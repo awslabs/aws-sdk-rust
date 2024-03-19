@@ -3,7 +3,7 @@
 /// Create Agent Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAgentInput {
+pub struct CreateAgentInput  {
     /// Name for a resource.
     pub agent_name: ::std::option::Option<::std::string::String>,
     /// Client specified token used for idempotency checks
@@ -21,29 +21,29 @@ pub struct CreateAgentInput {
     /// A KMS key ARN
     pub customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// A map of tag keys and values
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// Configuration for prompt override.
     pub prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
 }
-impl CreateAgentInput {
+impl  CreateAgentInput  {
     /// Name for a resource.
-    pub fn agent_name(&self) -> ::std::option::Option<&str> {
+    pub fn agent_name(&self) -> ::std::option::Option<& str> {
         self.agent_name.as_deref()
     }
     /// Client specified token used for idempotency checks
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// Instruction for the agent.
-    pub fn instruction(&self) -> ::std::option::Option<&str> {
+    pub fn instruction(&self) -> ::std::option::Option<& str> {
         self.instruction.as_deref()
     }
     /// ARN or name of a Bedrock model.
-    pub fn foundation_model(&self) -> ::std::option::Option<&str> {
+    pub fn foundation_model(&self) -> ::std::option::Option<& str> {
         self.foundation_model.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Max Session Time.
@@ -51,23 +51,23 @@ impl CreateAgentInput {
         self.idle_session_ttl_in_seconds
     }
     /// ARN of a IAM role.
-    pub fn agent_resource_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn agent_resource_role_arn(&self) -> ::std::option::Option<& str> {
         self.agent_resource_role_arn.as_deref()
     }
     /// A KMS key ARN
-    pub fn customer_encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn customer_encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.customer_encryption_key_arn.as_deref()
     }
     /// A map of tag keys and values
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// Configuration for prompt override.
-    pub fn prompt_override_configuration(&self) -> ::std::option::Option<&crate::types::PromptOverrideConfiguration> {
+    pub fn prompt_override_configuration(&self) -> ::std::option::Option<& crate::types::PromptOverrideConfiguration> {
         self.prompt_override_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateAgentInput {
+impl  ::std::fmt::Debug for CreateAgentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAgentInput");
         formatter.field("agent_name", &self.agent_name);
@@ -102,7 +102,7 @@ pub struct CreateAgentInputBuilder {
     pub(crate) idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     pub(crate) agent_resource_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) prompt_override_configuration: ::std::option::Option<crate::types::PromptOverrideConfiguration>,
 }
 impl CreateAgentInputBuilder {
@@ -114,8 +114,7 @@ impl CreateAgentInputBuilder {
     }
     /// Name for a resource.
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_name = input;
-        self
+        self.agent_name = input; self
     }
     /// Name for a resource.
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl CreateAgentInputBuilder {
     }
     /// Client specified token used for idempotency checks
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Client specified token used for idempotency checks
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl CreateAgentInputBuilder {
     }
     /// Instruction for the agent.
     pub fn set_instruction(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instruction = input;
-        self
+        self.instruction = input; self
     }
     /// Instruction for the agent.
     pub fn get_instruction(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +153,7 @@ impl CreateAgentInputBuilder {
     }
     /// ARN or name of a Bedrock model.
     pub fn set_foundation_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.foundation_model = input;
-        self
+        self.foundation_model = input; self
     }
     /// ARN or name of a Bedrock model.
     pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +166,7 @@ impl CreateAgentInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +179,7 @@ impl CreateAgentInputBuilder {
     }
     /// Max Session Time.
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_session_ttl_in_seconds = input;
-        self
+        self.idle_session_ttl_in_seconds = input; self
     }
     /// Max Session Time.
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -199,8 +193,7 @@ impl CreateAgentInputBuilder {
     }
     /// ARN of a IAM role.
     pub fn set_agent_resource_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_resource_role_arn = input;
-        self
+        self.agent_resource_role_arn = input; self
     }
     /// ARN of a IAM role.
     pub fn get_agent_resource_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +206,7 @@ impl CreateAgentInputBuilder {
     }
     /// A KMS key ARN
     pub fn set_customer_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_encryption_key_arn = input;
-        self
+        self.customer_encryption_key_arn = input; self
     }
     /// A KMS key ARN
     pub fn get_customer_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,17 +219,16 @@ impl CreateAgentInputBuilder {
     /// A map of tag keys and values
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A map of tag keys and values
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A map of tag keys and values
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Configuration for prompt override.
@@ -247,8 +238,7 @@ impl CreateAgentInputBuilder {
     }
     /// Configuration for prompt override.
     pub fn set_prompt_override_configuration(mut self, input: ::std::option::Option<crate::types::PromptOverrideConfiguration>) -> Self {
-        self.prompt_override_configuration = input;
-        self
+        self.prompt_override_configuration = input; self
     }
     /// Configuration for prompt override.
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
@@ -256,18 +246,30 @@ impl CreateAgentInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateAgentInput`](crate::operation::create_agent::CreateAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_agent::CreateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_agent::CreateAgentInput {
-            agent_name: self.agent_name,
-            client_token: self.client_token,
-            instruction: self.instruction,
-            foundation_model: self.foundation_model,
-            description: self.description,
-            idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-            agent_resource_role_arn: self.agent_resource_role_arn,
-            customer_encryption_key_arn: self.customer_encryption_key_arn,
-            tags: self.tags,
-            prompt_override_configuration: self.prompt_override_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_agent::CreateAgentInput {
+                agent_name: self.agent_name
+                ,
+                client_token: self.client_token
+                ,
+                instruction: self.instruction
+                ,
+                foundation_model: self.foundation_model
+                ,
+                description: self.description
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                agent_resource_role_arn: self.agent_resource_role_arn
+                ,
+                customer_encryption_key_arn: self.customer_encryption_key_arn
+                ,
+                tags: self.tags
+                ,
+                prompt_override_configuration: self.prompt_override_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateAgentInputBuilder {
@@ -286,3 +288,4 @@ impl ::std::fmt::Debug for CreateAgentInputBuilder {
         formatter.finish()
     }
 }
+

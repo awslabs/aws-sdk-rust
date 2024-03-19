@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOtaUpdatesOutput {
+pub struct ListOtaUpdatesOutput  {
     /// <p>A list of OTA update jobs.</p>
-    pub ota_updates: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>>,
+    pub ota_updates: ::std::option::Option<::std::vec::Vec::<crate::types::OtaUpdateSummary>>,
     /// <p>A token to use to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListOtaUpdatesOutput {
+impl  ListOtaUpdatesOutput  {
     /// <p>A list of OTA update jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ota_updates.is_none()`.
-    pub fn ota_updates(&self) -> &[crate::types::OtaUpdateSummary] {
-        self.ota_updates.as_deref().unwrap_or_default()
+    pub fn ota_updates(&self) -> & [crate::types::OtaUpdateSummary] {
+        self.ota_updates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token to use to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOtaUpdatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOtaUpdatesOutput {
     /// Creates a new builder-style object to manufacture [`ListOtaUpdatesOutput`](crate::operation::list_ota_updates::ListOtaUpdatesOutput).
     pub fn builder() -> crate::operation::list_ota_updates::builders::ListOtaUpdatesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListOtaUpdatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOtaUpdatesOutputBuilder {
-    pub(crate) ota_updates: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>>,
+    pub(crate) ota_updates: ::std::option::Option<::std::vec::Vec::<crate::types::OtaUpdateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListOtaUpdatesOutputBuilder {
     /// <p>A list of OTA update jobs.</p>
     pub fn ota_updates(mut self, input: crate::types::OtaUpdateSummary) -> Self {
         let mut v = self.ota_updates.unwrap_or_default();
-        v.push(input);
-        self.ota_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ota_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of OTA update jobs.</p>
-    pub fn set_ota_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>>) -> Self {
-        self.ota_updates = input;
-        self
+    pub fn set_ota_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OtaUpdateSummary>>) -> Self {
+        self.ota_updates = input; self
     }
     /// <p>A list of OTA update jobs.</p>
-    pub fn get_ota_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>> {
+    pub fn get_ota_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OtaUpdateSummary>> {
         &self.ota_updates
     }
     /// <p>A token to use to get the next set of results.</p>
@@ -69,28 +69,30 @@ impl ListOtaUpdatesOutputBuilder {
     }
     /// <p>A token to use to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to use to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOtaUpdatesOutput`](crate::operation::list_ota_updates::ListOtaUpdatesOutput).
     pub fn build(self) -> crate::operation::list_ota_updates::ListOtaUpdatesOutput {
         crate::operation::list_ota_updates::ListOtaUpdatesOutput {
-            ota_updates: self.ota_updates,
-            next_token: self.next_token,
+            ota_updates: self.ota_updates
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

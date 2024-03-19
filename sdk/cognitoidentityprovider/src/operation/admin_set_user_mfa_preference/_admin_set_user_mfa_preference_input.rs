@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminSetUserMfaPreferenceInput {
+pub struct AdminSetUserMfaPreferenceInput  {
     /// <p>The SMS text message MFA settings.</p>
     pub sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
     /// <p>The time-based one-time password software token MFA settings.</p>
@@ -12,25 +12,25 @@ pub struct AdminSetUserMfaPreferenceInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
-impl AdminSetUserMfaPreferenceInput {
+impl  AdminSetUserMfaPreferenceInput  {
     /// <p>The SMS text message MFA settings.</p>
-    pub fn sms_mfa_settings(&self) -> ::std::option::Option<&crate::types::SmsMfaSettingsType> {
+    pub fn sms_mfa_settings(&self) -> ::std::option::Option<& crate::types::SmsMfaSettingsType> {
         self.sms_mfa_settings.as_ref()
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
-    pub fn software_token_mfa_settings(&self) -> ::std::option::Option<&crate::types::SoftwareTokenMfaSettingsType> {
+    pub fn software_token_mfa_settings(&self) -> ::std::option::Option<& crate::types::SoftwareTokenMfaSettingsType> {
         self.software_token_mfa_settings.as_ref()
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for AdminSetUserMfaPreferenceInput {
+impl  ::std::fmt::Debug for AdminSetUserMfaPreferenceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserMfaPreferenceInput");
         formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
@@ -64,8 +64,7 @@ impl AdminSetUserMfaPreferenceInputBuilder {
     }
     /// <p>The SMS text message MFA settings.</p>
     pub fn set_sms_mfa_settings(mut self, input: ::std::option::Option<crate::types::SmsMfaSettingsType>) -> Self {
-        self.sms_mfa_settings = input;
-        self
+        self.sms_mfa_settings = input; self
     }
     /// <p>The SMS text message MFA settings.</p>
     pub fn get_sms_mfa_settings(&self) -> &::std::option::Option<crate::types::SmsMfaSettingsType> {
@@ -78,8 +77,7 @@ impl AdminSetUserMfaPreferenceInputBuilder {
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
     pub fn set_software_token_mfa_settings(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>) -> Self {
-        self.software_token_mfa_settings = input;
-        self
+        self.software_token_mfa_settings = input; self
     }
     /// <p>The time-based one-time password software token MFA settings.</p>
     pub fn get_software_token_mfa_settings(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
@@ -93,8 +91,7 @@ impl AdminSetUserMfaPreferenceInputBuilder {
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,26 +105,26 @@ impl AdminSetUserMfaPreferenceInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
     /// Consumes the builder and constructs a [`AdminSetUserMfaPreferenceInput`](crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput {
-            sms_mfa_settings: self.sms_mfa_settings,
-            software_token_mfa_settings: self.software_token_mfa_settings,
-            username: self.username,
-            user_pool_id: self.user_pool_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput {
+                sms_mfa_settings: self.sms_mfa_settings
+                ,
+                software_token_mfa_settings: self.software_token_mfa_settings
+                ,
+                username: self.username
+                ,
+                user_pool_id: self.user_pool_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AdminSetUserMfaPreferenceInputBuilder {
@@ -140,3 +137,4 @@ impl ::std::fmt::Debug for AdminSetUserMfaPreferenceInputBuilder {
         formatter.finish()
     }
 }
+

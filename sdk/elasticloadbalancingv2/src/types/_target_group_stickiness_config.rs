@@ -3,13 +3,13 @@
 /// <p>Information about the target group stickiness for a rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetGroupStickinessConfig {
+pub struct TargetGroupStickinessConfig  {
     /// <p>Indicates whether target group stickiness is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
     pub duration_seconds: ::std::option::Option<i32>,
 }
-impl TargetGroupStickinessConfig {
+impl  TargetGroupStickinessConfig  {
     /// <p>Indicates whether target group stickiness is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -41,8 +41,7 @@ impl TargetGroupStickinessConfigBuilder {
     }
     /// <p>Indicates whether target group stickiness is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether target group stickiness is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl TargetGroupStickinessConfigBuilder {
     }
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
     }
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl TargetGroupStickinessConfigBuilder {
     /// Consumes the builder and constructs a [`TargetGroupStickinessConfig`](crate::types::TargetGroupStickinessConfig).
     pub fn build(self) -> crate::types::TargetGroupStickinessConfig {
         crate::types::TargetGroupStickinessConfig {
-            enabled: self.enabled,
-            duration_seconds: self.duration_seconds,
+            enabled: self.enabled
+            ,
+            duration_seconds: self.duration_seconds
+            ,
         }
     }
 }
+

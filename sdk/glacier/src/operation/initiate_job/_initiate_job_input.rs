@@ -3,7 +3,7 @@
 /// <p>Provides options for initiating an Amazon S3 Glacier job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InitiateJobInput {
+pub struct InitiateJobInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
@@ -11,25 +11,25 @@ pub struct InitiateJobInput {
     /// <p>Provides options for specifying job information.</p>
     pub job_parameters: ::std::option::Option<crate::types::JobParameters>,
 }
-impl InitiateJobInput {
+impl  InitiateJobInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<& str> {
         self.vault_name.as_deref()
     }
     /// <p>Provides options for specifying job information.</p>
-    pub fn job_parameters(&self) -> ::std::option::Option<&crate::types::JobParameters> {
+    pub fn job_parameters(&self) -> ::std::option::Option<& crate::types::JobParameters> {
         self.job_parameters.as_ref()
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for InitiateJobInput {
-    fn account_id_mut(&mut self) -> &mut Option<String> {
-        &mut self.account_id
-    }
-}
+                        fn account_id_mut(&mut self) -> &mut Option<String> {
+                            &mut self.account_id
+                        }
+                    }
 impl InitiateJobInput {
     /// Creates a new builder-style object to manufacture [`InitiateJobInput`](crate::operation::initiate_job::InitiateJobInput).
     pub fn builder() -> crate::operation::initiate_job::builders::InitiateJobInputBuilder {
@@ -54,8 +54,7 @@ impl InitiateJobInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl InitiateJobInputBuilder {
     }
     /// <p>The name of the vault.</p>
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vault_name = input;
-        self
+        self.vault_name = input; self
     }
     /// <p>The name of the vault.</p>
     pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl InitiateJobInputBuilder {
     }
     /// <p>Provides options for specifying job information.</p>
     pub fn set_job_parameters(mut self, input: ::std::option::Option<crate::types::JobParameters>) -> Self {
-        self.job_parameters = input;
-        self
+        self.job_parameters = input; self
     }
     /// <p>Provides options for specifying job information.</p>
     pub fn get_job_parameters(&self) -> &::std::option::Option<crate::types::JobParameters> {
@@ -92,10 +89,16 @@ impl InitiateJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`InitiateJobInput`](crate::operation::initiate_job::InitiateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::initiate_job::InitiateJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::initiate_job::InitiateJobInput {
-            account_id: self.account_id,
-            vault_name: self.vault_name,
-            job_parameters: self.job_parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::initiate_job::InitiateJobInput {
+                account_id: self.account_id
+                ,
+                vault_name: self.vault_name
+                ,
+                job_parameters: self.job_parameters
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAudienceGenerationJobsOutput {
+pub struct ListAudienceGenerationJobsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The audience generation jobs that match the request.</p>
-    pub audience_generation_jobs: ::std::vec::Vec<crate::types::AudienceGenerationJobSummary>,
+    pub audience_generation_jobs: ::std::vec::Vec::<crate::types::AudienceGenerationJobSummary>,
     _request_id: Option<String>,
 }
-impl ListAudienceGenerationJobsOutput {
+impl  ListAudienceGenerationJobsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The audience generation jobs that match the request.</p>
-    pub fn audience_generation_jobs(&self) -> &[crate::types::AudienceGenerationJobSummary] {
-        use std::ops::Deref;
-        self.audience_generation_jobs.deref()
+    pub fn audience_generation_jobs(&self) -> & [crate::types::AudienceGenerationJobSummary] {
+        use std::ops::Deref; self.audience_generation_jobs.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAudienceGenerationJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAudienceGenerationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListAudienceGenerationJobsOutput`](crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsOutput).
     pub fn builder() -> crate::operation::list_audience_generation_jobs::builders::ListAudienceGenerationJobsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListAudienceGenerationJobsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAudienceGenerationJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) audience_generation_jobs: ::std::option::Option<::std::vec::Vec<crate::types::AudienceGenerationJobSummary>>,
+    pub(crate) audience_generation_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::AudienceGenerationJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListAudienceGenerationJobsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListAudienceGenerationJobsOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,46 +60,43 @@ impl ListAudienceGenerationJobsOutputBuilder {
     /// <p>The audience generation jobs that match the request.</p>
     pub fn audience_generation_jobs(mut self, input: crate::types::AudienceGenerationJobSummary) -> Self {
         let mut v = self.audience_generation_jobs.unwrap_or_default();
-        v.push(input);
-        self.audience_generation_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.audience_generation_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The audience generation jobs that match the request.</p>
-    pub fn set_audience_generation_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudienceGenerationJobSummary>>) -> Self {
-        self.audience_generation_jobs = input;
-        self
+    pub fn set_audience_generation_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AudienceGenerationJobSummary>>) -> Self {
+        self.audience_generation_jobs = input; self
     }
     /// <p>The audience generation jobs that match the request.</p>
-    pub fn get_audience_generation_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudienceGenerationJobSummary>> {
+    pub fn get_audience_generation_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AudienceGenerationJobSummary>> {
         &self.audience_generation_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAudienceGenerationJobsOutput`](crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`audience_generation_jobs`](crate::operation::list_audience_generation_jobs::builders::ListAudienceGenerationJobsOutputBuilder::audience_generation_jobs)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsOutput {
-            next_token: self.next_token,
-            audience_generation_jobs: self.audience_generation_jobs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_generation_jobs",
-                    "audience_generation_jobs was not specified but it is required when building ListAudienceGenerationJobsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsOutput {
+                next_token: self.next_token
+                ,
+                audience_generation_jobs: self.audience_generation_jobs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_generation_jobs", "audience_generation_jobs was not specified but it is required when building ListAudienceGenerationJobsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

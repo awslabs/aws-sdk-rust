@@ -3,7 +3,7 @@
 /// <p>Information about an authorization rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizationRule {
+pub struct AuthorizationRule  {
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the authorization rule.</p>
@@ -17,17 +17,17 @@ pub struct AuthorizationRule {
     /// <p>The current state of the authorization rule.</p>
     pub status: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
 }
-impl AuthorizationRule {
+impl  AuthorizationRule  {
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>A brief description of the authorization rule.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the Active Directory group to which the authorization rule grants access.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>Indicates whether the authorization rule grants access to all clients.</p>
@@ -35,11 +35,11 @@ impl AuthorizationRule {
         self.access_all
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network to which the authorization rule applies.</p>
-    pub fn destination_cidr(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr(&self) -> ::std::option::Option<& str> {
         self.destination_cidr.as_deref()
     }
     /// <p>The current state of the authorization rule.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ClientVpnAuthorizationRuleStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ClientVpnAuthorizationRuleStatus> {
         self.status.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl AuthorizationRuleBuilder {
     }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
     pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+        self.client_vpn_endpoint_id = input; self
     }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
     pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl AuthorizationRuleBuilder {
     }
     /// <p>A brief description of the authorization rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the authorization rule.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl AuthorizationRuleBuilder {
     }
     /// <p>The ID of the Active Directory group to which the authorization rule grants access.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The ID of the Active Directory group to which the authorization rule grants access.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl AuthorizationRuleBuilder {
     }
     /// <p>Indicates whether the authorization rule grants access to all clients.</p>
     pub fn set_access_all(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.access_all = input;
-        self
+        self.access_all = input; self
     }
     /// <p>Indicates whether the authorization rule grants access to all clients.</p>
     pub fn get_access_all(&self) -> &::std::option::Option<bool> {
@@ -125,8 +121,7 @@ impl AuthorizationRuleBuilder {
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network to which the authorization rule applies.</p>
     pub fn set_destination_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr = input;
-        self
+        self.destination_cidr = input; self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network to which the authorization rule applies.</p>
     pub fn get_destination_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl AuthorizationRuleBuilder {
     }
     /// <p>The current state of the authorization rule.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the authorization rule.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus> {
@@ -149,12 +143,19 @@ impl AuthorizationRuleBuilder {
     /// Consumes the builder and constructs a [`AuthorizationRule`](crate::types::AuthorizationRule).
     pub fn build(self) -> crate::types::AuthorizationRule {
         crate::types::AuthorizationRule {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-            description: self.description,
-            group_id: self.group_id,
-            access_all: self.access_all,
-            destination_cidr: self.destination_cidr,
-            status: self.status,
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id
+            ,
+            description: self.description
+            ,
+            group_id: self.group_id
+            ,
+            access_all: self.access_all
+            ,
+            destination_cidr: self.destination_cidr
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

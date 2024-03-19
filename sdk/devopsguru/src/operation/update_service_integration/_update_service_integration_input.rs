@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceIntegrationInput {
+pub struct UpdateServiceIntegrationInput  {
     /// <p>An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.</p>
     pub service_integration: ::std::option::Option<crate::types::UpdateServiceIntegrationConfig>,
 }
-impl UpdateServiceIntegrationInput {
+impl  UpdateServiceIntegrationInput  {
     /// <p>An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.</p>
-    pub fn service_integration(&self) -> ::std::option::Option<&crate::types::UpdateServiceIntegrationConfig> {
+    pub fn service_integration(&self) -> ::std::option::Option<& crate::types::UpdateServiceIntegrationConfig> {
         self.service_integration.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl UpdateServiceIntegrationInputBuilder {
     }
     /// <p>An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.</p>
     pub fn set_service_integration(mut self, input: ::std::option::Option<crate::types::UpdateServiceIntegrationConfig>) -> Self {
-        self.service_integration = input;
-        self
+        self.service_integration = input; self
     }
     /// <p>An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.</p>
     pub fn get_service_integration(&self) -> &::std::option::Option<crate::types::UpdateServiceIntegrationConfig> {
         &self.service_integration
     }
     /// Consumes the builder and constructs a [`UpdateServiceIntegrationInput`](crate::operation::update_service_integration::UpdateServiceIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_integration::UpdateServiceIntegrationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_service_integration::UpdateServiceIntegrationInput {
-            service_integration: self.service_integration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_integration::UpdateServiceIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_integration::UpdateServiceIntegrationInput {
+                service_integration: self.service_integration
+                ,
+            }
+        )
     }
 }
+

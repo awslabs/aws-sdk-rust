@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Origin {
+pub struct S3Origin  {
     /// <p>The DNS name of the Amazon S3 origin.</p>
     pub domain_name: ::std::string::String,
     /// <p>The CloudFront origin access identity to associate with the distribution. Use an origin access identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.</p>
@@ -13,20 +13,18 @@ pub struct S3Origin {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
     pub origin_access_identity: ::std::string::String,
 }
-impl S3Origin {
+impl  S3Origin  {
     /// <p>The DNS name of the Amazon S3 origin.</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>The CloudFront origin access identity to associate with the distribution. Use an origin access identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.</p>
     /// <p>If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_access_identity(&self) -> &str {
-        use std::ops::Deref;
-        self.origin_access_identity.deref()
+    pub fn origin_access_identity(&self) -> & str {
+        use std::ops::Deref; self.origin_access_identity.deref()
     }
 }
 impl S3Origin {
@@ -52,8 +50,7 @@ impl S3OriginBuilder {
     }
     /// <p>The DNS name of the Amazon S3 origin.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The DNS name of the Amazon S3 origin.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +72,7 @@ impl S3OriginBuilder {
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_origin_access_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_access_identity = input;
-        self
+        self.origin_access_identity = input; self
     }
     /// <p>The CloudFront origin access identity to associate with the distribution. Use an origin access identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.</p>
     /// <p>If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
@@ -91,19 +87,20 @@ impl S3OriginBuilder {
     /// - [`domain_name`](crate::types::builders::S3OriginBuilder::domain_name)
     /// - [`origin_access_identity`](crate::types::builders::S3OriginBuilder::origin_access_identity)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Origin, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Origin {
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building S3Origin",
-                )
-            })?,
-            origin_access_identity: self.origin_access_identity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "origin_access_identity",
-                    "origin_access_identity was not specified but it is required when building S3Origin",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Origin {
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building S3Origin")
+                    )?
+                ,
+                origin_access_identity: self.origin_access_identity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("origin_access_identity", "origin_access_identity was not specified but it is required when building S3Origin")
+                    )?
+                ,
+            }
+        )
     }
 }
+

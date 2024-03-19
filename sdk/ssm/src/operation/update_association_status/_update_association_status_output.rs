@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAssociationStatusOutput {
+pub struct UpdateAssociationStatusOutput  {
     /// <p>Information about the association.</p>
     pub association_description: ::std::option::Option<crate::types::AssociationDescription>,
     _request_id: Option<String>,
 }
-impl UpdateAssociationStatusOutput {
+impl  UpdateAssociationStatusOutput  {
     /// <p>Information about the association.</p>
-    pub fn association_description(&self) -> ::std::option::Option<&crate::types::AssociationDescription> {
+    pub fn association_description(&self) -> ::std::option::Option<& crate::types::AssociationDescription> {
         self.association_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAssociationStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAssociationStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssociationStatusOutput`](crate::operation::update_association_status::UpdateAssociationStatusOutput).
     pub fn builder() -> crate::operation::update_association_status::builders::UpdateAssociationStatusOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateAssociationStatusOutputBuilder {
     }
     /// <p>Information about the association.</p>
     pub fn set_association_description(mut self, input: ::std::option::Option<crate::types::AssociationDescription>) -> Self {
-        self.association_description = input;
-        self
+        self.association_description = input; self
     }
     /// <p>Information about the association.</p>
     pub fn get_association_description(&self) -> &::std::option::Option<crate::types::AssociationDescription> {
         &self.association_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAssociationStatusOutput`](crate::operation::update_association_status::UpdateAssociationStatusOutput).
     pub fn build(self) -> crate::operation::update_association_status::UpdateAssociationStatusOutput {
         crate::operation::update_association_status::UpdateAssociationStatusOutput {
-            association_description: self.association_description,
+            association_description: self.association_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

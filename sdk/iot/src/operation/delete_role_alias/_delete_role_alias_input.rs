@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRoleAliasInput {
+pub struct DeleteRoleAliasInput  {
     /// <p>The role alias to delete.</p>
     pub role_alias: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRoleAliasInput {
+impl  DeleteRoleAliasInput  {
     /// <p>The role alias to delete.</p>
-    pub fn role_alias(&self) -> ::std::option::Option<&str> {
+    pub fn role_alias(&self) -> ::std::option::Option<& str> {
         self.role_alias.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteRoleAliasInputBuilder {
     }
     /// <p>The role alias to delete.</p>
     pub fn set_role_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_alias = input;
-        self
+        self.role_alias = input; self
     }
     /// <p>The role alias to delete.</p>
     pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_alias
     }
     /// Consumes the builder and constructs a [`DeleteRoleAliasInput`](crate::operation::delete_role_alias::DeleteRoleAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_role_alias::DeleteRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_role_alias::DeleteRoleAliasInput { role_alias: self.role_alias })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_role_alias::DeleteRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_role_alias::DeleteRoleAliasInput {
+                role_alias: self.role_alias
+                ,
+            }
+        )
     }
 }
+

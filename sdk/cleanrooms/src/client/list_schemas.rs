@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSchemas`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`collaboration_identifier(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_collaboration_identifier):<br>required: **true**<br><p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p><br>
     ///   - [`schema_type(SchemaType)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::schema_type) / [`set_schema_type(Option<SchemaType>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_schema_type):<br>required: **false**<br><p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call.</p><br>
-    /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
+                            /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
     ///   - [`schema_summaries(Vec::<SchemaSummary>)`](crate::operation::list_schemas::ListSchemasOutput::schema_summaries): <p>The retrieved list of schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
+                            /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
     pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
-        crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
+                            }
 }
+

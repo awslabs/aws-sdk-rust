@@ -3,7 +3,7 @@
 /// <p>The lens review of a review template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReviewTemplateLensReview {
+pub struct ReviewTemplateLensReview  {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
@@ -18,62 +18,63 @@ pub struct ReviewTemplateLensReview {
     /// <p>The status of the lens.</p>
     pub lens_status: ::std::option::Option<crate::types::LensStatus>,
     /// <p>Pillar review summaries of a lens review.</p>
-    pub pillar_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplatePillarReviewSummary>>,
+    pub pillar_review_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ReviewTemplatePillarReviewSummary>>,
     /// <p>The date and time recorded.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A count of how many questions are answered and unanswered in the lens review.</p>
-    pub question_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Question, i32>>,
+    pub question_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Question, i32>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ReviewTemplateLensReview {
+impl  ReviewTemplateLensReview  {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The lens ARN.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The version of the lens.</p>
-    pub fn lens_version(&self) -> ::std::option::Option<&str> {
+    pub fn lens_version(&self) -> ::std::option::Option<& str> {
         self.lens_version.as_deref()
     }
     /// <p>The full name of the lens.</p>
-    pub fn lens_name(&self) -> ::std::option::Option<&str> {
+    pub fn lens_name(&self) -> ::std::option::Option<& str> {
         self.lens_name.as_deref()
     }
     /// <p>The status of the lens.</p>
-    pub fn lens_status(&self) -> ::std::option::Option<&crate::types::LensStatus> {
+    pub fn lens_status(&self) -> ::std::option::Option<& crate::types::LensStatus> {
         self.lens_status.as_ref()
     }
     /// <p>Pillar review summaries of a lens review.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillar_review_summaries.is_none()`.
-    pub fn pillar_review_summaries(&self) -> &[crate::types::ReviewTemplatePillarReviewSummary] {
-        self.pillar_review_summaries.as_deref().unwrap_or_default()
+    pub fn pillar_review_summaries(&self) -> & [crate::types::ReviewTemplatePillarReviewSummary] {
+        self.pillar_review_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
-    pub fn notes(&self) -> ::std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<& str> {
         self.notes.as_deref()
     }
     /// <p>A count of how many questions are answered and unanswered in the lens review.</p>
-    pub fn question_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Question, i32>> {
+    pub fn question_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Question, i32>> {
         self.question_counts.as_ref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -93,10 +94,10 @@ pub struct ReviewTemplateLensReviewBuilder {
     pub(crate) lens_version: ::std::option::Option<::std::string::String>,
     pub(crate) lens_name: ::std::option::Option<::std::string::String>,
     pub(crate) lens_status: ::std::option::Option<crate::types::LensStatus>,
-    pub(crate) pillar_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplatePillarReviewSummary>>,
+    pub(crate) pillar_review_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ReviewTemplatePillarReviewSummary>>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,
-    pub(crate) question_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Question, i32>>,
+    pub(crate) question_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Question, i32>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ReviewTemplateLensReviewBuilder {
@@ -113,8 +114,7 @@ impl ReviewTemplateLensReviewBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -130,8 +130,7 @@ impl ReviewTemplateLensReviewBuilder {
     }
     /// <p>The lens ARN.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>The lens ARN.</p>
     pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +143,7 @@ impl ReviewTemplateLensReviewBuilder {
     }
     /// <p>The version of the lens.</p>
     pub fn set_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_version = input;
-        self
+        self.lens_version = input; self
     }
     /// <p>The version of the lens.</p>
     pub fn get_lens_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +156,7 @@ impl ReviewTemplateLensReviewBuilder {
     }
     /// <p>The full name of the lens.</p>
     pub fn set_lens_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_name = input;
-        self
+        self.lens_name = input; self
     }
     /// <p>The full name of the lens.</p>
     pub fn get_lens_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +169,7 @@ impl ReviewTemplateLensReviewBuilder {
     }
     /// <p>The status of the lens.</p>
     pub fn set_lens_status(mut self, input: ::std::option::Option<crate::types::LensStatus>) -> Self {
-        self.lens_status = input;
-        self
+        self.lens_status = input; self
     }
     /// <p>The status of the lens.</p>
     pub fn get_lens_status(&self) -> &::std::option::Option<crate::types::LensStatus> {
@@ -186,20 +182,16 @@ impl ReviewTemplateLensReviewBuilder {
     /// <p>Pillar review summaries of a lens review.</p>
     pub fn pillar_review_summaries(mut self, input: crate::types::ReviewTemplatePillarReviewSummary) -> Self {
         let mut v = self.pillar_review_summaries.unwrap_or_default();
-        v.push(input);
-        self.pillar_review_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pillar_review_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Pillar review summaries of a lens review.</p>
-    pub fn set_pillar_review_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplatePillarReviewSummary>>,
-    ) -> Self {
-        self.pillar_review_summaries = input;
-        self
+    pub fn set_pillar_review_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReviewTemplatePillarReviewSummary>>) -> Self {
+        self.pillar_review_summaries = input; self
     }
     /// <p>Pillar review summaries of a lens review.</p>
-    pub fn get_pillar_review_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplatePillarReviewSummary>> {
+    pub fn get_pillar_review_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReviewTemplatePillarReviewSummary>> {
         &self.pillar_review_summaries
     }
     /// <p>The date and time recorded.</p>
@@ -209,8 +201,7 @@ impl ReviewTemplateLensReviewBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -225,8 +216,7 @@ impl ReviewTemplateLensReviewBuilder {
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notes = input;
-        self
+        self.notes = input; self
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
@@ -240,17 +230,16 @@ impl ReviewTemplateLensReviewBuilder {
     /// <p>A count of how many questions are answered and unanswered in the lens review.</p>
     pub fn question_counts(mut self, k: crate::types::Question, v: i32) -> Self {
         let mut hash_map = self.question_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.question_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.question_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A count of how many questions are answered and unanswered in the lens review.</p>
-    pub fn set_question_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Question, i32>>) -> Self {
-        self.question_counts = input;
-        self
+    pub fn set_question_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Question, i32>>) -> Self {
+        self.question_counts = input; self
     }
     /// <p>A count of how many questions are answered and unanswered in the lens review.</p>
-    pub fn get_question_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Question, i32>> {
+    pub fn get_question_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Question, i32>> {
         &self.question_counts
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -260,8 +249,7 @@ impl ReviewTemplateLensReviewBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -270,16 +258,27 @@ impl ReviewTemplateLensReviewBuilder {
     /// Consumes the builder and constructs a [`ReviewTemplateLensReview`](crate::types::ReviewTemplateLensReview).
     pub fn build(self) -> crate::types::ReviewTemplateLensReview {
         crate::types::ReviewTemplateLensReview {
-            lens_alias: self.lens_alias,
-            lens_arn: self.lens_arn,
-            lens_version: self.lens_version,
-            lens_name: self.lens_name,
-            lens_status: self.lens_status,
-            pillar_review_summaries: self.pillar_review_summaries,
-            updated_at: self.updated_at,
-            notes: self.notes,
-            question_counts: self.question_counts,
-            next_token: self.next_token,
+            lens_alias: self.lens_alias
+            ,
+            lens_arn: self.lens_arn
+            ,
+            lens_version: self.lens_version
+            ,
+            lens_name: self.lens_name
+            ,
+            lens_status: self.lens_status
+            ,
+            pillar_review_summaries: self.pillar_review_summaries
+            ,
+            updated_at: self.updated_at
+            ,
+            notes: self.notes
+            ,
+            question_counts: self.question_counts
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

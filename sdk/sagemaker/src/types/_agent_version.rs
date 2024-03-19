@@ -3,15 +3,15 @@
 /// <p>Edge Manager agent version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentVersion {
+pub struct AgentVersion  {
     /// <p>Version of the agent.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The number of Edge Manager agents.</p>
     pub agent_count: ::std::option::Option<i64>,
 }
-impl AgentVersion {
+impl  AgentVersion  {
     /// <p>Version of the agent.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The number of Edge Manager agents.</p>
@@ -42,8 +42,7 @@ impl AgentVersionBuilder {
     }
     /// <p>Version of the agent.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version of the agent.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl AgentVersionBuilder {
     }
     /// <p>The number of Edge Manager agents.</p>
     pub fn set_agent_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.agent_count = input;
-        self
+        self.agent_count = input; self
     }
     /// <p>The number of Edge Manager agents.</p>
     pub fn get_agent_count(&self) -> &::std::option::Option<i64> {
@@ -67,8 +65,11 @@ impl AgentVersionBuilder {
     /// Consumes the builder and constructs a [`AgentVersion`](crate::types::AgentVersion).
     pub fn build(self) -> crate::types::AgentVersion {
         crate::types::AgentVersion {
-            version: self.version,
-            agent_count: self.agent_count,
+            version: self.version
+            ,
+            agent_count: self.agent_count
+            ,
         }
     }
 }
+

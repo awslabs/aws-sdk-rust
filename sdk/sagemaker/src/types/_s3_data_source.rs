@@ -4,7 +4,7 @@
 /// <p>Your input bucket must be in the same Amazon Web Services region as your training job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DataSource {
+pub struct S3DataSource  {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training.</p>
     /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training.</p>
     /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
@@ -38,15 +38,15 @@ pub struct S3DataSource {
     /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects.</p>
     pub s3_data_distribution_type: ::std::option::Option<crate::types::S3DataDistribution>,
     /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
-    pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of names of instance groups that get data from the S3 data source.</p>
-    pub instance_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl S3DataSource {
+impl  S3DataSource  {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training.</p>
     /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training.</p>
     /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
-    pub fn s3_data_type(&self) -> ::std::option::Option<&crate::types::S3DataType> {
+    pub fn s3_data_type(&self) -> ::std::option::Option<& crate::types::S3DataType> {
         self.s3_data_type.as_ref()
     }
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
@@ -71,27 +71,29 @@ impl S3DataSource {
     /// <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf.</p></li>
     /// </ul>
     /// <p>Your input bucket must be located in same Amazon Web Services region as your training job.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>.</p>
     /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data.</p>
     /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms.</p>
     /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects.</p>
-    pub fn s3_data_distribution_type(&self) -> ::std::option::Option<&crate::types::S3DataDistribution> {
+    pub fn s3_data_distribution_type(&self) -> ::std::option::Option<& crate::types::S3DataDistribution> {
         self.s3_data_distribution_type.as_ref()
     }
     /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
-    pub fn attribute_names(&self) -> &[::std::string::String] {
-        self.attribute_names.as_deref().unwrap_or_default()
+    pub fn attribute_names(&self) -> & [::std::string::String] {
+        self.attribute_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of names of instance groups that get data from the S3 data source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_group_names.is_none()`.
-    pub fn instance_group_names(&self) -> &[::std::string::String] {
-        self.instance_group_names.as_deref().unwrap_or_default()
+    pub fn instance_group_names(&self) -> & [::std::string::String] {
+        self.instance_group_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl S3DataSource {
@@ -108,8 +110,8 @@ pub struct S3DataSourceBuilder {
     pub(crate) s3_data_type: ::std::option::Option<crate::types::S3DataType>,
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_data_distribution_type: ::std::option::Option<crate::types::S3DataDistribution>,
-    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) instance_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) instance_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl S3DataSourceBuilder {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training.</p>
@@ -124,8 +126,7 @@ impl S3DataSourceBuilder {
     /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training.</p>
     /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
     pub fn set_s3_data_type(mut self, input: ::std::option::Option<crate::types::S3DataType>) -> Self {
-        self.s3_data_type = input;
-        self
+        self.s3_data_type = input; self
     }
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training.</p>
     /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training.</p>
@@ -183,8 +184,7 @@ impl S3DataSourceBuilder {
     /// </ul>
     /// <p>Your input bucket must be located in same Amazon Web Services region as your training job.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
@@ -224,8 +224,7 @@ impl S3DataSourceBuilder {
     /// <p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe modes. Keep this in mind when developing algorithms.</p>
     /// <p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>), this copies 1/<i>n</i> of the number of objects.</p>
     pub fn set_s3_data_distribution_type(mut self, input: ::std::option::Option<crate::types::S3DataDistribution>) -> Self {
-        self.s3_data_distribution_type = input;
-        self
+        self.s3_data_distribution_type = input; self
     }
     /// <p>If you want SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <code>FullyReplicated</code>.</p>
     /// <p>If you want SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <code>ShardedByS3Key</code>. If there are <i>n</i> ML compute instances launched for a training job, each instance gets approximately 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data.</p>
@@ -241,17 +240,16 @@ impl S3DataSourceBuilder {
     /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
     pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
-    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attribute_names = input; self
     }
     /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attribute_names
     }
     /// Appends an item to `instance_group_names`.
@@ -261,27 +259,32 @@ impl S3DataSourceBuilder {
     /// <p>A list of names of instance groups that get data from the S3 data source.</p>
     pub fn instance_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.instance_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of names of instance groups that get data from the S3 data source.</p>
-    pub fn set_instance_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_group_names = input;
-        self
+    pub fn set_instance_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_group_names = input; self
     }
     /// <p>A list of names of instance groups that get data from the S3 data source.</p>
-    pub fn get_instance_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_group_names
     }
     /// Consumes the builder and constructs a [`S3DataSource`](crate::types::S3DataSource).
     pub fn build(self) -> crate::types::S3DataSource {
         crate::types::S3DataSource {
-            s3_data_type: self.s3_data_type,
-            s3_uri: self.s3_uri,
-            s3_data_distribution_type: self.s3_data_distribution_type,
-            attribute_names: self.attribute_names,
-            instance_group_names: self.instance_group_names,
+            s3_data_type: self.s3_data_type
+            ,
+            s3_uri: self.s3_uri
+            ,
+            s3_data_distribution_type: self.s3_data_distribution_type
+            ,
+            attribute_names: self.attribute_names
+            ,
+            instance_group_names: self.instance_group_names
+            ,
         }
     }
 }
+

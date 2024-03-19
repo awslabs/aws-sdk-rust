@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCollaborationAnalysisTemplateOutput {
+pub struct BatchGetCollaborationAnalysisTemplateOutput  {
     /// <p>The retrieved list of analysis templates within a collaboration.</p>
-    pub collaboration_analysis_templates: ::std::vec::Vec<crate::types::CollaborationAnalysisTemplate>,
+    pub collaboration_analysis_templates: ::std::vec::Vec::<crate::types::CollaborationAnalysisTemplate>,
     /// <p>Error reasons for collaboration analysis templates that could not be retrieved. One error is returned for every collaboration analysis template that could not be retrieved.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchGetCollaborationAnalysisTemplateError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchGetCollaborationAnalysisTemplateError>,
     _request_id: Option<String>,
 }
-impl BatchGetCollaborationAnalysisTemplateOutput {
+impl  BatchGetCollaborationAnalysisTemplateOutput  {
     /// <p>The retrieved list of analysis templates within a collaboration.</p>
-    pub fn collaboration_analysis_templates(&self) -> &[crate::types::CollaborationAnalysisTemplate] {
-        use std::ops::Deref;
-        self.collaboration_analysis_templates.deref()
+    pub fn collaboration_analysis_templates(&self) -> & [crate::types::CollaborationAnalysisTemplate] {
+        use std::ops::Deref; self.collaboration_analysis_templates.deref()
     }
     /// <p>Error reasons for collaboration analysis templates that could not be retrieved. One error is returned for every collaboration analysis template that could not be retrieved.</p>
-    pub fn errors(&self) -> &[crate::types::BatchGetCollaborationAnalysisTemplateError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchGetCollaborationAnalysisTemplateError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetCollaborationAnalysisTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetCollaborationAnalysisTemplateOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetCollaborationAnalysisTemplateOutput`](crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput).
     pub fn builder() -> crate::operation::batch_get_collaboration_analysis_template::builders::BatchGetCollaborationAnalysisTemplateOutputBuilder {
@@ -37,8 +35,8 @@ impl BatchGetCollaborationAnalysisTemplateOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCollaborationAnalysisTemplateOutputBuilder {
-    pub(crate) collaboration_analysis_templates: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplate>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCollaborationAnalysisTemplateError>>,
+    pub(crate) collaboration_analysis_templates: ::std::option::Option<::std::vec::Vec::<crate::types::CollaborationAnalysisTemplate>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetCollaborationAnalysisTemplateError>>,
     _request_id: Option<String>,
 }
 impl BatchGetCollaborationAnalysisTemplateOutputBuilder {
@@ -49,20 +47,16 @@ impl BatchGetCollaborationAnalysisTemplateOutputBuilder {
     /// <p>The retrieved list of analysis templates within a collaboration.</p>
     pub fn collaboration_analysis_templates(mut self, input: crate::types::CollaborationAnalysisTemplate) -> Self {
         let mut v = self.collaboration_analysis_templates.unwrap_or_default();
-        v.push(input);
-        self.collaboration_analysis_templates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collaboration_analysis_templates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The retrieved list of analysis templates within a collaboration.</p>
-    pub fn set_collaboration_analysis_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplate>>,
-    ) -> Self {
-        self.collaboration_analysis_templates = input;
-        self
+    pub fn set_collaboration_analysis_templates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CollaborationAnalysisTemplate>>) -> Self {
+        self.collaboration_analysis_templates = input; self
     }
     /// <p>The retrieved list of analysis templates within a collaboration.</p>
-    pub fn get_collaboration_analysis_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplate>> {
+    pub fn get_collaboration_analysis_templates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CollaborationAnalysisTemplate>> {
         &self.collaboration_analysis_templates
     }
     /// Appends an item to `errors`.
@@ -72,38 +66,32 @@ impl BatchGetCollaborationAnalysisTemplateOutputBuilder {
     /// <p>Error reasons for collaboration analysis templates that could not be retrieved. One error is returned for every collaboration analysis template that could not be retrieved.</p>
     pub fn errors(mut self, input: crate::types::BatchGetCollaborationAnalysisTemplateError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Error reasons for collaboration analysis templates that could not be retrieved. One error is returned for every collaboration analysis template that could not be retrieved.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCollaborationAnalysisTemplateError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetCollaborationAnalysisTemplateError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Error reasons for collaboration analysis templates that could not be retrieved. One error is returned for every collaboration analysis template that could not be retrieved.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetCollaborationAnalysisTemplateError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchGetCollaborationAnalysisTemplateError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetCollaborationAnalysisTemplateOutput`](crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`collaboration_analysis_templates`](crate::operation::batch_get_collaboration_analysis_template::builders::BatchGetCollaborationAnalysisTemplateOutputBuilder::collaboration_analysis_templates)
     /// - [`errors`](crate::operation::batch_get_collaboration_analysis_template::builders::BatchGetCollaborationAnalysisTemplateOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput {
                 collaboration_analysis_templates: self.collaboration_analysis_templates
@@ -121,3 +109,4 @@ impl BatchGetCollaborationAnalysisTemplateOutputBuilder {
         )
     }
 }
+

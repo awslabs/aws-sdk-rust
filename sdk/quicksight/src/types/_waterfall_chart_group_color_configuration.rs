@@ -3,7 +3,7 @@
 /// <p>The color configuration for individual groups within a waterfall visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WaterfallChartGroupColorConfiguration {
+pub struct WaterfallChartGroupColorConfiguration  {
     /// <p>Defines the color for the positive bars of a waterfall chart.</p>
     pub positive_bar_color: ::std::option::Option<::std::string::String>,
     /// <p>Defines the color for the negative bars of a waterfall chart.</p>
@@ -11,17 +11,17 @@ pub struct WaterfallChartGroupColorConfiguration {
     /// <p>Defines the color for the total bars of a waterfall chart.</p>
     pub total_bar_color: ::std::option::Option<::std::string::String>,
 }
-impl WaterfallChartGroupColorConfiguration {
+impl  WaterfallChartGroupColorConfiguration  {
     /// <p>Defines the color for the positive bars of a waterfall chart.</p>
-    pub fn positive_bar_color(&self) -> ::std::option::Option<&str> {
+    pub fn positive_bar_color(&self) -> ::std::option::Option<& str> {
         self.positive_bar_color.as_deref()
     }
     /// <p>Defines the color for the negative bars of a waterfall chart.</p>
-    pub fn negative_bar_color(&self) -> ::std::option::Option<&str> {
+    pub fn negative_bar_color(&self) -> ::std::option::Option<& str> {
         self.negative_bar_color.as_deref()
     }
     /// <p>Defines the color for the total bars of a waterfall chart.</p>
-    pub fn total_bar_color(&self) -> ::std::option::Option<&str> {
+    pub fn total_bar_color(&self) -> ::std::option::Option<& str> {
         self.total_bar_color.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl WaterfallChartGroupColorConfigurationBuilder {
     }
     /// <p>Defines the color for the positive bars of a waterfall chart.</p>
     pub fn set_positive_bar_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.positive_bar_color = input;
-        self
+        self.positive_bar_color = input; self
     }
     /// <p>Defines the color for the positive bars of a waterfall chart.</p>
     pub fn get_positive_bar_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl WaterfallChartGroupColorConfigurationBuilder {
     }
     /// <p>Defines the color for the negative bars of a waterfall chart.</p>
     pub fn set_negative_bar_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.negative_bar_color = input;
-        self
+        self.negative_bar_color = input; self
     }
     /// <p>Defines the color for the negative bars of a waterfall chart.</p>
     pub fn get_negative_bar_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl WaterfallChartGroupColorConfigurationBuilder {
     }
     /// <p>Defines the color for the total bars of a waterfall chart.</p>
     pub fn set_total_bar_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.total_bar_color = input;
-        self
+        self.total_bar_color = input; self
     }
     /// <p>Defines the color for the total bars of a waterfall chart.</p>
     pub fn get_total_bar_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl WaterfallChartGroupColorConfigurationBuilder {
     /// Consumes the builder and constructs a [`WaterfallChartGroupColorConfiguration`](crate::types::WaterfallChartGroupColorConfiguration).
     pub fn build(self) -> crate::types::WaterfallChartGroupColorConfiguration {
         crate::types::WaterfallChartGroupColorConfiguration {
-            positive_bar_color: self.positive_bar_color,
-            negative_bar_color: self.negative_bar_color,
-            total_bar_color: self.total_bar_color,
+            positive_bar_color: self.positive_bar_color
+            ,
+            negative_bar_color: self.negative_bar_color
+            ,
+            total_bar_color: self.total_bar_color
+            ,
         }
     }
 }
+

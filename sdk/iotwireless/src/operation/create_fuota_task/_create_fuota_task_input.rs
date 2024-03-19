@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFuotaTaskInput {
+pub struct CreateFuotaTaskInput  {
     /// <p>The name of a FUOTA task.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the new resource.</p>
@@ -16,7 +16,7 @@ pub struct CreateFuotaTaskInput {
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
     pub firmware_update_role: ::std::option::Option<::std::string::String>,
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub redundancy_percent: ::std::option::Option<i32>,
     /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
@@ -26,36 +26,37 @@ pub struct CreateFuotaTaskInput {
     /// </note>
     pub fragment_interval_ms: ::std::option::Option<i32>,
 }
-impl CreateFuotaTaskInput {
+impl  CreateFuotaTaskInput  {
     /// <p>The name of a FUOTA task.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanFuotaTask> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanFuotaTask> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_image(&self) -> ::std::option::Option<&str> {
+    pub fn firmware_update_image(&self) -> ::std::option::Option<& str> {
         self.firmware_update_image.as_deref()
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_role(&self) -> ::std::option::Option<&str> {
+    pub fn firmware_update_role(&self) -> ::std::option::Option<& str> {
         self.firmware_update_role.as_deref()
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub fn redundancy_percent(&self) -> ::std::option::Option<i32> {
@@ -89,7 +90,7 @@ pub struct CreateFuotaTaskInputBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanFuotaTask>,
     pub(crate) firmware_update_image: ::std::option::Option<::std::string::String>,
     pub(crate) firmware_update_role: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) redundancy_percent: ::std::option::Option<i32>,
     pub(crate) fragment_size_bytes: ::std::option::Option<i32>,
     pub(crate) fragment_interval_ms: ::std::option::Option<i32>,
@@ -102,8 +103,7 @@ impl CreateFuotaTaskInputBuilder {
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +116,7 @@ impl CreateFuotaTaskInputBuilder {
     }
     /// <p>The description of the new resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the new resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +129,7 @@ impl CreateFuotaTaskInputBuilder {
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +142,7 @@ impl CreateFuotaTaskInputBuilder {
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanFuotaTask>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanFuotaTask> {
@@ -159,8 +156,7 @@ impl CreateFuotaTaskInputBuilder {
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
     pub fn set_firmware_update_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firmware_update_image = input;
-        self
+        self.firmware_update_image = input; self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
     pub fn get_firmware_update_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +170,7 @@ impl CreateFuotaTaskInputBuilder {
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
     pub fn set_firmware_update_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firmware_update_role = input;
-        self
+        self.firmware_update_role = input; self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
     pub fn get_firmware_update_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,17 +183,16 @@ impl CreateFuotaTaskInputBuilder {
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
@@ -208,8 +202,7 @@ impl CreateFuotaTaskInputBuilder {
     }
     /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub fn set_redundancy_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.redundancy_percent = input;
-        self
+        self.redundancy_percent = input; self
     }
     /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub fn get_redundancy_percent(&self) -> &::std::option::Option<i32> {
@@ -222,8 +215,7 @@ impl CreateFuotaTaskInputBuilder {
     }
     /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     pub fn set_fragment_size_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fragment_size_bytes = input;
-        self
+        self.fragment_size_bytes = input; self
     }
     /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     pub fn get_fragment_size_bytes(&self) -> &::std::option::Option<i32> {
@@ -240,8 +232,7 @@ impl CreateFuotaTaskInputBuilder {
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
     /// </note>
     pub fn set_fragment_interval_ms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fragment_interval_ms = input;
-        self
+        self.fragment_interval_ms = input; self
     }
     /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p><note>
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
@@ -250,20 +241,31 @@ impl CreateFuotaTaskInputBuilder {
         &self.fragment_interval_ms
     }
     /// Consumes the builder and constructs a [`CreateFuotaTaskInput`](crate::operation::create_fuota_task::CreateFuotaTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_fuota_task::CreateFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_fuota_task::CreateFuotaTaskInput {
-            name: self.name,
-            description: self.description,
-            client_request_token: self.client_request_token,
-            lo_ra_wan: self.lo_ra_wan,
-            firmware_update_image: self.firmware_update_image,
-            firmware_update_role: self.firmware_update_role,
-            tags: self.tags,
-            redundancy_percent: self.redundancy_percent,
-            fragment_size_bytes: self.fragment_size_bytes,
-            fragment_interval_ms: self.fragment_interval_ms,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fuota_task::CreateFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_fuota_task::CreateFuotaTaskInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                client_request_token: self.client_request_token
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                firmware_update_image: self.firmware_update_image
+                ,
+                firmware_update_role: self.firmware_update_role
+                ,
+                tags: self.tags
+                ,
+                redundancy_percent: self.redundancy_percent
+                ,
+                fragment_size_bytes: self.fragment_size_bytes
+                ,
+                fragment_interval_ms: self.fragment_interval_ms
+                ,
+            }
+        )
     }
 }
+

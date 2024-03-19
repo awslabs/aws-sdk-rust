@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DescribeSpotFleetRequestHistory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSpotFleetRequestHistoryInput {
+pub struct DescribeSpotFleetRequestHistoryInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The type of events to describe. By default, all events are described.</p>
@@ -17,13 +17,13 @@ pub struct DescribeSpotFleetRequestHistoryInput {
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DescribeSpotFleetRequestHistoryInput {
+impl  DescribeSpotFleetRequestHistoryInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The type of events to describe. By default, all events are described.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
+    pub fn event_type(&self) -> ::std::option::Option<& crate::types::EventType> {
         self.event_type.as_ref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -31,15 +31,15 @@ impl DescribeSpotFleetRequestHistoryInput {
         self.max_results
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn spot_fleet_request_id(&self) -> ::std::option::Option<& str> {
         self.spot_fleet_request_id.as_deref()
     }
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -83,8 +82,7 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
     }
     /// <p>The type of events to describe. By default, all events are described.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>The type of events to describe. By default, all events are described.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::EventType> {
@@ -97,8 +95,7 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -111,8 +108,7 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +122,7 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_fleet_request_id = input;
-        self
+        self.spot_fleet_request_id = input; self
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn get_spot_fleet_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,29 +136,30 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
     }
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
     /// Consumes the builder and constructs a [`DescribeSpotFleetRequestHistoryInput`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryInput {
-                dry_run: self.dry_run,
-                event_type: self.event_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                spot_fleet_request_id: self.spot_fleet_request_id,
-                start_time: self.start_time,
-            },
+                dry_run: self.dry_run
+                ,
+                event_type: self.event_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                spot_fleet_request_id: self.spot_fleet_request_id
+                ,
+                start_time: self.start_time
+                ,
+            }
         )
     }
 }
+

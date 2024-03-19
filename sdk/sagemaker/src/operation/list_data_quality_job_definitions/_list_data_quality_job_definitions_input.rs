@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataQualityJobDefinitionsInput {
+pub struct ListDataQualityJobDefinitionsInput  {
     /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -20,21 +20,21 @@ pub struct ListDataQualityJobDefinitionsInput {
     /// <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListDataQualityJobDefinitionsInput {
+impl  ListDataQualityJobDefinitionsInput  {
     /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::MonitoringJobDefinitionSortKey> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::MonitoringJobDefinitionSortKey> {
         self.sort_by.as_ref()
     }
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.&gt;</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of data quality monitoring job definitions to return in the response.</p>
@@ -42,15 +42,15 @@ impl ListDataQualityJobDefinitionsInput {
         self.max_results
     }
     /// <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>A filter that returns only data quality monitoring job definitions created before the specified time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
 }
@@ -82,8 +82,7 @@ impl ListDataQualityJobDefinitionsInputBuilder {
     }
     /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl ListDataQualityJobDefinitionsInputBuilder {
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
@@ -110,8 +108,7 @@ impl ListDataQualityJobDefinitionsInputBuilder {
     }
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -124,8 +121,7 @@ impl ListDataQualityJobDefinitionsInputBuilder {
     }
     /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.&gt;</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.&gt;</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl ListDataQualityJobDefinitionsInputBuilder {
     }
     /// <p>The maximum number of data quality monitoring job definitions to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of data quality monitoring job definitions to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -152,8 +147,7 @@ impl ListDataQualityJobDefinitionsInputBuilder {
     }
     /// <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +160,7 @@ impl ListDataQualityJobDefinitionsInputBuilder {
     }
     /// <p>A filter that returns only data quality monitoring job definitions created before the specified time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>A filter that returns only data quality monitoring job definitions created before the specified time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,29 +173,34 @@ impl ListDataQualityJobDefinitionsInputBuilder {
     }
     /// <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_after
     }
     /// Consumes the builder and constructs a [`ListDataQualityJobDefinitionsInput`](crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput {
-            endpoint_name: self.endpoint_name,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            name_contains: self.name_contains,
-            creation_time_before: self.creation_time_before,
-            creation_time_after: self.creation_time_after,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_data_quality_job_definitions::ListDataQualityJobDefinitionsInput {
+                endpoint_name: self.endpoint_name
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                name_contains: self.name_contains
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+            }
+        )
     }
 }
+

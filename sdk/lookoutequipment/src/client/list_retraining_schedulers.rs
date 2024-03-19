@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRetrainingSchedulers`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`model_name_begins_with(impl Into<String>)`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::model_name_begins_with) / [`set_model_name_begins_with(Option<String>)`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::set_model_name_begins_with):<br>required: **false**<br><p>Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify.</p><br>
     ///   - [`status(RetrainingSchedulerStatus)`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::status) / [`set_status(Option<RetrainingSchedulerStatus>)`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::set_status):<br>required: **false**<br><p>Specify this field to only list retraining schedulers whose status matches the value you specify.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::set_next_token):<br>required: **false**<br><p>If the number of results exceeds the maximum, a pagination token is returned. Use the token in the request to show the next page of retraining schedulers.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the maximum number of retraining schedulers to list.</p><br>
-    /// - On success, responds with [`ListRetrainingSchedulersOutput`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput) with field(s):
+                            /// - On success, responds with [`ListRetrainingSchedulersOutput`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput) with field(s):
     ///   - [`retraining_scheduler_summaries(Option<Vec::<RetrainingSchedulerSummary>>)`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput::retraining_scheduler_summaries): <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersOutput::next_token): <p>If the number of results exceeds the maximum, this pagination token is returned. Use this token in the request to show the next page of retraining schedulers.</p>
-    /// - On failure, responds with [`SdkError<ListRetrainingSchedulersError>`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersError)
+                            /// - On failure, responds with [`SdkError<ListRetrainingSchedulersError>`](crate::operation::list_retraining_schedulers::ListRetrainingSchedulersError)
     pub fn list_retraining_schedulers(&self) -> crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder {
-        crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_retraining_schedulers::builders::ListRetrainingSchedulersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

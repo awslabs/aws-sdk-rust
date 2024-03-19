@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCapacityProvidersInput {
+pub struct DescribeCapacityProvidersInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub capacity_providers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub include: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>,
+    pub include: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderField>>,
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
@@ -14,18 +14,20 @@ pub struct DescribeCapacityProvidersInput {
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCapacityProvidersInput {
+impl  DescribeCapacityProvidersInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_providers.is_none()`.
-    pub fn capacity_providers(&self) -> &[::std::string::String] {
-        self.capacity_providers.as_deref().unwrap_or_default()
+    pub fn capacity_providers(&self) -> & [::std::string::String] {
+        self.capacity_providers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
-    pub fn include(&self) -> &[crate::types::CapacityProviderField] {
-        self.include.as_deref().unwrap_or_default()
+    pub fn include(&self) -> & [crate::types::CapacityProviderField] {
+        self.include.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -34,7 +36,7 @@ impl DescribeCapacityProvidersInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +51,8 @@ impl DescribeCapacityProvidersInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCapacityProvidersInputBuilder {
-    pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) include: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>,
+    pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) include: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderField>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -62,17 +64,16 @@ impl DescribeCapacityProvidersInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
     pub fn capacity_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capacity_providers.unwrap_or_default();
-        v.push(input.into());
-        self.capacity_providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.capacity_providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.capacity_providers = input;
-        self
+    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.capacity_providers = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.capacity_providers
     }
     /// Appends an item to `include`.
@@ -82,17 +83,16 @@ impl DescribeCapacityProvidersInputBuilder {
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
     pub fn include(mut self, input: crate::types::CapacityProviderField) -> Self {
         let mut v = self.include.unwrap_or_default();
-        v.push(input);
-        self.include = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>) -> Self {
-        self.include = input;
-        self
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderField>>) -> Self {
+        self.include = input; self
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderField>> {
         &self.include
     }
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
@@ -102,8 +102,7 @@ impl DescribeCapacityProvidersInputBuilder {
     }
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -120,8 +119,7 @@ impl DescribeCapacityProvidersInputBuilder {
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -130,17 +128,19 @@ impl DescribeCapacityProvidersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeCapacityProvidersInput`](crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput {
-            capacity_providers: self.capacity_providers,
-            include: self.include,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput {
+                capacity_providers: self.capacity_providers
+                ,
+                include: self.include
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

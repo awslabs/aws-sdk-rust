@@ -5,54 +5,50 @@ pub use crate::operation::list_trusted_token_issuers::_list_trusted_token_issuer
 
 impl ListTrustedTokenIssuersInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_trusted_token_issuers();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_trusted_token_issuers();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListTrustedTokenIssuers`.
-///
+/// 
 /// <p>Lists all the trusted token issuers configured in an instance of IAM Identity Center.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTrustedTokenIssuersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_trusted_token_issuers::builders::ListTrustedTokenIssuersInputBuilder,
+                    inner: crate::operation::list_trusted_token_issuers::builders::ListTrustedTokenIssuersInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
-        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError,
-    > for ListTrustedTokenIssuersFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
-            crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
+                    crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError,
+                > for ListTrustedTokenIssuersFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
+                        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListTrustedTokenIssuersFluentBuilder {
     /// Creates a new `ListTrustedTokenIssuers`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListTrustedTokenIssuersFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuers::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuers::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput,
-        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuers::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuers::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersOutput, crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_trusted_token_issuers::paginator::ListTrustedTokenIssuersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_trusted_token_issuers::paginator::ListTrustedTokenIssuersPaginator {
-        crate::operation::list_trusted_token_issuers::paginator::ListTrustedTokenIssuersPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_trusted_token_issuers::paginator::ListTrustedTokenIssuersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_trusted_token_issuers::paginator::ListTrustedTokenIssuersPaginator {
+                                crate::operation::list_trusted_token_issuers::paginator::ListTrustedTokenIssuersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies the ARN of the instance of IAM Identity Center with the trusted token issuer configurations that you want to list.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());
@@ -157,3 +144,4 @@ impl ListTrustedTokenIssuersFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

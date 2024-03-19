@@ -5,54 +5,50 @@ pub use crate::operation::search_raster_data_collection::_search_raster_data_col
 
 impl SearchRasterDataCollectionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.search_raster_data_collection();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.search_raster_data_collection();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SearchRasterDataCollection`.
-///
+/// 
 /// <p>Allows you run image query on a specific raster data collection to get a list of the satellite imagery matching the selected filters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchRasterDataCollectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionInputBuilder,
+                    inner: crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
-        crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
-    > for SearchRasterDataCollectionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
-            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
+                    crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
+                > for SearchRasterDataCollectionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
+                        crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SearchRasterDataCollectionFluentBuilder {
     /// Creates a new `SearchRasterDataCollection`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl SearchRasterDataCollectionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::search_raster_data_collection::SearchRasterDataCollection::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::search_raster_data_collection::SearchRasterDataCollection::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
-        crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_raster_data_collection::SearchRasterDataCollectionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::search_raster_data_collection::SearchRasterDataCollection::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::search_raster_data_collection::SearchRasterDataCollection::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput, crate::operation::search_raster_data_collection::SearchRasterDataCollectionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator {
-        crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator {
+                                crate::operation::search_raster_data_collection::paginator::SearchRasterDataCollectionPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
@@ -134,10 +121,7 @@ impl SearchRasterDataCollectionFluentBuilder {
         self
     }
     /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
-    pub fn set_raster_data_collection_query(
-        mut self,
-        input: ::std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>,
-    ) -> Self {
+    pub fn set_raster_data_collection_query(mut self, input: ::std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>) -> Self {
         self.inner = self.inner.set_raster_data_collection_query(input);
         self
     }
@@ -160,3 +144,4 @@ impl SearchRasterDataCollectionFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

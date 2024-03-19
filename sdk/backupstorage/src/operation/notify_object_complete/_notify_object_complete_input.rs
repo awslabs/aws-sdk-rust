@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct NotifyObjectCompleteInput {
+pub struct NotifyObjectCompleteInput  {
     /// Backup job Id for the in-progress backup
     pub backup_job_id: ::std::option::Option<::std::string::String>,
     /// Upload Id for the in-progress upload
@@ -22,29 +22,29 @@ pub struct NotifyObjectCompleteInput {
     /// Checksum algorithm.
     pub metadata_blob_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
 }
-impl NotifyObjectCompleteInput {
+impl  NotifyObjectCompleteInput  {
     /// Backup job Id for the in-progress backup
-    pub fn backup_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_job_id(&self) -> ::std::option::Option<& str> {
         self.backup_job_id.as_deref()
     }
     /// Upload Id for the in-progress upload
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// Object checksum
-    pub fn object_checksum(&self) -> ::std::option::Option<&str> {
+    pub fn object_checksum(&self) -> ::std::option::Option<& str> {
         self.object_checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
+    pub fn object_checksum_algorithm(&self) -> ::std::option::Option<& crate::types::SummaryChecksumAlgorithm> {
         self.object_checksum_algorithm.as_ref()
     }
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
-    pub fn metadata_string(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_string(&self) -> ::std::option::Option<& str> {
         self.metadata_string.as_deref()
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn metadata_blob(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn metadata_blob(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.
@@ -52,11 +52,11 @@ impl NotifyObjectCompleteInput {
         self.metadata_blob_length
     }
     /// Checksum of MetadataBlob.
-    pub fn metadata_blob_checksum(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_blob_checksum(&self) -> ::std::option::Option<& str> {
         self.metadata_blob_checksum.as_deref()
     }
     /// Checksum algorithm.
-    pub fn metadata_blob_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
+    pub fn metadata_blob_checksum_algorithm(&self) -> ::std::option::Option<& crate::types::DataChecksumAlgorithm> {
         self.metadata_blob_checksum_algorithm.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl NotifyObjectCompleteInputBuilder {
     }
     /// Backup job Id for the in-progress backup
     pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_job_id = input;
-        self
+        self.backup_job_id = input; self
     }
     /// Backup job Id for the in-progress backup
     pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl NotifyObjectCompleteInputBuilder {
     }
     /// Upload Id for the in-progress upload
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// Upload Id for the in-progress upload
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl NotifyObjectCompleteInputBuilder {
     }
     /// Object checksum
     pub fn set_object_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_checksum = input;
-        self
+        self.object_checksum = input; self
     }
     /// Object checksum
     pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +132,7 @@ impl NotifyObjectCompleteInputBuilder {
     }
     /// Checksum algorithm
     pub fn set_object_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>) -> Self {
-        self.object_checksum_algorithm = input;
-        self
+        self.object_checksum_algorithm = input; self
     }
     /// Checksum algorithm
     pub fn get_object_checksum_algorithm(&self) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
@@ -149,8 +145,7 @@ impl NotifyObjectCompleteInputBuilder {
     }
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
     pub fn set_metadata_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_string = input;
-        self
+        self.metadata_string = input; self
     }
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
     pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +158,7 @@ impl NotifyObjectCompleteInputBuilder {
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
     pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.metadata_blob = input;
-        self
+        self.metadata_blob = input; self
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
     pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -177,8 +171,7 @@ impl NotifyObjectCompleteInputBuilder {
     }
     /// The size of MetadataBlob.
     pub fn set_metadata_blob_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.metadata_blob_length = input;
-        self
+        self.metadata_blob_length = input; self
     }
     /// The size of MetadataBlob.
     pub fn get_metadata_blob_length(&self) -> &::std::option::Option<i64> {
@@ -191,8 +184,7 @@ impl NotifyObjectCompleteInputBuilder {
     }
     /// Checksum of MetadataBlob.
     pub fn set_metadata_blob_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_blob_checksum = input;
-        self
+        self.metadata_blob_checksum = input; self
     }
     /// Checksum of MetadataBlob.
     pub fn get_metadata_blob_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,28 +197,37 @@ impl NotifyObjectCompleteInputBuilder {
     }
     /// Checksum algorithm.
     pub fn set_metadata_blob_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
-        self.metadata_blob_checksum_algorithm = input;
-        self
+        self.metadata_blob_checksum_algorithm = input; self
     }
     /// Checksum algorithm.
     pub fn get_metadata_blob_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
         &self.metadata_blob_checksum_algorithm
     }
     /// Consumes the builder and constructs a [`NotifyObjectCompleteInput`](crate::operation::notify_object_complete::NotifyObjectCompleteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::notify_object_complete::NotifyObjectCompleteInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::notify_object_complete::NotifyObjectCompleteInput {
-            backup_job_id: self.backup_job_id,
-            upload_id: self.upload_id,
-            object_checksum: self.object_checksum,
-            object_checksum_algorithm: self.object_checksum_algorithm,
-            metadata_string: self.metadata_string,
-            metadata_blob: self.metadata_blob.unwrap_or_default(),
-            metadata_blob_length: self.metadata_blob_length,
-            metadata_blob_checksum: self.metadata_blob_checksum,
-            metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::notify_object_complete::NotifyObjectCompleteInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::notify_object_complete::NotifyObjectCompleteInput {
+                backup_job_id: self.backup_job_id
+                ,
+                upload_id: self.upload_id
+                ,
+                object_checksum: self.object_checksum
+                ,
+                object_checksum_algorithm: self.object_checksum_algorithm
+                ,
+                metadata_string: self.metadata_string
+                ,
+                metadata_blob: self.metadata_blob
+                    .unwrap_or_default()
+                ,
+                metadata_blob_length: self.metadata_blob_length
+                ,
+                metadata_blob_checksum: self.metadata_blob_checksum
+                ,
+                metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm
+                ,
+            }
+        )
     }
 }
+

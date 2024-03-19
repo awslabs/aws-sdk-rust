@@ -3,7 +3,7 @@
 /// List Action Groups Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAgentActionGroupsInput {
+pub struct ListAgentActionGroupsInput  {
     /// Id generated at the server side when an Agent is Listed
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Id generated at the server side when an Agent is Listed
@@ -13,13 +13,13 @@ pub struct ListAgentActionGroupsInput {
     /// Opaque continuation token of previous paginated response.
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAgentActionGroupsInput {
+impl  ListAgentActionGroupsInput  {
     /// Id generated at the server side when an Agent is Listed
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Id generated at the server side when an Agent is Listed
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// Max Results.
@@ -27,7 +27,7 @@ impl ListAgentActionGroupsInput {
         self.max_results
     }
     /// Opaque continuation token of previous paginated response.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl ListAgentActionGroupsInputBuilder {
     }
     /// Id generated at the server side when an Agent is Listed
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is Listed
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ListAgentActionGroupsInputBuilder {
     }
     /// Id generated at the server side when an Agent is Listed
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Id generated at the server side when an Agent is Listed
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ListAgentActionGroupsInputBuilder {
     }
     /// Max Results.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Max Results.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -99,23 +96,26 @@ impl ListAgentActionGroupsInputBuilder {
     }
     /// Opaque continuation token of previous paginated response.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Opaque continuation token of previous paginated response.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAgentActionGroupsInput`](crate::operation::list_agent_action_groups::ListAgentActionGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_agent_action_groups::ListAgentActionGroupsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_agent_action_groups::ListAgentActionGroupsInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_agent_action_groups::ListAgentActionGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_agent_action_groups::ListAgentActionGroupsInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

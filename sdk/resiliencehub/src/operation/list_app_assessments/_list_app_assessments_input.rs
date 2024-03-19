@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppAssessmentsInput {
+pub struct ListAppAssessmentsInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the assessment.</p>
     pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub assessment_status: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>,
+    pub assessment_status: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentStatus>>,
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
@@ -20,27 +20,28 @@ pub struct ListAppAssessmentsInput {
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAppAssessmentsInput {
+impl  ListAppAssessmentsInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The name for the assessment.</p>
-    pub fn assessment_name(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_name(&self) -> ::std::option::Option<& str> {
         self.assessment_name.as_deref()
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_status.is_none()`.
-    pub fn assessment_status(&self) -> &[crate::types::AssessmentStatus] {
-        self.assessment_status.as_deref().unwrap_or_default()
+    pub fn assessment_status(&self) -> & [crate::types::AssessmentStatus] {
+        self.assessment_status.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
+    pub fn compliance_status(&self) -> ::std::option::Option<& crate::types::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
     /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
-    pub fn invoker(&self) -> ::std::option::Option<&crate::types::AssessmentInvoker> {
+    pub fn invoker(&self) -> ::std::option::Option<& crate::types::AssessmentInvoker> {
         self.invoker.as_ref()
     }
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
@@ -48,7 +49,7 @@ impl ListAppAssessmentsInput {
         self.reverse_order
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -69,7 +70,7 @@ impl ListAppAssessmentsInput {
 pub struct ListAppAssessmentsInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) assessment_status: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>,
+    pub(crate) assessment_status: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentStatus>>,
     pub(crate) compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) invoker: ::std::option::Option<crate::types::AssessmentInvoker>,
     pub(crate) reverse_order: ::std::option::Option<bool>,
@@ -84,8 +85,7 @@ impl ListAppAssessmentsInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl ListAppAssessmentsInputBuilder {
     }
     /// <p>The name for the assessment.</p>
     pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_name = input;
-        self
+        self.assessment_name = input; self
     }
     /// <p>The name for the assessment.</p>
     pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,17 +111,16 @@ impl ListAppAssessmentsInputBuilder {
     /// <p>The current status of the assessment for the resiliency policy.</p>
     pub fn assessment_status(mut self, input: crate::types::AssessmentStatus) -> Self {
         let mut v = self.assessment_status.unwrap_or_default();
-        v.push(input);
-        self.assessment_status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assessment_status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn set_assessment_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>>) -> Self {
-        self.assessment_status = input;
-        self
+    pub fn set_assessment_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentStatus>>) -> Self {
+        self.assessment_status = input; self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn get_assessment_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentStatus>> {
+    pub fn get_assessment_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentStatus>> {
         &self.assessment_status
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
@@ -132,8 +130,7 @@ impl ListAppAssessmentsInputBuilder {
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
-        self.compliance_status = input;
-        self
+        self.compliance_status = input; self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
@@ -146,8 +143,7 @@ impl ListAppAssessmentsInputBuilder {
     }
     /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
     pub fn set_invoker(mut self, input: ::std::option::Option<crate::types::AssessmentInvoker>) -> Self {
-        self.invoker = input;
-        self
+        self.invoker = input; self
     }
     /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</p>
     pub fn get_invoker(&self) -> &::std::option::Option<crate::types::AssessmentInvoker> {
@@ -160,8 +156,7 @@ impl ListAppAssessmentsInputBuilder {
     }
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reverse_order = input;
-        self
+        self.reverse_order = input; self
     }
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
@@ -174,8 +169,7 @@ impl ListAppAssessmentsInputBuilder {
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,27 +182,34 @@ impl ListAppAssessmentsInputBuilder {
     }
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAppAssessmentsInput`](crate::operation::list_app_assessments::ListAppAssessmentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_app_assessments::ListAppAssessmentsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_app_assessments::ListAppAssessmentsInput {
-            app_arn: self.app_arn,
-            assessment_name: self.assessment_name,
-            assessment_status: self.assessment_status,
-            compliance_status: self.compliance_status,
-            invoker: self.invoker,
-            reverse_order: self.reverse_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_app_assessments::ListAppAssessmentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_app_assessments::ListAppAssessmentsInput {
+                app_arn: self.app_arn
+                ,
+                assessment_name: self.assessment_name
+                ,
+                assessment_status: self.assessment_status
+                ,
+                compliance_status: self.compliance_status
+                ,
+                invoker: self.invoker
+                ,
+                reverse_order: self.reverse_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

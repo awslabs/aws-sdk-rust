@@ -3,20 +3,19 @@
 /// <p>The Amazon S3 data for the Vector Enrichment job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VectorEnrichmentJobS3Data {
+pub struct VectorEnrichmentJobS3Data  {
     /// <p>The URL to the Amazon S3 data for the Vector Enrichment job.</p>
     pub s3_uri: ::std::string::String,
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl VectorEnrichmentJobS3Data {
+impl  VectorEnrichmentJobS3Data  {
     /// <p>The URL to the Amazon S3 data for the Vector Enrichment job.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl VectorEnrichmentJobS3DataBuilder {
     }
     /// <p>The URL to the Amazon S3 data for the Vector Enrichment job.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The URL to the Amazon S3 data for the Vector Enrichment job.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl VectorEnrichmentJobS3DataBuilder {
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl VectorEnrichmentJobS3DataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::VectorEnrichmentJobS3DataBuilder::s3_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::VectorEnrichmentJobS3Data, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VectorEnrichmentJobS3Data {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building VectorEnrichmentJobS3Data",
-                )
-            })?,
-            kms_key_id: self.kms_key_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VectorEnrichmentJobS3Data {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building VectorEnrichmentJobS3Data")
+                    )?
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
+        )
     }
 }
+

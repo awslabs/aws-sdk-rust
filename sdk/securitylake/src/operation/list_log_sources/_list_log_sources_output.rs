@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLogSourcesOutput {
+pub struct ListLogSourcesOutput  {
     /// <p>The list of log sources in your organization that send data to the data lake.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::LogSource>>,
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLogSourcesOutput {
+impl  ListLogSourcesOutput  {
     /// <p>The list of log sources in your organization that send data to the data lake.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::LogSource] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::LogSource] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLogSourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLogSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListLogSourcesOutput`](crate::operation::list_log_sources::ListLogSourcesOutput).
     pub fn builder() -> crate::operation::list_log_sources::builders::ListLogSourcesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListLogSourcesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogSourcesOutputBuilder {
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::LogSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListLogSourcesOutputBuilder {
     /// <p>The list of log sources in your organization that send data to the data lake.</p>
     pub fn sources(mut self, input: crate::types::LogSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of log sources in your organization that send data to the data lake.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogSource>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The list of log sources in your organization that send data to the data lake.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogSource>> {
         &self.sources
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
@@ -69,28 +69,30 @@ impl ListLogSourcesOutputBuilder {
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLogSourcesOutput`](crate::operation::list_log_sources::ListLogSourcesOutput).
     pub fn build(self) -> crate::operation::list_log_sources::ListLogSourcesOutput {
         crate::operation::list_log_sources::ListLogSourcesOutput {
-            sources: self.sources,
-            next_token: self.next_token,
+            sources: self.sources
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

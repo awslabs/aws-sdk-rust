@@ -3,7 +3,7 @@
 /// <p>Metadata for a step execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineExecutionStepMetadata {
+pub struct PipelineExecutionStepMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
     pub training_job: ::std::option::Option<crate::types::TrainingJobStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the processing job that was run by this step execution.</p>
@@ -69,45 +69,45 @@ pub struct PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this step.</p>
     pub auto_ml_job: ::std::option::Option<crate::types::AutoMlJobStepMetadata>,
 }
-impl PipelineExecutionStepMetadata {
+impl  PipelineExecutionStepMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
-    pub fn training_job(&self) -> ::std::option::Option<&crate::types::TrainingJobStepMetadata> {
+    pub fn training_job(&self) -> ::std::option::Option<& crate::types::TrainingJobStepMetadata> {
         self.training_job.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job that was run by this step execution.</p>
-    pub fn processing_job(&self) -> ::std::option::Option<&crate::types::ProcessingJobStepMetadata> {
+    pub fn processing_job(&self) -> ::std::option::Option<& crate::types::ProcessingJobStepMetadata> {
         self.processing_job.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job that was run by this step execution.</p>
-    pub fn transform_job(&self) -> ::std::option::Option<&crate::types::TransformJobStepMetadata> {
+    pub fn transform_job(&self) -> ::std::option::Option<& crate::types::TransformJobStepMetadata> {
         self.transform_job.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
-    pub fn tuning_job(&self) -> ::std::option::Option<&crate::types::TuningJobStepMetaData> {
+    pub fn tuning_job(&self) -> ::std::option::Option<& crate::types::TuningJobStepMetaData> {
         self.tuning_job.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model that was created by this step execution.</p>
-    pub fn model(&self) -> ::std::option::Option<&crate::types::ModelStepMetadata> {
+    pub fn model(&self) -> ::std::option::Option<& crate::types::ModelStepMetadata> {
         self.model.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model package that the model was registered to by this step execution.</p>
-    pub fn register_model(&self) -> ::std::option::Option<&crate::types::RegisterModelStepMetadata> {
+    pub fn register_model(&self) -> ::std::option::Option<& crate::types::RegisterModelStepMetadata> {
         self.register_model.as_ref()
     }
     /// <p>The outcome of the condition evaluation that was run by this step execution.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::ConditionStepMetadata> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::ConditionStepMetadata> {
         self.condition.as_ref()
     }
     /// <p>The URL of the Amazon SQS queue used by this step execution, the pipeline generated token, and a list of output parameters.</p>
-    pub fn callback(&self) -> ::std::option::Option<&crate::types::CallbackStepMetadata> {
+    pub fn callback(&self) -> ::std::option::Option<& crate::types::CallbackStepMetadata> {
         self.callback.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of output parameters.</p>
-    pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaStepMetadata> {
+    pub fn lambda(&self) -> ::std::option::Option<& crate::types::LambdaStepMetadata> {
         self.lambda.as_ref()
     }
     /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-    pub fn emr(&self) -> ::std::option::Option<&crate::types::EmrStepMetadata> {
+    pub fn emr(&self) -> ::std::option::Option<& crate::types::EmrStepMetadata> {
         self.emr.as_ref()
     }
     /// <p>The configurations and outcomes of the check step execution. This includes:</p>
@@ -129,7 +129,7 @@ impl PipelineExecutionStepMetadata {
     /// <li>
     /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
     /// </ul>
-    pub fn quality_check(&self) -> ::std::option::Option<&crate::types::QualityCheckStepMetadata> {
+    pub fn quality_check(&self) -> ::std::option::Option<& crate::types::QualityCheckStepMetadata> {
         self.quality_check.as_ref()
     }
     /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes:</p>
@@ -151,15 +151,15 @@ impl PipelineExecutionStepMetadata {
     /// <li>
     /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
     /// </ul>
-    pub fn clarify_check(&self) -> ::std::option::Option<&crate::types::ClarifyCheckStepMetadata> {
+    pub fn clarify_check(&self) -> ::std::option::Option<& crate::types::ClarifyCheckStepMetadata> {
         self.clarify_check.as_ref()
     }
     /// <p>The configurations and outcomes of a Fail step execution.</p>
-    pub fn fail(&self) -> ::std::option::Option<&crate::types::FailStepMetadata> {
+    pub fn fail(&self) -> ::std::option::Option<& crate::types::FailStepMetadata> {
         self.fail.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this step.</p>
-    pub fn auto_ml_job(&self) -> ::std::option::Option<&crate::types::AutoMlJobStepMetadata> {
+    pub fn auto_ml_job(&self) -> ::std::option::Option<& crate::types::AutoMlJobStepMetadata> {
         self.auto_ml_job.as_ref()
     }
 }
@@ -197,8 +197,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
     pub fn set_training_job(mut self, input: ::std::option::Option<crate::types::TrainingJobStepMetadata>) -> Self {
-        self.training_job = input;
-        self
+        self.training_job = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
     pub fn get_training_job(&self) -> &::std::option::Option<crate::types::TrainingJobStepMetadata> {
@@ -211,8 +210,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job that was run by this step execution.</p>
     pub fn set_processing_job(mut self, input: ::std::option::Option<crate::types::ProcessingJobStepMetadata>) -> Self {
-        self.processing_job = input;
-        self
+        self.processing_job = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job that was run by this step execution.</p>
     pub fn get_processing_job(&self) -> &::std::option::Option<crate::types::ProcessingJobStepMetadata> {
@@ -225,8 +223,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job that was run by this step execution.</p>
     pub fn set_transform_job(mut self, input: ::std::option::Option<crate::types::TransformJobStepMetadata>) -> Self {
-        self.transform_job = input;
-        self
+        self.transform_job = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job that was run by this step execution.</p>
     pub fn get_transform_job(&self) -> &::std::option::Option<crate::types::TransformJobStepMetadata> {
@@ -239,8 +236,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
     pub fn set_tuning_job(mut self, input: ::std::option::Option<crate::types::TuningJobStepMetaData>) -> Self {
-        self.tuning_job = input;
-        self
+        self.tuning_job = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
     pub fn get_tuning_job(&self) -> &::std::option::Option<crate::types::TuningJobStepMetaData> {
@@ -253,8 +249,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model that was created by this step execution.</p>
     pub fn set_model(mut self, input: ::std::option::Option<crate::types::ModelStepMetadata>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model that was created by this step execution.</p>
     pub fn get_model(&self) -> &::std::option::Option<crate::types::ModelStepMetadata> {
@@ -267,8 +262,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model package that the model was registered to by this step execution.</p>
     pub fn set_register_model(mut self, input: ::std::option::Option<crate::types::RegisterModelStepMetadata>) -> Self {
-        self.register_model = input;
-        self
+        self.register_model = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package that the model was registered to by this step execution.</p>
     pub fn get_register_model(&self) -> &::std::option::Option<crate::types::RegisterModelStepMetadata> {
@@ -281,8 +275,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The outcome of the condition evaluation that was run by this step execution.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::ConditionStepMetadata>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The outcome of the condition evaluation that was run by this step execution.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::ConditionStepMetadata> {
@@ -295,8 +288,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The URL of the Amazon SQS queue used by this step execution, the pipeline generated token, and a list of output parameters.</p>
     pub fn set_callback(mut self, input: ::std::option::Option<crate::types::CallbackStepMetadata>) -> Self {
-        self.callback = input;
-        self
+        self.callback = input; self
     }
     /// <p>The URL of the Amazon SQS queue used by this step execution, the pipeline generated token, and a list of output parameters.</p>
     pub fn get_callback(&self) -> &::std::option::Option<crate::types::CallbackStepMetadata> {
@@ -309,8 +301,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of output parameters.</p>
     pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaStepMetadata>) -> Self {
-        self.lambda = input;
-        self
+        self.lambda = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of output parameters.</p>
     pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaStepMetadata> {
@@ -323,8 +314,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
     pub fn set_emr(mut self, input: ::std::option::Option<crate::types::EmrStepMetadata>) -> Self {
-        self.emr = input;
-        self
+        self.emr = input; self
     }
     /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
     pub fn get_emr(&self) -> &::std::option::Option<crate::types::EmrStepMetadata> {
@@ -373,8 +363,7 @@ impl PipelineExecutionStepMetadataBuilder {
     /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
     /// </ul>
     pub fn set_quality_check(mut self, input: ::std::option::Option<crate::types::QualityCheckStepMetadata>) -> Self {
-        self.quality_check = input;
-        self
+        self.quality_check = input; self
     }
     /// <p>The configurations and outcomes of the check step execution. This includes:</p>
     /// <ul>
@@ -441,8 +430,7 @@ impl PipelineExecutionStepMetadataBuilder {
     /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
     /// </ul>
     pub fn set_clarify_check(mut self, input: ::std::option::Option<crate::types::ClarifyCheckStepMetadata>) -> Self {
-        self.clarify_check = input;
-        self
+        self.clarify_check = input; self
     }
     /// <p>Container for the metadata for a Clarify check step. The configurations and outcomes of the check step execution. This includes:</p>
     /// <ul>
@@ -473,8 +461,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The configurations and outcomes of a Fail step execution.</p>
     pub fn set_fail(mut self, input: ::std::option::Option<crate::types::FailStepMetadata>) -> Self {
-        self.fail = input;
-        self
+        self.fail = input; self
     }
     /// <p>The configurations and outcomes of a Fail step execution.</p>
     pub fn get_fail(&self) -> &::std::option::Option<crate::types::FailStepMetadata> {
@@ -487,8 +474,7 @@ impl PipelineExecutionStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this step.</p>
     pub fn set_auto_ml_job(mut self, input: ::std::option::Option<crate::types::AutoMlJobStepMetadata>) -> Self {
-        self.auto_ml_job = input;
-        self
+        self.auto_ml_job = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this step.</p>
     pub fn get_auto_ml_job(&self) -> &::std::option::Option<crate::types::AutoMlJobStepMetadata> {
@@ -497,20 +483,35 @@ impl PipelineExecutionStepMetadataBuilder {
     /// Consumes the builder and constructs a [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
     pub fn build(self) -> crate::types::PipelineExecutionStepMetadata {
         crate::types::PipelineExecutionStepMetadata {
-            training_job: self.training_job,
-            processing_job: self.processing_job,
-            transform_job: self.transform_job,
-            tuning_job: self.tuning_job,
-            model: self.model,
-            register_model: self.register_model,
-            condition: self.condition,
-            callback: self.callback,
-            lambda: self.lambda,
-            emr: self.emr,
-            quality_check: self.quality_check,
-            clarify_check: self.clarify_check,
-            fail: self.fail,
-            auto_ml_job: self.auto_ml_job,
+            training_job: self.training_job
+            ,
+            processing_job: self.processing_job
+            ,
+            transform_job: self.transform_job
+            ,
+            tuning_job: self.tuning_job
+            ,
+            model: self.model
+            ,
+            register_model: self.register_model
+            ,
+            condition: self.condition
+            ,
+            callback: self.callback
+            ,
+            lambda: self.lambda
+            ,
+            emr: self.emr
+            ,
+            quality_check: self.quality_check
+            ,
+            clarify_check: self.clarify_check
+            ,
+            fail: self.fail
+            ,
+            auto_ml_job: self.auto_ml_job
+            ,
         }
     }
 }
+

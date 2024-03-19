@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAuthorizationTokenInput {
+pub struct GetAuthorizationTokenInput  {
     /// <p>The name of the domain that is in scope for the generated authorization token.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -10,13 +10,13 @@ pub struct GetAuthorizationTokenInput {
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
     pub duration_seconds: ::std::option::Option<i64>,
 }
-impl GetAuthorizationTokenInput {
+impl  GetAuthorizationTokenInput  {
     /// <p>The name of the domain that is in scope for the generated authorization token.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
@@ -48,8 +48,7 @@ impl GetAuthorizationTokenInputBuilder {
     }
     /// <p>The name of the domain that is in scope for the generated authorization token.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that is in scope for the generated authorization token.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetAuthorizationTokenInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl GetAuthorizationTokenInputBuilder {
     }
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
     }
     /// <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i64> {
         &self.duration_seconds
     }
     /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_authorization_token::GetAuthorizationTokenInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_authorization_token::GetAuthorizationTokenInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-            duration_seconds: self.duration_seconds,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_authorization_token::GetAuthorizationTokenInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_authorization_token::GetAuthorizationTokenInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                duration_seconds: self.duration_seconds
+                ,
+            }
+        )
     }
 }
+

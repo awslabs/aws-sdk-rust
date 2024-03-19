@@ -5,112 +5,96 @@ pub use crate::operation::update_pull_request_approval_rule_content::_update_pul
 
 impl UpdatePullRequestApprovalRuleContentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_pull_request_approval_rule_content();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_pull_request_approval_rule_content();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdatePullRequestApprovalRuleContent`.
-///
+/// 
 /// <p>Updates the structure of an approval rule created specifically for a pull request. For example, you can change the number of required approvers and the approval pool for approvers.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalRuleContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder,
+                    inner: crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
-        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
-    > for UpdatePullRequestApprovalRuleContentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
-            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
+                    crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
+                > for UpdatePullRequestApprovalRuleContentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
+                        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdatePullRequestApprovalRuleContentFluentBuilder {
     /// Creates a new `UpdatePullRequestApprovalRuleContent`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the UpdatePullRequestApprovalRuleContent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput,
-        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContent::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput, crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The system-generated ID of the pull request.</p>
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
@@ -216,3 +200,4 @@ impl UpdatePullRequestApprovalRuleContentFluentBuilder {
         self.inner.get_new_rule_content()
     }
 }
+

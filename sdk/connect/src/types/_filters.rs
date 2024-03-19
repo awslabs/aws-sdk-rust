@@ -3,40 +3,44 @@
 /// <p>Contains the filter to apply when retrieving metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filters {
+pub struct Filters  {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
-    pub queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub queues: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The channel to use to filter the metrics.</p>
-    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
+    pub channels: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>,
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub routing_profiles: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
-    pub routing_step_expressions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub routing_step_expressions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Filters {
+impl  Filters  {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
-    pub fn queues(&self) -> &[::std::string::String] {
-        self.queues.as_deref().unwrap_or_default()
+    pub fn queues(&self) -> & [::std::string::String] {
+        self.queues.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The channel to use to filter the metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
-    pub fn channels(&self) -> &[crate::types::Channel] {
-        self.channels.as_deref().unwrap_or_default()
+    pub fn channels(&self) -> & [crate::types::Channel] {
+        self.channels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_profiles.is_none()`.
-    pub fn routing_profiles(&self) -> &[::std::string::String] {
-        self.routing_profiles.as_deref().unwrap_or_default()
+    pub fn routing_profiles(&self) -> & [::std::string::String] {
+        self.routing_profiles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_step_expressions.is_none()`.
-    pub fn routing_step_expressions(&self) -> &[::std::string::String] {
-        self.routing_step_expressions.as_deref().unwrap_or_default()
+    pub fn routing_step_expressions(&self) -> & [::std::string::String] {
+        self.routing_step_expressions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Filters {
@@ -50,10 +54,10 @@ impl Filters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FiltersBuilder {
-    pub(crate) queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
-    pub(crate) routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) routing_step_expressions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) queues: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>,
+    pub(crate) routing_profiles: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) routing_step_expressions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FiltersBuilder {
     /// Appends an item to `queues`.
@@ -63,17 +67,16 @@ impl FiltersBuilder {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
     pub fn queues(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.queues.unwrap_or_default();
-        v.push(input.into());
-        self.queues = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.queues = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
-    pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.queues = input;
-        self
+    pub fn set_queues(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.queues = input; self
     }
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
-    pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.queues
     }
     /// Appends an item to `channels`.
@@ -83,17 +86,16 @@ impl FiltersBuilder {
     /// <p>The channel to use to filter the metrics.</p>
     pub fn channels(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.channels.unwrap_or_default();
-        v.push(input);
-        self.channels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The channel to use to filter the metrics.</p>
-    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Channel>>) -> Self {
+        self.channels = input; self
     }
     /// <p>The channel to use to filter the metrics.</p>
-    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Channel>> {
         &self.channels
     }
     /// Appends an item to `routing_profiles`.
@@ -103,17 +105,16 @@ impl FiltersBuilder {
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
     pub fn routing_profiles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.routing_profiles.unwrap_or_default();
-        v.push(input.into());
-        self.routing_profiles = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.routing_profiles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn set_routing_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.routing_profiles = input;
-        self
+    pub fn set_routing_profiles(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.routing_profiles = input; self
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn get_routing_profiles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_routing_profiles(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.routing_profiles
     }
     /// Appends an item to `routing_step_expressions`.
@@ -123,26 +124,30 @@ impl FiltersBuilder {
     /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
     pub fn routing_step_expressions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.routing_step_expressions.unwrap_or_default();
-        v.push(input.into());
-        self.routing_step_expressions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.routing_step_expressions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
-    pub fn set_routing_step_expressions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.routing_step_expressions = input;
-        self
+    pub fn set_routing_step_expressions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.routing_step_expressions = input; self
     }
     /// <p>A list of expressions as a filter, in which an expression is an object of a step in a routing criteria.</p>
-    pub fn get_routing_step_expressions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_routing_step_expressions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.routing_step_expressions
     }
     /// Consumes the builder and constructs a [`Filters`](crate::types::Filters).
     pub fn build(self) -> crate::types::Filters {
         crate::types::Filters {
-            queues: self.queues,
-            channels: self.channels,
-            routing_profiles: self.routing_profiles,
-            routing_step_expressions: self.routing_step_expressions,
+            queues: self.queues
+            ,
+            channels: self.channels
+            ,
+            routing_profiles: self.routing_profiles
+            ,
+            routing_step_expressions: self.routing_step_expressions
+            ,
         }
     }
 }
+

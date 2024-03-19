@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListResolverRuleAssociations`](crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 rule associations.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>For the first <code>ListResolverRuleAssociation</code> request, omit this value.</p> <p>If you have more than <code>MaxResults</code> rule associations, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of rule associations. In the next request, specify the value of <code>NextToken</code> from the previous response.</p><br>
     ///   - [`filters(Filter)`](crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::set_filters):<br>required: **false**<br><p>An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.</p><note>  <p>If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p> </note><br>
-    /// - On success, responds with [`ListResolverRuleAssociationsOutput`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListResolverRuleAssociationsOutput`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput::next_token): <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     ///   - [`max_results(Option<i32>)`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput::max_results): <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     ///   - [`resolver_rule_associations(Option<Vec::<ResolverRuleAssociation>>)`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput::resolver_rule_associations): <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    /// - On failure, responds with [`SdkError<ListResolverRuleAssociationsError>`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError)
-    pub fn list_resolver_rule_associations(
-        &self,
-    ) -> crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder {
-        crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListResolverRuleAssociationsError>`](crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError)
+    pub fn list_resolver_rule_associations(&self) -> crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder {
+                                crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SwitchoverGlobalClusterInput {
+pub struct SwitchoverGlobalClusterInput  {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -13,18 +13,18 @@ pub struct SwitchoverGlobalClusterInput {
     /// <p>The identifier of the secondary Aurora DB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub target_db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl SwitchoverGlobalClusterInput {
+impl  SwitchoverGlobalClusterInput  {
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
     /// </ul>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
     /// <p>The identifier of the secondary Aurora DB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
-    pub fn target_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.target_db_cluster_identifier.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <p>Must match the identifier of an existing global database cluster (Aurora global database).</p></li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_identifier = input;
-        self
+        self.global_cluster_identifier = input; self
     }
     /// <p>The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -81,23 +80,22 @@ impl SwitchoverGlobalClusterInputBuilder {
     }
     /// <p>The identifier of the secondary Aurora DB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub fn set_target_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_db_cluster_identifier = input;
-        self
+        self.target_db_cluster_identifier = input; self
     }
     /// <p>The identifier of the secondary Aurora DB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub fn get_target_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_cluster_identifier
     }
     /// Consumes the builder and constructs a [`SwitchoverGlobalClusterInput`](crate::operation::switchover_global_cluster::SwitchoverGlobalClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::switchover_global_cluster::SwitchoverGlobalClusterInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::switchover_global_cluster::SwitchoverGlobalClusterInput {
-            global_cluster_identifier: self.global_cluster_identifier,
-            target_db_cluster_identifier: self.target_db_cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::switchover_global_cluster::SwitchoverGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::switchover_global_cluster::SwitchoverGlobalClusterInput {
+                global_cluster_identifier: self.global_cluster_identifier
+                ,
+                target_db_cluster_identifier: self.target_db_cluster_identifier
+                ,
+            }
+        )
     }
 }
+

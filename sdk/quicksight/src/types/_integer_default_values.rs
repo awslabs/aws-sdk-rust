@@ -3,22 +3,23 @@
 /// <p>The default values of the <code>IntegerParameterDeclaration</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegerDefaultValues {
+pub struct IntegerDefaultValues  {
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
     /// <p>The static values of the <code>IntegerDefaultValues</code>.</p>
-    pub static_values: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub static_values: ::std::option::Option<::std::vec::Vec::<i64>>,
 }
-impl IntegerDefaultValues {
+impl  IntegerDefaultValues  {
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
-    pub fn dynamic_value(&self) -> ::std::option::Option<&crate::types::DynamicDefaultValue> {
+    pub fn dynamic_value(&self) -> ::std::option::Option<& crate::types::DynamicDefaultValue> {
         self.dynamic_value.as_ref()
     }
     /// <p>The static values of the <code>IntegerDefaultValues</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_values.is_none()`.
-    pub fn static_values(&self) -> &[i64] {
-        self.static_values.as_deref().unwrap_or_default()
+    pub fn static_values(&self) -> & [i64] {
+        self.static_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IntegerDefaultValues {
@@ -33,7 +34,7 @@ impl IntegerDefaultValues {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegerDefaultValuesBuilder {
     pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
-    pub(crate) static_values: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub(crate) static_values: ::std::option::Option<::std::vec::Vec::<i64>>,
 }
 impl IntegerDefaultValuesBuilder {
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
@@ -43,8 +44,7 @@ impl IntegerDefaultValuesBuilder {
     }
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub fn set_dynamic_value(mut self, input: ::std::option::Option<crate::types::DynamicDefaultValue>) -> Self {
-        self.dynamic_value = input;
-        self
+        self.dynamic_value = input; self
     }
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub fn get_dynamic_value(&self) -> &::std::option::Option<crate::types::DynamicDefaultValue> {
@@ -57,24 +57,26 @@ impl IntegerDefaultValuesBuilder {
     /// <p>The static values of the <code>IntegerDefaultValues</code>.</p>
     pub fn static_values(mut self, input: i64) -> Self {
         let mut v = self.static_values.unwrap_or_default();
-        v.push(input);
-        self.static_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.static_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The static values of the <code>IntegerDefaultValues</code>.</p>
-    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
-        self.static_values = input;
-        self
+    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec::<i64>>) -> Self {
+        self.static_values = input; self
     }
     /// <p>The static values of the <code>IntegerDefaultValues</code>.</p>
-    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec::<i64>> {
         &self.static_values
     }
     /// Consumes the builder and constructs a [`IntegerDefaultValues`](crate::types::IntegerDefaultValues).
     pub fn build(self) -> crate::types::IntegerDefaultValues {
         crate::types::IntegerDefaultValues {
-            dynamic_value: self.dynamic_value,
-            static_values: self.static_values,
+            dynamic_value: self.dynamic_value
+            ,
+            static_values: self.static_values
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Summary information about an analyzable server.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyzableServerSummary {
+pub struct AnalyzableServerSummary  {
     /// The host name of the analyzable server.
     pub hostname: ::std::option::Option<::std::string::String>,
     /// The ip address of the analyzable server.
@@ -13,21 +13,21 @@ pub struct AnalyzableServerSummary {
     /// The virtual machine id of the analyzable server.
     pub vm_id: ::std::option::Option<::std::string::String>,
 }
-impl AnalyzableServerSummary {
+impl  AnalyzableServerSummary  {
     /// The host name of the analyzable server.
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// The ip address of the analyzable server.
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// The data source of the analyzable server.
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// The virtual machine id of the analyzable server.
-    pub fn vm_id(&self) -> ::std::option::Option<&str> {
+    pub fn vm_id(&self) -> ::std::option::Option<& str> {
         self.vm_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AnalyzableServerSummaryBuilder {
     }
     /// The host name of the analyzable server.
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// The host name of the analyzable server.
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AnalyzableServerSummaryBuilder {
     }
     /// The ip address of the analyzable server.
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// The ip address of the analyzable server.
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AnalyzableServerSummaryBuilder {
     }
     /// The data source of the analyzable server.
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// The data source of the analyzable server.
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AnalyzableServerSummaryBuilder {
     }
     /// The virtual machine id of the analyzable server.
     pub fn set_vm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vm_id = input;
-        self
+        self.vm_id = input; self
     }
     /// The virtual machine id of the analyzable server.
     pub fn get_vm_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl AnalyzableServerSummaryBuilder {
     /// Consumes the builder and constructs a [`AnalyzableServerSummary`](crate::types::AnalyzableServerSummary).
     pub fn build(self) -> crate::types::AnalyzableServerSummary {
         crate::types::AnalyzableServerSummary {
-            hostname: self.hostname,
-            ip_address: self.ip_address,
-            source: self.source,
-            vm_id: self.vm_id,
+            hostname: self.hostname
+            ,
+            ip_address: self.ip_address
+            ,
+            source: self.source
+            ,
+            vm_id: self.vm_id
+            ,
         }
     }
 }
+

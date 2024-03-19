@@ -3,13 +3,13 @@
 /// <p>A parameter to activate explainers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExplainerConfig {
+pub struct ExplainerConfig  {
     /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
     pub clarify_explainer_config: ::std::option::Option<crate::types::ClarifyExplainerConfig>,
 }
-impl ExplainerConfig {
+impl  ExplainerConfig  {
     /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
-    pub fn clarify_explainer_config(&self) -> ::std::option::Option<&crate::types::ClarifyExplainerConfig> {
+    pub fn clarify_explainer_config(&self) -> ::std::option::Option<& crate::types::ClarifyExplainerConfig> {
         self.clarify_explainer_config.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ExplainerConfigBuilder {
     }
     /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
     pub fn set_clarify_explainer_config(mut self, input: ::std::option::Option<crate::types::ClarifyExplainerConfig>) -> Self {
-        self.clarify_explainer_config = input;
-        self
+        self.clarify_explainer_config = input; self
     }
     /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
     pub fn get_clarify_explainer_config(&self) -> &::std::option::Option<crate::types::ClarifyExplainerConfig> {
@@ -44,7 +43,9 @@ impl ExplainerConfigBuilder {
     /// Consumes the builder and constructs a [`ExplainerConfig`](crate::types::ExplainerConfig).
     pub fn build(self) -> crate::types::ExplainerConfig {
         crate::types::ExplainerConfig {
-            clarify_explainer_config: self.clarify_explainer_config,
+            clarify_explainer_config: self.clarify_explainer_config
+            ,
         }
     }
 }
+

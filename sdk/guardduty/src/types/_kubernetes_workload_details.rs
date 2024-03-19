@@ -3,7 +3,7 @@
 /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesWorkloadDetails {
+pub struct KubernetesWorkloadDetails  {
     /// <p>Kubernetes workload name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
@@ -15,9 +15,9 @@ pub struct KubernetesWorkloadDetails {
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
     pub host_network: ::std::option::Option<bool>,
     /// <p>Containers running as part of the Kubernetes workload.</p>
-    pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
+    pub containers: ::std::option::Option<::std::vec::Vec::<crate::types::Container>>,
     /// <p>Volumes used by the Kubernetes workload.</p>
-    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
     /// <p>The service account name that is associated with a Kubernetes workload.</p>
     pub service_account_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
@@ -25,21 +25,21 @@ pub struct KubernetesWorkloadDetails {
     /// <p>Whether the host PID flag is enabled for the pods in the workload.</p>
     pub host_pid: ::std::option::Option<bool>,
 }
-impl KubernetesWorkloadDetails {
+impl  KubernetesWorkloadDetails  {
     /// <p>Kubernetes workload name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Kubernetes workload ID.</p>
-    pub fn uid(&self) -> ::std::option::Option<&str> {
+    pub fn uid(&self) -> ::std::option::Option<& str> {
         self.uid.as_deref()
     }
     /// <p>Kubernetes namespace that the workload is part of.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
@@ -47,19 +47,21 @@ impl KubernetesWorkloadDetails {
         self.host_network
     }
     /// <p>Containers running as part of the Kubernetes workload.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
-    pub fn containers(&self) -> &[crate::types::Container] {
-        self.containers.as_deref().unwrap_or_default()
+    pub fn containers(&self) -> & [crate::types::Container] {
+        self.containers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Volumes used by the Kubernetes workload.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
-    pub fn volumes(&self) -> &[crate::types::Volume] {
-        self.volumes.as_deref().unwrap_or_default()
+    pub fn volumes(&self) -> & [crate::types::Volume] {
+        self.volumes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The service account name that is associated with a Kubernetes workload.</p>
-    pub fn service_account_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_account_name(&self) -> ::std::option::Option<& str> {
         self.service_account_name.as_deref()
     }
     /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
@@ -87,8 +89,8 @@ pub struct KubernetesWorkloadDetailsBuilder {
     pub(crate) uid: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) host_network: ::std::option::Option<bool>,
-    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
-    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec::<crate::types::Container>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
     pub(crate) service_account_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_ipc: ::std::option::Option<bool>,
     pub(crate) host_pid: ::std::option::Option<bool>,
@@ -101,8 +103,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Kubernetes workload name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Kubernetes workload name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +116,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +129,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Kubernetes workload ID.</p>
     pub fn set_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
     }
     /// <p>Kubernetes workload ID.</p>
     pub fn get_uid(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Kubernetes namespace that the workload is part of.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>Kubernetes namespace that the workload is part of.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +155,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
     pub fn set_host_network(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.host_network = input;
-        self
+        self.host_network = input; self
     }
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
     pub fn get_host_network(&self) -> &::std::option::Option<bool> {
@@ -171,17 +168,16 @@ impl KubernetesWorkloadDetailsBuilder {
     /// <p>Containers running as part of the Kubernetes workload.</p>
     pub fn containers(mut self, input: crate::types::Container) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.containers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Containers running as part of the Kubernetes workload.</p>
-    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Container>>) -> Self {
+        self.containers = input; self
     }
     /// <p>Containers running as part of the Kubernetes workload.</p>
-    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Container>> {
         &self.containers
     }
     /// Appends an item to `volumes`.
@@ -191,17 +187,16 @@ impl KubernetesWorkloadDetailsBuilder {
     /// <p>Volumes used by the Kubernetes workload.</p>
     pub fn volumes(mut self, input: crate::types::Volume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Volumes used by the Kubernetes workload.</p>
-    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>) -> Self {
+        self.volumes = input; self
     }
     /// <p>Volumes used by the Kubernetes workload.</p>
-    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Volume>> {
         &self.volumes
     }
     /// <p>The service account name that is associated with a Kubernetes workload.</p>
@@ -211,8 +206,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>The service account name that is associated with a Kubernetes workload.</p>
     pub fn set_service_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_account_name = input;
-        self
+        self.service_account_name = input; self
     }
     /// <p>The service account name that is associated with a Kubernetes workload.</p>
     pub fn get_service_account_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +219,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
     pub fn set_host_ipc(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.host_ipc = input;
-        self
+        self.host_ipc = input; self
     }
     /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
     pub fn get_host_ipc(&self) -> &::std::option::Option<bool> {
@@ -239,8 +232,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Whether the host PID flag is enabled for the pods in the workload.</p>
     pub fn set_host_pid(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.host_pid = input;
-        self
+        self.host_pid = input; self
     }
     /// <p>Whether the host PID flag is enabled for the pods in the workload.</p>
     pub fn get_host_pid(&self) -> &::std::option::Option<bool> {
@@ -249,16 +241,27 @@ impl KubernetesWorkloadDetailsBuilder {
     /// Consumes the builder and constructs a [`KubernetesWorkloadDetails`](crate::types::KubernetesWorkloadDetails).
     pub fn build(self) -> crate::types::KubernetesWorkloadDetails {
         crate::types::KubernetesWorkloadDetails {
-            name: self.name,
-            r#type: self.r#type,
-            uid: self.uid,
-            namespace: self.namespace,
-            host_network: self.host_network,
-            containers: self.containers,
-            volumes: self.volumes,
-            service_account_name: self.service_account_name,
-            host_ipc: self.host_ipc,
-            host_pid: self.host_pid,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            uid: self.uid
+            ,
+            namespace: self.namespace
+            ,
+            host_network: self.host_network
+            ,
+            containers: self.containers
+            ,
+            volumes: self.volumes
+            ,
+            service_account_name: self.service_account_name
+            ,
+            host_ipc: self.host_ipc
+            ,
+            host_pid: self.host_pid
+            ,
         }
     }
 }
+

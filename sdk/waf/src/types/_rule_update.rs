@@ -7,19 +7,19 @@
 /// <p>Specifies a <code>Predicate</code> (such as an <code>IPSet</code>) and indicates whether you want to add it to a <code>Rule</code> or delete it from a <code>Rule</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleUpdate {
+pub struct RuleUpdate  {
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
     pub action: crate::types::ChangeAction,
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
     pub predicate: ::std::option::Option<crate::types::Predicate>,
 }
-impl RuleUpdate {
+impl  RuleUpdate  {
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
-    pub fn action(&self) -> &crate::types::ChangeAction {
+    pub fn action(&self) -> & crate::types::ChangeAction {
         &self.action
     }
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
-    pub fn predicate(&self) -> ::std::option::Option<&crate::types::Predicate> {
+    pub fn predicate(&self) -> ::std::option::Option<& crate::types::Predicate> {
         self.predicate.as_ref()
     }
 }
@@ -46,8 +46,7 @@ impl RuleUpdateBuilder {
     }
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
@@ -61,8 +60,7 @@ impl RuleUpdateBuilder {
     }
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
     pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
-        self.predicate = input;
-        self
+        self.predicate = input; self
     }
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
     pub fn get_predicate(&self) -> &::std::option::Option<crate::types::Predicate> {
@@ -72,14 +70,17 @@ impl RuleUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action`](crate::types::builders::RuleUpdateBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::RuleUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuleUpdate {
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building RuleUpdate",
-                )
-            })?,
-            predicate: self.predicate,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuleUpdate {
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building RuleUpdate")
+                    )?
+                ,
+                predicate: self.predicate
+                ,
+            }
+        )
     }
 }
+

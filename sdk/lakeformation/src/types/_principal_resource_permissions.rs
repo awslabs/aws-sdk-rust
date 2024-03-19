@@ -3,15 +3,15 @@
 /// <p>The permissions granted or revoked on a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrincipalResourcePermissions {
+pub struct PrincipalResourcePermissions  {
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>The resource where permissions are to be granted or revoked.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The permissions to be granted or revoked on the resource.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
     pub additional_details: ::std::option::Option<crate::types::DetailsMap>,
     /// <p>The date and time when the resource was last updated.</p>
@@ -19,37 +19,39 @@ pub struct PrincipalResourcePermissions {
     /// <p>The user who updated the record.</p>
     pub last_updated_by: ::std::option::Option<::std::string::String>,
 }
-impl PrincipalResourcePermissions {
+impl  PrincipalResourcePermissions  {
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
-    pub fn principal(&self) -> ::std::option::Option<&crate::types::DataLakePrincipal> {
+    pub fn principal(&self) -> ::std::option::Option<& crate::types::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>The resource where permissions are to be granted or revoked.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::Resource> {
         self.resource.as_ref()
     }
     /// <p>The permissions to be granted or revoked on the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[crate::types::Permission] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [crate::types::Permission] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions_with_grant_option.is_none()`.
-    pub fn permissions_with_grant_option(&self) -> &[crate::types::Permission] {
-        self.permissions_with_grant_option.as_deref().unwrap_or_default()
+    pub fn permissions_with_grant_option(&self) -> & [crate::types::Permission] {
+        self.permissions_with_grant_option.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
-    pub fn additional_details(&self) -> ::std::option::Option<&crate::types::DetailsMap> {
+    pub fn additional_details(&self) -> ::std::option::Option<& crate::types::DetailsMap> {
         self.additional_details.as_ref()
     }
     /// <p>The date and time when the resource was last updated.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The user who updated the record.</p>
-    pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_by(&self) -> ::std::option::Option<& str> {
         self.last_updated_by.as_deref()
     }
 }
@@ -66,8 +68,8 @@ impl PrincipalResourcePermissions {
 pub struct PrincipalResourcePermissionsBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    pub(crate) permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
+    pub(crate) permissions_with_grant_option: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>,
     pub(crate) additional_details: ::std::option::Option<crate::types::DetailsMap>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
@@ -80,8 +82,7 @@ impl PrincipalResourcePermissionsBuilder {
     }
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
@@ -94,8 +95,7 @@ impl PrincipalResourcePermissionsBuilder {
     }
     /// <p>The resource where permissions are to be granted or revoked.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The resource where permissions are to be granted or revoked.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
@@ -108,17 +108,16 @@ impl PrincipalResourcePermissionsBuilder {
     /// <p>The permissions to be granted or revoked on the resource.</p>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permissions to be granted or revoked on the resource.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The permissions to be granted or revoked on the resource.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Permission>> {
         &self.permissions
     }
     /// Appends an item to `permissions_with_grant_option`.
@@ -128,17 +127,16 @@ impl PrincipalResourcePermissionsBuilder {
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
     pub fn permissions_with_grant_option(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions_with_grant_option.unwrap_or_default();
-        v.push(input);
-        self.permissions_with_grant_option = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions_with_grant_option = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
-        self.permissions_with_grant_option = input;
-        self
+    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>) -> Self {
+        self.permissions_with_grant_option = input; self
     }
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Permission>> {
         &self.permissions_with_grant_option
     }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
@@ -148,8 +146,7 @@ impl PrincipalResourcePermissionsBuilder {
     }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
     pub fn set_additional_details(mut self, input: ::std::option::Option<crate::types::DetailsMap>) -> Self {
-        self.additional_details = input;
-        self
+        self.additional_details = input; self
     }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
     pub fn get_additional_details(&self) -> &::std::option::Option<crate::types::DetailsMap> {
@@ -162,8 +159,7 @@ impl PrincipalResourcePermissionsBuilder {
     }
     /// <p>The date and time when the resource was last updated.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>The date and time when the resource was last updated.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -176,8 +172,7 @@ impl PrincipalResourcePermissionsBuilder {
     }
     /// <p>The user who updated the record.</p>
     pub fn set_last_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_by = input;
-        self
+        self.last_updated_by = input; self
     }
     /// <p>The user who updated the record.</p>
     pub fn get_last_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,13 +181,21 @@ impl PrincipalResourcePermissionsBuilder {
     /// Consumes the builder and constructs a [`PrincipalResourcePermissions`](crate::types::PrincipalResourcePermissions).
     pub fn build(self) -> crate::types::PrincipalResourcePermissions {
         crate::types::PrincipalResourcePermissions {
-            principal: self.principal,
-            resource: self.resource,
-            permissions: self.permissions,
-            permissions_with_grant_option: self.permissions_with_grant_option,
-            additional_details: self.additional_details,
-            last_updated: self.last_updated,
-            last_updated_by: self.last_updated_by,
+            principal: self.principal
+            ,
+            resource: self.resource
+            ,
+            permissions: self.permissions
+            ,
+            permissions_with_grant_option: self.permissions_with_grant_option
+            ,
+            additional_details: self.additional_details
+            ,
+            last_updated: self.last_updated
+            ,
+            last_updated_by: self.last_updated_by
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the Kubernetes API for which you check if you have permission to call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesPermissionCheckedDetails {
+pub struct KubernetesPermissionCheckedDetails  {
     /// <p>The verb component of the Kubernetes API call. For example, when you check whether or not you have the permission to call the <code>CreatePod</code> API, the verb component will be <code>Create</code>.</p>
     pub verb: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes resource with which your Kubernetes API call will interact.</p>
@@ -13,17 +13,17 @@ pub struct KubernetesPermissionCheckedDetails {
     /// <p>Information whether the user has the permission to call the Kubernetes API.</p>
     pub allowed: ::std::option::Option<bool>,
 }
-impl KubernetesPermissionCheckedDetails {
+impl  KubernetesPermissionCheckedDetails  {
     /// <p>The verb component of the Kubernetes API call. For example, when you check whether or not you have the permission to call the <code>CreatePod</code> API, the verb component will be <code>Create</code>.</p>
-    pub fn verb(&self) -> ::std::option::Option<&str> {
+    pub fn verb(&self) -> ::std::option::Option<& str> {
         self.verb.as_deref()
     }
     /// <p>The Kubernetes resource with which your Kubernetes API call will interact.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>The namespace where the Kubernetes API action will take place.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>Information whether the user has the permission to call the Kubernetes API.</p>
@@ -55,8 +55,7 @@ impl KubernetesPermissionCheckedDetailsBuilder {
     }
     /// <p>The verb component of the Kubernetes API call. For example, when you check whether or not you have the permission to call the <code>CreatePod</code> API, the verb component will be <code>Create</code>.</p>
     pub fn set_verb(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verb = input;
-        self
+        self.verb = input; self
     }
     /// <p>The verb component of the Kubernetes API call. For example, when you check whether or not you have the permission to call the <code>CreatePod</code> API, the verb component will be <code>Create</code>.</p>
     pub fn get_verb(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl KubernetesPermissionCheckedDetailsBuilder {
     }
     /// <p>The Kubernetes resource with which your Kubernetes API call will interact.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The Kubernetes resource with which your Kubernetes API call will interact.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl KubernetesPermissionCheckedDetailsBuilder {
     }
     /// <p>The namespace where the Kubernetes API action will take place.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace where the Kubernetes API action will take place.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl KubernetesPermissionCheckedDetailsBuilder {
     }
     /// <p>Information whether the user has the permission to call the Kubernetes API.</p>
     pub fn set_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allowed = input;
-        self
+        self.allowed = input; self
     }
     /// <p>Information whether the user has the permission to call the Kubernetes API.</p>
     pub fn get_allowed(&self) -> &::std::option::Option<bool> {
@@ -107,10 +103,15 @@ impl KubernetesPermissionCheckedDetailsBuilder {
     /// Consumes the builder and constructs a [`KubernetesPermissionCheckedDetails`](crate::types::KubernetesPermissionCheckedDetails).
     pub fn build(self) -> crate::types::KubernetesPermissionCheckedDetails {
         crate::types::KubernetesPermissionCheckedDetails {
-            verb: self.verb,
-            resource: self.resource,
-            namespace: self.namespace,
-            allowed: self.allowed,
+            verb: self.verb
+            ,
+            resource: self.resource
+            ,
+            namespace: self.namespace
+            ,
+            allowed: self.allowed
+            ,
         }
     }
 }
+

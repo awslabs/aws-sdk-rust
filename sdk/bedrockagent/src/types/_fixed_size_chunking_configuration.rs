@@ -3,13 +3,13 @@
 /// Configures fixed size chunking strategy
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FixedSizeChunkingConfiguration {
+pub struct FixedSizeChunkingConfiguration  {
     /// The maximum number of tokens per chunk.
     pub max_tokens: i32,
     /// The overlap percentage between adjacent chunks.
     pub overlap_percentage: i32,
 }
-impl FixedSizeChunkingConfiguration {
+impl  FixedSizeChunkingConfiguration  {
     /// The maximum number of tokens per chunk.
     pub fn max_tokens(&self) -> i32 {
         self.max_tokens
@@ -42,8 +42,7 @@ impl FixedSizeChunkingConfigurationBuilder {
     }
     /// The maximum number of tokens per chunk.
     pub fn set_max_tokens(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_tokens = input;
-        self
+        self.max_tokens = input; self
     }
     /// The maximum number of tokens per chunk.
     pub fn get_max_tokens(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl FixedSizeChunkingConfigurationBuilder {
     }
     /// The overlap percentage between adjacent chunks.
     pub fn set_overlap_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.overlap_percentage = input;
-        self
+        self.overlap_percentage = input; self
     }
     /// The overlap percentage between adjacent chunks.
     pub fn get_overlap_percentage(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl FixedSizeChunkingConfigurationBuilder {
     /// - [`max_tokens`](crate::types::builders::FixedSizeChunkingConfigurationBuilder::max_tokens)
     /// - [`overlap_percentage`](crate::types::builders::FixedSizeChunkingConfigurationBuilder::overlap_percentage)
     pub fn build(self) -> ::std::result::Result<crate::types::FixedSizeChunkingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FixedSizeChunkingConfiguration {
-            max_tokens: self.max_tokens.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_tokens",
-                    "max_tokens was not specified but it is required when building FixedSizeChunkingConfiguration",
-                )
-            })?,
-            overlap_percentage: self.overlap_percentage.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "overlap_percentage",
-                    "overlap_percentage was not specified but it is required when building FixedSizeChunkingConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FixedSizeChunkingConfiguration {
+                max_tokens: self.max_tokens
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_tokens", "max_tokens was not specified but it is required when building FixedSizeChunkingConfiguration")
+                    )?
+                ,
+                overlap_percentage: self.overlap_percentage
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("overlap_percentage", "overlap_percentage was not specified but it is required when building FixedSizeChunkingConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

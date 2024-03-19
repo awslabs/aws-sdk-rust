@@ -3,22 +3,20 @@
 /// <p>Defines the storage configuration for an Amazon EFS file system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EfsStorageConfiguration {
+pub struct EfsStorageConfiguration  {
     /// <p>The file system identifier.</p>
     pub file_system_id: ::std::string::String,
     /// <p>The mount point for the file system.</p>
     pub mount_point: ::std::string::String,
 }
-impl EfsStorageConfiguration {
+impl  EfsStorageConfiguration  {
     /// <p>The file system identifier.</p>
-    pub fn file_system_id(&self) -> &str {
-        use std::ops::Deref;
-        self.file_system_id.deref()
+    pub fn file_system_id(&self) -> & str {
+        use std::ops::Deref; self.file_system_id.deref()
     }
     /// <p>The mount point for the file system.</p>
-    pub fn mount_point(&self) -> &str {
-        use std::ops::Deref;
-        self.mount_point.deref()
+    pub fn mount_point(&self) -> & str {
+        use std::ops::Deref; self.mount_point.deref()
     }
 }
 impl EfsStorageConfiguration {
@@ -44,8 +42,7 @@ impl EfsStorageConfigurationBuilder {
     }
     /// <p>The file system identifier.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The file system identifier.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl EfsStorageConfigurationBuilder {
     }
     /// <p>The mount point for the file system.</p>
     pub fn set_mount_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mount_point = input;
-        self
+        self.mount_point = input; self
     }
     /// <p>The mount point for the file system.</p>
     pub fn get_mount_point(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl EfsStorageConfigurationBuilder {
     /// - [`file_system_id`](crate::types::builders::EfsStorageConfigurationBuilder::file_system_id)
     /// - [`mount_point`](crate::types::builders::EfsStorageConfigurationBuilder::mount_point)
     pub fn build(self) -> ::std::result::Result<crate::types::EfsStorageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EfsStorageConfiguration {
-            file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_system_id",
-                    "file_system_id was not specified but it is required when building EfsStorageConfiguration",
-                )
-            })?,
-            mount_point: self.mount_point.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mount_point",
-                    "mount_point was not specified but it is required when building EfsStorageConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EfsStorageConfiguration {
+                file_system_id: self.file_system_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_system_id", "file_system_id was not specified but it is required when building EfsStorageConfiguration")
+                    )?
+                ,
+                mount_point: self.mount_point
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mount_point", "mount_point was not specified but it is required when building EfsStorageConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The container for the owner information to filter by.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OwnerFilter {
+pub struct OwnerFilter  {
     /// <p>The contract or wallet address.</p>
     pub address: ::std::string::String,
 }
-impl OwnerFilter {
+impl  OwnerFilter  {
     /// <p>The contract or wallet address.</p>
-    pub fn address(&self) -> &str {
-        use std::ops::Deref;
-        self.address.deref()
+    pub fn address(&self) -> & str {
+        use std::ops::Deref; self.address.deref()
     }
 }
 impl OwnerFilter {
@@ -36,8 +35,7 @@ impl OwnerFilterBuilder {
     }
     /// <p>The contract or wallet address.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The contract or wallet address.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl OwnerFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`address`](crate::types::builders::OwnerFilterBuilder::address)
     pub fn build(self) -> ::std::result::Result<crate::types::OwnerFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OwnerFilter {
-            address: self.address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "address",
-                    "address was not specified but it is required when building OwnerFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OwnerFilter {
+                address: self.address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("address", "address was not specified but it is required when building OwnerFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

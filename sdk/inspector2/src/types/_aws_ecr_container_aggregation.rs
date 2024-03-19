@@ -3,59 +3,64 @@
 /// <p>An aggregation of information about Amazon ECR containers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcrContainerAggregation {
+pub struct AwsEcrContainerAggregation  {
     /// <p>The container resource IDs.</p>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The image SHA values.</p>
-    pub image_shas: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub image_shas: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The container repositories.</p>
-    pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub repositories: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The architecture of the containers.</p>
-    pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub architectures: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The image tags.</p>
-    pub image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub image_tags: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     /// <p>The sort order (ascending or descending).</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort by.</p>
     pub sort_by: ::std::option::Option<crate::types::AwsEcrContainerSortBy>,
 }
-impl AwsEcrContainerAggregation {
+impl  AwsEcrContainerAggregation  {
     /// <p>The container resource IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[crate::types::StringFilter] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [crate::types::StringFilter] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The image SHA values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_shas.is_none()`.
-    pub fn image_shas(&self) -> &[crate::types::StringFilter] {
-        self.image_shas.as_deref().unwrap_or_default()
+    pub fn image_shas(&self) -> & [crate::types::StringFilter] {
+        self.image_shas.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The container repositories.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
-    pub fn repositories(&self) -> &[crate::types::StringFilter] {
-        self.repositories.as_deref().unwrap_or_default()
+    pub fn repositories(&self) -> & [crate::types::StringFilter] {
+        self.repositories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The architecture of the containers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
-    pub fn architectures(&self) -> &[crate::types::StringFilter] {
-        self.architectures.as_deref().unwrap_or_default()
+    pub fn architectures(&self) -> & [crate::types::StringFilter] {
+        self.architectures.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The image tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tags.is_none()`.
-    pub fn image_tags(&self) -> &[crate::types::StringFilter] {
-        self.image_tags.as_deref().unwrap_or_default()
+    pub fn image_tags(&self) -> & [crate::types::StringFilter] {
+        self.image_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The sort order (ascending or descending).</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort by.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::AwsEcrContainerSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::AwsEcrContainerSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -70,11 +75,11 @@ impl AwsEcrContainerAggregation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcrContainerAggregationBuilder {
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) image_shas: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) architectures: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) image_shas: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) repositories: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) architectures: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
+    pub(crate) image_tags: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) sort_by: ::std::option::Option<crate::types::AwsEcrContainerSortBy>,
 }
@@ -86,17 +91,16 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The container resource IDs.</p>
     pub fn resource_ids(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input);
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container resource IDs.</p>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>The container resource IDs.</p>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.resource_ids
     }
     /// Appends an item to `image_shas`.
@@ -106,17 +110,16 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The image SHA values.</p>
     pub fn image_shas(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.image_shas.unwrap_or_default();
-        v.push(input);
-        self.image_shas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.image_shas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The image SHA values.</p>
-    pub fn set_image_shas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.image_shas = input;
-        self
+    pub fn set_image_shas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.image_shas = input; self
     }
     /// <p>The image SHA values.</p>
-    pub fn get_image_shas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_image_shas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.image_shas
     }
     /// Appends an item to `repositories`.
@@ -126,17 +129,16 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The container repositories.</p>
     pub fn repositories(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.repositories.unwrap_or_default();
-        v.push(input);
-        self.repositories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.repositories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container repositories.</p>
-    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.repositories = input;
-        self
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.repositories = input; self
     }
     /// <p>The container repositories.</p>
-    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.repositories
     }
     /// Appends an item to `architectures`.
@@ -146,17 +148,16 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The architecture of the containers.</p>
     pub fn architectures(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.architectures.unwrap_or_default();
-        v.push(input);
-        self.architectures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.architectures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The architecture of the containers.</p>
-    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.architectures = input;
-        self
+    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.architectures = input; self
     }
     /// <p>The architecture of the containers.</p>
-    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.architectures
     }
     /// Appends an item to `image_tags`.
@@ -166,17 +167,16 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The image tags.</p>
     pub fn image_tags(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.image_tags.unwrap_or_default();
-        v.push(input);
-        self.image_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.image_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The image tags.</p>
-    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.image_tags = input;
-        self
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>>) -> Self {
+        self.image_tags = input; self
     }
     /// <p>The image tags.</p>
-    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StringFilter>> {
         &self.image_tags
     }
     /// <p>The sort order (ascending or descending).</p>
@@ -186,8 +186,7 @@ impl AwsEcrContainerAggregationBuilder {
     }
     /// <p>The sort order (ascending or descending).</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order (ascending or descending).</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -200,8 +199,7 @@ impl AwsEcrContainerAggregationBuilder {
     }
     /// <p>The value to sort by.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AwsEcrContainerSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The value to sort by.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AwsEcrContainerSortBy> {
@@ -210,13 +208,21 @@ impl AwsEcrContainerAggregationBuilder {
     /// Consumes the builder and constructs a [`AwsEcrContainerAggregation`](crate::types::AwsEcrContainerAggregation).
     pub fn build(self) -> crate::types::AwsEcrContainerAggregation {
         crate::types::AwsEcrContainerAggregation {
-            resource_ids: self.resource_ids,
-            image_shas: self.image_shas,
-            repositories: self.repositories,
-            architectures: self.architectures,
-            image_tags: self.image_tags,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
+            resource_ids: self.resource_ids
+            ,
+            image_shas: self.image_shas
+            ,
+            repositories: self.repositories
+            ,
+            architectures: self.architectures
+            ,
+            image_tags: self.image_tags
+            ,
+            sort_order: self.sort_order
+            ,
+            sort_by: self.sort_by
+            ,
         }
     }
 }
+

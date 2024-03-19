@@ -3,13 +3,13 @@
 /// <p>Specifies the serializer that you want Firehose to use to convert the format of your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputFormatConfiguration {
+pub struct OutputFormatConfiguration  {
     /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
     pub serializer: ::std::option::Option<crate::types::Serializer>,
 }
-impl OutputFormatConfiguration {
+impl  OutputFormatConfiguration  {
     /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
-    pub fn serializer(&self) -> ::std::option::Option<&crate::types::Serializer> {
+    pub fn serializer(&self) -> ::std::option::Option<& crate::types::Serializer> {
         self.serializer.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl OutputFormatConfigurationBuilder {
     }
     /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
     pub fn set_serializer(mut self, input: ::std::option::Option<crate::types::Serializer>) -> Self {
-        self.serializer = input;
-        self
+        self.serializer = input; self
     }
     /// <p>Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.</p>
     pub fn get_serializer(&self) -> &::std::option::Option<crate::types::Serializer> {
@@ -43,6 +42,10 @@ impl OutputFormatConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`OutputFormatConfiguration`](crate::types::OutputFormatConfiguration).
     pub fn build(self) -> crate::types::OutputFormatConfiguration {
-        crate::types::OutputFormatConfiguration { serializer: self.serializer }
+        crate::types::OutputFormatConfiguration {
+            serializer: self.serializer
+            ,
+        }
     }
 }
+

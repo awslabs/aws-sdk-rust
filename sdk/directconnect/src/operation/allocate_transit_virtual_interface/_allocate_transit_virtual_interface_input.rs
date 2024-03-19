@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllocateTransitVirtualInterfaceInput {
+pub struct AllocateTransitVirtualInterfaceInput  {
     /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
@@ -10,17 +10,17 @@ pub struct AllocateTransitVirtualInterfaceInput {
     /// <p>Information about the transit virtual interface.</p>
     pub new_transit_virtual_interface_allocation: ::std::option::Option<crate::types::NewTransitVirtualInterfaceAllocation>,
 }
-impl AllocateTransitVirtualInterfaceInput {
+impl  AllocateTransitVirtualInterfaceInput  {
     /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>Information about the transit virtual interface.</p>
-    pub fn new_transit_virtual_interface_allocation(&self) -> ::std::option::Option<&crate::types::NewTransitVirtualInterfaceAllocation> {
+    pub fn new_transit_virtual_interface_allocation(&self) -> ::std::option::Option<& crate::types::NewTransitVirtualInterfaceAllocation> {
         self.new_transit_virtual_interface_allocation.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AllocateTransitVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AllocateTransitVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,30 +75,25 @@ impl AllocateTransitVirtualInterfaceInputBuilder {
         self
     }
     /// <p>Information about the transit virtual interface.</p>
-    pub fn set_new_transit_virtual_interface_allocation(
-        mut self,
-        input: ::std::option::Option<crate::types::NewTransitVirtualInterfaceAllocation>,
-    ) -> Self {
-        self.new_transit_virtual_interface_allocation = input;
-        self
+    pub fn set_new_transit_virtual_interface_allocation(mut self, input: ::std::option::Option<crate::types::NewTransitVirtualInterfaceAllocation>) -> Self {
+        self.new_transit_virtual_interface_allocation = input; self
     }
     /// <p>Information about the transit virtual interface.</p>
     pub fn get_new_transit_virtual_interface_allocation(&self) -> &::std::option::Option<crate::types::NewTransitVirtualInterfaceAllocation> {
         &self.new_transit_virtual_interface_allocation
     }
     /// Consumes the builder and constructs a [`AllocateTransitVirtualInterfaceInput`](crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceInput {
-                connection_id: self.connection_id,
-                owner_account: self.owner_account,
-                new_transit_virtual_interface_allocation: self.new_transit_virtual_interface_allocation,
-            },
+                connection_id: self.connection_id
+                ,
+                owner_account: self.owner_account
+                ,
+                new_transit_virtual_interface_allocation: self.new_transit_virtual_interface_allocation
+                ,
+            }
         )
     }
 }
+

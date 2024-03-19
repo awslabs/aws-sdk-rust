@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStackInstanceResourceDriftsInput {
+pub struct ListStackInstanceResourceDriftsInput  {
     /// <p>The name or unique ID of the stack set that you want to list drifted resources for.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
@@ -20,7 +20,7 @@ pub struct ListStackInstanceResourceDriftsInput {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    pub stack_instance_resource_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
+    pub stack_instance_resource_drift_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>>,
     /// <p>The name of the Amazon Web Services account that you want to list resource drifts for.</p>
     pub stack_instance_account: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Region where you want to list resource drifts.</p>
@@ -38,13 +38,13 @@ pub struct ListStackInstanceResourceDriftsInput {
     /// </ul>
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
-impl ListStackInstanceResourceDriftsInput {
+impl  ListStackInstanceResourceDriftsInput  {
     /// <p>The name or unique ID of the stack set that you want to list drifted resources for.</p>
-    pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_set_name(&self) -> ::std::option::Option<& str> {
         self.stack_set_name.as_deref()
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -62,21 +62,22 @@ impl ListStackInstanceResourceDriftsInput {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_instance_resource_drift_statuses.is_none()`.
-    pub fn stack_instance_resource_drift_statuses(&self) -> &[crate::types::StackResourceDriftStatus] {
-        self.stack_instance_resource_drift_statuses.as_deref().unwrap_or_default()
+    pub fn stack_instance_resource_drift_statuses(&self) -> & [crate::types::StackResourceDriftStatus] {
+        self.stack_instance_resource_drift_statuses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the Amazon Web Services account that you want to list resource drifts for.</p>
-    pub fn stack_instance_account(&self) -> ::std::option::Option<&str> {
+    pub fn stack_instance_account(&self) -> ::std::option::Option<& str> {
         self.stack_instance_account.as_deref()
     }
     /// <p>The name of the Region where you want to list resource drifts.</p>
-    pub fn stack_instance_region(&self) -> ::std::option::Option<&str> {
+    pub fn stack_instance_region(&self) -> ::std::option::Option<& str> {
         self.stack_instance_region.as_deref()
     }
     /// <p>The unique ID of the drift operation.</p>
-    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn operation_id(&self) -> ::std::option::Option<& str> {
         self.operation_id.as_deref()
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -88,7 +89,7 @@ impl ListStackInstanceResourceDriftsInput {
     /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
     /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
-    pub fn call_as(&self) -> ::std::option::Option<&crate::types::CallAs> {
+    pub fn call_as(&self) -> ::std::option::Option<& crate::types::CallAs> {
         self.call_as.as_ref()
     }
 }
@@ -106,7 +107,7 @@ pub struct ListStackInstanceResourceDriftsInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) stack_instance_resource_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
+    pub(crate) stack_instance_resource_drift_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>>,
     pub(crate) stack_instance_account: ::std::option::Option<::std::string::String>,
     pub(crate) stack_instance_region: ::std::option::Option<::std::string::String>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
@@ -121,8 +122,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     }
     /// <p>The name or unique ID of the stack set that you want to list drifted resources for.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_set_name = input;
-        self
+        self.stack_set_name = input; self
     }
     /// <p>The name or unique ID of the stack set that you want to list drifted resources for.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +135,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +148,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -173,9 +171,9 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     /// </ul>
     pub fn stack_instance_resource_drift_statuses(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         let mut v = self.stack_instance_resource_drift_statuses.unwrap_or_default();
-        v.push(input);
-        self.stack_instance_resource_drift_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stack_instance_resource_drift_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource drift status of the stack instance.</p>
     /// <ul>
@@ -188,12 +186,8 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    pub fn set_stack_instance_resource_drift_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
-    ) -> Self {
-        self.stack_instance_resource_drift_statuses = input;
-        self
+    pub fn set_stack_instance_resource_drift_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>>) -> Self {
+        self.stack_instance_resource_drift_statuses = input; self
     }
     /// <p>The resource drift status of the stack instance.</p>
     /// <ul>
@@ -206,7 +200,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    pub fn get_stack_instance_resource_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
+    pub fn get_stack_instance_resource_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>> {
         &self.stack_instance_resource_drift_statuses
     }
     /// <p>The name of the Amazon Web Services account that you want to list resource drifts for.</p>
@@ -217,8 +211,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     }
     /// <p>The name of the Amazon Web Services account that you want to list resource drifts for.</p>
     pub fn set_stack_instance_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_instance_account = input;
-        self
+        self.stack_instance_account = input; self
     }
     /// <p>The name of the Amazon Web Services account that you want to list resource drifts for.</p>
     pub fn get_stack_instance_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +225,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     }
     /// <p>The name of the Region where you want to list resource drifts.</p>
     pub fn set_stack_instance_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_instance_region = input;
-        self
+        self.stack_instance_region = input; self
     }
     /// <p>The name of the Region where you want to list resource drifts.</p>
     pub fn get_stack_instance_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +239,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     }
     /// <p>The unique ID of the drift operation.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// <p>The unique ID of the drift operation.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -277,8 +268,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
     /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
-        self.call_as = input;
-        self
+        self.call_as = input; self
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -293,23 +283,27 @@ impl ListStackInstanceResourceDriftsInputBuilder {
         &self.call_as
     }
     /// Consumes the builder and constructs a [`ListStackInstanceResourceDriftsInput`](crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsInput {
-                stack_set_name: self.stack_set_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                stack_instance_resource_drift_statuses: self.stack_instance_resource_drift_statuses,
-                stack_instance_account: self.stack_instance_account,
-                stack_instance_region: self.stack_instance_region,
-                operation_id: self.operation_id,
-                call_as: self.call_as,
-            },
+                stack_set_name: self.stack_set_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                stack_instance_resource_drift_statuses: self.stack_instance_resource_drift_statuses
+                ,
+                stack_instance_account: self.stack_instance_account
+                ,
+                stack_instance_region: self.stack_instance_region
+                ,
+                operation_id: self.operation_id
+                ,
+                call_as: self.call_as
+                ,
+            }
         )
     }
 }
+

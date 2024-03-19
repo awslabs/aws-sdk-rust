@@ -4,7 +4,7 @@
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SuiteRunInformation</a> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuiteRunInformation {
+pub struct SuiteRunInformation  {
     /// <p>Suite definition ID of the suite run.</p>
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Suite definition version of the suite run.</p>
@@ -26,37 +26,37 @@ pub struct SuiteRunInformation {
     /// <p>Number of test cases that failed in the suite run.</p>
     pub failed: ::std::option::Option<i32>,
 }
-impl SuiteRunInformation {
+impl  SuiteRunInformation  {
     /// <p>Suite definition ID of the suite run.</p>
-    pub fn suite_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> ::std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Suite definition version of the suite run.</p>
-    pub fn suite_definition_version(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_version(&self) -> ::std::option::Option<& str> {
         self.suite_definition_version.as_deref()
     }
     /// <p>Suite definition name of the suite run.</p>
-    pub fn suite_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_name(&self) -> ::std::option::Option<& str> {
         self.suite_definition_name.as_deref()
     }
     /// <p>Suite run ID of the suite run.</p>
-    pub fn suite_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_run_id(&self) -> ::std::option::Option<& str> {
         self.suite_run_id.as_deref()
     }
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-    pub fn end_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_at.as_ref()
     }
     /// <p>Status of the suite run.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SuiteRunStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SuiteRunStatus> {
         self.status.as_ref()
     }
     /// <p>Number of test cases that passed in the suite run.</p>
@@ -98,8 +98,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Suite definition ID of the suite run.</p>
     pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_id = input;
-        self
+        self.suite_definition_id = input; self
     }
     /// <p>Suite definition ID of the suite run.</p>
     pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Suite definition version of the suite run.</p>
     pub fn set_suite_definition_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_version = input;
-        self
+        self.suite_definition_version = input; self
     }
     /// <p>Suite definition version of the suite run.</p>
     pub fn get_suite_definition_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Suite definition name of the suite run.</p>
     pub fn set_suite_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_name = input;
-        self
+        self.suite_definition_name = input; self
     }
     /// <p>Suite definition name of the suite run.</p>
     pub fn get_suite_definition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +137,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Suite run ID of the suite run.</p>
     pub fn set_suite_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_run_id = input;
-        self
+        self.suite_run_id = input; self
     }
     /// <p>Suite run ID of the suite run.</p>
     pub fn get_suite_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +150,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +163,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,8 +176,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
     pub fn set_end_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_at = input;
-        self
+        self.end_at = input; self
     }
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
     pub fn get_end_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -196,8 +189,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Status of the suite run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SuiteRunStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the suite run.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SuiteRunStatus> {
@@ -210,8 +202,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Number of test cases that passed in the suite run.</p>
     pub fn set_passed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.passed = input;
-        self
+        self.passed = input; self
     }
     /// <p>Number of test cases that passed in the suite run.</p>
     pub fn get_passed(&self) -> &::std::option::Option<i32> {
@@ -224,8 +215,7 @@ impl SuiteRunInformationBuilder {
     }
     /// <p>Number of test cases that failed in the suite run.</p>
     pub fn set_failed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed = input;
-        self
+        self.failed = input; self
     }
     /// <p>Number of test cases that failed in the suite run.</p>
     pub fn get_failed(&self) -> &::std::option::Option<i32> {
@@ -234,16 +224,27 @@ impl SuiteRunInformationBuilder {
     /// Consumes the builder and constructs a [`SuiteRunInformation`](crate::types::SuiteRunInformation).
     pub fn build(self) -> crate::types::SuiteRunInformation {
         crate::types::SuiteRunInformation {
-            suite_definition_id: self.suite_definition_id,
-            suite_definition_version: self.suite_definition_version,
-            suite_definition_name: self.suite_definition_name,
-            suite_run_id: self.suite_run_id,
-            created_at: self.created_at,
-            started_at: self.started_at,
-            end_at: self.end_at,
-            status: self.status,
-            passed: self.passed,
-            failed: self.failed,
+            suite_definition_id: self.suite_definition_id
+            ,
+            suite_definition_version: self.suite_definition_version
+            ,
+            suite_definition_name: self.suite_definition_name
+            ,
+            suite_run_id: self.suite_run_id
+            ,
+            created_at: self.created_at
+            ,
+            started_at: self.started_at
+            ,
+            end_at: self.end_at
+            ,
+            status: self.status
+            ,
+            passed: self.passed
+            ,
+            failed: self.failed
+            ,
         }
     }
 }
+

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBucketsInput {
+pub struct DescribeBucketsInput  {
     /// <p>The criteria to use to filter the query results.</p>
-    pub criteria: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
+    pub criteria: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
@@ -12,11 +12,9 @@ pub struct DescribeBucketsInput {
     /// <p>The criteria to use to sort the query results.</p>
     pub sort_criteria: ::std::option::Option<crate::types::BucketSortCriteria>,
 }
-impl DescribeBucketsInput {
+impl  DescribeBucketsInput  {
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn criteria(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>> {
+    pub fn criteria(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>> {
         self.criteria.as_ref()
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -24,11 +22,11 @@ impl DescribeBucketsInput {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&crate::types::BucketSortCriteria> {
+    pub fn sort_criteria(&self) -> ::std::option::Option<& crate::types::BucketSortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
@@ -43,7 +41,7 @@ impl DescribeBucketsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBucketsInputBuilder {
-    pub(crate) criteria: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
+    pub(crate) criteria: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sort_criteria: ::std::option::Option<crate::types::BucketSortCriteria>,
@@ -56,22 +54,16 @@ impl DescribeBucketsInputBuilder {
     /// <p>The criteria to use to filter the query results.</p>
     pub fn criteria(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::BucketCriteriaAdditionalProperties) -> Self {
         let mut hash_map = self.criteria.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.criteria = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.criteria = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
-    ) -> Self {
-        self.criteria = input;
-        self
+    pub fn set_criteria(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>) -> Self {
+        self.criteria = input; self
     }
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn get_criteria(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>> {
+    pub fn get_criteria(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>> {
         &self.criteria
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -81,8 +73,7 @@ impl DescribeBucketsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -95,8 +86,7 @@ impl DescribeBucketsInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,22 +99,26 @@ impl DescribeBucketsInputBuilder {
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::BucketSortCriteria>) -> Self {
-        self.sort_criteria = input;
-        self
+        self.sort_criteria = input; self
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::BucketSortCriteria> {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`DescribeBucketsInput`](crate::operation::describe_buckets::DescribeBucketsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_buckets::DescribeBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_buckets::DescribeBucketsInput {
-            criteria: self.criteria,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            sort_criteria: self.sort_criteria,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_buckets::DescribeBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_buckets::DescribeBucketsInput {
+                criteria: self.criteria
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+            }
+        )
     }
 }
+

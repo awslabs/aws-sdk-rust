@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssetRevisions`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the domain.</p><br>
     ///   - [`identifier(impl Into<String>)`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the asset.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of revisions is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of revisions, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListAssetRevisions</code> to list the next set of revisions.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of revisions to return in a single call to <code>ListAssetRevisions</code>. When the number of revisions to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListAssetRevisions</code> to list the next set of revisions.</p><br>
-    /// - On success, responds with [`ListAssetRevisionsOutput`](crate::operation::list_asset_revisions::ListAssetRevisionsOutput) with field(s):
+                            /// - On success, responds with [`ListAssetRevisionsOutput`](crate::operation::list_asset_revisions::ListAssetRevisionsOutput) with field(s):
     ///   - [`items(Option<Vec::<AssetRevision>>)`](crate::operation::list_asset_revisions::ListAssetRevisionsOutput::items): <p>The results of the <code>ListAssetRevisions</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_asset_revisions::ListAssetRevisionsOutput::next_token): <p>When the number of revisions is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of revisions, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListAssetRevisions</code> to list the next set of revisions.</p>
-    /// - On failure, responds with [`SdkError<ListAssetRevisionsError>`](crate::operation::list_asset_revisions::ListAssetRevisionsError)
+                            /// - On failure, responds with [`SdkError<ListAssetRevisionsError>`](crate::operation::list_asset_revisions::ListAssetRevisionsError)
     pub fn list_asset_revisions(&self) -> crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder {
-        crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_asset_revisions::builders::ListAssetRevisionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

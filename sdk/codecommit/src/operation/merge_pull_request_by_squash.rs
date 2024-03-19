@@ -9,249 +9,186 @@ impl MergePullRequestBySquash {
         Self
     }
     pub(crate) async fn orchestrate(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput,
-    ) -> ::std::result::Result<
-        crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >| {
-            err.map_service_error(|err| {
-                err.downcast::<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError>()
-                    .expect("correct error type")
-            })
-        };
-        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
-            .await
-            .map_err(map_err)?;
-        let output = context.finalize().map_err(map_err)?;
-        ::std::result::Result::Ok(
-            output
-                .downcast::<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput>()
-                .expect("correct output type"),
-        )
-    }
-
-    pub(crate) async fn orchestrate_with_stop_point(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput,
-        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
-    ) -> ::std::result::Result<
-        ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "codecommit",
-            "MergePullRequestBySquash",
-            input,
-            runtime_plugins,
-            stop_point,
-        )
-        .await
-    }
-
-    pub(crate) fn operation_runtime_plugins(
-        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        client_config: &crate::config::Config,
-        config_override: ::std::option::Option<crate::config::Builder>,
-    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
-        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
-            ::aws_runtime::auth::sigv4::SCHEME_ID,
-        ]));
-        if let ::std::option::Option::Some(config_override) = config_override {
-            for plugin in config_override.runtime_plugins.iter().cloned() {
-                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
-            }
-            runtime_plugins = runtime_plugins.with_operation_plugin(crate::config::ConfigOverrideRuntimePlugin::new(
-                config_override,
-                client_config.config.clone(),
-                &client_config.runtime_components,
-            ));
-        }
-        runtime_plugins
-    }
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput,
+                    ) -> ::std::result::Result<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>| {
+                            err.map_service_error(|err| {
+                                err.downcast::<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError>().expect("correct error type")
+                            })
+                        };
+                        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
+                            .await
+                            .map_err(map_err)?;
+                        let output = context.finalize().map_err(map_err)?;
+                        ::std::result::Result::Ok(output.downcast::<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput>().expect("correct output type"))
+                    }
+    
+                    pub(crate) async fn orchestrate_with_stop_point(
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput,
+                        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
+                    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext, ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
+                        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
+                            "codecommit",
+                            "MergePullRequestBySquash",
+                            input,
+                            runtime_plugins,
+                            stop_point
+                        ).await
+                    }
+    
+                    pub(crate) fn operation_runtime_plugins(
+                        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        client_config: &crate::config::Config,
+                        config_override: ::std::option::Option<crate::config::Builder>,
+                    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
+                        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
+                        runtime_plugins = runtime_plugins
+                                        .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![::aws_runtime::auth::sigv4::SCHEME_ID]));
+                        if let ::std::option::Option::Some(config_override) = config_override {
+                            for plugin in config_override.runtime_plugins.iter().cloned() {
+                                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
+                            }
+                            runtime_plugins = runtime_plugins.with_operation_plugin(
+                                crate::config::ConfigOverrideRuntimePlugin::new(config_override, client_config.config.clone(), &client_config.runtime_components)
+                            );
+                        }
+                        runtime_plugins
+                    }
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for MergePullRequestBySquash {
-    fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
-        let mut cfg = ::aws_smithy_types::config_bag::Layer::new("MergePullRequestBySquash");
+                fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
+                    let mut cfg = ::aws_smithy_types::config_bag::Layer::new("MergePullRequestBySquash");
 
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
-            MergePullRequestBySquashRequestSerializer,
-        ));
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
-            MergePullRequestBySquashResponseDeserializer,
-        ));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(MergePullRequestBySquashRequestSerializer));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(MergePullRequestBySquashResponseDeserializer));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
-        ));
+                    
+                    cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new()));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
-            "MergePullRequestBySquash",
-            "codecommit",
-        ));
-        let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
-        signing_options.double_uri_encode = true;
-        signing_options.content_sha256_header = false;
-        signing_options.normalize_uri_path = true;
-        signing_options.payload_override = None;
+                    cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+                            "MergePullRequestBySquash",
+                            "codecommit",
+                        ));
+let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
+                            signing_options.double_uri_encode = true;
+                            signing_options.content_sha256_header = false;
+                            signing_options.normalize_uri_path = true;
+                            signing_options.payload_override = None;
 
-        cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
-            signing_options,
-            ..::std::default::Default::default()
-        });
+                            cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
+                                signing_options,
+                                ..::std::default::Default::default()
+                            });
 
-        ::std::option::Option::Some(cfg.freeze())
-    }
+                    ::std::option::Option::Some(cfg.freeze())
+                }
 
-    fn runtime_components(
-        &self,
-        _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
-    ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        #[allow(unused_mut)]
-        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("MergePullRequestBySquash")
-            .with_interceptor(
-                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                ),
-            )
-            .with_interceptor(MergePullRequestBySquashEndpointParamsInterceptor)
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
-            >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
-            >::new());
+                fn runtime_components(&self, _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
+                    #[allow(unused_mut)]
+                    let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("MergePullRequestBySquash")
+                            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::RequestAndResponseBody))
+.with_interceptor(MergePullRequestBySquashEndpointParamsInterceptor)
+                            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError>::new())
+.with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError>::new())
+.with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError>::new());
 
-        ::std::borrow::Cow::Owned(rcb)
-    }
-}
-
-#[derive(Debug)]
-struct MergePullRequestBySquashResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for MergePullRequestBySquashResponseDeserializer {
-    fn deserialize_nonstreaming(
-        &self,
-        response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-    ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
-        let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
-        let body = response.body().bytes().expect("body loaded");
-        #[allow(unused_mut)]
-        let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
-        let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_merge_pull_request_by_squash::de_merge_pull_request_by_squash_http_error(status, headers, body)
-        } else {
-            crate::protocol_serde::shape_merge_pull_request_by_squash::de_merge_pull_request_by_squash_http_response(status, headers, body)
-        };
-        crate::protocol_serde::type_erase_result(parse_result)
-    }
-}
-#[derive(Debug)]
-struct MergePullRequestBySquashRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for MergePullRequestBySquashRequestSerializer {
-    #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
-    fn serialize_input(
-        &self,
-        input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
-        _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = input
-            .downcast::<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput>()
-            .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            fn uri_base(
-                _input: &crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                ::std::write!(output, "/").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
+                    ::std::borrow::Cow::Owned(rcb)
+                }
             }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
+
+            
+#[derive(Debug)]
+            struct MergePullRequestBySquashResponseDeserializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for MergePullRequestBySquashResponseDeserializer {
+                
+
+                fn deserialize_nonstreaming(&self, response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
+                    let (success, status) = (response.status().is_success(), response.status().as_u16());
+            let headers = response.headers();
+            let body = response.body().bytes().expect("body loaded");
+            #[allow(unused_mut)]
+            let mut force_error = false;
+            ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
+            let parse_result = if !success && status != 200 || force_error {
+                crate::protocol_serde::shape_merge_pull_request_by_squash::de_merge_pull_request_by_squash_http_error(status, headers, body)
+            } else {
+                crate::protocol_serde::shape_merge_pull_request_by_squash::de_merge_pull_request_by_squash_http_response(status, headers, body)
+            };
+            crate::protocol_serde::type_erase_result(parse_result)
+                }
+            }
+#[derive(Debug)]
+            struct MergePullRequestBySquashRequestSerializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for MergePullRequestBySquashRequestSerializer {
+                #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
+                fn serialize_input(&self, input: ::aws_smithy_runtime_api::client::interceptors::context::Input, _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let input = input.downcast::<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput>().expect("correct type");
+                    let _header_serialization_settings = _cfg.load::<crate::serialization_settings::HeaderSerializationSettings>().cloned().unwrap_or_default();
+                    let mut request_builder = {
+                        fn uri_base(_input: &crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput, output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+    use ::std::fmt::Write as _;
+    ::std::write!(output, "/").expect("formatting should succeed");
+    ::std::result::Result::Ok(())
+}
+#[allow(clippy::unnecessary_wraps)]
+fn update_http_builder(
                 input: &crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput,
-                builder: ::http::request::Builder,
+                builder: ::http::request::Builder
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("POST").uri(uri))
+    let mut uri = ::std::string::String::new();
+    uri_base(input, &mut uri)?;
+    ::std::result::Result::Ok(builder.method("POST").uri(uri))
+}
+let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
+builder = _header_serialization_settings.set_default_header(
+                        builder,
+                        ::http::header::HeaderName::from_static("x-amz-target"),
+                        "CodeCommit_20150413.MergePullRequestBySquash"
+                    );
+builder
+                    };
+                    let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_merge_pull_request_by_squash::ser_merge_pull_request_by_squash_input(&input)?);
+                    if let Some(content_length) = body.content_length() {
+                                let content_length = content_length.to_string();
+                                request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
+                            }
+                    ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+                }
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
-            builder = _header_serialization_settings.set_default_header(
-                builder,
-                ::http::header::HeaderName::from_static("x-amz-target"),
-                "CodeCommit_20150413.MergePullRequestBySquash",
-            );
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_merge_pull_request_by_squash::ser_merge_pull_request_by_squash_input(&input)?,
-        );
-        if let Some(content_length) = body.content_length() {
-            let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
-        }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
-    }
-}
 #[derive(Debug)]
-struct MergePullRequestBySquashEndpointParamsInterceptor;
+            struct MergePullRequestBySquashEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Intercept for MergePullRequestBySquashEndpointParamsInterceptor {
-    fn name(&self) -> &'static str {
-        "MergePullRequestBySquashEndpointParamsInterceptor"
-    }
+            impl ::aws_smithy_runtime_api::client::interceptors::Intercept for MergePullRequestBySquashEndpointParamsInterceptor {
+                fn name(&self) -> &'static str {
+                    "MergePullRequestBySquashEndpointParamsInterceptor"
+                }
 
-    fn read_before_execution(
-        &self,
-        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
-            '_,
-            ::aws_smithy_runtime_api::client::interceptors::context::Input,
-            ::aws_smithy_runtime_api::client::interceptors::context::Output,
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-        >,
-        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        let _input = context
-            .input()
-            .downcast_ref::<MergePullRequestBySquashInput>()
-            .ok_or("failed to downcast to MergePullRequestBySquashInput")?;
+                fn read_before_execution(
+                    &self,
+                    context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<'_, ::aws_smithy_runtime_api::client::interceptors::context::Input, ::aws_smithy_runtime_api::client::interceptors::context::Output, ::aws_smithy_runtime_api::client::interceptors::context::Error>,
+                    cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+                ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let _input = context.input()
+                        .downcast_ref::<MergePullRequestBySquashInput>()
+                        .ok_or("failed to downcast to MergePullRequestBySquashInput")?;
 
-        let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
-            .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
-            .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
-            .build()
-            .map_err(|err| {
-                ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
-            })?;
-        cfg.interceptor_state()
-            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
-        ::std::result::Result::Ok(())
-    }
-}
+                    
+
+                    let params = crate::config::endpoint::Params::builder()
+                        .set_region(cfg.load::<::aws_types::region::Region>().map(|r|r.as_ref().to_owned()))
+.set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
+.set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
+.set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+                        .build()
+                        .map_err(|err| ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err))?;
+                    cfg.interceptor_state().store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
+                    ::std::result::Result::Ok(())
+                }
+            }
 
 /// Error type for the `MergePullRequestBySquashError` operation.
 #[non_exhaustive]
@@ -336,36 +273,28 @@ pub enum MergePullRequestBySquashError {
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::types::error::TipsDivergenceExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+                    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
      \
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-MergePullRequestBySquashError) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+                    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl MergePullRequestBySquashError {
     /// Creates the `MergePullRequestBySquashError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-
-    /// Creates the `MergePullRequestBySquashError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.clone().into(),
-            meta: err,
-        })
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.into(), meta: ::std::default::Default::default() })
+                    }
+    
+                    /// Creates the `MergePullRequestBySquashError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.clone().into(), meta: err })
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CommitMessageLengthExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -565,95 +494,249 @@ impl MergePullRequestBySquashError {
 impl ::std::error::Error for MergePullRequestBySquashError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::CommitMessageLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ConcurrentReferenceUpdateException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionKeyAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionKeyDisabledException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionKeyNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionKeyUnavailableException(_inner) => ::std::option::Option::Some(_inner),
-            Self::FileContentSizeLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::FolderContentSizeLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidCommitIdException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidConflictDetailLevelException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidConflictResolutionException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidConflictResolutionStrategyException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidEmailException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidFileModeException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidPathException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidPullRequestIdException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidReplacementContentException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidReplacementTypeException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidRepositoryNameException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ManualMergeRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::MaximumConflictResolutionEntriesExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::MaximumFileContentToLoadExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::MaximumItemsToCompareExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::MultipleConflictResolutionEntriesException(_inner) => ::std::option::Option::Some(_inner),
-            Self::NameLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PathRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PullRequestAlreadyClosedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PullRequestDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
-            Self::PullRequestIdRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ReplacementContentRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ReplacementTypeRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::RepositoryDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
-            Self::RepositoryNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => ::std::option::Option::Some(_inner),
-            Self::TipOfSourceReferenceIsDifferentException(_inner) => ::std::option::Option::Some(_inner),
-            Self::TipsDivergenceExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+            Self::CommitMessageLengthExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ConcurrentReferenceUpdateException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionIntegrityChecksFailedException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionKeyAccessDeniedException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionKeyDisabledException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionKeyNotFoundException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::EncryptionKeyUnavailableException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::FileContentSizeLimitExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::FolderContentSizeLimitExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidCommitIdException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidConflictDetailLevelException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidConflictResolutionException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidConflictResolutionStrategyException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidEmailException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidFileModeException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidPathException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidPullRequestIdException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidReplacementContentException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidReplacementTypeException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InvalidRepositoryNameException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ManualMergeRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::MaximumConflictResolutionEntriesExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::MaximumFileContentToLoadExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::MaximumItemsToCompareExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::MultipleConflictResolutionEntriesException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::NameLengthExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::PathRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::PullRequestAlreadyClosedException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::PullRequestDoesNotExistException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::PullRequestIdRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ReplacementContentRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ReplacementTypeRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::RepositoryDoesNotExistException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::RepositoryNameRequiredException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::TipOfSourceReferenceIsDifferentException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::TipsDivergenceExceededException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                ::std::option::Option::Some(&*_inner.source)
+            }
         }
     }
 }
 impl ::std::fmt::Display for MergePullRequestBySquashError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::CommitMessageLengthExceededException(_inner) => _inner.fmt(f),
-            Self::ConcurrentReferenceUpdateException(_inner) => _inner.fmt(f),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyAccessDeniedException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyDisabledException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyNotFoundException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyUnavailableException(_inner) => _inner.fmt(f),
-            Self::FileContentSizeLimitExceededException(_inner) => _inner.fmt(f),
-            Self::FolderContentSizeLimitExceededException(_inner) => _inner.fmt(f),
-            Self::InvalidCommitIdException(_inner) => _inner.fmt(f),
-            Self::InvalidConflictDetailLevelException(_inner) => _inner.fmt(f),
-            Self::InvalidConflictResolutionException(_inner) => _inner.fmt(f),
-            Self::InvalidConflictResolutionStrategyException(_inner) => _inner.fmt(f),
-            Self::InvalidEmailException(_inner) => _inner.fmt(f),
-            Self::InvalidFileModeException(_inner) => _inner.fmt(f),
-            Self::InvalidPathException(_inner) => _inner.fmt(f),
-            Self::InvalidPullRequestIdException(_inner) => _inner.fmt(f),
-            Self::InvalidReplacementContentException(_inner) => _inner.fmt(f),
-            Self::InvalidReplacementTypeException(_inner) => _inner.fmt(f),
-            Self::InvalidRepositoryNameException(_inner) => _inner.fmt(f),
-            Self::ManualMergeRequiredException(_inner) => _inner.fmt(f),
-            Self::MaximumConflictResolutionEntriesExceededException(_inner) => _inner.fmt(f),
-            Self::MaximumFileContentToLoadExceededException(_inner) => _inner.fmt(f),
-            Self::MaximumItemsToCompareExceededException(_inner) => _inner.fmt(f),
-            Self::MultipleConflictResolutionEntriesException(_inner) => _inner.fmt(f),
-            Self::NameLengthExceededException(_inner) => _inner.fmt(f),
-            Self::PathRequiredException(_inner) => _inner.fmt(f),
-            Self::PullRequestAlreadyClosedException(_inner) => _inner.fmt(f),
-            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) => _inner.fmt(f),
-            Self::PullRequestDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::PullRequestIdRequiredException(_inner) => _inner.fmt(f),
-            Self::ReplacementContentRequiredException(_inner) => _inner.fmt(f),
-            Self::ReplacementTypeRequiredException(_inner) => _inner.fmt(f),
-            Self::RepositoryDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::RepositoryNameRequiredException(_inner) => _inner.fmt(f),
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => _inner.fmt(f),
-            Self::TipOfSourceReferenceIsDifferentException(_inner) => _inner.fmt(f),
-            Self::TipsDivergenceExceededException(_inner) => _inner.fmt(f),
+            Self::CommitMessageLengthExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ConcurrentReferenceUpdateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionIntegrityChecksFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::FileContentSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::FolderContentSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidCommitIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidConflictDetailLevelException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidConflictResolutionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidConflictResolutionStrategyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidEmailException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidFileModeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidPathException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidPullRequestIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidReplacementContentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidReplacementTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidRepositoryNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ManualMergeRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MaximumConflictResolutionEntriesExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MaximumFileContentToLoadExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MaximumItemsToCompareExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MultipleConflictResolutionEntriesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::NameLengthExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PathRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestAlreadyClosedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ReplacementContentRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ReplacementTypeRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::RepositoryDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::RepositoryNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TipOfSourceReferenceIsDifferentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TipsDivergenceExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
+                                                        write!(f, "unhandled error ({code})")
+                                                    } else {
+                                                        f.write_str("unhandled error")
+                                                    }
             }
         }
     }
@@ -669,66 +752,139 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for MergePullRequestBySquashErr
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MergePullRequestBySquashError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::CommitMessageLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ConcurrentReferenceUpdateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::FileContentSizeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::FolderContentSizeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidCommitIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidConflictDetailLevelException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidConflictResolutionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidConflictResolutionStrategyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidEmailException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidFileModeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidPathException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidPullRequestIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidReplacementContentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidReplacementTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidRepositoryNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ManualMergeRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::MaximumConflictResolutionEntriesExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            Self::CommitMessageLengthExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ConcurrentReferenceUpdateException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionIntegrityChecksFailedException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyAccessDeniedException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyDisabledException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyNotFoundException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyUnavailableException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::FileContentSizeLimitExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::FolderContentSizeLimitExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidCommitIdException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidConflictDetailLevelException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidConflictResolutionException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidConflictResolutionStrategyException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidEmailException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidFileModeException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidPathException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidPullRequestIdException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidReplacementContentException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidReplacementTypeException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidRepositoryNameException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ManualMergeRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MaximumConflictResolutionEntriesExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MaximumFileContentToLoadExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MaximumItemsToCompareExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MultipleConflictResolutionEntriesException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::NameLengthExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PathRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestAlreadyClosedException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestDoesNotExistException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestIdRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ReplacementContentRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ReplacementTypeRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::RepositoryDoesNotExistException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::RepositoryNameRequiredException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TipOfSourceReferenceIsDifferentException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TipsDivergenceExceededException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                &_inner.meta
             }
-            Self::MaximumFileContentToLoadExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::MaximumItemsToCompareExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::MultipleConflictResolutionEntriesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::NameLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PathRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PullRequestAlreadyClosedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PullRequestDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PullRequestIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReplacementContentRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReplacementTypeRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RepositoryDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RepositoryNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::TipOfSourceReferenceIsDifferentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::TipsDivergenceExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => &_inner.meta,
         }
     }
 }
 impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for MergePullRequestBySquashError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source,
-            meta: meta.unwrap_or_default(),
-        })
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source, meta: meta.unwrap_or_default() })
     }
 }
 impl ::aws_types::request_id::RequestId for crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
+                            }
 
 pub use crate::operation::merge_pull_request_by_squash::_merge_pull_request_by_squash_output::MergePullRequestBySquashOutput;
 
@@ -740,3 +896,4 @@ mod _merge_pull_request_by_squash_output;
 
 /// Builders
 pub mod builders;
+

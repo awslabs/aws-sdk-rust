@@ -3,7 +3,7 @@
 /// <p>Information used to delete the detector model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDetectorRequest {
+pub struct DeleteDetectorRequest  {
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
     pub message_id: ::std::string::String,
     /// <p>The name of the detector model that was used to create the detector instance.</p>
@@ -11,19 +11,17 @@ pub struct DeleteDetectorRequest {
     /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector.</p>
     pub key_value: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDetectorRequest {
+impl  DeleteDetectorRequest  {
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
-    pub fn message_id(&self) -> &str {
-        use std::ops::Deref;
-        self.message_id.deref()
+    pub fn message_id(&self) -> & str {
+        use std::ops::Deref; self.message_id.deref()
     }
     /// <p>The name of the detector model that was used to create the detector instance.</p>
-    pub fn detector_model_name(&self) -> &str {
-        use std::ops::Deref;
-        self.detector_model_name.deref()
+    pub fn detector_model_name(&self) -> & str {
+        use std::ops::Deref; self.detector_model_name.deref()
     }
     /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector.</p>
-    pub fn key_value(&self) -> ::std::option::Option<&str> {
+    pub fn key_value(&self) -> ::std::option::Option<& str> {
         self.key_value.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl DeleteDetectorRequestBuilder {
     }
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl DeleteDetectorRequestBuilder {
     }
     /// <p>The name of the detector model that was used to create the detector instance.</p>
     pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_model_name = input;
-        self
+        self.detector_model_name = input; self
     }
     /// <p>The name of the detector model that was used to create the detector instance.</p>
     pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl DeleteDetectorRequestBuilder {
     }
     /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector.</p>
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_value = input;
-        self
+        self.key_value = input; self
     }
     /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector.</p>
     pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl DeleteDetectorRequestBuilder {
     /// - [`message_id`](crate::types::builders::DeleteDetectorRequestBuilder::message_id)
     /// - [`detector_model_name`](crate::types::builders::DeleteDetectorRequestBuilder::detector_model_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteDetectorRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteDetectorRequest {
-            message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message_id",
-                    "message_id was not specified but it is required when building DeleteDetectorRequest",
-                )
-            })?,
-            detector_model_name: self.detector_model_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "detector_model_name",
-                    "detector_model_name was not specified but it is required when building DeleteDetectorRequest",
-                )
-            })?,
-            key_value: self.key_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteDetectorRequest {
+                message_id: self.message_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message_id", "message_id was not specified but it is required when building DeleteDetectorRequest")
+                    )?
+                ,
+                detector_model_name: self.detector_model_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("detector_model_name", "detector_model_name was not specified but it is required when building DeleteDetectorRequest")
+                    )?
+                ,
+                key_value: self.key_value
+                ,
+            }
+        )
     }
 }
+

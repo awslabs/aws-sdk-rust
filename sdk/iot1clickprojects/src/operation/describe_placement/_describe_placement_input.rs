@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePlacementInput {
+pub struct DescribePlacementInput  {
     /// <p>The name of the placement within a project.</p>
     pub placement_name: ::std::option::Option<::std::string::String>,
     /// <p>The project containing the placement to be described.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribePlacementInput {
+impl  DescribePlacementInput  {
     /// <p>The name of the placement within a project.</p>
-    pub fn placement_name(&self) -> ::std::option::Option<&str> {
+    pub fn placement_name(&self) -> ::std::option::Option<& str> {
         self.placement_name.as_deref()
     }
     /// <p>The project containing the placement to be described.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribePlacementInputBuilder {
     }
     /// <p>The name of the placement within a project.</p>
     pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.placement_name = input;
-        self
+        self.placement_name = input; self
     }
     /// <p>The name of the placement within a project.</p>
     pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribePlacementInputBuilder {
     }
     /// <p>The project containing the placement to be described.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The project containing the placement to be described.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_name
     }
     /// Consumes the builder and constructs a [`DescribePlacementInput`](crate::operation::describe_placement::DescribePlacementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_placement::DescribePlacementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_placement::DescribePlacementInput {
-            placement_name: self.placement_name,
-            project_name: self.project_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_placement::DescribePlacementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_placement::DescribePlacementInput {
+                placement_name: self.placement_name
+                ,
+                project_name: self.project_name
+                ,
+            }
+        )
     }
 }
+

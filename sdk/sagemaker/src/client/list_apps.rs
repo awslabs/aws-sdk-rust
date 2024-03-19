@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApps`](crate::operation::list_apps::builders::ListAppsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_apps::builders::ListAppsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for the results. The default is Ascending.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`domain_id_equals(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::domain_id_equals) / [`set_domain_id_equals(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_domain_id_equals):<br>required: **false**<br><p>A parameter to search for the domain ID.</p><br>
     ///   - [`user_profile_name_equals(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::user_profile_name_equals) / [`set_user_profile_name_equals(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_user_profile_name_equals):<br>required: **false**<br><p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p><br>
     ///   - [`space_name_equals(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::space_name_equals) / [`set_space_name_equals(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_space_name_equals):<br>required: **false**<br><p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p><br>
-    /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
+                            /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
     ///   - [`apps(Option<Vec::<AppDetails>>)`](crate::operation::list_apps::ListAppsOutput::apps): <p>The list of apps.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_apps::ListAppsOutput::next_token): <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListAppsError>`](crate::operation::list_apps::ListAppsError)
+                            /// - On failure, responds with [`SdkError<ListAppsError>`](crate::operation::list_apps::ListAppsError)
     pub fn list_apps(&self) -> crate::operation::list_apps::builders::ListAppsFluentBuilder {
-        crate::operation::list_apps::builders::ListAppsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_apps::builders::ListAppsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

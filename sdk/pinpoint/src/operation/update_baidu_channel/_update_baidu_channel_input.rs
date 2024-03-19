@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBaiduChannelInput {
+pub struct UpdateBaiduChannelInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     pub baidu_channel_request: ::std::option::Option<crate::types::BaiduChannelRequest>,
 }
-impl UpdateBaiduChannelInput {
+impl  UpdateBaiduChannelInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    pub fn baidu_channel_request(&self) -> ::std::option::Option<&crate::types::BaiduChannelRequest> {
+    pub fn baidu_channel_request(&self) -> ::std::option::Option<& crate::types::BaiduChannelRequest> {
         self.baidu_channel_request.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateBaiduChannelInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl UpdateBaiduChannelInputBuilder {
     }
     /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     pub fn set_baidu_channel_request(mut self, input: ::std::option::Option<crate::types::BaiduChannelRequest>) -> Self {
-        self.baidu_channel_request = input;
-        self
+        self.baidu_channel_request = input; self
     }
     /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     pub fn get_baidu_channel_request(&self) -> &::std::option::Option<crate::types::BaiduChannelRequest> {
         &self.baidu_channel_request
     }
     /// Consumes the builder and constructs a [`UpdateBaiduChannelInput`](crate::operation::update_baidu_channel::UpdateBaiduChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_baidu_channel::UpdateBaiduChannelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_baidu_channel::UpdateBaiduChannelInput {
-            application_id: self.application_id,
-            baidu_channel_request: self.baidu_channel_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_baidu_channel::UpdateBaiduChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_baidu_channel::UpdateBaiduChannelInput {
+                application_id: self.application_id
+                ,
+                baidu_channel_request: self.baidu_channel_request
+                ,
+            }
+        )
     }
 }
+

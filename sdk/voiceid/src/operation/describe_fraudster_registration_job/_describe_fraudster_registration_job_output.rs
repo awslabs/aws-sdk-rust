@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFraudsterRegistrationJobOutput {
+pub struct DescribeFraudsterRegistrationJobOutput  {
     /// <p>Contains details about the specified fraudster registration job.</p>
     pub job: ::std::option::Option<crate::types::FraudsterRegistrationJob>,
     _request_id: Option<String>,
 }
-impl DescribeFraudsterRegistrationJobOutput {
+impl  DescribeFraudsterRegistrationJobOutput  {
     /// <p>Contains details about the specified fraudster registration job.</p>
-    pub fn job(&self) -> ::std::option::Option<&crate::types::FraudsterRegistrationJob> {
+    pub fn job(&self) -> ::std::option::Option<& crate::types::FraudsterRegistrationJob> {
         self.job.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFraudsterRegistrationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFraudsterRegistrationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFraudsterRegistrationJobOutput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput).
     pub fn builder() -> crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeFraudsterRegistrationJobOutputBuilder {
     }
     /// <p>Contains details about the specified fraudster registration job.</p>
     pub fn set_job(mut self, input: ::std::option::Option<crate::types::FraudsterRegistrationJob>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
     }
     /// <p>Contains details about the specified fraudster registration job.</p>
     pub fn get_job(&self) -> &::std::option::Option<crate::types::FraudsterRegistrationJob> {
         &self.job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFraudsterRegistrationJobOutput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput).
     pub fn build(self) -> crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput {
         crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobOutput {
-            job: self.job,
+            job: self.job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

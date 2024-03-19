@@ -3,19 +3,19 @@
 /// <p>Contains information on the total of usage based on the topmost 50 account IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageTopAccountResult {
+pub struct UsageTopAccountResult  {
     /// <p>The unique account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
     pub total: ::std::option::Option<crate::types::Total>,
 }
-impl UsageTopAccountResult {
+impl  UsageTopAccountResult  {
     /// <p>The unique account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
-    pub fn total(&self) -> ::std::option::Option<&crate::types::Total> {
+    pub fn total(&self) -> ::std::option::Option<& crate::types::Total> {
         self.total.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UsageTopAccountResultBuilder {
     }
     /// <p>The unique account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The unique account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UsageTopAccountResultBuilder {
     }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Total>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
     pub fn get_total(&self) -> &::std::option::Option<crate::types::Total> {
@@ -65,8 +63,11 @@ impl UsageTopAccountResultBuilder {
     /// Consumes the builder and constructs a [`UsageTopAccountResult`](crate::types::UsageTopAccountResult).
     pub fn build(self) -> crate::types::UsageTopAccountResult {
         crate::types::UsageTopAccountResult {
-            account_id: self.account_id,
-            total: self.total,
+            account_id: self.account_id
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

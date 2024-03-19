@@ -3,7 +3,7 @@
 /// <p>Contains a summary of a component. This is a read-only data type that is returned by <code>ListComponents</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentSummary {
+pub struct ComponentSummary  {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
     pub app_id: ::std::string::String,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
@@ -15,31 +15,26 @@ pub struct ComponentSummary {
     /// <p>The component type.</p>
     pub component_type: ::std::string::String,
 }
-impl ComponentSummary {
+impl  ComponentSummary  {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub fn app_id(&self) -> &str {
-        use std::ops::Deref;
-        self.app_id.deref()
+    pub fn app_id(&self) -> & str {
+        use std::ops::Deref; self.app_id.deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> & str {
+        use std::ops::Deref; self.environment_name.deref()
     }
     /// <p>The unique ID of the component.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The component type.</p>
-    pub fn component_type(&self) -> &str {
-        use std::ops::Deref;
-        self.component_type.deref()
+    pub fn component_type(&self) -> & str {
+        use std::ops::Deref; self.component_type.deref()
     }
 }
 impl ComponentSummary {
@@ -68,8 +63,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The unique ID of the Amplify app associated with the component.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID of the Amplify app associated with the component.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +77,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +91,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The unique ID of the component.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID of the component.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +105,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +119,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The component type.</p>
     pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type = input;
-        self
+        self.component_type = input; self
     }
     /// <p>The component type.</p>
     pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,37 +133,35 @@ impl ComponentSummaryBuilder {
     /// - [`name`](crate::types::builders::ComponentSummaryBuilder::name)
     /// - [`component_type`](crate::types::builders::ComponentSummaryBuilder::component_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ComponentSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ComponentSummary {
-            app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_id",
-                    "app_id was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_type",
-                    "component_type was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ComponentSummary {
+                app_id: self.app_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_id", "app_id was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                environment_name: self.environment_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_name", "environment_name was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                component_type: self.component_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_type", "component_type was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

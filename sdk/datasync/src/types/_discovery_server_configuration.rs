@@ -3,17 +3,16 @@
 /// <p>The network settings that DataSync Discovery uses to connect with your on-premises storage system's management interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscoveryServerConfiguration {
+pub struct DiscoveryServerConfiguration  {
     /// <p>The domain name or IP address of your storage system's management interface.</p>
     pub server_hostname: ::std::string::String,
     /// <p>The network port for accessing the storage system's management interface.</p>
     pub server_port: ::std::option::Option<i32>,
 }
-impl DiscoveryServerConfiguration {
+impl  DiscoveryServerConfiguration  {
     /// <p>The domain name or IP address of your storage system's management interface.</p>
-    pub fn server_hostname(&self) -> &str {
-        use std::ops::Deref;
-        self.server_hostname.deref()
+    pub fn server_hostname(&self) -> & str {
+        use std::ops::Deref; self.server_hostname.deref()
     }
     /// <p>The network port for accessing the storage system's management interface.</p>
     pub fn server_port(&self) -> ::std::option::Option<i32> {
@@ -43,8 +42,7 @@ impl DiscoveryServerConfigurationBuilder {
     }
     /// <p>The domain name or IP address of your storage system's management interface.</p>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_hostname = input;
-        self
+        self.server_hostname = input; self
     }
     /// <p>The domain name or IP address of your storage system's management interface.</p>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl DiscoveryServerConfigurationBuilder {
     }
     /// <p>The network port for accessing the storage system's management interface.</p>
     pub fn set_server_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.server_port = input;
-        self
+        self.server_port = input; self
     }
     /// <p>The network port for accessing the storage system's management interface.</p>
     pub fn get_server_port(&self) -> &::std::option::Option<i32> {
@@ -68,14 +65,17 @@ impl DiscoveryServerConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`server_hostname`](crate::types::builders::DiscoveryServerConfigurationBuilder::server_hostname)
     pub fn build(self) -> ::std::result::Result<crate::types::DiscoveryServerConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DiscoveryServerConfiguration {
-            server_hostname: self.server_hostname.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "server_hostname",
-                    "server_hostname was not specified but it is required when building DiscoveryServerConfiguration",
-                )
-            })?,
-            server_port: self.server_port,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DiscoveryServerConfiguration {
+                server_hostname: self.server_hostname
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("server_hostname", "server_hostname was not specified but it is required when building DiscoveryServerConfiguration")
+                    )?
+                ,
+                server_port: self.server_port
+                ,
+            }
+        )
     }
 }
+

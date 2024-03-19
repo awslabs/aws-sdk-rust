@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBucketReplicationOutput {
+pub struct DeleteBucketReplicationOutput  {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
 impl crate::s3_request_id::RequestIdExt for DeleteBucketReplicationOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                    fn extended_request_id(&self) -> Option<&str> {
+                                        self._extended_request_id.as_deref()
+                                    }
+                                }
 impl ::aws_types::request_id::RequestId for DeleteBucketReplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteBucketReplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketReplicationOutput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput).
     pub fn builder() -> crate::operation::delete_bucket_replication::builders::DeleteBucketReplicationOutputBuilder {
@@ -32,23 +32,23 @@ pub struct DeleteBucketReplicationOutputBuilder {
 }
 impl DeleteBucketReplicationOutputBuilder {
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteBucketReplicationOutput`](crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput).
     pub fn build(self) -> crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput {
         crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput {
@@ -57,3 +57,4 @@ impl DeleteBucketReplicationOutputBuilder {
         }
     }
 }
+

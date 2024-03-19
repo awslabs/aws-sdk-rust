@@ -3,15 +3,14 @@
 /// <p>Represents a global secondary index to be deleted from an existing table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGlobalSecondaryIndexAction {
+pub struct DeleteGlobalSecondaryIndexAction  {
     /// <p>The name of the global secondary index to be deleted.</p>
     pub index_name: ::std::string::String,
 }
-impl DeleteGlobalSecondaryIndexAction {
+impl  DeleteGlobalSecondaryIndexAction  {
     /// <p>The name of the global secondary index to be deleted.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> & str {
+        use std::ops::Deref; self.index_name.deref()
     }
 }
 impl DeleteGlobalSecondaryIndexAction {
@@ -36,8 +35,7 @@ impl DeleteGlobalSecondaryIndexActionBuilder {
     }
     /// <p>The name of the global secondary index to be deleted.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the global secondary index to be deleted.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DeleteGlobalSecondaryIndexActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::types::builders::DeleteGlobalSecondaryIndexActionBuilder::index_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteGlobalSecondaryIndexAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteGlobalSecondaryIndexAction {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building DeleteGlobalSecondaryIndexAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteGlobalSecondaryIndexAction {
+                index_name: self.index_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_name", "index_name was not specified but it is required when building DeleteGlobalSecondaryIndexAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

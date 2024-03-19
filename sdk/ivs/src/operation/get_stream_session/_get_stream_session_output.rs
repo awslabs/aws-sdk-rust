@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStreamSessionOutput {
+pub struct GetStreamSessionOutput  {
     /// <p>List of stream details.</p>
     pub stream_session: ::std::option::Option<crate::types::StreamSession>,
     _request_id: Option<String>,
 }
-impl GetStreamSessionOutput {
+impl  GetStreamSessionOutput  {
     /// <p>List of stream details.</p>
-    pub fn stream_session(&self) -> ::std::option::Option<&crate::types::StreamSession> {
+    pub fn stream_session(&self) -> ::std::option::Option<& crate::types::StreamSession> {
         self.stream_session.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetStreamSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetStreamSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamSessionOutput`](crate::operation::get_stream_session::GetStreamSessionOutput).
     pub fn builder() -> crate::operation::get_stream_session::builders::GetStreamSessionOutputBuilder {
@@ -40,27 +40,28 @@ impl GetStreamSessionOutputBuilder {
     }
     /// <p>List of stream details.</p>
     pub fn set_stream_session(mut self, input: ::std::option::Option<crate::types::StreamSession>) -> Self {
-        self.stream_session = input;
-        self
+        self.stream_session = input; self
     }
     /// <p>List of stream details.</p>
     pub fn get_stream_session(&self) -> &::std::option::Option<crate::types::StreamSession> {
         &self.stream_session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetStreamSessionOutput`](crate::operation::get_stream_session::GetStreamSessionOutput).
     pub fn build(self) -> crate::operation::get_stream_session::GetStreamSessionOutput {
         crate::operation::get_stream_session::GetStreamSessionOutput {
-            stream_session: self.stream_session,
+            stream_session: self.stream_session
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

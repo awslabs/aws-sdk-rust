@@ -3,20 +3,19 @@
 /// <p>The data path options for the pivot table field options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableDataPathOption {
+pub struct PivotTableDataPathOption  {
     /// <p>The list of data path values for the data path options.</p>
-    pub data_path_list: ::std::vec::Vec<crate::types::DataPathValue>,
+    pub data_path_list: ::std::vec::Vec::<crate::types::DataPathValue>,
     /// <p>The width of the data path option.</p>
     pub width: ::std::option::Option<::std::string::String>,
 }
-impl PivotTableDataPathOption {
+impl  PivotTableDataPathOption  {
     /// <p>The list of data path values for the data path options.</p>
-    pub fn data_path_list(&self) -> &[crate::types::DataPathValue] {
-        use std::ops::Deref;
-        self.data_path_list.deref()
+    pub fn data_path_list(&self) -> & [crate::types::DataPathValue] {
+        use std::ops::Deref; self.data_path_list.deref()
     }
     /// <p>The width of the data path option.</p>
-    pub fn width(&self) -> ::std::option::Option<&str> {
+    pub fn width(&self) -> ::std::option::Option<& str> {
         self.width.as_deref()
     }
 }
@@ -31,7 +30,7 @@ impl PivotTableDataPathOption {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotTableDataPathOptionBuilder {
-    pub(crate) data_path_list: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
+    pub(crate) data_path_list: ::std::option::Option<::std::vec::Vec::<crate::types::DataPathValue>>,
     pub(crate) width: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableDataPathOptionBuilder {
@@ -42,17 +41,16 @@ impl PivotTableDataPathOptionBuilder {
     /// <p>The list of data path values for the data path options.</p>
     pub fn data_path_list(mut self, input: crate::types::DataPathValue) -> Self {
         let mut v = self.data_path_list.unwrap_or_default();
-        v.push(input);
-        self.data_path_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_path_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of data path values for the data path options.</p>
-    pub fn set_data_path_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>) -> Self {
-        self.data_path_list = input;
-        self
+    pub fn set_data_path_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataPathValue>>) -> Self {
+        self.data_path_list = input; self
     }
     /// <p>The list of data path values for the data path options.</p>
-    pub fn get_data_path_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>> {
+    pub fn get_data_path_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataPathValue>> {
         &self.data_path_list
     }
     /// <p>The width of the data path option.</p>
@@ -62,8 +60,7 @@ impl PivotTableDataPathOptionBuilder {
     }
     /// <p>The width of the data path option.</p>
     pub fn set_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
     }
     /// <p>The width of the data path option.</p>
     pub fn get_width(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,14 +70,17 @@ impl PivotTableDataPathOptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_path_list`](crate::types::builders::PivotTableDataPathOptionBuilder::data_path_list)
     pub fn build(self) -> ::std::result::Result<crate::types::PivotTableDataPathOption, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PivotTableDataPathOption {
-            data_path_list: self.data_path_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_path_list",
-                    "data_path_list was not specified but it is required when building PivotTableDataPathOption",
-                )
-            })?,
-            width: self.width,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PivotTableDataPathOption {
+                data_path_list: self.data_path_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_path_list", "data_path_list was not specified but it is required when building PivotTableDataPathOption")
+                    )?
+                ,
+                width: self.width
+                ,
+            }
+        )
     }
 }
+

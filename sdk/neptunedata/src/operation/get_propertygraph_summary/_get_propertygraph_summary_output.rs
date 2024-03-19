@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPropertygraphSummaryOutput {
+pub struct GetPropertygraphSummaryOutput  {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
     pub status_code: ::std::option::Option<i32>,
     /// <p>Payload containing the property graph summary response.</p>
     pub payload: ::std::option::Option<crate::types::PropertygraphSummaryValueMap>,
     _request_id: Option<String>,
 }
-impl GetPropertygraphSummaryOutput {
+impl  GetPropertygraphSummaryOutput  {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
     pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
     }
     /// <p>Payload containing the property graph summary response.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::PropertygraphSummaryValueMap> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::PropertygraphSummaryValueMap> {
         self.payload.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPropertygraphSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPropertygraphSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetPropertygraphSummaryOutput`](crate::operation::get_propertygraph_summary::GetPropertygraphSummaryOutput).
     pub fn builder() -> crate::operation::get_propertygraph_summary::builders::GetPropertygraphSummaryOutputBuilder {
@@ -47,8 +47,7 @@ impl GetPropertygraphSummaryOutputBuilder {
     }
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
@@ -61,28 +60,30 @@ impl GetPropertygraphSummaryOutputBuilder {
     }
     /// <p>Payload containing the property graph summary response.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::PropertygraphSummaryValueMap>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>Payload containing the property graph summary response.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::PropertygraphSummaryValueMap> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPropertygraphSummaryOutput`](crate::operation::get_propertygraph_summary::GetPropertygraphSummaryOutput).
     pub fn build(self) -> crate::operation::get_propertygraph_summary::GetPropertygraphSummaryOutput {
         crate::operation::get_propertygraph_summary::GetPropertygraphSummaryOutput {
-            status_code: self.status_code,
-            payload: self.payload,
+            status_code: self.status_code
+            ,
+            payload: self.payload
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

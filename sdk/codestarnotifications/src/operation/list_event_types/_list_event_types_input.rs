@@ -2,23 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEventTypesInput {
+pub struct ListEventTypesInput  {
     /// <p>The filters to use to return information by service or resource type.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ListEventTypesFilter>>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListEventTypesInput {
+impl  ListEventTypesInput  {
     /// <p>The filters to use to return information by service or resource type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ListEventTypesFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ListEventTypesFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
@@ -37,7 +38,7 @@ impl ListEventTypesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventTypesInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ListEventTypesFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -49,17 +50,16 @@ impl ListEventTypesInputBuilder {
     /// <p>The filters to use to return information by service or resource type.</p>
     pub fn filters(mut self, input: crate::types::ListEventTypesFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters to use to return information by service or resource type.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListEventTypesFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters to use to return information by service or resource type.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListEventTypesFilter>> {
         &self.filters
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
@@ -69,8 +69,7 @@ impl ListEventTypesInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,21 +82,24 @@ impl ListEventTypesInputBuilder {
     }
     /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEventTypesInput`](crate::operation::list_event_types::ListEventTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_event_types::ListEventTypesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_event_types::ListEventTypesInput {
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_event_types::ListEventTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_event_types::ListEventTypesInput {
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

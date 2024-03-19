@@ -3,18 +3,19 @@
 /// <p>The input to the SetVisibleToAllUsers action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetVisibleToAllUsersInput {
+pub struct SetVisibleToAllUsersInput  {
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub visible_to_all_users: ::std::option::Option<bool>,
 }
-impl SetVisibleToAllUsersInput {
+impl  SetVisibleToAllUsersInput  {
     /// <p>The unique identifier of the job flow (cluster).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_ids.is_none()`.
-    pub fn job_flow_ids(&self) -> &[::std::string::String] {
-        self.job_flow_ids.as_deref().unwrap_or_default()
+    pub fn job_flow_ids(&self) -> & [::std::string::String] {
+        self.job_flow_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn visible_to_all_users(&self) -> ::std::option::Option<bool> {
@@ -32,7 +33,7 @@ impl SetVisibleToAllUsersInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetVisibleToAllUsersInputBuilder {
-    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) visible_to_all_users: ::std::option::Option<bool>,
 }
 impl SetVisibleToAllUsersInputBuilder {
@@ -43,17 +44,16 @@ impl SetVisibleToAllUsersInputBuilder {
     /// <p>The unique identifier of the job flow (cluster).</p>
     pub fn job_flow_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_flow_ids.unwrap_or_default();
-        v.push(input.into());
-        self.job_flow_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.job_flow_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.job_flow_ids = input;
-        self
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.job_flow_ids = input; self
     }
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.job_flow_ids
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
@@ -64,21 +64,22 @@ impl SetVisibleToAllUsersInputBuilder {
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn set_visible_to_all_users(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.visible_to_all_users = input;
-        self
+        self.visible_to_all_users = input; self
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn get_visible_to_all_users(&self) -> &::std::option::Option<bool> {
         &self.visible_to_all_users
     }
     /// Consumes the builder and constructs a [`SetVisibleToAllUsersInput`](crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput {
-            job_flow_ids: self.job_flow_ids,
-            visible_to_all_users: self.visible_to_all_users,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput {
+                job_flow_ids: self.job_flow_ids
+                ,
+                visible_to_all_users: self.visible_to_all_users
+                ,
+            }
+        )
     }
 }
+

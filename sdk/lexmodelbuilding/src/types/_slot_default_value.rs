@@ -3,7 +3,7 @@
 /// <p>A default value for a slot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotDefaultValue {
+pub struct SlotDefaultValue  {
     /// <p>The default value for the slot. You can specify one of the following:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct SlotDefaultValue {
     /// </ul>
     pub default_value: ::std::string::String,
 }
-impl SlotDefaultValue {
+impl  SlotDefaultValue  {
     /// <p>The default value for the slot. You can specify one of the following:</p>
     /// <ul>
     /// <li>
@@ -25,9 +25,8 @@ impl SlotDefaultValue {
     /// <li>
     /// <p><code>'value'</code> - The discrete value "value."</p></li>
     /// </ul>
-    pub fn default_value(&self) -> &str {
-        use std::ops::Deref;
-        self.default_value.deref()
+    pub fn default_value(&self) -> & str {
+        use std::ops::Deref; self.default_value.deref()
     }
 }
 impl SlotDefaultValue {
@@ -68,8 +67,7 @@ impl SlotDefaultValueBuilder {
     /// <p><code>'value'</code> - The discrete value "value."</p></li>
     /// </ul>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value for the slot. You can specify one of the following:</p>
     /// <ul>
@@ -87,13 +85,15 @@ impl SlotDefaultValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`default_value`](crate::types::builders::SlotDefaultValueBuilder::default_value)
     pub fn build(self) -> ::std::result::Result<crate::types::SlotDefaultValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlotDefaultValue {
-            default_value: self.default_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "default_value",
-                    "default_value was not specified but it is required when building SlotDefaultValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlotDefaultValue {
+                default_value: self.default_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("default_value", "default_value was not specified but it is required when building SlotDefaultValue")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMinuteUsageOutput {
+pub struct GetMinuteUsageOutput  {
     /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
     pub is_reserved_minutes_customer: ::std::option::Option<bool>,
     /// <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
@@ -16,7 +16,7 @@ pub struct GetMinuteUsageOutput {
     pub estimated_minutes_remaining: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl GetMinuteUsageOutput {
+impl  GetMinuteUsageOutput  {
     /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
     pub fn is_reserved_minutes_customer(&self) -> ::std::option::Option<bool> {
         self.is_reserved_minutes_customer
@@ -39,10 +39,10 @@ impl GetMinuteUsageOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetMinuteUsageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMinuteUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetMinuteUsageOutput`](crate::operation::get_minute_usage::GetMinuteUsageOutput).
     pub fn builder() -> crate::operation::get_minute_usage::builders::GetMinuteUsageOutputBuilder {
@@ -69,8 +69,7 @@ impl GetMinuteUsageOutputBuilder {
     }
     /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
     pub fn set_is_reserved_minutes_customer(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_reserved_minutes_customer = input;
-        self
+        self.is_reserved_minutes_customer = input; self
     }
     /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
     pub fn get_is_reserved_minutes_customer(&self) -> &::std::option::Option<bool> {
@@ -83,8 +82,7 @@ impl GetMinuteUsageOutputBuilder {
     }
     /// <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
     pub fn set_total_reserved_minute_allocation(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_reserved_minute_allocation = input;
-        self
+        self.total_reserved_minute_allocation = input; self
     }
     /// <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
     pub fn get_total_reserved_minute_allocation(&self) -> &::std::option::Option<i32> {
@@ -97,8 +95,7 @@ impl GetMinuteUsageOutputBuilder {
     }
     /// <p>Upcoming minutes scheduled for an account, specific to the month being requested.</p>
     pub fn set_upcoming_minutes_scheduled(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.upcoming_minutes_scheduled = input;
-        self
+        self.upcoming_minutes_scheduled = input; self
     }
     /// <p>Upcoming minutes scheduled for an account, specific to the month being requested.</p>
     pub fn get_upcoming_minutes_scheduled(&self) -> &::std::option::Option<i32> {
@@ -111,8 +108,7 @@ impl GetMinuteUsageOutputBuilder {
     }
     /// <p>Total scheduled minutes for an account, specific to the month being requested.</p>
     pub fn set_total_scheduled_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_scheduled_minutes = input;
-        self
+        self.total_scheduled_minutes = input; self
     }
     /// <p>Total scheduled minutes for an account, specific to the month being requested.</p>
     pub fn get_total_scheduled_minutes(&self) -> &::std::option::Option<i32> {
@@ -125,31 +121,36 @@ impl GetMinuteUsageOutputBuilder {
     }
     /// <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
     pub fn set_estimated_minutes_remaining(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.estimated_minutes_remaining = input;
-        self
+        self.estimated_minutes_remaining = input; self
     }
     /// <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
     pub fn get_estimated_minutes_remaining(&self) -> &::std::option::Option<i32> {
         &self.estimated_minutes_remaining
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMinuteUsageOutput`](crate::operation::get_minute_usage::GetMinuteUsageOutput).
     pub fn build(self) -> crate::operation::get_minute_usage::GetMinuteUsageOutput {
         crate::operation::get_minute_usage::GetMinuteUsageOutput {
-            is_reserved_minutes_customer: self.is_reserved_minutes_customer,
-            total_reserved_minute_allocation: self.total_reserved_minute_allocation,
-            upcoming_minutes_scheduled: self.upcoming_minutes_scheduled,
-            total_scheduled_minutes: self.total_scheduled_minutes,
-            estimated_minutes_remaining: self.estimated_minutes_remaining,
+            is_reserved_minutes_customer: self.is_reserved_minutes_customer
+            ,
+            total_reserved_minute_allocation: self.total_reserved_minute_allocation
+            ,
+            upcoming_minutes_scheduled: self.upcoming_minutes_scheduled
+            ,
+            total_scheduled_minutes: self.total_scheduled_minutes
+            ,
+            estimated_minutes_remaining: self.estimated_minutes_remaining
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

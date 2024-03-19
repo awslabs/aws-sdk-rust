@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLiveSourceInput {
+pub struct DeleteLiveSourceInput  {
     /// <p>The name of the live source.</p>
     pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source location associated with this Live Source.</p>
     pub source_location_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLiveSourceInput {
+impl  DeleteLiveSourceInput  {
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn live_source_name(&self) -> ::std::option::Option<& str> {
         self.live_source_name.as_deref()
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteLiveSourceInputBuilder {
     }
     /// <p>The name of the live source.</p>
     pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.live_source_name = input;
-        self
+        self.live_source_name = input; self
     }
     /// <p>The name of the live source.</p>
     pub fn get_live_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteLiveSourceInputBuilder {
     }
     /// <p>The name of the source location associated with this Live Source.</p>
     pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location_name = input;
-        self
+        self.source_location_name = input; self
     }
     /// <p>The name of the source location associated with this Live Source.</p>
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`DeleteLiveSourceInput`](crate::operation::delete_live_source::DeleteLiveSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_live_source::DeleteLiveSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_live_source::DeleteLiveSourceInput {
-            live_source_name: self.live_source_name,
-            source_location_name: self.source_location_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_live_source::DeleteLiveSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_live_source::DeleteLiveSourceInput {
+                live_source_name: self.live_source_name
+                ,
+                source_location_name: self.source_location_name
+                ,
+            }
+        )
     }
 }
+

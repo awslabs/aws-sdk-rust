@@ -4,16 +4,17 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectedSheetsFilterScopeConfiguration {
+pub struct SelectedSheetsFilterScopeConfiguration  {
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
-    pub sheet_visual_scoping_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
+    pub sheet_visual_scoping_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SheetVisualScopingConfiguration>>,
 }
-impl SelectedSheetsFilterScopeConfiguration {
+impl  SelectedSheetsFilterScopeConfiguration  {
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheet_visual_scoping_configurations.is_none()`.
-    pub fn sheet_visual_scoping_configurations(&self) -> &[crate::types::SheetVisualScopingConfiguration] {
-        self.sheet_visual_scoping_configurations.as_deref().unwrap_or_default()
+    pub fn sheet_visual_scoping_configurations(&self) -> & [crate::types::SheetVisualScopingConfiguration] {
+        self.sheet_visual_scoping_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SelectedSheetsFilterScopeConfiguration {
@@ -27,7 +28,7 @@ impl SelectedSheetsFilterScopeConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectedSheetsFilterScopeConfigurationBuilder {
-    pub(crate) sheet_visual_scoping_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
+    pub(crate) sheet_visual_scoping_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SheetVisualScopingConfiguration>>,
 }
 impl SelectedSheetsFilterScopeConfigurationBuilder {
     /// Appends an item to `sheet_visual_scoping_configurations`.
@@ -37,26 +38,24 @@ impl SelectedSheetsFilterScopeConfigurationBuilder {
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
     pub fn sheet_visual_scoping_configurations(mut self, input: crate::types::SheetVisualScopingConfiguration) -> Self {
         let mut v = self.sheet_visual_scoping_configurations.unwrap_or_default();
-        v.push(input);
-        self.sheet_visual_scoping_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sheet_visual_scoping_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
-    pub fn set_sheet_visual_scoping_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
-    ) -> Self {
-        self.sheet_visual_scoping_configurations = input;
-        self
+    pub fn set_sheet_visual_scoping_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SheetVisualScopingConfiguration>>) -> Self {
+        self.sheet_visual_scoping_configurations = input; self
     }
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
-    pub fn get_sheet_visual_scoping_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>> {
+    pub fn get_sheet_visual_scoping_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SheetVisualScopingConfiguration>> {
         &self.sheet_visual_scoping_configurations
     }
     /// Consumes the builder and constructs a [`SelectedSheetsFilterScopeConfiguration`](crate::types::SelectedSheetsFilterScopeConfiguration).
     pub fn build(self) -> crate::types::SelectedSheetsFilterScopeConfiguration {
         crate::types::SelectedSheetsFilterScopeConfiguration {
-            sheet_visual_scoping_configurations: self.sheet_visual_scoping_configurations,
+            sheet_visual_scoping_configurations: self.sheet_visual_scoping_configurations
+            ,
         }
     }
 }
+

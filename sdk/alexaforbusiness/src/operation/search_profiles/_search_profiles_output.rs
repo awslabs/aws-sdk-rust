@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchProfilesOutput {
+pub struct SearchProfilesOutput  {
     /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
-    pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::ProfileData>>,
+    pub profiles: ::std::option::Option<::std::vec::Vec::<crate::types::ProfileData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of room profiles returned.</p>
     pub total_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl SearchProfilesOutput {
+impl  SearchProfilesOutput  {
     /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiles.is_none()`.
-    pub fn profiles(&self) -> &[crate::types::ProfileData] {
-        self.profiles.as_deref().unwrap_or_default()
+    pub fn profiles(&self) -> & [crate::types::ProfileData] {
+        self.profiles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of room profiles returned.</p>
@@ -28,10 +29,10 @@ impl SearchProfilesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SearchProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchProfilesOutput {
     /// Creates a new builder-style object to manufacture [`SearchProfilesOutput`](crate::operation::search_profiles::SearchProfilesOutput).
     pub fn builder() -> crate::operation::search_profiles::builders::SearchProfilesOutputBuilder {
@@ -43,7 +44,7 @@ impl SearchProfilesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchProfilesOutputBuilder {
-    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::ProfileData>>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec::<crate::types::ProfileData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) total_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl SearchProfilesOutputBuilder {
     /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
     pub fn profiles(mut self, input: crate::types::ProfileData) -> Self {
         let mut v = self.profiles.unwrap_or_default();
-        v.push(input);
-        self.profiles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.profiles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileData>>) -> Self {
-        self.profiles = input;
-        self
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProfileData>>) -> Self {
+        self.profiles = input; self
     }
     /// <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
-    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileData>> {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProfileData>> {
         &self.profiles
     }
     /// <p>The token returned to indicate that there is more data available.</p>
@@ -76,8 +76,7 @@ impl SearchProfilesOutputBuilder {
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl SearchProfilesOutputBuilder {
     }
     /// <p>The total number of room profiles returned.</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     /// <p>The total number of room profiles returned.</p>
     pub fn get_total_count(&self) -> &::std::option::Option<i32> {
         &self.total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchProfilesOutput`](crate::operation::search_profiles::SearchProfilesOutput).
     pub fn build(self) -> crate::operation::search_profiles::SearchProfilesOutput {
         crate::operation::search_profiles::SearchProfilesOutput {
-            profiles: self.profiles,
-            next_token: self.next_token,
-            total_count: self.total_count,
+            profiles: self.profiles
+            ,
+            next_token: self.next_token
+            ,
+            total_count: self.total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

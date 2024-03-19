@@ -3,7 +3,7 @@
 /// <p>The properties that are applied when the custom connector is being used as a destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomConnectorDestinationProperties {
+pub struct CustomConnectorDestinationProperties  {
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
     pub entity_name: ::std::string::String,
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
@@ -11,32 +11,32 @@ pub struct CustomConnectorDestinationProperties {
     /// <p>Specifies the type of write operation to be performed in the custom connector when it's used as destination.</p>
     pub write_operation_type: ::std::option::Option<crate::types::WriteOperationType>,
     /// <p>The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update, delete, or upsert.</p>
-    pub id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub id_field_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The custom properties that are specific to the connector when it's used as a destination in the flow.</p>
-    pub custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub custom_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CustomConnectorDestinationProperties {
+impl  CustomConnectorDestinationProperties  {
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
-    pub fn entity_name(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_name.deref()
+    pub fn entity_name(&self) -> & str {
+        use std::ops::Deref; self.entity_name.deref()
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
-    pub fn error_handling_config(&self) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
+    pub fn error_handling_config(&self) -> ::std::option::Option<& crate::types::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
     /// <p>Specifies the type of write operation to be performed in the custom connector when it's used as destination.</p>
-    pub fn write_operation_type(&self) -> ::std::option::Option<&crate::types::WriteOperationType> {
+    pub fn write_operation_type(&self) -> ::std::option::Option<& crate::types::WriteOperationType> {
         self.write_operation_type.as_ref()
     }
     /// <p>The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update, delete, or upsert.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id_field_names.is_none()`.
-    pub fn id_field_names(&self) -> &[::std::string::String] {
-        self.id_field_names.as_deref().unwrap_or_default()
+    pub fn id_field_names(&self) -> & [::std::string::String] {
+        self.id_field_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The custom properties that are specific to the connector when it's used as a destination in the flow.</p>
-    pub fn custom_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn custom_properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.custom_properties.as_ref()
     }
 }
@@ -54,8 +54,8 @@ pub struct CustomConnectorDestinationPropertiesBuilder {
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
     pub(crate) write_operation_type: ::std::option::Option<crate::types::WriteOperationType>,
-    pub(crate) id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) id_field_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) custom_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CustomConnectorDestinationPropertiesBuilder {
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
@@ -66,8 +66,7 @@ impl CustomConnectorDestinationPropertiesBuilder {
     }
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
     pub fn set_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_name = input;
-        self
+        self.entity_name = input; self
     }
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
     pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl CustomConnectorDestinationPropertiesBuilder {
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
     pub fn set_error_handling_config(mut self, input: ::std::option::Option<crate::types::ErrorHandlingConfig>) -> Self {
-        self.error_handling_config = input;
-        self
+        self.error_handling_config = input; self
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
     pub fn get_error_handling_config(&self) -> &::std::option::Option<crate::types::ErrorHandlingConfig> {
@@ -94,8 +92,7 @@ impl CustomConnectorDestinationPropertiesBuilder {
     }
     /// <p>Specifies the type of write operation to be performed in the custom connector when it's used as destination.</p>
     pub fn set_write_operation_type(mut self, input: ::std::option::Option<crate::types::WriteOperationType>) -> Self {
-        self.write_operation_type = input;
-        self
+        self.write_operation_type = input; self
     }
     /// <p>Specifies the type of write operation to be performed in the custom connector when it's used as destination.</p>
     pub fn get_write_operation_type(&self) -> &::std::option::Option<crate::types::WriteOperationType> {
@@ -108,17 +105,16 @@ impl CustomConnectorDestinationPropertiesBuilder {
     /// <p>The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update, delete, or upsert.</p>
     pub fn id_field_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.id_field_names.unwrap_or_default();
-        v.push(input.into());
-        self.id_field_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.id_field_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update, delete, or upsert.</p>
-    pub fn set_id_field_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.id_field_names = input;
-        self
+    pub fn set_id_field_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.id_field_names = input; self
     }
     /// <p>The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update, delete, or upsert.</p>
-    pub fn get_id_field_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_id_field_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.id_field_names
     }
     /// Adds a key-value pair to `custom_properties`.
@@ -126,45 +122,41 @@ impl CustomConnectorDestinationPropertiesBuilder {
     /// To override the contents of this collection use [`set_custom_properties`](Self::set_custom_properties).
     ///
     /// <p>The custom properties that are specific to the connector when it's used as a destination in the flow.</p>
-    pub fn custom_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.custom_properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.custom_properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.custom_properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The custom properties that are specific to the connector when it's used as a destination in the flow.</p>
-    pub fn set_custom_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.custom_properties = input;
-        self
+    pub fn set_custom_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.custom_properties = input; self
     }
     /// <p>The custom properties that are specific to the connector when it's used as a destination in the flow.</p>
-    pub fn get_custom_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_custom_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.custom_properties
     }
     /// Consumes the builder and constructs a [`CustomConnectorDestinationProperties`](crate::types::CustomConnectorDestinationProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_name`](crate::types::builders::CustomConnectorDestinationPropertiesBuilder::entity_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CustomConnectorDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomConnectorDestinationProperties {
-            entity_name: self.entity_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_name",
-                    "entity_name was not specified but it is required when building CustomConnectorDestinationProperties",
-                )
-            })?,
-            error_handling_config: self.error_handling_config,
-            write_operation_type: self.write_operation_type,
-            id_field_names: self.id_field_names,
-            custom_properties: self.custom_properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomConnectorDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CustomConnectorDestinationProperties {
+                entity_name: self.entity_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_name", "entity_name was not specified but it is required when building CustomConnectorDestinationProperties")
+                    )?
+                ,
+                error_handling_config: self.error_handling_config
+                ,
+                write_operation_type: self.write_operation_type
+                ,
+                id_field_names: self.id_field_names
+                ,
+                custom_properties: self.custom_properties
+                ,
+            }
+        )
     }
 }
+

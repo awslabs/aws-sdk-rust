@@ -3,7 +3,7 @@
 /// <p>Represents the raw content of an email message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RawMessage {
+pub struct RawMessage  {
     /// <p>The raw email message. The message has to meet the following criteria:</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct RawMessage {
     /// </ul>
     pub data: ::aws_smithy_types::Blob,
 }
-impl RawMessage {
+impl  RawMessage  {
     /// <p>The raw email message. The message has to meet the following criteria:</p>
     /// <ul>
     /// <li>
@@ -41,7 +41,7 @@ impl RawMessage {
     /// <li>
     /// <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p></li>
     /// </ul>
-    pub fn data(&self) -> &::aws_smithy_types::Blob {
+    pub fn data(&self) -> & ::aws_smithy_types::Blob {
         &self.data
     }
 }
@@ -99,8 +99,7 @@ impl RawMessageBuilder {
     /// <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p></li>
     /// </ul>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The raw email message. The message has to meet the following criteria:</p>
     /// <ul>
@@ -126,13 +125,15 @@ impl RawMessageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data`](crate::types::builders::RawMessageBuilder::data)
     pub fn build(self) -> ::std::result::Result<crate::types::RawMessage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RawMessage {
-            data: self.data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data",
-                    "data was not specified but it is required when building RawMessage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RawMessage {
+                data: self.data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building RawMessage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

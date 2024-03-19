@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGraphSnapshotInput {
+pub struct GetGraphSnapshotInput  {
     /// <p>The ID of the snapshot to retrieve.</p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetGraphSnapshotInput {
+impl  GetGraphSnapshotInput  {
     /// <p>The ID of the snapshot to retrieve.</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetGraphSnapshotInputBuilder {
     }
     /// <p>The ID of the snapshot to retrieve.</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>The ID of the snapshot to retrieve.</p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_identifier
     }
     /// Consumes the builder and constructs a [`GetGraphSnapshotInput`](crate::operation::get_graph_snapshot::GetGraphSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_graph_snapshot::GetGraphSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_graph_snapshot::GetGraphSnapshotInput {
-            snapshot_identifier: self.snapshot_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_graph_snapshot::GetGraphSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_graph_snapshot::GetGraphSnapshotInput {
+                snapshot_identifier: self.snapshot_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -60,3 +60,4 @@ pub mod builders;
 
 /// Error types that Amazon DynamoDB Streams can respond with.
 pub mod error;
+

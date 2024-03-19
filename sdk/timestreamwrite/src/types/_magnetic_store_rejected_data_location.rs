@@ -3,13 +3,13 @@
 /// <p>The location to write error reports for records rejected, asynchronously, during magnetic store writes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MagneticStoreRejectedDataLocation {
+pub struct MagneticStoreRejectedDataLocation  {
     /// <p>Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes.</p>
     pub s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
 }
-impl MagneticStoreRejectedDataLocation {
+impl  MagneticStoreRejectedDataLocation  {
     /// <p>Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes.</p>
-    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3Configuration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<& crate::types::S3Configuration> {
         self.s3_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MagneticStoreRejectedDataLocationBuilder {
     }
     /// <p>Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes.</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3Configuration>) -> Self {
-        self.s3_configuration = input;
-        self
+        self.s3_configuration = input; self
     }
     /// <p>Configuration of an S3 location to write error reports for records rejected, asynchronously, during magnetic store writes.</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3Configuration> {
@@ -44,7 +43,9 @@ impl MagneticStoreRejectedDataLocationBuilder {
     /// Consumes the builder and constructs a [`MagneticStoreRejectedDataLocation`](crate::types::MagneticStoreRejectedDataLocation).
     pub fn build(self) -> crate::types::MagneticStoreRejectedDataLocation {
         crate::types::MagneticStoreRejectedDataLocation {
-            s3_configuration: self.s3_configuration,
+            s3_configuration: self.s3_configuration
+            ,
         }
     }
 }
+

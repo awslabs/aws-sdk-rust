@@ -3,20 +3,19 @@
 /// <p>An object that represents the query parameter in the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpQueryParameter {
+pub struct HttpQueryParameter  {
     /// <p>A name for the query parameter that will be matched on.</p>
     pub name: ::std::string::String,
     /// <p>The query parameter to match on.</p>
     pub r#match: ::std::option::Option<crate::types::QueryParameterMatch>,
 }
-impl HttpQueryParameter {
+impl  HttpQueryParameter  {
     /// <p>A name for the query parameter that will be matched on.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The query parameter to match on.</p>
-    pub fn r#match(&self) -> ::std::option::Option<&crate::types::QueryParameterMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<& crate::types::QueryParameterMatch> {
         self.r#match.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl HttpQueryParameterBuilder {
     }
     /// <p>A name for the query parameter that will be matched on.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the query parameter that will be matched on.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl HttpQueryParameterBuilder {
     }
     /// <p>The query parameter to match on.</p>
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::QueryParameterMatch>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
     }
     /// <p>The query parameter to match on.</p>
     pub fn get_match(&self) -> &::std::option::Option<crate::types::QueryParameterMatch> {
@@ -68,14 +65,17 @@ impl HttpQueryParameterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::HttpQueryParameterBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::HttpQueryParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HttpQueryParameter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building HttpQueryParameter",
-                )
-            })?,
-            r#match: self.r#match,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HttpQueryParameter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building HttpQueryParameter")
+                    )?
+                ,
+                r#match: self.r#match
+                ,
+            }
+        )
     }
 }
+

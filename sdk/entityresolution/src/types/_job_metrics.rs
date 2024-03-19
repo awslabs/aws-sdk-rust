@@ -3,7 +3,7 @@
 /// <p>An object containing <code>InputRecords</code>, <code>TotalRecordsProcessed</code>, <code>MatchIDs</code>, and <code>RecordsNotProcessed</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobMetrics {
+pub struct JobMetrics  {
     /// <p>The total number of input records.</p>
     pub input_records: ::std::option::Option<i32>,
     /// <p>The total number of records processed.</p>
@@ -13,7 +13,7 @@ pub struct JobMetrics {
     /// <p>The total number of <code>matchID</code>s generated.</p>
     pub match_ids: ::std::option::Option<i32>,
 }
-impl JobMetrics {
+impl  JobMetrics  {
     /// <p>The total number of input records.</p>
     pub fn input_records(&self) -> ::std::option::Option<i32> {
         self.input_records
@@ -55,8 +55,7 @@ impl JobMetricsBuilder {
     }
     /// <p>The total number of input records.</p>
     pub fn set_input_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.input_records = input;
-        self
+        self.input_records = input; self
     }
     /// <p>The total number of input records.</p>
     pub fn get_input_records(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl JobMetricsBuilder {
     }
     /// <p>The total number of records processed.</p>
     pub fn set_total_records_processed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_records_processed = input;
-        self
+        self.total_records_processed = input; self
     }
     /// <p>The total number of records processed.</p>
     pub fn get_total_records_processed(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl JobMetricsBuilder {
     }
     /// <p>The total number of records that did not get processed.</p>
     pub fn set_records_not_processed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.records_not_processed = input;
-        self
+        self.records_not_processed = input; self
     }
     /// <p>The total number of records that did not get processed.</p>
     pub fn get_records_not_processed(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl JobMetricsBuilder {
     }
     /// <p>The total number of <code>matchID</code>s generated.</p>
     pub fn set_match_ids(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.match_ids = input;
-        self
+        self.match_ids = input; self
     }
     /// <p>The total number of <code>matchID</code>s generated.</p>
     pub fn get_match_ids(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl JobMetricsBuilder {
     /// Consumes the builder and constructs a [`JobMetrics`](crate::types::JobMetrics).
     pub fn build(self) -> crate::types::JobMetrics {
         crate::types::JobMetrics {
-            input_records: self.input_records,
-            total_records_processed: self.total_records_processed,
-            records_not_processed: self.records_not_processed,
-            match_ids: self.match_ids,
+            input_records: self.input_records
+            ,
+            total_records_processed: self.total_records_processed
+            ,
+            records_not_processed: self.records_not_processed
+            ,
+            match_ids: self.match_ids
+            ,
         }
     }
 }
+

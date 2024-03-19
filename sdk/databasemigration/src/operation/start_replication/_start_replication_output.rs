@@ -3,22 +3,22 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartReplicationOutput {
+pub struct StartReplicationOutput  {
     /// <p>The replication that DMS started.</p>
     pub replication: ::std::option::Option<crate::types::Replication>,
     _request_id: Option<String>,
 }
-impl StartReplicationOutput {
+impl  StartReplicationOutput  {
     /// <p>The replication that DMS started.</p>
-    pub fn replication(&self) -> ::std::option::Option<&crate::types::Replication> {
+    pub fn replication(&self) -> ::std::option::Option<& crate::types::Replication> {
         self.replication.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartReplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput).
     pub fn builder() -> crate::operation::start_replication::builders::StartReplicationOutputBuilder {
@@ -41,27 +41,28 @@ impl StartReplicationOutputBuilder {
     }
     /// <p>The replication that DMS started.</p>
     pub fn set_replication(mut self, input: ::std::option::Option<crate::types::Replication>) -> Self {
-        self.replication = input;
-        self
+        self.replication = input; self
     }
     /// <p>The replication that DMS started.</p>
     pub fn get_replication(&self) -> &::std::option::Option<crate::types::Replication> {
         &self.replication
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput).
     pub fn build(self) -> crate::operation::start_replication::StartReplicationOutput {
         crate::operation::start_replication::StartReplicationOutput {
-            replication: self.replication,
+            replication: self.replication
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLanguageModelsOutput {
+pub struct ListLanguageModelsOutput  {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
-    pub models: ::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>>,
+    pub models: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageModel>>,
     _request_id: Option<String>,
 }
-impl ListLanguageModelsOutput {
+impl  ListLanguageModelsOutput  {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
-    pub fn models(&self) -> &[crate::types::LanguageModel] {
-        self.models.as_deref().unwrap_or_default()
+    pub fn models(&self) -> & [crate::types::LanguageModel] {
+        self.models.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLanguageModelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLanguageModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListLanguageModelsOutput`](crate::operation::list_language_models::ListLanguageModelsOutput).
     pub fn builder() -> crate::operation::list_language_models::builders::ListLanguageModelsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListLanguageModelsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLanguageModelsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) models: ::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>>,
+    pub(crate) models: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageModel>>,
     _request_id: Option<String>,
 }
 impl ListLanguageModelsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListLanguageModelsOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListLanguageModelsOutputBuilder {
     /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
     pub fn models(mut self, input: crate::types::LanguageModel) -> Self {
         let mut v = self.models.unwrap_or_default();
-        v.push(input);
-        self.models = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.models = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
-    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>>) -> Self {
-        self.models = input;
-        self
+    pub fn set_models(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageModel>>) -> Self {
+        self.models = input; self
     }
     /// <p>Provides information about the custom language models that match the criteria specified in your request.</p>
-    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageModel>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LanguageModel>> {
         &self.models
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLanguageModelsOutput`](crate::operation::list_language_models::ListLanguageModelsOutput).
     pub fn build(self) -> crate::operation::list_language_models::ListLanguageModelsOutput {
         crate::operation::list_language_models::ListLanguageModelsOutput {
-            next_token: self.next_token,
-            models: self.models,
+            next_token: self.next_token
+            ,
+            models: self.models
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

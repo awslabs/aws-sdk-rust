@@ -3,20 +3,19 @@
 /// <p>The sub groups that belong to a group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemberGroup {
+pub struct MemberGroup  {
     /// <p>The identifier of the sub group you want to map to a group.</p>
     pub group_id: ::std::string::String,
     /// <p>The identifier of the data source for the sub group you want to map to a group.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
-impl MemberGroup {
+impl  MemberGroup  {
     /// <p>The identifier of the sub group you want to map to a group.</p>
-    pub fn group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.group_id.deref()
+    pub fn group_id(&self) -> & str {
+        use std::ops::Deref; self.group_id.deref()
     }
     /// <p>The identifier of the data source for the sub group you want to map to a group.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl MemberGroupBuilder {
     }
     /// <p>The identifier of the sub group you want to map to a group.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The identifier of the sub group you want to map to a group.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl MemberGroupBuilder {
     }
     /// <p>The identifier of the data source for the sub group you want to map to a group.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source for the sub group you want to map to a group.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl MemberGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`group_id`](crate::types::builders::MemberGroupBuilder::group_id)
     pub fn build(self) -> ::std::result::Result<crate::types::MemberGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MemberGroup {
-            group_id: self.group_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "group_id",
-                    "group_id was not specified but it is required when building MemberGroup",
-                )
-            })?,
-            data_source_id: self.data_source_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MemberGroup {
+                group_id: self.group_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("group_id", "group_id was not specified but it is required when building MemberGroup")
+                    )?
+                ,
+                data_source_id: self.data_source_id
+                ,
+            }
+        )
     }
 }
+

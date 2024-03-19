@@ -3,14 +3,14 @@
 /// <p>Contains configuration information for the default behavior of the CRL Distribution Point (CDP) extension in certificates issued by your CA. This extension contains a link to download the CRL, so you can check whether a certificate has been revoked. To choose whether you want this extension omitted or not in certificates issued by your CA, you can set the <b>OmitExtension</b> parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrlDistributionPointExtensionConfiguration {
+pub struct CrlDistributionPointExtensionConfiguration  {
     /// <p>Configures whether the CRL Distribution Point extension should be populated with the default URL to the CRL. If set to <code>true</code>, then the CDP extension will not be present in any certificates issued by that CA unless otherwise specified through CSR or API passthrough.</p><note>
     /// <p>Only set this if you have another way to distribute the CRL Distribution Points ffor certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
     /// <p>This configuration cannot be enabled with a custom CNAME set.</p>
     /// </note>
     pub omit_extension: bool,
 }
-impl CrlDistributionPointExtensionConfiguration {
+impl  CrlDistributionPointExtensionConfiguration  {
     /// <p>Configures whether the CRL Distribution Point extension should be populated with the default URL to the CRL. If set to <code>true</code>, then the CDP extension will not be present in any certificates issued by that CA unless otherwise specified through CSR or API passthrough.</p><note>
     /// <p>Only set this if you have another way to distribute the CRL Distribution Points ffor certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
     /// <p>This configuration cannot be enabled with a custom CNAME set.</p>
@@ -47,8 +47,7 @@ impl CrlDistributionPointExtensionConfigurationBuilder {
     /// <p>This configuration cannot be enabled with a custom CNAME set.</p>
     /// </note>
     pub fn set_omit_extension(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.omit_extension = input;
-        self
+        self.omit_extension = input; self
     }
     /// <p>Configures whether the CRL Distribution Point extension should be populated with the default URL to the CRL. If set to <code>true</code>, then the CDP extension will not be present in any certificates issued by that CA unless otherwise specified through CSR or API passthrough.</p><note>
     /// <p>Only set this if you have another way to distribute the CRL Distribution Points ffor certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
@@ -60,16 +59,16 @@ impl CrlDistributionPointExtensionConfigurationBuilder {
     /// Consumes the builder and constructs a [`CrlDistributionPointExtensionConfiguration`](crate::types::CrlDistributionPointExtensionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`omit_extension`](crate::types::builders::CrlDistributionPointExtensionConfigurationBuilder::omit_extension)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CrlDistributionPointExtensionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CrlDistributionPointExtensionConfiguration {
-            omit_extension: self.omit_extension.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "omit_extension",
-                    "omit_extension was not specified but it is required when building CrlDistributionPointExtensionConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CrlDistributionPointExtensionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CrlDistributionPointExtensionConfiguration {
+                omit_extension: self.omit_extension
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("omit_extension", "omit_extension was not specified but it is required when building CrlDistributionPointExtensionConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

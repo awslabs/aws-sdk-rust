@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClusterInput {
+pub struct DeleteClusterInput  {
     /// <p>The name of the cluster to be deleted</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub final_snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteClusterInput {
+impl  DeleteClusterInput  {
     /// <p>The name of the cluster to be deleted</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
-    pub fn final_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn final_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.final_snapshot_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteClusterInputBuilder {
     }
     /// <p>The name of the cluster to be deleted</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster to be deleted</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DeleteClusterInputBuilder {
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn set_final_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.final_snapshot_name = input;
-        self
+        self.final_snapshot_name = input; self
     }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn get_final_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.final_snapshot_name
     }
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput {
-            cluster_name: self.cluster_name,
-            final_snapshot_name: self.final_snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cluster::DeleteClusterInput {
+                cluster_name: self.cluster_name
+                ,
+                final_snapshot_name: self.final_snapshot_name
+                ,
+            }
+        )
     }
 }
+

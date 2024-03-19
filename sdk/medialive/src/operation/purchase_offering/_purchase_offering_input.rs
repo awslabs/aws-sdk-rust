@@ -3,7 +3,7 @@
 /// Placeholder documentation for PurchaseOfferingRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PurchaseOfferingInput {
+pub struct PurchaseOfferingInput  {
     /// Number of resources
     pub count: ::std::option::Option<i32>,
     /// Name for the new reservation
@@ -17,35 +17,35 @@ pub struct PurchaseOfferingInput {
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
     pub start: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PurchaseOfferingInput {
+impl  PurchaseOfferingInput  {
     /// Number of resources
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// Name for the new reservation
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Offering to purchase, e.g. '87654321'
-    pub fn offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// Renewal settings for the reservation
-    pub fn renewal_settings(&self) -> ::std::option::Option<&crate::types::RenewalSettings> {
+    pub fn renewal_settings(&self) -> ::std::option::Option<& crate::types::RenewalSettings> {
         self.renewal_settings.as_ref()
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-    pub fn start(&self) -> ::std::option::Option<&str> {
+    pub fn start(&self) -> ::std::option::Option<& str> {
         self.start.as_deref()
     }
     /// A collection of key-value pairs
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -66,7 +66,7 @@ pub struct PurchaseOfferingInputBuilder {
     pub(crate) renewal_settings: ::std::option::Option<crate::types::RenewalSettings>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) start: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PurchaseOfferingInputBuilder {
     /// Number of resources
@@ -77,8 +77,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// Number of resources
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// Number of resources
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -91,8 +90,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// Name for the new reservation
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name for the new reservation
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// Offering to purchase, e.g. '87654321'
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
     }
     /// Offering to purchase, e.g. '87654321'
     pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +117,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// Renewal settings for the reservation
     pub fn set_renewal_settings(mut self, input: ::std::option::Option<crate::types::RenewalSettings>) -> Self {
-        self.renewal_settings = input;
-        self
+        self.renewal_settings = input; self
     }
     /// Renewal settings for the reservation
     pub fn get_renewal_settings(&self) -> &::std::option::Option<crate::types::RenewalSettings> {
@@ -134,8 +130,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +143,7 @@ impl PurchaseOfferingInputBuilder {
     }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
     pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,31 +156,38 @@ impl PurchaseOfferingInputBuilder {
     /// A collection of key-value pairs
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A collection of key-value pairs
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A collection of key-value pairs
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
-            count: self.count,
-            name: self.name,
-            offering_id: self.offering_id,
-            renewal_settings: self.renewal_settings,
-            request_id: self.request_id,
-            start: self.start,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::purchase_offering::PurchaseOfferingInput {
+                count: self.count
+                ,
+                name: self.name
+                ,
+                offering_id: self.offering_id
+                ,
+                renewal_settings: self.renewal_settings
+                ,
+                request_id: self.request_id
+                ,
+                start: self.start
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

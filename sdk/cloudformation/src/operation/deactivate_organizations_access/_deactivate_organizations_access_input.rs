@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeactivateOrganizationsAccessInput {}
+pub struct DeactivateOrganizationsAccessInput  {
+}
 impl DeactivateOrganizationsAccessInput {
     /// Creates a new builder-style object to manufacture [`DeactivateOrganizationsAccessInput`](crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessInput).
     pub fn builder() -> crate::operation::deactivate_organizations_access::builders::DeactivateOrganizationsAccessInputBuilder {
@@ -13,15 +14,15 @@ impl DeactivateOrganizationsAccessInput {
 /// A builder for [`DeactivateOrganizationsAccessInput`](crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeactivateOrganizationsAccessInputBuilder {}
+pub struct DeactivateOrganizationsAccessInputBuilder {
+}
 impl DeactivateOrganizationsAccessInputBuilder {
     /// Consumes the builder and constructs a [`DeactivateOrganizationsAccessInput`](crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessInput {
+            }
+        )
     }
 }
+

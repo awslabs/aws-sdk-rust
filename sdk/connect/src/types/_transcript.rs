@@ -3,20 +3,19 @@
 /// <p>A structure that defines search criteria and matching logic to search for contacts by matching text with transcripts analyzed by Amazon Connect Contact Lens.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Transcript {
+pub struct Transcript  {
     /// <p>The list of search criteria based on Contact Lens conversational analytics transcript.</p>
-    pub criteria: ::std::vec::Vec<crate::types::TranscriptCriteria>,
+    pub criteria: ::std::vec::Vec::<crate::types::TranscriptCriteria>,
     /// <p>The match type combining search criteria using multiple transcript criteria.</p>
     pub match_type: ::std::option::Option<crate::types::SearchContactsMatchType>,
 }
-impl Transcript {
+impl  Transcript  {
     /// <p>The list of search criteria based on Contact Lens conversational analytics transcript.</p>
-    pub fn criteria(&self) -> &[crate::types::TranscriptCriteria] {
-        use std::ops::Deref;
-        self.criteria.deref()
+    pub fn criteria(&self) -> & [crate::types::TranscriptCriteria] {
+        use std::ops::Deref; self.criteria.deref()
     }
     /// <p>The match type combining search criteria using multiple transcript criteria.</p>
-    pub fn match_type(&self) -> ::std::option::Option<&crate::types::SearchContactsMatchType> {
+    pub fn match_type(&self) -> ::std::option::Option<& crate::types::SearchContactsMatchType> {
         self.match_type.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl Transcript {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranscriptBuilder {
-    pub(crate) criteria: ::std::option::Option<::std::vec::Vec<crate::types::TranscriptCriteria>>,
+    pub(crate) criteria: ::std::option::Option<::std::vec::Vec::<crate::types::TranscriptCriteria>>,
     pub(crate) match_type: ::std::option::Option<crate::types::SearchContactsMatchType>,
 }
 impl TranscriptBuilder {
@@ -42,17 +41,16 @@ impl TranscriptBuilder {
     /// <p>The list of search criteria based on Contact Lens conversational analytics transcript.</p>
     pub fn criteria(mut self, input: crate::types::TranscriptCriteria) -> Self {
         let mut v = self.criteria.unwrap_or_default();
-        v.push(input);
-        self.criteria = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.criteria = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of search criteria based on Contact Lens conversational analytics transcript.</p>
-    pub fn set_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TranscriptCriteria>>) -> Self {
-        self.criteria = input;
-        self
+    pub fn set_criteria(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TranscriptCriteria>>) -> Self {
+        self.criteria = input; self
     }
     /// <p>The list of search criteria based on Contact Lens conversational analytics transcript.</p>
-    pub fn get_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TranscriptCriteria>> {
+    pub fn get_criteria(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TranscriptCriteria>> {
         &self.criteria
     }
     /// <p>The match type combining search criteria using multiple transcript criteria.</p>
@@ -62,8 +60,7 @@ impl TranscriptBuilder {
     }
     /// <p>The match type combining search criteria using multiple transcript criteria.</p>
     pub fn set_match_type(mut self, input: ::std::option::Option<crate::types::SearchContactsMatchType>) -> Self {
-        self.match_type = input;
-        self
+        self.match_type = input; self
     }
     /// <p>The match type combining search criteria using multiple transcript criteria.</p>
     pub fn get_match_type(&self) -> &::std::option::Option<crate::types::SearchContactsMatchType> {
@@ -73,14 +70,17 @@ impl TranscriptBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`criteria`](crate::types::builders::TranscriptBuilder::criteria)
     pub fn build(self) -> ::std::result::Result<crate::types::Transcript, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Transcript {
-            criteria: self.criteria.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "criteria",
-                    "criteria was not specified but it is required when building Transcript",
-                )
-            })?,
-            match_type: self.match_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Transcript {
+                criteria: self.criteria
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("criteria", "criteria was not specified but it is required when building Transcript")
+                    )?
+                ,
+                match_type: self.match_type
+                ,
+            }
+        )
     }
 }
+

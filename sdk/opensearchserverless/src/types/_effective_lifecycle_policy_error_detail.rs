@@ -3,7 +3,7 @@
 /// <p>Error information for an OpenSearch Serverless request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EffectiveLifecyclePolicyErrorDetail {
+pub struct EffectiveLifecyclePolicyErrorDetail  {
     /// <p>The type of lifecycle policy.</p>
     pub r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
     /// <p>The name of OpenSearch Serverless index resource.</p>
@@ -13,21 +13,21 @@ pub struct EffectiveLifecyclePolicyErrorDetail {
     /// <p>The error code for the request.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
 }
-impl EffectiveLifecyclePolicyErrorDetail {
+impl  EffectiveLifecyclePolicyErrorDetail  {
     /// <p>The type of lifecycle policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of OpenSearch Serverless index resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>A description of the error. For example, <code>The specified Index resource is not found</code>.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error code for the request.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl EffectiveLifecyclePolicyErrorDetailBuilder {
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
@@ -69,8 +68,7 @@ impl EffectiveLifecyclePolicyErrorDetailBuilder {
     }
     /// <p>The name of OpenSearch Serverless index resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The name of OpenSearch Serverless index resource.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl EffectiveLifecyclePolicyErrorDetailBuilder {
     }
     /// <p>A description of the error. For example, <code>The specified Index resource is not found</code>.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A description of the error. For example, <code>The specified Index resource is not found</code>.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl EffectiveLifecyclePolicyErrorDetailBuilder {
     }
     /// <p>The error code for the request.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code for the request.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl EffectiveLifecyclePolicyErrorDetailBuilder {
     /// Consumes the builder and constructs a [`EffectiveLifecyclePolicyErrorDetail`](crate::types::EffectiveLifecyclePolicyErrorDetail).
     pub fn build(self) -> crate::types::EffectiveLifecyclePolicyErrorDetail {
         crate::types::EffectiveLifecyclePolicyErrorDetail {
-            r#type: self.r#type,
-            resource: self.resource,
-            error_message: self.error_message,
-            error_code: self.error_code,
+            r#type: self.r#type
+            ,
+            resource: self.resource
+            ,
+            error_message: self.error_message
+            ,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

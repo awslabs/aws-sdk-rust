@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPlacementsOutput {
+pub struct ListPlacementsOutput  {
     /// <p>An object listing the requested placements.</p>
-    pub placements: ::std::vec::Vec<crate::types::PlacementSummary>,
+    pub placements: ::std::vec::Vec::<crate::types::PlacementSummary>,
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPlacementsOutput {
+impl  ListPlacementsOutput  {
     /// <p>An object listing the requested placements.</p>
-    pub fn placements(&self) -> &[crate::types::PlacementSummary] {
-        use std::ops::Deref;
-        self.placements.deref()
+    pub fn placements(&self) -> & [crate::types::PlacementSummary] {
+        use std::ops::Deref; self.placements.deref()
     }
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPlacementsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPlacementsOutput {
     /// Creates a new builder-style object to manufacture [`ListPlacementsOutput`](crate::operation::list_placements::ListPlacementsOutput).
     pub fn builder() -> crate::operation::list_placements::builders::ListPlacementsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListPlacementsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlacementsOutputBuilder {
-    pub(crate) placements: ::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>>,
+    pub(crate) placements: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListPlacementsOutputBuilder {
     /// <p>An object listing the requested placements.</p>
     pub fn placements(mut self, input: crate::types::PlacementSummary) -> Self {
         let mut v = self.placements.unwrap_or_default();
-        v.push(input);
-        self.placements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.placements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object listing the requested placements.</p>
-    pub fn set_placements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>>) -> Self {
-        self.placements = input;
-        self
+    pub fn set_placements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementSummary>>) -> Self {
+        self.placements = input; self
     }
     /// <p>An object listing the requested placements.</p>
-    pub fn get_placements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>> {
+    pub fn get_placements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlacementSummary>> {
         &self.placements
     }
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
@@ -68,37 +66,37 @@ impl ListPlacementsOutputBuilder {
     }
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPlacementsOutput`](crate::operation::list_placements::ListPlacementsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`placements`](crate::operation::list_placements::builders::ListPlacementsOutputBuilder::placements)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_placements::ListPlacementsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_placements::ListPlacementsOutput {
-            placements: self.placements.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "placements",
-                    "placements was not specified but it is required when building ListPlacementsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_placements::ListPlacementsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_placements::ListPlacementsOutput {
+                placements: self.placements
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("placements", "placements was not specified but it is required when building ListPlacementsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

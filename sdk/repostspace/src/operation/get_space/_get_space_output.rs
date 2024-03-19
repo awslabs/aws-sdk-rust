@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetSpaceOutput {
+pub struct GetSpaceOutput  {
     /// <p>The unique ID of the private re:Post.</p>
     pub space_id: ::std::string::String,
     /// <p>The ARN of the private re:Post.</p>
@@ -34,9 +34,9 @@ pub struct GetSpaceOutput {
     /// <p>The storage limit of the private re:Post.</p>
     pub storage_limit: i64,
     /// <p>The list of users that are administrators of the private re:Post.</p>
-    pub user_admins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_admins: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of groups that are administrators of the private re:Post.</p>
-    pub group_admins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_admins: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     pub user_kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The number of users that have onboarded to the private re:Post.</p>
@@ -45,68 +45,61 @@ pub struct GetSpaceOutput {
     pub content_size: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl GetSpaceOutput {
+impl  GetSpaceOutput  {
     /// <p>The unique ID of the private re:Post.</p>
-    pub fn space_id(&self) -> &str {
-        use std::ops::Deref;
-        self.space_id.deref()
+    pub fn space_id(&self) -> & str {
+        use std::ops::Deref; self.space_id.deref()
     }
     /// <p>The ARN of the private re:Post.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the private re:Post.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The creation or deletion status of the private re:Post.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>The configuration status of the private re:Post.</p>
-    pub fn configuration_status(&self) -> &crate::types::ConfigurationStatus {
+    pub fn configuration_status(&self) -> & crate::types::ConfigurationStatus {
         &self.configuration_status
     }
     /// <p>The Identity Center identifier for the Application Instance.</p>
-    pub fn client_id(&self) -> &str {
-        use std::ops::Deref;
-        self.client_id.deref()
+    pub fn client_id(&self) -> & str {
+        use std::ops::Deref; self.client_id.deref()
     }
     /// <p>The description of the private re:Post.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The approval status of the custom subdomain.</p>
-    pub fn vanity_domain_status(&self) -> &crate::types::VanityDomainStatus {
+    pub fn vanity_domain_status(&self) -> & crate::types::VanityDomainStatus {
         &self.vanity_domain_status
     }
     /// <p>The custom subdomain that you use to access your private re:Post. All custom subdomains must be approved by AWS before use.</p>
-    pub fn vanity_domain(&self) -> &str {
-        use std::ops::Deref;
-        self.vanity_domain.deref()
+    pub fn vanity_domain(&self) -> & str {
+        use std::ops::Deref; self.vanity_domain.deref()
     }
     /// <p>The AWS generated subdomain of the private re:Post</p>
-    pub fn random_domain(&self) -> &str {
-        use std::ops::Deref;
-        self.random_domain.deref()
+    pub fn random_domain(&self) -> & str {
+        use std::ops::Deref; self.random_domain.deref()
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
-    pub fn customer_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn customer_role_arn(&self) -> ::std::option::Option<& str> {
         self.customer_role_arn.as_deref()
     }
     /// <p>The date when the private re:Post was created.</p>
-    pub fn create_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_date_time
     }
     /// <p>The date when the private re:Post was deleted.</p>
-    pub fn delete_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delete_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delete_date_time.as_ref()
     }
     /// <p>The pricing tier of the private re:Post.</p>
-    pub fn tier(&self) -> &crate::types::TierLevel {
+    pub fn tier(&self) -> & crate::types::TierLevel {
         &self.tier
     }
     /// <p>The storage limit of the private re:Post.</p>
@@ -114,19 +107,21 @@ impl GetSpaceOutput {
         self.storage_limit
     }
     /// <p>The list of users that are administrators of the private re:Post.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_admins.is_none()`.
-    pub fn user_admins(&self) -> &[::std::string::String] {
-        self.user_admins.as_deref().unwrap_or_default()
+    pub fn user_admins(&self) -> & [::std::string::String] {
+        self.user_admins.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of groups that are administrators of the private re:Post.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_admins.is_none()`.
-    pub fn group_admins(&self) -> &[::std::string::String] {
-        self.group_admins.as_deref().unwrap_or_default()
+    pub fn group_admins(&self) -> & [::std::string::String] {
+        self.group_admins.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
-    pub fn user_kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn user_kms_key(&self) -> ::std::option::Option<& str> {
         self.user_kms_key.as_deref()
     }
     /// <p>The number of users that have onboarded to the private re:Post.</p>
@@ -138,7 +133,7 @@ impl GetSpaceOutput {
         self.content_size
     }
 }
-impl ::std::fmt::Debug for GetSpaceOutput {
+impl  ::std::fmt::Debug for GetSpaceOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSpaceOutput");
         formatter.field("space_id", &self.space_id);
@@ -166,10 +161,10 @@ impl ::std::fmt::Debug for GetSpaceOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetSpaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSpaceOutput {
     /// Creates a new builder-style object to manufacture [`GetSpaceOutput`](crate::operation::get_space::GetSpaceOutput).
     pub fn builder() -> crate::operation::get_space::builders::GetSpaceOutputBuilder {
@@ -196,8 +191,8 @@ pub struct GetSpaceOutputBuilder {
     pub(crate) delete_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tier: ::std::option::Option<crate::types::TierLevel>,
     pub(crate) storage_limit: ::std::option::Option<i64>,
-    pub(crate) user_admins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) group_admins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_admins: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) group_admins: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) user_kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) user_count: ::std::option::Option<i32>,
     pub(crate) content_size: ::std::option::Option<i64>,
@@ -212,8 +207,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The unique ID of the private re:Post.</p>
     pub fn set_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_id = input;
-        self
+        self.space_id = input; self
     }
     /// <p>The unique ID of the private re:Post.</p>
     pub fn get_space_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +221,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The ARN of the private re:Post.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the private re:Post.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,8 +235,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The name of the private re:Post.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the private re:Post.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +249,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The creation or deletion status of the private re:Post.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The creation or deletion status of the private re:Post.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +263,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The configuration status of the private re:Post.</p>
     pub fn set_configuration_status(mut self, input: ::std::option::Option<crate::types::ConfigurationStatus>) -> Self {
-        self.configuration_status = input;
-        self
+        self.configuration_status = input; self
     }
     /// <p>The configuration status of the private re:Post.</p>
     pub fn get_configuration_status(&self) -> &::std::option::Option<crate::types::ConfigurationStatus> {
@@ -287,8 +277,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The Identity Center identifier for the Application Instance.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The Identity Center identifier for the Application Instance.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +290,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The description of the private re:Post.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the private re:Post.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +304,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The approval status of the custom subdomain.</p>
     pub fn set_vanity_domain_status(mut self, input: ::std::option::Option<crate::types::VanityDomainStatus>) -> Self {
-        self.vanity_domain_status = input;
-        self
+        self.vanity_domain_status = input; self
     }
     /// <p>The approval status of the custom subdomain.</p>
     pub fn get_vanity_domain_status(&self) -> &::std::option::Option<crate::types::VanityDomainStatus> {
@@ -331,8 +318,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The custom subdomain that you use to access your private re:Post. All custom subdomains must be approved by AWS before use.</p>
     pub fn set_vanity_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vanity_domain = input;
-        self
+        self.vanity_domain = input; self
     }
     /// <p>The custom subdomain that you use to access your private re:Post. All custom subdomains must be approved by AWS before use.</p>
     pub fn get_vanity_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -346,8 +332,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The AWS generated subdomain of the private re:Post</p>
     pub fn set_random_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.random_domain = input;
-        self
+        self.random_domain = input; self
     }
     /// <p>The AWS generated subdomain of the private re:Post</p>
     pub fn get_random_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -360,8 +345,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub fn set_customer_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_role_arn = input;
-        self
+        self.customer_role_arn = input; self
     }
     /// <p>The IAM role that grants permissions to the private re:Post to convert unanswered questions into AWS support tickets.</p>
     pub fn get_customer_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -375,8 +359,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The date when the private re:Post was created.</p>
     pub fn set_create_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date_time = input;
-        self
+        self.create_date_time = input; self
     }
     /// <p>The date when the private re:Post was created.</p>
     pub fn get_create_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -389,8 +372,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The date when the private re:Post was deleted.</p>
     pub fn set_delete_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delete_date_time = input;
-        self
+        self.delete_date_time = input; self
     }
     /// <p>The date when the private re:Post was deleted.</p>
     pub fn get_delete_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -404,8 +386,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The pricing tier of the private re:Post.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::TierLevel>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The pricing tier of the private re:Post.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::TierLevel> {
@@ -419,8 +400,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The storage limit of the private re:Post.</p>
     pub fn set_storage_limit(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.storage_limit = input;
-        self
+        self.storage_limit = input; self
     }
     /// <p>The storage limit of the private re:Post.</p>
     pub fn get_storage_limit(&self) -> &::std::option::Option<i64> {
@@ -433,17 +413,16 @@ impl GetSpaceOutputBuilder {
     /// <p>The list of users that are administrators of the private re:Post.</p>
     pub fn user_admins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_admins.unwrap_or_default();
-        v.push(input.into());
-        self.user_admins = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_admins = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of users that are administrators of the private re:Post.</p>
-    pub fn set_user_admins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_admins = input;
-        self
+    pub fn set_user_admins(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_admins = input; self
     }
     /// <p>The list of users that are administrators of the private re:Post.</p>
-    pub fn get_user_admins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_admins(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_admins
     }
     /// Appends an item to `group_admins`.
@@ -453,17 +432,16 @@ impl GetSpaceOutputBuilder {
     /// <p>The list of groups that are administrators of the private re:Post.</p>
     pub fn group_admins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_admins.unwrap_or_default();
-        v.push(input.into());
-        self.group_admins = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_admins = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of groups that are administrators of the private re:Post.</p>
-    pub fn set_group_admins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_admins = input;
-        self
+    pub fn set_group_admins(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_admins = input; self
     }
     /// <p>The list of groups that are administrators of the private re:Post.</p>
-    pub fn get_group_admins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_admins(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_admins
     }
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
@@ -473,8 +451,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     pub fn set_user_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_kms_key = input;
-        self
+        self.user_kms_key = input; self
     }
     /// <p>The custom AWS KMS key ARN that’s used for the AWS KMS encryption.</p>
     pub fn get_user_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -487,8 +464,7 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The number of users that have onboarded to the private re:Post.</p>
     pub fn set_user_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.user_count = input;
-        self
+        self.user_count = input; self
     }
     /// <p>The number of users that have onboarded to the private re:Post.</p>
     pub fn get_user_count(&self) -> &::std::option::Option<i32> {
@@ -501,22 +477,21 @@ impl GetSpaceOutputBuilder {
     }
     /// <p>The content size of the private re:Post.</p>
     pub fn set_content_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.content_size = input;
-        self
+        self.content_size = input; self
     }
     /// <p>The content size of the private re:Post.</p>
     pub fn get_content_size(&self) -> &::std::option::Option<i64> {
         &self.content_size
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSpaceOutput`](crate::operation::get_space::GetSpaceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`space_id`](crate::operation::get_space::builders::GetSpaceOutputBuilder::space_id)
@@ -532,89 +507,87 @@ impl GetSpaceOutputBuilder {
     /// - [`tier`](crate::operation::get_space::builders::GetSpaceOutputBuilder::tier)
     /// - [`storage_limit`](crate::operation::get_space::builders::GetSpaceOutputBuilder::storage_limit)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_space::GetSpaceOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_space::GetSpaceOutput {
-            space_id: self.space_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "space_id",
-                    "space_id was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            configuration_status: self.configuration_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configuration_status",
-                    "configuration_status was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            client_id: self.client_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_id",
-                    "client_id was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            description: self.description,
-            vanity_domain_status: self.vanity_domain_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vanity_domain_status",
-                    "vanity_domain_status was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            vanity_domain: self.vanity_domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vanity_domain",
-                    "vanity_domain was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            random_domain: self.random_domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "random_domain",
-                    "random_domain was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            customer_role_arn: self.customer_role_arn,
-            create_date_time: self.create_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_date_time",
-                    "create_date_time was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            delete_date_time: self.delete_date_time,
-            tier: self.tier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tier",
-                    "tier was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            storage_limit: self.storage_limit.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "storage_limit",
-                    "storage_limit was not specified but it is required when building GetSpaceOutput",
-                )
-            })?,
-            user_admins: self.user_admins,
-            group_admins: self.group_admins,
-            user_kms_key: self.user_kms_key,
-            user_count: self.user_count,
-            content_size: self.content_size,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_space::GetSpaceOutput {
+                space_id: self.space_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("space_id", "space_id was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                configuration_status: self.configuration_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configuration_status", "configuration_status was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                client_id: self.client_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_id", "client_id was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                vanity_domain_status: self.vanity_domain_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vanity_domain_status", "vanity_domain_status was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                vanity_domain: self.vanity_domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vanity_domain", "vanity_domain was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                random_domain: self.random_domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("random_domain", "random_domain was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                customer_role_arn: self.customer_role_arn
+                ,
+                create_date_time: self.create_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_date_time", "create_date_time was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                delete_date_time: self.delete_date_time
+                ,
+                tier: self.tier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tier", "tier was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                storage_limit: self.storage_limit
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("storage_limit", "storage_limit was not specified but it is required when building GetSpaceOutput")
+                    )?
+                ,
+                user_admins: self.user_admins
+                ,
+                group_admins: self.group_admins
+                ,
+                user_kms_key: self.user_kms_key
+                ,
+                user_count: self.user_count
+                ,
+                content_size: self.content_size
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetSpaceOutputBuilder {
@@ -644,3 +617,4 @@ impl ::std::fmt::Debug for GetSpaceOutputBuilder {
         formatter.finish()
     }
 }
+

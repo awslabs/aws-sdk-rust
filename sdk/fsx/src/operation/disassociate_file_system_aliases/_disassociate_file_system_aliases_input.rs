@@ -3,28 +3,29 @@
 /// <p>The request object of DNS aliases to disassociate from an Amazon FSx for Windows File Server file system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateFileSystemAliasesInput {
+pub struct DisassociateFileSystemAliasesInput  {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
-    pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aliases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisassociateFileSystemAliasesInput {
+impl  DisassociateFileSystemAliasesInput  {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
-    pub fn aliases(&self) -> &[::std::string::String] {
-        self.aliases.as_deref().unwrap_or_default()
+    pub fn aliases(&self) -> & [::std::string::String] {
+        self.aliases.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociateFileSystemAliasesInput {
@@ -40,7 +41,7 @@ impl DisassociateFileSystemAliasesInput {
 pub struct DisassociateFileSystemAliasesInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
-    pub(crate) aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aliases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisassociateFileSystemAliasesInputBuilder {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -50,8 +51,7 @@ impl DisassociateFileSystemAliasesInputBuilder {
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl DisassociateFileSystemAliasesInputBuilder {
     }
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl DisassociateFileSystemAliasesInputBuilder {
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
     pub fn aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aliases.unwrap_or_default();
-        v.push(input.into());
-        self.aliases = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aliases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
-    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aliases = input;
-        self
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aliases = input; self
     }
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
-    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aliases
     }
     /// Consumes the builder and constructs a [`DisassociateFileSystemAliasesInput`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput {
-            client_request_token: self.client_request_token,
-            file_system_id: self.file_system_id,
-            aliases: self.aliases,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput {
+                client_request_token: self.client_request_token
+                ,
+                file_system_id: self.file_system_id
+                ,
+                aliases: self.aliases
+                ,
+            }
+        )
     }
 }
+

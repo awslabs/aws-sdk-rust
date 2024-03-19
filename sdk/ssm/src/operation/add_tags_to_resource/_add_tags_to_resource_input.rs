@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddTagsToResourceInput {
+pub struct AddTagsToResourceInput  {
     /// <p>Specifies the type of resource you are tagging.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
@@ -21,13 +21,13 @@ pub struct AddTagsToResourceInput {
     /// <p>One or more tags. The value parameter is required.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl AddTagsToResourceInput {
+impl  AddTagsToResourceInput  {
     /// <p>Specifies the type of resource you are tagging.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceTypeForTagging> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceTypeForTagging> {
         self.resource_type.as_ref()
     }
     /// <p>The resource ID you want to tag.</p>
@@ -40,16 +40,17 @@ impl AddTagsToResourceInput {
     /// <p><code>ManagedInstance</code>: <code>mi-012345abcde</code></p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>One or more tags. The value parameter is required.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddTagsToResourceInput {
@@ -65,7 +66,7 @@ impl AddTagsToResourceInput {
 pub struct AddTagsToResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl AddTagsToResourceInputBuilder {
     /// <p>Specifies the type of resource you are tagging.</p><note>
@@ -80,8 +81,7 @@ impl AddTagsToResourceInputBuilder {
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeForTagging>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Specifies the type of resource you are tagging.</p><note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
@@ -115,8 +115,7 @@ impl AddTagsToResourceInputBuilder {
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
@@ -140,31 +139,34 @@ impl AddTagsToResourceInputBuilder {
     /// </important>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tags. The value parameter is required.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>One or more tags. The value parameter is required.</p><important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::add_tags_to_resource::AddTagsToResourceInput {
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_tags_to_resource::AddTagsToResourceInput {
+                resource_type: self.resource_type
+                ,
+                resource_id: self.resource_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

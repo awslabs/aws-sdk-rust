@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIndexesOutput {
+pub struct ListIndexesOutput  {
     /// <p>A structure that contains the details and status of each index.</p>
-    pub indexes: ::std::option::Option<::std::vec::Vec<crate::types::Index>>,
+    pub indexes: ::std::option::Option<::std::vec::Vec::<crate::types::Index>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListIndexesOutput {
+impl  ListIndexesOutput  {
     /// <p>A structure that contains the details and status of each index.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.indexes.is_none()`.
-    pub fn indexes(&self) -> &[crate::types::Index] {
-        self.indexes.as_deref().unwrap_or_default()
+    pub fn indexes(&self) -> & [crate::types::Index] {
+        self.indexes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIndexesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIndexesOutput {
     /// Creates a new builder-style object to manufacture [`ListIndexesOutput`](crate::operation::list_indexes::ListIndexesOutput).
     pub fn builder() -> crate::operation::list_indexes::builders::ListIndexesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListIndexesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIndexesOutputBuilder {
-    pub(crate) indexes: ::std::option::Option<::std::vec::Vec<crate::types::Index>>,
+    pub(crate) indexes: ::std::option::Option<::std::vec::Vec::<crate::types::Index>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListIndexesOutputBuilder {
     /// <p>A structure that contains the details and status of each index.</p>
     pub fn indexes(mut self, input: crate::types::Index) -> Self {
         let mut v = self.indexes.unwrap_or_default();
-        v.push(input);
-        self.indexes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.indexes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure that contains the details and status of each index.</p>
-    pub fn set_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Index>>) -> Self {
-        self.indexes = input;
-        self
+    pub fn set_indexes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Index>>) -> Self {
+        self.indexes = input; self
     }
     /// <p>A structure that contains the details and status of each index.</p>
-    pub fn get_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Index>> {
+    pub fn get_indexes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Index>> {
         &self.indexes
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
@@ -69,28 +69,30 @@ impl ListIndexesOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIndexesOutput`](crate::operation::list_indexes::ListIndexesOutput).
     pub fn build(self) -> crate::operation::list_indexes::ListIndexesOutput {
         crate::operation::list_indexes::ListIndexesOutput {
-            indexes: self.indexes,
-            next_token: self.next_token,
+            indexes: self.indexes
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

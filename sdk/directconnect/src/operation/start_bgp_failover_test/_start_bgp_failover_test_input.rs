@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartBgpFailoverTestInput {
+pub struct StartBgpFailoverTestInput  {
     /// <p>The ID of the virtual interface you want to test.</p>
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The BGP peers to place in the DOWN state.</p>
-    pub bgp_peers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bgp_peers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
     /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
     pub test_duration_in_minutes: ::std::option::Option<i32>,
 }
-impl StartBgpFailoverTestInput {
+impl  StartBgpFailoverTestInput  {
     /// <p>The ID of the virtual interface you want to test.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The BGP peers to place in the DOWN state.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bgp_peers.is_none()`.
-    pub fn bgp_peers(&self) -> &[::std::string::String] {
-        self.bgp_peers.as_deref().unwrap_or_default()
+    pub fn bgp_peers(&self) -> & [::std::string::String] {
+        self.bgp_peers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
     /// <p>Maximum value: 4,320 minutes (72 hours).</p>
@@ -42,7 +43,7 @@ impl StartBgpFailoverTestInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBgpFailoverTestInputBuilder {
     pub(crate) virtual_interface_id: ::std::option::Option<::std::string::String>,
-    pub(crate) bgp_peers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bgp_peers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) test_duration_in_minutes: ::std::option::Option<i32>,
 }
 impl StartBgpFailoverTestInputBuilder {
@@ -54,8 +55,7 @@ impl StartBgpFailoverTestInputBuilder {
     }
     /// <p>The ID of the virtual interface you want to test.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual interface you want to test.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,17 +68,16 @@ impl StartBgpFailoverTestInputBuilder {
     /// <p>The BGP peers to place in the DOWN state.</p>
     pub fn bgp_peers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bgp_peers.unwrap_or_default();
-        v.push(input.into());
-        self.bgp_peers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bgp_peers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The BGP peers to place in the DOWN state.</p>
-    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bgp_peers = input;
-        self
+    pub fn set_bgp_peers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bgp_peers = input; self
     }
     /// <p>The BGP peers to place in the DOWN state.</p>
-    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bgp_peers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bgp_peers
     }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
@@ -92,8 +91,7 @@ impl StartBgpFailoverTestInputBuilder {
     /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
     pub fn set_test_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.test_duration_in_minutes = input;
-        self
+        self.test_duration_in_minutes = input; self
     }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
     /// <p>Maximum value: 4,320 minutes (72 hours).</p>
@@ -102,14 +100,17 @@ impl StartBgpFailoverTestInputBuilder {
         &self.test_duration_in_minutes
     }
     /// Consumes the builder and constructs a [`StartBgpFailoverTestInput`](crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput {
-            virtual_interface_id: self.virtual_interface_id,
-            bgp_peers: self.bgp_peers,
-            test_duration_in_minutes: self.test_duration_in_minutes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput {
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                bgp_peers: self.bgp_peers
+                ,
+                test_duration_in_minutes: self.test_duration_in_minutes
+                ,
+            }
+        )
     }
 }
+

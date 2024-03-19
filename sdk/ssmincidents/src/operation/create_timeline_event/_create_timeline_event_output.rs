@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTimelineEventOutput {
+pub struct CreateTimelineEventOutput  {
     /// <p>The ARN of the incident record that you added the event to.</p>
     pub incident_record_arn: ::std::string::String,
     /// <p>The ID of the event for easy reference later.</p>
     pub event_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateTimelineEventOutput {
+impl  CreateTimelineEventOutput  {
     /// <p>The ARN of the incident record that you added the event to.</p>
-    pub fn incident_record_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.incident_record_arn.deref()
+    pub fn incident_record_arn(&self) -> & str {
+        use std::ops::Deref; self.incident_record_arn.deref()
     }
     /// <p>The ID of the event for easy reference later.</p>
-    pub fn event_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_id.deref()
+    pub fn event_id(&self) -> & str {
+        use std::ops::Deref; self.event_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTimelineEventOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTimelineEventOutput {
     /// Creates a new builder-style object to manufacture [`CreateTimelineEventOutput`](crate::operation::create_timeline_event::CreateTimelineEventOutput).
     pub fn builder() -> crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateTimelineEventOutputBuilder {
     }
     /// <p>The ARN of the incident record that you added the event to.</p>
     pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incident_record_arn = input;
-        self
+        self.incident_record_arn = input; self
     }
     /// <p>The ARN of the incident record that you added the event to.</p>
     pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,44 +62,41 @@ impl CreateTimelineEventOutputBuilder {
     }
     /// <p>The ID of the event for easy reference later.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The ID of the event for easy reference later.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTimelineEventOutput`](crate::operation::create_timeline_event::CreateTimelineEventOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`incident_record_arn`](crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder::incident_record_arn)
     /// - [`event_id`](crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder::event_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_timeline_event::CreateTimelineEventOutput {
-            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "incident_record_arn",
-                    "incident_record_arn was not specified but it is required when building CreateTimelineEventOutput",
-                )
-            })?,
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building CreateTimelineEventOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_timeline_event::CreateTimelineEventOutput {
+                incident_record_arn: self.incident_record_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("incident_record_arn", "incident_record_arn was not specified but it is required when building CreateTimelineEventOutput")
+                    )?
+                ,
+                event_id: self.event_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_id", "event_id was not specified but it is required when building CreateTimelineEventOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

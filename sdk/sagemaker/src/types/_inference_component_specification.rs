@@ -3,7 +3,7 @@
 /// <p>Details about the resources to deploy with this inference component, including the model, container, and compute resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceComponentSpecification {
+pub struct InferenceComponentSpecification  {
     /// <p>The name of an existing SageMaker model object in your account that you want to deploy with the inference component.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines a container that provides the runtime environment for a model that you deploy with an inference component.</p>
@@ -13,21 +13,21 @@ pub struct InferenceComponentSpecification {
     /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
     pub compute_resource_requirements: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
 }
-impl InferenceComponentSpecification {
+impl  InferenceComponentSpecification  {
     /// <p>The name of an existing SageMaker model object in your account that you want to deploy with the inference component.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>Defines a container that provides the runtime environment for a model that you deploy with an inference component.</p>
-    pub fn container(&self) -> ::std::option::Option<&crate::types::InferenceComponentContainerSpecification> {
+    pub fn container(&self) -> ::std::option::Option<& crate::types::InferenceComponentContainerSpecification> {
         self.container.as_ref()
     }
     /// <p>Settings that take effect while the model container starts up.</p>
-    pub fn startup_parameters(&self) -> ::std::option::Option<&crate::types::InferenceComponentStartupParameters> {
+    pub fn startup_parameters(&self) -> ::std::option::Option<& crate::types::InferenceComponentStartupParameters> {
         self.startup_parameters.as_ref()
     }
     /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
-    pub fn compute_resource_requirements(&self) -> ::std::option::Option<&crate::types::InferenceComponentComputeResourceRequirements> {
+    pub fn compute_resource_requirements(&self) -> ::std::option::Option<& crate::types::InferenceComponentComputeResourceRequirements> {
         self.compute_resource_requirements.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl InferenceComponentSpecificationBuilder {
     }
     /// <p>The name of an existing SageMaker model object in your account that you want to deploy with the inference component.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of an existing SageMaker model object in your account that you want to deploy with the inference component.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl InferenceComponentSpecificationBuilder {
     }
     /// <p>Defines a container that provides the runtime environment for a model that you deploy with an inference component.</p>
     pub fn set_container(mut self, input: ::std::option::Option<crate::types::InferenceComponentContainerSpecification>) -> Self {
-        self.container = input;
-        self
+        self.container = input; self
     }
     /// <p>Defines a container that provides the runtime environment for a model that you deploy with an inference component.</p>
     pub fn get_container(&self) -> &::std::option::Option<crate::types::InferenceComponentContainerSpecification> {
@@ -83,8 +81,7 @@ impl InferenceComponentSpecificationBuilder {
     }
     /// <p>Settings that take effect while the model container starts up.</p>
     pub fn set_startup_parameters(mut self, input: ::std::option::Option<crate::types::InferenceComponentStartupParameters>) -> Self {
-        self.startup_parameters = input;
-        self
+        self.startup_parameters = input; self
     }
     /// <p>Settings that take effect while the model container starts up.</p>
     pub fn get_startup_parameters(&self) -> &::std::option::Option<crate::types::InferenceComponentStartupParameters> {
@@ -97,12 +94,8 @@ impl InferenceComponentSpecificationBuilder {
         self
     }
     /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
-    pub fn set_compute_resource_requirements(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>,
-    ) -> Self {
-        self.compute_resource_requirements = input;
-        self
+    pub fn set_compute_resource_requirements(mut self, input: ::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements>) -> Self {
+        self.compute_resource_requirements = input; self
     }
     /// <p>The compute resources allocated to run the model assigned to the inference component.</p>
     pub fn get_compute_resource_requirements(&self) -> &::std::option::Option<crate::types::InferenceComponentComputeResourceRequirements> {
@@ -111,10 +104,15 @@ impl InferenceComponentSpecificationBuilder {
     /// Consumes the builder and constructs a [`InferenceComponentSpecification`](crate::types::InferenceComponentSpecification).
     pub fn build(self) -> crate::types::InferenceComponentSpecification {
         crate::types::InferenceComponentSpecification {
-            model_name: self.model_name,
-            container: self.container,
-            startup_parameters: self.startup_parameters,
-            compute_resource_requirements: self.compute_resource_requirements,
+            model_name: self.model_name
+            ,
+            container: self.container
+            ,
+            startup_parameters: self.startup_parameters
+            ,
+            compute_resource_requirements: self.compute_resource_requirements
+            ,
         }
     }
 }
+

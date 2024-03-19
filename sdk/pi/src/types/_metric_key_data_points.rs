@@ -3,22 +3,23 @@
 /// <p>A time-ordered series of data points, corresponding to a dimension of a Performance Insights metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricKeyDataPoints {
+pub struct MetricKeyDataPoints  {
     /// <p>The dimensions to which the data points apply.</p>
     pub key: ::std::option::Option<crate::types::ResponseResourceMetricKey>,
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
-    pub data_points: ::std::option::Option<::std::vec::Vec<crate::types::DataPoint>>,
+    pub data_points: ::std::option::Option<::std::vec::Vec::<crate::types::DataPoint>>,
 }
-impl MetricKeyDataPoints {
+impl  MetricKeyDataPoints  {
     /// <p>The dimensions to which the data points apply.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::ResponseResourceMetricKey> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::ResponseResourceMetricKey> {
         self.key.as_ref()
     }
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_points.is_none()`.
-    pub fn data_points(&self) -> &[crate::types::DataPoint] {
-        self.data_points.as_deref().unwrap_or_default()
+    pub fn data_points(&self) -> & [crate::types::DataPoint] {
+        self.data_points.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MetricKeyDataPoints {
@@ -33,7 +34,7 @@ impl MetricKeyDataPoints {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricKeyDataPointsBuilder {
     pub(crate) key: ::std::option::Option<crate::types::ResponseResourceMetricKey>,
-    pub(crate) data_points: ::std::option::Option<::std::vec::Vec<crate::types::DataPoint>>,
+    pub(crate) data_points: ::std::option::Option<::std::vec::Vec::<crate::types::DataPoint>>,
 }
 impl MetricKeyDataPointsBuilder {
     /// <p>The dimensions to which the data points apply.</p>
@@ -43,8 +44,7 @@ impl MetricKeyDataPointsBuilder {
     }
     /// <p>The dimensions to which the data points apply.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::ResponseResourceMetricKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The dimensions to which the data points apply.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::ResponseResourceMetricKey> {
@@ -57,24 +57,26 @@ impl MetricKeyDataPointsBuilder {
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
     pub fn data_points(mut self, input: crate::types::DataPoint) -> Self {
         let mut v = self.data_points.unwrap_or_default();
-        v.push(input);
-        self.data_points = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_points = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
-    pub fn set_data_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataPoint>>) -> Self {
-        self.data_points = input;
-        self
+    pub fn set_data_points(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataPoint>>) -> Self {
+        self.data_points = input; self
     }
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
-    pub fn get_data_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPoint>> {
+    pub fn get_data_points(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataPoint>> {
         &self.data_points
     }
     /// Consumes the builder and constructs a [`MetricKeyDataPoints`](crate::types::MetricKeyDataPoints).
     pub fn build(self) -> crate::types::MetricKeyDataPoints {
         crate::types::MetricKeyDataPoints {
-            key: self.key,
-            data_points: self.data_points,
+            key: self.key
+            ,
+            data_points: self.data_points
+            ,
         }
     }
 }
+

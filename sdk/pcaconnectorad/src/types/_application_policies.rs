@@ -3,21 +3,20 @@
 /// <p>Application policies describe what the certificate can be used for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationPolicies {
+pub struct ApplicationPolicies  {
     /// <p>Marks the application policy extension as critical.</p>
     pub critical: ::std::option::Option<bool>,
     /// <p>Application policies describe what the certificate can be used for.</p>
-    pub policies: ::std::vec::Vec<crate::types::ApplicationPolicy>,
+    pub policies: ::std::vec::Vec::<crate::types::ApplicationPolicy>,
 }
-impl ApplicationPolicies {
+impl  ApplicationPolicies  {
     /// <p>Marks the application policy extension as critical.</p>
     pub fn critical(&self) -> ::std::option::Option<bool> {
         self.critical
     }
     /// <p>Application policies describe what the certificate can be used for.</p>
-    pub fn policies(&self) -> &[crate::types::ApplicationPolicy] {
-        use std::ops::Deref;
-        self.policies.deref()
+    pub fn policies(&self) -> & [crate::types::ApplicationPolicy] {
+        use std::ops::Deref; self.policies.deref()
     }
 }
 impl ApplicationPolicies {
@@ -32,7 +31,7 @@ impl ApplicationPolicies {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationPoliciesBuilder {
     pub(crate) critical: ::std::option::Option<bool>,
-    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicy>>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPolicy>>,
 }
 impl ApplicationPoliciesBuilder {
     /// <p>Marks the application policy extension as critical.</p>
@@ -42,8 +41,7 @@ impl ApplicationPoliciesBuilder {
     }
     /// <p>Marks the application policy extension as critical.</p>
     pub fn set_critical(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.critical = input;
-        self
+        self.critical = input; self
     }
     /// <p>Marks the application policy extension as critical.</p>
     pub fn get_critical(&self) -> &::std::option::Option<bool> {
@@ -56,31 +54,33 @@ impl ApplicationPoliciesBuilder {
     /// <p>Application policies describe what the certificate can be used for.</p>
     pub fn policies(mut self, input: crate::types::ApplicationPolicy) -> Self {
         let mut v = self.policies.unwrap_or_default();
-        v.push(input);
-        self.policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Application policies describe what the certificate can be used for.</p>
-    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicy>>) -> Self {
-        self.policies = input;
-        self
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPolicy>>) -> Self {
+        self.policies = input; self
     }
     /// <p>Application policies describe what the certificate can be used for.</p>
-    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicy>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationPolicy>> {
         &self.policies
     }
     /// Consumes the builder and constructs a [`ApplicationPolicies`](crate::types::ApplicationPolicies).
     /// This method will fail if any of the following fields are not set:
     /// - [`policies`](crate::types::builders::ApplicationPoliciesBuilder::policies)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationPolicies, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationPolicies {
-            critical: self.critical,
-            policies: self.policies.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policies",
-                    "policies was not specified but it is required when building ApplicationPolicies",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationPolicies {
+                critical: self.critical
+                ,
+                policies: self.policies
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policies", "policies was not specified but it is required when building ApplicationPolicies")
+                    )?
+                ,
+            }
+        )
     }
 }
+

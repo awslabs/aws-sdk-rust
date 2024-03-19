@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionalgorithmspec = unimplemented!();
 /// match encryptionalgorithmspec {
@@ -32,16 +32,14 @@
 /// Specifically, when `encryptionalgorithmspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionAlgorithmSpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum EncryptionAlgorithmSpec {
     #[allow(missing_docs)] // documentation missing in model
     RsaesOaepSha1,
@@ -53,67 +51,68 @@ pub enum EncryptionAlgorithmSpec {
     SymmetricDefault,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for EncryptionAlgorithmSpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "RSAES_OAEP_SHA_1" => EncryptionAlgorithmSpec::RsaesOaepSha1,
-            "RSAES_OAEP_SHA_256" => EncryptionAlgorithmSpec::RsaesOaepSha256,
-            "SM2PKE" => EncryptionAlgorithmSpec::Sm2Pke,
-            "SYMMETRIC_DEFAULT" => EncryptionAlgorithmSpec::SymmetricDefault,
-            other => EncryptionAlgorithmSpec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "RSAES_OAEP_SHA_1" => EncryptionAlgorithmSpec::RsaesOaepSha1,
+"RSAES_OAEP_SHA_256" => EncryptionAlgorithmSpec::RsaesOaepSha256,
+"SM2PKE" => EncryptionAlgorithmSpec::Sm2Pke,
+"SYMMETRIC_DEFAULT" => EncryptionAlgorithmSpec::SymmetricDefault,
+other => EncryptionAlgorithmSpec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for EncryptionAlgorithmSpec {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(EncryptionAlgorithmSpec::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(EncryptionAlgorithmSpec::from(s))
+                    }
+                }
 impl EncryptionAlgorithmSpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EncryptionAlgorithmSpec::RsaesOaepSha1 => "RSAES_OAEP_SHA_1",
-            EncryptionAlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
-            EncryptionAlgorithmSpec::Sm2Pke => "SM2PKE",
-            EncryptionAlgorithmSpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            EncryptionAlgorithmSpec::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "SM2PKE", "SYMMETRIC_DEFAULT"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EncryptionAlgorithmSpec::RsaesOaepSha1 => "RSAES_OAEP_SHA_1",
+    EncryptionAlgorithmSpec::RsaesOaepSha256 => "RSAES_OAEP_SHA_256",
+    EncryptionAlgorithmSpec::Sm2Pke => "SM2PKE",
+    EncryptionAlgorithmSpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
+    EncryptionAlgorithmSpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "SM2PKE", "SYMMETRIC_DEFAULT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for EncryptionAlgorithmSpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl EncryptionAlgorithmSpec {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for EncryptionAlgorithmSpec {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            EncryptionAlgorithmSpec::RsaesOaepSha1 => write!(f, "RSAES_OAEP_SHA_1"),
-            EncryptionAlgorithmSpec::RsaesOaepSha256 => write!(f, "RSAES_OAEP_SHA_256"),
-            EncryptionAlgorithmSpec::Sm2Pke => write!(f, "SM2PKE"),
-            EncryptionAlgorithmSpec::SymmetricDefault => write!(f, "SYMMETRIC_DEFAULT"),
-            EncryptionAlgorithmSpec::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                EncryptionAlgorithmSpec::RsaesOaepSha1 => write!(f, "RSAES_OAEP_SHA_1"),
+EncryptionAlgorithmSpec::RsaesOaepSha256 => write!(f, "RSAES_OAEP_SHA_256"),
+EncryptionAlgorithmSpec::Sm2Pke => write!(f, "SM2PKE"),
+EncryptionAlgorithmSpec::SymmetricDefault => write!(f, "SYMMETRIC_DEFAULT"),
+EncryptionAlgorithmSpec::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

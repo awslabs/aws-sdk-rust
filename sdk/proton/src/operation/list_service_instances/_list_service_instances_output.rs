@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServiceInstancesOutput {
+pub struct ListServiceInstancesOutput  {
     /// <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of service instances with summary data.</p>
-    pub service_instances: ::std::vec::Vec<crate::types::ServiceInstanceSummary>,
+    pub service_instances: ::std::vec::Vec::<crate::types::ServiceInstanceSummary>,
     _request_id: Option<String>,
 }
-impl ListServiceInstancesOutput {
+impl  ListServiceInstancesOutput  {
     /// <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of service instances with summary data.</p>
-    pub fn service_instances(&self) -> &[crate::types::ServiceInstanceSummary] {
-        use std::ops::Deref;
-        self.service_instances.deref()
+    pub fn service_instances(&self) -> & [crate::types::ServiceInstanceSummary] {
+        use std::ops::Deref; self.service_instances.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListServiceInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListServiceInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceInstancesOutput`](crate::operation::list_service_instances::ListServiceInstancesOutput).
     pub fn builder() -> crate::operation::list_service_instances::builders::ListServiceInstancesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListServiceInstancesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceInstancesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) service_instances: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>,
+    pub(crate) service_instances: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceInstanceSummary>>,
     _request_id: Option<String>,
 }
 impl ListServiceInstancesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListServiceInstancesOutputBuilder {
     }
     /// <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl ListServiceInstancesOutputBuilder {
     /// <p>An array of service instances with summary data.</p>
     pub fn service_instances(mut self, input: crate::types::ServiceInstanceSummary) -> Self {
         let mut v = self.service_instances.unwrap_or_default();
-        v.push(input);
-        self.service_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of service instances with summary data.</p>
-    pub fn set_service_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>) -> Self {
-        self.service_instances = input;
-        self
+    pub fn set_service_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceInstanceSummary>>) -> Self {
+        self.service_instances = input; self
     }
     /// <p>An array of service instances with summary data.</p>
-    pub fn get_service_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>> {
+    pub fn get_service_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceInstanceSummary>> {
         &self.service_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListServiceInstancesOutput`](crate::operation::list_service_instances::ListServiceInstancesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_instances`](crate::operation::list_service_instances::builders::ListServiceInstancesOutputBuilder::service_instances)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_service_instances::ListServiceInstancesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_service_instances::ListServiceInstancesOutput {
-            next_token: self.next_token,
-            service_instances: self.service_instances.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_instances",
-                    "service_instances was not specified but it is required when building ListServiceInstancesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_instances::ListServiceInstancesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_service_instances::ListServiceInstancesOutput {
+                next_token: self.next_token
+                ,
+                service_instances: self.service_instances
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_instances", "service_instances was not specified but it is required when building ListServiceInstancesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

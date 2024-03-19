@@ -3,7 +3,7 @@
 /// <p>The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFileSystemWindowsConfiguration {
+pub struct CreateFileSystemWindowsConfiguration  {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the file system should join when it's created.</p>
     pub active_directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an FSx for ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP SVMs</a>.</p>
@@ -45,19 +45,19 @@ pub struct CreateFileSystemWindowsConfiguration {
     /// <p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aliases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system.</p>
     pub audit_log_configuration: ::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
 }
-impl CreateFileSystemWindowsConfiguration {
+impl  CreateFileSystemWindowsConfiguration  {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the file system should join when it's created.</p>
-    pub fn active_directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn active_directory_id(&self) -> ::std::option::Option<& str> {
         self.active_directory_id.as_deref()
     }
     /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an FSx for ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP SVMs</a>.</p>
-    pub fn self_managed_active_directory_configuration(&self) -> ::std::option::Option<&crate::types::SelfManagedActiveDirectoryConfiguration> {
+    pub fn self_managed_active_directory_configuration(&self) -> ::std::option::Option<& crate::types::SelfManagedActiveDirectoryConfiguration> {
         self.self_managed_active_directory_configuration.as_ref()
     }
     /// <p>Specifies the file system deployment type, valid values are the following:</p>
@@ -70,11 +70,11 @@ impl CreateFileSystemWindowsConfiguration {
     /// <p><code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
-    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::WindowsDeploymentType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<& crate::types::WindowsDeploymentType> {
         self.deployment_type.as_ref()
     }
     /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency.</p>
-    pub fn preferred_subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_subnet_id(&self) -> ::std::option::Option<& str> {
         self.preferred_subnet_id.as_deref()
     }
     /// <p>Sets the throughput capacity of an Amazon FSx file system, measured in megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
@@ -82,11 +82,11 @@ impl CreateFileSystemWindowsConfiguration {
         self.throughput_capacity
     }
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
-    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<& str> {
         self.weekly_maintenance_start_time.as_deref()
     }
     /// <p>The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.</p>
-    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<& str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -111,17 +111,18 @@ impl CreateFileSystemWindowsConfiguration {
     /// <p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
-    pub fn aliases(&self) -> &[::std::string::String] {
-        self.aliases.as_deref().unwrap_or_default()
+    pub fn aliases(&self) -> & [::std::string::String] {
+        self.aliases.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system.</p>
-    pub fn audit_log_configuration(&self) -> ::std::option::Option<&crate::types::WindowsAuditLogCreateConfiguration> {
+    pub fn audit_log_configuration(&self) -> ::std::option::Option<& crate::types::WindowsAuditLogCreateConfiguration> {
         self.audit_log_configuration.as_ref()
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
-    pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
+    pub fn disk_iops_configuration(&self) -> ::std::option::Option<& crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
 }
@@ -145,7 +146,7 @@ pub struct CreateFileSystemWindowsConfigurationBuilder {
     pub(crate) daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     pub(crate) automatic_backup_retention_days: ::std::option::Option<i32>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
-    pub(crate) aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aliases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) audit_log_configuration: ::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
     pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
 }
@@ -157,8 +158,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the file system should join when it's created.</p>
     pub fn set_active_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.active_directory_id = input;
-        self
+        self.active_directory_id = input; self
     }
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the file system should join when it's created.</p>
     pub fn get_active_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,12 +170,8 @@ impl CreateFileSystemWindowsConfigurationBuilder {
         self
     }
     /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an FSx for ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP SVMs</a>.</p>
-    pub fn set_self_managed_active_directory_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>,
-    ) -> Self {
-        self.self_managed_active_directory_configuration = input;
-        self
+    pub fn set_self_managed_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration>) -> Self {
+        self.self_managed_active_directory_configuration = input; self
     }
     /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an FSx for ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx for Windows with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP SVMs</a>.</p>
     pub fn get_self_managed_active_directory_configuration(&self) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryConfiguration> {
@@ -206,8 +202,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::WindowsDeploymentType>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// <p>Specifies the file system deployment type, valid values are the following:</p>
     /// <ul>
@@ -229,8 +224,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency.</p>
     pub fn set_preferred_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_subnet_id = input;
-        self
+        self.preferred_subnet_id = input; self
     }
     /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and minimize latency.</p>
     pub fn get_preferred_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +238,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>Sets the throughput capacity of an Amazon FSx file system, measured in megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.throughput_capacity = input;
-        self
+        self.throughput_capacity = input; self
     }
     /// <p>Sets the throughput capacity of an Amazon FSx file system, measured in megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
     pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
@@ -258,8 +251,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     pub fn set_weekly_maintenance_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.weekly_maintenance_start_time = input;
-        self
+        self.weekly_maintenance_start_time = input; self
     }
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +264,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.</p>
     pub fn set_daily_automatic_backup_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.daily_automatic_backup_start_time = input;
-        self
+        self.daily_automatic_backup_start_time = input; self
     }
     /// <p>The preferred time to take daily automatic backups, formatted HH:MM in the UTC time zone.</p>
     pub fn get_daily_automatic_backup_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +277,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn set_automatic_backup_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.automatic_backup_retention_days = input;
-        self
+        self.automatic_backup_retention_days = input; self
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn get_automatic_backup_retention_days(&self) -> &::std::option::Option<i32> {
@@ -300,8 +290,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
     pub fn set_copy_tags_to_backups(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_backups = input;
-        self
+        self.copy_tags_to_backups = input; self
     }
     /// <p>A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
     pub fn get_copy_tags_to_backups(&self) -> &::std::option::Option<bool> {
@@ -327,9 +316,9 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub fn aliases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aliases.unwrap_or_default();
-        v.push(input.into());
-        self.aliases = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aliases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request payload.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p>
@@ -345,9 +334,8 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     /// <p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aliases = input;
-        self
+    pub fn set_aliases(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aliases = input; self
     }
     /// <p>An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request payload.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p>
@@ -363,7 +351,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     /// <p>Can start with a numeric.</p></li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aliases
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system.</p>
@@ -373,8 +361,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system.</p>
     pub fn set_audit_log_configuration(mut self, input: ::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>) -> Self {
-        self.audit_log_configuration = input;
-        self
+        self.audit_log_configuration = input; self
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system.</p>
     pub fn get_audit_log_configuration(&self) -> &::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration> {
@@ -387,8 +374,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
     pub fn set_disk_iops_configuration(mut self, input: ::std::option::Option<crate::types::DiskIopsConfiguration>) -> Self {
-        self.disk_iops_configuration = input;
-        self
+        self.disk_iops_configuration = input; self
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
     pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
@@ -397,18 +383,31 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     /// Consumes the builder and constructs a [`CreateFileSystemWindowsConfiguration`](crate::types::CreateFileSystemWindowsConfiguration).
     pub fn build(self) -> crate::types::CreateFileSystemWindowsConfiguration {
         crate::types::CreateFileSystemWindowsConfiguration {
-            active_directory_id: self.active_directory_id,
-            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration,
-            deployment_type: self.deployment_type,
-            preferred_subnet_id: self.preferred_subnet_id,
-            throughput_capacity: self.throughput_capacity,
-            weekly_maintenance_start_time: self.weekly_maintenance_start_time,
-            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time,
-            automatic_backup_retention_days: self.automatic_backup_retention_days,
-            copy_tags_to_backups: self.copy_tags_to_backups,
-            aliases: self.aliases,
-            audit_log_configuration: self.audit_log_configuration,
-            disk_iops_configuration: self.disk_iops_configuration,
+            active_directory_id: self.active_directory_id
+            ,
+            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration
+            ,
+            deployment_type: self.deployment_type
+            ,
+            preferred_subnet_id: self.preferred_subnet_id
+            ,
+            throughput_capacity: self.throughput_capacity
+            ,
+            weekly_maintenance_start_time: self.weekly_maintenance_start_time
+            ,
+            daily_automatic_backup_start_time: self.daily_automatic_backup_start_time
+            ,
+            automatic_backup_retention_days: self.automatic_backup_retention_days
+            ,
+            copy_tags_to_backups: self.copy_tags_to_backups
+            ,
+            aliases: self.aliases
+            ,
+            audit_log_configuration: self.audit_log_configuration
+            ,
+            disk_iops_configuration: self.disk_iops_configuration
+            ,
         }
     }
 }
+

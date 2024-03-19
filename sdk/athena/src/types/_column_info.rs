@@ -3,7 +3,7 @@
 /// <p>Information about the columns in a query execution result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnInfo {
+pub struct ColumnInfo  {
     /// <p>The catalog to which the query results belong.</p>
     pub catalog_name: ::std::option::Option<::std::string::String>,
     /// <p>The schema name (database name) to which the query results belong.</p>
@@ -25,32 +25,30 @@ pub struct ColumnInfo {
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     pub case_sensitive: bool,
 }
-impl ColumnInfo {
+impl  ColumnInfo  {
     /// <p>The catalog to which the query results belong.</p>
-    pub fn catalog_name(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_name(&self) -> ::std::option::Option<& str> {
         self.catalog_name.as_deref()
     }
     /// <p>The schema name (database name) to which the query results belong.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The table name for the query results.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A column label.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
     pub fn precision(&self) -> i32 {
@@ -61,7 +59,7 @@ impl ColumnInfo {
         self.scale
     }
     /// <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
-    pub fn nullable(&self) -> ::std::option::Option<&crate::types::ColumnNullable> {
+    pub fn nullable(&self) -> ::std::option::Option<& crate::types::ColumnNullable> {
         self.nullable.as_ref()
     }
     /// <p>Indicates whether values in the column are case-sensitive.</p>
@@ -99,8 +97,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The catalog to which the query results belong.</p>
     pub fn set_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_name = input;
-        self
+        self.catalog_name = input; self
     }
     /// <p>The catalog to which the query results belong.</p>
     pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The schema name (database name) to which the query results belong.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The schema name (database name) to which the query results belong.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The table name for the query results.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The table name for the query results.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +137,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the column.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +150,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>A column label.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>A column label.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +164,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The data type of the column.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The data type of the column.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +177,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
     pub fn set_precision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.precision = input;
-        self
+        self.precision = input; self
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
     pub fn get_precision(&self) -> &::std::option::Option<i32> {
@@ -199,8 +190,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
     pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scale = input;
-        self
+        self.scale = input; self
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
     pub fn get_scale(&self) -> &::std::option::Option<i32> {
@@ -213,8 +203,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
     pub fn set_nullable(mut self, input: ::std::option::Option<crate::types::ColumnNullable>) -> Self {
-        self.nullable = input;
-        self
+        self.nullable = input; self
     }
     /// <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
     pub fn get_nullable(&self) -> &::std::option::Option<crate::types::ColumnNullable> {
@@ -227,8 +216,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     pub fn set_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.case_sensitive = input;
-        self
+        self.case_sensitive = input; self
     }
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     pub fn get_case_sensitive(&self) -> &::std::option::Option<bool> {
@@ -239,27 +227,39 @@ impl ColumnInfoBuilder {
     /// - [`name`](crate::types::builders::ColumnInfoBuilder::name)
     /// - [`r#type`](crate::types::builders::ColumnInfoBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ColumnInfo {
-            catalog_name: self.catalog_name,
-            schema_name: self.schema_name,
-            table_name: self.table_name,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ColumnInfo",
-                )
-            })?,
-            label: self.label,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ColumnInfo",
-                )
-            })?,
-            precision: self.precision.unwrap_or_default(),
-            scale: self.scale.unwrap_or_default(),
-            nullable: self.nullable,
-            case_sensitive: self.case_sensitive.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::ColumnInfo {
+                catalog_name: self.catalog_name
+                ,
+                schema_name: self.schema_name
+                ,
+                table_name: self.table_name
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ColumnInfo")
+                    )?
+                ,
+                label: self.label
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ColumnInfo")
+                    )?
+                ,
+                precision: self.precision
+                    .unwrap_or_default()
+                ,
+                scale: self.scale
+                    .unwrap_or_default()
+                ,
+                nullable: self.nullable
+                ,
+                case_sensitive: self.case_sensitive
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

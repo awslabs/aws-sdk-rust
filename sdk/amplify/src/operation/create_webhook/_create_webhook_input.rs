@@ -3,7 +3,7 @@
 /// <p>The request structure for the create webhook request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWebhookInput {
+pub struct CreateWebhookInput  {
     /// <p>The unique ID for an Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for a branch that is part of an Amplify app.</p>
@@ -11,17 +11,17 @@ pub struct CreateWebhookInput {
     /// <p>The description for a webhook.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreateWebhookInput {
+impl  CreateWebhookInput  {
     /// <p>The unique ID for an Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name for a branch that is part of an Amplify app.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p>The description for a webhook.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl CreateWebhookInputBuilder {
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl CreateWebhookInputBuilder {
     }
     /// <p>The name for a branch that is part of an Amplify app.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name for a branch that is part of an Amplify app.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl CreateWebhookInputBuilder {
     }
     /// <p>The description for a webhook.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for a webhook.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_webhook::CreateWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_webhook::CreateWebhookInput {
-            app_id: self.app_id,
-            branch_name: self.branch_name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_webhook::CreateWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_webhook::CreateWebhookInput {
+                app_id: self.app_id
+                ,
+                branch_name: self.branch_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

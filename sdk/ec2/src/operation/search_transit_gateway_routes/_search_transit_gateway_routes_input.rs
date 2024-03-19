@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchTransitGatewayRoutesInput {
+pub struct SearchTransitGatewayRoutesInput  {
     /// <p>The ID of the transit gateway route table.</p>
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. The possible values are:</p>
@@ -28,15 +28,15 @@ pub struct SearchTransitGatewayRoutesInput {
     /// <li>
     /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of routes to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl SearchTransitGatewayRoutesInput {
+impl  SearchTransitGatewayRoutesInput  {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>One or more filters. The possible values are:</p>
@@ -62,10 +62,11 @@ impl SearchTransitGatewayRoutesInput {
     /// <li>
     /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of routes to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -88,7 +89,7 @@ impl SearchTransitGatewayRoutesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTransitGatewayRoutesInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -101,8 +102,7 @@ impl SearchTransitGatewayRoutesInputBuilder {
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_route_table_id = input;
-        self
+        self.transit_gateway_route_table_id = input; self
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,9 +137,9 @@ impl SearchTransitGatewayRoutesInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
@@ -164,9 +164,8 @@ impl SearchTransitGatewayRoutesInputBuilder {
     /// <li>
     /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
@@ -191,7 +190,7 @@ impl SearchTransitGatewayRoutesInputBuilder {
     /// <li>
     /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of routes to return.</p>
@@ -201,8 +200,7 @@ impl SearchTransitGatewayRoutesInputBuilder {
     }
     /// <p>The maximum number of routes to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of routes to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -215,25 +213,26 @@ impl SearchTransitGatewayRoutesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`SearchTransitGatewayRoutesInput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput {
-            transit_gateway_route_table_id: self.transit_gateway_route_table_id,
-            filters: self.filters,
-            max_results: self.max_results,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput {
+                transit_gateway_route_table_id: self.transit_gateway_route_table_id
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

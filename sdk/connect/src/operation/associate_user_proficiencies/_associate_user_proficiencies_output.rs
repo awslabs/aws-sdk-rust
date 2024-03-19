@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateUserProficienciesOutput {
+pub struct AssociateUserProficienciesOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AssociateUserProficienciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateUserProficienciesOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserProficienciesOutput`](crate::operation::associate_user_proficiencies::AssociateUserProficienciesOutput).
     pub fn builder() -> crate::operation::associate_user_proficiencies::builders::AssociateUserProficienciesOutputBuilder {
@@ -25,14 +25,14 @@ pub struct AssociateUserProficienciesOutputBuilder {
 }
 impl AssociateUserProficienciesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateUserProficienciesOutput`](crate::operation::associate_user_proficiencies::AssociateUserProficienciesOutput).
     pub fn build(self) -> crate::operation::associate_user_proficiencies::AssociateUserProficienciesOutput {
         crate::operation::associate_user_proficiencies::AssociateUserProficienciesOutput {
@@ -40,3 +40,4 @@ impl AssociateUserProficienciesOutputBuilder {
         }
     }
 }
+

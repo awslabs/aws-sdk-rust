@@ -3,15 +3,15 @@
 /// <p>Describes the launch specification for VM import.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ImportInstanceLaunchSpecification {
+pub struct ImportInstanceLaunchSpecification  {
     /// <p>Reserved.</p>
     pub additional_info: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the instance.</p>
     pub architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     /// <p>The security group IDs.</p>
-    pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The security group names.</p>
-    pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
     /// <p>The instance type. For more information about the instance types that you can import, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance Types</a> in the VM Import/Export User Guide.</p>
@@ -27,33 +27,35 @@ pub struct ImportInstanceLaunchSpecification {
     /// <p>The Base64-encoded user data to make available to the instance.</p>
     pub user_data: ::std::option::Option<crate::types::UserData>,
 }
-impl ImportInstanceLaunchSpecification {
+impl  ImportInstanceLaunchSpecification  {
     /// <p>Reserved.</p>
-    pub fn additional_info(&self) -> ::std::option::Option<&str> {
+    pub fn additional_info(&self) -> ::std::option::Option<& str> {
         self.additional_info.as_deref()
     }
     /// <p>The architecture of the instance.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&crate::types::ArchitectureValues> {
+    pub fn architecture(&self) -> ::std::option::Option<& crate::types::ArchitectureValues> {
         self.architecture.as_ref()
     }
     /// <p>The security group IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
-    pub fn group_ids(&self) -> &[::std::string::String] {
-        self.group_ids.as_deref().unwrap_or_default()
+    pub fn group_ids(&self) -> & [::std::string::String] {
+        self.group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The security group names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
-    pub fn group_names(&self) -> &[::std::string::String] {
-        self.group_names.as_deref().unwrap_or_default()
+    pub fn group_names(&self) -> & [::std::string::String] {
+        self.group_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<&crate::types::ShutdownBehavior> {
+    pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<& crate::types::ShutdownBehavior> {
         self.instance_initiated_shutdown_behavior.as_ref()
     }
     /// <p>The instance type. For more information about the instance types that you can import, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance Types</a> in the VM Import/Export User Guide.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Indicates whether monitoring is enabled.</p>
@@ -61,23 +63,23 @@ impl ImportInstanceLaunchSpecification {
         self.monitoring
     }
     /// <p>The placement information for the instance.</p>
-    pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
+    pub fn placement(&self) -> ::std::option::Option<& crate::types::Placement> {
         self.placement.as_ref()
     }
     /// <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
-    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The Base64-encoded user data to make available to the instance.</p>
-    pub fn user_data(&self) -> ::std::option::Option<&crate::types::UserData> {
+    pub fn user_data(&self) -> ::std::option::Option<& crate::types::UserData> {
         self.user_data.as_ref()
     }
 }
-impl ::std::fmt::Debug for ImportInstanceLaunchSpecification {
+impl  ::std::fmt::Debug for ImportInstanceLaunchSpecification  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImportInstanceLaunchSpecification");
         formatter.field("additional_info", &self.additional_info);
@@ -107,8 +109,8 @@ impl ImportInstanceLaunchSpecification {
 pub struct ImportInstanceLaunchSpecificationBuilder {
     pub(crate) additional_info: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<crate::types::ArchitectureValues>,
-    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) monitoring: ::std::option::Option<bool>,
@@ -125,8 +127,7 @@ impl ImportInstanceLaunchSpecificationBuilder {
     }
     /// <p>Reserved.</p>
     pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.additional_info = input;
-        self
+        self.additional_info = input; self
     }
     /// <p>Reserved.</p>
     pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +140,7 @@ impl ImportInstanceLaunchSpecificationBuilder {
     }
     /// <p>The architecture of the instance.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::ArchitectureValues>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The architecture of the instance.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<crate::types::ArchitectureValues> {
@@ -153,17 +153,16 @@ impl ImportInstanceLaunchSpecificationBuilder {
     /// <p>The security group IDs.</p>
     pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group IDs.</p>
-    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_ids = input;
-        self
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_ids = input; self
     }
     /// <p>The security group IDs.</p>
-    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_ids
     }
     /// Appends an item to `group_names`.
@@ -173,17 +172,16 @@ impl ImportInstanceLaunchSpecificationBuilder {
     /// <p>The security group names.</p>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_names.unwrap_or_default();
-        v.push(input.into());
-        self.group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group names.</p>
-    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_names = input;
-        self
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_names = input; self
     }
     /// <p>The security group names.</p>
-    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_names
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
@@ -193,8 +191,7 @@ impl ImportInstanceLaunchSpecificationBuilder {
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::ShutdownBehavior>) -> Self {
-        self.instance_initiated_shutdown_behavior = input;
-        self
+        self.instance_initiated_shutdown_behavior = input; self
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::ShutdownBehavior> {
@@ -207,8 +204,7 @@ impl ImportInstanceLaunchSpecificationBuilder {
     }
     /// <p>The instance type. For more information about the instance types that you can import, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance Types</a> in the VM Import/Export User Guide.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type. For more information about the instance types that you can import, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance Types</a> in the VM Import/Export User Guide.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
@@ -221,8 +217,7 @@ impl ImportInstanceLaunchSpecificationBuilder {
     }
     /// <p>Indicates whether monitoring is enabled.</p>
     pub fn set_monitoring(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.monitoring = input;
-        self
+        self.monitoring = input; self
     }
     /// <p>Indicates whether monitoring is enabled.</p>
     pub fn get_monitoring(&self) -> &::std::option::Option<bool> {
@@ -235,8 +230,7 @@ impl ImportInstanceLaunchSpecificationBuilder {
     }
     /// <p>The placement information for the instance.</p>
     pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
-        self.placement = input;
-        self
+        self.placement = input; self
     }
     /// <p>The placement information for the instance.</p>
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
@@ -249,8 +243,7 @@ impl ImportInstanceLaunchSpecificationBuilder {
     }
     /// <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip_address = input;
-        self
+        self.private_ip_address = input; self
     }
     /// <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,8 +256,7 @@ impl ImportInstanceLaunchSpecificationBuilder {
     }
     /// <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -277,8 +269,7 @@ impl ImportInstanceLaunchSpecificationBuilder {
     }
     /// <p>The Base64-encoded user data to make available to the instance.</p>
     pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::UserData>) -> Self {
-        self.user_data = input;
-        self
+        self.user_data = input; self
     }
     /// <p>The Base64-encoded user data to make available to the instance.</p>
     pub fn get_user_data(&self) -> &::std::option::Option<crate::types::UserData> {
@@ -287,17 +278,28 @@ impl ImportInstanceLaunchSpecificationBuilder {
     /// Consumes the builder and constructs a [`ImportInstanceLaunchSpecification`](crate::types::ImportInstanceLaunchSpecification).
     pub fn build(self) -> crate::types::ImportInstanceLaunchSpecification {
         crate::types::ImportInstanceLaunchSpecification {
-            additional_info: self.additional_info,
-            architecture: self.architecture,
-            group_ids: self.group_ids,
-            group_names: self.group_names,
-            instance_initiated_shutdown_behavior: self.instance_initiated_shutdown_behavior,
-            instance_type: self.instance_type,
-            monitoring: self.monitoring,
-            placement: self.placement,
-            private_ip_address: self.private_ip_address,
-            subnet_id: self.subnet_id,
-            user_data: self.user_data,
+            additional_info: self.additional_info
+            ,
+            architecture: self.architecture
+            ,
+            group_ids: self.group_ids
+            ,
+            group_names: self.group_names
+            ,
+            instance_initiated_shutdown_behavior: self.instance_initiated_shutdown_behavior
+            ,
+            instance_type: self.instance_type
+            ,
+            monitoring: self.monitoring
+            ,
+            placement: self.placement
+            ,
+            private_ip_address: self.private_ip_address
+            ,
+            subnet_id: self.subnet_id
+            ,
+            user_data: self.user_data
+            ,
         }
     }
 }
@@ -318,3 +320,4 @@ impl ::std::fmt::Debug for ImportInstanceLaunchSpecificationBuilder {
         formatter.finish()
     }
 }
+

@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLineageGroups`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`created_after(DateTime)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::created_after) / [`set_created_after(Option<DateTime>)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::set_created_after):<br>required: **false**<br><p>A timestamp to filter against lineage groups created after a certain point in time.</p><br>
     ///   - [`created_before(DateTime)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::created_before) / [`set_created_before(Option<DateTime>)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::set_created_before):<br>required: **false**<br><p>A timestamp to filter against lineage groups created before a certain point in time.</p><br>
     ///   - [`sort_by(SortLineageGroupsBy)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::sort_by) / [`set_sort_by(Option<SortLineageGroupsBy>)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for the results. The default is <code>Ascending</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of endpoints to return in the response. This value defaults to 10.</p><br>
-    /// - On success, responds with [`ListLineageGroupsOutput`](crate::operation::list_lineage_groups::ListLineageGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListLineageGroupsOutput`](crate::operation::list_lineage_groups::ListLineageGroupsOutput) with field(s):
     ///   - [`lineage_group_summaries(Option<Vec::<LineageGroupSummary>>)`](crate::operation::list_lineage_groups::ListLineageGroupsOutput::lineage_group_summaries): <p>A list of lineage groups and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lineage_groups::ListLineageGroupsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListLineageGroupsError>`](crate::operation::list_lineage_groups::ListLineageGroupsError)
+                            /// - On failure, responds with [`SdkError<ListLineageGroupsError>`](crate::operation::list_lineage_groups::ListLineageGroupsError)
     pub fn list_lineage_groups(&self) -> crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder {
-        crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_lineage_groups::builders::ListLineageGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

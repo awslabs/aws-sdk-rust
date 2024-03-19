@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseLogEventsInput {
+pub struct GetRelationalDatabaseLogEventsInput  {
     /// <p>The name of your database for which to get log events.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log stream.</p>
@@ -36,14 +36,14 @@ pub struct GetRelationalDatabaseLogEventsInput {
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl GetRelationalDatabaseLogEventsInput {
+impl  GetRelationalDatabaseLogEventsInput  {
     /// <p>The name of your database for which to get log events.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
-    pub fn log_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_name(&self) -> ::std::option::Option<& str> {
         self.log_stream_name.as_deref()
     }
     /// <p>The start of the time interval from which to get log events.</p>
@@ -55,7 +55,7 @@ impl GetRelationalDatabaseLogEventsInput {
     /// <p>Specified in the Unix time format.</p>
     /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time interval from which to get log events.</p>
@@ -67,7 +67,7 @@ impl GetRelationalDatabaseLogEventsInput {
     /// <p>Specified in the Unix time format.</p>
     /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p><note>
@@ -78,7 +78,7 @@ impl GetRelationalDatabaseLogEventsInput {
     }
     /// <p>The token to advance to the next or previous page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -109,8 +109,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     }
     /// <p>The name of your database for which to get log events.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of your database for which to get log events.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
     pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream_name = input;
-        self
+        self.log_stream_name = input; self
     }
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
@@ -157,8 +155,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p></li>
     /// </ul>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
@@ -195,8 +192,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p></li>
     /// </ul>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
@@ -221,8 +217,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
     /// </note>
     pub fn set_start_from_head(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.start_from_head = input;
-        self
+        self.start_from_head = input; self
     }
     /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p><note>
     /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
@@ -239,8 +234,7 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
     /// <p>The token to advance to the next or previous page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The token to advance to the next or previous page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
@@ -248,21 +242,23 @@ impl GetRelationalDatabaseLogEventsInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseLogEventsInput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput {
-                relational_database_name: self.relational_database_name,
-                log_stream_name: self.log_stream_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                start_from_head: self.start_from_head,
-                page_token: self.page_token,
-            },
+                relational_database_name: self.relational_database_name
+                ,
+                log_stream_name: self.log_stream_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                start_from_head: self.start_from_head
+                ,
+                page_token: self.page_token
+                ,
+            }
         )
     }
 }
+

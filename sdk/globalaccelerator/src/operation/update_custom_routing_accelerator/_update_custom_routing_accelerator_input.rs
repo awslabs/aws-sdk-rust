@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCustomRoutingAcceleratorInput {
+pub struct UpdateCustomRoutingAcceleratorInput  {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
@@ -13,17 +13,17 @@ pub struct UpdateCustomRoutingAcceleratorInput {
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl UpdateCustomRoutingAcceleratorInput {
+impl  UpdateCustomRoutingAcceleratorInput  {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    pub fn accelerator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn accelerator_arn(&self) -> ::std::option::Option<& str> {
         self.accelerator_arn.as_deref()
     }
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
@@ -57,8 +57,7 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
     pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accelerator_arn = input;
-        self
+        self.accelerator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
     pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
     }
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
@@ -101,8 +98,7 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true.</p>
     /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
@@ -110,17 +106,19 @@ impl UpdateCustomRoutingAcceleratorInputBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateCustomRoutingAcceleratorInput`](crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput {
-            accelerator_arn: self.accelerator_arn,
-            name: self.name,
-            ip_address_type: self.ip_address_type,
-            enabled: self.enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_custom_routing_accelerator::UpdateCustomRoutingAcceleratorInput {
+                accelerator_arn: self.accelerator_arn
+                ,
+                name: self.name
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+                enabled: self.enabled
+                ,
+            }
+        )
     }
 }
+

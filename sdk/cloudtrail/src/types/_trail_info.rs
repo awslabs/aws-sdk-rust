@@ -3,7 +3,7 @@
 /// <p>Information about a CloudTrail trail, including the trail's name, home Region, and Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrailInfo {
+pub struct TrailInfo  {
     /// <p>The ARN of a trail.</p>
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a trail.</p>
@@ -11,17 +11,17 @@ pub struct TrailInfo {
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
     pub home_region: ::std::option::Option<::std::string::String>,
 }
-impl TrailInfo {
+impl  TrailInfo  {
     /// <p>The ARN of a trail.</p>
-    pub fn trail_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trail_arn(&self) -> ::std::option::Option<& str> {
         self.trail_arn.as_deref()
     }
     /// <p>The name of a trail.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
-    pub fn home_region(&self) -> ::std::option::Option<&str> {
+    pub fn home_region(&self) -> ::std::option::Option<& str> {
         self.home_region.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl TrailInfoBuilder {
     }
     /// <p>The ARN of a trail.</p>
     pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trail_arn = input;
-        self
+        self.trail_arn = input; self
     }
     /// <p>The ARN of a trail.</p>
     pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl TrailInfoBuilder {
     }
     /// <p>The name of a trail.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a trail.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl TrailInfoBuilder {
     }
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_region = input;
-        self
+        self.home_region = input; self
     }
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
     pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl TrailInfoBuilder {
     /// Consumes the builder and constructs a [`TrailInfo`](crate::types::TrailInfo).
     pub fn build(self) -> crate::types::TrailInfo {
         crate::types::TrailInfo {
-            trail_arn: self.trail_arn,
-            name: self.name,
-            home_region: self.home_region,
+            trail_arn: self.trail_arn
+            ,
+            name: self.name
+            ,
+            home_region: self.home_region
+            ,
         }
     }
 }
+

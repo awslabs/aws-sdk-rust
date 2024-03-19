@@ -3,7 +3,7 @@
 /// <p>Provides a summary of an alert's configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlertSummary {
+pub struct AlertSummary  {
     /// <p>The ARN of the alert.</p>
     pub alert_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the detector to which the alert is attached.</p>
@@ -21,19 +21,19 @@ pub struct AlertSummary {
     /// <p>The time at which the alert was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl AlertSummary {
+impl  AlertSummary  {
     /// <p>The ARN of the alert.</p>
-    pub fn alert_arn(&self) -> ::std::option::Option<&str> {
+    pub fn alert_arn(&self) -> ::std::option::Option<& str> {
         self.alert_arn.as_deref()
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The name of the alert.</p>
-    pub fn alert_name(&self) -> ::std::option::Option<&str> {
+    pub fn alert_name(&self) -> ::std::option::Option<& str> {
         self.alert_name.as_deref()
     }
     /// <p>The minimum severity for an anomaly to trigger the alert.</p>
@@ -41,23 +41,23 @@ impl AlertSummary {
         self.alert_sensitivity_threshold
     }
     /// <p>The type of the alert.</p>
-    pub fn alert_type(&self) -> ::std::option::Option<&crate::types::AlertType> {
+    pub fn alert_type(&self) -> ::std::option::Option<& crate::types::AlertType> {
         self.alert_type.as_ref()
     }
     /// <p>The status of the alert.</p>
-    pub fn alert_status(&self) -> ::std::option::Option<&crate::types::AlertStatus> {
+    pub fn alert_status(&self) -> ::std::option::Option<& crate::types::AlertStatus> {
         self.alert_status.as_ref()
     }
     /// <p>The time at which the alert was last modified.</p>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The time at which the alert was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -80,7 +80,7 @@ pub struct AlertSummaryBuilder {
     pub(crate) alert_status: ::std::option::Option<crate::types::AlertStatus>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl AlertSummaryBuilder {
     /// <p>The ARN of the alert.</p>
@@ -90,8 +90,7 @@ impl AlertSummaryBuilder {
     }
     /// <p>The ARN of the alert.</p>
     pub fn set_alert_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alert_arn = input;
-        self
+        self.alert_arn = input; self
     }
     /// <p>The ARN of the alert.</p>
     pub fn get_alert_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl AlertSummaryBuilder {
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl AlertSummaryBuilder {
     }
     /// <p>The name of the alert.</p>
     pub fn set_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alert_name = input;
-        self
+        self.alert_name = input; self
     }
     /// <p>The name of the alert.</p>
     pub fn get_alert_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl AlertSummaryBuilder {
     }
     /// <p>The minimum severity for an anomaly to trigger the alert.</p>
     pub fn set_alert_sensitivity_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.alert_sensitivity_threshold = input;
-        self
+        self.alert_sensitivity_threshold = input; self
     }
     /// <p>The minimum severity for an anomaly to trigger the alert.</p>
     pub fn get_alert_sensitivity_threshold(&self) -> &::std::option::Option<i32> {
@@ -146,8 +142,7 @@ impl AlertSummaryBuilder {
     }
     /// <p>The type of the alert.</p>
     pub fn set_alert_type(mut self, input: ::std::option::Option<crate::types::AlertType>) -> Self {
-        self.alert_type = input;
-        self
+        self.alert_type = input; self
     }
     /// <p>The type of the alert.</p>
     pub fn get_alert_type(&self) -> &::std::option::Option<crate::types::AlertType> {
@@ -160,8 +155,7 @@ impl AlertSummaryBuilder {
     }
     /// <p>The status of the alert.</p>
     pub fn set_alert_status(mut self, input: ::std::option::Option<crate::types::AlertStatus>) -> Self {
-        self.alert_status = input;
-        self
+        self.alert_status = input; self
     }
     /// <p>The status of the alert.</p>
     pub fn get_alert_status(&self) -> &::std::option::Option<crate::types::AlertStatus> {
@@ -174,8 +168,7 @@ impl AlertSummaryBuilder {
     }
     /// <p>The time at which the alert was last modified.</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The time at which the alert was last modified.</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +181,7 @@ impl AlertSummaryBuilder {
     }
     /// <p>The time at which the alert was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time at which the alert was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -202,31 +194,41 @@ impl AlertSummaryBuilder {
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AlertSummary`](crate::types::AlertSummary).
     pub fn build(self) -> crate::types::AlertSummary {
         crate::types::AlertSummary {
-            alert_arn: self.alert_arn,
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            alert_name: self.alert_name,
-            alert_sensitivity_threshold: self.alert_sensitivity_threshold.unwrap_or_default(),
-            alert_type: self.alert_type,
-            alert_status: self.alert_status,
-            last_modification_time: self.last_modification_time,
-            creation_time: self.creation_time,
-            tags: self.tags,
+            alert_arn: self.alert_arn
+            ,
+            anomaly_detector_arn: self.anomaly_detector_arn
+            ,
+            alert_name: self.alert_name
+            ,
+            alert_sensitivity_threshold: self.alert_sensitivity_threshold
+                .unwrap_or_default()
+            ,
+            alert_type: self.alert_type
+            ,
+            alert_status: self.alert_status
+            ,
+            last_modification_time: self.last_modification_time
+            ,
+            creation_time: self.creation_time
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

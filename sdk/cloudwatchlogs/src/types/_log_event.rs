@@ -3,19 +3,19 @@
 /// <p>This structure contains the information for one sample log event that is associated with an anomaly found by a log anomaly detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogEvent {
+pub struct LogEvent  {
     /// <p>The time stamp of the log event.</p>
     pub timestamp: ::std::option::Option<i64>,
     /// <p>The message content of the log event.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl LogEvent {
+impl  LogEvent  {
     /// <p>The time stamp of the log event.</p>
     pub fn timestamp(&self) -> ::std::option::Option<i64> {
         self.timestamp
     }
     /// <p>The message content of the log event.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl LogEventBuilder {
     }
     /// <p>The time stamp of the log event.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time stamp of the log event.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl LogEventBuilder {
     }
     /// <p>The message content of the log event.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message content of the log event.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl LogEventBuilder {
     /// Consumes the builder and constructs a [`LogEvent`](crate::types::LogEvent).
     pub fn build(self) -> crate::types::LogEvent {
         crate::types::LogEvent {
-            timestamp: self.timestamp,
-            message: self.message,
+            timestamp: self.timestamp
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

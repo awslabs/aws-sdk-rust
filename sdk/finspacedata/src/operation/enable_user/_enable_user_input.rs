@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableUserInput {
+pub struct EnableUserInput  {
     /// <p>The unique identifier for the user that you want to activate.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl EnableUserInput {
+impl  EnableUserInput  {
     /// <p>The unique identifier for the user that you want to activate.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EnableUserInputBuilder {
     }
     /// <p>The unique identifier for the user that you want to activate.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The unique identifier for the user that you want to activate.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EnableUserInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl EnableUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`EnableUserInput`](crate::operation::enable_user::EnableUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::enable_user::EnableUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_user::EnableUserInput {
-            user_id: self.user_id,
-            client_token: self.client_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::enable_user::EnableUserInput {
+                user_id: self.user_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

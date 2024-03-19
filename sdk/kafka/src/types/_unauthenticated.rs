@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Unauthenticated {
+pub struct Unauthenticated  {
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl Unauthenticated {
+impl  Unauthenticated  {
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -33,8 +33,7 @@ impl UnauthenticatedBuilder {
     }
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -42,6 +41,10 @@ impl UnauthenticatedBuilder {
     }
     /// Consumes the builder and constructs a [`Unauthenticated`](crate::types::Unauthenticated).
     pub fn build(self) -> crate::types::Unauthenticated {
-        crate::types::Unauthenticated { enabled: self.enabled }
+        crate::types::Unauthenticated {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

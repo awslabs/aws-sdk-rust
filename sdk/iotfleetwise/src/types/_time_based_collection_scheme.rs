@@ -3,11 +3,11 @@
 /// <p>Information about a collection scheme that uses a time period to decide how often to collect data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeBasedCollectionScheme {
+pub struct TimeBasedCollectionScheme  {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
     pub period_ms: i64,
 }
-impl TimeBasedCollectionScheme {
+impl  TimeBasedCollectionScheme  {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
     pub fn period_ms(&self) -> i64 {
         self.period_ms
@@ -35,8 +35,7 @@ impl TimeBasedCollectionSchemeBuilder {
     }
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
     pub fn set_period_ms(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.period_ms = input;
-        self
+        self.period_ms = input; self
     }
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
     pub fn get_period_ms(&self) -> &::std::option::Option<i64> {
@@ -46,13 +45,15 @@ impl TimeBasedCollectionSchemeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`period_ms`](crate::types::builders::TimeBasedCollectionSchemeBuilder::period_ms)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeBasedCollectionScheme, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeBasedCollectionScheme {
-            period_ms: self.period_ms.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "period_ms",
-                    "period_ms was not specified but it is required when building TimeBasedCollectionScheme",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeBasedCollectionScheme {
+                period_ms: self.period_ms
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("period_ms", "period_ms was not specified but it is required when building TimeBasedCollectionScheme")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the association between an application and a bundle resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BundleResourceAssociation {
+pub struct BundleResourceAssociation  {
     /// <p>The identifier of the associated resource.</p>
     pub associated_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the associated resources.</p>
@@ -19,33 +19,33 @@ pub struct BundleResourceAssociation {
     /// <p>The reason the association deployment failed.</p>
     pub state_reason: ::std::option::Option<crate::types::AssociationStateReason>,
 }
-impl BundleResourceAssociation {
+impl  BundleResourceAssociation  {
     /// <p>The identifier of the associated resource.</p>
-    pub fn associated_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn associated_resource_id(&self) -> ::std::option::Option<& str> {
         self.associated_resource_id.as_deref()
     }
     /// <p>The resource type of the associated resources.</p>
-    pub fn associated_resource_type(&self) -> ::std::option::Option<&crate::types::BundleAssociatedResourceType> {
+    pub fn associated_resource_type(&self) -> ::std::option::Option<& crate::types::BundleAssociatedResourceType> {
         self.associated_resource_type.as_ref()
     }
     /// <p>The identifier of the bundle.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The time the association is created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The time the association status was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The status of the bundle resource association.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AssociationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AssociationState> {
         self.state.as_ref()
     }
     /// <p>The reason the association deployment failed.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&crate::types::AssociationStateReason> {
+    pub fn state_reason(&self) -> ::std::option::Option<& crate::types::AssociationStateReason> {
         self.state_reason.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl BundleResourceAssociationBuilder {
     }
     /// <p>The identifier of the associated resource.</p>
     pub fn set_associated_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.associated_resource_id = input;
-        self
+        self.associated_resource_id = input; self
     }
     /// <p>The identifier of the associated resource.</p>
     pub fn get_associated_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl BundleResourceAssociationBuilder {
     }
     /// <p>The resource type of the associated resources.</p>
     pub fn set_associated_resource_type(mut self, input: ::std::option::Option<crate::types::BundleAssociatedResourceType>) -> Self {
-        self.associated_resource_type = input;
-        self
+        self.associated_resource_type = input; self
     }
     /// <p>The resource type of the associated resources.</p>
     pub fn get_associated_resource_type(&self) -> &::std::option::Option<crate::types::BundleAssociatedResourceType> {
@@ -104,8 +102,7 @@ impl BundleResourceAssociationBuilder {
     }
     /// <p>The identifier of the bundle.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The identifier of the bundle.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl BundleResourceAssociationBuilder {
     }
     /// <p>The time the association is created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The time the association is created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +128,7 @@ impl BundleResourceAssociationBuilder {
     }
     /// <p>The time the association status was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time the association status was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl BundleResourceAssociationBuilder {
     }
     /// <p>The status of the bundle resource association.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AssociationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The status of the bundle resource association.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AssociationState> {
@@ -160,8 +154,7 @@ impl BundleResourceAssociationBuilder {
     }
     /// <p>The reason the association deployment failed.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<crate::types::AssociationStateReason>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>The reason the association deployment failed.</p>
     pub fn get_state_reason(&self) -> &::std::option::Option<crate::types::AssociationStateReason> {
@@ -170,13 +163,21 @@ impl BundleResourceAssociationBuilder {
     /// Consumes the builder and constructs a [`BundleResourceAssociation`](crate::types::BundleResourceAssociation).
     pub fn build(self) -> crate::types::BundleResourceAssociation {
         crate::types::BundleResourceAssociation {
-            associated_resource_id: self.associated_resource_id,
-            associated_resource_type: self.associated_resource_type,
-            bundle_id: self.bundle_id,
-            created: self.created,
-            last_updated_time: self.last_updated_time,
-            state: self.state,
-            state_reason: self.state_reason,
+            associated_resource_id: self.associated_resource_id
+            ,
+            associated_resource_type: self.associated_resource_type
+            ,
+            bundle_id: self.bundle_id
+            ,
+            created: self.created
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            state: self.state
+            ,
+            state_reason: self.state_reason
+            ,
         }
     }
 }
+

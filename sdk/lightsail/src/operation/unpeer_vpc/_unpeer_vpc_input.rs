@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnpeerVpcInput {}
+pub struct UnpeerVpcInput  {
+}
 impl UnpeerVpcInput {
     /// Creates a new builder-style object to manufacture [`UnpeerVpcInput`](crate::operation::unpeer_vpc::UnpeerVpcInput).
     pub fn builder() -> crate::operation::unpeer_vpc::builders::UnpeerVpcInputBuilder {
@@ -13,10 +14,15 @@ impl UnpeerVpcInput {
 /// A builder for [`UnpeerVpcInput`](crate::operation::unpeer_vpc::UnpeerVpcInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct UnpeerVpcInputBuilder {}
+pub struct UnpeerVpcInputBuilder {
+}
 impl UnpeerVpcInputBuilder {
     /// Consumes the builder and constructs a [`UnpeerVpcInput`](crate::operation::unpeer_vpc::UnpeerVpcInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::unpeer_vpc::UnpeerVpcInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::unpeer_vpc::UnpeerVpcInput {})
+        ::std::result::Result::Ok(
+            crate::operation::unpeer_vpc::UnpeerVpcInput {
+            }
+        )
     }
 }
+

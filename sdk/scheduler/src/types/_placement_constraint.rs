@@ -3,19 +3,19 @@
 /// <p>An object representing a constraint on task placement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlacementConstraint {
+pub struct PlacementConstraint  {
     /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
     pub r#type: ::std::option::Option<crate::types::PlacementConstraintType>,
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub expression: ::std::option::Option<::std::string::String>,
 }
-impl PlacementConstraint {
+impl  PlacementConstraint  {
     /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PlacementConstraintType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PlacementConstraintType> {
         self.r#type.as_ref()
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PlacementConstraintBuilder {
     }
     /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PlacementConstraintType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PlacementConstraintType> {
@@ -55,8 +54,7 @@ impl PlacementConstraintBuilder {
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PlacementConstraintBuilder {
     /// Consumes the builder and constructs a [`PlacementConstraint`](crate::types::PlacementConstraint).
     pub fn build(self) -> crate::types::PlacementConstraint {
         crate::types::PlacementConstraint {
-            r#type: self.r#type,
-            expression: self.expression,
+            r#type: self.r#type
+            ,
+            expression: self.expression
+            ,
         }
     }
 }
+

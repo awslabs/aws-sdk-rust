@@ -3,13 +3,13 @@
 /// <p>A data type that contains a <code>Timestamp</code> object. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimestampStructure {
+pub struct TimestampStructure  {
     /// <p>A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub value: ::aws_smithy_types::DateTime,
 }
-impl TimestampStructure {
+impl  TimestampStructure  {
     /// <p>A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn value(&self) -> &::aws_smithy_types::DateTime {
+    pub fn value(&self) -> & ::aws_smithy_types::DateTime {
         &self.value
     }
 }
@@ -35,8 +35,7 @@ impl TimestampStructureBuilder {
     }
     /// <p>A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A <code>Timestamp</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -46,13 +45,15 @@ impl TimestampStructureBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::TimestampStructureBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::TimestampStructure, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimestampStructure {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building TimestampStructure",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimestampStructure {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building TimestampStructure")
+                    )?
+                ,
+            }
+        )
     }
 }
+

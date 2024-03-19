@@ -3,9 +3,9 @@
 /// <p>For global and local secondary indexes, identifies the attributes that are copied from the table into the index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDynamoDbTableProjection {
+pub struct AwsDynamoDbTableProjection  {
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
-    pub non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub non_key_attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -17,12 +17,13 @@ pub struct AwsDynamoDbTableProjection {
     /// </ul>
     pub projection_type: ::std::option::Option<::std::string::String>,
 }
-impl AwsDynamoDbTableProjection {
+impl  AwsDynamoDbTableProjection  {
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.non_key_attributes.is_none()`.
-    pub fn non_key_attributes(&self) -> &[::std::string::String] {
-        self.non_key_attributes.as_deref().unwrap_or_default()
+    pub fn non_key_attributes(&self) -> & [::std::string::String] {
+        self.non_key_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
@@ -33,7 +34,7 @@ impl AwsDynamoDbTableProjection {
     /// <li>
     /// <p><code>KEYS_ONLY</code></p></li>
     /// </ul>
-    pub fn projection_type(&self) -> ::std::option::Option<&str> {
+    pub fn projection_type(&self) -> ::std::option::Option<& str> {
         self.projection_type.as_deref()
     }
 }
@@ -48,7 +49,7 @@ impl AwsDynamoDbTableProjection {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableProjectionBuilder {
-    pub(crate) non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) non_key_attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) projection_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableProjectionBuilder {
@@ -59,17 +60,16 @@ impl AwsDynamoDbTableProjectionBuilder {
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
     pub fn non_key_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.non_key_attributes.unwrap_or_default();
-        v.push(input.into());
-        self.non_key_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.non_key_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
-    pub fn set_non_key_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.non_key_attributes = input;
-        self
+    pub fn set_non_key_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.non_key_attributes = input; self
     }
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
-    pub fn get_non_key_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_key_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.non_key_attributes
     }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
@@ -95,8 +95,7 @@ impl AwsDynamoDbTableProjectionBuilder {
     /// <p><code>KEYS_ONLY</code></p></li>
     /// </ul>
     pub fn set_projection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.projection_type = input;
-        self
+        self.projection_type = input; self
     }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>
@@ -113,8 +112,11 @@ impl AwsDynamoDbTableProjectionBuilder {
     /// Consumes the builder and constructs a [`AwsDynamoDbTableProjection`](crate::types::AwsDynamoDbTableProjection).
     pub fn build(self) -> crate::types::AwsDynamoDbTableProjection {
         crate::types::AwsDynamoDbTableProjection {
-            non_key_attributes: self.non_key_attributes,
-            projection_type: self.projection_type,
+            non_key_attributes: self.non_key_attributes
+            ,
+            projection_type: self.projection_type
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssessmentControlInsightsByControlDomainInput {
+pub struct ListAssessmentControlInsightsByControlDomainInput  {
     /// <p>The unique identifier for the control domain.</p>
     pub control_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the active assessment.</p>
@@ -12,17 +12,17 @@ pub struct ListAssessmentControlInsightsByControlDomainInput {
     /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAssessmentControlInsightsByControlDomainInput {
+impl  ListAssessmentControlInsightsByControlDomainInput  {
     /// <p>The unique identifier for the control domain.</p>
-    pub fn control_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_domain_id(&self) -> ::std::option::Option<& str> {
         self.control_domain_id.as_deref()
     }
     /// <p>The unique identifier for the active assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Represents the maximum number of results on a page or for an API request call.</p>
@@ -32,9 +32,7 @@ impl ListAssessmentControlInsightsByControlDomainInput {
 }
 impl ListAssessmentControlInsightsByControlDomainInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentControlInsightsByControlDomainInput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_control_insights_by_control_domain::builders::ListAssessmentControlInsightsByControlDomainInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_control_insights_by_control_domain::builders::ListAssessmentControlInsightsByControlDomainInputBuilder {
         crate::operation::list_assessment_control_insights_by_control_domain::builders::ListAssessmentControlInsightsByControlDomainInputBuilder::default()
     }
 }
@@ -57,8 +55,7 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
     }
     /// <p>The unique identifier for the control domain.</p>
     pub fn set_control_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_domain_id = input;
-        self
+        self.control_domain_id = input; self
     }
     /// <p>The unique identifier for the control domain.</p>
     pub fn get_control_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
     }
     /// <p>The unique identifier for the active assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The unique identifier for the active assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +82,7 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,27 +95,26 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
     }
     /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Represents the maximum number of results on a page or for an API request call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentControlInsightsByControlDomainInput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput {
-                control_domain_id: self.control_domain_id,
-                assessment_id: self.assessment_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                control_domain_id: self.control_domain_id
+                ,
+                assessment_id: self.assessment_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

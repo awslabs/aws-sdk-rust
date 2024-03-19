@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateServiceInstanceInput {
+pub struct UpdateServiceInstanceInput  {
     /// <p>The name of the service instance to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that the service instance belongs to.</p>
@@ -40,13 +40,13 @@ pub struct UpdateServiceInstanceInput {
     /// <p>The client token of the service instance to update.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateServiceInstanceInput {
+impl  UpdateServiceInstanceInput  {
     /// <p>The name of the service instance to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
@@ -72,27 +72,27 @@ impl UpdateServiceInstanceInput {
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentUpdateType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<& crate::types::DeploymentUpdateType> {
         self.deployment_type.as_ref()
     }
     /// <p>The formatted specification that defines the service instance update.</p>
-    pub fn spec(&self) -> ::std::option::Option<&str> {
+    pub fn spec(&self) -> ::std::option::Option<& str> {
         self.spec.as_deref()
     }
     /// <p>The major version of the service template to update.</p>
-    pub fn template_major_version(&self) -> ::std::option::Option<&str> {
+    pub fn template_major_version(&self) -> ::std::option::Option<& str> {
         self.template_major_version.as_deref()
     }
     /// <p>The minor version of the service template to update.</p>
-    pub fn template_minor_version(&self) -> ::std::option::Option<&str> {
+    pub fn template_minor_version(&self) -> ::std::option::Option<& str> {
         self.template_minor_version.as_deref()
     }
     /// <p>The client token of the service instance to update.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateServiceInstanceInput {
+impl  ::std::fmt::Debug for UpdateServiceInstanceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceInstanceInput");
         formatter.field("name", &self.name);
@@ -133,8 +133,7 @@ impl UpdateServiceInstanceInputBuilder {
     }
     /// <p>The name of the service instance to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the service instance to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +147,7 @@ impl UpdateServiceInstanceInputBuilder {
     }
     /// <p>The name of the service that the service instance belongs to.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service that the service instance belongs to.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +205,7 @@ impl UpdateServiceInstanceInputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentUpdateType>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
     /// <dl>
@@ -243,8 +240,7 @@ impl UpdateServiceInstanceInputBuilder {
     }
     /// <p>The formatted specification that defines the service instance update.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The formatted specification that defines the service instance update.</p>
     pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +253,7 @@ impl UpdateServiceInstanceInputBuilder {
     }
     /// <p>The major version of the service template to update.</p>
     pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_major_version = input;
-        self
+        self.template_major_version = input; self
     }
     /// <p>The major version of the service template to update.</p>
     pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +266,7 @@ impl UpdateServiceInstanceInputBuilder {
     }
     /// <p>The minor version of the service template to update.</p>
     pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_minor_version = input;
-        self
+        self.template_minor_version = input; self
     }
     /// <p>The minor version of the service template to update.</p>
     pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -285,27 +279,32 @@ impl UpdateServiceInstanceInputBuilder {
     }
     /// <p>The client token of the service instance to update.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token of the service instance to update.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateServiceInstanceInput`](crate::operation::update_service_instance::UpdateServiceInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_service_instance::UpdateServiceInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_service_instance::UpdateServiceInstanceInput {
-            name: self.name,
-            service_name: self.service_name,
-            deployment_type: self.deployment_type,
-            spec: self.spec,
-            template_major_version: self.template_major_version,
-            template_minor_version: self.template_minor_version,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_instance::UpdateServiceInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_instance::UpdateServiceInstanceInput {
+                name: self.name
+                ,
+                service_name: self.service_name
+                ,
+                deployment_type: self.deployment_type
+                ,
+                spec: self.spec
+                ,
+                template_major_version: self.template_major_version
+                ,
+                template_minor_version: self.template_minor_version
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateServiceInstanceInputBuilder {
@@ -321,3 +320,4 @@ impl ::std::fmt::Debug for UpdateServiceInstanceInputBuilder {
         formatter.finish()
     }
 }
+

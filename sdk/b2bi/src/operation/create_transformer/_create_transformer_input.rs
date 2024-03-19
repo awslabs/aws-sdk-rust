@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTransformerInput {
+pub struct CreateTransformerInput  {
     /// <p>Specifies the name of the transformer, used to identify it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
@@ -16,38 +16,39 @@ pub struct CreateTransformerInput {
     /// <p>Reserved for future use.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateTransformerInput {
+impl  CreateTransformerInput  {
     /// <p>Specifies the name of the transformer, used to identify it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    pub fn file_format(&self) -> ::std::option::Option<&crate::types::FileFormat> {
+    pub fn file_format(&self) -> ::std::option::Option<& crate::types::FileFormat> {
         self.file_format.as_ref()
     }
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
-    pub fn mapping_template(&self) -> ::std::option::Option<&str> {
+    pub fn mapping_template(&self) -> ::std::option::Option<& str> {
         self.mapping_template.as_deref()
     }
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
-    pub fn edi_type(&self) -> ::std::option::Option<&crate::types::EdiType> {
+    pub fn edi_type(&self) -> ::std::option::Option<& crate::types::EdiType> {
         self.edi_type.as_ref()
     }
     /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
-    pub fn sample_document(&self) -> ::std::option::Option<&str> {
+    pub fn sample_document(&self) -> ::std::option::Option<& str> {
         self.sample_document.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateTransformerInput {
@@ -67,7 +68,7 @@ pub struct CreateTransformerInputBuilder {
     pub(crate) edi_type: ::std::option::Option<crate::types::EdiType>,
     pub(crate) sample_document: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateTransformerInputBuilder {
     /// <p>Specifies the name of the transformer, used to identify it.</p>
@@ -78,8 +79,7 @@ impl CreateTransformerInputBuilder {
     }
     /// <p>Specifies the name of the transformer, used to identify it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of the transformer, used to identify it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl CreateTransformerInputBuilder {
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
-        self.file_format = input;
-        self
+        self.file_format = input; self
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
@@ -108,8 +107,7 @@ impl CreateTransformerInputBuilder {
     }
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
     pub fn set_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mapping_template = input;
-        self
+        self.mapping_template = input; self
     }
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
     pub fn get_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +121,7 @@ impl CreateTransformerInputBuilder {
     }
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub fn set_edi_type(mut self, input: ::std::option::Option<crate::types::EdiType>) -> Self {
-        self.edi_type = input;
-        self
+        self.edi_type = input; self
     }
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub fn get_edi_type(&self) -> &::std::option::Option<crate::types::EdiType> {
@@ -137,8 +134,7 @@ impl CreateTransformerInputBuilder {
     }
     /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
     pub fn set_sample_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_document = input;
-        self
+        self.sample_document = input; self
     }
     /// <p>Specifies a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
     pub fn get_sample_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +147,7 @@ impl CreateTransformerInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,31 +160,38 @@ impl CreateTransformerInputBuilder {
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTransformerInput`](crate::operation::create_transformer::CreateTransformerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_transformer::CreateTransformerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_transformer::CreateTransformerInput {
-            name: self.name,
-            file_format: self.file_format,
-            mapping_template: self.mapping_template,
-            edi_type: self.edi_type,
-            sample_document: self.sample_document,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_transformer::CreateTransformerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_transformer::CreateTransformerInput {
+                name: self.name
+                ,
+                file_format: self.file_format
+                ,
+                mapping_template: self.mapping_template
+                ,
+                edi_type: self.edi_type
+                ,
+                sample_document: self.sample_document
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

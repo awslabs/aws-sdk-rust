@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAcceptedPortfolioSharesInput {
+pub struct ListAcceptedPortfolioSharesInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -26,7 +26,7 @@ pub struct ListAcceptedPortfolioSharesInput {
     /// </ul>
     pub portfolio_share_type: ::std::option::Option<crate::types::PortfolioShareType>,
 }
-impl ListAcceptedPortfolioSharesInput {
+impl  ListAcceptedPortfolioSharesInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -34,11 +34,11 @@ impl ListAcceptedPortfolioSharesInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -54,7 +54,7 @@ impl ListAcceptedPortfolioSharesInput {
     /// <li>
     /// <p><code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p></li>
     /// </ul>
-    pub fn portfolio_share_type(&self) -> ::std::option::Option<&crate::types::PortfolioShareType> {
+    pub fn portfolio_share_type(&self) -> ::std::option::Option<& crate::types::PortfolioShareType> {
         self.portfolio_share_type.as_ref()
     }
 }
@@ -94,8 +94,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -114,8 +113,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +126,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -158,8 +155,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     /// <p><code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p></li>
     /// </ul>
     pub fn set_portfolio_share_type(mut self, input: ::std::option::Option<crate::types::PortfolioShareType>) -> Self {
-        self.portfolio_share_type = input;
-        self
+        self.portfolio_share_type = input; self
     }
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
@@ -174,17 +170,19 @@ impl ListAcceptedPortfolioSharesInputBuilder {
         &self.portfolio_share_type
     }
     /// Consumes the builder and constructs a [`ListAcceptedPortfolioSharesInput`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput {
-            accept_language: self.accept_language,
-            page_token: self.page_token,
-            page_size: self.page_size,
-            portfolio_share_type: self.portfolio_share_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput {
+                accept_language: self.accept_language
+                ,
+                page_token: self.page_token
+                ,
+                page_size: self.page_size
+                ,
+                portfolio_share_type: self.portfolio_share_type
+                ,
+            }
+        )
     }
 }
+

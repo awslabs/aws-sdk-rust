@@ -7,30 +7,29 @@
 /// <p>The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoggingConfiguration {
+pub struct LoggingConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     pub resource_arn: ::std::string::String,
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub log_destination_configs: ::std::vec::Vec<::std::string::String>,
+    pub log_destination_configs: ::std::vec::Vec::<::std::string::String>,
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
-    pub redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
+    pub redacted_fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldToMatch>>,
 }
-impl LoggingConfiguration {
+impl  LoggingConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub fn log_destination_configs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.log_destination_configs.deref()
+    pub fn log_destination_configs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.log_destination_configs.deref()
     }
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redacted_fields.is_none()`.
-    pub fn redacted_fields(&self) -> &[crate::types::FieldToMatch] {
-        self.redacted_fields.as_deref().unwrap_or_default()
+    pub fn redacted_fields(&self) -> & [crate::types::FieldToMatch] {
+        self.redacted_fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LoggingConfiguration {
@@ -45,8 +44,8 @@ impl LoggingConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) log_destination_configs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
+    pub(crate) log_destination_configs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) redacted_fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldToMatch>>,
 }
 impl LoggingConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
@@ -57,8 +56,7 @@ impl LoggingConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +69,16 @@ impl LoggingConfigurationBuilder {
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
     pub fn log_destination_configs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_destination_configs.unwrap_or_default();
-        v.push(input.into());
-        self.log_destination_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_destination_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub fn set_log_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_destination_configs = input;
-        self
+    pub fn set_log_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_destination_configs = input; self
     }
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub fn get_log_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_destination_configs
     }
     /// Appends an item to `redacted_fields`.
@@ -91,17 +88,16 @@ impl LoggingConfigurationBuilder {
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
     pub fn redacted_fields(mut self, input: crate::types::FieldToMatch) -> Self {
         let mut v = self.redacted_fields.unwrap_or_default();
-        v.push(input);
-        self.redacted_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.redacted_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
-    pub fn set_redacted_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>) -> Self {
-        self.redacted_fields = input;
-        self
+    pub fn set_redacted_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldToMatch>>) -> Self {
+        self.redacted_fields = input; self
     }
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.</p>
-    pub fn get_redacted_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>> {
+    pub fn get_redacted_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldToMatch>> {
         &self.redacted_fields
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
@@ -109,20 +105,22 @@ impl LoggingConfigurationBuilder {
     /// - [`resource_arn`](crate::types::builders::LoggingConfigurationBuilder::resource_arn)
     /// - [`log_destination_configs`](crate::types::builders::LoggingConfigurationBuilder::log_destination_configs)
     pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LoggingConfiguration {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building LoggingConfiguration",
-                )
-            })?,
-            log_destination_configs: self.log_destination_configs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_destination_configs",
-                    "log_destination_configs was not specified but it is required when building LoggingConfiguration",
-                )
-            })?,
-            redacted_fields: self.redacted_fields,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LoggingConfiguration {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building LoggingConfiguration")
+                    )?
+                ,
+                log_destination_configs: self.log_destination_configs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_destination_configs", "log_destination_configs was not specified but it is required when building LoggingConfiguration")
+                    )?
+                ,
+                redacted_fields: self.redacted_fields
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DkimAttributes {
+pub struct DkimAttributes  {
     /// <p>If the value is <code>true</code>, then the messages that you send from the identity are signed using DKIM. If the value is <code>false</code>, then the messages that you send from the identity aren't DKIM-signed.</p>
     pub signing_enabled: bool,
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
@@ -24,7 +24,7 @@ pub struct DkimAttributes {
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector for the public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    pub tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tokens: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
     /// <li>
@@ -40,7 +40,7 @@ pub struct DkimAttributes {
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
     pub last_key_generation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DkimAttributes {
+impl  DkimAttributes  {
     /// <p>If the value is <code>true</code>, then the messages that you send from the identity are signed using DKIM. If the value is <code>false</code>, then the messages that you send from the identity aren't DKIM-signed.</p>
     pub fn signing_enabled(&self) -> bool {
         self.signing_enabled
@@ -58,16 +58,17 @@ impl DkimAttributes {
     /// <li>
     /// <p><code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DkimStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DkimStatus> {
         self.status.as_ref()
     }
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector for the public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tokens.is_none()`.
-    pub fn tokens(&self) -> &[::std::string::String] {
-        self.tokens.as_deref().unwrap_or_default()
+    pub fn tokens(&self) -> & [::std::string::String] {
+        self.tokens.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
@@ -76,19 +77,19 @@ impl DkimAttributes {
     /// <li>
     /// <p><code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
     /// </ul>
-    pub fn signing_attributes_origin(&self) -> ::std::option::Option<&crate::types::DkimSigningAttributesOrigin> {
+    pub fn signing_attributes_origin(&self) -> ::std::option::Option<& crate::types::DkimSigningAttributesOrigin> {
         self.signing_attributes_origin.as_ref()
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
-    pub fn next_signing_key_length(&self) -> ::std::option::Option<&crate::types::DkimSigningKeyLength> {
+    pub fn next_signing_key_length(&self) -> ::std::option::Option<& crate::types::DkimSigningKeyLength> {
         self.next_signing_key_length.as_ref()
     }
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
-    pub fn current_signing_key_length(&self) -> ::std::option::Option<&crate::types::DkimSigningKeyLength> {
+    pub fn current_signing_key_length(&self) -> ::std::option::Option<& crate::types::DkimSigningKeyLength> {
         self.current_signing_key_length.as_ref()
     }
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-    pub fn last_key_generation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_key_generation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_key_generation_timestamp.as_ref()
     }
 }
@@ -105,7 +106,7 @@ impl DkimAttributes {
 pub struct DkimAttributesBuilder {
     pub(crate) signing_enabled: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::DkimStatus>,
-    pub(crate) tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tokens: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) signing_attributes_origin: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
     pub(crate) next_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
     pub(crate) current_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
@@ -119,8 +120,7 @@ impl DkimAttributesBuilder {
     }
     /// <p>If the value is <code>true</code>, then the messages that you send from the identity are signed using DKIM. If the value is <code>false</code>, then the messages that you send from the identity aren't DKIM-signed.</p>
     pub fn set_signing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.signing_enabled = input;
-        self
+        self.signing_enabled = input; self
     }
     /// <p>If the value is <code>true</code>, then the messages that you send from the identity are signed using DKIM. If the value is <code>false</code>, then the messages that you send from the identity aren't DKIM-signed.</p>
     pub fn get_signing_enabled(&self) -> &::std::option::Option<bool> {
@@ -157,8 +157,7 @@ impl DkimAttributesBuilder {
     /// <p><code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DkimStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
     /// <ul>
@@ -185,21 +184,20 @@ impl DkimAttributesBuilder {
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
     pub fn tokens(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tokens.unwrap_or_default();
-        v.push(input.into());
-        self.tokens = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tokens = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector for the public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    pub fn set_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tokens = input;
-        self
+    pub fn set_tokens(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tokens = input; self
     }
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector for the public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    pub fn get_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tokens(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tokens
     }
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
@@ -221,8 +219,7 @@ impl DkimAttributesBuilder {
     /// <p><code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM (BYODKIM).</p></li>
     /// </ul>
     pub fn set_signing_attributes_origin(mut self, input: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>) -> Self {
-        self.signing_attributes_origin = input;
-        self
+        self.signing_attributes_origin = input; self
     }
     /// <p>A string that indicates how DKIM was configured for the identity. These are the possible values:</p>
     /// <ul>
@@ -241,8 +238,7 @@ impl DkimAttributesBuilder {
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn set_next_signing_key_length(mut self, input: ::std::option::Option<crate::types::DkimSigningKeyLength>) -> Self {
-        self.next_signing_key_length = input;
-        self
+        self.next_signing_key_length = input; self
     }
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
     pub fn get_next_signing_key_length(&self) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
@@ -255,8 +251,7 @@ impl DkimAttributesBuilder {
     }
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
     pub fn set_current_signing_key_length(mut self, input: ::std::option::Option<crate::types::DkimSigningKeyLength>) -> Self {
-        self.current_signing_key_length = input;
-        self
+        self.current_signing_key_length = input; self
     }
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
     pub fn get_current_signing_key_length(&self) -> &::std::option::Option<crate::types::DkimSigningKeyLength> {
@@ -269,8 +264,7 @@ impl DkimAttributesBuilder {
     }
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
     pub fn set_last_key_generation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_key_generation_timestamp = input;
-        self
+        self.last_key_generation_timestamp = input; self
     }
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
     pub fn get_last_key_generation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -279,13 +273,22 @@ impl DkimAttributesBuilder {
     /// Consumes the builder and constructs a [`DkimAttributes`](crate::types::DkimAttributes).
     pub fn build(self) -> crate::types::DkimAttributes {
         crate::types::DkimAttributes {
-            signing_enabled: self.signing_enabled.unwrap_or_default(),
-            status: self.status,
-            tokens: self.tokens,
-            signing_attributes_origin: self.signing_attributes_origin,
-            next_signing_key_length: self.next_signing_key_length,
-            current_signing_key_length: self.current_signing_key_length,
-            last_key_generation_timestamp: self.last_key_generation_timestamp,
+            signing_enabled: self.signing_enabled
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
+            tokens: self.tokens
+            ,
+            signing_attributes_origin: self.signing_attributes_origin
+            ,
+            next_signing_key_length: self.next_signing_key_length
+            ,
+            current_signing_key_length: self.current_signing_key_length
+            ,
+            last_key_generation_timestamp: self.last_key_generation_timestamp
+            ,
         }
     }
 }
+

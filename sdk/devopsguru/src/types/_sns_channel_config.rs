@@ -5,13 +5,13 @@
 /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnsChannelConfig {
+pub struct SnsChannelConfig  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
-impl SnsChannelConfig {
+impl  SnsChannelConfig  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
 }
@@ -36,8 +36,7 @@ impl SnsChannelConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,6 +44,10 @@ impl SnsChannelConfigBuilder {
     }
     /// Consumes the builder and constructs a [`SnsChannelConfig`](crate::types::SnsChannelConfig).
     pub fn build(self) -> crate::types::SnsChannelConfig {
-        crate::types::SnsChannelConfig { topic_arn: self.topic_arn }
+        crate::types::SnsChannelConfig {
+            topic_arn: self.topic_arn
+            ,
+        }
     }
 }
+

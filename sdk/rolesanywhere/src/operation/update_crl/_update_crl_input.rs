@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCrlInput {
+pub struct UpdateCrlInput  {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     pub crl_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Crl.</p>
@@ -10,17 +10,17 @@ pub struct UpdateCrlInput {
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub crl_data: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl UpdateCrlInput {
+impl  UpdateCrlInput  {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn crl_id(&self) -> ::std::option::Option<&str> {
+    pub fn crl_id(&self) -> ::std::option::Option<& str> {
         self.crl_id.as_deref()
     }
     /// <p>The name of the Crl.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
-    pub fn crl_data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn crl_data(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.crl_data.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateCrlInputBuilder {
     }
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     pub fn set_crl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crl_id = input;
-        self
+        self.crl_id = input; self
     }
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     pub fn get_crl_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateCrlInputBuilder {
     }
     /// <p>The name of the Crl.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Crl.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl UpdateCrlInputBuilder {
     }
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn set_crl_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.crl_data = input;
-        self
+        self.crl_data = input; self
     }
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn get_crl_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -85,10 +82,16 @@ impl UpdateCrlInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateCrlInput`](crate::operation::update_crl::UpdateCrlInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_crl::UpdateCrlInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_crl::UpdateCrlInput {
-            crl_id: self.crl_id,
-            name: self.name,
-            crl_data: self.crl_data,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_crl::UpdateCrlInput {
+                crl_id: self.crl_id
+                ,
+                name: self.name
+                ,
+                crl_data: self.crl_data
+                ,
+            }
+        )
     }
 }
+

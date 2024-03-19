@@ -3,20 +3,19 @@
 /// <p>A list of principals. Each principal can be either a <code>USER</code> or a <code>GROUP</code> and can be designated document access permissions of either <code>ALLOW</code> or <code>DENY</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessControl {
+pub struct AccessControl  {
     /// <p>Contains a list of principals, where a principal can be either a <code>USER</code> or a <code>GROUP</code>. Each principal can be have the following type of document access: <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub principals: ::std::vec::Vec<crate::types::Principal>,
+    pub principals: ::std::vec::Vec::<crate::types::Principal>,
     /// <p>Describes the member relation within a principal list.</p>
     pub member_relation: ::std::option::Option<crate::types::MemberRelation>,
 }
-impl AccessControl {
+impl  AccessControl  {
     /// <p>Contains a list of principals, where a principal can be either a <code>USER</code> or a <code>GROUP</code>. Each principal can be have the following type of document access: <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn principals(&self) -> &[crate::types::Principal] {
-        use std::ops::Deref;
-        self.principals.deref()
+    pub fn principals(&self) -> & [crate::types::Principal] {
+        use std::ops::Deref; self.principals.deref()
     }
     /// <p>Describes the member relation within a principal list.</p>
-    pub fn member_relation(&self) -> ::std::option::Option<&crate::types::MemberRelation> {
+    pub fn member_relation(&self) -> ::std::option::Option<& crate::types::MemberRelation> {
         self.member_relation.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl AccessControl {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessControlBuilder {
-    pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
+    pub(crate) principals: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>,
     pub(crate) member_relation: ::std::option::Option<crate::types::MemberRelation>,
 }
 impl AccessControlBuilder {
@@ -42,17 +41,16 @@ impl AccessControlBuilder {
     /// <p>Contains a list of principals, where a principal can be either a <code>USER</code> or a <code>GROUP</code>. Each principal can be have the following type of document access: <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn principals(mut self, input: crate::types::Principal) -> Self {
         let mut v = self.principals.unwrap_or_default();
-        v.push(input);
-        self.principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of principals, where a principal can be either a <code>USER</code> or a <code>GROUP</code>. Each principal can be have the following type of document access: <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
-        self.principals = input;
-        self
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>) -> Self {
+        self.principals = input; self
     }
     /// <p>Contains a list of principals, where a principal can be either a <code>USER</code> or a <code>GROUP</code>. Each principal can be have the following type of document access: <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Principal>> {
         &self.principals
     }
     /// <p>Describes the member relation within a principal list.</p>
@@ -62,8 +60,7 @@ impl AccessControlBuilder {
     }
     /// <p>Describes the member relation within a principal list.</p>
     pub fn set_member_relation(mut self, input: ::std::option::Option<crate::types::MemberRelation>) -> Self {
-        self.member_relation = input;
-        self
+        self.member_relation = input; self
     }
     /// <p>Describes the member relation within a principal list.</p>
     pub fn get_member_relation(&self) -> &::std::option::Option<crate::types::MemberRelation> {
@@ -73,14 +70,17 @@ impl AccessControlBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`principals`](crate::types::builders::AccessControlBuilder::principals)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessControl, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessControl {
-            principals: self.principals.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "principals",
-                    "principals was not specified but it is required when building AccessControl",
-                )
-            })?,
-            member_relation: self.member_relation,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessControl {
+                principals: self.principals
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("principals", "principals was not specified but it is required when building AccessControl")
+                    )?
+                ,
+                member_relation: self.member_relation
+                ,
+            }
+        )
     }
 }
+

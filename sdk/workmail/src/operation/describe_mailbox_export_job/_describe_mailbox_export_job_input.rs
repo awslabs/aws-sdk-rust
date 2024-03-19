@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMailboxExportJobInput {
+pub struct DescribeMailboxExportJobInput  {
     /// <p>The mailbox export job ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The organization ID.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMailboxExportJobInput {
+impl  DescribeMailboxExportJobInput  {
     /// <p>The mailbox export job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The organization ID.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeMailboxExportJobInputBuilder {
     }
     /// <p>The mailbox export job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The mailbox export job ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeMailboxExportJobInputBuilder {
     }
     /// <p>The organization ID.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The organization ID.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }
     /// Consumes the builder and constructs a [`DescribeMailboxExportJobInput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput {
-            job_id: self.job_id,
-            organization_id: self.organization_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput {
+                job_id: self.job_id
+                ,
+                organization_id: self.organization_id
+                ,
+            }
+        )
     }
 }
+

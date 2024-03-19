@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCollaborationInput {
+pub struct UpdateCollaborationInput  {
     /// <p>The identifier for the collaboration.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
@@ -10,17 +10,17 @@ pub struct UpdateCollaborationInput {
     /// <p>A description of the collaboration.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateCollaborationInput {
+impl  UpdateCollaborationInput  {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the collaboration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateCollaborationInputBuilder {
     }
     /// <p>The identifier for the collaboration.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>The identifier for the collaboration.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateCollaborationInputBuilder {
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl UpdateCollaborationInputBuilder {
     }
     /// <p>A description of the collaboration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the collaboration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateCollaborationInput`](crate::operation::update_collaboration::UpdateCollaborationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_collaboration::UpdateCollaborationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_collaboration::UpdateCollaborationInput {
-            collaboration_identifier: self.collaboration_identifier,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_collaboration::UpdateCollaborationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_collaboration::UpdateCollaborationInput {
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

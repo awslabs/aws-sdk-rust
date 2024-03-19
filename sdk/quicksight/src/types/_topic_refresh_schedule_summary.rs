@@ -3,7 +3,7 @@
 /// <p>A summary of the refresh schedule details for a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TopicRefreshScheduleSummary {
+pub struct TopicRefreshScheduleSummary  {
     /// <p>The ID of the dataset.</p>
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
@@ -13,21 +13,21 @@ pub struct TopicRefreshScheduleSummary {
     /// <p>The definition of a refresh schedule.</p>
     pub refresh_schedule: ::std::option::Option<crate::types::TopicRefreshSchedule>,
 }
-impl TopicRefreshScheduleSummary {
+impl  TopicRefreshScheduleSummary  {
     /// <p>The ID of the dataset.</p>
-    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn refresh_schedule(&self) -> ::std::option::Option<&crate::types::TopicRefreshSchedule> {
+    pub fn refresh_schedule(&self) -> ::std::option::Option<& crate::types::TopicRefreshSchedule> {
         self.refresh_schedule.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl TopicRefreshScheduleSummaryBuilder {
     }
     /// <p>The ID of the dataset.</p>
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_id = input;
-        self
+        self.dataset_id = input; self
     }
     /// <p>The ID of the dataset.</p>
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TopicRefreshScheduleSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl TopicRefreshScheduleSummaryBuilder {
     }
     /// <p>The name of the dataset.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl TopicRefreshScheduleSummaryBuilder {
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn set_refresh_schedule(mut self, input: ::std::option::Option<crate::types::TopicRefreshSchedule>) -> Self {
-        self.refresh_schedule = input;
-        self
+        self.refresh_schedule = input; self
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn get_refresh_schedule(&self) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
@@ -107,10 +103,15 @@ impl TopicRefreshScheduleSummaryBuilder {
     /// Consumes the builder and constructs a [`TopicRefreshScheduleSummary`](crate::types::TopicRefreshScheduleSummary).
     pub fn build(self) -> crate::types::TopicRefreshScheduleSummary {
         crate::types::TopicRefreshScheduleSummary {
-            dataset_id: self.dataset_id,
-            dataset_arn: self.dataset_arn,
-            dataset_name: self.dataset_name,
-            refresh_schedule: self.refresh_schedule,
+            dataset_id: self.dataset_id
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            dataset_name: self.dataset_name
+            ,
+            refresh_schedule: self.refresh_schedule
+            ,
         }
     }
 }
+

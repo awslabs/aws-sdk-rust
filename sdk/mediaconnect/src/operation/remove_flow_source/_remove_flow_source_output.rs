@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveFlowSourceOutput {
+pub struct RemoveFlowSourceOutput  {
     /// The ARN of the flow that is associated with the source you removed.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the source that was removed.
     pub source_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RemoveFlowSourceOutput {
+impl  RemoveFlowSourceOutput  {
     /// The ARN of the flow that is associated with the source you removed.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The ARN of the source that was removed.
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RemoveFlowSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RemoveFlowSourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowSourceOutput`](crate::operation::remove_flow_source::RemoveFlowSourceOutput).
     pub fn builder() -> crate::operation::remove_flow_source::builders::RemoveFlowSourceOutputBuilder {
@@ -47,8 +47,7 @@ impl RemoveFlowSourceOutputBuilder {
     }
     /// The ARN of the flow that is associated with the source you removed.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The ARN of the flow that is associated with the source you removed.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl RemoveFlowSourceOutputBuilder {
     }
     /// The ARN of the source that was removed.
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// The ARN of the source that was removed.
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RemoveFlowSourceOutput`](crate::operation::remove_flow_source::RemoveFlowSourceOutput).
     pub fn build(self) -> crate::operation::remove_flow_source::RemoveFlowSourceOutput {
         crate::operation::remove_flow_source::RemoveFlowSourceOutput {
-            flow_arn: self.flow_arn,
-            source_arn: self.source_arn,
+            flow_arn: self.flow_arn
+            ,
+            source_arn: self.source_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

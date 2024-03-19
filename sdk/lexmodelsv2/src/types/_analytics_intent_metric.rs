@@ -3,7 +3,7 @@
 /// <p>Contains the metric and the summary statistic you want to calculate, and the order in which to sort the results, for the intents in the bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsIntentMetric {
+pub struct AnalyticsIntentMetric  {
     /// <p>The metric for which you want to get intent summary statistics.</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct AnalyticsIntentMetric {
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
 }
-impl AnalyticsIntentMetric {
+impl  AnalyticsIntentMetric  {
     /// <p>The metric for which you want to get intent summary statistics.</p>
     /// <ul>
     /// <li>
@@ -45,7 +45,7 @@ impl AnalyticsIntentMetric {
     /// <li>
     /// <p><code>Dropped</code> – The number of times the user dropped the intent.</p></li>
     /// </ul>
-    pub fn name(&self) -> &crate::types::AnalyticsIntentMetricName {
+    pub fn name(&self) -> & crate::types::AnalyticsIntentMetricName {
         &self.name
     }
     /// <p>The summary statistic to calculate.</p>
@@ -57,11 +57,11 @@ impl AnalyticsIntentMetric {
     /// <li>
     /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
-    pub fn statistic(&self) -> &crate::types::AnalyticsMetricStatistic {
+    pub fn statistic(&self) -> & crate::types::AnalyticsMetricStatistic {
         &self.statistic
     }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::AnalyticsSortOrder> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::AnalyticsSortOrder> {
         self.order.as_ref()
     }
 }
@@ -113,8 +113,7 @@ impl AnalyticsIntentMetricBuilder {
     /// <p><code>Dropped</code> – The number of times the user dropped the intent.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentMetricName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The metric for which you want to get intent summary statistics.</p>
     /// <ul>
@@ -156,8 +155,7 @@ impl AnalyticsIntentMetricBuilder {
     /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
@@ -178,8 +176,7 @@ impl AnalyticsIntentMetricBuilder {
     }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::AnalyticsSortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::AnalyticsSortOrder> {
@@ -190,20 +187,22 @@ impl AnalyticsIntentMetricBuilder {
     /// - [`name`](crate::types::builders::AnalyticsIntentMetricBuilder::name)
     /// - [`statistic`](crate::types::builders::AnalyticsIntentMetricBuilder::statistic)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsIntentMetric, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalyticsIntentMetric {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AnalyticsIntentMetric",
-                )
-            })?,
-            statistic: self.statistic.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statistic",
-                    "statistic was not specified but it is required when building AnalyticsIntentMetric",
-                )
-            })?,
-            order: self.order,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalyticsIntentMetric {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AnalyticsIntentMetric")
+                    )?
+                ,
+                statistic: self.statistic
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statistic", "statistic was not specified but it is required when building AnalyticsIntentMetric")
+                    )?
+                ,
+                order: self.order
+                ,
+            }
+        )
     }
 }
+

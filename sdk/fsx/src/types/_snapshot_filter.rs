@@ -3,22 +3,23 @@
 /// <p>A filter used to restrict the results of <code>DescribeSnapshots</code> calls. You can use multiple filters to return results that meet all applied filter requirements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotFilter {
+pub struct SnapshotFilter  {
     /// <p>The name of the filter to use. You can filter by the <code>file-system-id</code> or by <code>volume-id</code>.</p>
     pub name: ::std::option::Option<crate::types::SnapshotFilterName>,
     /// <p>The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SnapshotFilter {
+impl  SnapshotFilter  {
     /// <p>The name of the filter to use. You can filter by the <code>file-system-id</code> or by <code>volume-id</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SnapshotFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::SnapshotFilterName> {
         self.name.as_ref()
     }
     /// <p>The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SnapshotFilter {
@@ -33,7 +34,7 @@ impl SnapshotFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SnapshotFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SnapshotFilterBuilder {
     /// <p>The name of the filter to use. You can filter by the <code>file-system-id</code> or by <code>volume-id</code>.</p>
@@ -43,8 +44,7 @@ impl SnapshotFilterBuilder {
     }
     /// <p>The name of the filter to use. You can filter by the <code>file-system-id</code> or by <code>volume-id</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::SnapshotFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the filter to use. You can filter by the <code>file-system-id</code> or by <code>volume-id</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::SnapshotFilterName> {
@@ -57,24 +57,26 @@ impl SnapshotFilterBuilder {
     /// <p>The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`SnapshotFilter`](crate::types::SnapshotFilter).
     pub fn build(self) -> crate::types::SnapshotFilter {
         crate::types::SnapshotFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

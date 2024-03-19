@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let constraintviolationexceptionreason = unimplemented!();
 /// match constraintviolationexceptionreason {
@@ -62,16 +62,14 @@
 /// Specifically, when `constraintviolationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConstraintViolationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountCannotLeaveOrganization,
@@ -143,214 +141,158 @@ pub enum ConstraintViolationExceptionReason {
     WaitPeriodActive,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ConstraintViolationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_CANNOT_LEAVE_ORGANIZATION" => ConstraintViolationExceptionReason::AccountCannotLeaveOrganization,
-            "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula,
-            "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification,
-            "ACCOUNT_CREATION_NOT_COMPLETE" => ConstraintViolationExceptionReason::AccountCreationNotComplete,
-            "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded,
-            "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
-            "CANNOT_CLOSE_MANAGEMENT_ACCOUNT" => ConstraintViolationExceptionReason::CannotCloseManagementAccount,
-            "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR" => ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator,
-            "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG" => ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg,
-            "CLOSE_ACCOUNT_QUOTA_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountQuotaExceeded,
-            "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded,
-            "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION" => {
-                ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion
-            }
-            "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE" => ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService,
-            "EMAIL_VERIFICATION_CODE_EXPIRED" => ConstraintViolationExceptionReason::EmailVerificationCodeExpired,
-            "HANDSHAKE_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
-            "INVALID_PAYMENT_INSTRUMENT" => ConstraintViolationExceptionReason::InvalidPaymentInstrument,
-            "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE" => ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace,
-            "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE" => ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense,
-            "MASTER_ACCOUNT_MISSING_CONTACT_INFO" => ConstraintViolationExceptionReason::MasterAccountMissingContactInfo,
-            "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED" => ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled,
-            "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED" => ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired,
-            "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED" => {
-                ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded
-            }
-            "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded,
-            "MAX_TAG_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxTagLimitExceeded,
-            "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED" => ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired,
-            "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded,
-            "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE" => ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode,
-            "OU_DEPTH_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuDepthLimitExceeded,
-            "OU_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuNumberLimitExceeded,
-            "POLICY_CONTENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyContentLimitExceeded,
-            "POLICY_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyNumberLimitExceeded,
-            "SERVICE_ACCESS_NOT_ENABLED" => ConstraintViolationExceptionReason::ServiceAccessNotEnabled,
-            "TAG_POLICY_VIOLATION" => ConstraintViolationExceptionReason::TagPolicyViolation,
-            "WAIT_PERIOD_ACTIVE" => ConstraintViolationExceptionReason::WaitPeriodActive,
-            other => ConstraintViolationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCOUNT_CANNOT_LEAVE_ORGANIZATION" => ConstraintViolationExceptionReason::AccountCannotLeaveOrganization,
+"ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula,
+"ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification,
+"ACCOUNT_CREATION_NOT_COMPLETE" => ConstraintViolationExceptionReason::AccountCreationNotComplete,
+"ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded,
+"ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
+"CANNOT_CLOSE_MANAGEMENT_ACCOUNT" => ConstraintViolationExceptionReason::CannotCloseManagementAccount,
+"CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR" => ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator,
+"CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG" => ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg,
+"CLOSE_ACCOUNT_QUOTA_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountQuotaExceeded,
+"CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded,
+"CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION" => ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion,
+"DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE" => ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService,
+"EMAIL_VERIFICATION_CODE_EXPIRED" => ConstraintViolationExceptionReason::EmailVerificationCodeExpired,
+"HANDSHAKE_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
+"INVALID_PAYMENT_INSTRUMENT" => ConstraintViolationExceptionReason::InvalidPaymentInstrument,
+"MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE" => ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace,
+"MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE" => ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense,
+"MASTER_ACCOUNT_MISSING_CONTACT_INFO" => ConstraintViolationExceptionReason::MasterAccountMissingContactInfo,
+"MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED" => ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled,
+"MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED" => ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired,
+"MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded,
+"MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded,
+"MAX_TAG_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MaxTagLimitExceeded,
+"MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED" => ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired,
+"MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded,
+"ORGANIZATION_NOT_IN_ALL_FEATURES_MODE" => ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode,
+"OU_DEPTH_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuDepthLimitExceeded,
+"OU_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::OuNumberLimitExceeded,
+"POLICY_CONTENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyContentLimitExceeded,
+"POLICY_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyNumberLimitExceeded,
+"SERVICE_ACCESS_NOT_ENABLED" => ConstraintViolationExceptionReason::ServiceAccessNotEnabled,
+"TAG_POLICY_VIOLATION" => ConstraintViolationExceptionReason::TagPolicyViolation,
+"WAIT_PERIOD_ACTIVE" => ConstraintViolationExceptionReason::WaitPeriodActive,
+other => ConstraintViolationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ConstraintViolationExceptionReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ConstraintViolationExceptionReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ConstraintViolationExceptionReason::from(s))
+                    }
+                }
 impl ConstraintViolationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
-            ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
-            ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
-            ConstraintViolationExceptionReason::AccountCreationNotComplete => "ACCOUNT_CREATION_NOT_COMPLETE",
-            ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::CannotCloseManagementAccount => "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
-            ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
-            ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
-            ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
-            ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion => {
-                "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION"
-            }
-            ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService => "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
-            ConstraintViolationExceptionReason::EmailVerificationCodeExpired => "EMAIL_VERIFICATION_CODE_EXPIRED",
-            ConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
-            ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace => "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE",
-            ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense => "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE",
-            ConstraintViolationExceptionReason::MasterAccountMissingContactInfo => "MASTER_ACCOUNT_MISSING_CONTACT_INFO",
-            ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled => "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED",
-            ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired => "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
-            ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded => {
-                "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED"
-            }
-            ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded => "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::MaxTagLimitExceeded => "MAX_TAG_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired => "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
-            ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded => "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode => "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE",
-            ConstraintViolationExceptionReason::OuDepthLimitExceeded => "OU_DEPTH_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::OuNumberLimitExceeded => "OU_NUMBER_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::PolicyContentLimitExceeded => "POLICY_CONTENT_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => "POLICY_NUMBER_LIMIT_EXCEEDED",
-            ConstraintViolationExceptionReason::ServiceAccessNotEnabled => "SERVICE_ACCESS_NOT_ENABLED",
-            ConstraintViolationExceptionReason::TagPolicyViolation => "TAG_POLICY_VIOLATION",
-            ConstraintViolationExceptionReason::WaitPeriodActive => "WAIT_PERIOD_ACTIVE",
-            ConstraintViolationExceptionReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
-            "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
-            "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
-            "ACCOUNT_CREATION_NOT_COMPLETE",
-            "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
-            "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
-            "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
-            "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
-            "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
-            "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
-            "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
-            "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION",
-            "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
-            "EMAIL_VERIFICATION_CODE_EXPIRED",
-            "HANDSHAKE_RATE_LIMIT_EXCEEDED",
-            "INVALID_PAYMENT_INSTRUMENT",
-            "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE",
-            "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE",
-            "MASTER_ACCOUNT_MISSING_CONTACT_INFO",
-            "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED",
-            "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
-            "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED",
-            "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
-            "MAX_TAG_LIMIT_EXCEEDED",
-            "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
-            "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
-            "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE",
-            "OU_DEPTH_LIMIT_EXCEEDED",
-            "OU_NUMBER_LIMIT_EXCEEDED",
-            "POLICY_CONTENT_LIMIT_EXCEEDED",
-            "POLICY_NUMBER_LIMIT_EXCEEDED",
-            "SERVICE_ACCESS_NOT_ENABLED",
-            "TAG_POLICY_VIOLATION",
-            "WAIT_PERIOD_ACTIVE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
+    ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
+    ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
+    ConstraintViolationExceptionReason::AccountCreationNotComplete => "ACCOUNT_CREATION_NOT_COMPLETE",
+    ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::CannotCloseManagementAccount => "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
+    ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
+    ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
+    ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
+    ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion => "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION",
+    ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService => "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
+    ConstraintViolationExceptionReason::EmailVerificationCodeExpired => "EMAIL_VERIFICATION_CODE_EXPIRED",
+    ConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
+    ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace => "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE",
+    ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense => "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE",
+    ConstraintViolationExceptionReason::MasterAccountMissingContactInfo => "MASTER_ACCOUNT_MISSING_CONTACT_INFO",
+    ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled => "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED",
+    ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired => "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
+    ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded => "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded => "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::MaxTagLimitExceeded => "MAX_TAG_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired => "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
+    ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded => "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode => "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE",
+    ConstraintViolationExceptionReason::OuDepthLimitExceeded => "OU_DEPTH_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::OuNumberLimitExceeded => "OU_NUMBER_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::PolicyContentLimitExceeded => "POLICY_CONTENT_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => "POLICY_NUMBER_LIMIT_EXCEEDED",
+    ConstraintViolationExceptionReason::ServiceAccessNotEnabled => "SERVICE_ACCESS_NOT_ENABLED",
+    ConstraintViolationExceptionReason::TagPolicyViolation => "TAG_POLICY_VIOLATION",
+    ConstraintViolationExceptionReason::WaitPeriodActive => "WAIT_PERIOD_ACTIVE",
+    ConstraintViolationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_CANNOT_LEAVE_ORGANIZATION", "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA", "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION", "ACCOUNT_CREATION_NOT_COMPLETE", "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED", "ACCOUNT_NUMBER_LIMIT_EXCEEDED", "CANNOT_CLOSE_MANAGEMENT_ACCOUNT", "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR", "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG", "CLOSE_ACCOUNT_QUOTA_EXCEEDED", "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED", "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION", "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE", "EMAIL_VERIFICATION_CODE_EXPIRED", "HANDSHAKE_RATE_LIMIT_EXCEEDED", "INVALID_PAYMENT_INSTRUMENT", "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE", "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE", "MASTER_ACCOUNT_MISSING_CONTACT_INFO", "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED", "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED", "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "MAX_TAG_LIMIT_EXCEEDED", "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE", "OU_DEPTH_LIMIT_EXCEEDED", "OU_NUMBER_LIMIT_EXCEEDED", "POLICY_CONTENT_LIMIT_EXCEEDED", "POLICY_NUMBER_LIMIT_EXCEEDED", "SERVICE_ACCESS_NOT_ENABLED", "TAG_POLICY_VIOLATION", "WAIT_PERIOD_ACTIVE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ConstraintViolationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ConstraintViolationExceptionReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ConstraintViolationExceptionReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => write!(f, "ACCOUNT_CANNOT_LEAVE_ORGANIZATION"),
-            ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => write!(f, "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA"),
-            ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => {
-                write!(f, "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION")
-            }
-            ConstraintViolationExceptionReason::AccountCreationNotComplete => write!(f, "ACCOUNT_CREATION_NOT_COMPLETE"),
-            ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => write!(f, "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::AccountNumberLimitExceeded => write!(f, "ACCOUNT_NUMBER_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::CannotCloseManagementAccount => write!(f, "CANNOT_CLOSE_MANAGEMENT_ACCOUNT"),
-            ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => {
-                write!(f, "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR")
-            }
-            ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => {
-                write!(f, "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG")
-            }
-            ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => write!(f, "CLOSE_ACCOUNT_QUOTA_EXCEEDED"),
-            ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => write!(f, "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion => {
-                write!(f, "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION")
-            }
-            ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService => {
-                write!(f, "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE")
-            }
-            ConstraintViolationExceptionReason::EmailVerificationCodeExpired => write!(f, "EMAIL_VERIFICATION_CODE_EXPIRED"),
-            ConstraintViolationExceptionReason::HandshakeRateLimitExceeded => write!(f, "HANDSHAKE_RATE_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::InvalidPaymentInstrument => write!(f, "INVALID_PAYMENT_INSTRUMENT"),
-            ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace => {
-                write!(f, "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE")
-            }
-            ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense => write!(f, "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE"),
-            ConstraintViolationExceptionReason::MasterAccountMissingContactInfo => write!(f, "MASTER_ACCOUNT_MISSING_CONTACT_INFO"),
-            ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled => write!(f, "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED"),
-            ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired => write!(f, "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED"),
-            ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded => {
-                write!(f, "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED")
-            }
-            ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded => write!(f, "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::MaxTagLimitExceeded => write!(f, "MAX_TAG_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired => write!(f, "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED"),
-            ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded => write!(f, "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode => write!(f, "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE"),
-            ConstraintViolationExceptionReason::OuDepthLimitExceeded => write!(f, "OU_DEPTH_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::OuNumberLimitExceeded => write!(f, "OU_NUMBER_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::PolicyContentLimitExceeded => write!(f, "POLICY_CONTENT_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => write!(f, "POLICY_NUMBER_LIMIT_EXCEEDED"),
-            ConstraintViolationExceptionReason::ServiceAccessNotEnabled => write!(f, "SERVICE_ACCESS_NOT_ENABLED"),
-            ConstraintViolationExceptionReason::TagPolicyViolation => write!(f, "TAG_POLICY_VIOLATION"),
-            ConstraintViolationExceptionReason::WaitPeriodActive => write!(f, "WAIT_PERIOD_ACTIVE"),
-            ConstraintViolationExceptionReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => write!(f, "ACCOUNT_CANNOT_LEAVE_ORGANIZATION"),
+ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => write!(f, "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA"),
+ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => write!(f, "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION"),
+ConstraintViolationExceptionReason::AccountCreationNotComplete => write!(f, "ACCOUNT_CREATION_NOT_COMPLETE"),
+ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => write!(f, "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::AccountNumberLimitExceeded => write!(f, "ACCOUNT_NUMBER_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::CannotCloseManagementAccount => write!(f, "CANNOT_CLOSE_MANAGEMENT_ACCOUNT"),
+ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => write!(f, "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR"),
+ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => write!(f, "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG"),
+ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => write!(f, "CLOSE_ACCOUNT_QUOTA_EXCEEDED"),
+ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => write!(f, "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion => write!(f, "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION"),
+ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService => write!(f, "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE"),
+ConstraintViolationExceptionReason::EmailVerificationCodeExpired => write!(f, "EMAIL_VERIFICATION_CODE_EXPIRED"),
+ConstraintViolationExceptionReason::HandshakeRateLimitExceeded => write!(f, "HANDSHAKE_RATE_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::InvalidPaymentInstrument => write!(f, "INVALID_PAYMENT_INSTRUMENT"),
+ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace => write!(f, "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE"),
+ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense => write!(f, "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE"),
+ConstraintViolationExceptionReason::MasterAccountMissingContactInfo => write!(f, "MASTER_ACCOUNT_MISSING_CONTACT_INFO"),
+ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled => write!(f, "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED"),
+ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired => write!(f, "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED"),
+ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded => write!(f, "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded => write!(f, "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::MaxTagLimitExceeded => write!(f, "MAX_TAG_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired => write!(f, "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED"),
+ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded => write!(f, "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode => write!(f, "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE"),
+ConstraintViolationExceptionReason::OuDepthLimitExceeded => write!(f, "OU_DEPTH_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::OuNumberLimitExceeded => write!(f, "OU_NUMBER_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::PolicyContentLimitExceeded => write!(f, "POLICY_CONTENT_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => write!(f, "POLICY_NUMBER_LIMIT_EXCEEDED"),
+ConstraintViolationExceptionReason::ServiceAccessNotEnabled => write!(f, "SERVICE_ACCESS_NOT_ENABLED"),
+ConstraintViolationExceptionReason::TagPolicyViolation => write!(f, "TAG_POLICY_VIOLATION"),
+ConstraintViolationExceptionReason::WaitPeriodActive => write!(f, "WAIT_PERIOD_ACTIVE"),
+ConstraintViolationExceptionReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

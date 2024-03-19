@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReplicationConfigurationInput {
+pub struct DeleteReplicationConfigurationInput  {
     /// <p>The ID of the source file system in the replication configuration.</p>
     pub source_file_system_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReplicationConfigurationInput {
+impl  DeleteReplicationConfigurationInput  {
     /// <p>The ID of the source file system in the replication configuration.</p>
-    pub fn source_file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_file_system_id(&self) -> ::std::option::Option<& str> {
         self.source_file_system_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteReplicationConfigurationInputBuilder {
     }
     /// <p>The ID of the source file system in the replication configuration.</p>
     pub fn set_source_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_file_system_id = input;
-        self
+        self.source_file_system_id = input; self
     }
     /// <p>The ID of the source file system in the replication configuration.</p>
     pub fn get_source_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_file_system_id
     }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigurationInput`](crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput {
-            source_file_system_id: self.source_file_system_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput {
+                source_file_system_id: self.source_file_system_id
+                ,
+            }
+        )
     }
 }
+

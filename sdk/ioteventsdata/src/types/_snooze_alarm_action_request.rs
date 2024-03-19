@@ -3,7 +3,7 @@
 /// <p>Information needed to snooze the alarm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnoozeAlarmActionRequest {
+pub struct SnoozeAlarmActionRequest  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     pub request_id: ::std::string::String,
     /// <p>The name of the alarm model.</p>
@@ -15,23 +15,21 @@ pub struct SnoozeAlarmActionRequest {
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     pub snooze_duration: i32,
 }
-impl SnoozeAlarmActionRequest {
+impl  SnoozeAlarmActionRequest  {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> &str {
-        use std::ops::Deref;
-        self.request_id.deref()
+    pub fn request_id(&self) -> & str {
+        use std::ops::Deref; self.request_id.deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> &str {
-        use std::ops::Deref;
-        self.alarm_model_name.deref()
+    pub fn alarm_model_name(&self) -> & str {
+        use std::ops::Deref; self.alarm_model_name.deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> ::std::option::Option<&str> {
+    pub fn key_value(&self) -> ::std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    pub fn note(&self) -> ::std::option::Option<&str> {
+    pub fn note(&self) -> ::std::option::Option<& str> {
         self.note.as_deref()
     }
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
@@ -65,8 +63,7 @@ impl SnoozeAlarmActionRequestBuilder {
     }
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl SnoozeAlarmActionRequestBuilder {
     }
     /// <p>The name of the alarm model.</p>
     pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_name = input;
-        self
+        self.alarm_model_name = input; self
     }
     /// <p>The name of the alarm model.</p>
     pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl SnoozeAlarmActionRequestBuilder {
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_value = input;
-        self
+        self.key_value = input; self
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +103,7 @@ impl SnoozeAlarmActionRequestBuilder {
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
     pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.note = input;
-        self
+        self.note = input; self
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
     pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +117,7 @@ impl SnoozeAlarmActionRequestBuilder {
     }
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     pub fn set_snooze_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snooze_duration = input;
-        self
+        self.snooze_duration = input; self
     }
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     pub fn get_snooze_duration(&self) -> &::std::option::Option<i32> {
@@ -136,27 +129,29 @@ impl SnoozeAlarmActionRequestBuilder {
     /// - [`alarm_model_name`](crate::types::builders::SnoozeAlarmActionRequestBuilder::alarm_model_name)
     /// - [`snooze_duration`](crate::types::builders::SnoozeAlarmActionRequestBuilder::snooze_duration)
     pub fn build(self) -> ::std::result::Result<crate::types::SnoozeAlarmActionRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnoozeAlarmActionRequest {
-            request_id: self.request_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "request_id",
-                    "request_id was not specified but it is required when building SnoozeAlarmActionRequest",
-                )
-            })?,
-            alarm_model_name: self.alarm_model_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alarm_model_name",
-                    "alarm_model_name was not specified but it is required when building SnoozeAlarmActionRequest",
-                )
-            })?,
-            key_value: self.key_value,
-            note: self.note,
-            snooze_duration: self.snooze_duration.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "snooze_duration",
-                    "snooze_duration was not specified but it is required when building SnoozeAlarmActionRequest",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnoozeAlarmActionRequest {
+                request_id: self.request_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("request_id", "request_id was not specified but it is required when building SnoozeAlarmActionRequest")
+                    )?
+                ,
+                alarm_model_name: self.alarm_model_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alarm_model_name", "alarm_model_name was not specified but it is required when building SnoozeAlarmActionRequest")
+                    )?
+                ,
+                key_value: self.key_value
+                ,
+                note: self.note
+                ,
+                snooze_duration: self.snooze_duration
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("snooze_duration", "snooze_duration was not specified but it is required when building SnoozeAlarmActionRequest")
+                    )?
+                ,
+            }
+        )
     }
 }
+

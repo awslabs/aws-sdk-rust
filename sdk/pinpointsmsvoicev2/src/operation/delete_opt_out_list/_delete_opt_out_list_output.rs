@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOptOutListOutput {
+pub struct DeleteOptOutListOutput  {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
     pub opt_out_list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the OptOutList that was removed.</p>
@@ -11,25 +11,25 @@ pub struct DeleteOptOutListOutput {
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DeleteOptOutListOutput {
+impl  DeleteOptOutListOutput  {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
-    pub fn opt_out_list_arn(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The name of the OptOutList that was removed.</p>
-    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The time when the OptOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteOptOutListOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteOptOutListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOptOutListOutput`](crate::operation::delete_opt_out_list::DeleteOptOutListOutput).
     pub fn builder() -> crate::operation::delete_opt_out_list::builders::DeleteOptOutListOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteOptOutListOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
     pub fn set_opt_out_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_arn = input;
-        self
+        self.opt_out_list_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
     pub fn get_opt_out_list_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteOptOutListOutputBuilder {
     }
     /// <p>The name of the OptOutList that was removed.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_name = input;
-        self
+        self.opt_out_list_name = input; self
     }
     /// <p>The name of the OptOutList that was removed.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DeleteOptOutListOutputBuilder {
     }
     /// <p>The time when the OptOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time when the OptOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteOptOutListOutput`](crate::operation::delete_opt_out_list::DeleteOptOutListOutput).
     pub fn build(self) -> crate::operation::delete_opt_out_list::DeleteOptOutListOutput {
         crate::operation::delete_opt_out_list::DeleteOptOutListOutput {
-            opt_out_list_arn: self.opt_out_list_arn,
-            opt_out_list_name: self.opt_out_list_name,
-            created_timestamp: self.created_timestamp,
+            opt_out_list_arn: self.opt_out_list_arn
+            ,
+            opt_out_list_name: self.opt_out_list_name
+            ,
+            created_timestamp: self.created_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

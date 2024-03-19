@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateInstanceEventWindowOutput {
+pub struct DisassociateInstanceEventWindowOutput  {
     /// <p>Information about the event window.</p>
     pub instance_event_window: ::std::option::Option<crate::types::InstanceEventWindow>,
     _request_id: Option<String>,
 }
-impl DisassociateInstanceEventWindowOutput {
+impl  DisassociateInstanceEventWindowOutput  {
     /// <p>Information about the event window.</p>
-    pub fn instance_event_window(&self) -> ::std::option::Option<&crate::types::InstanceEventWindow> {
+    pub fn instance_event_window(&self) -> ::std::option::Option<& crate::types::InstanceEventWindow> {
         self.instance_event_window.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateInstanceEventWindowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateInstanceEventWindowOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateInstanceEventWindowOutput`](crate::operation::disassociate_instance_event_window::DisassociateInstanceEventWindowOutput).
     pub fn builder() -> crate::operation::disassociate_instance_event_window::builders::DisassociateInstanceEventWindowOutputBuilder {
@@ -40,27 +40,28 @@ impl DisassociateInstanceEventWindowOutputBuilder {
     }
     /// <p>Information about the event window.</p>
     pub fn set_instance_event_window(mut self, input: ::std::option::Option<crate::types::InstanceEventWindow>) -> Self {
-        self.instance_event_window = input;
-        self
+        self.instance_event_window = input; self
     }
     /// <p>Information about the event window.</p>
     pub fn get_instance_event_window(&self) -> &::std::option::Option<crate::types::InstanceEventWindow> {
         &self.instance_event_window
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateInstanceEventWindowOutput`](crate::operation::disassociate_instance_event_window::DisassociateInstanceEventWindowOutput).
     pub fn build(self) -> crate::operation::disassociate_instance_event_window::DisassociateInstanceEventWindowOutput {
         crate::operation::disassociate_instance_event_window::DisassociateInstanceEventWindowOutput {
-            instance_event_window: self.instance_event_window,
+            instance_event_window: self.instance_event_window
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

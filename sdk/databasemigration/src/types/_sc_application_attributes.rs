@@ -3,19 +3,19 @@
 /// <p>Provides information that defines a schema conversion application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScApplicationAttributes {
+pub struct ScApplicationAttributes  {
     /// <p>The path for the Amazon S3 bucket that the application uses for exporting assessment reports.</p>
     pub s3_bucket_path: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
     pub s3_bucket_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl ScApplicationAttributes {
+impl  ScApplicationAttributes  {
     /// <p>The path for the Amazon S3 bucket that the application uses for exporting assessment reports.</p>
-    pub fn s3_bucket_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_path(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_path.as_deref()
     }
     /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
-    pub fn s3_bucket_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_role_arn(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_role_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ScApplicationAttributesBuilder {
     }
     /// <p>The path for the Amazon S3 bucket that the application uses for exporting assessment reports.</p>
     pub fn set_s3_bucket_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_path = input;
-        self
+        self.s3_bucket_path = input; self
     }
     /// <p>The path for the Amazon S3 bucket that the application uses for exporting assessment reports.</p>
     pub fn get_s3_bucket_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ScApplicationAttributesBuilder {
     }
     /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
     pub fn set_s3_bucket_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_role_arn = input;
-        self
+        self.s3_bucket_role_arn = input; self
     }
     /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
     pub fn get_s3_bucket_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ScApplicationAttributesBuilder {
     /// Consumes the builder and constructs a [`ScApplicationAttributes`](crate::types::ScApplicationAttributes).
     pub fn build(self) -> crate::types::ScApplicationAttributes {
         crate::types::ScApplicationAttributes {
-            s3_bucket_path: self.s3_bucket_path,
-            s3_bucket_role_arn: self.s3_bucket_role_arn,
+            s3_bucket_path: self.s3_bucket_path
+            ,
+            s3_bucket_role_arn: self.s3_bucket_role_arn
+            ,
         }
     }
 }
+

@@ -8,7 +8,7 @@
 /// <p>You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FeaturizationConfig {
+pub struct FeaturizationConfig  {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
@@ -32,11 +32,11 @@ pub struct FeaturizationConfig {
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
-    pub forecast_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub forecast_dimensions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
-    pub featurizations: ::std::option::Option<::std::vec::Vec<crate::types::Featurization>>,
+    pub featurizations: ::std::option::Option<::std::vec::Vec::<crate::types::Featurization>>,
 }
-impl FeaturizationConfig {
+impl  FeaturizationConfig  {
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
     /// <ul>
@@ -56,23 +56,24 @@ impl FeaturizationConfig {
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
     /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES dataset frequency.</p>
-    pub fn forecast_frequency(&self) -> &str {
-        use std::ops::Deref;
-        self.forecast_frequency.deref()
+    pub fn forecast_frequency(&self) -> & str {
+        use std::ops::Deref; self.forecast_frequency.deref()
     }
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_dimensions.is_none()`.
-    pub fn forecast_dimensions(&self) -> &[::std::string::String] {
-        self.forecast_dimensions.as_deref().unwrap_or_default()
+    pub fn forecast_dimensions(&self) -> & [::std::string::String] {
+        self.forecast_dimensions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featurizations.is_none()`.
-    pub fn featurizations(&self) -> &[crate::types::Featurization] {
-        self.featurizations.as_deref().unwrap_or_default()
+    pub fn featurizations(&self) -> & [crate::types::Featurization] {
+        self.featurizations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FeaturizationConfig {
@@ -87,8 +88,8 @@ impl FeaturizationConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturizationConfigBuilder {
     pub(crate) forecast_frequency: ::std::option::Option<::std::string::String>,
-    pub(crate) forecast_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) featurizations: ::std::option::Option<::std::vec::Vec<crate::types::Featurization>>,
+    pub(crate) forecast_dimensions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) featurizations: ::std::option::Option<::std::vec::Vec::<crate::types::Featurization>>,
 }
 impl FeaturizationConfigBuilder {
     /// <p>The frequency of predictions in a forecast.</p>
@@ -135,8 +136,7 @@ impl FeaturizationConfigBuilder {
     /// <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>
     /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the TARGET_TIME_SERIES dataset frequency.</p>
     pub fn set_forecast_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_frequency = input;
-        self
+        self.forecast_frequency = input; self
     }
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:</p>
@@ -169,21 +169,20 @@ impl FeaturizationConfigBuilder {
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
     pub fn forecast_dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_dimensions.unwrap_or_default();
-        v.push(input.into());
-        self.forecast_dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.forecast_dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
-    pub fn set_forecast_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.forecast_dimensions = input;
-        self
+    pub fn set_forecast_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.forecast_dimensions = input; self
     }
     /// <p>An array of dimension (field) names that specify how to group the generated forecast.</p>
     /// <p>For example, suppose that you are generating a forecast for item sales across all of your stores, and your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would specify <code>store_id</code> as the dimension.</p>
     /// <p>All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.</p>
-    pub fn get_forecast_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_forecast_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.forecast_dimensions
     }
     /// Appends an item to `featurizations`.
@@ -193,32 +192,35 @@ impl FeaturizationConfigBuilder {
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
     pub fn featurizations(mut self, input: crate::types::Featurization) -> Self {
         let mut v = self.featurizations.unwrap_or_default();
-        v.push(input);
-        self.featurizations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.featurizations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
-    pub fn set_featurizations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Featurization>>) -> Self {
-        self.featurizations = input;
-        self
+    pub fn set_featurizations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Featurization>>) -> Self {
+        self.featurizations = input; self
     }
     /// <p>An array of featurization (transformation) information for the fields of a dataset.</p>
-    pub fn get_featurizations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Featurization>> {
+    pub fn get_featurizations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Featurization>> {
         &self.featurizations
     }
     /// Consumes the builder and constructs a [`FeaturizationConfig`](crate::types::FeaturizationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`forecast_frequency`](crate::types::builders::FeaturizationConfigBuilder::forecast_frequency)
     pub fn build(self) -> ::std::result::Result<crate::types::FeaturizationConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FeaturizationConfig {
-            forecast_frequency: self.forecast_frequency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "forecast_frequency",
-                    "forecast_frequency was not specified but it is required when building FeaturizationConfig",
-                )
-            })?,
-            forecast_dimensions: self.forecast_dimensions,
-            featurizations: self.featurizations,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FeaturizationConfig {
+                forecast_frequency: self.forecast_frequency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("forecast_frequency", "forecast_frequency was not specified but it is required when building FeaturizationConfig")
+                    )?
+                ,
+                forecast_dimensions: self.forecast_dimensions
+                ,
+                featurizations: self.featurizations
+                ,
+            }
+        )
     }
 }
+

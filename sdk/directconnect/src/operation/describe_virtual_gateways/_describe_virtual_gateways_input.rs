@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVirtualGatewaysInput {}
+pub struct DescribeVirtualGatewaysInput  {
+}
 impl DescribeVirtualGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysInput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput).
     pub fn builder() -> crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder {
@@ -13,15 +14,15 @@ impl DescribeVirtualGatewaysInput {
 /// A builder for [`DescribeVirtualGatewaysInput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeVirtualGatewaysInputBuilder {}
+pub struct DescribeVirtualGatewaysInputBuilder {
+}
 impl DescribeVirtualGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualGatewaysInput`](crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysInput {
+            }
+        )
     }
 }
+

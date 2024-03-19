@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCostCategoriesInput {
+pub struct GetCostCategoriesInput  {
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
     pub search_string: ::std::option::Option<::std::string::String>,
@@ -84,7 +84,7 @@ pub struct GetCostCategoriesInput {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub sort_by: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
+    pub sort_by: ::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>>,
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
     /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.</p>
@@ -92,18 +92,18 @@ pub struct GetCostCategoriesInput {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
-impl GetCostCategoriesInput {
+impl  GetCostCategoriesInput  {
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
-    pub fn search_string(&self) -> ::std::option::Option<&str> {
+    pub fn search_string(&self) -> ::std::option::Option<& str> {
         self.search_string.as_deref()
     }
     /// <p>The time period of the request.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn cost_category_name(&self) -> ::std::option::Option<&str> {
+    pub fn cost_category_name(&self) -> ::std::option::Option<& str> {
         self.cost_category_name.as_deref()
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
@@ -159,7 +159,7 @@ impl GetCostCategoriesInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>The value that you sort the data by.</p>
@@ -182,10 +182,11 @@ impl GetCostCategoriesInput {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_by.is_none()`.
-    pub fn sort_by(&self) -> &[crate::types::SortDefinition] {
-        self.sort_by.as_deref().unwrap_or_default()
+    pub fn sort_by(&self) -> & [crate::types::SortDefinition] {
+        self.sort_by.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
     /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
@@ -194,7 +195,7 @@ impl GetCostCategoriesInput {
         self.max_results
     }
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
@@ -213,7 +214,7 @@ pub struct GetCostCategoriesInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) cost_category_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
-    pub(crate) sort_by: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
+    pub(crate) sort_by: ::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
 }
@@ -227,8 +228,7 @@ impl GetCostCategoriesInputBuilder {
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
     pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_string = input;
-        self
+        self.search_string = input; self
     }
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
@@ -243,8 +243,7 @@ impl GetCostCategoriesInputBuilder {
     }
     /// <p>The time period of the request.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>The time period of the request.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -257,8 +256,7 @@ impl GetCostCategoriesInputBuilder {
     }
     /// <p>The unique name of the Cost Category.</p>
     pub fn set_cost_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cost_category_name = input;
-        self
+        self.cost_category_name = input; self
     }
     /// <p>The unique name of the Cost Category.</p>
     pub fn get_cost_category_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -375,8 +373,7 @@ impl GetCostCategoriesInputBuilder {
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -460,9 +457,9 @@ impl GetCostCategoriesInputBuilder {
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
     pub fn sort_by(mut self, input: crate::types::SortDefinition) -> Self {
         let mut v = self.sort_by.unwrap_or_default();
-        v.push(input);
-        self.sort_by = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sort_by = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value that you sort the data by.</p>
     /// <p>The key represents the cost and usage metrics. The following values are supported:</p>
@@ -484,9 +481,8 @@ impl GetCostCategoriesInputBuilder {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>>) -> Self {
+        self.sort_by = input; self
     }
     /// <p>The value that you sort the data by.</p>
     /// <p>The key represents the cost and usage metrics. The following values are supported:</p>
@@ -508,7 +504,7 @@ impl GetCostCategoriesInputBuilder {
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
-    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>> {
         &self.sort_by
     }
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
@@ -522,8 +518,7 @@ impl GetCostCategoriesInputBuilder {
     /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>This field is only used when the <code>SortBy</code> value is provided in the request.</p>
     /// <p>The maximum number of objects that are returned for this request. If <code>MaxResults</code> isn't specified with the <code>SortBy</code> value, the request returns 1000 results as the default value for this parameter.</p>
@@ -538,25 +533,32 @@ impl GetCostCategoriesInputBuilder {
     }
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     /// Consumes the builder and constructs a [`GetCostCategoriesInput`](crate::operation::get_cost_categories::GetCostCategoriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_cost_categories::GetCostCategoriesInput {
-            search_string: self.search_string,
-            time_period: self.time_period,
-            cost_category_name: self.cost_category_name,
-            filter: self.filter,
-            sort_by: self.sort_by,
-            max_results: self.max_results,
-            next_page_token: self.next_page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cost_categories::GetCostCategoriesInput {
+                search_string: self.search_string
+                ,
+                time_period: self.time_period
+                ,
+                cost_category_name: self.cost_category_name
+                ,
+                filter: self.filter
+                ,
+                sort_by: self.sort_by
+                ,
+                max_results: self.max_results
+                ,
+                next_page_token: self.next_page_token
+                ,
+            }
+        )
     }
 }
+

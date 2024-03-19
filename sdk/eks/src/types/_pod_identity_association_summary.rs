@@ -14,7 +14,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PodIdentityAssociationSummary {
+pub struct PodIdentityAssociationSummary  {
     /// <p>The name of the cluster that the association is in.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
@@ -26,25 +26,25 @@ pub struct PodIdentityAssociationSummary {
     /// <p>The ID of the association.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
 }
-impl PodIdentityAssociationSummary {
+impl  PodIdentityAssociationSummary  {
     /// <p>The name of the cluster that the association is in.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
-    pub fn service_account(&self) -> ::std::option::Option<&str> {
+    pub fn service_account(&self) -> ::std::option::Option<& str> {
         self.service_account.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
-    pub fn association_arn(&self) -> ::std::option::Option<&str> {
+    pub fn association_arn(&self) -> ::std::option::Option<& str> {
         self.association_arn.as_deref()
     }
     /// <p>The ID of the association.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl PodIdentityAssociationSummaryBuilder {
     }
     /// <p>The name of the cluster that the association is in.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster that the association is in.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl PodIdentityAssociationSummaryBuilder {
     }
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl PodIdentityAssociationSummaryBuilder {
     }
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
     pub fn set_service_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_account = input;
-        self
+        self.service_account = input; self
     }
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
     pub fn get_service_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl PodIdentityAssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn set_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_arn = input;
-        self
+        self.association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn get_association_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl PodIdentityAssociationSummaryBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,11 +134,17 @@ impl PodIdentityAssociationSummaryBuilder {
     /// Consumes the builder and constructs a [`PodIdentityAssociationSummary`](crate::types::PodIdentityAssociationSummary).
     pub fn build(self) -> crate::types::PodIdentityAssociationSummary {
         crate::types::PodIdentityAssociationSummary {
-            cluster_name: self.cluster_name,
-            namespace: self.namespace,
-            service_account: self.service_account,
-            association_arn: self.association_arn,
-            association_id: self.association_id,
+            cluster_name: self.cluster_name
+            ,
+            namespace: self.namespace
+            ,
+            service_account: self.service_account
+            ,
+            association_arn: self.association_arn
+            ,
+            association_id: self.association_id
+            ,
         }
     }
 }
+

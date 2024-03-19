@@ -3,7 +3,7 @@
 /// <p>Describes the settings for a configuration set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfigurationTemplateOutput {
+pub struct UpdateConfigurationTemplateOutput  {
     /// <p>The name of the solution stack this configuration set uses.</p>
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the platform version.</p>
@@ -33,32 +33,32 @@ pub struct UpdateConfigurationTemplateOutput {
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
     pub date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    pub option_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>>,
     _request_id: Option<String>,
 }
-impl UpdateConfigurationTemplateOutput {
+impl  UpdateConfigurationTemplateOutput  {
     /// <p>The name of the solution stack this configuration set uses.</p>
-    pub fn solution_stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> ::std::option::Option<& str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>The name of the application associated with this configuration set.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>If not <code>null</code>, the name of the configuration template for this configuration set.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>Describes this configuration set.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If not <code>null</code>, the name of the environment for this configuration set.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set:</p>
@@ -72,29 +72,30 @@ impl UpdateConfigurationTemplateOutput {
     /// <li>
     /// <p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
     /// </ul>
-    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::ConfigurationDeploymentStatus> {
+    pub fn deployment_status(&self) -> ::std::option::Option<& crate::types::ConfigurationDeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    pub fn date_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
-    pub fn option_settings(&self) -> &[crate::types::ConfigurationOptionSetting] {
-        self.option_settings.as_deref().unwrap_or_default()
+    pub fn option_settings(&self) -> & [crate::types::ConfigurationOptionSetting] {
+        self.option_settings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateConfigurationTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationTemplateOutput`](crate::operation::update_configuration_template::UpdateConfigurationTemplateOutput).
     pub fn builder() -> crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateOutputBuilder {
@@ -115,7 +116,7 @@ pub struct UpdateConfigurationTemplateOutputBuilder {
     pub(crate) deployment_status: ::std::option::Option<crate::types::ConfigurationDeploymentStatus>,
     pub(crate) date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    pub(crate) option_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>>,
     _request_id: Option<String>,
 }
 impl UpdateConfigurationTemplateOutputBuilder {
@@ -126,8 +127,7 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>The name of the solution stack this configuration set uses.</p>
     pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_stack_name = input;
-        self
+        self.solution_stack_name = input; self
     }
     /// <p>The name of the solution stack this configuration set uses.</p>
     pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +140,7 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>The ARN of the platform version.</p>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_arn = input;
-        self
+        self.platform_arn = input; self
     }
     /// <p>The ARN of the platform version.</p>
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +153,7 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>The name of the application associated with this configuration set.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application associated with this configuration set.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +166,7 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>If not <code>null</code>, the name of the configuration template for this configuration set.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>If not <code>null</code>, the name of the configuration template for this configuration set.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +179,7 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>Describes this configuration set.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Describes this configuration set.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +192,7 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>If not <code>null</code>, the name of the environment for this configuration set.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>If not <code>null</code>, the name of the environment for this configuration set.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +225,7 @@ impl UpdateConfigurationTemplateOutputBuilder {
     /// <p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
     /// </ul>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::ConfigurationDeploymentStatus>) -> Self {
-        self.deployment_status = input;
-        self
+        self.deployment_status = input; self
     }
     /// <p>If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set:</p>
     /// <ul>
@@ -254,8 +248,7 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The date (in UTC time) when this configuration set was created.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -268,8 +261,7 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
     pub fn set_date_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_updated = input;
-        self
+        self.date_updated = input; self
     }
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
     pub fn get_date_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -282,42 +274,52 @@ impl UpdateConfigurationTemplateOutputBuilder {
     /// <p>A list of the configuration options and their values in this configuration set.</p>
     pub fn option_settings(mut self, input: crate::types::ConfigurationOptionSetting) -> Self {
         let mut v = self.option_settings.unwrap_or_default();
-        v.push(input);
-        self.option_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.option_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
-        self.option_settings = input;
-        self
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>>) -> Self {
+        self.option_settings = input; self
     }
     /// <p>A list of the configuration options and their values in this configuration set.</p>
-    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>> {
         &self.option_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateConfigurationTemplateOutput`](crate::operation::update_configuration_template::UpdateConfigurationTemplateOutput).
     pub fn build(self) -> crate::operation::update_configuration_template::UpdateConfigurationTemplateOutput {
         crate::operation::update_configuration_template::UpdateConfigurationTemplateOutput {
-            solution_stack_name: self.solution_stack_name,
-            platform_arn: self.platform_arn,
-            application_name: self.application_name,
-            template_name: self.template_name,
-            description: self.description,
-            environment_name: self.environment_name,
-            deployment_status: self.deployment_status,
-            date_created: self.date_created,
-            date_updated: self.date_updated,
-            option_settings: self.option_settings,
+            solution_stack_name: self.solution_stack_name
+            ,
+            platform_arn: self.platform_arn
+            ,
+            application_name: self.application_name
+            ,
+            template_name: self.template_name
+            ,
+            description: self.description
+            ,
+            environment_name: self.environment_name
+            ,
+            deployment_status: self.deployment_status
+            ,
+            date_created: self.date_created
+            ,
+            date_updated: self.date_updated
+            ,
+            option_settings: self.option_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

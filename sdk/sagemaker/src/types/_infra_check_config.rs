@@ -3,11 +3,11 @@
 /// <p>Configuration information for the infrastructure health check of a training job. A SageMaker-provided health check tests the health of instance hardware and cluster network connectivity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InfraCheckConfig {
+pub struct InfraCheckConfig  {
     /// <p>Enables an infrastructure health check.</p>
     pub enable_infra_check: ::std::option::Option<bool>,
 }
-impl InfraCheckConfig {
+impl  InfraCheckConfig  {
     /// <p>Enables an infrastructure health check.</p>
     pub fn enable_infra_check(&self) -> ::std::option::Option<bool> {
         self.enable_infra_check
@@ -34,8 +34,7 @@ impl InfraCheckConfigBuilder {
     }
     /// <p>Enables an infrastructure health check.</p>
     pub fn set_enable_infra_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_infra_check = input;
-        self
+        self.enable_infra_check = input; self
     }
     /// <p>Enables an infrastructure health check.</p>
     pub fn get_enable_infra_check(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl InfraCheckConfigBuilder {
     /// Consumes the builder and constructs a [`InfraCheckConfig`](crate::types::InfraCheckConfig).
     pub fn build(self) -> crate::types::InfraCheckConfig {
         crate::types::InfraCheckConfig {
-            enable_infra_check: self.enable_infra_check,
+            enable_infra_check: self.enable_infra_check
+            ,
         }
     }
 }
+

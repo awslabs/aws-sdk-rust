@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssociatedResourceInput {
+pub struct GetAssociatedResourceInput  {
     /// <p>The name, ID, or ARN of the application.</p>
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource associated with the application.</p>
@@ -12,32 +12,33 @@ pub struct GetAssociatedResourceInput {
     /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
-    pub resource_tag_status: ::std::option::Option<::std::vec::Vec<crate::types::ResourceItemStatus>>,
+    pub resource_tag_status: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceItemStatus>>,
     /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetAssociatedResourceInput {
+impl  GetAssociatedResourceInput  {
     /// <p>The name, ID, or ARN of the application.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The type of resource associated with the application.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The name or ID of the resource associated with the application.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tag_status.is_none()`.
-    pub fn resource_tag_status(&self) -> &[crate::types::ResourceItemStatus] {
-        self.resource_tag_status.as_deref().unwrap_or_default()
+    pub fn resource_tag_status(&self) -> & [crate::types::ResourceItemStatus] {
+        self.resource_tag_status.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -59,7 +60,7 @@ pub struct GetAssociatedResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_tag_status: ::std::option::Option<::std::vec::Vec<crate::types::ResourceItemStatus>>,
+    pub(crate) resource_tag_status: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceItemStatus>>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl GetAssociatedResourceInputBuilder {
@@ -71,8 +72,7 @@ impl GetAssociatedResourceInputBuilder {
     }
     /// <p>The name, ID, or ARN of the application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The name, ID, or ARN of the application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl GetAssociatedResourceInputBuilder {
     }
     /// <p>The type of resource associated with the application.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource associated with the application.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -101,8 +100,7 @@ impl GetAssociatedResourceInputBuilder {
     }
     /// <p>The name or ID of the resource associated with the application.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The name or ID of the resource associated with the application.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl GetAssociatedResourceInputBuilder {
     }
     /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,17 +126,16 @@ impl GetAssociatedResourceInputBuilder {
     /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
     pub fn resource_tag_status(mut self, input: crate::types::ResourceItemStatus) -> Self {
         let mut v = self.resource_tag_status.unwrap_or_default();
-        v.push(input);
-        self.resource_tag_status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tag_status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
-    pub fn set_resource_tag_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceItemStatus>>) -> Self {
-        self.resource_tag_status = input;
-        self
+    pub fn set_resource_tag_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceItemStatus>>) -> Self {
+        self.resource_tag_status = input; self
     }
     /// <p>States whether an application tag is applied, not applied, in the process of being applied, or skipped.</p>
-    pub fn get_resource_tag_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceItemStatus>> {
+    pub fn get_resource_tag_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceItemStatus>> {
         &self.resource_tag_status
     }
     /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
@@ -149,25 +145,30 @@ impl GetAssociatedResourceInputBuilder {
     }
     /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return. If the parameter is omitted, it defaults to 25. The value is optional.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetAssociatedResourceInput`](crate::operation::get_associated_resource::GetAssociatedResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_associated_resource::GetAssociatedResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_associated_resource::GetAssociatedResourceInput {
-            application: self.application,
-            resource_type: self.resource_type,
-            resource: self.resource,
-            next_token: self.next_token,
-            resource_tag_status: self.resource_tag_status,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_associated_resource::GetAssociatedResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_associated_resource::GetAssociatedResourceInput {
+                application: self.application
+                ,
+                resource_type: self.resource_type
+                ,
+                resource: self.resource
+                ,
+                next_token: self.next_token
+                ,
+                resource_tag_status: self.resource_tag_status
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

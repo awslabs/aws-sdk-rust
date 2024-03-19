@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetStandardsControlAssociationsOutput {
+pub struct BatchGetStandardsControlAssociationsOutput  {
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard.</p>
-    pub standards_control_association_details: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
+    pub standards_control_association_details: ::std::option::Option<::std::vec::Vec::<crate::types::StandardsControlAssociationDetail>>,
     /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned.</p>
-    pub unprocessed_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>,
+    pub unprocessed_associations: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedStandardsControlAssociation>>,
     _request_id: Option<String>,
 }
-impl BatchGetStandardsControlAssociationsOutput {
+impl  BatchGetStandardsControlAssociationsOutput  {
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_association_details.is_none()`.
-    pub fn standards_control_association_details(&self) -> &[crate::types::StandardsControlAssociationDetail] {
-        self.standards_control_association_details.as_deref().unwrap_or_default()
+    pub fn standards_control_association_details(&self) -> & [crate::types::StandardsControlAssociationDetail] {
+        self.standards_control_association_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_associations.is_none()`.
-    pub fn unprocessed_associations(&self) -> &[crate::types::UnprocessedStandardsControlAssociation] {
-        self.unprocessed_associations.as_deref().unwrap_or_default()
+    pub fn unprocessed_associations(&self) -> & [crate::types::UnprocessedStandardsControlAssociation] {
+        self.unprocessed_associations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetStandardsControlAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetStandardsControlAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetStandardsControlAssociationsOutput`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput).
     pub fn builder() -> crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetStandardsControlAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsOutputBuilder {
-    pub(crate) standards_control_association_details: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
-    pub(crate) unprocessed_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>,
+    pub(crate) standards_control_association_details: ::std::option::Option<::std::vec::Vec::<crate::types::StandardsControlAssociationDetail>>,
+    pub(crate) unprocessed_associations: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedStandardsControlAssociation>>,
     _request_id: Option<String>,
 }
 impl BatchGetStandardsControlAssociationsOutputBuilder {
@@ -51,22 +53,16 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard.</p>
     pub fn standards_control_association_details(mut self, input: crate::types::StandardsControlAssociationDetail) -> Self {
         let mut v = self.standards_control_association_details.unwrap_or_default();
-        v.push(input);
-        self.standards_control_association_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.standards_control_association_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard.</p>
-    pub fn set_standards_control_association_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
-    ) -> Self {
-        self.standards_control_association_details = input;
-        self
+    pub fn set_standards_control_association_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StandardsControlAssociationDetail>>) -> Self {
+        self.standards_control_association_details = input; self
     }
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard.</p>
-    pub fn get_standards_control_association_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>> {
+    pub fn get_standards_control_association_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StandardsControlAssociationDetail>> {
         &self.standards_control_association_details
     }
     /// Appends an item to `unprocessed_associations`.
@@ -76,37 +72,36 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
     /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned.</p>
     pub fn unprocessed_associations(mut self, input: crate::types::UnprocessedStandardsControlAssociation) -> Self {
         let mut v = self.unprocessed_associations.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned.</p>
-    pub fn set_unprocessed_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>,
-    ) -> Self {
-        self.unprocessed_associations = input;
-        self
+    pub fn set_unprocessed_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedStandardsControlAssociation>>) -> Self {
+        self.unprocessed_associations = input; self
     }
     /// <p>A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned.</p>
-    pub fn get_unprocessed_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>> {
+    pub fn get_unprocessed_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedStandardsControlAssociation>> {
         &self.unprocessed_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetStandardsControlAssociationsOutput`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput).
     pub fn build(self) -> crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput {
         crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput {
-            standards_control_association_details: self.standards_control_association_details,
-            unprocessed_associations: self.unprocessed_associations,
+            standards_control_association_details: self.standards_control_association_details
+            ,
+            unprocessed_associations: self.unprocessed_associations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -5,7 +5,7 @@
 /// <p>If you provide a forecast ARN for <code>ResourceArn</code>, you can set <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to either “ALL” or “Specific”.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExplainabilityConfig {
+pub struct ExplainabilityConfig  {
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
     pub time_series_granularity: crate::types::TimeSeriesGranularity,
@@ -13,15 +13,15 @@ pub struct ExplainabilityConfig {
     /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
     pub time_point_granularity: crate::types::TimePointGranularity,
 }
-impl ExplainabilityConfig {
+impl  ExplainabilityConfig  {
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
-    pub fn time_series_granularity(&self) -> &crate::types::TimeSeriesGranularity {
+    pub fn time_series_granularity(&self) -> & crate::types::TimeSeriesGranularity {
         &self.time_series_granularity
     }
     /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
-    pub fn time_point_granularity(&self) -> &crate::types::TimePointGranularity {
+    pub fn time_point_granularity(&self) -> & crate::types::TimePointGranularity {
         &self.time_point_granularity
     }
 }
@@ -50,8 +50,7 @@ impl ExplainabilityConfigBuilder {
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
     pub fn set_time_series_granularity(mut self, input: ::std::option::Option<crate::types::TimeSeriesGranularity>) -> Self {
-        self.time_series_granularity = input;
-        self
+        self.time_series_granularity = input; self
     }
     /// <p>To create an Explainability for all time series in your datasets, use <code>ALL</code>. To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time series by uploading a CSV or Parquet file to an Amazon S3 bucket and set the location within the <code>DataDestination</code> data type.</p>
@@ -68,8 +67,7 @@ impl ExplainabilityConfigBuilder {
     /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
     pub fn set_time_point_granularity(mut self, input: ::std::option::Option<crate::types::TimePointGranularity>) -> Self {
-        self.time_point_granularity = input;
-        self
+        self.time_point_granularity = input; self
     }
     /// <p>To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>. To create an Explainability for specific time points in your forecast horizon, use <code>SPECIFIC</code>.</p>
     /// <p>Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code> parameters within the <code>CreateExplainability</code> operation.</p>
@@ -81,19 +79,20 @@ impl ExplainabilityConfigBuilder {
     /// - [`time_series_granularity`](crate::types::builders::ExplainabilityConfigBuilder::time_series_granularity)
     /// - [`time_point_granularity`](crate::types::builders::ExplainabilityConfigBuilder::time_point_granularity)
     pub fn build(self) -> ::std::result::Result<crate::types::ExplainabilityConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExplainabilityConfig {
-            time_series_granularity: self.time_series_granularity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_series_granularity",
-                    "time_series_granularity was not specified but it is required when building ExplainabilityConfig",
-                )
-            })?,
-            time_point_granularity: self.time_point_granularity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_point_granularity",
-                    "time_point_granularity was not specified but it is required when building ExplainabilityConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExplainabilityConfig {
+                time_series_granularity: self.time_series_granularity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_series_granularity", "time_series_granularity was not specified but it is required when building ExplainabilityConfig")
+                    )?
+                ,
+                time_point_granularity: self.time_point_granularity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_point_granularity", "time_point_granularity was not specified but it is required when building ExplainabilityConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

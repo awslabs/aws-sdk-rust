@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRawMessageContentInput {
+pub struct PutRawMessageContentInput  {
     /// <p>The identifier of the email message being updated.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the raw message content of the updated email message.</p>
     pub content: ::std::option::Option<crate::types::RawMessageContent>,
 }
-impl PutRawMessageContentInput {
+impl  PutRawMessageContentInput  {
     /// <p>The identifier of the email message being updated.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>Describes the raw message content of the updated email message.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::RawMessageContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::RawMessageContent> {
         self.content.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl PutRawMessageContentInputBuilder {
     }
     /// <p>The identifier of the email message being updated.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The identifier of the email message being updated.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl PutRawMessageContentInputBuilder {
     }
     /// <p>Describes the raw message content of the updated email message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::RawMessageContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Describes the raw message content of the updated email message.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::RawMessageContent> {
         &self.content
     }
     /// Consumes the builder and constructs a [`PutRawMessageContentInput`](crate::operation::put_raw_message_content::PutRawMessageContentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_raw_message_content::PutRawMessageContentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_raw_message_content::PutRawMessageContentInput {
-            message_id: self.message_id,
-            content: self.content,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_raw_message_content::PutRawMessageContentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_raw_message_content::PutRawMessageContentInput {
+                message_id: self.message_id
+                ,
+                content: self.content
+                ,
+            }
+        )
     }
 }
+

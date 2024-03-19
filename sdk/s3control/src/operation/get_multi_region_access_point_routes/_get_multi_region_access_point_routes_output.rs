@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMultiRegionAccessPointRoutesOutput {
+pub struct GetMultiRegionAccessPointRoutesOutput  {
     /// <p>The Multi-Region Access Point ARN.</p>
     pub mrap: ::std::option::Option<::std::string::String>,
     /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub routes: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
+    pub routes: ::std::option::Option<::std::vec::Vec::<crate::types::MultiRegionAccessPointRoute>>,
     _request_id: Option<String>,
 }
-impl GetMultiRegionAccessPointRoutesOutput {
+impl  GetMultiRegionAccessPointRoutesOutput  {
     /// <p>The Multi-Region Access Point ARN.</p>
-    pub fn mrap(&self) -> ::std::option::Option<&str> {
+    pub fn mrap(&self) -> ::std::option::Option<& str> {
         self.mrap.as_deref()
     }
     /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
-    pub fn routes(&self) -> &[crate::types::MultiRegionAccessPointRoute] {
-        self.routes.as_deref().unwrap_or_default()
+    pub fn routes(&self) -> & [crate::types::MultiRegionAccessPointRoute] {
+        self.routes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMultiRegionAccessPointRoutesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMultiRegionAccessPointRoutesOutput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointRoutesOutput`](crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput).
     pub fn builder() -> crate::operation::get_multi_region_access_point_routes::builders::GetMultiRegionAccessPointRoutesOutputBuilder {
@@ -38,7 +39,7 @@ impl GetMultiRegionAccessPointRoutesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointRoutesOutputBuilder {
     pub(crate) mrap: ::std::option::Option<::std::string::String>,
-    pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
+    pub(crate) routes: ::std::option::Option<::std::vec::Vec::<crate::types::MultiRegionAccessPointRoute>>,
     _request_id: Option<String>,
 }
 impl GetMultiRegionAccessPointRoutesOutputBuilder {
@@ -49,8 +50,7 @@ impl GetMultiRegionAccessPointRoutesOutputBuilder {
     }
     /// <p>The Multi-Region Access Point ARN.</p>
     pub fn set_mrap(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mrap = input;
-        self
+        self.mrap = input; self
     }
     /// <p>The Multi-Region Access Point ARN.</p>
     pub fn get_mrap(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl GetMultiRegionAccessPointRoutesOutputBuilder {
     /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
     pub fn routes(mut self, input: crate::types::MultiRegionAccessPointRoute) -> Self {
         let mut v = self.routes.unwrap_or_default();
-        v.push(input);
-        self.routes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.routes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>) -> Self {
-        self.routes = input;
-        self
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MultiRegionAccessPointRoute>>) -> Self {
+        self.routes = input; self
     }
     /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>> {
+    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MultiRegionAccessPointRoute>> {
         &self.routes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMultiRegionAccessPointRoutesOutput`](crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput).
     pub fn build(self) -> crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput {
         crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesOutput {
-            mrap: self.mrap,
-            routes: self.routes,
+            mrap: self.mrap
+            ,
+            routes: self.routes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

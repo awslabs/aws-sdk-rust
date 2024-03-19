@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let advancedinputfiltersharpen = unimplemented!();
 /// match advancedinputfiltersharpen {
@@ -31,16 +31,14 @@
 /// Specifically, when `advancedinputfiltersharpen` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AdvancedInputFilterSharpen::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Optionally specify the amount of sharpening to apply when you use the Advanced input filter. Sharpening adds contrast to the edges of your video content and can reduce softness. To apply no sharpening: Keep the default value, Off. To apply a minimal amount of sharpening choose Low, or for the maximum choose High.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AdvancedInputFilterSharpen {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -50,64 +48,65 @@ pub enum AdvancedInputFilterSharpen {
     Off,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AdvancedInputFilterSharpen {
-    fn from(s: &str) -> Self {
-        match s {
-            "HIGH" => AdvancedInputFilterSharpen::High,
-            "LOW" => AdvancedInputFilterSharpen::Low,
-            "OFF" => AdvancedInputFilterSharpen::Off,
-            other => AdvancedInputFilterSharpen::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "HIGH" => AdvancedInputFilterSharpen::High,
+"LOW" => AdvancedInputFilterSharpen::Low,
+"OFF" => AdvancedInputFilterSharpen::Off,
+other => AdvancedInputFilterSharpen::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AdvancedInputFilterSharpen {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AdvancedInputFilterSharpen::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AdvancedInputFilterSharpen::from(s))
+                    }
+                }
 impl AdvancedInputFilterSharpen {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AdvancedInputFilterSharpen::High => "HIGH",
-            AdvancedInputFilterSharpen::Low => "LOW",
-            AdvancedInputFilterSharpen::Off => "OFF",
-            AdvancedInputFilterSharpen::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["HIGH", "LOW", "OFF"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AdvancedInputFilterSharpen::High => "HIGH",
+    AdvancedInputFilterSharpen::Low => "LOW",
+    AdvancedInputFilterSharpen::Off => "OFF",
+    AdvancedInputFilterSharpen::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["HIGH", "LOW", "OFF"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AdvancedInputFilterSharpen {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AdvancedInputFilterSharpen {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AdvancedInputFilterSharpen {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AdvancedInputFilterSharpen::High => write!(f, "HIGH"),
-            AdvancedInputFilterSharpen::Low => write!(f, "LOW"),
-            AdvancedInputFilterSharpen::Off => write!(f, "OFF"),
-            AdvancedInputFilterSharpen::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AdvancedInputFilterSharpen::High => write!(f, "HIGH"),
+AdvancedInputFilterSharpen::Low => write!(f, "LOW"),
+AdvancedInputFilterSharpen::Off => write!(f, "OFF"),
+AdvancedInputFilterSharpen::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateAccessPolicyOutput {
+pub struct DisassociateAccessPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DisassociateAccessPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAccessPolicyOutput`](crate::operation::disassociate_access_policy::DisassociateAccessPolicyOutput).
     pub fn builder() -> crate::operation::disassociate_access_policy::builders::DisassociateAccessPolicyOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DisassociateAccessPolicyOutputBuilder {
 }
 impl DisassociateAccessPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateAccessPolicyOutput`](crate::operation::disassociate_access_policy::DisassociateAccessPolicyOutput).
     pub fn build(self) -> crate::operation::disassociate_access_policy::DisassociateAccessPolicyOutput {
         crate::operation::disassociate_access_policy::DisassociateAccessPolicyOutput {
@@ -40,3 +40,4 @@ impl DisassociateAccessPolicyOutputBuilder {
         }
     }
 }
+

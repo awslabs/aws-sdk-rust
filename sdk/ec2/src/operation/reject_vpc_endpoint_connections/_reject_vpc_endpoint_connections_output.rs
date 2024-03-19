@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectVpcEndpointConnectionsOutput {
+pub struct RejectVpcEndpointConnectionsOutput  {
     /// <p>Information about the endpoints that were not rejected, if applicable.</p>
-    pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
+    pub unsuccessful: ::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,
 }
-impl RejectVpcEndpointConnectionsOutput {
+impl  RejectVpcEndpointConnectionsOutput  {
     /// <p>Information about the endpoints that were not rejected, if applicable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful.is_none()`.
-    pub fn unsuccessful(&self) -> &[crate::types::UnsuccessfulItem] {
-        self.unsuccessful.as_deref().unwrap_or_default()
+    pub fn unsuccessful(&self) -> & [crate::types::UnsuccessfulItem] {
+        self.unsuccessful.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for RejectVpcEndpointConnectionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RejectVpcEndpointConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`RejectVpcEndpointConnectionsOutput`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput).
     pub fn builder() -> crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsOutputBuilder {
@@ -31,7 +32,7 @@ impl RejectVpcEndpointConnectionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectVpcEndpointConnectionsOutputBuilder {
-    pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
+    pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,
 }
 impl RejectVpcEndpointConnectionsOutputBuilder {
@@ -42,33 +43,34 @@ impl RejectVpcEndpointConnectionsOutputBuilder {
     /// <p>Information about the endpoints that were not rejected, if applicable.</p>
     pub fn unsuccessful(mut self, input: crate::types::UnsuccessfulItem) -> Self {
         let mut v = self.unsuccessful.unwrap_or_default();
-        v.push(input);
-        self.unsuccessful = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unsuccessful = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the endpoints that were not rejected, if applicable.</p>
-    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>) -> Self {
-        self.unsuccessful = input;
-        self
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulItem>>) -> Self {
+        self.unsuccessful = input; self
     }
     /// <p>Information about the endpoints that were not rejected, if applicable.</p>
-    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulItem>> {
         &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RejectVpcEndpointConnectionsOutput`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput).
     pub fn build(self) -> crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput {
         crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput {
-            unsuccessful: self.unsuccessful,
+            unsuccessful: self.unsuccessful
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

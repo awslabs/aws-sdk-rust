@@ -7,30 +7,28 @@
 /// <p>A complex type that contains <code>XssMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct XssMatchSet {
+pub struct XssMatchSet  {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p><code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub xss_match_set_id: ::std::string::String,
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
-    pub xss_match_tuples: ::std::vec::Vec<crate::types::XssMatchTuple>,
+    pub xss_match_tuples: ::std::vec::Vec::<crate::types::XssMatchTuple>,
 }
-impl XssMatchSet {
+impl  XssMatchSet  {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p><code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.xss_match_set_id.deref()
+    pub fn xss_match_set_id(&self) -> & str {
+        use std::ops::Deref; self.xss_match_set_id.deref()
     }
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
-    pub fn xss_match_tuples(&self) -> &[crate::types::XssMatchTuple] {
-        use std::ops::Deref;
-        self.xss_match_tuples.deref()
+    pub fn xss_match_tuples(&self) -> & [crate::types::XssMatchTuple] {
+        use std::ops::Deref; self.xss_match_tuples.deref()
     }
 }
 impl XssMatchSet {
@@ -46,7 +44,7 @@ impl XssMatchSet {
 pub struct XssMatchSetBuilder {
     pub(crate) xss_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) xss_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchTuple>>,
+    pub(crate) xss_match_tuples: ::std::option::Option<::std::vec::Vec::<crate::types::XssMatchTuple>>,
 }
 impl XssMatchSetBuilder {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
@@ -59,8 +57,7 @@ impl XssMatchSetBuilder {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p><code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub fn set_xss_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.xss_match_set_id = input;
-        self
+        self.xss_match_set_id = input; self
     }
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p><code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
@@ -74,8 +71,7 @@ impl XssMatchSetBuilder {
     }
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +84,16 @@ impl XssMatchSetBuilder {
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
     pub fn xss_match_tuples(mut self, input: crate::types::XssMatchTuple) -> Self {
         let mut v = self.xss_match_tuples.unwrap_or_default();
-        v.push(input);
-        self.xss_match_tuples = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.xss_match_tuples = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
-    pub fn set_xss_match_tuples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchTuple>>) -> Self {
-        self.xss_match_tuples = input;
-        self
+    pub fn set_xss_match_tuples(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::XssMatchTuple>>) -> Self {
+        self.xss_match_tuples = input; self
     }
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
-    pub fn get_xss_match_tuples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::XssMatchTuple>> {
+    pub fn get_xss_match_tuples(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::XssMatchTuple>> {
         &self.xss_match_tuples
     }
     /// Consumes the builder and constructs a [`XssMatchSet`](crate::types::XssMatchSet).
@@ -106,20 +101,22 @@ impl XssMatchSetBuilder {
     /// - [`xss_match_set_id`](crate::types::builders::XssMatchSetBuilder::xss_match_set_id)
     /// - [`xss_match_tuples`](crate::types::builders::XssMatchSetBuilder::xss_match_tuples)
     pub fn build(self) -> ::std::result::Result<crate::types::XssMatchSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::XssMatchSet {
-            xss_match_set_id: self.xss_match_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "xss_match_set_id",
-                    "xss_match_set_id was not specified but it is required when building XssMatchSet",
-                )
-            })?,
-            name: self.name,
-            xss_match_tuples: self.xss_match_tuples.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "xss_match_tuples",
-                    "xss_match_tuples was not specified but it is required when building XssMatchSet",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::XssMatchSet {
+                xss_match_set_id: self.xss_match_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("xss_match_set_id", "xss_match_set_id was not specified but it is required when building XssMatchSet")
+                    )?
+                ,
+                name: self.name
+                ,
+                xss_match_tuples: self.xss_match_tuples
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("xss_match_tuples", "xss_match_tuples was not specified but it is required when building XssMatchSet")
+                    )?
+                ,
+            }
+        )
     }
 }
+

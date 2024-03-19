@@ -4,29 +4,27 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Transform {
+pub struct Transform  {
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub expression: ::std::string::String,
     /// <p>The list of variables used in the expression.</p>
-    pub variables: ::std::vec::Vec<crate::types::ExpressionVariable>,
+    pub variables: ::std::vec::Vec::<crate::types::ExpressionVariable>,
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub processing_config: ::std::option::Option<crate::types::TransformProcessingConfig>,
 }
-impl Transform {
+impl  Transform  {
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn expression(&self) -> &str {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & str {
+        use std::ops::Deref; self.expression.deref()
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn variables(&self) -> &[crate::types::ExpressionVariable] {
-        use std::ops::Deref;
-        self.variables.deref()
+    pub fn variables(&self) -> & [crate::types::ExpressionVariable] {
+        use std::ops::Deref; self.variables.deref()
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
-    pub fn processing_config(&self) -> ::std::option::Option<&crate::types::TransformProcessingConfig> {
+    pub fn processing_config(&self) -> ::std::option::Option<& crate::types::TransformProcessingConfig> {
         self.processing_config.as_ref()
     }
 }
@@ -42,7 +40,7 @@ impl Transform {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
-    pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
+    pub(crate) variables: ::std::option::Option<::std::vec::Vec::<crate::types::ExpressionVariable>>,
     pub(crate) processing_config: ::std::option::Option<crate::types::TransformProcessingConfig>,
 }
 impl TransformBuilder {
@@ -56,8 +54,7 @@ impl TransformBuilder {
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -71,17 +68,16 @@ impl TransformBuilder {
     /// <p>The list of variables used in the expression.</p>
     pub fn variables(mut self, input: crate::types::ExpressionVariable) -> Self {
         let mut v = self.variables.unwrap_or_default();
-        v.push(input);
-        self.variables = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.variables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExpressionVariable>>) -> Self {
+        self.variables = input; self
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExpressionVariable>> {
         &self.variables
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
@@ -91,8 +87,7 @@ impl TransformBuilder {
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub fn set_processing_config(mut self, input: ::std::option::Option<crate::types::TransformProcessingConfig>) -> Self {
-        self.processing_config = input;
-        self
+        self.processing_config = input; self
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub fn get_processing_config(&self) -> &::std::option::Option<crate::types::TransformProcessingConfig> {
@@ -103,20 +98,22 @@ impl TransformBuilder {
     /// - [`expression`](crate::types::builders::TransformBuilder::expression)
     /// - [`variables`](crate::types::builders::TransformBuilder::variables)
     pub fn build(self) -> ::std::result::Result<crate::types::Transform, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Transform {
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building Transform",
-                )
-            })?,
-            variables: self.variables.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "variables",
-                    "variables was not specified but it is required when building Transform",
-                )
-            })?,
-            processing_config: self.processing_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Transform {
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building Transform")
+                    )?
+                ,
+                variables: self.variables
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("variables", "variables was not specified but it is required when building Transform")
+                    )?
+                ,
+                processing_config: self.processing_config
+                ,
+            }
+        )
     }
 }
+

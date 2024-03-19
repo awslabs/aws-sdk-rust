@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSnowballUsageOutput {
+pub struct GetSnowballUsageOutput  {
     /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
     pub snowball_limit: ::std::option::Option<i32>,
     /// <p>The number of Snow devices that this account is currently using.</p>
     pub snowballs_in_use: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl GetSnowballUsageOutput {
+impl  GetSnowballUsageOutput  {
     /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
     pub fn snowball_limit(&self) -> ::std::option::Option<i32> {
         self.snowball_limit
@@ -20,10 +20,10 @@ impl GetSnowballUsageOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetSnowballUsageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSnowballUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetSnowballUsageOutput`](crate::operation::get_snowball_usage::GetSnowballUsageOutput).
     pub fn builder() -> crate::operation::get_snowball_usage::builders::GetSnowballUsageOutputBuilder {
@@ -47,8 +47,7 @@ impl GetSnowballUsageOutputBuilder {
     }
     /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
     pub fn set_snowball_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snowball_limit = input;
-        self
+        self.snowball_limit = input; self
     }
     /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
     pub fn get_snowball_limit(&self) -> &::std::option::Option<i32> {
@@ -61,28 +60,30 @@ impl GetSnowballUsageOutputBuilder {
     }
     /// <p>The number of Snow devices that this account is currently using.</p>
     pub fn set_snowballs_in_use(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snowballs_in_use = input;
-        self
+        self.snowballs_in_use = input; self
     }
     /// <p>The number of Snow devices that this account is currently using.</p>
     pub fn get_snowballs_in_use(&self) -> &::std::option::Option<i32> {
         &self.snowballs_in_use
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSnowballUsageOutput`](crate::operation::get_snowball_usage::GetSnowballUsageOutput).
     pub fn build(self) -> crate::operation::get_snowball_usage::GetSnowballUsageOutput {
         crate::operation::get_snowball_usage::GetSnowballUsageOutput {
-            snowball_limit: self.snowball_limit,
-            snowballs_in_use: self.snowballs_in_use,
+            snowball_limit: self.snowball_limit
+            ,
+            snowballs_in_use: self.snowballs_in_use
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

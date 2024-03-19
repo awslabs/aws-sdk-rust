@@ -3,7 +3,7 @@
 /// <p>Describes an action to publish data to an Amazon SQS queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqsAction {
+pub struct SqsAction  {
     /// <p>The ARN of the IAM role that grants access.</p>
     pub role_arn: ::std::string::String,
     /// <p>The URL of the Amazon SQS queue.</p>
@@ -11,16 +11,14 @@ pub struct SqsAction {
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub use_base64: ::std::option::Option<bool>,
 }
-impl SqsAction {
+impl  SqsAction  {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The URL of the Amazon SQS queue.</p>
-    pub fn queue_url(&self) -> &str {
-        use std::ops::Deref;
-        self.queue_url.deref()
+    pub fn queue_url(&self) -> & str {
+        use std::ops::Deref; self.queue_url.deref()
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub fn use_base64(&self) -> ::std::option::Option<bool> {
@@ -51,8 +49,7 @@ impl SqsActionBuilder {
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl SqsActionBuilder {
     }
     /// <p>The URL of the Amazon SQS queue.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
     /// <p>The URL of the Amazon SQS queue.</p>
     pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl SqsActionBuilder {
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub fn set_use_base64(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_base64 = input;
-        self
+        self.use_base64 = input; self
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub fn get_use_base64(&self) -> &::std::option::Option<bool> {
@@ -92,20 +87,22 @@ impl SqsActionBuilder {
     /// - [`role_arn`](crate::types::builders::SqsActionBuilder::role_arn)
     /// - [`queue_url`](crate::types::builders::SqsActionBuilder::queue_url)
     pub fn build(self) -> ::std::result::Result<crate::types::SqsAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SqsAction {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building SqsAction",
-                )
-            })?,
-            queue_url: self.queue_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queue_url",
-                    "queue_url was not specified but it is required when building SqsAction",
-                )
-            })?,
-            use_base64: self.use_base64,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SqsAction {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building SqsAction")
+                    )?
+                ,
+                queue_url: self.queue_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queue_url", "queue_url was not specified but it is required when building SqsAction")
+                    )?
+                ,
+                use_base64: self.use_base64
+                ,
+            }
+        )
     }
 }
+

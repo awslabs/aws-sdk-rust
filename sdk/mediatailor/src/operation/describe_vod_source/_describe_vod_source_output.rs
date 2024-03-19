@@ -2,68 +2,70 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVodSourceOutput {
+pub struct DescribeVodSourceOutput  {
     /// <p>The ad break opportunities within the VOD source.</p>
-    pub ad_break_opportunities: ::std::option::Option<::std::vec::Vec<crate::types::AdBreakOpportunity>>,
+    pub ad_break_opportunities: ::std::option::Option<::std::vec::Vec::<crate::types::AdBreakOpportunity>>,
     /// <p>The ARN of the VOD source.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations.</p>
-    pub http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub http_package_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::HttpPackageConfiguration>>,
     /// <p>The last modified time of the VOD source.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the source location associated with the VOD source.</p>
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The name of the VOD source.</p>
     pub vod_source_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeVodSourceOutput {
+impl  DescribeVodSourceOutput  {
     /// <p>The ad break opportunities within the VOD source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_break_opportunities.is_none()`.
-    pub fn ad_break_opportunities(&self) -> &[crate::types::AdBreakOpportunity] {
-        self.ad_break_opportunities.as_deref().unwrap_or_default()
+    pub fn ad_break_opportunities(&self) -> & [crate::types::AdBreakOpportunity] {
+        self.ad_break_opportunities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the VOD source.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The HTTP package configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.http_package_configurations.is_none()`.
-    pub fn http_package_configurations(&self) -> &[crate::types::HttpPackageConfiguration] {
-        self.http_package_configurations.as_deref().unwrap_or_default()
+    pub fn http_package_configurations(&self) -> & [crate::types::HttpPackageConfiguration] {
+        self.http_package_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The last modified time of the VOD source.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location associated with the VOD source.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
     /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> ::std::option::Option<& str> {
         self.vod_source_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVodSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVodSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVodSourceOutput`](crate::operation::describe_vod_source::DescribeVodSourceOutput).
     pub fn builder() -> crate::operation::describe_vod_source::builders::DescribeVodSourceOutputBuilder {
@@ -75,13 +77,13 @@ impl DescribeVodSourceOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVodSourceOutputBuilder {
-    pub(crate) ad_break_opportunities: ::std::option::Option<::std::vec::Vec<crate::types::AdBreakOpportunity>>,
+    pub(crate) ad_break_opportunities: ::std::option::Option<::std::vec::Vec::<crate::types::AdBreakOpportunity>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub(crate) http_package_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::HttpPackageConfiguration>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -93,17 +95,16 @@ impl DescribeVodSourceOutputBuilder {
     /// <p>The ad break opportunities within the VOD source.</p>
     pub fn ad_break_opportunities(mut self, input: crate::types::AdBreakOpportunity) -> Self {
         let mut v = self.ad_break_opportunities.unwrap_or_default();
-        v.push(input);
-        self.ad_break_opportunities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ad_break_opportunities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ad break opportunities within the VOD source.</p>
-    pub fn set_ad_break_opportunities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreakOpportunity>>) -> Self {
-        self.ad_break_opportunities = input;
-        self
+    pub fn set_ad_break_opportunities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdBreakOpportunity>>) -> Self {
+        self.ad_break_opportunities = input; self
     }
     /// <p>The ad break opportunities within the VOD source.</p>
-    pub fn get_ad_break_opportunities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdBreakOpportunity>> {
+    pub fn get_ad_break_opportunities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdBreakOpportunity>> {
         &self.ad_break_opportunities
     }
     /// <p>The ARN of the VOD source.</p>
@@ -113,8 +114,7 @@ impl DescribeVodSourceOutputBuilder {
     }
     /// <p>The ARN of the VOD source.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the VOD source.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl DescribeVodSourceOutputBuilder {
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,17 +140,16 @@ impl DescribeVodSourceOutputBuilder {
     /// <p>The HTTP package configurations.</p>
     pub fn http_package_configurations(mut self, input: crate::types::HttpPackageConfiguration) -> Self {
         let mut v = self.http_package_configurations.unwrap_or_default();
-        v.push(input);
-        self.http_package_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.http_package_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The HTTP package configurations.</p>
-    pub fn set_http_package_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>) -> Self {
-        self.http_package_configurations = input;
-        self
+    pub fn set_http_package_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HttpPackageConfiguration>>) -> Self {
+        self.http_package_configurations = input; self
     }
     /// <p>The HTTP package configurations.</p>
-    pub fn get_http_package_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
+    pub fn get_http_package_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HttpPackageConfiguration>> {
         &self.http_package_configurations
     }
     /// <p>The last modified time of the VOD source.</p>
@@ -161,8 +159,7 @@ impl DescribeVodSourceOutputBuilder {
     }
     /// <p>The last modified time of the VOD source.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The last modified time of the VOD source.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -175,8 +172,7 @@ impl DescribeVodSourceOutputBuilder {
     }
     /// <p>The name of the source location associated with the VOD source.</p>
     pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location_name = input;
-        self
+        self.source_location_name = input; self
     }
     /// <p>The name of the source location associated with the VOD source.</p>
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,17 +185,16 @@ impl DescribeVodSourceOutputBuilder {
     /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The name of the VOD source.</p>
@@ -209,34 +204,42 @@ impl DescribeVodSourceOutputBuilder {
     }
     /// <p>The name of the VOD source.</p>
     pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vod_source_name = input;
-        self
+        self.vod_source_name = input; self
     }
     /// <p>The name of the VOD source.</p>
     pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vod_source_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVodSourceOutput`](crate::operation::describe_vod_source::DescribeVodSourceOutput).
     pub fn build(self) -> crate::operation::describe_vod_source::DescribeVodSourceOutput {
         crate::operation::describe_vod_source::DescribeVodSourceOutput {
-            ad_break_opportunities: self.ad_break_opportunities,
-            arn: self.arn,
-            creation_time: self.creation_time,
-            http_package_configurations: self.http_package_configurations,
-            last_modified_time: self.last_modified_time,
-            source_location_name: self.source_location_name,
-            tags: self.tags,
-            vod_source_name: self.vod_source_name,
+            ad_break_opportunities: self.ad_break_opportunities
+            ,
+            arn: self.arn
+            ,
+            creation_time: self.creation_time
+            ,
+            http_package_configurations: self.http_package_configurations
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            source_location_name: self.source_location_name
+            ,
+            tags: self.tags
+            ,
+            vod_source_name: self.vod_source_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

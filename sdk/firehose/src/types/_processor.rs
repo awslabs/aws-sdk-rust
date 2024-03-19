@@ -5,22 +5,23 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Processor {
+pub struct Processor  {
     /// <p>The type of processor.</p>
     pub r#type: crate::types::ProcessorType,
     /// <p>The processor parameters.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessorParameter>>,
 }
-impl Processor {
+impl  Processor  {
     /// <p>The type of processor.</p>
-    pub fn r#type(&self) -> &crate::types::ProcessorType {
+    pub fn r#type(&self) -> & crate::types::ProcessorType {
         &self.r#type
     }
     /// <p>The processor parameters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::ProcessorParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::ProcessorParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Processor {
@@ -35,7 +36,7 @@ impl Processor {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessorBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ProcessorType>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessorParameter>>,
 }
 impl ProcessorBuilder {
     /// <p>The type of processor.</p>
@@ -46,8 +47,7 @@ impl ProcessorBuilder {
     }
     /// <p>The type of processor.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProcessorType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of processor.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProcessorType> {
@@ -60,31 +60,33 @@ impl ProcessorBuilder {
     /// <p>The processor parameters.</p>
     pub fn parameters(mut self, input: crate::types::ProcessorParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The processor parameters.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessorParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The processor parameters.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProcessorParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`Processor`](crate::types::Processor).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ProcessorBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Processor, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Processor {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Processor",
-                )
-            })?,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Processor {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Processor")
+                    )?
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

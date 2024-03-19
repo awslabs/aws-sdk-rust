@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let studiocomponentstate = unimplemented!();
 /// match studiocomponentstate {
@@ -36,7 +36,7 @@
 /// Specifically, when `studiocomponentstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StudioComponentState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -65,9 +65,7 @@
 /// service quotas and cannot be used or acted upon any futher. It will be removed from your
 /// account after a period of time.</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum StudioComponentState {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
@@ -87,88 +85,80 @@ pub enum StudioComponentState {
     UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for StudioComponentState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => StudioComponentState::CreateFailed,
-            "CREATE_IN_PROGRESS" => StudioComponentState::CreateInProgress,
-            "DELETED" => StudioComponentState::Deleted,
-            "DELETE_FAILED" => StudioComponentState::DeleteFailed,
-            "DELETE_IN_PROGRESS" => StudioComponentState::DeleteInProgress,
-            "READY" => StudioComponentState::Ready,
-            "UPDATE_FAILED" => StudioComponentState::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => StudioComponentState::UpdateInProgress,
-            other => StudioComponentState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATE_FAILED" => StudioComponentState::CreateFailed,
+"CREATE_IN_PROGRESS" => StudioComponentState::CreateInProgress,
+"DELETED" => StudioComponentState::Deleted,
+"DELETE_FAILED" => StudioComponentState::DeleteFailed,
+"DELETE_IN_PROGRESS" => StudioComponentState::DeleteInProgress,
+"READY" => StudioComponentState::Ready,
+"UPDATE_FAILED" => StudioComponentState::UpdateFailed,
+"UPDATE_IN_PROGRESS" => StudioComponentState::UpdateInProgress,
+other => StudioComponentState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for StudioComponentState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(StudioComponentState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(StudioComponentState::from(s))
+                    }
+                }
 impl StudioComponentState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StudioComponentState::CreateFailed => "CREATE_FAILED",
-            StudioComponentState::CreateInProgress => "CREATE_IN_PROGRESS",
-            StudioComponentState::Deleted => "DELETED",
-            StudioComponentState::DeleteFailed => "DELETE_FAILED",
-            StudioComponentState::DeleteInProgress => "DELETE_IN_PROGRESS",
-            StudioComponentState::Ready => "READY",
-            StudioComponentState::UpdateFailed => "UPDATE_FAILED",
-            StudioComponentState::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            StudioComponentState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "DELETED",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "READY",
-            "UPDATE_FAILED",
-            "UPDATE_IN_PROGRESS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StudioComponentState::CreateFailed => "CREATE_FAILED",
+    StudioComponentState::CreateInProgress => "CREATE_IN_PROGRESS",
+    StudioComponentState::Deleted => "DELETED",
+    StudioComponentState::DeleteFailed => "DELETE_FAILED",
+    StudioComponentState::DeleteInProgress => "DELETE_IN_PROGRESS",
+    StudioComponentState::Ready => "READY",
+    StudioComponentState::UpdateFailed => "UPDATE_FAILED",
+    StudioComponentState::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    StudioComponentState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETED", "DELETE_FAILED", "DELETE_IN_PROGRESS", "READY", "UPDATE_FAILED", "UPDATE_IN_PROGRESS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for StudioComponentState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl StudioComponentState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for StudioComponentState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            StudioComponentState::CreateFailed => write!(f, "CREATE_FAILED"),
-            StudioComponentState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
-            StudioComponentState::Deleted => write!(f, "DELETED"),
-            StudioComponentState::DeleteFailed => write!(f, "DELETE_FAILED"),
-            StudioComponentState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            StudioComponentState::Ready => write!(f, "READY"),
-            StudioComponentState::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            StudioComponentState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            StudioComponentState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                StudioComponentState::CreateFailed => write!(f, "CREATE_FAILED"),
+StudioComponentState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+StudioComponentState::Deleted => write!(f, "DELETED"),
+StudioComponentState::DeleteFailed => write!(f, "DELETE_FAILED"),
+StudioComponentState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+StudioComponentState::Ready => write!(f, "READY"),
+StudioComponentState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+StudioComponentState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+StudioComponentState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

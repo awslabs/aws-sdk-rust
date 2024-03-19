@@ -3,19 +3,18 @@
 /// <p>When you update an SQL-based Kinesis Data Analytics application's output configuration using the <code>UpdateApplication</code> operation, provides information about an Amazon Lambda function that is configured as the destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaOutputUpdate {
+pub struct LambdaOutputUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p><note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a></p>
     /// </note>
     pub resource_arn_update: ::std::string::String,
 }
-impl LambdaOutputUpdate {
+impl  LambdaOutputUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p><note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a></p>
     /// </note>
-    pub fn resource_arn_update(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn_update.deref()
+    pub fn resource_arn_update(&self) -> & str {
+        use std::ops::Deref; self.resource_arn_update.deref()
     }
 }
 impl LambdaOutputUpdate {
@@ -44,8 +43,7 @@ impl LambdaOutputUpdateBuilder {
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a></p>
     /// </note>
     pub fn set_resource_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn_update = input;
-        self
+        self.resource_arn_update = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p><note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a></p>
@@ -57,13 +55,15 @@ impl LambdaOutputUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn_update`](crate::types::builders::LambdaOutputUpdateBuilder::resource_arn_update)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaOutputUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaOutputUpdate {
-            resource_arn_update: self.resource_arn_update.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn_update",
-                    "resource_arn_update was not specified but it is required when building LambdaOutputUpdate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaOutputUpdate {
+                resource_arn_update: self.resource_arn_update
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn_update", "resource_arn_update was not specified but it is required when building LambdaOutputUpdate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

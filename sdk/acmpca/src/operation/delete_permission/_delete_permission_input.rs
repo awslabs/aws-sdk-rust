@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePermissionInput {
+pub struct DeletePermissionInput  {
     /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
@@ -11,18 +11,18 @@ pub struct DeletePermissionInput {
     /// <p>The Amazon Web Services account that calls this action.</p>
     pub source_account: ::std::option::Option<::std::string::String>,
 }
-impl DeletePermissionInput {
+impl  DeletePermissionInput  {
     /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code></p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>The Amazon Web Services account that calls this action.</p>
-    pub fn source_account(&self) -> ::std::option::Option<&str> {
+    pub fn source_account(&self) -> ::std::option::Option<& str> {
         self.source_account.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl DeletePermissionInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form:</p>
     /// <p><code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
@@ -68,8 +67,7 @@ impl DeletePermissionInputBuilder {
     }
     /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code></p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code></p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,21 +80,24 @@ impl DeletePermissionInputBuilder {
     }
     /// <p>The Amazon Web Services account that calls this action.</p>
     pub fn set_source_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_account = input;
-        self
+        self.source_account = input; self
     }
     /// <p>The Amazon Web Services account that calls this action.</p>
     pub fn get_source_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_account
     }
     /// Consumes the builder and constructs a [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_permission::DeletePermissionInput {
-            certificate_authority_arn: self.certificate_authority_arn,
-            principal: self.principal,
-            source_account: self.source_account,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_permission::DeletePermissionInput {
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
+                principal: self.principal
+                ,
+                source_account: self.source_account
+                ,
+            }
+        )
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::put_channel_expiration_settings::_put_channel_expirati
 
 impl PutChannelExpirationSettingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_channel_expiration_settings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_channel_expiration_settings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutChannelExpirationSettings`.
-///
+/// 
 /// <p>Sets the number of days before the channel is automatically deleted.</p><note>
 /// <ul>
 /// <li>
@@ -35,33 +32,32 @@ impl PutChannelExpirationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutChannelExpirationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder,
+                    inner: crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
-        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
-    > for PutChannelExpirationSettingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
-            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
+                    crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
+                > for PutChannelExpirationSettingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
+                        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutChannelExpirationSettingsFluentBuilder {
     /// Creates a new `PutChannelExpirationSettings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -70,53 +66,44 @@ impl PutChannelExpirationSettingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_channel_expiration_settings::PutChannelExpirationSettings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput,
-        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_channel_expiration_settings::PutChannelExpirationSettings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsOutput, crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -160,3 +147,4 @@ impl PutChannelExpirationSettingsFluentBuilder {
         self.inner.get_expiration_settings()
     }
 }
+

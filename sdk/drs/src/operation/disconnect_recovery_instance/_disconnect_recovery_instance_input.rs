@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisconnectRecoveryInstanceInput {
+pub struct DisconnectRecoveryInstanceInput  {
     /// <p>The ID of the Recovery Instance to disconnect.</p>
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl DisconnectRecoveryInstanceInput {
+impl  DisconnectRecoveryInstanceInput  {
     /// <p>The ID of the Recovery Instance to disconnect.</p>
-    pub fn recovery_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_instance_id(&self) -> ::std::option::Option<& str> {
         self.recovery_instance_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DisconnectRecoveryInstanceInputBuilder {
     }
     /// <p>The ID of the Recovery Instance to disconnect.</p>
     pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_instance_id = input;
-        self
+        self.recovery_instance_id = input; self
     }
     /// <p>The ID of the Recovery Instance to disconnect.</p>
     pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recovery_instance_id
     }
     /// Consumes the builder and constructs a [`DisconnectRecoveryInstanceInput`](crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput {
-            recovery_instance_id: self.recovery_instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput {
+                recovery_instance_id: self.recovery_instance_id
+                ,
+            }
+        )
     }
 }
+

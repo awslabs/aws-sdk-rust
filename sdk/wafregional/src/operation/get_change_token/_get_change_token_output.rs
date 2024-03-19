@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetChangeTokenOutput {
+pub struct GetChangeTokenOutput  {
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetChangeTokenOutput {
+impl  GetChangeTokenOutput  {
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetChangeTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetChangeTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetChangeTokenOutput`](crate::operation::get_change_token::GetChangeTokenOutput).
     pub fn builder() -> crate::operation::get_change_token::builders::GetChangeTokenOutputBuilder {
@@ -40,27 +40,28 @@ impl GetChangeTokenOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request to get the current status of the request.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetChangeTokenOutput`](crate::operation::get_change_token::GetChangeTokenOutput).
     pub fn build(self) -> crate::operation::get_change_token::GetChangeTokenOutput {
         crate::operation::get_change_token::GetChangeTokenOutput {
-            change_token: self.change_token,
+            change_token: self.change_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The HTTP configuration for the source location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpConfiguration {
+pub struct HttpConfiguration  {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
     pub base_url: ::std::string::String,
 }
-impl HttpConfiguration {
+impl  HttpConfiguration  {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
-    pub fn base_url(&self) -> &str {
-        use std::ops::Deref;
-        self.base_url.deref()
+    pub fn base_url(&self) -> & str {
+        use std::ops::Deref; self.base_url.deref()
     }
 }
 impl HttpConfiguration {
@@ -36,8 +35,7 @@ impl HttpConfigurationBuilder {
     }
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
     pub fn set_base_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_url = input;
-        self
+        self.base_url = input; self
     }
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
     pub fn get_base_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl HttpConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`base_url`](crate::types::builders::HttpConfigurationBuilder::base_url)
     pub fn build(self) -> ::std::result::Result<crate::types::HttpConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HttpConfiguration {
-            base_url: self.base_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "base_url",
-                    "base_url was not specified but it is required when building HttpConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HttpConfiguration {
+                base_url: self.base_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("base_url", "base_url was not specified but it is required when building HttpConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRelationalDatabaseSnapshotInput {
+pub struct CreateRelationalDatabaseSnapshotInput  {
     /// <p>The name of the database on which to base your new snapshot.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name for your new database snapshot.</p>
@@ -16,11 +16,11 @@ pub struct CreateRelationalDatabaseSnapshotInput {
     pub relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateRelationalDatabaseSnapshotInput {
+impl  CreateRelationalDatabaseSnapshotInput  {
     /// <p>The name of the database on which to base your new snapshot.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>The name for your new database snapshot.</p>
@@ -31,15 +31,16 @@ impl CreateRelationalDatabaseSnapshotInput {
     /// <li>
     /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
-    pub fn relational_database_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_snapshot_name.as_deref()
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateRelationalDatabaseSnapshotInput {
@@ -55,7 +56,7 @@ impl CreateRelationalDatabaseSnapshotInput {
 pub struct CreateRelationalDatabaseSnapshotInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name of the database on which to base your new snapshot.</p>
@@ -66,8 +67,7 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     }
     /// <p>The name of the database on which to base your new snapshot.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of the database on which to base your new snapshot.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +95,7 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_snapshot_name = input;
-        self
+        self.relational_database_snapshot_name = input; self
     }
     /// <p>The name for your new database snapshot.</p>
     /// <p>Constraints:</p>
@@ -117,34 +116,32 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRelationalDatabaseSnapshotInput`](crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput {
-                relational_database_name: self.relational_database_name,
-                relational_database_snapshot_name: self.relational_database_snapshot_name,
-                tags: self.tags,
-            },
+                relational_database_name: self.relational_database_name
+                ,
+                relational_database_snapshot_name: self.relational_database_snapshot_name
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

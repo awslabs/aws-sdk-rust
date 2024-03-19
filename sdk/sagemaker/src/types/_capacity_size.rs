@@ -4,7 +4,7 @@
 /// <p>For a rollback strategy, if you don't specify the fields in this object, or if you set the <code>Value</code> to 100%, then SageMaker uses a blue/green rollback strategy and rolls all traffic back to the blue fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacitySize {
+pub struct CapacitySize  {
     /// <p>Specifies the endpoint capacity type.</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct CapacitySize {
     /// <p>Defines the capacity size, either as a number of instances or a capacity percentage.</p>
     pub value: ::std::option::Option<i32>,
 }
-impl CapacitySize {
+impl  CapacitySize  {
     /// <p>Specifies the endpoint capacity type.</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ impl CapacitySize {
     /// <li>
     /// <p><code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CapacitySizeType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::CapacitySizeType> {
         self.r#type.as_ref()
     }
     /// <p>Defines the capacity size, either as a number of instances or a capacity percentage.</p>
@@ -67,8 +67,7 @@ impl CapacitySizeBuilder {
     /// <p><code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CapacitySizeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the endpoint capacity type.</p>
     /// <ul>
@@ -88,8 +87,7 @@ impl CapacitySizeBuilder {
     }
     /// <p>Defines the capacity size, either as a number of instances or a capacity percentage.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Defines the capacity size, either as a number of instances or a capacity percentage.</p>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
@@ -98,8 +96,11 @@ impl CapacitySizeBuilder {
     /// Consumes the builder and constructs a [`CapacitySize`](crate::types::CapacitySize).
     pub fn build(self) -> crate::types::CapacitySize {
         crate::types::CapacitySize {
-            r#type: self.r#type,
-            value: self.value,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

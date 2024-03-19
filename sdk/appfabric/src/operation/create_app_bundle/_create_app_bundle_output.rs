@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppBundleOutput {
+pub struct CreateAppBundleOutput  {
     /// <p>Contains information about an app bundle.</p>
     pub app_bundle: ::std::option::Option<crate::types::AppBundle>,
     _request_id: Option<String>,
 }
-impl CreateAppBundleOutput {
+impl  CreateAppBundleOutput  {
     /// <p>Contains information about an app bundle.</p>
-    pub fn app_bundle(&self) -> ::std::option::Option<&crate::types::AppBundle> {
+    pub fn app_bundle(&self) -> ::std::option::Option<& crate::types::AppBundle> {
         self.app_bundle.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAppBundleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAppBundleOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppBundleOutput`](crate::operation::create_app_bundle::CreateAppBundleOutput).
     pub fn builder() -> crate::operation::create_app_bundle::builders::CreateAppBundleOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateAppBundleOutputBuilder {
     }
     /// <p>Contains information about an app bundle.</p>
     pub fn set_app_bundle(mut self, input: ::std::option::Option<crate::types::AppBundle>) -> Self {
-        self.app_bundle = input;
-        self
+        self.app_bundle = input; self
     }
     /// <p>Contains information about an app bundle.</p>
     pub fn get_app_bundle(&self) -> &::std::option::Option<crate::types::AppBundle> {
         &self.app_bundle
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAppBundleOutput`](crate::operation::create_app_bundle::CreateAppBundleOutput).
     pub fn build(self) -> crate::operation::create_app_bundle::CreateAppBundleOutput {
         crate::operation::create_app_bundle::CreateAppBundleOutput {
-            app_bundle: self.app_bundle,
+            app_bundle: self.app_bundle
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

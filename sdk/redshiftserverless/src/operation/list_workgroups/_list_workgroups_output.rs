@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkgroupsOutput {
+pub struct ListWorkgroupsOutput  {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The returned array of workgroups.</p>
-    pub workgroups: ::std::vec::Vec<crate::types::Workgroup>,
+    pub workgroups: ::std::vec::Vec::<crate::types::Workgroup>,
     _request_id: Option<String>,
 }
-impl ListWorkgroupsOutput {
+impl  ListWorkgroupsOutput  {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The returned array of workgroups.</p>
-    pub fn workgroups(&self) -> &[crate::types::Workgroup] {
-        use std::ops::Deref;
-        self.workgroups.deref()
+    pub fn workgroups(&self) -> & [crate::types::Workgroup] {
+        use std::ops::Deref; self.workgroups.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWorkgroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWorkgroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkgroupsOutput`](crate::operation::list_workgroups::ListWorkgroupsOutput).
     pub fn builder() -> crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListWorkgroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkgroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) workgroups: ::std::option::Option<::std::vec::Vec<crate::types::Workgroup>>,
+    pub(crate) workgroups: ::std::option::Option<::std::vec::Vec::<crate::types::Workgroup>>,
     _request_id: Option<String>,
 }
 impl ListWorkgroupsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListWorkgroupsOutputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListWorkgroupsOutputBuilder {
     /// <p>The returned array of workgroups.</p>
     pub fn workgroups(mut self, input: crate::types::Workgroup) -> Self {
         let mut v = self.workgroups.unwrap_or_default();
-        v.push(input);
-        self.workgroups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.workgroups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The returned array of workgroups.</p>
-    pub fn set_workgroups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Workgroup>>) -> Self {
-        self.workgroups = input;
-        self
+    pub fn set_workgroups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Workgroup>>) -> Self {
+        self.workgroups = input; self
     }
     /// <p>The returned array of workgroups.</p>
-    pub fn get_workgroups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Workgroup>> {
+    pub fn get_workgroups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Workgroup>> {
         &self.workgroups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWorkgroupsOutput`](crate::operation::list_workgroups::ListWorkgroupsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`workgroups`](crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder::workgroups)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_workgroups::ListWorkgroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_workgroups::ListWorkgroupsOutput {
-            next_token: self.next_token,
-            workgroups: self.workgroups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workgroups",
-                    "workgroups was not specified but it is required when building ListWorkgroupsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workgroups::ListWorkgroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_workgroups::ListWorkgroupsOutput {
+                next_token: self.next_token
+                ,
+                workgroups: self.workgroups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workgroups", "workgroups was not specified but it is required when building ListWorkgroupsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

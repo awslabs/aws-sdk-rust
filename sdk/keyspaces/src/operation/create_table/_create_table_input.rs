@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTableInput {
+pub struct CreateTableInput  {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
@@ -81,7 +81,7 @@ pub struct CreateTableInput {
     pub default_time_to_live: ::std::option::Option<i32>,
     /// <p>A list of key-value pair tags to be attached to the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
     /// <li>
@@ -103,15 +103,15 @@ pub struct CreateTableInput {
     /// <li>
     /// <p><code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)</p></li>
     /// </ul>
-    pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
+    pub replica_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>>,
 }
-impl CreateTableInput {
+impl  CreateTableInput  {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
@@ -140,11 +140,11 @@ impl CreateTableInput {
     /// <li>
     /// <p><code>type</code> - An Amazon Keyspaces data type.</p></li>
     /// </ul>
-    pub fn schema_definition(&self) -> ::std::option::Option<&crate::types::SchemaDefinition> {
+    pub fn schema_definition(&self) -> ::std::option::Option<& crate::types::SchemaDefinition> {
         self.schema_definition.as_ref()
     }
     /// <p>This parameter allows to enter a description of the table.</p>
-    pub fn comment(&self) -> ::std::option::Option<&crate::types::Comment> {
+    pub fn comment(&self) -> ::std::option::Option<& crate::types::Comment> {
         self.comment.as_ref()
     }
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
@@ -156,7 +156,7 @@ impl CreateTableInput {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn capacity_specification(&self) -> ::std::option::Option<&crate::types::CapacitySpecification> {
+    pub fn capacity_specification(&self) -> ::std::option::Option<& crate::types::CapacitySpecification> {
         self.capacity_specification.as_ref()
     }
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
@@ -168,7 +168,7 @@ impl CreateTableInput {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification(&self) -> ::std::option::Option<&crate::types::EncryptionSpecification> {
+    pub fn encryption_specification(&self) -> ::std::option::Option<& crate::types::EncryptionSpecification> {
         self.encryption_specification.as_ref()
     }
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
@@ -180,7 +180,7 @@ impl CreateTableInput {
     /// </ul>
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn point_in_time_recovery(&self) -> ::std::option::Option<&crate::types::PointInTimeRecovery> {
+    pub fn point_in_time_recovery(&self) -> ::std::option::Option<& crate::types::PointInTimeRecovery> {
         self.point_in_time_recovery.as_ref()
     }
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
@@ -192,7 +192,7 @@ impl CreateTableInput {
     /// </ul>
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn ttl(&self) -> ::std::option::Option<&crate::types::TimeToLive> {
+    pub fn ttl(&self) -> ::std::option::Option<& crate::types::TimeToLive> {
         self.ttl.as_ref()
     }
     /// <p>The default Time to Live setting in seconds for the table.</p>
@@ -202,10 +202,11 @@ impl CreateTableInput {
     }
     /// <p>A list of key-value pair tags to be attached to the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
@@ -213,13 +214,13 @@ impl CreateTableInput {
     /// <p><code>status: "enabled"</code></p></li>
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
-    pub fn client_side_timestamps(&self) -> ::std::option::Option<&crate::types::ClientSideTimestamps> {
+    pub fn client_side_timestamps(&self) -> ::std::option::Option<& crate::types::ClientSideTimestamps> {
         self.client_side_timestamps.as_ref()
     }
     /// <p>The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity automatically on your behalf.</p>
     /// <p>Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     /// <p>By default, auto scaling is disabled for a table.</p>
-    pub fn auto_scaling_specification(&self) -> ::std::option::Option<&crate::types::AutoScalingSpecification> {
+    pub fn auto_scaling_specification(&self) -> ::std::option::Option<& crate::types::AutoScalingSpecification> {
         self.auto_scaling_specification.as_ref()
     }
     /// <p>The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.</p>
@@ -232,10 +233,11 @@ impl CreateTableInput {
     /// <li>
     /// <p><code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_specifications.is_none()`.
-    pub fn replica_specifications(&self) -> &[crate::types::ReplicaSpecification] {
-        self.replica_specifications.as_deref().unwrap_or_default()
+    pub fn replica_specifications(&self) -> & [crate::types::ReplicaSpecification] {
+        self.replica_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateTableInput {
@@ -258,10 +260,10 @@ pub struct CreateTableInputBuilder {
     pub(crate) point_in_time_recovery: ::std::option::Option<crate::types::PointInTimeRecovery>,
     pub(crate) ttl: ::std::option::Option<crate::types::TimeToLive>,
     pub(crate) default_time_to_live: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
     pub(crate) auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
-    pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
+    pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>>,
 }
 impl CreateTableInputBuilder {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
@@ -272,8 +274,7 @@ impl CreateTableInputBuilder {
     }
     /// <p>The name of the keyspace that the table is going to be created in.</p>
     pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyspace_name = input;
-        self
+        self.keyspace_name = input; self
     }
     /// <p>The name of the keyspace that the table is going to be created in.</p>
     pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +288,7 @@ impl CreateTableInputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -352,8 +352,7 @@ impl CreateTableInputBuilder {
     /// <p><code>type</code> - An Amazon Keyspaces data type.</p></li>
     /// </ul>
     pub fn set_schema_definition(mut self, input: ::std::option::Option<crate::types::SchemaDefinition>) -> Self {
-        self.schema_definition = input;
-        self
+        self.schema_definition = input; self
     }
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
@@ -391,8 +390,7 @@ impl CreateTableInputBuilder {
     }
     /// <p>This parameter allows to enter a description of the table.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<crate::types::Comment>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>This parameter allows to enter a description of the table.</p>
     pub fn get_comment(&self) -> &::std::option::Option<crate::types::Comment> {
@@ -421,8 +419,7 @@ impl CreateTableInputBuilder {
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_capacity_specification(mut self, input: ::std::option::Option<crate::types::CapacitySpecification>) -> Self {
-        self.capacity_specification = input;
-        self
+        self.capacity_specification = input; self
     }
     /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
     /// <ul>
@@ -459,8 +456,7 @@ impl CreateTableInputBuilder {
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_encryption_specification(mut self, input: ::std::option::Option<crate::types::EncryptionSpecification>) -> Self {
-        self.encryption_specification = input;
-        self
+        self.encryption_specification = input; self
     }
     /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
     /// <ul>
@@ -497,8 +493,7 @@ impl CreateTableInputBuilder {
     /// <p>If it's not specified, the default is <code>status=DISABLED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_point_in_time_recovery(mut self, input: ::std::option::Option<crate::types::PointInTimeRecovery>) -> Self {
-        self.point_in_time_recovery = input;
-        self
+        self.point_in_time_recovery = input; self
     }
     /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
     /// <ul>
@@ -535,8 +530,7 @@ impl CreateTableInputBuilder {
     /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<crate::types::TimeToLive>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// <p>Enables Time to Live custom settings for the table. The options are:</p>
     /// <ul>
@@ -559,8 +553,7 @@ impl CreateTableInputBuilder {
     /// <p>The default Time to Live setting in seconds for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_default_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_time_to_live = input;
-        self
+        self.default_time_to_live = input; self
     }
     /// <p>The default Time to Live setting in seconds for the table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -575,19 +568,18 @@ impl CreateTableInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pair tags to be attached to the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pair tags to be attached to the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
@@ -607,8 +599,7 @@ impl CreateTableInputBuilder {
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
     pub fn set_client_side_timestamps(mut self, input: ::std::option::Option<crate::types::ClientSideTimestamps>) -> Self {
-        self.client_side_timestamps = input;
-        self
+        self.client_side_timestamps = input; self
     }
     /// <p>Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
@@ -630,8 +621,7 @@ impl CreateTableInputBuilder {
     /// <p>Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     /// <p>By default, auto scaling is disabled for a table.</p>
     pub fn set_auto_scaling_specification(mut self, input: ::std::option::Option<crate::types::AutoScalingSpecification>) -> Self {
-        self.auto_scaling_specification = input;
-        self
+        self.auto_scaling_specification = input; self
     }
     /// <p>The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity automatically on your behalf.</p>
     /// <p>Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
@@ -655,9 +645,9 @@ impl CreateTableInputBuilder {
     /// </ul>
     pub fn replica_specifications(mut self, input: crate::types::ReplicaSpecification) -> Self {
         let mut v = self.replica_specifications.unwrap_or_default();
-        v.push(input);
-        self.replica_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replica_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.</p>
     /// <p>For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica in a specific Region, you can do so by configuring the following parameters.</p>
@@ -669,9 +659,8 @@ impl CreateTableInputBuilder {
     /// <li>
     /// <p><code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)</p></li>
     /// </ul>
-    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>) -> Self {
-        self.replica_specifications = input;
-        self
+    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>>) -> Self {
+        self.replica_specifications = input; self
     }
     /// <p>The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.</p>
     /// <p>For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica in a specific Region, you can do so by configuring the following parameters.</p>
@@ -683,25 +672,41 @@ impl CreateTableInputBuilder {
     /// <li>
     /// <p><code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)</p></li>
     /// </ul>
-    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>> {
+    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>> {
         &self.replica_specifications
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
-            keyspace_name: self.keyspace_name,
-            table_name: self.table_name,
-            schema_definition: self.schema_definition,
-            comment: self.comment,
-            capacity_specification: self.capacity_specification,
-            encryption_specification: self.encryption_specification,
-            point_in_time_recovery: self.point_in_time_recovery,
-            ttl: self.ttl,
-            default_time_to_live: self.default_time_to_live,
-            tags: self.tags,
-            client_side_timestamps: self.client_side_timestamps,
-            auto_scaling_specification: self.auto_scaling_specification,
-            replica_specifications: self.replica_specifications,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_table::CreateTableInput {
+                keyspace_name: self.keyspace_name
+                ,
+                table_name: self.table_name
+                ,
+                schema_definition: self.schema_definition
+                ,
+                comment: self.comment
+                ,
+                capacity_specification: self.capacity_specification
+                ,
+                encryption_specification: self.encryption_specification
+                ,
+                point_in_time_recovery: self.point_in_time_recovery
+                ,
+                ttl: self.ttl
+                ,
+                default_time_to_live: self.default_time_to_live
+                ,
+                tags: self.tags
+                ,
+                client_side_timestamps: self.client_side_timestamps
+                ,
+                auto_scaling_specification: self.auto_scaling_specification
+                ,
+                replica_specifications: self.replica_specifications
+                ,
+            }
+        )
     }
 }
+

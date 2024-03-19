@@ -34,3 +34,4 @@ pub use crate::types::_origin_endpoint_list_configuration::OriginEndpointListCon
 pub use crate::types::_list_low_latency_hls_manifest_configuration::ListLowLatencyHlsManifestConfigurationBuilder;
 
 pub use crate::types::_list_hls_manifest_configuration::ListHlsManifestConfigurationBuilder;
+

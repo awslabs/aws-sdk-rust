@@ -3,7 +3,7 @@
 /// <p>Information about a data provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataProviderDescriptorDefinition {
+pub struct DataProviderDescriptorDefinition  {
     /// <p>The name or Amazon Resource Name (ARN) of the data provider.</p>
     pub data_provider_identifier: ::std::string::String,
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
@@ -11,18 +11,17 @@ pub struct DataProviderDescriptorDefinition {
     /// <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl DataProviderDescriptorDefinition {
+impl  DataProviderDescriptorDefinition  {
     /// <p>The name or Amazon Resource Name (ARN) of the data provider.</p>
-    pub fn data_provider_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.data_provider_identifier.deref()
+    pub fn data_provider_identifier(&self) -> & str {
+        use std::ops::Deref; self.data_provider_identifier.deref()
     }
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
-    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_secret_id.as_deref()
     }
     /// <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
-    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl DataProviderDescriptorDefinitionBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the data provider.</p>
     pub fn set_data_provider_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_provider_identifier = input;
-        self
+        self.data_provider_identifier = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the data provider.</p>
     pub fn get_data_provider_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl DataProviderDescriptorDefinitionBuilder {
     }
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
     pub fn set_secrets_manager_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_secret_id = input;
-        self
+        self.secrets_manager_secret_id = input; self
     }
     /// <p>The identifier of the Amazon Web Services Secrets Manager Secret used to store access credentials for the data provider.</p>
     pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl DataProviderDescriptorDefinitionBuilder {
     }
     /// <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
     pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_access_role_arn = input;
-        self
+        self.secrets_manager_access_role_arn = input; self
     }
     /// <p>The ARN of the role used to access Amazon Web Services Secrets Manager.</p>
     pub fn get_secrets_manager_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl DataProviderDescriptorDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_provider_identifier`](crate::types::builders::DataProviderDescriptorDefinitionBuilder::data_provider_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::DataProviderDescriptorDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataProviderDescriptorDefinition {
-            data_provider_identifier: self.data_provider_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_provider_identifier",
-                    "data_provider_identifier was not specified but it is required when building DataProviderDescriptorDefinition",
-                )
-            })?,
-            secrets_manager_secret_id: self.secrets_manager_secret_id,
-            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataProviderDescriptorDefinition {
+                data_provider_identifier: self.data_provider_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_provider_identifier", "data_provider_identifier was not specified but it is required when building DataProviderDescriptorDefinition")
+                    )?
+                ,
+                secrets_manager_secret_id: self.secrets_manager_secret_id
+                ,
+                secrets_manager_access_role_arn: self.secrets_manager_access_role_arn
+                ,
+            }
+        )
     }
 }
+

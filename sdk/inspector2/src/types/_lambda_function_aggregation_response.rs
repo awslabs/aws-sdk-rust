@@ -3,7 +3,7 @@
 /// <p>A response that contains the results of an Amazon Web Services Lambda function finding aggregation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaFunctionAggregationResponse {
+pub struct LambdaFunctionAggregationResponse  {
     /// <p>The resource IDs included in the aggregation results.</p>
     pub resource_id: ::std::string::String,
     /// <p>The Amazon Web Services Lambda function names included in the aggregation results.</p>
@@ -11,7 +11,7 @@ pub struct LambdaFunctionAggregationResponse {
     /// <p>The runtimes included in the aggregation results.</p>
     pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The tags included in the aggregation results.</p>
-    pub lambda_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub lambda_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the Amazon Web Services account that owns the Amazon Web Services Lambda function.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
@@ -19,34 +19,33 @@ pub struct LambdaFunctionAggregationResponse {
     /// <p>The date that the Amazon Web Services Lambda function included in the aggregation results was last changed.</p>
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LambdaFunctionAggregationResponse {
+impl  LambdaFunctionAggregationResponse  {
     /// <p>The resource IDs included in the aggregation results.</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The Amazon Web Services Lambda function names included in the aggregation results.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The runtimes included in the aggregation results.</p>
-    pub fn runtime(&self) -> ::std::option::Option<&str> {
+    pub fn runtime(&self) -> ::std::option::Option<& str> {
         self.runtime.as_deref()
     }
     /// <p>The tags included in the aggregation results.</p>
-    pub fn lambda_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn lambda_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.lambda_tags.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon Web Services Lambda function.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
     /// <p>The date that the Amazon Web Services Lambda function included in the aggregation results was last changed.</p>
-    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
 }
@@ -64,7 +63,7 @@ pub struct LambdaFunctionAggregationResponseBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) runtime: ::std::option::Option<::std::string::String>,
-    pub(crate) lambda_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) lambda_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -78,8 +77,7 @@ impl LambdaFunctionAggregationResponseBuilder {
     }
     /// <p>The resource IDs included in the aggregation results.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource IDs included in the aggregation results.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl LambdaFunctionAggregationResponseBuilder {
     }
     /// <p>The Amazon Web Services Lambda function names included in the aggregation results.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The Amazon Web Services Lambda function names included in the aggregation results.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl LambdaFunctionAggregationResponseBuilder {
     }
     /// <p>The runtimes included in the aggregation results.</p>
     pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.runtime = input;
-        self
+        self.runtime = input; self
     }
     /// <p>The runtimes included in the aggregation results.</p>
     pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,20 +116,16 @@ impl LambdaFunctionAggregationResponseBuilder {
     /// <p>The tags included in the aggregation results.</p>
     pub fn lambda_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.lambda_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.lambda_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.lambda_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags included in the aggregation results.</p>
-    pub fn set_lambda_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.lambda_tags = input;
-        self
+    pub fn set_lambda_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.lambda_tags = input; self
     }
     /// <p>The tags included in the aggregation results.</p>
-    pub fn get_lambda_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_lambda_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.lambda_tags
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon Web Services Lambda function.</p>
@@ -143,8 +135,7 @@ impl LambdaFunctionAggregationResponseBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon Web Services Lambda function.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon Web Services Lambda function.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +148,7 @@ impl LambdaFunctionAggregationResponseBuilder {
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
     pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input;
-        self
+        self.severity_counts = input; self
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
@@ -171,8 +161,7 @@ impl LambdaFunctionAggregationResponseBuilder {
     }
     /// <p>The date that the Amazon Web Services Lambda function included in the aggregation results was last changed.</p>
     pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_at = input;
-        self
+        self.last_modified_at = input; self
     }
     /// <p>The date that the Amazon Web Services Lambda function included in the aggregation results was last changed.</p>
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,19 +171,27 @@ impl LambdaFunctionAggregationResponseBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_id`](crate::types::builders::LambdaFunctionAggregationResponseBuilder::resource_id)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaFunctionAggregationResponse {
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building LambdaFunctionAggregationResponse",
-                )
-            })?,
-            function_name: self.function_name,
-            runtime: self.runtime,
-            lambda_tags: self.lambda_tags,
-            account_id: self.account_id,
-            severity_counts: self.severity_counts,
-            last_modified_at: self.last_modified_at,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaFunctionAggregationResponse {
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building LambdaFunctionAggregationResponse")
+                    )?
+                ,
+                function_name: self.function_name
+                ,
+                runtime: self.runtime
+                ,
+                lambda_tags: self.lambda_tags
+                ,
+                account_id: self.account_id
+                ,
+                severity_counts: self.severity_counts
+                ,
+                last_modified_at: self.last_modified_at
+                ,
+            }
+        )
     }
 }
+

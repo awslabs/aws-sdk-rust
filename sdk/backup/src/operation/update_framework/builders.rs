@@ -5,54 +5,50 @@ pub use crate::operation::update_framework::_update_framework_input::UpdateFrame
 
 impl UpdateFrameworkInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_framework::UpdateFrameworkOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_framework::UpdateFrameworkError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_framework();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_framework::UpdateFrameworkOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_framework::UpdateFrameworkError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_framework();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateFramework`.
-///
+/// 
 /// <p>Updates an existing framework identified by its <code>FrameworkName</code> with the input document in JSON format.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFrameworkFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_framework::builders::UpdateFrameworkInputBuilder,
+                    inner: crate::operation::update_framework::builders::UpdateFrameworkInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_framework::UpdateFrameworkOutput,
-        crate::operation::update_framework::UpdateFrameworkError,
-    > for UpdateFrameworkFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_framework::UpdateFrameworkOutput,
-            crate::operation::update_framework::UpdateFrameworkError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_framework::UpdateFrameworkOutput,
+                    crate::operation::update_framework::UpdateFrameworkError,
+                > for UpdateFrameworkFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_framework::UpdateFrameworkOutput,
+                        crate::operation::update_framework::UpdateFrameworkError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateFrameworkFluentBuilder {
     /// Creates a new `UpdateFramework`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateFrameworkFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_framework::UpdateFrameworkOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_framework::UpdateFrameworkError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_framework::UpdateFramework::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_framework::UpdateFramework::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_framework::UpdateFrameworkOutput,
-        crate::operation::update_framework::UpdateFrameworkError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_framework::UpdateFrameworkOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_framework::UpdateFrameworkError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_framework::UpdateFramework::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_framework::UpdateFramework::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_framework::UpdateFrameworkOutput, crate::operation::update_framework::UpdateFrameworkError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_name(input.into());
@@ -146,12 +133,12 @@ impl UpdateFrameworkFluentBuilder {
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>) -> Self {
+    pub fn set_framework_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FrameworkControl>>) -> Self {
         self.inner = self.inner.set_framework_controls(input);
         self
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>> {
+    pub fn get_framework_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FrameworkControl>> {
         self.inner.get_framework_controls()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
@@ -169,3 +156,4 @@ impl UpdateFrameworkFluentBuilder {
         self.inner.get_idempotency_token()
     }
 }
+

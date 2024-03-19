@@ -3,20 +3,19 @@
 /// <p>Provides information about an event that occurred affecting the bot locale.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotLocaleHistoryEvent {
+pub struct BotLocaleHistoryEvent  {
     /// <p>A description of the event that occurred.</p>
     pub event: ::std::string::String,
     /// <p>A timestamp of the date and time that the event occurred.</p>
     pub event_date: ::aws_smithy_types::DateTime,
 }
-impl BotLocaleHistoryEvent {
+impl  BotLocaleHistoryEvent  {
     /// <p>A description of the event that occurred.</p>
-    pub fn event(&self) -> &str {
-        use std::ops::Deref;
-        self.event.deref()
+    pub fn event(&self) -> & str {
+        use std::ops::Deref; self.event.deref()
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
-    pub fn event_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn event_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.event_date
     }
 }
@@ -43,8 +42,7 @@ impl BotLocaleHistoryEventBuilder {
     }
     /// <p>A description of the event that occurred.</p>
     pub fn set_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>A description of the event that occurred.</p>
     pub fn get_event(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl BotLocaleHistoryEventBuilder {
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
     pub fn set_event_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_date = input;
-        self
+        self.event_date = input; self
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
     pub fn get_event_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -70,19 +67,20 @@ impl BotLocaleHistoryEventBuilder {
     /// - [`event`](crate::types::builders::BotLocaleHistoryEventBuilder::event)
     /// - [`event_date`](crate::types::builders::BotLocaleHistoryEventBuilder::event_date)
     pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleHistoryEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BotLocaleHistoryEvent {
-            event: self.event.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event",
-                    "event was not specified but it is required when building BotLocaleHistoryEvent",
-                )
-            })?,
-            event_date: self.event_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_date",
-                    "event_date was not specified but it is required when building BotLocaleHistoryEvent",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BotLocaleHistoryEvent {
+                event: self.event
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event", "event was not specified but it is required when building BotLocaleHistoryEvent")
+                    )?
+                ,
+                event_date: self.event_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_date", "event_date was not specified but it is required when building BotLocaleHistoryEvent")
+                    )?
+                ,
+            }
+        )
     }
 }
+

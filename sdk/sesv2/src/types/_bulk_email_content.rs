@@ -3,13 +3,13 @@
 /// <p>An object that contains the body of the message. You can specify a template message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BulkEmailContent {
+pub struct BulkEmailContent  {
     /// <p>The template to use for the bulk email message.</p>
     pub template: ::std::option::Option<crate::types::Template>,
 }
-impl BulkEmailContent {
+impl  BulkEmailContent  {
     /// <p>The template to use for the bulk email message.</p>
-    pub fn template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.template.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl BulkEmailContentBuilder {
     }
     /// <p>The template to use for the bulk email message.</p>
     pub fn set_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The template to use for the bulk email message.</p>
     pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
@@ -43,6 +42,10 @@ impl BulkEmailContentBuilder {
     }
     /// Consumes the builder and constructs a [`BulkEmailContent`](crate::types::BulkEmailContent).
     pub fn build(self) -> crate::types::BulkEmailContent {
-        crate::types::BulkEmailContent { template: self.template }
+        crate::types::BulkEmailContent {
+            template: self.template
+            ,
+        }
     }
 }
+

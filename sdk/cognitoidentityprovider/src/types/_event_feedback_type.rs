@@ -3,7 +3,7 @@
 /// <p>Specifies the event feedback type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventFeedbackType {
+pub struct EventFeedbackType  {
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub feedback_value: crate::types::FeedbackValueType,
     /// <p>The provider.</p>
@@ -11,18 +11,17 @@ pub struct EventFeedbackType {
     /// <p>The event feedback date.</p>
     pub feedback_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EventFeedbackType {
+impl  EventFeedbackType  {
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
-    pub fn feedback_value(&self) -> &crate::types::FeedbackValueType {
+    pub fn feedback_value(&self) -> & crate::types::FeedbackValueType {
         &self.feedback_value
     }
     /// <p>The provider.</p>
-    pub fn provider(&self) -> &str {
-        use std::ops::Deref;
-        self.provider.deref()
+    pub fn provider(&self) -> & str {
+        use std::ops::Deref; self.provider.deref()
     }
     /// <p>The event feedback date.</p>
-    pub fn feedback_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn feedback_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.feedback_date.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl EventFeedbackTypeBuilder {
     }
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn set_feedback_value(mut self, input: ::std::option::Option<crate::types::FeedbackValueType>) -> Self {
-        self.feedback_value = input;
-        self
+        self.feedback_value = input; self
     }
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
     pub fn get_feedback_value(&self) -> &::std::option::Option<crate::types::FeedbackValueType> {
@@ -65,8 +63,7 @@ impl EventFeedbackTypeBuilder {
     }
     /// <p>The provider.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl EventFeedbackTypeBuilder {
     }
     /// <p>The event feedback date.</p>
     pub fn set_feedback_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.feedback_date = input;
-        self
+        self.feedback_date = input; self
     }
     /// <p>The event feedback date.</p>
     pub fn get_feedback_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -91,20 +87,22 @@ impl EventFeedbackTypeBuilder {
     /// - [`feedback_value`](crate::types::builders::EventFeedbackTypeBuilder::feedback_value)
     /// - [`provider`](crate::types::builders::EventFeedbackTypeBuilder::provider)
     pub fn build(self) -> ::std::result::Result<crate::types::EventFeedbackType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EventFeedbackType {
-            feedback_value: self.feedback_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "feedback_value",
-                    "feedback_value was not specified but it is required when building EventFeedbackType",
-                )
-            })?,
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building EventFeedbackType",
-                )
-            })?,
-            feedback_date: self.feedback_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EventFeedbackType {
+                feedback_value: self.feedback_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("feedback_value", "feedback_value was not specified but it is required when building EventFeedbackType")
+                    )?
+                ,
+                provider: self.provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider", "provider was not specified but it is required when building EventFeedbackType")
+                    )?
+                ,
+                feedback_date: self.feedback_date
+                ,
+            }
+        )
     }
 }
+

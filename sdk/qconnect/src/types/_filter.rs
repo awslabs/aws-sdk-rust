@@ -3,7 +3,7 @@
 /// <p>A search filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The field on which to filter.</p>
     pub field: crate::types::FilterField,
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
@@ -11,19 +11,18 @@ pub struct Filter {
     /// <p>The desired field value on which to filter.</p>
     pub value: ::std::string::String,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The field on which to filter.</p>
-    pub fn field(&self) -> &crate::types::FilterField {
+    pub fn field(&self) -> & crate::types::FilterField {
         &self.field
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
-    pub fn operator(&self) -> &crate::types::FilterOperator {
+    pub fn operator(&self) -> & crate::types::FilterOperator {
         &self.operator
     }
     /// <p>The desired field value on which to filter.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl Filter {
@@ -50,8 +49,7 @@ impl FilterBuilder {
     }
     /// <p>The field on which to filter.</p>
     pub fn set_field(mut self, input: ::std::option::Option<crate::types::FilterField>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>The field on which to filter.</p>
     pub fn get_field(&self) -> &::std::option::Option<crate::types::FilterField> {
@@ -65,8 +63,7 @@ impl FilterBuilder {
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::FilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::FilterOperator> {
@@ -80,8 +77,7 @@ impl FilterBuilder {
     }
     /// <p>The desired field value on which to filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The desired field value on which to filter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,25 +89,25 @@ impl FilterBuilder {
     /// - [`operator`](crate::types::builders::FilterBuilder::operator)
     /// - [`value`](crate::types::builders::FilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Filter {
-            field: self.field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field",
-                    "field was not specified but it is required when building Filter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building Filter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Filter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Filter {
+                field: self.field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field", "field was not specified but it is required when building Filter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building Filter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Filter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

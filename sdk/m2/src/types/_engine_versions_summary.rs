@@ -3,22 +3,20 @@
 /// <p>A subset of information about the engine version for a specific application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EngineVersionsSummary {
+pub struct EngineVersionsSummary  {
     /// <p>The type of target platform for the application.</p>
     pub engine_type: ::std::string::String,
     /// <p>The version of the engine type used by the application.</p>
     pub engine_version: ::std::string::String,
 }
-impl EngineVersionsSummary {
+impl  EngineVersionsSummary  {
     /// <p>The type of target platform for the application.</p>
-    pub fn engine_type(&self) -> &str {
-        use std::ops::Deref;
-        self.engine_type.deref()
+    pub fn engine_type(&self) -> & str {
+        use std::ops::Deref; self.engine_type.deref()
     }
     /// <p>The version of the engine type used by the application.</p>
-    pub fn engine_version(&self) -> &str {
-        use std::ops::Deref;
-        self.engine_version.deref()
+    pub fn engine_version(&self) -> & str {
+        use std::ops::Deref; self.engine_version.deref()
     }
 }
 impl EngineVersionsSummary {
@@ -44,8 +42,7 @@ impl EngineVersionsSummaryBuilder {
     }
     /// <p>The type of target platform for the application.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>The type of target platform for the application.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl EngineVersionsSummaryBuilder {
     }
     /// <p>The version of the engine type used by the application.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the engine type used by the application.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl EngineVersionsSummaryBuilder {
     /// - [`engine_type`](crate::types::builders::EngineVersionsSummaryBuilder::engine_type)
     /// - [`engine_version`](crate::types::builders::EngineVersionsSummaryBuilder::engine_version)
     pub fn build(self) -> ::std::result::Result<crate::types::EngineVersionsSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EngineVersionsSummary {
-            engine_type: self.engine_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "engine_type",
-                    "engine_type was not specified but it is required when building EngineVersionsSummary",
-                )
-            })?,
-            engine_version: self.engine_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "engine_version",
-                    "engine_version was not specified but it is required when building EngineVersionsSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EngineVersionsSummary {
+                engine_type: self.engine_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("engine_type", "engine_type was not specified but it is required when building EngineVersionsSummary")
+                    )?
+                ,
+                engine_version: self.engine_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("engine_version", "engine_version was not specified but it is required when building EngineVersionsSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

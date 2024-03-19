@@ -3,19 +3,19 @@
 /// <p>A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snow device AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompatibleImage {
+pub struct CompatibleImage  {
     /// <p>The unique identifier for an individual Snow device AMI.</p>
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The optional name of a compatible image.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl CompatibleImage {
+impl  CompatibleImage  {
     /// <p>The unique identifier for an individual Snow device AMI.</p>
-    pub fn ami_id(&self) -> ::std::option::Option<&str> {
+    pub fn ami_id(&self) -> ::std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The optional name of a compatible image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CompatibleImageBuilder {
     }
     /// <p>The unique identifier for an individual Snow device AMI.</p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ami_id = input;
-        self
+        self.ami_id = input; self
     }
     /// <p>The unique identifier for an individual Snow device AMI.</p>
     pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CompatibleImageBuilder {
     }
     /// <p>The optional name of a compatible image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The optional name of a compatible image.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CompatibleImageBuilder {
     /// Consumes the builder and constructs a [`CompatibleImage`](crate::types::CompatibleImage).
     pub fn build(self) -> crate::types::CompatibleImage {
         crate::types::CompatibleImage {
-            ami_id: self.ami_id,
-            name: self.name,
+            ami_id: self.ami_id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

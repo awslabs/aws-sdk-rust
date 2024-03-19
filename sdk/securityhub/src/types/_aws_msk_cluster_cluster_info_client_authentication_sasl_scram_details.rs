@@ -3,11 +3,11 @@
 /// <p>Details for SASL/SCRAM client authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails {
+pub struct AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails  {
     /// <p>Indicates whether SASL/SCRAM authentication is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails {
+impl  AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails  {
     /// <p>Indicates whether SASL/SCRAM authentication is enabled or not.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl AwsMskClusterClusterInfoClientAuthenticationSaslScramDetailsBuilder {
     }
     /// <p>Indicates whether SASL/SCRAM authentication is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether SASL/SCRAM authentication is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl AwsMskClusterClusterInfoClientAuthenticationSaslScramDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails`](crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails).
     pub fn build(self) -> crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails {
-        crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails { enabled: self.enabled }
+        crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

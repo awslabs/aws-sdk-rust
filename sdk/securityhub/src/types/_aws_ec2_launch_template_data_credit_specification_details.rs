@@ -3,13 +3,13 @@
 /// <p>Specifies the credit option for CPU usage of a T2, T3, or T3a Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataCreditSpecificationDetails {
+pub struct AwsEc2LaunchTemplateDataCreditSpecificationDetails  {
     /// <p>The credit option for CPU usage of a T instance.</p>
     pub cpu_credits: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2LaunchTemplateDataCreditSpecificationDetails {
+impl  AwsEc2LaunchTemplateDataCreditSpecificationDetails  {
     /// <p>The credit option for CPU usage of a T instance.</p>
-    pub fn cpu_credits(&self) -> ::std::option::Option<&str> {
+    pub fn cpu_credits(&self) -> ::std::option::Option<& str> {
         self.cpu_credits.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEc2LaunchTemplateDataCreditSpecificationDetailsBuilder {
     }
     /// <p>The credit option for CPU usage of a T instance.</p>
     pub fn set_cpu_credits(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu_credits = input;
-        self
+        self.cpu_credits = input; self
     }
     /// <p>The credit option for CPU usage of a T instance.</p>
     pub fn get_cpu_credits(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEc2LaunchTemplateDataCreditSpecificationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataCreditSpecificationDetails`](crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails {
         crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails {
-            cpu_credits: self.cpu_credits,
+            cpu_credits: self.cpu_credits
+            ,
         }
     }
 }
+

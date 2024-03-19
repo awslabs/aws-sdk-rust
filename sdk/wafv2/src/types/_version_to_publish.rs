@@ -6,15 +6,15 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersionToPublish {
+pub struct VersionToPublish  {
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version.</p>
     pub associated_rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days.</p>
     pub forecasted_lifetime: ::std::option::Option<i32>,
 }
-impl VersionToPublish {
+impl  VersionToPublish  {
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version.</p>
-    pub fn associated_rule_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn associated_rule_group_arn(&self) -> ::std::option::Option<& str> {
         self.associated_rule_group_arn.as_deref()
     }
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days.</p>
@@ -44,8 +44,7 @@ impl VersionToPublishBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version.</p>
     pub fn set_associated_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.associated_rule_group_arn = input;
-        self
+        self.associated_rule_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version.</p>
     pub fn get_associated_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +57,7 @@ impl VersionToPublishBuilder {
     }
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days.</p>
     pub fn set_forecasted_lifetime(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.forecasted_lifetime = input;
-        self
+        self.forecasted_lifetime = input; self
     }
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days.</p>
     pub fn get_forecasted_lifetime(&self) -> &::std::option::Option<i32> {
@@ -68,8 +66,11 @@ impl VersionToPublishBuilder {
     /// Consumes the builder and constructs a [`VersionToPublish`](crate::types::VersionToPublish).
     pub fn build(self) -> crate::types::VersionToPublish {
         crate::types::VersionToPublish {
-            associated_rule_group_arn: self.associated_rule_group_arn,
-            forecasted_lifetime: self.forecasted_lifetime,
+            associated_rule_group_arn: self.associated_rule_group_arn
+            ,
+            forecasted_lifetime: self.forecasted_lifetime
+            ,
         }
     }
 }
+

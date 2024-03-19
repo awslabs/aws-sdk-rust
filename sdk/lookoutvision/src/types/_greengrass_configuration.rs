@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GreengrassConfiguration {
+pub struct GreengrassConfiguration  {
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide.</p>
     pub compiler_options: ::std::option::Option<::std::string::String>,
@@ -22,43 +22,44 @@ pub struct GreengrassConfiguration {
     /// <p>A description for the AWS IoT Greengrass component.</p>
     pub component_description: ::std::option::Option<::std::string::String>,
     /// <p>A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl GreengrassConfiguration {
+impl  GreengrassConfiguration  {
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide.</p>
-    pub fn compiler_options(&self) -> ::std::option::Option<&str> {
+    pub fn compiler_options(&self) -> ::std::option::Option<& str> {
         self.compiler_options.as_deref()
     }
     /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>.</p>
-    pub fn target_device(&self) -> ::std::option::Option<&crate::types::TargetDevice> {
+    pub fn target_device(&self) -> ::std::option::Option<& crate::types::TargetDevice> {
         self.target_device.as_ref()
     }
     /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>.</p>
-    pub fn target_platform(&self) -> ::std::option::Option<&crate::types::TargetPlatform> {
+    pub fn target_platform(&self) -> ::std::option::Option<& crate::types::TargetPlatform> {
         self.target_platform.as_ref()
     }
     /// <p>An S3 location in which Lookout for Vision stores the component artifacts.</p>
-    pub fn s3_output_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn s3_output_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.s3_output_location.as_ref()
     }
     /// <p>A name for the AWS IoT Greengrass component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used.</p>
-    pub fn component_version(&self) -> ::std::option::Option<&str> {
+    pub fn component_version(&self) -> ::std::option::Option<& str> {
         self.component_version.as_deref()
     }
     /// <p>A description for the AWS IoT Greengrass component.</p>
-    pub fn component_description(&self) -> ::std::option::Option<&str> {
+    pub fn component_description(&self) -> ::std::option::Option<& str> {
         self.component_description.as_deref()
     }
     /// <p>A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GreengrassConfiguration {
@@ -79,7 +80,7 @@ pub struct GreengrassConfigurationBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_version: ::std::option::Option<::std::string::String>,
     pub(crate) component_description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl GreengrassConfigurationBuilder {
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
@@ -91,8 +92,7 @@ impl GreengrassConfigurationBuilder {
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide.</p>
     pub fn set_compiler_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compiler_options = input;
-        self
+        self.compiler_options = input; self
     }
     /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide.</p>
@@ -106,8 +106,7 @@ impl GreengrassConfigurationBuilder {
     }
     /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>.</p>
     pub fn set_target_device(mut self, input: ::std::option::Option<crate::types::TargetDevice>) -> Self {
-        self.target_device = input;
-        self
+        self.target_device = input; self
     }
     /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>.</p>
     pub fn get_target_device(&self) -> &::std::option::Option<crate::types::TargetDevice> {
@@ -120,8 +119,7 @@ impl GreengrassConfigurationBuilder {
     }
     /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>.</p>
     pub fn set_target_platform(mut self, input: ::std::option::Option<crate::types::TargetPlatform>) -> Self {
-        self.target_platform = input;
-        self
+        self.target_platform = input; self
     }
     /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>.</p>
     pub fn get_target_platform(&self) -> &::std::option::Option<crate::types::TargetPlatform> {
@@ -135,8 +133,7 @@ impl GreengrassConfigurationBuilder {
     }
     /// <p>An S3 location in which Lookout for Vision stores the component artifacts.</p>
     pub fn set_s3_output_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3_output_location = input;
-        self
+        self.s3_output_location = input; self
     }
     /// <p>An S3 location in which Lookout for Vision stores the component artifacts.</p>
     pub fn get_s3_output_location(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -150,8 +147,7 @@ impl GreengrassConfigurationBuilder {
     }
     /// <p>A name for the AWS IoT Greengrass component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>A name for the AWS IoT Greengrass component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +160,7 @@ impl GreengrassConfigurationBuilder {
     }
     /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used.</p>
     pub fn set_component_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_version = input;
-        self
+        self.component_version = input; self
     }
     /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used.</p>
     pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +173,7 @@ impl GreengrassConfigurationBuilder {
     }
     /// <p>A description for the AWS IoT Greengrass component.</p>
     pub fn set_component_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_description = input;
-        self
+        self.component_description = input; self
     }
     /// <p>A description for the AWS IoT Greengrass component.</p>
     pub fn get_component_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,30 +186,38 @@ impl GreengrassConfigurationBuilder {
     /// <p>A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`GreengrassConfiguration`](crate::types::GreengrassConfiguration).
     pub fn build(self) -> crate::types::GreengrassConfiguration {
         crate::types::GreengrassConfiguration {
-            compiler_options: self.compiler_options,
-            target_device: self.target_device,
-            target_platform: self.target_platform,
-            s3_output_location: self.s3_output_location,
-            component_name: self.component_name,
-            component_version: self.component_version,
-            component_description: self.component_description,
-            tags: self.tags,
+            compiler_options: self.compiler_options
+            ,
+            target_device: self.target_device
+            ,
+            target_platform: self.target_platform
+            ,
+            s3_output_location: self.s3_output_location
+            ,
+            component_name: self.component_name
+            ,
+            component_version: self.component_version
+            ,
+            component_description: self.component_description
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

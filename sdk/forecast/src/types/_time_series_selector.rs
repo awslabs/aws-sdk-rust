@@ -12,13 +12,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeSeriesSelector {
+pub struct TimeSeriesSelector  {
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
     pub time_series_identifiers: ::std::option::Option<crate::types::TimeSeriesIdentifiers>,
 }
-impl TimeSeriesSelector {
+impl  TimeSeriesSelector  {
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
-    pub fn time_series_identifiers(&self) -> ::std::option::Option<&crate::types::TimeSeriesIdentifiers> {
+    pub fn time_series_identifiers(&self) -> ::std::option::Option<& crate::types::TimeSeriesIdentifiers> {
         self.time_series_identifiers.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl TimeSeriesSelectorBuilder {
     }
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
     pub fn set_time_series_identifiers(mut self, input: ::std::option::Option<crate::types::TimeSeriesIdentifiers>) -> Self {
-        self.time_series_identifiers = input;
-        self
+        self.time_series_identifiers = input; self
     }
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
     pub fn get_time_series_identifiers(&self) -> &::std::option::Option<crate::types::TimeSeriesIdentifiers> {
@@ -53,7 +52,9 @@ impl TimeSeriesSelectorBuilder {
     /// Consumes the builder and constructs a [`TimeSeriesSelector`](crate::types::TimeSeriesSelector).
     pub fn build(self) -> crate::types::TimeSeriesSelector {
         crate::types::TimeSeriesSelector {
-            time_series_identifiers: self.time_series_identifiers,
+            time_series_identifiers: self.time_series_identifiers
+            ,
         }
     }
 }
+

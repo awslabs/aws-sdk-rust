@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserGroupsOutput {
+pub struct DescribeUserGroupsOutput  {
     /// <p>Returns a list of user groups.</p>
-    pub user_groups: ::std::option::Option<::std::vec::Vec<crate::types::UserGroup>>,
+    pub user_groups: ::std::option::Option<::std::vec::Vec::<crate::types::UserGroup>>,
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeUserGroupsOutput {
+impl  DescribeUserGroupsOutput  {
     /// <p>Returns a list of user groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_groups.is_none()`.
-    pub fn user_groups(&self) -> &[crate::types::UserGroup] {
-        self.user_groups.as_deref().unwrap_or_default()
+    pub fn user_groups(&self) -> & [crate::types::UserGroup] {
+        self.user_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUserGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUserGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserGroupsOutput`](crate::operation::describe_user_groups::DescribeUserGroupsOutput).
     pub fn builder() -> crate::operation::describe_user_groups::builders::DescribeUserGroupsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeUserGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserGroupsOutputBuilder {
-    pub(crate) user_groups: ::std::option::Option<::std::vec::Vec<crate::types::UserGroup>>,
+    pub(crate) user_groups: ::std::option::Option<::std::vec::Vec::<crate::types::UserGroup>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeUserGroupsOutputBuilder {
     /// <p>Returns a list of user groups.</p>
     pub fn user_groups(mut self, input: crate::types::UserGroup) -> Self {
         let mut v = self.user_groups.unwrap_or_default();
-        v.push(input);
-        self.user_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of user groups.</p>
-    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserGroup>>) -> Self {
-        self.user_groups = input;
-        self
+    pub fn set_user_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserGroup>>) -> Self {
+        self.user_groups = input; self
     }
     /// <p>Returns a list of user groups.</p>
-    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserGroup>> {
+    pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserGroup>> {
         &self.user_groups
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
@@ -69,28 +69,30 @@ impl DescribeUserGroupsOutputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUserGroupsOutput`](crate::operation::describe_user_groups::DescribeUserGroupsOutput).
     pub fn build(self) -> crate::operation::describe_user_groups::DescribeUserGroupsOutput {
         crate::operation::describe_user_groups::DescribeUserGroupsOutput {
-            user_groups: self.user_groups,
-            marker: self.marker,
+            user_groups: self.user_groups
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

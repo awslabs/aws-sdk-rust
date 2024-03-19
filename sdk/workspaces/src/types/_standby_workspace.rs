@@ -3,7 +3,7 @@
 /// <p>Describes a standby WorkSpace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StandbyWorkspace {
+pub struct StandbyWorkspace  {
     /// <p>The identifier of the standby WorkSpace.</p>
     pub primary_workspace_id: ::std::string::String,
     /// <p>The volume encryption key of the standby WorkSpace.</p>
@@ -11,33 +11,32 @@ pub struct StandbyWorkspace {
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     pub directory_id: ::std::string::String,
     /// <p>The tags associated with the standby WorkSpace.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
     pub data_replication: ::std::option::Option<crate::types::DataReplication>,
 }
-impl StandbyWorkspace {
+impl  StandbyWorkspace  {
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn primary_workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.primary_workspace_id.deref()
+    pub fn primary_workspace_id(&self) -> & str {
+        use std::ops::Deref; self.primary_workspace_id.deref()
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
-    pub fn volume_encryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn volume_encryption_key(&self) -> ::std::option::Option<& str> {
         self.volume_encryption_key.as_deref()
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    pub fn directory_id(&self) -> &str {
-        use std::ops::Deref;
-        self.directory_id.deref()
+    pub fn directory_id(&self) -> & str {
+        use std::ops::Deref; self.directory_id.deref()
     }
     /// <p>The tags associated with the standby WorkSpace.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
-    pub fn data_replication(&self) -> ::std::option::Option<&crate::types::DataReplication> {
+    pub fn data_replication(&self) -> ::std::option::Option<& crate::types::DataReplication> {
         self.data_replication.as_ref()
     }
 }
@@ -55,7 +54,7 @@ pub struct StandbyWorkspaceBuilder {
     pub(crate) primary_workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) data_replication: ::std::option::Option<crate::types::DataReplication>,
 }
 impl StandbyWorkspaceBuilder {
@@ -67,8 +66,7 @@ impl StandbyWorkspaceBuilder {
     }
     /// <p>The identifier of the standby WorkSpace.</p>
     pub fn set_primary_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_workspace_id = input;
-        self
+        self.primary_workspace_id = input; self
     }
     /// <p>The identifier of the standby WorkSpace.</p>
     pub fn get_primary_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl StandbyWorkspaceBuilder {
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
     pub fn set_volume_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_encryption_key = input;
-        self
+        self.volume_encryption_key = input; self
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
     pub fn get_volume_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +93,7 @@ impl StandbyWorkspaceBuilder {
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,17 +106,16 @@ impl StandbyWorkspaceBuilder {
     /// <p>The tags associated with the standby WorkSpace.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the standby WorkSpace.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the standby WorkSpace.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
@@ -130,8 +125,7 @@ impl StandbyWorkspaceBuilder {
     }
     /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
     pub fn set_data_replication(mut self, input: ::std::option::Option<crate::types::DataReplication>) -> Self {
-        self.data_replication = input;
-        self
+        self.data_replication = input; self
     }
     /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
     pub fn get_data_replication(&self) -> &::std::option::Option<crate::types::DataReplication> {
@@ -142,22 +136,26 @@ impl StandbyWorkspaceBuilder {
     /// - [`primary_workspace_id`](crate::types::builders::StandbyWorkspaceBuilder::primary_workspace_id)
     /// - [`directory_id`](crate::types::builders::StandbyWorkspaceBuilder::directory_id)
     pub fn build(self) -> ::std::result::Result<crate::types::StandbyWorkspace, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StandbyWorkspace {
-            primary_workspace_id: self.primary_workspace_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "primary_workspace_id",
-                    "primary_workspace_id was not specified but it is required when building StandbyWorkspace",
-                )
-            })?,
-            volume_encryption_key: self.volume_encryption_key,
-            directory_id: self.directory_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "directory_id",
-                    "directory_id was not specified but it is required when building StandbyWorkspace",
-                )
-            })?,
-            tags: self.tags,
-            data_replication: self.data_replication,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StandbyWorkspace {
+                primary_workspace_id: self.primary_workspace_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("primary_workspace_id", "primary_workspace_id was not specified but it is required when building StandbyWorkspace")
+                    )?
+                ,
+                volume_encryption_key: self.volume_encryption_key
+                ,
+                directory_id: self.directory_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("directory_id", "directory_id was not specified but it is required when building StandbyWorkspace")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                data_replication: self.data_replication
+                ,
+            }
+        )
     }
 }
+

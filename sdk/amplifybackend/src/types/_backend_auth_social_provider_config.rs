@@ -3,23 +3,23 @@
 /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct BackendAuthSocialProviderConfig {
+pub struct BackendAuthSocialProviderConfig  {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
     pub client_secret: ::std::option::Option<::std::string::String>,
 }
-impl BackendAuthSocialProviderConfig {
+impl  BackendAuthSocialProviderConfig  {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
+    pub fn client_secret(&self) -> ::std::option::Option<& str> {
         self.client_secret.as_deref()
     }
 }
-impl ::std::fmt::Debug for BackendAuthSocialProviderConfig {
+impl  ::std::fmt::Debug for BackendAuthSocialProviderConfig  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("BackendAuthSocialProviderConfig");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl BackendAuthSocialProviderConfigBuilder {
     }
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl BackendAuthSocialProviderConfigBuilder {
     }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
     pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_secret = input;
-        self
+        self.client_secret = input; self
     }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl BackendAuthSocialProviderConfigBuilder {
     /// Consumes the builder and constructs a [`BackendAuthSocialProviderConfig`](crate::types::BackendAuthSocialProviderConfig).
     pub fn build(self) -> crate::types::BackendAuthSocialProviderConfig {
         crate::types::BackendAuthSocialProviderConfig {
-            client_id: self.client_id,
-            client_secret: self.client_secret,
+            client_id: self.client_id
+            ,
+            client_secret: self.client_secret
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for BackendAuthSocialProviderConfigBuilder {
         formatter.finish()
     }
 }
+

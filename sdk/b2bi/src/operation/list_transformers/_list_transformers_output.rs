@@ -2,31 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTransformersOutput {
+pub struct ListTransformersOutput  {
     /// <p>Returns an array of one or more transformer objects.</p>
     /// <p>For each transformer, a <code>TransformerSummary</code> object is returned. The <code>TransformerSummary</code> contains all the details for a specific transformer.</p>
-    pub transformers: ::std::vec::Vec<crate::types::TransformerSummary>,
+    pub transformers: ::std::vec::Vec::<crate::types::TransformerSummary>,
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTransformersOutput {
+impl  ListTransformersOutput  {
     /// <p>Returns an array of one or more transformer objects.</p>
     /// <p>For each transformer, a <code>TransformerSummary</code> object is returned. The <code>TransformerSummary</code> contains all the details for a specific transformer.</p>
-    pub fn transformers(&self) -> &[crate::types::TransformerSummary] {
-        use std::ops::Deref;
-        self.transformers.deref()
+    pub fn transformers(&self) -> & [crate::types::TransformerSummary] {
+        use std::ops::Deref; self.transformers.deref()
     }
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTransformersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTransformersOutput {
     /// Creates a new builder-style object to manufacture [`ListTransformersOutput`](crate::operation::list_transformers::ListTransformersOutput).
     pub fn builder() -> crate::operation::list_transformers::builders::ListTransformersOutputBuilder {
@@ -38,7 +37,7 @@ impl ListTransformersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransformersOutputBuilder {
-    pub(crate) transformers: ::std::option::Option<::std::vec::Vec<crate::types::TransformerSummary>>,
+    pub(crate) transformers: ::std::option::Option<::std::vec::Vec::<crate::types::TransformerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,19 +50,18 @@ impl ListTransformersOutputBuilder {
     /// <p>For each transformer, a <code>TransformerSummary</code> object is returned. The <code>TransformerSummary</code> contains all the details for a specific transformer.</p>
     pub fn transformers(mut self, input: crate::types::TransformerSummary) -> Self {
         let mut v = self.transformers.unwrap_or_default();
-        v.push(input);
-        self.transformers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.transformers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns an array of one or more transformer objects.</p>
     /// <p>For each transformer, a <code>TransformerSummary</code> object is returned. The <code>TransformerSummary</code> contains all the details for a specific transformer.</p>
-    pub fn set_transformers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransformerSummary>>) -> Self {
-        self.transformers = input;
-        self
+    pub fn set_transformers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransformerSummary>>) -> Self {
+        self.transformers = input; self
     }
     /// <p>Returns an array of one or more transformer objects.</p>
     /// <p>For each transformer, a <code>TransformerSummary</code> object is returned. The <code>TransformerSummary</code> contains all the details for a specific transformer.</p>
-    pub fn get_transformers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformerSummary>> {
+    pub fn get_transformers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransformerSummary>> {
         &self.transformers
     }
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
@@ -73,37 +71,37 @@ impl ListTransformersOutputBuilder {
     }
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When additional results are obtained from the command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional resources.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTransformersOutput`](crate::operation::list_transformers::ListTransformersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`transformers`](crate::operation::list_transformers::builders::ListTransformersOutputBuilder::transformers)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_transformers::ListTransformersOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_transformers::ListTransformersOutput {
-            transformers: self.transformers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transformers",
-                    "transformers was not specified but it is required when building ListTransformersOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_transformers::ListTransformersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_transformers::ListTransformersOutput {
+                transformers: self.transformers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transformers", "transformers was not specified but it is required when building ListTransformersOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumberorderstatus = unimplemented!();
 /// match phonenumberorderstatus {
@@ -32,16 +32,14 @@
 /// Specifically, when `phonenumberorderstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberOrderStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum PhoneNumberOrderStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -53,67 +51,68 @@ pub enum PhoneNumberOrderStatus {
     Successful,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for PhoneNumberOrderStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Failed" => PhoneNumberOrderStatus::Failed,
-            "Partial" => PhoneNumberOrderStatus::Partial,
-            "Processing" => PhoneNumberOrderStatus::Processing,
-            "Successful" => PhoneNumberOrderStatus::Successful,
-            other => PhoneNumberOrderStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Failed" => PhoneNumberOrderStatus::Failed,
+"Partial" => PhoneNumberOrderStatus::Partial,
+"Processing" => PhoneNumberOrderStatus::Processing,
+"Successful" => PhoneNumberOrderStatus::Successful,
+other => PhoneNumberOrderStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for PhoneNumberOrderStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(PhoneNumberOrderStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(PhoneNumberOrderStatus::from(s))
+                    }
+                }
 impl PhoneNumberOrderStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PhoneNumberOrderStatus::Failed => "Failed",
-            PhoneNumberOrderStatus::Partial => "Partial",
-            PhoneNumberOrderStatus::Processing => "Processing",
-            PhoneNumberOrderStatus::Successful => "Successful",
-            PhoneNumberOrderStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Failed", "Partial", "Processing", "Successful"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PhoneNumberOrderStatus::Failed => "Failed",
+    PhoneNumberOrderStatus::Partial => "Partial",
+    PhoneNumberOrderStatus::Processing => "Processing",
+    PhoneNumberOrderStatus::Successful => "Successful",
+    PhoneNumberOrderStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Failed", "Partial", "Processing", "Successful"]
+                }
+            }
 impl ::std::convert::AsRef<str> for PhoneNumberOrderStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl PhoneNumberOrderStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for PhoneNumberOrderStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            PhoneNumberOrderStatus::Failed => write!(f, "Failed"),
-            PhoneNumberOrderStatus::Partial => write!(f, "Partial"),
-            PhoneNumberOrderStatus::Processing => write!(f, "Processing"),
-            PhoneNumberOrderStatus::Successful => write!(f, "Successful"),
-            PhoneNumberOrderStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                PhoneNumberOrderStatus::Failed => write!(f, "Failed"),
+PhoneNumberOrderStatus::Partial => write!(f, "Partial"),
+PhoneNumberOrderStatus::Processing => write!(f, "Processing"),
+PhoneNumberOrderStatus::Successful => write!(f, "Successful"),
+PhoneNumberOrderStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

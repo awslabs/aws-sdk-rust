@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListReadSetExportJobs`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::set_sequence_store_id):<br>required: **true**<br><p>The jobs' sequence store ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of jobs to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`filter(ExportReadSetFilter)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::filter) / [`set_filter(Option<ExportReadSetFilter>)`](crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
-    /// - On success, responds with [`ListReadSetExportJobsOutput`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListReadSetExportJobsOutput`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`export_jobs(Option<Vec::<ExportReadSetJobDetail>>)`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput::export_jobs): <p>A list of jobs.</p>
-    /// - On failure, responds with [`SdkError<ListReadSetExportJobsError>`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError)
+                            /// - On failure, responds with [`SdkError<ListReadSetExportJobsError>`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError)
     pub fn list_read_set_export_jobs(&self) -> crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder {
-        crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

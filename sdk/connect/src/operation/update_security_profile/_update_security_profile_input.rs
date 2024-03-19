@@ -2,71 +2,75 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSecurityProfileInput {
+pub struct UpdateSecurityProfileInput  {
     /// <p>The description of the security profile.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifier for the security profle.</p>
     pub security_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
-    pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
+    pub applications: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>,
     /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
-    pub hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSecurityProfileInput {
+impl  UpdateSecurityProfileInput  {
     /// <p>The description of the security profile.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
-    pub fn permissions(&self) -> &[::std::string::String] {
-        self.permissions.as_deref().unwrap_or_default()
+    pub fn permissions(&self) -> & [::std::string::String] {
+        self.permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier for the security profle.</p>
-    pub fn security_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_profile_id(&self) -> ::std::option::Option<& str> {
         self.security_profile_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn allowed_access_control_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn allowed_access_control_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.allowed_access_control_tags.as_ref()
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_restricted_resources.is_none()`.
-    pub fn tag_restricted_resources(&self) -> &[::std::string::String] {
-        self.tag_restricted_resources.as_deref().unwrap_or_default()
+    pub fn tag_restricted_resources(&self) -> & [::std::string::String] {
+        self.tag_restricted_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
-    pub fn applications(&self) -> &[crate::types::Application] {
-        self.applications.as_deref().unwrap_or_default()
+    pub fn applications(&self) -> & [crate::types::Application] {
+        self.applications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hierarchy_restricted_resources.is_none()`.
-    pub fn hierarchy_restricted_resources(&self) -> &[::std::string::String] {
-        self.hierarchy_restricted_resources.as_deref().unwrap_or_default()
+    pub fn hierarchy_restricted_resources(&self) -> & [::std::string::String] {
+        self.hierarchy_restricted_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn allowed_access_control_hierarchy_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn allowed_access_control_hierarchy_group_id(&self) -> ::std::option::Option<& str> {
         self.allowed_access_control_hierarchy_group_id.as_deref()
     }
 }
@@ -82,13 +86,13 @@ impl UpdateSecurityProfileInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecurityProfileInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) security_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
-    pub(crate) hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) tag_restricted_resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>,
+    pub(crate) hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecurityProfileInputBuilder {
@@ -99,8 +103,7 @@ impl UpdateSecurityProfileInputBuilder {
     }
     /// <p>The description of the security profile.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the security profile.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +116,16 @@ impl UpdateSecurityProfileInputBuilder {
     /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
     pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input.into());
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.permissions
     }
     /// <p>The identifier for the security profle.</p>
@@ -134,8 +136,7 @@ impl UpdateSecurityProfileInputBuilder {
     }
     /// <p>The identifier for the security profle.</p>
     pub fn set_security_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_profile_id = input;
-        self
+        self.security_profile_id = input; self
     }
     /// <p>The identifier for the security profle.</p>
     pub fn get_security_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +150,7 @@ impl UpdateSecurityProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,28 +161,18 @@ impl UpdateSecurityProfileInputBuilder {
     /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
     ///
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn allowed_access_control_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_access_control_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.allowed_access_control_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.allowed_access_control_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.allowed_access_control_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn set_allowed_access_control_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.allowed_access_control_tags = input;
-        self
+    pub fn set_allowed_access_control_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.allowed_access_control_tags = input; self
     }
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn get_allowed_access_control_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_allowed_access_control_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.allowed_access_control_tags
     }
     /// Appends an item to `tag_restricted_resources`.
@@ -192,17 +182,16 @@ impl UpdateSecurityProfileInputBuilder {
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
     pub fn tag_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_restricted_resources.unwrap_or_default();
-        v.push(input.into());
-        self.tag_restricted_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_restricted_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub fn set_tag_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_restricted_resources = input;
-        self
+    pub fn set_tag_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_restricted_resources = input; self
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_restricted_resources
     }
     /// Appends an item to `applications`.
@@ -213,19 +202,18 @@ impl UpdateSecurityProfileInputBuilder {
     /// <p>A list of the third-party application's metadata.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         let mut v = self.applications.unwrap_or_default();
-        v.push(input);
-        self.applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
-    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
-        self.applications = input;
-        self
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>) -> Self {
+        self.applications = input; self
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
-    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Application>> {
         &self.applications
     }
     /// Appends an item to `hierarchy_restricted_resources`.
@@ -235,17 +223,16 @@ impl UpdateSecurityProfileInputBuilder {
     /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
     pub fn hierarchy_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hierarchy_restricted_resources.unwrap_or_default();
-        v.push(input.into());
-        self.hierarchy_restricted_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hierarchy_restricted_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
-    pub fn set_hierarchy_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.hierarchy_restricted_resources = input;
-        self
+    pub fn set_hierarchy_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.hierarchy_restricted_resources = input; self
     }
     /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
-    pub fn get_hierarchy_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hierarchy_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.hierarchy_restricted_resources
     }
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
@@ -255,28 +242,36 @@ impl UpdateSecurityProfileInputBuilder {
     }
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub fn set_allowed_access_control_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.allowed_access_control_hierarchy_group_id = input;
-        self
+        self.allowed_access_control_hierarchy_group_id = input; self
     }
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub fn get_allowed_access_control_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_access_control_hierarchy_group_id
     }
     /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_security_profile::UpdateSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_security_profile::UpdateSecurityProfileInput {
-            description: self.description,
-            permissions: self.permissions,
-            security_profile_id: self.security_profile_id,
-            instance_id: self.instance_id,
-            allowed_access_control_tags: self.allowed_access_control_tags,
-            tag_restricted_resources: self.tag_restricted_resources,
-            applications: self.applications,
-            hierarchy_restricted_resources: self.hierarchy_restricted_resources,
-            allowed_access_control_hierarchy_group_id: self.allowed_access_control_hierarchy_group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_security_profile::UpdateSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_security_profile::UpdateSecurityProfileInput {
+                description: self.description
+                ,
+                permissions: self.permissions
+                ,
+                security_profile_id: self.security_profile_id
+                ,
+                instance_id: self.instance_id
+                ,
+                allowed_access_control_tags: self.allowed_access_control_tags
+                ,
+                tag_restricted_resources: self.tag_restricted_resources
+                ,
+                applications: self.applications
+                ,
+                hierarchy_restricted_resources: self.hierarchy_restricted_resources
+                ,
+                allowed_access_control_hierarchy_group_id: self.allowed_access_control_hierarchy_group_id
+                ,
+            }
+        )
     }
 }
+

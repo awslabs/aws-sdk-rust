@@ -2,16 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetSamplingStatisticSummaries`](crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
-    /// - On success, responds with [`GetSamplingStatisticSummariesOutput`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput) with field(s):
+                            /// - On success, responds with [`GetSamplingStatisticSummariesOutput`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput) with field(s):
     ///   - [`sampling_statistic_summaries(Option<Vec::<SamplingStatisticSummary>>)`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput::sampling_statistic_summaries): <p>Information about the number of requests instrumented for each sampling rule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput::next_token): <p>Pagination token.</p>
-    /// - On failure, responds with [`SdkError<GetSamplingStatisticSummariesError>`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError)
-    pub fn get_sampling_statistic_summaries(
-        &self,
-    ) -> crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder {
-        crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetSamplingStatisticSummariesError>`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError)
+    pub fn get_sampling_statistic_summaries(&self) -> crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder {
+                                crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

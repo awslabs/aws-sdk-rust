@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFleetMetadataInput {
+pub struct DescribeFleetMetadataInput  {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFleetMetadataInput {
+impl  DescribeFleetMetadataInput  {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DescribeFleetMetadataInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_arn
     }
     /// Consumes the builder and constructs a [`DescribeFleetMetadataInput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput { fleet_arn: self.fleet_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput {
+                fleet_arn: self.fleet_arn
+                ,
+            }
+        )
     }
 }
+

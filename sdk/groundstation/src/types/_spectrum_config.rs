@@ -3,7 +3,7 @@
 /// <p>Object that describes a spectral <code>Config</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpectrumConfig {
+pub struct SpectrumConfig  {
     /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     pub center_frequency: ::std::option::Option<crate::types::Frequency>,
     /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
@@ -19,9 +19,9 @@ pub struct SpectrumConfig {
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub polarization: ::std::option::Option<crate::types::Polarization>,
 }
-impl SpectrumConfig {
+impl  SpectrumConfig  {
     /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
-    pub fn center_frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
+    pub fn center_frequency(&self) -> ::std::option::Option<& crate::types::Frequency> {
         self.center_frequency.as_ref()
     }
     /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
@@ -33,11 +33,11 @@ impl SpectrumConfig {
     /// <li>
     /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
     /// </ul>
-    pub fn bandwidth(&self) -> ::std::option::Option<&crate::types::FrequencyBandwidth> {
+    pub fn bandwidth(&self) -> ::std::option::Option<& crate::types::FrequencyBandwidth> {
         self.bandwidth.as_ref()
     }
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
-    pub fn polarization(&self) -> ::std::option::Option<&crate::types::Polarization> {
+    pub fn polarization(&self) -> ::std::option::Option<& crate::types::Polarization> {
         self.polarization.as_ref()
     }
 }
@@ -65,8 +65,7 @@ impl SpectrumConfigBuilder {
     }
     /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     pub fn set_center_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
-        self.center_frequency = input;
-        self
+        self.center_frequency = input; self
     }
     /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
     pub fn get_center_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
@@ -96,8 +95,7 @@ impl SpectrumConfigBuilder {
     /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
     /// </ul>
     pub fn set_bandwidth(mut self, input: ::std::option::Option<crate::types::FrequencyBandwidth>) -> Self {
-        self.bandwidth = input;
-        self
+        self.bandwidth = input; self
     }
     /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
@@ -118,8 +116,7 @@ impl SpectrumConfigBuilder {
     }
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub fn set_polarization(mut self, input: ::std::option::Option<crate::types::Polarization>) -> Self {
-        self.polarization = input;
-        self
+        self.polarization = input; self
     }
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub fn get_polarization(&self) -> &::std::option::Option<crate::types::Polarization> {
@@ -128,9 +125,13 @@ impl SpectrumConfigBuilder {
     /// Consumes the builder and constructs a [`SpectrumConfig`](crate::types::SpectrumConfig).
     pub fn build(self) -> crate::types::SpectrumConfig {
         crate::types::SpectrumConfig {
-            center_frequency: self.center_frequency,
-            bandwidth: self.bandwidth,
-            polarization: self.polarization,
+            center_frequency: self.center_frequency
+            ,
+            bandwidth: self.bandwidth
+            ,
+            polarization: self.polarization
+            ,
         }
     }
 }
+

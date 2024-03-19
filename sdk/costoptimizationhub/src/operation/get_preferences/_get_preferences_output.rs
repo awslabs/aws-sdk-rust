@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPreferencesOutput {
+pub struct GetPreferencesOutput  {
     /// <p>Retrieves the status of the "savings estimation mode" preference.</p>
     pub savings_estimation_mode: ::std::option::Option<crate::types::SavingsEstimationMode>,
     /// <p>Retrieves the status of the "member account discount visibility" preference.</p>
     pub member_account_discount_visibility: ::std::option::Option<crate::types::MemberAccountDiscountVisibility>,
     _request_id: Option<String>,
 }
-impl GetPreferencesOutput {
+impl  GetPreferencesOutput  {
     /// <p>Retrieves the status of the "savings estimation mode" preference.</p>
-    pub fn savings_estimation_mode(&self) -> ::std::option::Option<&crate::types::SavingsEstimationMode> {
+    pub fn savings_estimation_mode(&self) -> ::std::option::Option<& crate::types::SavingsEstimationMode> {
         self.savings_estimation_mode.as_ref()
     }
     /// <p>Retrieves the status of the "member account discount visibility" preference.</p>
-    pub fn member_account_discount_visibility(&self) -> ::std::option::Option<&crate::types::MemberAccountDiscountVisibility> {
+    pub fn member_account_discount_visibility(&self) -> ::std::option::Option<& crate::types::MemberAccountDiscountVisibility> {
         self.member_account_discount_visibility.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPreferencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetPreferencesOutput`](crate::operation::get_preferences::GetPreferencesOutput).
     pub fn builder() -> crate::operation::get_preferences::builders::GetPreferencesOutputBuilder {
@@ -47,8 +47,7 @@ impl GetPreferencesOutputBuilder {
     }
     /// <p>Retrieves the status of the "savings estimation mode" preference.</p>
     pub fn set_savings_estimation_mode(mut self, input: ::std::option::Option<crate::types::SavingsEstimationMode>) -> Self {
-        self.savings_estimation_mode = input;
-        self
+        self.savings_estimation_mode = input; self
     }
     /// <p>Retrieves the status of the "savings estimation mode" preference.</p>
     pub fn get_savings_estimation_mode(&self) -> &::std::option::Option<crate::types::SavingsEstimationMode> {
@@ -61,28 +60,30 @@ impl GetPreferencesOutputBuilder {
     }
     /// <p>Retrieves the status of the "member account discount visibility" preference.</p>
     pub fn set_member_account_discount_visibility(mut self, input: ::std::option::Option<crate::types::MemberAccountDiscountVisibility>) -> Self {
-        self.member_account_discount_visibility = input;
-        self
+        self.member_account_discount_visibility = input; self
     }
     /// <p>Retrieves the status of the "member account discount visibility" preference.</p>
     pub fn get_member_account_discount_visibility(&self) -> &::std::option::Option<crate::types::MemberAccountDiscountVisibility> {
         &self.member_account_discount_visibility
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPreferencesOutput`](crate::operation::get_preferences::GetPreferencesOutput).
     pub fn build(self) -> crate::operation::get_preferences::GetPreferencesOutput {
         crate::operation::get_preferences::GetPreferencesOutput {
-            savings_estimation_mode: self.savings_estimation_mode,
-            member_account_discount_visibility: self.member_account_discount_visibility,
+            savings_estimation_mode: self.savings_estimation_mode
+            ,
+            member_account_discount_visibility: self.member_account_discount_visibility
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrustedAdvisorCheckSummary {
+pub struct TrustedAdvisorCheckSummary  {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     pub check_id: ::std::string::String,
     /// <p>The time of the last refresh of the check.</p>
@@ -17,32 +17,29 @@ pub struct TrustedAdvisorCheckSummary {
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub category_specific_summary: ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
 }
-impl TrustedAdvisorCheckSummary {
+impl  TrustedAdvisorCheckSummary  {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(&self) -> &str {
-        use std::ops::Deref;
-        self.check_id.deref()
+    pub fn check_id(&self) -> & str {
+        use std::ops::Deref; self.check_id.deref()
     }
     /// <p>The time of the last refresh of the check.</p>
-    pub fn timestamp(&self) -> &str {
-        use std::ops::Deref;
-        self.timestamp.deref()
+    pub fn timestamp(&self) -> & str {
+        use std::ops::Deref; self.timestamp.deref()
     }
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
     pub fn has_flagged_resources(&self) -> bool {
         self.has_flagged_resources
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
-    pub fn resources_summary(&self) -> ::std::option::Option<&crate::types::TrustedAdvisorResourcesSummary> {
+    pub fn resources_summary(&self) -> ::std::option::Option<& crate::types::TrustedAdvisorResourcesSummary> {
         self.resources_summary.as_ref()
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
-    pub fn category_specific_summary(&self) -> ::std::option::Option<&crate::types::TrustedAdvisorCategorySpecificSummary> {
+    pub fn category_specific_summary(&self) -> ::std::option::Option<& crate::types::TrustedAdvisorCategorySpecificSummary> {
         self.category_specific_summary.as_ref()
     }
 }
@@ -73,8 +70,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
     }
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     pub fn set_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_id = input;
-        self
+        self.check_id = input; self
     }
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     pub fn get_check_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
     }
     /// <p>The time of the last refresh of the check.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time of the last refresh of the check.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
     }
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +111,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
     }
     /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
     pub fn set_has_flagged_resources(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_flagged_resources = input;
-        self
+        self.has_flagged_resources = input; self
     }
     /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
     pub fn get_has_flagged_resources(&self) -> &::std::option::Option<bool> {
@@ -132,8 +125,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     pub fn set_resources_summary(mut self, input: ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>) -> Self {
-        self.resources_summary = input;
-        self
+        self.resources_summary = input; self
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     pub fn get_resources_summary(&self) -> &::std::option::Option<crate::types::TrustedAdvisorResourcesSummary> {
@@ -147,8 +139,7 @@ impl TrustedAdvisorCheckSummaryBuilder {
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub fn set_category_specific_summary(mut self, input: ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>) -> Self {
-        self.category_specific_summary = input;
-        self
+        self.category_specific_summary = input; self
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub fn get_category_specific_summary(&self) -> &::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary> {
@@ -160,28 +151,32 @@ impl TrustedAdvisorCheckSummaryBuilder {
     /// - [`timestamp`](crate::types::builders::TrustedAdvisorCheckSummaryBuilder::timestamp)
     /// - [`status`](crate::types::builders::TrustedAdvisorCheckSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrustedAdvisorCheckSummary {
-            check_id: self.check_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "check_id",
-                    "check_id was not specified but it is required when building TrustedAdvisorCheckSummary",
-                )
-            })?,
-            timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestamp",
-                    "timestamp was not specified but it is required when building TrustedAdvisorCheckSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building TrustedAdvisorCheckSummary",
-                )
-            })?,
-            has_flagged_resources: self.has_flagged_resources.unwrap_or_default(),
-            resources_summary: self.resources_summary,
-            category_specific_summary: self.category_specific_summary,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrustedAdvisorCheckSummary {
+                check_id: self.check_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("check_id", "check_id was not specified but it is required when building TrustedAdvisorCheckSummary")
+                    )?
+                ,
+                timestamp: self.timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestamp", "timestamp was not specified but it is required when building TrustedAdvisorCheckSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building TrustedAdvisorCheckSummary")
+                    )?
+                ,
+                has_flagged_resources: self.has_flagged_resources
+                    .unwrap_or_default()
+                ,
+                resources_summary: self.resources_summary
+                ,
+                category_specific_summary: self.category_specific_summary
+                ,
+            }
+        )
     }
 }
+

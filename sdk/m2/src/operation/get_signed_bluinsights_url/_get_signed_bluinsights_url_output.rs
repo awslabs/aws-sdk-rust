@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSignedBluinsightsUrlOutput {
+pub struct GetSignedBluinsightsUrlOutput  {
     /// <p>Single sign-on AWS Blu Insights URL.</p>
     pub signed_bi_url: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetSignedBluinsightsUrlOutput {
+impl  GetSignedBluinsightsUrlOutput  {
     /// <p>Single sign-on AWS Blu Insights URL.</p>
-    pub fn signed_bi_url(&self) -> &str {
-        use std::ops::Deref;
-        self.signed_bi_url.deref()
+    pub fn signed_bi_url(&self) -> & str {
+        use std::ops::Deref; self.signed_bi_url.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSignedBluinsightsUrlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSignedBluinsightsUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetSignedBluinsightsUrlOutput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput).
     pub fn builder() -> crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlOutputBuilder {
@@ -42,39 +41,35 @@ impl GetSignedBluinsightsUrlOutputBuilder {
     }
     /// <p>Single sign-on AWS Blu Insights URL.</p>
     pub fn set_signed_bi_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signed_bi_url = input;
-        self
+        self.signed_bi_url = input; self
     }
     /// <p>Single sign-on AWS Blu Insights URL.</p>
     pub fn get_signed_bi_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.signed_bi_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSignedBluinsightsUrlOutput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`signed_bi_url`](crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlOutputBuilder::signed_bi_url)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput {
-            signed_bi_url: self.signed_bi_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signed_bi_url",
-                    "signed_bi_url was not specified but it is required when building GetSignedBluinsightsUrlOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput {
+                signed_bi_url: self.signed_bi_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signed_bi_url", "signed_bi_url was not specified but it is required when building GetSignedBluinsightsUrlOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTablesInput {
+pub struct ListTablesInput  {
     /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub workbook_id: ::std::option::Option<::std::string::String>,
@@ -12,10 +12,10 @@ pub struct ListTablesInput {
     /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTablesInput {
+impl  ListTablesInput  {
     /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
-    pub fn workbook_id(&self) -> ::std::option::Option<&str> {
+    pub fn workbook_id(&self) -> ::std::option::Option<& str> {
         self.workbook_id.as_deref()
     }
     /// <p>The maximum number of tables to return in each page of the results.</p>
@@ -24,7 +24,7 @@ impl ListTablesInput {
     }
     /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
     /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListTablesInputBuilder {
     /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn set_workbook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workbook_id = input;
-        self
+        self.workbook_id = input; self
     }
     /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
@@ -69,8 +68,7 @@ impl ListTablesInputBuilder {
     }
     /// <p>The maximum number of tables to return in each page of the results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of tables to return in each page of the results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl ListTablesInputBuilder {
     /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
     /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>This parameter is optional. If a nextToken is not specified, the API returns the first page of data.</p>
     /// <p>Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException.</p>
@@ -95,10 +92,16 @@ impl ListTablesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_tables::ListTablesInput {
-            workbook_id: self.workbook_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_tables::ListTablesInput {
+                workbook_id: self.workbook_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

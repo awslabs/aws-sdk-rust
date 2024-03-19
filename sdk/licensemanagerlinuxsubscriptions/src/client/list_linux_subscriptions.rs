@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLinuxSubscriptions`](crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(Filter)`](crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::set_filters):<br>required: **false**<br><p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>Subscription</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.</p> <p>The valid names for this filter are:</p> <ul>  <li>   <p><code>Subscription</code></p></li> </ul> <p>The valid Operators for this filter are:</p> <ul>  <li>   <p><code>contains</code></p></li>  <li>   <p><code>equals</code></p></li>  <li>   <p><code>Notequal</code></p></li> </ul><br>
     ///   - [`max_results(i32)`](crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Token for the next set of results.</p><br>
-    /// - On success, responds with [`ListLinuxSubscriptionsOutput`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput) with field(s):
+                            /// - On success, responds with [`ListLinuxSubscriptionsOutput`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput) with field(s):
     ///   - [`subscriptions(Option<Vec::<Subscription>>)`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput::subscriptions): <p>An array that contains subscription objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListLinuxSubscriptionsError>`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError)
+                            /// - On failure, responds with [`SdkError<ListLinuxSubscriptionsError>`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError)
     pub fn list_linux_subscriptions(&self) -> crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder {
-        crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

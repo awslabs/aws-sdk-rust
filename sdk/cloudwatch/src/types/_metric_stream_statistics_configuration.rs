@@ -3,30 +3,32 @@
 /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. This structure contains information for one metric that includes additional statistics in the stream. For more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricStreamStatisticsConfiguration {
+pub struct MetricStreamStatisticsConfiguration  {
     /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
     /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
-    pub include_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsMetric>>,
+    pub include_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsMetric>>,
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
-    pub additional_statistics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub additional_statistics: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl MetricStreamStatisticsConfiguration {
+impl  MetricStreamStatisticsConfiguration  {
     /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
     /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_metrics.is_none()`.
-    pub fn include_metrics(&self) -> &[crate::types::MetricStreamStatisticsMetric] {
-        self.include_metrics.as_deref().unwrap_or_default()
+    pub fn include_metrics(&self) -> & [crate::types::MetricStreamStatisticsMetric] {
+        self.include_metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_statistics.is_none()`.
-    pub fn additional_statistics(&self) -> &[::std::string::String] {
-        self.additional_statistics.as_deref().unwrap_or_default()
+    pub fn additional_statistics(&self) -> & [::std::string::String] {
+        self.additional_statistics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MetricStreamStatisticsConfiguration {
@@ -40,8 +42,8 @@ impl MetricStreamStatisticsConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricStreamStatisticsConfigurationBuilder {
-    pub(crate) include_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsMetric>>,
-    pub(crate) additional_statistics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) include_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsMetric>>,
+    pub(crate) additional_statistics: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl MetricStreamStatisticsConfigurationBuilder {
     /// Appends an item to `include_metrics`.
@@ -52,19 +54,18 @@ impl MetricStreamStatisticsConfigurationBuilder {
     /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
     pub fn include_metrics(mut self, input: crate::types::MetricStreamStatisticsMetric) -> Self {
         let mut v = self.include_metrics.unwrap_or_default();
-        v.push(input);
-        self.include_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
     /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
-    pub fn set_include_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsMetric>>) -> Self {
-        self.include_metrics = input;
-        self
+    pub fn set_include_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsMetric>>) -> Self {
+        self.include_metrics = input; self
     }
     /// <p>An array of metric name and namespace pairs that stream the additional statistics listed in the value of the <code>AdditionalStatistics</code> parameter. There can be as many as 100 pairs in the array.</p>
     /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
-    pub fn get_include_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsMetric>> {
+    pub fn get_include_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsMetric>> {
         &self.include_metrics
     }
     /// Appends an item to `additional_statistics`.
@@ -76,28 +77,30 @@ impl MetricStreamStatisticsConfigurationBuilder {
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
     pub fn additional_statistics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_statistics.unwrap_or_default();
-        v.push(input.into());
-        self.additional_statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.additional_statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
-    pub fn set_additional_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.additional_statistics = input;
-        self
+    pub fn set_additional_statistics(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.additional_statistics = input; self
     }
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
-    pub fn get_additional_statistics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_statistics(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.additional_statistics
     }
     /// Consumes the builder and constructs a [`MetricStreamStatisticsConfiguration`](crate::types::MetricStreamStatisticsConfiguration).
     pub fn build(self) -> crate::types::MetricStreamStatisticsConfiguration {
         crate::types::MetricStreamStatisticsConfiguration {
-            include_metrics: self.include_metrics,
-            additional_statistics: self.additional_statistics,
+            include_metrics: self.include_metrics
+            ,
+            additional_statistics: self.additional_statistics
+            ,
         }
     }
 }
+

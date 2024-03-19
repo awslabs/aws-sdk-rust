@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannelGroups`](crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token from the GET list request. Use the token to fetch the next page of results.</p><br>
-    /// - On success, responds with [`ListChannelGroupsOutput`](crate::operation::list_channel_groups::ListChannelGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListChannelGroupsOutput`](crate::operation::list_channel_groups::ListChannelGroupsOutput) with field(s):
     ///   - [`items(Option<Vec::<ChannelGroupListConfiguration>>)`](crate::operation::list_channel_groups::ListChannelGroupsOutput::items): <p>The objects being returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_groups::ListChannelGroupsOutput::next_token): <p>The pagination token from the GET list request. Use the token to fetch the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListChannelGroupsError>`](crate::operation::list_channel_groups::ListChannelGroupsError)
+                            /// - On failure, responds with [`SdkError<ListChannelGroupsError>`](crate::operation::list_channel_groups::ListChannelGroupsError)
     pub fn list_channel_groups(&self) -> crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder {
-        crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

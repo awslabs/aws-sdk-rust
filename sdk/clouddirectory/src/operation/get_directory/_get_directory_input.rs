@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDirectoryInput {
+pub struct GetDirectoryInput  {
     /// <p>The ARN of the directory.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetDirectoryInput {
+impl  GetDirectoryInput  {
     /// <p>The ARN of the directory.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetDirectoryInputBuilder {
     }
     /// <p>The ARN of the directory.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The ARN of the directory.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_arn
     }
     /// Consumes the builder and constructs a [`GetDirectoryInput`](crate::operation::get_directory::GetDirectoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_directory::GetDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_directory::GetDirectoryInput {
-            directory_arn: self.directory_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_directory::GetDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_directory::GetDirectoryInput {
+                directory_arn: self.directory_arn
+                ,
+            }
+        )
     }
 }
+

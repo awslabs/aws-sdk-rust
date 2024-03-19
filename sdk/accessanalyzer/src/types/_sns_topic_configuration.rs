@@ -3,13 +3,13 @@
 /// <p>The proposed access control configuration for an Amazon SNS topic. You can propose a configuration for a new Amazon SNS topic or an existing Amazon SNS topic that you own by specifying the policy. If the configuration is for an existing Amazon SNS topic and you do not specify the Amazon SNS policy, then the access preview uses the existing Amazon SNS policy for the topic. If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon SNS topic without a policy. To propose deletion of an existing Amazon SNS topic policy, you can specify an empty string for the Amazon SNS policy. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Topic.html">Topic</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnsTopicConfiguration {
+pub struct SnsTopicConfiguration  {
     /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     pub topic_policy: ::std::option::Option<::std::string::String>,
 }
-impl SnsTopicConfiguration {
+impl  SnsTopicConfiguration  {
     /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-    pub fn topic_policy(&self) -> ::std::option::Option<&str> {
+    pub fn topic_policy(&self) -> ::std::option::Option<& str> {
         self.topic_policy.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl SnsTopicConfigurationBuilder {
     }
     /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     pub fn set_topic_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_policy = input;
-        self
+        self.topic_policy = input; self
     }
     /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     pub fn get_topic_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl SnsTopicConfigurationBuilder {
     /// Consumes the builder and constructs a [`SnsTopicConfiguration`](crate::types::SnsTopicConfiguration).
     pub fn build(self) -> crate::types::SnsTopicConfiguration {
         crate::types::SnsTopicConfiguration {
-            topic_policy: self.topic_policy,
+            topic_policy: self.topic_policy
+            ,
         }
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p>AWS Systems Manager Parameter Store parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SsmParameterStoreParameter {
+pub struct SsmParameterStoreParameter  {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
     pub parameter_type: crate::types::SsmParameterStoreParameterType,
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
     pub parameter_name: ::std::string::String,
 }
-impl SsmParameterStoreParameter {
+impl  SsmParameterStoreParameter  {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
-    pub fn parameter_type(&self) -> &crate::types::SsmParameterStoreParameterType {
+    pub fn parameter_type(&self) -> & crate::types::SsmParameterStoreParameterType {
         &self.parameter_type
     }
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
-    pub fn parameter_name(&self) -> &str {
-        use std::ops::Deref;
-        self.parameter_name.deref()
+    pub fn parameter_name(&self) -> & str {
+        use std::ops::Deref; self.parameter_name.deref()
     }
 }
 impl SsmParameterStoreParameter {
@@ -43,8 +42,7 @@ impl SsmParameterStoreParameterBuilder {
     }
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
     pub fn set_parameter_type(mut self, input: ::std::option::Option<crate::types::SsmParameterStoreParameterType>) -> Self {
-        self.parameter_type = input;
-        self
+        self.parameter_type = input; self
     }
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
     pub fn get_parameter_type(&self) -> &::std::option::Option<crate::types::SsmParameterStoreParameterType> {
@@ -58,8 +56,7 @@ impl SsmParameterStoreParameterBuilder {
     }
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_name = input;
-        self
+        self.parameter_name = input; self
     }
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl SsmParameterStoreParameterBuilder {
     /// - [`parameter_type`](crate::types::builders::SsmParameterStoreParameterBuilder::parameter_type)
     /// - [`parameter_name`](crate::types::builders::SsmParameterStoreParameterBuilder::parameter_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SsmParameterStoreParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SsmParameterStoreParameter {
-            parameter_type: self.parameter_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameter_type",
-                    "parameter_type was not specified but it is required when building SsmParameterStoreParameter",
-                )
-            })?,
-            parameter_name: self.parameter_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameter_name",
-                    "parameter_name was not specified but it is required when building SsmParameterStoreParameter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SsmParameterStoreParameter {
+                parameter_type: self.parameter_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameter_type", "parameter_type was not specified but it is required when building SsmParameterStoreParameter")
+                    )?
+                ,
+                parameter_name: self.parameter_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameter_name", "parameter_name was not specified but it is required when building SsmParameterStoreParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

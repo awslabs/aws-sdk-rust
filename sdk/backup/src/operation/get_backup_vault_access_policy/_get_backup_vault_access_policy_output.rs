@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBackupVaultAccessPolicyOutput {
+pub struct GetBackupVaultAccessPolicyOutput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
@@ -11,25 +11,25 @@ pub struct GetBackupVaultAccessPolicyOutput {
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetBackupVaultAccessPolicyOutput {
+impl  GetBackupVaultAccessPolicyOutput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_arn(&self) -> ::std::option::Option<& str> {
         self.backup_vault_arn.as_deref()
     }
     /// <p>The backup vault access policy document in JSON format.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBackupVaultAccessPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBackupVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetBackupVaultAccessPolicyOutput`](crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyOutput).
     pub fn builder() -> crate::operation::get_backup_vault_access_policy::builders::GetBackupVaultAccessPolicyOutputBuilder {
@@ -54,8 +54,7 @@ impl GetBackupVaultAccessPolicyOutputBuilder {
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetBackupVaultAccessPolicyOutputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_arn = input;
-        self
+        self.backup_vault_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl GetBackupVaultAccessPolicyOutputBuilder {
     }
     /// <p>The backup vault access policy document in JSON format.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The backup vault access policy document in JSON format.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBackupVaultAccessPolicyOutput`](crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyOutput).
     pub fn build(self) -> crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyOutput {
         crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyOutput {
-            backup_vault_name: self.backup_vault_name,
-            backup_vault_arn: self.backup_vault_arn,
-            policy: self.policy,
+            backup_vault_name: self.backup_vault_name
+            ,
+            backup_vault_arn: self.backup_vault_arn
+            ,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

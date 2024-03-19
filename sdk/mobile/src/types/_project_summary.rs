@@ -3,19 +3,19 @@
 /// <p>Summary information about an AWS Mobile Hub project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectSummary {
+pub struct ProjectSummary  {
     /// <p>Name of the project.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Unique project identifier.</p>
     pub project_id: ::std::option::Option<::std::string::String>,
 }
-impl ProjectSummary {
+impl  ProjectSummary  {
     /// <p>Name of the project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Unique project identifier.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>Name of the project.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the project.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>Unique project identifier.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>Unique project identifier.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ProjectSummaryBuilder {
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     pub fn build(self) -> crate::types::ProjectSummary {
         crate::types::ProjectSummary {
-            name: self.name,
-            project_id: self.project_id,
+            name: self.name
+            ,
+            project_id: self.project_id
+            ,
         }
     }
 }
+

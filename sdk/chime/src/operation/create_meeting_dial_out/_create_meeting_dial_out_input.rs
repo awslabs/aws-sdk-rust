@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateMeetingDialOutInput {
+pub struct CreateMeetingDialOutInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
@@ -12,25 +12,25 @@ pub struct CreateMeetingDialOutInput {
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
     pub join_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateMeetingDialOutInput {
+impl  CreateMeetingDialOutInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> ::std::option::Option<&str> {
+    pub fn meeting_id(&self) -> ::std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
-    pub fn from_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn from_phone_number(&self) -> ::std::option::Option<& str> {
         self.from_phone_number.as_deref()
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
-    pub fn to_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn to_phone_number(&self) -> ::std::option::Option<& str> {
         self.to_phone_number.as_deref()
     }
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
-    pub fn join_token(&self) -> ::std::option::Option<&str> {
+    pub fn join_token(&self) -> ::std::option::Option<& str> {
         self.join_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateMeetingDialOutInput {
+impl  ::std::fmt::Debug for CreateMeetingDialOutInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeetingDialOutInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -65,8 +65,7 @@ impl CreateMeetingDialOutInputBuilder {
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl CreateMeetingDialOutInputBuilder {
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
     pub fn set_from_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_phone_number = input;
-        self
+        self.from_phone_number = input; self
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
     pub fn get_from_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl CreateMeetingDialOutInputBuilder {
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
     pub fn set_to_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.to_phone_number = input;
-        self
+        self.to_phone_number = input; self
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
     pub fn get_to_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,24 +107,26 @@ impl CreateMeetingDialOutInputBuilder {
     }
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
     pub fn set_join_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.join_token = input;
-        self
+        self.join_token = input; self
     }
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
     pub fn get_join_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.join_token
     }
     /// Consumes the builder and constructs a [`CreateMeetingDialOutInput`](crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput {
-            meeting_id: self.meeting_id,
-            from_phone_number: self.from_phone_number,
-            to_phone_number: self.to_phone_number,
-            join_token: self.join_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput {
+                meeting_id: self.meeting_id
+                ,
+                from_phone_number: self.from_phone_number
+                ,
+                to_phone_number: self.to_phone_number
+                ,
+                join_token: self.join_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateMeetingDialOutInputBuilder {
@@ -140,3 +139,4 @@ impl ::std::fmt::Debug for CreateMeetingDialOutInputBuilder {
         formatter.finish()
     }
 }
+

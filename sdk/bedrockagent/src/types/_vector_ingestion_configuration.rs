@@ -3,13 +3,13 @@
 /// Configures ingestion for a vector knowledge base
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VectorIngestionConfiguration {
+pub struct VectorIngestionConfiguration  {
     /// Configures chunking strategy
     pub chunking_configuration: ::std::option::Option<crate::types::ChunkingConfiguration>,
 }
-impl VectorIngestionConfiguration {
+impl  VectorIngestionConfiguration  {
     /// Configures chunking strategy
-    pub fn chunking_configuration(&self) -> ::std::option::Option<&crate::types::ChunkingConfiguration> {
+    pub fn chunking_configuration(&self) -> ::std::option::Option<& crate::types::ChunkingConfiguration> {
         self.chunking_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl VectorIngestionConfigurationBuilder {
     }
     /// Configures chunking strategy
     pub fn set_chunking_configuration(mut self, input: ::std::option::Option<crate::types::ChunkingConfiguration>) -> Self {
-        self.chunking_configuration = input;
-        self
+        self.chunking_configuration = input; self
     }
     /// Configures chunking strategy
     pub fn get_chunking_configuration(&self) -> &::std::option::Option<crate::types::ChunkingConfiguration> {
@@ -44,7 +43,9 @@ impl VectorIngestionConfigurationBuilder {
     /// Consumes the builder and constructs a [`VectorIngestionConfiguration`](crate::types::VectorIngestionConfiguration).
     pub fn build(self) -> crate::types::VectorIngestionConfiguration {
         crate::types::VectorIngestionConfiguration {
-            chunking_configuration: self.chunking_configuration,
+            chunking_configuration: self.chunking_configuration
+            ,
         }
     }
 }
+

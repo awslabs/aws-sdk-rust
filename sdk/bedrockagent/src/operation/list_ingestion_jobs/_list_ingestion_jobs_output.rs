@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIngestionJobsOutput {
+pub struct ListIngestionJobsOutput  {
     /// List of IngestionJobSummaries
-    pub ingestion_job_summaries: ::std::vec::Vec<crate::types::IngestionJobSummary>,
+    pub ingestion_job_summaries: ::std::vec::Vec::<crate::types::IngestionJobSummary>,
     /// Opaque continuation token of previous paginated response.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListIngestionJobsOutput {
+impl  ListIngestionJobsOutput  {
     /// List of IngestionJobSummaries
-    pub fn ingestion_job_summaries(&self) -> &[crate::types::IngestionJobSummary] {
-        use std::ops::Deref;
-        self.ingestion_job_summaries.deref()
+    pub fn ingestion_job_summaries(&self) -> & [crate::types::IngestionJobSummary] {
+        use std::ops::Deref; self.ingestion_job_summaries.deref()
     }
     /// Opaque continuation token of previous paginated response.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIngestionJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIngestionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListIngestionJobsOutput`](crate::operation::list_ingestion_jobs::ListIngestionJobsOutput).
     pub fn builder() -> crate::operation::list_ingestion_jobs::builders::ListIngestionJobsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListIngestionJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIngestionJobsOutputBuilder {
-    pub(crate) ingestion_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>>,
+    pub(crate) ingestion_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::IngestionJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListIngestionJobsOutputBuilder {
     /// List of IngestionJobSummaries
     pub fn ingestion_job_summaries(mut self, input: crate::types::IngestionJobSummary) -> Self {
         let mut v = self.ingestion_job_summaries.unwrap_or_default();
-        v.push(input);
-        self.ingestion_job_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ingestion_job_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// List of IngestionJobSummaries
-    pub fn set_ingestion_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>>) -> Self {
-        self.ingestion_job_summaries = input;
-        self
+    pub fn set_ingestion_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IngestionJobSummary>>) -> Self {
+        self.ingestion_job_summaries = input; self
     }
     /// List of IngestionJobSummaries
-    pub fn get_ingestion_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>> {
+    pub fn get_ingestion_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IngestionJobSummary>> {
         &self.ingestion_job_summaries
     }
     /// Opaque continuation token of previous paginated response.
@@ -68,37 +66,37 @@ impl ListIngestionJobsOutputBuilder {
     }
     /// Opaque continuation token of previous paginated response.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Opaque continuation token of previous paginated response.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIngestionJobsOutput`](crate::operation::list_ingestion_jobs::ListIngestionJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`ingestion_job_summaries`](crate::operation::list_ingestion_jobs::builders::ListIngestionJobsOutputBuilder::ingestion_job_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_ingestion_jobs::ListIngestionJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_ingestion_jobs::ListIngestionJobsOutput {
-            ingestion_job_summaries: self.ingestion_job_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ingestion_job_summaries",
-                    "ingestion_job_summaries was not specified but it is required when building ListIngestionJobsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ingestion_jobs::ListIngestionJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_ingestion_jobs::ListIngestionJobsOutput {
+                ingestion_job_summaries: self.ingestion_job_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ingestion_job_summaries", "ingestion_job_summaries was not specified but it is required when building ListIngestionJobsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

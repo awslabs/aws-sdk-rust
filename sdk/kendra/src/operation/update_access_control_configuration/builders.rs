@@ -5,56 +5,52 @@ pub use crate::operation::update_access_control_configuration::_update_access_co
 
 impl UpdateAccessControlConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_access_control_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_access_control_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateAccessControlConfiguration`.
-///
+/// 
 /// <p>Updates an access control configuration for your documents in an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
 /// <p>You can update an access control configuration you created without indexing all of your documents again. For example, your index contains top-secret company documents that only certain employees or users should access. You created an 'allow' access control configuration for one user who recently joined the 'top-secret' team, switching from a team with 'deny' access to top-secret documents. However, the user suddenly returns to their previous team and should no longer have access to top secret documents. You can update the access control configuration to re-configure access control for your documents as circumstances change.</p>
 /// <p>You call the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a> API to apply the updated access control configuration, with the <code>AccessControlConfigurationId</code> included in the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a> object. If you use an S3 bucket as a data source, you synchronize your data source to apply the <code>AccessControlConfigurationId</code> in the <code>.metadata.json</code> file. Amazon Kendra currently only supports access control configuration for S3 data sources and documents indexed using the <code>BatchPutDocument</code> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccessControlConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationInputBuilder,
+                    inner: crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput,
-        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError,
-    > for UpdateAccessControlConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput,
-            crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput,
+                    crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError,
+                > for UpdateAccessControlConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput,
+                        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateAccessControlConfigurationFluentBuilder {
     /// Creates a new `UpdateAccessControlConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl UpdateAccessControlConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_access_control_configuration::UpdateAccessControlConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_access_control_configuration::UpdateAccessControlConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput,
-        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_access_control_configuration::UpdateAccessControlConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_access_control_configuration::UpdateAccessControlConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationOutput, crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the index for an access control configuration.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -176,12 +163,12 @@ impl UpdateAccessControlConfigurationFluentBuilder {
         self
     }
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
+    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>) -> Self {
         self.inner = self.inner.set_access_control_list(input);
         self
     }
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Principal>> {
         self.inner.get_access_control_list()
     }
     /// Appends an item to `HierarchicalAccessControlList`.
@@ -194,15 +181,13 @@ impl UpdateAccessControlConfigurationFluentBuilder {
         self
     }
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn set_hierarchical_access_control_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
-    ) -> Self {
+    pub fn set_hierarchical_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>>) -> Self {
         self.inner = self.inner.set_hierarchical_access_control_list(input);
         self
     }
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn get_hierarchical_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
+    pub fn get_hierarchical_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>> {
         self.inner.get_hierarchical_access_control_list()
     }
 }
+

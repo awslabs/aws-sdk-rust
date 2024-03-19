@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNetworkAclOutput {
+pub struct CreateNetworkAclOutput  {
     /// <p>Information about the network ACL.</p>
     pub network_acl: ::std::option::Option<crate::types::NetworkAcl>,
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateNetworkAclOutput {
+impl  CreateNetworkAclOutput  {
     /// <p>Information about the network ACL.</p>
-    pub fn network_acl(&self) -> ::std::option::Option<&crate::types::NetworkAcl> {
+    pub fn network_acl(&self) -> ::std::option::Option<& crate::types::NetworkAcl> {
         self.network_acl.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateNetworkAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateNetworkAclOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAclOutput`](crate::operation::create_network_acl::CreateNetworkAclOutput).
     pub fn builder() -> crate::operation::create_network_acl::builders::CreateNetworkAclOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateNetworkAclOutputBuilder {
     }
     /// <p>Information about the network ACL.</p>
     pub fn set_network_acl(mut self, input: ::std::option::Option<crate::types::NetworkAcl>) -> Self {
-        self.network_acl = input;
-        self
+        self.network_acl = input; self
     }
     /// <p>Information about the network ACL.</p>
     pub fn get_network_acl(&self) -> &::std::option::Option<crate::types::NetworkAcl> {
@@ -61,28 +60,30 @@ impl CreateNetworkAclOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateNetworkAclOutput`](crate::operation::create_network_acl::CreateNetworkAclOutput).
     pub fn build(self) -> crate::operation::create_network_acl::CreateNetworkAclOutput {
         crate::operation::create_network_acl::CreateNetworkAclOutput {
-            network_acl: self.network_acl,
-            client_token: self.client_token,
+            network_acl: self.network_acl
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

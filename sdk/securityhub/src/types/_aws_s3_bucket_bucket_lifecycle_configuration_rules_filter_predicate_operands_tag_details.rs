@@ -3,19 +3,19 @@
 /// <p>A tag that is assigned to matching objects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
+pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails  {
     /// <p>The tag key.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
+impl  AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails  {
     /// <p>The tag key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetai
     }
     /// <p>The tag key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The tag key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetai
     }
     /// <p>The tag value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The tag value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetai
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

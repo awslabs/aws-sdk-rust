@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTaskTemplatesOutput {
+pub struct ListTaskTemplatesOutput  {
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
-    pub task_templates: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>>,
+    pub task_templates: ::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateMetadata>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p><important>
     /// <p>This is always returned as a null in the response.</p>
     /// </important>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTaskTemplatesOutput {
+impl  ListTaskTemplatesOutput  {
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_templates.is_none()`.
-    pub fn task_templates(&self) -> &[crate::types::TaskTemplateMetadata] {
-        self.task_templates.as_deref().unwrap_or_default()
+    pub fn task_templates(&self) -> & [crate::types::TaskTemplateMetadata] {
+        self.task_templates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p><important>
     /// <p>This is always returned as a null in the response.</p>
     /// </important>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTaskTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTaskTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTaskTemplatesOutput`](crate::operation::list_task_templates::ListTaskTemplatesOutput).
     pub fn builder() -> crate::operation::list_task_templates::builders::ListTaskTemplatesOutputBuilder {
@@ -41,7 +42,7 @@ impl ListTaskTemplatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTaskTemplatesOutputBuilder {
-    pub(crate) task_templates: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>>,
+    pub(crate) task_templates: ::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl ListTaskTemplatesOutputBuilder {
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
     pub fn task_templates(mut self, input: crate::types::TaskTemplateMetadata) -> Self {
         let mut v = self.task_templates.unwrap_or_default();
-        v.push(input);
-        self.task_templates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.task_templates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
-    pub fn set_task_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>>) -> Self {
-        self.task_templates = input;
-        self
+    pub fn set_task_templates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateMetadata>>) -> Self {
+        self.task_templates = input; self
     }
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
-    pub fn get_task_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>> {
+    pub fn get_task_templates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskTemplateMetadata>> {
         &self.task_templates
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p><important>
@@ -77,8 +77,7 @@ impl ListTaskTemplatesOutputBuilder {
     /// <p>This is always returned as a null in the response.</p>
     /// </important>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p><important>
     /// <p>This is always returned as a null in the response.</p>
@@ -87,20 +86,23 @@ impl ListTaskTemplatesOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTaskTemplatesOutput`](crate::operation::list_task_templates::ListTaskTemplatesOutput).
     pub fn build(self) -> crate::operation::list_task_templates::ListTaskTemplatesOutput {
         crate::operation::list_task_templates::ListTaskTemplatesOutput {
-            task_templates: self.task_templates,
-            next_token: self.next_token,
+            task_templates: self.task_templates
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

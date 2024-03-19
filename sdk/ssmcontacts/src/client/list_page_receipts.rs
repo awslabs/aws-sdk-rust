@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPageReceipts`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`page_id(impl Into<String>)`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::page_id) / [`set_page_id(Option<String>)`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::set_page_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the engagement to a specific contact channel.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to continue to the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of acknowledgements per page of results.</p><br>
-    /// - On success, responds with [`ListPageReceiptsOutput`](crate::operation::list_page_receipts::ListPageReceiptsOutput) with field(s):
+                            /// - On success, responds with [`ListPageReceiptsOutput`](crate::operation::list_page_receipts::ListPageReceiptsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_page_receipts::ListPageReceiptsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`receipts(Option<Vec::<Receipt>>)`](crate::operation::list_page_receipts::ListPageReceiptsOutput::receipts): <p>A list of each acknowledgement.</p>
-    /// - On failure, responds with [`SdkError<ListPageReceiptsError>`](crate::operation::list_page_receipts::ListPageReceiptsError)
+                            /// - On failure, responds with [`SdkError<ListPageReceiptsError>`](crate::operation::list_page_receipts::ListPageReceiptsError)
     pub fn list_page_receipts(&self) -> crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder {
-        crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_page_receipts::builders::ListPageReceiptsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

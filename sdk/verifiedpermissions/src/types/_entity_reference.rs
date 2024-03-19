@@ -23,11 +23,7 @@ impl EntityReference {
     /// Tries to convert the enum instance into [`Identifier`](crate::types::EntityReference::Identifier), extracting the inner [`EntityIdentifier`](crate::types::EntityIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_identifier(&self) -> ::std::result::Result<&crate::types::EntityIdentifier, &Self> {
-        if let EntityReference::Identifier(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityReference::Identifier(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Identifier`](crate::types::EntityReference::Identifier).
     pub fn is_identifier(&self) -> bool {
@@ -36,11 +32,7 @@ impl EntityReference {
     /// Tries to convert the enum instance into [`Unspecified`](crate::types::EntityReference::Unspecified), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unspecified(&self) -> ::std::result::Result<&bool, &Self> {
-        if let EntityReference::Unspecified(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityReference::Unspecified(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Unspecified`](crate::types::EntityReference::Unspecified).
     pub fn is_unspecified(&self) -> bool {
@@ -51,3 +43,4 @@ impl EntityReference {
         matches!(self, Self::Unknown)
     }
 }
+

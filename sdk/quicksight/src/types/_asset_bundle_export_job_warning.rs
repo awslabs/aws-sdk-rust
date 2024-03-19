@@ -3,19 +3,19 @@
 /// <p>Describes a warning that occurred during an Asset Bundle export job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleExportJobWarning {
+pub struct AssetBundleExportJobWarning  {
     /// <p>The ARN of the resource whose processing caused a warning.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the warning.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl AssetBundleExportJobWarning {
+impl  AssetBundleExportJobWarning  {
     /// <p>The ARN of the resource whose processing caused a warning.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A description of the warning.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssetBundleExportJobWarningBuilder {
     }
     /// <p>The ARN of the resource whose processing caused a warning.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the resource whose processing caused a warning.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AssetBundleExportJobWarningBuilder {
     }
     /// <p>A description of the warning.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A description of the warning.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AssetBundleExportJobWarningBuilder {
     /// Consumes the builder and constructs a [`AssetBundleExportJobWarning`](crate::types::AssetBundleExportJobWarning).
     pub fn build(self) -> crate::types::AssetBundleExportJobWarning {
         crate::types::AssetBundleExportJobWarning {
-            arn: self.arn,
-            message: self.message,
+            arn: self.arn
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

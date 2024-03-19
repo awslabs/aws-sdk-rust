@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessGrantsLocationsInput {
+pub struct ListAccessGrantsLocationsInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants Locations</code> request in order to retrieve the next page of results.</p>
@@ -15,13 +15,13 @@ pub struct ListAccessGrantsLocationsInput {
     /// </bucket></code>. A prefix in S3 is a string of characters at the beginning of an object key name used to organize the objects that you store in your S3 buckets. For example, object key names that start with the <code>engineering/</code> prefix or object key names that start with the <code>marketing/campaigns/</code> prefix.</p>
     pub location_scope: ::std::option::Option<::std::string::String>,
 }
-impl ListAccessGrantsLocationsInput {
+impl  ListAccessGrantsLocationsInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants Locations</code> request in order to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of access grants that you would like returned in the <code>List Access Grants</code> response. If the results include the pagination token <code>NextToken</code>, make another call using the <code>NextToken</code> to determine if there are more results.</p>
@@ -32,7 +32,7 @@ impl ListAccessGrantsLocationsInput {
     /// /
     /// <prefix></prefix>
     /// </bucket></code>. A prefix in S3 is a string of characters at the beginning of an object key name used to organize the objects that you store in your S3 buckets. For example, object key names that start with the <code>engineering/</code> prefix or object key names that start with the <code>marketing/campaigns/</code> prefix.</p>
-    pub fn location_scope(&self) -> ::std::option::Option<&str> {
+    pub fn location_scope(&self) -> ::std::option::Option<& str> {
         self.location_scope.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl ListAccessGrantsLocationsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ListAccessGrantsLocationsInputBuilder {
     }
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants Locations</code> request in order to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants Locations</code> request in order to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl ListAccessGrantsLocationsInputBuilder {
     }
     /// <p>The maximum number of access grants that you would like returned in the <code>List Access Grants</code> response. If the results include the pagination token <code>NextToken</code>, make another call using the <code>NextToken</code> to determine if there are more results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of access grants that you would like returned in the <code>List Access Grants</code> response. If the results include the pagination token <code>NextToken</code>, make another call using the <code>NextToken</code> to determine if there are more results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -109,8 +106,7 @@ impl ListAccessGrantsLocationsInputBuilder {
     /// <prefix></prefix>
     /// </bucket></code>. A prefix in S3 is a string of characters at the beginning of an object key name used to organize the objects that you store in your S3 buckets. For example, object key names that start with the <code>engineering/</code> prefix or object key names that start with the <code>marketing/campaigns/</code> prefix.</p>
     pub fn set_location_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_scope = input;
-        self
+        self.location_scope = input; self
     }
     /// <p>The S3 path to the location that you are registering. The location scope can be the default S3 location <code>s3://</code>, the S3 path to a bucket <code>s3://<bucket></bucket></code>, or the S3 path to a bucket and prefix <code>s3://<bucket>
     /// /
@@ -120,17 +116,19 @@ impl ListAccessGrantsLocationsInputBuilder {
         &self.location_scope
     }
     /// Consumes the builder and constructs a [`ListAccessGrantsLocationsInput`](crate::operation::list_access_grants_locations::ListAccessGrantsLocationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_access_grants_locations::ListAccessGrantsLocationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_access_grants_locations::ListAccessGrantsLocationsInput {
-            account_id: self.account_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            location_scope: self.location_scope,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_access_grants_locations::ListAccessGrantsLocationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_access_grants_locations::ListAccessGrantsLocationsInput {
+                account_id: self.account_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                location_scope: self.location_scope
+                ,
+            }
+        )
     }
 }
+

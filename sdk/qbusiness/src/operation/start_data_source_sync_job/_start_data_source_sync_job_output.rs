@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDataSourceSyncJobOutput {
+pub struct StartDataSourceSyncJobOutput  {
     /// <p>The identifier for a particular synchronization job.</p>
     pub execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartDataSourceSyncJobOutput {
+impl  StartDataSourceSyncJobOutput  {
     /// <p>The identifier for a particular synchronization job.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartDataSourceSyncJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartDataSourceSyncJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDataSourceSyncJobOutput`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput).
     pub fn builder() -> crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobOutputBuilder {
@@ -40,27 +40,28 @@ impl StartDataSourceSyncJobOutputBuilder {
     }
     /// <p>The identifier for a particular synchronization job.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>The identifier for a particular synchronization job.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartDataSourceSyncJobOutput`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput).
     pub fn build(self) -> crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput {
         crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput {
-            execution_id: self.execution_id,
+            execution_id: self.execution_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

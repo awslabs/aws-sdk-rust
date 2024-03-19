@@ -5,13 +5,13 @@
 /// <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HyperParameterTuningJobConfig {
+pub struct HyperParameterTuningJobConfig  {
     /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
     pub parameter_ranges: ::std::option::Option<crate::types::ParameterRanges>,
 }
-impl HyperParameterTuningJobConfig {
+impl  HyperParameterTuningJobConfig  {
     /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
-    pub fn parameter_ranges(&self) -> ::std::option::Option<&crate::types::ParameterRanges> {
+    pub fn parameter_ranges(&self) -> ::std::option::Option<& crate::types::ParameterRanges> {
         self.parameter_ranges.as_ref()
     }
 }
@@ -36,8 +36,7 @@ impl HyperParameterTuningJobConfigBuilder {
     }
     /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
     pub fn set_parameter_ranges(mut self, input: ::std::option::Option<crate::types::ParameterRanges>) -> Self {
-        self.parameter_ranges = input;
-        self
+        self.parameter_ranges = input; self
     }
     /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
     pub fn get_parameter_ranges(&self) -> &::std::option::Option<crate::types::ParameterRanges> {
@@ -46,7 +45,9 @@ impl HyperParameterTuningJobConfigBuilder {
     /// Consumes the builder and constructs a [`HyperParameterTuningJobConfig`](crate::types::HyperParameterTuningJobConfig).
     pub fn build(self) -> crate::types::HyperParameterTuningJobConfig {
         crate::types::HyperParameterTuningJobConfig {
-            parameter_ranges: self.parameter_ranges,
+            parameter_ranges: self.parameter_ranges
+            ,
         }
     }
 }
+

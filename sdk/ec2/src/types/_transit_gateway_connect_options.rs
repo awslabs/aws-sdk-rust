@@ -3,13 +3,13 @@
 /// <p>Describes the Connect attachment options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayConnectOptions {
+pub struct TransitGatewayConnectOptions  {
     /// <p>The tunnel protocol.</p>
     pub protocol: ::std::option::Option<crate::types::ProtocolValue>,
 }
-impl TransitGatewayConnectOptions {
+impl  TransitGatewayConnectOptions  {
     /// <p>The tunnel protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::ProtocolValue> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::ProtocolValue> {
         self.protocol.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TransitGatewayConnectOptionsBuilder {
     }
     /// <p>The tunnel protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolValue>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The tunnel protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolValue> {
@@ -43,6 +42,10 @@ impl TransitGatewayConnectOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`TransitGatewayConnectOptions`](crate::types::TransitGatewayConnectOptions).
     pub fn build(self) -> crate::types::TransitGatewayConnectOptions {
-        crate::types::TransitGatewayConnectOptions { protocol: self.protocol }
+        crate::types::TransitGatewayConnectOptions {
+            protocol: self.protocol
+            ,
+        }
     }
 }
+

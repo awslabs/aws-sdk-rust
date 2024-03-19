@@ -5,23 +5,20 @@ pub use crate::operation::list_accounts_for_parent::_list_accounts_for_parent_in
 
 impl ListAccountsForParentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_accounts_for_parent::ListAccountsForParentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_accounts_for_parent::ListAccountsForParentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_accounts_for_parent();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_accounts_for_parent::ListAccountsForParentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_accounts_for_parent::ListAccountsForParentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_accounts_for_parent();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListAccountsForParent`.
-///
+/// 
 /// <p>Lists the accounts in an organization that are contained by the specified target root or organizational unit (OU). If you specify the root, you get a list of all the accounts that aren't in any OU. If you specify an OU, you get a list of all the accounts in only that OU and not in any child OUs. To get a list of all accounts in the organization, use the <code>ListAccounts</code> operation.</p><note>
 /// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a <code>List*</code> operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl ListAccountsForParentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccountsForParentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_accounts_for_parent::builders::ListAccountsForParentInputBuilder,
+                    inner: crate::operation::list_accounts_for_parent::builders::ListAccountsForParentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_accounts_for_parent::ListAccountsForParentOutput,
-        crate::operation::list_accounts_for_parent::ListAccountsForParentError,
-    > for ListAccountsForParentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_accounts_for_parent::ListAccountsForParentOutput,
-            crate::operation::list_accounts_for_parent::ListAccountsForParentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_accounts_for_parent::ListAccountsForParentOutput,
+                    crate::operation::list_accounts_for_parent::ListAccountsForParentError,
+                > for ListAccountsForParentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_accounts_for_parent::ListAccountsForParentOutput,
+                        crate::operation::list_accounts_for_parent::ListAccountsForParentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListAccountsForParentFluentBuilder {
     /// Creates a new `ListAccountsForParent`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,59 +60,50 @@ impl ListAccountsForParentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_accounts_for_parent::ListAccountsForParentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_accounts_for_parent::ListAccountsForParentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_accounts_for_parent::ListAccountsForParent::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_accounts_for_parent::ListAccountsForParent::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_accounts_for_parent::ListAccountsForParentOutput,
-        crate::operation::list_accounts_for_parent::ListAccountsForParentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_accounts_for_parent::ListAccountsForParentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_accounts_for_parent::ListAccountsForParentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_accounts_for_parent::ListAccountsForParent::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_accounts_for_parent::ListAccountsForParent::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_accounts_for_parent::ListAccountsForParentOutput, crate::operation::list_accounts_for_parent::ListAccountsForParentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator {
-        crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator {
+                                crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose accounts you want to list.</p>
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_id(input.into());
@@ -160,3 +147,4 @@ impl ListAccountsForParentFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

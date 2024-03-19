@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAlarmHistory`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`alarm_name(impl Into<String>)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::alarm_name) / [`set_alarm_name(Option<String>)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::set_alarm_name):<br>required: **false**<br><p>The name of the alarm.</p><br>
     ///   - [`alarm_types(AlarmType)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::alarm_types) / [`set_alarm_types(Option<Vec::<AlarmType>>)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::set_alarm_types):<br>required: **false**<br><p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p><br>
     ///   - [`history_item_type(HistoryItemType)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::history_item_type) / [`set_history_item_type(Option<HistoryItemType>)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::set_history_item_type):<br>required: **false**<br><p>The type of alarm histories to retrieve.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`max_records(i32)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of alarm history records to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to indicate that there is more data available.</p><br>
     ///   - [`scan_by(ScanBy)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::scan_by) / [`set_scan_by(Option<ScanBy>)`](crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::set_scan_by):<br>required: **false**<br><p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p><br>
-    /// - On success, responds with [`DescribeAlarmHistoryOutput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput) with field(s):
+                            /// - On success, responds with [`DescribeAlarmHistoryOutput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput) with field(s):
     ///   - [`alarm_history_items(Option<Vec::<AlarmHistoryItem>>)`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput::alarm_history_items): <p>The alarm histories, in JSON format.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput::next_token): <p>The token that marks the start of the next batch of returned results.</p>
-    /// - On failure, responds with [`SdkError<DescribeAlarmHistoryError>`](crate::operation::describe_alarm_history::DescribeAlarmHistoryError)
+                            /// - On failure, responds with [`SdkError<DescribeAlarmHistoryError>`](crate::operation::describe_alarm_history::DescribeAlarmHistoryError)
     pub fn describe_alarm_history(&self) -> crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder {
-        crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListChecksOutput {
+pub struct ListChecksOutput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of Checks</p>
-    pub check_summaries: ::std::vec::Vec<crate::types::CheckSummary>,
+    pub check_summaries: ::std::vec::Vec::<crate::types::CheckSummary>,
     _request_id: Option<String>,
 }
-impl ListChecksOutput {
+impl  ListChecksOutput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of Checks</p>
-    pub fn check_summaries(&self) -> &[crate::types::CheckSummary] {
-        use std::ops::Deref;
-        self.check_summaries.deref()
+    pub fn check_summaries(&self) -> & [crate::types::CheckSummary] {
+        use std::ops::Deref; self.check_summaries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListChecksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListChecksOutput {
     /// Creates a new builder-style object to manufacture [`ListChecksOutput`](crate::operation::list_checks::ListChecksOutput).
     pub fn builder() -> crate::operation::list_checks::builders::ListChecksOutputBuilder {
@@ -37,7 +36,7 @@ impl ListChecksOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChecksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) check_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>>,
+    pub(crate) check_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::CheckSummary>>,
     _request_id: Option<String>,
 }
 impl ListChecksOutputBuilder {
@@ -48,8 +47,7 @@ impl ListChecksOutputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,41 +60,43 @@ impl ListChecksOutputBuilder {
     /// <p>The list of Checks</p>
     pub fn check_summaries(mut self, input: crate::types::CheckSummary) -> Self {
         let mut v = self.check_summaries.unwrap_or_default();
-        v.push(input);
-        self.check_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.check_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Checks</p>
-    pub fn set_check_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>>) -> Self {
-        self.check_summaries = input;
-        self
+    pub fn set_check_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CheckSummary>>) -> Self {
+        self.check_summaries = input; self
     }
     /// <p>The list of Checks</p>
-    pub fn get_check_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>> {
+    pub fn get_check_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CheckSummary>> {
         &self.check_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListChecksOutput`](crate::operation::list_checks::ListChecksOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`check_summaries`](crate::operation::list_checks::builders::ListChecksOutputBuilder::check_summaries)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_checks::ListChecksOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_checks::ListChecksOutput {
-            next_token: self.next_token,
-            check_summaries: self.check_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "check_summaries",
-                    "check_summaries was not specified but it is required when building ListChecksOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_checks::ListChecksOutput {
+                next_token: self.next_token
+                ,
+                check_summaries: self.check_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("check_summaries", "check_summaries was not specified but it is required when building ListChecksOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbProxyTargetGroupInput {
+pub struct ModifyDbProxyTargetGroupInput  {
     /// <p>The name of the target group to modify.</p>
     pub target_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the proxy.</p>
@@ -12,21 +12,21 @@ pub struct ModifyDbProxyTargetGroupInput {
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub new_name: ::std::option::Option<::std::string::String>,
 }
-impl ModifyDbProxyTargetGroupInput {
+impl  ModifyDbProxyTargetGroupInput  {
     /// <p>The name of the target group to modify.</p>
-    pub fn target_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_group_name(&self) -> ::std::option::Option<& str> {
         self.target_group_name.as_deref()
     }
     /// <p>The name of the proxy.</p>
-    pub fn db_proxy_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_proxy_name(&self) -> ::std::option::Option<& str> {
         self.db_proxy_name.as_deref()
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
-    pub fn connection_pool_config(&self) -> ::std::option::Option<&crate::types::ConnectionPoolConfiguration> {
+    pub fn connection_pool_config(&self) -> ::std::option::Option<& crate::types::ConnectionPoolConfiguration> {
         self.connection_pool_config.as_ref()
     }
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn new_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_name(&self) -> ::std::option::Option<& str> {
         self.new_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ModifyDbProxyTargetGroupInputBuilder {
     }
     /// <p>The name of the target group to modify.</p>
     pub fn set_target_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_group_name = input;
-        self
+        self.target_group_name = input; self
     }
     /// <p>The name of the target group to modify.</p>
     pub fn get_target_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ModifyDbProxyTargetGroupInputBuilder {
     }
     /// <p>The name of the proxy.</p>
     pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_proxy_name = input;
-        self
+        self.db_proxy_name = input; self
     }
     /// <p>The name of the proxy.</p>
     pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ModifyDbProxyTargetGroupInputBuilder {
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
     pub fn set_connection_pool_config(mut self, input: ::std::option::Option<crate::types::ConnectionPoolConfiguration>) -> Self {
-        self.connection_pool_config = input;
-        self
+        self.connection_pool_config = input; self
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
     pub fn get_connection_pool_config(&self) -> &::std::option::Option<crate::types::ConnectionPoolConfiguration> {
@@ -98,25 +95,26 @@ impl ModifyDbProxyTargetGroupInputBuilder {
     }
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn set_new_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_name = input;
-        self
+        self.new_name = input; self
     }
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn get_new_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_name
     }
     /// Consumes the builder and constructs a [`ModifyDbProxyTargetGroupInput`](crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupInput {
-            target_group_name: self.target_group_name,
-            db_proxy_name: self.db_proxy_name,
-            connection_pool_config: self.connection_pool_config,
-            new_name: self.new_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupInput {
+                target_group_name: self.target_group_name
+                ,
+                db_proxy_name: self.db_proxy_name
+                ,
+                connection_pool_config: self.connection_pool_config
+                ,
+                new_name: self.new_name
+                ,
+            }
+        )
     }
 }
+

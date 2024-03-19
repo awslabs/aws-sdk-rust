@@ -3,7 +3,7 @@
 /// <p>Provides information about a pending maintenance action for a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PendingMaintenanceAction {
+pub struct PendingMaintenanceAction  {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
@@ -17,29 +17,29 @@ pub struct PendingMaintenanceAction {
     /// <p>A description providing more detail about the maintenance action.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl PendingMaintenanceAction {
+impl  PendingMaintenanceAction  {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
-    pub fn auto_applied_after_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn auto_applied_after_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.auto_applied_after_date.as_ref()
     }
     /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
-    pub fn forced_apply_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn forced_apply_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.forced_apply_date.as_ref()
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    pub fn opt_in_status(&self) -> ::std::option::Option<&str> {
+    pub fn opt_in_status(&self) -> ::std::option::Option<& str> {
         self.opt_in_status.as_deref()
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
-    pub fn current_apply_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn current_apply_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.current_apply_date.as_ref()
     }
     /// <p>A description providing more detail about the maintenance action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl PendingMaintenanceActionBuilder {
     }
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl PendingMaintenanceActionBuilder {
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     pub fn set_auto_applied_after_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.auto_applied_after_date = input;
-        self
+        self.auto_applied_after_date = input; self
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     pub fn get_auto_applied_after_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +95,7 @@ impl PendingMaintenanceActionBuilder {
     }
     /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     pub fn set_forced_apply_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.forced_apply_date = input;
-        self
+        self.forced_apply_date = input; self
     }
     /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     pub fn get_forced_apply_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl PendingMaintenanceActionBuilder {
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
     pub fn set_opt_in_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_in_status = input;
-        self
+        self.opt_in_status = input; self
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
     pub fn get_opt_in_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl PendingMaintenanceActionBuilder {
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
     pub fn set_current_apply_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.current_apply_date = input;
-        self
+        self.current_apply_date = input; self
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
     pub fn get_current_apply_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl PendingMaintenanceActionBuilder {
     }
     /// <p>A description providing more detail about the maintenance action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description providing more detail about the maintenance action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl PendingMaintenanceActionBuilder {
     /// Consumes the builder and constructs a [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
     pub fn build(self) -> crate::types::PendingMaintenanceAction {
         crate::types::PendingMaintenanceAction {
-            action: self.action,
-            auto_applied_after_date: self.auto_applied_after_date,
-            forced_apply_date: self.forced_apply_date,
-            opt_in_status: self.opt_in_status,
-            current_apply_date: self.current_apply_date,
-            description: self.description,
+            action: self.action
+            ,
+            auto_applied_after_date: self.auto_applied_after_date
+            ,
+            forced_apply_date: self.forced_apply_date
+            ,
+            opt_in_status: self.opt_in_status
+            ,
+            current_apply_date: self.current_apply_date
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

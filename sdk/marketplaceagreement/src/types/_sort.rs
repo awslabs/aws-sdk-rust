@@ -3,19 +3,19 @@
 /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Sort {
+pub struct Sort  {
     /// <p>The attribute on which the data is grouped, which can be by <code>StartTime</code> and <code>EndTime</code>. The default value is <code>EndTime</code>.</p>
     pub sort_by: ::std::option::Option<::std::string::String>,
     /// <p>The sorting order, which can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl Sort {
+impl  Sort  {
     /// <p>The attribute on which the data is grouped, which can be by <code>StartTime</code> and <code>EndTime</code>. The default value is <code>EndTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&str> {
+    pub fn sort_by(&self) -> ::std::option::Option<& str> {
         self.sort_by.as_deref()
     }
     /// <p>The sorting order, which can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SortBuilder {
     }
     /// <p>The attribute on which the data is grouped, which can be by <code>StartTime</code> and <code>EndTime</code>. The default value is <code>EndTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The attribute on which the data is grouped, which can be by <code>StartTime</code> and <code>EndTime</code>. The default value is <code>EndTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SortBuilder {
     }
     /// <p>The sorting order, which can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sorting order, which can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -65,8 +63,11 @@ impl SortBuilder {
     /// Consumes the builder and constructs a [`Sort`](crate::types::Sort).
     pub fn build(self) -> crate::types::Sort {
         crate::types::Sort {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
+            sort_by: self.sort_by
+            ,
+            sort_order: self.sort_order
+            ,
         }
     }
 }
+

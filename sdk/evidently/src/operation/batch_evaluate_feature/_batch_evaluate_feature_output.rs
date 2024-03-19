@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchEvaluateFeatureOutput {
+pub struct BatchEvaluateFeatureOutput  {
     /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
+    pub results: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationResult>>,
     _request_id: Option<String>,
 }
-impl BatchEvaluateFeatureOutput {
+impl  BatchEvaluateFeatureOutput  {
     /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
-    pub fn results(&self) -> &[crate::types::EvaluationResult] {
-        self.results.as_deref().unwrap_or_default()
+    pub fn results(&self) -> & [crate::types::EvaluationResult] {
+        self.results.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchEvaluateFeatureOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchEvaluateFeatureOutput {
     /// Creates a new builder-style object to manufacture [`BatchEvaluateFeatureOutput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput).
     pub fn builder() -> crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureOutputBuilder {
@@ -31,7 +32,7 @@ impl BatchEvaluateFeatureOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEvaluateFeatureOutputBuilder {
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationResult>>,
     _request_id: Option<String>,
 }
 impl BatchEvaluateFeatureOutputBuilder {
@@ -42,33 +43,34 @@ impl BatchEvaluateFeatureOutputBuilder {
     /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
     pub fn results(mut self, input: crate::types::EvaluationResult) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationResult>>) -> Self {
+        self.results = input; self
     }
     /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EvaluationResult>> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchEvaluateFeatureOutput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput).
     pub fn build(self) -> crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput {
         crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput {
-            results: self.results,
+            results: self.results
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

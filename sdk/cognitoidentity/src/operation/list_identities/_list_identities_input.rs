@@ -3,7 +3,7 @@
 /// <p>Input to the ListIdentities action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIdentitiesInput {
+pub struct ListIdentitiesInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of identities to return.</p>
@@ -13,9 +13,9 @@ pub struct ListIdentitiesInput {
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     pub hide_disabled: ::std::option::Option<bool>,
 }
-impl ListIdentitiesInput {
+impl  ListIdentitiesInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The maximum number of identities to return.</p>
@@ -23,7 +23,7 @@ impl ListIdentitiesInput {
         self.max_results
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
@@ -56,8 +56,7 @@ impl ListIdentitiesInputBuilder {
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ListIdentitiesInputBuilder {
     }
     /// <p>The maximum number of identities to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of identities to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl ListIdentitiesInputBuilder {
     }
     /// <p>A pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,22 +96,26 @@ impl ListIdentitiesInputBuilder {
     }
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     pub fn set_hide_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hide_disabled = input;
-        self
+        self.hide_disabled = input; self
     }
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     pub fn get_hide_disabled(&self) -> &::std::option::Option<bool> {
         &self.hide_disabled
     }
     /// Consumes the builder and constructs a [`ListIdentitiesInput`](crate::operation::list_identities::ListIdentitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_identities::ListIdentitiesInput {
-            identity_pool_id: self.identity_pool_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            hide_disabled: self.hide_disabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_identities::ListIdentitiesInput {
+                identity_pool_id: self.identity_pool_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                hide_disabled: self.hide_disabled
+                ,
+            }
+        )
     }
 }
+

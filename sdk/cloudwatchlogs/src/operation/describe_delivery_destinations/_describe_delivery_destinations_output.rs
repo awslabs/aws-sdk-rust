@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDeliveryDestinationsOutput {
+pub struct DescribeDeliveryDestinationsOutput  {
     /// <p>An array of structures. Each structure contains information about one delivery destination in the account.</p>
-    pub delivery_destinations: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryDestination>>,
+    pub delivery_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryDestination>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDeliveryDestinationsOutput {
+impl  DescribeDeliveryDestinationsOutput  {
     /// <p>An array of structures. Each structure contains information about one delivery destination in the account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delivery_destinations.is_none()`.
-    pub fn delivery_destinations(&self) -> &[crate::types::DeliveryDestination] {
-        self.delivery_destinations.as_deref().unwrap_or_default()
+    pub fn delivery_destinations(&self) -> & [crate::types::DeliveryDestination] {
+        self.delivery_destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDeliveryDestinationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDeliveryDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeliveryDestinationsOutput`](crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsOutput).
     pub fn builder() -> crate::operation::describe_delivery_destinations::builders::DescribeDeliveryDestinationsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeDeliveryDestinationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeliveryDestinationsOutputBuilder {
-    pub(crate) delivery_destinations: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryDestination>>,
+    pub(crate) delivery_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryDestination>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeDeliveryDestinationsOutputBuilder {
     /// <p>An array of structures. Each structure contains information about one delivery destination in the account.</p>
     pub fn delivery_destinations(mut self, input: crate::types::DeliveryDestination) -> Self {
         let mut v = self.delivery_destinations.unwrap_or_default();
-        v.push(input);
-        self.delivery_destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.delivery_destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures. Each structure contains information about one delivery destination in the account.</p>
-    pub fn set_delivery_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryDestination>>) -> Self {
-        self.delivery_destinations = input;
-        self
+    pub fn set_delivery_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryDestination>>) -> Self {
+        self.delivery_destinations = input; self
     }
     /// <p>An array of structures. Each structure contains information about one delivery destination in the account.</p>
-    pub fn get_delivery_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliveryDestination>> {
+    pub fn get_delivery_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeliveryDestination>> {
         &self.delivery_destinations
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -69,28 +69,30 @@ impl DescribeDeliveryDestinationsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDeliveryDestinationsOutput`](crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsOutput).
     pub fn build(self) -> crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsOutput {
         crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsOutput {
-            delivery_destinations: self.delivery_destinations,
-            next_token: self.next_token,
+            delivery_destinations: self.delivery_destinations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Details about the step associated with a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Step {
+pub struct Step  {
     /// <p>The component ID.</p>
     pub component_id: ::std::string::String,
     /// <p>The component type.</p>
     pub component_type: ::std::string::String,
 }
-impl Step {
+impl  Step  {
     /// <p>The component ID.</p>
-    pub fn component_id(&self) -> &str {
-        use std::ops::Deref;
-        self.component_id.deref()
+    pub fn component_id(&self) -> & str {
+        use std::ops::Deref; self.component_id.deref()
     }
     /// <p>The component type.</p>
-    pub fn component_type(&self) -> &str {
-        use std::ops::Deref;
-        self.component_type.deref()
+    pub fn component_type(&self) -> & str {
+        use std::ops::Deref; self.component_type.deref()
     }
 }
 impl Step {
@@ -44,8 +42,7 @@ impl StepBuilder {
     }
     /// <p>The component ID.</p>
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_id = input;
-        self
+        self.component_id = input; self
     }
     /// <p>The component ID.</p>
     pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl StepBuilder {
     }
     /// <p>The component type.</p>
     pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type = input;
-        self
+        self.component_type = input; self
     }
     /// <p>The component type.</p>
     pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl StepBuilder {
     /// - [`component_id`](crate::types::builders::StepBuilder::component_id)
     /// - [`component_type`](crate::types::builders::StepBuilder::component_type)
     pub fn build(self) -> ::std::result::Result<crate::types::Step, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Step {
-            component_id: self.component_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_id",
-                    "component_id was not specified but it is required when building Step",
-                )
-            })?,
-            component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_type",
-                    "component_type was not specified but it is required when building Step",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Step {
+                component_id: self.component_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_id", "component_id was not specified but it is required when building Step")
+                    )?
+                ,
+                component_type: self.component_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_type", "component_type was not specified but it is required when building Step")
+                    )?
+                ,
+            }
+        )
     }
 }
+

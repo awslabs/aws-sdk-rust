@@ -3,19 +3,19 @@
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPositionInput {
+pub struct GetPositionInput  {
     /// <p>Resource identifier used to retrieve the position information.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Resource type of the resource for which position information is retrieved.</p>
     pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
 }
-impl GetPositionInput {
+impl  GetPositionInput  {
     /// <p>Resource identifier used to retrieve the position information.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>Resource type of the resource for which position information is retrieved.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::PositionResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::PositionResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl GetPositionInputBuilder {
     }
     /// <p>Resource identifier used to retrieve the position information.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>Resource identifier used to retrieve the position information.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl GetPositionInputBuilder {
     }
     /// <p>Resource type of the resource for which position information is retrieved.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Resource type of the resource for which position information is retrieved.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
@@ -66,9 +64,14 @@ impl GetPositionInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetPositionInput`](crate::operation::get_position::GetPositionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_position::GetPositionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_position::GetPositionInput {
-            resource_identifier: self.resource_identifier,
-            resource_type: self.resource_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_position::GetPositionInput {
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

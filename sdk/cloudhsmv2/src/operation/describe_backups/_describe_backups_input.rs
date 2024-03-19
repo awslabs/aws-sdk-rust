@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBackupsInput {
+pub struct DescribeBackupsInput  {
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
@@ -13,13 +13,13 @@ pub struct DescribeBackupsInput {
     /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
-    pub filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub filters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub sort_ascending: ::std::option::Option<bool>,
 }
-impl DescribeBackupsInput {
+impl  DescribeBackupsInput  {
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
@@ -32,7 +32,7 @@ impl DescribeBackupsInput {
     /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
-    pub fn filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn filters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.filters.as_ref()
     }
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
@@ -53,7 +53,7 @@ impl DescribeBackupsInput {
 pub struct DescribeBackupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) filters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) sort_ascending: ::std::option::Option<bool>,
 }
 impl DescribeBackupsInputBuilder {
@@ -64,8 +64,7 @@ impl DescribeBackupsInputBuilder {
     }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl DescribeBackupsInputBuilder {
     }
     /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -95,11 +93,11 @@ impl DescribeBackupsInputBuilder {
     /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
-    pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.filters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.filters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>One or more filters to limit the items returned in the response.</p>
     /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
@@ -107,12 +105,8 @@ impl DescribeBackupsInputBuilder {
     /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters to limit the items returned in the response.</p>
     /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
@@ -120,7 +114,7 @@ impl DescribeBackupsInputBuilder {
     /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
     /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.filters
     }
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
@@ -130,22 +124,26 @@ impl DescribeBackupsInputBuilder {
     }
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub fn set_sort_ascending(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sort_ascending = input;
-        self
+        self.sort_ascending = input; self
     }
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub fn get_sort_ascending(&self) -> &::std::option::Option<bool> {
         &self.sort_ascending
     }
     /// Consumes the builder and constructs a [`DescribeBackupsInput`](crate::operation::describe_backups::DescribeBackupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_backups::DescribeBackupsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_backups::DescribeBackupsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filters: self.filters,
-            sort_ascending: self.sort_ascending,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_backups::DescribeBackupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_backups::DescribeBackupsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+                sort_ascending: self.sort_ascending
+                ,
+            }
+        )
     }
 }
+

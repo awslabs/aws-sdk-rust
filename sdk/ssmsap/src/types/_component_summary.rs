@@ -3,7 +3,7 @@
 /// <p>The summary of the component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentSummary {
+pub struct ComponentSummary  {
     /// <p>The ID of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component.</p>
@@ -11,29 +11,29 @@ pub struct ComponentSummary {
     /// <p>The type of the component.</p>
     pub component_type: ::std::option::Option<crate::types::ComponentType>,
     /// <p>The tags of the component.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl ComponentSummary {
+impl  ComponentSummary  {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_id(&self) -> ::std::option::Option<& str> {
         self.component_id.as_deref()
     }
     /// <p>The type of the component.</p>
-    pub fn component_type(&self) -> ::std::option::Option<&crate::types::ComponentType> {
+    pub fn component_type(&self) -> ::std::option::Option<& crate::types::ComponentType> {
         self.component_type.as_ref()
     }
     /// <p>The tags of the component.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -51,7 +51,7 @@ pub struct ComponentSummaryBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_type: ::std::option::Option<crate::types::ComponentType>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ComponentSummaryBuilder {
@@ -62,8 +62,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The ID of the component.</p>
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_id = input;
-        self
+        self.component_id = input; self
     }
     /// <p>The ID of the component.</p>
     pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The type of the component.</p>
     pub fn set_component_type(mut self, input: ::std::option::Option<crate::types::ComponentType>) -> Self {
-        self.component_type = input;
-        self
+        self.component_type = input; self
     }
     /// <p>The type of the component.</p>
     pub fn get_component_type(&self) -> &::std::option::Option<crate::types::ComponentType> {
@@ -104,17 +101,16 @@ impl ComponentSummaryBuilder {
     /// <p>The tags of the component.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags of the component.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags of the component.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
@@ -124,8 +120,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,11 +129,17 @@ impl ComponentSummaryBuilder {
     /// Consumes the builder and constructs a [`ComponentSummary`](crate::types::ComponentSummary).
     pub fn build(self) -> crate::types::ComponentSummary {
         crate::types::ComponentSummary {
-            application_id: self.application_id,
-            component_id: self.component_id,
-            component_type: self.component_type,
-            tags: self.tags,
-            arn: self.arn,
+            application_id: self.application_id
+            ,
+            component_id: self.component_id
+            ,
+            component_type: self.component_type
+            ,
+            tags: self.tags
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

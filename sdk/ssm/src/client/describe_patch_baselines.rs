@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribePatchBaselines`](crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(PatchOrchestratorFilter)`](crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::filters) / [`set_filters(Option<Vec::<PatchOrchestratorFilter>>)`](crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::set_filters):<br>required: **false**<br><p>Each element in the array is a structure containing a key-value pair.</p> <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p> <ul>  <li>   <p><b> <code>NAME_PREFIX</code> </b></p>   <p>Sample values: <code>AWS-</code> | <code>My-</code></p></li>  <li>   <p><b> <code>OWNER</code> </b></p>   <p>Sample values: <code>AWS</code> | <code>Self</code></p></li>  <li>   <p><b> <code>OPERATING_SYSTEM</code> </b></p>   <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code></p></li> </ul><br>
     ///   - [`max_results(i32)`](crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of patch baselines to return (per page).</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribePatchBaselinesOutput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput) with field(s):
+                            /// - On success, responds with [`DescribePatchBaselinesOutput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput) with field(s):
     ///   - [`baseline_identities(Option<Vec::<PatchBaselineIdentity>>)`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput::baseline_identities): <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribePatchBaselinesError>`](crate::operation::describe_patch_baselines::DescribePatchBaselinesError)
+                            /// - On failure, responds with [`SdkError<DescribePatchBaselinesError>`](crate::operation::describe_patch_baselines::DescribePatchBaselinesError)
     pub fn describe_patch_baselines(&self) -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder {
-        crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

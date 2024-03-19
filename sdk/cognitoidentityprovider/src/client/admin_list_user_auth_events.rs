@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`AdminListUserAuthEvents`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID.</p><br>
     ///   - [`username(impl Into<String>)`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::set_username):<br>required: **true**<br><p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party IdP.</p><br>
     ///   - [`max_results(i32)`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token.</p><br>
-    /// - On success, responds with [`AdminListUserAuthEventsOutput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput) with field(s):
+                            /// - On success, responds with [`AdminListUserAuthEventsOutput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput) with field(s):
     ///   - [`auth_events(Option<Vec::<AuthEventType>>)`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput::auth_events): <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput::next_token): <p>A pagination token.</p>
-    /// - On failure, responds with [`SdkError<AdminListUserAuthEventsError>`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError)
+                            /// - On failure, responds with [`SdkError<AdminListUserAuthEventsError>`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError)
     pub fn admin_list_user_auth_events(&self) -> crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder {
-        crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

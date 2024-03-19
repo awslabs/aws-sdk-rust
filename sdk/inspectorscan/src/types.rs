@@ -20,3 +20,4 @@ pub mod builders;
 
 /// Error types that Inspector Scan can respond with.
 pub mod error;
+

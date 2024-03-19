@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetPreparedStatementInput {
+pub struct BatchGetPreparedStatementInput  {
     /// <p>A list of prepared statement names to return.</p>
-    pub prepared_statement_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub prepared_statement_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
     pub work_group: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetPreparedStatementInput {
+impl  BatchGetPreparedStatementInput  {
     /// <p>A list of prepared statement names to return.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prepared_statement_names.is_none()`.
-    pub fn prepared_statement_names(&self) -> &[::std::string::String] {
-        self.prepared_statement_names.as_deref().unwrap_or_default()
+    pub fn prepared_statement_names(&self) -> & [::std::string::String] {
+        self.prepared_statement_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
-    pub fn work_group(&self) -> ::std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<& str> {
         self.work_group.as_deref()
     }
 }
@@ -31,7 +32,7 @@ impl BatchGetPreparedStatementInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetPreparedStatementInputBuilder {
-    pub(crate) prepared_statement_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) prepared_statement_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetPreparedStatementInputBuilder {
@@ -42,17 +43,16 @@ impl BatchGetPreparedStatementInputBuilder {
     /// <p>A list of prepared statement names to return.</p>
     pub fn prepared_statement_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.prepared_statement_names.unwrap_or_default();
-        v.push(input.into());
-        self.prepared_statement_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.prepared_statement_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of prepared statement names to return.</p>
-    pub fn set_prepared_statement_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.prepared_statement_names = input;
-        self
+    pub fn set_prepared_statement_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.prepared_statement_names = input; self
     }
     /// <p>A list of prepared statement names to return.</p>
-    pub fn get_prepared_statement_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_prepared_statement_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.prepared_statement_names
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
@@ -63,23 +63,22 @@ impl BatchGetPreparedStatementInputBuilder {
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.work_group
     }
     /// Consumes the builder and constructs a [`BatchGetPreparedStatementInput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput {
-            prepared_statement_names: self.prepared_statement_names,
-            work_group: self.work_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput {
+                prepared_statement_names: self.prepared_statement_names
+                ,
+                work_group: self.work_group
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbParameterGroupOutput {
+pub struct CreateDbParameterGroupOutput  {
     /// <p>A service-generated unique identifier.</p>
     pub id: ::std::string::String,
     /// <p>The customer-supplied name that uniquely identifies the DB parameter group when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
@@ -15,36 +15,33 @@ pub struct CreateDbParameterGroupOutput {
     pub parameters: ::std::option::Option<crate::types::Parameters>,
     _request_id: Option<String>,
 }
-impl CreateDbParameterGroupOutput {
+impl  CreateDbParameterGroupOutput  {
     /// <p>A service-generated unique identifier.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The customer-supplied name that uniquely identifies the DB parameter group when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARM) of the DB parameter group.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The description of the DB parameter group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of the parameters that comprise the DB parameter group.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&crate::types::Parameters> {
+    pub fn parameters(&self) -> ::std::option::Option<& crate::types::Parameters> {
         self.parameters.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDbParameterGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupOutput`](crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput).
     pub fn builder() -> crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder {
@@ -72,8 +69,7 @@ impl CreateDbParameterGroupOutputBuilder {
     }
     /// <p>A service-generated unique identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A service-generated unique identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl CreateDbParameterGroupOutputBuilder {
     }
     /// <p>The customer-supplied name that uniquely identifies the DB parameter group when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The customer-supplied name that uniquely identifies the DB parameter group when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl CreateDbParameterGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARM) of the DB parameter group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARM) of the DB parameter group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +110,7 @@ impl CreateDbParameterGroupOutputBuilder {
     }
     /// <p>The description of the DB parameter group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the DB parameter group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,55 +123,51 @@ impl CreateDbParameterGroupOutputBuilder {
     }
     /// <p>A list of the parameters that comprise the DB parameter group.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>A list of the parameters that comprise the DB parameter group.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
         &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDbParameterGroupOutput`](crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder::id)
     /// - [`name`](crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder::name)
     /// - [`arn`](crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder::arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CreateDbParameterGroupOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateDbParameterGroupOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CreateDbParameterGroupOutput",
-                )
-            })?,
-            description: self.description,
-            parameters: self.parameters,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CreateDbParameterGroupOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CreateDbParameterGroupOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CreateDbParameterGroupOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

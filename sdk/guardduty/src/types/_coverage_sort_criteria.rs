@@ -3,7 +3,7 @@
 /// <p>Information about the sorting criteria used in the coverage statistics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageSortCriteria {
+pub struct CoverageSortCriteria  {
     /// <p>Represents the field name used to sort the coverage details.</p><note>
     /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
     /// </note>
@@ -11,15 +11,15 @@ pub struct CoverageSortCriteria {
     /// <p>The order in which the sorted findings are to be displayed.</p>
     pub order_by: ::std::option::Option<crate::types::OrderBy>,
 }
-impl CoverageSortCriteria {
+impl  CoverageSortCriteria  {
     /// <p>Represents the field name used to sort the coverage details.</p><note>
     /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
     /// </note>
-    pub fn attribute_name(&self) -> ::std::option::Option<&crate::types::CoverageSortKey> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& crate::types::CoverageSortKey> {
         self.attribute_name.as_ref()
     }
     /// <p>The order in which the sorted findings are to be displayed.</p>
-    pub fn order_by(&self) -> ::std::option::Option<&crate::types::OrderBy> {
+    pub fn order_by(&self) -> ::std::option::Option<& crate::types::OrderBy> {
         self.order_by.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl CoverageSortCriteriaBuilder {
     /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
     /// </note>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<crate::types::CoverageSortKey>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>Represents the field name used to sort the coverage details.</p><note>
     /// <p>Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been deprecated.</p>
@@ -65,8 +64,7 @@ impl CoverageSortCriteriaBuilder {
     }
     /// <p>The order in which the sorted findings are to be displayed.</p>
     pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
-        self.order_by = input;
-        self
+        self.order_by = input; self
     }
     /// <p>The order in which the sorted findings are to be displayed.</p>
     pub fn get_order_by(&self) -> &::std::option::Option<crate::types::OrderBy> {
@@ -75,8 +73,11 @@ impl CoverageSortCriteriaBuilder {
     /// Consumes the builder and constructs a [`CoverageSortCriteria`](crate::types::CoverageSortCriteria).
     pub fn build(self) -> crate::types::CoverageSortCriteria {
         crate::types::CoverageSortCriteria {
-            attribute_name: self.attribute_name,
-            order_by: self.order_by,
+            attribute_name: self.attribute_name
+            ,
+            order_by: self.order_by
+            ,
         }
     }
 }
+

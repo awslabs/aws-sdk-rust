@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationResourceLifecycleInput {
+pub struct UpdateApplicationResourceLifecycleInput  {
     /// <p>The name of the application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle configuration.</p>
     pub resource_lifecycle_config: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
 }
-impl UpdateApplicationResourceLifecycleInput {
+impl  UpdateApplicationResourceLifecycleInput  {
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The lifecycle configuration.</p>
-    pub fn resource_lifecycle_config(&self) -> ::std::option::Option<&crate::types::ApplicationResourceLifecycleConfig> {
+    pub fn resource_lifecycle_config(&self) -> ::std::option::Option<& crate::types::ApplicationResourceLifecycleConfig> {
         self.resource_lifecycle_config.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateApplicationResourceLifecycleInputBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl UpdateApplicationResourceLifecycleInputBuilder {
     }
     /// <p>The lifecycle configuration.</p>
     pub fn set_resource_lifecycle_config(mut self, input: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>) -> Self {
-        self.resource_lifecycle_config = input;
-        self
+        self.resource_lifecycle_config = input; self
     }
     /// <p>The lifecycle configuration.</p>
     pub fn get_resource_lifecycle_config(&self) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
         &self.resource_lifecycle_config
     }
     /// Consumes the builder and constructs a [`UpdateApplicationResourceLifecycleInput`](crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleInput {
-                application_name: self.application_name,
-                resource_lifecycle_config: self.resource_lifecycle_config,
-            },
+                application_name: self.application_name
+                ,
+                resource_lifecycle_config: self.resource_lifecycle_config
+                ,
+            }
         )
     }
 }
+

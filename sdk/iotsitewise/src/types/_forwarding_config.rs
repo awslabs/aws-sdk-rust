@@ -3,13 +3,13 @@
 /// <p>The forwarding configuration for a given property.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ForwardingConfig {
+pub struct ForwardingConfig  {
     /// <p>The forwarding state for the given property.</p>
     pub state: crate::types::ForwardingConfigState,
 }
-impl ForwardingConfig {
+impl  ForwardingConfig  {
     /// <p>The forwarding state for the given property.</p>
-    pub fn state(&self) -> &crate::types::ForwardingConfigState {
+    pub fn state(&self) -> & crate::types::ForwardingConfigState {
         &self.state
     }
 }
@@ -35,8 +35,7 @@ impl ForwardingConfigBuilder {
     }
     /// <p>The forwarding state for the given property.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ForwardingConfigState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The forwarding state for the given property.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ForwardingConfigState> {
@@ -46,13 +45,15 @@ impl ForwardingConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::ForwardingConfigBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::ForwardingConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ForwardingConfig {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building ForwardingConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ForwardingConfig {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building ForwardingConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

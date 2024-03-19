@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetColumnStatisticsTaskRunInput {
+pub struct GetColumnStatisticsTaskRunInput  {
     /// <p>The identifier for the particular column statistics task run.</p>
     pub column_statistics_task_run_id: ::std::option::Option<::std::string::String>,
 }
-impl GetColumnStatisticsTaskRunInput {
+impl  GetColumnStatisticsTaskRunInput  {
     /// <p>The identifier for the particular column statistics task run.</p>
-    pub fn column_statistics_task_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn column_statistics_task_run_id(&self) -> ::std::option::Option<& str> {
         self.column_statistics_task_run_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetColumnStatisticsTaskRunInputBuilder {
     }
     /// <p>The identifier for the particular column statistics task run.</p>
     pub fn set_column_statistics_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_statistics_task_run_id = input;
-        self
+        self.column_statistics_task_run_id = input; self
     }
     /// <p>The identifier for the particular column statistics task run.</p>
     pub fn get_column_statistics_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.column_statistics_task_run_id
     }
     /// Consumes the builder and constructs a [`GetColumnStatisticsTaskRunInput`](crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunInput {
-            column_statistics_task_run_id: self.column_statistics_task_run_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_column_statistics_task_run::GetColumnStatisticsTaskRunInput {
+                column_statistics_task_run_id: self.column_statistics_task_run_id
+                ,
+            }
+        )
     }
 }
+

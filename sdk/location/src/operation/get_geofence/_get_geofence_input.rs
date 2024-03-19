@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGeofenceInput {
+pub struct GetGeofenceInput  {
     /// <p>The geofence collection storing the target geofence.</p>
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>The geofence you're retrieving details for.</p>
     pub geofence_id: ::std::option::Option<::std::string::String>,
 }
-impl GetGeofenceInput {
+impl  GetGeofenceInput  {
     /// <p>The geofence collection storing the target geofence.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+    pub fn collection_name(&self) -> ::std::option::Option<& str> {
         self.collection_name.as_deref()
     }
     /// <p>The geofence you're retrieving details for.</p>
-    pub fn geofence_id(&self) -> ::std::option::Option<&str> {
+    pub fn geofence_id(&self) -> ::std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetGeofenceInputBuilder {
     }
     /// <p>The geofence collection storing the target geofence.</p>
     pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_name = input;
-        self
+        self.collection_name = input; self
     }
     /// <p>The geofence collection storing the target geofence.</p>
     pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetGeofenceInputBuilder {
     }
     /// <p>The geofence you're retrieving details for.</p>
     pub fn set_geofence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.geofence_id = input;
-        self
+        self.geofence_id = input; self
     }
     /// <p>The geofence you're retrieving details for.</p>
     pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetGeofenceInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetGeofenceInput`](crate::operation::get_geofence::GetGeofenceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_geofence::GetGeofenceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_geofence::GetGeofenceInput {
-            collection_name: self.collection_name,
-            geofence_id: self.geofence_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_geofence::GetGeofenceInput {
+                collection_name: self.collection_name
+                ,
+                geofence_id: self.geofence_id
+                ,
+            }
+        )
     }
 }
+

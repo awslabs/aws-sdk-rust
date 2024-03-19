@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevokeClientVpnIngressInput {
+pub struct RevokeClientVpnIngressInput  {
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
@@ -14,17 +14,17 @@ pub struct RevokeClientVpnIngressInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl RevokeClientVpnIngressInput {
+impl  RevokeClientVpnIngressInput  {
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
-    pub fn target_network_cidr(&self) -> ::std::option::Option<&str> {
+    pub fn target_network_cidr(&self) -> ::std::option::Option<& str> {
         self.target_network_cidr.as_deref()
     }
     /// <p>The ID of the Active Directory group for which to revoke access.</p>
-    pub fn access_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_group_id(&self) -> ::std::option::Option<& str> {
         self.access_group_id.as_deref()
     }
     /// <p>Indicates whether access should be revoked for all clients.</p>
@@ -62,8 +62,7 @@ impl RevokeClientVpnIngressInputBuilder {
     }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
     pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+        self.client_vpn_endpoint_id = input; self
     }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
     pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl RevokeClientVpnIngressInputBuilder {
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
     pub fn set_target_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_network_cidr = input;
-        self
+        self.target_network_cidr = input; self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
     pub fn get_target_network_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl RevokeClientVpnIngressInputBuilder {
     }
     /// <p>The ID of the Active Directory group for which to revoke access.</p>
     pub fn set_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_group_id = input;
-        self
+        self.access_group_id = input; self
     }
     /// <p>The ID of the Active Directory group for which to revoke access.</p>
     pub fn get_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl RevokeClientVpnIngressInputBuilder {
     }
     /// <p>Indicates whether access should be revoked for all clients.</p>
     pub fn set_revoke_all_groups(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.revoke_all_groups = input;
-        self
+        self.revoke_all_groups = input; self
     }
     /// <p>Indicates whether access should be revoked for all clients.</p>
     pub fn get_revoke_all_groups(&self) -> &::std::option::Option<bool> {
@@ -119,26 +115,28 @@ impl RevokeClientVpnIngressInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`RevokeClientVpnIngressInput`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-            target_network_cidr: self.target_network_cidr,
-            access_group_id: self.access_group_id,
-            revoke_all_groups: self.revoke_all_groups,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput {
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id
+                ,
+                target_network_cidr: self.target_network_cidr
+                ,
+                access_group_id: self.access_group_id
+                ,
+                revoke_all_groups: self.revoke_all_groups
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

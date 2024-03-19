@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAppInstanceAdminOutput {
+pub struct DescribeAppInstanceAdminOutput  {
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub app_instance_admin: ::std::option::Option<crate::types::AppInstanceAdmin>,
     _request_id: Option<String>,
 }
-impl DescribeAppInstanceAdminOutput {
+impl  DescribeAppInstanceAdminOutput  {
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
-    pub fn app_instance_admin(&self) -> ::std::option::Option<&crate::types::AppInstanceAdmin> {
+    pub fn app_instance_admin(&self) -> ::std::option::Option<& crate::types::AppInstanceAdmin> {
         self.app_instance_admin.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAppInstanceAdminOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAppInstanceAdminOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceAdminOutput`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput).
     pub fn builder() -> crate::operation::describe_app_instance_admin::builders::DescribeAppInstanceAdminOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeAppInstanceAdminOutputBuilder {
     }
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn set_app_instance_admin(mut self, input: ::std::option::Option<crate::types::AppInstanceAdmin>) -> Self {
-        self.app_instance_admin = input;
-        self
+        self.app_instance_admin = input; self
     }
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn get_app_instance_admin(&self) -> &::std::option::Option<crate::types::AppInstanceAdmin> {
         &self.app_instance_admin
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAppInstanceAdminOutput`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput).
     pub fn build(self) -> crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput {
         crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput {
-            app_instance_admin: self.app_instance_admin,
+            app_instance_admin: self.app_instance_admin
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

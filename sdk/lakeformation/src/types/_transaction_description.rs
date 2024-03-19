@@ -3,7 +3,7 @@
 /// <p>A structure that contains information about a transaction.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransactionDescription {
+pub struct TransactionDescription  {
     /// <p>The ID of the transaction.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
@@ -13,21 +13,21 @@ pub struct TransactionDescription {
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
     pub transaction_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl TransactionDescription {
+impl  TransactionDescription  {
     /// <p>The ID of the transaction.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
-    pub fn transaction_status(&self) -> ::std::option::Option<&crate::types::TransactionStatus> {
+    pub fn transaction_status(&self) -> ::std::option::Option<& crate::types::TransactionStatus> {
         self.transaction_status.as_ref()
     }
     /// <p>The time when the transaction started.</p>
-    pub fn transaction_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn transaction_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.transaction_start_time.as_ref()
     }
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
-    pub fn transaction_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn transaction_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.transaction_end_time.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl TransactionDescriptionBuilder {
     }
     /// <p>The ID of the transaction.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The ID of the transaction.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TransactionDescriptionBuilder {
     }
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
     pub fn set_transaction_status(mut self, input: ::std::option::Option<crate::types::TransactionStatus>) -> Self {
-        self.transaction_status = input;
-        self
+        self.transaction_status = input; self
     }
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
     pub fn get_transaction_status(&self) -> &::std::option::Option<crate::types::TransactionStatus> {
@@ -83,8 +81,7 @@ impl TransactionDescriptionBuilder {
     }
     /// <p>The time when the transaction started.</p>
     pub fn set_transaction_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.transaction_start_time = input;
-        self
+        self.transaction_start_time = input; self
     }
     /// <p>The time when the transaction started.</p>
     pub fn get_transaction_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl TransactionDescriptionBuilder {
     }
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
     pub fn set_transaction_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.transaction_end_time = input;
-        self
+        self.transaction_end_time = input; self
     }
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
     pub fn get_transaction_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl TransactionDescriptionBuilder {
     /// Consumes the builder and constructs a [`TransactionDescription`](crate::types::TransactionDescription).
     pub fn build(self) -> crate::types::TransactionDescription {
         crate::types::TransactionDescription {
-            transaction_id: self.transaction_id,
-            transaction_status: self.transaction_status,
-            transaction_start_time: self.transaction_start_time,
-            transaction_end_time: self.transaction_end_time,
+            transaction_id: self.transaction_id
+            ,
+            transaction_status: self.transaction_status
+            ,
+            transaction_start_time: self.transaction_start_time
+            ,
+            transaction_end_time: self.transaction_end_time
+            ,
         }
     }
 }
+

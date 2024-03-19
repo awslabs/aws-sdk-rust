@@ -3,13 +3,13 @@
 /// <p>The capacity usage summary of the resources used by the <code>ReferenceSets</code> in a firewall.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityUsageSummary {
+pub struct CapacityUsageSummary  {
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
     pub cidrs: ::std::option::Option<crate::types::CidrSummary>,
 }
-impl CapacityUsageSummary {
+impl  CapacityUsageSummary  {
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
-    pub fn cidrs(&self) -> ::std::option::Option<&crate::types::CidrSummary> {
+    pub fn cidrs(&self) -> ::std::option::Option<& crate::types::CidrSummary> {
         self.cidrs.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl CapacityUsageSummaryBuilder {
     }
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
     pub fn set_cidrs(mut self, input: ::std::option::Option<crate::types::CidrSummary>) -> Self {
-        self.cidrs = input;
-        self
+        self.cidrs = input; self
     }
     /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
     pub fn get_cidrs(&self) -> &::std::option::Option<crate::types::CidrSummary> {
@@ -43,6 +42,10 @@ impl CapacityUsageSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`CapacityUsageSummary`](crate::types::CapacityUsageSummary).
     pub fn build(self) -> crate::types::CapacityUsageSummary {
-        crate::types::CapacityUsageSummary { cidrs: self.cidrs }
+        crate::types::CapacityUsageSummary {
+            cidrs: self.cidrs
+            ,
+        }
     }
 }
+

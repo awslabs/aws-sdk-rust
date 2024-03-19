@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePrivateGraphEndpointInput {
+pub struct DeletePrivateGraphEndpointInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC where the private endpoint is located.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePrivateGraphEndpointInput {
+impl  DeletePrivateGraphEndpointInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>The ID of the VPC where the private endpoint is located.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeletePrivateGraphEndpointInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeletePrivateGraphEndpointInputBuilder {
     }
     /// <p>The ID of the VPC where the private endpoint is located.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC where the private endpoint is located.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
     /// Consumes the builder and constructs a [`DeletePrivateGraphEndpointInput`](crate::operation::delete_private_graph_endpoint::DeletePrivateGraphEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_private_graph_endpoint::DeletePrivateGraphEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_private_graph_endpoint::DeletePrivateGraphEndpointInput {
-            graph_identifier: self.graph_identifier,
-            vpc_id: self.vpc_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_private_graph_endpoint::DeletePrivateGraphEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_private_graph_endpoint::DeletePrivateGraphEndpointInput {
+                graph_identifier: self.graph_identifier
+                ,
+                vpc_id: self.vpc_id
+                ,
+            }
+        )
     }
 }
+

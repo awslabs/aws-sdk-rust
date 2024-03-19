@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetIpamDiscoveredResourceCidrs`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::set_dry_run):<br>required: **false**<br><p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`ipam_resource_discovery_id(impl Into<String>)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::ipam_resource_discovery_id) / [`set_ipam_resource_discovery_id(Option<String>)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::set_ipam_resource_discovery_id):<br>required: **true**<br><p>A resource discovery ID.</p><br>
     ///   - [`resource_region(impl Into<String>)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::resource_region) / [`set_resource_region(Option<String>)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::set_resource_region):<br>required: **true**<br><p>A resource Region.</p><br>
     ///   - [`filters(Filter)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::set_filters):<br>required: **false**<br><p>Filters.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of discovered resource CIDRs to return in one page of results.</p><br>
-    /// - On success, responds with [`GetIpamDiscoveredResourceCidrsOutput`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput) with field(s):
+                            /// - On success, responds with [`GetIpamDiscoveredResourceCidrsOutput`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput) with field(s):
     ///   - [`ipam_discovered_resource_cidrs(Option<Vec::<IpamDiscoveredResourceCidr>>)`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput::ipam_discovered_resource_cidrs): <p>Discovered resource CIDRs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetIpamDiscoveredResourceCidrsError>`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError)
-    pub fn get_ipam_discovered_resource_cidrs(
-        &self,
-    ) -> crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder {
-        crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetIpamDiscoveredResourceCidrsError>`](crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError)
+    pub fn get_ipam_discovered_resource_cidrs(&self) -> crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder {
+                                crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

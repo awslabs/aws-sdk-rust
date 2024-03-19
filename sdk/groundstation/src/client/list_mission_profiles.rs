@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMissionProfiles`](crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of mission profiles returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p><br>
-    /// - On success, responds with [`ListMissionProfilesOutput`](crate::operation::list_mission_profiles::ListMissionProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListMissionProfilesOutput`](crate::operation::list_mission_profiles::ListMissionProfilesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_mission_profiles::ListMissionProfilesOutput::next_token): <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     ///   - [`mission_profile_list(Option<Vec::<MissionProfileListItem>>)`](crate::operation::list_mission_profiles::ListMissionProfilesOutput::mission_profile_list): <p>List of mission profiles.</p>
-    /// - On failure, responds with [`SdkError<ListMissionProfilesError>`](crate::operation::list_mission_profiles::ListMissionProfilesError)
+                            /// - On failure, responds with [`SdkError<ListMissionProfilesError>`](crate::operation::list_mission_profiles::ListMissionProfilesError)
     pub fn list_mission_profiles(&self) -> crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder {
-        crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -21,11 +21,7 @@ impl CustomFileSystemConfig {
     /// Tries to convert the enum instance into [`EfsFileSystemConfig`](crate::types::CustomFileSystemConfig::EfsFileSystemConfig), extracting the inner [`EfsFileSystemConfig`](crate::types::EfsFileSystemConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_efs_file_system_config(&self) -> ::std::result::Result<&crate::types::EfsFileSystemConfig, &Self> {
-        if let CustomFileSystemConfig::EfsFileSystemConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let CustomFileSystemConfig::EfsFileSystemConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EfsFileSystemConfig`](crate::types::CustomFileSystemConfig::EfsFileSystemConfig).
     pub fn is_efs_file_system_config(&self) -> bool {
@@ -36,3 +32,4 @@ impl CustomFileSystemConfig {
         matches!(self, Self::Unknown)
     }
 }
+

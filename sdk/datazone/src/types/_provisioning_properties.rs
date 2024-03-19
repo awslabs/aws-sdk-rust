@@ -21,11 +21,7 @@ impl ProvisioningProperties {
     /// Tries to convert the enum instance into [`CloudFormation`](crate::types::ProvisioningProperties::CloudFormation), extracting the inner [`CloudFormationProperties`](crate::types::CloudFormationProperties).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cloud_formation(&self) -> ::std::result::Result<&crate::types::CloudFormationProperties, &Self> {
-        if let ProvisioningProperties::CloudFormation(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ProvisioningProperties::CloudFormation(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CloudFormation`](crate::types::ProvisioningProperties::CloudFormation).
     pub fn is_cloud_formation(&self) -> bool {
@@ -36,3 +32,4 @@ impl ProvisioningProperties {
         matches!(self, Self::Unknown)
     }
 }
+

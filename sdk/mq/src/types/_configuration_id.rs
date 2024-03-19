@@ -3,15 +3,15 @@
 /// <p>A list of information about the configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationId {
+pub struct ConfigurationId  {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The revision number of the configuration.</p>
     pub revision: ::std::option::Option<i32>,
 }
-impl ConfigurationId {
+impl  ConfigurationId  {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision number of the configuration.</p>
@@ -42,8 +42,7 @@ impl ConfigurationIdBuilder {
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ConfigurationIdBuilder {
     }
     /// <p>The revision number of the configuration.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision number of the configuration.</p>
     pub fn get_revision(&self) -> &::std::option::Option<i32> {
@@ -66,8 +64,11 @@ impl ConfigurationIdBuilder {
     /// Consumes the builder and constructs a [`ConfigurationId`](crate::types::ConfigurationId).
     pub fn build(self) -> crate::types::ConfigurationId {
         crate::types::ConfigurationId {
-            id: self.id,
-            revision: self.revision,
+            id: self.id
+            ,
+            revision: self.revision
+            ,
         }
     }
 }
+

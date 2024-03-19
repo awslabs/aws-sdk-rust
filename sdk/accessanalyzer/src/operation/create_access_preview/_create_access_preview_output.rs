@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPreviewOutput {
+pub struct CreateAccessPreviewOutput  {
     /// <p>The unique ID for the access preview.</p>
     pub id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateAccessPreviewOutput {
+impl  CreateAccessPreviewOutput  {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAccessPreviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAccessPreviewOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput).
     pub fn builder() -> crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder {
@@ -42,37 +41,35 @@ impl CreateAccessPreviewOutputBuilder {
     }
     /// <p>The unique ID for the access preview.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID for the access preview.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAccessPreviewOutput`](crate::operation::create_access_preview::CreateAccessPreviewOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::create_access_preview::builders::CreateAccessPreviewOutputBuilder::id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_access_preview::CreateAccessPreviewOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CreateAccessPreviewOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_access_preview::CreateAccessPreviewOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CreateAccessPreviewOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

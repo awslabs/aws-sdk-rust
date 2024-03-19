@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LockSnapshotInput {
+pub struct LockSnapshotInput  {
     /// <p>The ID of the snapshot to lock.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -38,9 +38,9 @@ pub struct LockSnapshotInput {
     /// <p>You must specify either this parameter or <b>LockDuration</b>, but not both.</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LockSnapshotInput {
+impl  LockSnapshotInput  {
     /// <p>The ID of the snapshot to lock.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -63,7 +63,7 @@ impl LockSnapshotInput {
     /// <p><code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked in compliance mode can't be unlocked by any user. They can be deleted only after the lock duration expires. Users can't decrease the lock duration or change the lock mode to <code>governance</code>. However, users with appropriate IAM permissions can increase the lock duration at any time.</p>
     /// <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p></li>
     /// </ul>
-    pub fn lock_mode(&self) -> ::std::option::Option<&crate::types::LockMode> {
+    pub fn lock_mode(&self) -> ::std::option::Option<& crate::types::LockMode> {
         self.lock_mode.as_ref()
     }
     /// <p>The cooling-off period during which you can unlock the snapshot or modify the lock settings after locking the snapshot in compliance mode, in hours. After the cooling-off period expires, you can't unlock or delete the snapshot, decrease the lock duration, or change the lock mode. You can increase the lock duration after the cooling-off period expires.</p>
@@ -82,7 +82,7 @@ impl LockSnapshotInput {
     }
     /// <p>The date and time at which the snapshot lock is to automatically expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     /// <p>You must specify either this parameter or <b>LockDuration</b>, but not both.</p>
-    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
 }
@@ -113,8 +113,7 @@ impl LockSnapshotInputBuilder {
     }
     /// <p>The ID of the snapshot to lock.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot to lock.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl LockSnapshotInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -172,8 +170,7 @@ impl LockSnapshotInputBuilder {
     /// <p>If you lock a snapshot in <code>compliance</code> mode, you can optionally specify <b>CoolOffPeriod</b>.</p></li>
     /// </ul>
     pub fn set_lock_mode(mut self, input: ::std::option::Option<crate::types::LockMode>) -> Self {
-        self.lock_mode = input;
-        self
+        self.lock_mode = input; self
     }
     /// <p>The mode in which to lock the snapshot. Specify one of the following:</p>
     /// <ul>
@@ -209,8 +206,7 @@ impl LockSnapshotInputBuilder {
     /// <p>If you are extending the lock duration for a snapshot that is locked in compliance mode after the cooling-off period has expired, omit this parameter. If you specify a cooling-period in a such a request, the request fails.</p>
     /// <p>Allowed values: Min 1, max 72.</p>
     pub fn set_cool_off_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cool_off_period = input;
-        self
+        self.cool_off_period = input; self
     }
     /// <p>The cooling-off period during which you can unlock the snapshot or modify the lock settings after locking the snapshot in compliance mode, in hours. After the cooling-off period expires, you can't unlock or delete the snapshot, decrease the lock duration, or change the lock mode. You can increase the lock duration after the cooling-off period expires.</p>
     /// <p>The cooling-off period is optional when locking a snapshot in compliance mode. If you are locking the snapshot in governance mode, omit this parameter.</p>
@@ -231,8 +227,7 @@ impl LockSnapshotInputBuilder {
     /// <p>You must specify either this parameter or <b>ExpirationDate</b>, but not both.</p>
     /// <p>Allowed values: Min: 1, max 36500</p>
     pub fn set_lock_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lock_duration = input;
-        self
+        self.lock_duration = input; self
     }
     /// <p>The period of time for which to lock the snapshot, in days. The snapshot lock will automatically expire after this period lapses.</p>
     /// <p>You must specify either this parameter or <b>ExpirationDate</b>, but not both.</p>
@@ -249,8 +244,7 @@ impl LockSnapshotInputBuilder {
     /// <p>The date and time at which the snapshot lock is to automatically expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     /// <p>You must specify either this parameter or <b>LockDuration</b>, but not both.</p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_date = input;
-        self
+        self.expiration_date = input; self
     }
     /// <p>The date and time at which the snapshot lock is to automatically expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     /// <p>You must specify either this parameter or <b>LockDuration</b>, but not both.</p>
@@ -258,16 +252,23 @@ impl LockSnapshotInputBuilder {
         &self.expiration_date
     }
     /// Consumes the builder and constructs a [`LockSnapshotInput`](crate::operation::lock_snapshot::LockSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::lock_snapshot::LockSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::lock_snapshot::LockSnapshotInput {
-            snapshot_id: self.snapshot_id,
-            dry_run: self.dry_run,
-            lock_mode: self.lock_mode,
-            cool_off_period: self.cool_off_period,
-            lock_duration: self.lock_duration,
-            expiration_date: self.expiration_date,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::lock_snapshot::LockSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::lock_snapshot::LockSnapshotInput {
+                snapshot_id: self.snapshot_id
+                ,
+                dry_run: self.dry_run
+                ,
+                lock_mode: self.lock_mode
+                ,
+                cool_off_period: self.cool_off_period
+                ,
+                lock_duration: self.lock_duration
+                ,
+                expiration_date: self.expiration_date
+                ,
+            }
+        )
     }
 }
+

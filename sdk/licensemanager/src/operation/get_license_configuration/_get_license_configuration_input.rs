@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLicenseConfigurationInput {
+pub struct GetLicenseConfigurationInput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetLicenseConfigurationInput {
+impl  GetLicenseConfigurationInput  {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetLicenseConfigurationInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_configuration_arn = input;
-        self
+        self.license_configuration_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_configuration_arn
     }
     /// Consumes the builder and constructs a [`GetLicenseConfigurationInput`](crate::operation::get_license_configuration::GetLicenseConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_license_configuration::GetLicenseConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_license_configuration::GetLicenseConfigurationInput {
-            license_configuration_arn: self.license_configuration_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_license_configuration::GetLicenseConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_license_configuration::GetLicenseConfigurationInput {
+                license_configuration_arn: self.license_configuration_arn
+                ,
+            }
+        )
     }
 }
+

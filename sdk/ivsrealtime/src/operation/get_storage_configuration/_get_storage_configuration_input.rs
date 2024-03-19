@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStorageConfigurationInput {
+pub struct GetStorageConfigurationInput  {
     /// <p>ARN of the storage configuration to be retrieved.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetStorageConfigurationInput {
+impl  GetStorageConfigurationInput  {
     /// <p>ARN of the storage configuration to be retrieved.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetStorageConfigurationInputBuilder {
     }
     /// <p>ARN of the storage configuration to be retrieved.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the storage configuration to be retrieved.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetStorageConfigurationInput`](crate::operation::get_storage_configuration::GetStorageConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_storage_configuration::GetStorageConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_storage_configuration::GetStorageConfigurationInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_storage_configuration::GetStorageConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_storage_configuration::GetStorageConfigurationInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

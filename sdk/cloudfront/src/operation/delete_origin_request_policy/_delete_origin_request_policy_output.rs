@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteOriginRequestPolicyOutput {
+pub struct DeleteOriginRequestPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteOriginRequestPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteOriginRequestPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOriginRequestPolicyOutput`](crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyOutput).
     pub fn builder() -> crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteOriginRequestPolicyOutputBuilder {
 }
 impl DeleteOriginRequestPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteOriginRequestPolicyOutput`](crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyOutput).
     pub fn build(self) -> crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyOutput {
         crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyOutput {
@@ -40,3 +40,4 @@ impl DeleteOriginRequestPolicyOutputBuilder {
         }
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlueGreenDeployment {
+pub struct BlueGreenDeployment  {
     /// <p>The unique identifier of the blue/green deployment.</p>
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied name of the blue/green deployment.</p>
@@ -16,9 +16,9 @@ pub struct BlueGreenDeployment {
     /// <p>Before switchover, the target database is the clone database in the green environment.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The details about each source and target resource in the blue/green deployment.</p>
-    pub switchover_details: ::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>>,
+    pub switchover_details: ::std::option::Option<::std::vec::Vec::<crate::types::SwitchoverDetail>>,
     /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
-    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec::<crate::types::BlueGreenDeploymentTask>>,
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -45,38 +45,40 @@ pub struct BlueGreenDeployment {
     /// <p>The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
     pub delete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl BlueGreenDeployment {
+impl  BlueGreenDeployment  {
     /// <p>The unique identifier of the blue/green deployment.</p>
-    pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn blue_green_deployment_identifier(&self) -> ::std::option::Option<& str> {
         self.blue_green_deployment_identifier.as_deref()
     }
     /// <p>The user-supplied name of the blue/green deployment.</p>
-    pub fn blue_green_deployment_name(&self) -> ::std::option::Option<&str> {
+    pub fn blue_green_deployment_name(&self) -> ::std::option::Option<& str> {
         self.blue_green_deployment_name.as_deref()
     }
     /// <p>The source database for the blue/green deployment.</p>
     /// <p>Before switchover, the source database is the production database in the blue environment.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The target database for the blue/green deployment.</p>
     /// <p>Before switchover, the target database is the clone database in the green environment.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The details about each source and target resource in the blue/green deployment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.switchover_details.is_none()`.
-    pub fn switchover_details(&self) -> &[crate::types::SwitchoverDetail] {
-        self.switchover_details.as_deref().unwrap_or_default()
+    pub fn switchover_details(&self) -> & [crate::types::SwitchoverDetail] {
+        self.switchover_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
-    pub fn tasks(&self) -> &[crate::types::BlueGreenDeploymentTask] {
-        self.tasks.as_deref().unwrap_or_default()
+    pub fn tasks(&self) -> & [crate::types::BlueGreenDeploymentTask] {
+        self.tasks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
@@ -96,26 +98,27 @@ impl BlueGreenDeployment {
     /// <li>
     /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Additional information about the status of the blue/green deployment.</p>
-    pub fn status_details(&self) -> ::std::option::Option<&str> {
+    pub fn status_details(&self) -> ::std::option::Option<& str> {
         self.status_details.as_deref()
     }
     /// <p>The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
-    pub fn delete_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delete_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delete_time.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BlueGreenDeployment {
@@ -133,13 +136,13 @@ pub struct BlueGreenDeploymentBuilder {
     pub(crate) blue_green_deployment_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
-    pub(crate) switchover_details: ::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>>,
-    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>>,
+    pub(crate) switchover_details: ::std::option::Option<::std::vec::Vec::<crate::types::SwitchoverDetail>>,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec::<crate::types::BlueGreenDeploymentTask>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) status_details: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl BlueGreenDeploymentBuilder {
     /// <p>The unique identifier of the blue/green deployment.</p>
@@ -149,8 +152,7 @@ impl BlueGreenDeploymentBuilder {
     }
     /// <p>The unique identifier of the blue/green deployment.</p>
     pub fn set_blue_green_deployment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blue_green_deployment_identifier = input;
-        self
+        self.blue_green_deployment_identifier = input; self
     }
     /// <p>The unique identifier of the blue/green deployment.</p>
     pub fn get_blue_green_deployment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +165,7 @@ impl BlueGreenDeploymentBuilder {
     }
     /// <p>The user-supplied name of the blue/green deployment.</p>
     pub fn set_blue_green_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blue_green_deployment_name = input;
-        self
+        self.blue_green_deployment_name = input; self
     }
     /// <p>The user-supplied name of the blue/green deployment.</p>
     pub fn get_blue_green_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +180,7 @@ impl BlueGreenDeploymentBuilder {
     /// <p>The source database for the blue/green deployment.</p>
     /// <p>Before switchover, the source database is the production database in the blue environment.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source database for the blue/green deployment.</p>
     /// <p>Before switchover, the source database is the production database in the blue environment.</p>
@@ -196,8 +196,7 @@ impl BlueGreenDeploymentBuilder {
     /// <p>The target database for the blue/green deployment.</p>
     /// <p>Before switchover, the target database is the clone database in the green environment.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target database for the blue/green deployment.</p>
     /// <p>Before switchover, the target database is the clone database in the green environment.</p>
@@ -211,17 +210,16 @@ impl BlueGreenDeploymentBuilder {
     /// <p>The details about each source and target resource in the blue/green deployment.</p>
     pub fn switchover_details(mut self, input: crate::types::SwitchoverDetail) -> Self {
         let mut v = self.switchover_details.unwrap_or_default();
-        v.push(input);
-        self.switchover_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.switchover_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details about each source and target resource in the blue/green deployment.</p>
-    pub fn set_switchover_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>>) -> Self {
-        self.switchover_details = input;
-        self
+    pub fn set_switchover_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SwitchoverDetail>>) -> Self {
+        self.switchover_details = input; self
     }
     /// <p>The details about each source and target resource in the blue/green deployment.</p>
-    pub fn get_switchover_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SwitchoverDetail>> {
+    pub fn get_switchover_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SwitchoverDetail>> {
         &self.switchover_details
     }
     /// Appends an item to `tasks`.
@@ -231,17 +229,16 @@ impl BlueGreenDeploymentBuilder {
     /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
     pub fn tasks(mut self, input: crate::types::BlueGreenDeploymentTask) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input);
-        self.tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
-    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>>) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BlueGreenDeploymentTask>>) -> Self {
+        self.tasks = input; self
     }
     /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
-    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeploymentTask>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BlueGreenDeploymentTask>> {
         &self.tasks
     }
     /// <p>The status of the blue/green deployment.</p>
@@ -285,8 +282,7 @@ impl BlueGreenDeploymentBuilder {
     /// <p><code>DELETING</code> - The blue/green deployment is being deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
@@ -316,8 +312,7 @@ impl BlueGreenDeploymentBuilder {
     }
     /// <p>Additional information about the status of the blue/green deployment.</p>
     pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_details = input;
-        self
+        self.status_details = input; self
     }
     /// <p>Additional information about the status of the blue/green deployment.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,8 +325,7 @@ impl BlueGreenDeploymentBuilder {
     }
     /// <p>The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time when the blue/green deployment was created, in Universal Coordinated Time (UTC).</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -344,8 +338,7 @@ impl BlueGreenDeploymentBuilder {
     }
     /// <p>The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
     pub fn set_delete_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delete_time = input;
-        self
+        self.delete_time = input; self
     }
     /// <p>The time when the blue/green deployment was deleted, in Universal Coordinated Time (UTC).</p>
     pub fn get_delete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -358,33 +351,44 @@ impl BlueGreenDeploymentBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`BlueGreenDeployment`](crate::types::BlueGreenDeployment).
     pub fn build(self) -> crate::types::BlueGreenDeployment {
         crate::types::BlueGreenDeployment {
-            blue_green_deployment_identifier: self.blue_green_deployment_identifier,
-            blue_green_deployment_name: self.blue_green_deployment_name,
-            source: self.source,
-            target: self.target,
-            switchover_details: self.switchover_details,
-            tasks: self.tasks,
-            status: self.status,
-            status_details: self.status_details,
-            create_time: self.create_time,
-            delete_time: self.delete_time,
-            tag_list: self.tag_list,
+            blue_green_deployment_identifier: self.blue_green_deployment_identifier
+            ,
+            blue_green_deployment_name: self.blue_green_deployment_name
+            ,
+            source: self.source
+            ,
+            target: self.target
+            ,
+            switchover_details: self.switchover_details
+            ,
+            tasks: self.tasks
+            ,
+            status: self.status
+            ,
+            status_details: self.status_details
+            ,
+            create_time: self.create_time
+            ,
+            delete_time: self.delete_time
+            ,
+            tag_list: self.tag_list
+            ,
         }
     }
 }
+

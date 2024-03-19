@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetViolationDetailsInput {
+pub struct GetViolationDetailsInput  {
     /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ pub struct GetViolationDetailsInput {
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
-impl GetViolationDetailsInput {
+impl  GetViolationDetailsInput  {
     /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
     /// <ul>
     /// <li>
@@ -38,19 +38,19 @@ impl GetViolationDetailsInput {
     /// <li>
     /// <p>Third-party firewall</p></li>
     /// </ul>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
-    pub fn member_account(&self) -> ::std::option::Option<&str> {
+    pub fn member_account(&self) -> ::std::option::Option<& str> {
         self.member_account.as_deref()
     }
     /// <p>The ID of the resource that has violations.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
@@ -103,8 +103,7 @@ impl GetViolationDetailsInputBuilder {
     /// <p>Third-party firewall</p></li>
     /// </ul>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
     /// <ul>
@@ -130,8 +129,7 @@ impl GetViolationDetailsInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
     pub fn set_member_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_account = input;
-        self
+        self.member_account = input; self
     }
     /// <p>The Amazon Web Services account ID that you want the details for.</p>
     pub fn get_member_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +143,7 @@ impl GetViolationDetailsInputBuilder {
     }
     /// <p>The ID of the resource that has violations.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource that has violations.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,23 +157,26 @@ impl GetViolationDetailsInputBuilder {
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`GetViolationDetailsInput`](crate::operation::get_violation_details::GetViolationDetailsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_violation_details::GetViolationDetailsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_violation_details::GetViolationDetailsInput {
-            policy_id: self.policy_id,
-            member_account: self.member_account,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_violation_details::GetViolationDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_violation_details::GetViolationDetailsInput {
+                policy_id: self.policy_id
+                ,
+                member_account: self.member_account
+                ,
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

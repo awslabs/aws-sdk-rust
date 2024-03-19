@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDimensions`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve at one time.</p><br>
-    /// - On success, responds with [`ListDimensionsOutput`](crate::operation::list_dimensions::ListDimensionsOutput) with field(s):
+                            /// - On success, responds with [`ListDimensionsOutput`](crate::operation::list_dimensions::ListDimensionsOutput) with field(s):
     ///   - [`dimension_names(Option<Vec::<String>>)`](crate::operation::list_dimensions::ListDimensionsOutput::dimension_names): <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dimensions::ListDimensionsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListDimensionsError>`](crate::operation::list_dimensions::ListDimensionsError)
+                            /// - On failure, responds with [`SdkError<ListDimensionsError>`](crate::operation::list_dimensions::ListDimensionsError)
     pub fn list_dimensions(&self) -> crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder {
-        crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dimensions::builders::ListDimensionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

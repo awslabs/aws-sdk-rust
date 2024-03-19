@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetResources`](crate::operation::get_resources::builders::GetResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`rest_api_id(impl Into<String>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::set_rest_api_id):<br>required: **true**<br><p>The string identifier of the associated RestApi.</p><br>
     ///   - [`position(impl Into<String>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::set_position):<br>required: **false**<br><p>The current pagination position in the paged result set.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
     ///   - [`embed(impl Into<String>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::embed) / [`set_embed(Option<Vec::<String>>)`](crate::operation::get_resources::builders::GetResourcesFluentBuilder::set_embed):<br>required: **false**<br><p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p><br>
-    /// - On success, responds with [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput) with field(s):
+                            /// - On success, responds with [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput) with field(s):
     ///   - [`items(Option<Vec::<Resource>>)`](crate::operation::get_resources::GetResourcesOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_resources::GetResourcesOutput::position): <p>The current pagination position in the paged result set.</p>
-    /// - On failure, responds with [`SdkError<GetResourcesError>`](crate::operation::get_resources::GetResourcesError)
+                            /// - On failure, responds with [`SdkError<GetResourcesError>`](crate::operation::get_resources::GetResourcesError)
     pub fn get_resources(&self) -> crate::operation::get_resources::builders::GetResourcesFluentBuilder {
-        crate::operation::get_resources::builders::GetResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_resources::builders::GetResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

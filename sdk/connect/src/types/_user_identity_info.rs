@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UserIdentityInfo {
+pub struct UserIdentityInfo  {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
@@ -18,30 +18,30 @@ pub struct UserIdentityInfo {
     /// <p>The user's mobile number.</p>
     pub mobile: ::std::option::Option<::std::string::String>,
 }
-impl UserIdentityInfo {
+impl  UserIdentityInfo  {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code></p>
-    pub fn secondary_email(&self) -> ::std::option::Option<&str> {
+    pub fn secondary_email(&self) -> ::std::option::Option<& str> {
         self.secondary_email.as_deref()
     }
     /// <p>The user's mobile number.</p>
-    pub fn mobile(&self) -> ::std::option::Option<&str> {
+    pub fn mobile(&self) -> ::std::option::Option<& str> {
         self.mobile.as_deref()
     }
 }
-impl ::std::fmt::Debug for UserIdentityInfo {
+impl  ::std::fmt::Debug for UserIdentityInfo  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserIdentityInfo");
         formatter.field("first_name", &"*** Sensitive Data Redacted ***");
@@ -77,8 +77,7 @@ impl UserIdentityInfoBuilder {
     }
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UserIdentityInfoBuilder {
     }
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl UserIdentityInfoBuilder {
     }
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +118,7 @@ impl UserIdentityInfoBuilder {
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code></p>
     pub fn set_secondary_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secondary_email = input;
-        self
+        self.secondary_email = input; self
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code></p>
@@ -136,8 +132,7 @@ impl UserIdentityInfoBuilder {
     }
     /// <p>The user's mobile number.</p>
     pub fn set_mobile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mobile = input;
-        self
+        self.mobile = input; self
     }
     /// <p>The user's mobile number.</p>
     pub fn get_mobile(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,11 +141,16 @@ impl UserIdentityInfoBuilder {
     /// Consumes the builder and constructs a [`UserIdentityInfo`](crate::types::UserIdentityInfo).
     pub fn build(self) -> crate::types::UserIdentityInfo {
         crate::types::UserIdentityInfo {
-            first_name: self.first_name,
-            last_name: self.last_name,
-            email: self.email,
-            secondary_email: self.secondary_email,
-            mobile: self.mobile,
+            first_name: self.first_name
+            ,
+            last_name: self.last_name
+            ,
+            email: self.email
+            ,
+            secondary_email: self.secondary_email
+            ,
+            mobile: self.mobile
+            ,
         }
     }
 }
@@ -165,3 +165,4 @@ impl ::std::fmt::Debug for UserIdentityInfoBuilder {
         formatter.finish()
     }
 }
+

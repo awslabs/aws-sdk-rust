@@ -3,7 +3,7 @@
 /// An AWS Chatbot configuration for Slack.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlackChannelConfiguration {
+pub struct SlackChannelConfiguration  {
     /// Name of the Slack Workspace.
     pub slack_team_name: ::std::string::String,
     /// The ID of the Slack workspace authorized with AWS Chatbot.
@@ -17,65 +17,59 @@ pub struct SlackChannelConfiguration {
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub iam_role_arn: ::std::string::String,
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub sns_topic_arns: ::std::vec::Vec<::std::string::String>,
+    pub sns_topic_arns: ::std::vec::Vec::<::std::string::String>,
     /// The name of the configuration.
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// Logging levels include ERROR, INFO, or NONE.
     pub logging_level: ::std::option::Option<::std::string::String>,
     /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
-    pub guardrail_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub guardrail_policy_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// Enables use of a user role requirement in your chat configuration.
     pub user_authorization_required: ::std::option::Option<bool>,
 }
-impl SlackChannelConfiguration {
+impl  SlackChannelConfiguration  {
     /// Name of the Slack Workspace.
-    pub fn slack_team_name(&self) -> &str {
-        use std::ops::Deref;
-        self.slack_team_name.deref()
+    pub fn slack_team_name(&self) -> & str {
+        use std::ops::Deref; self.slack_team_name.deref()
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
-    pub fn slack_team_id(&self) -> &str {
-        use std::ops::Deref;
-        self.slack_team_id.deref()
+    pub fn slack_team_id(&self) -> & str {
+        use std::ops::Deref; self.slack_team_id.deref()
     }
     /// The ID of the Slack channel. To get the ID, open Slack, right click on the channel name in the left pane, then choose Copy Link. The channel ID is the 9-character string at the end of the URL. For example, ABCBBLZZZ.
-    pub fn slack_channel_id(&self) -> &str {
-        use std::ops::Deref;
-        self.slack_channel_id.deref()
+    pub fn slack_channel_id(&self) -> & str {
+        use std::ops::Deref; self.slack_channel_id.deref()
     }
     /// The name of the Slack Channel.
-    pub fn slack_channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.slack_channel_name.deref()
+    pub fn slack_channel_name(&self) -> & str {
+        use std::ops::Deref; self.slack_channel_name.deref()
     }
     /// The ARN of the SlackChannelConfiguration.
-    pub fn chat_configuration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.chat_configuration_arn.deref()
+    pub fn chat_configuration_arn(&self) -> & str {
+        use std::ops::Deref; self.chat_configuration_arn.deref()
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
-    pub fn iam_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.iam_role_arn.deref()
+    pub fn iam_role_arn(&self) -> & str {
+        use std::ops::Deref; self.iam_role_arn.deref()
     }
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub fn sns_topic_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.sns_topic_arns.deref()
+    pub fn sns_topic_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.sns_topic_arns.deref()
     }
     /// The name of the configuration.
-    pub fn configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_name(&self) -> ::std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
     /// Logging levels include ERROR, INFO, or NONE.
-    pub fn logging_level(&self) -> ::std::option::Option<&str> {
+    pub fn logging_level(&self) -> ::std::option::Option<& str> {
         self.logging_level.as_deref()
     }
     /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.guardrail_policy_arns.is_none()`.
-    pub fn guardrail_policy_arns(&self) -> &[::std::string::String] {
-        self.guardrail_policy_arns.as_deref().unwrap_or_default()
+    pub fn guardrail_policy_arns(&self) -> & [::std::string::String] {
+        self.guardrail_policy_arns.as_deref()
+        .unwrap_or_default()
     }
     /// Enables use of a user role requirement in your chat configuration.
     pub fn user_authorization_required(&self) -> ::std::option::Option<bool> {
@@ -99,10 +93,10 @@ pub struct SlackChannelConfigurationBuilder {
     pub(crate) slack_channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) chat_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) sns_topic_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sns_topic_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) logging_level: ::std::option::Option<::std::string::String>,
-    pub(crate) guardrail_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) guardrail_policy_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) user_authorization_required: ::std::option::Option<bool>,
 }
 impl SlackChannelConfigurationBuilder {
@@ -114,8 +108,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// Name of the Slack Workspace.
     pub fn set_slack_team_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_team_name = input;
-        self
+        self.slack_team_name = input; self
     }
     /// Name of the Slack Workspace.
     pub fn get_slack_team_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +122,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn set_slack_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_team_id = input;
-        self
+        self.slack_team_id = input; self
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn get_slack_team_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +136,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// The ID of the Slack channel. To get the ID, open Slack, right click on the channel name in the left pane, then choose Copy Link. The channel ID is the 9-character string at the end of the URL. For example, ABCBBLZZZ.
     pub fn set_slack_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_channel_id = input;
-        self
+        self.slack_channel_id = input; self
     }
     /// The ID of the Slack channel. To get the ID, open Slack, right click on the channel name in the left pane, then choose Copy Link. The channel ID is the 9-character string at the end of the URL. For example, ABCBBLZZZ.
     pub fn get_slack_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +150,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// The name of the Slack Channel.
     pub fn set_slack_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_channel_name = input;
-        self
+        self.slack_channel_name = input; self
     }
     /// The name of the Slack Channel.
     pub fn get_slack_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +164,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// The ARN of the SlackChannelConfiguration.
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chat_configuration_arn = input;
-        self
+        self.chat_configuration_arn = input; self
     }
     /// The ARN of the SlackChannelConfiguration.
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +178,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,17 +191,16 @@ impl SlackChannelConfigurationBuilder {
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
     pub fn sns_topic_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sns_topic_arns.unwrap_or_default();
-        v.push(input.into());
-        self.sns_topic_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.sns_topic_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub fn set_sns_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.sns_topic_arns = input;
-        self
+    pub fn set_sns_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.sns_topic_arns = input; self
     }
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub fn get_sns_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sns_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.sns_topic_arns
     }
     /// The name of the configuration.
@@ -223,8 +210,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// The name of the configuration.
     pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_name = input;
-        self
+        self.configuration_name = input; self
     }
     /// The name of the configuration.
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +223,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// Logging levels include ERROR, INFO, or NONE.
     pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logging_level = input;
-        self
+        self.logging_level = input; self
     }
     /// Logging levels include ERROR, INFO, or NONE.
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,17 +236,16 @@ impl SlackChannelConfigurationBuilder {
     /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
     pub fn guardrail_policy_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.guardrail_policy_arns.unwrap_or_default();
-        v.push(input.into());
-        self.guardrail_policy_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.guardrail_policy_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
-    pub fn set_guardrail_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.guardrail_policy_arns = input;
-        self
+    pub fn set_guardrail_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.guardrail_policy_arns = input; self
     }
     /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
-    pub fn get_guardrail_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_guardrail_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.guardrail_policy_arns
     }
     /// Enables use of a user role requirement in your chat configuration.
@@ -271,8 +255,7 @@ impl SlackChannelConfigurationBuilder {
     }
     /// Enables use of a user role requirement in your chat configuration.
     pub fn set_user_authorization_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.user_authorization_required = input;
-        self
+        self.user_authorization_required = input; self
     }
     /// Enables use of a user role requirement in your chat configuration.
     pub fn get_user_authorization_required(&self) -> &::std::option::Option<bool> {
@@ -288,53 +271,53 @@ impl SlackChannelConfigurationBuilder {
     /// - [`iam_role_arn`](crate::types::builders::SlackChannelConfigurationBuilder::iam_role_arn)
     /// - [`sns_topic_arns`](crate::types::builders::SlackChannelConfigurationBuilder::sns_topic_arns)
     pub fn build(self) -> ::std::result::Result<crate::types::SlackChannelConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlackChannelConfiguration {
-            slack_team_name: self.slack_team_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slack_team_name",
-                    "slack_team_name was not specified but it is required when building SlackChannelConfiguration",
-                )
-            })?,
-            slack_team_id: self.slack_team_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slack_team_id",
-                    "slack_team_id was not specified but it is required when building SlackChannelConfiguration",
-                )
-            })?,
-            slack_channel_id: self.slack_channel_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slack_channel_id",
-                    "slack_channel_id was not specified but it is required when building SlackChannelConfiguration",
-                )
-            })?,
-            slack_channel_name: self.slack_channel_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slack_channel_name",
-                    "slack_channel_name was not specified but it is required when building SlackChannelConfiguration",
-                )
-            })?,
-            chat_configuration_arn: self.chat_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "chat_configuration_arn",
-                    "chat_configuration_arn was not specified but it is required when building SlackChannelConfiguration",
-                )
-            })?,
-            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iam_role_arn",
-                    "iam_role_arn was not specified but it is required when building SlackChannelConfiguration",
-                )
-            })?,
-            sns_topic_arns: self.sns_topic_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sns_topic_arns",
-                    "sns_topic_arns was not specified but it is required when building SlackChannelConfiguration",
-                )
-            })?,
-            configuration_name: self.configuration_name,
-            logging_level: self.logging_level,
-            guardrail_policy_arns: self.guardrail_policy_arns,
-            user_authorization_required: self.user_authorization_required,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlackChannelConfiguration {
+                slack_team_name: self.slack_team_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slack_team_name", "slack_team_name was not specified but it is required when building SlackChannelConfiguration")
+                    )?
+                ,
+                slack_team_id: self.slack_team_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slack_team_id", "slack_team_id was not specified but it is required when building SlackChannelConfiguration")
+                    )?
+                ,
+                slack_channel_id: self.slack_channel_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slack_channel_id", "slack_channel_id was not specified but it is required when building SlackChannelConfiguration")
+                    )?
+                ,
+                slack_channel_name: self.slack_channel_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slack_channel_name", "slack_channel_name was not specified but it is required when building SlackChannelConfiguration")
+                    )?
+                ,
+                chat_configuration_arn: self.chat_configuration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("chat_configuration_arn", "chat_configuration_arn was not specified but it is required when building SlackChannelConfiguration")
+                    )?
+                ,
+                iam_role_arn: self.iam_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iam_role_arn", "iam_role_arn was not specified but it is required when building SlackChannelConfiguration")
+                    )?
+                ,
+                sns_topic_arns: self.sns_topic_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sns_topic_arns", "sns_topic_arns was not specified but it is required when building SlackChannelConfiguration")
+                    )?
+                ,
+                configuration_name: self.configuration_name
+                ,
+                logging_level: self.logging_level
+                ,
+                guardrail_policy_arns: self.guardrail_policy_arns
+                ,
+                user_authorization_required: self.user_authorization_required
+                ,
+            }
+        )
     }
 }
+

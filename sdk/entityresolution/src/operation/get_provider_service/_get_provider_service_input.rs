@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProviderServiceInput {
+pub struct GetProviderServiceInput  {
     /// <p>The name of the provider. This name is typically the company name.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the product that the provider service provides.</p>
     pub provider_service_name: ::std::option::Option<::std::string::String>,
 }
-impl GetProviderServiceInput {
+impl  GetProviderServiceInput  {
     /// <p>The name of the provider. This name is typically the company name.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the product that the provider service provides.</p>
-    pub fn provider_service_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_service_name(&self) -> ::std::option::Option<& str> {
         self.provider_service_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetProviderServiceInputBuilder {
     }
     /// <p>The name of the provider. This name is typically the company name.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The name of the provider. This name is typically the company name.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetProviderServiceInputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the product that the provider service provides.</p>
     pub fn set_provider_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_service_name = input;
-        self
+        self.provider_service_name = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the product that the provider service provides.</p>
     pub fn get_provider_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_service_name
     }
     /// Consumes the builder and constructs a [`GetProviderServiceInput`](crate::operation::get_provider_service::GetProviderServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_provider_service::GetProviderServiceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_provider_service::GetProviderServiceInput {
-            provider_name: self.provider_name,
-            provider_service_name: self.provider_service_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_provider_service::GetProviderServiceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_provider_service::GetProviderServiceInput {
+                provider_name: self.provider_name
+                ,
+                provider_service_name: self.provider_service_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableHealthServiceAccessForOrganizationOutput {
+pub struct EnableHealthServiceAccessForOrganizationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for EnableHealthServiceAccessForOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EnableHealthServiceAccessForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`EnableHealthServiceAccessForOrganizationOutput`](crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationOutputBuilder {
         crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct EnableHealthServiceAccessForOrganizationOutputBuilder {
 }
 impl EnableHealthServiceAccessForOrganizationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EnableHealthServiceAccessForOrganizationOutput`](crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput).
     pub fn build(self) -> crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput {
         crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput {
@@ -41,3 +40,4 @@ impl EnableHealthServiceAccessForOrganizationOutputBuilder {
         }
     }
 }
+

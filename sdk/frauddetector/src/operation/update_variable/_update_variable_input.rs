@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVariableInput {
+pub struct UpdateVariableInput  {
     /// <p>The name of the variable.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new default value of the variable.</p>
@@ -12,21 +12,21 @@ pub struct UpdateVariableInput {
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub variable_type: ::std::option::Option<::std::string::String>,
 }
-impl UpdateVariableInput {
+impl  UpdateVariableInput  {
     /// <p>The name of the variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The new default value of the variable.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The new description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
-    pub fn variable_type(&self) -> ::std::option::Option<&str> {
+    pub fn variable_type(&self) -> ::std::option::Option<& str> {
         self.variable_type.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateVariableInputBuilder {
     }
     /// <p>The name of the variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateVariableInputBuilder {
     }
     /// <p>The new default value of the variable.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The new default value of the variable.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateVariableInputBuilder {
     }
     /// <p>The new description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl UpdateVariableInputBuilder {
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variable_type = input;
-        self
+        self.variable_type = input; self
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.variable_type
     }
     /// Consumes the builder and constructs a [`UpdateVariableInput`](crate::operation::update_variable::UpdateVariableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_variable::UpdateVariableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_variable::UpdateVariableInput {
-            name: self.name,
-            default_value: self.default_value,
-            description: self.description,
-            variable_type: self.variable_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_variable::UpdateVariableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_variable::UpdateVariableInput {
+                name: self.name
+                ,
+                default_value: self.default_value
+                ,
+                description: self.description
+                ,
+                variable_type: self.variable_type
+                ,
+            }
+        )
     }
 }
+

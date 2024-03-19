@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeviceRegistrationOutput {
+pub struct GetDeviceRegistrationOutput  {
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
     pub device_registration: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
     pub cache_ttl: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDeviceRegistrationOutput {
+impl  GetDeviceRegistrationOutput  {
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
-    pub fn device_registration(&self) -> ::std::option::Option<&str> {
+    pub fn device_registration(&self) -> ::std::option::Option<& str> {
         self.device_registration.as_deref()
     }
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
-    pub fn cache_ttl(&self) -> ::std::option::Option<&str> {
+    pub fn cache_ttl(&self) -> ::std::option::Option<& str> {
         self.cache_ttl.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDeviceRegistrationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDeviceRegistrationOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationOutput`](crate::operation::get_device_registration::GetDeviceRegistrationOutput).
     pub fn builder() -> crate::operation::get_device_registration::builders::GetDeviceRegistrationOutputBuilder {
@@ -47,8 +47,7 @@ impl GetDeviceRegistrationOutputBuilder {
     }
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
     pub fn set_device_registration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_registration = input;
-        self
+        self.device_registration = input; self
     }
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
     pub fn get_device_registration(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetDeviceRegistrationOutputBuilder {
     }
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
     pub fn set_cache_ttl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_ttl = input;
-        self
+        self.cache_ttl = input; self
     }
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
     pub fn get_cache_ttl(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_ttl
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDeviceRegistrationOutput`](crate::operation::get_device_registration::GetDeviceRegistrationOutput).
     pub fn build(self) -> crate::operation::get_device_registration::GetDeviceRegistrationOutput {
         crate::operation::get_device_registration::GetDeviceRegistrationOutput {
-            device_registration: self.device_registration,
-            cache_ttl: self.cache_ttl,
+            device_registration: self.device_registration
+            ,
+            cache_ttl: self.cache_ttl
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

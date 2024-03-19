@@ -23,3 +23,4 @@ pub fn de_topic(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
     }
     Ok(builder.build())
 }
+

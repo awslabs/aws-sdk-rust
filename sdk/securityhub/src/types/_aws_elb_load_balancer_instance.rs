@@ -3,13 +3,13 @@
 /// <p>Provides information about an EC2 instance for a load balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElbLoadBalancerInstance {
+pub struct AwsElbLoadBalancerInstance  {
     /// <p>The instance identifier.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsElbLoadBalancerInstance {
+impl  AwsElbLoadBalancerInstance  {
     /// <p>The instance identifier.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsElbLoadBalancerInstanceBuilder {
     }
     /// <p>The instance identifier.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance identifier.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsElbLoadBalancerInstanceBuilder {
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerInstance`](crate::types::AwsElbLoadBalancerInstance).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerInstance {
         crate::types::AwsElbLoadBalancerInstance {
-            instance_id: self.instance_id,
+            instance_id: self.instance_id
+            ,
         }
     }
 }
+

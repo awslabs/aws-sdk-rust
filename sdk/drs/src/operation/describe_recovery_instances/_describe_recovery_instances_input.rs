@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRecoveryInstancesInput {
+pub struct DescribeRecoveryInstancesInput  {
     /// <p>A set of filters by which to return Recovery Instances.</p>
     pub filters: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>,
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
@@ -10,9 +10,9 @@ pub struct DescribeRecoveryInstancesInput {
     /// <p>The token of the next Recovery Instance to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRecoveryInstancesInput {
+impl  DescribeRecoveryInstancesInput  {
     /// <p>A set of filters by which to return Recovery Instances.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::DescribeRecoveryInstancesRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::DescribeRecoveryInstancesRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
@@ -20,7 +20,7 @@ impl DescribeRecoveryInstancesInput {
         self.max_results
     }
     /// <p>The token of the next Recovery Instance to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DescribeRecoveryInstancesInputBuilder {
     }
     /// <p>A set of filters by which to return Recovery Instances.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>A set of filters by which to return Recovery Instances.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeRecoveryInstancesRequestFilters> {
@@ -61,8 +60,7 @@ impl DescribeRecoveryInstancesInputBuilder {
     }
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of Recovery Instances to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,24 +73,24 @@ impl DescribeRecoveryInstancesInputBuilder {
     }
     /// <p>The token of the next Recovery Instance to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token of the next Recovery Instance to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRecoveryInstancesInput`](crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput {
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_recovery_instances::DescribeRecoveryInstancesInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

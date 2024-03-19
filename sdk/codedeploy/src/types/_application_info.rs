@@ -3,7 +3,7 @@
 /// <p>Information about an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationInfo {
+pub struct ApplicationInfo  {
     /// <p>The application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The application name.</p>
@@ -17,17 +17,17 @@ pub struct ApplicationInfo {
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
 }
-impl ApplicationInfo {
+impl  ApplicationInfo  {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The application name.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The time at which the application was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
@@ -35,11 +35,11 @@ impl ApplicationInfo {
         self.linked_to_git_hub
     }
     /// <p>The name for a connection to a GitHub account.</p>
-    pub fn git_hub_account_name(&self) -> ::std::option::Option<&str> {
+    pub fn git_hub_account_name(&self) -> ::std::option::Option<& str> {
         self.git_hub_account_name.as_deref()
     }
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
-    pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {
+    pub fn compute_platform(&self) -> ::std::option::Option<& crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl ApplicationInfoBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ApplicationInfoBuilder {
     }
     /// <p>The application name.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The application name.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ApplicationInfoBuilder {
     }
     /// <p>The time at which the application was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the application was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl ApplicationInfoBuilder {
     }
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
     pub fn set_linked_to_git_hub(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.linked_to_git_hub = input;
-        self
+        self.linked_to_git_hub = input; self
     }
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
     pub fn get_linked_to_git_hub(&self) -> &::std::option::Option<bool> {
@@ -125,8 +121,7 @@ impl ApplicationInfoBuilder {
     }
     /// <p>The name for a connection to a GitHub account.</p>
     pub fn set_git_hub_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.git_hub_account_name = input;
-        self
+        self.git_hub_account_name = input; self
     }
     /// <p>The name for a connection to a GitHub account.</p>
     pub fn get_git_hub_account_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl ApplicationInfoBuilder {
     }
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
     pub fn set_compute_platform(mut self, input: ::std::option::Option<crate::types::ComputePlatform>) -> Self {
-        self.compute_platform = input;
-        self
+        self.compute_platform = input; self
     }
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
     pub fn get_compute_platform(&self) -> &::std::option::Option<crate::types::ComputePlatform> {
@@ -149,12 +143,20 @@ impl ApplicationInfoBuilder {
     /// Consumes the builder and constructs a [`ApplicationInfo`](crate::types::ApplicationInfo).
     pub fn build(self) -> crate::types::ApplicationInfo {
         crate::types::ApplicationInfo {
-            application_id: self.application_id,
-            application_name: self.application_name,
-            create_time: self.create_time,
-            linked_to_git_hub: self.linked_to_git_hub.unwrap_or_default(),
-            git_hub_account_name: self.git_hub_account_name,
-            compute_platform: self.compute_platform,
+            application_id: self.application_id
+            ,
+            application_name: self.application_name
+            ,
+            create_time: self.create_time
+            ,
+            linked_to_git_hub: self.linked_to_git_hub
+                .unwrap_or_default()
+            ,
+            git_hub_account_name: self.git_hub_account_name
+            ,
+            compute_platform: self.compute_platform
+            ,
         }
     }
 }
+

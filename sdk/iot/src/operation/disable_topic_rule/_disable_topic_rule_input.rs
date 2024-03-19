@@ -3,13 +3,13 @@
 /// <p>The input for the DisableTopicRuleRequest operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableTopicRuleInput {
+pub struct DisableTopicRuleInput  {
     /// <p>The name of the rule to disable.</p>
     pub rule_name: ::std::option::Option<::std::string::String>,
 }
-impl DisableTopicRuleInput {
+impl  DisableTopicRuleInput  {
     /// <p>The name of the rule to disable.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DisableTopicRuleInputBuilder {
     }
     /// <p>The name of the rule to disable.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the rule to disable.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_name
     }
     /// Consumes the builder and constructs a [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_topic_rule::DisableTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_topic_rule::DisableTopicRuleInput { rule_name: self.rule_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_topic_rule::DisableTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_topic_rule::DisableTopicRuleInput {
+                rule_name: self.rule_name
+                ,
+            }
+        )
     }
 }
+

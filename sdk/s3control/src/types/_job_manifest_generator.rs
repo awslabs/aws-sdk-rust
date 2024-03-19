@@ -21,11 +21,7 @@ impl JobManifestGenerator {
     /// Tries to convert the enum instance into [`S3JobManifestGenerator`](crate::types::JobManifestGenerator::S3JobManifestGenerator), extracting the inner [`S3JobManifestGenerator`](crate::types::S3JobManifestGenerator).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_job_manifest_generator(&self) -> ::std::result::Result<&crate::types::S3JobManifestGenerator, &Self> {
-        if let JobManifestGenerator::S3JobManifestGenerator(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let JobManifestGenerator::S3JobManifestGenerator(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3JobManifestGenerator`](crate::types::JobManifestGenerator::S3JobManifestGenerator).
     pub fn is_s3_job_manifest_generator(&self) -> bool {
@@ -36,3 +32,4 @@ impl JobManifestGenerator {
         matches!(self, Self::Unknown)
     }
 }
+

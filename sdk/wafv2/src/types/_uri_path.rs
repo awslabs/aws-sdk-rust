@@ -5,7 +5,8 @@
 /// <p>JSON specification: <code>"UriPath": {}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UriPath {}
+pub struct UriPath  {
+}
 impl UriPath {
     /// Creates a new builder-style object to manufacture [`UriPath`](crate::types::UriPath).
     pub fn builder() -> crate::types::builders::UriPathBuilder {
@@ -16,10 +17,13 @@ impl UriPath {
 /// A builder for [`UriPath`](crate::types::UriPath).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct UriPathBuilder {}
+pub struct UriPathBuilder {
+}
 impl UriPathBuilder {
     /// Consumes the builder and constructs a [`UriPath`](crate::types::UriPath).
     pub fn build(self) -> crate::types::UriPath {
-        crate::types::UriPath {}
+        crate::types::UriPath {
+        }
     }
 }
+

@@ -2,14 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPlatformApplications`](crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p><code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to retrieve additional records that are available after the first page results.</p><br>
-    /// - On success, responds with [`ListPlatformApplicationsOutput`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput) with field(s):
+                            /// - On success, responds with [`ListPlatformApplicationsOutput`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput) with field(s):
     ///   - [`platform_applications(Option<Vec::<PlatformApplication>>)`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput::platform_applications): <p>Platform applications returned when calling <code>ListPlatformApplications</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput::next_token): <p><code>NextToken</code> string is returned when calling <code>ListPlatformApplications</code> action if additional records are available after the first page results.</p>
-    /// - On failure, responds with [`SdkError<ListPlatformApplicationsError>`](crate::operation::list_platform_applications::ListPlatformApplicationsError)
+                            /// - On failure, responds with [`SdkError<ListPlatformApplicationsError>`](crate::operation::list_platform_applications::ListPlatformApplicationsError)
     pub fn list_platform_applications(&self) -> crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder {
-        crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_platform_applications::builders::ListPlatformApplicationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

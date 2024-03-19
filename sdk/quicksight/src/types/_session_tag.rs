@@ -3,25 +3,23 @@
 /// <p>The key-value pair used for the row-level security tags feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SessionTag {
+pub struct SessionTag  {
     /// <p>The key for the tag.</p>
     pub key: ::std::string::String,
     /// <p>The value that you want to assign the tag.</p>
     pub value: ::std::string::String,
 }
-impl SessionTag {
+impl  SessionTag  {
     /// <p>The key for the tag.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value that you want to assign the tag.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
-impl ::std::fmt::Debug for SessionTag {
+impl  ::std::fmt::Debug for SessionTag  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SessionTag");
         formatter.field("key", &self.key);
@@ -52,8 +50,7 @@ impl SessionTagBuilder {
     }
     /// <p>The key for the tag.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key for the tag.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl SessionTagBuilder {
     }
     /// <p>The value that you want to assign the tag.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value that you want to assign the tag.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl SessionTagBuilder {
     /// - [`key`](crate::types::builders::SessionTagBuilder::key)
     /// - [`value`](crate::types::builders::SessionTagBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::SessionTag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SessionTag {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building SessionTag",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building SessionTag",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SessionTag {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building SessionTag")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building SessionTag")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SessionTagBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for SessionTagBuilder {
         formatter.finish()
     }
 }
+

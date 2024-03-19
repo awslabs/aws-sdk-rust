@@ -3,7 +3,7 @@
 /// <p>Specifies the parameters in the config file of the dynamic transform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransformConfigParameter {
+pub struct TransformConfigParameter  {
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
     pub name: ::std::string::String,
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
@@ -13,38 +13,38 @@ pub struct TransformConfigParameter {
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
     pub validation_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
-    pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
     pub list_type: ::std::option::Option<crate::types::ParamType>,
     /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
     pub is_optional: ::std::option::Option<bool>,
 }
-impl TransformConfigParameter {
+impl  TransformConfigParameter  {
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
-    pub fn r#type(&self) -> &crate::types::ParamType {
+    pub fn r#type(&self) -> & crate::types::ParamType {
         &self.r#type
     }
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
-    pub fn validation_rule(&self) -> ::std::option::Option<&str> {
+    pub fn validation_rule(&self) -> ::std::option::Option<& str> {
         self.validation_rule.as_deref()
     }
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
-    pub fn validation_message(&self) -> ::std::option::Option<&str> {
+    pub fn validation_message(&self) -> ::std::option::Option<& str> {
         self.validation_message.as_deref()
     }
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value.is_none()`.
-    pub fn value(&self) -> &[::std::string::String] {
-        self.value.as_deref().unwrap_or_default()
+    pub fn value(&self) -> & [::std::string::String] {
+        self.value.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
-    pub fn list_type(&self) -> ::std::option::Option<&crate::types::ParamType> {
+    pub fn list_type(&self) -> ::std::option::Option<& crate::types::ParamType> {
         self.list_type.as_ref()
     }
     /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
@@ -67,7 +67,7 @@ pub struct TransformConfigParameterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ParamType>,
     pub(crate) validation_rule: ::std::option::Option<::std::string::String>,
     pub(crate) validation_message: ::std::option::Option<::std::string::String>,
-    pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) list_type: ::std::option::Option<crate::types::ParamType>,
     pub(crate) is_optional: ::std::option::Option<bool>,
 }
@@ -80,8 +80,7 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ParamType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ParamType> {
@@ -109,8 +107,7 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
     pub fn set_validation_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.validation_rule = input;
-        self
+        self.validation_rule = input; self
     }
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
     pub fn get_validation_rule(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
     pub fn set_validation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.validation_message = input;
-        self
+        self.validation_message = input; self
     }
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
     pub fn get_validation_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,17 +133,16 @@ impl TransformConfigParameterBuilder {
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
-        v.push(input.into());
-        self.value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
-    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.value = input; self
     }
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
-    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.value
     }
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
@@ -157,8 +152,7 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
     pub fn set_list_type(mut self, input: ::std::option::Option<crate::types::ParamType>) -> Self {
-        self.list_type = input;
-        self
+        self.list_type = input; self
     }
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
     pub fn get_list_type(&self) -> &::std::option::Option<crate::types::ParamType> {
@@ -171,8 +165,7 @@ impl TransformConfigParameterBuilder {
     }
     /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
     pub fn set_is_optional(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_optional = input;
-        self
+        self.is_optional = input; self
     }
     /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
     pub fn get_is_optional(&self) -> &::std::option::Option<bool> {
@@ -183,24 +176,30 @@ impl TransformConfigParameterBuilder {
     /// - [`name`](crate::types::builders::TransformConfigParameterBuilder::name)
     /// - [`r#type`](crate::types::builders::TransformConfigParameterBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::TransformConfigParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TransformConfigParameter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TransformConfigParameter",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building TransformConfigParameter",
-                )
-            })?,
-            validation_rule: self.validation_rule,
-            validation_message: self.validation_message,
-            value: self.value,
-            list_type: self.list_type,
-            is_optional: self.is_optional,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TransformConfigParameter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TransformConfigParameter")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building TransformConfigParameter")
+                    )?
+                ,
+                validation_rule: self.validation_rule
+                ,
+                validation_message: self.validation_message
+                ,
+                value: self.value
+                ,
+                list_type: self.list_type
+                ,
+                is_optional: self.is_optional
+                ,
+            }
+        )
     }
 }
+

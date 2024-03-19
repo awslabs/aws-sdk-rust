@@ -3,7 +3,7 @@
 /// <p>Metadata for a column that is used as the input of a transform operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputColumn {
+pub struct InputColumn  {
     /// <p>The name of this column in the underlying data source.</p>
     pub name: ::std::string::String,
     /// <p>The data type of the column.</p>
@@ -11,18 +11,17 @@ pub struct InputColumn {
     /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
     pub sub_type: ::std::option::Option<crate::types::ColumnDataSubType>,
 }
-impl InputColumn {
+impl  InputColumn  {
     /// <p>The name of this column in the underlying data source.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> &crate::types::InputColumnDataType {
+    pub fn r#type(&self) -> & crate::types::InputColumnDataType {
         &self.r#type
     }
     /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
-    pub fn sub_type(&self) -> ::std::option::Option<&crate::types::ColumnDataSubType> {
+    pub fn sub_type(&self) -> ::std::option::Option<& crate::types::ColumnDataSubType> {
         self.sub_type.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl InputColumnBuilder {
     }
     /// <p>The name of this column in the underlying data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this column in the underlying data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl InputColumnBuilder {
     }
     /// <p>The data type of the column.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InputColumnDataType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The data type of the column.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InputColumnDataType> {
@@ -79,8 +76,7 @@ impl InputColumnBuilder {
     }
     /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
     pub fn set_sub_type(mut self, input: ::std::option::Option<crate::types::ColumnDataSubType>) -> Self {
-        self.sub_type = input;
-        self
+        self.sub_type = input; self
     }
     /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
     pub fn get_sub_type(&self) -> &::std::option::Option<crate::types::ColumnDataSubType> {
@@ -91,20 +87,22 @@ impl InputColumnBuilder {
     /// - [`name`](crate::types::builders::InputColumnBuilder::name)
     /// - [`r#type`](crate::types::builders::InputColumnBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::InputColumn, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputColumn {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building InputColumn",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building InputColumn",
-                )
-            })?,
-            sub_type: self.sub_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputColumn {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building InputColumn")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building InputColumn")
+                    )?
+                ,
+                sub_type: self.sub_type
+                ,
+            }
+        )
     }
 }
+

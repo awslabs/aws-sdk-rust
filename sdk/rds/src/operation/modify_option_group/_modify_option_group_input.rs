@@ -3,34 +3,36 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyOptionGroupInput {
+pub struct ModifyOptionGroupInput  {
     /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-    pub options_to_include: ::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>>,
+    pub options_to_include: ::std::option::Option<::std::vec::Vec::<crate::types::OptionConfiguration>>,
     /// <p>Options in this list are removed from the option group.</p>
-    pub options_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub options_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub apply_immediately: ::std::option::Option<bool>,
 }
-impl ModifyOptionGroupInput {
+impl  ModifyOptionGroupInput  {
     /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_to_include.is_none()`.
-    pub fn options_to_include(&self) -> &[crate::types::OptionConfiguration] {
-        self.options_to_include.as_deref().unwrap_or_default()
+    pub fn options_to_include(&self) -> & [crate::types::OptionConfiguration] {
+        self.options_to_include.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Options in this list are removed from the option group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_to_remove.is_none()`.
-    pub fn options_to_remove(&self) -> &[::std::string::String] {
-        self.options_to_remove.as_deref().unwrap_or_default()
+    pub fn options_to_remove(&self) -> & [::std::string::String] {
+        self.options_to_remove.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
@@ -49,8 +51,8 @@ impl ModifyOptionGroupInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyOptionGroupInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) options_to_include: ::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>>,
-    pub(crate) options_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) options_to_include: ::std::option::Option<::std::vec::Vec::<crate::types::OptionConfiguration>>,
+    pub(crate) options_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
 }
 impl ModifyOptionGroupInputBuilder {
@@ -64,8 +66,7 @@ impl ModifyOptionGroupInputBuilder {
     /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_group_name = input;
-        self
+        self.option_group_name = input; self
     }
     /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
@@ -79,17 +80,16 @@ impl ModifyOptionGroupInputBuilder {
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
     pub fn options_to_include(mut self, input: crate::types::OptionConfiguration) -> Self {
         let mut v = self.options_to_include.unwrap_or_default();
-        v.push(input);
-        self.options_to_include = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options_to_include = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-    pub fn set_options_to_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>>) -> Self {
-        self.options_to_include = input;
-        self
+    pub fn set_options_to_include(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OptionConfiguration>>) -> Self {
+        self.options_to_include = input; self
     }
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-    pub fn get_options_to_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>> {
+    pub fn get_options_to_include(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OptionConfiguration>> {
         &self.options_to_include
     }
     /// Appends an item to `options_to_remove`.
@@ -99,17 +99,16 @@ impl ModifyOptionGroupInputBuilder {
     /// <p>Options in this list are removed from the option group.</p>
     pub fn options_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.options_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.options_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.options_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Options in this list are removed from the option group.</p>
-    pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.options_to_remove = input;
-        self
+    pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.options_to_remove = input; self
     }
     /// <p>Options in this list are removed from the option group.</p>
-    pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.options_to_remove
     }
     /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
@@ -119,22 +118,26 @@ impl ModifyOptionGroupInputBuilder {
     }
     /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
+        self.apply_immediately = input; self
     }
     /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         &self.apply_immediately
     }
     /// Consumes the builder and constructs a [`ModifyOptionGroupInput`](crate::operation::modify_option_group::ModifyOptionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_option_group::ModifyOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_option_group::ModifyOptionGroupInput {
-            option_group_name: self.option_group_name,
-            options_to_include: self.options_to_include,
-            options_to_remove: self.options_to_remove,
-            apply_immediately: self.apply_immediately,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_option_group::ModifyOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_option_group::ModifyOptionGroupInput {
+                option_group_name: self.option_group_name
+                ,
+                options_to_include: self.options_to_include
+                ,
+                options_to_remove: self.options_to_remove
+                ,
+                apply_immediately: self.apply_immediately
+                ,
+            }
+        )
     }
 }
+

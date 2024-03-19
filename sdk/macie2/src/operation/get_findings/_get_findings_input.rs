@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingsInput {
+pub struct GetFindingsInput  {
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
-    pub finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub finding_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The criteria for sorting the results of the request.</p>
     pub sort_criteria: ::std::option::Option<crate::types::SortCriteria>,
 }
-impl GetFindingsInput {
+impl  GetFindingsInput  {
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_ids.is_none()`.
-    pub fn finding_ids(&self) -> &[::std::string::String] {
-        self.finding_ids.as_deref().unwrap_or_default()
+    pub fn finding_ids(&self) -> & [::std::string::String] {
+        self.finding_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The criteria for sorting the results of the request.</p>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&crate::types::SortCriteria> {
+    pub fn sort_criteria(&self) -> ::std::option::Option<& crate::types::SortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
@@ -31,7 +32,7 @@ impl GetFindingsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsInputBuilder {
-    pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) sort_criteria: ::std::option::Option<crate::types::SortCriteria>,
 }
 impl GetFindingsInputBuilder {
@@ -42,17 +43,16 @@ impl GetFindingsInputBuilder {
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
     pub fn finding_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.finding_ids.unwrap_or_default();
-        v.push(input.into());
-        self.finding_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.finding_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
-    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.finding_ids = input;
-        self
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.finding_ids = input; self
     }
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
-    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.finding_ids
     }
     /// <p>The criteria for sorting the results of the request.</p>
@@ -62,8 +62,7 @@ impl GetFindingsInputBuilder {
     }
     /// <p>The criteria for sorting the results of the request.</p>
     pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::SortCriteria>) -> Self {
-        self.sort_criteria = input;
-        self
+        self.sort_criteria = input; self
     }
     /// <p>The criteria for sorting the results of the request.</p>
     pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::SortCriteria> {
@@ -71,9 +70,14 @@ impl GetFindingsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_findings::GetFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_findings::GetFindingsInput {
-            finding_ids: self.finding_ids,
-            sort_criteria: self.sort_criteria,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_findings::GetFindingsInput {
+                finding_ids: self.finding_ids
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+            }
+        )
     }
 }
+

@@ -3,30 +3,31 @@
 /// <p>Input for List Share Invitations</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListShareInvitationsOutput {
+pub struct ListShareInvitationsOutput  {
     /// <p>List of share invitation summaries in a workload.</p>
-    pub share_invitation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
+    pub share_invitation_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ShareInvitationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListShareInvitationsOutput {
+impl  ListShareInvitationsOutput  {
     /// <p>List of share invitation summaries in a workload.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.share_invitation_summaries.is_none()`.
-    pub fn share_invitation_summaries(&self) -> &[crate::types::ShareInvitationSummary] {
-        self.share_invitation_summaries.as_deref().unwrap_or_default()
+    pub fn share_invitation_summaries(&self) -> & [crate::types::ShareInvitationSummary] {
+        self.share_invitation_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListShareInvitationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListShareInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`ListShareInvitationsOutput`](crate::operation::list_share_invitations::ListShareInvitationsOutput).
     pub fn builder() -> crate::operation::list_share_invitations::builders::ListShareInvitationsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListShareInvitationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListShareInvitationsOutputBuilder {
-    pub(crate) share_invitation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
+    pub(crate) share_invitation_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ShareInvitationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListShareInvitationsOutputBuilder {
     /// <p>List of share invitation summaries in a workload.</p>
     pub fn share_invitation_summaries(mut self, input: crate::types::ShareInvitationSummary) -> Self {
         let mut v = self.share_invitation_summaries.unwrap_or_default();
-        v.push(input);
-        self.share_invitation_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.share_invitation_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of share invitation summaries in a workload.</p>
-    pub fn set_share_invitation_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>) -> Self {
-        self.share_invitation_summaries = input;
-        self
+    pub fn set_share_invitation_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ShareInvitationSummary>>) -> Self {
+        self.share_invitation_summaries = input; self
     }
     /// <p>List of share invitation summaries in a workload.</p>
-    pub fn get_share_invitation_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>> {
+    pub fn get_share_invitation_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ShareInvitationSummary>> {
         &self.share_invitation_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -70,28 +70,30 @@ impl ListShareInvitationsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListShareInvitationsOutput`](crate::operation::list_share_invitations::ListShareInvitationsOutput).
     pub fn build(self) -> crate::operation::list_share_invitations::ListShareInvitationsOutput {
         crate::operation::list_share_invitations::ListShareInvitationsOutput {
-            share_invitation_summaries: self.share_invitation_summaries,
-            next_token: self.next_token,
+            share_invitation_summaries: self.share_invitation_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

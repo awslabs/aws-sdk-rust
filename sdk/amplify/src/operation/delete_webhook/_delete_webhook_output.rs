@@ -3,22 +3,22 @@
 /// <p>The result structure for the delete webhook request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWebhookOutput {
+pub struct DeleteWebhookOutput  {
     /// <p>Describes a webhook that connects repository events to an Amplify app.</p>
     pub webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,
 }
-impl DeleteWebhookOutput {
+impl  DeleteWebhookOutput  {
     /// <p>Describes a webhook that connects repository events to an Amplify app.</p>
-    pub fn webhook(&self) -> ::std::option::Option<&crate::types::Webhook> {
+    pub fn webhook(&self) -> ::std::option::Option<& crate::types::Webhook> {
         self.webhook.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteWebhookOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteWebhookOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWebhookOutput`](crate::operation::delete_webhook::DeleteWebhookOutput).
     pub fn builder() -> crate::operation::delete_webhook::builders::DeleteWebhookOutputBuilder {
@@ -42,27 +42,28 @@ impl DeleteWebhookOutputBuilder {
     }
     /// <p>Describes a webhook that connects repository events to an Amplify app.</p>
     pub fn set_webhook(mut self, input: ::std::option::Option<crate::types::Webhook>) -> Self {
-        self.webhook = input;
-        self
+        self.webhook = input; self
     }
     /// <p>Describes a webhook that connects repository events to an Amplify app.</p>
     pub fn get_webhook(&self) -> &::std::option::Option<crate::types::Webhook> {
         &self.webhook
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteWebhookOutput`](crate::operation::delete_webhook::DeleteWebhookOutput).
     pub fn build(self) -> crate::operation::delete_webhook::DeleteWebhookOutput {
         crate::operation::delete_webhook::DeleteWebhookOutput {
-            webhook: self.webhook,
+            webhook: self.webhook
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

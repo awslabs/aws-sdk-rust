@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPerformanceAnalysisReports`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_type(ServiceType)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::service_type) / [`set_service_type(Option<ServiceType>)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::set_service_type):<br>required: **true**<br><p>The Amazon Web Services service for which Performance Insights returns metrics. Valid value is <code>RDS</code>.</p><br>
     ///   - [`identifier(impl Into<String>)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::set_identifier):<br>required: **true**<br><p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p> <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxResults</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxResults</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`list_tags(bool)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::list_tags) / [`set_list_tags(Option<bool>)`](crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::set_list_tags):<br>required: **false**<br><p>Specifies whether or not to include the list of tags in the response.</p><br>
-    /// - On success, responds with [`ListPerformanceAnalysisReportsOutput`](crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsOutput) with field(s):
+                            /// - On success, responds with [`ListPerformanceAnalysisReportsOutput`](crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsOutput) with field(s):
     ///   - [`analysis_reports(Option<Vec::<AnalysisReportSummary>>)`](crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsOutput::analysis_reports): <p>List of reports including the report identifier, start and end time, creation time, and status.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsOutput::next_token): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-    /// - On failure, responds with [`SdkError<ListPerformanceAnalysisReportsError>`](crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError)
-    pub fn list_performance_analysis_reports(
-        &self,
-    ) -> crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder {
-        crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListPerformanceAnalysisReportsError>`](crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError)
+    pub fn list_performance_analysis_reports(&self) -> crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder {
+                                crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

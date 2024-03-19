@@ -3,7 +3,7 @@
 /// <p>Describes a scheduled action that could not be created, updated, or deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedScheduledUpdateGroupActionRequest {
+pub struct FailedScheduledUpdateGroupActionRequest  {
     /// <p>The name of the scheduled action.</p>
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
@@ -11,17 +11,17 @@ pub struct FailedScheduledUpdateGroupActionRequest {
     /// <p>The error message accompanying the error code.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl FailedScheduledUpdateGroupActionRequest {
+impl  FailedScheduledUpdateGroupActionRequest  {
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> ::std::option::Option<& str> {
         self.scheduled_action_name.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message accompanying the error code.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl FailedScheduledUpdateGroupActionRequestBuilder {
     }
     /// <p>The name of the scheduled action.</p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_name = input;
-        self
+        self.scheduled_action_name = input; self
     }
     /// <p>The name of the scheduled action.</p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl FailedScheduledUpdateGroupActionRequestBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl FailedScheduledUpdateGroupActionRequestBuilder {
     }
     /// <p>The error message accompanying the error code.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message accompanying the error code.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl FailedScheduledUpdateGroupActionRequestBuilder {
     /// Consumes the builder and constructs a [`FailedScheduledUpdateGroupActionRequest`](crate::types::FailedScheduledUpdateGroupActionRequest).
     pub fn build(self) -> crate::types::FailedScheduledUpdateGroupActionRequest {
         crate::types::FailedScheduledUpdateGroupActionRequest {
-            scheduled_action_name: self.scheduled_action_name,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            scheduled_action_name: self.scheduled_action_name
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

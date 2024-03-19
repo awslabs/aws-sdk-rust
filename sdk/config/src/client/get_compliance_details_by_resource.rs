@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetComplianceDetailsByResource`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_type(impl Into<String>)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::resource_type) / [`set_resource_type(Option<String>)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::set_resource_type):<br>required: **false**<br><p>The type of the Amazon Web Services resource for which you want compliance information.</p><br>
     ///   - [`resource_id(impl Into<String>)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::set_resource_id):<br>required: **false**<br><p>The ID of the Amazon Web Services resource for which you want compliance information.</p><br>
     ///   - [`compliance_types(ComplianceType)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::compliance_types) / [`set_compliance_types(Option<Vec::<ComplianceType>>)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::set_compliance_types):<br>required: **false**<br><p>Filters the results by compliance.</p> <p><code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p><br>
     ///   - [`resource_evaluation_id(impl Into<String>)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::resource_evaluation_id) / [`set_resource_evaluation_id(Option<String>)`](crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::set_resource_evaluation_id):<br>required: **false**<br><p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>  <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p> </note><br>
-    /// - On success, responds with [`GetComplianceDetailsByResourceOutput`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput) with field(s):
+                            /// - On success, responds with [`GetComplianceDetailsByResourceOutput`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput) with field(s):
     ///   - [`evaluation_results(Option<Vec::<EvaluationResult>>)`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput::evaluation_results): <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<GetComplianceDetailsByResourceError>`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError)
-    pub fn get_compliance_details_by_resource(
-        &self,
-    ) -> crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder {
-        crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetComplianceDetailsByResourceError>`](crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError)
+    pub fn get_compliance_details_by_resource(&self) -> crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder {
+                                crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceFluentBuilder::new(self.handle.clone())
+                            }
 }
+

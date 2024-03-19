@@ -2,26 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationOutput {
+pub struct DescribeOrganizationOutput  {
     /// <p>A structure that contains information about the organization.</p><important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
     pub organization: ::std::option::Option<crate::types::Organization>,
     _request_id: Option<String>,
 }
-impl DescribeOrganizationOutput {
+impl  DescribeOrganizationOutput  {
     /// <p>A structure that contains information about the organization.</p><important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
-    pub fn organization(&self) -> ::std::option::Option<&crate::types::Organization> {
+    pub fn organization(&self) -> ::std::option::Option<& crate::types::Organization> {
         self.organization.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput).
     pub fn builder() -> crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder {
@@ -48,8 +48,7 @@ impl DescribeOrganizationOutputBuilder {
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
     pub fn set_organization(mut self, input: ::std::option::Option<crate::types::Organization>) -> Self {
-        self.organization = input;
-        self
+        self.organization = input; self
     }
     /// <p>A structure that contains information about the organization.</p><important>
     /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
@@ -58,19 +57,21 @@ impl DescribeOrganizationOutputBuilder {
         &self.organization
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeOrganizationOutput`](crate::operation::describe_organization::DescribeOrganizationOutput).
     pub fn build(self) -> crate::operation::describe_organization::DescribeOrganizationOutput {
         crate::operation::describe_organization::DescribeOrganizationOutput {
-            organization: self.organization,
+            organization: self.organization
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStageInput {
+pub struct CreateStageInput  {
     /// <p>Optional name that can be specified for the stage being created.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Array of participant token configuration objects to attach to the new stage.</p>
-    pub participant_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenConfiguration>>,
+    pub participant_token_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenConfiguration>>,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateStageInput {
+impl  CreateStageInput  {
     /// <p>Optional name that can be specified for the stage being created.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Array of participant token configuration objects to attach to the new stage.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.participant_token_configurations.is_none()`.
-    pub fn participant_token_configurations(&self) -> &[crate::types::ParticipantTokenConfiguration] {
-        self.participant_token_configurations.as_deref().unwrap_or_default()
+    pub fn participant_token_configurations(&self) -> & [crate::types::ParticipantTokenConfiguration] {
+        self.participant_token_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -38,8 +39,8 @@ impl CreateStageInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStageInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) participant_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenConfiguration>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) participant_token_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenConfiguration>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateStageInputBuilder {
     /// <p>Optional name that can be specified for the stage being created.</p>
@@ -49,8 +50,7 @@ impl CreateStageInputBuilder {
     }
     /// <p>Optional name that can be specified for the stage being created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Optional name that can be specified for the stage being created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,20 +63,16 @@ impl CreateStageInputBuilder {
     /// <p>Array of participant token configuration objects to attach to the new stage.</p>
     pub fn participant_token_configurations(mut self, input: crate::types::ParticipantTokenConfiguration) -> Self {
         let mut v = self.participant_token_configurations.unwrap_or_default();
-        v.push(input);
-        self.participant_token_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.participant_token_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of participant token configuration objects to attach to the new stage.</p>
-    pub fn set_participant_token_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenConfiguration>>,
-    ) -> Self {
-        self.participant_token_configurations = input;
-        self
+    pub fn set_participant_token_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenConfiguration>>) -> Self {
+        self.participant_token_configurations = input; self
     }
     /// <p>Array of participant token configuration objects to attach to the new stage.</p>
-    pub fn get_participant_token_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenConfiguration>> {
+    pub fn get_participant_token_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenConfiguration>> {
         &self.participant_token_configurations
     }
     /// Adds a key-value pair to `tags`.
@@ -86,25 +82,30 @@ impl CreateStageInputBuilder {
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStageInput`](crate::operation::create_stage::CreateStageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_stage::CreateStageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_stage::CreateStageInput {
-            name: self.name,
-            participant_token_configurations: self.participant_token_configurations,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_stage::CreateStageInput {
+                name: self.name
+                ,
+                participant_token_configurations: self.participant_token_configurations
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

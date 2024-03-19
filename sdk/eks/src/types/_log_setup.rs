@@ -3,18 +3,19 @@
 /// <p>An object representing the enabled or disabled Kubernetes control plane logs for your cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogSetup {
+pub struct LogSetup  {
     /// <p>The available cluster control plane log types.</p>
-    pub types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
+    pub types: ::std::option::Option<::std::vec::Vec::<crate::types::LogType>>,
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl LogSetup {
+impl  LogSetup  {
     /// <p>The available cluster control plane log types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
-    pub fn types(&self) -> &[crate::types::LogType] {
-        self.types.as_deref().unwrap_or_default()
+    pub fn types(&self) -> & [crate::types::LogType] {
+        self.types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
@@ -32,7 +33,7 @@ impl LogSetup {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogSetupBuilder {
-    pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec::<crate::types::LogType>>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl LogSetupBuilder {
@@ -43,17 +44,16 @@ impl LogSetupBuilder {
     /// <p>The available cluster control plane log types.</p>
     pub fn types(mut self, input: crate::types::LogType) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input);
-        self.types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The available cluster control plane log types.</p>
-    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogType>>) -> Self {
+        self.types = input; self
     }
     /// <p>The available cluster control plane log types.</p>
-    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogType>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogType>> {
         &self.types
     }
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
@@ -63,8 +63,7 @@ impl LogSetupBuilder {
     }
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -73,8 +72,11 @@ impl LogSetupBuilder {
     /// Consumes the builder and constructs a [`LogSetup`](crate::types::LogSetup).
     pub fn build(self) -> crate::types::LogSetup {
         crate::types::LogSetup {
-            types: self.types,
-            enabled: self.enabled,
+            types: self.types
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

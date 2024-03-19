@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDashboardSnapshotJobOutput {
+pub struct StartDashboardSnapshotJobOutput  {
     /// <p>The Amazon Resource Name (ARN) for the dashboard snapshot job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
@@ -13,17 +13,17 @@ pub struct StartDashboardSnapshotJobOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl StartDashboardSnapshotJobOutput {
+impl  StartDashboardSnapshotJobOutput  {
     /// <p>The Amazon Resource Name (ARN) for the dashboard snapshot job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn snapshot_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_job_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_job_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request</p>
@@ -32,10 +32,10 @@ impl StartDashboardSnapshotJobOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for StartDashboardSnapshotJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartDashboardSnapshotJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDashboardSnapshotJobOutput`](crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput).
     pub fn builder() -> crate::operation::start_dashboard_snapshot_job::builders::StartDashboardSnapshotJobOutputBuilder {
@@ -61,8 +61,7 @@ impl StartDashboardSnapshotJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the dashboard snapshot job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the dashboard snapshot job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl StartDashboardSnapshotJobOutputBuilder {
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub fn set_snapshot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_job_id = input;
-        self
+        self.snapshot_job_id = input; self
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub fn get_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl StartDashboardSnapshotJobOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,35 @@ impl StartDashboardSnapshotJobOutputBuilder {
     }
     /// <p>The HTTP status of the request</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartDashboardSnapshotJobOutput`](crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput).
     pub fn build(self) -> crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput {
         crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput {
-            arn: self.arn,
-            snapshot_job_id: self.snapshot_job_id,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            arn: self.arn
+            ,
+            snapshot_job_id: self.snapshot_job_id
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

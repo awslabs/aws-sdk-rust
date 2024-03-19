@@ -3,25 +3,23 @@
 /// <p>The connector-specific credentials required when using Amplitude.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AmplitudeConnectorProfileCredentials {
+pub struct AmplitudeConnectorProfileCredentials  {
     /// <p>A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API.</p>
     pub api_key: ::std::string::String,
     /// <p>The Secret Access Key portion of the credentials.</p>
     pub secret_key: ::std::string::String,
 }
-impl AmplitudeConnectorProfileCredentials {
+impl  AmplitudeConnectorProfileCredentials  {
     /// <p>A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API.</p>
-    pub fn api_key(&self) -> &str {
-        use std::ops::Deref;
-        self.api_key.deref()
+    pub fn api_key(&self) -> & str {
+        use std::ops::Deref; self.api_key.deref()
     }
     /// <p>The Secret Access Key portion of the credentials.</p>
-    pub fn secret_key(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_key.deref()
+    pub fn secret_key(&self) -> & str {
+        use std::ops::Deref; self.secret_key.deref()
     }
 }
-impl ::std::fmt::Debug for AmplitudeConnectorProfileCredentials {
+impl  ::std::fmt::Debug for AmplitudeConnectorProfileCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AmplitudeConnectorProfileCredentials");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
@@ -52,8 +50,7 @@ impl AmplitudeConnectorProfileCredentialsBuilder {
     }
     /// <p>A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
     }
     /// <p>A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API.</p>
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl AmplitudeConnectorProfileCredentialsBuilder {
     }
     /// <p>The Secret Access Key portion of the credentials.</p>
     pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_key = input;
-        self
+        self.secret_key = input; self
     }
     /// <p>The Secret Access Key portion of the credentials.</p>
     pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,23 +74,21 @@ impl AmplitudeConnectorProfileCredentialsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`api_key`](crate::types::builders::AmplitudeConnectorProfileCredentialsBuilder::api_key)
     /// - [`secret_key`](crate::types::builders::AmplitudeConnectorProfileCredentialsBuilder::secret_key)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AmplitudeConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AmplitudeConnectorProfileCredentials {
-            api_key: self.api_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "api_key",
-                    "api_key was not specified but it is required when building AmplitudeConnectorProfileCredentials",
-                )
-            })?,
-            secret_key: self.secret_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_key",
-                    "secret_key was not specified but it is required when building AmplitudeConnectorProfileCredentials",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AmplitudeConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AmplitudeConnectorProfileCredentials {
+                api_key: self.api_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_key", "api_key was not specified but it is required when building AmplitudeConnectorProfileCredentials")
+                    )?
+                ,
+                secret_key: self.secret_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_key", "secret_key was not specified but it is required when building AmplitudeConnectorProfileCredentials")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AmplitudeConnectorProfileCredentialsBuilder {
@@ -105,3 +99,4 @@ impl ::std::fmt::Debug for AmplitudeConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

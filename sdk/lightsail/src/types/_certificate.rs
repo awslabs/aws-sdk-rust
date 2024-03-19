@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Certificate {
+pub struct Certificate  {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate (<code>my-certificate</code>).</p>
@@ -17,9 +17,9 @@ pub struct Certificate {
     /// <p>The serial number of the certificate.</p>
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
-    pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subject_alternative_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub domain_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>>,
+    pub domain_validation_records: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationRecord>>,
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
@@ -62,42 +62,44 @@ pub struct Certificate {
     /// <p>The reason the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
     pub revocation_reason: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail certificate. This code enables our support team to look up your Lightsail information more easily.</p>
     pub support_code: ::std::option::Option<::std::string::String>,
 }
-impl Certificate {
+impl  Certificate  {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the certificate (<code>my-certificate</code>).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The domain name of the certificate.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The validation status of the certificate.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CertificateStatus> {
         self.status.as_ref()
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn serial_number(&self) -> ::std::option::Option<&str> {
+    pub fn serial_number(&self) -> ::std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
-    pub fn subject_alternative_names(&self) -> &[::std::string::String] {
-        self.subject_alternative_names.as_deref().unwrap_or_default()
+    pub fn subject_alternative_names(&self) -> & [::std::string::String] {
+        self.subject_alternative_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_records.is_none()`.
-    pub fn domain_validation_records(&self) -> &[crate::types::DomainValidationRecord] {
-        self.domain_validation_records.as_deref().unwrap_or_default()
+    pub fn domain_validation_records(&self) -> & [crate::types::DomainValidationRecord] {
+        self.domain_validation_records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
@@ -117,7 +119,7 @@ impl Certificate {
     /// <li>
     /// <p><b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request.</p></li>
     /// </ul>
-    pub fn request_failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn request_failure_reason(&self) -> ::std::option::Option<& str> {
         self.request_failure_reason.as_deref()
     }
     /// <p>The number of Lightsail resources that the certificate is attached to.</p>
@@ -125,53 +127,54 @@ impl Certificate {
         self.in_use_resource_count
     }
     /// <p>The algorithm used to generate the key pair (the public and private key) of the certificate.</p>
-    pub fn key_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn key_algorithm(&self) -> ::std::option::Option<& str> {
         self.key_algorithm.as_deref()
     }
     /// <p>The timestamp when the certificate was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp when the certificate was issued.</p>
-    pub fn issued_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn issued_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.issued_at.as_ref()
     }
     /// <p>The certificate authority that issued the certificate.</p>
-    pub fn issuer_ca(&self) -> ::std::option::Option<&str> {
+    pub fn issuer_ca(&self) -> ::std::option::Option<& str> {
         self.issuer_ca.as_deref()
     }
     /// <p>The timestamp when the certificate is first valid.</p>
-    pub fn not_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
     /// <p>The timestamp when the certificate expires.</p>
-    pub fn not_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_after.as_ref()
     }
     /// <p>The renewal eligibility of the certificate.</p>
-    pub fn eligible_to_renew(&self) -> ::std::option::Option<&str> {
+    pub fn eligible_to_renew(&self) -> ::std::option::Option<& str> {
         self.eligible_to_renew.as_deref()
     }
     /// <p>An object that describes the status of the certificate renewal managed by Lightsail.</p>
-    pub fn renewal_summary(&self) -> ::std::option::Option<&crate::types::RenewalSummary> {
+    pub fn renewal_summary(&self) -> ::std::option::Option<& crate::types::RenewalSummary> {
         self.renewal_summary.as_ref()
     }
     /// <p>The timestamp when the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
-    pub fn revoked_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
     /// <p>The reason the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
-    pub fn revocation_reason(&self) -> ::std::option::Option<&str> {
+    pub fn revocation_reason(&self) -> ::std::option::Option<& str> {
         self.revocation_reason.as_deref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail certificate. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> ::std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<& str> {
         self.support_code.as_deref()
     }
 }
@@ -191,8 +194,8 @@ pub struct CertificateBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CertificateStatus>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
-    pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) domain_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>>,
+    pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) domain_validation_records: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationRecord>>,
     pub(crate) request_failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) in_use_resource_count: ::std::option::Option<i32>,
     pub(crate) key_algorithm: ::std::option::Option<::std::string::String>,
@@ -205,7 +208,7 @@ pub struct CertificateBuilder {
     pub(crate) renewal_summary: ::std::option::Option<crate::types::RenewalSummary>,
     pub(crate) revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) revocation_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) support_code: ::std::option::Option<::std::string::String>,
 }
 impl CertificateBuilder {
@@ -216,8 +219,7 @@ impl CertificateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +232,7 @@ impl CertificateBuilder {
     }
     /// <p>The name of the certificate (<code>my-certificate</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the certificate (<code>my-certificate</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +245,7 @@ impl CertificateBuilder {
     }
     /// <p>The domain name of the certificate.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name of the certificate.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +258,7 @@ impl CertificateBuilder {
     }
     /// <p>The validation status of the certificate.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The validation status of the certificate.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
@@ -272,8 +271,7 @@ impl CertificateBuilder {
     }
     /// <p>The serial number of the certificate.</p>
     pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p>The serial number of the certificate.</p>
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,17 +284,16 @@ impl CertificateBuilder {
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
     pub fn subject_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject_alternative_names.unwrap_or_default();
-        v.push(input.into());
-        self.subject_alternative_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subject_alternative_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
-    pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subject_alternative_names = input;
-        self
+    pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subject_alternative_names = input; self
     }
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
-    pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subject_alternative_names
     }
     /// Appends an item to `domain_validation_records`.
@@ -306,17 +303,16 @@ impl CertificateBuilder {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
     pub fn domain_validation_records(mut self, input: crate::types::DomainValidationRecord) -> Self {
         let mut v = self.domain_validation_records.unwrap_or_default();
-        v.push(input);
-        self.domain_validation_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_validation_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub fn set_domain_validation_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>>) -> Self {
-        self.domain_validation_records = input;
-        self
+    pub fn set_domain_validation_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationRecord>>) -> Self {
+        self.domain_validation_records = input; self
     }
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub fn get_domain_validation_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>> {
+    pub fn get_domain_validation_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationRecord>> {
         &self.domain_validation_records
     }
     /// <p>The validation failure reason, if any, of the certificate.</p>
@@ -360,8 +356,7 @@ impl CertificateBuilder {
     /// <p><b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request.</p></li>
     /// </ul>
     pub fn set_request_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_failure_reason = input;
-        self
+        self.request_failure_reason = input; self
     }
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
@@ -391,8 +386,7 @@ impl CertificateBuilder {
     }
     /// <p>The number of Lightsail resources that the certificate is attached to.</p>
     pub fn set_in_use_resource_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.in_use_resource_count = input;
-        self
+        self.in_use_resource_count = input; self
     }
     /// <p>The number of Lightsail resources that the certificate is attached to.</p>
     pub fn get_in_use_resource_count(&self) -> &::std::option::Option<i32> {
@@ -405,8 +399,7 @@ impl CertificateBuilder {
     }
     /// <p>The algorithm used to generate the key pair (the public and private key) of the certificate.</p>
     pub fn set_key_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_algorithm = input;
-        self
+        self.key_algorithm = input; self
     }
     /// <p>The algorithm used to generate the key pair (the public and private key) of the certificate.</p>
     pub fn get_key_algorithm(&self) -> &::std::option::Option<::std::string::String> {
@@ -419,8 +412,7 @@ impl CertificateBuilder {
     }
     /// <p>The timestamp when the certificate was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the certificate was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -433,8 +425,7 @@ impl CertificateBuilder {
     }
     /// <p>The timestamp when the certificate was issued.</p>
     pub fn set_issued_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.issued_at = input;
-        self
+        self.issued_at = input; self
     }
     /// <p>The timestamp when the certificate was issued.</p>
     pub fn get_issued_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -447,8 +438,7 @@ impl CertificateBuilder {
     }
     /// <p>The certificate authority that issued the certificate.</p>
     pub fn set_issuer_ca(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issuer_ca = input;
-        self
+        self.issuer_ca = input; self
     }
     /// <p>The certificate authority that issued the certificate.</p>
     pub fn get_issuer_ca(&self) -> &::std::option::Option<::std::string::String> {
@@ -461,8 +451,7 @@ impl CertificateBuilder {
     }
     /// <p>The timestamp when the certificate is first valid.</p>
     pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_before = input;
-        self
+        self.not_before = input; self
     }
     /// <p>The timestamp when the certificate is first valid.</p>
     pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -475,8 +464,7 @@ impl CertificateBuilder {
     }
     /// <p>The timestamp when the certificate expires.</p>
     pub fn set_not_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_after = input;
-        self
+        self.not_after = input; self
     }
     /// <p>The timestamp when the certificate expires.</p>
     pub fn get_not_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -489,8 +477,7 @@ impl CertificateBuilder {
     }
     /// <p>The renewal eligibility of the certificate.</p>
     pub fn set_eligible_to_renew(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.eligible_to_renew = input;
-        self
+        self.eligible_to_renew = input; self
     }
     /// <p>The renewal eligibility of the certificate.</p>
     pub fn get_eligible_to_renew(&self) -> &::std::option::Option<::std::string::String> {
@@ -503,8 +490,7 @@ impl CertificateBuilder {
     }
     /// <p>An object that describes the status of the certificate renewal managed by Lightsail.</p>
     pub fn set_renewal_summary(mut self, input: ::std::option::Option<crate::types::RenewalSummary>) -> Self {
-        self.renewal_summary = input;
-        self
+        self.renewal_summary = input; self
     }
     /// <p>An object that describes the status of the certificate renewal managed by Lightsail.</p>
     pub fn get_renewal_summary(&self) -> &::std::option::Option<crate::types::RenewalSummary> {
@@ -517,8 +503,7 @@ impl CertificateBuilder {
     }
     /// <p>The timestamp when the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
     pub fn set_revoked_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.revoked_at = input;
-        self
+        self.revoked_at = input; self
     }
     /// <p>The timestamp when the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
     pub fn get_revoked_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -531,8 +516,7 @@ impl CertificateBuilder {
     }
     /// <p>The reason the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
     pub fn set_revocation_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revocation_reason = input;
-        self
+        self.revocation_reason = input; self
     }
     /// <p>The reason the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
     pub fn get_revocation_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -545,17 +529,16 @@ impl CertificateBuilder {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail certificate. This code enables our support team to look up your Lightsail information more easily.</p>
@@ -565,8 +548,7 @@ impl CertificateBuilder {
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail certificate. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail certificate. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -575,27 +557,50 @@ impl CertificateBuilder {
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {
         crate::types::Certificate {
-            arn: self.arn,
-            name: self.name,
-            domain_name: self.domain_name,
-            status: self.status,
-            serial_number: self.serial_number,
-            subject_alternative_names: self.subject_alternative_names,
-            domain_validation_records: self.domain_validation_records,
-            request_failure_reason: self.request_failure_reason,
-            in_use_resource_count: self.in_use_resource_count.unwrap_or_default(),
-            key_algorithm: self.key_algorithm,
-            created_at: self.created_at,
-            issued_at: self.issued_at,
-            issuer_ca: self.issuer_ca,
-            not_before: self.not_before,
-            not_after: self.not_after,
-            eligible_to_renew: self.eligible_to_renew,
-            renewal_summary: self.renewal_summary,
-            revoked_at: self.revoked_at,
-            revocation_reason: self.revocation_reason,
-            tags: self.tags,
-            support_code: self.support_code,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            domain_name: self.domain_name
+            ,
+            status: self.status
+            ,
+            serial_number: self.serial_number
+            ,
+            subject_alternative_names: self.subject_alternative_names
+            ,
+            domain_validation_records: self.domain_validation_records
+            ,
+            request_failure_reason: self.request_failure_reason
+            ,
+            in_use_resource_count: self.in_use_resource_count
+                .unwrap_or_default()
+            ,
+            key_algorithm: self.key_algorithm
+            ,
+            created_at: self.created_at
+            ,
+            issued_at: self.issued_at
+            ,
+            issuer_ca: self.issuer_ca
+            ,
+            not_before: self.not_before
+            ,
+            not_after: self.not_after
+            ,
+            eligible_to_renew: self.eligible_to_renew
+            ,
+            renewal_summary: self.renewal_summary
+            ,
+            revoked_at: self.revoked_at
+            ,
+            revocation_reason: self.revocation_reason
+            ,
+            tags: self.tags
+            ,
+            support_code: self.support_code
+            ,
         }
     }
 }
+

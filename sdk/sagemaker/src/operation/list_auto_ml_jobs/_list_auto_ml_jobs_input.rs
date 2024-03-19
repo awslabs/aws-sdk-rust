@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAutoMlJobsInput {
+pub struct ListAutoMlJobsInput  {
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Request a list of jobs, using a filter for time.</p>
@@ -24,37 +24,37 @@ pub struct ListAutoMlJobsInput {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAutoMlJobsInput {
+impl  ListAutoMlJobsInput  {
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn last_modified_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_after.as_ref()
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>Request a list of jobs, using a search filter for name.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>Request a list of jobs, using a filter for status.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&crate::types::AutoMlJobStatus> {
+    pub fn status_equals(&self) -> ::std::option::Option<& crate::types::AutoMlJobStatus> {
         self.status_equals.as_ref()
     }
     /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::AutoMlSortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::AutoMlSortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::AutoMlSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::AutoMlSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Request a list of jobs up to a specified limit.</p>
@@ -62,7 +62,7 @@ impl ListAutoMlJobsInput {
         self.max_results
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -96,8 +96,7 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,8 +109,7 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,8 +122,7 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_after = input;
-        self
+        self.last_modified_time_after = input; self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -138,8 +135,7 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_before = input;
-        self
+        self.last_modified_time_before = input; self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -152,8 +148,7 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>Request a list of jobs, using a search filter for name.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>Request a list of jobs, using a search filter for name.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +161,7 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>Request a list of jobs, using a filter for status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::AutoMlJobStatus>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>Request a list of jobs, using a filter for status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::AutoMlJobStatus> {
@@ -180,8 +174,7 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::AutoMlSortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::AutoMlSortOrder> {
@@ -194,8 +187,7 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AutoMlSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AutoMlSortBy> {
@@ -208,8 +200,7 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>Request a list of jobs up to a specified limit.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Request a list of jobs up to a specified limit.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -222,28 +213,38 @@ impl ListAutoMlJobsInputBuilder {
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAutoMlJobsInput`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput {
-            creation_time_after: self.creation_time_after,
-            creation_time_before: self.creation_time_before,
-            last_modified_time_after: self.last_modified_time_after,
-            last_modified_time_before: self.last_modified_time_before,
-            name_contains: self.name_contains,
-            status_equals: self.status_equals,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput {
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                last_modified_time_after: self.last_modified_time_after
+                ,
+                last_modified_time_before: self.last_modified_time_before
+                ,
+                name_contains: self.name_contains
+                ,
+                status_equals: self.status_equals
+                ,
+                sort_order: self.sort_order
+                ,
+                sort_by: self.sort_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

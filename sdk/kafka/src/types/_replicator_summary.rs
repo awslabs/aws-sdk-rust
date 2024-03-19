@@ -3,7 +3,7 @@
 /// <p>Information about a replicator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicatorSummary {
+pub struct ReplicatorSummary  {
     /// <p>The time the replicator was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current version of the replicator.</p>
@@ -11,9 +11,9 @@ pub struct ReplicatorSummary {
     /// <p>Whether this resource is a replicator reference.</p>
     pub is_replicator_reference: ::std::option::Option<bool>,
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    pub kafka_clusters_summary: ::std::option::Option<::std::vec::Vec<crate::types::KafkaClusterSummary>>,
+    pub kafka_clusters_summary: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaClusterSummary>>,
     /// <p>A list of summarized information of replications between clusters.</p>
-    pub replication_info_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfoSummary>>,
+    pub replication_info_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfoSummary>>,
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub replicator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the replicator.</p>
@@ -23,13 +23,13 @@ pub struct ReplicatorSummary {
     /// <p>State of the replicator.</p>
     pub replicator_state: ::std::option::Option<crate::types::ReplicatorState>,
 }
-impl ReplicatorSummary {
+impl  ReplicatorSummary  {
     /// <p>The time the replicator was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current version of the replicator.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>Whether this resource is a replicator reference.</p>
@@ -37,31 +37,33 @@ impl ReplicatorSummary {
         self.is_replicator_reference
     }
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kafka_clusters_summary.is_none()`.
-    pub fn kafka_clusters_summary(&self) -> &[crate::types::KafkaClusterSummary] {
-        self.kafka_clusters_summary.as_deref().unwrap_or_default()
+    pub fn kafka_clusters_summary(&self) -> & [crate::types::KafkaClusterSummary] {
+        self.kafka_clusters_summary.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of summarized information of replications between clusters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_info_summary_list.is_none()`.
-    pub fn replication_info_summary_list(&self) -> &[crate::types::ReplicationInfoSummary] {
-        self.replication_info_summary_list.as_deref().unwrap_or_default()
+    pub fn replication_info_summary_list(&self) -> & [crate::types::ReplicationInfoSummary] {
+        self.replication_info_summary_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
-    pub fn replicator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_arn(&self) -> ::std::option::Option<& str> {
         self.replicator_arn.as_deref()
     }
     /// <p>The name of the replicator.</p>
-    pub fn replicator_name(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_name(&self) -> ::std::option::Option<& str> {
         self.replicator_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator resource in the region where the replicator was created.</p>
-    pub fn replicator_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_resource_arn(&self) -> ::std::option::Option<& str> {
         self.replicator_resource_arn.as_deref()
     }
     /// <p>State of the replicator.</p>
-    pub fn replicator_state(&self) -> ::std::option::Option<&crate::types::ReplicatorState> {
+    pub fn replicator_state(&self) -> ::std::option::Option<& crate::types::ReplicatorState> {
         self.replicator_state.as_ref()
     }
 }
@@ -79,8 +81,8 @@ pub struct ReplicatorSummaryBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
     pub(crate) is_replicator_reference: ::std::option::Option<bool>,
-    pub(crate) kafka_clusters_summary: ::std::option::Option<::std::vec::Vec<crate::types::KafkaClusterSummary>>,
-    pub(crate) replication_info_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfoSummary>>,
+    pub(crate) kafka_clusters_summary: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaClusterSummary>>,
+    pub(crate) replication_info_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfoSummary>>,
     pub(crate) replicator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replicator_name: ::std::option::Option<::std::string::String>,
     pub(crate) replicator_resource_arn: ::std::option::Option<::std::string::String>,
@@ -94,8 +96,7 @@ impl ReplicatorSummaryBuilder {
     }
     /// <p>The time the replicator was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the replicator was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -108,8 +109,7 @@ impl ReplicatorSummaryBuilder {
     }
     /// <p>The current version of the replicator.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The current version of the replicator.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl ReplicatorSummaryBuilder {
     }
     /// <p>Whether this resource is a replicator reference.</p>
     pub fn set_is_replicator_reference(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_replicator_reference = input;
-        self
+        self.is_replicator_reference = input; self
     }
     /// <p>Whether this resource is a replicator reference.</p>
     pub fn get_is_replicator_reference(&self) -> &::std::option::Option<bool> {
@@ -136,17 +135,16 @@ impl ReplicatorSummaryBuilder {
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
     pub fn kafka_clusters_summary(mut self, input: crate::types::KafkaClusterSummary) -> Self {
         let mut v = self.kafka_clusters_summary.unwrap_or_default();
-        v.push(input);
-        self.kafka_clusters_summary = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.kafka_clusters_summary = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    pub fn set_kafka_clusters_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KafkaClusterSummary>>) -> Self {
-        self.kafka_clusters_summary = input;
-        self
+    pub fn set_kafka_clusters_summary(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaClusterSummary>>) -> Self {
+        self.kafka_clusters_summary = input; self
     }
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    pub fn get_kafka_clusters_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KafkaClusterSummary>> {
+    pub fn get_kafka_clusters_summary(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KafkaClusterSummary>> {
         &self.kafka_clusters_summary
     }
     /// Appends an item to `replication_info_summary_list`.
@@ -156,17 +154,16 @@ impl ReplicatorSummaryBuilder {
     /// <p>A list of summarized information of replications between clusters.</p>
     pub fn replication_info_summary_list(mut self, input: crate::types::ReplicationInfoSummary) -> Self {
         let mut v = self.replication_info_summary_list.unwrap_or_default();
-        v.push(input);
-        self.replication_info_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_info_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of summarized information of replications between clusters.</p>
-    pub fn set_replication_info_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfoSummary>>) -> Self {
-        self.replication_info_summary_list = input;
-        self
+    pub fn set_replication_info_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfoSummary>>) -> Self {
+        self.replication_info_summary_list = input; self
     }
     /// <p>A list of summarized information of replications between clusters.</p>
-    pub fn get_replication_info_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfoSummary>> {
+    pub fn get_replication_info_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfoSummary>> {
         &self.replication_info_summary_list
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
@@ -176,8 +173,7 @@ impl ReplicatorSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub fn set_replicator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_arn = input;
-        self
+        self.replicator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub fn get_replicator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +186,7 @@ impl ReplicatorSummaryBuilder {
     }
     /// <p>The name of the replicator.</p>
     pub fn set_replicator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_name = input;
-        self
+        self.replicator_name = input; self
     }
     /// <p>The name of the replicator.</p>
     pub fn get_replicator_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +199,7 @@ impl ReplicatorSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator resource in the region where the replicator was created.</p>
     pub fn set_replicator_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_resource_arn = input;
-        self
+        self.replicator_resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator resource in the region where the replicator was created.</p>
     pub fn get_replicator_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +212,7 @@ impl ReplicatorSummaryBuilder {
     }
     /// <p>State of the replicator.</p>
     pub fn set_replicator_state(mut self, input: ::std::option::Option<crate::types::ReplicatorState>) -> Self {
-        self.replicator_state = input;
-        self
+        self.replicator_state = input; self
     }
     /// <p>State of the replicator.</p>
     pub fn get_replicator_state(&self) -> &::std::option::Option<crate::types::ReplicatorState> {
@@ -228,15 +221,25 @@ impl ReplicatorSummaryBuilder {
     /// Consumes the builder and constructs a [`ReplicatorSummary`](crate::types::ReplicatorSummary).
     pub fn build(self) -> crate::types::ReplicatorSummary {
         crate::types::ReplicatorSummary {
-            creation_time: self.creation_time,
-            current_version: self.current_version,
-            is_replicator_reference: self.is_replicator_reference,
-            kafka_clusters_summary: self.kafka_clusters_summary,
-            replication_info_summary_list: self.replication_info_summary_list,
-            replicator_arn: self.replicator_arn,
-            replicator_name: self.replicator_name,
-            replicator_resource_arn: self.replicator_resource_arn,
-            replicator_state: self.replicator_state,
+            creation_time: self.creation_time
+            ,
+            current_version: self.current_version
+            ,
+            is_replicator_reference: self.is_replicator_reference
+            ,
+            kafka_clusters_summary: self.kafka_clusters_summary
+            ,
+            replication_info_summary_list: self.replication_info_summary_list
+            ,
+            replicator_arn: self.replicator_arn
+            ,
+            replicator_name: self.replicator_name
+            ,
+            replicator_resource_arn: self.replicator_resource_arn
+            ,
+            replicator_state: self.replicator_state
+            ,
         }
     }
 }
+

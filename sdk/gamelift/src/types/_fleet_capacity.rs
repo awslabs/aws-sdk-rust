@@ -5,7 +5,7 @@
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetCapacity {
+pub struct FleetCapacity  {
     /// <p>A unique identifier for the fleet associated with the location.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
@@ -19,27 +19,27 @@ pub struct FleetCapacity {
     /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
-impl FleetCapacity {
+impl  FleetCapacity  {
     /// <p>A unique identifier for the fleet associated with the location.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::Ec2InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::Ec2InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
-    pub fn instance_counts(&self) -> ::std::option::Option<&crate::types::Ec2InstanceCounts> {
+    pub fn instance_counts(&self) -> ::std::option::Option<& crate::types::Ec2InstanceCounts> {
         self.instance_counts.as_ref()
     }
     /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl FleetCapacityBuilder {
     }
     /// <p>A unique identifier for the fleet associated with the location.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet associated with the location.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl FleetCapacityBuilder {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -102,8 +100,7 @@ impl FleetCapacityBuilder {
     }
     /// <p>The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the computing resources in use, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
@@ -116,8 +113,7 @@ impl FleetCapacityBuilder {
     }
     /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
     pub fn set_instance_counts(mut self, input: ::std::option::Option<crate::types::Ec2InstanceCounts>) -> Self {
-        self.instance_counts = input;
-        self
+        self.instance_counts = input; self
     }
     /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
     pub fn get_instance_counts(&self) -> &::std::option::Option<crate::types::Ec2InstanceCounts> {
@@ -130,8 +126,7 @@ impl FleetCapacityBuilder {
     }
     /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fleet location for the instance count information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,11 +135,17 @@ impl FleetCapacityBuilder {
     /// Consumes the builder and constructs a [`FleetCapacity`](crate::types::FleetCapacity).
     pub fn build(self) -> crate::types::FleetCapacity {
         crate::types::FleetCapacity {
-            fleet_id: self.fleet_id,
-            fleet_arn: self.fleet_arn,
-            instance_type: self.instance_type,
-            instance_counts: self.instance_counts,
-            location: self.location,
+            fleet_id: self.fleet_id
+            ,
+            fleet_arn: self.fleet_arn
+            ,
+            instance_type: self.instance_type
+            ,
+            instance_counts: self.instance_counts
+            ,
+            location: self.location
+            ,
         }
     }
 }
+

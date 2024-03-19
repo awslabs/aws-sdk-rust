@@ -5,23 +5,20 @@ pub use crate::operation::start_delivery_stream_encryption::_start_delivery_stre
 
 impl StartDeliveryStreamEncryptionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_delivery_stream_encryption();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_delivery_stream_encryption();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartDeliveryStreamEncryption`.
-///
+/// 
 /// <p>Enables server-side encryption (SSE) for the delivery stream.</p>
 /// <p>This operation is asynchronous. It returns immediately. When you invoke it, Firehose first sets the encryption status of the stream to <code>ENABLING</code>, and then to <code>ENABLED</code>. The encryption status of a delivery stream is the <code>Status</code> property in <code>DeliveryStreamEncryptionConfiguration</code>. If the operation fails, the encryption status changes to <code>ENABLING_FAILED</code>. You can continue to read and write data to your delivery stream while the encryption status is <code>ENABLING</code>, but the data is not encrypted. It can take up to 5 seconds after the encryption status changes to <code>ENABLED</code> before all records written to the delivery stream are encrypted. To find out whether a record or a batch of records was encrypted, check the response elements <code>PutRecordOutput$Encrypted</code> and <code>PutRecordBatchOutput$Encrypted</code>, respectively.</p>
 /// <p>To check the encryption status of a delivery stream, use <code>DescribeDeliveryStream</code>.</p>
@@ -34,33 +31,32 @@ impl StartDeliveryStreamEncryptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDeliveryStreamEncryptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionInputBuilder,
+                    inner: crate::operation::start_delivery_stream_encryption::builders::StartDeliveryStreamEncryptionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput,
-        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError,
-    > for StartDeliveryStreamEncryptionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput,
-            crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput,
+                    crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError,
+                > for StartDeliveryStreamEncryptionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput,
+                        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartDeliveryStreamEncryptionFluentBuilder {
     /// Creates a new `StartDeliveryStreamEncryption`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -69,53 +65,44 @@ impl StartDeliveryStreamEncryptionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryption::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryption::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput,
-        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryption::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryption::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionOutput, crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
@@ -136,17 +123,13 @@ impl StartDeliveryStreamEncryptionFluentBuilder {
         self
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn set_delivery_stream_encryption_configuration_input(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
-    ) -> Self {
+    pub fn set_delivery_stream_encryption_configuration_input(mut self, input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>) -> Self {
         self.inner = self.inner.set_delivery_stream_encryption_configuration_input(input);
         self
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn get_delivery_stream_encryption_configuration_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput> {
+    pub fn get_delivery_stream_encryption_configuration_input(&self) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput> {
         self.inner.get_delivery_stream_encryption_configuration_input()
     }
 }
+

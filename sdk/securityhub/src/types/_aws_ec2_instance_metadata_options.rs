@@ -3,7 +3,7 @@
 /// <p>Metadata options that allow you to configure and secure the Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2InstanceMetadataOptions {
+pub struct AwsEc2InstanceMetadataOptions  {
     /// <p>Enables or disables the HTTP metadata endpoint on the instance.</p>
     pub http_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
@@ -15,13 +15,13 @@ pub struct AwsEc2InstanceMetadataOptions {
     /// <p>Specifies whether to allow access to instance tags from the instance metadata.</p>
     pub instance_metadata_tags: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2InstanceMetadataOptions {
+impl  AwsEc2InstanceMetadataOptions  {
     /// <p>Enables or disables the HTTP metadata endpoint on the instance.</p>
-    pub fn http_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn http_endpoint(&self) -> ::std::option::Option<& str> {
         self.http_endpoint.as_deref()
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
-    pub fn http_protocol_ipv6(&self) -> ::std::option::Option<&str> {
+    pub fn http_protocol_ipv6(&self) -> ::std::option::Option<& str> {
         self.http_protocol_ipv6.as_deref()
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
@@ -29,11 +29,11 @@ impl AwsEc2InstanceMetadataOptions {
         self.http_put_response_hop_limit
     }
     /// <p>The state of token usage for your instance metadata requests.</p>
-    pub fn http_tokens(&self) -> ::std::option::Option<&str> {
+    pub fn http_tokens(&self) -> ::std::option::Option<& str> {
         self.http_tokens.as_deref()
     }
     /// <p>Specifies whether to allow access to instance tags from the instance metadata.</p>
-    pub fn instance_metadata_tags(&self) -> ::std::option::Option<&str> {
+    pub fn instance_metadata_tags(&self) -> ::std::option::Option<& str> {
         self.instance_metadata_tags.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl AwsEc2InstanceMetadataOptionsBuilder {
     }
     /// <p>Enables or disables the HTTP metadata endpoint on the instance.</p>
     pub fn set_http_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_endpoint = input;
-        self
+        self.http_endpoint = input; self
     }
     /// <p>Enables or disables the HTTP metadata endpoint on the instance.</p>
     pub fn get_http_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl AwsEc2InstanceMetadataOptionsBuilder {
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
     pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_protocol_ipv6 = input;
-        self
+        self.http_protocol_ipv6 = input; self
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
     pub fn get_http_protocol_ipv6(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl AwsEc2InstanceMetadataOptionsBuilder {
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.http_put_response_hop_limit = input;
-        self
+        self.http_put_response_hop_limit = input; self
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
     pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl AwsEc2InstanceMetadataOptionsBuilder {
     }
     /// <p>The state of token usage for your instance metadata requests.</p>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_tokens = input;
-        self
+        self.http_tokens = input; self
     }
     /// <p>The state of token usage for your instance metadata requests.</p>
     pub fn get_http_tokens(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl AwsEc2InstanceMetadataOptionsBuilder {
     }
     /// <p>Specifies whether to allow access to instance tags from the instance metadata.</p>
     pub fn set_instance_metadata_tags(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_metadata_tags = input;
-        self
+        self.instance_metadata_tags = input; self
     }
     /// <p>Specifies whether to allow access to instance tags from the instance metadata.</p>
     pub fn get_instance_metadata_tags(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl AwsEc2InstanceMetadataOptionsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2InstanceMetadataOptions`](crate::types::AwsEc2InstanceMetadataOptions).
     pub fn build(self) -> crate::types::AwsEc2InstanceMetadataOptions {
         crate::types::AwsEc2InstanceMetadataOptions {
-            http_endpoint: self.http_endpoint,
-            http_protocol_ipv6: self.http_protocol_ipv6,
-            http_put_response_hop_limit: self.http_put_response_hop_limit,
-            http_tokens: self.http_tokens,
-            instance_metadata_tags: self.instance_metadata_tags,
+            http_endpoint: self.http_endpoint
+            ,
+            http_protocol_ipv6: self.http_protocol_ipv6
+            ,
+            http_put_response_hop_limit: self.http_put_response_hop_limit
+            ,
+            http_tokens: self.http_tokens
+            ,
+            instance_metadata_tags: self.instance_metadata_tags
+            ,
         }
     }
 }
+

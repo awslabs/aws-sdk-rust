@@ -3,25 +3,23 @@
 /// <p>The search criteria based on user-defned contact attribute key and values to search on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SearchableContactAttributesCriteria {
+pub struct SearchableContactAttributesCriteria  {
     /// <p>The key containing a searchable user-defined contact attribute.</p>
     pub key: ::std::string::String,
     /// <p>The list of values to search for within a user-defined contact attribute.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl SearchableContactAttributesCriteria {
+impl  SearchableContactAttributesCriteria  {
     /// <p>The key containing a searchable user-defined contact attribute.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The list of values to search for within a user-defined contact attribute.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
-impl ::std::fmt::Debug for SearchableContactAttributesCriteria {
+impl  ::std::fmt::Debug for SearchableContactAttributesCriteria  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchableContactAttributesCriteria");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
@@ -41,7 +39,7 @@ impl SearchableContactAttributesCriteria {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SearchableContactAttributesCriteriaBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SearchableContactAttributesCriteriaBuilder {
     /// <p>The key containing a searchable user-defined contact attribute.</p>
@@ -52,8 +50,7 @@ impl SearchableContactAttributesCriteriaBuilder {
     }
     /// <p>The key containing a searchable user-defined contact attribute.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key containing a searchable user-defined contact attribute.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +63,16 @@ impl SearchableContactAttributesCriteriaBuilder {
     /// <p>The list of values to search for within a user-defined contact attribute.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of values to search for within a user-defined contact attribute.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The list of values to search for within a user-defined contact attribute.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`SearchableContactAttributesCriteria`](crate::types::SearchableContactAttributesCriteria).
@@ -84,20 +80,20 @@ impl SearchableContactAttributesCriteriaBuilder {
     /// - [`key`](crate::types::builders::SearchableContactAttributesCriteriaBuilder::key)
     /// - [`values`](crate::types::builders::SearchableContactAttributesCriteriaBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchableContactAttributesCriteria, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchableContactAttributesCriteria {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building SearchableContactAttributesCriteria",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building SearchableContactAttributesCriteria",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchableContactAttributesCriteria {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building SearchableContactAttributesCriteria")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building SearchableContactAttributesCriteria")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SearchableContactAttributesCriteriaBuilder {
@@ -108,3 +104,4 @@ impl ::std::fmt::Debug for SearchableContactAttributesCriteriaBuilder {
         formatter.finish()
     }
 }
+

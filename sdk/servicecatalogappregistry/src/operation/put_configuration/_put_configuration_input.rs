@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutConfigurationInput {
+pub struct PutConfigurationInput  {
     /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
     pub configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
 }
-impl PutConfigurationInput {
+impl  PutConfigurationInput  {
     /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::AppRegistryConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::AppRegistryConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -34,19 +34,20 @@ impl PutConfigurationInputBuilder {
     }
     /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AppRegistryConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Associates a <code>TagKey</code> configuration to an account.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`PutConfigurationInput`](crate::operation::put_configuration::PutConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_configuration::PutConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_configuration::PutConfigurationInput {
-            configuration: self.configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration::PutConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_configuration::PutConfigurationInput {
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
+

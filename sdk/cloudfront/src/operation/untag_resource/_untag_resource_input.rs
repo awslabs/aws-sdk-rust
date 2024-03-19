@@ -3,19 +3,19 @@
 /// <p>The request to remove tags from a CloudFront resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>An ARN of a CloudFront resource.</p>
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
     pub tag_keys: ::std::option::Option<crate::types::TagKeys>,
 }
-impl UntagResourceInput {
+impl  UntagResourceInput  {
     /// <p>An ARN of a CloudFront resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&crate::types::TagKeys> {
+    pub fn tag_keys(&self) -> ::std::option::Option<& crate::types::TagKeys> {
         self.tag_keys.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl UntagResourceInputBuilder {
     }
     /// <p>An ARN of a CloudFront resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>An ARN of a CloudFront resource.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl UntagResourceInputBuilder {
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<crate::types::TagKeys>) -> Self {
-        self.tag_keys = input;
-        self
+        self.tag_keys = input; self
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<crate::types::TagKeys> {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
-            resource: self.resource,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::untag_resource::UntagResourceInput {
+                resource: self.resource
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

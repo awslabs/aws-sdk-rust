@@ -3,7 +3,7 @@
 /// <p>Evidence that's manually added to a control in Audit Manager. <code>manualEvidence</code> can be one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or <code>textResponse</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ManualEvidence {
+pub struct ManualEvidence  {
     /// <p>The S3 URL of the object that's imported as manual evidence.</p>
     pub s3_resource_path: ::std::option::Option<::std::string::String>,
     /// <p>The plain text response that's entered and saved as manual evidence.</p>
@@ -11,21 +11,21 @@ pub struct ManualEvidence {
     /// <p>The name of the file that's uploaded as manual evidence. This name is populated using the <code>evidenceFileName</code> value from the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html"> <code>GetEvidenceFileUploadUrl</code> </a> API response.</p>
     pub evidence_file_name: ::std::option::Option<::std::string::String>,
 }
-impl ManualEvidence {
+impl  ManualEvidence  {
     /// <p>The S3 URL of the object that's imported as manual evidence.</p>
-    pub fn s3_resource_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_resource_path(&self) -> ::std::option::Option<& str> {
         self.s3_resource_path.as_deref()
     }
     /// <p>The plain text response that's entered and saved as manual evidence.</p>
-    pub fn text_response(&self) -> ::std::option::Option<&str> {
+    pub fn text_response(&self) -> ::std::option::Option<& str> {
         self.text_response.as_deref()
     }
     /// <p>The name of the file that's uploaded as manual evidence. This name is populated using the <code>evidenceFileName</code> value from the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html"> <code>GetEvidenceFileUploadUrl</code> </a> API response.</p>
-    pub fn evidence_file_name(&self) -> ::std::option::Option<&str> {
+    pub fn evidence_file_name(&self) -> ::std::option::Option<& str> {
         self.evidence_file_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for ManualEvidence {
+impl  ::std::fmt::Debug for ManualEvidence  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ManualEvidence");
         formatter.field("s3_resource_path", &self.s3_resource_path);
@@ -57,8 +57,7 @@ impl ManualEvidenceBuilder {
     }
     /// <p>The S3 URL of the object that's imported as manual evidence.</p>
     pub fn set_s3_resource_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_resource_path = input;
-        self
+        self.s3_resource_path = input; self
     }
     /// <p>The S3 URL of the object that's imported as manual evidence.</p>
     pub fn get_s3_resource_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ManualEvidenceBuilder {
     }
     /// <p>The plain text response that's entered and saved as manual evidence.</p>
     pub fn set_text_response(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_response = input;
-        self
+        self.text_response = input; self
     }
     /// <p>The plain text response that's entered and saved as manual evidence.</p>
     pub fn get_text_response(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ManualEvidenceBuilder {
     }
     /// <p>The name of the file that's uploaded as manual evidence. This name is populated using the <code>evidenceFileName</code> value from the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html"> <code>GetEvidenceFileUploadUrl</code> </a> API response.</p>
     pub fn set_evidence_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evidence_file_name = input;
-        self
+        self.evidence_file_name = input; self
     }
     /// <p>The name of the file that's uploaded as manual evidence. This name is populated using the <code>evidenceFileName</code> value from the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html"> <code>GetEvidenceFileUploadUrl</code> </a> API response.</p>
     pub fn get_evidence_file_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl ManualEvidenceBuilder {
     /// Consumes the builder and constructs a [`ManualEvidence`](crate::types::ManualEvidence).
     pub fn build(self) -> crate::types::ManualEvidence {
         crate::types::ManualEvidence {
-            s3_resource_path: self.s3_resource_path,
-            text_response: self.text_response,
-            evidence_file_name: self.evidence_file_name,
+            s3_resource_path: self.s3_resource_path
+            ,
+            text_response: self.text_response
+            ,
+            evidence_file_name: self.evidence_file_name
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for ManualEvidenceBuilder {
         formatter.finish()
     }
 }
+

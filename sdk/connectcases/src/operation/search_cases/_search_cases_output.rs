@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchCasesOutput {
+pub struct SearchCasesOutput  {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
-    pub cases: ::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>,
+    pub cases: ::std::vec::Vec::<::std::option::Option<crate::types::SearchCasesResponseItem>>,
     _request_id: Option<String>,
 }
-impl SearchCasesOutput {
+impl  SearchCasesOutput  {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
-    pub fn cases(&self) -> &[::std::option::Option<crate::types::SearchCasesResponseItem>] {
-        use std::ops::Deref;
-        self.cases.deref()
+    pub fn cases(&self) -> & [::std::option::Option<crate::types::SearchCasesResponseItem>] {
+        use std::ops::Deref; self.cases.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchCasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchCasesOutput {
     /// Creates a new builder-style object to manufacture [`SearchCasesOutput`](crate::operation::search_cases::SearchCasesOutput).
     pub fn builder() -> crate::operation::search_cases::builders::SearchCasesOutputBuilder {
@@ -37,7 +36,7 @@ impl SearchCasesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchCasesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) cases: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>>,
+    pub(crate) cases: ::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::SearchCasesResponseItem>>>,
     _request_id: Option<String>,
 }
 impl SearchCasesOutputBuilder {
@@ -48,8 +47,7 @@ impl SearchCasesOutputBuilder {
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,41 +60,43 @@ impl SearchCasesOutputBuilder {
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
     pub fn cases(mut self, input: ::std::option::Option<crate::types::SearchCasesResponseItem>) -> Self {
         let mut v = self.cases.unwrap_or_default();
-        v.push(input);
-        self.cases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
-    pub fn set_cases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>>) -> Self {
-        self.cases = input;
-        self
+    pub fn set_cases(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::SearchCasesResponseItem>>>) -> Self {
+        self.cases = input; self
     }
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
-    pub fn get_cases(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>> {
+    pub fn get_cases(&self) -> &::std::option::Option<::std::vec::Vec::<::std::option::Option<crate::types::SearchCasesResponseItem>>> {
         &self.cases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchCasesOutput`](crate::operation::search_cases::SearchCasesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`cases`](crate::operation::search_cases::builders::SearchCasesOutputBuilder::cases)
     pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_cases::SearchCasesOutput {
-            next_token: self.next_token,
-            cases: self.cases.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cases",
-                    "cases was not specified but it is required when building SearchCasesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::search_cases::SearchCasesOutput {
+                next_token: self.next_token
+                ,
+                cases: self.cases
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cases", "cases was not specified but it is required when building SearchCasesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

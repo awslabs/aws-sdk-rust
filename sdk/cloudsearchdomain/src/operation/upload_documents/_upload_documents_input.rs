@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code>UploadDocuments</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct UploadDocumentsInput {
+pub struct UploadDocumentsInput  {
     /// <p>A batch of documents formatted in JSON or HTML.</p>
     pub documents: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
@@ -13,9 +13,9 @@ pub struct UploadDocumentsInput {
     /// </ul>
     pub content_type: ::std::option::Option<crate::types::ContentType>,
 }
-impl UploadDocumentsInput {
+impl  UploadDocumentsInput  {
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn documents(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn documents(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.documents
     }
     /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
@@ -23,7 +23,7 @@ impl UploadDocumentsInput {
     /// <li>application/json</li>
     /// <li>application/xml</li>
     /// </ul>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<& crate::types::ContentType> {
         self.content_type.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl UploadDocumentsInputBuilder {
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
     pub fn set_documents(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.documents = input;
-        self
+        self.documents = input; self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
     pub fn get_documents(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -73,8 +72,7 @@ impl UploadDocumentsInputBuilder {
     /// <li>application/xml</li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>
     /// <ul>
@@ -85,12 +83,16 @@ impl UploadDocumentsInputBuilder {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`UploadDocumentsInput`](crate::operation::upload_documents::UploadDocumentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::upload_documents::UploadDocumentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::upload_documents::UploadDocumentsInput {
-            documents: self.documents.unwrap_or_default(),
-            content_type: self.content_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upload_documents::UploadDocumentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upload_documents::UploadDocumentsInput {
+                documents: self.documents
+                    .unwrap_or_default()
+                ,
+                content_type: self.content_type
+                ,
+            }
+        )
     }
 }
+

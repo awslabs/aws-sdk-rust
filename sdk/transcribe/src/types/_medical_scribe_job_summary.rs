@@ -3,7 +3,7 @@
 /// <p>Provides detailed information about a specific Medical Scribe job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MedicalScribeJobSummary {
+pub struct MedicalScribeJobSummary  {
     /// <p>The name of the Medical Scribe job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     pub medical_scribe_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the specified Medical Scribe job request was made.</p>
@@ -23,37 +23,37 @@ pub struct MedicalScribeJobSummary {
     /// <p>If <code>MedicalScribeJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl MedicalScribeJobSummary {
+impl  MedicalScribeJobSummary  {
     /// <p>The name of the Medical Scribe job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn medical_scribe_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn medical_scribe_job_name(&self) -> ::std::option::Option<& str> {
         self.medical_scribe_job_name.as_deref()
     }
     /// <p>The date and time the specified Medical Scribe job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time your Medical Scribe job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time the specified Medical Scribe job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that finished processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::MedicalScribeLanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::MedicalScribeLanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Provides the status of the specified Medical Scribe job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>MedicalScribeOutput</code> If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your Medical Scribe job failed.</p>
-    pub fn medical_scribe_job_status(&self) -> ::std::option::Option<&crate::types::MedicalScribeJobStatus> {
+    pub fn medical_scribe_job_status(&self) -> ::std::option::Option<& crate::types::MedicalScribeJobStatus> {
         self.medical_scribe_job_status.as_ref()
     }
     /// <p>If <code>MedicalScribeJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -84,8 +84,7 @@ impl MedicalScribeJobSummaryBuilder {
     }
     /// <p>The name of the Medical Scribe job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     pub fn set_medical_scribe_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.medical_scribe_job_name = input;
-        self
+        self.medical_scribe_job_name = input; self
     }
     /// <p>The name of the Medical Scribe job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     pub fn get_medical_scribe_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl MedicalScribeJobSummaryBuilder {
     /// <p>The date and time the specified Medical Scribe job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time the specified Medical Scribe job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -117,8 +115,7 @@ impl MedicalScribeJobSummaryBuilder {
     /// <p>The date and time your Medical Scribe job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time your Medical Scribe job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -134,8 +131,7 @@ impl MedicalScribeJobSummaryBuilder {
     /// <p>The date and time the specified Medical Scribe job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that finished processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>The date and time the specified Medical Scribe job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that finished processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -149,8 +145,7 @@ impl MedicalScribeJobSummaryBuilder {
     }
     /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::MedicalScribeLanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::MedicalScribeLanguageCode> {
@@ -165,8 +160,7 @@ impl MedicalScribeJobSummaryBuilder {
     /// <p>Provides the status of the specified Medical Scribe job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>MedicalScribeOutput</code> If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your Medical Scribe job failed.</p>
     pub fn set_medical_scribe_job_status(mut self, input: ::std::option::Option<crate::types::MedicalScribeJobStatus>) -> Self {
-        self.medical_scribe_job_status = input;
-        self
+        self.medical_scribe_job_status = input; self
     }
     /// <p>Provides the status of the specified Medical Scribe job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>MedicalScribeOutput</code> If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your Medical Scribe job failed.</p>
@@ -180,8 +174,7 @@ impl MedicalScribeJobSummaryBuilder {
     }
     /// <p>If <code>MedicalScribeJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If <code>MedicalScribeJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,13 +183,21 @@ impl MedicalScribeJobSummaryBuilder {
     /// Consumes the builder and constructs a [`MedicalScribeJobSummary`](crate::types::MedicalScribeJobSummary).
     pub fn build(self) -> crate::types::MedicalScribeJobSummary {
         crate::types::MedicalScribeJobSummary {
-            medical_scribe_job_name: self.medical_scribe_job_name,
-            creation_time: self.creation_time,
-            start_time: self.start_time,
-            completion_time: self.completion_time,
-            language_code: self.language_code,
-            medical_scribe_job_status: self.medical_scribe_job_status,
-            failure_reason: self.failure_reason,
+            medical_scribe_job_name: self.medical_scribe_job_name
+            ,
+            creation_time: self.creation_time
+            ,
+            start_time: self.start_time
+            ,
+            completion_time: self.completion_time
+            ,
+            language_code: self.language_code
+            ,
+            medical_scribe_job_status: self.medical_scribe_job_status
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

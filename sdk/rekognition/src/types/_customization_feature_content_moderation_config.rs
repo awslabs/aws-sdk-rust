@@ -3,11 +3,11 @@
 /// <p>Configuration options for Content Moderation training.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomizationFeatureContentModerationConfig {
+pub struct CustomizationFeatureContentModerationConfig  {
     /// <p>The confidence level you plan to use to identify if unsafe content is present during inference.</p>
     pub confidence_threshold: ::std::option::Option<f32>,
 }
-impl CustomizationFeatureContentModerationConfig {
+impl  CustomizationFeatureContentModerationConfig  {
     /// <p>The confidence level you plan to use to identify if unsafe content is present during inference.</p>
     pub fn confidence_threshold(&self) -> ::std::option::Option<f32> {
         self.confidence_threshold
@@ -34,8 +34,7 @@ impl CustomizationFeatureContentModerationConfigBuilder {
     }
     /// <p>The confidence level you plan to use to identify if unsafe content is present during inference.</p>
     pub fn set_confidence_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence_threshold = input;
-        self
+        self.confidence_threshold = input; self
     }
     /// <p>The confidence level you plan to use to identify if unsafe content is present during inference.</p>
     pub fn get_confidence_threshold(&self) -> &::std::option::Option<f32> {
@@ -44,7 +43,9 @@ impl CustomizationFeatureContentModerationConfigBuilder {
     /// Consumes the builder and constructs a [`CustomizationFeatureContentModerationConfig`](crate::types::CustomizationFeatureContentModerationConfig).
     pub fn build(self) -> crate::types::CustomizationFeatureContentModerationConfig {
         crate::types::CustomizationFeatureContentModerationConfig {
-            confidence_threshold: self.confidence_threshold,
+            confidence_threshold: self.confidence_threshold
+            ,
         }
     }
 }
+

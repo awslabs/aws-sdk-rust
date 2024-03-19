@@ -5,54 +5,50 @@ pub use crate::operation::update_intent::_update_intent_input::UpdateIntentInput
 
 impl UpdateIntentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_intent::UpdateIntentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_intent::UpdateIntentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_intent();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_intent::UpdateIntentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_intent::UpdateIntentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_intent();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateIntent`.
-///
+/// 
 /// <p>Updates the settings for an intent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIntentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_intent::builders::UpdateIntentInputBuilder,
+                    inner: crate::operation::update_intent::builders::UpdateIntentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_intent::UpdateIntentOutput,
-        crate::operation::update_intent::UpdateIntentError,
-    > for UpdateIntentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_intent::UpdateIntentOutput,
-            crate::operation::update_intent::UpdateIntentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_intent::UpdateIntentOutput,
+                    crate::operation::update_intent::UpdateIntentError,
+                > for UpdateIntentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_intent::UpdateIntentOutput,
+                        crate::operation::update_intent::UpdateIntentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateIntentFluentBuilder {
     /// Creates a new `UpdateIntent`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateIntentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_intent::UpdateIntentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_intent::UpdateIntentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_intent::UpdateIntent::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_intent::UpdateIntent::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_intent::UpdateIntentOutput,
-        crate::operation::update_intent::UpdateIntentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_intent::UpdateIntentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_intent::UpdateIntentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_intent::UpdateIntent::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_intent::UpdateIntent::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_intent::UpdateIntentOutput, crate::operation::update_intent::UpdateIntentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique identifier of the intent to update.</p>
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.intent_id(input.into());
@@ -174,12 +161,12 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>New utterances used to invoke the intent.</p>
-    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>) -> Self {
+    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SampleUtterance>>) -> Self {
         self.inner = self.inner.set_sample_utterances(input);
         self
     }
     /// <p>New utterances used to invoke the intent.</p>
-    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>> {
+    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SampleUtterance>> {
         self.inner.get_sample_utterances()
     }
     /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
@@ -220,12 +207,12 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>A new list of slots and their priorities that are contained by the intent.</p>
-    pub fn set_slot_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotPriority>>) -> Self {
+    pub fn set_slot_priorities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SlotPriority>>) -> Self {
         self.inner = self.inner.set_slot_priorities(input);
         self
     }
     /// <p>A new list of slots and their priorities that are contained by the intent.</p>
-    pub fn get_slot_priorities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotPriority>> {
+    pub fn get_slot_priorities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SlotPriority>> {
         self.inner.get_slot_priorities()
     }
     /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
@@ -266,12 +253,12 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
-    pub fn set_input_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>) -> Self {
+    pub fn set_input_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputContext>>) -> Self {
         self.inner = self.inner.set_input_contexts(input);
         self
     }
     /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
-    pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
+    pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputContext>> {
         self.inner.get_input_contexts()
     }
     /// Appends an item to `outputContexts`.
@@ -284,12 +271,12 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-    pub fn set_output_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>) -> Self {
+    pub fn set_output_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>>) -> Self {
         self.inner = self.inner.set_output_contexts(input);
         self
     }
     /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-    pub fn get_output_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputContext>> {
+    pub fn get_output_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>> {
         self.inner.get_output_contexts()
     }
     /// <p>New configuration settings for connecting to an Amazon Kendra index.</p>
@@ -377,3 +364,4 @@ impl UpdateIntentFluentBuilder {
         self.inner.get_qn_a_intent_configuration()
     }
 }
+

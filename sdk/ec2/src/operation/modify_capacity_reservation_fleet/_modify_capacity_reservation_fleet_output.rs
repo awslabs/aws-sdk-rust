@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyCapacityReservationFleetOutput {
+pub struct ModifyCapacityReservationFleetOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl ModifyCapacityReservationFleetOutput {
+impl  ModifyCapacityReservationFleetOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyCapacityReservationFleetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyCapacityReservationFleetOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCapacityReservationFleetOutput`](crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput).
     pub fn builder() -> crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyCapacityReservationFleetOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#return = input;
-        self
+        self.r#return = input; self
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn get_return(&self) -> &::std::option::Option<bool> {
         &self.r#return
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyCapacityReservationFleetOutput`](crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput).
     pub fn build(self) -> crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput {
         crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput {
-            r#return: self.r#return,
+            r#return: self.r#return
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLifecyclePolicyInput {
+pub struct DeleteLifecyclePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to delete.</p>
     pub lifecycle_policy_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLifecyclePolicyInput {
+impl  DeleteLifecyclePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to delete.</p>
-    pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<& str> {
         self.lifecycle_policy_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteLifecyclePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to delete.</p>
     pub fn set_lifecycle_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_policy_arn = input;
-        self
+        self.lifecycle_policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy resource to delete.</p>
     pub fn get_lifecycle_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_policy_arn
     }
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput {
-            lifecycle_policy_arn: self.lifecycle_policy_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput {
+                lifecycle_policy_arn: self.lifecycle_policy_arn
+                ,
+            }
+        )
     }
 }
+

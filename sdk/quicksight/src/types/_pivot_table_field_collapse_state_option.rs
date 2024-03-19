@@ -3,7 +3,7 @@
 /// <p>The collapse state options for the pivot table field options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableFieldCollapseStateOption {
+pub struct PivotTableFieldCollapseStateOption  {
     /// <p>A tagged-union object that sets the collapse state.</p>
     pub target: ::std::option::Option<crate::types::PivotTableFieldCollapseStateTarget>,
     /// <p>The state of the field target of a pivot table. Choose one of the following options:</p>
@@ -15,9 +15,9 @@ pub struct PivotTableFieldCollapseStateOption {
     /// </ul>
     pub state: ::std::option::Option<crate::types::PivotTableFieldCollapseState>,
 }
-impl PivotTableFieldCollapseStateOption {
+impl  PivotTableFieldCollapseStateOption  {
     /// <p>A tagged-union object that sets the collapse state.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::PivotTableFieldCollapseStateTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::PivotTableFieldCollapseStateTarget> {
         self.target.as_ref()
     }
     /// <p>The state of the field target of a pivot table. Choose one of the following options:</p>
@@ -27,7 +27,7 @@ impl PivotTableFieldCollapseStateOption {
     /// <li>
     /// <p><code>EXPANDED</code></p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::PivotTableFieldCollapseState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::PivotTableFieldCollapseState> {
         self.state.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl PivotTableFieldCollapseStateOptionBuilder {
     }
     /// <p>A tagged-union object that sets the collapse state.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::PivotTableFieldCollapseStateTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>A tagged-union object that sets the collapse state.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::PivotTableFieldCollapseStateTarget> {
@@ -80,8 +79,7 @@ impl PivotTableFieldCollapseStateOptionBuilder {
     /// <p><code>EXPANDED</code></p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PivotTableFieldCollapseState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the field target of a pivot table. Choose one of the following options:</p>
     /// <ul>
@@ -96,8 +94,11 @@ impl PivotTableFieldCollapseStateOptionBuilder {
     /// Consumes the builder and constructs a [`PivotTableFieldCollapseStateOption`](crate::types::PivotTableFieldCollapseStateOption).
     pub fn build(self) -> crate::types::PivotTableFieldCollapseStateOption {
         crate::types::PivotTableFieldCollapseStateOption {
-            target: self.target,
-            state: self.state,
+            target: self.target
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

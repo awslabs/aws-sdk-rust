@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInstanceEventWindowInput {
+pub struct CreateInstanceEventWindowInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The name of the event window.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    pub time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>,
+    pub time_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceEventWindowTimeRangeRequest>>,
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -28,22 +28,23 @@ pub struct CreateInstanceEventWindowInput {
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the event window.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
-impl CreateInstanceEventWindowInput {
+impl  CreateInstanceEventWindowInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The name of the event window.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_ranges.is_none()`.
-    pub fn time_ranges(&self) -> &[crate::types::InstanceEventWindowTimeRangeRequest] {
-        self.time_ranges.as_deref().unwrap_or_default()
+    pub fn time_ranges(&self) -> & [crate::types::InstanceEventWindowTimeRangeRequest] {
+        self.time_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
     /// <p>Constraints:</p>
@@ -62,14 +63,15 @@ impl CreateInstanceEventWindowInput {
     /// <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
-    pub fn cron_expression(&self) -> ::std::option::Option<&str> {
+    pub fn cron_expression(&self) -> ::std::option::Option<& str> {
         self.cron_expression.as_deref()
     }
     /// <p>The tags to apply to the event window.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateInstanceEventWindowInput {
@@ -85,9 +87,9 @@ impl CreateInstanceEventWindowInput {
 pub struct CreateInstanceEventWindowInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) time_ranges: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>,
+    pub(crate) time_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceEventWindowTimeRangeRequest>>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
 impl CreateInstanceEventWindowInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -97,8 +99,7 @@ impl CreateInstanceEventWindowInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -111,8 +112,7 @@ impl CreateInstanceEventWindowInputBuilder {
     }
     /// <p>The name of the event window.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the event window.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,17 +125,16 @@ impl CreateInstanceEventWindowInputBuilder {
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
     pub fn time_ranges(mut self, input: crate::types::InstanceEventWindowTimeRangeRequest) -> Self {
         let mut v = self.time_ranges.unwrap_or_default();
-        v.push(input);
-        self.time_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.time_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    pub fn set_time_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>) -> Self {
-        self.time_ranges = input;
-        self
+    pub fn set_time_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceEventWindowTimeRangeRequest>>) -> Self {
+        self.time_ranges = input; self
     }
     /// <p>The time range for the event window. If you specify a time range, you can't specify a cron expression.</p>
-    pub fn get_time_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>> {
+    pub fn get_time_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceEventWindowTimeRangeRequest>> {
         &self.time_ranges
     }
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
@@ -177,8 +176,7 @@ impl CreateInstanceEventWindowInputBuilder {
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cron_expression = input;
-        self
+        self.cron_expression = input; self
     }
     /// <p>The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>. If you specify a cron expression, you can't specify a time range.</p>
     /// <p>Constraints:</p>
@@ -207,32 +205,34 @@ impl CreateInstanceEventWindowInputBuilder {
     /// <p>The tags to apply to the event window.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the event window.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the event window.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateInstanceEventWindowInput`](crate::operation::create_instance_event_window::CreateInstanceEventWindowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_instance_event_window::CreateInstanceEventWindowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_instance_event_window::CreateInstanceEventWindowInput {
-            dry_run: self.dry_run,
-            name: self.name,
-            time_ranges: self.time_ranges,
-            cron_expression: self.cron_expression,
-            tag_specifications: self.tag_specifications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_instance_event_window::CreateInstanceEventWindowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_instance_event_window::CreateInstanceEventWindowInput {
+                dry_run: self.dry_run
+                ,
+                name: self.name
+                ,
+                time_ranges: self.time_ranges
+                ,
+                cron_expression: self.cron_expression
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+            }
+        )
     }
 }
+

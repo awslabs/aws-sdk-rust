@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLabelingJobsForWorkteam`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workteam_arn(impl Into<String>)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::workteam_arn) / [`set_workteam_arn(Option<String>)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::set_workteam_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of labeling jobs to return in each page of the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p><br>
@@ -12,13 +12,12 @@ impl super::Client {
     ///   - [`job_reference_code_contains(impl Into<String>)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::job_reference_code_contains) / [`set_job_reference_code_contains(Option<String>)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::set_job_reference_code_contains):<br>required: **false**<br><p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p><br>
     ///   - [`sort_by(ListLabelingJobsForWorkteamSortByOptions)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::sort_by) / [`set_sort_by(Option<ListLabelingJobsForWorkteamSortByOptions>)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field to sort results by. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results. The default is <code>Ascending</code>.</p><br>
-    /// - On success, responds with [`ListLabelingJobsForWorkteamOutput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput) with field(s):
+                            /// - On success, responds with [`ListLabelingJobsForWorkteamOutput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput) with field(s):
     ///   - [`labeling_job_summary_list(Option<Vec::<LabelingJobForWorkteamSummary>>)`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput::labeling_job_summary_list): <p>An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of labeling jobs, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListLabelingJobsForWorkteamError>`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError)
-    pub fn list_labeling_jobs_for_workteam(
-        &self,
-    ) -> crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder {
-        crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListLabelingJobsForWorkteamError>`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError)
+    pub fn list_labeling_jobs_for_workteam(&self) -> crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder {
+                                crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamFluentBuilder::new(self.handle.clone())
+                            }
 }
+

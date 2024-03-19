@@ -3,22 +3,20 @@
 /// <p>The name and value pair of a parameter to use to start execution of a SageMaker Model Building Pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SageMakerPipelineParameter {
+pub struct SageMakerPipelineParameter  {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub name: ::std::string::String,
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub value: ::std::string::String,
 }
-impl SageMakerPipelineParameter {
+impl  SageMakerPipelineParameter  {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl SageMakerPipelineParameter {
@@ -44,8 +42,7 @@ impl SageMakerPipelineParameterBuilder {
     }
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl SageMakerPipelineParameterBuilder {
     }
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl SageMakerPipelineParameterBuilder {
     /// - [`name`](crate::types::builders::SageMakerPipelineParameterBuilder::name)
     /// - [`value`](crate::types::builders::SageMakerPipelineParameterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::SageMakerPipelineParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SageMakerPipelineParameter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SageMakerPipelineParameter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building SageMakerPipelineParameter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SageMakerPipelineParameter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SageMakerPipelineParameter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building SageMakerPipelineParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

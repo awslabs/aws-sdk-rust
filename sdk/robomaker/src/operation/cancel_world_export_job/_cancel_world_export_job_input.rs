@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelWorldExportJobInput {
+pub struct CancelWorldExportJobInput  {
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
     pub job: ::std::option::Option<::std::string::String>,
 }
-impl CancelWorldExportJobInput {
+impl  CancelWorldExportJobInput  {
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
-    pub fn job(&self) -> ::std::option::Option<&str> {
+    pub fn job(&self) -> ::std::option::Option<& str> {
         self.job.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl CancelWorldExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
     pub fn set_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
     pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
         &self.job
     }
     /// Consumes the builder and constructs a [`CancelWorldExportJobInput`](crate::operation::cancel_world_export_job::CancelWorldExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_world_export_job::CancelWorldExportJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::cancel_world_export_job::CancelWorldExportJobInput { job: self.job })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_world_export_job::CancelWorldExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_world_export_job::CancelWorldExportJobInput {
+                job: self.job
+                ,
+            }
+        )
     }
 }
+

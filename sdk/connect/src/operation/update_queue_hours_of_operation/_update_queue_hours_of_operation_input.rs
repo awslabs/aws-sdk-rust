@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateQueueHoursOfOperationInput {
+pub struct UpdateQueueHoursOfOperationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the queue.</p>
@@ -10,17 +10,17 @@ pub struct UpdateQueueHoursOfOperationInput {
     /// <p>The identifier for the hours of operation.</p>
     pub hours_of_operation_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateQueueHoursOfOperationInput {
+impl  UpdateQueueHoursOfOperationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> ::std::option::Option<&str> {
+    pub fn queue_id(&self) -> ::std::option::Option<& str> {
         self.queue_id.as_deref()
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn hours_of_operation_id(&self) -> ::std::option::Option<& str> {
         self.hours_of_operation_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateQueueHoursOfOperationInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateQueueHoursOfOperationInputBuilder {
     }
     /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_id = input;
-        self
+        self.queue_id = input; self
     }
     /// <p>The identifier for the queue.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateQueueHoursOfOperationInputBuilder {
     }
     /// <p>The identifier for the hours of operation.</p>
     pub fn set_hours_of_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hours_of_operation_id = input;
-        self
+        self.hours_of_operation_id = input; self
     }
     /// <p>The identifier for the hours of operation.</p>
     pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hours_of_operation_id
     }
     /// Consumes the builder and constructs a [`UpdateQueueHoursOfOperationInput`](crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput {
-            instance_id: self.instance_id,
-            queue_id: self.queue_id,
-            hours_of_operation_id: self.hours_of_operation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_queue_hours_of_operation::UpdateQueueHoursOfOperationInput {
+                instance_id: self.instance_id
+                ,
+                queue_id: self.queue_id
+                ,
+                hours_of_operation_id: self.hours_of_operation_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains additional details about the state's execution, including its input and output data processing flow, and HTTP request information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InspectionDataRequest {
+pub struct InspectionDataRequest  {
     /// <p>The protocol used to make the HTTP request.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP method used for the HTTP request.</p>
@@ -15,25 +15,25 @@ pub struct InspectionDataRequest {
     /// <p>The request body for the HTTP request.</p>
     pub body: ::std::option::Option<::std::string::String>,
 }
-impl InspectionDataRequest {
+impl  InspectionDataRequest  {
     /// <p>The protocol used to make the HTTP request.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The HTTP method used for the HTTP request.</p>
-    pub fn method(&self) -> ::std::option::Option<&str> {
+    pub fn method(&self) -> ::std::option::Option<& str> {
         self.method.as_deref()
     }
     /// <p>The API endpoint used for the HTTP request.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The request headers associated with the HTTP request.</p>
-    pub fn headers(&self) -> ::std::option::Option<&str> {
+    pub fn headers(&self) -> ::std::option::Option<& str> {
         self.headers.as_deref()
     }
     /// <p>The request body for the HTTP request.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl InspectionDataRequestBuilder {
     }
     /// <p>The protocol used to make the HTTP request.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol used to make the HTTP request.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl InspectionDataRequestBuilder {
     }
     /// <p>The HTTP method used for the HTTP request.</p>
     pub fn set_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.method = input;
-        self
+        self.method = input; self
     }
     /// <p>The HTTP method used for the HTTP request.</p>
     pub fn get_method(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl InspectionDataRequestBuilder {
     }
     /// <p>The API endpoint used for the HTTP request.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The API endpoint used for the HTTP request.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl InspectionDataRequestBuilder {
     }
     /// <p>The request headers associated with the HTTP request.</p>
     pub fn set_headers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.headers = input;
-        self
+        self.headers = input; self
     }
     /// <p>The request headers associated with the HTTP request.</p>
     pub fn get_headers(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl InspectionDataRequestBuilder {
     }
     /// <p>The request body for the HTTP request.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The request body for the HTTP request.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl InspectionDataRequestBuilder {
     /// Consumes the builder and constructs a [`InspectionDataRequest`](crate::types::InspectionDataRequest).
     pub fn build(self) -> crate::types::InspectionDataRequest {
         crate::types::InspectionDataRequest {
-            protocol: self.protocol,
-            method: self.method,
-            url: self.url,
-            headers: self.headers,
-            body: self.body,
+            protocol: self.protocol
+            ,
+            method: self.method
+            ,
+            url: self.url
+            ,
+            headers: self.headers
+            ,
+            body: self.body
+            ,
         }
     }
 }
+

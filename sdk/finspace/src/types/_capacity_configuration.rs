@@ -3,7 +3,7 @@
 /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityConfiguration {
+pub struct CapacityConfiguration  {
     /// <p>The type that determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.</p>
     /// <p>You can only specify one of the following values:</p>
     /// <ul>
@@ -26,7 +26,7 @@ pub struct CapacityConfiguration {
     /// <p>The number of instances running in a cluster.</p>
     pub node_count: ::std::option::Option<i32>,
 }
-impl CapacityConfiguration {
+impl  CapacityConfiguration  {
     /// <p>The type that determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.</p>
     /// <p>You can only specify one of the following values:</p>
     /// <ul>
@@ -45,7 +45,7 @@ impl CapacityConfiguration {
     /// <li>
     /// <p><code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
     /// </ul>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The number of instances running in a cluster.</p>
@@ -109,8 +109,7 @@ impl CapacityConfigurationBuilder {
     /// <p><code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory and 128 vCPUs.</p></li>
     /// </ul>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The type that determines the hardware of the host computer used for your cluster instance. Each node type offers different memory and storage capabilities. Choose a node type based on the requirements of the application or software that you plan to run on your instance.</p>
     /// <p>You can only specify one of the following values:</p>
@@ -140,8 +139,7 @@ impl CapacityConfigurationBuilder {
     }
     /// <p>The number of instances running in a cluster.</p>
     pub fn set_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.node_count = input;
-        self
+        self.node_count = input; self
     }
     /// <p>The number of instances running in a cluster.</p>
     pub fn get_node_count(&self) -> &::std::option::Option<i32> {
@@ -150,8 +148,11 @@ impl CapacityConfigurationBuilder {
     /// Consumes the builder and constructs a [`CapacityConfiguration`](crate::types::CapacityConfiguration).
     pub fn build(self) -> crate::types::CapacityConfiguration {
         crate::types::CapacityConfiguration {
-            node_type: self.node_type,
-            node_count: self.node_count,
+            node_type: self.node_type
+            ,
+            node_count: self.node_count
+            ,
         }
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>An infrastructure as code defined resource output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Output {
+pub struct Output  {
     /// <p>The output key.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The output value.</p>
     pub value_string: ::std::option::Option<::std::string::String>,
 }
-impl Output {
+impl  Output  {
     /// <p>The output key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The output value.</p>
-    pub fn value_string(&self) -> ::std::option::Option<&str> {
+    pub fn value_string(&self) -> ::std::option::Option<& str> {
         self.value_string.as_deref()
     }
 }
-impl ::std::fmt::Debug for Output {
+impl  ::std::fmt::Debug for Output  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Output");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl OutputBuilder {
     }
     /// <p>The output key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The output key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl OutputBuilder {
     }
     /// <p>The output value.</p>
     pub fn set_value_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value_string = input;
-        self
+        self.value_string = input; self
     }
     /// <p>The output value.</p>
     pub fn get_value_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl OutputBuilder {
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {
         crate::types::Output {
-            key: self.key,
-            value_string: self.value_string,
+            key: self.key
+            ,
+            value_string: self.value_string
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for OutputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVoiceConnectorGroupInput {
+pub struct CreateVoiceConnectorGroupInput  {
     /// <p>The name of the Voice Connector group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
-    pub voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    pub voice_connector_items: ::std::option::Option<::std::vec::Vec::<crate::types::VoiceConnectorItem>>,
 }
-impl CreateVoiceConnectorGroupInput {
+impl  CreateVoiceConnectorGroupInput  {
     /// <p>The name of the Voice Connector group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice_connector_items.is_none()`.
-    pub fn voice_connector_items(&self) -> &[crate::types::VoiceConnectorItem] {
-        self.voice_connector_items.as_deref().unwrap_or_default()
+    pub fn voice_connector_items(&self) -> & [crate::types::VoiceConnectorItem] {
+        self.voice_connector_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateVoiceConnectorGroupInput {
@@ -32,7 +33,7 @@ impl CreateVoiceConnectorGroupInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
+    pub(crate) voice_connector_items: ::std::option::Option<::std::vec::Vec::<crate::types::VoiceConnectorItem>>,
 }
 impl CreateVoiceConnectorGroupInputBuilder {
     /// <p>The name of the Voice Connector group.</p>
@@ -43,8 +44,7 @@ impl CreateVoiceConnectorGroupInputBuilder {
     }
     /// <p>The name of the Voice Connector group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Voice Connector group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl CreateVoiceConnectorGroupInputBuilder {
     /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
     pub fn voice_connector_items(mut self, input: crate::types::VoiceConnectorItem) -> Self {
         let mut v = self.voice_connector_items.unwrap_or_default();
-        v.push(input);
-        self.voice_connector_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.voice_connector_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
-    pub fn set_voice_connector_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>) -> Self {
-        self.voice_connector_items = input;
-        self
+    pub fn set_voice_connector_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VoiceConnectorItem>>) -> Self {
+        self.voice_connector_items = input; self
     }
     /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
-    pub fn get_voice_connector_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+    pub fn get_voice_connector_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VoiceConnectorItem>> {
         &self.voice_connector_items
     }
     /// Consumes the builder and constructs a [`CreateVoiceConnectorGroupInput`](crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput {
-            name: self.name,
-            voice_connector_items: self.voice_connector_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupInput {
+                name: self.name
+                ,
+                voice_connector_items: self.voice_connector_items
+                ,
+            }
+        )
     }
 }
+

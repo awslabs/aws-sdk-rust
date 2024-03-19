@@ -3,13 +3,13 @@
 /// <p>The Organizations organizational unit data source for the sync.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceDataSyncOrganizationalUnit {
+pub struct ResourceDataSyncOrganizationalUnit  {
     /// <p>The Organizations unit ID data source for the sync.</p>
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
-impl ResourceDataSyncOrganizationalUnit {
+impl  ResourceDataSyncOrganizationalUnit  {
     /// <p>The Organizations unit ID data source for the sync.</p>
-    pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
+    pub fn organizational_unit_id(&self) -> ::std::option::Option<& str> {
         self.organizational_unit_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ResourceDataSyncOrganizationalUnitBuilder {
     }
     /// <p>The Organizations unit ID data source for the sync.</p>
     pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organizational_unit_id = input;
-        self
+        self.organizational_unit_id = input; self
     }
     /// <p>The Organizations unit ID data source for the sync.</p>
     pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ResourceDataSyncOrganizationalUnitBuilder {
     /// Consumes the builder and constructs a [`ResourceDataSyncOrganizationalUnit`](crate::types::ResourceDataSyncOrganizationalUnit).
     pub fn build(self) -> crate::types::ResourceDataSyncOrganizationalUnit {
         crate::types::ResourceDataSyncOrganizationalUnit {
-            organizational_unit_id: self.organizational_unit_id,
+            organizational_unit_id: self.organizational_unit_id
+            ,
         }
     }
 }
+

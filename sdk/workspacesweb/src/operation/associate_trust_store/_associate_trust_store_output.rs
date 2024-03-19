@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateTrustStoreOutput {
+pub struct AssociateTrustStoreOutput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::string::String,
     /// <p>The ARN of the trust store.</p>
     pub trust_store_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl AssociateTrustStoreOutput {
+impl  AssociateTrustStoreOutput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_arn.deref()
+    pub fn portal_arn(&self) -> & str {
+        use std::ops::Deref; self.portal_arn.deref()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.trust_store_arn.deref()
+    pub fn trust_store_arn(&self) -> & str {
+        use std::ops::Deref; self.trust_store_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateTrustStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateTrustStoreOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTrustStoreOutput`](crate::operation::associate_trust_store::AssociateTrustStoreOutput).
     pub fn builder() -> crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder {
@@ -50,8 +48,7 @@ impl AssociateTrustStoreOutputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,44 +62,41 @@ impl AssociateTrustStoreOutputBuilder {
     }
     /// <p>The ARN of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The ARN of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trust_store_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateTrustStoreOutput`](crate::operation::associate_trust_store::AssociateTrustStoreOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`portal_arn`](crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder::portal_arn)
     /// - [`trust_store_arn`](crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder::trust_store_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_trust_store::AssociateTrustStoreOutput {
-            portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_arn",
-                    "portal_arn was not specified but it is required when building AssociateTrustStoreOutput",
-                )
-            })?,
-            trust_store_arn: self.trust_store_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "trust_store_arn",
-                    "trust_store_arn was not specified but it is required when building AssociateTrustStoreOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_trust_store::AssociateTrustStoreOutput {
+                portal_arn: self.portal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building AssociateTrustStoreOutput")
+                    )?
+                ,
+                trust_store_arn: self.trust_store_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("trust_store_arn", "trust_store_arn was not specified but it is required when building AssociateTrustStoreOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

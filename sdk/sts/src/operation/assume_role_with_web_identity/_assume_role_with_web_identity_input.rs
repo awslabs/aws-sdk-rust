@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssumeRoleWithWebIdentityInput {
+pub struct AssumeRoleWithWebIdentityInput  {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the assumed role session. Typically, you pass the name or identifier that is associated with the user who is using your application. That way, the temporary security credentials that your application will use are associated with that user. This session name is included as part of the ARN and assumed role ID in the <code>AssumedRoleUser</code> response element.</p>
@@ -19,7 +19,7 @@ pub struct AssumeRoleWithWebIdentityInput {
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    pub policy_arns: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>,
+    pub policy_arns: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyDescriptorType>>,
     /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
     /// <p>This parameter is optional. Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON policy characters can be any ASCII character from the space character to the end of the valid character list (\u0020 through \u00FF). It can also include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p><note>
@@ -32,24 +32,24 @@ pub struct AssumeRoleWithWebIdentityInput {
     /// </note>
     pub duration_seconds: ::std::option::Option<i32>,
 }
-impl AssumeRoleWithWebIdentityInput {
+impl  AssumeRoleWithWebIdentityInput  {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An identifier for the assumed role session. Typically, you pass the name or identifier that is associated with the user who is using your application. That way, the temporary security credentials that your application will use are associated with that user. This session name is included as part of the ARN and assumed role ID in the <code>AssumedRoleUser</code> response element.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
-    pub fn role_session_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_session_name(&self) -> ::std::option::Option<& str> {
         self.role_session_name.as_deref()
     }
     /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are supported.</p>
-    pub fn web_identity_token(&self) -> ::std::option::Option<&str> {
+    pub fn web_identity_token(&self) -> ::std::option::Option<& str> {
         self.web_identity_token.as_deref()
     }
     /// <p>The fully qualified host component of the domain name of the OAuth 2.0 identity provider. Do not specify this value for an OpenID Connect identity provider.</p>
     /// <p>Currently <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only supported identity providers for OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p>
     /// <p>Do not specify this value for OpenID Connect ID tokens.</p>
-    pub fn provider_id(&self) -> ::std::option::Option<&str> {
+    pub fn provider_id(&self) -> ::std::option::Option<& str> {
         self.provider_id.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session policies. The policies must exist in the same account as the role.</p>
@@ -57,17 +57,18 @@ impl AssumeRoleWithWebIdentityInput {
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_arns.is_none()`.
-    pub fn policy_arns(&self) -> &[crate::types::PolicyDescriptorType] {
-        self.policy_arns.as_deref().unwrap_or_default()
+    pub fn policy_arns(&self) -> & [crate::types::PolicyDescriptorType] {
+        self.policy_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
     /// <p>This parameter is optional. Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON policy characters can be any ASCII character from the space character to the end of the valid character list (\u0020 through \u00FF). It can also include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p><note>
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If you specify a value higher than this setting, the operation fails. For example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.</p>
@@ -78,7 +79,7 @@ impl AssumeRoleWithWebIdentityInput {
         self.duration_seconds
     }
 }
-impl ::std::fmt::Debug for AssumeRoleWithWebIdentityInput {
+impl  ::std::fmt::Debug for AssumeRoleWithWebIdentityInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssumeRoleWithWebIdentityInput");
         formatter.field("role_arn", &self.role_arn);
@@ -106,7 +107,7 @@ pub struct AssumeRoleWithWebIdentityInputBuilder {
     pub(crate) role_session_name: ::std::option::Option<::std::string::String>,
     pub(crate) web_identity_token: ::std::option::Option<::std::string::String>,
     pub(crate) provider_id: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_arns: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>,
+    pub(crate) policy_arns: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyDescriptorType>>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
 }
@@ -119,8 +120,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +136,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
     /// <p>An identifier for the assumed role session. Typically, you pass the name or identifier that is associated with the user who is using your application. That way, the temporary security credentials that your application will use are associated with that user. This session name is included as part of the ARN and assumed role ID in the <code>AssumedRoleUser</code> response element.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     pub fn set_role_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_session_name = input;
-        self
+        self.role_session_name = input; self
     }
     /// <p>An identifier for the assumed role session. Typically, you pass the name or identifier that is associated with the user who is using your application. That way, the temporary security credentials that your application will use are associated with that user. This session name is included as part of the ARN and assumed role ID in the <code>AssumedRoleUser</code> response element.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
@@ -152,8 +151,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
     }
     /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are supported.</p>
     pub fn set_web_identity_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_identity_token = input;
-        self
+        self.web_identity_token = input; self
     }
     /// <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are supported.</p>
     pub fn get_web_identity_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +168,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
     /// <p>Currently <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only supported identity providers for OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p>
     /// <p>Do not specify this value for OpenID Connect ID tokens.</p>
     pub fn set_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_id = input;
-        self
+        self.provider_id = input; self
     }
     /// <p>The fully qualified host component of the domain name of the OAuth 2.0 identity provider. Do not specify this value for an OpenID Connect identity provider.</p>
     /// <p>Currently <code>www.amazon.com</code> and <code>graph.facebook.com</code> are the only supported identity providers for OAuth 2.0 access tokens. Do not include URL schemes and port numbers.</p>
@@ -190,25 +187,24 @@ impl AssumeRoleWithWebIdentityInputBuilder {
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
     pub fn policy_arns(mut self, input: crate::types::PolicyDescriptorType) -> Self {
         let mut v = self.policy_arns.unwrap_or_default();
-        v.push(input);
-        self.policy_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session policies. The policies must exist in the same account as the role.</p>
     /// <p>This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.</p><note>
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>) -> Self {
-        self.policy_arns = input;
-        self
+    pub fn set_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyDescriptorType>>) -> Self {
+        self.policy_arns = input; self
     }
     /// <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session policies. The policies must exist in the same account as the role.</p>
     /// <p>This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.</p><note>
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn get_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>> {
+    pub fn get_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyDescriptorType>> {
         &self.policy_arns
     }
     /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -226,8 +222,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
     /// <p>This parameter is optional. Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
@@ -250,8 +245,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
     /// <p>The <code>DurationSeconds</code> parameter is separate from the duration of a console session that you might request using the returned credentials. The request to the federation endpoint for a console sign-in token takes a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
     }
     /// <p>The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If you specify a value higher than this setting, the operation fails. For example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.</p>
     /// <p>By default, the value is set to <code>3600</code> seconds.</p><note>
@@ -261,21 +255,25 @@ impl AssumeRoleWithWebIdentityInputBuilder {
         &self.duration_seconds
     }
     /// Consumes the builder and constructs a [`AssumeRoleWithWebIdentityInput`](crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput {
-            role_arn: self.role_arn,
-            role_session_name: self.role_session_name,
-            web_identity_token: self.web_identity_token,
-            provider_id: self.provider_id,
-            policy_arns: self.policy_arns,
-            policy: self.policy,
-            duration_seconds: self.duration_seconds,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput {
+                role_arn: self.role_arn
+                ,
+                role_session_name: self.role_session_name
+                ,
+                web_identity_token: self.web_identity_token
+                ,
+                provider_id: self.provider_id
+                ,
+                policy_arns: self.policy_arns
+                ,
+                policy: self.policy
+                ,
+                duration_seconds: self.duration_seconds
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AssumeRoleWithWebIdentityInputBuilder {
@@ -291,3 +289,4 @@ impl ::std::fmt::Debug for AssumeRoleWithWebIdentityInputBuilder {
         formatter.finish()
     }
 }
+

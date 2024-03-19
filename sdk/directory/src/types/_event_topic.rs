@@ -3,7 +3,7 @@
 /// <p>Information about Amazon SNS topic and Directory Service directory associations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventTopic {
+pub struct EventTopic  {
     /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
@@ -15,25 +15,25 @@ pub struct EventTopic {
     /// <p>The topic registration status.</p>
     pub status: ::std::option::Option<crate::types::TopicStatus>,
 }
-impl EventTopic {
+impl  EventTopic  {
     /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
+    pub fn topic_name(&self) -> ::std::option::Option<& str> {
         self.topic_name.as_deref()
     }
     /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
-    pub fn created_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date_time.as_ref()
     }
     /// <p>The topic registration status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TopicStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TopicStatus> {
         self.status.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl EventTopicBuilder {
     }
     /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl EventTopicBuilder {
     }
     /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
     }
     /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl EventTopicBuilder {
     }
     /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl EventTopicBuilder {
     }
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
     pub fn set_created_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date_time = input;
-        self
+        self.created_date_time = input; self
     }
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
     pub fn get_created_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl EventTopicBuilder {
     }
     /// <p>The topic registration status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TopicStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The topic registration status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TopicStatus> {
@@ -128,11 +123,17 @@ impl EventTopicBuilder {
     /// Consumes the builder and constructs a [`EventTopic`](crate::types::EventTopic).
     pub fn build(self) -> crate::types::EventTopic {
         crate::types::EventTopic {
-            directory_id: self.directory_id,
-            topic_name: self.topic_name,
-            topic_arn: self.topic_arn,
-            created_date_time: self.created_date_time,
-            status: self.status,
+            directory_id: self.directory_id
+            ,
+            topic_name: self.topic_name
+            ,
+            topic_arn: self.topic_arn
+            ,
+            created_date_time: self.created_date_time
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

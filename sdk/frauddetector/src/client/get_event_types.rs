@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetEventTypes`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::set_name):<br>required: **false**<br><p>The name.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token for the subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
-    /// - On success, responds with [`GetEventTypesOutput`](crate::operation::get_event_types::GetEventTypesOutput) with field(s):
+                            /// - On success, responds with [`GetEventTypesOutput`](crate::operation::get_event_types::GetEventTypesOutput) with field(s):
     ///   - [`event_types(Option<Vec::<EventType>>)`](crate::operation::get_event_types::GetEventTypesOutput::event_types): <p>An array of event types.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_event_types::GetEventTypesOutput::next_token): <p>The next page token.</p>
-    /// - On failure, responds with [`SdkError<GetEventTypesError>`](crate::operation::get_event_types::GetEventTypesError)
+                            /// - On failure, responds with [`SdkError<GetEventTypesError>`](crate::operation::get_event_types::GetEventTypesError)
     pub fn get_event_types(&self) -> crate::operation::get_event_types::builders::GetEventTypesFluentBuilder {
-        crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

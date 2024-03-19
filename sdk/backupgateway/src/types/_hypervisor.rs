@@ -4,7 +4,7 @@
 /// <p>A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Hypervisor {
+pub struct Hypervisor  {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
@@ -16,25 +16,25 @@ pub struct Hypervisor {
     /// <p>The state of the hypervisor.</p>
     pub state: ::std::option::Option<crate::types::HypervisorState>,
 }
-impl Hypervisor {
+impl  Hypervisor  {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> ::std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The name of the hypervisor.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the hypervisor.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::HypervisorState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::HypervisorState> {
         self.state.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl HypervisorBuilder {
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl HypervisorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hypervisor_arn = input;
-        self
+        self.hypervisor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl HypervisorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl HypervisorBuilder {
     }
     /// <p>The name of the hypervisor.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the hypervisor.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl HypervisorBuilder {
     }
     /// <p>The state of the hypervisor.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::HypervisorState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the hypervisor.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::HypervisorState> {
@@ -129,11 +124,17 @@ impl HypervisorBuilder {
     /// Consumes the builder and constructs a [`Hypervisor`](crate::types::Hypervisor).
     pub fn build(self) -> crate::types::Hypervisor {
         crate::types::Hypervisor {
-            host: self.host,
-            hypervisor_arn: self.hypervisor_arn,
-            kms_key_arn: self.kms_key_arn,
-            name: self.name,
-            state: self.state,
+            host: self.host
+            ,
+            hypervisor_arn: self.hypervisor_arn
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
+            name: self.name
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

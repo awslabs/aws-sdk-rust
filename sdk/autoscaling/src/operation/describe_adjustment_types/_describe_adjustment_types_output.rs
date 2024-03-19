@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAdjustmentTypesOutput {
+pub struct DescribeAdjustmentTypesOutput  {
     /// <p>The policy adjustment types.</p>
-    pub adjustment_types: ::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>>,
+    pub adjustment_types: ::std::option::Option<::std::vec::Vec::<crate::types::AdjustmentType>>,
     _request_id: Option<String>,
 }
-impl DescribeAdjustmentTypesOutput {
+impl  DescribeAdjustmentTypesOutput  {
     /// <p>The policy adjustment types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adjustment_types.is_none()`.
-    pub fn adjustment_types(&self) -> &[crate::types::AdjustmentType] {
-        self.adjustment_types.as_deref().unwrap_or_default()
+    pub fn adjustment_types(&self) -> & [crate::types::AdjustmentType] {
+        self.adjustment_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAdjustmentTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAdjustmentTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAdjustmentTypesOutput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput).
     pub fn builder() -> crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeAdjustmentTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAdjustmentTypesOutputBuilder {
-    pub(crate) adjustment_types: ::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>>,
+    pub(crate) adjustment_types: ::std::option::Option<::std::vec::Vec::<crate::types::AdjustmentType>>,
     _request_id: Option<String>,
 }
 impl DescribeAdjustmentTypesOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeAdjustmentTypesOutputBuilder {
     /// <p>The policy adjustment types.</p>
     pub fn adjustment_types(mut self, input: crate::types::AdjustmentType) -> Self {
         let mut v = self.adjustment_types.unwrap_or_default();
-        v.push(input);
-        self.adjustment_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.adjustment_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The policy adjustment types.</p>
-    pub fn set_adjustment_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>>) -> Self {
-        self.adjustment_types = input;
-        self
+    pub fn set_adjustment_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdjustmentType>>) -> Self {
+        self.adjustment_types = input; self
     }
     /// <p>The policy adjustment types.</p>
-    pub fn get_adjustment_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdjustmentType>> {
+    pub fn get_adjustment_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdjustmentType>> {
         &self.adjustment_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAdjustmentTypesOutput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput).
     pub fn build(self) -> crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput {
         crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput {
-            adjustment_types: self.adjustment_types,
+            adjustment_types: self.adjustment_types
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

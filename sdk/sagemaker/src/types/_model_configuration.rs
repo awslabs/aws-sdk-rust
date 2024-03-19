@@ -3,27 +3,28 @@
 /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelConfiguration {
+pub struct ModelConfiguration  {
     /// <p>The inference specification name in the model package version.</p>
     pub inference_specification_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
-    pub environment_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
+    pub environment_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>,
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
 }
-impl ModelConfiguration {
+impl  ModelConfiguration  {
     /// <p>The inference specification name in the model package version.</p>
-    pub fn inference_specification_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_specification_name(&self) -> ::std::option::Option<& str> {
         self.inference_specification_name.as_deref()
     }
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_parameters.is_none()`.
-    pub fn environment_parameters(&self) -> &[crate::types::EnvironmentParameter] {
-        self.environment_parameters.as_deref().unwrap_or_default()
+    pub fn environment_parameters(&self) -> & [crate::types::EnvironmentParameter] {
+        self.environment_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
-    pub fn compilation_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn compilation_job_name(&self) -> ::std::option::Option<& str> {
         self.compilation_job_name.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl ModelConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelConfigurationBuilder {
     pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
-    pub(crate) environment_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
+    pub(crate) environment_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>,
     pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelConfigurationBuilder {
@@ -50,8 +51,7 @@ impl ModelConfigurationBuilder {
     }
     /// <p>The inference specification name in the model package version.</p>
     pub fn set_inference_specification_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_specification_name = input;
-        self
+        self.inference_specification_name = input; self
     }
     /// <p>The inference specification name in the model package version.</p>
     pub fn get_inference_specification_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl ModelConfigurationBuilder {
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
     pub fn environment_parameters(mut self, input: crate::types::EnvironmentParameter) -> Self {
         let mut v = self.environment_parameters.unwrap_or_default();
-        v.push(input);
-        self.environment_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.environment_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
-    pub fn set_environment_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>) -> Self {
-        self.environment_parameters = input;
-        self
+    pub fn set_environment_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>) -> Self {
+        self.environment_parameters = input; self
     }
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
-    pub fn get_environment_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>> {
+    pub fn get_environment_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>> {
         &self.environment_parameters
     }
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
@@ -84,8 +83,7 @@ impl ModelConfigurationBuilder {
     }
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
     pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compilation_job_name = input;
-        self
+        self.compilation_job_name = input; self
     }
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
     pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,9 +92,13 @@ impl ModelConfigurationBuilder {
     /// Consumes the builder and constructs a [`ModelConfiguration`](crate::types::ModelConfiguration).
     pub fn build(self) -> crate::types::ModelConfiguration {
         crate::types::ModelConfiguration {
-            inference_specification_name: self.inference_specification_name,
-            environment_parameters: self.environment_parameters,
-            compilation_job_name: self.compilation_job_name,
+            inference_specification_name: self.inference_specification_name
+            ,
+            environment_parameters: self.environment_parameters
+            ,
+            compilation_job_name: self.compilation_job_name
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The epsilon and noise parameter values that you want to use for the differential privacy template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DifferentialPrivacyTemplateParametersInput {
+pub struct DifferentialPrivacyTemplateParametersInput  {
     /// <p>The epsilon value that you want to use.</p>
     pub epsilon: i32,
     /// <p>Noise added per query is measured in terms of the number of users whose contributions you want to obscure. This value governs the rate at which the privacy budget is depleted.</p>
     pub users_noise_per_query: i32,
 }
-impl DifferentialPrivacyTemplateParametersInput {
+impl  DifferentialPrivacyTemplateParametersInput  {
     /// <p>The epsilon value that you want to use.</p>
     pub fn epsilon(&self) -> i32 {
         self.epsilon
@@ -42,8 +42,7 @@ impl DifferentialPrivacyTemplateParametersInputBuilder {
     }
     /// <p>The epsilon value that you want to use.</p>
     pub fn set_epsilon(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.epsilon = input;
-        self
+        self.epsilon = input; self
     }
     /// <p>The epsilon value that you want to use.</p>
     pub fn get_epsilon(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl DifferentialPrivacyTemplateParametersInputBuilder {
     }
     /// <p>Noise added per query is measured in terms of the number of users whose contributions you want to obscure. This value governs the rate at which the privacy budget is depleted.</p>
     pub fn set_users_noise_per_query(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.users_noise_per_query = input;
-        self
+        self.users_noise_per_query = input; self
     }
     /// <p>Noise added per query is measured in terms of the number of users whose contributions you want to obscure. This value governs the rate at which the privacy budget is depleted.</p>
     pub fn get_users_noise_per_query(&self) -> &::std::option::Option<i32> {
@@ -68,22 +66,21 @@ impl DifferentialPrivacyTemplateParametersInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`epsilon`](crate::types::builders::DifferentialPrivacyTemplateParametersInputBuilder::epsilon)
     /// - [`users_noise_per_query`](crate::types::builders::DifferentialPrivacyTemplateParametersInputBuilder::users_noise_per_query)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::DifferentialPrivacyTemplateParametersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DifferentialPrivacyTemplateParametersInput {
-            epsilon: self.epsilon.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "epsilon",
-                    "epsilon was not specified but it is required when building DifferentialPrivacyTemplateParametersInput",
-                )
-            })?,
-            users_noise_per_query: self.users_noise_per_query.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "users_noise_per_query",
-                    "users_noise_per_query was not specified but it is required when building DifferentialPrivacyTemplateParametersInput",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::DifferentialPrivacyTemplateParametersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::DifferentialPrivacyTemplateParametersInput {
+                epsilon: self.epsilon
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("epsilon", "epsilon was not specified but it is required when building DifferentialPrivacyTemplateParametersInput")
+                    )?
+                ,
+                users_noise_per_query: self.users_noise_per_query
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("users_noise_per_query", "users_noise_per_query was not specified but it is required when building DifferentialPrivacyTemplateParametersInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

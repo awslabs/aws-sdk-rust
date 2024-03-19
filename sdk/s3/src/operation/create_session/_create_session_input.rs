@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSessionInput {
+pub struct CreateSessionInput  {
     /// <p>Specifies the mode of the session that will be created, either <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is capable of executing all the Zonal endpoint APIs on a directory bucket. A <code>ReadOnly</code> session is constrained to execute the following Zonal endpoint APIs: <code>GetObject</code>, <code>HeadObject</code>, <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>, <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
     pub session_mode: ::std::option::Option<crate::types::SessionMode>,
     /// <p>The name of the bucket that you create a session for.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
 }
-impl CreateSessionInput {
+impl  CreateSessionInput  {
     /// <p>Specifies the mode of the session that will be created, either <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is capable of executing all the Zonal endpoint APIs on a directory bucket. A <code>ReadOnly</code> session is constrained to execute the following Zonal endpoint APIs: <code>GetObject</code>, <code>HeadObject</code>, <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>, <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
-    pub fn session_mode(&self) -> ::std::option::Option<&crate::types::SessionMode> {
+    pub fn session_mode(&self) -> ::std::option::Option<& crate::types::SessionMode> {
         self.session_mode.as_ref()
     }
     /// <p>The name of the bucket that you create a session for.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl CreateSessionInputBuilder {
     }
     /// <p>Specifies the mode of the session that will be created, either <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is capable of executing all the Zonal endpoint APIs on a directory bucket. A <code>ReadOnly</code> session is constrained to execute the following Zonal endpoint APIs: <code>GetObject</code>, <code>HeadObject</code>, <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>, <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
     pub fn set_session_mode(mut self, input: ::std::option::Option<crate::types::SessionMode>) -> Self {
-        self.session_mode = input;
-        self
+        self.session_mode = input; self
     }
     /// <p>Specifies the mode of the session that will be created, either <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is capable of executing all the Zonal endpoint APIs on a directory bucket. A <code>ReadOnly</code> session is constrained to execute the following Zonal endpoint APIs: <code>GetObject</code>, <code>HeadObject</code>, <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>, <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
     pub fn get_session_mode(&self) -> &::std::option::Option<crate::types::SessionMode> {
@@ -55,20 +54,22 @@ impl CreateSessionInputBuilder {
     }
     /// <p>The name of the bucket that you create a session for.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket that you create a session for.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_session::CreateSessionInput {
-            session_mode: self.session_mode,
-            bucket: self.bucket,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_session::CreateSessionInput {
+                session_mode: self.session_mode
+                ,
+                bucket: self.bucket
+                ,
+            }
+        )
     }
 }
+

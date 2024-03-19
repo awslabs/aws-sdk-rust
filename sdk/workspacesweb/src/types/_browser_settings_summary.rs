@@ -3,15 +3,14 @@
 /// <p>The summary for browser settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BrowserSettingsSummary {
+pub struct BrowserSettingsSummary  {
     /// <p>The ARN of the browser settings.</p>
     pub browser_settings_arn: ::std::string::String,
 }
-impl BrowserSettingsSummary {
+impl  BrowserSettingsSummary  {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.browser_settings_arn.deref()
+    pub fn browser_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.browser_settings_arn.deref()
     }
 }
 impl BrowserSettingsSummary {
@@ -36,8 +35,7 @@ impl BrowserSettingsSummaryBuilder {
     }
     /// <p>The ARN of the browser settings.</p>
     pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.browser_settings_arn = input;
-        self
+        self.browser_settings_arn = input; self
     }
     /// <p>The ARN of the browser settings.</p>
     pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl BrowserSettingsSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`browser_settings_arn`](crate::types::builders::BrowserSettingsSummaryBuilder::browser_settings_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::BrowserSettingsSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BrowserSettingsSummary {
-            browser_settings_arn: self.browser_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "browser_settings_arn",
-                    "browser_settings_arn was not specified but it is required when building BrowserSettingsSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BrowserSettingsSummary {
+                browser_settings_arn: self.browser_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("browser_settings_arn", "browser_settings_arn was not specified but it is required when building BrowserSettingsSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

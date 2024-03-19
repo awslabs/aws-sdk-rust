@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutImageOutput {
+pub struct PutImageOutput  {
     /// <p>Details of the image uploaded.</p>
     pub image: ::std::option::Option<crate::types::Image>,
     _request_id: Option<String>,
 }
-impl PutImageOutput {
+impl  PutImageOutput  {
     /// <p>Details of the image uploaded.</p>
-    pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
+    pub fn image(&self) -> ::std::option::Option<& crate::types::Image> {
         self.image.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutImageOutput {
     /// Creates a new builder-style object to manufacture [`PutImageOutput`](crate::operation::put_image::PutImageOutput).
     pub fn builder() -> crate::operation::put_image::builders::PutImageOutputBuilder {
@@ -40,27 +40,28 @@ impl PutImageOutputBuilder {
     }
     /// <p>Details of the image uploaded.</p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>Details of the image uploaded.</p>
     pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
         &self.image
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutImageOutput`](crate::operation::put_image::PutImageOutput).
     pub fn build(self) -> crate::operation::put_image::PutImageOutput {
         crate::operation::put_image::PutImageOutput {
-            image: self.image,
+            image: self.image
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

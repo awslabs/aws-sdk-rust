@@ -3,22 +3,23 @@
 /// <p>Describes the configuration of a theme's properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThemeValue {
+pub struct ThemeValue  {
     /// <p>The value of a theme property.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub children: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
+    pub children: ::std::option::Option<::std::vec::Vec::<crate::types::ThemeValues>>,
 }
-impl ThemeValue {
+impl  ThemeValue  {
     /// <p>The value of a theme property.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.children.is_none()`.
-    pub fn children(&self) -> &[crate::types::ThemeValues] {
-        self.children.as_deref().unwrap_or_default()
+    pub fn children(&self) -> & [crate::types::ThemeValues] {
+        self.children.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ThemeValue {
@@ -33,7 +34,7 @@ impl ThemeValue {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThemeValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
-    pub(crate) children: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
+    pub(crate) children: ::std::option::Option<::std::vec::Vec::<crate::types::ThemeValues>>,
 }
 impl ThemeValueBuilder {
     /// <p>The value of a theme property.</p>
@@ -43,8 +44,7 @@ impl ThemeValueBuilder {
     }
     /// <p>The value of a theme property.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of a theme property.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ThemeValueBuilder {
     /// <p>A list of key-value pairs that define the theme's properties.</p>
     pub fn children(mut self, input: crate::types::ThemeValues) -> Self {
         let mut v = self.children.unwrap_or_default();
-        v.push(input);
-        self.children = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.children = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn set_children(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>) -> Self {
-        self.children = input;
-        self
+    pub fn set_children(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ThemeValues>>) -> Self {
+        self.children = input; self
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn get_children(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
+    pub fn get_children(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ThemeValues>> {
         &self.children
     }
     /// Consumes the builder and constructs a [`ThemeValue`](crate::types::ThemeValue).
     pub fn build(self) -> crate::types::ThemeValue {
         crate::types::ThemeValue {
-            value: self.value,
-            children: self.children,
+            value: self.value
+            ,
+            children: self.children
+            ,
         }
     }
 }
+

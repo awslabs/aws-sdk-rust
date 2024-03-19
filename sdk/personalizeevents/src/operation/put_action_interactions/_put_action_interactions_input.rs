@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutActionInteractionsInput {
+pub struct PutActionInteractionsInput  {
     /// <p>The ID of your action interaction event tracker. When you create an Action interactions dataset, Amazon Personalize creates an action interaction event tracker for you. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-tracker-id.html">Action interaction event tracker ID</a>.</p>
     pub tracking_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of action interaction events from the session.</p>
-    pub action_interactions: ::std::option::Option<::std::vec::Vec<crate::types::ActionInteraction>>,
+    pub action_interactions: ::std::option::Option<::std::vec::Vec::<crate::types::ActionInteraction>>,
 }
-impl PutActionInteractionsInput {
+impl  PutActionInteractionsInput  {
     /// <p>The ID of your action interaction event tracker. When you create an Action interactions dataset, Amazon Personalize creates an action interaction event tracker for you. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-tracker-id.html">Action interaction event tracker ID</a>.</p>
-    pub fn tracking_id(&self) -> ::std::option::Option<&str> {
+    pub fn tracking_id(&self) -> ::std::option::Option<& str> {
         self.tracking_id.as_deref()
     }
     /// <p>A list of action interaction events from the session.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_interactions.is_none()`.
-    pub fn action_interactions(&self) -> &[crate::types::ActionInteraction] {
-        self.action_interactions.as_deref().unwrap_or_default()
+    pub fn action_interactions(&self) -> & [crate::types::ActionInteraction] {
+        self.action_interactions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutActionInteractionsInput {
@@ -32,7 +33,7 @@ impl PutActionInteractionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutActionInteractionsInputBuilder {
     pub(crate) tracking_id: ::std::option::Option<::std::string::String>,
-    pub(crate) action_interactions: ::std::option::Option<::std::vec::Vec<crate::types::ActionInteraction>>,
+    pub(crate) action_interactions: ::std::option::Option<::std::vec::Vec::<crate::types::ActionInteraction>>,
 }
 impl PutActionInteractionsInputBuilder {
     /// <p>The ID of your action interaction event tracker. When you create an Action interactions dataset, Amazon Personalize creates an action interaction event tracker for you. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-tracker-id.html">Action interaction event tracker ID</a>.</p>
@@ -43,8 +44,7 @@ impl PutActionInteractionsInputBuilder {
     }
     /// <p>The ID of your action interaction event tracker. When you create an Action interactions dataset, Amazon Personalize creates an action interaction event tracker for you. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-tracker-id.html">Action interaction event tracker ID</a>.</p>
     pub fn set_tracking_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracking_id = input;
-        self
+        self.tracking_id = input; self
     }
     /// <p>The ID of your action interaction event tracker. When you create an Action interactions dataset, Amazon Personalize creates an action interaction event tracker for you. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-tracker-id.html">Action interaction event tracker ID</a>.</p>
     pub fn get_tracking_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl PutActionInteractionsInputBuilder {
     /// <p>A list of action interaction events from the session.</p>
     pub fn action_interactions(mut self, input: crate::types::ActionInteraction) -> Self {
         let mut v = self.action_interactions.unwrap_or_default();
-        v.push(input);
-        self.action_interactions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.action_interactions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of action interaction events from the session.</p>
-    pub fn set_action_interactions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionInteraction>>) -> Self {
-        self.action_interactions = input;
-        self
+    pub fn set_action_interactions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionInteraction>>) -> Self {
+        self.action_interactions = input; self
     }
     /// <p>A list of action interaction events from the session.</p>
-    pub fn get_action_interactions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionInteraction>> {
+    pub fn get_action_interactions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionInteraction>> {
         &self.action_interactions
     }
     /// Consumes the builder and constructs a [`PutActionInteractionsInput`](crate::operation::put_action_interactions::PutActionInteractionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_action_interactions::PutActionInteractionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_action_interactions::PutActionInteractionsInput {
-            tracking_id: self.tracking_id,
-            action_interactions: self.action_interactions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_action_interactions::PutActionInteractionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_action_interactions::PutActionInteractionsInput {
+                tracking_id: self.tracking_id
+                ,
+                action_interactions: self.action_interactions
+                ,
+            }
+        )
     }
 }
+

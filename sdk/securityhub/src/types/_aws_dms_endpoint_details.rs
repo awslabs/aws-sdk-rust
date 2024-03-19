@@ -3,7 +3,7 @@
 /// <p>Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store type, and location information about your data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDmsEndpointDetails {
+pub struct AwsDmsEndpointDetails  {
     /// <p>The Amazon Resource Name (ARN) for the SSL certificate that encrypts connections between the DMS endpoint and the replication instance.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint database.</p>
@@ -31,41 +31,41 @@ pub struct AwsDmsEndpointDetails {
     /// <p>The user name to be used to log in to the endpoint database.</p>
     pub username: ::std::option::Option<::std::string::String>,
 }
-impl AwsDmsEndpointDetails {
+impl  AwsDmsEndpointDetails  {
     /// <p>The Amazon Resource Name (ARN) for the SSL certificate that encrypts connections between the DMS endpoint and the replication instance.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The name of the endpoint database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>The database endpoint identifier.</p>
-    pub fn endpoint_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_identifier(&self) -> ::std::option::Option<& str> {
         self.endpoint_identifier.as_deref()
     }
     /// <p>The type of endpoint. Valid values are source and target.</p>
-    pub fn endpoint_type(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<& str> {
         self.endpoint_type.as_deref()
     }
     /// <p>The type of engine for the endpoint, depending on the <code>EndpointType</code> value.</p>
-    pub fn engine_name(&self) -> ::std::option::Option<&str> {
+    pub fn engine_name(&self) -> ::std::option::Option<& str> {
         self.engine_name.as_deref()
     }
     /// <p>A value that can be used for cross-account validation.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>Additional attributes associated with the connection.</p>
-    pub fn extra_connection_attributes(&self) -> ::std::option::Option<&str> {
+    pub fn extra_connection_attributes(&self) -> ::std::option::Option<& str> {
         self.extra_connection_attributes.as_deref()
     }
     /// <p>An DMS key identifier that is used to encrypt the connection parameters for the endpoint. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The port used to access the endpoint.</p>
@@ -73,15 +73,15 @@ impl AwsDmsEndpointDetails {
         self.port
     }
     /// <p>The name of the server where the endpoint database resides.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The SSL mode used to connect to the endpoint. The default is none.</p>
-    pub fn ssl_mode(&self) -> ::std::option::Option<&str> {
+    pub fn ssl_mode(&self) -> ::std::option::Option<& str> {
         self.ssl_mode.as_deref()
     }
     /// <p>The user name to be used to log in to the endpoint database.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -118,8 +118,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the SSL certificate that encrypts connections between the DMS endpoint and the replication instance.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the SSL certificate that encrypts connections between the DMS endpoint and the replication instance.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The name of the endpoint database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the endpoint database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +144,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +157,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The database endpoint identifier.</p>
     pub fn set_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_identifier = input;
-        self
+        self.endpoint_identifier = input; self
     }
     /// <p>The database endpoint identifier.</p>
     pub fn get_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +170,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The type of endpoint. Valid values are source and target.</p>
     pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_type = input;
-        self
+        self.endpoint_type = input; self
     }
     /// <p>The type of endpoint. Valid values are source and target.</p>
     pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +183,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The type of engine for the endpoint, depending on the <code>EndpointType</code> value.</p>
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_name = input;
-        self
+        self.engine_name = input; self
     }
     /// <p>The type of engine for the endpoint, depending on the <code>EndpointType</code> value.</p>
     pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +196,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>A value that can be used for cross-account validation.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>A value that can be used for cross-account validation.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +209,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>Additional attributes associated with the connection.</p>
     pub fn set_extra_connection_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extra_connection_attributes = input;
-        self
+        self.extra_connection_attributes = input; self
     }
     /// <p>Additional attributes associated with the connection.</p>
     pub fn get_extra_connection_attributes(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +222,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>An DMS key identifier that is used to encrypt the connection parameters for the endpoint. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>An DMS key identifier that is used to encrypt the connection parameters for the endpoint. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +235,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The port used to access the endpoint.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port used to access the endpoint.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -258,8 +248,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The name of the server where the endpoint database resides.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server where the endpoint database resides.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +261,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The SSL mode used to connect to the endpoint. The default is none.</p>
     pub fn set_ssl_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssl_mode = input;
-        self
+        self.ssl_mode = input; self
     }
     /// <p>The SSL mode used to connect to the endpoint. The default is none.</p>
     pub fn get_ssl_mode(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +274,7 @@ impl AwsDmsEndpointDetailsBuilder {
     }
     /// <p>The user name to be used to log in to the endpoint database.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The user name to be used to log in to the endpoint database.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -296,19 +283,33 @@ impl AwsDmsEndpointDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsDmsEndpointDetails`](crate::types::AwsDmsEndpointDetails).
     pub fn build(self) -> crate::types::AwsDmsEndpointDetails {
         crate::types::AwsDmsEndpointDetails {
-            certificate_arn: self.certificate_arn,
-            database_name: self.database_name,
-            endpoint_arn: self.endpoint_arn,
-            endpoint_identifier: self.endpoint_identifier,
-            endpoint_type: self.endpoint_type,
-            engine_name: self.engine_name,
-            external_id: self.external_id,
-            extra_connection_attributes: self.extra_connection_attributes,
-            kms_key_id: self.kms_key_id,
-            port: self.port,
-            server_name: self.server_name,
-            ssl_mode: self.ssl_mode,
-            username: self.username,
+            certificate_arn: self.certificate_arn
+            ,
+            database_name: self.database_name
+            ,
+            endpoint_arn: self.endpoint_arn
+            ,
+            endpoint_identifier: self.endpoint_identifier
+            ,
+            endpoint_type: self.endpoint_type
+            ,
+            engine_name: self.engine_name
+            ,
+            external_id: self.external_id
+            ,
+            extra_connection_attributes: self.extra_connection_attributes
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            port: self.port
+            ,
+            server_name: self.server_name
+            ,
+            ssl_mode: self.ssl_mode
+            ,
+            username: self.username
+            ,
         }
     }
 }
+

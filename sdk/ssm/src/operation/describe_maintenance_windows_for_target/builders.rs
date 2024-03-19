@@ -5,54 +5,50 @@ pub use crate::operation::describe_maintenance_windows_for_target::_describe_mai
 
 impl DescribeMaintenanceWindowsForTargetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_maintenance_windows_for_target();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_maintenance_windows_for_target();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeMaintenanceWindowsForTarget`.
-///
+/// 
 /// <p>Retrieves information about the maintenance window targets or tasks that a managed node is associated with.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsForTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder,
+                    inner: crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput,
-        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError,
-    > for DescribeMaintenanceWindowsForTargetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput,
-            crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput,
+                    crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError,
+                > for DescribeMaintenanceWindowsForTargetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput,
+                        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeMaintenanceWindowsForTargetFluentBuilder {
     /// Creates a new `DescribeMaintenanceWindowsForTarget`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,65 +57,50 @@ impl DescribeMaintenanceWindowsForTargetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTarget::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTarget::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput,
-        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTarget::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTarget::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput, crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator {
-        crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator {
+                                crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -130,12 +111,12 @@ impl DescribeMaintenanceWindowsForTargetFluentBuilder {
         self
     }
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         self.inner.get_targets()
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
@@ -181,3 +162,4 @@ impl DescribeMaintenanceWindowsForTargetFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

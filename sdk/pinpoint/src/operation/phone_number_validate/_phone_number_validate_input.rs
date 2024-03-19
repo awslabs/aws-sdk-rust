@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PhoneNumberValidateInput {
+pub struct PhoneNumberValidateInput  {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
     pub number_validate_request: ::std::option::Option<crate::types::NumberValidateRequest>,
 }
-impl PhoneNumberValidateInput {
+impl  PhoneNumberValidateInput  {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
-    pub fn number_validate_request(&self) -> ::std::option::Option<&crate::types::NumberValidateRequest> {
+    pub fn number_validate_request(&self) -> ::std::option::Option<& crate::types::NumberValidateRequest> {
         self.number_validate_request.as_ref()
     }
 }
@@ -34,20 +34,20 @@ impl PhoneNumberValidateInputBuilder {
     }
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
     pub fn set_number_validate_request(mut self, input: ::std::option::Option<crate::types::NumberValidateRequest>) -> Self {
-        self.number_validate_request = input;
-        self
+        self.number_validate_request = input; self
     }
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
     pub fn get_number_validate_request(&self) -> &::std::option::Option<crate::types::NumberValidateRequest> {
         &self.number_validate_request
     }
     /// Consumes the builder and constructs a [`PhoneNumberValidateInput`](crate::operation::phone_number_validate::PhoneNumberValidateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::phone_number_validate::PhoneNumberValidateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::phone_number_validate::PhoneNumberValidateInput {
-            number_validate_request: self.number_validate_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::phone_number_validate::PhoneNumberValidateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::phone_number_validate::PhoneNumberValidateInput {
+                number_validate_request: self.number_validate_request
+                ,
+            }
+        )
     }
 }
+

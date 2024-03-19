@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartImportJobInput {
+pub struct StartImportJobInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
     /// <li>
@@ -20,17 +20,17 @@ pub struct StartImportJobInput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
     pub external_source_configuration: ::std::option::Option<crate::types::ExternalSourceConfiguration>,
 }
-impl StartImportJobInput {
+impl  StartImportJobInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
     /// <li>
     /// <p>For importing Amazon Q quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The type of the import job.</p>
@@ -38,23 +38,23 @@ impl StartImportJobInput {
     /// <li>
     /// <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
-    pub fn import_job_type(&self) -> ::std::option::Option<&crate::types::ImportJobType> {
+    pub fn import_job_type(&self) -> ::std::option::Option<& crate::types::ImportJobType> {
         self.import_job_type.as_ref()
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
-    pub fn external_source_configuration(&self) -> ::std::option::Option<&crate::types::ExternalSourceConfiguration> {
+    pub fn external_source_configuration(&self) -> ::std::option::Option<& crate::types::ExternalSourceConfiguration> {
         self.external_source_configuration.as_ref()
     }
 }
@@ -73,7 +73,7 @@ pub struct StartImportJobInputBuilder {
     pub(crate) import_job_type: ::std::option::Option<crate::types::ImportJobType>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) external_source_configuration: ::std::option::Option<crate::types::ExternalSourceConfiguration>,
 }
 impl StartImportJobInputBuilder {
@@ -93,8 +93,7 @@ impl StartImportJobInputBuilder {
     /// <p>For importing Amazon Q quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
@@ -120,8 +119,7 @@ impl StartImportJobInputBuilder {
     /// <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
     pub fn set_import_job_type(mut self, input: ::std::option::Option<crate::types::ImportJobType>) -> Self {
-        self.import_job_type = input;
-        self
+        self.import_job_type = input; self
     }
     /// <p>The type of the import job.</p>
     /// <ul>
@@ -139,8 +137,7 @@ impl StartImportJobInputBuilder {
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl StartImportJobInputBuilder {
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,17 +163,16 @@ impl StartImportJobInputBuilder {
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>The metadata fields of the imported Amazon Q resources.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
@@ -187,24 +182,30 @@ impl StartImportJobInputBuilder {
     }
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
     pub fn set_external_source_configuration(mut self, input: ::std::option::Option<crate::types::ExternalSourceConfiguration>) -> Self {
-        self.external_source_configuration = input;
-        self
+        self.external_source_configuration = input; self
     }
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
     pub fn get_external_source_configuration(&self) -> &::std::option::Option<crate::types::ExternalSourceConfiguration> {
         &self.external_source_configuration
     }
     /// Consumes the builder and constructs a [`StartImportJobInput`](crate::operation::start_import_job::StartImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_import_job::StartImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_import_job::StartImportJobInput {
-            knowledge_base_id: self.knowledge_base_id,
-            import_job_type: self.import_job_type,
-            upload_id: self.upload_id,
-            client_token: self.client_token,
-            metadata: self.metadata,
-            external_source_configuration: self.external_source_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_import_job::StartImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_import_job::StartImportJobInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                import_job_type: self.import_job_type
+                ,
+                upload_id: self.upload_id
+                ,
+                client_token: self.client_token
+                ,
+                metadata: self.metadata
+                ,
+                external_source_configuration: self.external_source_configuration
+                ,
+            }
+        )
     }
 }
+

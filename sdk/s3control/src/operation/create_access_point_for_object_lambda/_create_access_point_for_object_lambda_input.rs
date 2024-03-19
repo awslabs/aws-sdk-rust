@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPointForObjectLambdaInput {
+pub struct CreateAccessPointForObjectLambdaInput  {
     /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name you want to assign to this Object Lambda Access Point.</p>
@@ -10,17 +10,17 @@ pub struct CreateAccessPointForObjectLambdaInput {
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
     pub configuration: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
 }
-impl CreateAccessPointForObjectLambdaInput {
+impl  CreateAccessPointForObjectLambdaInput  {
     /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name you want to assign to this Object Lambda Access Point.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ObjectLambdaConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ObjectLambdaConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateAccessPointForObjectLambdaInputBuilder {
     }
     /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateAccessPointForObjectLambdaInputBuilder {
     }
     /// <p>The name you want to assign to this Object Lambda Access Point.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name you want to assign to this Object Lambda Access Point.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl CreateAccessPointForObjectLambdaInputBuilder {
     }
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`CreateAccessPointForObjectLambdaInput`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaInput {
-                account_id: self.account_id,
-                name: self.name,
-                configuration: self.configuration,
-            },
+                account_id: self.account_id
+                ,
+                name: self.name
+                ,
+                configuration: self.configuration
+                ,
+            }
         )
     }
 }
+

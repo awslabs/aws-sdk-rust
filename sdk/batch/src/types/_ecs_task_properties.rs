@@ -3,9 +3,9 @@
 /// <p>The properties for a task definition that describes the container and volume definitions of an Amazon ECS task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsTaskProperties {
+pub struct EcsTaskProperties  {
     /// <p>This object is a list of containers.</p>
-    pub containers: ::std::option::Option<::std::vec::Vec<crate::types::TaskContainerProperties>>,
+    pub containers: ::std::option::Option<::std::vec::Vec::<crate::types::TaskContainerProperties>>,
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate resources, you must provide an execution role. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the <i>Batch User Guide</i>.</p>
@@ -32,25 +32,26 @@ pub struct EcsTaskProperties {
     /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     /// <p>A list of volumes that are associated with the job.</p>
-    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
 }
-impl EcsTaskProperties {
+impl  EcsTaskProperties  {
     /// <p>This object is a list of containers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
-    pub fn containers(&self) -> &[crate::types::TaskContainerProperties] {
-        self.containers.as_deref().unwrap_or_default()
+    pub fn containers(&self) -> & [crate::types::TaskContainerProperties] {
+        self.containers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
-    pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> ::std::option::Option<& crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate resources, you must provide an execution role. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the <i>Batch User Guide</i>.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by default. This uses a recent, approved version of the Fargate platform for compute resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(&self) -> ::std::option::Option<&str> {
+    pub fn platform_version(&self) -> ::std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>.</p>
@@ -58,35 +59,36 @@ impl EcsTaskProperties {
     /// <p>If <code>task</code> is specified, all containers within the specified <code>task</code> share the same IPC resources.</p>
     /// <p>If <code>none</code> is specified, the IPC resources within the containers of a task are private, and are not shared with other containers in a task or on the container instance.</p>
     /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p>
-    pub fn ipc_mode(&self) -> ::std::option::Option<&str> {
+    pub fn ipc_mode(&self) -> ::std::option::Option<& str> {
         self.ipc_mode.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that's associated with the Amazon ECS task.</p><note>
     /// <p>This is object is comparable to <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ContainerProperties.html">ContainerProperties:jobRoleArn</a>.</p>
     /// </note>
-    pub fn task_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_role_arn(&self) -> ::std::option::Option<& str> {
         self.task_role_arn.as_deref()
     }
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the process namespace with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
     /// <p>If no value is specified, the default is a private namespace for each container. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the Docker run reference.</p>
-    pub fn pid_mode(&self) -> ::std::option::Option<&str> {
+    pub fn pid_mode(&self) -> ::std::option::Option<& str> {
         self.pid_mode.as_deref()
     }
     /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
-    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<& crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
-    pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
+    pub fn runtime_platform(&self) -> ::std::option::Option<& crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
     /// <p>A list of volumes that are associated with the job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
-    pub fn volumes(&self) -> &[crate::types::Volume] {
-        self.volumes.as_deref().unwrap_or_default()
+    pub fn volumes(&self) -> & [crate::types::Volume] {
+        self.volumes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EcsTaskProperties {
@@ -100,7 +102,7 @@ impl EcsTaskProperties {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsTaskPropertiesBuilder {
-    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::TaskContainerProperties>>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec::<crate::types::TaskContainerProperties>>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
@@ -109,7 +111,7 @@ pub struct EcsTaskPropertiesBuilder {
     pub(crate) pid_mode: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
-    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
 }
 impl EcsTaskPropertiesBuilder {
     /// Appends an item to `containers`.
@@ -119,17 +121,16 @@ impl EcsTaskPropertiesBuilder {
     /// <p>This object is a list of containers.</p>
     pub fn containers(mut self, input: crate::types::TaskContainerProperties) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.containers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This object is a list of containers.</p>
-    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskContainerProperties>>) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskContainerProperties>>) -> Self {
+        self.containers = input; self
     }
     /// <p>This object is a list of containers.</p>
-    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskContainerProperties>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskContainerProperties>> {
         &self.containers
     }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
@@ -139,8 +140,7 @@ impl EcsTaskPropertiesBuilder {
     }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
-        self.ephemeral_storage = input;
-        self
+        self.ephemeral_storage = input; self
     }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
@@ -153,8 +153,7 @@ impl EcsTaskPropertiesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate resources, you must provide an execution role. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate resources, you must provide an execution role. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the <i>Batch User Guide</i>.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +166,7 @@ impl EcsTaskPropertiesBuilder {
     }
     /// <p>The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by default. This uses a recent, approved version of the Fargate platform for compute resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_version = input;
-        self
+        self.platform_version = input; self
     }
     /// <p>The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by default. This uses a recent, approved version of the Fargate platform for compute resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +187,7 @@ impl EcsTaskPropertiesBuilder {
     /// <p>If <code>none</code> is specified, the IPC resources within the containers of a task are private, and are not shared with other containers in a task or on the container instance.</p>
     /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p>
     pub fn set_ipc_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipc_mode = input;
-        self
+        self.ipc_mode = input; self
     }
     /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance.</p>
@@ -211,8 +208,7 @@ impl EcsTaskPropertiesBuilder {
     /// <p>This is object is comparable to <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ContainerProperties.html">ContainerProperties:jobRoleArn</a>.</p>
     /// </note>
     pub fn set_task_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_role_arn = input;
-        self
+        self.task_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that's associated with the Amazon ECS task.</p><note>
     /// <p>This is object is comparable to <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ContainerProperties.html">ContainerProperties:jobRoleArn</a>.</p>
@@ -233,8 +229,7 @@ impl EcsTaskPropertiesBuilder {
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
     /// <p>If no value is specified, the default is a private namespace for each container. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the Docker run reference.</p>
     pub fn set_pid_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pid_mode = input;
-        self
+        self.pid_mode = input; self
     }
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. For example, monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the same task.</p>
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the process namespace with the host Amazon EC2 instance.</p>
@@ -250,8 +245,7 @@ impl EcsTaskPropertiesBuilder {
     }
     /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input;
-        self
+        self.network_configuration = input; self
     }
     /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
@@ -264,8 +258,7 @@ impl EcsTaskPropertiesBuilder {
     }
     /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
     pub fn set_runtime_platform(mut self, input: ::std::option::Option<crate::types::RuntimePlatform>) -> Self {
-        self.runtime_platform = input;
-        self
+        self.runtime_platform = input; self
     }
     /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
     pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
@@ -278,32 +271,42 @@ impl EcsTaskPropertiesBuilder {
     /// <p>A list of volumes that are associated with the job.</p>
     pub fn volumes(mut self, input: crate::types::Volume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of volumes that are associated with the job.</p>
-    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>) -> Self {
+        self.volumes = input; self
     }
     /// <p>A list of volumes that are associated with the job.</p>
-    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Volume>> {
         &self.volumes
     }
     /// Consumes the builder and constructs a [`EcsTaskProperties`](crate::types::EcsTaskProperties).
     pub fn build(self) -> crate::types::EcsTaskProperties {
         crate::types::EcsTaskProperties {
-            containers: self.containers,
-            ephemeral_storage: self.ephemeral_storage,
-            execution_role_arn: self.execution_role_arn,
-            platform_version: self.platform_version,
-            ipc_mode: self.ipc_mode,
-            task_role_arn: self.task_role_arn,
-            pid_mode: self.pid_mode,
-            network_configuration: self.network_configuration,
-            runtime_platform: self.runtime_platform,
-            volumes: self.volumes,
+            containers: self.containers
+            ,
+            ephemeral_storage: self.ephemeral_storage
+            ,
+            execution_role_arn: self.execution_role_arn
+            ,
+            platform_version: self.platform_version
+            ,
+            ipc_mode: self.ipc_mode
+            ,
+            task_role_arn: self.task_role_arn
+            ,
+            pid_mode: self.pid_mode
+            ,
+            network_configuration: self.network_configuration
+            ,
+            runtime_platform: self.runtime_platform
+            ,
+            volumes: self.volumes
+            ,
         }
     }
 }
+

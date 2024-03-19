@@ -3,22 +3,22 @@
 /// <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains progress information for the requested domain change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainChangeProgressOutput {
+pub struct DescribeDomainChangeProgressOutput  {
     /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
     pub change_progress_status: ::std::option::Option<crate::types::ChangeProgressStatusDetails>,
     _request_id: Option<String>,
 }
-impl DescribeDomainChangeProgressOutput {
+impl  DescribeDomainChangeProgressOutput  {
     /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
-    pub fn change_progress_status(&self) -> ::std::option::Option<&crate::types::ChangeProgressStatusDetails> {
+    pub fn change_progress_status(&self) -> ::std::option::Option<& crate::types::ChangeProgressStatusDetails> {
         self.change_progress_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDomainChangeProgressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDomainChangeProgressOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressOutput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput).
     pub fn builder() -> crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeDomainChangeProgressOutputBuilder {
     }
     /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
     pub fn set_change_progress_status(mut self, input: ::std::option::Option<crate::types::ChangeProgressStatusDetails>) -> Self {
-        self.change_progress_status = input;
-        self
+        self.change_progress_status = input; self
     }
     /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
     pub fn get_change_progress_status(&self) -> &::std::option::Option<crate::types::ChangeProgressStatusDetails> {
         &self.change_progress_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDomainChangeProgressOutput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput).
     pub fn build(self) -> crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput {
         crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput {
-            change_progress_status: self.change_progress_status,
+            change_progress_status: self.change_progress_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

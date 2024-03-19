@@ -3,7 +3,7 @@
 /// <p>Describes the network card support of the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkCardInfo {
+pub struct NetworkCardInfo  {
     /// <p>The index of the network card.</p>
     pub network_card_index: ::std::option::Option<i32>,
     /// <p>The network performance of the network card.</p>
@@ -15,13 +15,13 @@ pub struct NetworkCardInfo {
     /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
     pub peak_bandwidth_in_gbps: ::std::option::Option<f64>,
 }
-impl NetworkCardInfo {
+impl  NetworkCardInfo  {
     /// <p>The index of the network card.</p>
     pub fn network_card_index(&self) -> ::std::option::Option<i32> {
         self.network_card_index
     }
     /// <p>The network performance of the network card.</p>
-    pub fn network_performance(&self) -> ::std::option::Option<&str> {
+    pub fn network_performance(&self) -> ::std::option::Option<& str> {
         self.network_performance.as_deref()
     }
     /// <p>The maximum number of network interfaces for the network card.</p>
@@ -62,8 +62,7 @@ impl NetworkCardInfoBuilder {
     }
     /// <p>The index of the network card.</p>
     pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.network_card_index = input;
-        self
+        self.network_card_index = input; self
     }
     /// <p>The index of the network card.</p>
     pub fn get_network_card_index(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl NetworkCardInfoBuilder {
     }
     /// <p>The network performance of the network card.</p>
     pub fn set_network_performance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_performance = input;
-        self
+        self.network_performance = input; self
     }
     /// <p>The network performance of the network card.</p>
     pub fn get_network_performance(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl NetworkCardInfoBuilder {
     }
     /// <p>The maximum number of network interfaces for the network card.</p>
     pub fn set_maximum_network_interfaces(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_network_interfaces = input;
-        self
+        self.maximum_network_interfaces = input; self
     }
     /// <p>The maximum number of network interfaces for the network card.</p>
     pub fn get_maximum_network_interfaces(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl NetworkCardInfoBuilder {
     }
     /// <p>The baseline network performance of the network card, in Gbps.</p>
     pub fn set_baseline_bandwidth_in_gbps(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.baseline_bandwidth_in_gbps = input;
-        self
+        self.baseline_bandwidth_in_gbps = input; self
     }
     /// <p>The baseline network performance of the network card, in Gbps.</p>
     pub fn get_baseline_bandwidth_in_gbps(&self) -> &::std::option::Option<f64> {
@@ -118,8 +114,7 @@ impl NetworkCardInfoBuilder {
     }
     /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
     pub fn set_peak_bandwidth_in_gbps(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.peak_bandwidth_in_gbps = input;
-        self
+        self.peak_bandwidth_in_gbps = input; self
     }
     /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
     pub fn get_peak_bandwidth_in_gbps(&self) -> &::std::option::Option<f64> {
@@ -128,11 +123,17 @@ impl NetworkCardInfoBuilder {
     /// Consumes the builder and constructs a [`NetworkCardInfo`](crate::types::NetworkCardInfo).
     pub fn build(self) -> crate::types::NetworkCardInfo {
         crate::types::NetworkCardInfo {
-            network_card_index: self.network_card_index,
-            network_performance: self.network_performance,
-            maximum_network_interfaces: self.maximum_network_interfaces,
-            baseline_bandwidth_in_gbps: self.baseline_bandwidth_in_gbps,
-            peak_bandwidth_in_gbps: self.peak_bandwidth_in_gbps,
+            network_card_index: self.network_card_index
+            ,
+            network_performance: self.network_performance
+            ,
+            maximum_network_interfaces: self.maximum_network_interfaces
+            ,
+            baseline_bandwidth_in_gbps: self.baseline_bandwidth_in_gbps
+            ,
+            peak_bandwidth_in_gbps: self.peak_bandwidth_in_gbps
+            ,
         }
     }
 }
+

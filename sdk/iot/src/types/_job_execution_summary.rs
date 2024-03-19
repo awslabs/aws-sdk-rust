@@ -3,7 +3,7 @@
 /// <p>The job execution summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobExecutionSummary {
+pub struct JobExecutionSummary  {
     /// <p>The status of the job execution.</p>
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
@@ -17,21 +17,21 @@ pub struct JobExecutionSummary {
     /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
     pub retry_attempt: ::std::option::Option<i32>,
 }
-impl JobExecutionSummary {
+impl  JobExecutionSummary  {
     /// <p>The status of the job execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::JobExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
-    pub fn queued_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn queued_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.queued_at.as_ref()
     }
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
@@ -69,8 +69,7 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The status of the job execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the job execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobExecutionStatus> {
@@ -83,8 +82,7 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
     pub fn set_queued_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.queued_at = input;
-        self
+        self.queued_at = input; self
     }
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
     pub fn get_queued_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +95,7 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
     pub fn set_execution_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.execution_number = input;
-        self
+        self.execution_number = input; self
     }
     /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
     pub fn get_execution_number(&self) -> &::std::option::Option<i64> {
@@ -139,8 +134,7 @@ impl JobExecutionSummaryBuilder {
     }
     /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
     pub fn set_retry_attempt(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retry_attempt = input;
-        self
+        self.retry_attempt = input; self
     }
     /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
     pub fn get_retry_attempt(&self) -> &::std::option::Option<i32> {
@@ -149,12 +143,19 @@ impl JobExecutionSummaryBuilder {
     /// Consumes the builder and constructs a [`JobExecutionSummary`](crate::types::JobExecutionSummary).
     pub fn build(self) -> crate::types::JobExecutionSummary {
         crate::types::JobExecutionSummary {
-            status: self.status,
-            queued_at: self.queued_at,
-            started_at: self.started_at,
-            last_updated_at: self.last_updated_at,
-            execution_number: self.execution_number,
-            retry_attempt: self.retry_attempt,
+            status: self.status
+            ,
+            queued_at: self.queued_at
+            ,
+            started_at: self.started_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            execution_number: self.execution_number
+            ,
+            retry_attempt: self.retry_attempt
+            ,
         }
     }
 }
+

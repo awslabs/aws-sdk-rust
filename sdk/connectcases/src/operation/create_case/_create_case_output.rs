@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCaseOutput {
+pub struct CreateCaseOutput  {
     /// <p>A unique identifier of the case.</p>
     pub case_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the case.</p>
     pub case_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateCaseOutput {
+impl  CreateCaseOutput  {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> &str {
-        use std::ops::Deref;
-        self.case_id.deref()
+    pub fn case_id(&self) -> & str {
+        use std::ops::Deref; self.case_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the case.</p>
-    pub fn case_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.case_arn.deref()
+    pub fn case_arn(&self) -> & str {
+        use std::ops::Deref; self.case_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCaseOutput {
     /// Creates a new builder-style object to manufacture [`CreateCaseOutput`](crate::operation::create_case::CreateCaseOutput).
     pub fn builder() -> crate::operation::create_case::builders::CreateCaseOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateCaseOutputBuilder {
     }
     /// <p>A unique identifier of the case.</p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// <p>A unique identifier of the case.</p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,41 +62,41 @@ impl CreateCaseOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the case.</p>
     pub fn set_case_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.case_arn = input;
-        self
+        self.case_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the case.</p>
     pub fn get_case_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCaseOutput`](crate::operation::create_case::CreateCaseOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`case_id`](crate::operation::create_case::builders::CreateCaseOutputBuilder::case_id)
     /// - [`case_arn`](crate::operation::create_case::builders::CreateCaseOutputBuilder::case_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_case::CreateCaseOutput {
-            case_id: self.case_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "case_id",
-                    "case_id was not specified but it is required when building CreateCaseOutput",
-                )
-            })?,
-            case_arn: self.case_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "case_arn",
-                    "case_arn was not specified but it is required when building CreateCaseOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_case::CreateCaseOutput {
+                case_id: self.case_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("case_id", "case_id was not specified but it is required when building CreateCaseOutput")
+                    )?
+                ,
+                case_arn: self.case_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("case_arn", "case_arn was not specified but it is required when building CreateCaseOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

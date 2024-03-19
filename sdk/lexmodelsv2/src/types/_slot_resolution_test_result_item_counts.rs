@@ -3,27 +3,25 @@
 /// <p>Information about the counts for a slot resolution in the results of a test execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotResolutionTestResultItemCounts {
+pub struct SlotResolutionTestResultItemCounts  {
     /// <p>The total number of results.</p>
     pub total_result_count: i32,
     /// <p>The number of matched, mismatched and execution error results for speech transcription for the slot.</p>
-    pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
+    pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>,
     /// <p>The number of matched and mismatched results for slot resolution for the slot.</p>
-    pub slot_match_result_counts: ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
+    pub slot_match_result_counts: ::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>,
 }
-impl SlotResolutionTestResultItemCounts {
+impl  SlotResolutionTestResultItemCounts  {
     /// <p>The total number of results.</p>
     pub fn total_result_count(&self) -> i32 {
         self.total_result_count
     }
     /// <p>The number of matched, mismatched and execution error results for speech transcription for the slot.</p>
-    pub fn speech_transcription_result_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
+    pub fn speech_transcription_result_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>> {
         self.speech_transcription_result_counts.as_ref()
     }
     /// <p>The number of matched and mismatched results for slot resolution for the slot.</p>
-    pub fn slot_match_result_counts(&self) -> &::std::collections::HashMap<crate::types::TestResultMatchStatus, i32> {
+    pub fn slot_match_result_counts(&self) -> & ::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32> {
         &self.slot_match_result_counts
     }
 }
@@ -39,8 +37,8 @@ impl SlotResolutionTestResultItemCounts {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotResolutionTestResultItemCountsBuilder {
     pub(crate) total_result_count: ::std::option::Option<i32>,
-    pub(crate) speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
-    pub(crate) slot_match_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
+    pub(crate) speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>,
+    pub(crate) slot_match_result_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>,
 }
 impl SlotResolutionTestResultItemCountsBuilder {
     /// <p>The total number of results.</p>
@@ -51,8 +49,7 @@ impl SlotResolutionTestResultItemCountsBuilder {
     }
     /// <p>The total number of results.</p>
     pub fn set_total_result_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_result_count = input;
-        self
+        self.total_result_count = input; self
     }
     /// <p>The total number of results.</p>
     pub fn get_total_result_count(&self) -> &::std::option::Option<i32> {
@@ -65,22 +62,16 @@ impl SlotResolutionTestResultItemCountsBuilder {
     /// <p>The number of matched, mismatched and execution error results for speech transcription for the slot.</p>
     pub fn speech_transcription_result_counts(mut self, k: crate::types::TestResultMatchStatus, v: i32) -> Self {
         let mut hash_map = self.speech_transcription_result_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.speech_transcription_result_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.speech_transcription_result_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The number of matched, mismatched and execution error results for speech transcription for the slot.</p>
-    pub fn set_speech_transcription_result_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
-    ) -> Self {
-        self.speech_transcription_result_counts = input;
-        self
+    pub fn set_speech_transcription_result_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>) -> Self {
+        self.speech_transcription_result_counts = input; self
     }
     /// <p>The number of matched, mismatched and execution error results for speech transcription for the slot.</p>
-    pub fn get_speech_transcription_result_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
+    pub fn get_speech_transcription_result_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>> {
         &self.speech_transcription_result_counts
     }
     /// Adds a key-value pair to `slot_match_result_counts`.
@@ -90,20 +81,16 @@ impl SlotResolutionTestResultItemCountsBuilder {
     /// <p>The number of matched and mismatched results for slot resolution for the slot.</p>
     pub fn slot_match_result_counts(mut self, k: crate::types::TestResultMatchStatus, v: i32) -> Self {
         let mut hash_map = self.slot_match_result_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.slot_match_result_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.slot_match_result_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The number of matched and mismatched results for slot resolution for the slot.</p>
-    pub fn set_slot_match_result_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
-    ) -> Self {
-        self.slot_match_result_counts = input;
-        self
+    pub fn set_slot_match_result_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>) -> Self {
+        self.slot_match_result_counts = input; self
     }
     /// <p>The number of matched and mismatched results for slot resolution for the slot.</p>
-    pub fn get_slot_match_result_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
+    pub fn get_slot_match_result_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>> {
         &self.slot_match_result_counts
     }
     /// Consumes the builder and constructs a [`SlotResolutionTestResultItemCounts`](crate::types::SlotResolutionTestResultItemCounts).
@@ -111,20 +98,22 @@ impl SlotResolutionTestResultItemCountsBuilder {
     /// - [`total_result_count`](crate::types::builders::SlotResolutionTestResultItemCountsBuilder::total_result_count)
     /// - [`slot_match_result_counts`](crate::types::builders::SlotResolutionTestResultItemCountsBuilder::slot_match_result_counts)
     pub fn build(self) -> ::std::result::Result<crate::types::SlotResolutionTestResultItemCounts, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlotResolutionTestResultItemCounts {
-            total_result_count: self.total_result_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_result_count",
-                    "total_result_count was not specified but it is required when building SlotResolutionTestResultItemCounts",
-                )
-            })?,
-            speech_transcription_result_counts: self.speech_transcription_result_counts,
-            slot_match_result_counts: self.slot_match_result_counts.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slot_match_result_counts",
-                    "slot_match_result_counts was not specified but it is required when building SlotResolutionTestResultItemCounts",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlotResolutionTestResultItemCounts {
+                total_result_count: self.total_result_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_result_count", "total_result_count was not specified but it is required when building SlotResolutionTestResultItemCounts")
+                    )?
+                ,
+                speech_transcription_result_counts: self.speech_transcription_result_counts
+                ,
+                slot_match_result_counts: self.slot_match_result_counts
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slot_match_result_counts", "slot_match_result_counts was not specified but it is required when building SlotResolutionTestResultItemCounts")
+                    )?
+                ,
+            }
+        )
     }
 }
+

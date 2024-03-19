@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateServiceInstanceInput {
+pub struct CreateServiceInstanceInput  {
     /// <p>The name of the service instance to create.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service the service instance is added to.</p>
@@ -15,44 +15,45 @@ pub struct CreateServiceInstanceInput {
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The client token of the service instance to create.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateServiceInstanceInput {
+impl  CreateServiceInstanceInput  {
     /// <p>The name of the service instance to create.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the service the service instance is added to.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The spec for the service instance you want to create.</p>
-    pub fn spec(&self) -> ::std::option::Option<&str> {
+    pub fn spec(&self) -> ::std::option::Option<& str> {
         self.spec.as_deref()
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
-    pub fn template_major_version(&self) -> ::std::option::Option<&str> {
+    pub fn template_major_version(&self) -> ::std::option::Option<& str> {
         self.template_major_version.as_deref()
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    pub fn template_minor_version(&self) -> ::std::option::Option<&str> {
+    pub fn template_minor_version(&self) -> ::std::option::Option<& str> {
         self.template_minor_version.as_deref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The client token of the service instance to create.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateServiceInstanceInput {
+impl  ::std::fmt::Debug for CreateServiceInstanceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateServiceInstanceInput");
         formatter.field("name", &self.name);
@@ -81,7 +82,7 @@ pub struct CreateServiceInstanceInputBuilder {
     pub(crate) spec: ::std::option::Option<::std::string::String>,
     pub(crate) template_major_version: ::std::option::Option<::std::string::String>,
     pub(crate) template_minor_version: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateServiceInstanceInputBuilder {
@@ -93,8 +94,7 @@ impl CreateServiceInstanceInputBuilder {
     }
     /// <p>The name of the service instance to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the service instance to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +108,7 @@ impl CreateServiceInstanceInputBuilder {
     }
     /// <p>The name of the service the service instance is added to.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service the service instance is added to.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +122,7 @@ impl CreateServiceInstanceInputBuilder {
     }
     /// <p>The spec for the service instance you want to create.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The spec for the service instance you want to create.</p>
     pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +135,7 @@ impl CreateServiceInstanceInputBuilder {
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_major_version = input;
-        self
+        self.template_major_version = input; self
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +148,7 @@ impl CreateServiceInstanceInputBuilder {
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
     pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_minor_version = input;
-        self
+        self.template_minor_version = input; self
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
     pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,19 +162,18 @@ impl CreateServiceInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The client token of the service instance to create.</p>
@@ -188,27 +183,32 @@ impl CreateServiceInstanceInputBuilder {
     }
     /// <p>The client token of the service instance to create.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token of the service instance to create.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateServiceInstanceInput`](crate::operation::create_service_instance::CreateServiceInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_service_instance::CreateServiceInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_service_instance::CreateServiceInstanceInput {
-            name: self.name,
-            service_name: self.service_name,
-            spec: self.spec,
-            template_major_version: self.template_major_version,
-            template_minor_version: self.template_minor_version,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_service_instance::CreateServiceInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_service_instance::CreateServiceInstanceInput {
+                name: self.name
+                ,
+                service_name: self.service_name
+                ,
+                spec: self.spec
+                ,
+                template_major_version: self.template_major_version
+                ,
+                template_minor_version: self.template_minor_version
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateServiceInstanceInputBuilder {
@@ -224,3 +224,4 @@ impl ::std::fmt::Debug for CreateServiceInstanceInputBuilder {
         formatter.finish()
     }
 }
+

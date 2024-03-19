@@ -3,11 +3,11 @@
 /// <p>Represents the CSV dataset format used when running a monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringCsvDatasetFormat {
+pub struct MonitoringCsvDatasetFormat  {
     /// <p>Indicates if the CSV data has a header.</p>
     pub header: ::std::option::Option<bool>,
 }
-impl MonitoringCsvDatasetFormat {
+impl  MonitoringCsvDatasetFormat  {
     /// <p>Indicates if the CSV data has a header.</p>
     pub fn header(&self) -> ::std::option::Option<bool> {
         self.header
@@ -34,8 +34,7 @@ impl MonitoringCsvDatasetFormatBuilder {
     }
     /// <p>Indicates if the CSV data has a header.</p>
     pub fn set_header(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// <p>Indicates if the CSV data has a header.</p>
     pub fn get_header(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl MonitoringCsvDatasetFormatBuilder {
     }
     /// Consumes the builder and constructs a [`MonitoringCsvDatasetFormat`](crate::types::MonitoringCsvDatasetFormat).
     pub fn build(self) -> crate::types::MonitoringCsvDatasetFormat {
-        crate::types::MonitoringCsvDatasetFormat { header: self.header }
+        crate::types::MonitoringCsvDatasetFormat {
+            header: self.header
+            ,
+        }
     }
 }
+

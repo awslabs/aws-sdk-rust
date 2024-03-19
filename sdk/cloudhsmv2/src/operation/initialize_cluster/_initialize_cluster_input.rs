@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InitializeClusterInput {
+pub struct InitializeClusterInput  {
     /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
@@ -10,17 +10,17 @@ pub struct InitializeClusterInput {
     /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub trust_anchor: ::std::option::Option<::std::string::String>,
 }
-impl InitializeClusterInput {
+impl  InitializeClusterInput  {
     /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
-    pub fn signed_cert(&self) -> ::std::option::Option<&str> {
+    pub fn signed_cert(&self) -> ::std::option::Option<& str> {
         self.signed_cert.as_deref()
     }
     /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
-    pub fn trust_anchor(&self) -> ::std::option::Option<&str> {
+    pub fn trust_anchor(&self) -> ::std::option::Option<& str> {
         self.trust_anchor.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl InitializeClusterInputBuilder {
     }
     /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl InitializeClusterInputBuilder {
     }
     /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub fn set_signed_cert(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signed_cert = input;
-        self
+        self.signed_cert = input; self
     }
     /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub fn get_signed_cert(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl InitializeClusterInputBuilder {
     }
     /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub fn set_trust_anchor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_anchor = input;
-        self
+        self.trust_anchor = input; self
     }
     /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub fn get_trust_anchor(&self) -> &::std::option::Option<::std::string::String> {
         &self.trust_anchor
     }
     /// Consumes the builder and constructs a [`InitializeClusterInput`](crate::operation::initialize_cluster::InitializeClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::initialize_cluster::InitializeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::initialize_cluster::InitializeClusterInput {
-            cluster_id: self.cluster_id,
-            signed_cert: self.signed_cert,
-            trust_anchor: self.trust_anchor,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::initialize_cluster::InitializeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::initialize_cluster::InitializeClusterInput {
+                cluster_id: self.cluster_id
+                ,
+                signed_cert: self.signed_cert
+                ,
+                trust_anchor: self.trust_anchor
+                ,
+            }
+        )
     }
 }
+

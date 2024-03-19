@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListThingGroupsForThing`](crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`thing_name(impl Into<String>)`](crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder::set_thing_name):<br>required: **true**<br><p>The thing name.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
-    /// - On success, responds with [`ListThingGroupsForThingOutput`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput) with field(s):
+                            /// - On success, responds with [`ListThingGroupsForThingOutput`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput) with field(s):
     ///   - [`thing_groups(Option<Vec::<GroupNameAndArn>>)`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput::thing_groups): <p>The thing groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListThingGroupsForThingError>`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingError)
+                            /// - On failure, responds with [`SdkError<ListThingGroupsForThingError>`](crate::operation::list_thing_groups_for_thing::ListThingGroupsForThingError)
     pub fn list_thing_groups_for_thing(&self) -> crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder {
-        crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_thing_groups_for_thing::builders::ListThingGroupsForThingFluentBuilder::new(self.handle.clone())
+                            }
 }
+

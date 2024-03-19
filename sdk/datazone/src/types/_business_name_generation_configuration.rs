@@ -3,11 +3,11 @@
 /// <p>The configuration of the business name generation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BusinessNameGenerationConfiguration {
+pub struct BusinessNameGenerationConfiguration  {
     /// <p>Specifies whether the business name generation is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl BusinessNameGenerationConfiguration {
+impl  BusinessNameGenerationConfiguration  {
     /// <p>Specifies whether the business name generation is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl BusinessNameGenerationConfigurationBuilder {
     }
     /// <p>Specifies whether the business name generation is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether the business name generation is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl BusinessNameGenerationConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`BusinessNameGenerationConfiguration`](crate::types::BusinessNameGenerationConfiguration).
     pub fn build(self) -> crate::types::BusinessNameGenerationConfiguration {
-        crate::types::BusinessNameGenerationConfiguration { enabled: self.enabled }
+        crate::types::BusinessNameGenerationConfiguration {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

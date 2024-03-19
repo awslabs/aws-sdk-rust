@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCallAnalyticsJobInput {
+pub struct StartCallAnalyticsJobInput  {
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
     pub call_analytics_job_name: ::std::option::Option<::std::string::String>,
@@ -51,16 +51,16 @@ pub struct StartCallAnalyticsJobInput {
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
     pub settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub channel_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelDefinition>>,
 }
-impl StartCallAnalyticsJobInput {
+impl  StartCallAnalyticsJobInput  {
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
-    pub fn call_analytics_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn call_analytics_job_name(&self) -> ::std::option::Option<& str> {
         self.call_analytics_job_name.as_deref()
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.</p>
-    pub fn media(&self) -> ::std::option::Option<&crate::types::Media> {
+    pub fn media(&self) -> ::std::option::Option<& crate::types::Media> {
         self.media.as_ref()
     }
     /// <p>The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the following formats to specify the output location:</p>
@@ -75,7 +75,7 @@ impl StartCallAnalyticsJobInput {
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
     /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
     /// <p>If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&str> {
+    pub fn output_location(&self) -> ::std::option::Option<& str> {
         self.output_location.as_deref()
     }
     /// <p>The KMS key you want to use to encrypt your Call Analytics output.</p>
@@ -100,24 +100,25 @@ impl StartCallAnalyticsJobInput {
     /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
-    pub fn output_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn output_encryption_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.output_encryption_kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::CallAnalyticsJobSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::CallAnalyticsJobSettings> {
         self.settings.as_ref()
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_definitions.is_none()`.
-    pub fn channel_definitions(&self) -> &[crate::types::ChannelDefinition] {
-        self.channel_definitions.as_deref().unwrap_or_default()
+    pub fn channel_definitions(&self) -> & [crate::types::ChannelDefinition] {
+        self.channel_definitions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartCallAnalyticsJobInput {
@@ -137,7 +138,7 @@ pub struct StartCallAnalyticsJobInputBuilder {
     pub(crate) output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
-    pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelDefinition>>,
 }
 impl StartCallAnalyticsJobInputBuilder {
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
@@ -150,8 +151,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
     pub fn set_call_analytics_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.call_analytics_job_name = input;
-        self
+        self.call_analytics_job_name = input; self
     }
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
@@ -166,8 +166,7 @@ impl StartCallAnalyticsJobInputBuilder {
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.</p>
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
-        self.media = input;
-        self
+        self.media = input; self
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.</p>
     pub fn get_media(&self) -> &::std::option::Option<crate::types::Media> {
@@ -202,8 +201,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
     /// <p>If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the following formats to specify the output location:</p>
     /// <ol>
@@ -269,8 +267,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_encryption_kms_key_id = input;
-        self
+        self.output_encryption_kms_key_id = input; self
     }
     /// <p>The KMS key you want to use to encrypt your Call Analytics output.</p>
     /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
@@ -308,8 +305,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
@@ -324,8 +320,7 @@ impl StartCallAnalyticsJobInputBuilder {
     }
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJobSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobSettings> {
@@ -338,32 +333,38 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
     pub fn channel_definitions(mut self, input: crate::types::ChannelDefinition) -> Self {
         let mut v = self.channel_definitions.unwrap_or_default();
-        v.push(input);
-        self.channel_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channel_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>) -> Self {
-        self.channel_definitions = input;
-        self
+    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelDefinition>>) -> Self {
+        self.channel_definitions = input; self
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChannelDefinition>> {
         &self.channel_definitions
     }
     /// Consumes the builder and constructs a [`StartCallAnalyticsJobInput`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput {
-            call_analytics_job_name: self.call_analytics_job_name,
-            media: self.media,
-            output_location: self.output_location,
-            output_encryption_kms_key_id: self.output_encryption_kms_key_id,
-            data_access_role_arn: self.data_access_role_arn,
-            settings: self.settings,
-            channel_definitions: self.channel_definitions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput {
+                call_analytics_job_name: self.call_analytics_job_name
+                ,
+                media: self.media
+                ,
+                output_location: self.output_location
+                ,
+                output_encryption_kms_key_id: self.output_encryption_kms_key_id
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                settings: self.settings
+                ,
+                channel_definitions: self.channel_definitions
+                ,
+            }
+        )
     }
 }
+

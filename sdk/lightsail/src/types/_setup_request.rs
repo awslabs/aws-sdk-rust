@@ -3,27 +3,28 @@
 /// <p>Returns information that was submitted during the <code>SetupInstanceHttps</code> request. Email information is redacted for privacy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetupRequest {
+pub struct SetupRequest  {
     /// <p>The name of the Lightsail instance.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain and subdomains that the SSL/TLS certificate secures.</p>
-    pub domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub domain_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
     pub certificate_provider: ::std::option::Option<crate::types::CertificateProvider>,
 }
-impl SetupRequest {
+impl  SetupRequest  {
     /// <p>The name of the Lightsail instance.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
     /// <p>The name of the domain and subdomains that the SSL/TLS certificate secures.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_names.is_none()`.
-    pub fn domain_names(&self) -> &[::std::string::String] {
-        self.domain_names.as_deref().unwrap_or_default()
+    pub fn domain_names(&self) -> & [::std::string::String] {
+        self.domain_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
-    pub fn certificate_provider(&self) -> ::std::option::Option<&crate::types::CertificateProvider> {
+    pub fn certificate_provider(&self) -> ::std::option::Option<& crate::types::CertificateProvider> {
         self.certificate_provider.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl SetupRequest {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetupRequestBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domain_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) certificate_provider: ::std::option::Option<crate::types::CertificateProvider>,
 }
 impl SetupRequestBuilder {
@@ -50,8 +51,7 @@ impl SetupRequestBuilder {
     }
     /// <p>The name of the Lightsail instance.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name of the Lightsail instance.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl SetupRequestBuilder {
     /// <p>The name of the domain and subdomains that the SSL/TLS certificate secures.</p>
     pub fn domain_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_names.unwrap_or_default();
-        v.push(input.into());
-        self.domain_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.domain_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the domain and subdomains that the SSL/TLS certificate secures.</p>
-    pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.domain_names = input;
-        self
+    pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.domain_names = input; self
     }
     /// <p>The name of the domain and subdomains that the SSL/TLS certificate secures.</p>
-    pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.domain_names
     }
     /// <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
@@ -84,8 +83,7 @@ impl SetupRequestBuilder {
     }
     /// <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
     pub fn set_certificate_provider(mut self, input: ::std::option::Option<crate::types::CertificateProvider>) -> Self {
-        self.certificate_provider = input;
-        self
+        self.certificate_provider = input; self
     }
     /// <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
     pub fn get_certificate_provider(&self) -> &::std::option::Option<crate::types::CertificateProvider> {
@@ -94,9 +92,13 @@ impl SetupRequestBuilder {
     /// Consumes the builder and constructs a [`SetupRequest`](crate::types::SetupRequest).
     pub fn build(self) -> crate::types::SetupRequest {
         crate::types::SetupRequest {
-            instance_name: self.instance_name,
-            domain_names: self.domain_names,
-            certificate_provider: self.certificate_provider,
+            instance_name: self.instance_name
+            ,
+            domain_names: self.domain_names
+            ,
+            certificate_provider: self.certificate_provider
+            ,
         }
     }
 }
+

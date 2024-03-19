@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSigningJobsOutput {
+pub struct ListSigningJobsOutput  {
     /// <p>A list of your signing jobs.</p>
-    pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::SigningJob>>,
+    pub jobs: ::std::option::Option<::std::vec::Vec::<crate::types::SigningJob>>,
     /// <p>String for specifying the next set of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSigningJobsOutput {
+impl  ListSigningJobsOutput  {
     /// <p>A list of your signing jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
-    pub fn jobs(&self) -> &[crate::types::SigningJob] {
-        self.jobs.as_deref().unwrap_or_default()
+    pub fn jobs(&self) -> & [crate::types::SigningJob] {
+        self.jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>String for specifying the next set of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSigningJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSigningJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningJobsOutput`](crate::operation::list_signing_jobs::ListSigningJobsOutput).
     pub fn builder() -> crate::operation::list_signing_jobs::builders::ListSigningJobsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSigningJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSigningJobsOutputBuilder {
-    pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::SigningJob>>,
+    pub(crate) jobs: ::std::option::Option<::std::vec::Vec::<crate::types::SigningJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListSigningJobsOutputBuilder {
     /// <p>A list of your signing jobs.</p>
     pub fn jobs(mut self, input: crate::types::SigningJob) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input);
-        self.jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of your signing jobs.</p>
-    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningJob>>) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SigningJob>>) -> Self {
+        self.jobs = input; self
     }
     /// <p>A list of your signing jobs.</p>
-    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningJob>> {
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SigningJob>> {
         &self.jobs
     }
     /// <p>String for specifying the next set of paginated results.</p>
@@ -69,28 +69,30 @@ impl ListSigningJobsOutputBuilder {
     }
     /// <p>String for specifying the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>String for specifying the next set of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSigningJobsOutput`](crate::operation::list_signing_jobs::ListSigningJobsOutput).
     pub fn build(self) -> crate::operation::list_signing_jobs::ListSigningJobsOutput {
         crate::operation::list_signing_jobs::ListSigningJobsOutput {
-            jobs: self.jobs,
-            next_token: self.next_token,
+            jobs: self.jobs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

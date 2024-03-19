@@ -3,7 +3,7 @@
 /// <p>Information about an Cloud9 development environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Environment {
+pub struct Environment  {
     /// <p>The ID of the environment.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment.</p>
@@ -51,17 +51,17 @@ pub struct Environment {
     /// </ul>
     pub managed_credentials_status: ::std::option::Option<crate::types::ManagedCredentialsStatus>,
 }
-impl Environment {
+impl  Environment  {
     /// <p>The ID of the environment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description for the environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of environment. Valid values include the following:</p>
@@ -71,25 +71,23 @@ impl Environment {
     /// <li>
     /// <p><code>ssh</code>: Your own server connects to the environment.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::EnvironmentType {
+    pub fn r#type(&self) -> & crate::types::EnvironmentType {
         &self.r#type
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
-    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
+    pub fn connection_type(&self) -> ::std::option::Option<& crate::types::ConnectionType> {
         self.connection_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
-    pub fn owner_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.owner_arn.deref()
+    pub fn owner_arn(&self) -> & str {
+        use std::ops::Deref; self.owner_arn.deref()
     }
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
-    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::EnvironmentLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<& crate::types::EnvironmentLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
@@ -115,11 +113,11 @@ impl Environment {
     /// <li>
     /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
     /// </ul>
-    pub fn managed_credentials_status(&self) -> ::std::option::Option<&crate::types::ManagedCredentialsStatus> {
+    pub fn managed_credentials_status(&self) -> ::std::option::Option<& crate::types::ManagedCredentialsStatus> {
         self.managed_credentials_status.as_ref()
     }
 }
-impl ::std::fmt::Debug for Environment {
+impl  ::std::fmt::Debug for Environment  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Environment");
         formatter.field("id", &self.id);
@@ -163,8 +161,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The ID of the environment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the environment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +174,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +187,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The description for the environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +213,7 @@ impl EnvironmentBuilder {
     /// <p><code>ssh</code>: Your own server connects to the environment.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
@@ -238,8 +232,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
     pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
-        self.connection_type = input;
-        self
+        self.connection_type = input; self
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
     pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
@@ -253,8 +246,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +260,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
     pub fn set_owner_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_arn = input;
-        self
+        self.owner_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
     pub fn get_owner_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -282,8 +273,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::EnvironmentLifecycle>) -> Self {
-        self.lifecycle = input;
-        self
+        self.lifecycle = input; self
     }
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::EnvironmentLifecycle> {
@@ -340,8 +330,7 @@ impl EnvironmentBuilder {
     /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
     /// </ul>
     pub fn set_managed_credentials_status(mut self, input: ::std::option::Option<crate::types::ManagedCredentialsStatus>) -> Self {
-        self.managed_credentials_status = input;
-        self
+        self.managed_credentials_status = input; self
     }
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
@@ -375,32 +364,37 @@ impl EnvironmentBuilder {
     /// - [`arn`](crate::types::builders::EnvironmentBuilder::arn)
     /// - [`owner_arn`](crate::types::builders::EnvironmentBuilder::owner_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::Environment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Environment {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Environment",
-                )
-            })?,
-            connection_type: self.connection_type,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Environment",
-                )
-            })?,
-            owner_arn: self.owner_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owner_arn",
-                    "owner_arn was not specified but it is required when building Environment",
-                )
-            })?,
-            lifecycle: self.lifecycle,
-            managed_credentials_status: self.managed_credentials_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Environment {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Environment")
+                    )?
+                ,
+                connection_type: self.connection_type
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Environment")
+                    )?
+                ,
+                owner_arn: self.owner_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owner_arn", "owner_arn was not specified but it is required when building Environment")
+                    )?
+                ,
+                lifecycle: self.lifecycle
+                ,
+                managed_credentials_status: self.managed_credentials_status
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EnvironmentBuilder {
@@ -418,3 +412,4 @@ impl ::std::fmt::Debug for EnvironmentBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information collected from managed nodes based on your inventory policy document</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryItem {
+pub struct InventoryItem  {
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
     pub type_name: ::std::string::String,
     /// <p>The schema version for the inventory item.</p>
@@ -13,38 +13,36 @@ pub struct InventoryItem {
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
     pub content_hash: ::std::option::Option<::std::string::String>,
     /// <p>The inventory data of the inventory type.</p>
-    pub content: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub content: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     /// <p>A map of associated properties for a specified inventory type. For example, with this attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.</p>
-    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl InventoryItem {
+impl  InventoryItem  {
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
-    pub fn type_name(&self) -> &str {
-        use std::ops::Deref;
-        self.type_name.deref()
+    pub fn type_name(&self) -> & str {
+        use std::ops::Deref; self.type_name.deref()
     }
     /// <p>The schema version for the inventory item.</p>
-    pub fn schema_version(&self) -> &str {
-        use std::ops::Deref;
-        self.schema_version.deref()
+    pub fn schema_version(&self) -> & str {
+        use std::ops::Deref; self.schema_version.deref()
     }
     /// <p>The time the inventory information was collected.</p>
-    pub fn capture_time(&self) -> &str {
-        use std::ops::Deref;
-        self.capture_time.deref()
+    pub fn capture_time(&self) -> & str {
+        use std::ops::Deref; self.capture_time.deref()
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
-    pub fn content_hash(&self) -> ::std::option::Option<&str> {
+    pub fn content_hash(&self) -> ::std::option::Option<& str> {
         self.content_hash.as_deref()
     }
     /// <p>The inventory data of the inventory type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
-    pub fn content(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
-        self.content.as_deref().unwrap_or_default()
+    pub fn content(&self) -> & [::std::collections::HashMap::<::std::string::String, ::std::string::String>] {
+        self.content.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map of associated properties for a specified inventory type. For example, with this attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.</p>
-    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn context(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.context.as_ref()
     }
 }
@@ -63,8 +61,8 @@ pub struct InventoryItemBuilder {
     pub(crate) schema_version: ::std::option::Option<::std::string::String>,
     pub(crate) capture_time: ::std::option::Option<::std::string::String>,
     pub(crate) content_hash: ::std::option::Option<::std::string::String>,
-    pub(crate) content: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
-    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) content: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl InventoryItemBuilder {
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
@@ -75,8 +73,7 @@ impl InventoryItemBuilder {
     }
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +87,7 @@ impl InventoryItemBuilder {
     }
     /// <p>The schema version for the inventory item.</p>
     pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// <p>The schema version for the inventory item.</p>
     pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +101,7 @@ impl InventoryItemBuilder {
     }
     /// <p>The time the inventory information was collected.</p>
     pub fn set_capture_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capture_time = input;
-        self
+        self.capture_time = input; self
     }
     /// <p>The time the inventory information was collected.</p>
     pub fn get_capture_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +114,7 @@ impl InventoryItemBuilder {
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
     pub fn set_content_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_hash = input;
-        self
+        self.content_hash = input; self
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
     pub fn get_content_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,22 +125,18 @@ impl InventoryItemBuilder {
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
     /// <p>The inventory data of the inventory type.</p>
-    pub fn content(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
+    pub fn content(mut self, input: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.content.unwrap_or_default();
-        v.push(input);
-        self.content = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.content = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The inventory data of the inventory type.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
-    ) -> Self {
-        self.content = input;
-        self
+    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.content = input; self
     }
     /// <p>The inventory data of the inventory type.</p>
-    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.content
     }
     /// Adds a key-value pair to `context`.
@@ -156,17 +146,16 @@ impl InventoryItemBuilder {
     /// <p>A map of associated properties for a specified inventory type. For example, with this attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.</p>
     pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.context.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.context = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.context = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of associated properties for a specified inventory type. For example, with this attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.</p>
-    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.context = input;
-        self
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.context = input; self
     }
     /// <p>A map of associated properties for a specified inventory type. For example, with this attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.</p>
-    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.context
     }
     /// Consumes the builder and constructs a [`InventoryItem`](crate::types::InventoryItem).
@@ -175,28 +164,31 @@ impl InventoryItemBuilder {
     /// - [`schema_version`](crate::types::builders::InventoryItemBuilder::schema_version)
     /// - [`capture_time`](crate::types::builders::InventoryItemBuilder::capture_time)
     pub fn build(self) -> ::std::result::Result<crate::types::InventoryItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InventoryItem {
-            type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "type_name",
-                    "type_name was not specified but it is required when building InventoryItem",
-                )
-            })?,
-            schema_version: self.schema_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_version",
-                    "schema_version was not specified but it is required when building InventoryItem",
-                )
-            })?,
-            capture_time: self.capture_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "capture_time",
-                    "capture_time was not specified but it is required when building InventoryItem",
-                )
-            })?,
-            content_hash: self.content_hash,
-            content: self.content,
-            context: self.context,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InventoryItem {
+                type_name: self.type_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("type_name", "type_name was not specified but it is required when building InventoryItem")
+                    )?
+                ,
+                schema_version: self.schema_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_version", "schema_version was not specified but it is required when building InventoryItem")
+                    )?
+                ,
+                capture_time: self.capture_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("capture_time", "capture_time was not specified but it is required when building InventoryItem")
+                    )?
+                ,
+                content_hash: self.content_hash
+                ,
+                content: self.content
+                ,
+                context: self.context
+                ,
+            }
+        )
     }
 }
+

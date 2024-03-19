@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListQueriesInput {
+pub struct ListQueriesInput  {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>A token you can use to get the next page of results.</p>
@@ -16,13 +16,13 @@ pub struct ListQueriesInput {
     /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
 }
-impl ListQueriesInput {
+impl  ListQueriesInput  {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
-    pub fn event_data_store(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store(&self) -> ::std::option::Option<& str> {
         self.event_data_store.as_deref()
     }
     /// <p>A token you can use to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of queries to show on a page.</p>
@@ -30,15 +30,15 @@ impl ListQueriesInput {
         self.max_results
     }
     /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
-    pub fn query_status(&self) -> ::std::option::Option<&crate::types::QueryStatus> {
+    pub fn query_status(&self) -> ::std::option::Option<& crate::types::QueryStatus> {
         self.query_status.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl ListQueriesInputBuilder {
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
     pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data_store = input;
-        self
+        self.event_data_store = input; self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
     pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ListQueriesInputBuilder {
     }
     /// <p>A token you can use to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token you can use to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ListQueriesInputBuilder {
     }
     /// <p>The maximum number of queries to show on a page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of queries to show on a page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -111,8 +108,7 @@ impl ListQueriesInputBuilder {
     }
     /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl ListQueriesInputBuilder {
     }
     /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl ListQueriesInputBuilder {
     }
     /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
-        self.query_status = input;
-        self
+        self.query_status = input; self
     }
     /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     pub fn get_query_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
@@ -148,13 +142,22 @@ impl ListQueriesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListQueriesInput`](crate::operation::list_queries::ListQueriesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_queries::ListQueriesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_queries::ListQueriesInput {
-            event_data_store: self.event_data_store,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            query_status: self.query_status,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_queries::ListQueriesInput {
+                event_data_store: self.event_data_store
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                query_status: self.query_status
+                ,
+            }
+        )
     }
 }
+

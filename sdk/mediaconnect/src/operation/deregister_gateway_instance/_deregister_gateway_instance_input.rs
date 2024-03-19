@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterGatewayInstanceInput {
+pub struct DeregisterGatewayInstanceInput  {
     /// Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
     pub force: ::std::option::Option<bool>,
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
     pub gateway_instance_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterGatewayInstanceInput {
+impl  DeregisterGatewayInstanceInput  {
     /// Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
-    pub fn gateway_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_instance_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_instance_arn.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeregisterGatewayInstanceInputBuilder {
     }
     /// Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
     pub fn get_force(&self) -> &::std::option::Option<bool> {
@@ -55,23 +54,22 @@ impl DeregisterGatewayInstanceInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
     pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_instance_arn = input;
-        self
+        self.gateway_instance_arn = input; self
     }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
     pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_instance_arn
     }
     /// Consumes the builder and constructs a [`DeregisterGatewayInstanceInput`](crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput {
-            force: self.force,
-            gateway_instance_arn: self.gateway_instance_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceInput {
+                force: self.force
+                ,
+                gateway_instance_arn: self.gateway_instance_arn
+                ,
+            }
+        )
     }
 }
+

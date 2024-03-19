@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTemplateGroupAccessControlEntries`](crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder::set_max_results):<br>required: **false**<br><p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder::set_next_token):<br>required: **false**<br><p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p><br>
     ///   - [`template_arn(impl Into<String>)`](crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder::template_arn) / [`set_template_arn(Option<String>)`](crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder::set_template_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p><br>
-    /// - On success, responds with [`ListTemplateGroupAccessControlEntriesOutput`](crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesOutput) with field(s):
+                            /// - On success, responds with [`ListTemplateGroupAccessControlEntriesOutput`](crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesOutput) with field(s):
     ///   - [`access_control_entries(Option<Vec::<AccessControlEntrySummary>>)`](crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesOutput::access_control_entries): <p>An access control entry grants or denies permission to an Active Directory group to enroll certificates for a template.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesOutput::next_token): <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    /// - On failure, responds with [`SdkError<ListTemplateGroupAccessControlEntriesError>`](crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesError)
-    pub fn list_template_group_access_control_entries(
-        &self,
-    ) -> crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder {
-        crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListTemplateGroupAccessControlEntriesError>`](crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesError)
+    pub fn list_template_group_access_control_entries(&self) -> crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder {
+                                crate::operation::list_template_group_access_control_entries::builders::ListTemplateGroupAccessControlEntriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

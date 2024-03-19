@@ -3,19 +3,19 @@
 /// <p>An object representing the term duration and term unit type of your subscription. This determines the term length of your subscription. Valid values are MONTHS for term unit and 12 or 36 for term duration, indicating a 12 month or 36 month subscription.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EksAnywhereSubscriptionTerm {
+pub struct EksAnywhereSubscriptionTerm  {
     /// <p>The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month subscription.</p>
     pub duration: i32,
     /// <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
     pub unit: ::std::option::Option<crate::types::EksAnywhereSubscriptionTermUnit>,
 }
-impl EksAnywhereSubscriptionTerm {
+impl  EksAnywhereSubscriptionTerm  {
     /// <p>The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month subscription.</p>
     pub fn duration(&self) -> i32 {
         self.duration
     }
     /// <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::EksAnywhereSubscriptionTermUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::EksAnywhereSubscriptionTermUnit> {
         self.unit.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EksAnywhereSubscriptionTermBuilder {
     }
     /// <p>The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month subscription.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month subscription.</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl EksAnywhereSubscriptionTermBuilder {
     }
     /// <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::EksAnywhereSubscriptionTermUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The term unit of the subscription. Valid value is <code>MONTHS</code>.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscriptionTermUnit> {
@@ -65,8 +63,12 @@ impl EksAnywhereSubscriptionTermBuilder {
     /// Consumes the builder and constructs a [`EksAnywhereSubscriptionTerm`](crate::types::EksAnywhereSubscriptionTerm).
     pub fn build(self) -> crate::types::EksAnywhereSubscriptionTerm {
         crate::types::EksAnywhereSubscriptionTerm {
-            duration: self.duration.unwrap_or_default(),
-            unit: self.unit,
+            duration: self.duration
+                .unwrap_or_default()
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

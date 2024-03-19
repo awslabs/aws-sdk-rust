@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContactInformationOutput {
+pub struct GetContactInformationOutput  {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     pub contact_information: ::std::option::Option<crate::types::ContactInformation>,
     _request_id: Option<String>,
 }
-impl GetContactInformationOutput {
+impl  GetContactInformationOutput  {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
-    pub fn contact_information(&self) -> ::std::option::Option<&crate::types::ContactInformation> {
+    pub fn contact_information(&self) -> ::std::option::Option<& crate::types::ContactInformation> {
         self.contact_information.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContactInformationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetContactInformationOutput {
     /// Creates a new builder-style object to manufacture [`GetContactInformationOutput`](crate::operation::get_contact_information::GetContactInformationOutput).
     pub fn builder() -> crate::operation::get_contact_information::builders::GetContactInformationOutputBuilder {
@@ -40,27 +40,28 @@ impl GetContactInformationOutputBuilder {
     }
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     pub fn set_contact_information(mut self, input: ::std::option::Option<crate::types::ContactInformation>) -> Self {
-        self.contact_information = input;
-        self
+        self.contact_information = input; self
     }
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     pub fn get_contact_information(&self) -> &::std::option::Option<crate::types::ContactInformation> {
         &self.contact_information
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetContactInformationOutput`](crate::operation::get_contact_information::GetContactInformationOutput).
     pub fn build(self) -> crate::operation::get_contact_information::GetContactInformationOutput {
         crate::operation::get_contact_information::GetContactInformationOutput {
-            contact_information: self.contact_information,
+            contact_information: self.contact_information
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelCustomizationJobs`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Return customization jobs created after the specified time.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>Return customization jobs created before the specified time.</p><br>
     ///   - [`status_equals(FineTuningJobStatus)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::status_equals) / [`set_status_equals(Option<FineTuningJobStatus>)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::set_status_equals):<br>required: **false**<br><p>Return customization jobs with the specified status.</p><br>
@@ -12,13 +12,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p><br>
     ///   - [`sort_by(SortJobsBy)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::sort_by) / [`set_sort_by(Option<SortJobsBy>)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field to sort by in the returned list of jobs.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order of the results.</p><br>
-    /// - On success, responds with [`ListModelCustomizationJobsOutput`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput) with field(s):
+                            /// - On success, responds with [`ListModelCustomizationJobsOutput`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput::next_token): <p>Page continuation token to use in the next request.</p>
     ///   - [`model_customization_job_summaries(Option<Vec::<ModelCustomizationJobSummary>>)`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsOutput::model_customization_job_summaries): <p>Job summaries.</p>
-    /// - On failure, responds with [`SdkError<ListModelCustomizationJobsError>`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError)
-    pub fn list_model_customization_jobs(
-        &self,
-    ) -> crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder {
-        crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListModelCustomizationJobsError>`](crate::operation::list_model_customization_jobs::ListModelCustomizationJobsError)
+    pub fn list_model_customization_jobs(&self) -> crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder {
+                                crate::operation::list_model_customization_jobs::builders::ListModelCustomizationJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

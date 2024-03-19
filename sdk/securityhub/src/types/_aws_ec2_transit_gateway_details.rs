@@ -3,7 +3,7 @@
 /// <p>Information about an Amazon Web Services Amazon EC2 Transit Gateway that interconnects virtual private clouds (VPCs) and on-premises networks.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2TransitGatewayDetails {
+pub struct AwsEc2TransitGatewayDetails  {
     /// <p>The ID of the transit gateway.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the transit gateway.</p>
@@ -15,7 +15,7 @@ pub struct AwsEc2TransitGatewayDetails {
     /// <p>Turn on or turn off automatic association with the default association route table.</p>
     pub default_route_table_association: ::std::option::Option<::std::string::String>,
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks.</p>
-    pub transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the default association route table.</p>
     pub association_default_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the default propagation route table.</p>
@@ -29,51 +29,52 @@ pub struct AwsEc2TransitGatewayDetails {
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session.</p>
     pub amazon_side_asn: ::std::option::Option<i32>,
 }
-impl AwsEc2TransitGatewayDetails {
+impl  AwsEc2TransitGatewayDetails  {
     /// <p>The ID of the transit gateway.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description of the transit gateway.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Turn on or turn off automatic propagation of routes to the default propagation route table.</p>
-    pub fn default_route_table_propagation(&self) -> ::std::option::Option<&str> {
+    pub fn default_route_table_propagation(&self) -> ::std::option::Option<& str> {
         self.default_route_table_propagation.as_deref()
     }
     /// <p>Turn on or turn off automatic acceptance of attachment requests.</p>
-    pub fn auto_accept_shared_attachments(&self) -> ::std::option::Option<&str> {
+    pub fn auto_accept_shared_attachments(&self) -> ::std::option::Option<& str> {
         self.auto_accept_shared_attachments.as_deref()
     }
     /// <p>Turn on or turn off automatic association with the default association route table.</p>
-    pub fn default_route_table_association(&self) -> ::std::option::Option<&str> {
+    pub fn default_route_table_association(&self) -> ::std::option::Option<& str> {
         self.default_route_table_association.as_deref()
     }
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_cidr_blocks.is_none()`.
-    pub fn transit_gateway_cidr_blocks(&self) -> &[::std::string::String] {
-        self.transit_gateway_cidr_blocks.as_deref().unwrap_or_default()
+    pub fn transit_gateway_cidr_blocks(&self) -> & [::std::string::String] {
+        self.transit_gateway_cidr_blocks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the default association route table.</p>
-    pub fn association_default_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_default_route_table_id(&self) -> ::std::option::Option<& str> {
         self.association_default_route_table_id.as_deref()
     }
     /// <p>The ID of the default propagation route table.</p>
-    pub fn propagation_default_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn propagation_default_route_table_id(&self) -> ::std::option::Option<& str> {
         self.propagation_default_route_table_id.as_deref()
     }
     /// <p>Turn on or turn off Equal Cost Multipath Protocol (ECMP) support.</p>
-    pub fn vpn_ecmp_support(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_ecmp_support(&self) -> ::std::option::Option<& str> {
         self.vpn_ecmp_support.as_deref()
     }
     /// <p>Turn on or turn off DNS support.</p>
-    pub fn dns_support(&self) -> ::std::option::Option<&str> {
+    pub fn dns_support(&self) -> ::std::option::Option<& str> {
         self.dns_support.as_deref()
     }
     /// <p>Indicates whether multicast is supported on the transit gateway.</p>
-    pub fn multicast_support(&self) -> ::std::option::Option<&str> {
+    pub fn multicast_support(&self) -> ::std::option::Option<& str> {
         self.multicast_support.as_deref()
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session.</p>
@@ -97,7 +98,7 @@ pub struct AwsEc2TransitGatewayDetailsBuilder {
     pub(crate) default_route_table_propagation: ::std::option::Option<::std::string::String>,
     pub(crate) auto_accept_shared_attachments: ::std::option::Option<::std::string::String>,
     pub(crate) default_route_table_association: ::std::option::Option<::std::string::String>,
-    pub(crate) transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) association_default_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) propagation_default_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_ecmp_support: ::std::option::Option<::std::string::String>,
@@ -113,8 +114,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>The description of the transit gateway.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the transit gateway.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>Turn on or turn off automatic propagation of routes to the default propagation route table.</p>
     pub fn set_default_route_table_propagation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_route_table_propagation = input;
-        self
+        self.default_route_table_propagation = input; self
     }
     /// <p>Turn on or turn off automatic propagation of routes to the default propagation route table.</p>
     pub fn get_default_route_table_propagation(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +153,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>Turn on or turn off automatic acceptance of attachment requests.</p>
     pub fn set_auto_accept_shared_attachments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_accept_shared_attachments = input;
-        self
+        self.auto_accept_shared_attachments = input; self
     }
     /// <p>Turn on or turn off automatic acceptance of attachment requests.</p>
     pub fn get_auto_accept_shared_attachments(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +166,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>Turn on or turn off automatic association with the default association route table.</p>
     pub fn set_default_route_table_association(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_route_table_association = input;
-        self
+        self.default_route_table_association = input; self
     }
     /// <p>Turn on or turn off automatic association with the default association route table.</p>
     pub fn get_default_route_table_association(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,17 +179,16 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks.</p>
     pub fn transit_gateway_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.transit_gateway_cidr_blocks.unwrap_or_default();
-        v.push(input.into());
-        self.transit_gateway_cidr_blocks = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.transit_gateway_cidr_blocks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks.</p>
-    pub fn set_transit_gateway_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.transit_gateway_cidr_blocks = input;
-        self
+    pub fn set_transit_gateway_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.transit_gateway_cidr_blocks = input; self
     }
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks.</p>
-    pub fn get_transit_gateway_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transit_gateway_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.transit_gateway_cidr_blocks
     }
     /// <p>The ID of the default association route table.</p>
@@ -203,8 +198,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>The ID of the default association route table.</p>
     pub fn set_association_default_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_default_route_table_id = input;
-        self
+        self.association_default_route_table_id = input; self
     }
     /// <p>The ID of the default association route table.</p>
     pub fn get_association_default_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +211,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>The ID of the default propagation route table.</p>
     pub fn set_propagation_default_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.propagation_default_route_table_id = input;
-        self
+        self.propagation_default_route_table_id = input; self
     }
     /// <p>The ID of the default propagation route table.</p>
     pub fn get_propagation_default_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +224,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>Turn on or turn off Equal Cost Multipath Protocol (ECMP) support.</p>
     pub fn set_vpn_ecmp_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpn_ecmp_support = input;
-        self
+        self.vpn_ecmp_support = input; self
     }
     /// <p>Turn on or turn off Equal Cost Multipath Protocol (ECMP) support.</p>
     pub fn get_vpn_ecmp_support(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +237,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>Turn on or turn off DNS support.</p>
     pub fn set_dns_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_support = input;
-        self
+        self.dns_support = input; self
     }
     /// <p>Turn on or turn off DNS support.</p>
     pub fn get_dns_support(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +250,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>Indicates whether multicast is supported on the transit gateway.</p>
     pub fn set_multicast_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.multicast_support = input;
-        self
+        self.multicast_support = input; self
     }
     /// <p>Indicates whether multicast is supported on the transit gateway.</p>
     pub fn get_multicast_support(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +263,7 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session.</p>
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.amazon_side_asn = input;
-        self
+        self.amazon_side_asn = input; self
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session.</p>
     pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i32> {
@@ -283,18 +272,31 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2TransitGatewayDetails`](crate::types::AwsEc2TransitGatewayDetails).
     pub fn build(self) -> crate::types::AwsEc2TransitGatewayDetails {
         crate::types::AwsEc2TransitGatewayDetails {
-            id: self.id,
-            description: self.description,
-            default_route_table_propagation: self.default_route_table_propagation,
-            auto_accept_shared_attachments: self.auto_accept_shared_attachments,
-            default_route_table_association: self.default_route_table_association,
-            transit_gateway_cidr_blocks: self.transit_gateway_cidr_blocks,
-            association_default_route_table_id: self.association_default_route_table_id,
-            propagation_default_route_table_id: self.propagation_default_route_table_id,
-            vpn_ecmp_support: self.vpn_ecmp_support,
-            dns_support: self.dns_support,
-            multicast_support: self.multicast_support,
-            amazon_side_asn: self.amazon_side_asn,
+            id: self.id
+            ,
+            description: self.description
+            ,
+            default_route_table_propagation: self.default_route_table_propagation
+            ,
+            auto_accept_shared_attachments: self.auto_accept_shared_attachments
+            ,
+            default_route_table_association: self.default_route_table_association
+            ,
+            transit_gateway_cidr_blocks: self.transit_gateway_cidr_blocks
+            ,
+            association_default_route_table_id: self.association_default_route_table_id
+            ,
+            propagation_default_route_table_id: self.propagation_default_route_table_id
+            ,
+            vpn_ecmp_support: self.vpn_ecmp_support
+            ,
+            dns_support: self.dns_support
+            ,
+            multicast_support: self.multicast_support
+            ,
+            amazon_side_asn: self.amazon_side_asn
+            ,
         }
     }
 }
+

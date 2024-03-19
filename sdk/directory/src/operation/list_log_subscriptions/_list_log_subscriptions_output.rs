@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLogSubscriptionsOutput {
+pub struct ListLogSubscriptionsOutput  {
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
-    pub log_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>>,
+    pub log_subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::LogSubscription>>,
     /// <p>The token for the next set of items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLogSubscriptionsOutput {
+impl  ListLogSubscriptionsOutput  {
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_subscriptions.is_none()`.
-    pub fn log_subscriptions(&self) -> &[crate::types::LogSubscription] {
-        self.log_subscriptions.as_deref().unwrap_or_default()
+    pub fn log_subscriptions(&self) -> & [crate::types::LogSubscription] {
+        self.log_subscriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLogSubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLogSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLogSubscriptionsOutput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput).
     pub fn builder() -> crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListLogSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogSubscriptionsOutputBuilder {
-    pub(crate) log_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>>,
+    pub(crate) log_subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::LogSubscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListLogSubscriptionsOutputBuilder {
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
     pub fn log_subscriptions(mut self, input: crate::types::LogSubscription) -> Self {
         let mut v = self.log_subscriptions.unwrap_or_default();
-        v.push(input);
-        self.log_subscriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_subscriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
-    pub fn set_log_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>>) -> Self {
-        self.log_subscriptions = input;
-        self
+    pub fn set_log_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogSubscription>>) -> Self {
+        self.log_subscriptions = input; self
     }
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
-    pub fn get_log_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>> {
+    pub fn get_log_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogSubscription>> {
         &self.log_subscriptions
     }
     /// <p>The token for the next set of items to return.</p>
@@ -69,28 +69,30 @@ impl ListLogSubscriptionsOutputBuilder {
     }
     /// <p>The token for the next set of items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLogSubscriptionsOutput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput).
     pub fn build(self) -> crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput {
         crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput {
-            log_subscriptions: self.log_subscriptions,
-            next_token: self.next_token,
+            log_subscriptions: self.log_subscriptions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

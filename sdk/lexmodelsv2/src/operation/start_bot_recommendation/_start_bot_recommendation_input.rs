@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartBotRecommendationInput {
+pub struct StartBotRecommendationInput  {
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot containing the bot recommendation.</p>
@@ -14,25 +14,25 @@ pub struct StartBotRecommendationInput {
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub encryption_setting: ::std::option::Option<crate::types::EncryptionSetting>,
 }
-impl StartBotRecommendationInput {
+impl  StartBotRecommendationInput  {
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the bot recommendation.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(&self) -> ::std::option::Option<&crate::types::TranscriptSourceSetting> {
+    pub fn transcript_source_setting(&self) -> ::std::option::Option<& crate::types::TranscriptSourceSetting> {
         self.transcript_source_setting.as_ref()
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn encryption_setting(&self) -> ::std::option::Option<&crate::types::EncryptionSetting> {
+    pub fn encryption_setting(&self) -> ::std::option::Option<& crate::types::EncryptionSetting> {
         self.encryption_setting.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl StartBotRecommendationInputBuilder {
     }
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl StartBotRecommendationInputBuilder {
     }
     /// <p>The version of the bot containing the bot recommendation.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot containing the bot recommendation.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl StartBotRecommendationInputBuilder {
     }
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a></p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl StartBotRecommendationInputBuilder {
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
     pub fn set_transcript_source_setting(mut self, input: ::std::option::Option<crate::types::TranscriptSourceSetting>) -> Self {
-        self.transcript_source_setting = input;
-        self
+        self.transcript_source_setting = input; self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
     pub fn get_transcript_source_setting(&self) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
@@ -121,26 +117,28 @@ impl StartBotRecommendationInputBuilder {
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub fn set_encryption_setting(mut self, input: ::std::option::Option<crate::types::EncryptionSetting>) -> Self {
-        self.encryption_setting = input;
-        self
+        self.encryption_setting = input; self
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub fn get_encryption_setting(&self) -> &::std::option::Option<crate::types::EncryptionSetting> {
         &self.encryption_setting
     }
     /// Consumes the builder and constructs a [`StartBotRecommendationInput`](crate::operation::start_bot_recommendation::StartBotRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_bot_recommendation::StartBotRecommendationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_bot_recommendation::StartBotRecommendationInput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            transcript_source_setting: self.transcript_source_setting,
-            encryption_setting: self.encryption_setting,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_bot_recommendation::StartBotRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_bot_recommendation::StartBotRecommendationInput {
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                transcript_source_setting: self.transcript_source_setting
+                ,
+                encryption_setting: self.encryption_setting
+                ,
+            }
+        )
     }
 }
+

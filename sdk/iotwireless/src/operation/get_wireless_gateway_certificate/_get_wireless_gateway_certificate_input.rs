@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessGatewayCertificateInput {
+pub struct GetWirelessGatewayCertificateInput  {
     /// <p>The ID of the resource to get.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetWirelessGatewayCertificateInput {
+impl  GetWirelessGatewayCertificateInput  {
     /// <p>The ID of the resource to get.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetWirelessGatewayCertificateInputBuilder {
     }
     /// <p>The ID of the resource to get.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource to get.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayCertificateInput`](crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_wireless_gateway_certificate::GetWirelessGatewayCertificateInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

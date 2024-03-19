@@ -3,21 +3,20 @@
 /// <p>The import source for the Key Value Store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportSource {
+pub struct ImportSource  {
     /// <p>The source type of the import source for the Key Value Store.</p>
     pub source_type: crate::types::ImportSourceType,
     /// <p>The Amazon Resource Name (ARN) of the import source for the Key Value Store.</p>
     pub source_arn: ::std::string::String,
 }
-impl ImportSource {
+impl  ImportSource  {
     /// <p>The source type of the import source for the Key Value Store.</p>
-    pub fn source_type(&self) -> &crate::types::ImportSourceType {
+    pub fn source_type(&self) -> & crate::types::ImportSourceType {
         &self.source_type
     }
     /// <p>The Amazon Resource Name (ARN) of the import source for the Key Value Store.</p>
-    pub fn source_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.source_arn.deref()
+    pub fn source_arn(&self) -> & str {
+        use std::ops::Deref; self.source_arn.deref()
     }
 }
 impl ImportSource {
@@ -43,8 +42,7 @@ impl ImportSourceBuilder {
     }
     /// <p>The source type of the import source for the Key Value Store.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ImportSourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The source type of the import source for the Key Value Store.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ImportSourceType> {
@@ -58,8 +56,7 @@ impl ImportSourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the import source for the Key Value Store.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the import source for the Key Value Store.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl ImportSourceBuilder {
     /// - [`source_type`](crate::types::builders::ImportSourceBuilder::source_type)
     /// - [`source_arn`](crate::types::builders::ImportSourceBuilder::source_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ImportSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportSource {
-            source_type: self.source_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_type",
-                    "source_type was not specified but it is required when building ImportSource",
-                )
-            })?,
-            source_arn: self.source_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_arn",
-                    "source_arn was not specified but it is required when building ImportSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImportSource {
+                source_type: self.source_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_type", "source_type was not specified but it is required when building ImportSource")
+                    )?
+                ,
+                source_arn: self.source_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_arn", "source_arn was not specified but it is required when building ImportSource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

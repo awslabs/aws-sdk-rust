@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssetPropertyValueOutput {
+pub struct GetAssetPropertyValueOutput  {
     /// <p>The current asset property value.</p>
     pub property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
     _request_id: Option<String>,
 }
-impl GetAssetPropertyValueOutput {
+impl  GetAssetPropertyValueOutput  {
     /// <p>The current asset property value.</p>
-    pub fn property_value(&self) -> ::std::option::Option<&crate::types::AssetPropertyValue> {
+    pub fn property_value(&self) -> ::std::option::Option<& crate::types::AssetPropertyValue> {
         self.property_value.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAssetPropertyValueOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAssetPropertyValueOutput {
     /// Creates a new builder-style object to manufacture [`GetAssetPropertyValueOutput`](crate::operation::get_asset_property_value::GetAssetPropertyValueOutput).
     pub fn builder() -> crate::operation::get_asset_property_value::builders::GetAssetPropertyValueOutputBuilder {
@@ -40,27 +40,28 @@ impl GetAssetPropertyValueOutputBuilder {
     }
     /// <p>The current asset property value.</p>
     pub fn set_property_value(mut self, input: ::std::option::Option<crate::types::AssetPropertyValue>) -> Self {
-        self.property_value = input;
-        self
+        self.property_value = input; self
     }
     /// <p>The current asset property value.</p>
     pub fn get_property_value(&self) -> &::std::option::Option<crate::types::AssetPropertyValue> {
         &self.property_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAssetPropertyValueOutput`](crate::operation::get_asset_property_value::GetAssetPropertyValueOutput).
     pub fn build(self) -> crate::operation::get_asset_property_value::GetAssetPropertyValueOutput {
         crate::operation::get_asset_property_value::GetAssetPropertyValueOutput {
-            property_value: self.property_value,
+            property_value: self.property_value
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

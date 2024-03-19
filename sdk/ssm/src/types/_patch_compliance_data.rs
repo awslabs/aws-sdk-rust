@@ -3,7 +3,7 @@
 /// <p>Information about the state of a patch on a particular managed node as it relates to the patch baseline used to patch the node.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PatchComplianceData {
+pub struct PatchComplianceData  {
     /// <p>The title of the patch.</p>
     pub title: ::std::string::String,
     /// <p>The operating system-specific ID of the patch.</p>
@@ -22,40 +22,36 @@ pub struct PatchComplianceData {
     /// </note>
     pub cve_ids: ::std::option::Option<::std::string::String>,
 }
-impl PatchComplianceData {
+impl  PatchComplianceData  {
     /// <p>The title of the patch.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The operating system-specific ID of the patch.</p>
-    pub fn kb_id(&self) -> &str {
-        use std::ops::Deref;
-        self.kb_id.deref()
+    pub fn kb_id(&self) -> & str {
+        use std::ops::Deref; self.kb_id.deref()
     }
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
-    pub fn classification(&self) -> &str {
-        use std::ops::Deref;
-        self.classification.deref()
+    pub fn classification(&self) -> & str {
+        use std::ops::Deref; self.classification.deref()
     }
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
-    pub fn severity(&self) -> &str {
-        use std::ops::Deref;
-        self.severity.deref()
+    pub fn severity(&self) -> & str {
+        use std::ops::Deref; self.severity.deref()
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn state(&self) -> &crate::types::PatchComplianceDataState {
+    pub fn state(&self) -> & crate::types::PatchComplianceDataState {
         &self.state
     }
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
-    pub fn installed_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn installed_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.installed_time
     }
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p><note>
     /// <p>Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or <code>Failed</code>.</p>
     /// </note>
-    pub fn cve_ids(&self) -> ::std::option::Option<&str> {
+    pub fn cve_ids(&self) -> ::std::option::Option<& str> {
         self.cve_ids.as_deref()
     }
 }
@@ -87,8 +83,7 @@ impl PatchComplianceDataBuilder {
     }
     /// <p>The title of the patch.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the patch.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl PatchComplianceDataBuilder {
     }
     /// <p>The operating system-specific ID of the patch.</p>
     pub fn set_kb_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kb_id = input;
-        self
+        self.kb_id = input; self
     }
     /// <p>The operating system-specific ID of the patch.</p>
     pub fn get_kb_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +111,7 @@ impl PatchComplianceDataBuilder {
     }
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
     pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.classification = input;
-        self
+        self.classification = input; self
     }
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
     pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +125,7 @@ impl PatchComplianceDataBuilder {
     }
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
     pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +141,7 @@ impl PatchComplianceDataBuilder {
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PatchComplianceDataState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -165,8 +156,7 @@ impl PatchComplianceDataBuilder {
     }
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
     pub fn set_installed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.installed_time = input;
-        self
+        self.installed_time = input; self
     }
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
     pub fn get_installed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,8 +173,7 @@ impl PatchComplianceDataBuilder {
     /// <p>Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or <code>Failed</code>.</p>
     /// </note>
     pub fn set_cve_ids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cve_ids = input;
-        self
+        self.cve_ids = input; self
     }
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p><note>
     /// <p>Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or <code>Failed</code>.</p>
@@ -201,44 +190,42 @@ impl PatchComplianceDataBuilder {
     /// - [`state`](crate::types::builders::PatchComplianceDataBuilder::state)
     /// - [`installed_time`](crate::types::builders::PatchComplianceDataBuilder::installed_time)
     pub fn build(self) -> ::std::result::Result<crate::types::PatchComplianceData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PatchComplianceData {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building PatchComplianceData",
-                )
-            })?,
-            kb_id: self.kb_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kb_id",
-                    "kb_id was not specified but it is required when building PatchComplianceData",
-                )
-            })?,
-            classification: self.classification.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "classification",
-                    "classification was not specified but it is required when building PatchComplianceData",
-                )
-            })?,
-            severity: self.severity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "severity",
-                    "severity was not specified but it is required when building PatchComplianceData",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building PatchComplianceData",
-                )
-            })?,
-            installed_time: self.installed_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "installed_time",
-                    "installed_time was not specified but it is required when building PatchComplianceData",
-                )
-            })?,
-            cve_ids: self.cve_ids,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PatchComplianceData {
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building PatchComplianceData")
+                    )?
+                ,
+                kb_id: self.kb_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kb_id", "kb_id was not specified but it is required when building PatchComplianceData")
+                    )?
+                ,
+                classification: self.classification
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("classification", "classification was not specified but it is required when building PatchComplianceData")
+                    )?
+                ,
+                severity: self.severity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("severity", "severity was not specified but it is required when building PatchComplianceData")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building PatchComplianceData")
+                    )?
+                ,
+                installed_time: self.installed_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("installed_time", "installed_time was not specified but it is required when building PatchComplianceData")
+                    )?
+                ,
+                cve_ids: self.cve_ids
+                ,
+            }
+        )
     }
 }
+

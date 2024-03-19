@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplateAliasesOutput {
+pub struct ListTemplateAliasesOutput  {
     /// <p>A structure containing the list of the template's aliases.</p>
-    pub template_alias_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>>,
+    pub template_alias_list: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateAlias>>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -13,31 +13,32 @@ pub struct ListTemplateAliasesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTemplateAliasesOutput {
+impl  ListTemplateAliasesOutput  {
     /// <p>A structure containing the list of the template's aliases.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_alias_list.is_none()`.
-    pub fn template_alias_list(&self) -> &[crate::types::TemplateAlias] {
-        self.template_alias_list.as_deref().unwrap_or_default()
+    pub fn template_alias_list(&self) -> & [crate::types::TemplateAlias] {
+        self.template_alias_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTemplateAliasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTemplateAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateAliasesOutput`](crate::operation::list_template_aliases::ListTemplateAliasesOutput).
     pub fn builder() -> crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder {
@@ -49,7 +50,7 @@ impl ListTemplateAliasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateAliasesOutputBuilder {
-    pub(crate) template_alias_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>>,
+    pub(crate) template_alias_list: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateAlias>>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -63,17 +64,16 @@ impl ListTemplateAliasesOutputBuilder {
     /// <p>A structure containing the list of the template's aliases.</p>
     pub fn template_alias_list(mut self, input: crate::types::TemplateAlias) -> Self {
         let mut v = self.template_alias_list.unwrap_or_default();
-        v.push(input);
-        self.template_alias_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.template_alias_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure containing the list of the template's aliases.</p>
-    pub fn set_template_alias_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>>) -> Self {
-        self.template_alias_list = input;
-        self
+    pub fn set_template_alias_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateAlias>>) -> Self {
+        self.template_alias_list = input; self
     }
     /// <p>A structure containing the list of the template's aliases.</p>
-    pub fn get_template_alias_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateAlias>> {
+    pub fn get_template_alias_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TemplateAlias>> {
         &self.template_alias_list
     }
     /// <p>The HTTP status of the request.</p>
@@ -83,8 +83,7 @@ impl ListTemplateAliasesOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -97,8 +96,7 @@ impl ListTemplateAliasesOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,30 +109,35 @@ impl ListTemplateAliasesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTemplateAliasesOutput`](crate::operation::list_template_aliases::ListTemplateAliasesOutput).
     pub fn build(self) -> crate::operation::list_template_aliases::ListTemplateAliasesOutput {
         crate::operation::list_template_aliases::ListTemplateAliasesOutput {
-            template_alias_list: self.template_alias_list,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
-            next_token: self.next_token,
+            template_alias_list: self.template_alias_list
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

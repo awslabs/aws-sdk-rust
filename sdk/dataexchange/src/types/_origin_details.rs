@@ -3,13 +3,13 @@
 /// <p>Details about the origin of the data set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginDetails {
+pub struct OriginDetails  {
     /// <p>The product ID of the origin of the data set.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
 }
-impl OriginDetails {
+impl  OriginDetails  {
     /// <p>The product ID of the origin of the data set.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl OriginDetailsBuilder {
     }
     /// <p>The product ID of the origin of the data set.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product ID of the origin of the data set.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl OriginDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`OriginDetails`](crate::types::OriginDetails).
     pub fn build(self) -> crate::types::OriginDetails {
-        crate::types::OriginDetails { product_id: self.product_id }
+        crate::types::OriginDetails {
+            product_id: self.product_id
+            ,
+        }
     }
 }
+

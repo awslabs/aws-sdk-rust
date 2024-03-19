@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEcsServiceRecommendationProjectedMetricsInput {
+pub struct GetEcsServiceRecommendationProjectedMetricsInput  {
     /// <p>The ARN that identifies the Amazon ECS service.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code></p>
@@ -16,15 +16,15 @@ pub struct GetEcsServiceRecommendationProjectedMetricsInput {
     /// <p>The timestamp of the last projected metrics data point to return.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GetEcsServiceRecommendationProjectedMetricsInput {
+impl  GetEcsServiceRecommendationProjectedMetricsInput  {
     /// <p>The ARN that identifies the Amazon ECS service.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code></p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<& str> {
         self.service_arn.as_deref()
     }
     /// <p>The statistic of the projected metrics.</p>
-    pub fn stat(&self) -> ::std::option::Option<&crate::types::MetricStatistic> {
+    pub fn stat(&self) -> ::std::option::Option<& crate::types::MetricStatistic> {
         self.stat.as_ref()
     }
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
@@ -32,20 +32,18 @@ impl GetEcsServiceRecommendationProjectedMetricsInput {
         self.period
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 impl GetEcsServiceRecommendationProjectedMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder {
-        crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder {
+        crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder::default()
     }
 }
 
@@ -72,8 +70,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code></p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
     }
     /// <p>The ARN that identifies the Amazon ECS service.</p>
     /// <p>The following is the format of the ARN:</p>
@@ -89,8 +86,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
     }
     /// <p>The statistic of the projected metrics.</p>
     pub fn set_stat(mut self, input: ::std::option::Option<crate::types::MetricStatistic>) -> Self {
-        self.stat = input;
-        self
+        self.stat = input; self
     }
     /// <p>The statistic of the projected metrics.</p>
     pub fn get_stat(&self) -> &::std::option::Option<crate::types::MetricStatistic> {
@@ -104,8 +100,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
     }
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The granularity, in seconds, of the projected metrics data points.</p>
     pub fn get_period(&self) -> &::std::option::Option<i32> {
@@ -119,8 +114,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp of the first projected metrics data point to return.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -134,28 +128,28 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
     }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp of the last projected metrics data point to return.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput {
-                service_arn: self.service_arn,
-                stat: self.stat,
-                period: self.period,
-                start_time: self.start_time,
-                end_time: self.end_time,
-            },
+                service_arn: self.service_arn
+                ,
+                stat: self.stat
+                ,
+                period: self.period
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
         )
     }
 }
+

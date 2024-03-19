@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDistributionsByCachePolicyIdInput {
+pub struct ListDistributionsByCachePolicyIdInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -10,9 +10,9 @@ pub struct ListDistributionsByCachePolicyIdInput {
     /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
     pub cache_policy_id: ::std::option::Option<::std::string::String>,
 }
-impl ListDistributionsByCachePolicyIdInput {
+impl  ListDistributionsByCachePolicyIdInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -20,7 +20,7 @@ impl ListDistributionsByCachePolicyIdInput {
         self.max_items
     }
     /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
-    pub fn cache_policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn cache_policy_id(&self) -> ::std::option::Option<& str> {
         self.cache_policy_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListDistributionsByCachePolicyIdInputBuilder {
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListDistributionsByCachePolicyIdInputBuilder {
     }
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -76,26 +74,24 @@ impl ListDistributionsByCachePolicyIdInputBuilder {
     }
     /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
     pub fn set_cache_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_policy_id = input;
-        self
+        self.cache_policy_id = input; self
     }
     /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
     pub fn get_cache_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_policy_id
     }
     /// Consumes the builder and constructs a [`ListDistributionsByCachePolicyIdInput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput {
-                marker: self.marker,
-                max_items: self.max_items,
-                cache_policy_id: self.cache_policy_id,
-            },
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+                cache_policy_id: self.cache_policy_id
+                ,
+            }
         )
     }
 }
+
