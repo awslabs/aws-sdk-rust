@@ -49,6 +49,8 @@ pub use crate::types::error::_backup_not_found_exception::BackupNotFoundExceptio
 
 pub use crate::types::error::_backup_in_use_exception::BackupInUseExceptionBuilder;
 
+pub use crate::types::error::_policy_not_found_exception::PolicyNotFoundExceptionBuilder;
+
 pub use crate::types::error::_import_conflict_exception::ImportConflictExceptionBuilder;
 
 pub use crate::types::error::_invalid_export_time_exception::InvalidExportTimeExceptionBuilder;

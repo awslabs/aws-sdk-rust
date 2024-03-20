@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConsumedCapacity {
-    /// <p>The name of the table that was affected by the operation.</p>
+    /// <p>The name of the table that was affected by the operation. If you had specified the Amazon Resource Name (ARN) of a table in the input, you'll see the table ARN in the response.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The total number of capacity units consumed by the operation.</p>
     pub capacity_units: ::std::option::Option<f64>,
@@ -20,7 +20,7 @@ pub struct ConsumedCapacity {
     pub global_secondary_indexes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Capacity>>,
 }
 impl ConsumedCapacity {
-    /// <p>The name of the table that was affected by the operation.</p>
+    /// <p>The name of the table that was affected by the operation. If you had specified the Amazon Resource Name (ARN) of a table in the input, you'll see the table ARN in the response.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -69,17 +69,17 @@ pub struct ConsumedCapacityBuilder {
     pub(crate) global_secondary_indexes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Capacity>>,
 }
 impl ConsumedCapacityBuilder {
-    /// <p>The name of the table that was affected by the operation.</p>
+    /// <p>The name of the table that was affected by the operation. If you had specified the Amazon Resource Name (ARN) of a table in the input, you'll see the table ARN in the response.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the table that was affected by the operation.</p>
+    /// <p>The name of the table that was affected by the operation. If you had specified the Amazon Resource Name (ARN) of a table in the input, you'll see the table ARN in the response.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The name of the table that was affected by the operation.</p>
+    /// <p>The name of the table that was affected by the operation. If you had specified the Amazon Resource Name (ARN) of a table in the input, you'll see the table ARN in the response.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

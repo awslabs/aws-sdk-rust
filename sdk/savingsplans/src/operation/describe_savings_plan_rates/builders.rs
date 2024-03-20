@@ -22,7 +22,7 @@ impl DescribeSavingsPlanRatesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeSavingsPlanRates`.
 ///
-/// <p>Describes the specified Savings Plans rates.</p>
+/// <p>Describes the rates for the specified Savings Plan.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlanRatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

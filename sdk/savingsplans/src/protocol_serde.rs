@@ -37,6 +37,8 @@ pub(crate) mod shape_describe_savings_plans_offerings;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_return_savings_plan;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -66,6 +68,8 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_return_savings_plan_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 

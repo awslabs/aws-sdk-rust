@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBackupsInput {
-    /// <p>The backups from the table specified by <code>TableName</code> are listed.</p>
+    /// <p>Lists the backups from the table specified in <code>TableName</code>. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of backups to return at once.</p>
     pub limit: ::std::option::Option<i32>,
@@ -26,7 +26,7 @@ pub struct ListBackupsInput {
     pub backup_type: ::std::option::Option<crate::types::BackupTypeFilter>,
 }
 impl ListBackupsInput {
-    /// <p>The backups from the table specified by <code>TableName</code> are listed.</p>
+    /// <p>Lists the backups from the table specified in <code>TableName</code>. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -79,17 +79,17 @@ pub struct ListBackupsInputBuilder {
     pub(crate) backup_type: ::std::option::Option<crate::types::BackupTypeFilter>,
 }
 impl ListBackupsInputBuilder {
-    /// <p>The backups from the table specified by <code>TableName</code> are listed.</p>
+    /// <p>Lists the backups from the table specified in <code>TableName</code>. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The backups from the table specified by <code>TableName</code> are listed.</p>
+    /// <p>Lists the backups from the table specified in <code>TableName</code>. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The backups from the table specified by <code>TableName</code> are listed.</p>
+    /// <p>Lists the backups from the table specified in <code>TableName</code>. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

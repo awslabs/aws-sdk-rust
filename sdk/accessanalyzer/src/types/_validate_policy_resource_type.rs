@@ -12,6 +12,7 @@
 /// ```text
 /// # let validatepolicyresourcetype = unimplemented!();
 /// match validatepolicyresourcetype {
+///     ValidatePolicyResourceType::DynamodbTable => { /* ... */ },
 ///     ValidatePolicyResourceType::RoleTrust => { /* ... */ },
 ///     ValidatePolicyResourceType::S3AccessPoint => { /* ... */ },
 ///     ValidatePolicyResourceType::S3Bucket => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum ValidatePolicyResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    DynamodbTable,
+    #[allow(missing_docs)] // documentation missing in model
     RoleTrust,
     #[allow(missing_docs)] // documentation missing in model
     S3AccessPoint,
@@ -61,6 +64,7 @@ pub enum ValidatePolicyResourceType {
 impl ::std::convert::From<&str> for ValidatePolicyResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS::DynamoDB::Table" => ValidatePolicyResourceType::DynamodbTable,
             "AWS::IAM::AssumeRolePolicyDocument" => ValidatePolicyResourceType::RoleTrust,
             "AWS::S3::AccessPoint" => ValidatePolicyResourceType::S3AccessPoint,
             "AWS::S3::Bucket" => ValidatePolicyResourceType::S3Bucket,
@@ -81,6 +85,7 @@ impl ValidatePolicyResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ValidatePolicyResourceType::DynamodbTable => "AWS::DynamoDB::Table",
             ValidatePolicyResourceType::RoleTrust => "AWS::IAM::AssumeRolePolicyDocument",
             ValidatePolicyResourceType::S3AccessPoint => "AWS::S3::AccessPoint",
             ValidatePolicyResourceType::S3Bucket => "AWS::S3::Bucket",
@@ -92,6 +97,7 @@ impl ValidatePolicyResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AWS::DynamoDB::Table",
             "AWS::IAM::AssumeRolePolicyDocument",
             "AWS::S3::AccessPoint",
             "AWS::S3::Bucket",
@@ -120,6 +126,7 @@ impl ValidatePolicyResourceType {
 impl ::std::fmt::Display for ValidatePolicyResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ValidatePolicyResourceType::DynamodbTable => write!(f, "AWS::DynamoDB::Table"),
             ValidatePolicyResourceType::RoleTrust => write!(f, "AWS::IAM::AssumeRolePolicyDocument"),
             ValidatePolicyResourceType::S3AccessPoint => write!(f, "AWS::S3::AccessPoint"),
             ValidatePolicyResourceType::S3Bucket => write!(f, "AWS::S3::Bucket"),

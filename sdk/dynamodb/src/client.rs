@@ -179,6 +179,8 @@ mod delete_backup;
 
 mod delete_item;
 
+mod delete_resource_policy;
+
 mod delete_table;
 
 mod describe_backup;
@@ -219,6 +221,8 @@ mod export_table_to_point_in_time;
 
 mod get_item;
 
+mod get_resource_policy;
+
 mod import_table;
 
 mod list_backups;
@@ -236,6 +240,8 @@ mod list_tables;
 mod list_tags_of_resource;
 
 mod put_item;
+
+mod put_resource_policy;
 
 mod query;
 

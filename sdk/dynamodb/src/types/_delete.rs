@@ -6,7 +6,7 @@
 pub struct Delete {
     /// <p>The primary key of the item to be deleted. Each element consists of an attribute name and a value for that attribute.</p>
     pub key: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    /// <p>Name of the table in which the item to be deleted resides.</p>
+    /// <p>Name of the table in which the item to be deleted resides. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub table_name: ::std::string::String,
     /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
     pub condition_expression: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl Delete {
     pub fn key(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue> {
         &self.key
     }
-    /// <p>Name of the table in which the item to be deleted resides.</p>
+    /// <p>Name of the table in which the item to be deleted resides. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(&self) -> &str {
         use std::ops::Deref;
         self.table_name.deref()
@@ -85,18 +85,18 @@ impl DeleteBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         &self.key
     }
-    /// <p>Name of the table in which the item to be deleted resides.</p>
+    /// <p>Name of the table in which the item to be deleted resides. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the table in which the item to be deleted resides.</p>
+    /// <p>Name of the table in which the item to be deleted resides. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>Name of the table in which the item to be deleted resides.</p>
+    /// <p>Name of the table in which the item to be deleted resides. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

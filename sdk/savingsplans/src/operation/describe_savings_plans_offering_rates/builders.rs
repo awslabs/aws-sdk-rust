@@ -22,7 +22,7 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeSavingsPlansOfferingRates`.
 ///
-/// <p>Describes the specified Savings Plans offering rates.</p>
+/// <p>Describes the offering rates for the specified Savings Plans.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingRatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -166,17 +166,17 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_products`](Self::set_products).
     ///
-    /// <p>The AWS products.</p>
+    /// <p>The Amazon Web Services products.</p>
     pub fn products(mut self, input: crate::types::SavingsPlanProductType) -> Self {
         self.inner = self.inner.products(input);
         self
     }
-    /// <p>The AWS products.</p>
+    /// <p>The Amazon Web Services products.</p>
     pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>) -> Self {
         self.inner = self.inner.set_products(input);
         self
     }
-    /// <p>The AWS products.</p>
+    /// <p>The Amazon Web Services products.</p>
     pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>> {
         self.inner.get_products()
     }
@@ -220,17 +220,17 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
     ///
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn operations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operations(input.into());
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_operations(input);
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_operations()
     }

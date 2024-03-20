@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTable`](crate::operation::delete_table::builders::DeleteTableFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`table_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table to delete.</p><br>
+    ///   - [`table_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table to delete. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p><br>
     /// - On success, responds with [`DeleteTableOutput`](crate::operation::delete_table::DeleteTableOutput) with field(s):
     ///   - [`table_description(Option<TableDescription>)`](crate::operation::delete_table::DeleteTableOutput::table_description): <p>Represents the properties of a table.</p>
     /// - On failure, responds with [`SdkError<DeleteTableError>`](crate::operation::delete_table::DeleteTableError)

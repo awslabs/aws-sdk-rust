@@ -134,6 +134,13 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }
+                        "returnableUntil" => {
+                            builder = builder.set_returnable_until(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

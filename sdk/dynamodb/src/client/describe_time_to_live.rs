@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTimeToLive`](crate::operation::describe_time_to_live::builders::DescribeTimeToLiveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`table_name(impl Into<String>)`](crate::operation::describe_time_to_live::builders::DescribeTimeToLiveFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::describe_time_to_live::builders::DescribeTimeToLiveFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table to be described.</p><br>
+    ///   - [`table_name(impl Into<String>)`](crate::operation::describe_time_to_live::builders::DescribeTimeToLiveFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::describe_time_to_live::builders::DescribeTimeToLiveFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table to be described. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p><br>
     /// - On success, responds with [`DescribeTimeToLiveOutput`](crate::operation::describe_time_to_live::DescribeTimeToLiveOutput) with field(s):
     ///   - [`time_to_live_description(Option<TimeToLiveDescription>)`](crate::operation::describe_time_to_live::DescribeTimeToLiveOutput::time_to_live_description): <p></p>
     /// - On failure, responds with [`SdkError<DescribeTimeToLiveError>`](crate::operation::describe_time_to_live::DescribeTimeToLiveError)

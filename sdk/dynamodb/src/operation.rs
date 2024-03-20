@@ -25,6 +25,9 @@ pub mod delete_backup;
 /// Types for the `DeleteItem` operation.
 pub mod delete_item;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DeleteTable` operation.
 pub mod delete_table;
 
@@ -85,6 +88,9 @@ pub mod export_table_to_point_in_time;
 /// Types for the `GetItem` operation.
 pub mod get_item;
 
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
+
 /// Types for the `ImportTable` operation.
 pub mod import_table;
 
@@ -111,6 +117,9 @@ pub mod list_tags_of_resource;
 
 /// Types for the `PutItem` operation.
 pub mod put_item;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `Query` operation.
 pub mod query;

@@ -114,17 +114,17 @@ impl ListContributorInsightsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_contributor_insights::paginator::ListContributorInsightsPaginator {
         crate::operation::list_contributor_insights::paginator::ListContributorInsightsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the table.</p>
+    /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
-    /// <p>The name of the table.</p>
+    /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
-    /// <p>The name of the table.</p>
+    /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }

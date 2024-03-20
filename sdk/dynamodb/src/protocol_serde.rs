@@ -39,6 +39,8 @@ pub(crate) mod shape_delete_backup;
 
 pub(crate) mod shape_delete_item;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_delete_table;
 
 pub(crate) mod shape_describe_backup;
@@ -79,6 +81,8 @@ pub(crate) mod shape_export_table_to_point_in_time;
 
 pub(crate) mod shape_get_item;
 
+pub(crate) mod shape_get_resource_policy;
+
 pub(crate) mod shape_import_table;
 
 pub(crate) mod shape_list_backups;
@@ -96,6 +100,8 @@ pub(crate) mod shape_list_tables;
 pub(crate) mod shape_list_tags_of_resource;
 
 pub(crate) mod shape_put_item;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_query;
 
@@ -163,6 +169,8 @@ pub(crate) mod shape_delete_backup_input;
 
 pub(crate) mod shape_delete_item_input;
 
+pub(crate) mod shape_delete_resource_policy_input;
+
 pub(crate) mod shape_delete_table_input;
 
 pub(crate) mod shape_describe_backup_input;
@@ -204,6 +212,8 @@ pub(crate) mod shape_export_not_found_exception;
 pub(crate) mod shape_export_table_to_point_in_time_input;
 
 pub(crate) mod shape_get_item_input;
+
+pub(crate) mod shape_get_resource_policy_input;
 
 pub(crate) mod shape_global_table_already_exists_exception;
 
@@ -247,9 +257,13 @@ pub(crate) mod shape_list_tags_of_resource_input;
 
 pub(crate) mod shape_point_in_time_recovery_unavailable_exception;
 
+pub(crate) mod shape_policy_not_found_exception;
+
 pub(crate) mod shape_provisioned_throughput_exceeded_exception;
 
 pub(crate) mod shape_put_item_input;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_query_input;
 

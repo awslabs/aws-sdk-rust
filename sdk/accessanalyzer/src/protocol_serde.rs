@@ -215,6 +215,10 @@ pub(crate) mod shape_condition_key_map;
 
 pub(crate) mod shape_configurations_map;
 
+pub(crate) mod shape_dynamodb_stream_configuration;
+
+pub(crate) mod shape_dynamodb_table_configuration;
+
 pub(crate) mod shape_ebs_snapshot_configuration;
 
 pub(crate) mod shape_ecr_repository_configuration;

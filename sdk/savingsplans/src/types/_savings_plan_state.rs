@@ -15,9 +15,11 @@
 ///     SavingsPlanState::Active => { /* ... */ },
 ///     SavingsPlanState::PaymentFailed => { /* ... */ },
 ///     SavingsPlanState::PaymentPending => { /* ... */ },
+///     SavingsPlanState::PendingReturn => { /* ... */ },
 ///     SavingsPlanState::Queued => { /* ... */ },
 ///     SavingsPlanState::QueuedDeleted => { /* ... */ },
 ///     SavingsPlanState::Retired => { /* ... */ },
+///     SavingsPlanState::Returned => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,11 +54,15 @@ pub enum SavingsPlanState {
     #[allow(missing_docs)] // documentation missing in model
     PaymentPending,
     #[allow(missing_docs)] // documentation missing in model
+    PendingReturn,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
     #[allow(missing_docs)] // documentation missing in model
     QueuedDeleted,
     #[allow(missing_docs)] // documentation missing in model
     Retired,
+    #[allow(missing_docs)] // documentation missing in model
+    Returned,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,9 +73,11 @@ impl ::std::convert::From<&str> for SavingsPlanState {
             "active" => SavingsPlanState::Active,
             "payment-failed" => SavingsPlanState::PaymentFailed,
             "payment-pending" => SavingsPlanState::PaymentPending,
+            "pending-return" => SavingsPlanState::PendingReturn,
             "queued" => SavingsPlanState::Queued,
             "queued-deleted" => SavingsPlanState::QueuedDeleted,
             "retired" => SavingsPlanState::Retired,
+            "returned" => SavingsPlanState::Returned,
             other => SavingsPlanState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -88,15 +96,26 @@ impl SavingsPlanState {
             SavingsPlanState::Active => "active",
             SavingsPlanState::PaymentFailed => "payment-failed",
             SavingsPlanState::PaymentPending => "payment-pending",
+            SavingsPlanState::PendingReturn => "pending-return",
             SavingsPlanState::Queued => "queued",
             SavingsPlanState::QueuedDeleted => "queued-deleted",
             SavingsPlanState::Retired => "retired",
+            SavingsPlanState::Returned => "returned",
             SavingsPlanState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["active", "payment-failed", "payment-pending", "queued", "queued-deleted", "retired"]
+        &[
+            "active",
+            "payment-failed",
+            "payment-pending",
+            "pending-return",
+            "queued",
+            "queued-deleted",
+            "retired",
+            "returned",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SavingsPlanState {
@@ -122,9 +141,11 @@ impl ::std::fmt::Display for SavingsPlanState {
             SavingsPlanState::Active => write!(f, "active"),
             SavingsPlanState::PaymentFailed => write!(f, "payment-failed"),
             SavingsPlanState::PaymentPending => write!(f, "payment-pending"),
+            SavingsPlanState::PendingReturn => write!(f, "pending-return"),
             SavingsPlanState::Queued => write!(f, "queued"),
             SavingsPlanState::QueuedDeleted => write!(f, "queued-deleted"),
             SavingsPlanState::Retired => write!(f, "retired"),
+            SavingsPlanState::Returned => write!(f, "returned"),
             SavingsPlanState::Unknown(value) => write!(f, "{}", value),
         }
     }

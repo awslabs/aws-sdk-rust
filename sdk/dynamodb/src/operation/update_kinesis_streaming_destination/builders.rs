@@ -108,31 +108,31 @@ impl UpdateKinesisStreamingDestinationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The table name for the Kinesis streaming destination input.</p>
+    /// <p>The table name for the Kinesis streaming destination input. You can also provide the ARN of the table in this parameter.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
-    /// <p>The table name for the Kinesis streaming destination input.</p>
+    /// <p>The table name for the Kinesis streaming destination input. You can also provide the ARN of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
-    /// <p>The table name for the Kinesis streaming destination input.</p>
+    /// <p>The table name for the Kinesis streaming destination input. You can also provide the ARN of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
-    /// <p>The ARN for the Kinesis stream input.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
         self
     }
-    /// <p>The ARN for the Kinesis stream input.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
-    /// <p>The ARN for the Kinesis stream input.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stream_arn()
     }

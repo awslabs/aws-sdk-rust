@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetItemOutput {
-    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
+    /// <p>A map of table name or table ARN to a list of items. Each object in <code>Responses</code> consists of a table name or ARN, along with a map of attribute data consisting of the data type and attribute value.</p>
     pub responses: ::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,
@@ -35,7 +35,7 @@ pub struct BatchGetItemOutput {
     _request_id: Option<String>,
 }
 impl BatchGetItemOutput {
-    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
+    /// <p>A map of table name or table ARN to a list of items. Each object in <code>Responses</code> consists of a table name or ARN, along with a map of attribute data consisting of the data type and attribute value.</p>
     pub fn responses(
         &self,
     ) -> ::std::option::Option<
@@ -105,7 +105,7 @@ impl BatchGetItemOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_responses`](Self::set_responses).
     ///
-    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
+    /// <p>A map of table name or table ARN to a list of items. Each object in <code>Responses</code> consists of a table name or ARN, along with a map of attribute data consisting of the data type and attribute value.</p>
     pub fn responses(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -116,7 +116,7 @@ impl BatchGetItemOutputBuilder {
         self.responses = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
+    /// <p>A map of table name or table ARN to a list of items. Each object in <code>Responses</code> consists of a table name or ARN, along with a map of attribute data consisting of the data type and attribute value.</p>
     pub fn set_responses(
         mut self,
         input: ::std::option::Option<
@@ -129,7 +129,7 @@ impl BatchGetItemOutputBuilder {
         self.responses = input;
         self
     }
-    /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
+    /// <p>A map of table name or table ARN to a list of items. Each object in <code>Responses</code> consists of a table name or ARN, along with a map of attribute data consisting of the data type and attribute value.</p>
     pub fn get_responses(
         &self,
     ) -> &::std::option::Option<

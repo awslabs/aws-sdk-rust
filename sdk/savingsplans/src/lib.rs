@@ -16,7 +16,7 @@
 #![allow(rustdoc::redundant_explicit_links)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! Savings Plans are a pricing model that offer significant savings on AWS usage (for example, on Amazon EC2 instances). You commit to a consistent amount of usage, in USD per hour, for a term of 1 or 3 years, and receive a lower price for that usage. For more information, see the [AWS Savings Plans User Guide](https://docs.aws.amazon.com/savingsplans/latest/userguide/).
+//! Savings Plans are a pricing model that offer significant savings on Amazon Web Services usage (for example, on Amazon EC2 instances). You commit to a consistent amount of usage per hour, in the specified currency, for a term of one or three years, and receive a lower price for that usage. For more information, see the [Amazon Web Services Savings Plans User Guide](https://docs.aws.amazon.com/savingsplans/latest/userguide/).
 //!
 //! ## Getting Started
 //!
@@ -30,7 +30,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-savingsplans = "1.17.0"
+//! aws-sdk-savingsplans = "1.18.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

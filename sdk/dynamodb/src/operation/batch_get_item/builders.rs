@@ -124,7 +124,7 @@ impl BatchGetItemFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_request_items`](Self::set_request_items).
     ///
-    /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
+    /// <p>A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
     /// <ul>
     /// <li>
@@ -170,7 +170,7 @@ impl BatchGetItemFluentBuilder {
         self.inner = self.inner.request_items(k.into(), v);
         self
     }
-    /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
+    /// <p>A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
     /// <ul>
     /// <li>
@@ -219,7 +219,7 @@ impl BatchGetItemFluentBuilder {
         self.inner = self.inner.set_request_items(input);
         self
     }
-    /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
+    /// <p>A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
     /// <ul>
     /// <li>

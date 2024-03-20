@@ -49,6 +49,8 @@ pub use crate::types::error::_backup_not_found_exception::BackupNotFoundExceptio
 
 pub use crate::types::error::_backup_in_use_exception::BackupInUseException;
 
+pub use crate::types::error::_policy_not_found_exception::PolicyNotFoundException;
+
 pub use crate::types::error::_import_conflict_exception::ImportConflictException;
 
 pub use crate::types::error::_invalid_export_time_exception::InvalidExportTimeException;
@@ -102,6 +104,8 @@ mod _item_collection_size_limit_exceeded_exception;
 mod _limit_exceeded_exception;
 
 mod _point_in_time_recovery_unavailable_exception;
+
+mod _policy_not_found_exception;
 
 mod _provisioned_throughput_exceeded_exception;
 

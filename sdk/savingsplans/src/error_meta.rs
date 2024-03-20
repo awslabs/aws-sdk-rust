@@ -279,6 +279,35 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::return_savings_plan::ReturnSavingsPlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::return_savings_plan::ReturnSavingsPlanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::return_savings_plan::ReturnSavingsPlanError> for Error {
+    fn from(err: crate::operation::return_savings_plan::ReturnSavingsPlanError) -> Self {
+        match err {
+            crate::operation::return_savings_plan::ReturnSavingsPlanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::return_savings_plan::ReturnSavingsPlanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::return_savings_plan::ReturnSavingsPlanError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::return_savings_plan::ReturnSavingsPlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::return_savings_plan::ReturnSavingsPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

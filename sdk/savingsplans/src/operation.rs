@@ -22,6 +22,9 @@ pub mod describe_savings_plans_offerings;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ReturnSavingsPlan` operation.
+pub mod return_savings_plan;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

@@ -176,17 +176,17 @@ impl DescribeSavingsPlansFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
     ///
-    /// <p>The states.</p>
+    /// <p>The current states of the Savings Plans.</p>
     pub fn states(mut self, input: crate::types::SavingsPlanState) -> Self {
         self.inner = self.inner.states(input);
         self
     }
-    /// <p>The states.</p>
+    /// <p>The current states of the Savings Plans.</p>
     pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
-    /// <p>The states.</p>
+    /// <p>The current states of the Savings Plans.</p>
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>> {
         self.inner.get_states()
     }

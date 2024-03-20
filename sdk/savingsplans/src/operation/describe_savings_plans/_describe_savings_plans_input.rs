@@ -11,7 +11,7 @@ pub struct DescribeSavingsPlansInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The states.</p>
+    /// <p>The current states of the Savings Plans.</p>
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>>,
     /// <p>The filters.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>>,
@@ -37,7 +37,7 @@ impl DescribeSavingsPlansInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The states.</p>
+    /// <p>The current states of the Savings Plans.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
     pub fn states(&self) -> &[crate::types::SavingsPlanState] {
@@ -141,19 +141,19 @@ impl DescribeSavingsPlansInputBuilder {
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
     ///
-    /// <p>The states.</p>
+    /// <p>The current states of the Savings Plans.</p>
     pub fn states(mut self, input: crate::types::SavingsPlanState) -> Self {
         let mut v = self.states.unwrap_or_default();
         v.push(input);
         self.states = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The states.</p>
+    /// <p>The current states of the Savings Plans.</p>
     pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>>) -> Self {
         self.states = input;
         self
     }
-    /// <p>The states.</p>
+    /// <p>The current states of the Savings Plans.</p>
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>> {
         &self.states
     }

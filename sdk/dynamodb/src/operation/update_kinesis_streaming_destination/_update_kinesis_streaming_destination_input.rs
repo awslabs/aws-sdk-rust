@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKinesisStreamingDestinationInput {
-    /// <p>The table name for the Kinesis streaming destination input.</p>
+    /// <p>The table name for the Kinesis streaming destination input. You can also provide the ARN of the table in this parameter.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN for the Kinesis stream input.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The command to update the Kinesis stream configuration.</p>
     pub update_kinesis_streaming_configuration: ::std::option::Option<crate::types::UpdateKinesisStreamingConfiguration>,
 }
 impl UpdateKinesisStreamingDestinationInput {
-    /// <p>The table name for the Kinesis streaming destination input.</p>
+    /// <p>The table name for the Kinesis streaming destination input. You can also provide the ARN of the table in this parameter.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
-    /// <p>The ARN for the Kinesis stream input.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
@@ -40,33 +40,33 @@ pub struct UpdateKinesisStreamingDestinationInputBuilder {
     pub(crate) update_kinesis_streaming_configuration: ::std::option::Option<crate::types::UpdateKinesisStreamingConfiguration>,
 }
 impl UpdateKinesisStreamingDestinationInputBuilder {
-    /// <p>The table name for the Kinesis streaming destination input.</p>
+    /// <p>The table name for the Kinesis streaming destination input. You can also provide the ARN of the table in this parameter.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The table name for the Kinesis streaming destination input.</p>
+    /// <p>The table name for the Kinesis streaming destination input. You can also provide the ARN of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The table name for the Kinesis streaming destination input.</p>
+    /// <p>The table name for the Kinesis streaming destination input. You can also provide the ARN of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
-    /// <p>The ARN for the Kinesis stream input.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
     /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN for the Kinesis stream input.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
-    /// <p>The ARN for the Kinesis stream input.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }

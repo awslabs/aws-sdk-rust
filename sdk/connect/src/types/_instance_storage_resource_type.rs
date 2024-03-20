@@ -19,7 +19,9 @@
 ///     InstanceStorageResourceType::ContactEvaluations => { /* ... */ },
 ///     InstanceStorageResourceType::ContactTraceRecords => { /* ... */ },
 ///     InstanceStorageResourceType::MediaStreams => { /* ... */ },
+///     InstanceStorageResourceType::RealTimeContactAnalysisChatSegments => { /* ... */ },
 ///     InstanceStorageResourceType::RealTimeContactAnalysisSegments => { /* ... */ },
+///     InstanceStorageResourceType::RealTimeContactAnalysisVoiceSegments => { /* ... */ },
 ///     InstanceStorageResourceType::ScheduledReports => { /* ... */ },
 ///     InstanceStorageResourceType::ScreenRecordings => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -64,7 +66,11 @@ pub enum InstanceStorageResourceType {
     #[allow(missing_docs)] // documentation missing in model
     MediaStreams,
     #[allow(missing_docs)] // documentation missing in model
+    RealTimeContactAnalysisChatSegments,
+    #[allow(missing_docs)] // documentation missing in model
     RealTimeContactAnalysisSegments,
+    #[allow(missing_docs)] // documentation missing in model
+    RealTimeContactAnalysisVoiceSegments,
     #[allow(missing_docs)] // documentation missing in model
     ScheduledReports,
     #[allow(missing_docs)] // documentation missing in model
@@ -83,7 +89,9 @@ impl ::std::convert::From<&str> for InstanceStorageResourceType {
             "CONTACT_EVALUATIONS" => InstanceStorageResourceType::ContactEvaluations,
             "CONTACT_TRACE_RECORDS" => InstanceStorageResourceType::ContactTraceRecords,
             "MEDIA_STREAMS" => InstanceStorageResourceType::MediaStreams,
+            "REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS" => InstanceStorageResourceType::RealTimeContactAnalysisChatSegments,
             "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS" => InstanceStorageResourceType::RealTimeContactAnalysisSegments,
+            "REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS" => InstanceStorageResourceType::RealTimeContactAnalysisVoiceSegments,
             "SCHEDULED_REPORTS" => InstanceStorageResourceType::ScheduledReports,
             "SCREEN_RECORDINGS" => InstanceStorageResourceType::ScreenRecordings,
             other => InstanceStorageResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -108,7 +116,9 @@ impl InstanceStorageResourceType {
             InstanceStorageResourceType::ContactEvaluations => "CONTACT_EVALUATIONS",
             InstanceStorageResourceType::ContactTraceRecords => "CONTACT_TRACE_RECORDS",
             InstanceStorageResourceType::MediaStreams => "MEDIA_STREAMS",
+            InstanceStorageResourceType::RealTimeContactAnalysisChatSegments => "REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS",
             InstanceStorageResourceType::RealTimeContactAnalysisSegments => "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",
+            InstanceStorageResourceType::RealTimeContactAnalysisVoiceSegments => "REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS",
             InstanceStorageResourceType::ScheduledReports => "SCHEDULED_REPORTS",
             InstanceStorageResourceType::ScreenRecordings => "SCREEN_RECORDINGS",
             InstanceStorageResourceType::Unknown(value) => value.as_str(),
@@ -124,7 +134,9 @@ impl InstanceStorageResourceType {
             "CONTACT_EVALUATIONS",
             "CONTACT_TRACE_RECORDS",
             "MEDIA_STREAMS",
+            "REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS",
             "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",
+            "REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS",
             "SCHEDULED_REPORTS",
             "SCREEN_RECORDINGS",
         ]
@@ -157,7 +169,9 @@ impl ::std::fmt::Display for InstanceStorageResourceType {
             InstanceStorageResourceType::ContactEvaluations => write!(f, "CONTACT_EVALUATIONS"),
             InstanceStorageResourceType::ContactTraceRecords => write!(f, "CONTACT_TRACE_RECORDS"),
             InstanceStorageResourceType::MediaStreams => write!(f, "MEDIA_STREAMS"),
+            InstanceStorageResourceType::RealTimeContactAnalysisChatSegments => write!(f, "REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS"),
             InstanceStorageResourceType::RealTimeContactAnalysisSegments => write!(f, "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"),
+            InstanceStorageResourceType::RealTimeContactAnalysisVoiceSegments => write!(f, "REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS"),
             InstanceStorageResourceType::ScheduledReports => write!(f, "SCHEDULED_REPORTS"),
             InstanceStorageResourceType::ScreenRecordings => write!(f, "SCREEN_RECORDINGS"),
             InstanceStorageResourceType::Unknown(value) => write!(f, "{}", value),

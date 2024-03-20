@@ -9,13 +9,13 @@ pub struct DescribeSavingsPlansOfferingRatesInput {
     pub savings_plan_payment_options: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
     /// <p>The plan types.</p>
     pub savings_plan_types: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>,
-    /// <p>The AWS products.</p>
+    /// <p>The Amazon Web Services products.</p>
     pub products: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>,
     /// <p>The services.</p>
     pub service_codes: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateServiceCode>>,
     /// <p>The usage details of the line item in the billing report.</p>
     pub usage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub operations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>>,
@@ -43,7 +43,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
     pub fn savings_plan_types(&self) -> &[crate::types::SavingsPlanType] {
         self.savings_plan_types.as_deref().unwrap_or_default()
     }
-    /// <p>The AWS products.</p>
+    /// <p>The Amazon Web Services products.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.products.is_none()`.
     pub fn products(&self) -> &[crate::types::SavingsPlanProductType] {
@@ -61,7 +61,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
     pub fn usage_types(&self) -> &[::std::string::String] {
         self.usage_types.as_deref().unwrap_or_default()
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
     pub fn operations(&self) -> &[::std::string::String] {
@@ -169,19 +169,19 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_products`](Self::set_products).
     ///
-    /// <p>The AWS products.</p>
+    /// <p>The Amazon Web Services products.</p>
     pub fn products(mut self, input: crate::types::SavingsPlanProductType) -> Self {
         let mut v = self.products.unwrap_or_default();
         v.push(input);
         self.products = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS products.</p>
+    /// <p>The Amazon Web Services products.</p>
     pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>) -> Self {
         self.products = input;
         self
     }
-    /// <p>The AWS products.</p>
+    /// <p>The Amazon Web Services products.</p>
     pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>> {
         &self.products
     }
@@ -229,19 +229,19 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
     ///
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn operations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.operations.unwrap_or_default();
         v.push(input.into());
         self.operations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.operations = input;
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.operations
     }

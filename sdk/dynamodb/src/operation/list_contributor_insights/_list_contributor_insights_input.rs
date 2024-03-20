@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContributorInsightsInput {
-    /// <p>The name of the table.</p>
+    /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A token to for the desired page, if there is one.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListContributorInsightsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListContributorInsightsInput {
-    /// <p>The name of the table.</p>
+    /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListContributorInsightsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListContributorInsightsInputBuilder {
-    /// <p>The name of the table.</p>
+    /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the table.</p>
+    /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The name of the table.</p>
+    /// <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

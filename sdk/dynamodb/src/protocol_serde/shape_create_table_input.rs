@@ -93,5 +93,8 @@ pub fn ser_create_table_input_input(
     if let Some(var_30) = &input.deletion_protection_enabled {
         object.key("DeletionProtectionEnabled").boolean(*var_30);
     }
+    if let Some(var_31) = &input.resource_policy {
+        object.key("ResourcePolicy").string(var_31.as_str());
+    }
     Ok(())
 }

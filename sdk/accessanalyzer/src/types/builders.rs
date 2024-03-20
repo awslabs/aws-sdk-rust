@@ -81,6 +81,10 @@ pub use crate::types::_analyzed_resource::AnalyzedResourceBuilder;
 
 pub use crate::types::_access_preview::AccessPreviewBuilder;
 
+pub use crate::types::_dynamodb_table_configuration::DynamodbTableConfigurationBuilder;
+
+pub use crate::types::_dynamodb_stream_configuration::DynamodbStreamConfigurationBuilder;
+
 pub use crate::types::_s3_express_directory_bucket_configuration::S3ExpressDirectoryBucketConfigurationBuilder;
 
 pub use crate::types::_sqs_queue_configuration::SqsQueueConfigurationBuilder;

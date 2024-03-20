@@ -139,7 +139,7 @@ impl BatchWriteItemFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_request_items`](Self::set_request_items).
     ///
-    /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
+    /// <p>A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
@@ -159,7 +159,7 @@ impl BatchWriteItemFluentBuilder {
         self.inner = self.inner.request_items(k.into(), v);
         self
     }
-    /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
+    /// <p>A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>
@@ -182,7 +182,7 @@ impl BatchWriteItemFluentBuilder {
         self.inner = self.inner.set_request_items(input);
         self
     }
-    /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
+    /// <p>A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The item to be deleted is identified by a <code>Key</code> subelement:</p>

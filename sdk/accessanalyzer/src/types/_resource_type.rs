@@ -12,6 +12,8 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::AwsDynamodbStream => { /* ... */ },
+///     ResourceType::AwsDynamodbTable => { /* ... */ },
 ///     ResourceType::AwsEc2Snapshot => { /* ... */ },
 ///     ResourceType::AwsEcrRepository => { /* ... */ },
 ///     ResourceType::AwsEfsFilesystem => { /* ... */ },
@@ -54,6 +56,10 @@
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AwsDynamodbStream,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsDynamodbTable,
+    #[allow(missing_docs)] // documentation missing in model
     AwsEc2Snapshot,
     #[allow(missing_docs)] // documentation missing in model
     AwsEcrRepository,
@@ -88,6 +94,8 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS::DynamoDB::Stream" => ResourceType::AwsDynamodbStream,
+            "AWS::DynamoDB::Table" => ResourceType::AwsDynamodbTable,
             "AWS::EC2::Snapshot" => ResourceType::AwsEc2Snapshot,
             "AWS::ECR::Repository" => ResourceType::AwsEcrRepository,
             "AWS::EFS::FileSystem" => ResourceType::AwsEfsFilesystem,
@@ -117,6 +125,8 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::AwsDynamodbStream => "AWS::DynamoDB::Stream",
+            ResourceType::AwsDynamodbTable => "AWS::DynamoDB::Table",
             ResourceType::AwsEc2Snapshot => "AWS::EC2::Snapshot",
             ResourceType::AwsEcrRepository => "AWS::ECR::Repository",
             ResourceType::AwsEfsFilesystem => "AWS::EFS::FileSystem",
@@ -137,6 +147,8 @@ impl ResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AWS::DynamoDB::Stream",
+            "AWS::DynamoDB::Table",
             "AWS::EC2::Snapshot",
             "AWS::ECR::Repository",
             "AWS::EFS::FileSystem",
@@ -174,6 +186,8 @@ impl ResourceType {
 impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ResourceType::AwsDynamodbStream => write!(f, "AWS::DynamoDB::Stream"),
+            ResourceType::AwsDynamodbTable => write!(f, "AWS::DynamoDB::Table"),
             ResourceType::AwsEc2Snapshot => write!(f, "AWS::EC2::Snapshot"),
             ResourceType::AwsEcrRepository => write!(f, "AWS::ECR::Repository"),
             ResourceType::AwsEfsFilesystem => write!(f, "AWS::EFS::FileSystem"),

@@ -5,6 +5,10 @@
 pub struct GetTransactionInput {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub transaction_hash: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain network where the transaction occurred.</p>
     pub network: ::std::option::Option<crate::types::QueryNetwork>,
 }
@@ -12,6 +16,12 @@ impl GetTransactionInput {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn transaction_hash(&self) -> ::std::option::Option<&str> {
         self.transaction_hash.as_deref()
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+        self.transaction_id.as_deref()
     }
     /// <p>The blockchain network where the transaction occurred.</p>
     pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
@@ -30,11 +40,11 @@ impl GetTransactionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransactionInputBuilder {
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
 }
 impl GetTransactionInputBuilder {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
-    /// This field is required.
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
@@ -47,6 +57,26 @@ impl GetTransactionInputBuilder {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_hash
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transaction_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transaction_id = input;
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// <p>The blockchain network where the transaction occurred.</p>
     /// This field is required.
@@ -69,6 +99,7 @@ impl GetTransactionInputBuilder {
     ) -> ::std::result::Result<crate::operation::get_transaction::GetTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_transaction::GetTransactionInput {
             transaction_hash: self.transaction_hash,
+            transaction_id: self.transaction_id,
             network: self.network,
         })
     }

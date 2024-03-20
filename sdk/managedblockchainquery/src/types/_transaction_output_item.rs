@@ -6,6 +6,8 @@
 pub struct TransactionOutputItem {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub transaction_hash: ::std::string::String,
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
+    pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain network where the transaction occurred.</p>
     pub network: crate::types::QueryNetwork,
     /// <p>The time when the transaction occurred.</p>
@@ -18,6 +20,10 @@ impl TransactionOutputItem {
     pub fn transaction_hash(&self) -> &str {
         use std::ops::Deref;
         self.transaction_hash.deref()
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
+    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+        self.transaction_id.as_deref()
     }
     /// <p>The blockchain network where the transaction occurred.</p>
     pub fn network(&self) -> &crate::types::QueryNetwork {
@@ -44,6 +50,7 @@ impl TransactionOutputItem {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransactionOutputItemBuilder {
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
     pub(crate) transaction_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
@@ -63,6 +70,20 @@ impl TransactionOutputItemBuilder {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_hash
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transaction_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transaction_id = input;
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// <p>The blockchain network where the transaction occurred.</p>
     /// This field is required.
@@ -121,6 +142,7 @@ impl TransactionOutputItemBuilder {
                     "transaction_hash was not specified but it is required when building TransactionOutputItem",
                 )
             })?,
+            transaction_id: self.transaction_id,
             network: self.network.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network",

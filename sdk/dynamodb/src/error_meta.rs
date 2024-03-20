@@ -49,6 +49,9 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Point in time recovery has not yet been enabled for this source table.</p>
     PointInTimeRecoveryUnavailableException(crate::types::error::PointInTimeRecoveryUnavailableException),
+    /// <p>The operation tried to access a nonexistent resource-based policy.</p>
+    /// <p>If you specified an <code>ExpectedRevisionId</code>, it's possible that a policy is present for the resource but its revision ID didn't match the expected value.</p>
+    PolicyNotFoundException(crate::types::error::PolicyNotFoundException),
     /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::types::error::ProvisionedThroughputExceededException),
     /// <p>The specified replica is already part of the global table.</p>
@@ -267,6 +270,7 @@ impl ::std::fmt::Display for Error {
             Error::ItemCollectionSizeLimitExceededException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::PointInTimeRecoveryUnavailableException(inner) => inner.fmt(f),
+            Error::PolicyNotFoundException(inner) => inner.fmt(f),
             Error::ProvisionedThroughputExceededException(inner) => inner.fmt(f),
             Error::ReplicaAlreadyExistsException(inner) => inner.fmt(f),
             Error::ReplicaNotFoundException(inner) => inner.fmt(f),
@@ -320,6 +324,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ItemCollectionSizeLimitExceededException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::PointInTimeRecoveryUnavailableException(inner) => inner.meta(),
+            Self::PolicyNotFoundException(inner) => inner.meta(),
             Self::ProvisionedThroughputExceededException(inner) => inner.meta(),
             Self::ReplicaAlreadyExistsException(inner) => inner.meta(),
             Self::ReplicaNotFoundException(inner) => inner.meta(),
@@ -559,6 +564,43 @@ impl From<crate::operation::delete_item::DeleteItemError> for Error {
             crate::operation::delete_item::DeleteItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_item::DeleteItemError::TransactionConflictException(inner) => Error::TransactionConflictException(inner),
             crate::operation::delete_item::DeleteItemError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
+        match err {
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::PolicyNotFoundException(inner) => {
+                Error::PolicyNotFoundException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1206,6 +1248,33 @@ impl From<crate::operation::get_item::GetItemError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_table::ImportTableError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1432,6 +1501,35 @@ impl From<crate::operation::put_item::PutItemError> for Error {
             crate::operation::put_item::PutItemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_item::PutItemError::TransactionConflictException(inner) => Error::TransactionConflictException(inner),
             crate::operation::put_item::PutItemError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
+        match err {
+            crate::operation::put_resource_policy::PutResourcePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2045,6 +2143,7 @@ impl ::std::error::Error for Error {
             Error::ItemCollectionSizeLimitExceededException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::PointInTimeRecoveryUnavailableException(inner) => inner.source(),
+            Error::PolicyNotFoundException(inner) => inner.source(),
             Error::ProvisionedThroughputExceededException(inner) => inner.source(),
             Error::ReplicaAlreadyExistsException(inner) => inner.source(),
             Error::ReplicaNotFoundException(inner) => inner.source(),
@@ -2084,6 +2183,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ItemCollectionSizeLimitExceededException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::PointInTimeRecoveryUnavailableException(e) => e.request_id(),
+            Self::PolicyNotFoundException(e) => e.request_id(),
             Self::ProvisionedThroughputExceededException(e) => e.request_id(),
             Self::ReplicaAlreadyExistsException(e) => e.request_id(),
             Self::ReplicaNotFoundException(e) => e.request_id(),

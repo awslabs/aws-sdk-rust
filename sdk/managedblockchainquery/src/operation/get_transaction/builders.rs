@@ -124,6 +124,26 @@ impl GetTransactionFluentBuilder {
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transaction_hash()
     }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.transaction_id(input.into());
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_transaction_id(input);
+        self
+    }
+    /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
+    /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
+    /// </note>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
+    }
     /// <p>The blockchain network where the transaction occurred.</p>
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.inner = self.inner.network(input);

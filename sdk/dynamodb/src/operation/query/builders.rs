@@ -111,17 +111,17 @@ impl QueryFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::query::paginator::QueryPaginator {
         crate::operation::query::paginator::QueryPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the table containing the requested items.</p>
+    /// <p>The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
-    /// <p>The name of the table containing the requested items.</p>
+    /// <p>The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
-    /// <p>The name of the table containing the requested items.</p>
+    /// <p>The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }

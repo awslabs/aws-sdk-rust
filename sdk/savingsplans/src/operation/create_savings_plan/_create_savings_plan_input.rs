@@ -5,13 +5,13 @@
 pub struct CreateSavingsPlanInput {
     /// <p>The ID of the offering.</p>
     pub savings_plan_offering_id: ::std::option::Option<::std::string::String>,
-    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
     pub commitment: ::std::option::Option<::std::string::String>,
-    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.</p>
     pub upfront_payment_amount: ::std::option::Option<::std::string::String>,
-    /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    /// <p>The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
     pub purchase_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -21,19 +21,19 @@ impl CreateSavingsPlanInput {
     pub fn savings_plan_offering_id(&self) -> ::std::option::Option<&str> {
         self.savings_plan_offering_id.as_deref()
     }
-    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
     pub fn commitment(&self) -> ::std::option::Option<&str> {
         self.commitment.as_deref()
     }
-    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.</p>
     pub fn upfront_payment_amount(&self) -> ::std::option::Option<&str> {
         self.upfront_payment_amount.as_deref()
     }
-    /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    /// <p>The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
     pub fn purchase_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.purchase_time.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -76,60 +76,60 @@ impl CreateSavingsPlanInputBuilder {
     pub fn get_savings_plan_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.savings_plan_offering_id
     }
-    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
     /// This field is required.
     pub fn commitment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commitment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
     pub fn set_commitment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commitment = input;
         self
     }
-    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
     pub fn get_commitment(&self) -> &::std::option::Option<::std::string::String> {
         &self.commitment
     }
-    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.</p>
     pub fn upfront_payment_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upfront_payment_amount = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.</p>
     pub fn set_upfront_payment_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upfront_payment_amount = input;
         self
     }
-    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.</p>
     pub fn get_upfront_payment_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.upfront_payment_amount
     }
-    /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    /// <p>The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
     pub fn purchase_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.purchase_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    /// <p>The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
     pub fn set_purchase_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.purchase_time = input;
         self
     }
-    /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    /// <p>The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
     pub fn get_purchase_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.purchase_time
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

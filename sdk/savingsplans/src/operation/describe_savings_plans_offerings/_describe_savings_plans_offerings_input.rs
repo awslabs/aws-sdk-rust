@@ -9,9 +9,9 @@ pub struct DescribeSavingsPlansOfferingsInput {
     pub payment_options: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
     /// <p>The product type.</p>
     pub product_type: ::std::option::Option<crate::types::SavingsPlanProductType>,
-    /// <p>The plan type.</p>
+    /// <p>The plan types.</p>
     pub plan_types: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>,
-    /// <p>The durations, in seconds.</p>
+    /// <p>The duration, in seconds.</p>
     pub durations: ::std::option::Option<::std::vec::Vec<i64>>,
     /// <p>The currencies.</p>
     pub currencies: ::std::option::Option<::std::vec::Vec<crate::types::CurrencyCode>>,
@@ -21,7 +21,7 @@ pub struct DescribeSavingsPlansOfferingsInput {
     pub service_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The usage details of the line item in the billing report.</p>
     pub usage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub operations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingFilterElement>>,
@@ -47,13 +47,13 @@ impl DescribeSavingsPlansOfferingsInput {
     pub fn product_type(&self) -> ::std::option::Option<&crate::types::SavingsPlanProductType> {
         self.product_type.as_ref()
     }
-    /// <p>The plan type.</p>
+    /// <p>The plan types.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plan_types.is_none()`.
     pub fn plan_types(&self) -> &[crate::types::SavingsPlanType] {
         self.plan_types.as_deref().unwrap_or_default()
     }
-    /// <p>The durations, in seconds.</p>
+    /// <p>The duration, in seconds.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.durations.is_none()`.
     pub fn durations(&self) -> &[i64] {
@@ -83,7 +83,7 @@ impl DescribeSavingsPlansOfferingsInput {
     pub fn usage_types(&self) -> &[::std::string::String] {
         self.usage_types.as_deref().unwrap_or_default()
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
     pub fn operations(&self) -> &[::std::string::String] {
@@ -188,19 +188,19 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_plan_types`](Self::set_plan_types).
     ///
-    /// <p>The plan type.</p>
+    /// <p>The plan types.</p>
     pub fn plan_types(mut self, input: crate::types::SavingsPlanType) -> Self {
         let mut v = self.plan_types.unwrap_or_default();
         v.push(input);
         self.plan_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The plan type.</p>
+    /// <p>The plan types.</p>
     pub fn set_plan_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>) -> Self {
         self.plan_types = input;
         self
     }
-    /// <p>The plan type.</p>
+    /// <p>The plan types.</p>
     pub fn get_plan_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>> {
         &self.plan_types
     }
@@ -208,19 +208,19 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_durations`](Self::set_durations).
     ///
-    /// <p>The durations, in seconds.</p>
+    /// <p>The duration, in seconds.</p>
     pub fn durations(mut self, input: i64) -> Self {
         let mut v = self.durations.unwrap_or_default();
         v.push(input);
         self.durations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The durations, in seconds.</p>
+    /// <p>The duration, in seconds.</p>
     pub fn set_durations(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
         self.durations = input;
         self
     }
-    /// <p>The durations, in seconds.</p>
+    /// <p>The duration, in seconds.</p>
     pub fn get_durations(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
         &self.durations
     }
@@ -308,19 +308,19 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
     ///
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn operations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.operations.unwrap_or_default();
         v.push(input.into());
         self.operations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.operations = input;
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.operations
     }

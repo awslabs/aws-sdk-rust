@@ -8,7 +8,7 @@ pub struct Update {
     pub key: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     /// <p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new value(s) for them.</p>
     pub update_expression: ::std::string::String,
-    /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
+    /// <p>Name of the table for the <code>UpdateItem</code> request. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub table_name: ::std::string::String,
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     pub condition_expression: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl Update {
         use std::ops::Deref;
         self.update_expression.deref()
     }
-    /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
+    /// <p>Name of the table for the <code>UpdateItem</code> request. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(&self) -> &str {
         use std::ops::Deref;
         self.table_name.deref()
@@ -108,18 +108,18 @@ impl UpdateBuilder {
     pub fn get_update_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_expression
     }
-    /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
+    /// <p>Name of the table for the <code>UpdateItem</code> request. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
+    /// <p>Name of the table for the <code>UpdateItem</code> request. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
+    /// <p>Name of the table for the <code>UpdateItem</code> request. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

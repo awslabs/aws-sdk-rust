@@ -16,9 +16,9 @@ pub struct SavingsPlan {
     pub start: ::std::option::Option<::std::string::String>,
     /// <p>The end time.</p>
     pub end: ::std::option::Option<::std::string::String>,
-    /// <p>The state.</p>
+    /// <p>The current state.</p>
     pub state: ::std::option::Option<crate::types::SavingsPlanState>,
-    /// <p>The AWS Region.</p>
+    /// <p>The Amazon Web Services Region.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 instance family.</p>
     pub ec2_instance_family: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ pub struct SavingsPlan {
     pub product_types: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>,
     /// <p>The currency.</p>
     pub currency: ::std::option::Option<crate::types::CurrencyCode>,
-    /// <p>The hourly commitment, in USD.</p>
+    /// <p>The hourly commitment amount in the specified currency.</p>
     pub commitment: ::std::option::Option<::std::string::String>,
     /// <p>The up-front payment amount.</p>
     pub upfront_payment_amount: ::std::option::Option<::std::string::String>,
@@ -40,6 +40,8 @@ pub struct SavingsPlan {
     pub term_duration_in_seconds: i64,
     /// <p>One or more tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    pub returnable_until: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlan {
     /// <p>The ID of the offering.</p>
@@ -66,11 +68,11 @@ impl SavingsPlan {
     pub fn end(&self) -> ::std::option::Option<&str> {
         self.end.as_deref()
     }
-    /// <p>The state.</p>
+    /// <p>The current state.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::SavingsPlanState> {
         self.state.as_ref()
     }
-    /// <p>The AWS Region.</p>
+    /// <p>The Amazon Web Services Region.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
@@ -96,7 +98,7 @@ impl SavingsPlan {
     pub fn currency(&self) -> ::std::option::Option<&crate::types::CurrencyCode> {
         self.currency.as_ref()
     }
-    /// <p>The hourly commitment, in USD.</p>
+    /// <p>The hourly commitment amount in the specified currency.</p>
     pub fn commitment(&self) -> ::std::option::Option<&str> {
         self.commitment.as_deref()
     }
@@ -115,6 +117,10 @@ impl SavingsPlan {
     /// <p>One or more tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    pub fn returnable_until(&self) -> ::std::option::Option<&str> {
+        self.returnable_until.as_deref()
     }
 }
 impl SavingsPlan {
@@ -146,6 +152,7 @@ pub struct SavingsPlanBuilder {
     pub(crate) recurring_payment_amount: ::std::option::Option<::std::string::String>,
     pub(crate) term_duration_in_seconds: ::std::option::Option<i64>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) returnable_until: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlanBuilder {
     /// <p>The ID of the offering.</p>
@@ -232,31 +239,31 @@ impl SavingsPlanBuilder {
     pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
         &self.end
     }
-    /// <p>The state.</p>
+    /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::SavingsPlanState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state.</p>
+    /// <p>The current state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SavingsPlanState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state.</p>
+    /// <p>The current state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SavingsPlanState> {
         &self.state
     }
-    /// <p>The AWS Region.</p>
+    /// <p>The Amazon Web Services Region.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region.</p>
+    /// <p>The Amazon Web Services Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The AWS Region.</p>
+    /// <p>The Amazon Web Services Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
@@ -336,17 +343,17 @@ impl SavingsPlanBuilder {
     pub fn get_currency(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
         &self.currency
     }
-    /// <p>The hourly commitment, in USD.</p>
+    /// <p>The hourly commitment amount in the specified currency.</p>
     pub fn commitment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commitment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The hourly commitment, in USD.</p>
+    /// <p>The hourly commitment amount in the specified currency.</p>
     pub fn set_commitment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commitment = input;
         self
     }
-    /// <p>The hourly commitment, in USD.</p>
+    /// <p>The hourly commitment amount in the specified currency.</p>
     pub fn get_commitment(&self) -> &::std::option::Option<::std::string::String> {
         &self.commitment
     }
@@ -412,6 +419,20 @@ impl SavingsPlanBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    pub fn returnable_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.returnable_until = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    pub fn set_returnable_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.returnable_until = input;
+        self
+    }
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    pub fn get_returnable_until(&self) -> &::std::option::Option<::std::string::String> {
+        &self.returnable_until
+    }
     /// Consumes the builder and constructs a [`SavingsPlan`](crate::types::SavingsPlan).
     pub fn build(self) -> crate::types::SavingsPlan {
         crate::types::SavingsPlan {
@@ -433,6 +454,7 @@ impl SavingsPlanBuilder {
             recurring_payment_amount: self.recurring_payment_amount,
             term_duration_in_seconds: self.term_duration_in_seconds.unwrap_or_default(),
             tags: self.tags,
+            returnable_until: self.returnable_until,
         }
     }
 }

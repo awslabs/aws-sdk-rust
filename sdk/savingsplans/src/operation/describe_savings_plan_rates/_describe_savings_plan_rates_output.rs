@@ -5,7 +5,7 @@
 pub struct DescribeSavingsPlanRatesOutput {
     /// <p>The ID of the Savings Plan.</p>
     pub savings_plan_id: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the Savings Plans rates.</p>
+    /// <p>Information about the Savings Plan rates.</p>
     pub search_results: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRate>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl DescribeSavingsPlanRatesOutput {
     pub fn savings_plan_id(&self) -> ::std::option::Option<&str> {
         self.savings_plan_id.as_deref()
     }
-    /// <p>Information about the Savings Plans rates.</p>
+    /// <p>Information about the Savings Plan rates.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.search_results.is_none()`.
     pub fn search_results(&self) -> &[crate::types::SavingsPlanRate] {
@@ -67,19 +67,19 @@ impl DescribeSavingsPlanRatesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_search_results`](Self::set_search_results).
     ///
-    /// <p>Information about the Savings Plans rates.</p>
+    /// <p>Information about the Savings Plan rates.</p>
     pub fn search_results(mut self, input: crate::types::SavingsPlanRate) -> Self {
         let mut v = self.search_results.unwrap_or_default();
         v.push(input);
         self.search_results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the Savings Plans rates.</p>
+    /// <p>Information about the Savings Plan rates.</p>
     pub fn set_search_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRate>>) -> Self {
         self.search_results = input;
         self
     }
-    /// <p>Information about the Savings Plans rates.</p>
+    /// <p>Information about the Savings Plan rates.</p>
     pub fn get_search_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRate>> {
         &self.search_results
     }

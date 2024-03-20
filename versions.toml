@@ -40,9 +40,9 @@ source_hash = '7caa8ed74da665f093808300182adf679555d0e28ae81e3e7993903a56c4804d'
 
 [crates.aws-sdk-accessanalyzer]
 category = 'AwsSdk'
-version = '1.18.0'
-source_hash = 'b59239f65a00c64f5adbcd3d5bc85d3991f617cba0c608fec3235d7383b4e156'
-model_hash = '8030e051fd48928add57fcafce0e13ff9912e476e50fe5a34e5a6b5337c637ff'
+version = '1.19.0'
+source_hash = '45c0bc36224d13aa6d373763384e4ebd2c70aa58ebf9619051559e9ac7ed4165'
+model_hash = 'e6f65fcae82f35bd1d826f98314c3d8ff78bc667443c1a096ee20d7c545204a6'
 
 [crates.aws-sdk-account]
 category = 'AwsSdk'
@@ -454,9 +454,9 @@ model_hash = 'e2e9823e7ed4cdef9ed93b1ee9f740bc9b4d6778f053e8daa8cffa084d86e018'
 
 [crates.aws-sdk-codebuild]
 category = 'AwsSdk'
-version = '1.20.0'
-source_hash = 'd2486ce741917941db4ea4d4d8f9a4b41870175cad6b8cffdae55c20393c25ab'
-model_hash = '772193bb51f74c85ff90e5fe19a4722d9dc9824d887ef256aca52a913cd0a9e9'
+version = '1.20.1'
+source_hash = '5d0f5d11ec8f34b442b88df9691bafc8d009eb01c9e9e1e3b7bbd8d0999d20bc'
+model_hash = 'b5db6cc3205ebaa88da56a2915b3dc3b41eb0a73b1ed490f17f696428aeecbd6'
 
 [crates.aws-sdk-codecatalyst]
 category = 'AwsSdk'
@@ -562,9 +562,9 @@ model_hash = 'e4d996b32a7412543a447b7870a5ce1a3ca88a75d5b18b31ed8c20844bcc4b9b'
 
 [crates.aws-sdk-connect]
 category = 'AwsSdk'
-version = '1.27.0'
-source_hash = '468135b42a2c03332156399cdac8e73277c214a9eeabf6ce1f19513746de45cf'
-model_hash = '003c150e3d3d9e02d16edf3f5f59a209790336ed9e099e743b4535722cfb167e'
+version = '1.28.0'
+source_hash = '3597d85f213c68eef3269c465b7577490a1c1b1de024fd31573fec7d9fbfaec6'
+model_hash = '7a5f461ed3d125c560bbcfdd8a7f1b2b93dbe3c0ea10ad8e37ba64faa473e800'
 
 [crates.aws-sdk-connectcampaigns]
 category = 'AwsSdk'
@@ -718,9 +718,9 @@ model_hash = 'a5d00509fc56a3c98a0b988952a83640276f5b8feff62484daf74587b9d81860'
 
 [crates.aws-sdk-dynamodb]
 category = 'AwsSdk'
-version = '1.18.0'
-source_hash = '3254634313a1be0ffa325196d26c119c967de0348751a78f326c10971c7af866'
-model_hash = 'a37a3e3a9e81bb178cf8f750419bb2f1fbac281b6ccfa8713ea085f8d6c2aa3b'
+version = '1.19.0'
+source_hash = '9197c692ed35f4c026f3dd7ddad49c12f37fc5062926e078c4e8129b41b5a088'
+model_hash = '0222d0dbbcd81dc7d11f5ab7fe5affcdcb16afcb43bdccf65093df272a358d0a'
 
 [crates.aws-sdk-dynamodbstreams]
 category = 'AwsSdk'
@@ -1348,9 +1348,9 @@ model_hash = '732edc18f1e2be8c0a2b7067659d1c7ffe4025d14b93bbef886979f9809a9a7b'
 
 [crates.aws-sdk-managedblockchainquery]
 category = 'AwsSdk'
-version = '1.19.0'
-source_hash = '1fbcfb1930673b93a8e6bf51832b0d5a3078c699bc19a60d5cd24e419f98fdd6'
-model_hash = 'aed37d207f1a3a99cfa17a7725411661c9b6c1f4bc4e53862c6f742a8cd51e7e'
+version = '1.20.0'
+source_hash = '088346c1f645f07c76252b931b75d7c86872d194ca82026e9da6bd2599479aae'
+model_hash = '75e95fc63e28951777b9e51399dd8409595c2c851a3e77cfa0ff9e3db4106373'
 
 [crates.aws-sdk-marketplaceagreement]
 category = 'AwsSdk'
@@ -1936,9 +1936,9 @@ model_hash = '9cd9122d04c5618a143f895485313c45977e1b4cf415c43ff971b8f5246a19ec'
 
 [crates.aws-sdk-savingsplans]
 category = 'AwsSdk'
-version = '1.17.0'
-source_hash = '3bcae3d4135840cd7228dabf6cf4107a02d64b6c130aaf78c4c2985fad5cdfdb'
-model_hash = '73740c3536780079c11f1b917c81eed2600d1ae565ce64eedbd3ecf616aa4af4'
+version = '1.18.0'
+source_hash = 'f15a81a098a906c3af3e0a3ba334112da894a508e7bedfe44f39fc81ca697f0d'
+model_hash = '6f3f06cde8d55546a24c9b33c006eb14b4da2518039c7aa5e7fa91235e9d9955'
 
 [crates.aws-sdk-scheduler]
 category = 'AwsSdk'
@@ -2435,13 +2435,10 @@ source_hash = 'd6ea8e07b94101a2c092315bb0258933080e366cbd1ef6f34e6c089aa8535738'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '314dce251860de25f6f49bcea9bd7168ec2bf2f94eeb524e859963fd48e96487'
-
-[release]
-tag = 'release-2024-03-19'
-
 [release.crates]
-aws-sdk-cloudformation = '1.21.1'
-aws-sdk-cloudwatchlogs = '1.20.0'
-aws-sdk-ec2 = '1.27.0'
-aws-sdk-finspace = '1.20.0'
-aws-sdk-managedblockchainquery = '1.19.0'
+aws-sdk-accessanalyzer = '1.19.0'
+aws-sdk-codebuild = '1.20.1'
+aws-sdk-connect = '1.28.0'
+aws-sdk-dynamodb = '1.19.0'
+aws-sdk-managedblockchainquery = '1.20.0'
+aws-sdk-savingsplans = '1.18.0'

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableKinesisStreamingDestinationInput {
-    /// <p>The name of the DynamoDB table.</p>
+    /// <p>The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for a Kinesis data stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct DisableKinesisStreamingDestinationInput {
     pub enable_kinesis_streaming_configuration: ::std::option::Option<crate::types::EnableKinesisStreamingConfiguration>,
 }
 impl DisableKinesisStreamingDestinationInput {
-    /// <p>The name of the DynamoDB table.</p>
+    /// <p>The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct DisableKinesisStreamingDestinationInputBuilder {
     pub(crate) enable_kinesis_streaming_configuration: ::std::option::Option<crate::types::EnableKinesisStreamingConfiguration>,
 }
 impl DisableKinesisStreamingDestinationInputBuilder {
-    /// <p>The name of the DynamoDB table.</p>
+    /// <p>The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the DynamoDB table.</p>
+    /// <p>The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The name of the DynamoDB table.</p>
+    /// <p>The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

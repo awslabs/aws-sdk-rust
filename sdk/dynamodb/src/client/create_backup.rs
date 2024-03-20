@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateBackup`](crate::operation::create_backup::builders::CreateBackupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`table_name(impl Into<String>)`](crate::operation::create_backup::builders::CreateBackupFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::create_backup::builders::CreateBackupFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table.</p><br>
+    ///   - [`table_name(impl Into<String>)`](crate::operation::create_backup::builders::CreateBackupFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::create_backup::builders::CreateBackupFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p><br>
     ///   - [`backup_name(impl Into<String>)`](crate::operation::create_backup::builders::CreateBackupFluentBuilder::backup_name) / [`set_backup_name(Option<String>)`](crate::operation::create_backup::builders::CreateBackupFluentBuilder::set_backup_name):<br>required: **true**<br><p>Specified name for the backup.</p><br>
     /// - On success, responds with [`CreateBackupOutput`](crate::operation::create_backup::CreateBackupOutput) with field(s):
     ///   - [`backup_details(Option<BackupDetails>)`](crate::operation::create_backup::CreateBackupOutput::backup_details): <p>Contains the details of the backup created for the table.</p>

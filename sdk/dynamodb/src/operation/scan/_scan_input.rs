@@ -4,7 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanInput {
-    /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a secondary index to scan. This index can be any local secondary index or global secondary index. Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName</code>.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
@@ -116,7 +117,8 @@ pub struct ScanInput {
     pub consistent_read: ::std::option::Option<bool>,
 }
 impl ScanInput {
-    /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -292,18 +294,21 @@ pub struct ScanInputBuilder {
     pub(crate) consistent_read: ::std::option::Option<bool>,
 }
 impl ScanInputBuilder {
-    /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
+    /// <p>You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

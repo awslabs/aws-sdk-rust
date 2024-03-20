@@ -6,7 +6,7 @@
 pub struct Get {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the primary key of the item to retrieve.</p>
     pub key: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    /// <p>The name of the table from which to retrieve the specified item.</p>
+    /// <p>The name of the table from which to retrieve the specified item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub table_name: ::std::string::String,
     /// <p>A string that identifies one or more attributes of the specified item to retrieve from the table. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes of the specified item are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
     pub projection_expression: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl Get {
     pub fn key(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue> {
         &self.key
     }
-    /// <p>The name of the table from which to retrieve the specified item.</p>
+    /// <p>The name of the table from which to retrieve the specified item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(&self) -> &str {
         use std::ops::Deref;
         self.table_name.deref()
@@ -69,18 +69,18 @@ impl GetBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         &self.key
     }
-    /// <p>The name of the table from which to retrieve the specified item.</p>
+    /// <p>The name of the table from which to retrieve the specified item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the table from which to retrieve the specified item.</p>
+    /// <p>The name of the table from which to retrieve the specified item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The name of the table from which to retrieve the specified item.</p>
+    /// <p>The name of the table from which to retrieve the specified item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

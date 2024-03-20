@@ -4,6 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Configuration {
+    /// <p>The access control configuration is for a DynamoDB stream.</p>
+    DynamodbStream(crate::types::DynamodbStreamConfiguration),
+    /// <p>The access control configuration is for a DynamoDB table or index.</p>
+    DynamodbTable(crate::types::DynamodbTableConfiguration),
     /// <p>The access control configuration is for an Amazon EBS volume snapshot.</p>
     EbsSnapshot(crate::types::EbsSnapshotConfiguration),
     /// <p>The access control configuration is for an Amazon ECR repository.</p>
@@ -39,6 +43,32 @@ pub enum Configuration {
     Unknown,
 }
 impl Configuration {
+    /// Tries to convert the enum instance into [`DynamodbStream`](crate::types::Configuration::DynamodbStream), extracting the inner [`DynamodbStreamConfiguration`](crate::types::DynamodbStreamConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_dynamodb_stream(&self) -> ::std::result::Result<&crate::types::DynamodbStreamConfiguration, &Self> {
+        if let Configuration::DynamodbStream(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DynamodbStream`](crate::types::Configuration::DynamodbStream).
+    pub fn is_dynamodb_stream(&self) -> bool {
+        self.as_dynamodb_stream().is_ok()
+    }
+    /// Tries to convert the enum instance into [`DynamodbTable`](crate::types::Configuration::DynamodbTable), extracting the inner [`DynamodbTableConfiguration`](crate::types::DynamodbTableConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_dynamodb_table(&self) -> ::std::result::Result<&crate::types::DynamodbTableConfiguration, &Self> {
+        if let Configuration::DynamodbTable(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DynamodbTable`](crate::types::Configuration::DynamodbTable).
+    pub fn is_dynamodb_table(&self) -> bool {
+        self.as_dynamodb_table().is_ok()
+    }
     /// Tries to convert the enum instance into [`EbsSnapshot`](crate::types::Configuration::EbsSnapshot), extracting the inner [`EbsSnapshotConfiguration`](crate::types::EbsSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ebs_snapshot(&self) -> ::std::result::Result<&crate::types::EbsSnapshotConfiguration, &Self> {

@@ -177,6 +177,8 @@ mod describe_savings_plans_offerings;
 
 mod list_tags_for_resource;
 
+mod return_savings_plan;
+
 mod tag_resource;
 
 mod untag_resource;

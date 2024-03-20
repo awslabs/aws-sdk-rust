@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "transactionId" => {
+                            builder = builder.set_transaction_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "network" => {
                             builder = builder.set_network(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

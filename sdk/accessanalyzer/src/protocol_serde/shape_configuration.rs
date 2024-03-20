@@ -79,6 +79,18 @@ pub fn ser_configuration(
             )?;
             object_12.finish();
         }
+        crate::types::Configuration::DynamodbStream(inner) => {
+            #[allow(unused_mut)]
+            let mut object_13 = object_7.key("dynamodbStream").start_object();
+            crate::protocol_serde::shape_dynamodb_stream_configuration::ser_dynamodb_stream_configuration(&mut object_13, inner)?;
+            object_13.finish();
+        }
+        crate::types::Configuration::DynamodbTable(inner) => {
+            #[allow(unused_mut)]
+            let mut object_14 = object_7.key("dynamodbTable").start_object();
+            crate::protocol_serde::shape_dynamodb_table_configuration::ser_dynamodb_table_configuration(&mut object_14, inner)?;
+            object_14.finish();
+        }
         crate::types::Configuration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Configuration"))
         }
@@ -173,6 +185,16 @@ where
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3ExpressDirectoryBucket' cannot be null")
+                            })?,
+                        )),
+                        "dynamodbStream" => Some(crate::types::Configuration::DynamodbStream(
+                            crate::protocol_serde::shape_dynamodb_stream_configuration::de_dynamodb_stream_configuration(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dynamodbStream' cannot be null"),
+                            )?,
+                        )),
+                        "dynamodbTable" => Some(crate::types::Configuration::DynamodbTable(
+                            crate::protocol_serde::shape_dynamodb_table_configuration::de_dynamodb_table_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dynamodbTable' cannot be null")
                             })?,
                         )),
                         _ => {

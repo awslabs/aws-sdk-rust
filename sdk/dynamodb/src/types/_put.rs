@@ -6,7 +6,7 @@
 pub struct Put {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema.</p>
     pub item: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    /// <p>Name of the table in which to write the item.</p>
+    /// <p>Name of the table in which to write the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub table_name: ::std::string::String,
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     pub condition_expression: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl Put {
     pub fn item(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue> {
         &self.item
     }
-    /// <p>Name of the table in which to write the item.</p>
+    /// <p>Name of the table in which to write the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(&self) -> &str {
         use std::ops::Deref;
         self.table_name.deref()
@@ -88,18 +88,18 @@ impl PutBuilder {
     pub fn get_item(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         &self.item
     }
-    /// <p>Name of the table in which to write the item.</p>
+    /// <p>Name of the table in which to write the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the table in which to write the item.</p>
+    /// <p>Name of the table in which to write the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>Name of the table in which to write the item.</p>
+    /// <p>Name of the table in which to write the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

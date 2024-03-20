@@ -6,7 +6,7 @@
 pub struct CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
     pub attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
-    /// <p>The name of the table to create.</p>
+    /// <p>The name of the table to create. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
@@ -120,6 +120,10 @@ pub struct CreateTableInput {
     pub table_class: ::std::option::Option<crate::types::TableClass>,
     /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
+    /// <p>An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.</p>
+    /// <p>When you attach a resource-based policy while creating a table, the policy creation is <i>strongly consistent</i>.</p>
+    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. You can’t request an increase for this limit. For a full list of all considerations that you should keep in mind while attaching a resource-based policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
+    pub resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
@@ -128,7 +132,7 @@ impl CreateTableInput {
     pub fn attribute_definitions(&self) -> &[crate::types::AttributeDefinition] {
         self.attribute_definitions.as_deref().unwrap_or_default()
     }
-    /// <p>The name of the table to create.</p>
+    /// <p>The name of the table to create. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -272,6 +276,12 @@ impl CreateTableInput {
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
     }
+    /// <p>An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.</p>
+    /// <p>When you attach a resource-based policy while creating a table, the policy creation is <i>strongly consistent</i>.</p>
+    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. You can’t request an increase for this limit. For a full list of all considerations that you should keep in mind while attaching a resource-based policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
+    pub fn resource_policy(&self) -> ::std::option::Option<&str> {
+        self.resource_policy.as_deref()
+    }
 }
 impl CreateTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
@@ -296,6 +306,7 @@ pub struct CreateTableInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) table_class: ::std::option::Option<crate::types::TableClass>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
+    pub(crate) resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl CreateTableInputBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -318,18 +329,18 @@ impl CreateTableInputBuilder {
     pub fn get_attribute_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>> {
         &self.attribute_definitions
     }
-    /// <p>The name of the table to create.</p>
+    /// <p>The name of the table to create. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the table to create.</p>
+    /// <p>The name of the table to create. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The name of the table to create.</p>
+    /// <p>The name of the table to create. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
@@ -773,6 +784,26 @@ impl CreateTableInputBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }
+    /// <p>An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.</p>
+    /// <p>When you attach a resource-based policy while creating a table, the policy creation is <i>strongly consistent</i>.</p>
+    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. You can’t request an increase for this limit. For a full list of all considerations that you should keep in mind while attaching a resource-based policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
+    pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.</p>
+    /// <p>When you attach a resource-based policy while creating a table, the policy creation is <i>strongly consistent</i>.</p>
+    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. You can’t request an increase for this limit. For a full list of all considerations that you should keep in mind while attaching a resource-based policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
+    pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_policy = input;
+        self
+    }
+    /// <p>An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.</p>
+    /// <p>When you attach a resource-based policy while creating a table, the policy creation is <i>strongly consistent</i>.</p>
+    /// <p>The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. You can’t request an increase for this limit. For a full list of all considerations that you should keep in mind while attaching a resource-based policy, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based policy considerations</a>.</p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_policy
+    }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
@@ -788,6 +819,7 @@ impl CreateTableInputBuilder {
             tags: self.tags,
             table_class: self.table_class,
             deletion_protection_enabled: self.deletion_protection_enabled,
+            resource_policy: self.resource_policy,
         })
     }
 }

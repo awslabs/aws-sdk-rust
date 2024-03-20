@@ -22,7 +22,7 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeSavingsPlansOfferings`.
 ///
-/// <p>Describes the specified Savings Plans offerings.</p>
+/// <p>Describes the offerings for the specified Savings Plans.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -162,17 +162,17 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_plan_types`](Self::set_plan_types).
     ///
-    /// <p>The plan type.</p>
+    /// <p>The plan types.</p>
     pub fn plan_types(mut self, input: crate::types::SavingsPlanType) -> Self {
         self.inner = self.inner.plan_types(input);
         self
     }
-    /// <p>The plan type.</p>
+    /// <p>The plan types.</p>
     pub fn set_plan_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>) -> Self {
         self.inner = self.inner.set_plan_types(input);
         self
     }
-    /// <p>The plan type.</p>
+    /// <p>The plan types.</p>
     pub fn get_plan_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>> {
         self.inner.get_plan_types()
     }
@@ -180,17 +180,17 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_durations`](Self::set_durations).
     ///
-    /// <p>The durations, in seconds.</p>
+    /// <p>The duration, in seconds.</p>
     pub fn durations(mut self, input: i64) -> Self {
         self.inner = self.inner.durations(input);
         self
     }
-    /// <p>The durations, in seconds.</p>
+    /// <p>The duration, in seconds.</p>
     pub fn set_durations(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
         self.inner = self.inner.set_durations(input);
         self
     }
-    /// <p>The durations, in seconds.</p>
+    /// <p>The duration, in seconds.</p>
     pub fn get_durations(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
         self.inner.get_durations()
     }
@@ -270,17 +270,17 @@ impl DescribeSavingsPlansOfferingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
     ///
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn operations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operations(input.into());
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_operations(input);
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_operations()
     }

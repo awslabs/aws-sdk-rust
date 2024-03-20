@@ -9,5 +9,8 @@ pub fn ser_get_transaction_input_input(
     if let Some(var_2) = &input.transaction_hash {
         object.key("transactionHash").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.transaction_id {
+        object.key("transactionId").string(var_3.as_str());
+    }
     Ok(())
 }

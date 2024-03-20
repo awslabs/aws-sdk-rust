@@ -127,6 +127,10 @@ pub use crate::types::_access_preview::AccessPreview;
 
 pub use crate::types::_configuration::Configuration;
 
+pub use crate::types::_dynamodb_table_configuration::DynamodbTableConfiguration;
+
+pub use crate::types::_dynamodb_stream_configuration::DynamodbStreamConfiguration;
+
 pub use crate::types::_s3_express_directory_bucket_configuration::S3ExpressDirectoryBucketConfiguration;
 
 pub use crate::types::_sqs_queue_configuration::SqsQueueConfiguration;
@@ -230,6 +234,10 @@ mod _cloud_trail_properties;
 mod _configuration;
 
 mod _criterion;
+
+mod _dynamodb_stream_configuration;
+
+mod _dynamodb_table_configuration;
 
 mod _ebs_snapshot_configuration;
 

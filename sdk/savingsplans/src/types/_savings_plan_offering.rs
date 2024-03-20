@@ -22,7 +22,7 @@ pub struct SavingsPlanOffering {
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The usage details of the line item in the billing report.</p>
     pub usage_type: ::std::option::Option<::std::string::String>,
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The properties.</p>
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingProperty>>,
@@ -66,7 +66,7 @@ impl SavingsPlanOffering {
     pub fn usage_type(&self) -> ::std::option::Option<&str> {
         self.usage_type.as_deref()
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn operation(&self) -> ::std::option::Option<&str> {
         self.operation.as_deref()
     }
@@ -233,17 +233,17 @@ impl SavingsPlanOfferingBuilder {
     pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_type
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation = input;
         self
     }
-    /// <p>The specific AWS operation for the line item in the billing report.</p>
+    /// <p>The specific Amazon Web Services operation for the line item in the billing report.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation
     }
