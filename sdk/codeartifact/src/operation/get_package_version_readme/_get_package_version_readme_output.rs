@@ -5,12 +5,14 @@
 pub struct GetPackageVersionReadmeOutput {
     /// <p>The format of the package with the requested readme file.</p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <p>The namespace of the package version with the requested readme file. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li>
     /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
     /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
@@ -30,12 +32,14 @@ impl GetPackageVersionReadmeOutput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <p>The namespace of the package version with the requested readme file. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li>
     /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
     /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
@@ -98,12 +102,14 @@ impl GetPackageVersionReadmeOutputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
         &self.format
     }
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <p>The namespace of the package version with the requested readme file. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li>
     /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
     /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
@@ -111,12 +117,14 @@ impl GetPackageVersionReadmeOutputBuilder {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <p>The namespace of the package version with the requested readme file. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li>
     /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
     /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
@@ -124,12 +132,14 @@ impl GetPackageVersionReadmeOutputBuilder {
         self.namespace = input;
         self
     }
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <p>The namespace of the package version with the requested readme file. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li>
     /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// <li>
     /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>

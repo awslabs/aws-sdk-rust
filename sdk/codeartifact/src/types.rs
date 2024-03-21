@@ -23,6 +23,22 @@ pub use crate::types::_successful_package_version_info::SuccessfulPackageVersion
 
 pub use crate::types::_package_version_status::PackageVersionStatus;
 
+pub use crate::types::_package_group_allowed_repository_update_type::PackageGroupAllowedRepositoryUpdateType;
+
+pub use crate::types::_package_group_origin_restriction_type::PackageGroupOriginRestrictionType;
+
+pub use crate::types::_package_group_description::PackageGroupDescription;
+
+pub use crate::types::_package_group_reference::PackageGroupReference;
+
+pub use crate::types::_package_group_origin_configuration::PackageGroupOriginConfiguration;
+
+pub use crate::types::_package_group_origin_restriction::PackageGroupOriginRestriction;
+
+pub use crate::types::_package_group_origin_restriction_mode::PackageGroupOriginRestrictionMode;
+
+pub use crate::types::_package_group_allowed_repository::PackageGroupAllowedRepository;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_resource_policy::ResourcePolicy;
@@ -38,6 +54,8 @@ pub use crate::types::_allow_publish::AllowPublish;
 pub use crate::types::_asset_summary::AssetSummary;
 
 pub use crate::types::_hash_algorithm::HashAlgorithm;
+
+pub use crate::types::_package_group_summary::PackageGroupSummary;
 
 pub use crate::types::_repository_summary::RepositorySummary;
 
@@ -59,6 +77,10 @@ pub use crate::types::_domain_summary::DomainSummary;
 
 pub use crate::types::_domain_status::DomainStatus;
 
+pub use crate::types::_associated_package::AssociatedPackage;
+
+pub use crate::types::_package_group_association_type::PackageGroupAssociationType;
+
 pub use crate::types::_package_version_description::PackageVersionDescription;
 
 pub use crate::types::_license_info::LicenseInfo;
@@ -72,6 +94,8 @@ mod _allow_publish;
 mod _allow_upstream;
 
 mod _asset_summary;
+
+mod _associated_package;
 
 mod _domain_description;
 
@@ -92,6 +116,26 @@ mod _package_dependency;
 mod _package_description;
 
 mod _package_format;
+
+mod _package_group_allowed_repository;
+
+mod _package_group_allowed_repository_update_type;
+
+mod _package_group_association_type;
+
+mod _package_group_description;
+
+mod _package_group_origin_configuration;
+
+mod _package_group_origin_restriction;
+
+mod _package_group_origin_restriction_mode;
+
+mod _package_group_origin_restriction_type;
+
+mod _package_group_reference;
+
+mod _package_group_summary;
 
 mod _package_origin_configuration;
 

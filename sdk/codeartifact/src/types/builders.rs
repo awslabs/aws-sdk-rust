@@ -11,6 +11,16 @@ pub use crate::types::_package_version_error::PackageVersionErrorBuilder;
 
 pub use crate::types::_successful_package_version_info::SuccessfulPackageVersionInfoBuilder;
 
+pub use crate::types::_package_group_description::PackageGroupDescriptionBuilder;
+
+pub use crate::types::_package_group_reference::PackageGroupReferenceBuilder;
+
+pub use crate::types::_package_group_origin_configuration::PackageGroupOriginConfigurationBuilder;
+
+pub use crate::types::_package_group_origin_restriction::PackageGroupOriginRestrictionBuilder;
+
+pub use crate::types::_package_group_allowed_repository::PackageGroupAllowedRepositoryBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_resource_policy::ResourcePolicyBuilder;
@@ -20,6 +30,8 @@ pub use crate::types::_package_origin_configuration::PackageOriginConfigurationB
 pub use crate::types::_package_origin_restrictions::PackageOriginRestrictionsBuilder;
 
 pub use crate::types::_asset_summary::AssetSummaryBuilder;
+
+pub use crate::types::_package_group_summary::PackageGroupSummaryBuilder;
 
 pub use crate::types::_repository_summary::RepositorySummaryBuilder;
 
@@ -34,6 +46,8 @@ pub use crate::types::_package_dependency::PackageDependencyBuilder;
 pub use crate::types::_package_summary::PackageSummaryBuilder;
 
 pub use crate::types::_domain_summary::DomainSummaryBuilder;
+
+pub use crate::types::_associated_package::AssociatedPackageBuilder;
 
 pub use crate::types::_package_version_description::PackageVersionDescriptionBuilder;
 

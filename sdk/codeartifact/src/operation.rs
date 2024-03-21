@@ -10,6 +10,9 @@ pub mod copy_package_versions;
 /// Types for the `CreateDomain` operation.
 pub mod create_domain;
 
+/// Types for the `CreatePackageGroup` operation.
+pub mod create_package_group;
+
 /// Types for the `CreateRepository` operation.
 pub mod create_repository;
 
@@ -21,6 +24,9 @@ pub mod delete_domain_permissions_policy;
 
 /// Types for the `DeletePackage` operation.
 pub mod delete_package;
+
+/// Types for the `DeletePackageGroup` operation.
+pub mod delete_package_group;
 
 /// Types for the `DeletePackageVersions` operation.
 pub mod delete_package_versions;
@@ -37,6 +43,9 @@ pub mod describe_domain;
 /// Types for the `DescribePackage` operation.
 pub mod describe_package;
 
+/// Types for the `DescribePackageGroup` operation.
+pub mod describe_package_group;
+
 /// Types for the `DescribePackageVersion` operation.
 pub mod describe_package_version;
 
@@ -48,6 +57,9 @@ pub mod disassociate_external_connection;
 
 /// Types for the `DisposePackageVersions` operation.
 pub mod dispose_package_versions;
+
+/// Types for the `GetAssociatedPackageGroup` operation.
+pub mod get_associated_package_group;
 
 /// Types for the `GetAuthorizationToken` operation.
 pub mod get_authorization_token;
@@ -67,8 +79,17 @@ pub mod get_repository_endpoint;
 /// Types for the `GetRepositoryPermissionsPolicy` operation.
 pub mod get_repository_permissions_policy;
 
+/// Types for the `ListAllowedRepositoriesForGroup` operation.
+pub mod list_allowed_repositories_for_group;
+
+/// Types for the `ListAssociatedPackages` operation.
+pub mod list_associated_packages;
+
 /// Types for the `ListDomains` operation.
 pub mod list_domains;
+
+/// Types for the `ListPackageGroups` operation.
+pub mod list_package_groups;
 
 /// Types for the `ListPackageVersionAssets` operation.
 pub mod list_package_version_assets;
@@ -87,6 +108,9 @@ pub mod list_repositories;
 
 /// Types for the `ListRepositoriesInDomain` operation.
 pub mod list_repositories_in_domain;
+
+/// Types for the `ListSubPackageGroups` operation.
+pub mod list_sub_package_groups;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -108,6 +132,12 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdatePackageGroup` operation.
+pub mod update_package_group;
+
+/// Types for the `UpdatePackageGroupOriginConfiguration` operation.
+pub mod update_package_group_origin_configuration;
 
 /// Types for the `UpdatePackageVersionsStatus` operation.
 pub mod update_package_versions_status;

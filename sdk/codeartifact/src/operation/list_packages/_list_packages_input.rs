@@ -15,13 +15,13 @@ pub struct ListPackagesInput {
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned.</p>
@@ -56,13 +56,13 @@ impl ListPackagesInput {
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
@@ -173,13 +173,13 @@ impl ListPackagesInputBuilder {
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -189,13 +189,13 @@ impl ListPackagesInputBuilder {
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
@@ -205,13 +205,13 @@ impl ListPackagesInputBuilder {
     /// <p>Each package format uses namespace as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
     /// <li>
-    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li>
-    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <p>The namespace of an npm or Swift package version is its <code>scope</code>.</p></li>
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace

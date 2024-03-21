@@ -25,6 +25,8 @@ impl GetRepositoryEndpointInputBuilder {
 /// <p>Returns the endpoint of a repository for a specific package format. A repository has one endpoint for each package format:</p>
 /// <ul>
 /// <li>
+/// <p><code>generic</code></p></li>
+/// <li>
 /// <p><code>maven</code></p></li>
 /// <li>
 /// <p><code>npm</code></p></li>
@@ -32,6 +34,8 @@ impl GetRepositoryEndpointInputBuilder {
 /// <p><code>nuget</code></p></li>
 /// <li>
 /// <p><code>pypi</code></p></li>
+/// <li>
+/// <p><code>swift</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRepositoryEndpointFluentBuilder {

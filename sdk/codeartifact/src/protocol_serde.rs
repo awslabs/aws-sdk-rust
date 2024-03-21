@@ -29,6 +29,8 @@ pub(crate) mod shape_copy_package_versions;
 
 pub(crate) mod shape_create_domain;
 
+pub(crate) mod shape_create_package_group;
+
 pub(crate) mod shape_create_repository;
 
 pub(crate) mod shape_delete_domain;
@@ -36,6 +38,8 @@ pub(crate) mod shape_delete_domain;
 pub(crate) mod shape_delete_domain_permissions_policy;
 
 pub(crate) mod shape_delete_package;
+
+pub(crate) mod shape_delete_package_group;
 
 pub(crate) mod shape_delete_package_versions;
 
@@ -47,6 +51,8 @@ pub(crate) mod shape_describe_domain;
 
 pub(crate) mod shape_describe_package;
 
+pub(crate) mod shape_describe_package_group;
+
 pub(crate) mod shape_describe_package_version;
 
 pub(crate) mod shape_describe_repository;
@@ -54,6 +60,8 @@ pub(crate) mod shape_describe_repository;
 pub(crate) mod shape_disassociate_external_connection;
 
 pub(crate) mod shape_dispose_package_versions;
+
+pub(crate) mod shape_get_associated_package_group;
 
 pub(crate) mod shape_get_authorization_token;
 
@@ -67,7 +75,13 @@ pub(crate) mod shape_get_repository_endpoint;
 
 pub(crate) mod shape_get_repository_permissions_policy;
 
+pub(crate) mod shape_list_allowed_repositories_for_group;
+
+pub(crate) mod shape_list_associated_packages;
+
 pub(crate) mod shape_list_domains;
+
+pub(crate) mod shape_list_package_groups;
 
 pub(crate) mod shape_list_package_version_assets;
 
@@ -80,6 +94,8 @@ pub(crate) mod shape_list_packages;
 pub(crate) mod shape_list_repositories;
 
 pub(crate) mod shape_list_repositories_in_domain;
+
+pub(crate) mod shape_list_sub_package_groups;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -96,6 +112,10 @@ pub(crate) mod shape_put_repository_permissions_policy;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_package_group;
+
+pub(crate) mod shape_update_package_group_origin_configuration;
 
 pub(crate) mod shape_update_package_versions_status;
 
@@ -116,6 +136,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_copy_package_versions_input;
 
 pub(crate) mod shape_create_domain_input;
+
+pub(crate) mod shape_create_package_group_input;
 
 pub(crate) mod shape_create_repository_input;
 
@@ -145,6 +167,10 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_package_group_input;
+
+pub(crate) mod shape_update_package_group_origin_configuration_input;
+
 pub(crate) mod shape_update_package_versions_status_input;
 
 pub(crate) mod shape_update_repository_input;
@@ -155,6 +181,8 @@ pub(crate) mod shape_asset_summary;
 
 pub(crate) mod shape_asset_summary_list;
 
+pub(crate) mod shape_associated_package_list;
+
 pub(crate) mod shape_domain_description;
 
 pub(crate) mod shape_domain_summary_list;
@@ -162,6 +190,14 @@ pub(crate) mod shape_domain_summary_list;
 pub(crate) mod shape_package_dependency_list;
 
 pub(crate) mod shape_package_description;
+
+pub(crate) mod shape_package_group_allowed_repository;
+
+pub(crate) mod shape_package_group_allowed_repository_updates;
+
+pub(crate) mod shape_package_group_description;
+
+pub(crate) mod shape_package_group_summary_list;
 
 pub(crate) mod shape_package_origin_configuration;
 
@@ -179,6 +215,8 @@ pub(crate) mod shape_package_version_summary_list;
 
 pub(crate) mod shape_repository_description;
 
+pub(crate) mod shape_repository_name_list;
+
 pub(crate) mod shape_repository_summary_list;
 
 pub(crate) mod shape_resource_policy;
@@ -193,11 +231,21 @@ pub(crate) mod shape_upstream_repository;
 
 pub(crate) mod shape_asset_hashes;
 
+pub(crate) mod shape_associated_package;
+
 pub(crate) mod shape_domain_summary;
 
 pub(crate) mod shape_license_info_list;
 
 pub(crate) mod shape_package_dependency;
+
+pub(crate) mod shape_package_group_allowed_repository_update;
+
+pub(crate) mod shape_package_group_origin_configuration;
+
+pub(crate) mod shape_package_group_reference;
+
+pub(crate) mod shape_package_group_summary;
 
 pub(crate) mod shape_package_version_error;
 
@@ -217,6 +265,10 @@ pub(crate) mod shape_domain_entry_point;
 
 pub(crate) mod shape_license_info;
 
+pub(crate) mod shape_package_group_origin_restrictions;
+
 pub(crate) mod shape_repository_external_connection_info;
 
 pub(crate) mod shape_upstream_repository_info;
+
+pub(crate) mod shape_package_group_origin_restriction;

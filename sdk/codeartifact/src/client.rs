@@ -142,6 +142,8 @@ mod copy_package_versions;
 
 mod create_domain;
 
+mod create_package_group;
+
 mod create_repository;
 
 /// Operation customization and supporting types.
@@ -177,6 +179,8 @@ mod delete_domain_permissions_policy;
 
 mod delete_package;
 
+mod delete_package_group;
+
 mod delete_package_versions;
 
 mod delete_repository;
@@ -187,6 +191,8 @@ mod describe_domain;
 
 mod describe_package;
 
+mod describe_package_group;
+
 mod describe_package_version;
 
 mod describe_repository;
@@ -194,6 +200,8 @@ mod describe_repository;
 mod disassociate_external_connection;
 
 mod dispose_package_versions;
+
+mod get_associated_package_group;
 
 mod get_authorization_token;
 
@@ -207,7 +215,13 @@ mod get_repository_endpoint;
 
 mod get_repository_permissions_policy;
 
+mod list_allowed_repositories_for_group;
+
+mod list_associated_packages;
+
 mod list_domains;
+
+mod list_package_groups;
 
 mod list_package_version_assets;
 
@@ -220,6 +234,8 @@ mod list_packages;
 mod list_repositories;
 
 mod list_repositories_in_domain;
+
+mod list_sub_package_groups;
 
 mod list_tags_for_resource;
 
@@ -234,6 +250,10 @@ mod put_repository_permissions_policy;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_package_group;
+
+mod update_package_group_origin_configuration;
 
 mod update_package_versions_status;
 

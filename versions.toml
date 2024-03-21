@@ -448,9 +448,9 @@ model_hash = '66c93f240080d6ab32c8771416e79564dc0f617082da93752a23ff426b2a18c6'
 
 [crates.aws-sdk-codeartifact]
 category = 'AwsSdk'
-version = '1.17.0'
-source_hash = '4167d4859f91f90f274af5a59a40832ace43108eb631be548019814818c372b3'
-model_hash = 'e2e9823e7ed4cdef9ed93b1ee9f740bc9b4d6778f053e8daa8cffa084d86e018'
+version = '1.18.0'
+source_hash = '7e5518cd2c1e30b3387bdb1d260521ac705cea9d3f2e8d526abb07738eafb819'
+model_hash = 'e370cb8c0740c19c163525990f4cf45948b5a9e9e0a125b28801778987c9f1ad'
 
 [crates.aws-sdk-codebuild]
 category = 'AwsSdk'
@@ -2435,14 +2435,5 @@ source_hash = 'd6ea8e07b94101a2c092315bb0258933080e366cbd1ef6f34e6c089aa8535738'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '314dce251860de25f6f49bcea9bd7168ec2bf2f94eeb524e859963fd48e96487'
-
-[release]
-tag = 'release-2024-03-20'
-
 [release.crates]
-aws-sdk-accessanalyzer = '1.19.0'
-aws-sdk-codebuild = '1.20.1'
-aws-sdk-connect = '1.28.0'
-aws-sdk-dynamodb = '1.19.0'
-aws-sdk-managedblockchainquery = '1.20.0'
-aws-sdk-savingsplans = '1.18.0'
+aws-sdk-codeartifact = '1.18.0'
