@@ -122,17 +122,17 @@ impl QueryFluentBuilder {
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }
-    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. For example, <code>Timeoff AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>, <code>october</code>, <code>hr</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a> in the Amazon Kendra Developer Guide.</p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
         self
     }
-    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. For example, <code>Timeoff AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>, <code>october</code>, <code>hr</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a> in the Amazon Kendra Developer Guide.</p>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
     }
-    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. For example, <code>Timeoff AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>, <code>october</code>, <code>hr</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a> in the Amazon Kendra Developer Guide.</p>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_text()
     }

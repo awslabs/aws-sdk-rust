@@ -22,7 +22,7 @@ impl UpdateDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDataSource`.
 ///
-/// <p>Updates an existing Amazon Kendra data source connector.</p>
+/// <p>Updates an Amazon Kendra data source connector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

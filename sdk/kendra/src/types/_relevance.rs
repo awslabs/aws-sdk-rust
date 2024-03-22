@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Relevance {
-    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.</p>
+    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to <code>DATE</code> fields.</p>
     pub freshness: ::std::option::Option<bool>,
     /// <p>The relative importance of the field in the search. Larger numbers provide more of a boost than smaller numbers.</p>
     pub importance: ::std::option::Option<i32>,
@@ -14,14 +14,14 @@ pub struct Relevance {
     /// <p>Determines how values should be interpreted.</p>
     /// <p>When the <code>RankOrder</code> field is <code>ASCENDING</code>, higher numbers are better. For example, a document with a rating score of 10 is higher ranking than a document with a rating score of 1.</p>
     /// <p>When the <code>RankOrder</code> field is <code>DESCENDING</code>, lower numbers are better. For example, in a task tracking application, a priority 1 task is more important than a priority 5 task.</p>
-    /// <p>Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.</p>
+    /// <p>Only applies to <code>LONG</code> fields.</p>
     pub rank_order: ::std::option::Option<crate::types::Order>,
-    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
+    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department", query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
     pub value_importance_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl Relevance {
-    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.</p>
+    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to <code>DATE</code> fields.</p>
     pub fn freshness(&self) -> ::std::option::Option<bool> {
         self.freshness
     }
@@ -37,11 +37,11 @@ impl Relevance {
     /// <p>Determines how values should be interpreted.</p>
     /// <p>When the <code>RankOrder</code> field is <code>ASCENDING</code>, higher numbers are better. For example, a document with a rating score of 10 is higher ranking than a document with a rating score of 1.</p>
     /// <p>When the <code>RankOrder</code> field is <code>DESCENDING</code>, lower numbers are better. For example, in a task tracking application, a priority 1 task is more important than a priority 5 task.</p>
-    /// <p>Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.</p>
+    /// <p>Only applies to <code>LONG</code> fields.</p>
     pub fn rank_order(&self) -> ::std::option::Option<&crate::types::Order> {
         self.rank_order.as_ref()
     }
-    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
+    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department", query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
     pub fn value_importance_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.value_importance_map.as_ref()
@@ -65,17 +65,17 @@ pub struct RelevanceBuilder {
     pub(crate) value_importance_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl RelevanceBuilder {
-    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.</p>
+    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to <code>DATE</code> fields.</p>
     pub fn freshness(mut self, input: bool) -> Self {
         self.freshness = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.</p>
+    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to <code>DATE</code> fields.</p>
     pub fn set_freshness(mut self, input: ::std::option::Option<bool>) -> Self {
         self.freshness = input;
         self
     }
-    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.</p>
+    /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to <code>DATE</code> fields.</p>
     pub fn get_freshness(&self) -> &::std::option::Option<bool> {
         &self.freshness
     }
@@ -113,7 +113,7 @@ impl RelevanceBuilder {
     /// <p>Determines how values should be interpreted.</p>
     /// <p>When the <code>RankOrder</code> field is <code>ASCENDING</code>, higher numbers are better. For example, a document with a rating score of 10 is higher ranking than a document with a rating score of 1.</p>
     /// <p>When the <code>RankOrder</code> field is <code>DESCENDING</code>, lower numbers are better. For example, in a task tracking application, a priority 1 task is more important than a priority 5 task.</p>
-    /// <p>Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.</p>
+    /// <p>Only applies to <code>LONG</code> fields.</p>
     pub fn rank_order(mut self, input: crate::types::Order) -> Self {
         self.rank_order = ::std::option::Option::Some(input);
         self
@@ -121,7 +121,7 @@ impl RelevanceBuilder {
     /// <p>Determines how values should be interpreted.</p>
     /// <p>When the <code>RankOrder</code> field is <code>ASCENDING</code>, higher numbers are better. For example, a document with a rating score of 10 is higher ranking than a document with a rating score of 1.</p>
     /// <p>When the <code>RankOrder</code> field is <code>DESCENDING</code>, lower numbers are better. For example, in a task tracking application, a priority 1 task is more important than a priority 5 task.</p>
-    /// <p>Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.</p>
+    /// <p>Only applies to <code>LONG</code> fields.</p>
     pub fn set_rank_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
         self.rank_order = input;
         self
@@ -129,7 +129,7 @@ impl RelevanceBuilder {
     /// <p>Determines how values should be interpreted.</p>
     /// <p>When the <code>RankOrder</code> field is <code>ASCENDING</code>, higher numbers are better. For example, a document with a rating score of 10 is higher ranking than a document with a rating score of 1.</p>
     /// <p>When the <code>RankOrder</code> field is <code>DESCENDING</code>, lower numbers are better. For example, in a task tracking application, a priority 1 task is more important than a priority 5 task.</p>
-    /// <p>Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.</p>
+    /// <p>Only applies to <code>LONG</code> fields.</p>
     pub fn get_rank_order(&self) -> &::std::option::Option<crate::types::Order> {
         &self.rank_order
     }
@@ -137,7 +137,7 @@ impl RelevanceBuilder {
     ///
     /// To override the contents of this collection use [`set_value_importance_map`](Self::set_value_importance_map).
     ///
-    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
+    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department", query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
     pub fn value_importance_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.value_importance_map.unwrap_or_default();
@@ -145,13 +145,13 @@ impl RelevanceBuilder {
         self.value_importance_map = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
+    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department", query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
     pub fn set_value_importance_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
         self.value_importance_map = input;
         self
     }
-    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department," query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
+    /// <p>A list of values that should be given a different boost when they appear in the result list. For example, if you are boosting a field called "department", query terms that match the department field are boosted in the result. However, you can add entries from the department field to boost documents with those values higher.</p>
     /// <p>For example, you can add entries to the map with names of departments. If you add "HR",5 and "Legal",3 those departments are given special attention when they appear in the metadata of a document. When those terms appear they are given the specified importance instead of the regular importance for the boost.</p>
     pub fn get_value_importance_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
         &self.value_importance_map

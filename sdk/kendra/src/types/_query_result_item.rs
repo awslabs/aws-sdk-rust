@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryResultItem {
-    /// <p>The identifier for the query result.</p>
+    /// <p>The unique identifier for the query result item id (<code>Id</code>) and the query result item document id (<code>DocumentId</code>) combined. The value of this field changes with every request, even when you have the same documents.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of document within the response. For example, a response could include a question-answer that's relevant to the query.</p>
     pub r#type: ::std::option::Option<crate::types::QueryResultType>,
@@ -34,7 +34,7 @@ pub struct QueryResultItem {
     pub collapsed_result_detail: ::std::option::Option<crate::types::CollapsedResultDetail>,
 }
 impl QueryResultItem {
-    /// <p>The identifier for the query result.</p>
+    /// <p>The unique identifier for the query result item id (<code>Id</code>) and the query result item document id (<code>DocumentId</code>) combined. The value of this field changes with every request, even when you have the same documents.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -118,17 +118,17 @@ pub struct QueryResultItemBuilder {
     pub(crate) collapsed_result_detail: ::std::option::Option<crate::types::CollapsedResultDetail>,
 }
 impl QueryResultItemBuilder {
-    /// <p>The identifier for the query result.</p>
+    /// <p>The unique identifier for the query result item id (<code>Id</code>) and the query result item document id (<code>DocumentId</code>) combined. The value of this field changes with every request, even when you have the same documents.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the query result.</p>
+    /// <p>The unique identifier for the query result item id (<code>Id</code>) and the query result item document id (<code>DocumentId</code>) combined. The value of this field changes with every request, even when you have the same documents.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The identifier for the query result.</p>
+    /// <p>The unique identifier for the query result item id (<code>Id</code>) and the query result item document id (<code>DocumentId</code>) combined. The value of this field changes with every request, even when you have the same documents.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

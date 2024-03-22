@@ -257,6 +257,8 @@ pub enum ListPriceListsError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The requested resource can't be found.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You've made too many requests exceeding service quotas.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -298,6 +300,7 @@ impl ListPriceListsError {
             Self::InvalidNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -326,6 +329,10 @@ impl ListPriceListsError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(self, Self::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `ListPriceListsError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `ListPriceListsError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
@@ -340,6 +347,7 @@ impl ::std::error::Error for ListPriceListsError {
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -354,6 +362,7 @@ impl ::std::fmt::Display for ListPriceListsError {
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -386,6 +395,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListPriceList
             Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

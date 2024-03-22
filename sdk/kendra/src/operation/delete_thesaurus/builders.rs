@@ -22,7 +22,7 @@ impl DeleteThesaurusInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteThesaurus`.
 ///
-/// <p>Deletes an existing Amazon Kendra thesaurus.</p>
+/// <p>Deletes an Amazon Kendra thesaurus.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteThesaurusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

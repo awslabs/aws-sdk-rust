@@ -22,7 +22,7 @@ impl DescribeThesaurusInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeThesaurus`.
 ///
-/// <p>Gets information about an existing Amazon Kendra thesaurus.</p>
+/// <p>Gets information about an Amazon Kendra thesaurus.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeThesaurusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

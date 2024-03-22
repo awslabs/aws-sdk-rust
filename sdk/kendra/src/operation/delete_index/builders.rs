@@ -22,7 +22,7 @@ impl DeleteIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteIndex`.
 ///
-/// <p>Deletes an existing Amazon Kendra index. An exception is not thrown if the index is already being deleted. While the index is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeIndex</code> API is set to <code>DELETING</code>.</p>
+/// <p>Deletes an Amazon Kendra index. An exception is not thrown if the index is already being deleted. While the index is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeIndex</code> API is set to <code>DELETING</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIndexFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

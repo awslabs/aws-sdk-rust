@@ -4,7 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceConfiguration {
-    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
+    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon S3 connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>S3DataSourceConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub s3_configuration: ::std::option::Option<crate::types::S3DataSourceConfiguration>,
     /// <p>Provides the configuration information to connect to Microsoft SharePoint as your data source.</p>
     pub share_point_configuration: ::std::option::Option<crate::types::SharePointConfiguration>,
@@ -24,9 +29,19 @@ pub struct DataSourceConfiguration {
     pub web_crawler_configuration: ::std::option::Option<crate::types::WebCrawlerConfiguration>,
     /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
     pub work_docs_configuration: ::std::option::Option<crate::types::WorkDocsConfiguration>,
-    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon FSx Windows connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>FsxConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fsx_configuration: ::std::option::Option<crate::types::FsxConfiguration>,
-    /// <p>Provides the configuration information to connect to Slack as your data source.</p>
+    /// <p>Provides the configuration information to connect to Slack as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Slack connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>SlackConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub slack_configuration: ::std::option::Option<crate::types::SlackConfiguration>,
     /// <p>Provides the configuration information to connect to Box as your data source.</p>
     pub box_configuration: ::std::option::Option<crate::types::BoxConfiguration>,
@@ -34,17 +49,28 @@ pub struct DataSourceConfiguration {
     pub quip_configuration: ::std::option::Option<crate::types::QuipConfiguration>,
     /// <p>Provides the configuration information to connect to Jira as your data source.</p>
     pub jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
-    /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+    /// <p>Provides the configuration information to connect to GitHub as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded GitHub connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>GitHubConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won’t be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub git_hub_configuration: ::std::option::Option<crate::types::GitHubConfiguration>,
-    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p><note>
     /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
+    /// </note>
     #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
     pub alfresco_configuration: ::std::option::Option<crate::types::AlfrescoConfiguration>,
     /// <p>Provides a template for the configuration information to connect to your data source.</p>
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
 }
 impl DataSourceConfiguration {
-    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
+    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon S3 connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>S3DataSourceConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3DataSourceConfiguration> {
         self.s3_configuration.as_ref()
     }
@@ -84,11 +110,21 @@ impl DataSourceConfiguration {
     pub fn work_docs_configuration(&self) -> ::std::option::Option<&crate::types::WorkDocsConfiguration> {
         self.work_docs_configuration.as_ref()
     }
-    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon FSx Windows connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>FsxConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn fsx_configuration(&self) -> ::std::option::Option<&crate::types::FsxConfiguration> {
         self.fsx_configuration.as_ref()
     }
-    /// <p>Provides the configuration information to connect to Slack as your data source.</p>
+    /// <p>Provides the configuration information to connect to Slack as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Slack connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>SlackConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn slack_configuration(&self) -> ::std::option::Option<&crate::types::SlackConfiguration> {
         self.slack_configuration.as_ref()
     }
@@ -104,12 +140,18 @@ impl DataSourceConfiguration {
     pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::JiraConfiguration> {
         self.jira_configuration.as_ref()
     }
-    /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+    /// <p>Provides the configuration information to connect to GitHub as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded GitHub connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>GitHubConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won’t be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn git_hub_configuration(&self) -> ::std::option::Option<&crate::types::GitHubConfiguration> {
         self.git_hub_configuration.as_ref()
     }
-    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p><note>
     /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
+    /// </note>
     #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
     pub fn alfresco_configuration(&self) -> ::std::option::Option<&crate::types::AlfrescoConfiguration> {
         self.alfresco_configuration.as_ref()
@@ -150,17 +192,32 @@ pub struct DataSourceConfigurationBuilder {
     pub(crate) template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
 }
 impl DataSourceConfigurationBuilder {
-    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
+    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon S3 connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>S3DataSourceConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn s3_configuration(mut self, input: crate::types::S3DataSourceConfiguration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
+    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon S3 connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>S3DataSourceConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3DataSourceConfiguration>) -> Self {
         self.s3_configuration = input;
         self
     }
-    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
+    /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon S3 connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>S3DataSourceConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3DataSourceConfiguration> {
         &self.s3_configuration
     }
@@ -290,31 +347,61 @@ impl DataSourceConfigurationBuilder {
     pub fn get_work_docs_configuration(&self) -> &::std::option::Option<crate::types::WorkDocsConfiguration> {
         &self.work_docs_configuration
     }
-    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon FSx Windows connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>FsxConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn fsx_configuration(mut self, input: crate::types::FsxConfiguration) -> Self {
         self.fsx_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon FSx Windows connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>FsxConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn set_fsx_configuration(mut self, input: ::std::option::Option<crate::types::FsxConfiguration>) -> Self {
         self.fsx_configuration = input;
         self
     }
-    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
+    /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Amazon FSx Windows connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>FsxConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn get_fsx_configuration(&self) -> &::std::option::Option<crate::types::FsxConfiguration> {
         &self.fsx_configuration
     }
-    /// <p>Provides the configuration information to connect to Slack as your data source.</p>
+    /// <p>Provides the configuration information to connect to Slack as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Slack connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>SlackConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn slack_configuration(mut self, input: crate::types::SlackConfiguration) -> Self {
         self.slack_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the configuration information to connect to Slack as your data source.</p>
+    /// <p>Provides the configuration information to connect to Slack as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Slack connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>SlackConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn set_slack_configuration(mut self, input: ::std::option::Option<crate::types::SlackConfiguration>) -> Self {
         self.slack_configuration = input;
         self
     }
-    /// <p>Provides the configuration information to connect to Slack as your data source.</p>
+    /// <p>Provides the configuration information to connect to Slack as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded Slack connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>SlackConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn get_slack_configuration(&self) -> &::std::option::Option<crate::types::SlackConfiguration> {
         &self.slack_configuration
     }
@@ -360,36 +447,54 @@ impl DataSourceConfigurationBuilder {
     pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::JiraConfiguration> {
         &self.jira_configuration
     }
-    /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+    /// <p>Provides the configuration information to connect to GitHub as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded GitHub connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>GitHubConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won’t be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn git_hub_configuration(mut self, input: crate::types::GitHubConfiguration) -> Self {
         self.git_hub_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+    /// <p>Provides the configuration information to connect to GitHub as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded GitHub connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>GitHubConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won’t be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn set_git_hub_configuration(mut self, input: ::std::option::Option<crate::types::GitHubConfiguration>) -> Self {
         self.git_hub_configuration = input;
         self
     }
-    /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
+    /// <p>Provides the configuration information to connect to GitHub as your data source.</p><note>
+    /// <p>Amazon Kendra now supports an upgraded GitHub connector.</p>
+    /// <p>You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> object instead of the <code>GitHubConfiguration</code> object to configure your connector.</p>
+    /// <p>Connectors configured using the older console and API architecture will continue to function as configured. However, you won’t be able to edit or update them. If you want to edit or update your connector configuration, you must create a new connector.</p>
+    /// <p>We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the older architecture is scheduled to end by June 2024.</p>
+    /// </note>
     pub fn get_git_hub_configuration(&self) -> &::std::option::Option<crate::types::GitHubConfiguration> {
         &self.git_hub_configuration
     }
-    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p><note>
     /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
+    /// </note>
     #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
     pub fn alfresco_configuration(mut self, input: crate::types::AlfrescoConfiguration) -> Self {
         self.alfresco_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p><note>
     /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
+    /// </note>
     #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
     pub fn set_alfresco_configuration(mut self, input: ::std::option::Option<crate::types::AlfrescoConfiguration>) -> Self {
         self.alfresco_configuration = input;
         self
     }
-    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
+    /// <p>Provides the configuration information to connect to Alfresco as your data source.</p><note>
     /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
+    /// </note>
     #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
     pub fn get_alfresco_configuration(&self) -> &::std::option::Option<crate::types::AlfrescoConfiguration> {
         &self.alfresco_configuration

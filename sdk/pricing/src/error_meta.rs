@@ -15,6 +15,8 @@ pub enum Error {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The requested resource can't be found.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You've made too many requests exceeding service quotas.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -35,6 +37,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -63,6 +66,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidNextTokenException(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -153,6 +157,9 @@ impl From<crate::operation::get_price_list_file_url::GetPriceListFileUrlError> f
                 Error::InvalidParameterException(inner)
             }
             crate::operation::get_price_list_file_url::GetPriceListFileUrlError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_price_list_file_url::GetPriceListFileUrlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_price_list_file_url::GetPriceListFileUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -208,6 +215,7 @@ impl From<crate::operation::list_price_lists::ListPriceListsError> for Error {
             crate::operation::list_price_lists::ListPriceListsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::list_price_lists::ListPriceListsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_price_lists::ListPriceListsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_price_lists::ListPriceListsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_price_lists::ListPriceListsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_price_lists::ListPriceListsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -222,6 +230,7 @@ impl ::std::error::Error for Error {
             Error::InvalidNextTokenException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -236,6 +245,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidNextTokenException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

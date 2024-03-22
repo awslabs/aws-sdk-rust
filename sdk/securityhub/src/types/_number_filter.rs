@@ -8,12 +8,12 @@ pub struct NumberFilter {
     pub gte: ::std::option::Option<f64>,
     /// <p>The less-than-equal condition to be applied to a single field when querying for findings.</p>
     pub lte: ::std::option::Option<f64>,
+    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
+    pub eq: ::std::option::Option<f64>,
     /// <p>The greater-than condition to be applied to a single field when querying for findings.</p>
     pub gt: ::std::option::Option<f64>,
     /// <p>The less-than condition to be applied to a single field when querying for findings.</p>
     pub lt: ::std::option::Option<f64>,
-    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
-    pub eq: ::std::option::Option<f64>,
 }
 impl NumberFilter {
     /// <p>The greater-than-equal condition to be applied to a single field when querying for findings.</p>
@@ -24,6 +24,10 @@ impl NumberFilter {
     pub fn lte(&self) -> ::std::option::Option<f64> {
         self.lte
     }
+    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
+    pub fn eq(&self) -> ::std::option::Option<f64> {
+        self.eq
+    }
     /// <p>The greater-than condition to be applied to a single field when querying for findings.</p>
     pub fn gt(&self) -> ::std::option::Option<f64> {
         self.gt
@@ -31,10 +35,6 @@ impl NumberFilter {
     /// <p>The less-than condition to be applied to a single field when querying for findings.</p>
     pub fn lt(&self) -> ::std::option::Option<f64> {
         self.lt
-    }
-    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
-    pub fn eq(&self) -> ::std::option::Option<f64> {
-        self.eq
     }
 }
 impl NumberFilter {
@@ -50,9 +50,9 @@ impl NumberFilter {
 pub struct NumberFilterBuilder {
     pub(crate) gte: ::std::option::Option<f64>,
     pub(crate) lte: ::std::option::Option<f64>,
+    pub(crate) eq: ::std::option::Option<f64>,
     pub(crate) gt: ::std::option::Option<f64>,
     pub(crate) lt: ::std::option::Option<f64>,
-    pub(crate) eq: ::std::option::Option<f64>,
 }
 impl NumberFilterBuilder {
     /// <p>The greater-than-equal condition to be applied to a single field when querying for findings.</p>
@@ -83,6 +83,20 @@ impl NumberFilterBuilder {
     pub fn get_lte(&self) -> &::std::option::Option<f64> {
         &self.lte
     }
+    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
+    pub fn eq(mut self, input: f64) -> Self {
+        self.eq = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
+    pub fn set_eq(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.eq = input;
+        self
+    }
+    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
+    pub fn get_eq(&self) -> &::std::option::Option<f64> {
+        &self.eq
+    }
     /// <p>The greater-than condition to be applied to a single field when querying for findings.</p>
     pub fn gt(mut self, input: f64) -> Self {
         self.gt = ::std::option::Option::Some(input);
@@ -111,28 +125,14 @@ impl NumberFilterBuilder {
     pub fn get_lt(&self) -> &::std::option::Option<f64> {
         &self.lt
     }
-    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
-    pub fn eq(mut self, input: f64) -> Self {
-        self.eq = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
-    pub fn set_eq(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.eq = input;
-        self
-    }
-    /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
-    pub fn get_eq(&self) -> &::std::option::Option<f64> {
-        &self.eq
-    }
     /// Consumes the builder and constructs a [`NumberFilter`](crate::types::NumberFilter).
     pub fn build(self) -> crate::types::NumberFilter {
         crate::types::NumberFilter {
             gte: self.gte,
             lte: self.lte,
+            eq: self.eq,
             gt: self.gt,
             lt: self.lt,
-            eq: self.eq,
         }
     }
 }

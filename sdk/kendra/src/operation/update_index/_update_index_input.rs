@@ -5,7 +5,7 @@
 pub struct UpdateIndexInput {
     /// <p>The identifier of the index you want to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the index you want to update.</p>
+    /// <p>A new name for the index.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ pub struct UpdateIndexInput {
     pub user_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
     /// <p>The user context policy.</p>
     pub user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
-    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Gets users and groups from IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub user_group_resolution_configuration: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
 }
 impl UpdateIndexInput {
@@ -28,7 +28,7 @@ impl UpdateIndexInput {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the index you want to update.</p>
+    /// <p>A new name for the index.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -61,7 +61,7 @@ impl UpdateIndexInput {
     pub fn user_context_policy(&self) -> ::std::option::Option<&crate::types::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
-    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Gets users and groups from IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn user_group_resolution_configuration(&self) -> ::std::option::Option<&crate::types::UserGroupResolutionConfiguration> {
         self.user_group_resolution_configuration.as_ref()
     }
@@ -103,17 +103,17 @@ impl UpdateIndexInputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The name of the index you want to update.</p>
+    /// <p>A new name for the index.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the index you want to update.</p>
+    /// <p>A new name for the index.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the index you want to update.</p>
+    /// <p>A new name for the index.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -221,17 +221,17 @@ impl UpdateIndexInputBuilder {
     pub fn get_user_context_policy(&self) -> &::std::option::Option<crate::types::UserContextPolicy> {
         &self.user_context_policy
     }
-    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Gets users and groups from IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn user_group_resolution_configuration(mut self, input: crate::types::UserGroupResolutionConfiguration) -> Self {
         self.user_group_resolution_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Gets users and groups from IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn set_user_group_resolution_configuration(mut self, input: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>) -> Self {
         self.user_group_resolution_configuration = input;
         self
     }
-    /// <p>Enables fetching access levels of groups and users from an IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+    /// <p>Gets users and groups from IAM Identity Center identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn get_user_group_resolution_configuration(&self) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
         &self.user_group_resolution_configuration
     }

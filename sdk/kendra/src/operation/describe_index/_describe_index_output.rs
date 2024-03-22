@@ -9,9 +9,9 @@ pub struct DescribeIndexOutput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
     pub edition: ::std::option::Option<crate::types::IndexEdition>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon CloudWatch logs.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMS customer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub status: ::std::option::Option<crate::types::IndexStatus>,
@@ -19,7 +19,7 @@ pub struct DescribeIndexOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when the index was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Unix when the index was last updated.</p>
+    /// <p>The Unix timestamp when the index was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
     pub document_metadata_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
@@ -33,7 +33,7 @@ pub struct DescribeIndexOutput {
     pub user_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
     /// <p>The user context policy for the Amazon Kendra index.</p>
     pub user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
+    /// <p>Whether you have enabled IAM Identity Center identity source for your users and groups. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub user_group_resolution_configuration: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
     _request_id: Option<String>,
 }
@@ -50,11 +50,11 @@ impl DescribeIndexOutput {
     pub fn edition(&self) -> ::std::option::Option<&crate::types::IndexEdition> {
         self.edition.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon CloudWatch logs.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMS customer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
@@ -70,7 +70,7 @@ impl DescribeIndexOutput {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix when the index was last updated.</p>
+    /// <p>The Unix timestamp when the index was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -102,7 +102,7 @@ impl DescribeIndexOutput {
     pub fn user_context_policy(&self) -> ::std::option::Option<&crate::types::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
+    /// <p>Whether you have enabled IAM Identity Center identity source for your users and groups. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn user_group_resolution_configuration(&self) -> ::std::option::Option<&crate::types::UserGroupResolutionConfiguration> {
         self.user_group_resolution_configuration.as_ref()
     }
@@ -184,31 +184,31 @@ impl DescribeIndexOutputBuilder {
     pub fn get_edition(&self) -> &::std::option::Option<crate::types::IndexEdition> {
         &self.edition
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon CloudWatch logs.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon CloudWatch logs.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon CloudWatch logs.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMS customer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMS customer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.server_side_encryption_configuration = input;
         self
     }
-    /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+    /// <p>The identifier of the KMS customer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         &self.server_side_encryption_configuration
     }
@@ -254,17 +254,17 @@ impl DescribeIndexOutputBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The Unix when the index was last updated.</p>
+    /// <p>The Unix timestamp when the index was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix when the index was last updated.</p>
+    /// <p>The Unix timestamp when the index was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The Unix when the index was last updated.</p>
+    /// <p>The Unix timestamp when the index was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
@@ -367,17 +367,17 @@ impl DescribeIndexOutputBuilder {
     pub fn get_user_context_policy(&self) -> &::std::option::Option<crate::types::UserContextPolicy> {
         &self.user_context_policy
     }
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
+    /// <p>Whether you have enabled IAM Identity Center identity source for your users and groups. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn user_group_resolution_configuration(mut self, input: crate::types::UserGroupResolutionConfiguration) -> Self {
         self.user_group_resolution_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
+    /// <p>Whether you have enabled IAM Identity Center identity source for your users and groups. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn set_user_group_resolution_configuration(mut self, input: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>) -> Self {
         self.user_group_resolution_configuration = input;
         self
     }
-    /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center identity source.</p>
+    /// <p>Whether you have enabled IAM Identity Center identity source for your users and groups. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn get_user_group_resolution_configuration(&self) -> &::std::option::Option<crate::types::UserGroupResolutionConfiguration> {
         &self.user_group_resolution_configuration
     }

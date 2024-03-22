@@ -22,7 +22,7 @@ impl DescribeIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeIndex`.
 ///
-/// <p>Gets information about an existing Amazon Kendra index.</p>
+/// <p>Gets information about an Amazon Kendra index.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIndexFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
