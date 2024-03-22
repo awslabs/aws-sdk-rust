@@ -2435,6 +2435,10 @@ source_hash = 'd6ea8e07b94101a2c092315bb0258933080e366cbd1ef6f34e6c089aa8535738'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '314dce251860de25f6f49bcea9bd7168ec2bf2f94eeb524e859963fd48e96487'
+
+[release]
+tag = 'release-2024-03-22'
+
 [release.crates]
 aws-sdk-firehose = '1.19.1'
 aws-sdk-kendra = '1.18.0'
