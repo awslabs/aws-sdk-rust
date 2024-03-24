@@ -51,3 +51,6 @@ pub mod use_dual_stack;
 /// Default access token provider chain
 #[cfg(feature = "sso")]
 pub mod token;
+
+/// Default endpoint-url provider chain
+pub mod endpoint_url;

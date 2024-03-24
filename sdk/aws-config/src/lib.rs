@@ -208,6 +208,7 @@ pub async fn load_defaults(version: BehaviorVersion) -> SdkConfig {
 }
 
 mod loader {
+    use crate::default_provider::endpoint_url::use_endpoint_url_provider;
     use crate::default_provider::use_dual_stack::use_dual_stack_provider;
     use crate::default_provider::use_fips::use_fips_provider;
     use crate::default_provider::{app_name, credentials, region, retry_config, timeout_config};
@@ -749,6 +750,12 @@ mod loader {
                     .await
             };
 
+            let endpoint_url = if let Some(endpoint_url) = self.endpoint_url {
+                Some(endpoint_url)
+            } else {
+                use_endpoint_url_provider(&conf).await
+            };
+
             let retry_config = if let Some(retry_config) = self.retry_config {
                 retry_config
             } else {
@@ -818,7 +825,7 @@ mod loader {
             builder.set_credentials_provider(credentials_provider);
             builder.set_token_provider(token_provider);
             builder.set_sleep_impl(sleep_impl);
-            builder.set_endpoint_url(self.endpoint_url);
+            builder.set_endpoint_url(endpoint_url);
             builder.set_use_fips(use_fips);
             builder.set_use_dual_stack(use_dual_stack);
             builder.set_stalled_stream_protection(self.stalled_stream_protection_config);
@@ -927,6 +934,13 @@ mod loader {
 
             let conf = base_conf().load().await;
             assert_eq!(None, conf.use_dual_stack());
+        }
+
+        #[tokio::test]
+        async fn endpoint_url() {
+            let endpoint_url = "http://localhost:1234";
+            let conf = base_conf().endpoint_url(endpoint_url).load().await;
+            assert_eq!(Some(endpoint_url), conf.endpoint_url());
         }
 
         #[tokio::test]
