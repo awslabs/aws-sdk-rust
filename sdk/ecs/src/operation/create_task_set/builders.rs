@@ -22,7 +22,9 @@ impl CreateTaskSetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTaskSet`.
 ///
-/// <p>Create a task set in the specified cluster and service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+/// <p>Create a task set in the specified cluster and service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><note>
+/// <p>The following change began on March 21, 2024. When the task definition revision is not specified, Amazon ECS resolves the task definition revision before it authorizes the task definition.</p>
+/// </note>
 /// <p>For information about the maximum number of task sets and otther quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon ECS service quotas</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTaskSetFluentBuilder {

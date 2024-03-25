@@ -17,6 +17,8 @@
 ///     SourceType::Codepipeline => { /* ... */ },
 ///     SourceType::Github => { /* ... */ },
 ///     SourceType::GithubEnterprise => { /* ... */ },
+///     SourceType::Gitlab => { /* ... */ },
+///     SourceType::GitlabSelfManaged => { /* ... */ },
 ///     SourceType::NoSource => { /* ... */ },
 ///     SourceType::S3 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,6 +59,10 @@ pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     GithubEnterprise,
     #[allow(missing_docs)] // documentation missing in model
+    Gitlab,
+    #[allow(missing_docs)] // documentation missing in model
+    GitlabSelfManaged,
+    #[allow(missing_docs)] // documentation missing in model
     NoSource,
     #[allow(missing_docs)] // documentation missing in model
     S3,
@@ -72,6 +78,8 @@ impl ::std::convert::From<&str> for SourceType {
             "CODEPIPELINE" => SourceType::Codepipeline,
             "GITHUB" => SourceType::Github,
             "GITHUB_ENTERPRISE" => SourceType::GithubEnterprise,
+            "GITLAB" => SourceType::Gitlab,
+            "GITLAB_SELF_MANAGED" => SourceType::GitlabSelfManaged,
             "NO_SOURCE" => SourceType::NoSource,
             "S3" => SourceType::S3,
             other => SourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -94,6 +102,8 @@ impl SourceType {
             SourceType::Codepipeline => "CODEPIPELINE",
             SourceType::Github => "GITHUB",
             SourceType::GithubEnterprise => "GITHUB_ENTERPRISE",
+            SourceType::Gitlab => "GITLAB",
+            SourceType::GitlabSelfManaged => "GITLAB_SELF_MANAGED",
             SourceType::NoSource => "NO_SOURCE",
             SourceType::S3 => "S3",
             SourceType::Unknown(value) => value.as_str(),
@@ -107,6 +117,8 @@ impl SourceType {
             "CODEPIPELINE",
             "GITHUB",
             "GITHUB_ENTERPRISE",
+            "GITLAB",
+            "GITLAB_SELF_MANAGED",
             "NO_SOURCE",
             "S3",
         ]
@@ -137,6 +149,8 @@ impl ::std::fmt::Display for SourceType {
             SourceType::Codepipeline => write!(f, "CODEPIPELINE"),
             SourceType::Github => write!(f, "GITHUB"),
             SourceType::GithubEnterprise => write!(f, "GITHUB_ENTERPRISE"),
+            SourceType::Gitlab => write!(f, "GITLAB"),
+            SourceType::GitlabSelfManaged => write!(f, "GITLAB_SELF_MANAGED"),
             SourceType::NoSource => write!(f, "NO_SOURCE"),
             SourceType::S3 => write!(f, "S3"),
             SourceType::Unknown(value) => write!(f, "{}", value),

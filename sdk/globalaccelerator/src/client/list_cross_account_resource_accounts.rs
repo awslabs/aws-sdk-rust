@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::list_cross_account_resource_accounts::builders::ListCrossAccountResourceAccountsFluentBuilder::send) it.
     /// - On success, responds with [`ListCrossAccountResourceAccountsOutput`](crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsOutput) with field(s):
-    ///   - [`resource_owner_aws_account_ids(Option<Vec::<String>>)`](crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsOutput::resource_owner_aws_account_ids): <p>The account IDs of principals (resource owners) in a cross-account attachment who can add endpoints (resources) listed in the same attachment.</p>
+    ///   - [`resource_owner_aws_account_ids(Option<Vec::<String>>)`](crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsOutput::resource_owner_aws_account_ids): <p>The account IDs of principals (resource owners) in a cross-account attachment who can work with resources listed in the same attachment.</p>
     /// - On failure, responds with [`SdkError<ListCrossAccountResourceAccountsError>`](crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsError)
     pub fn list_cross_account_resource_accounts(
         &self,

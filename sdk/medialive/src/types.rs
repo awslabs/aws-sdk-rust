@@ -317,6 +317,14 @@ pub use crate::types::_mpeg2_adaptive_quantization::Mpeg2AdaptiveQuantization;
 
 pub use crate::types::_h265_settings::H265Settings;
 
+pub use crate::types::_h265_treeblock_size::H265TreeblockSize;
+
+pub use crate::types::_h265_tile_padding::H265TilePadding;
+
+pub use crate::types::_h265_mv_temporal_predictor::H265MvTemporalPredictor;
+
+pub use crate::types::_h265_mv_over_picture_boundaries::H265MvOverPictureBoundaries;
+
 pub use crate::types::_h265_timecode_insertion_behavior::H265TimecodeInsertionBehavior;
 
 pub use crate::types::_h265_tier::H265Tier;
@@ -1447,6 +1455,10 @@ mod _h265_level;
 
 mod _h265_look_ahead_rate_control;
 
+mod _h265_mv_over_picture_boundaries;
+
+mod _h265_mv_temporal_predictor;
+
 mod _h265_profile;
 
 mod _h265_rate_control_mode;
@@ -1459,7 +1471,11 @@ mod _h265_settings;
 
 mod _h265_tier;
 
+mod _h265_tile_padding;
+
 mod _h265_timecode_insertion_behavior;
+
+mod _h265_treeblock_size;
 
 mod _hdr10_settings;
 

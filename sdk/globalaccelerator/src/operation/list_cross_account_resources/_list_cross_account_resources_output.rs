@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCrossAccountResourcesOutput {
-    /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+    /// <p>The cross-account resources used with an accelerator.</p>
     pub cross_account_resources: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountResource>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCrossAccountResourcesOutput {
-    /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+    /// <p>The cross-account resources used with an accelerator.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_resources.is_none()`.
     pub fn cross_account_resources(&self) -> &[crate::types::CrossAccountResource] {
@@ -46,19 +46,19 @@ impl ListCrossAccountResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cross_account_resources`](Self::set_cross_account_resources).
     ///
-    /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+    /// <p>The cross-account resources used with an accelerator.</p>
     pub fn cross_account_resources(mut self, input: crate::types::CrossAccountResource) -> Self {
         let mut v = self.cross_account_resources.unwrap_or_default();
         v.push(input);
         self.cross_account_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+    /// <p>The cross-account resources used with an accelerator.</p>
     pub fn set_cross_account_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountResource>>) -> Self {
         self.cross_account_resources = input;
         self
     }
-    /// <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+    /// <p>The cross-account resources used with an accelerator.</p>
     pub fn get_cross_account_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossAccountResource>> {
         &self.cross_account_resources
     }

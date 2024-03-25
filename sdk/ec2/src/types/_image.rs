@@ -40,7 +40,7 @@ pub struct Image {
     pub ena_support: ::std::option::Option<bool>,
     /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
     pub hypervisor: ::std::option::Option<crate::types::HypervisorType>,
-    /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
     pub image_owner_alias: ::std::option::Option<::std::string::String>,
     /// <p>The name of the AMI that was provided during image creation.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -144,7 +144,7 @@ impl Image {
     pub fn hypervisor(&self) -> ::std::option::Option<&crate::types::HypervisorType> {
         self.hypervisor.as_ref()
     }
-    /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
     pub fn image_owner_alias(&self) -> ::std::option::Option<&str> {
         self.image_owner_alias.as_deref()
     }
@@ -507,17 +507,17 @@ impl ImageBuilder {
     pub fn get_hypervisor(&self) -> &::std::option::Option<crate::types::HypervisorType> {
         &self.hypervisor
     }
-    /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
     pub fn image_owner_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_owner_alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
     pub fn set_image_owner_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_owner_alias = input;
         self
     }
-    /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+    /// <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
     pub fn get_image_owner_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_owner_alias
     }

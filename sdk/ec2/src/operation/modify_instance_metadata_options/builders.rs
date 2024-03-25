@@ -129,7 +129,14 @@ impl ModifyInstanceMetadataOptionsFluentBuilder {
     /// <li>
     /// <p><code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code>, the default is <code>required</code>.</p>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code> and the account level default is set to <code>no-preference</code>, the default is <code>required</code>.</p></li>
+    /// <li>
+    /// <p>If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code>, but the account level default is set to <code>V1 or V2</code>, the default is <code>optional</code>.</p></li>
+    /// </ul>
+    /// <p>The default value can also be affected by other combinations of parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn http_tokens(mut self, input: crate::types::HttpTokensState) -> Self {
         self.inner = self.inner.http_tokens(input);
         self
@@ -141,7 +148,14 @@ impl ModifyInstanceMetadataOptionsFluentBuilder {
     /// <li>
     /// <p><code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code>, the default is <code>required</code>.</p>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code> and the account level default is set to <code>no-preference</code>, the default is <code>required</code>.</p></li>
+    /// <li>
+    /// <p>If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code>, but the account level default is set to <code>V1 or V2</code>, the default is <code>optional</code>.</p></li>
+    /// </ul>
+    /// <p>The default value can also be affected by other combinations of parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::HttpTokensState>) -> Self {
         self.inner = self.inner.set_http_tokens(input);
         self
@@ -153,7 +167,14 @@ impl ModifyInstanceMetadataOptionsFluentBuilder {
     /// <li>
     /// <p><code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
-    /// <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code>, the default is <code>required</code>.</p>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code> and the account level default is set to <code>no-preference</code>, the default is <code>required</code>.</p></li>
+    /// <li>
+    /// <p>If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code>, but the account level default is set to <code>V1 or V2</code>, the default is <code>optional</code>.</p></li>
+    /// </ul>
+    /// <p>The default value can also be affected by other combinations of parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::HttpTokensState> {
         self.inner.get_http_tokens()
     }

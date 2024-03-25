@@ -3,13 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionByoipCidrInput {
-    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or another Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
     pub cidr_authorization_context: ::std::option::Option<crate::types::CidrAuthorizationContext>,
 }
 impl ProvisionByoipCidrInput {
-    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or another Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
@@ -33,18 +35,21 @@ pub struct ProvisionByoipCidrInputBuilder {
     pub(crate) cidr_authorization_context: ::std::option::Option<crate::types::CidrAuthorizationContext>,
 }
 impl ProvisionByoipCidrInputBuilder {
-    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or another Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or another Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
     }
-    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or another Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }

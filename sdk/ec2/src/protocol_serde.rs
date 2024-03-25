@@ -1783,6 +1783,10 @@ pub(crate) mod shape_get_image_block_public_access_state;
 
 pub(crate) mod shape_get_image_block_public_access_state_input;
 
+pub(crate) mod shape_get_instance_metadata_defaults;
+
+pub(crate) mod shape_get_instance_metadata_defaults_input;
+
 pub(crate) mod shape_get_instance_types_from_instance_requirements;
 
 pub(crate) mod shape_get_instance_types_from_instance_requirements_input;
@@ -2026,6 +2030,10 @@ pub(crate) mod shape_modify_instance_event_window_input;
 pub(crate) mod shape_modify_instance_maintenance_options;
 
 pub(crate) mod shape_modify_instance_maintenance_options_input;
+
+pub(crate) mod shape_modify_instance_metadata_defaults;
+
+pub(crate) mod shape_modify_instance_metadata_defaults_input;
 
 pub(crate) mod shape_modify_instance_metadata_options;
 
@@ -3000,6 +3008,8 @@ pub(crate) mod shape_instance_family_credit_specification;
 pub(crate) mod shape_instance_id_set;
 
 pub(crate) mod shape_instance_list;
+
+pub(crate) mod shape_instance_metadata_defaults_response;
 
 pub(crate) mod shape_instance_metadata_options_response;
 

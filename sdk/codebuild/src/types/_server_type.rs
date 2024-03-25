@@ -15,6 +15,8 @@
 ///     ServerType::Bitbucket => { /* ... */ },
 ///     ServerType::Github => { /* ... */ },
 ///     ServerType::GithubEnterprise => { /* ... */ },
+///     ServerType::Gitlab => { /* ... */ },
+///     ServerType::GitlabSelfManaged => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +50,10 @@ pub enum ServerType {
     Github,
     #[allow(missing_docs)] // documentation missing in model
     GithubEnterprise,
+    #[allow(missing_docs)] // documentation missing in model
+    Gitlab,
+    #[allow(missing_docs)] // documentation missing in model
+    GitlabSelfManaged,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +64,8 @@ impl ::std::convert::From<&str> for ServerType {
             "BITBUCKET" => ServerType::Bitbucket,
             "GITHUB" => ServerType::Github,
             "GITHUB_ENTERPRISE" => ServerType::GithubEnterprise,
+            "GITLAB" => ServerType::Gitlab,
+            "GITLAB_SELF_MANAGED" => ServerType::GitlabSelfManaged,
             other => ServerType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +84,14 @@ impl ServerType {
             ServerType::Bitbucket => "BITBUCKET",
             ServerType::Github => "GITHUB",
             ServerType::GithubEnterprise => "GITHUB_ENTERPRISE",
+            ServerType::Gitlab => "GITLAB",
+            ServerType::GitlabSelfManaged => "GITLAB_SELF_MANAGED",
             ServerType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"]
+        &["BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE", "GITLAB", "GITLAB_SELF_MANAGED"]
     }
 }
 impl ::std::convert::AsRef<str> for ServerType {
@@ -107,6 +117,8 @@ impl ::std::fmt::Display for ServerType {
             ServerType::Bitbucket => write!(f, "BITBUCKET"),
             ServerType::Github => write!(f, "GITHUB"),
             ServerType::GithubEnterprise => write!(f, "GITHUB_ENTERPRISE"),
+            ServerType::Gitlab => write!(f, "GITLAB"),
+            ServerType::GitlabSelfManaged => write!(f, "GITLAB_SELF_MANAGED"),
             ServerType::Unknown(value) => write!(f, "{}", value),
         }
     }

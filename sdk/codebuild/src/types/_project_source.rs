@@ -13,9 +13,13 @@ pub struct ProjectSource {
     /// <li>
     /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
     /// <li>
-    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub repository.</p></li>
     /// <li>
     /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB</code>: The source code is in a GitLab repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.</p></li>
     /// <li>
     /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
     /// <li>
@@ -58,6 +62,8 @@ pub struct ProjectSource {
     /// <li>
     /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// <li>
+    /// <p>For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitLab account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected to your GitLab account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to override the default connection and use this connection instead, set the <code>auth</code> object's <code>type</code> value to <code>CODECONNECTIONS</code> in the <code>source</code> object.</p></li>
+    /// <li>
     /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
@@ -72,7 +78,7 @@ pub struct ProjectSource {
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
     /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
     pub auth: ::std::option::Option<crate::types::SourceAuth>,
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
@@ -94,9 +100,13 @@ impl ProjectSource {
     /// <li>
     /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
     /// <li>
-    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub repository.</p></li>
     /// <li>
     /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB</code>: The source code is in a GitLab repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.</p></li>
     /// <li>
     /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
     /// <li>
@@ -141,6 +151,8 @@ impl ProjectSource {
     /// <li>
     /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// <li>
+    /// <p>For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitLab account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected to your GitLab account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to override the default connection and use this connection instead, set the <code>auth</code> object's <code>type</code> value to <code>CODECONNECTIONS</code> in the <code>source</code> object.</p></li>
+    /// <li>
     /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
@@ -165,7 +177,7 @@ impl ProjectSource {
     pub fn auth(&self) -> ::std::option::Option<&crate::types::SourceAuth> {
         self.auth.as_ref()
     }
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
@@ -217,9 +229,13 @@ impl ProjectSourceBuilder {
     /// <li>
     /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
     /// <li>
-    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub repository.</p></li>
     /// <li>
     /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB</code>: The source code is in a GitLab repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.</p></li>
     /// <li>
     /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
     /// <li>
@@ -239,9 +255,13 @@ impl ProjectSourceBuilder {
     /// <li>
     /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
     /// <li>
-    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub repository.</p></li>
     /// <li>
     /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB</code>: The source code is in a GitLab repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.</p></li>
     /// <li>
     /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
     /// <li>
@@ -260,9 +280,13 @@ impl ProjectSourceBuilder {
     /// <li>
     /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
     /// <li>
-    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub repository.</p></li>
     /// <li>
     /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB</code>: The source code is in a GitLab repository.</p></li>
+    /// <li>
+    /// <p><code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.</p></li>
     /// <li>
     /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
     /// <li>
@@ -307,6 +331,8 @@ impl ProjectSourceBuilder {
     /// <li>
     /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// <li>
+    /// <p>For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitLab account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected to your GitLab account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to override the default connection and use this connection instead, set the <code>auth</code> object's <code>type</code> value to <code>CODECONNECTIONS</code> in the <code>source</code> object.</p></li>
+    /// <li>
     /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
@@ -350,6 +376,8 @@ impl ProjectSourceBuilder {
     /// <li>
     /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// <li>
+    /// <p>For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitLab account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected to your GitLab account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to override the default connection and use this connection instead, set the <code>auth</code> object's <code>type</code> value to <code>CODECONNECTIONS</code> in the <code>source</code> object.</p></li>
+    /// <li>
     /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
@@ -392,6 +420,8 @@ impl ProjectSourceBuilder {
     /// </ul></li>
     /// <li>
     /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitLab account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected to your GitLab account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to override the default connection and use this connection instead, set the <code>auth</code> object's <code>type</code> value to <code>CODECONNECTIONS</code> in the <code>source</code> object.</p></li>
     /// <li>
     /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
@@ -461,7 +491,7 @@ impl ProjectSourceBuilder {
     pub fn get_auth(&self) -> &::std::option::Option<crate::types::SourceAuth> {
         &self.auth
     }
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
@@ -469,7 +499,7 @@ impl ProjectSourceBuilder {
         self.report_build_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
@@ -477,7 +507,7 @@ impl ProjectSourceBuilder {
         self.report_build_status = input;
         self
     }
-    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
+    /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>

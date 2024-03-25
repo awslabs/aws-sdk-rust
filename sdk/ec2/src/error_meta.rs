@@ -11639,6 +11639,34 @@ impl From<crate::operation::get_image_block_public_access_state::GetImageBlockPu
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_instance_metadata_defaults::GetInstanceMetadataDefaultsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_instance_metadata_defaults::GetInstanceMetadataDefaultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_instance_metadata_defaults::GetInstanceMetadataDefaultsError> for Error {
+    fn from(err: crate::operation::get_instance_metadata_defaults::GetInstanceMetadataDefaultsError) -> Self {
+        match err {
+            crate::operation::get_instance_metadata_defaults::GetInstanceMetadataDefaultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
@@ -13308,6 +13336,38 @@ impl From<crate::operation::modify_instance_maintenance_options::ModifyInstanceM
     fn from(err: crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError) -> Self {
         match err {
             crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_instance_metadata_defaults::ModifyInstanceMetadataDefaultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_instance_metadata_defaults::ModifyInstanceMetadataDefaultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_instance_metadata_defaults::ModifyInstanceMetadataDefaultsError> for Error {
+    fn from(err: crate::operation::modify_instance_metadata_defaults::ModifyInstanceMetadataDefaultsError) -> Self {
+        match err {
+            crate::operation::modify_instance_metadata_defaults::ModifyInstanceMetadataDefaultsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

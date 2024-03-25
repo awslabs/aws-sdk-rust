@@ -30,6 +30,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The state of the address pool.</p>
     pub state: ::std::option::Option<crate::types::ByoipCidrState>,
@@ -38,6 +39,7 @@ pub struct ByoipCidr {
 }
 impl ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
@@ -69,16 +71,19 @@ pub struct ByoipCidrBuilder {
 }
 impl ByoipCidrBuilder {
     /// <p>The address range, in CIDR notation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address range, in CIDR notation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
     }
     /// <p>The address range, in CIDR notation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }

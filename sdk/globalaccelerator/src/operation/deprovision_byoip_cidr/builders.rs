@@ -111,16 +111,19 @@ impl DeprovisionByoipCidrFluentBuilder {
         self
     }
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
         self
     }
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr(input);
         self
     }
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr()
     }

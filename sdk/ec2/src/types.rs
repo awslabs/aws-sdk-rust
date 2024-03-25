@@ -817,6 +817,12 @@ pub use crate::types::_host_tenancy::HostTenancy;
 
 pub use crate::types::_affinity::Affinity;
 
+pub use crate::types::_default_instance_metadata_tags_state::DefaultInstanceMetadataTagsState;
+
+pub use crate::types::_default_instance_metadata_endpoint_state::DefaultInstanceMetadataEndpointState;
+
+pub use crate::types::_metadata_default_http_tokens_state::MetadataDefaultHttpTokensState;
+
 pub use crate::types::_instance_event_window::InstanceEventWindow;
 
 pub use crate::types::_instance_event_window_state::InstanceEventWindowState;
@@ -1132,6 +1138,8 @@ pub use crate::types::_ipam_address_history_record::IpamAddressHistoryRecord;
 pub use crate::types::_ipam_address_history_resource_type::IpamAddressHistoryResourceType;
 
 pub use crate::types::_instance_type_info_from_instance_requirements::InstanceTypeInfoFromInstanceRequirements;
+
+pub use crate::types::_instance_metadata_defaults_response::InstanceMetadataDefaultsResponse;
 
 pub use crate::types::_capacity_reservation_group::CapacityReservationGroup;
 
@@ -2499,6 +2507,10 @@ mod _data_response;
 
 mod _datafeed_subscription_state;
 
+mod _default_instance_metadata_endpoint_state;
+
+mod _default_instance_metadata_tags_state;
+
 mod _default_route_table_association_value;
 
 mod _default_route_table_propagation_value;
@@ -2951,6 +2963,8 @@ mod _instance_market_options_request;
 
 mod _instance_match_criteria;
 
+mod _instance_metadata_defaults_response;
+
 mod _instance_metadata_endpoint_state;
 
 mod _instance_metadata_options_request;
@@ -3336,6 +3350,8 @@ mod _memory_info;
 mod _memory_mib;
 
 mod _memory_mib_request;
+
+mod _metadata_default_http_tokens_state;
 
 mod _metric_point;
 

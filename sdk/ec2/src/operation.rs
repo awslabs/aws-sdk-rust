@@ -1321,6 +1321,9 @@ pub mod get_host_reservation_purchase_preview;
 /// Types for the `GetImageBlockPublicAccessState` operation.
 pub mod get_image_block_public_access_state;
 
+/// Types for the `GetInstanceMetadataDefaults` operation.
+pub mod get_instance_metadata_defaults;
+
 /// Types for the `GetInstanceTypesFromInstanceRequirements` operation.
 pub mod get_instance_types_from_instance_requirements;
 
@@ -1503,6 +1506,9 @@ pub mod modify_instance_event_window;
 
 /// Types for the `ModifyInstanceMaintenanceOptions` operation.
 pub mod modify_instance_maintenance_options;
+
+/// Types for the `ModifyInstanceMetadataDefaults` operation.
+pub mod modify_instance_metadata_defaults;
 
 /// Types for the `ModifyInstanceMetadataOptions` operation.
 pub mod modify_instance_metadata_options;

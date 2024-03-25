@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCrossAccountResourceAccountsOutput {
-    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can add endpoints (resources) listed in the same attachment.</p>
+    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can work with resources listed in the same attachment.</p>
     pub resource_owner_aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListCrossAccountResourceAccountsOutput {
-    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can add endpoints (resources) listed in the same attachment.</p>
+    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can work with resources listed in the same attachment.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_owner_aws_account_ids.is_none()`.
     pub fn resource_owner_aws_account_ids(&self) -> &[::std::string::String] {
@@ -39,19 +39,19 @@ impl ListCrossAccountResourceAccountsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_owner_aws_account_ids`](Self::set_resource_owner_aws_account_ids).
     ///
-    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can add endpoints (resources) listed in the same attachment.</p>
+    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can work with resources listed in the same attachment.</p>
     pub fn resource_owner_aws_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_owner_aws_account_ids.unwrap_or_default();
         v.push(input.into());
         self.resource_owner_aws_account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can add endpoints (resources) listed in the same attachment.</p>
+    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can work with resources listed in the same attachment.</p>
     pub fn set_resource_owner_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_owner_aws_account_ids = input;
         self
     }
-    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can add endpoints (resources) listed in the same attachment.</p>
+    /// <p>The account IDs of principals (resource owners) in a cross-account attachment who can work with resources listed in the same attachment.</p>
     pub fn get_resource_owner_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_owner_aws_account_ids
     }

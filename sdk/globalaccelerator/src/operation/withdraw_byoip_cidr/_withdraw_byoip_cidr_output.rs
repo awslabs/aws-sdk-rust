@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WithdrawByoipCidrOutput {
-    /// <p>Information about the address pool.</p>
+    /// <p>Information about the BYOIP address pool.</p>
     pub byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,
 }
 impl WithdrawByoipCidrOutput {
-    /// <p>Information about the address pool.</p>
+    /// <p>Information about the BYOIP address pool.</p>
     pub fn byoip_cidr(&self) -> ::std::option::Option<&crate::types::ByoipCidr> {
         self.byoip_cidr.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct WithdrawByoipCidrOutputBuilder {
     _request_id: Option<String>,
 }
 impl WithdrawByoipCidrOutputBuilder {
-    /// <p>Information about the address pool.</p>
+    /// <p>Information about the BYOIP address pool.</p>
     pub fn byoip_cidr(mut self, input: crate::types::ByoipCidr) -> Self {
         self.byoip_cidr = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the address pool.</p>
+    /// <p>Information about the BYOIP address pool.</p>
     pub fn set_byoip_cidr(mut self, input: ::std::option::Option<crate::types::ByoipCidr>) -> Self {
         self.byoip_cidr = input;
         self
     }
-    /// <p>Information about the address pool.</p>
+    /// <p>Information about the BYOIP address pool.</p>
     pub fn get_byoip_cidr(&self) -> &::std::option::Option<crate::types::ByoipCidr> {
         &self.byoip_cidr
     }

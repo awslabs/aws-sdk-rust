@@ -30,7 +30,7 @@ pub struct CreateServiceInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p><note>
-    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
@@ -95,6 +95,7 @@ pub struct CreateServiceInput {
     /// <p>When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.</p>
     pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
+    /// <p>You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The default is <code>NONE</code>.</p>
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     /// <p>Determines whether the execute command functionality is turned on for the service. If <code>true</code>, this enables execute command functionality on all containers in the service tasks.</p>
@@ -151,7 +152,7 @@ impl CreateServiceInput {
     }
     /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p><note>
-    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
@@ -250,6 +251,7 @@ impl CreateServiceInput {
         self.enable_ecs_managed_tags
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
+    /// <p>You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The default is <code>NONE</code>.</p>
     pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
@@ -453,7 +455,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p><note>
-    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
@@ -464,7 +466,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p><note>
-    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
@@ -475,7 +477,7 @@ impl CreateServiceInputBuilder {
     }
     /// <p>The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p><note>
-    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+    /// <p>Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     /// </note>
     /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.</p>
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
@@ -781,18 +783,21 @@ impl CreateServiceInputBuilder {
         &self.enable_ecs_managed_tags
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
+    /// <p>You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The default is <code>NONE</code>.</p>
     pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
         self.propagate_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
+    /// <p>You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The default is <code>NONE</code>.</p>
     pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
         self.propagate_tags = input;
         self
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.</p>
+    /// <p>You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The default is <code>NONE</code>.</p>
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
         &self.propagate_tags

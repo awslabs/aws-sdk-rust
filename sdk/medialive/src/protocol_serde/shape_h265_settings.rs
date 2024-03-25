@@ -138,6 +138,30 @@ pub fn ser_h265_settings(
         crate::protocol_serde::shape_timecode_burnin_settings::ser_timecode_burnin_settings(&mut object_33, var_32)?;
         object_33.finish();
     }
+    if let Some(var_34) = &input.mv_over_picture_boundaries {
+        object.key("mvOverPictureBoundaries").string(var_34.as_str());
+    }
+    if let Some(var_35) = &input.mv_temporal_predictor {
+        object.key("mvTemporalPredictor").string(var_35.as_str());
+    }
+    if let Some(var_36) = &input.tile_height {
+        object.key("tileHeight").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_36).into()),
+        );
+    }
+    if let Some(var_37) = &input.tile_padding {
+        object.key("tilePadding").string(var_37.as_str());
+    }
+    if let Some(var_38) = &input.tile_width {
+        object.key("tileWidth").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_38).into()),
+        );
+    }
+    if let Some(var_39) = &input.treeblock_size {
+        object.key("treeblockSize").string(var_39.as_str());
+    }
     Ok(())
 }
 
@@ -354,6 +378,48 @@ where
                         "timecodeBurninSettings" => {
                             builder = builder.set_timecode_burnin_settings(
                                 crate::protocol_serde::shape_timecode_burnin_settings::de_timecode_burnin_settings(tokens)?,
+                            );
+                        }
+                        "mvOverPictureBoundaries" => {
+                            builder = builder.set_mv_over_picture_boundaries(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265MvOverPictureBoundaries::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "mvTemporalPredictor" => {
+                            builder = builder.set_mv_temporal_predictor(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265MvTemporalPredictor::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "tileHeight" => {
+                            builder = builder.set_tile_height(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "tilePadding" => {
+                            builder = builder.set_tile_padding(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265TilePadding::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "tileWidth" => {
+                            builder = builder.set_tile_width(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "treeblockSize" => {
+                            builder = builder.set_treeblock_size(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265TreeblockSize::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

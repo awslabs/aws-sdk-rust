@@ -769,6 +769,8 @@ pub use crate::types::_ipam_address_history_record::IpamAddressHistoryRecordBuil
 
 pub use crate::types::_instance_type_info_from_instance_requirements::InstanceTypeInfoFromInstanceRequirementsBuilder;
 
+pub use crate::types::_instance_metadata_defaults_response::InstanceMetadataDefaultsResponseBuilder;
+
 pub use crate::types::_capacity_reservation_group::CapacityReservationGroupBuilder;
 
 pub use crate::types::_integrate_services::IntegrateServicesBuilder;

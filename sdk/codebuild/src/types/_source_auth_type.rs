@@ -12,6 +12,7 @@
 /// ```text
 /// # let sourceauthtype = unimplemented!();
 /// match sourceauthtype {
+///     SourceAuthType::Codeconnections => { /* ... */ },
 ///     SourceAuthType::Oauth => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum SourceAuthType {
     #[allow(missing_docs)] // documentation missing in model
+    Codeconnections,
+    #[allow(missing_docs)] // documentation missing in model
     Oauth,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +52,7 @@ pub enum SourceAuthType {
 impl ::std::convert::From<&str> for SourceAuthType {
     fn from(s: &str) -> Self {
         match s {
+            "CODECONNECTIONS" => SourceAuthType::Codeconnections,
             "OAUTH" => SourceAuthType::Oauth,
             other => SourceAuthType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +69,14 @@ impl SourceAuthType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SourceAuthType::Codeconnections => "CODECONNECTIONS",
             SourceAuthType::Oauth => "OAUTH",
             SourceAuthType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OAUTH"]
+        &["CODECONNECTIONS", "OAUTH"]
     }
 }
 impl ::std::convert::AsRef<str> for SourceAuthType {
@@ -94,6 +99,7 @@ impl SourceAuthType {
 impl ::std::fmt::Display for SourceAuthType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SourceAuthType::Codeconnections => write!(f, "CODECONNECTIONS"),
             SourceAuthType::Oauth => write!(f, "OAUTH"),
             SourceAuthType::Unknown(value) => write!(f, "{}", value),
         }

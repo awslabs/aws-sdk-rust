@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`WithdrawByoipCidr`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cidr(impl Into<String>)`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::cidr) / [`set_cidr(Option<String>)`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::set_cidr):<br>required: **true**<br><p>The address range, in CIDR notation.</p><br>
+    ///   - [`cidr(impl Into<String>)`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::cidr) / [`set_cidr(Option<String>)`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::set_cidr):<br>required: **true**<br><p>The address range, in CIDR notation.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p><br>
     /// - On success, responds with [`WithdrawByoipCidrOutput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput) with field(s):
-    ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput::byoip_cidr): <p>Information about the address pool.</p>
+    ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput::byoip_cidr): <p>Information about the BYOIP address pool.</p>
     /// - On failure, responds with [`SdkError<WithdrawByoipCidrError>`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError)
     pub fn withdraw_byoip_cidr(&self) -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder {
         crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::new(self.handle.clone())

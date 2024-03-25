@@ -11,13 +11,12 @@ pub struct InstanceMetadataOptionsResponse {
     /// <p>Indicates whether IMDSv2 is required.</p>
     /// <ul>
     /// <li>
-    /// <p><code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role credentials.</p></li>
+    /// <p><code>optional</code> - IMDSv2 is optional, which means that you can use either IMDSv2 or IMDSv1.</p></li>
     /// <li>
-    /// <p><code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
+    /// <p><code>required</code> - IMDSv2 is required, which means that IMDSv1 is disabled, and you must use IMDSv2.</p></li>
     /// </ul>
     pub http_tokens: ::std::option::Option<crate::types::HttpTokensState>,
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel.</p>
     /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
@@ -39,15 +38,14 @@ impl InstanceMetadataOptionsResponse {
     /// <p>Indicates whether IMDSv2 is required.</p>
     /// <ul>
     /// <li>
-    /// <p><code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role credentials.</p></li>
+    /// <p><code>optional</code> - IMDSv2 is optional, which means that you can use either IMDSv2 or IMDSv1.</p></li>
     /// <li>
-    /// <p><code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
+    /// <p><code>required</code> - IMDSv2 is required, which means that IMDSv1 is disabled, and you must use IMDSv2.</p></li>
     /// </ul>
     pub fn http_tokens(&self) -> ::std::option::Option<&crate::types::HttpTokensState> {
         self.http_tokens.as_ref()
     }
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel.</p>
     /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
@@ -109,9 +107,9 @@ impl InstanceMetadataOptionsResponseBuilder {
     /// <p>Indicates whether IMDSv2 is required.</p>
     /// <ul>
     /// <li>
-    /// <p><code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role credentials.</p></li>
+    /// <p><code>optional</code> - IMDSv2 is optional, which means that you can use either IMDSv2 or IMDSv1.</p></li>
     /// <li>
-    /// <p><code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
+    /// <p><code>required</code> - IMDSv2 is required, which means that IMDSv1 is disabled, and you must use IMDSv2.</p></li>
     /// </ul>
     pub fn http_tokens(mut self, input: crate::types::HttpTokensState) -> Self {
         self.http_tokens = ::std::option::Option::Some(input);
@@ -120,9 +118,9 @@ impl InstanceMetadataOptionsResponseBuilder {
     /// <p>Indicates whether IMDSv2 is required.</p>
     /// <ul>
     /// <li>
-    /// <p><code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role credentials.</p></li>
+    /// <p><code>optional</code> - IMDSv2 is optional, which means that you can use either IMDSv2 or IMDSv1.</p></li>
     /// <li>
-    /// <p><code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
+    /// <p><code>required</code> - IMDSv2 is required, which means that IMDSv1 is disabled, and you must use IMDSv2.</p></li>
     /// </ul>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::HttpTokensState>) -> Self {
         self.http_tokens = input;
@@ -131,29 +129,26 @@ impl InstanceMetadataOptionsResponseBuilder {
     /// <p>Indicates whether IMDSv2 is required.</p>
     /// <ul>
     /// <li>
-    /// <p><code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role credentials.</p></li>
+    /// <p><code>optional</code> - IMDSv2 is optional, which means that you can use either IMDSv2 or IMDSv1.</p></li>
     /// <li>
-    /// <p><code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
+    /// <p><code>required</code> - IMDSv2 is required, which means that IMDSv1 is disabled, and you must use IMDSv2.</p></li>
     /// </ul>
     pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::HttpTokensState> {
         &self.http_tokens
     }
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel.</p>
     /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
         self.http_put_response_hop_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel.</p>
     /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
     }
-    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: <code>1</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel.</p>
     /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
         &self.http_put_response_hop_limit

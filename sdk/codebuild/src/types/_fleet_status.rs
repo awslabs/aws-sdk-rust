@@ -13,6 +13,8 @@ pub struct FleetStatus {
     /// <li>
     /// <p><code>ROTATING</code>: The compute fleet is being rotated.</p></li>
     /// <li>
+    /// <p><code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p></li>
+    /// <li>
     /// <p><code>DELETING</code>: The compute fleet is being deleted.</p></li>
     /// <li>
     /// <p><code>CREATE_FAILED</code>: The compute fleet has failed to create.</p></li>
@@ -42,6 +44,8 @@ impl FleetStatus {
     /// <p><code>UPDATING</code>: The compute fleet is being updated.</p></li>
     /// <li>
     /// <p><code>ROTATING</code>: The compute fleet is being rotated.</p></li>
+    /// <li>
+    /// <p><code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p></li>
     /// <li>
     /// <p><code>DELETING</code>: The compute fleet is being deleted.</p></li>
     /// <li>
@@ -94,6 +98,8 @@ impl FleetStatusBuilder {
     /// <li>
     /// <p><code>ROTATING</code>: The compute fleet is being rotated.</p></li>
     /// <li>
+    /// <p><code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p></li>
+    /// <li>
     /// <p><code>DELETING</code>: The compute fleet is being deleted.</p></li>
     /// <li>
     /// <p><code>CREATE_FAILED</code>: The compute fleet has failed to create.</p></li>
@@ -115,6 +121,8 @@ impl FleetStatusBuilder {
     /// <li>
     /// <p><code>ROTATING</code>: The compute fleet is being rotated.</p></li>
     /// <li>
+    /// <p><code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p></li>
+    /// <li>
     /// <p><code>DELETING</code>: The compute fleet is being deleted.</p></li>
     /// <li>
     /// <p><code>CREATE_FAILED</code>: The compute fleet has failed to create.</p></li>
@@ -135,6 +143,8 @@ impl FleetStatusBuilder {
     /// <p><code>UPDATING</code>: The compute fleet is being updated.</p></li>
     /// <li>
     /// <p><code>ROTATING</code>: The compute fleet is being rotated.</p></li>
+    /// <li>
+    /// <p><code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p></li>
     /// <li>
     /// <p><code>DELETING</code>: The compute fleet is being deleted.</p></li>
     /// <li>

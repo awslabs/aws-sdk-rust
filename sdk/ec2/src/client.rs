@@ -1043,6 +1043,8 @@ mod get_host_reservation_purchase_preview;
 
 mod get_image_block_public_access_state;
 
+mod get_instance_metadata_defaults;
+
 mod get_instance_types_from_instance_requirements;
 
 mod get_instance_uefi_data;
@@ -1164,6 +1166,8 @@ mod modify_instance_event_start_time;
 mod modify_instance_event_window;
 
 mod modify_instance_maintenance_options;
+
+mod modify_instance_metadata_defaults;
 
 mod modify_instance_metadata_options;
 

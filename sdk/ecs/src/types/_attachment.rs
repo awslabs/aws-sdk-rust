@@ -13,7 +13,7 @@ pub struct Attachment {
     /// <p>Details of the attachment.</p>
     /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
-    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
+    /// <p>For Elastic Block Storage, this includes <code>roleArn</code>, <code>deleteOnTermination</code>, <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code> (only when the attachment fails to create or attach).</p>
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl Attachment {
@@ -32,7 +32,7 @@ impl Attachment {
     /// <p>Details of the attachment.</p>
     /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
-    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
+    /// <p>For Elastic Block Storage, this includes <code>roleArn</code>, <code>deleteOnTermination</code>, <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code> (only when the attachment fails to create or attach).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
     pub fn details(&self) -> &[crate::types::KeyValuePair] {
@@ -105,7 +105,7 @@ impl AttachmentBuilder {
     /// <p>Details of the attachment.</p>
     /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
-    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
+    /// <p>For Elastic Block Storage, this includes <code>roleArn</code>, <code>deleteOnTermination</code>, <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code> (only when the attachment fails to create or attach).</p>
     pub fn details(mut self, input: crate::types::KeyValuePair) -> Self {
         let mut v = self.details.unwrap_or_default();
         v.push(input);
@@ -115,7 +115,7 @@ impl AttachmentBuilder {
     /// <p>Details of the attachment.</p>
     /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
-    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
+    /// <p>For Elastic Block Storage, this includes <code>roleArn</code>, <code>deleteOnTermination</code>, <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code> (only when the attachment fails to create or attach).</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.details = input;
         self
@@ -123,7 +123,7 @@ impl AttachmentBuilder {
     /// <p>Details of the attachment.</p>
     /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
-    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
+    /// <p>For Elastic Block Storage, this includes <code>roleArn</code>, <code>deleteOnTermination</code>, <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code> (only when the attachment fails to create or attach).</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
         &self.details
     }

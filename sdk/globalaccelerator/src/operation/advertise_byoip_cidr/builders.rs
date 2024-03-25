@@ -111,16 +111,19 @@ impl AdvertiseByoipCidrFluentBuilder {
         self
     }
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
         self
     }
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr(input);
         self
     }
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr()
     }

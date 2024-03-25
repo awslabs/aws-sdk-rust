@@ -22,7 +22,7 @@ impl ListCrossAccountResourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCrossAccountResources`.
 ///
-/// <p>List the cross-account endpoints available to add to an accelerator.</p>
+/// <p>List the cross-account resources available to work with.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCrossAccountResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -142,17 +142,17 @@ impl ListCrossAccountResourcesFluentBuilder {
     pub fn get_resource_owner_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_owner_aws_account_id()
     }
-    /// <p>The number of cross-account endpoints objects that you want to return with this call. The default value is 10.</p>
+    /// <p>The number of cross-account resource objects that you want to return with this call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The number of cross-account endpoints objects that you want to return with this call. The default value is 10.</p>
+    /// <p>The number of cross-account resource objects that you want to return with this call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The number of cross-account endpoints objects that you want to return with this call. The default value is 10.</p>
+    /// <p>The number of cross-account resource objects that you want to return with this call. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

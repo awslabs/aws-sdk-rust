@@ -5,6 +5,7 @@
 /// </note>
 /// <p>You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.</p>
 /// <p>The health check is designed to make sure that your containers survive agent restarts, upgrades, or temporary unavailability.</p>
+/// <p>Amazon ECS performs health checks on containers with the default that launched the container instance or the task.</p>
 /// <p>The following describes the possible <code>healthStatus</code> values for a container:</p>
 /// <ul>
 /// <li>

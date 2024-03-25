@@ -7,16 +7,16 @@ pub struct UpdateCrossAccountAttachmentInput {
     pub attachment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cross-account attachment.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to add the resources from another account, listed in the attachment.</p>
+    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To add more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     pub add_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that is given permission to add the resources from another account, listed in the cross-account attachment.</p>
+    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To remove more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     pub remove_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator by the principals that are listed in the attachment.</p>
+    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To add more than one resource, separate the resource ARNs with commas.</p>
     pub add_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator fy principals that are listed in the cross-account attachment.</p>
+    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To remove more than one resource, separate the resource ARNs with commas.</p>
     pub remove_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
 }
@@ -29,28 +29,28 @@ impl UpdateCrossAccountAttachmentInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to add the resources from another account, listed in the attachment.</p>
+    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To add more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_principals.is_none()`.
     pub fn add_principals(&self) -> &[::std::string::String] {
         self.add_principals.as_deref().unwrap_or_default()
     }
-    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that is given permission to add the resources from another account, listed in the cross-account attachment.</p>
+    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To remove more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_principals.is_none()`.
     pub fn remove_principals(&self) -> &[::std::string::String] {
         self.remove_principals.as_deref().unwrap_or_default()
     }
-    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator by the principals that are listed in the attachment.</p>
+    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To add more than one resource, separate the resource ARNs with commas.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_resources.is_none()`.
     pub fn add_resources(&self) -> &[crate::types::Resource] {
         self.add_resources.as_deref().unwrap_or_default()
     }
-    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator fy principals that are listed in the cross-account attachment.</p>
+    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To remove more than one resource, separate the resource ARNs with commas.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_resources.is_none()`.
@@ -110,7 +110,7 @@ impl UpdateCrossAccountAttachmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_add_principals`](Self::set_add_principals).
     ///
-    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to add the resources from another account, listed in the attachment.</p>
+    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To add more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     pub fn add_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_principals.unwrap_or_default();
@@ -118,13 +118,13 @@ impl UpdateCrossAccountAttachmentInputBuilder {
         self.add_principals = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to add the resources from another account, listed in the attachment.</p>
+    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To add more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     pub fn set_add_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add_principals = input;
         self
     }
-    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to add the resources from another account, listed in the attachment.</p>
+    /// <p>The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To add more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     pub fn get_add_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.add_principals
@@ -133,7 +133,7 @@ impl UpdateCrossAccountAttachmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_remove_principals`](Self::set_remove_principals).
     ///
-    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that is given permission to add the resources from another account, listed in the cross-account attachment.</p>
+    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To remove more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     pub fn remove_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_principals.unwrap_or_default();
@@ -141,13 +141,13 @@ impl UpdateCrossAccountAttachmentInputBuilder {
         self.remove_principals = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that is given permission to add the resources from another account, listed in the cross-account attachment.</p>
+    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To remove more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     pub fn set_remove_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_principals = input;
         self
     }
-    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that is given permission to add the resources from another account, listed in the cross-account attachment.</p>
+    /// <p>The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.</p>
     /// <p>To remove more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.</p>
     pub fn get_remove_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_principals
@@ -156,7 +156,7 @@ impl UpdateCrossAccountAttachmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_add_resources`](Self::set_add_resources).
     ///
-    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator by the principals that are listed in the attachment.</p>
+    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To add more than one resource, separate the resource ARNs with commas.</p>
     pub fn add_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.add_resources.unwrap_or_default();
@@ -164,13 +164,13 @@ impl UpdateCrossAccountAttachmentInputBuilder {
         self.add_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator by the principals that are listed in the attachment.</p>
+    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To add more than one resource, separate the resource ARNs with commas.</p>
     pub fn set_add_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.add_resources = input;
         self
     }
-    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator by the principals that are listed in the attachment.</p>
+    /// <p>The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To add more than one resource, separate the resource ARNs with commas.</p>
     pub fn get_add_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.add_resources
@@ -179,7 +179,7 @@ impl UpdateCrossAccountAttachmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_remove_resources`](Self::set_remove_resources).
     ///
-    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator fy principals that are listed in the cross-account attachment.</p>
+    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To remove more than one resource, separate the resource ARNs with commas.</p>
     pub fn remove_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.remove_resources.unwrap_or_default();
@@ -187,13 +187,13 @@ impl UpdateCrossAccountAttachmentInputBuilder {
         self.remove_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator fy principals that are listed in the cross-account attachment.</p>
+    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To remove more than one resource, separate the resource ARNs with commas.</p>
     pub fn set_remove_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.remove_resources = input;
         self
     }
-    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be added to an accelerator fy principals that are listed in the cross-account attachment.</p>
+    /// <p>The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.</p>
     /// <p>To remove more than one resource, separate the resource ARNs with commas.</p>
     pub fn get_remove_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.remove_resources

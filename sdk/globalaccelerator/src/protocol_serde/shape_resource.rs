@@ -6,8 +6,11 @@ pub fn ser_resource(
     {
         object.key("EndpointId").string(input.endpoint_id.as_str());
     }
-    if let Some(var_1) = &input.region {
-        object.key("Region").string(var_1.as_str());
+    if let Some(var_1) = &input.cidr {
+        object.key("Cidr").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.region {
+        object.key("Region").string(var_2.as_str());
     }
     Ok(())
 }
@@ -34,6 +37,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Cidr" => {
+                            builder = builder.set_cidr(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Region" => {
                             builder = builder.set_region(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -51,9 +61,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::resource_correct_errors(builder).build().map_err(|err| {
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
-            })?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

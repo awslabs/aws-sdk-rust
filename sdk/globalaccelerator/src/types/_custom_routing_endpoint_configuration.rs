@@ -6,7 +6,7 @@
 pub struct CustomRoutingEndpointConfiguration {
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
+    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints.</p>
     pub attachment_arn: ::std::option::Option<::std::string::String>,
 }
 impl CustomRoutingEndpointConfiguration {
@@ -14,7 +14,7 @@ impl CustomRoutingEndpointConfiguration {
     pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
+    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints.</p>
     pub fn attachment_arn(&self) -> ::std::option::Option<&str> {
         self.attachment_arn.as_deref()
     }
@@ -48,17 +48,17 @@ impl CustomRoutingEndpointConfigurationBuilder {
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
+    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints.</p>
     pub fn attachment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
+    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints.</p>
     pub fn set_attachment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints to accelerators.</p>
+    /// <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies the endpoints (resources) that can be added to accelerators and principals that have permission to add the endpoints.</p>
     pub fn get_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_arn
     }

@@ -22,7 +22,8 @@ impl ListCrossAccountResourceAccountsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCrossAccountResourceAccounts`.
 ///
-/// <p>List the accounts that have cross-account endpoints.</p>
+/// <p>List the accounts that have cross-account resources.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html"> Working with cross-account attachments and resources in Global Accelerator</a> in the <i> Global Accelerator Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCrossAccountResourceAccountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -5,19 +5,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceAuth {
-    /// <note>
-    /// <p>This data type is deprecated and is no longer accurate or used.</p>
-    /// </note>
-    /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
+    /// <p>The authorization type to use. Valid options are OAUTH or CODECONNECTIONS.</p>
     pub r#type: crate::types::SourceAuthType,
     /// <p>The resource value that applies to the specified authorization type.</p>
     pub resource: ::std::option::Option<::std::string::String>,
 }
 impl SourceAuth {
-    /// <note>
-    /// <p>This data type is deprecated and is no longer accurate or used.</p>
-    /// </note>
-    /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
+    /// <p>The authorization type to use. Valid options are OAUTH or CODECONNECTIONS.</p>
     pub fn r#type(&self) -> &crate::types::SourceAuthType {
         &self.r#type
     }
@@ -41,27 +35,18 @@ pub struct SourceAuthBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
 }
 impl SourceAuthBuilder {
-    /// <note>
-    /// <p>This data type is deprecated and is no longer accurate or used.</p>
-    /// </note>
-    /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
+    /// <p>The authorization type to use. Valid options are OAUTH or CODECONNECTIONS.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::SourceAuthType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <note>
-    /// <p>This data type is deprecated and is no longer accurate or used.</p>
-    /// </note>
-    /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
+    /// <p>The authorization type to use. Valid options are OAUTH or CODECONNECTIONS.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceAuthType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <note>
-    /// <p>This data type is deprecated and is no longer accurate or used.</p>
-    /// </note>
-    /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which represents the OAuth authorization type.</p>
+    /// <p>The authorization type to use. Valid options are OAUTH or CODECONNECTIONS.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceAuthType> {
         &self.r#type
     }

@@ -64,6 +64,18 @@ pub struct H265Settings {
     pub timecode_insertion: ::std::option::Option<crate::types::H265TimecodeInsertionBehavior>,
     /// Timecode burn-in settings
     pub timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub mv_over_picture_boundaries: ::std::option::Option<crate::types::H265MvOverPictureBoundaries>,
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub mv_temporal_predictor: ::std::option::Option<crate::types::H265MvTemporalPredictor>,
+    /// Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 of less. If the tile width and height are specified, MediaLive will override the video codec slices field with a value that MediaLive calculates
+    pub tile_height: ::std::option::Option<i32>,
+    /// Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub tile_padding: ::std::option::Option<crate::types::H265TilePadding>,
+    /// Set this field to set up the picture as a tile. See tileHeight for more information.
+    pub tile_width: ::std::option::Option<i32>,
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub treeblock_size: ::std::option::Option<crate::types::H265TreeblockSize>,
 }
 impl H265Settings {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
@@ -186,6 +198,30 @@ impl H265Settings {
     pub fn timecode_burnin_settings(&self) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
         self.timecode_burnin_settings.as_ref()
     }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub fn mv_over_picture_boundaries(&self) -> ::std::option::Option<&crate::types::H265MvOverPictureBoundaries> {
+        self.mv_over_picture_boundaries.as_ref()
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub fn mv_temporal_predictor(&self) -> ::std::option::Option<&crate::types::H265MvTemporalPredictor> {
+        self.mv_temporal_predictor.as_ref()
+    }
+    /// Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 of less. If the tile width and height are specified, MediaLive will override the video codec slices field with a value that MediaLive calculates
+    pub fn tile_height(&self) -> ::std::option::Option<i32> {
+        self.tile_height
+    }
+    /// Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub fn tile_padding(&self) -> ::std::option::Option<&crate::types::H265TilePadding> {
+        self.tile_padding.as_ref()
+    }
+    /// Set this field to set up the picture as a tile. See tileHeight for more information.
+    pub fn tile_width(&self) -> ::std::option::Option<i32> {
+        self.tile_width
+    }
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub fn treeblock_size(&self) -> ::std::option::Option<&crate::types::H265TreeblockSize> {
+        self.treeblock_size.as_ref()
+    }
 }
 impl H265Settings {
     /// Creates a new builder-style object to manufacture [`H265Settings`](crate::types::H265Settings).
@@ -228,6 +264,12 @@ pub struct H265SettingsBuilder {
     pub(crate) tier: ::std::option::Option<crate::types::H265Tier>,
     pub(crate) timecode_insertion: ::std::option::Option<crate::types::H265TimecodeInsertionBehavior>,
     pub(crate) timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
+    pub(crate) mv_over_picture_boundaries: ::std::option::Option<crate::types::H265MvOverPictureBoundaries>,
+    pub(crate) mv_temporal_predictor: ::std::option::Option<crate::types::H265MvTemporalPredictor>,
+    pub(crate) tile_height: ::std::option::Option<i32>,
+    pub(crate) tile_padding: ::std::option::Option<crate::types::H265TilePadding>,
+    pub(crate) tile_width: ::std::option::Option<i32>,
+    pub(crate) treeblock_size: ::std::option::Option<crate::types::H265TreeblockSize>,
 }
 impl H265SettingsBuilder {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
@@ -652,6 +694,90 @@ impl H265SettingsBuilder {
     pub fn get_timecode_burnin_settings(&self) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
         &self.timecode_burnin_settings
     }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub fn mv_over_picture_boundaries(mut self, input: crate::types::H265MvOverPictureBoundaries) -> Self {
+        self.mv_over_picture_boundaries = ::std::option::Option::Some(input);
+        self
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub fn set_mv_over_picture_boundaries(mut self, input: ::std::option::Option<crate::types::H265MvOverPictureBoundaries>) -> Self {
+        self.mv_over_picture_boundaries = input;
+        self
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub fn get_mv_over_picture_boundaries(&self) -> &::std::option::Option<crate::types::H265MvOverPictureBoundaries> {
+        &self.mv_over_picture_boundaries
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub fn mv_temporal_predictor(mut self, input: crate::types::H265MvTemporalPredictor) -> Self {
+        self.mv_temporal_predictor = ::std::option::Option::Some(input);
+        self
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub fn set_mv_temporal_predictor(mut self, input: ::std::option::Option<crate::types::H265MvTemporalPredictor>) -> Self {
+        self.mv_temporal_predictor = input;
+        self
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub fn get_mv_temporal_predictor(&self) -> &::std::option::Option<crate::types::H265MvTemporalPredictor> {
+        &self.mv_temporal_predictor
+    }
+    /// Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 of less. If the tile width and height are specified, MediaLive will override the video codec slices field with a value that MediaLive calculates
+    pub fn tile_height(mut self, input: i32) -> Self {
+        self.tile_height = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 of less. If the tile width and height are specified, MediaLive will override the video codec slices field with a value that MediaLive calculates
+    pub fn set_tile_height(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tile_height = input;
+        self
+    }
+    /// Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 of less. If the tile width and height are specified, MediaLive will override the video codec slices field with a value that MediaLive calculates
+    pub fn get_tile_height(&self) -> &::std::option::Option<i32> {
+        &self.tile_height
+    }
+    /// Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub fn tile_padding(mut self, input: crate::types::H265TilePadding) -> Self {
+        self.tile_padding = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub fn set_tile_padding(mut self, input: ::std::option::Option<crate::types::H265TilePadding>) -> Self {
+        self.tile_padding = input;
+        self
+    }
+    /// Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub fn get_tile_padding(&self) -> &::std::option::Option<crate::types::H265TilePadding> {
+        &self.tile_padding
+    }
+    /// Set this field to set up the picture as a tile. See tileHeight for more information.
+    pub fn tile_width(mut self, input: i32) -> Self {
+        self.tile_width = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set this field to set up the picture as a tile. See tileHeight for more information.
+    pub fn set_tile_width(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tile_width = input;
+        self
+    }
+    /// Set this field to set up the picture as a tile. See tileHeight for more information.
+    pub fn get_tile_width(&self) -> &::std::option::Option<i32> {
+        &self.tile_width
+    }
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub fn treeblock_size(mut self, input: crate::types::H265TreeblockSize) -> Self {
+        self.treeblock_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub fn set_treeblock_size(mut self, input: ::std::option::Option<crate::types::H265TreeblockSize>) -> Self {
+        self.treeblock_size = input;
+        self
+    }
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub fn get_treeblock_size(&self) -> &::std::option::Option<crate::types::H265TreeblockSize> {
+        &self.treeblock_size
+    }
     /// Consumes the builder and constructs a [`H265Settings`](crate::types::H265Settings).
     pub fn build(self) -> crate::types::H265Settings {
         crate::types::H265Settings {
@@ -685,6 +811,12 @@ impl H265SettingsBuilder {
             tier: self.tier,
             timecode_insertion: self.timecode_insertion,
             timecode_burnin_settings: self.timecode_burnin_settings,
+            mv_over_picture_boundaries: self.mv_over_picture_boundaries,
+            mv_temporal_predictor: self.mv_temporal_predictor,
+            tile_height: self.tile_height,
+            tile_padding: self.tile_padding,
+            tile_width: self.tile_width,
+            treeblock_size: self.treeblock_size,
         }
     }
 }

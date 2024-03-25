@@ -13,6 +13,7 @@
 /// # let authtype = unimplemented!();
 /// match authtype {
 ///     AuthType::BasicAuth => { /* ... */ },
+///     AuthType::Codeconnections => { /* ... */ },
 ///     AuthType::Oauth => { /* ... */ },
 ///     AuthType::PersonalAccessToken => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum AuthType {
     #[allow(missing_docs)] // documentation missing in model
     BasicAuth,
     #[allow(missing_docs)] // documentation missing in model
+    Codeconnections,
+    #[allow(missing_docs)] // documentation missing in model
     Oauth,
     #[allow(missing_docs)] // documentation missing in model
     PersonalAccessToken,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for AuthType {
     fn from(s: &str) -> Self {
         match s {
             "BASIC_AUTH" => AuthType::BasicAuth,
+            "CODECONNECTIONS" => AuthType::Codeconnections,
             "OAUTH" => AuthType::Oauth,
             "PERSONAL_ACCESS_TOKEN" => AuthType::PersonalAccessToken,
             other => AuthType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl AuthType {
     pub fn as_str(&self) -> &str {
         match self {
             AuthType::BasicAuth => "BASIC_AUTH",
+            AuthType::Codeconnections => "CODECONNECTIONS",
             AuthType::Oauth => "OAUTH",
             AuthType::PersonalAccessToken => "PERSONAL_ACCESS_TOKEN",
             AuthType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl AuthType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASIC_AUTH", "OAUTH", "PERSONAL_ACCESS_TOKEN"]
+        &["BASIC_AUTH", "CODECONNECTIONS", "OAUTH", "PERSONAL_ACCESS_TOKEN"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthType {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for AuthType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AuthType::BasicAuth => write!(f, "BASIC_AUTH"),
+            AuthType::Codeconnections => write!(f, "CODECONNECTIONS"),
             AuthType::Oauth => write!(f, "OAUTH"),
             AuthType::PersonalAccessToken => write!(f, "PERSONAL_ACCESS_TOKEN"),
             AuthType::Unknown(value) => write!(f, "{}", value),

@@ -7,7 +7,7 @@ pub struct ListCrossAccountResourcesInput {
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of a resource owner in a cross-account attachment.</p>
     pub resource_owner_aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The number of cross-account endpoints objects that you want to return with this call. The default value is 10.</p>
+    /// <p>The number of cross-account resource objects that you want to return with this call. The default value is 10.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl ListCrossAccountResourcesInput {
     pub fn resource_owner_aws_account_id(&self) -> ::std::option::Option<&str> {
         self.resource_owner_aws_account_id.as_deref()
     }
-    /// <p>The number of cross-account endpoints objects that you want to return with this call. The default value is 10.</p>
+    /// <p>The number of cross-account resource objects that you want to return with this call. The default value is 10.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -76,17 +76,17 @@ impl ListCrossAccountResourcesInputBuilder {
     pub fn get_resource_owner_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_owner_aws_account_id
     }
-    /// <p>The number of cross-account endpoints objects that you want to return with this call. The default value is 10.</p>
+    /// <p>The number of cross-account resource objects that you want to return with this call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of cross-account endpoints objects that you want to return with this call. The default value is 10.</p>
+    /// <p>The number of cross-account resource objects that you want to return with this call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The number of cross-account endpoints objects that you want to return with this call. The default value is 10.</p>
+    /// <p>The number of cross-account resource objects that you want to return with this call. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
