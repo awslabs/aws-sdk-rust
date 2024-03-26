@@ -389,6 +389,7 @@ pub(crate) mod identity_provider {
 
     #[derive(Debug)]
     pub(crate) struct DefaultS3ExpressIdentityProvider {
+        behavior_version: crate::config::BehaviorVersion,
         cache: S3ExpressIdentityCache,
     }
 
@@ -453,8 +454,7 @@ pub(crate) mod identity_provider {
             runtime_components: &'a RuntimeComponents,
             config_bag: &'a ConfigBag,
         ) -> Result<SessionCredentials, BoxError> {
-            // TODO(Post S3Express release): Thread through `BehaviorVersion` from the outer S3 client
-            let mut config_builder = crate::config::Builder::from_config_bag(config_bag).behavior_version(crate::config::BehaviorVersion::latest());
+            let mut config_builder = crate::config::Builder::from_config_bag(config_bag).behavior_version(self.behavior_version.clone());
 
             // inherits all runtime components from a current S3 operation but clears out
             // out interceptors configured for that operation
@@ -476,11 +476,20 @@ pub(crate) mod identity_provider {
 
     #[derive(Default)]
     pub(crate) struct Builder {
+        behavior_version: Option<crate::config::BehaviorVersion>,
         time_source: Option<SharedTimeSource>,
         buffer_time: Option<Duration>,
     }
 
     impl Builder {
+        pub(crate) fn behavior_version(mut self, behavior_version: crate::config::BehaviorVersion) -> Self {
+            self.set_behavior_version(Some(behavior_version));
+            self
+        }
+        pub(crate) fn set_behavior_version(&mut self, behavior_version: Option<crate::config::BehaviorVersion>) -> &mut Self {
+            self.behavior_version = behavior_version;
+            self
+        }
         pub(crate) fn time_source(mut self, time_source: impl TimeSource + 'static) -> Self {
             self.set_time_source(time_source.into_shared());
             self
@@ -501,6 +510,7 @@ pub(crate) mod identity_provider {
         }
         pub(crate) fn build(self) -> DefaultS3ExpressIdentityProvider {
             DefaultS3ExpressIdentityProvider {
+                behavior_version: self.behavior_version.expect("required field `behavior_version` should be set"),
                 cache: S3ExpressIdentityCache::new(
                     DEFAULT_MAX_CACHE_CAPACITY,
                     self.time_source.unwrap_or_default(),

@@ -1207,12 +1207,10 @@ impl ServiceRuntimePlugin {
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             crate::s3_express::auth::S3ExpressAuthScheme::new(),
         ));
-        runtime_components.set_identity_resolver(
-            crate::s3_express::auth::SCHEME_ID,
-            crate::s3_express::identity_provider::DefaultS3ExpressIdentityProvider::builder()
-                .time_source(_service_config.time_source().unwrap_or_default())
-                .build(),
-        );
+        runtime_components.set_identity_resolver(crate::s3_express::auth::SCHEME_ID, crate::s3_express::identity_provider::DefaultS3ExpressIdentityProvider::builder()
+                                    .behavior_version(_service_config.behavior_version.clone().expect("Invalid client configuration: A behavior version must be set when creating an inner S3 client. A behavior version should be set in the outer S3 client, so it needs to be passed down to the inner client."))
+                                    .time_source(_service_config.time_source().unwrap_or_default())
+                                    .build());
         runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
@@ -1348,12 +1346,10 @@ pub use ::aws_smithy_async::rt::sleep::Sleep;
 pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
     let mut configured_plugins = ::std::vec::Vec::new();
     ::std::mem::swap(&mut config.runtime_plugins, &mut configured_plugins);
-    #[allow(unused_mut)]
-    let mut behavior_version = config.behavior_version.clone();
     #[cfg(feature = "behavior-version-latest")]
     {
-        if behavior_version.is_none() {
-            behavior_version = Some(::aws_smithy_runtime_api::client::behavior_version::BehaviorVersion::latest());
+        if config.behavior_version.is_none() {
+            config.behavior_version = Some(::aws_smithy_runtime_api::client::behavior_version::BehaviorVersion::latest());
         }
     }
 
@@ -1362,7 +1358,7 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
                         .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
                             ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new()
                                 .with_retry_partition_name("s3")
-                                .with_behavior_version(behavior_version.expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
+                                .with_behavior_version(config.behavior_version.clone().expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
                         ))
                         // user config
                         .with_client_plugin(
