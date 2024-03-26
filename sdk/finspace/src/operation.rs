@@ -34,6 +34,9 @@ pub mod delete_environment;
 /// Types for the `DeleteKxCluster` operation.
 pub mod delete_kx_cluster;
 
+/// Types for the `DeleteKxClusterNode` operation.
+pub mod delete_kx_cluster_node;
+
 /// Types for the `DeleteKxDatabase` operation.
 pub mod delete_kx_database;
 

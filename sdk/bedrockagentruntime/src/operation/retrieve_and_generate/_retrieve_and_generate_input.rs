@@ -5,9 +5,9 @@
 pub struct RetrieveAndGenerateInput {
     /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>Contains the query made to the knowledge base.</p>
+    /// <p>Contains the query to be made to the knowledge base.</p>
     pub input: ::std::option::Option<crate::types::RetrieveAndGenerateInput>,
-    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub retrieve_and_generate_configuration: ::std::option::Option<crate::types::RetrieveAndGenerateConfiguration>,
     /// <p>Contains details about the session with the knowledge base.</p>
     pub session_configuration: ::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration>,
@@ -17,11 +17,11 @@ impl RetrieveAndGenerateInput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>Contains the query made to the knowledge base.</p>
+    /// <p>Contains the query to be made to the knowledge base.</p>
     pub fn input(&self) -> ::std::option::Option<&crate::types::RetrieveAndGenerateInput> {
         self.input.as_ref()
     }
-    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn retrieve_and_generate_configuration(&self) -> ::std::option::Option<&crate::types::RetrieveAndGenerateConfiguration> {
         self.retrieve_and_generate_configuration.as_ref()
     }
@@ -71,32 +71,32 @@ impl RetrieveAndGenerateInputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>Contains the query made to the knowledge base.</p>
+    /// <p>Contains the query to be made to the knowledge base.</p>
     /// This field is required.
     pub fn input(mut self, input: crate::types::RetrieveAndGenerateInput) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the query made to the knowledge base.</p>
+    /// <p>Contains the query to be made to the knowledge base.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateInput>) -> Self {
         self.input = input;
         self
     }
-    /// <p>Contains the query made to the knowledge base.</p>
+    /// <p>Contains the query to be made to the knowledge base.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateInput> {
         &self.input
     }
-    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn retrieve_and_generate_configuration(mut self, input: crate::types::RetrieveAndGenerateConfiguration) -> Self {
         self.retrieve_and_generate_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn set_retrieve_and_generate_configuration(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateConfiguration>) -> Self {
         self.retrieve_and_generate_configuration = input;
         self
     }
-    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn get_retrieve_and_generate_configuration(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateConfiguration> {
         &self.retrieve_and_generate_configuration
     }

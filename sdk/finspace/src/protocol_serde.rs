@@ -45,6 +45,8 @@ pub(crate) mod shape_delete_environment;
 
 pub(crate) mod shape_delete_kx_cluster;
 
+pub(crate) mod shape_delete_kx_cluster_node;
+
 pub(crate) mod shape_delete_kx_database;
 
 pub(crate) mod shape_delete_kx_dataview;

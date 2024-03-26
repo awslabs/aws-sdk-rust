@@ -100,6 +100,8 @@ pub(crate) mod shape_trace_part;
 
 pub(crate) mod shape_generated_response_part;
 
+pub(crate) mod shape_generation_configuration;
+
 pub(crate) mod shape_retrieval_result_content;
 
 pub(crate) mod shape_retrieval_result_location;
@@ -107,6 +109,8 @@ pub(crate) mod shape_retrieval_result_location;
 pub(crate) mod shape_retrieved_references;
 
 pub(crate) mod shape_attribution;
+
+pub(crate) mod shape_prompt_template;
 
 pub(crate) mod shape_retrieval_result_s3_location;
 

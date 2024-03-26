@@ -45,6 +45,10 @@ pub use crate::types::_anomaly_subscription_frequency::AnomalySubscriptionFreque
 
 pub use crate::types::_resource_tag::ResourceTag;
 
+pub use crate::types::_cost_allocation_tag_backfill_request::CostAllocationTagBackfillRequest;
+
+pub use crate::types::_cost_allocation_tag_backfill_status::CostAllocationTagBackfillStatus;
+
 pub use crate::types::_anomaly_feedback_type::AnomalyFeedbackType;
 
 pub use crate::types::_generation_summary::GenerationSummary;
@@ -262,6 +266,10 @@ mod _approximation_dimension;
 mod _context;
 
 mod _cost_allocation_tag;
+
+mod _cost_allocation_tag_backfill_request;
+
+mod _cost_allocation_tag_backfill_status;
 
 mod _cost_allocation_tag_status;
 

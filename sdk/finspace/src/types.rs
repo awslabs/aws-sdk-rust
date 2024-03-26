@@ -85,6 +85,8 @@ pub use crate::types::_volume_type::VolumeType;
 
 pub use crate::types::_kx_node::KxNode;
 
+pub use crate::types::_kx_node_status::KxNodeStatus;
+
 pub use crate::types::_kx_changeset_list_entry::KxChangesetListEntry;
 
 pub use crate::types::_changeset_status::ChangesetStatus;
@@ -200,6 +202,8 @@ mod _kx_nas1_configuration;
 mod _kx_nas1_type;
 
 mod _kx_node;
+
+mod _kx_node_status;
 
 mod _kx_savedown_storage_configuration;
 

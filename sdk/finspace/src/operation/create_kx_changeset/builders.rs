@@ -140,7 +140,7 @@ impl CreateKxChangesetFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_change_requests`](Self::set_change_requests).
     ///
-    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
+    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can have the following values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT – Adds or updates files in a database.</p></li>
@@ -170,7 +170,7 @@ impl CreateKxChangesetFluentBuilder {
         self.inner = self.inner.change_requests(input);
         self
     }
-    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
+    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can have the following values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT – Adds or updates files in a database.</p></li>
@@ -200,7 +200,7 @@ impl CreateKxChangesetFluentBuilder {
         self.inner = self.inner.set_change_requests(input);
         self
     }
-    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
+    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can have the following values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT – Adds or updates files in a database.</p></li>

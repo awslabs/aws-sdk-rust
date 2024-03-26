@@ -185,6 +185,8 @@ mod delete_environment;
 
 mod delete_kx_cluster;
 
+mod delete_kx_cluster_node;
+
 mod delete_kx_database;
 
 mod delete_kx_dataview;

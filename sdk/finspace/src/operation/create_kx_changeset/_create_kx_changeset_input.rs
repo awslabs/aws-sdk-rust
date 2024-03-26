@@ -7,7 +7,7 @@ pub struct CreateKxChangesetInput {
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the kdb database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
+    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can have the following values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT – Adds or updates files in a database.</p></li>
@@ -46,7 +46,7 @@ impl CreateKxChangesetInput {
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
+    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can have the following values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT – Adds or updates files in a database.</p></li>
@@ -133,7 +133,7 @@ impl CreateKxChangesetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_change_requests`](Self::set_change_requests).
     ///
-    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
+    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can have the following values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT – Adds or updates files in a database.</p></li>
@@ -165,7 +165,7 @@ impl CreateKxChangesetInputBuilder {
         self.change_requests = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
+    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can have the following values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT – Adds or updates files in a database.</p></li>
@@ -195,7 +195,7 @@ impl CreateKxChangesetInputBuilder {
         self.change_requests = input;
         self
     }
-    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
+    /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can have the following values:</p>
     /// <ul>
     /// <li>
     /// <p>PUT – Adds or updates files in a database.</p></li>

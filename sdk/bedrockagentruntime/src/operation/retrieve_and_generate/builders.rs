@@ -22,9 +22,7 @@ impl RetrieveAndGenerateInputBuilder {
 }
 /// Fluent builder constructing a request to `RetrieveAndGenerate`.
 ///
-/// <p>Queries a knowledge base and generates responses based on the retrieved results. The response cites up to five sources but only selects the ones that are relevant to the query.</p><note>
-/// <p>The <code>numberOfResults</code> field is currently unsupported for <code>RetrieveAndGenerate</code>. Don't include it in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_KnowledgeBaseVectorSearchConfiguration.html">vectorSearchConfiguration</a> object.</p>
-/// </note>
+/// <p>Queries a knowledge base and generates responses based on the retrieved results. The response cites up to five sources but only selects the ones that are relevant to the query.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveAndGenerateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,31 +122,31 @@ impl RetrieveAndGenerateFluentBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }
-    /// <p>Contains the query made to the knowledge base.</p>
+    /// <p>Contains the query to be made to the knowledge base.</p>
     pub fn input(mut self, input: crate::types::RetrieveAndGenerateInput) -> Self {
         self.inner = self.inner.input(input);
         self
     }
-    /// <p>Contains the query made to the knowledge base.</p>
+    /// <p>Contains the query to be made to the knowledge base.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateInput>) -> Self {
         self.inner = self.inner.set_input(input);
         self
     }
-    /// <p>Contains the query made to the knowledge base.</p>
+    /// <p>Contains the query to be made to the knowledge base.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateInput> {
         self.inner.get_input()
     }
-    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn retrieve_and_generate_configuration(mut self, input: crate::types::RetrieveAndGenerateConfiguration) -> Self {
         self.inner = self.inner.retrieve_and_generate_configuration(input);
         self
     }
-    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn set_retrieve_and_generate_configuration(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateConfiguration>) -> Self {
         self.inner = self.inner.set_retrieve_and_generate_configuration(input);
         self
     }
-    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn get_retrieve_and_generate_configuration(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateConfiguration> {
         self.inner.get_retrieve_and_generate_configuration()
     }

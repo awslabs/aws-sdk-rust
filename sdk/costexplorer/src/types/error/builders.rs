@@ -15,6 +15,8 @@ pub use crate::types::error::_generation_exists_exception::GenerationExistsExcep
 
 pub use crate::types::error::_data_unavailable_exception::DataUnavailableExceptionBuilder;
 
+pub use crate::types::error::_backfill_limit_exceeded_exception::BackfillLimitExceededExceptionBuilder;
+
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
 
 pub use crate::types::error::_unresolvable_usage_unit_exception::UnresolvableUsageUnitExceptionBuilder;

@@ -29,7 +29,7 @@ pub struct SearchTransitGatewayRoutesInput {
     /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The maximum number of routes to return. If a value is not provided, the default is 1000.</p>
+    /// <p>The maximum number of routes to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
@@ -67,7 +67,7 @@ impl SearchTransitGatewayRoutesInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of routes to return. If a value is not provided, the default is 1000.</p>
+    /// <p>The maximum number of routes to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -194,17 +194,17 @@ impl SearchTransitGatewayRoutesInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>The maximum number of routes to return. If a value is not provided, the default is 1000.</p>
+    /// <p>The maximum number of routes to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of routes to return. If a value is not provided, the default is 1000.</p>
+    /// <p>The maximum number of routes to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of routes to return. If a value is not provided, the default is 1000.</p>
+    /// <p>The maximum number of routes to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

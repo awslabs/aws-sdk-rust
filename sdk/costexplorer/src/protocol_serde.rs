@@ -77,6 +77,8 @@ pub(crate) mod shape_get_tags;
 
 pub(crate) mod shape_get_usage_forecast;
 
+pub(crate) mod shape_list_cost_allocation_tag_backfill_history;
+
 pub(crate) mod shape_list_cost_allocation_tags;
 
 pub(crate) mod shape_list_cost_category_definitions;
@@ -86,6 +88,8 @@ pub(crate) mod shape_list_savings_plans_purchase_recommendation_generation;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_provide_anomaly_feedback;
+
+pub(crate) mod shape_start_cost_allocation_tag_backfill;
 
 pub(crate) mod shape_start_savings_plans_purchase_recommendation_generation;
 
@@ -108,6 +112,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_backfill_limit_exceeded_exception;
 
 pub(crate) mod shape_bill_expiration_exception;
 
@@ -173,6 +179,8 @@ pub(crate) mod shape_invalid_next_token_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_list_cost_allocation_tag_backfill_history_input;
+
 pub(crate) mod shape_list_cost_allocation_tags_input;
 
 pub(crate) mod shape_list_cost_category_definitions_input;
@@ -188,6 +196,8 @@ pub(crate) mod shape_request_changed_exception;
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_start_cost_allocation_tag_backfill_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -222,6 +232,10 @@ pub(crate) mod shape_anomaly_subscription;
 pub(crate) mod shape_anomaly_subscriptions;
 
 pub(crate) mod shape_approximate_usage_records_per_service;
+
+pub(crate) mod shape_cost_allocation_tag_backfill_request;
+
+pub(crate) mod shape_cost_allocation_tag_backfill_request_list;
 
 pub(crate) mod shape_cost_allocation_tag_list;
 

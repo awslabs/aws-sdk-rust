@@ -10,6 +10,14 @@ pub struct KxNode {
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when a particular node is started. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies the status of the cluster nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The node is actively serving.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> – The node is being prepared.</p></li>
+    /// </ul>
+    pub status: ::std::option::Option<crate::types::KxNodeStatus>,
 }
 impl KxNode {
     /// <p>A unique identifier for the node.</p>
@@ -23,6 +31,16 @@ impl KxNode {
     /// <p>The time when a particular node is started. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
+    }
+    /// <p>Specifies the status of the cluster nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The node is actively serving.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> – The node is being prepared.</p></li>
+    /// </ul>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::KxNodeStatus> {
+        self.status.as_ref()
     }
 }
 impl KxNode {
@@ -39,6 +57,7 @@ pub struct KxNodeBuilder {
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::KxNodeStatus>,
 }
 impl KxNodeBuilder {
     /// <p>A unique identifier for the node.</p>
@@ -83,12 +102,45 @@ impl KxNodeBuilder {
     pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.launch_time
     }
+    /// <p>Specifies the status of the cluster nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The node is actively serving.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> – The node is being prepared.</p></li>
+    /// </ul>
+    pub fn status(mut self, input: crate::types::KxNodeStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the status of the cluster nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The node is actively serving.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> – The node is being prepared.</p></li>
+    /// </ul>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxNodeStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>Specifies the status of the cluster nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The node is actively serving.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONING</code> – The node is being prepared.</p></li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::KxNodeStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`KxNode`](crate::types::KxNode).
     pub fn build(self) -> crate::types::KxNode {
         crate::types::KxNode {
             node_id: self.node_id,
             availability_zone_id: self.availability_zone_id,
             launch_time: self.launch_time,
+            status: self.status,
         }
     }
 }

@@ -217,6 +217,8 @@ mod get_tags;
 
 mod get_usage_forecast;
 
+mod list_cost_allocation_tag_backfill_history;
+
 mod list_cost_allocation_tags;
 
 mod list_cost_category_definitions;
@@ -226,6 +228,8 @@ mod list_savings_plans_purchase_recommendation_generation;
 mod list_tags_for_resource;
 
 mod provide_anomaly_feedback;
+
+mod start_cost_allocation_tag_backfill;
 
 mod start_savings_plans_purchase_recommendation_generation;
 

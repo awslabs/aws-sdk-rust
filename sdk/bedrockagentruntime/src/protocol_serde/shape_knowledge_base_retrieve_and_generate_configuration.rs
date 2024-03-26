@@ -15,5 +15,11 @@ pub fn ser_knowledge_base_retrieve_and_generate_configuration(
         crate::protocol_serde::shape_knowledge_base_retrieval_configuration::ser_knowledge_base_retrieval_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.generation_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("generationConfiguration").start_object();
+        crate::protocol_serde::shape_generation_configuration::ser_generation_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

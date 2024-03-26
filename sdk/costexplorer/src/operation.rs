@@ -82,6 +82,9 @@ pub mod get_tags;
 /// Types for the `GetUsageForecast` operation.
 pub mod get_usage_forecast;
 
+/// Types for the `ListCostAllocationTagBackfillHistory` operation.
+pub mod list_cost_allocation_tag_backfill_history;
+
 /// Types for the `ListCostAllocationTags` operation.
 pub mod list_cost_allocation_tags;
 
@@ -96,6 +99,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ProvideAnomalyFeedback` operation.
 pub mod provide_anomaly_feedback;
+
+/// Types for the `StartCostAllocationTagBackfill` operation.
+pub mod start_cost_allocation_tag_backfill;
 
 /// Types for the `StartSavingsPlansPurchaseRecommendationGeneration` operation.
 pub mod start_savings_plans_purchase_recommendation_generation;

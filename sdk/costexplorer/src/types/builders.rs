@@ -23,6 +23,8 @@ pub use crate::types::_subscriber::SubscriberBuilder;
 
 pub use crate::types::_resource_tag::ResourceTagBuilder;
 
+pub use crate::types::_cost_allocation_tag_backfill_request::CostAllocationTagBackfillRequestBuilder;
+
 pub use crate::types::_generation_summary::GenerationSummaryBuilder;
 
 pub use crate::types::_cost_category_reference::CostCategoryReferenceBuilder;

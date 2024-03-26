@@ -35,6 +35,10 @@ pub use crate::types::_retrieve_and_generate_configuration::RetrieveAndGenerateC
 
 pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::KnowledgeBaseRetrieveAndGenerateConfiguration;
 
+pub use crate::types::_generation_configuration::GenerationConfiguration;
+
+pub use crate::types::_prompt_template::PromptTemplate;
+
 pub use crate::types::_retrieve_and_generate_type::RetrieveAndGenerateType;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInput;
@@ -119,6 +123,8 @@ mod _final_response;
 
 mod _generated_response_part;
 
+mod _generation_configuration;
+
 mod _inference_configuration;
 
 mod _invocation_input;
@@ -160,6 +166,8 @@ mod _pre_processing_model_invocation_output;
 mod _pre_processing_parsed_response;
 
 mod _pre_processing_trace;
+
+mod _prompt_template;
 
 mod _prompt_type;
 

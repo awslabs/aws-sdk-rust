@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InvokeAgentInput {
-    /// <p>Contains parameters that specify various attributes of the session.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     /// <p>The unique identifier of the agent to use.</p>
     pub agent_id: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct InvokeAgentInput {
     pub input_text: ::std::option::Option<::std::string::String>,
 }
 impl InvokeAgentInput {
-    /// <p>Contains parameters that specify various attributes of the session.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn session_state(&self) -> ::std::option::Option<&crate::types::SessionState> {
         self.session_state.as_ref()
     }
@@ -81,17 +81,17 @@ pub struct InvokeAgentInputBuilder {
     pub(crate) input_text: ::std::option::Option<::std::string::String>,
 }
 impl InvokeAgentInputBuilder {
-    /// <p>Contains parameters that specify various attributes of the session.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn session_state(mut self, input: crate::types::SessionState) -> Self {
         self.session_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains parameters that specify various attributes of the session.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.session_state = input;
         self
     }
-    /// <p>Contains parameters that specify various attributes of the session.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
         &self.session_state
     }

@@ -6,7 +6,7 @@
 pub struct KxNas1Configuration {
     /// <p>The type of the network attached storage.</p>
     pub r#type: ::std::option::Option<crate::types::KxNas1Type>,
-    /// <p>The size of the network attached storage.</p>
+    /// <p>The size of the network attached storage. For storage type <code>SSD_1000</code> and <code>SSD_250</code> you can select the minimum size as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you can select the minimum size as 6000 GB or increments of 6000 GB.</p>
     pub size: ::std::option::Option<i32>,
 }
 impl KxNas1Configuration {
@@ -14,7 +14,7 @@ impl KxNas1Configuration {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::KxNas1Type> {
         self.r#type.as_ref()
     }
-    /// <p>The size of the network attached storage.</p>
+    /// <p>The size of the network attached storage. For storage type <code>SSD_1000</code> and <code>SSD_250</code> you can select the minimum size as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you can select the minimum size as 6000 GB or increments of 6000 GB.</p>
     pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
@@ -48,17 +48,17 @@ impl KxNas1ConfigurationBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KxNas1Type> {
         &self.r#type
     }
-    /// <p>The size of the network attached storage.</p>
+    /// <p>The size of the network attached storage. For storage type <code>SSD_1000</code> and <code>SSD_250</code> you can select the minimum size as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you can select the minimum size as 6000 GB or increments of 6000 GB.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the network attached storage.</p>
+    /// <p>The size of the network attached storage. For storage type <code>SSD_1000</code> and <code>SSD_250</code> you can select the minimum size as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you can select the minimum size as 6000 GB or increments of 6000 GB.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }
-    /// <p>The size of the network attached storage.</p>
+    /// <p>The size of the network attached storage. For storage type <code>SSD_1000</code> and <code>SSD_250</code> you can select the minimum size as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you can select the minimum size as 6000 GB or increments of 6000 GB.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
         &self.size
     }

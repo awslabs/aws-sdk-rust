@@ -119,31 +119,31 @@ impl RetrieveFluentBuilder {
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
-    /// <p>The query to send the knowledge base.</p>
+    /// <p>Contains the query to send the knowledge base.</p>
     pub fn retrieval_query(mut self, input: crate::types::KnowledgeBaseQuery) -> Self {
         self.inner = self.inner.retrieval_query(input);
         self
     }
-    /// <p>The query to send the knowledge base.</p>
+    /// <p>Contains the query to send the knowledge base.</p>
     pub fn set_retrieval_query(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseQuery>) -> Self {
         self.inner = self.inner.set_retrieval_query(input);
         self
     }
-    /// <p>The query to send the knowledge base.</p>
+    /// <p>Contains the query to send the knowledge base.</p>
     pub fn get_retrieval_query(&self) -> &::std::option::Option<crate::types::KnowledgeBaseQuery> {
         self.inner.get_retrieval_query()
     }
-    /// <p>Contains details about how the results should be returned.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn retrieval_configuration(mut self, input: crate::types::KnowledgeBaseRetrievalConfiguration) -> Self {
         self.inner = self.inner.retrieval_configuration(input);
         self
     }
-    /// <p>Contains details about how the results should be returned.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>) -> Self {
         self.inner = self.inner.set_retrieval_configuration(input);
         self
     }
-    /// <p>Contains details about how the results should be returned.</p>
+    /// <p>Contains configurations for the knowledge base query and retrieval process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration> {
         self.inner.get_retrieval_configuration()
     }

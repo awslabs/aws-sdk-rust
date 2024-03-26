@@ -31,6 +31,10 @@ pub use crate::types::_retrieve_and_generate_configuration::RetrieveAndGenerateC
 
 pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::KnowledgeBaseRetrieveAndGenerateConfigurationBuilder;
 
+pub use crate::types::_generation_configuration::GenerationConfigurationBuilder;
+
+pub use crate::types::_prompt_template::PromptTemplateBuilder;
+
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInputBuilder;
 
 pub use crate::types::_trace_part::TracePartBuilder;

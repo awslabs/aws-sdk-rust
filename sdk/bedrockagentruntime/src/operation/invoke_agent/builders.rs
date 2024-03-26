@@ -129,17 +129,17 @@ impl InvokeAgentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Contains parameters that specify various attributes of the session.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn session_state(mut self, input: crate::types::SessionState) -> Self {
         self.inner = self.inner.session_state(input);
         self
     }
-    /// <p>Contains parameters that specify various attributes of the session.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.inner = self.inner.set_session_state(input);
         self
     }
-    /// <p>Contains parameters that specify various attributes of the session.</p>
+    /// <p>Contains parameters that specify various attributes of the session. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p>
     pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
         self.inner.get_session_state()
     }
