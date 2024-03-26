@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-mocks-experimental"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
 description = "Experimental testing utilities for smithy-rs generated clients"
 edition = "2021"

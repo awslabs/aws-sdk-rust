@@ -5,7 +5,9 @@
 
 use std::time::{Duration, SystemTime};
 
+use aws_config::timeout::TimeoutConfig;
 use aws_config::Region;
+use aws_sdk_s3::config::endpoint::{EndpointFuture, Params, ResolveEndpoint};
 use aws_sdk_s3::config::{Builder, Credentials};
 use aws_sdk_s3::presigning::PresigningConfig;
 use aws_sdk_s3::primitives::SdkBody;
@@ -16,6 +18,7 @@ use aws_smithy_runtime::client::http::test_util::{
     capture_request, ReplayEvent, StaticReplayClient,
 };
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
+use aws_smithy_types::endpoint::Endpoint;
 use http::Uri;
 
 async fn test_client<F>(update_builder: F) -> Client
@@ -409,4 +412,38 @@ async fn support_customer_overriding_express_credentials_provider() {
         .expect("x-amz-security-token should be present");
     assert_eq!(expected_session_token, actual_session_token);
     assert!(req.headers().get("x-amz-s3session-token").is_none());
+}
+
+#[tokio::test]
+async fn s3_express_auth_flow_should_not_be_reached_with_no_auth_schemes() {
+    #[derive(Debug)]
+    struct TestResolver {
+        url: String,
+    }
+    impl ResolveEndpoint for TestResolver {
+        fn resolve_endpoint(&self, _params: &Params) -> EndpointFuture<'_> {
+            EndpointFuture::ready(Ok(Endpoint::builder().url(self.url.clone()).build()))
+        }
+    }
+
+    let (http_client, request) = capture_request(None);
+    let conf = Config::builder()
+        .http_client(http_client)
+        .region(Region::new("us-west-2"))
+        .endpoint_resolver(TestResolver {
+            url: "http://127.0.0.1".to_owned(),
+        })
+        .with_test_defaults()
+        .timeout_config(
+            TimeoutConfig::builder()
+                .operation_attempt_timeout(Duration::from_secs(1))
+                .build(),
+        )
+        .build();
+    let client = Client::from_conf(conf);
+
+    // Note that we pass a regular bucket; when the bug was present, it still went through s3 Express auth flow.
+    let _ = client.list_objects_v2().bucket("test-bucket").send().await;
+    // If s3 Express auth flow were exercised, no request would be received, most likely due to `TimeoutError`.
+    let _ = request.expect_request();
 }

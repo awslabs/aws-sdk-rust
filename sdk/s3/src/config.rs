@@ -936,24 +936,6 @@ impl Builder {
         self.config.store_or_unset(app_name);
         self
     }
-    /// Sets the credentials provider for S3 Express One Zone
-    pub fn express_credentials_provider(mut self, credentials_provider: impl crate::config::ProvideCredentials + 'static) -> Self {
-        self.set_express_credentials_provider(::std::option::Option::Some(crate::config::SharedCredentialsProvider::new(
-            credentials_provider,
-        )));
-        self
-    }
-    /// Sets the credentials provider for S3 Express One Zone
-    pub fn set_express_credentials_provider(
-        &mut self,
-        credentials_provider: ::std::option::Option<crate::config::SharedCredentialsProvider>,
-    ) -> &mut Self {
-        if let ::std::option::Option::Some(credentials_provider) = credentials_provider {
-            self.runtime_components
-                .set_identity_resolver(crate::s3_express::auth::SCHEME_ID, credentials_provider);
-        }
-        self
-    }
     /// Overrides the default invocation ID generator.
     ///
     /// The invocation ID generator generates ID values for the `amz-sdk-invocation-id` header. By default, this will be a random UUID. Overriding it may be useful in tests that examine the HTTP request and need to be deterministic.
@@ -1048,6 +1030,24 @@ impl Builder {
             }
             self.runtime_components
                 .set_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, credentials_provider);
+        }
+        self
+    }
+    /// Sets the credentials provider for S3 Express One Zone
+    pub fn express_credentials_provider(mut self, credentials_provider: impl crate::config::ProvideCredentials + 'static) -> Self {
+        self.set_express_credentials_provider(::std::option::Option::Some(crate::config::SharedCredentialsProvider::new(
+            credentials_provider,
+        )));
+        self
+    }
+    /// Sets the credentials provider for S3 Express One Zone
+    pub fn set_express_credentials_provider(
+        &mut self,
+        credentials_provider: ::std::option::Option<crate::config::SharedCredentialsProvider>,
+    ) -> &mut Self {
+        if let ::std::option::Option::Some(credentials_provider) = credentials_provider {
+            self.runtime_components
+                .set_identity_resolver(crate::s3_express::auth::SCHEME_ID, credentials_provider);
         }
         self
     }
@@ -1204,13 +1204,6 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::request_info::RequestInfoInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
-        runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
-            crate::s3_express::auth::S3ExpressAuthScheme::new(),
-        ));
-        runtime_components.set_identity_resolver(crate::s3_express::auth::SCHEME_ID, crate::s3_express::identity_provider::DefaultS3ExpressIdentityProvider::builder()
-                                    .behavior_version(_service_config.behavior_version.clone().expect("Invalid client configuration: A behavior version must be set when creating an inner S3 client. A behavior version should be set in the outer S3 client, so it needs to be passed down to the inner client."))
-                                    .time_source(_service_config.time_source().unwrap_or_default())
-                                    .build());
         runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
@@ -1222,6 +1215,13 @@ impl ServiceRuntimePlugin {
                 ::aws_runtime::auth::sigv4a::SigV4aAuthScheme::new(),
             ));
         }
+        runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
+            crate::s3_express::auth::S3ExpressAuthScheme::new(),
+        ));
+        runtime_components.set_identity_resolver(crate::s3_express::auth::SCHEME_ID, crate::s3_express::identity_provider::DefaultS3ExpressIdentityProvider::builder()
+                                    .behavior_version(_service_config.behavior_version.clone().expect("Invalid client configuration: A behavior version must be set when creating an inner S3 client. A behavior version should be set in the outer S3 client, so it needs to be passed down to the inner client."))
+                                    .time_source(_service_config.time_source().unwrap_or_default())
+                                    .build());
         Self { config, runtime_components }
     }
 }

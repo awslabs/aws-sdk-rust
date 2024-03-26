@@ -75,6 +75,46 @@ macro_rules! mock {
     };
 }
 
+// This could be obviated by a reasonable trait, since you can express it with SdkConfig if clients implement From<&SdkConfig>.
+
+/// `mock_client!` macro produces a Client configured with a number of Rules and appropriate test default configuration.
+///
+/// # Examples
+/// **Create a client that uses a mock failure and then a success**:
+/// ```rust
+/// use aws_sdk_s3::operation::get_object::{GetObjectOutput, GetObjectError};
+/// use aws_sdk_s3::types::error::NoSuchKey;
+/// use aws_sdk_s3::Client;
+/// use aws_smithy_types::byte_stream::ByteStream;
+/// use aws_smithy_mocks_experimental::{mock_client, mock, RuleMode};
+/// let get_object_happy_path = mock!(Client::get_object)
+///   .match_requests(|req|req.bucket() == Some("test-bucket") && req.key() == Some("test-key"))
+///   .then_output(||GetObjectOutput::builder().body(ByteStream::from_static(b"12345-abcde")).build());
+/// let get_object_error_path = mock!(Client::get_object)
+///   .then_error(||GetObjectError::NoSuchKey(NoSuchKey::builder().build()));
+/// let client = mock_client!(aws_sdk_s3, RuleMode::Sequential, &[&get_object_error_path, &get_object_happy_path]);
+/// ```
+#[macro_export]
+macro_rules! mock_client {
+    ($aws_crate: ident, $rules: expr) => {
+        mock_client!($aws_crate, $crate::RuleMode::Sequential, $rules)
+    };
+    ($aws_crate: ident, $rule_mode: expr, $rules: expr) => {{
+        let mut mock_response_interceptor =
+            $crate::MockResponseInterceptor::new().rule_mode($rule_mode);
+        for rule in $rules {
+            mock_response_interceptor = mock_response_interceptor.with_rule(rule)
+        }
+        $aws_crate::client::Client::from_conf(
+            $aws_crate::config::Config::builder()
+                .with_test_defaults()
+                .region($aws_crate::config::Region::from_static("us-east-1"))
+                .interceptor(mock_response_interceptor)
+                .build(),
+        )
+    }};
+}
+
 type MatchFn = Arc<dyn Fn(&Input) -> bool + Send + Sync>;
 type OutputFn = Arc<dyn Fn() -> Result<Output, OrchestratorError<Error>> + Send + Sync>;
 
@@ -90,10 +130,19 @@ enum MockOutput {
     ModeledResponse(OutputFn),
 }
 
+/// RuleMode describes how rules will be interpreted.
+/// - In RuleMode::MatchAny, the first matching rule will be applied, and the rules will remain unchanged.
+/// - In RuleMode::Sequential, the first matching rule will be applied, and that rule will be removed from the list of rules.
+#[derive()]
+pub enum RuleMode {
+    MatchAny,
+    Sequential,
+}
+
 /// Interceptor which produces mock responses based on a list of rules
 pub struct MockResponseInterceptor {
     rules: Arc<Mutex<VecDeque<Rule>>>,
-    enforce_order: bool,
+    rule_mode: RuleMode,
     must_match: bool,
 }
 
@@ -213,7 +262,7 @@ impl MockResponseInterceptor {
     pub fn new() -> Self {
         Self {
             rules: Default::default(),
-            enforce_order: false,
+            rule_mode: RuleMode::MatchAny,
             must_match: true,
         }
     }
@@ -225,11 +274,11 @@ impl MockResponseInterceptor {
         self
     }
 
-    /// Require that rules are matched in order.
+    /// Set the RuleMode to use when evaluating rules.
     ///
-    /// If a rule matches out of order, the interceptor will panic.
-    pub fn enforce_order(mut self) -> Self {
-        self.enforce_order = true;
+    /// See `RuleMode` enum for modes and how they are applied.
+    pub fn rule_mode(mut self, rule_mode: RuleMode) -> Self {
+        self.rule_mode = rule_mode;
         self
     }
 
@@ -251,8 +300,8 @@ impl Intercept for MockResponseInterceptor {
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let mut rules = self.rules.lock().unwrap();
-        let rule = match self.enforce_order {
-            true => {
+        let rule = match self.rule_mode {
+            RuleMode::Sequential => {
                 let rule = rules
                     .pop_front()
                     .expect("no more rules but a new request was received");
@@ -264,7 +313,7 @@ impl Intercept for MockResponseInterceptor {
                 }
                 Some(rule)
             }
-            false => rules
+            RuleMode::MatchAny => rules
                 .iter()
                 .find(|rule| (rule.matcher)(context.input()))
                 .cloned(),
