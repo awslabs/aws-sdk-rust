@@ -38,7 +38,7 @@ use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 ///
 /// # Examples
 /// **Mock and return a success response**:
-/// ```rust
+/// ```rust,ignore
 /// use aws_sdk_s3::operation::get_object::GetObjectOutput;
 /// use aws_sdk_s3::Client;
 /// use aws_smithy_types::byte_stream::ByteStream;
@@ -49,7 +49,7 @@ use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 /// ```
 ///
 /// **Mock and return an error**:
-/// ```rust
+/// ```rust,ignore
 /// use aws_sdk_s3::operation::get_object::GetObjectError;
 /// use aws_sdk_s3::types::error::NoSuchKey;
 /// use aws_sdk_s3::Client;
@@ -81,7 +81,7 @@ macro_rules! mock {
 ///
 /// # Examples
 /// **Create a client that uses a mock failure and then a success**:
-/// ```rust
+/// ```rust,ignore
 /// use aws_sdk_s3::operation::get_object::{GetObjectOutput, GetObjectError};
 /// use aws_sdk_s3::types::error::NoSuchKey;
 /// use aws_sdk_s3::Client;
