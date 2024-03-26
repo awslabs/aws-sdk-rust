@@ -208,12 +208,6 @@ pub async fn load_defaults(version: BehaviorVersion) -> SdkConfig {
 }
 
 mod loader {
-    use crate::default_provider::use_dual_stack::use_dual_stack_provider;
-    use crate::default_provider::use_fips::use_fips_provider;
-    use crate::default_provider::{app_name, credentials, region, retry_config, timeout_config};
-    use crate::meta::region::ProvideRegion;
-    use crate::profile::profile_file::ProfileFiles;
-    use crate::provider_config::ProviderConfig;
     use aws_credential_types::provider::{
         token::{ProvideToken, SharedTokenProvider},
         ProvideCredentials, SharedCredentialsProvider,
@@ -233,6 +227,14 @@ mod loader {
     use aws_types::os_shim_internal::{Env, Fs};
     use aws_types::sdk_config::SharedHttpClient;
     use aws_types::SdkConfig;
+
+    use crate::default_provider::{
+        app_name, credentials, endpoint_url, ignore_configured_endpoint_urls as ignore_ep, region,
+        retry_config, timeout_config, use_dual_stack, use_fips,
+    };
+    use crate::meta::region::ProvideRegion;
+    use crate::profile::profile_file::ProfileFiles;
+    use crate::provider_config::ProviderConfig;
 
     #[derive(Default, Debug)]
     enum CredentialsProviderOption {
@@ -726,13 +728,13 @@ mod loader {
             let use_fips = if let Some(use_fips) = self.use_fips {
                 Some(use_fips)
             } else {
-                use_fips_provider(&conf).await
+                use_fips::use_fips_provider(&conf).await
             };
 
             let use_dual_stack = if let Some(use_dual_stack) = self.use_dual_stack {
                 Some(use_dual_stack)
             } else {
-                use_dual_stack_provider(&conf).await
+                use_dual_stack::use_dual_stack_provider(&conf).await
             };
 
             let conf = conf
@@ -811,6 +813,30 @@ mod loader {
                 .timeout_config(timeout_config)
                 .time_source(time_source);
 
+            // If an endpoint URL is set programmatically, then our work is done.
+            let endpoint_url = if self.endpoint_url.is_some() {
+                self.endpoint_url
+            } else {
+                // Otherwise, check to see if we should ignore EP URLs set in the environment.
+                let ignore_configured_endpoint_urls =
+                    ignore_ep::ignore_configured_endpoint_urls_provider(&conf)
+                        .await
+                        .unwrap_or_default();
+
+                if ignore_configured_endpoint_urls {
+                    // If yes, log a trace and return `None`.
+                    tracing::trace!(
+                        "`ignore_configured_endpoint_urls` is set, any endpoint URLs configured in the environment will be ignored. \
+                        NOTE: Endpoint URLs set programmatically WILL still be respected"
+                    );
+                    None
+                } else {
+                    // Otherwise, attempt to resolve one.
+                    endpoint_url::endpoint_url_provider(&conf).await
+                }
+            };
+            builder.set_endpoint_url(endpoint_url);
+
             builder.set_behavior_version(self.behavior_version);
             builder.set_http_client(self.http_client);
             builder.set_app_name(app_name);
@@ -818,7 +844,6 @@ mod loader {
             builder.set_credentials_provider(credentials_provider);
             builder.set_token_provider(token_provider);
             builder.set_sleep_impl(sleep_impl);
-            builder.set_endpoint_url(self.endpoint_url);
             builder.set_use_fips(use_fips);
             builder.set_use_dual_stack(use_dual_stack);
             builder.set_stalled_stream_protection(self.stalled_stream_protection_config);
@@ -969,6 +994,99 @@ mod loader {
                 .expect_err("did not expect credentials to be loaded—no traffic is allowed");
             let num_requests = num_requests.load(Ordering::Relaxed);
             assert!(num_requests > 0, "{}", num_requests);
+        }
+
+        #[tokio::test]
+        async fn endpoint_urls_may_be_ignored_from_env() {
+            let fs = Fs::from_slice(&[(
+                "test_config",
+                "[profile custom]\nendpoint_url = http://profile",
+            )]);
+            let env = Env::from_slice(&[("AWS_IGNORE_CONFIGURED_ENDPOINT_URLS", "true")]);
+
+            let conf = base_conf().use_dual_stack(false).load().await;
+            assert_eq!(Some(false), conf.use_dual_stack());
+
+            let conf = base_conf().load().await;
+            assert_eq!(None, conf.use_dual_stack());
+
+            // Check that we get nothing back because the env said we should ignore endpoints
+            let config = base_conf()
+                .fs(fs.clone())
+                .env(env)
+                .profile_name("custom")
+                .profile_files(
+                    ProfileFiles::builder()
+                        .with_file(ProfileFileKind::Config, "test_config")
+                        .build(),
+                )
+                .load()
+                .await;
+            assert_eq!(None, config.endpoint_url());
+
+            // Check that without the env, we DO get something back
+            let config = base_conf()
+                .fs(fs)
+                .profile_name("custom")
+                .profile_files(
+                    ProfileFiles::builder()
+                        .with_file(ProfileFileKind::Config, "test_config")
+                        .build(),
+                )
+                .load()
+                .await;
+            assert_eq!(Some("http://profile"), config.endpoint_url());
+        }
+
+        #[tokio::test]
+        async fn endpoint_urls_may_be_ignored_from_profile() {
+            let fs = Fs::from_slice(&[(
+                "test_config",
+                "[profile custom]\nignore_configured_endpoint_urls = true",
+            )]);
+            let env = Env::from_slice(&[("AWS_ENDPOINT_URL", "http://environment")]);
+
+            // Check that we get nothing back because the profile said we should ignore endpoints
+            let config = base_conf()
+                .fs(fs)
+                .env(env.clone())
+                .profile_name("custom")
+                .profile_files(
+                    ProfileFiles::builder()
+                        .with_file(ProfileFileKind::Config, "test_config")
+                        .build(),
+                )
+                .load()
+                .await;
+            assert_eq!(None, config.endpoint_url());
+
+            // Check that without the profile, we DO get something back
+            let config = base_conf().env(env).load().await;
+            assert_eq!(Some("http://environment"), config.endpoint_url());
+        }
+
+        #[tokio::test]
+        async fn programmatic_endpoint_urls_may_not_be_ignored() {
+            let fs = Fs::from_slice(&[(
+                "test_config",
+                "[profile custom]\nignore_configured_endpoint_urls = true",
+            )]);
+            let env = Env::from_slice(&[("AWS_IGNORE_CONFIGURED_ENDPOINT_URLS", "true")]);
+
+            // Check that we get something back because we explicitly set the loader's endpoint URL
+            let config = base_conf()
+                .fs(fs)
+                .env(env)
+                .endpoint_url("http://localhost")
+                .profile_name("custom")
+                .profile_files(
+                    ProfileFiles::builder()
+                        .with_file(ProfileFileKind::Config, "test_config")
+                        .build(),
+                )
+                .load()
+                .await;
+            assert_eq!(Some("http://localhost"), config.endpoint_url());
         }
     }
 }

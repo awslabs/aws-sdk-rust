@@ -97,7 +97,13 @@ async fn default_connect_timeout_set() {
                 .build()
         )
     );
+    assert_eq!(
+        sdk_config.endpoint_url(),
+        Some("http://172.255.255.0:18104")
+    );
+
     let config = aws_sdk_s3::config::Builder::from(&sdk_config)
+        // .endpoint_url("http://172.255.255.0:18104")
         .timeout_config(
             TimeoutConfig::builder()
                 .operation_attempt_timeout(Duration::from_secs(8))

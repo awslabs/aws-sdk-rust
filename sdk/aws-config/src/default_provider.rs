@@ -51,3 +51,9 @@ pub mod use_dual_stack;
 /// Default access token provider chain
 #[cfg(feature = "sso")]
 pub mod token;
+
+/// Default "ignore configured endpoint URLs" provider chain
+pub mod ignore_configured_endpoint_urls;
+
+/// Default endpoint URL provider chain
+pub mod endpoint_url;

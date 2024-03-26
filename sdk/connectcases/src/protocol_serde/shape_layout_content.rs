@@ -30,6 +30,12 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    if let ::std::option::Option::Some(::std::result::Result::Ok(::aws_smithy_json::deserialize::Token::ValueNull { .. })) =
+                        tokens.peek()
+                    {
+                        let _ = tokens.next().expect("peek returned a token")?;
+                        continue;
+                    }
                     let key = key.to_unescaped()?;
                     if key == "__type" {
                         ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
@@ -64,6 +70,11 @@ where
                 "expected start object or null",
             ))
         }
+    }
+    if variant.is_none() {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "Union did not contain a valid variant.",
+        ));
     }
     Ok(variant)
 }

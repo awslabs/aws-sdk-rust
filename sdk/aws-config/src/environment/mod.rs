@@ -6,7 +6,7 @@
 //! Providers that load configuration from environment variables
 
 use std::error::Error;
-use std::fmt::{Display, Formatter};
+use std::fmt;
 
 /// Load credentials from the environment
 pub mod credentials;
@@ -21,9 +21,9 @@ pub(crate) struct InvalidBooleanValue {
     value: String,
 }
 
-impl Display for InvalidBooleanValue {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{} was not a valid boolean", self.value)
+impl fmt::Display for InvalidBooleanValue {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{} is not a valid boolean", self.value)
     }
 }
 
@@ -38,5 +38,28 @@ pub(crate) fn parse_bool(value: &str) -> Result<bool, InvalidBooleanValue> {
         Err(InvalidBooleanValue {
             value: value.to_string(),
         })
+    }
+}
+
+#[derive(Debug)]
+pub(crate) struct InvalidUrlValue {
+    value: String,
+}
+
+impl fmt::Display for InvalidUrlValue {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{} is not a valid URL", self.value)
+    }
+}
+
+impl Error for InvalidUrlValue {}
+
+pub(crate) fn parse_url(value: &str) -> Result<String, InvalidUrlValue> {
+    match url::Url::parse(value) {
+        // We discard the parse result because it includes a trailing slash
+        Ok(_) => Ok(value.to_string()),
+        Err(_) => Err(InvalidUrlValue {
+            value: value.to_string(),
+        }),
     }
 }
