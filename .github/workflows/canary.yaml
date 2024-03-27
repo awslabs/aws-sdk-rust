@@ -91,6 +91,8 @@ jobs:
           role-to-assume: ${{ secrets.CANARY_WORKFLOW_GITHUB_ACTIONS_ROLE_ARN }}
           aws-region: us-west-2
       - name: Run the canary
+        env:
+          CANARY_STACK_CDK_OUTPUTS_BUCKET_NAME: ${{ secrets.CANARY_STACK_CDK_OUTPUTS_BUCKET_NAME }}
         run: |
           # If `smithy-rs` lives under `aws-sdk-rust`, the following `cargo run` will run into a workspace problem:
           #   `cargo metadata` exited with an error: error: current package believes it's in a workspace when it's not:
