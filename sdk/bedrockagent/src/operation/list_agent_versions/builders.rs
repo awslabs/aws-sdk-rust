@@ -22,7 +22,7 @@ impl ListAgentVersionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAgentVersions`.
 ///
-/// Lists Agent Versions
+/// <p>Lists the versions of an agent and information about each version.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAgentVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListAgentVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_agent_versions::paginator::ListAgentVersionsPaginator {
         crate::operation::list_agent_versions::paginator::ListAgentVersionsPaginator::new(self.handle, self.inner)
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

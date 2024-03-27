@@ -22,7 +22,7 @@ impl GetAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAgent`.
 ///
-/// Gets an Agent for existing Amazon Bedrock Agent
+/// <p>Gets information about an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl GetAgentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }

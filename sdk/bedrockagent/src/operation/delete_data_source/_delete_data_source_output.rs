@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataSourceOutput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which the data source that was deleted belonged.</p>
     pub knowledge_base_id: ::std::string::String,
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source that was deleted.</p>
     pub data_source_id: ::std::string::String,
-    /// The status of a data source.
+    /// <p>The status of the data source.</p>
     pub status: crate::types::DataSourceStatus,
     _request_id: Option<String>,
 }
 impl DeleteDataSourceOutput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which the data source that was deleted belonged.</p>
     pub fn knowledge_base_id(&self) -> &str {
         use std::ops::Deref;
         self.knowledge_base_id.deref()
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source that was deleted.</p>
     pub fn data_source_id(&self) -> &str {
         use std::ops::Deref;
         self.data_source_id.deref()
     }
-    /// The status of a data source.
+    /// <p>The status of the data source.</p>
     pub fn status(&self) -> &crate::types::DataSourceStatus {
         &self.status
     }
@@ -49,48 +49,48 @@ pub struct DeleteDataSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteDataSourceOutputBuilder {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which the data source that was deleted belonged.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which the data source that was deleted belonged.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which the data source that was deleted belonged.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source that was deleted.</p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source that was deleted.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source that was deleted.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
-    /// The status of a data source.
+    /// <p>The status of the data source.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// The status of a data source.
+    /// <p>The status of the data source.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// The status of a data source.
+    /// <p>The status of the data source.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
         &self.status
     }

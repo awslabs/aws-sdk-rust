@@ -22,7 +22,7 @@ impl GetAgentVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAgentVersion`.
 ///
-/// Gets an Agent version for existing Amazon Bedrock Agent
+/// <p>Gets details about a version of an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAgentVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetAgentVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Numerical Agent Version.
+    /// <p>The version of the agent.</p>
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
-    /// Numerical Agent Version.
+    /// <p>The version of the agent.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }
-    /// Numerical Agent Version.
+    /// <p>The version of the agent.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_version()
     }

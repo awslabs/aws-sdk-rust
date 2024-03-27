@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataSourceOutput {
-    /// Contains the information of a data source.
+    /// <p>Contains details about the data source.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     _request_id: Option<String>,
 }
 impl UpdateDataSourceOutput {
-    /// Contains the information of a data source.
+    /// <p>Contains details about the data source.</p>
     pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateDataSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateDataSourceOutputBuilder {
-    /// Contains the information of a data source.
+    /// <p>Contains details about the data source.</p>
     /// This field is required.
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
     }
-    /// Contains the information of a data source.
+    /// <p>Contains details about the data source.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
-    /// Contains the information of a data source.
+    /// <p>Contains details about the data source.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
         &self.data_source
     }

@@ -13,6 +13,10 @@ pub use crate::types::_knowledge_base_retrieval_configuration::KnowledgeBaseRetr
 
 pub use crate::types::_knowledge_base_vector_search_configuration::KnowledgeBaseVectorSearchConfiguration;
 
+pub use crate::types::_retrieval_filter::RetrievalFilter;
+
+pub use crate::types::_filter_attribute::FilterAttribute;
+
 pub use crate::types::_search_type::SearchType;
 
 pub use crate::types::_knowledge_base_query::KnowledgeBaseQuery;
@@ -119,6 +123,8 @@ mod _creation_mode;
 
 mod _failure_trace;
 
+mod _filter_attribute;
+
 mod _final_response;
 
 mod _generated_response_part;
@@ -178,6 +184,8 @@ mod _reprompt_response;
 mod _request_body;
 
 mod _response_stream;
+
+mod _retrieval_filter;
 
 mod _retrieval_result_content;
 

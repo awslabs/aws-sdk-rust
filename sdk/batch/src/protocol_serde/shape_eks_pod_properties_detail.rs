@@ -31,6 +31,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "imagePullSecrets" => {
+                            builder = builder.set_image_pull_secrets(crate::protocol_serde::shape_image_pull_secrets::de_image_pull_secrets(tokens)?);
+                        }
                         "containers" => {
                             builder = builder.set_containers(crate::protocol_serde::shape_eks_container_details::de_eks_container_details(tokens)?);
                         }

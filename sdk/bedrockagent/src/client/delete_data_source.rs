@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataSource`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::set_knowledge_base_id):<br>required: **true**<br>Identifier for a resource.<br>
-    ///   - [`data_source_id(impl Into<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::data_source_id) / [`set_data_source_id(Option<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::set_data_source_id):<br>required: **true**<br>Identifier for a resource.<br>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The unique identifier of the knowledge base from which to delete the data source.</p><br>
+    ///   - [`data_source_id(impl Into<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::data_source_id) / [`set_data_source_id(Option<String>)`](crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::set_data_source_id):<br>required: **true**<br><p>The unique identifier of the data source to delete.</p><br>
     /// - On success, responds with [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput) with field(s):
-    ///   - [`knowledge_base_id(String)`](crate::operation::delete_data_source::DeleteDataSourceOutput::knowledge_base_id): Identifier for a resource.
-    ///   - [`data_source_id(String)`](crate::operation::delete_data_source::DeleteDataSourceOutput::data_source_id): Identifier for a resource.
-    ///   - [`status(DataSourceStatus)`](crate::operation::delete_data_source::DeleteDataSourceOutput::status): The status of a data source.
+    ///   - [`knowledge_base_id(String)`](crate::operation::delete_data_source::DeleteDataSourceOutput::knowledge_base_id): <p>The unique identifier of the knowledge base to which the data source that was deleted belonged.</p>
+    ///   - [`data_source_id(String)`](crate::operation::delete_data_source::DeleteDataSourceOutput::data_source_id): <p>The unique identifier of the data source that was deleted.</p>
+    ///   - [`status(DataSourceStatus)`](crate::operation::delete_data_source::DeleteDataSourceOutput::status): <p>The status of the data source.</p>
     /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::operation::delete_data_source::DeleteDataSourceError)
     pub fn delete_data_source(&self) -> crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder {
         crate::operation::delete_data_source::builders::DeleteDataSourceFluentBuilder::new(self.handle.clone())

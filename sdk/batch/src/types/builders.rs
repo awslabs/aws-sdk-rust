@@ -109,6 +109,8 @@ pub use crate::types::_eks_container_security_context::EksContainerSecurityConte
 
 pub use crate::types::_eks_container_volume_mount::EksContainerVolumeMountBuilder;
 
+pub use crate::types::_image_pull_secret::ImagePullSecretBuilder;
+
 pub use crate::types::_node_properties::NodePropertiesBuilder;
 
 pub use crate::types::_node_range_property::NodeRangePropertyBuilder;

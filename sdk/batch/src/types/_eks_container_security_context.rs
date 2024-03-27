@@ -10,6 +10,8 @@ pub struct EksContainerSecurityContext {
     pub run_as_group: ::std::option::Option<i64>,
     /// <p>When this parameter is <code>true</code>, the container is given elevated permissions on the host container instance. The level of permissions are similar to the <code>root</code> user permissions. The default value is <code>false</code>. This parameter maps to <code>privileged</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#privileged">Privileged pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub privileged: ::std::option::Option<bool>,
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The default value is <code>false</code>.</p>
+    pub allow_privilege_escalation: ::std::option::Option<bool>,
     /// <p>When this parameter is <code>true</code>, the container is given read-only access to its root file system. The default value is <code>false</code>. This parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#volumes-and-file-systems">Volumes and file systems pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub read_only_root_filesystem: ::std::option::Option<bool>,
     /// <p>When this parameter is specified, the container is run as a user with a <code>uid</code> other than 0. If this parameter isn't specified, so such rule is enforced. This parameter maps to <code>RunAsUser</code> and <code>MustRunAsNonRoot</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
@@ -27,6 +29,10 @@ impl EksContainerSecurityContext {
     /// <p>When this parameter is <code>true</code>, the container is given elevated permissions on the host container instance. The level of permissions are similar to the <code>root</code> user permissions. The default value is <code>false</code>. This parameter maps to <code>privileged</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#privileged">Privileged pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn privileged(&self) -> ::std::option::Option<bool> {
         self.privileged
+    }
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The default value is <code>false</code>.</p>
+    pub fn allow_privilege_escalation(&self) -> ::std::option::Option<bool> {
+        self.allow_privilege_escalation
     }
     /// <p>When this parameter is <code>true</code>, the container is given read-only access to its root file system. The default value is <code>false</code>. This parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#volumes-and-file-systems">Volumes and file systems pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn read_only_root_filesystem(&self) -> ::std::option::Option<bool> {
@@ -51,6 +57,7 @@ pub struct EksContainerSecurityContextBuilder {
     pub(crate) run_as_user: ::std::option::Option<i64>,
     pub(crate) run_as_group: ::std::option::Option<i64>,
     pub(crate) privileged: ::std::option::Option<bool>,
+    pub(crate) allow_privilege_escalation: ::std::option::Option<bool>,
     pub(crate) read_only_root_filesystem: ::std::option::Option<bool>,
     pub(crate) run_as_non_root: ::std::option::Option<bool>,
 }
@@ -97,6 +104,20 @@ impl EksContainerSecurityContextBuilder {
     pub fn get_privileged(&self) -> &::std::option::Option<bool> {
         &self.privileged
     }
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The default value is <code>false</code>.</p>
+    pub fn allow_privilege_escalation(mut self, input: bool) -> Self {
+        self.allow_privilege_escalation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The default value is <code>false</code>.</p>
+    pub fn set_allow_privilege_escalation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_privilege_escalation = input;
+        self
+    }
+    /// <p>Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The default value is <code>false</code>.</p>
+    pub fn get_allow_privilege_escalation(&self) -> &::std::option::Option<bool> {
+        &self.allow_privilege_escalation
+    }
     /// <p>When this parameter is <code>true</code>, the container is given read-only access to its root file system. The default value is <code>false</code>. This parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#volumes-and-file-systems">Volumes and file systems pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn read_only_root_filesystem(mut self, input: bool) -> Self {
         self.read_only_root_filesystem = ::std::option::Option::Some(input);
@@ -131,6 +152,7 @@ impl EksContainerSecurityContextBuilder {
             run_as_user: self.run_as_user,
             run_as_group: self.run_as_group,
             privileged: self.privileged,
+            allow_privilege_escalation: self.allow_privilege_escalation,
             read_only_root_filesystem: self.read_only_root_filesystem,
             run_as_non_root: self.run_as_non_root,
         }

@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartIngestionJobInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to ingest.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// Description of the Resource.
+    /// <p>A description of the ingestion job.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl StartIngestionJobInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to ingest.</p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// Description of the Resource.
+    /// <p>A description of the ingestion job.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -47,61 +47,61 @@ pub struct StartIngestionJobInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl StartIngestionJobInputBuilder {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to which to add the data source.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to ingest.</p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to ingest.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to ingest.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// Description of the Resource.
+    /// <p>A description of the ingestion job.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the ingestion job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the ingestion job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

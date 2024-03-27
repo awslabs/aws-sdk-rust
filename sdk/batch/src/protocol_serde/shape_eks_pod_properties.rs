@@ -12,20 +12,20 @@ pub fn ser_eks_pod_properties(
     if let Some(var_3) = &input.dns_policy {
         object.key("dnsPolicy").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.containers {
-        let mut array_5 = object.key("containers").start_array();
+    if let Some(var_4) = &input.image_pull_secrets {
+        let mut array_5 = object.key("imagePullSecrets").start_array();
         for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_eks_container::ser_eks_container(&mut object_7, item_6)?;
+                crate::protocol_serde::shape_image_pull_secret::ser_image_pull_secret(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
         array_5.finish();
     }
-    if let Some(var_8) = &input.init_containers {
-        let mut array_9 = object.key("initContainers").start_array();
+    if let Some(var_8) = &input.containers {
+        let mut array_9 = object.key("containers").start_array();
         for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
@@ -36,26 +36,38 @@ pub fn ser_eks_pod_properties(
         }
         array_9.finish();
     }
-    if let Some(var_12) = &input.volumes {
-        let mut array_13 = object.key("volumes").start_array();
+    if let Some(var_12) = &input.init_containers {
+        let mut array_13 = object.key("initContainers").start_array();
         for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_eks_volume::ser_eks_volume(&mut object_15, item_14)?;
+                crate::protocol_serde::shape_eks_container::ser_eks_container(&mut object_15, item_14)?;
                 object_15.finish();
             }
         }
         array_13.finish();
     }
-    if let Some(var_16) = &input.metadata {
-        #[allow(unused_mut)]
-        let mut object_17 = object.key("metadata").start_object();
-        crate::protocol_serde::shape_eks_metadata::ser_eks_metadata(&mut object_17, var_16)?;
-        object_17.finish();
+    if let Some(var_16) = &input.volumes {
+        let mut array_17 = object.key("volumes").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_eks_volume::ser_eks_volume(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
     }
-    if let Some(var_18) = &input.share_process_namespace {
-        object.key("shareProcessNamespace").boolean(*var_18);
+    if let Some(var_20) = &input.metadata {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("metadata").start_object();
+        crate::protocol_serde::shape_eks_metadata::ser_eks_metadata(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.share_process_namespace {
+        object.key("shareProcessNamespace").boolean(*var_22);
     }
     Ok(())
 }
@@ -91,6 +103,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "imagePullSecrets" => {
+                            builder = builder.set_image_pull_secrets(crate::protocol_serde::shape_image_pull_secrets::de_image_pull_secrets(tokens)?);
                         }
                         "containers" => {
                             builder = builder.set_containers(crate::protocol_serde::shape_eks_containers::de_eks_containers(tokens)?);

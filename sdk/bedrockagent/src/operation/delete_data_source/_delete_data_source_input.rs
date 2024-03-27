@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataSourceInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base from which to delete the data source.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to delete.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDataSourceInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base from which to delete the data source.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to delete.</p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteDataSourceInputBuilder {
     pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDataSourceInputBuilder {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base from which to delete the data source.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base from which to delete the data source.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base from which to delete the data source.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to delete.</p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to delete.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to delete.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }

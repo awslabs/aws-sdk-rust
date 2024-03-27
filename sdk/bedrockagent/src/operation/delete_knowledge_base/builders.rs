@@ -22,7 +22,7 @@ impl DeleteKnowledgeBaseInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteKnowledgeBase`.
 ///
-/// Delete an existing knowledge base
+/// <p>Deletes a knowledge base. Before deleting a knowledge base, you should disassociate the knowledge base from any agents that it is associated with by making a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DisassociateAgentKnowledgeBase.html">DisassociateAgentKnowledgeBase</a> request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKnowledgeBaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteKnowledgeBaseFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to delete.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to delete.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to delete.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAgent`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_id(impl Into<String>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::agent_id) / [`set_agent_id(Option<String>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::set_agent_id):<br>required: **true**<br>Id generated at the server side when an Agent is created<br>
-    ///   - [`skip_resource_in_use_check(bool)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::skip_resource_in_use_check) / [`set_skip_resource_in_use_check(Option<bool>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::set_skip_resource_in_use_check):<br>required: **false**<br>Skips checking if resource is in use when set to true. Defaults to false<br>
+    ///   - [`agent_id(impl Into<String>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::agent_id) / [`set_agent_id(Option<String>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::set_agent_id):<br>required: **true**<br><p>The unique identifier of the agent to delete.</p><br>
+    ///   - [`skip_resource_in_use_check(bool)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::skip_resource_in_use_check) / [`set_skip_resource_in_use_check(Option<bool>)`](crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::set_skip_resource_in_use_check):<br>required: **false**<br><p>By default, this value is <code>false</code> and deletion is stopped if the resource is in use. If you set it to <code>true</code>, the resource will be deleted even if the resource is in use.</p><br>
     /// - On success, responds with [`DeleteAgentOutput`](crate::operation::delete_agent::DeleteAgentOutput) with field(s):
-    ///   - [`agent_id(String)`](crate::operation::delete_agent::DeleteAgentOutput::agent_id): Identifier for a resource.
-    ///   - [`agent_status(AgentStatus)`](crate::operation::delete_agent::DeleteAgentOutput::agent_status): Schema Type for Action APIs.
+    ///   - [`agent_id(String)`](crate::operation::delete_agent::DeleteAgentOutput::agent_id): <p>The unique identifier of the agent that was deleted.</p>
+    ///   - [`agent_status(AgentStatus)`](crate::operation::delete_agent::DeleteAgentOutput::agent_status): <p>The status of the agent.</p>
     /// - On failure, responds with [`SdkError<DeleteAgentError>`](crate::operation::delete_agent::DeleteAgentError)
     pub fn delete_agent(&self) -> crate::operation::delete_agent::builders::DeleteAgentFluentBuilder {
         crate::operation::delete_agent::builders::DeleteAgentFluentBuilder::new(self.handle.clone())

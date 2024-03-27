@@ -22,7 +22,7 @@ impl GetAgentAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAgentAlias`.
 ///
-/// Describes an Alias for a Amazon Bedrock Agent
+/// <p>Gets information about an alias of an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAgentAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetAgentAliasFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent to which the alias to get information belongs.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent to which the alias to get information belongs.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent to which the alias to get information belongs.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Id generated at the server side when an Agent Alias is created
+    /// <p>The unique identifier of the alias for which to get information.</p>
     pub fn agent_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_alias_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent Alias is created
+    /// <p>The unique identifier of the alias for which to get information.</p>
     pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_alias_id(input);
         self
     }
-    /// Id generated at the server side when an Agent Alias is created
+    /// <p>The unique identifier of the alias for which to get information.</p>
     pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_alias_id()
     }

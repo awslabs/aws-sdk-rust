@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIngestionJobInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which the ingestion job applies.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source in the ingestion job.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the ingestion job.</p>
     pub ingestion_job_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIngestionJobInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which the ingestion job applies.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source in the ingestion job.</p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the ingestion job.</p>
     pub fn ingestion_job_id(&self) -> ::std::option::Option<&str> {
         self.ingestion_job_id.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct GetIngestionJobInputBuilder {
     pub(crate) ingestion_job_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIngestionJobInputBuilder {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which the ingestion job applies.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which the ingestion job applies.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which the ingestion job applies.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source in the ingestion job.</p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source in the ingestion job.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source in the ingestion job.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the ingestion job.</p>
     /// This field is required.
     pub fn ingestion_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the ingestion job.</p>
     pub fn set_ingestion_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_job_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the ingestion job.</p>
     pub fn get_ingestion_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ingestion_job_id
     }

@@ -22,7 +22,7 @@ impl GetKnowledgeBaseInputBuilder {
 }
 /// Fluent builder constructing a request to `GetKnowledgeBase`.
 ///
-/// Get an existing knowledge base
+/// <p>Gets information about a knoweldge base.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKnowledgeBaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetKnowledgeBaseFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which to get information.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which to get information.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which to get information.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }

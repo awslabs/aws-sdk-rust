@@ -15,6 +15,8 @@ pub struct KnowledgeBaseRetrievalResult {
     pub location: ::std::option::Option<crate::types::RetrievalResultLocation>,
     /// <p>The level of relevance of the result to the query.</p>
     pub score: ::std::option::Option<f64>,
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl KnowledgeBaseRetrievalResult {
     /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
@@ -29,6 +31,10 @@ impl KnowledgeBaseRetrievalResult {
     pub fn score(&self) -> ::std::option::Option<f64> {
         self.score
     }
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        self.metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for KnowledgeBaseRetrievalResult {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -36,6 +42,7 @@ impl ::std::fmt::Debug for KnowledgeBaseRetrievalResult {
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("location", &"*** Sensitive Data Redacted ***");
         formatter.field("score", &self.score);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -53,6 +60,7 @@ pub struct KnowledgeBaseRetrievalResultBuilder {
     pub(crate) content: ::std::option::Option<crate::types::RetrievalResultContent>,
     pub(crate) location: ::std::option::Option<crate::types::RetrievalResultLocation>,
     pub(crate) score: ::std::option::Option<f64>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl KnowledgeBaseRetrievalResultBuilder {
     /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
@@ -98,12 +106,36 @@ impl KnowledgeBaseRetrievalResultBuilder {
     pub fn get_score(&self) -> &::std::option::Option<f64> {
         &self.score
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub fn set_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    ) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseRetrievalResult`](crate::types::KnowledgeBaseRetrievalResult).
     pub fn build(self) -> crate::types::KnowledgeBaseRetrievalResult {
         crate::types::KnowledgeBaseRetrievalResult {
             content: self.content,
             location: self.location,
             score: self.score,
+            metadata: self.metadata,
         }
     }
 }
@@ -113,6 +145,7 @@ impl ::std::fmt::Debug for KnowledgeBaseRetrievalResultBuilder {
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("location", &"*** Sensitive Data Redacted ***");
         formatter.field("score", &self.score);
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

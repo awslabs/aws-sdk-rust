@@ -381,6 +381,15 @@ pub(crate) fn eks_volume_correct_errors(mut builder: crate::types::builders::Eks
     builder
 }
 
+pub(crate) fn image_pull_secret_correct_errors(
+    mut builder: crate::types::builders::ImagePullSecretBuilder,
+) -> crate::types::builders::ImagePullSecretBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tmpfs_correct_errors(mut builder: crate::types::builders::TmpfsBuilder) -> crate::types::builders::TmpfsBuilder {
     if builder.container_path.is_none() {
         builder.container_path = Some(Default::default())

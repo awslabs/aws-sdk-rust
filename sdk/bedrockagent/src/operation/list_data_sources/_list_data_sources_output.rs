@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSourcesOutput {
-    /// list of data source summaries
+    /// <p>A list of objects, each of which contains information about a data source.</p>
     pub data_source_summaries: ::std::vec::Vec<crate::types::DataSourceSummary>,
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDataSourcesOutput {
-    /// list of data source summaries
+    /// <p>A list of objects, each of which contains information about a data source.</p>
     pub fn data_source_summaries(&self) -> &[crate::types::DataSourceSummary] {
         use std::ops::Deref;
         self.data_source_summaries.deref()
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListDataSourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_source_summaries`](Self::set_data_source_summaries).
     ///
-    /// list of data source summaries
+    /// <p>A list of objects, each of which contains information about a data source.</p>
     pub fn data_source_summaries(mut self, input: crate::types::DataSourceSummary) -> Self {
         let mut v = self.data_source_summaries.unwrap_or_default();
         v.push(input);
         self.data_source_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// list of data source summaries
+    /// <p>A list of objects, each of which contains information about a data source.</p>
     pub fn set_data_source_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>>) -> Self {
         self.data_source_summaries = input;
         self
     }
-    /// list of data source summaries
+    /// <p>A list of objects, each of which contains information about a data source.</p>
     pub fn get_data_source_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
         &self.data_source_summaries
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

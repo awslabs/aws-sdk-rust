@@ -137,6 +137,8 @@ pub use crate::types::_eks_container_security_context::EksContainerSecurityConte
 
 pub use crate::types::_eks_container_volume_mount::EksContainerVolumeMount;
 
+pub use crate::types::_image_pull_secret::ImagePullSecret;
+
 pub use crate::types::_platform_capability::PlatformCapability;
 
 pub use crate::types::_node_properties::NodeProperties;
@@ -332,6 +334,8 @@ mod _fairshare_policy;
 mod _fargate_platform_configuration;
 
 mod _host;
+
+mod _image_pull_secret;
 
 mod _job_definition;
 

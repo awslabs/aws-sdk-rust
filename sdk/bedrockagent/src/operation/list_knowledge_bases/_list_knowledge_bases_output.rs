@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKnowledgeBasesOutput {
-    /// List of KnowledgeBaseSummaries
+    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
     pub knowledge_base_summaries: ::std::vec::Vec<crate::types::KnowledgeBaseSummary>,
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListKnowledgeBasesOutput {
-    /// List of KnowledgeBaseSummaries
+    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
     pub fn knowledge_base_summaries(&self) -> &[crate::types::KnowledgeBaseSummary] {
         use std::ops::Deref;
         self.knowledge_base_summaries.deref()
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListKnowledgeBasesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_knowledge_base_summaries`](Self::set_knowledge_base_summaries).
     ///
-    /// List of KnowledgeBaseSummaries
+    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
     pub fn knowledge_base_summaries(mut self, input: crate::types::KnowledgeBaseSummary) -> Self {
         let mut v = self.knowledge_base_summaries.unwrap_or_default();
         v.push(input);
         self.knowledge_base_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// List of KnowledgeBaseSummaries
+    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
     pub fn set_knowledge_base_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>) -> Self {
         self.knowledge_base_summaries = input;
         self
     }
-    /// List of KnowledgeBaseSummaries
+    /// <p>A list of objects, each of which contains information about a knowledge base.</p>
     pub fn get_knowledge_base_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
         &self.knowledge_base_summaries
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -22,7 +22,7 @@ impl GetAgentKnowledgeBaseInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAgentKnowledgeBase`.
 ///
-/// Gets a knowledge base associated to an existing Amazon Bedrock Agent Version
+/// <p>Gets information about a knowledge base associated with an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAgentKnowledgeBaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl GetAgentKnowledgeBaseFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent with which the knowledge base is associated.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent with which the knowledge base is associated.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent with which the knowledge base is associated.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Version number generated when a version is created
+    /// <p>The version of the agent with which the knowledge base is associated.</p>
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
-    /// Version number generated when a version is created
+    /// <p>The version of the agent with which the knowledge base is associated.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }
-    /// Version number generated when a version is created
+    /// <p>The version of the agent with which the knowledge base is associated.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_version()
     }
-    /// Id generated at the server side when a Knowledge Base is associated
+    /// <p>The unique identifier of the knowledge base associated with the agent.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// Id generated at the server side when a Knowledge Base is associated
+    /// <p>The unique identifier of the knowledge base associated with the agent.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// Id generated at the server side when a Knowledge Base is associated
+    /// <p>The unique identifier of the knowledge base associated with the agent.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }

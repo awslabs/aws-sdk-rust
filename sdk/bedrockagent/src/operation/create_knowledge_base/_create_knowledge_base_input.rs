@@ -3,47 +3,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKnowledgeBaseInput {
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// Name for a resource.
+    /// <p>A name for the knowledge base.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// Description of the Resource.
+    /// <p>A description of the knowledge base.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// Configures a bedrock knowledge base.
+    /// <p>Contains details about the embeddings model used for the knowledge base.</p>
     pub knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>,
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Contains details about the configuration of the vector database used for the knowledge base.</p>
     pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
-    /// A map of tag keys and values
+    /// <p>Specify the key-value pairs for the tags that you want to attach to your knowledge base in this object.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateKnowledgeBaseInput {
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// Name for a resource.
+    /// <p>A name for the knowledge base.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// Description of the Resource.
+    /// <p>A description of the knowledge base.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Contains details about the embeddings model used for the knowledge base.</p>
     pub fn knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseConfiguration> {
         self.knowledge_base_configuration.as_ref()
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Contains details about the configuration of the vector database used for the knowledge base.</p>
     pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
         self.storage_configuration.as_ref()
     }
-    /// A map of tag keys and values
+    /// <p>Specify the key-value pairs for the tags that you want to attach to your knowledge base in this object.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -68,91 +68,91 @@ pub struct CreateKnowledgeBaseInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateKnowledgeBaseInputBuilder {
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// Name for a resource.
+    /// <p>A name for the knowledge base.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name for a resource.
+    /// <p>A name for the knowledge base.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// Name for a resource.
+    /// <p>A name for the knowledge base.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// Description of the Resource.
+    /// <p>A description of the knowledge base.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the knowledge base.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the knowledge base.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Contains details about the embeddings model used for the knowledge base.</p>
     /// This field is required.
     pub fn knowledge_base_configuration(mut self, input: crate::types::KnowledgeBaseConfiguration) -> Self {
         self.knowledge_base_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Contains details about the embeddings model used for the knowledge base.</p>
     pub fn set_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>) -> Self {
         self.knowledge_base_configuration = input;
         self
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Contains details about the embeddings model used for the knowledge base.</p>
     pub fn get_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseConfiguration> {
         &self.knowledge_base_configuration
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Contains details about the configuration of the vector database used for the knowledge base.</p>
     /// This field is required.
     pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
         self.storage_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Contains details about the configuration of the vector database used for the knowledge base.</p>
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
         self.storage_configuration = input;
         self
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Contains details about the configuration of the vector database used for the knowledge base.</p>
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         &self.storage_configuration
     }
@@ -160,19 +160,19 @@ impl CreateKnowledgeBaseInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// A map of tag keys and values
+    /// <p>Specify the key-value pairs for the tags that you want to attach to your knowledge base in this object.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// A map of tag keys and values
+    /// <p>Specify the key-value pairs for the tags that you want to attach to your knowledge base in this object.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// A map of tag keys and values
+    /// <p>Specify the key-value pairs for the tags that you want to attach to your knowledge base in this object.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

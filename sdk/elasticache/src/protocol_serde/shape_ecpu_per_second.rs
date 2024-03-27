@@ -12,6 +12,14 @@ pub fn ser_ecpu_per_second(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("Minimum");
+    if let Some(var_4) = &input.minimum {
+        scope_3.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
     Ok(())
 }
 
@@ -24,7 +32,7 @@ pub fn de_ecpu_per_second(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Maximum") /* Maximum com.amazonaws.elasticache#ECPUPerSecond$Maximum */ =>  {
-                let var_3 =
+                let var_5 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -35,11 +43,26 @@ pub fn de_ecpu_per_second(
                         ?
                     )
                 ;
-                builder = builder.set_maximum(var_3);
+                builder = builder.set_maximum(var_5);
+            }
+            ,
+            s if s.matches("Minimum") /* Minimum com.amazonaws.elasticache#ECPUPerSecond$Minimum */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.elasticache#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_minimum(var_6);
             }
             ,
             _ => {}
         }
     }
-    Ok(crate::serde_util::ecpu_per_second_correct_errors(builder).build())
+    Ok(builder.build())
 }

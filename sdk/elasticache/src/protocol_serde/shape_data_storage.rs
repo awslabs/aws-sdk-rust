@@ -13,9 +13,17 @@ pub fn ser_data_storage(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Unit");
-    if let Some(var_4) = &input.unit {
-        scope_3.string(var_4.as_str());
+    let mut scope_3 = writer.prefix("Minimum");
+    if let Some(var_4) = &input.minimum {
+        scope_3.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("Unit");
+    if let Some(var_6) = &input.unit {
+        scope_5.string(var_6.as_str());
     }
     Ok(())
 }
@@ -29,7 +37,7 @@ pub fn de_data_storage(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Maximum") /* Maximum com.amazonaws.elasticache#DataStorage$Maximum */ =>  {
-                let var_5 =
+                let var_7 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -40,11 +48,26 @@ pub fn de_data_storage(
                         ?
                     )
                 ;
-                builder = builder.set_maximum(var_5);
+                builder = builder.set_maximum(var_7);
+            }
+            ,
+            s if s.matches("Minimum") /* Minimum com.amazonaws.elasticache#DataStorage$Minimum */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.elasticache#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_minimum(var_8);
             }
             ,
             s if s.matches("Unit") /* Unit com.amazonaws.elasticache#DataStorage$Unit */ =>  {
-                let var_6 =
+                let var_9 =
                     Some(
                         Result::<crate::types::DataStorageUnit, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DataStorageUnit::from(
@@ -54,7 +77,7 @@ pub fn de_data_storage(
                         ?
                     )
                 ;
-                builder = builder.set_unit(var_6);
+                builder = builder.set_unit(var_9);
             }
             ,
             _ => {}

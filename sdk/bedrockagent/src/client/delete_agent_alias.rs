@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAgentAlias`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_id(impl Into<String>)`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder::agent_id) / [`set_agent_id(Option<String>)`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder::set_agent_id):<br>required: **true**<br>Id generated at the server side when an Agent is created<br>
-    ///   - [`agent_alias_id(impl Into<String>)`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder::agent_alias_id) / [`set_agent_alias_id(Option<String>)`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder::set_agent_alias_id):<br>required: **true**<br>Id generated at the server side when an Agent Alias is created<br>
+    ///   - [`agent_id(impl Into<String>)`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder::agent_id) / [`set_agent_id(Option<String>)`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder::set_agent_id):<br>required: **true**<br><p>The unique identifier of the agent that the alias belongs to.</p><br>
+    ///   - [`agent_alias_id(impl Into<String>)`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder::agent_alias_id) / [`set_agent_alias_id(Option<String>)`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder::set_agent_alias_id):<br>required: **true**<br><p>The unique identifier of the alias to delete.</p><br>
     /// - On success, responds with [`DeleteAgentAliasOutput`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput) with field(s):
-    ///   - [`agent_id(String)`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput::agent_id): Identifier for a resource.
-    ///   - [`agent_alias_id(String)`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput::agent_alias_id): Id for an Agent Alias generated at the server side.
-    ///   - [`agent_alias_status(AgentAliasStatus)`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput::agent_alias_status): The statuses an Agent Alias can be in.
+    ///   - [`agent_id(String)`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput::agent_id): <p>The unique identifier of the agent that the alias belongs to.</p>
+    ///   - [`agent_alias_id(String)`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput::agent_alias_id): <p>The unique identifier of the alias that was deleted.</p>
+    ///   - [`agent_alias_status(AgentAliasStatus)`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput::agent_alias_status): <p>The status of the alias.</p>
     /// - On failure, responds with [`SdkError<DeleteAgentAliasError>`](crate::operation::delete_agent_alias::DeleteAgentAliasError)
     pub fn delete_agent_alias(&self) -> crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder {
         crate::operation::delete_agent_alias::builders::DeleteAgentAliasFluentBuilder::new(self.handle.clone())

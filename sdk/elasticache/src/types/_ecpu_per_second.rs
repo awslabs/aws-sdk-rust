@@ -6,11 +6,17 @@
 pub struct EcpuPerSecond {
     /// <p>The configuration for the maximum number of ECPUs the cache can consume per second.</p>
     pub maximum: ::std::option::Option<i32>,
+    /// <p>The configuration for the minimum number of ECPUs the cache should be able consume per second.</p>
+    pub minimum: ::std::option::Option<i32>,
 }
 impl EcpuPerSecond {
     /// <p>The configuration for the maximum number of ECPUs the cache can consume per second.</p>
     pub fn maximum(&self) -> ::std::option::Option<i32> {
         self.maximum
+    }
+    /// <p>The configuration for the minimum number of ECPUs the cache should be able consume per second.</p>
+    pub fn minimum(&self) -> ::std::option::Option<i32> {
+        self.minimum
     }
 }
 impl EcpuPerSecond {
@@ -25,10 +31,10 @@ impl EcpuPerSecond {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcpuPerSecondBuilder {
     pub(crate) maximum: ::std::option::Option<i32>,
+    pub(crate) minimum: ::std::option::Option<i32>,
 }
 impl EcpuPerSecondBuilder {
     /// <p>The configuration for the maximum number of ECPUs the cache can consume per second.</p>
-    /// This field is required.
     pub fn maximum(mut self, input: i32) -> Self {
         self.maximum = ::std::option::Option::Some(input);
         self
@@ -42,8 +48,25 @@ impl EcpuPerSecondBuilder {
     pub fn get_maximum(&self) -> &::std::option::Option<i32> {
         &self.maximum
     }
+    /// <p>The configuration for the minimum number of ECPUs the cache should be able consume per second.</p>
+    pub fn minimum(mut self, input: i32) -> Self {
+        self.minimum = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the minimum number of ECPUs the cache should be able consume per second.</p>
+    pub fn set_minimum(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.minimum = input;
+        self
+    }
+    /// <p>The configuration for the minimum number of ECPUs the cache should be able consume per second.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<i32> {
+        &self.minimum
+    }
     /// Consumes the builder and constructs a [`EcpuPerSecond`](crate::types::EcpuPerSecond).
     pub fn build(self) -> crate::types::EcpuPerSecond {
-        crate::types::EcpuPerSecond { maximum: self.maximum }
+        crate::types::EcpuPerSecond {
+            maximum: self.maximum,
+            minimum: self.minimum,
+        }
     }
 }

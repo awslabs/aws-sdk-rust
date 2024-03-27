@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_agents::builders::ListAgentsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_agents::builders::ListAgentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_agents::builders::ListAgentsFluentBuilder::set_max_results):<br>required: **false**<br>Max Results.<br>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_agents::builders::ListAgentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_agents::builders::ListAgentsFluentBuilder::set_next_token):<br>required: **false**<br>Opaque continuation token of previous paginated response.<br>
+    ///   - [`max_results(i32)`](crate::operation::list_agents::builders::ListAgentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_agents::builders::ListAgentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_agents::builders::ListAgentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_agents::builders::ListAgentsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p><br>
     /// - On success, responds with [`ListAgentsOutput`](crate::operation::list_agents::ListAgentsOutput) with field(s):
-    ///   - [`agent_summaries(Vec::<AgentSummary>)`](crate::operation::list_agents::ListAgentsOutput::agent_summaries): List of AgentSummary.
-    ///   - [`next_token(Option<String>)`](crate::operation::list_agents::ListAgentsOutput::next_token): Opaque continuation token of previous paginated response.
+    ///   - [`agent_summaries(Vec::<AgentSummary>)`](crate::operation::list_agents::ListAgentsOutput::agent_summaries): <p>A list of objects, each of which contains information about an agent.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_agents::ListAgentsOutput::next_token): <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     /// - On failure, responds with [`SdkError<ListAgentsError>`](crate::operation::list_agents::ListAgentsError)
     pub fn list_agents(&self) -> crate::operation::list_agents::builders::ListAgentsFluentBuilder {
         crate::operation::list_agents::builders::ListAgentsFluentBuilder::new(self.handle.clone())

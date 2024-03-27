@@ -22,7 +22,7 @@ impl CreateAgentAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAgentAlias`.
 ///
-/// Creates an Alias for an existing Amazon Bedrock Agent
+/// <p>Creates an alias of an agent that can be used to deploy the agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAgentAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl CreateAgentAliasFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Name for a resource.
+    /// <p>The name of the alias.</p>
     pub fn agent_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_alias_name(input.into());
         self
     }
-    /// Name for a resource.
+    /// <p>The name of the alias.</p>
     pub fn set_agent_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_alias_name(input);
         self
     }
-    /// Name for a resource.
+    /// <p>The name of the alias.</p>
     pub fn get_agent_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_alias_name()
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// Description of the Resource.
+    /// <p>A description of the alias of the agent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the alias of the agent.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the alias of the agent.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -168,12 +168,12 @@ impl CreateAgentAliasFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_routing_configuration`](Self::set_routing_configuration).
     ///
-    /// Routing configuration for an Agent alias.
+    /// <p>Contains details about the routing configuration of the alias.</p>
     pub fn routing_configuration(mut self, input: crate::types::AgentAliasRoutingConfigurationListItem) -> Self {
         self.inner = self.inner.routing_configuration(input);
         self
     }
-    /// Routing configuration for an Agent alias.
+    /// <p>Contains details about the routing configuration of the alias.</p>
     pub fn set_routing_configuration(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
@@ -181,7 +181,7 @@ impl CreateAgentAliasFluentBuilder {
         self.inner = self.inner.set_routing_configuration(input);
         self
     }
-    /// Routing configuration for an Agent alias.
+    /// <p>Contains details about the routing configuration of the alias.</p>
     pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>> {
         self.inner.get_routing_configuration()
     }
@@ -189,17 +189,17 @@ impl CreateAgentAliasFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// A map of tag keys and values
+    /// <p>Any tags that you want to attach to the alias of the agent.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// A map of tag keys and values
+    /// <p>Any tags that you want to attach to the alias of the agent.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// A map of tag keys and values
+    /// <p>Any tags that you want to attach to the alias of the agent.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

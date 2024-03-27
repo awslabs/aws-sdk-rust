@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAgentVersion`](crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_id(impl Into<String>)`](crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder::agent_id) / [`set_agent_id(Option<String>)`](crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder::set_agent_id):<br>required: **true**<br>Id generated at the server side when an Agent is created<br>
-    ///   - [`agent_version(impl Into<String>)`](crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder::agent_version) / [`set_agent_version(Option<String>)`](crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder::set_agent_version):<br>required: **true**<br>Numerical Agent Version.<br>
+    ///   - [`agent_id(impl Into<String>)`](crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder::agent_id) / [`set_agent_id(Option<String>)`](crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder::set_agent_id):<br>required: **true**<br><p>The unique identifier of the agent.</p><br>
+    ///   - [`agent_version(impl Into<String>)`](crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder::agent_version) / [`set_agent_version(Option<String>)`](crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder::set_agent_version):<br>required: **true**<br><p>The version of the agent.</p><br>
     /// - On success, responds with [`GetAgentVersionOutput`](crate::operation::get_agent_version::GetAgentVersionOutput) with field(s):
-    ///   - [`agent_version(Option<AgentVersion>)`](crate::operation::get_agent_version::GetAgentVersionOutput::agent_version): Contains the information of an agent version.
+    ///   - [`agent_version(Option<AgentVersion>)`](crate::operation::get_agent_version::GetAgentVersionOutput::agent_version): <p>Contains details about the version of the agent.</p>
     /// - On failure, responds with [`SdkError<GetAgentVersionError>`](crate::operation::get_agent_version::GetAgentVersionError)
     pub fn get_agent_version(&self) -> crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder {
         crate::operation::get_agent_version::builders::GetAgentVersionFluentBuilder::new(self.handle.clone())

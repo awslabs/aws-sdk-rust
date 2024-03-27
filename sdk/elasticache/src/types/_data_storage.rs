@@ -6,6 +6,8 @@
 pub struct DataStorage {
     /// <p>The upper limit for data storage the cache is set to use.</p>
     pub maximum: ::std::option::Option<i32>,
+    /// <p>The lower limit for data storage the cache is set to use.</p>
+    pub minimum: ::std::option::Option<i32>,
     /// <p>The unit that the storage is measured in, in GB.</p>
     pub unit: ::std::option::Option<crate::types::DataStorageUnit>,
 }
@@ -13,6 +15,10 @@ impl DataStorage {
     /// <p>The upper limit for data storage the cache is set to use.</p>
     pub fn maximum(&self) -> ::std::option::Option<i32> {
         self.maximum
+    }
+    /// <p>The lower limit for data storage the cache is set to use.</p>
+    pub fn minimum(&self) -> ::std::option::Option<i32> {
+        self.minimum
     }
     /// <p>The unit that the storage is measured in, in GB.</p>
     pub fn unit(&self) -> ::std::option::Option<&crate::types::DataStorageUnit> {
@@ -31,11 +37,11 @@ impl DataStorage {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataStorageBuilder {
     pub(crate) maximum: ::std::option::Option<i32>,
+    pub(crate) minimum: ::std::option::Option<i32>,
     pub(crate) unit: ::std::option::Option<crate::types::DataStorageUnit>,
 }
 impl DataStorageBuilder {
     /// <p>The upper limit for data storage the cache is set to use.</p>
-    /// This field is required.
     pub fn maximum(mut self, input: i32) -> Self {
         self.maximum = ::std::option::Option::Some(input);
         self
@@ -48,6 +54,20 @@ impl DataStorageBuilder {
     /// <p>The upper limit for data storage the cache is set to use.</p>
     pub fn get_maximum(&self) -> &::std::option::Option<i32> {
         &self.maximum
+    }
+    /// <p>The lower limit for data storage the cache is set to use.</p>
+    pub fn minimum(mut self, input: i32) -> Self {
+        self.minimum = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The lower limit for data storage the cache is set to use.</p>
+    pub fn set_minimum(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.minimum = input;
+        self
+    }
+    /// <p>The lower limit for data storage the cache is set to use.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<i32> {
+        &self.minimum
     }
     /// <p>The unit that the storage is measured in, in GB.</p>
     /// This field is required.
@@ -68,6 +88,7 @@ impl DataStorageBuilder {
     pub fn build(self) -> crate::types::DataStorage {
         crate::types::DataStorage {
             maximum: self.maximum,
+            minimum: self.minimum,
             unit: self.unit,
         }
     }

@@ -3,41 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKnowledgeBaseInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to update.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
-    /// Name for a resource.
+    /// <p>Specifies a new name for the knowledge base.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the knowledge base.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// ARN of a IAM role.
+    /// <p>Specifies a different Amazon Resource Name (ARN) of the IAM role with permissions to modify the knowledge base.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// Configures a bedrock knowledge base.
+    /// <p>Specifies the configuration for the embeddings model used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     pub knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>,
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Specifies the configuration for the vector store used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
 }
 impl UpdateKnowledgeBaseInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to update.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the knowledge base.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the knowledge base.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// ARN of a IAM role.
+    /// <p>Specifies a different Amazon Resource Name (ARN) of the IAM role with permissions to modify the knowledge base.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Specifies the configuration for the embeddings model used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     pub fn knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseConfiguration> {
         self.knowledge_base_configuration.as_ref()
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Specifies the configuration for the vector store used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
         self.storage_configuration.as_ref()
     }
@@ -61,92 +61,92 @@ pub struct UpdateKnowledgeBaseInputBuilder {
     pub(crate) storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
 }
 impl UpdateKnowledgeBaseInputBuilder {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to update.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to update.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base to update.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the knowledge base.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the knowledge base.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the knowledge base.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the knowledge base.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the knowledge base.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the knowledge base.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// ARN of a IAM role.
+    /// <p>Specifies a different Amazon Resource Name (ARN) of the IAM role with permissions to modify the knowledge base.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// ARN of a IAM role.
+    /// <p>Specifies a different Amazon Resource Name (ARN) of the IAM role with permissions to modify the knowledge base.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// ARN of a IAM role.
+    /// <p>Specifies a different Amazon Resource Name (ARN) of the IAM role with permissions to modify the knowledge base.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Specifies the configuration for the embeddings model used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     /// This field is required.
     pub fn knowledge_base_configuration(mut self, input: crate::types::KnowledgeBaseConfiguration) -> Self {
         self.knowledge_base_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Specifies the configuration for the embeddings model used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     pub fn set_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>) -> Self {
         self.knowledge_base_configuration = input;
         self
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Specifies the configuration for the embeddings model used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     pub fn get_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseConfiguration> {
         &self.knowledge_base_configuration
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Specifies the configuration for the vector store used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     /// This field is required.
     pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
         self.storage_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Specifies the configuration for the vector store used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
         self.storage_configuration = input;
         self
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Specifies the configuration for the vector store used for the knowledge base. You must use the same configuration as when the knowledge base was created.</p>
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         &self.storage_configuration
     }

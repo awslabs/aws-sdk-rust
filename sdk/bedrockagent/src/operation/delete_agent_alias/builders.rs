@@ -22,7 +22,7 @@ impl DeleteAgentAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAgentAlias`.
 ///
-/// Deletes an Alias for a Amazon Bedrock Agent
+/// <p>Deletes an alias of an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAgentAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteAgentAliasFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent that the alias belongs to.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent that the alias belongs to.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent that the alias belongs to.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Id generated at the server side when an Agent Alias is created
+    /// <p>The unique identifier of the alias to delete.</p>
     pub fn agent_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_alias_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent Alias is created
+    /// <p>The unique identifier of the alias to delete.</p>
     pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_alias_id(input);
         self
     }
-    /// Id generated at the server side when an Agent Alias is created
+    /// <p>The unique identifier of the alias to delete.</p>
     pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_alias_id()
     }

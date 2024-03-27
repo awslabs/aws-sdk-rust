@@ -22,7 +22,7 @@ impl GetIngestionJobInputBuilder {
 }
 /// Fluent builder constructing a request to `GetIngestionJob`.
 ///
-/// Get an ingestion job
+/// <p>Gets information about a ingestion job, in which a data source is added to a knowledge base.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIngestionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl GetIngestionJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which the ingestion job applies.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which the ingestion job applies.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which the ingestion job applies.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source in the ingestion job.</p>
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source in the ingestion job.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source in the ingestion job.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the ingestion job.</p>
     pub fn ingestion_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ingestion_job_id(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the ingestion job.</p>
     pub fn set_ingestion_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ingestion_job_id(input);
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the ingestion job.</p>
     pub fn get_ingestion_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ingestion_job_id()
     }

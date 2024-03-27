@@ -15,6 +15,8 @@ pub struct RetrievedReference {
     pub content: ::std::option::Option<crate::types::RetrievalResultContent>,
     /// <p>Contains information about the location of the data source.</p>
     pub location: ::std::option::Option<crate::types::RetrievalResultLocation>,
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl RetrievedReference {
     /// <p>Contains the cited text from the data source.</p>
@@ -25,12 +27,17 @@ impl RetrievedReference {
     pub fn location(&self) -> ::std::option::Option<&crate::types::RetrievalResultLocation> {
         self.location.as_ref()
     }
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        self.metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RetrievedReference {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrievedReference");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("location", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -47,6 +54,7 @@ impl RetrievedReference {
 pub struct RetrievedReferenceBuilder {
     pub(crate) content: ::std::option::Option<crate::types::RetrievalResultContent>,
     pub(crate) location: ::std::option::Option<crate::types::RetrievalResultLocation>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl RetrievedReferenceBuilder {
     /// <p>Contains the cited text from the data source.</p>
@@ -77,11 +85,35 @@ impl RetrievedReferenceBuilder {
     pub fn get_location(&self) -> &::std::option::Option<crate::types::RetrievalResultLocation> {
         &self.location
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub fn set_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    ) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Contains metadata attributes and their values for the file in the data source. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata and filtering</a>.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`RetrievedReference`](crate::types::RetrievedReference).
     pub fn build(self) -> crate::types::RetrievedReference {
         crate::types::RetrievedReference {
             content: self.content,
             location: self.location,
+            metadata: self.metadata,
         }
     }
 }
@@ -90,6 +122,7 @@ impl ::std::fmt::Debug for RetrievedReferenceBuilder {
         let mut formatter = f.debug_struct("RetrievedReferenceBuilder");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("location", &"*** Sensitive Data Redacted ***");
+        formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

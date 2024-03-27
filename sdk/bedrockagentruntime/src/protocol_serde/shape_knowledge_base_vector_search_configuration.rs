@@ -12,5 +12,11 @@ pub fn ser_knowledge_base_vector_search_configuration(
     if let Some(var_1) = &input.override_search_type {
         object.key("overrideSearchType").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.filter {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("filter").start_object();
+        crate::protocol_serde::shape_retrieval_filter::ser_retrieval_filter(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }

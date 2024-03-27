@@ -22,7 +22,7 @@ impl DisassociateAgentKnowledgeBaseInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateAgentKnowledgeBase`.
 ///
-/// Disassociate an existing Knowledge Base from an Amazon Bedrock Agent
+/// <p>Disassociates a knowledge base from an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateAgentKnowledgeBaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DisassociateAgentKnowledgeBaseFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent from which to disassociate the knowledge base.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent from which to disassociate the knowledge base.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent from which to disassociate the knowledge base.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Draft Version of the Agent.
+    /// <p>The version of the agent from which to disassociate the knowledge base.</p>
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
-    /// Draft Version of the Agent.
+    /// <p>The version of the agent from which to disassociate the knowledge base.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }
-    /// Draft Version of the Agent.
+    /// <p>The version of the agent from which to disassociate the knowledge base.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_version()
     }
-    /// Id generated at the server side when a Knowledge Base is associated to an Agent
+    /// <p>The unique identifier of the knowledge base to disassociate.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// Id generated at the server side when a Knowledge Base is associated to an Agent
+    /// <p>The unique identifier of the knowledge base to disassociate.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// Id generated at the server side when a Knowledge Base is associated to an Agent
+    /// <p>The unique identifier of the knowledge base to disassociate.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }

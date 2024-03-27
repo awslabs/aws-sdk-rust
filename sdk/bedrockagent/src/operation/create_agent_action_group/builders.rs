@@ -22,7 +22,8 @@ impl CreateAgentActionGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAgentActionGroup`.
 ///
-/// Creates an Action Group for existing Amazon Bedrock Agent
+/// <p>Creates an action group for an agent. An action group represents the actions that an agent can carry out for the customer by defining the APIs that an agent can call and the logic for calling them.</p>
+/// <p>To allow your agent to request the user for additional information when trying to complete a task, add an action group with the <code>parentActionGroupSignature</code> field set to <code>AMAZON.UserInput</code>. You must leave the <code>description</code>, <code>apiSchema</code>, and <code>actionGroupExecutor</code> fields blank for this action group. During orchestration, if your agent determines that it needs to invoke an API in an action group, but doesn't have enough information to complete the API request, it will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a> reprompting the user for more information.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAgentActionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,129 +109,132 @@ impl CreateAgentActionGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent for which to create the action group.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent for which to create the action group.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent for which to create the action group.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Draft Version of the Agent.
+    /// <p>The version of the agent for which to create the action group.</p>
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
-    /// Draft Version of the Agent.
+    /// <p>The version of the agent for which to create the action group.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }
-    /// Draft Version of the Agent.
+    /// <p>The version of the agent for which to create the action group.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_version()
     }
-    /// Name for a resource.
+    /// <p>The name to give the action group.</p>
     pub fn action_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_group_name(input.into());
         self
     }
-    /// Name for a resource.
+    /// <p>The name to give the action group.</p>
     pub fn set_action_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_group_name(input);
         self
     }
-    /// Name for a resource.
+    /// <p>The name to give the action group.</p>
     pub fn get_action_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_action_group_name()
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// Description of the Resource.
+    /// <p>A description of the action group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the action group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the action group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// Action Group Signature for a BuiltIn Action
+    /// <p>To allow your agent to request the user for additional information when trying to complete a task, set this field to <code>AMAZON.UserInput</code>. You must leave the <code>description</code>, <code>apiSchema</code>, and <code>actionGroupExecutor</code> fields blank for this action group.</p>
+    /// <p>During orchestration, if your agent determines that it needs to invoke an API in an action group, but doesn't have enough information to complete the API request, it will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a> reprompting the user for more information.</p>
     pub fn parent_action_group_signature(mut self, input: crate::types::ActionGroupSignature) -> Self {
         self.inner = self.inner.parent_action_group_signature(input);
         self
     }
-    /// Action Group Signature for a BuiltIn Action
+    /// <p>To allow your agent to request the user for additional information when trying to complete a task, set this field to <code>AMAZON.UserInput</code>. You must leave the <code>description</code>, <code>apiSchema</code>, and <code>actionGroupExecutor</code> fields blank for this action group.</p>
+    /// <p>During orchestration, if your agent determines that it needs to invoke an API in an action group, but doesn't have enough information to complete the API request, it will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a> reprompting the user for more information.</p>
     pub fn set_parent_action_group_signature(mut self, input: ::std::option::Option<crate::types::ActionGroupSignature>) -> Self {
         self.inner = self.inner.set_parent_action_group_signature(input);
         self
     }
-    /// Action Group Signature for a BuiltIn Action
+    /// <p>To allow your agent to request the user for additional information when trying to complete a task, set this field to <code>AMAZON.UserInput</code>. You must leave the <code>description</code>, <code>apiSchema</code>, and <code>actionGroupExecutor</code> fields blank for this action group.</p>
+    /// <p>During orchestration, if your agent determines that it needs to invoke an API in an action group, but doesn't have enough information to complete the API request, it will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a> reprompting the user for more information.</p>
     pub fn get_parent_action_group_signature(&self) -> &::std::option::Option<crate::types::ActionGroupSignature> {
         self.inner.get_parent_action_group_signature()
     }
-    /// Type of Executors for an Action Group
+    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn action_group_executor(mut self, input: crate::types::ActionGroupExecutor) -> Self {
         self.inner = self.inner.action_group_executor(input);
         self
     }
-    /// Type of Executors for an Action Group
+    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn set_action_group_executor(mut self, input: ::std::option::Option<crate::types::ActionGroupExecutor>) -> Self {
         self.inner = self.inner.set_action_group_executor(input);
         self
     }
-    /// Type of Executors for an Action Group
+    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn get_action_group_executor(&self) -> &::std::option::Option<crate::types::ActionGroupExecutor> {
         self.inner.get_action_group_executor()
     }
-    /// Contains information about the API Schema for the Action Group
+    /// <p>Contains either details about the S3 object containing the OpenAPI schema for the action group or the JSON or YAML-formatted payload defining the schema. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action group OpenAPI schemas</a>.</p>
     pub fn api_schema(mut self, input: crate::types::ApiSchema) -> Self {
         self.inner = self.inner.api_schema(input);
         self
     }
-    /// Contains information about the API Schema for the Action Group
+    /// <p>Contains either details about the S3 object containing the OpenAPI schema for the action group or the JSON or YAML-formatted payload defining the schema. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action group OpenAPI schemas</a>.</p>
     pub fn set_api_schema(mut self, input: ::std::option::Option<crate::types::ApiSchema>) -> Self {
         self.inner = self.inner.set_api_schema(input);
         self
     }
-    /// Contains information about the API Schema for the Action Group
+    /// <p>Contains either details about the S3 object containing the OpenAPI schema for the action group or the JSON or YAML-formatted payload defining the schema. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action group OpenAPI schemas</a>.</p>
     pub fn get_api_schema(&self) -> &::std::option::Option<crate::types::ApiSchema> {
         self.inner.get_api_schema()
     }
-    /// State of the action group
+    /// <p>Specifies whether the action group is available for the agent to invoke or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub fn action_group_state(mut self, input: crate::types::ActionGroupState) -> Self {
         self.inner = self.inner.action_group_state(input);
         self
     }
-    /// State of the action group
+    /// <p>Specifies whether the action group is available for the agent to invoke or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub fn set_action_group_state(mut self, input: ::std::option::Option<crate::types::ActionGroupState>) -> Self {
         self.inner = self.inner.set_action_group_state(input);
         self
     }
-    /// State of the action group
+    /// <p>Specifies whether the action group is available for the agent to invoke or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub fn get_action_group_state(&self) -> &::std::option::Option<crate::types::ActionGroupState> {
         self.inner.get_action_group_state()
     }

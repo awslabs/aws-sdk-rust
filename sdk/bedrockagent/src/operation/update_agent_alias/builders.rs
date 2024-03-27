@@ -22,7 +22,7 @@ impl UpdateAgentAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAgentAlias`.
 ///
-/// Updates an existing Alias for an Amazon Bedrock Agent
+/// <p>Updates configurations for an alias of an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgentAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateAgentAliasFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Id generated at the server side when an Agent Alias is created
+    /// <p>The unique identifier of the alias.</p>
     pub fn agent_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_alias_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent Alias is created
+    /// <p>The unique identifier of the alias.</p>
     pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_alias_id(input);
         self
     }
-    /// Id generated at the server side when an Agent Alias is created
+    /// <p>The unique identifier of the alias.</p>
     pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_alias_id()
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the alias.</p>
     pub fn agent_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_alias_name(input.into());
         self
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the alias.</p>
     pub fn set_agent_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_alias_name(input);
         self
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the alias.</p>
     pub fn get_agent_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_alias_name()
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the alias.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the alias.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -168,12 +168,12 @@ impl UpdateAgentAliasFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_routing_configuration`](Self::set_routing_configuration).
     ///
-    /// Routing configuration for an Agent alias.
+    /// <p>Contains details about the routing configuration of the alias.</p>
     pub fn routing_configuration(mut self, input: crate::types::AgentAliasRoutingConfigurationListItem) -> Self {
         self.inner = self.inner.routing_configuration(input);
         self
     }
-    /// Routing configuration for an Agent alias.
+    /// <p>Contains details about the routing configuration of the alias.</p>
     pub fn set_routing_configuration(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>>,
@@ -181,7 +181,7 @@ impl UpdateAgentAliasFluentBuilder {
         self.inner = self.inner.set_routing_configuration(input);
         self
     }
-    /// Routing configuration for an Agent alias.
+    /// <p>Contains details about the routing configuration of the alias.</p>
     pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>> {
         self.inner.get_routing_configuration()
     }

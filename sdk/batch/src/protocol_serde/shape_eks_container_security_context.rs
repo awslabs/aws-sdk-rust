@@ -18,11 +18,14 @@ pub fn ser_eks_container_security_context(
     if let Some(var_3) = &input.privileged {
         object.key("privileged").boolean(*var_3);
     }
-    if let Some(var_4) = &input.read_only_root_filesystem {
-        object.key("readOnlyRootFilesystem").boolean(*var_4);
+    if let Some(var_4) = &input.allow_privilege_escalation {
+        object.key("allowPrivilegeEscalation").boolean(*var_4);
     }
-    if let Some(var_5) = &input.run_as_non_root {
-        object.key("runAsNonRoot").boolean(*var_5);
+    if let Some(var_5) = &input.read_only_root_filesystem {
+        object.key("readOnlyRootFilesystem").boolean(*var_5);
+    }
+    if let Some(var_6) = &input.run_as_non_root {
+        object.key("runAsNonRoot").boolean(*var_6);
     }
     Ok(())
 }
@@ -58,6 +61,10 @@ where
                         }
                         "privileged" => {
                             builder = builder.set_privileged(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "allowPrivilegeEscalation" => {
+                            builder =
+                                builder.set_allow_privilege_escalation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "readOnlyRootFilesystem" => {
                             builder =

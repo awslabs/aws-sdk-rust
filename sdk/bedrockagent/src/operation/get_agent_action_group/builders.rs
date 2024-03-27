@@ -22,7 +22,7 @@ impl GetAgentActionGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAgentActionGroup`.
 ///
-/// Gets an Action Group for existing Amazon Bedrock Agent Version
+/// <p>Gets information about an action group for an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAgentActionGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl GetAgentActionGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent that the action group belongs to.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent that the action group belongs to.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent that the action group belongs to.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Version number generated when a version is created
+    /// <p>The version of the agent that the action group belongs to.</p>
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
-    /// Version number generated when a version is created
+    /// <p>The version of the agent that the action group belongs to.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }
-    /// Version number generated when a version is created
+    /// <p>The version of the agent that the action group belongs to.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_version()
     }
-    /// Id generated at the server side when an Agent Action Group is created
+    /// <p>The unique identifier of the action group for which to get information.</p>
     pub fn action_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_group_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent Action Group is created
+    /// <p>The unique identifier of the action group for which to get information.</p>
     pub fn set_action_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_group_id(input);
         self
     }
-    /// Id generated at the server side when an Agent Action Group is created
+    /// <p>The unique identifier of the action group for which to get information.</p>
     pub fn get_action_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_action_group_id()
     }

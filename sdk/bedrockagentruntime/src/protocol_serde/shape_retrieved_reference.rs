@@ -24,6 +24,11 @@ where
                                 tokens,
                             )?);
                         }
+                        "metadata" => {
+                            builder = builder.set_metadata(crate::protocol_serde::shape_retrieval_result_metadata::de_retrieval_result_metadata(
+                                tokens,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

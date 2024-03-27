@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKnowledgeBaseOutput {
-    /// Contains the information of a knowledge base.
+    /// <p>Contains details about the knowledge base.</p>
     pub knowledge_base: ::std::option::Option<crate::types::KnowledgeBase>,
     _request_id: Option<String>,
 }
 impl UpdateKnowledgeBaseOutput {
-    /// Contains the information of a knowledge base.
+    /// <p>Contains details about the knowledge base.</p>
     pub fn knowledge_base(&self) -> ::std::option::Option<&crate::types::KnowledgeBase> {
         self.knowledge_base.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateKnowledgeBaseOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateKnowledgeBaseOutputBuilder {
-    /// Contains the information of a knowledge base.
+    /// <p>Contains details about the knowledge base.</p>
     /// This field is required.
     pub fn knowledge_base(mut self, input: crate::types::KnowledgeBase) -> Self {
         self.knowledge_base = ::std::option::Option::Some(input);
         self
     }
-    /// Contains the information of a knowledge base.
+    /// <p>Contains details about the knowledge base.</p>
     pub fn set_knowledge_base(mut self, input: ::std::option::Option<crate::types::KnowledgeBase>) -> Self {
         self.knowledge_base = input;
         self
     }
-    /// Contains the information of a knowledge base.
+    /// <p>Contains details about the knowledge base.</p>
     pub fn get_knowledge_base(&self) -> &::std::option::Option<crate::types::KnowledgeBase> {
         &self.knowledge_base
     }

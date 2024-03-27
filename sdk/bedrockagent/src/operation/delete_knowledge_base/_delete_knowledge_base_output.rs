@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKnowledgeBaseOutput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base that was deleted.</p>
     pub knowledge_base_id: ::std::string::String,
-    /// The status of a knowledge base.
+    /// <p>The status of the knowledge base and whether it has been successfully deleted.</p>
     pub status: crate::types::KnowledgeBaseStatus,
     _request_id: Option<String>,
 }
 impl DeleteKnowledgeBaseOutput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base that was deleted.</p>
     pub fn knowledge_base_id(&self) -> &str {
         use std::ops::Deref;
         self.knowledge_base_id.deref()
     }
-    /// The status of a knowledge base.
+    /// <p>The status of the knowledge base and whether it has been successfully deleted.</p>
     pub fn status(&self) -> &crate::types::KnowledgeBaseStatus {
         &self.status
     }
@@ -41,33 +41,33 @@ pub struct DeleteKnowledgeBaseOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteKnowledgeBaseOutputBuilder {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base that was deleted.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base that was deleted.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base that was deleted.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// The status of a knowledge base.
+    /// <p>The status of the knowledge base and whether it has been successfully deleted.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::KnowledgeBaseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// The status of a knowledge base.
+    /// <p>The status of the knowledge base and whether it has been successfully deleted.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseStatus>) -> Self {
         self.status = input;
         self
     }
-    /// The status of a knowledge base.
+    /// <p>The status of the knowledge base and whether it has been successfully deleted.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KnowledgeBaseStatus> {
         &self.status
     }

@@ -9,12 +9,14 @@
 /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate request</a> – in the <code>vectorSearchConfiguration</code> field</p></li>
 /// </ul>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KnowledgeBaseVectorSearchConfiguration {
     /// <p>The number of source chunks to retrieve.</p>
     pub number_of_results: i32,
     /// <p>By default, Amazon Bedrock decides a search strategy for you. If you're using an Amazon OpenSearch Serverless vector store that contains a filterable text field, you can specify whether to query the knowledge base with a <code>HYBRID</code> search using both vector embeddings and raw text, or <code>SEMANTIC</code> search using only vector embeddings. For other vector store configurations, only <code>SEMANTIC</code> search is available. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-test.html">Test a knowledge base</a>.</p>
     pub override_search_type: ::std::option::Option<crate::types::SearchType>,
+    /// <p>Specifies the filters to use on the metadata in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub filter: ::std::option::Option<crate::types::RetrievalFilter>,
 }
 impl KnowledgeBaseVectorSearchConfiguration {
     /// <p>The number of source chunks to retrieve.</p>
@@ -24,6 +26,19 @@ impl KnowledgeBaseVectorSearchConfiguration {
     /// <p>By default, Amazon Bedrock decides a search strategy for you. If you're using an Amazon OpenSearch Serverless vector store that contains a filterable text field, you can specify whether to query the knowledge base with a <code>HYBRID</code> search using both vector embeddings and raw text, or <code>SEMANTIC</code> search using only vector embeddings. For other vector store configurations, only <code>SEMANTIC</code> search is available. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-test.html">Test a knowledge base</a>.</p>
     pub fn override_search_type(&self) -> ::std::option::Option<&crate::types::SearchType> {
         self.override_search_type.as_ref()
+    }
+    /// <p>Specifies the filters to use on the metadata in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::RetrievalFilter> {
+        self.filter.as_ref()
+    }
+}
+impl ::std::fmt::Debug for KnowledgeBaseVectorSearchConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("KnowledgeBaseVectorSearchConfiguration");
+        formatter.field("number_of_results", &self.number_of_results);
+        formatter.field("override_search_type", &self.override_search_type);
+        formatter.field("filter", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl KnowledgeBaseVectorSearchConfiguration {
@@ -35,10 +50,11 @@ impl KnowledgeBaseVectorSearchConfiguration {
 
 /// A builder for [`KnowledgeBaseVectorSearchConfiguration`](crate::types::KnowledgeBaseVectorSearchConfiguration).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct KnowledgeBaseVectorSearchConfigurationBuilder {
     pub(crate) number_of_results: ::std::option::Option<i32>,
     pub(crate) override_search_type: ::std::option::Option<crate::types::SearchType>,
+    pub(crate) filter: ::std::option::Option<crate::types::RetrievalFilter>,
 }
 impl KnowledgeBaseVectorSearchConfigurationBuilder {
     /// <p>The number of source chunks to retrieve.</p>
@@ -69,11 +85,35 @@ impl KnowledgeBaseVectorSearchConfigurationBuilder {
     pub fn get_override_search_type(&self) -> &::std::option::Option<crate::types::SearchType> {
         &self.override_search_type
     }
+    /// <p>Specifies the filters to use on the metadata in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub fn filter(mut self, input: crate::types::RetrievalFilter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the filters to use on the metadata in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::RetrievalFilter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>Specifies the filters to use on the metadata in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::RetrievalFilter> {
+        &self.filter
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseVectorSearchConfiguration`](crate::types::KnowledgeBaseVectorSearchConfiguration).
     pub fn build(self) -> crate::types::KnowledgeBaseVectorSearchConfiguration {
         crate::types::KnowledgeBaseVectorSearchConfiguration {
             number_of_results: self.number_of_results.unwrap_or(5),
             override_search_type: self.override_search_type,
+            filter: self.filter,
         }
+    }
+}
+impl ::std::fmt::Debug for KnowledgeBaseVectorSearchConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("KnowledgeBaseVectorSearchConfigurationBuilder");
+        formatter.field("number_of_results", &self.number_of_results);
+        formatter.field("override_search_type", &self.override_search_type);
+        formatter.field("filter", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

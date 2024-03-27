@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIngestionJobsOutput {
-    /// List of IngestionJobSummaries
+    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
     pub ingestion_job_summaries: ::std::vec::Vec<crate::types::IngestionJobSummary>,
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIngestionJobsOutput {
-    /// List of IngestionJobSummaries
+    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
     pub fn ingestion_job_summaries(&self) -> &[crate::types::IngestionJobSummary] {
         use std::ops::Deref;
         self.ingestion_job_summaries.deref()
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListIngestionJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_ingestion_job_summaries`](Self::set_ingestion_job_summaries).
     ///
-    /// List of IngestionJobSummaries
+    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
     pub fn ingestion_job_summaries(mut self, input: crate::types::IngestionJobSummary) -> Self {
         let mut v = self.ingestion_job_summaries.unwrap_or_default();
         v.push(input);
         self.ingestion_job_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// List of IngestionJobSummaries
+    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
     pub fn set_ingestion_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>>) -> Self {
         self.ingestion_job_summaries = input;
         self
     }
-    /// List of IngestionJobSummaries
+    /// <p>A list of objects, each of which contains information about an ingestion job.</p>
     pub fn get_ingestion_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestionJobSummary>> {
         &self.ingestion_job_summaries
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

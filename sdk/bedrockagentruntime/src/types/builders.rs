@@ -11,6 +11,8 @@ pub use crate::types::_knowledge_base_retrieval_configuration::KnowledgeBaseRetr
 
 pub use crate::types::_knowledge_base_vector_search_configuration::KnowledgeBaseVectorSearchConfigurationBuilder;
 
+pub use crate::types::_filter_attribute::FilterAttributeBuilder;
+
 pub use crate::types::_knowledge_base_query::KnowledgeBaseQueryBuilder;
 
 pub use crate::types::_citation::CitationBuilder;

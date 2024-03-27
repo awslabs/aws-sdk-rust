@@ -22,7 +22,7 @@ impl TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// Tag a resource
+/// <p>Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl TagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// ARN of Taggable resources: [Agent, AgentAlias, Knowledge-Base]
+    /// <p>The ARN of the resource to tag.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// ARN of Taggable resources: [Agent, AgentAlias, Knowledge-Base]
+    /// <p>The ARN of the resource to tag.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// ARN of Taggable resources: [Agent, AgentAlias, Knowledge-Base]
+    /// <p>The ARN of the resource to tag.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
@@ -126,17 +126,17 @@ impl TagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// A map of tag keys and values
+    /// <p>An object containing key-value pairs that define the tags to attach to the resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// A map of tag keys and values
+    /// <p>An object containing key-value pairs that define the tags to attach to the resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// A map of tag keys and values
+    /// <p>An object containing key-value pairs that define the tags to attach to the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

@@ -22,7 +22,7 @@ impl PrepareAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `PrepareAgent`.
 ///
-/// Prepares an existing Amazon Bedrock Agent to receive runtime requests
+/// <p>Creates a <code>DRAFT</code> version of the agent that can be used for internal testing.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PrepareAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl PrepareAgentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent for which to create a <code>DRAFT</code> version.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent for which to create a <code>DRAFT</code> version.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent for which to create a <code>DRAFT</code> version.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }

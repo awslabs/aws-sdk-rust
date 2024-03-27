@@ -22,7 +22,7 @@ impl UpdateAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAgent`.
 ///
-/// Updates an existing Amazon Bedrock Agent
+/// <p>Updates the configuration of an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,129 +108,132 @@ impl UpdateAgentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the agent.</p>
     pub fn agent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_name(input.into());
         self
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the agent.</p>
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_name(input);
         self
     }
-    /// Name for a resource.
+    /// <p>Specifies a new name for the agent.</p>
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_name()
     }
-    /// Instruction for the agent.
+    /// <p>Specifies new instructions that tell the agent what it should do and how it should interact with users.</p>
     pub fn instruction(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instruction(input.into());
         self
     }
-    /// Instruction for the agent.
+    /// <p>Specifies new instructions that tell the agent what it should do and how it should interact with users.</p>
     pub fn set_instruction(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instruction(input);
         self
     }
-    /// Instruction for the agent.
+    /// <p>Specifies new instructions that tell the agent what it should do and how it should interact with users.</p>
     pub fn get_instruction(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instruction()
     }
-    /// ARN or name of a Bedrock model.
+    /// <p>Specifies a new foundation model to be used for orchestration by the agent.</p>
     pub fn foundation_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.foundation_model(input.into());
         self
     }
-    /// ARN or name of a Bedrock model.
+    /// <p>Specifies a new foundation model to be used for orchestration by the agent.</p>
     pub fn set_foundation_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_foundation_model(input);
         self
     }
-    /// ARN or name of a Bedrock model.
+    /// <p>Specifies a new foundation model to be used for orchestration by the agent.</p>
     pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_foundation_model()
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description of the agent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description of the agent.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description of the agent.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// Max Session Time.
+    /// <p>The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.</p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.</p>
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.idle_session_ttl_in_seconds(input);
         self
     }
-    /// Max Session Time.
+    /// <p>The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.</p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
         self
     }
-    /// Max Session Time.
+    /// <p>The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.</p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.</p>
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_idle_session_ttl_in_seconds()
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to update the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
     pub fn agent_resource_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_resource_role_arn(input.into());
         self
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to update the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
     pub fn set_agent_resource_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_resource_role_arn(input);
         self
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to update the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
     pub fn get_agent_resource_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_resource_role_arn()
     }
-    /// A KMS key ARN
+    /// <p>The ARN of the KMS key with which to encrypt the agent.</p>
     pub fn customer_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_encryption_key_arn(input.into());
         self
     }
-    /// A KMS key ARN
+    /// <p>The ARN of the KMS key with which to encrypt the agent.</p>
     pub fn set_customer_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_encryption_key_arn(input);
         self
     }
-    /// A KMS key ARN
+    /// <p>The ARN of the KMS key with which to encrypt the agent.</p>
     pub fn get_customer_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_encryption_key_arn()
     }
-    /// Configuration for prompt override.
+    /// <p>Contains configurations to override prompts in different parts of an agent sequence. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced prompts</a>.</p>
     pub fn prompt_override_configuration(mut self, input: crate::types::PromptOverrideConfiguration) -> Self {
         self.inner = self.inner.prompt_override_configuration(input);
         self
     }
-    /// Configuration for prompt override.
+    /// <p>Contains configurations to override prompts in different parts of an agent sequence. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced prompts</a>.</p>
     pub fn set_prompt_override_configuration(mut self, input: ::std::option::Option<crate::types::PromptOverrideConfiguration>) -> Self {
         self.inner = self.inner.set_prompt_override_configuration(input);
         self
     }
-    /// Configuration for prompt override.
+    /// <p>Contains configurations to override prompts in different parts of an agent sequence. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced prompts</a>.</p>
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
         self.inner.get_prompt_override_configuration()
     }

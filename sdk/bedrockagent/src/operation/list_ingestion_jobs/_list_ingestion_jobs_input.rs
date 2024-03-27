@@ -3,43 +3,43 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIngestionJobsInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
-    /// List of IngestionJobFilters
+    /// <p>Contains a definition of a filter for which to filter the results.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>>,
-    /// Sorts the response returned by ListIngestionJobs operation.
+    /// <p>Contains details about how to sort the results.</p>
     pub sort_by: ::std::option::Option<crate::types::IngestionJobSortBy>,
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIngestionJobsInput {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// List of IngestionJobFilters
+    /// <p>Contains a definition of a filter for which to filter the results.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::IngestionJobFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// Sorts the response returned by ListIngestionJobs operation.
+    /// <p>Contains details about how to sort the results.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::IngestionJobSortBy> {
         self.sort_by.as_ref()
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -63,33 +63,33 @@ pub struct ListIngestionJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIngestionJobsInputBuilder {
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base for which to return ingestion jobs.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
     /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_id = input;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source for which to return ingestion jobs.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
@@ -97,61 +97,61 @@ impl ListIngestionJobsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// List of IngestionJobFilters
+    /// <p>Contains a definition of a filter for which to filter the results.</p>
     pub fn filters(mut self, input: crate::types::IngestionJobFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// List of IngestionJobFilters
+    /// <p>Contains a definition of a filter for which to filter the results.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// List of IngestionJobFilters
+    /// <p>Contains a definition of a filter for which to filter the results.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestionJobFilter>> {
         &self.filters
     }
-    /// Sorts the response returned by ListIngestionJobs operation.
+    /// <p>Contains details about how to sort the results.</p>
     pub fn sort_by(mut self, input: crate::types::IngestionJobSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
-    /// Sorts the response returned by ListIngestionJobs operation.
+    /// <p>Contains details about how to sort the results.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::IngestionJobSortBy>) -> Self {
         self.sort_by = input;
         self
     }
-    /// Sorts the response returned by ListIngestionJobs operation.
+    /// <p>Contains details about how to sort the results.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::IngestionJobSortBy> {
         &self.sort_by
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteKnowledgeBase`](crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseFluentBuilder::set_knowledge_base_id):<br>required: **true**<br>Identifier for a resource.<br>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The unique identifier of the knowledge base to delete.</p><br>
     /// - On success, responds with [`DeleteKnowledgeBaseOutput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput) with field(s):
-    ///   - [`knowledge_base_id(String)`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput::knowledge_base_id): Identifier for a resource.
-    ///   - [`status(KnowledgeBaseStatus)`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput::status): The status of a knowledge base.
+    ///   - [`knowledge_base_id(String)`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput::knowledge_base_id): <p>The unique identifier of the knowledge base that was deleted.</p>
+    ///   - [`status(KnowledgeBaseStatus)`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput::status): <p>The status of the knowledge base and whether it has been successfully deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteKnowledgeBaseError>`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseError)
     pub fn delete_knowledge_base(&self) -> crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseFluentBuilder {
         crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseFluentBuilder::new(self.handle.clone())

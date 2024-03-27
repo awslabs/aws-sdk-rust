@@ -22,7 +22,7 @@ impl DeleteDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataSource`.
 ///
-/// Delete an existing data source
+/// <p>Deletes a data source from a knowledge base.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteDataSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base from which to delete the data source.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base from which to delete the data source.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the knowledge base from which to delete the data source.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to delete.</p>
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to delete.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
-    /// Identifier for a resource.
+    /// <p>The unique identifier of the data source to delete.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }

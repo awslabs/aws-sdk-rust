@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "numberOfMetadataDocumentsScanned" => {
+                            builder = builder.set_number_of_metadata_documents_scanned(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "numberOfNewDocumentsIndexed" => {
                             builder = builder.set_number_of_new_documents_indexed(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -30,6 +37,13 @@ where
                         }
                         "numberOfModifiedDocumentsIndexed" => {
                             builder = builder.set_number_of_modified_documents_indexed(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "numberOfMetadataDocumentsModified" => {
+                            builder = builder.set_number_of_metadata_documents_modified(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,

@@ -1,6 +1,6 @@
 # aws-sdk-bedrockagent
 
-An example service, deployed with the Octane Service creator, which will echo the string
+Describes the API operations for creating and managing Amazon Bedrock agents.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-bedrockagent = "1.16.0"
+aws-sdk-bedrockagent = "1.17.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -22,7 +22,7 @@ impl ListAgentKnowledgeBasesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAgentKnowledgeBases`.
 ///
-/// List of Knowledge Bases associated to an existing Amazon Bedrock Agent Version
+/// <p>Lists knowledge bases associated with an agent and information about each one.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAgentKnowledgeBasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListAgentKnowledgeBasesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_agent_knowledge_bases::paginator::ListAgentKnowledgeBasesPaginator {
         crate::operation::list_agent_knowledge_bases::paginator::ListAgentKnowledgeBasesPaginator::new(self.handle, self.inner)
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent for which to return information about knowledge bases associated with it.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent for which to return information about knowledge bases associated with it.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent for which to return information about knowledge bases associated with it.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Version number generated when a version is created
+    /// <p>The version of the agent for which to return information about knowledge bases associated with it.</p>
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
-    /// Version number generated when a version is created
+    /// <p>The version of the agent for which to return information about knowledge bases associated with it.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }
-    /// Version number generated when a version is created
+    /// <p>The version of the agent for which to return information about knowledge bases associated with it.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_version()
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Max Results.
+    /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

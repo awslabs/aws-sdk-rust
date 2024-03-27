@@ -102,13 +102,19 @@ pub(crate) mod shape_generated_response_part;
 
 pub(crate) mod shape_generation_configuration;
 
+pub(crate) mod shape_retrieval_filter;
+
 pub(crate) mod shape_retrieval_result_content;
 
 pub(crate) mod shape_retrieval_result_location;
 
+pub(crate) mod shape_retrieval_result_metadata;
+
 pub(crate) mod shape_retrieved_references;
 
 pub(crate) mod shape_attribution;
+
+pub(crate) mod shape_filter_attribute;
 
 pub(crate) mod shape_prompt_template;
 

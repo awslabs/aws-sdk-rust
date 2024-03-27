@@ -22,7 +22,29 @@ impl CreateKnowledgeBaseInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateKnowledgeBase`.
 ///
-/// Create a new knowledge base
+/// <p>Creates a knowledge base that contains data sources from which information can be queried and used by LLMs. To create a knowledge base, you must first set up your data sources and configure a supported vector store. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html">Set up your data for ingestion</a>.</p><note>
+/// <p>If you prefer to let Amazon Bedrock create and manage a vector store for you in Amazon OpenSearch Service, use the console. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create a knowledge base</a>.</p>
+/// </note>
+/// <ul>
+/// <li>
+/// <p>Provide the <code>name</code> and an optional <code>description</code>.</p></li>
+/// <li>
+/// <p>Provide the ARN with permissions to create a knowledge base in the <code>roleArn</code> field.</p></li>
+/// <li>
+/// <p>Provide the embedding model to use in the <code>embeddingModelArn</code> field in the <code>knowledgeBaseConfiguration</code> object.</p></li>
+/// <li>
+/// <p>Provide the configuration for your vector store in the <code>storageConfiguration</code> object.</p>
+/// <ul>
+/// <li>
+/// <p>For an Amazon OpenSearch Service database, use the <code>opensearchServerlessConfiguration</code> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-oss.html">Create a vector store in Amazon OpenSearch Service</a>.</p></li>
+/// <li>
+/// <p>For an Amazon Aurora database, use the <code>RdsConfiguration</code> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-rds.html">Create a vector store in Amazon Aurora</a>.</p></li>
+/// <li>
+/// <p>For a Pinecone database, use the <code>pineconeConfiguration</code> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-pinecone.html">Create a vector store in Pinecone</a>.</p></li>
+/// <li>
+/// <p>For a Redis Enterprise Cloud database, use the <code>redisEnterpriseCloudConfiguration</code> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-redis.html">Create a vector store in Redis Enterprise Cloud</a>.</p></li>
+/// </ul></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKnowledgeBaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,87 +130,87 @@ impl CreateKnowledgeBaseFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Client specified token used for idempotency checks
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// Name for a resource.
+    /// <p>A name for the knowledge base.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// Name for a resource.
+    /// <p>A name for the knowledge base.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// Name for a resource.
+    /// <p>A name for the knowledge base.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// Description of the Resource.
+    /// <p>A description of the knowledge base.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the knowledge base.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Description of the Resource.
+    /// <p>A description of the knowledge base.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// ARN of a IAM role.
+    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Contains details about the embeddings model used for the knowledge base.</p>
     pub fn knowledge_base_configuration(mut self, input: crate::types::KnowledgeBaseConfiguration) -> Self {
         self.inner = self.inner.knowledge_base_configuration(input);
         self
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Contains details about the embeddings model used for the knowledge base.</p>
     pub fn set_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>) -> Self {
         self.inner = self.inner.set_knowledge_base_configuration(input);
         self
     }
-    /// Configures a bedrock knowledge base.
+    /// <p>Contains details about the embeddings model used for the knowledge base.</p>
     pub fn get_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseConfiguration> {
         self.inner.get_knowledge_base_configuration()
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Contains details about the configuration of the vector database used for the knowledge base.</p>
     pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
         self.inner = self.inner.storage_configuration(input);
         self
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Contains details about the configuration of the vector database used for the knowledge base.</p>
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
         self.inner = self.inner.set_storage_configuration(input);
         self
     }
-    /// Configures the physical storage of ingested data in a knowledge base.
+    /// <p>Contains details about the configuration of the vector database used for the knowledge base.</p>
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         self.inner.get_storage_configuration()
     }
@@ -196,17 +218,17 @@ impl CreateKnowledgeBaseFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// A map of tag keys and values
+    /// <p>Specify the key-value pairs for the tags that you want to attach to your knowledge base in this object.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// A map of tag keys and values
+    /// <p>Specify the key-value pairs for the tags that you want to attach to your knowledge base in this object.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// A map of tag keys and values
+    /// <p>Specify the key-value pairs for the tags that you want to attach to your knowledge base in this object.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

@@ -275,6 +275,8 @@ pub(crate) mod shape_eks_volume;
 
 pub(crate) mod shape_host;
 
+pub(crate) mod shape_image_pull_secret;
+
 pub(crate) mod shape_job_dependency_list;
 
 pub(crate) mod shape_job_state_time_limit_actions;
@@ -362,6 +364,8 @@ pub(crate) mod shape_eks_container_details;
 pub(crate) mod shape_eks_containers;
 
 pub(crate) mod shape_eks_volumes;
+
+pub(crate) mod shape_image_pull_secrets;
 
 pub(crate) mod shape_log_configuration_options_map;
 

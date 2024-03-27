@@ -8,7 +8,16 @@ pub struct PutResourcePolicyInput {
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub resource_policy: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
+    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p><important>
+    /// <p>Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public access from being granted through the resource policies that are directly attached to your secrets. In addition to using these features, carefully inspect the following policies to confirm that they do not grant public access:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)</p></li>
+    /// <li>
+    /// <p>Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service (KMS) keys)</p></li>
+    /// </ul>
+    /// <p>To review permissions to your secrets, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html">Determine who has permissions to your secrets</a>.</p>
+    /// </important>
     pub block_public_policy: ::std::option::Option<bool>,
 }
 impl PutResourcePolicyInput {
@@ -21,7 +30,16 @@ impl PutResourcePolicyInput {
     pub fn resource_policy(&self) -> ::std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
-    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
+    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p><important>
+    /// <p>Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public access from being granted through the resource policies that are directly attached to your secrets. In addition to using these features, carefully inspect the following policies to confirm that they do not grant public access:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)</p></li>
+    /// <li>
+    /// <p>Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service (KMS) keys)</p></li>
+    /// </ul>
+    /// <p>To review permissions to your secrets, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html">Determine who has permissions to your secrets</a>.</p>
+    /// </important>
     pub fn block_public_policy(&self) -> ::std::option::Option<bool> {
         self.block_public_policy
     }
@@ -75,17 +93,44 @@ impl PutResourcePolicyInputBuilder {
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_policy
     }
-    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
+    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p><important>
+    /// <p>Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public access from being granted through the resource policies that are directly attached to your secrets. In addition to using these features, carefully inspect the following policies to confirm that they do not grant public access:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)</p></li>
+    /// <li>
+    /// <p>Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service (KMS) keys)</p></li>
+    /// </ul>
+    /// <p>To review permissions to your secrets, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html">Determine who has permissions to your secrets</a>.</p>
+    /// </important>
     pub fn block_public_policy(mut self, input: bool) -> Self {
         self.block_public_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
+    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p><important>
+    /// <p>Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public access from being granted through the resource policies that are directly attached to your secrets. In addition to using these features, carefully inspect the following policies to confirm that they do not grant public access:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)</p></li>
+    /// <li>
+    /// <p>Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service (KMS) keys)</p></li>
+    /// </ul>
+    /// <p>To review permissions to your secrets, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html">Determine who has permissions to your secrets</a>.</p>
+    /// </important>
     pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.block_public_policy = input;
         self
     }
-    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
+    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p><important>
+    /// <p>Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public access from being granted through the resource policies that are directly attached to your secrets. In addition to using these features, carefully inspect the following policies to confirm that they do not grant public access:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)</p></li>
+    /// <li>
+    /// <p>Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service (KMS) keys)</p></li>
+    /// </ul>
+    /// <p>To review permissions to your secrets, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html">Determine who has permissions to your secrets</a>.</p>
+    /// </important>
     pub fn get_block_public_policy(&self) -> &::std::option::Option<bool> {
         &self.block_public_policy
     }

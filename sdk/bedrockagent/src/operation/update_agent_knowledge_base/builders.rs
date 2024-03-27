@@ -22,7 +22,7 @@ impl UpdateAgentKnowledgeBaseInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAgentKnowledgeBase`.
 ///
-/// Updates an existing Knowledge Base associated to an Amazon Bedrock Agent
+/// <p>Updates the configuration for a knowledge base that has been associated with an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgentKnowledgeBaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl UpdateAgentKnowledgeBaseFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent associated with the knowledge base that you want to update.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent associated with the knowledge base that you want to update.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent associated with the knowledge base that you want to update.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Draft Version of the Agent.
+    /// <p>The version of the agent associated with the knowledge base that you want to update.</p>
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
-    /// Draft Version of the Agent.
+    /// <p>The version of the agent associated with the knowledge base that you want to update.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }
-    /// Draft Version of the Agent.
+    /// <p>The version of the agent associated with the knowledge base that you want to update.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_version()
     }
-    /// Id generated at the server side when a Knowledge Base is associated to an Agent
+    /// <p>The unique identifier of the knowledge base that has been associated with an agent.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// Id generated at the server side when a Knowledge Base is associated to an Agent
+    /// <p>The unique identifier of the knowledge base that has been associated with an agent.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// Id generated at the server side when a Knowledge Base is associated to an Agent
+    /// <p>The unique identifier of the knowledge base that has been associated with an agent.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the knowledge base associated with an agent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the knowledge base associated with an agent.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Description of the Resource.
+    /// <p>Specifies a new description for the knowledge base associated with an agent.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// State of the knowledge base; whether it is enabled or disabled
+    /// <p>Specifies whether the agent uses the knowledge base or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub fn knowledge_base_state(mut self, input: crate::types::KnowledgeBaseState) -> Self {
         self.inner = self.inner.knowledge_base_state(input);
         self
     }
-    /// State of the knowledge base; whether it is enabled or disabled
+    /// <p>Specifies whether the agent uses the knowledge base or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub fn set_knowledge_base_state(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseState>) -> Self {
         self.inner = self.inner.set_knowledge_base_state(input);
         self
     }
-    /// State of the knowledge base; whether it is enabled or disabled
+    /// <p>Specifies whether the agent uses the knowledge base or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub fn get_knowledge_base_state(&self) -> &::std::option::Option<crate::types::KnowledgeBaseState> {
         self.inner.get_knowledge_base_state()
     }

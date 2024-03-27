@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataSource`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_knowledge_base_id):<br>required: **true**<br>Identifier for a resource.<br>
-    ///   - [`data_source_id(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::data_source_id) / [`set_data_source_id(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_data_source_id):<br>required: **true**<br>Identifier for a resource.<br>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The unique identifier of the knowledge base that the data source was added to.</p><br>
+    ///   - [`data_source_id(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::data_source_id) / [`set_data_source_id(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_data_source_id):<br>required: **true**<br><p>The unique identifier of the data source.</p><br>
     /// - On success, responds with [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput) with field(s):
-    ///   - [`data_source(Option<DataSource>)`](crate::operation::get_data_source::GetDataSourceOutput::data_source): Contains the information of a data source.
+    ///   - [`data_source(Option<DataSource>)`](crate::operation::get_data_source::GetDataSourceOutput::data_source): <p>Contains details about the data source.</p>
     /// - On failure, responds with [`SdkError<GetDataSourceError>`](crate::operation::get_data_source::GetDataSourceError)
     pub fn get_data_source(&self) -> crate::operation::get_data_source::builders::GetDataSourceFluentBuilder {
         crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::new(self.handle.clone())

@@ -22,7 +22,7 @@ impl DeleteAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAgent`.
 ///
-/// Deletes an Agent for existing Amazon Bedrock Agent
+/// <p>Deletes an agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteAgentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent to delete.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_id(input.into());
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent to delete.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_id(input);
         self
     }
-    /// Id generated at the server side when an Agent is created
+    /// <p>The unique identifier of the agent to delete.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_id()
     }
-    /// Skips checking if resource is in use when set to true. Defaults to false
+    /// <p>By default, this value is <code>false</code> and deletion is stopped if the resource is in use. If you set it to <code>true</code>, the resource will be deleted even if the resource is in use.</p>
     pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_resource_in_use_check(input);
         self
     }
-    /// Skips checking if resource is in use when set to true. Defaults to false
+    /// <p>By default, this value is <code>false</code> and deletion is stopped if the resource is in use. If you set it to <code>true</code>, the resource will be deleted even if the resource is in use.</p>
     pub fn set_skip_resource_in_use_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_resource_in_use_check(input);
         self
     }
-    /// Skips checking if resource is in use when set to true. Defaults to false
+    /// <p>By default, this value is <code>false</code> and deletion is stopped if the resource is in use. If you set it to <code>true</code>, the resource will be deleted even if the resource is in use.</p>
     pub fn get_skip_resource_in_use_check(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_resource_in_use_check()
     }
