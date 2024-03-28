@@ -160,12 +160,12 @@ impl ProviderChain {
                 }
             }
         };
-        tracing::info!(base = ?repr.base(), "first credentials will be loaded from {:?}", repr.base());
+        tracing::debug!(base = ?repr.base(), "first credentials will be loaded from {:?}", repr.base());
         let chain = repr
             .chain()
             .iter()
             .map(|role_arn| {
-                tracing::info!(role_arn = ?role_arn, "which will be used to assume a role");
+                tracing::debug!(role_arn = ?role_arn, "which will be used to assume a role");
                 AssumeRoleProvider {
                     role_arn: role_arn.role_arn.into(),
                     external_id: role_arn.external_id.map(Into::into),
