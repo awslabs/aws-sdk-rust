@@ -7,7 +7,8 @@ pub struct UpdateGraphInput {
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub public_connectivity: ::std::option::Option<bool>,
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub provisioned_memory: ::std::option::Option<i32>,
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
@@ -21,7 +22,8 @@ impl UpdateGraphInput {
     pub fn public_connectivity(&self) -> ::std::option::Option<bool> {
         self.public_connectivity
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
     }
@@ -76,17 +78,20 @@ impl UpdateGraphInputBuilder {
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
         &self.public_connectivity
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
     }

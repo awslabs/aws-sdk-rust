@@ -14,6 +14,7 @@
 /// match resourcetype {
 ///     ResourceType::AwsApplicationinsightsApplication => { /* ... */ },
 ///     ResourceType::AwsCloudwatchMetric => { /* ... */ },
+///     ResourceType::AwsInternetmonitorMonitor => { /* ... */ },
 ///     ResourceType::AwsLogsLoggroup => { /* ... */ },
 ///     ResourceType::AwsXrayTrace => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsCloudwatchMetric,
     #[allow(missing_docs)] // documentation missing in model
+    AwsInternetmonitorMonitor,
+    #[allow(missing_docs)] // documentation missing in model
     AwsLogsLoggroup,
     #[allow(missing_docs)] // documentation missing in model
     AwsXrayTrace,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for ResourceType {
         match s {
             "AWS::ApplicationInsights::Application" => ResourceType::AwsApplicationinsightsApplication,
             "AWS::CloudWatch::Metric" => ResourceType::AwsCloudwatchMetric,
+            "AWS::InternetMonitor::Monitor" => ResourceType::AwsInternetmonitorMonitor,
             "AWS::Logs::LogGroup" => ResourceType::AwsLogsLoggroup,
             "AWS::XRay::Trace" => ResourceType::AwsXrayTrace,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl ResourceType {
         match self {
             ResourceType::AwsApplicationinsightsApplication => "AWS::ApplicationInsights::Application",
             ResourceType::AwsCloudwatchMetric => "AWS::CloudWatch::Metric",
+            ResourceType::AwsInternetmonitorMonitor => "AWS::InternetMonitor::Monitor",
             ResourceType::AwsLogsLoggroup => "AWS::Logs::LogGroup",
             ResourceType::AwsXrayTrace => "AWS::XRay::Trace",
             ResourceType::Unknown(value) => value.as_str(),
@@ -89,6 +94,7 @@ impl ResourceType {
         &[
             "AWS::ApplicationInsights::Application",
             "AWS::CloudWatch::Metric",
+            "AWS::InternetMonitor::Monitor",
             "AWS::Logs::LogGroup",
             "AWS::XRay::Trace",
         ]
@@ -116,6 +122,7 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::AwsApplicationinsightsApplication => write!(f, "AWS::ApplicationInsights::Application"),
             ResourceType::AwsCloudwatchMetric => write!(f, "AWS::CloudWatch::Metric"),
+            ResourceType::AwsInternetmonitorMonitor => write!(f, "AWS::InternetMonitor::Monitor"),
             ResourceType::AwsLogsLoggroup => write!(f, "AWS::Logs::LogGroup"),
             ResourceType::AwsXrayTrace => write!(f, "AWS::XRay::Trace"),
             ResourceType::Unknown(value) => write!(f, "{}", value),

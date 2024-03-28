@@ -22,7 +22,7 @@ impl UpdateIpRestrictionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateIpRestriction`.
 ///
-/// <p>Updates the content and status of IP rules. To use this operation, you must provide the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.</p>
+/// <p>Updates the content and status of IP rules. Traffic from a source is allowed when the source satisfies either the <code>IpRestrictionRule</code>, <code>VpcIdRestrictionRule</code>, or <code>VpcEndpointIdRestrictionRule</code>. To use this operation, you must provide the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIpRestrictionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -146,6 +146,60 @@ impl UpdateIpRestrictionFluentBuilder {
     /// <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
     pub fn get_ip_restriction_rule_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_ip_restriction_rule_map()
+    }
+    /// Adds a key-value pair to `VpcIdRestrictionRuleMap`.
+    ///
+    /// To override the contents of this collection use [`set_vpc_id_restriction_rule_map`](Self::set_vpc_id_restriction_rule_map).
+    ///
+    /// <p>A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC endpoints that are present in the specified VPC is allowed.</p>
+    pub fn vpc_id_restriction_rule_map(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.vpc_id_restriction_rule_map(k.into(), v.into());
+        self
+    }
+    /// <p>A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC endpoints that are present in the specified VPC is allowed.</p>
+    pub fn set_vpc_id_restriction_rule_map(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_vpc_id_restriction_rule_map(input);
+        self
+    }
+    /// <p>A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC endpoints that are present in the specified VPC is allowed.</p>
+    pub fn get_vpc_id_restriction_rule_map(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_vpc_id_restriction_rule_map()
+    }
+    /// Adds a key-value pair to `VpcEndpointIdRestrictionRuleMap`.
+    ///
+    /// To override the contents of this collection use [`set_vpc_endpoint_id_restriction_rule_map`](Self::set_vpc_endpoint_id_restriction_rule_map).
+    ///
+    /// <p>A map of allowed VPC endpoint IDs and their corresponding rule descriptions.</p>
+    pub fn vpc_endpoint_id_restriction_rule_map(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.vpc_endpoint_id_restriction_rule_map(k.into(), v.into());
+        self
+    }
+    /// <p>A map of allowed VPC endpoint IDs and their corresponding rule descriptions.</p>
+    pub fn set_vpc_endpoint_id_restriction_rule_map(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_vpc_endpoint_id_restriction_rule_map(input);
+        self
+    }
+    /// <p>A map of allowed VPC endpoint IDs and their corresponding rule descriptions.</p>
+    pub fn get_vpc_endpoint_id_restriction_rule_map(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_vpc_endpoint_id_restriction_rule_map()
     }
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub fn enabled(mut self, input: bool) -> Self {

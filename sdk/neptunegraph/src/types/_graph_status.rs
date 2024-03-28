@@ -16,6 +16,7 @@
 ///     GraphStatus::Creating => { /* ... */ },
 ///     GraphStatus::Deleting => { /* ... */ },
 ///     GraphStatus::Failed => { /* ... */ },
+///     GraphStatus::Importing => { /* ... */ },
 ///     GraphStatus::Resetting => { /* ... */ },
 ///     GraphStatus::Snapshotting => { /* ... */ },
 ///     GraphStatus::Updating => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum GraphStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    Importing,
+    #[allow(missing_docs)] // documentation missing in model
     Resetting,
     #[allow(missing_docs)] // documentation missing in model
     Snapshotting,
@@ -71,6 +74,7 @@ impl ::std::convert::From<&str> for GraphStatus {
             "CREATING" => GraphStatus::Creating,
             "DELETING" => GraphStatus::Deleting,
             "FAILED" => GraphStatus::Failed,
+            "IMPORTING" => GraphStatus::Importing,
             "RESETTING" => GraphStatus::Resetting,
             "SNAPSHOTTING" => GraphStatus::Snapshotting,
             "UPDATING" => GraphStatus::Updating,
@@ -93,6 +97,7 @@ impl GraphStatus {
             GraphStatus::Creating => "CREATING",
             GraphStatus::Deleting => "DELETING",
             GraphStatus::Failed => "FAILED",
+            GraphStatus::Importing => "IMPORTING",
             GraphStatus::Resetting => "RESETTING",
             GraphStatus::Snapshotting => "SNAPSHOTTING",
             GraphStatus::Updating => "UPDATING",
@@ -101,7 +106,16 @@ impl GraphStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "CREATING", "DELETING", "FAILED", "RESETTING", "SNAPSHOTTING", "UPDATING"]
+        &[
+            "AVAILABLE",
+            "CREATING",
+            "DELETING",
+            "FAILED",
+            "IMPORTING",
+            "RESETTING",
+            "SNAPSHOTTING",
+            "UPDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for GraphStatus {
@@ -128,6 +142,7 @@ impl ::std::fmt::Display for GraphStatus {
             GraphStatus::Creating => write!(f, "CREATING"),
             GraphStatus::Deleting => write!(f, "DELETING"),
             GraphStatus::Failed => write!(f, "FAILED"),
+            GraphStatus::Importing => write!(f, "IMPORTING"),
             GraphStatus::Resetting => write!(f, "RESETTING"),
             GraphStatus::Snapshotting => write!(f, "SNAPSHOTTING"),
             GraphStatus::Updating => write!(f, "UPDATING"),

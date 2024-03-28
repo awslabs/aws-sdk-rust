@@ -18,11 +18,11 @@ impl super::Client {
     ///   - [`status(Option<GraphStatus>)`](crate::operation::create_graph::CreateGraphOutput::status): <p>The current status of the graph.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::create_graph::CreateGraphOutput::status_reason): <p>The reason the status was given.</p>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::create_graph::CreateGraphOutput::create_time): <p>The time when the graph was created.</p>
-    ///   - [`provisioned_memory(Option<i32>)`](crate::operation::create_graph::CreateGraphOutput::provisioned_memory): <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    ///   - [`provisioned_memory(Option<i32>)`](crate::operation::create_graph::CreateGraphOutput::provisioned_memory): <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p> <p>Min = 128</p>
     ///   - [`endpoint(Option<String>)`](crate::operation::create_graph::CreateGraphOutput::endpoint): <p>The graph endpoint.</p>
-    ///   - [`public_connectivity(Option<bool>)`](crate::operation::create_graph::CreateGraphOutput::public_connectivity): <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
+    ///   - [`public_connectivity(Option<bool>)`](crate::operation::create_graph::CreateGraphOutput::public_connectivity): <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p><note>  <p>If enabling public connectivity for the first time, there will be a delay while it is enabled.</p> </note>
     ///   - [`vector_search_configuration(Option<VectorSearchConfiguration>)`](crate::operation::create_graph::CreateGraphOutput::vector_search_configuration): <p>The vector-search configuration for the graph, which specifies the vector dimension to use in the vector index, if any.</p>
-    ///   - [`replica_count(Option<i32>)`](crate::operation::create_graph::CreateGraphOutput::replica_count): <p>The number of replicas in other AZs.</p>
+    ///   - [`replica_count(Option<i32>)`](crate::operation::create_graph::CreateGraphOutput::replica_count): <p>The number of replicas in other AZs.</p> <p>Default: If not specified, the default value is 1.</p>
     ///   - [`kms_key_identifier(Option<String>)`](crate::operation::create_graph::CreateGraphOutput::kms_key_identifier): <p>Specifies the KMS key used to encrypt data in the new graph.</p>
     ///   - [`source_snapshot_id(Option<String>)`](crate::operation::create_graph::CreateGraphOutput::source_snapshot_id): <p>The ID of the source graph.</p>
     ///   - [`deletion_protection(Option<bool>)`](crate::operation::create_graph::CreateGraphOutput::deletion_protection): <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>

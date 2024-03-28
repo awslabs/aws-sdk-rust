@@ -13,6 +13,7 @@
 /// # let customizablemetricheadroom = unimplemented!();
 /// match customizablemetricheadroom {
 ///     CustomizableMetricHeadroom::Percent0 => { /* ... */ },
+///     CustomizableMetricHeadroom::Percent10 => { /* ... */ },
 ///     CustomizableMetricHeadroom::Percent20 => { /* ... */ },
 ///     CustomizableMetricHeadroom::Percent30 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum CustomizableMetricHeadroom {
     #[allow(missing_docs)] // documentation missing in model
     Percent0,
     #[allow(missing_docs)] // documentation missing in model
+    Percent10,
+    #[allow(missing_docs)] // documentation missing in model
     Percent20,
     #[allow(missing_docs)] // documentation missing in model
     Percent30,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for CustomizableMetricHeadroom {
     fn from(s: &str) -> Self {
         match s {
             "PERCENT_0" => CustomizableMetricHeadroom::Percent0,
+            "PERCENT_10" => CustomizableMetricHeadroom::Percent10,
             "PERCENT_20" => CustomizableMetricHeadroom::Percent20,
             "PERCENT_30" => CustomizableMetricHeadroom::Percent30,
             other => CustomizableMetricHeadroom::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl CustomizableMetricHeadroom {
     pub fn as_str(&self) -> &str {
         match self {
             CustomizableMetricHeadroom::Percent0 => "PERCENT_0",
+            CustomizableMetricHeadroom::Percent10 => "PERCENT_10",
             CustomizableMetricHeadroom::Percent20 => "PERCENT_20",
             CustomizableMetricHeadroom::Percent30 => "PERCENT_30",
             CustomizableMetricHeadroom::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl CustomizableMetricHeadroom {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PERCENT_0", "PERCENT_20", "PERCENT_30"]
+        &["PERCENT_0", "PERCENT_10", "PERCENT_20", "PERCENT_30"]
     }
 }
 impl ::std::convert::AsRef<str> for CustomizableMetricHeadroom {
@@ -105,6 +110,7 @@ impl ::std::fmt::Display for CustomizableMetricHeadroom {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CustomizableMetricHeadroom::Percent0 => write!(f, "PERCENT_0"),
+            CustomizableMetricHeadroom::Percent10 => write!(f, "PERCENT_10"),
             CustomizableMetricHeadroom::Percent20 => write!(f, "PERCENT_20"),
             CustomizableMetricHeadroom::Percent30 => write!(f, "PERCENT_30"),
             CustomizableMetricHeadroom::Unknown(value) => write!(f, "{}", value),

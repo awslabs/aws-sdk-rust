@@ -44,6 +44,16 @@ pub struct RuntimeContext {
     pub iana_protocol_number: ::std::option::Option<i32>,
     /// <p>Specifies the Region of a process's address space such as stack and heap.</p>
     pub memory_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Name of the potentially suspicious tool.</p>
+    pub tool_name: ::std::option::Option<::std::string::String>,
+    /// <p>Category that the tool belongs to. Some of the examples are Backdoor Tool, Pentest Tool, Network Scanner, and Network Sniffer.</p>
+    pub tool_category: ::std::option::Option<::std::string::String>,
+    /// <p>Name of the security service that has been potentially disabled.</p>
+    pub service_name: ::std::option::Option<::std::string::String>,
+    /// <p>Example of the command line involved in the suspicious activity.</p>
+    pub command_line_example: ::std::option::Option<::std::string::String>,
+    /// <p>The suspicious file path for which the threat intelligence details were found.</p>
+    pub threat_file_path: ::std::option::Option<::std::string::String>,
 }
 impl RuntimeContext {
     /// <p>Information about the process that modified the current process. This is available for multiple finding types.</p>
@@ -130,6 +140,26 @@ impl RuntimeContext {
     pub fn memory_regions(&self) -> &[::std::string::String] {
         self.memory_regions.as_deref().unwrap_or_default()
     }
+    /// <p>Name of the potentially suspicious tool.</p>
+    pub fn tool_name(&self) -> ::std::option::Option<&str> {
+        self.tool_name.as_deref()
+    }
+    /// <p>Category that the tool belongs to. Some of the examples are Backdoor Tool, Pentest Tool, Network Scanner, and Network Sniffer.</p>
+    pub fn tool_category(&self) -> ::std::option::Option<&str> {
+        self.tool_category.as_deref()
+    }
+    /// <p>Name of the security service that has been potentially disabled.</p>
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
+        self.service_name.as_deref()
+    }
+    /// <p>Example of the command line involved in the suspicious activity.</p>
+    pub fn command_line_example(&self) -> ::std::option::Option<&str> {
+        self.command_line_example.as_deref()
+    }
+    /// <p>The suspicious file path for which the threat intelligence details were found.</p>
+    pub fn threat_file_path(&self) -> ::std::option::Option<&str> {
+        self.threat_file_path.as_deref()
+    }
 }
 impl RuntimeContext {
     /// Creates a new builder-style object to manufacture [`RuntimeContext`](crate::types::RuntimeContext).
@@ -162,6 +192,11 @@ pub struct RuntimeContextBuilder {
     pub(crate) address_family: ::std::option::Option<::std::string::String>,
     pub(crate) iana_protocol_number: ::std::option::Option<i32>,
     pub(crate) memory_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tool_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tool_category: ::std::option::Option<::std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) command_line_example: ::std::option::Option<::std::string::String>,
+    pub(crate) threat_file_path: ::std::option::Option<::std::string::String>,
 }
 impl RuntimeContextBuilder {
     /// <p>Information about the process that modified the current process. This is available for multiple finding types.</p>
@@ -456,6 +491,76 @@ impl RuntimeContextBuilder {
     pub fn get_memory_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.memory_regions
     }
+    /// <p>Name of the potentially suspicious tool.</p>
+    pub fn tool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tool_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Name of the potentially suspicious tool.</p>
+    pub fn set_tool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tool_name = input;
+        self
+    }
+    /// <p>Name of the potentially suspicious tool.</p>
+    pub fn get_tool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tool_name
+    }
+    /// <p>Category that the tool belongs to. Some of the examples are Backdoor Tool, Pentest Tool, Network Scanner, and Network Sniffer.</p>
+    pub fn tool_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tool_category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Category that the tool belongs to. Some of the examples are Backdoor Tool, Pentest Tool, Network Scanner, and Network Sniffer.</p>
+    pub fn set_tool_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tool_category = input;
+        self
+    }
+    /// <p>Category that the tool belongs to. Some of the examples are Backdoor Tool, Pentest Tool, Network Scanner, and Network Sniffer.</p>
+    pub fn get_tool_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tool_category
+    }
+    /// <p>Name of the security service that has been potentially disabled.</p>
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Name of the security service that has been potentially disabled.</p>
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_name = input;
+        self
+    }
+    /// <p>Name of the security service that has been potentially disabled.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
+    /// <p>Example of the command line involved in the suspicious activity.</p>
+    pub fn command_line_example(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.command_line_example = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Example of the command line involved in the suspicious activity.</p>
+    pub fn set_command_line_example(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.command_line_example = input;
+        self
+    }
+    /// <p>Example of the command line involved in the suspicious activity.</p>
+    pub fn get_command_line_example(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command_line_example
+    }
+    /// <p>The suspicious file path for which the threat intelligence details were found.</p>
+    pub fn threat_file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.threat_file_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The suspicious file path for which the threat intelligence details were found.</p>
+    pub fn set_threat_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.threat_file_path = input;
+        self
+    }
+    /// <p>The suspicious file path for which the threat intelligence details were found.</p>
+    pub fn get_threat_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threat_file_path
+    }
     /// Consumes the builder and constructs a [`RuntimeContext`](crate::types::RuntimeContext).
     pub fn build(self) -> crate::types::RuntimeContext {
         crate::types::RuntimeContext {
@@ -479,6 +584,11 @@ impl RuntimeContextBuilder {
             address_family: self.address_family,
             iana_protocol_number: self.iana_protocol_number,
             memory_regions: self.memory_regions,
+            tool_name: self.tool_name,
+            tool_category: self.tool_category,
+            service_name: self.service_name,
+            command_line_example: self.command_line_example,
+            threat_file_path: self.threat_file_path,
         }
     }
 }

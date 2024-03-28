@@ -157,6 +157,16 @@ pub(crate) fn de_describe_ip_restriction(
                             .transpose()?,
                     );
                 }
+                "VpcEndpointIdRestrictionRuleMap" => {
+                    builder = builder.set_vpc_endpoint_id_restriction_rule_map(
+                        crate::protocol_serde::shape_vpc_endpoint_id_restriction_rule_map::de_vpc_endpoint_id_restriction_rule_map(tokens)?,
+                    );
+                }
+                "VpcIdRestrictionRuleMap" => {
+                    builder = builder.set_vpc_id_restriction_rule_map(
+                        crate::protocol_serde::shape_vpc_id_restriction_rule_map::de_vpc_id_restriction_rule_map(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

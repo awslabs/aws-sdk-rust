@@ -248,40 +248,73 @@ impl PutRecommendationPreferencesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_utilization_preferences`](Self::set_utilization_preferences).
     ///
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p>The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. When this preference isn't specified, we use the following default values.</p>
+    /// <p>CPU utilization:</p>
     /// <ul>
     /// <li>
     /// <p><code>P99_5</code> for threshold</p></li>
     /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
+    /// </ul>
+    /// <p>Memory utilization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
     /// </ul><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can only set CPU and memory utilization preferences for the Amazon EC2 instance resource type.</p></li>
+    /// <li>
+    /// <p>The threshold setting isn’t available for memory utilization.</p></li>
+    /// </ul>
     /// </note>
     pub fn utilization_preferences(mut self, input: crate::types::UtilizationPreference) -> Self {
         self.inner = self.inner.utilization_preferences(input);
         self
     }
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p>The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. When this preference isn't specified, we use the following default values.</p>
+    /// <p>CPU utilization:</p>
     /// <ul>
     /// <li>
     /// <p><code>P99_5</code> for threshold</p></li>
     /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
+    /// </ul>
+    /// <p>Memory utilization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
     /// </ul><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can only set CPU and memory utilization preferences for the Amazon EC2 instance resource type.</p></li>
+    /// <li>
+    /// <p>The threshold setting isn’t available for memory utilization.</p></li>
+    /// </ul>
     /// </note>
     pub fn set_utilization_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>) -> Self {
         self.inner = self.inner.set_utilization_preferences(input);
         self
     }
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p>The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. When this preference isn't specified, we use the following default values.</p>
+    /// <p>CPU utilization:</p>
     /// <ul>
     /// <li>
     /// <p><code>P99_5</code> for threshold</p></li>
     /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
+    /// </ul>
+    /// <p>Memory utilization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
     /// </ul><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can only set CPU and memory utilization preferences for the Amazon EC2 instance resource type.</p></li>
+    /// <li>
+    /// <p>The threshold setting isn’t available for memory utilization.</p></li>
+    /// </ul>
     /// </note>
     pub fn get_utilization_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>> {
         self.inner.get_utilization_preferences()

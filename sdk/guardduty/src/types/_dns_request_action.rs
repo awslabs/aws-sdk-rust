@@ -10,7 +10,7 @@ pub struct DnsRequestAction {
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the targeted port is blocked.</p>
     pub blocked: ::std::option::Option<bool>,
-    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    /// <p>The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix list</a>.</p>
     pub domain_with_suffix: ::std::option::Option<::std::string::String>,
 }
 impl DnsRequestAction {
@@ -26,7 +26,7 @@ impl DnsRequestAction {
     pub fn blocked(&self) -> ::std::option::Option<bool> {
         self.blocked
     }
-    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    /// <p>The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix list</a>.</p>
     pub fn domain_with_suffix(&self) -> ::std::option::Option<&str> {
         self.domain_with_suffix.as_deref()
     }
@@ -90,17 +90,17 @@ impl DnsRequestActionBuilder {
     pub fn get_blocked(&self) -> &::std::option::Option<bool> {
         &self.blocked
     }
-    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    /// <p>The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix list</a>.</p>
     pub fn domain_with_suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_with_suffix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    /// <p>The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix list</a>.</p>
     pub fn set_domain_with_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_with_suffix = input;
         self
     }
-    /// <p>The second and top level domain involved in the activity that prompted GuardDuty to generate this finding.</p>
+    /// <p>The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix list</a>.</p>
     pub fn get_domain_with_suffix(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_with_suffix
     }

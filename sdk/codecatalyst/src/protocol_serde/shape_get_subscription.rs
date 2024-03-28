@@ -142,6 +142,19 @@ pub(crate) fn de_get_subscription(
                             .transpose()?,
                     );
                 }
+                "pendingSubscriptionStartTime" => {
+                    builder = builder.set_pending_subscription_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "pendingSubscriptionType" => {
+                    builder = builder.set_pending_subscription_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "subscriptionType" => {
                     builder = builder.set_subscription_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

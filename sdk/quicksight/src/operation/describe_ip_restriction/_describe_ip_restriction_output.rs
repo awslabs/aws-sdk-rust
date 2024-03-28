@@ -7,6 +7,10 @@ pub struct DescribeIpRestrictionOutput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
     pub ip_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A map of allowed VPC IDs and their rule descriptions.</p>
+    pub vpc_id_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+    pub vpc_endpoint_id_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -23,6 +27,16 @@ impl DescribeIpRestrictionOutput {
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
     pub fn ip_restriction_rule_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.ip_restriction_rule_map.as_ref()
+    }
+    /// <p>A map of allowed VPC IDs and their rule descriptions.</p>
+    pub fn vpc_id_restriction_rule_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.vpc_id_restriction_rule_map.as_ref()
+    }
+    /// <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+    pub fn vpc_endpoint_id_restriction_rule_map(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.vpc_endpoint_id_restriction_rule_map.as_ref()
     }
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
@@ -55,6 +69,8 @@ impl DescribeIpRestrictionOutput {
 pub struct DescribeIpRestrictionOutputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) vpc_id_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) vpc_endpoint_id_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -101,6 +117,64 @@ impl DescribeIpRestrictionOutputBuilder {
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
     pub fn get_ip_restriction_rule_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.ip_restriction_rule_map
+    }
+    /// Adds a key-value pair to `vpc_id_restriction_rule_map`.
+    ///
+    /// To override the contents of this collection use [`set_vpc_id_restriction_rule_map`](Self::set_vpc_id_restriction_rule_map).
+    ///
+    /// <p>A map of allowed VPC IDs and their rule descriptions.</p>
+    pub fn vpc_id_restriction_rule_map(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.vpc_id_restriction_rule_map.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.vpc_id_restriction_rule_map = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of allowed VPC IDs and their rule descriptions.</p>
+    pub fn set_vpc_id_restriction_rule_map(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.vpc_id_restriction_rule_map = input;
+        self
+    }
+    /// <p>A map of allowed VPC IDs and their rule descriptions.</p>
+    pub fn get_vpc_id_restriction_rule_map(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.vpc_id_restriction_rule_map
+    }
+    /// Adds a key-value pair to `vpc_endpoint_id_restriction_rule_map`.
+    ///
+    /// To override the contents of this collection use [`set_vpc_endpoint_id_restriction_rule_map`](Self::set_vpc_endpoint_id_restriction_rule_map).
+    ///
+    /// <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+    pub fn vpc_endpoint_id_restriction_rule_map(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.vpc_endpoint_id_restriction_rule_map.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.vpc_endpoint_id_restriction_rule_map = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+    pub fn set_vpc_endpoint_id_restriction_rule_map(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.vpc_endpoint_id_restriction_rule_map = input;
+        self
+    }
+    /// <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+    pub fn get_vpc_endpoint_id_restriction_rule_map(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.vpc_endpoint_id_restriction_rule_map
     }
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -158,6 +232,8 @@ impl DescribeIpRestrictionOutputBuilder {
         crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput {
             aws_account_id: self.aws_account_id,
             ip_restriction_rule_map: self.ip_restriction_rule_map,
+            vpc_id_restriction_rule_map: self.vpc_id_restriction_rule_map,
+            vpc_endpoint_id_restriction_rule_map: self.vpc_endpoint_id_restriction_rule_map,
             enabled: self.enabled,
             request_id: self.request_id,
             status: self.status.unwrap_or_default(),

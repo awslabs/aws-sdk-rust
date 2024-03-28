@@ -6,17 +6,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtilizationPreference {
-    /// <p>The name of the resource utilization metric name to customize.</p><note>
-    /// <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p>
-    /// </note>
+    /// <p>The name of the resource utilization metric name to customize.</p>
     pub metric_name: ::std::option::Option<crate::types::CustomizableMetricName>,
     /// <p>The parameters to set when customizing the resource utilization thresholds.</p>
     pub metric_parameters: ::std::option::Option<crate::types::CustomizableMetricParameters>,
 }
 impl UtilizationPreference {
-    /// <p>The name of the resource utilization metric name to customize.</p><note>
-    /// <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p>
-    /// </note>
+    /// <p>The name of the resource utilization metric name to customize.</p>
     pub fn metric_name(&self) -> ::std::option::Option<&crate::types::CustomizableMetricName> {
         self.metric_name.as_ref()
     }
@@ -40,23 +36,17 @@ pub struct UtilizationPreferenceBuilder {
     pub(crate) metric_parameters: ::std::option::Option<crate::types::CustomizableMetricParameters>,
 }
 impl UtilizationPreferenceBuilder {
-    /// <p>The name of the resource utilization metric name to customize.</p><note>
-    /// <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p>
-    /// </note>
+    /// <p>The name of the resource utilization metric name to customize.</p>
     pub fn metric_name(mut self, input: crate::types::CustomizableMetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the resource utilization metric name to customize.</p><note>
-    /// <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p>
-    /// </note>
+    /// <p>The name of the resource utilization metric name to customize.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::CustomizableMetricName>) -> Self {
         self.metric_name = input;
         self
     }
-    /// <p>The name of the resource utilization metric name to customize.</p><note>
-    /// <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p>
-    /// </note>
+    /// <p>The name of the resource utilization metric name to customize.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::CustomizableMetricName> {
         &self.metric_name
     }

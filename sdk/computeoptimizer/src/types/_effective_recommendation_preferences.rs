@@ -27,7 +27,7 @@ pub struct EffectiveRecommendationPreferences {
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
     /// <p>The number of days the utilization metrics of the Amazon Web Services resource are analyzed.</p>
     pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
-    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
+    /// <p>The resource’s CPU and memory utilization preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub utilization_preferences: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>,
@@ -72,7 +72,7 @@ impl EffectiveRecommendationPreferences {
     pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
         self.look_back_period.as_ref()
     }
-    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
+    /// <p>The resource’s CPU and memory utilization preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     ///
@@ -231,7 +231,7 @@ impl EffectiveRecommendationPreferencesBuilder {
     ///
     /// To override the contents of this collection use [`set_utilization_preferences`](Self::set_utilization_preferences).
     ///
-    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
+    /// <p>The resource’s CPU and memory utilization preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub fn utilization_preferences(mut self, input: crate::types::UtilizationPreference) -> Self {
@@ -240,14 +240,14 @@ impl EffectiveRecommendationPreferencesBuilder {
         self.utilization_preferences = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
+    /// <p>The resource’s CPU and memory utilization preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub fn set_utilization_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>) -> Self {
         self.utilization_preferences = input;
         self
     }
-    /// <p>The resource’s CPU utilization threshold preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
+    /// <p>The resource’s CPU and memory utilization preferences, such as threshold and headroom, that are used to generate rightsizing recommendations.</p><note>
     /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
     /// </note>
     pub fn get_utilization_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>> {

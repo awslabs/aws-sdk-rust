@@ -16,15 +16,19 @@ pub struct CreateGraphOutput {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time when the graph was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub provisioned_memory: ::std::option::Option<i32>,
     /// <p>The graph endpoint.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p><note>
+    /// <p>If enabling public connectivity for the first time, there will be a delay while it is enabled.</p>
+    /// </note>
     pub public_connectivity: ::std::option::Option<bool>,
     /// <p>The vector-search configuration for the graph, which specifies the vector dimension to use in the vector index, if any.</p>
     pub vector_search_configuration: ::std::option::Option<crate::types::VectorSearchConfiguration>,
     /// <p>The number of replicas in other AZs.</p>
+    /// <p>Default: If not specified, the default value is 1.</p>
     pub replica_count: ::std::option::Option<i32>,
     /// <p>Specifies the KMS key used to encrypt data in the new graph.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
@@ -65,7 +69,8 @@ impl CreateGraphOutput {
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
     }
@@ -73,7 +78,9 @@ impl CreateGraphOutput {
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p><note>
+    /// <p>If enabling public connectivity for the first time, there will be a delay while it is enabled.</p>
+    /// </note>
     pub fn public_connectivity(&self) -> ::std::option::Option<bool> {
         self.public_connectivity
     }
@@ -82,6 +89,7 @@ impl CreateGraphOutput {
         self.vector_search_configuration.as_ref()
     }
     /// <p>The number of replicas in other AZs.</p>
+    /// <p>Default: If not specified, the default value is 1.</p>
     pub fn replica_count(&self) -> ::std::option::Option<i32> {
         self.replica_count
     }
@@ -226,17 +234,20 @@ impl CreateGraphOutputBuilder {
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
     }
@@ -254,17 +265,23 @@ impl CreateGraphOutputBuilder {
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p><note>
+    /// <p>If enabling public connectivity for the first time, there will be a delay while it is enabled.</p>
+    /// </note>
     pub fn public_connectivity(mut self, input: bool) -> Self {
         self.public_connectivity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p><note>
+    /// <p>If enabling public connectivity for the first time, there will be a delay while it is enabled.</p>
+    /// </note>
     pub fn set_public_connectivity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_connectivity = input;
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p><note>
+    /// <p>If enabling public connectivity for the first time, there will be a delay while it is enabled.</p>
+    /// </note>
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
         &self.public_connectivity
     }
@@ -283,16 +300,19 @@ impl CreateGraphOutputBuilder {
         &self.vector_search_configuration
     }
     /// <p>The number of replicas in other AZs.</p>
+    /// <p>Default: If not specified, the default value is 1.</p>
     pub fn replica_count(mut self, input: i32) -> Self {
         self.replica_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of replicas in other AZs.</p>
+    /// <p>Default: If not specified, the default value is 1.</p>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.replica_count = input;
         self
     }
     /// <p>The number of replicas in other AZs.</p>
+    /// <p>Default: If not specified, the default value is 1.</p>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
         &self.replica_count
     }

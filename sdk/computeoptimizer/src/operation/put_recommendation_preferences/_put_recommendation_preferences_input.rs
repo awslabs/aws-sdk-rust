@@ -32,14 +32,25 @@ pub struct PutRecommendationPreferencesInput {
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
     pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p>The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. When this preference isn't specified, we use the following default values.</p>
+    /// <p>CPU utilization:</p>
     /// <ul>
     /// <li>
     /// <p><code>P99_5</code> for threshold</p></li>
     /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
+    /// </ul>
+    /// <p>Memory utilization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
     /// </ul><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can only set CPU and memory utilization preferences for the Amazon EC2 instance resource type.</p></li>
+    /// <li>
+    /// <p>The threshold setting isn’t available for memory utilization.</p></li>
+    /// </ul>
     /// </note>
     pub utilization_preferences: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>,
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
@@ -94,14 +105,25 @@ impl PutRecommendationPreferencesInput {
     pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
         self.look_back_period.as_ref()
     }
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p>The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. When this preference isn't specified, we use the following default values.</p>
+    /// <p>CPU utilization:</p>
     /// <ul>
     /// <li>
     /// <p><code>P99_5</code> for threshold</p></li>
     /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
+    /// </ul>
+    /// <p>Memory utilization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
     /// </ul><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can only set CPU and memory utilization preferences for the Amazon EC2 instance resource type.</p></li>
+    /// <li>
+    /// <p>The threshold setting isn’t available for memory utilization.</p></li>
+    /// </ul>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utilization_preferences.is_none()`.
@@ -286,14 +308,25 @@ impl PutRecommendationPreferencesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_utilization_preferences`](Self::set_utilization_preferences).
     ///
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p>The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. When this preference isn't specified, we use the following default values.</p>
+    /// <p>CPU utilization:</p>
     /// <ul>
     /// <li>
     /// <p><code>P99_5</code> for threshold</p></li>
     /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
+    /// </ul>
+    /// <p>Memory utilization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
     /// </ul><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can only set CPU and memory utilization preferences for the Amazon EC2 instance resource type.</p></li>
+    /// <li>
+    /// <p>The threshold setting isn’t available for memory utilization.</p></li>
+    /// </ul>
     /// </note>
     pub fn utilization_preferences(mut self, input: crate::types::UtilizationPreference) -> Self {
         let mut v = self.utilization_preferences.unwrap_or_default();
@@ -301,27 +334,49 @@ impl PutRecommendationPreferencesInputBuilder {
         self.utilization_preferences = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p>The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. When this preference isn't specified, we use the following default values.</p>
+    /// <p>CPU utilization:</p>
     /// <ul>
     /// <li>
     /// <p><code>P99_5</code> for threshold</p></li>
     /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
+    /// </ul>
+    /// <p>Memory utilization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
     /// </ul><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can only set CPU and memory utilization preferences for the Amazon EC2 instance resource type.</p></li>
+    /// <li>
+    /// <p>The threshold setting isn’t available for memory utilization.</p></li>
+    /// </ul>
     /// </note>
     pub fn set_utilization_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>) -> Self {
         self.utilization_preferences = input;
         self
     }
-    /// <p>The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values:</p>
+    /// <p>The preference to control the resource’s CPU utilization threshold, CPU utilization headroom, and memory utilization headroom. When this preference isn't specified, we use the following default values.</p>
+    /// <p>CPU utilization:</p>
     /// <ul>
     /// <li>
     /// <p><code>P99_5</code> for threshold</p></li>
     /// <li>
-    /// <p><code>PERCENT_17</code> for headroom</p></li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
+    /// </ul>
+    /// <p>Memory utilization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PERCENT_20</code> for headroom</p></li>
     /// </ul><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can only set CPU and memory utilization preferences for the Amazon EC2 instance resource type.</p></li>
+    /// <li>
+    /// <p>The threshold setting isn’t available for memory utilization.</p></li>
+    /// </ul>
     /// </note>
     pub fn get_utilization_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>> {
         &self.utilization_preferences

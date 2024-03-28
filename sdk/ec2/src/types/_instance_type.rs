@@ -166,6 +166,7 @@
 ///     InstanceType::C7gd8xlarge => { /* ... */ },
 ///     InstanceType::C7gdLarge => { /* ... */ },
 ///     InstanceType::C7gdMedium => { /* ... */ },
+///     InstanceType::C7gdMetal => { /* ... */ },
 ///     InstanceType::C7gdXlarge => { /* ... */ },
 ///     InstanceType::C7gn12xlarge => { /* ... */ },
 ///     InstanceType::C7gn16xlarge => { /* ... */ },
@@ -484,6 +485,7 @@
 ///     InstanceType::M7gd8xlarge => { /* ... */ },
 ///     InstanceType::M7gdLarge => { /* ... */ },
 ///     InstanceType::M7gdMedium => { /* ... */ },
+///     InstanceType::M7gdMetal => { /* ... */ },
 ///     InstanceType::M7gdXlarge => { /* ... */ },
 ///     InstanceType::M7iFlex2xlarge => { /* ... */ },
 ///     InstanceType::M7iFlex4xlarge => { /* ... */ },
@@ -684,6 +686,7 @@
 ///     InstanceType::R7gd8xlarge => { /* ... */ },
 ///     InstanceType::R7gdLarge => { /* ... */ },
 ///     InstanceType::R7gdMedium => { /* ... */ },
+///     InstanceType::R7gdMetal => { /* ... */ },
 ///     InstanceType::R7gdXlarge => { /* ... */ },
 ///     InstanceType::R7i12xlarge => { /* ... */ },
 ///     InstanceType::R7i16xlarge => { /* ... */ },
@@ -1130,6 +1133,8 @@ pub enum InstanceType {
     C7gdLarge,
     #[allow(missing_docs)] // documentation missing in model
     C7gdMedium,
+    #[allow(missing_docs)] // documentation missing in model
+    C7gdMetal,
     #[allow(missing_docs)] // documentation missing in model
     C7gdXlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -1767,6 +1772,8 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     M7gdMedium,
     #[allow(missing_docs)] // documentation missing in model
+    M7gdMetal,
+    #[allow(missing_docs)] // documentation missing in model
     M7gdXlarge,
     #[allow(missing_docs)] // documentation missing in model
     M7iFlex2xlarge,
@@ -2167,6 +2174,8 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     R7gdMedium,
     #[allow(missing_docs)] // documentation missing in model
+    R7gdMetal,
+    #[allow(missing_docs)] // documentation missing in model
     R7gdXlarge,
     #[allow(missing_docs)] // documentation missing in model
     R7i12xlarge,
@@ -2549,6 +2558,7 @@ impl ::std::convert::From<&str> for InstanceType {
             "c7gd.8xlarge" => InstanceType::C7gd8xlarge,
             "c7gd.large" => InstanceType::C7gdLarge,
             "c7gd.medium" => InstanceType::C7gdMedium,
+            "c7gd.metal" => InstanceType::C7gdMetal,
             "c7gd.xlarge" => InstanceType::C7gdXlarge,
             "c7gn.12xlarge" => InstanceType::C7gn12xlarge,
             "c7gn.16xlarge" => InstanceType::C7gn16xlarge,
@@ -2867,6 +2877,7 @@ impl ::std::convert::From<&str> for InstanceType {
             "m7gd.8xlarge" => InstanceType::M7gd8xlarge,
             "m7gd.large" => InstanceType::M7gdLarge,
             "m7gd.medium" => InstanceType::M7gdMedium,
+            "m7gd.metal" => InstanceType::M7gdMetal,
             "m7gd.xlarge" => InstanceType::M7gdXlarge,
             "m7i-flex.2xlarge" => InstanceType::M7iFlex2xlarge,
             "m7i-flex.4xlarge" => InstanceType::M7iFlex4xlarge,
@@ -3067,6 +3078,7 @@ impl ::std::convert::From<&str> for InstanceType {
             "r7gd.8xlarge" => InstanceType::R7gd8xlarge,
             "r7gd.large" => InstanceType::R7gdLarge,
             "r7gd.medium" => InstanceType::R7gdMedium,
+            "r7gd.metal" => InstanceType::R7gdMetal,
             "r7gd.xlarge" => InstanceType::R7gdXlarge,
             "r7i.12xlarge" => InstanceType::R7i12xlarge,
             "r7i.16xlarge" => InstanceType::R7i16xlarge,
@@ -3347,6 +3359,7 @@ impl InstanceType {
             InstanceType::C7gd8xlarge => "c7gd.8xlarge",
             InstanceType::C7gdLarge => "c7gd.large",
             InstanceType::C7gdMedium => "c7gd.medium",
+            InstanceType::C7gdMetal => "c7gd.metal",
             InstanceType::C7gdXlarge => "c7gd.xlarge",
             InstanceType::C7gn12xlarge => "c7gn.12xlarge",
             InstanceType::C7gn16xlarge => "c7gn.16xlarge",
@@ -3665,6 +3678,7 @@ impl InstanceType {
             InstanceType::M7gd8xlarge => "m7gd.8xlarge",
             InstanceType::M7gdLarge => "m7gd.large",
             InstanceType::M7gdMedium => "m7gd.medium",
+            InstanceType::M7gdMetal => "m7gd.metal",
             InstanceType::M7gdXlarge => "m7gd.xlarge",
             InstanceType::M7iFlex2xlarge => "m7i-flex.2xlarge",
             InstanceType::M7iFlex4xlarge => "m7i-flex.4xlarge",
@@ -3865,6 +3879,7 @@ impl InstanceType {
             InstanceType::R7gd8xlarge => "r7gd.8xlarge",
             InstanceType::R7gdLarge => "r7gd.large",
             InstanceType::R7gdMedium => "r7gd.medium",
+            InstanceType::R7gdMetal => "r7gd.metal",
             InstanceType::R7gdXlarge => "r7gd.xlarge",
             InstanceType::R7i12xlarge => "r7i.12xlarge",
             InstanceType::R7i16xlarge => "r7i.16xlarge",
@@ -4136,6 +4151,7 @@ impl InstanceType {
             "c7gd.8xlarge",
             "c7gd.large",
             "c7gd.medium",
+            "c7gd.metal",
             "c7gd.xlarge",
             "c7gn.12xlarge",
             "c7gn.16xlarge",
@@ -4454,6 +4470,7 @@ impl InstanceType {
             "m7gd.8xlarge",
             "m7gd.large",
             "m7gd.medium",
+            "m7gd.metal",
             "m7gd.xlarge",
             "m7i-flex.2xlarge",
             "m7i-flex.4xlarge",
@@ -4654,6 +4671,7 @@ impl InstanceType {
             "r7gd.8xlarge",
             "r7gd.large",
             "r7gd.medium",
+            "r7gd.metal",
             "r7gd.xlarge",
             "r7i.12xlarge",
             "r7i.16xlarge",
@@ -4942,6 +4960,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::C7gd8xlarge => write!(f, "c7gd.8xlarge"),
             InstanceType::C7gdLarge => write!(f, "c7gd.large"),
             InstanceType::C7gdMedium => write!(f, "c7gd.medium"),
+            InstanceType::C7gdMetal => write!(f, "c7gd.metal"),
             InstanceType::C7gdXlarge => write!(f, "c7gd.xlarge"),
             InstanceType::C7gn12xlarge => write!(f, "c7gn.12xlarge"),
             InstanceType::C7gn16xlarge => write!(f, "c7gn.16xlarge"),
@@ -5260,6 +5279,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::M7gd8xlarge => write!(f, "m7gd.8xlarge"),
             InstanceType::M7gdLarge => write!(f, "m7gd.large"),
             InstanceType::M7gdMedium => write!(f, "m7gd.medium"),
+            InstanceType::M7gdMetal => write!(f, "m7gd.metal"),
             InstanceType::M7gdXlarge => write!(f, "m7gd.xlarge"),
             InstanceType::M7iFlex2xlarge => write!(f, "m7i-flex.2xlarge"),
             InstanceType::M7iFlex4xlarge => write!(f, "m7i-flex.4xlarge"),
@@ -5460,6 +5480,7 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::R7gd8xlarge => write!(f, "r7gd.8xlarge"),
             InstanceType::R7gdLarge => write!(f, "r7gd.large"),
             InstanceType::R7gdMedium => write!(f, "r7gd.medium"),
+            InstanceType::R7gdMetal => write!(f, "r7gd.metal"),
             InstanceType::R7gdXlarge => write!(f, "r7gd.xlarge"),
             InstanceType::R7i12xlarge => write!(f, "r7i.12xlarge"),
             InstanceType::R7i16xlarge => write!(f, "r7i.16xlarge"),

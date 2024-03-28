@@ -256,17 +256,17 @@ impl CreateDevEnvironmentFluentBuilder {
     pub fn get_persistent_storage(&self) -> &::std::option::Option<crate::types::PersistentStorageConfiguration> {
         self.inner.get_persistent_storage()
     }
-    /// <p>The name of the connection to use connect to a Amazon VPC.</p>
+    /// <p>The name of the connection that will be used to connect to Amazon VPC, if any.</p>
     pub fn vpc_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_connection_name(input.into());
         self
     }
-    /// <p>The name of the connection to use connect to a Amazon VPC.</p>
+    /// <p>The name of the connection that will be used to connect to Amazon VPC, if any.</p>
     pub fn set_vpc_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_connection_name(input);
         self
     }
-    /// <p>The name of the connection to use connect to a Amazon VPC.</p>
+    /// <p>The name of the connection that will be used to connect to Amazon VPC, if any.</p>
     pub fn get_vpc_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_connection_name()
     }

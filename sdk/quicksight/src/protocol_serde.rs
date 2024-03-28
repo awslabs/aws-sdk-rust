@@ -769,6 +769,10 @@ pub(crate) mod shape_vpc_connection_properties;
 
 pub(crate) mod shape_vpc_connection_summary_list;
 
+pub(crate) mod shape_vpc_endpoint_id_restriction_rule_map;
+
+pub(crate) mod shape_vpc_id_restriction_rule_map;
+
 pub(crate) mod shape_active_iam_policy_assignment;
 
 pub(crate) mod shape_ad_hoc_filtering_option;

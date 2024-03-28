@@ -10,9 +10,6 @@ pub struct CoverageResourceDetails {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Information about the Amazon ECS cluster that is assessed for runtime coverage.</p>
     pub ecs_cluster_details: ::std::option::Option<crate::types::CoverageEcsClusterDetails>,
-    /// <note>
-    /// <p>This API is also used when you use GuardDuty Runtime Monitoring for your Amazon EC2 instances (currently in preview release) and is subject to change. The use of this API is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> ("Betas and Previews").</p>
-    /// </note>
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
     pub ec2_instance_details: ::std::option::Option<crate::types::CoverageEc2InstanceDetails>,
 }
@@ -29,9 +26,6 @@ impl CoverageResourceDetails {
     pub fn ecs_cluster_details(&self) -> ::std::option::Option<&crate::types::CoverageEcsClusterDetails> {
         self.ecs_cluster_details.as_ref()
     }
-    /// <note>
-    /// <p>This API is also used when you use GuardDuty Runtime Monitoring for your Amazon EC2 instances (currently in preview release) and is subject to change. The use of this API is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> ("Betas and Previews").</p>
-    /// </note>
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
     pub fn ec2_instance_details(&self) -> ::std::option::Option<&crate::types::CoverageEc2InstanceDetails> {
         self.ec2_instance_details.as_ref()
@@ -96,25 +90,16 @@ impl CoverageResourceDetailsBuilder {
     pub fn get_ecs_cluster_details(&self) -> &::std::option::Option<crate::types::CoverageEcsClusterDetails> {
         &self.ecs_cluster_details
     }
-    /// <note>
-    /// <p>This API is also used when you use GuardDuty Runtime Monitoring for your Amazon EC2 instances (currently in preview release) and is subject to change. The use of this API is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> ("Betas and Previews").</p>
-    /// </note>
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
     pub fn ec2_instance_details(mut self, input: crate::types::CoverageEc2InstanceDetails) -> Self {
         self.ec2_instance_details = ::std::option::Option::Some(input);
         self
     }
-    /// <note>
-    /// <p>This API is also used when you use GuardDuty Runtime Monitoring for your Amazon EC2 instances (currently in preview release) and is subject to change. The use of this API is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> ("Betas and Previews").</p>
-    /// </note>
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
     pub fn set_ec2_instance_details(mut self, input: ::std::option::Option<crate::types::CoverageEc2InstanceDetails>) -> Self {
         self.ec2_instance_details = input;
         self
     }
-    /// <note>
-    /// <p>This API is also used when you use GuardDuty Runtime Monitoring for your Amazon EC2 instances (currently in preview release) and is subject to change. The use of this API is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> ("Betas and Previews").</p>
-    /// </note>
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
     pub fn get_ec2_instance_details(&self) -> &::std::option::Option<crate::types::CoverageEc2InstanceDetails> {
         &self.ec2_instance_details

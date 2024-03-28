@@ -4,17 +4,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomizableMetricParameters {
-    /// <p>The threshold value used for the specified metric parameter.</p>
+    /// <p>The threshold value used for the specified metric parameter.</p><note>
+    /// <p>You can only specify the threshold value for CPU utilization.</p>
+    /// </note>
     pub threshold: ::std::option::Option<crate::types::CustomizableMetricThreshold>,
-    /// <p>The headroom threshold value in percentage used for the specified metric parameter.</p>
+    /// <p>The headroom value in percentage used for the specified metric parameter.</p>
+    /// <p>The following lists the valid values for CPU and memory utilization.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CPU utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_0</code></p></li>
+    /// <li>
+    /// <p>Memory utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_10</code></p></li>
+    /// </ul>
     pub headroom: ::std::option::Option<crate::types::CustomizableMetricHeadroom>,
 }
 impl CustomizableMetricParameters {
-    /// <p>The threshold value used for the specified metric parameter.</p>
+    /// <p>The threshold value used for the specified metric parameter.</p><note>
+    /// <p>You can only specify the threshold value for CPU utilization.</p>
+    /// </note>
     pub fn threshold(&self) -> ::std::option::Option<&crate::types::CustomizableMetricThreshold> {
         self.threshold.as_ref()
     }
-    /// <p>The headroom threshold value in percentage used for the specified metric parameter.</p>
+    /// <p>The headroom value in percentage used for the specified metric parameter.</p>
+    /// <p>The following lists the valid values for CPU and memory utilization.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CPU utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_0</code></p></li>
+    /// <li>
+    /// <p>Memory utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_10</code></p></li>
+    /// </ul>
     pub fn headroom(&self) -> ::std::option::Option<&crate::types::CustomizableMetricHeadroom> {
         self.headroom.as_ref()
     }
@@ -34,31 +52,58 @@ pub struct CustomizableMetricParametersBuilder {
     pub(crate) headroom: ::std::option::Option<crate::types::CustomizableMetricHeadroom>,
 }
 impl CustomizableMetricParametersBuilder {
-    /// <p>The threshold value used for the specified metric parameter.</p>
+    /// <p>The threshold value used for the specified metric parameter.</p><note>
+    /// <p>You can only specify the threshold value for CPU utilization.</p>
+    /// </note>
     pub fn threshold(mut self, input: crate::types::CustomizableMetricThreshold) -> Self {
         self.threshold = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The threshold value used for the specified metric parameter.</p>
+    /// <p>The threshold value used for the specified metric parameter.</p><note>
+    /// <p>You can only specify the threshold value for CPU utilization.</p>
+    /// </note>
     pub fn set_threshold(mut self, input: ::std::option::Option<crate::types::CustomizableMetricThreshold>) -> Self {
         self.threshold = input;
         self
     }
-    /// <p>The threshold value used for the specified metric parameter.</p>
+    /// <p>The threshold value used for the specified metric parameter.</p><note>
+    /// <p>You can only specify the threshold value for CPU utilization.</p>
+    /// </note>
     pub fn get_threshold(&self) -> &::std::option::Option<crate::types::CustomizableMetricThreshold> {
         &self.threshold
     }
-    /// <p>The headroom threshold value in percentage used for the specified metric parameter.</p>
+    /// <p>The headroom value in percentage used for the specified metric parameter.</p>
+    /// <p>The following lists the valid values for CPU and memory utilization.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CPU utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_0</code></p></li>
+    /// <li>
+    /// <p>Memory utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_10</code></p></li>
+    /// </ul>
     pub fn headroom(mut self, input: crate::types::CustomizableMetricHeadroom) -> Self {
         self.headroom = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The headroom threshold value in percentage used for the specified metric parameter.</p>
+    /// <p>The headroom value in percentage used for the specified metric parameter.</p>
+    /// <p>The following lists the valid values for CPU and memory utilization.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CPU utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_0</code></p></li>
+    /// <li>
+    /// <p>Memory utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_10</code></p></li>
+    /// </ul>
     pub fn set_headroom(mut self, input: ::std::option::Option<crate::types::CustomizableMetricHeadroom>) -> Self {
         self.headroom = input;
         self
     }
-    /// <p>The headroom threshold value in percentage used for the specified metric parameter.</p>
+    /// <p>The headroom value in percentage used for the specified metric parameter.</p>
+    /// <p>The following lists the valid values for CPU and memory utilization.</p>
+    /// <ul>
+    /// <li>
+    /// <p>CPU utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_0</code></p></li>
+    /// <li>
+    /// <p>Memory utilization: <code>PERCENT_30 | PERCENT_20 | PERCENT_10</code></p></li>
+    /// </ul>
     pub fn get_headroom(&self) -> &::std::option::Option<crate::types::CustomizableMetricHeadroom> {
         &self.headroom
     }

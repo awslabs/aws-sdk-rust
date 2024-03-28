@@ -7,6 +7,8 @@ impl super::Client {
     /// - On success, responds with [`DescribeIpRestrictionOutput`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput) with field(s):
     ///   - [`aws_account_id(Option<String>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::aws_account_id): <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     ///   - [`ip_restriction_rule_map(Option<HashMap::<String, String>>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::ip_restriction_rule_map): <p>A map that describes the IP rules with CIDR range and description.</p>
+    ///   - [`vpc_id_restriction_rule_map(Option<HashMap::<String, String>>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::vpc_id_restriction_rule_map): <p>A map of allowed VPC IDs and their rule descriptions.</p>
+    ///   - [`vpc_endpoint_id_restriction_rule_map(Option<HashMap::<String, String>>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::vpc_endpoint_id_restriction_rule_map): <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
     ///   - [`enabled(Option<bool>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::enabled): <p>A value that specifies whether IP rules are turned on.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput::status): <p>The HTTP status of the request.</p>

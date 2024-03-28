@@ -136,17 +136,20 @@ impl UpdateGraphFluentBuilder {
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
         self.inner.get_public_connectivity()
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.inner = self.inner.provisioned_memory(input);
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_provisioned_memory(input);
         self
     }
-    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
+    /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
+    /// <p>Min = 128</p>
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         self.inner.get_provisioned_memory()
     }

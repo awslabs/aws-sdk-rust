@@ -7,6 +7,10 @@ pub struct GetSubscriptionOutput {
     pub subscription_type: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
     pub aws_account_name: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the billing plan that the space will be changed to at the start of the next billing cycle. This applies only to changes that reduce the functionality available for the space. Billing plan changes that increase functionality are applied immediately. For more information, see <a href="https://codecatalyst.aws/explore/pricing">Pricing</a>.</p>
+    pub pending_subscription_type: ::std::option::Option<::std::string::String>,
+    /// <p>The day and time the pending change will be applied to the space, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub pending_subscription_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetSubscriptionOutput {
@@ -17,6 +21,14 @@ impl GetSubscriptionOutput {
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
     pub fn aws_account_name(&self) -> ::std::option::Option<&str> {
         self.aws_account_name.as_deref()
+    }
+    /// <p>The type of the billing plan that the space will be changed to at the start of the next billing cycle. This applies only to changes that reduce the functionality available for the space. Billing plan changes that increase functionality are applied immediately. For more information, see <a href="https://codecatalyst.aws/explore/pricing">Pricing</a>.</p>
+    pub fn pending_subscription_type(&self) -> ::std::option::Option<&str> {
+        self.pending_subscription_type.as_deref()
+    }
+    /// <p>The day and time the pending change will be applied to the space, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn pending_subscription_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.pending_subscription_start_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSubscriptionOutput {
@@ -37,6 +49,8 @@ impl GetSubscriptionOutput {
 pub struct GetSubscriptionOutputBuilder {
     pub(crate) subscription_type: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pending_subscription_type: ::std::option::Option<::std::string::String>,
+    pub(crate) pending_subscription_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetSubscriptionOutputBuilder {
@@ -68,6 +82,34 @@ impl GetSubscriptionOutputBuilder {
     pub fn get_aws_account_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_name
     }
+    /// <p>The type of the billing plan that the space will be changed to at the start of the next billing cycle. This applies only to changes that reduce the functionality available for the space. Billing plan changes that increase functionality are applied immediately. For more information, see <a href="https://codecatalyst.aws/explore/pricing">Pricing</a>.</p>
+    pub fn pending_subscription_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pending_subscription_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of the billing plan that the space will be changed to at the start of the next billing cycle. This applies only to changes that reduce the functionality available for the space. Billing plan changes that increase functionality are applied immediately. For more information, see <a href="https://codecatalyst.aws/explore/pricing">Pricing</a>.</p>
+    pub fn set_pending_subscription_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pending_subscription_type = input;
+        self
+    }
+    /// <p>The type of the billing plan that the space will be changed to at the start of the next billing cycle. This applies only to changes that reduce the functionality available for the space. Billing plan changes that increase functionality are applied immediately. For more information, see <a href="https://codecatalyst.aws/explore/pricing">Pricing</a>.</p>
+    pub fn get_pending_subscription_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pending_subscription_type
+    }
+    /// <p>The day and time the pending change will be applied to the space, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn pending_subscription_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.pending_subscription_start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The day and time the pending change will be applied to the space, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn set_pending_subscription_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.pending_subscription_start_time = input;
+        self
+    }
+    /// <p>The day and time the pending change will be applied to the space, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn get_pending_subscription_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.pending_subscription_start_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +124,8 @@ impl GetSubscriptionOutputBuilder {
         crate::operation::get_subscription::GetSubscriptionOutput {
             subscription_type: self.subscription_type,
             aws_account_name: self.aws_account_name,
+            pending_subscription_type: self.pending_subscription_type,
+            pending_subscription_start_time: self.pending_subscription_start_time,
             _request_id: self._request_id,
         }
     }

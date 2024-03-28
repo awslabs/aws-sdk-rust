@@ -8,6 +8,8 @@ pub struct ThreatIntelligenceDetail {
     pub threat_list_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
     pub threat_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>SHA256 of the file that generated the finding.</p>
+    pub threat_file_sha256: ::std::option::Option<::std::string::String>,
 }
 impl ThreatIntelligenceDetail {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
@@ -19,6 +21,10 @@ impl ThreatIntelligenceDetail {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threat_names.is_none()`.
     pub fn threat_names(&self) -> &[::std::string::String] {
         self.threat_names.as_deref().unwrap_or_default()
+    }
+    /// <p>SHA256 of the file that generated the finding.</p>
+    pub fn threat_file_sha256(&self) -> ::std::option::Option<&str> {
+        self.threat_file_sha256.as_deref()
     }
 }
 impl ThreatIntelligenceDetail {
@@ -34,6 +40,7 @@ impl ThreatIntelligenceDetail {
 pub struct ThreatIntelligenceDetailBuilder {
     pub(crate) threat_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) threat_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) threat_file_sha256: ::std::option::Option<::std::string::String>,
 }
 impl ThreatIntelligenceDetailBuilder {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
@@ -70,11 +77,26 @@ impl ThreatIntelligenceDetailBuilder {
     pub fn get_threat_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.threat_names
     }
+    /// <p>SHA256 of the file that generated the finding.</p>
+    pub fn threat_file_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.threat_file_sha256 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>SHA256 of the file that generated the finding.</p>
+    pub fn set_threat_file_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.threat_file_sha256 = input;
+        self
+    }
+    /// <p>SHA256 of the file that generated the finding.</p>
+    pub fn get_threat_file_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threat_file_sha256
+    }
     /// Consumes the builder and constructs a [`ThreatIntelligenceDetail`](crate::types::ThreatIntelligenceDetail).
     pub fn build(self) -> crate::types::ThreatIntelligenceDetail {
         crate::types::ThreatIntelligenceDetail {
             threat_list_name: self.threat_list_name,
             threat_names: self.threat_names,
+            threat_file_sha256: self.threat_file_sha256,
         }
     }
 }

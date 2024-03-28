@@ -188,21 +188,24 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     ///
     /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
     /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
-    /// <p>Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    /// <p>If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous users need access to.</p>
+    /// <p>Currently, you can pass up to 25 theme ARNs in each API call.</p>
     pub fn authorized_resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorized_resource_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
     /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
-    /// <p>Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    /// <p>If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous users need access to.</p>
+    /// <p>Currently, you can pass up to 25 theme ARNs in each API call.</p>
     pub fn set_authorized_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_authorized_resource_arns(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
     /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
-    /// <p>Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    /// <p>If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous users need access to.</p>
+    /// <p>Currently, you can pass up to 25 theme ARNs in each API call.</p>
     pub fn get_authorized_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_authorized_resource_arns()
     }

@@ -25,7 +25,7 @@ pub struct CreateDevEnvironmentInput {
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub persistent_storage: ::std::option::Option<crate::types::PersistentStorageConfiguration>,
-    /// <p>The name of the connection to use connect to a Amazon VPC.</p>
+    /// <p>The name of the connection that will be used to connect to Amazon VPC, if any.</p>
     pub vpc_connection_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateDevEnvironmentInput {
@@ -73,7 +73,7 @@ impl CreateDevEnvironmentInput {
     pub fn persistent_storage(&self) -> ::std::option::Option<&crate::types::PersistentStorageConfiguration> {
         self.persistent_storage.as_ref()
     }
-    /// <p>The name of the connection to use connect to a Amazon VPC.</p>
+    /// <p>The name of the connection that will be used to connect to Amazon VPC, if any.</p>
     pub fn vpc_connection_name(&self) -> ::std::option::Option<&str> {
         self.vpc_connection_name.as_deref()
     }
@@ -255,17 +255,17 @@ impl CreateDevEnvironmentInputBuilder {
     pub fn get_persistent_storage(&self) -> &::std::option::Option<crate::types::PersistentStorageConfiguration> {
         &self.persistent_storage
     }
-    /// <p>The name of the connection to use connect to a Amazon VPC.</p>
+    /// <p>The name of the connection that will be used to connect to Amazon VPC, if any.</p>
     pub fn vpc_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the connection to use connect to a Amazon VPC.</p>
+    /// <p>The name of the connection that will be used to connect to Amazon VPC, if any.</p>
     pub fn set_vpc_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connection_name = input;
         self
     }
-    /// <p>The name of the connection to use connect to a Amazon VPC.</p>
+    /// <p>The name of the connection that will be used to connect to Amazon VPC, if any.</p>
     pub fn get_vpc_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_connection_name
     }

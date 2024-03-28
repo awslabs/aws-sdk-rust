@@ -25,6 +25,7 @@
 ///     NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration => { /* ... */ },
 ///     NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::Ec2LaunchTemplateNotFound => { /* ... */ },
+///     NodegroupIssueCode::Ec2LaunchTemplateVersionMaxLimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => { /* ... */ },
 ///     NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => { /* ... */ },
 ///     NodegroupIssueCode::Ec2SecurityGroupNotFound => { /* ... */ },
@@ -39,6 +40,7 @@
 ///     NodegroupIssueCode::InstanceLimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::InsufficientFreeAddresses => { /* ... */ },
 ///     NodegroupIssueCode::InternalFailure => { /* ... */ },
+///     NodegroupIssueCode::KubernetesLabelInvalid => { /* ... */ },
 ///     NodegroupIssueCode::LimitExceeded => { /* ... */ },
 ///     NodegroupIssueCode::NodeCreationFailure => { /* ... */ },
 ///     NodegroupIssueCode::NodeTerminationFailure => { /* ... */ },
@@ -99,6 +101,8 @@ pub enum NodegroupIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     Ec2LaunchTemplateNotFound,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2LaunchTemplateVersionMaxLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2LaunchTemplateVersionMismatch,
     #[allow(missing_docs)] // documentation missing in model
     Ec2SecurityGroupDeletionFailure,
@@ -126,6 +130,8 @@ pub enum NodegroupIssueCode {
     InsufficientFreeAddresses,
     #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    KubernetesLabelInvalid,
     #[allow(missing_docs)] // documentation missing in model
     LimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
@@ -158,6 +164,7 @@ impl ::std::convert::From<&str> for NodegroupIssueCode {
             "Ec2LaunchTemplateInvalidConfiguration" => NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration,
             "Ec2LaunchTemplateMaxLimitExceeded" => NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded,
             "Ec2LaunchTemplateNotFound" => NodegroupIssueCode::Ec2LaunchTemplateNotFound,
+            "Ec2LaunchTemplateVersionMaxLimitExceeded" => NodegroupIssueCode::Ec2LaunchTemplateVersionMaxLimitExceeded,
             "Ec2LaunchTemplateVersionMismatch" => NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch,
             "Ec2SecurityGroupDeletionFailure" => NodegroupIssueCode::Ec2SecurityGroupDeletionFailure,
             "Ec2SecurityGroupNotFound" => NodegroupIssueCode::Ec2SecurityGroupNotFound,
@@ -172,6 +179,7 @@ impl ::std::convert::From<&str> for NodegroupIssueCode {
             "InstanceLimitExceeded" => NodegroupIssueCode::InstanceLimitExceeded,
             "InsufficientFreeAddresses" => NodegroupIssueCode::InsufficientFreeAddresses,
             "InternalFailure" => NodegroupIssueCode::InternalFailure,
+            "KubernetesLabelInvalid" => NodegroupIssueCode::KubernetesLabelInvalid,
             "LimitExceeded" => NodegroupIssueCode::LimitExceeded,
             "NodeCreationFailure" => NodegroupIssueCode::NodeCreationFailure,
             "NodeTerminationFailure" => NodegroupIssueCode::NodeTerminationFailure,
@@ -206,6 +214,7 @@ impl NodegroupIssueCode {
             NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration => "Ec2LaunchTemplateInvalidConfiguration",
             NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded => "Ec2LaunchTemplateMaxLimitExceeded",
             NodegroupIssueCode::Ec2LaunchTemplateNotFound => "Ec2LaunchTemplateNotFound",
+            NodegroupIssueCode::Ec2LaunchTemplateVersionMaxLimitExceeded => "Ec2LaunchTemplateVersionMaxLimitExceeded",
             NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => "Ec2LaunchTemplateVersionMismatch",
             NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => "Ec2SecurityGroupDeletionFailure",
             NodegroupIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
@@ -220,6 +229,7 @@ impl NodegroupIssueCode {
             NodegroupIssueCode::InstanceLimitExceeded => "InstanceLimitExceeded",
             NodegroupIssueCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
             NodegroupIssueCode::InternalFailure => "InternalFailure",
+            NodegroupIssueCode::KubernetesLabelInvalid => "KubernetesLabelInvalid",
             NodegroupIssueCode::LimitExceeded => "LimitExceeded",
             NodegroupIssueCode::NodeCreationFailure => "NodeCreationFailure",
             NodegroupIssueCode::NodeTerminationFailure => "NodeTerminationFailure",
@@ -245,6 +255,7 @@ impl NodegroupIssueCode {
             "Ec2LaunchTemplateInvalidConfiguration",
             "Ec2LaunchTemplateMaxLimitExceeded",
             "Ec2LaunchTemplateNotFound",
+            "Ec2LaunchTemplateVersionMaxLimitExceeded",
             "Ec2LaunchTemplateVersionMismatch",
             "Ec2SecurityGroupDeletionFailure",
             "Ec2SecurityGroupNotFound",
@@ -259,6 +270,7 @@ impl NodegroupIssueCode {
             "InstanceLimitExceeded",
             "InsufficientFreeAddresses",
             "InternalFailure",
+            "KubernetesLabelInvalid",
             "LimitExceeded",
             "NodeCreationFailure",
             "NodeTerminationFailure",
@@ -301,6 +313,7 @@ impl ::std::fmt::Display for NodegroupIssueCode {
             NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration => write!(f, "Ec2LaunchTemplateInvalidConfiguration"),
             NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded => write!(f, "Ec2LaunchTemplateMaxLimitExceeded"),
             NodegroupIssueCode::Ec2LaunchTemplateNotFound => write!(f, "Ec2LaunchTemplateNotFound"),
+            NodegroupIssueCode::Ec2LaunchTemplateVersionMaxLimitExceeded => write!(f, "Ec2LaunchTemplateVersionMaxLimitExceeded"),
             NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => write!(f, "Ec2LaunchTemplateVersionMismatch"),
             NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => write!(f, "Ec2SecurityGroupDeletionFailure"),
             NodegroupIssueCode::Ec2SecurityGroupNotFound => write!(f, "Ec2SecurityGroupNotFound"),
@@ -315,6 +328,7 @@ impl ::std::fmt::Display for NodegroupIssueCode {
             NodegroupIssueCode::InstanceLimitExceeded => write!(f, "InstanceLimitExceeded"),
             NodegroupIssueCode::InsufficientFreeAddresses => write!(f, "InsufficientFreeAddresses"),
             NodegroupIssueCode::InternalFailure => write!(f, "InternalFailure"),
+            NodegroupIssueCode::KubernetesLabelInvalid => write!(f, "KubernetesLabelInvalid"),
             NodegroupIssueCode::LimitExceeded => write!(f, "LimitExceeded"),
             NodegroupIssueCode::NodeCreationFailure => write!(f, "NodeCreationFailure"),
             NodegroupIssueCode::NodeTerminationFailure => write!(f, "NodeTerminationFailure"),

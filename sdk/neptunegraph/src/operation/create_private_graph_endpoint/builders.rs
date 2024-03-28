@@ -22,7 +22,9 @@ impl CreatePrivateGraphEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePrivateGraphEndpoint`.
 ///
-/// <p>Create a private graph endpoint to allow private access from to the graph from within a VPC. You can attach security groups to the private graph endpoint. VPC endpoint charges apply.</p>
+/// <p>Create a private graph endpoint to allow private access from to the graph from within a VPC. You can attach security groups to the private graph endpoint.</p><note>
+/// <p>VPC endpoint charges apply.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePrivateGraphEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

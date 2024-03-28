@@ -24,6 +24,13 @@ where
                         "threatNames" => {
                             builder = builder.set_threat_names(crate::protocol_serde::shape_threat_names::de_threat_names(tokens)?);
                         }
+                        "threatFileSha256" => {
+                            builder = builder.set_threat_file_sha256(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
