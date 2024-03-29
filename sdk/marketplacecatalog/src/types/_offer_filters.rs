@@ -10,6 +10,10 @@ pub struct OfferFilters {
     pub name: ::std::option::Option<crate::types::OfferNameFilter>,
     /// <p>Allows filtering on the <code>ProductId</code> of an offer.</p>
     pub product_id: ::std::option::Option<crate::types::OfferProductIdFilter>,
+    /// <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p><note>
+    /// <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response will only include offers for which you have permissions.</p>
+    /// </note>
+    pub resale_authorization_id: ::std::option::Option<crate::types::OfferResaleAuthorizationIdFilter>,
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
     pub release_date: ::std::option::Option<crate::types::OfferReleaseDateFilter>,
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer.</p>
@@ -35,6 +39,12 @@ impl OfferFilters {
     /// <p>Allows filtering on the <code>ProductId</code> of an offer.</p>
     pub fn product_id(&self) -> ::std::option::Option<&crate::types::OfferProductIdFilter> {
         self.product_id.as_ref()
+    }
+    /// <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p><note>
+    /// <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response will only include offers for which you have permissions.</p>
+    /// </note>
+    pub fn resale_authorization_id(&self) -> ::std::option::Option<&crate::types::OfferResaleAuthorizationIdFilter> {
+        self.resale_authorization_id.as_ref()
     }
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
     pub fn release_date(&self) -> ::std::option::Option<&crate::types::OfferReleaseDateFilter> {
@@ -75,6 +85,7 @@ pub struct OfferFiltersBuilder {
     pub(crate) entity_id: ::std::option::Option<crate::types::OfferEntityIdFilter>,
     pub(crate) name: ::std::option::Option<crate::types::OfferNameFilter>,
     pub(crate) product_id: ::std::option::Option<crate::types::OfferProductIdFilter>,
+    pub(crate) resale_authorization_id: ::std::option::Option<crate::types::OfferResaleAuthorizationIdFilter>,
     pub(crate) release_date: ::std::option::Option<crate::types::OfferReleaseDateFilter>,
     pub(crate) availability_end_date: ::std::option::Option<crate::types::OfferAvailabilityEndDateFilter>,
     pub(crate) buyer_accounts: ::std::option::Option<crate::types::OfferBuyerAccountsFilter>,
@@ -124,6 +135,26 @@ impl OfferFiltersBuilder {
     /// <p>Allows filtering on the <code>ProductId</code> of an offer.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<crate::types::OfferProductIdFilter> {
         &self.product_id
+    }
+    /// <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p><note>
+    /// <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response will only include offers for which you have permissions.</p>
+    /// </note>
+    pub fn resale_authorization_id(mut self, input: crate::types::OfferResaleAuthorizationIdFilter) -> Self {
+        self.resale_authorization_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p><note>
+    /// <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response will only include offers for which you have permissions.</p>
+    /// </note>
+    pub fn set_resale_authorization_id(mut self, input: ::std::option::Option<crate::types::OfferResaleAuthorizationIdFilter>) -> Self {
+        self.resale_authorization_id = input;
+        self
+    }
+    /// <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p><note>
+    /// <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response will only include offers for which you have permissions.</p>
+    /// </note>
+    pub fn get_resale_authorization_id(&self) -> &::std::option::Option<crate::types::OfferResaleAuthorizationIdFilter> {
+        &self.resale_authorization_id
     }
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
     pub fn release_date(mut self, input: crate::types::OfferReleaseDateFilter) -> Self {
@@ -215,6 +246,7 @@ impl OfferFiltersBuilder {
             entity_id: self.entity_id,
             name: self.name,
             product_id: self.product_id,
+            resale_authorization_id: self.resale_authorization_id,
             release_date: self.release_date,
             availability_end_date: self.availability_end_date,
             buyer_accounts: self.buyer_accounts,

@@ -138,4 +138,18 @@ impl GetHealthEventFluentBuilder {
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_id()
     }
+    /// <p>TBD</p>
+    pub fn linked_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.linked_account_id(input.into());
+        self
+    }
+    /// <p>TBD</p>
+    pub fn set_linked_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_linked_account_id(input);
+        self
+    }
+    /// <p>TBD</p>
+    pub fn get_linked_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_linked_account_id()
+    }
 }

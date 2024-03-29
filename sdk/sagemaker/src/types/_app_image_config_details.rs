@@ -16,6 +16,8 @@ pub struct AppImageConfigDetails {
     pub kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
     /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
     pub jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub code_editor_app_image_config: ::std::option::Option<crate::types::CodeEditorAppImageConfig>,
 }
 impl AppImageConfigDetails {
     /// <p>The ARN of the AppImageConfig.</p>
@@ -42,6 +44,10 @@ impl AppImageConfigDetails {
     pub fn jupyter_lab_app_image_config(&self) -> ::std::option::Option<&crate::types::JupyterLabAppImageConfig> {
         self.jupyter_lab_app_image_config.as_ref()
     }
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub fn code_editor_app_image_config(&self) -> ::std::option::Option<&crate::types::CodeEditorAppImageConfig> {
+        self.code_editor_app_image_config.as_ref()
+    }
 }
 impl AppImageConfigDetails {
     /// Creates a new builder-style object to manufacture [`AppImageConfigDetails`](crate::types::AppImageConfigDetails).
@@ -60,6 +66,7 @@ pub struct AppImageConfigDetailsBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
     pub(crate) jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
+    pub(crate) code_editor_app_image_config: ::std::option::Option<crate::types::CodeEditorAppImageConfig>,
 }
 impl AppImageConfigDetailsBuilder {
     /// <p>The ARN of the AppImageConfig.</p>
@@ -146,6 +153,20 @@ impl AppImageConfigDetailsBuilder {
     pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
         &self.jupyter_lab_app_image_config
     }
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub fn code_editor_app_image_config(mut self, input: crate::types::CodeEditorAppImageConfig) -> Self {
+        self.code_editor_app_image_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub fn set_code_editor_app_image_config(mut self, input: ::std::option::Option<crate::types::CodeEditorAppImageConfig>) -> Self {
+        self.code_editor_app_image_config = input;
+        self
+    }
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub fn get_code_editor_app_image_config(&self) -> &::std::option::Option<crate::types::CodeEditorAppImageConfig> {
+        &self.code_editor_app_image_config
+    }
     /// Consumes the builder and constructs a [`AppImageConfigDetails`](crate::types::AppImageConfigDetails).
     pub fn build(self) -> crate::types::AppImageConfigDetails {
         crate::types::AppImageConfigDetails {
@@ -155,6 +176,7 @@ impl AppImageConfigDetailsBuilder {
             last_modified_time: self.last_modified_time,
             kernel_gateway_image_config: self.kernel_gateway_image_config,
             jupyter_lab_app_image_config: self.jupyter_lab_app_image_config,
+            code_editor_app_image_config: self.code_editor_app_image_config,
         }
     }
 }

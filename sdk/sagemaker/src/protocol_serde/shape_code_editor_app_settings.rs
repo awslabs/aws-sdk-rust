@@ -9,14 +9,26 @@ pub fn ser_code_editor_app_settings(
         crate::protocol_serde::shape_resource_spec::ser_resource_spec(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.lifecycle_config_arns {
-        let mut array_4 = object.key("LifecycleConfigArns").start_array();
+    if let Some(var_3) = &input.custom_images {
+        let mut array_4 = object.key("CustomImages").start_array();
         for item_5 in var_3 {
             {
-                array_4.value().string(item_5.as_str());
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_custom_image::ser_custom_image(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
         array_4.finish();
+    }
+    if let Some(var_7) = &input.lifecycle_config_arns {
+        let mut array_8 = object.key("LifecycleConfigArns").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
     }
     Ok(())
 }
@@ -38,6 +50,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DefaultResourceSpec" => {
                             builder = builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens)?);
+                        }
+                        "CustomImages" => {
+                            builder = builder.set_custom_images(crate::protocol_serde::shape_custom_images::de_custom_images(tokens)?);
                         }
                         "LifecycleConfigArns" => {
                             builder = builder

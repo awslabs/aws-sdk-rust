@@ -1719,6 +1719,68 @@ impl From<crate::operation::get_log_levels_by_resource_types::GetLogLevelsByReso
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metric_configuration::GetMetricConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metric_configuration::GetMetricConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_metric_configuration::GetMetricConfigurationError> for Error {
+    fn from(err: crate::operation::get_metric_configuration::GetMetricConfigurationError) -> Self {
+        match err {
+            crate::operation::get_metric_configuration::GetMetricConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_metric_configuration::GetMetricConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_metric_configuration::GetMetricConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_metric_configuration::GetMetricConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_metric_configuration::GetMetricConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_metric_configuration::GetMetricConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_metric_configuration::GetMetricConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metrics::GetMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metrics::GetMetricsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_metrics::GetMetricsError> for Error {
+    fn from(err: crate::operation::get_metrics::GetMetricsError) -> Self {
+        match err {
+            crate::operation::get_metrics::GetMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_metrics::GetMetricsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_metrics::GetMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_metrics::GetMetricsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_metrics::GetMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_metrics::GetMetricsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_metrics::GetMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_multicast_group::GetMulticastGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3733,6 +3795,48 @@ impl From<crate::operation::update_log_levels_by_resource_types::UpdateLogLevels
                 Error::ValidationException(inner)
             }
             crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_metric_configuration::UpdateMetricConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_metric_configuration::UpdateMetricConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_metric_configuration::UpdateMetricConfigurationError> for Error {
+    fn from(err: crate::operation::update_metric_configuration::UpdateMetricConfigurationError) -> Self {
+        match err {
+            crate::operation::update_metric_configuration::UpdateMetricConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_metric_configuration::UpdateMetricConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_metric_configuration::UpdateMetricConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_metric_configuration::UpdateMetricConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_metric_configuration::UpdateMetricConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_metric_configuration::UpdateMetricConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_metric_configuration::UpdateMetricConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

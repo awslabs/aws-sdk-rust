@@ -71,6 +71,8 @@ pub(crate) mod shape_reset_graph;
 
 pub(crate) mod shape_restore_graph_from_snapshot;
 
+pub(crate) mod shape_start_import_task;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -110,6 +112,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_restore_graph_from_snapshot_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_start_import_task_input;
 
 pub(crate) mod shape_tag_resource_input;
 

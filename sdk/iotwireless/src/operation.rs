@@ -130,6 +130,12 @@ pub mod get_fuota_task;
 /// Types for the `GetLogLevelsByResourceTypes` operation.
 pub mod get_log_levels_by_resource_types;
 
+/// Types for the `GetMetricConfiguration` operation.
+pub mod get_metric_configuration;
+
+/// Types for the `GetMetrics` operation.
+pub mod get_metrics;
+
 /// Types for the `GetMulticastGroup` operation.
 pub mod get_multicast_group;
 
@@ -300,6 +306,9 @@ pub mod update_fuota_task;
 
 /// Types for the `UpdateLogLevelsByResourceTypes` operation.
 pub mod update_log_levels_by_resource_types;
+
+/// Types for the `UpdateMetricConfiguration` operation.
+pub mod update_metric_configuration;
 
 /// Types for the `UpdateMulticastGroup` operation.
 pub mod update_multicast_group;

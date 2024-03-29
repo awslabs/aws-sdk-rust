@@ -7,6 +7,8 @@ pub struct GetHealthEventInput {
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The internally-generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
+    /// <p>TBD</p>
+    pub linked_account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHealthEventInput {
     /// <p>The name of the monitor.</p>
@@ -16,6 +18,10 @@ impl GetHealthEventInput {
     /// <p>The internally-generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
     pub fn event_id(&self) -> ::std::option::Option<&str> {
         self.event_id.as_deref()
+    }
+    /// <p>TBD</p>
+    pub fn linked_account_id(&self) -> ::std::option::Option<&str> {
+        self.linked_account_id.as_deref()
     }
 }
 impl GetHealthEventInput {
@@ -31,6 +37,7 @@ impl GetHealthEventInput {
 pub struct GetHealthEventInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
+    pub(crate) linked_account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHealthEventInputBuilder {
     /// <p>The name of the monitor.</p>
@@ -63,6 +70,20 @@ impl GetHealthEventInputBuilder {
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }
+    /// <p>TBD</p>
+    pub fn linked_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linked_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>TBD</p>
+    pub fn set_linked_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.linked_account_id = input;
+        self
+    }
+    /// <p>TBD</p>
+    pub fn get_linked_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_account_id
+    }
     /// Consumes the builder and constructs a [`GetHealthEventInput`](crate::operation::get_health_event::GetHealthEventInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl GetHealthEventInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_health_event::GetHealthEventInput {
             monitor_name: self.monitor_name,
             event_id: self.event_id,
+            linked_account_id: self.linked_account_id,
         })
     }
 }

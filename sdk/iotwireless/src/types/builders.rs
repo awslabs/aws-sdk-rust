@@ -35,6 +35,8 @@ pub use crate::types::_trace_content::TraceContentBuilder;
 
 pub use crate::types::_lo_ra_wan_multicast::LoRaWanMulticastBuilder;
 
+pub use crate::types::_summary_metric_configuration::SummaryMetricConfigurationBuilder;
+
 pub use crate::types::_wireless_gateway_log_option::WirelessGatewayLogOptionBuilder;
 
 pub use crate::types::_wireless_gateway_event_log_option::WirelessGatewayEventLogOptionBuilder;
@@ -220,6 +222,14 @@ pub use crate::types::_wi_fi_access_point::WiFiAccessPointBuilder;
 pub use crate::types::_accuracy::AccuracyBuilder;
 
 pub use crate::types::_lo_ra_wan_multicast_get::LoRaWanMulticastGetBuilder;
+
+pub use crate::types::_summary_metric_query_result::SummaryMetricQueryResultBuilder;
+
+pub use crate::types::_metric_query_value::MetricQueryValueBuilder;
+
+pub use crate::types::_dimension::DimensionBuilder;
+
+pub use crate::types::_summary_metric_query::SummaryMetricQueryBuilder;
 
 pub use crate::types::_lo_ra_wan_fuota_task_get_info::LoRaWanFuotaTaskGetInfoBuilder;
 

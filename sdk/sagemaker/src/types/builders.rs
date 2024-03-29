@@ -245,11 +245,13 @@ pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGrou
 
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfigBuilder;
 
-pub use crate::types::_jupyter_lab_app_image_config::JupyterLabAppImageConfigBuilder;
+pub use crate::types::_code_editor_app_image_config::CodeEditorAppImageConfigBuilder;
 
 pub use crate::types::_container_config::ContainerConfigBuilder;
 
 pub use crate::types::_file_system_config::FileSystemConfigBuilder;
+
+pub use crate::types::_jupyter_lab_app_image_config::JupyterLabAppImageConfigBuilder;
 
 pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfigBuilder;
 

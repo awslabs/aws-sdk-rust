@@ -15,6 +15,8 @@ pub struct DescribeAppImageConfigOutput {
     pub kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
     /// <p>The configuration of the JupyterLab app.</p>
     pub jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
+    /// <p>The configuration of the Code Editor app.</p>
+    pub code_editor_app_image_config: ::std::option::Option<crate::types::CodeEditorAppImageConfig>,
     _request_id: Option<String>,
 }
 impl DescribeAppImageConfigOutput {
@@ -42,6 +44,10 @@ impl DescribeAppImageConfigOutput {
     pub fn jupyter_lab_app_image_config(&self) -> ::std::option::Option<&crate::types::JupyterLabAppImageConfig> {
         self.jupyter_lab_app_image_config.as_ref()
     }
+    /// <p>The configuration of the Code Editor app.</p>
+    pub fn code_editor_app_image_config(&self) -> ::std::option::Option<&crate::types::CodeEditorAppImageConfig> {
+        self.code_editor_app_image_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeAppImageConfigOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +71,7 @@ pub struct DescribeAppImageConfigOutputBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
     pub(crate) jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
+    pub(crate) code_editor_app_image_config: ::std::option::Option<crate::types::CodeEditorAppImageConfig>,
     _request_id: Option<String>,
 }
 impl DescribeAppImageConfigOutputBuilder {
@@ -152,6 +159,20 @@ impl DescribeAppImageConfigOutputBuilder {
     pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
         &self.jupyter_lab_app_image_config
     }
+    /// <p>The configuration of the Code Editor app.</p>
+    pub fn code_editor_app_image_config(mut self, input: crate::types::CodeEditorAppImageConfig) -> Self {
+        self.code_editor_app_image_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the Code Editor app.</p>
+    pub fn set_code_editor_app_image_config(mut self, input: ::std::option::Option<crate::types::CodeEditorAppImageConfig>) -> Self {
+        self.code_editor_app_image_config = input;
+        self
+    }
+    /// <p>The configuration of the Code Editor app.</p>
+    pub fn get_code_editor_app_image_config(&self) -> &::std::option::Option<crate::types::CodeEditorAppImageConfig> {
+        &self.code_editor_app_image_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -170,6 +191,7 @@ impl DescribeAppImageConfigOutputBuilder {
             last_modified_time: self.last_modified_time,
             kernel_gateway_image_config: self.kernel_gateway_image_config,
             jupyter_lab_app_image_config: self.jupyter_lab_app_image_config,
+            code_editor_app_image_config: self.code_editor_app_image_config,
             _request_id: self._request_id,
         }
     }

@@ -338,6 +338,24 @@ pub(crate) fn restore_graph_from_snapshot_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_import_task_output_output_correct_errors(
+    mut builder: crate::operation::start_import_task::builders::StartImportTaskOutputBuilder,
+) -> crate::operation::start_import_task::builders::StartImportTaskOutputBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ImportTaskStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_graph_output_output_correct_errors(
     mut builder: crate::operation::update_graph::builders::UpdateGraphOutputBuilder,
 ) -> crate::operation::update_graph::builders::UpdateGraphOutputBuilder {

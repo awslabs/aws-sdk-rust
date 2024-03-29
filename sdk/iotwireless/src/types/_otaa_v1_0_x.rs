@@ -6,9 +6,9 @@
 pub struct OtaaV10X {
     /// <p>The AppKey value.</p>
     pub app_key: ::std::option::Option<::std::string::String>,
-    /// <p>The AppEUI value.</p>
+    /// <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.</p>
     pub app_eui: ::std::option::Option<::std::string::String>,
-    /// <p>The JoinEUI value.</p>
+    /// <p>The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.</p>
     pub join_eui: ::std::option::Option<::std::string::String>,
     /// <p>The GenAppKey value.</p>
     pub gen_app_key: ::std::option::Option<::std::string::String>,
@@ -18,11 +18,11 @@ impl OtaaV10X {
     pub fn app_key(&self) -> ::std::option::Option<&str> {
         self.app_key.as_deref()
     }
-    /// <p>The AppEUI value.</p>
+    /// <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.</p>
     pub fn app_eui(&self) -> ::std::option::Option<&str> {
         self.app_eui.as_deref()
     }
-    /// <p>The JoinEUI value.</p>
+    /// <p>The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.</p>
     pub fn join_eui(&self) -> ::std::option::Option<&str> {
         self.join_eui.as_deref()
     }
@@ -62,31 +62,31 @@ impl OtaaV10XBuilder {
     pub fn get_app_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_key
     }
-    /// <p>The AppEUI value.</p>
+    /// <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.</p>
     pub fn app_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_eui = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AppEUI value.</p>
+    /// <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.</p>
     pub fn set_app_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_eui = input;
         self
     }
-    /// <p>The AppEUI value.</p>
+    /// <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.</p>
     pub fn get_app_eui(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_eui
     }
-    /// <p>The JoinEUI value.</p>
+    /// <p>The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.</p>
     pub fn join_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.join_eui = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JoinEUI value.</p>
+    /// <p>The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.</p>
     pub fn set_join_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.join_eui = input;
         self
     }
-    /// <p>The JoinEUI value.</p>
+    /// <p>The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.</p>
     pub fn get_join_eui(&self) -> &::std::option::Option<::std::string::String> {
         &self.join_eui
     }

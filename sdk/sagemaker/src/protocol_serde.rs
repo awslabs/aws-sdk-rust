@@ -1399,6 +1399,8 @@ pub(crate) mod shape_cluster_node_summaries;
 
 pub(crate) mod shape_cluster_summaries;
 
+pub(crate) mod shape_code_editor_app_image_config;
+
 pub(crate) mod shape_code_repository_summary_list;
 
 pub(crate) mod shape_cognito_config;

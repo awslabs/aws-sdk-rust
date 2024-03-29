@@ -122,6 +122,11 @@ pub(crate) fn de_describe_app_image_config(
                         crate::protocol_serde::shape_jupyter_lab_app_image_config::de_jupyter_lab_app_image_config(tokens)?,
                     );
                 }
+                "CodeEditorAppImageConfig" => {
+                    builder = builder.set_code_editor_app_image_config(
+                        crate::protocol_serde::shape_code_editor_app_image_config::de_code_editor_app_image_config(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -337,11 +337,13 @@ pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfig;
 
 pub use crate::types::_cluster_instance_type::ClusterInstanceType;
 
-pub use crate::types::_jupyter_lab_app_image_config::JupyterLabAppImageConfig;
+pub use crate::types::_code_editor_app_image_config::CodeEditorAppImageConfig;
 
 pub use crate::types::_container_config::ContainerConfig;
 
 pub use crate::types::_file_system_config::FileSystemConfig;
+
+pub use crate::types::_jupyter_lab_app_image_config::JupyterLabAppImageConfig;
 
 pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfig;
 
@@ -1930,6 +1932,8 @@ mod _cluster_sort_by;
 mod _cluster_status;
 
 mod _cluster_summary;
+
+mod _code_editor_app_image_config;
 
 mod _code_editor_app_settings;
 

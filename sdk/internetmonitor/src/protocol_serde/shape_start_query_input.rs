@@ -18,13 +18,16 @@ pub fn ser_start_query_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.query_type {
-        object.key("QueryType").string(var_6.as_str());
+    if let Some(var_6) = &input.linked_account_id {
+        object.key("LinkedAccountId").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.start_time {
+    if let Some(var_7) = &input.query_type {
+        object.key("QueryType").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.start_time {
         object
             .key("StartTime")
-            .date_time(var_7, ::aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(var_8, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }

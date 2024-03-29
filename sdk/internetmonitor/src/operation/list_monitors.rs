@@ -201,6 +201,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMonitors
                         query.push_kv("MonitorStatus", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
+                if let ::std::option::Option::Some(inner_4) = &_input.include_linked_accounts {
+                    {
+                        query.push_kv("IncludeLinkedAccounts", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

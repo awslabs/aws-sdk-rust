@@ -2,10 +2,10 @@
 resolver = "2"
 exclude = [
     "examples/webassembly",
-    "examples/examples",
     "examples/test-utils",
-    "examples/cross_service",
     "examples/lambda",
+    "examples/examples",
+    "examples/cross_service",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -110,6 +110,7 @@ members = [
     "sdk/codebuild",
     "sdk/codecatalyst",
     "sdk/codecommit",
+    "sdk/codeconnections",
     "sdk/codedeploy",
     "sdk/codeguruprofiler",
     "sdk/codegurureviewer",

@@ -168,4 +168,18 @@ impl CreateAppImageConfigFluentBuilder {
     pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
         self.inner.get_jupyter_lab_app_image_config()
     }
+    /// <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.</p>
+    pub fn code_editor_app_image_config(mut self, input: crate::types::CodeEditorAppImageConfig) -> Self {
+        self.inner = self.inner.code_editor_app_image_config(input);
+        self
+    }
+    /// <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.</p>
+    pub fn set_code_editor_app_image_config(mut self, input: ::std::option::Option<crate::types::CodeEditorAppImageConfig>) -> Self {
+        self.inner = self.inner.set_code_editor_app_image_config(input);
+        self
+    }
+    /// <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.</p>
+    pub fn get_code_editor_app_image_config(&self) -> &::std::option::Option<crate::types::CodeEditorAppImageConfig> {
+        self.inner.get_code_editor_app_image_config()
+    }
 }

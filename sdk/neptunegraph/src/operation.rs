@@ -73,6 +73,9 @@ pub mod reset_graph;
 /// Types for the `RestoreGraphFromSnapshot` operation.
 pub mod restore_graph_from_snapshot;
 
+/// Types for the `StartImportTask` operation.
+pub mod start_import_task;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

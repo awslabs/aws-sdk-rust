@@ -131,6 +131,8 @@ pub use crate::types::_offer_release_date_filter::OfferReleaseDateFilter;
 
 pub use crate::types::_offer_release_date_filter_date_range::OfferReleaseDateFilterDateRange;
 
+pub use crate::types::_offer_resale_authorization_id_filter::OfferResaleAuthorizationIdFilter;
+
 pub use crate::types::_offer_product_id_filter::OfferProductIdFilter;
 
 pub use crate::types::_offer_name_filter::OfferNameFilter;
@@ -306,6 +308,8 @@ mod _offer_product_id_filter;
 mod _offer_release_date_filter;
 
 mod _offer_release_date_filter_date_range;
+
+mod _offer_resale_authorization_id_filter;
 
 mod _offer_sort;
 

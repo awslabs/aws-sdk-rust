@@ -22,6 +22,8 @@
 //!
 //! You can also use the API operations to create multicast groups and schedule a multicast session for sending a downlink message to devices in the group. By using Firmware Updates Over-The-Air (FUOTA) API operations, you can create a FUOTA task and schedule a session to update the firmware of individual devices or an entire group of devices in a multicast group.
 //!
+//! To connect to the AWS IoT Wireless Service, use the Service endpoints as described in [IoT Wireless Service endpoints](https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region) in the _AWS General Reference_.
+//!
 //! ## Getting Started
 //!
 //! > Examples are available for many services and operations, check out the
@@ -34,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-iotwireless = "1.18.0"
+//! aws-sdk-iotwireless = "1.19.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

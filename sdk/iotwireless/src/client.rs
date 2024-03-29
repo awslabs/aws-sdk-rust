@@ -249,6 +249,10 @@ mod get_fuota_task;
 
 mod get_log_levels_by_resource_types;
 
+mod get_metric_configuration;
+
+mod get_metrics;
+
 mod get_multicast_group;
 
 mod get_multicast_group_session;
@@ -362,6 +366,8 @@ mod update_event_configuration_by_resource_types;
 mod update_fuota_task;
 
 mod update_log_levels_by_resource_types;
+
+mod update_metric_configuration;
 
 mod update_multicast_group;
 

@@ -30,5 +30,11 @@ pub fn ser_create_app_image_config_input_input(
         crate::protocol_serde::shape_jupyter_lab_app_image_config::ser_jupyter_lab_app_image_config(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.code_editor_app_image_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("CodeEditorAppImageConfig").start_object();
+        crate::protocol_serde::shape_code_editor_app_image_config::ser_code_editor_app_image_config(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

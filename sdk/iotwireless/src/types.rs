@@ -59,6 +59,10 @@ pub use crate::types::_dl_class::DlClass;
 
 pub use crate::types::_supported_rf_region::SupportedRfRegion;
 
+pub use crate::types::_summary_metric_configuration::SummaryMetricConfiguration;
+
+pub use crate::types::_summary_metric_configuration_status::SummaryMetricConfigurationStatus;
+
 pub use crate::types::_wireless_gateway_log_option::WirelessGatewayLogOption;
 
 pub use crate::types::_wireless_gateway_event_log_option::WirelessGatewayEventLogOption;
@@ -299,6 +303,22 @@ pub use crate::types::_accuracy::Accuracy;
 
 pub use crate::types::_lo_ra_wan_multicast_get::LoRaWanMulticastGet;
 
+pub use crate::types::_summary_metric_query_result::SummaryMetricQueryResult;
+
+pub use crate::types::_metric_query_value::MetricQueryValue;
+
+pub use crate::types::_aggregation_period::AggregationPeriod;
+
+pub use crate::types::_dimension::Dimension;
+
+pub use crate::types::_dimension_name::DimensionName;
+
+pub use crate::types::_metric_name::MetricName;
+
+pub use crate::types::_metric_query_status::MetricQueryStatus;
+
+pub use crate::types::_summary_metric_query::SummaryMetricQuery;
+
 pub use crate::types::_lo_ra_wan_fuota_task_get_info::LoRaWanFuotaTaskGetInfo;
 
 pub use crate::types::_fuota_task_status::FuotaTaskStatus;
@@ -322,6 +342,8 @@ mod _abp_v1_0_x;
 mod _abp_v1_1;
 
 mod _accuracy;
+
+mod _aggregation_period;
 
 mod _application_config;
 
@@ -360,6 +382,10 @@ mod _device_registration_state_event_configuration;
 mod _device_registration_state_resource_type_event_configuration;
 
 mod _device_state;
+
+mod _dimension;
+
+mod _dimension_name;
 
 mod _dl_class;
 
@@ -479,6 +505,12 @@ mod _message_delivery_status_resource_type_event_configuration;
 
 mod _message_type;
 
+mod _metric_name;
+
+mod _metric_query_status;
+
+mod _metric_query_value;
+
 mod _multicast_frame_info;
 
 mod _multicast_group;
@@ -566,6 +598,14 @@ mod _sidewalk_update_account;
 mod _sidewalk_update_import_info;
 
 mod _signing_alg;
+
+mod _summary_metric_configuration;
+
+mod _summary_metric_configuration_status;
+
+mod _summary_metric_query;
+
+mod _summary_metric_query_result;
 
 mod _supported_rf_region;
 

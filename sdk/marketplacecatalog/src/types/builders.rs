@@ -97,6 +97,8 @@ pub use crate::types::_offer_release_date_filter::OfferReleaseDateFilterBuilder;
 
 pub use crate::types::_offer_release_date_filter_date_range::OfferReleaseDateFilterDateRangeBuilder;
 
+pub use crate::types::_offer_resale_authorization_id_filter::OfferResaleAuthorizationIdFilterBuilder;
+
 pub use crate::types::_offer_product_id_filter::OfferProductIdFilterBuilder;
 
 pub use crate::types::_offer_name_filter::OfferNameFilterBuilder;

@@ -16,6 +16,7 @@
 ///     FleetStatusCode::CreateFailed => { /* ... */ },
 ///     FleetStatusCode::Creating => { /* ... */ },
 ///     FleetStatusCode::Deleting => { /* ... */ },
+///     FleetStatusCode::PendingDeletion => { /* ... */ },
 ///     FleetStatusCode::Rotating => { /* ... */ },
 ///     FleetStatusCode::UpdateRollbackFailed => { /* ... */ },
 ///     FleetStatusCode::Updating => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum FleetStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    PendingDeletion,
+    #[allow(missing_docs)] // documentation missing in model
     Rotating,
     #[allow(missing_docs)] // documentation missing in model
     UpdateRollbackFailed,
@@ -71,6 +74,7 @@ impl ::std::convert::From<&str> for FleetStatusCode {
             "CREATE_FAILED" => FleetStatusCode::CreateFailed,
             "CREATING" => FleetStatusCode::Creating,
             "DELETING" => FleetStatusCode::Deleting,
+            "PENDING_DELETION" => FleetStatusCode::PendingDeletion,
             "ROTATING" => FleetStatusCode::Rotating,
             "UPDATE_ROLLBACK_FAILED" => FleetStatusCode::UpdateRollbackFailed,
             "UPDATING" => FleetStatusCode::Updating,
@@ -93,6 +97,7 @@ impl FleetStatusCode {
             FleetStatusCode::CreateFailed => "CREATE_FAILED",
             FleetStatusCode::Creating => "CREATING",
             FleetStatusCode::Deleting => "DELETING",
+            FleetStatusCode::PendingDeletion => "PENDING_DELETION",
             FleetStatusCode::Rotating => "ROTATING",
             FleetStatusCode::UpdateRollbackFailed => "UPDATE_ROLLBACK_FAILED",
             FleetStatusCode::Updating => "UPDATING",
@@ -106,6 +111,7 @@ impl FleetStatusCode {
             "CREATE_FAILED",
             "CREATING",
             "DELETING",
+            "PENDING_DELETION",
             "ROTATING",
             "UPDATE_ROLLBACK_FAILED",
             "UPDATING",
@@ -136,6 +142,7 @@ impl ::std::fmt::Display for FleetStatusCode {
             FleetStatusCode::CreateFailed => write!(f, "CREATE_FAILED"),
             FleetStatusCode::Creating => write!(f, "CREATING"),
             FleetStatusCode::Deleting => write!(f, "DELETING"),
+            FleetStatusCode::PendingDeletion => write!(f, "PENDING_DELETION"),
             FleetStatusCode::Rotating => write!(f, "ROTATING"),
             FleetStatusCode::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
             FleetStatusCode::Updating => write!(f, "UPDATING"),

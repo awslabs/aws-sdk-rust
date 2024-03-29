@@ -11,6 +11,8 @@ pub struct CreateAppImageConfigInput {
     pub kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
     /// <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image kernel in the <code>AppImageConfig</code> API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in JupyterLab.</p>
     pub jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
+    /// <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.</p>
+    pub code_editor_app_image_config: ::std::option::Option<crate::types::CodeEditorAppImageConfig>,
 }
 impl CreateAppImageConfigInput {
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
@@ -31,6 +33,10 @@ impl CreateAppImageConfigInput {
     pub fn jupyter_lab_app_image_config(&self) -> ::std::option::Option<&crate::types::JupyterLabAppImageConfig> {
         self.jupyter_lab_app_image_config.as_ref()
     }
+    /// <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.</p>
+    pub fn code_editor_app_image_config(&self) -> ::std::option::Option<&crate::types::CodeEditorAppImageConfig> {
+        self.code_editor_app_image_config.as_ref()
+    }
 }
 impl CreateAppImageConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateAppImageConfigInput`](crate::operation::create_app_image_config::CreateAppImageConfigInput).
@@ -47,6 +53,7 @@ pub struct CreateAppImageConfigInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
     pub(crate) jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
+    pub(crate) code_editor_app_image_config: ::std::option::Option<crate::types::CodeEditorAppImageConfig>,
 }
 impl CreateAppImageConfigInputBuilder {
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
@@ -112,6 +119,20 @@ impl CreateAppImageConfigInputBuilder {
     pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
         &self.jupyter_lab_app_image_config
     }
+    /// <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.</p>
+    pub fn code_editor_app_image_config(mut self, input: crate::types::CodeEditorAppImageConfig) -> Self {
+        self.code_editor_app_image_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.</p>
+    pub fn set_code_editor_app_image_config(mut self, input: ::std::option::Option<crate::types::CodeEditorAppImageConfig>) -> Self {
+        self.code_editor_app_image_config = input;
+        self
+    }
+    /// <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.</p>
+    pub fn get_code_editor_app_image_config(&self) -> &::std::option::Option<crate::types::CodeEditorAppImageConfig> {
+        &self.code_editor_app_image_config
+    }
     /// Consumes the builder and constructs a [`CreateAppImageConfigInput`](crate::operation::create_app_image_config::CreateAppImageConfigInput).
     pub fn build(
         self,
@@ -122,6 +143,7 @@ impl CreateAppImageConfigInputBuilder {
             tags: self.tags,
             kernel_gateway_image_config: self.kernel_gateway_image_config,
             jupyter_lab_app_image_config: self.jupyter_lab_app_image_config,
+            code_editor_app_image_config: self.code_editor_app_image_config,
         })
     }
 }

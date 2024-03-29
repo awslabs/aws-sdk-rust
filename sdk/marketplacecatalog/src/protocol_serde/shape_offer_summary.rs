@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ResaleAuthorizationId" => {
+                            builder = builder.set_resale_authorization_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "ReleaseDate" => {
                             builder = builder.set_release_date(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

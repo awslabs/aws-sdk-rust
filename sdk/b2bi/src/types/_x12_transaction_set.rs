@@ -16,17 +16,39 @@
 ///     X12TransactionSet::X12180 => { /* ... */ },
 ///     X12TransactionSet::X12204 => { /* ... */ },
 ///     X12TransactionSet::X12210 => { /* ... */ },
+///     X12TransactionSet::X12211 => { /* ... */ },
 ///     X12TransactionSet::X12214 => { /* ... */ },
 ///     X12TransactionSet::X12215 => { /* ... */ },
+///     X12TransactionSet::X12259 => { /* ... */ },
+///     X12TransactionSet::X12260 => { /* ... */ },
+///     X12TransactionSet::X12266 => { /* ... */ },
+///     X12TransactionSet::X12269 => { /* ... */ },
+///     X12TransactionSet::X12270 => { /* ... */ },
+///     X12TransactionSet::X12271 => { /* ... */ },
+///     X12TransactionSet::X12274 => { /* ... */ },
+///     X12TransactionSet::X12275 => { /* ... */ },
+///     X12TransactionSet::X12276 => { /* ... */ },
+///     X12TransactionSet::X12277 => { /* ... */ },
+///     X12TransactionSet::X12278 => { /* ... */ },
 ///     X12TransactionSet::X12310 => { /* ... */ },
 ///     X12TransactionSet::X12315 => { /* ... */ },
 ///     X12TransactionSet::X12322 => { /* ... */ },
 ///     X12TransactionSet::X12404 => { /* ... */ },
 ///     X12TransactionSet::X12410 => { /* ... */ },
+///     X12TransactionSet::X12417 => { /* ... */ },
+///     X12TransactionSet::X12421 => { /* ... */ },
+///     X12TransactionSet::X12426 => { /* ... */ },
+///     X12TransactionSet::X12810 => { /* ... */ },
 ///     X12TransactionSet::X12820 => { /* ... */ },
 ///     X12TransactionSet::X12824 => { /* ... */ },
 ///     X12TransactionSet::X12830 => { /* ... */ },
+///     X12TransactionSet::X12832 => { /* ... */ },
+///     X12TransactionSet::X12834 => { /* ... */ },
+///     X12TransactionSet::X12835 => { /* ... */ },
+///     X12TransactionSet::X12837 => { /* ... */ },
+///     X12TransactionSet::X12844 => { /* ... */ },
 ///     X12TransactionSet::X12846 => { /* ... */ },
+///     X12TransactionSet::X12849 => { /* ... */ },
 ///     X12TransactionSet::X12850 => { /* ... */ },
 ///     X12TransactionSet::X12852 => { /* ... */ },
 ///     X12TransactionSet::X12855 => { /* ... */ },
@@ -34,9 +56,14 @@
 ///     X12TransactionSet::X12860 => { /* ... */ },
 ///     X12TransactionSet::X12861 => { /* ... */ },
 ///     X12TransactionSet::X12864 => { /* ... */ },
+///     X12TransactionSet::X12865 => { /* ... */ },
+///     X12TransactionSet::X12869 => { /* ... */ },
+///     X12TransactionSet::X12870 => { /* ... */ },
 ///     X12TransactionSet::X12940 => { /* ... */ },
+///     X12TransactionSet::X12945 => { /* ... */ },
 ///     X12TransactionSet::X12990 => { /* ... */ },
 ///     X12TransactionSet::X12997 => { /* ... */ },
+///     X12TransactionSet::X12999 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -73,9 +100,33 @@ pub enum X12TransactionSet {
     #[allow(missing_docs)] // documentation missing in model
     X12210,
     #[allow(missing_docs)] // documentation missing in model
+    X12211,
+    #[allow(missing_docs)] // documentation missing in model
     X12214,
     #[allow(missing_docs)] // documentation missing in model
     X12215,
+    #[allow(missing_docs)] // documentation missing in model
+    X12259,
+    #[allow(missing_docs)] // documentation missing in model
+    X12260,
+    #[allow(missing_docs)] // documentation missing in model
+    X12266,
+    #[allow(missing_docs)] // documentation missing in model
+    X12269,
+    #[allow(missing_docs)] // documentation missing in model
+    X12270,
+    #[allow(missing_docs)] // documentation missing in model
+    X12271,
+    #[allow(missing_docs)] // documentation missing in model
+    X12274,
+    #[allow(missing_docs)] // documentation missing in model
+    X12275,
+    #[allow(missing_docs)] // documentation missing in model
+    X12276,
+    #[allow(missing_docs)] // documentation missing in model
+    X12277,
+    #[allow(missing_docs)] // documentation missing in model
+    X12278,
     #[allow(missing_docs)] // documentation missing in model
     X12310,
     #[allow(missing_docs)] // documentation missing in model
@@ -87,13 +138,33 @@ pub enum X12TransactionSet {
     #[allow(missing_docs)] // documentation missing in model
     X12410,
     #[allow(missing_docs)] // documentation missing in model
+    X12417,
+    #[allow(missing_docs)] // documentation missing in model
+    X12421,
+    #[allow(missing_docs)] // documentation missing in model
+    X12426,
+    #[allow(missing_docs)] // documentation missing in model
+    X12810,
+    #[allow(missing_docs)] // documentation missing in model
     X12820,
     #[allow(missing_docs)] // documentation missing in model
     X12824,
     #[allow(missing_docs)] // documentation missing in model
     X12830,
     #[allow(missing_docs)] // documentation missing in model
+    X12832,
+    #[allow(missing_docs)] // documentation missing in model
+    X12834,
+    #[allow(missing_docs)] // documentation missing in model
+    X12835,
+    #[allow(missing_docs)] // documentation missing in model
+    X12837,
+    #[allow(missing_docs)] // documentation missing in model
+    X12844,
+    #[allow(missing_docs)] // documentation missing in model
     X12846,
+    #[allow(missing_docs)] // documentation missing in model
+    X12849,
     #[allow(missing_docs)] // documentation missing in model
     X12850,
     #[allow(missing_docs)] // documentation missing in model
@@ -109,11 +180,21 @@ pub enum X12TransactionSet {
     #[allow(missing_docs)] // documentation missing in model
     X12864,
     #[allow(missing_docs)] // documentation missing in model
+    X12865,
+    #[allow(missing_docs)] // documentation missing in model
+    X12869,
+    #[allow(missing_docs)] // documentation missing in model
+    X12870,
+    #[allow(missing_docs)] // documentation missing in model
     X12940,
+    #[allow(missing_docs)] // documentation missing in model
+    X12945,
     #[allow(missing_docs)] // documentation missing in model
     X12990,
     #[allow(missing_docs)] // documentation missing in model
     X12997,
+    #[allow(missing_docs)] // documentation missing in model
+    X12999,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -125,17 +206,39 @@ impl ::std::convert::From<&str> for X12TransactionSet {
             "X12_180" => X12TransactionSet::X12180,
             "X12_204" => X12TransactionSet::X12204,
             "X12_210" => X12TransactionSet::X12210,
+            "X12_211" => X12TransactionSet::X12211,
             "X12_214" => X12TransactionSet::X12214,
             "X12_215" => X12TransactionSet::X12215,
+            "X12_259" => X12TransactionSet::X12259,
+            "X12_260" => X12TransactionSet::X12260,
+            "X12_266" => X12TransactionSet::X12266,
+            "X12_269" => X12TransactionSet::X12269,
+            "X12_270" => X12TransactionSet::X12270,
+            "X12_271" => X12TransactionSet::X12271,
+            "X12_274" => X12TransactionSet::X12274,
+            "X12_275" => X12TransactionSet::X12275,
+            "X12_276" => X12TransactionSet::X12276,
+            "X12_277" => X12TransactionSet::X12277,
+            "X12_278" => X12TransactionSet::X12278,
             "X12_310" => X12TransactionSet::X12310,
             "X12_315" => X12TransactionSet::X12315,
             "X12_322" => X12TransactionSet::X12322,
             "X12_404" => X12TransactionSet::X12404,
             "X12_410" => X12TransactionSet::X12410,
+            "X12_417" => X12TransactionSet::X12417,
+            "X12_421" => X12TransactionSet::X12421,
+            "X12_426" => X12TransactionSet::X12426,
+            "X12_810" => X12TransactionSet::X12810,
             "X12_820" => X12TransactionSet::X12820,
             "X12_824" => X12TransactionSet::X12824,
             "X12_830" => X12TransactionSet::X12830,
+            "X12_832" => X12TransactionSet::X12832,
+            "X12_834" => X12TransactionSet::X12834,
+            "X12_835" => X12TransactionSet::X12835,
+            "X12_837" => X12TransactionSet::X12837,
+            "X12_844" => X12TransactionSet::X12844,
             "X12_846" => X12TransactionSet::X12846,
+            "X12_849" => X12TransactionSet::X12849,
             "X12_850" => X12TransactionSet::X12850,
             "X12_852" => X12TransactionSet::X12852,
             "X12_855" => X12TransactionSet::X12855,
@@ -143,9 +246,14 @@ impl ::std::convert::From<&str> for X12TransactionSet {
             "X12_860" => X12TransactionSet::X12860,
             "X12_861" => X12TransactionSet::X12861,
             "X12_864" => X12TransactionSet::X12864,
+            "X12_865" => X12TransactionSet::X12865,
+            "X12_869" => X12TransactionSet::X12869,
+            "X12_870" => X12TransactionSet::X12870,
             "X12_940" => X12TransactionSet::X12940,
+            "X12_945" => X12TransactionSet::X12945,
             "X12_990" => X12TransactionSet::X12990,
             "X12_997" => X12TransactionSet::X12997,
+            "X12_999" => X12TransactionSet::X12999,
             other => X12TransactionSet::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -165,17 +273,39 @@ impl X12TransactionSet {
             X12TransactionSet::X12180 => "X12_180",
             X12TransactionSet::X12204 => "X12_204",
             X12TransactionSet::X12210 => "X12_210",
+            X12TransactionSet::X12211 => "X12_211",
             X12TransactionSet::X12214 => "X12_214",
             X12TransactionSet::X12215 => "X12_215",
+            X12TransactionSet::X12259 => "X12_259",
+            X12TransactionSet::X12260 => "X12_260",
+            X12TransactionSet::X12266 => "X12_266",
+            X12TransactionSet::X12269 => "X12_269",
+            X12TransactionSet::X12270 => "X12_270",
+            X12TransactionSet::X12271 => "X12_271",
+            X12TransactionSet::X12274 => "X12_274",
+            X12TransactionSet::X12275 => "X12_275",
+            X12TransactionSet::X12276 => "X12_276",
+            X12TransactionSet::X12277 => "X12_277",
+            X12TransactionSet::X12278 => "X12_278",
             X12TransactionSet::X12310 => "X12_310",
             X12TransactionSet::X12315 => "X12_315",
             X12TransactionSet::X12322 => "X12_322",
             X12TransactionSet::X12404 => "X12_404",
             X12TransactionSet::X12410 => "X12_410",
+            X12TransactionSet::X12417 => "X12_417",
+            X12TransactionSet::X12421 => "X12_421",
+            X12TransactionSet::X12426 => "X12_426",
+            X12TransactionSet::X12810 => "X12_810",
             X12TransactionSet::X12820 => "X12_820",
             X12TransactionSet::X12824 => "X12_824",
             X12TransactionSet::X12830 => "X12_830",
+            X12TransactionSet::X12832 => "X12_832",
+            X12TransactionSet::X12834 => "X12_834",
+            X12TransactionSet::X12835 => "X12_835",
+            X12TransactionSet::X12837 => "X12_837",
+            X12TransactionSet::X12844 => "X12_844",
             X12TransactionSet::X12846 => "X12_846",
+            X12TransactionSet::X12849 => "X12_849",
             X12TransactionSet::X12850 => "X12_850",
             X12TransactionSet::X12852 => "X12_852",
             X12TransactionSet::X12855 => "X12_855",
@@ -183,18 +313,25 @@ impl X12TransactionSet {
             X12TransactionSet::X12860 => "X12_860",
             X12TransactionSet::X12861 => "X12_861",
             X12TransactionSet::X12864 => "X12_864",
+            X12TransactionSet::X12865 => "X12_865",
+            X12TransactionSet::X12869 => "X12_869",
+            X12TransactionSet::X12870 => "X12_870",
             X12TransactionSet::X12940 => "X12_940",
+            X12TransactionSet::X12945 => "X12_945",
             X12TransactionSet::X12990 => "X12_990",
             X12TransactionSet::X12997 => "X12_997",
+            X12TransactionSet::X12999 => "X12_999",
             X12TransactionSet::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "X12_110", "X12_180", "X12_204", "X12_210", "X12_214", "X12_215", "X12_310", "X12_315", "X12_322", "X12_404", "X12_410", "X12_820",
-            "X12_824", "X12_830", "X12_846", "X12_850", "X12_852", "X12_855", "X12_856", "X12_860", "X12_861", "X12_864", "X12_940", "X12_990",
-            "X12_997",
+            "X12_110", "X12_180", "X12_204", "X12_210", "X12_211", "X12_214", "X12_215", "X12_259", "X12_260", "X12_266", "X12_269", "X12_270",
+            "X12_271", "X12_274", "X12_275", "X12_276", "X12_277", "X12_278", "X12_310", "X12_315", "X12_322", "X12_404", "X12_410", "X12_417",
+            "X12_421", "X12_426", "X12_810", "X12_820", "X12_824", "X12_830", "X12_832", "X12_834", "X12_835", "X12_837", "X12_844", "X12_846",
+            "X12_849", "X12_850", "X12_852", "X12_855", "X12_856", "X12_860", "X12_861", "X12_864", "X12_865", "X12_869", "X12_870", "X12_940",
+            "X12_945", "X12_990", "X12_997", "X12_999",
         ]
     }
 }
@@ -222,17 +359,39 @@ impl ::std::fmt::Display for X12TransactionSet {
             X12TransactionSet::X12180 => write!(f, "X12_180"),
             X12TransactionSet::X12204 => write!(f, "X12_204"),
             X12TransactionSet::X12210 => write!(f, "X12_210"),
+            X12TransactionSet::X12211 => write!(f, "X12_211"),
             X12TransactionSet::X12214 => write!(f, "X12_214"),
             X12TransactionSet::X12215 => write!(f, "X12_215"),
+            X12TransactionSet::X12259 => write!(f, "X12_259"),
+            X12TransactionSet::X12260 => write!(f, "X12_260"),
+            X12TransactionSet::X12266 => write!(f, "X12_266"),
+            X12TransactionSet::X12269 => write!(f, "X12_269"),
+            X12TransactionSet::X12270 => write!(f, "X12_270"),
+            X12TransactionSet::X12271 => write!(f, "X12_271"),
+            X12TransactionSet::X12274 => write!(f, "X12_274"),
+            X12TransactionSet::X12275 => write!(f, "X12_275"),
+            X12TransactionSet::X12276 => write!(f, "X12_276"),
+            X12TransactionSet::X12277 => write!(f, "X12_277"),
+            X12TransactionSet::X12278 => write!(f, "X12_278"),
             X12TransactionSet::X12310 => write!(f, "X12_310"),
             X12TransactionSet::X12315 => write!(f, "X12_315"),
             X12TransactionSet::X12322 => write!(f, "X12_322"),
             X12TransactionSet::X12404 => write!(f, "X12_404"),
             X12TransactionSet::X12410 => write!(f, "X12_410"),
+            X12TransactionSet::X12417 => write!(f, "X12_417"),
+            X12TransactionSet::X12421 => write!(f, "X12_421"),
+            X12TransactionSet::X12426 => write!(f, "X12_426"),
+            X12TransactionSet::X12810 => write!(f, "X12_810"),
             X12TransactionSet::X12820 => write!(f, "X12_820"),
             X12TransactionSet::X12824 => write!(f, "X12_824"),
             X12TransactionSet::X12830 => write!(f, "X12_830"),
+            X12TransactionSet::X12832 => write!(f, "X12_832"),
+            X12TransactionSet::X12834 => write!(f, "X12_834"),
+            X12TransactionSet::X12835 => write!(f, "X12_835"),
+            X12TransactionSet::X12837 => write!(f, "X12_837"),
+            X12TransactionSet::X12844 => write!(f, "X12_844"),
             X12TransactionSet::X12846 => write!(f, "X12_846"),
+            X12TransactionSet::X12849 => write!(f, "X12_849"),
             X12TransactionSet::X12850 => write!(f, "X12_850"),
             X12TransactionSet::X12852 => write!(f, "X12_852"),
             X12TransactionSet::X12855 => write!(f, "X12_855"),
@@ -240,9 +399,14 @@ impl ::std::fmt::Display for X12TransactionSet {
             X12TransactionSet::X12860 => write!(f, "X12_860"),
             X12TransactionSet::X12861 => write!(f, "X12_861"),
             X12TransactionSet::X12864 => write!(f, "X12_864"),
+            X12TransactionSet::X12865 => write!(f, "X12_865"),
+            X12TransactionSet::X12869 => write!(f, "X12_869"),
+            X12TransactionSet::X12870 => write!(f, "X12_870"),
             X12TransactionSet::X12940 => write!(f, "X12_940"),
+            X12TransactionSet::X12945 => write!(f, "X12_945"),
             X12TransactionSet::X12990 => write!(f, "X12_990"),
             X12TransactionSet::X12997 => write!(f, "X12_997"),
+            X12TransactionSet::X12999 => write!(f, "X12_999"),
             X12TransactionSet::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -38,6 +38,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS CloudTrail Data Service | [aws-sdk-cloudtraildata](https://crates.io/crates/aws-sdk-cloudtraildata) ([docs](https://docs.rs/aws-sdk-cloudtraildata)) |
 | AWS CodeBuild | [aws-sdk-codebuild](https://crates.io/crates/aws-sdk-codebuild) ([docs](https://docs.rs/aws-sdk-codebuild)) |
 | AWS CodeCommit | [aws-sdk-codecommit](https://crates.io/crates/aws-sdk-codecommit) ([docs](https://docs.rs/aws-sdk-codecommit)) |
+| AWS CodeConnections | [aws-sdk-codeconnections](https://crates.io/crates/aws-sdk-codeconnections) ([docs](https://docs.rs/aws-sdk-codeconnections)) |
 | AWS CodeDeploy | [aws-sdk-codedeploy](https://crates.io/crates/aws-sdk-codedeploy) ([docs](https://docs.rs/aws-sdk-codedeploy)) |
 | AWS CodePipeline | [aws-sdk-codepipeline](https://crates.io/crates/aws-sdk-codepipeline) ([docs](https://docs.rs/aws-sdk-codepipeline)) |
 | AWS CodeStar | [aws-sdk-codestar](https://crates.io/crates/aws-sdk-codestar) ([docs](https://docs.rs/aws-sdk-codestar)) |

@@ -10,6 +10,8 @@ pub struct ListMonitorsInput {
     /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
     /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
     pub monitor_status: ::std::option::Option<::std::string::String>,
+    /// <p>TBD</p>
+    pub include_linked_accounts: ::std::option::Option<bool>,
 }
 impl ListMonitorsInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -24,6 +26,10 @@ impl ListMonitorsInput {
     /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
     pub fn monitor_status(&self) -> ::std::option::Option<&str> {
         self.monitor_status.as_deref()
+    }
+    /// <p>TBD</p>
+    pub fn include_linked_accounts(&self) -> ::std::option::Option<bool> {
+        self.include_linked_accounts
     }
 }
 impl ListMonitorsInput {
@@ -40,6 +46,7 @@ pub struct ListMonitorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) monitor_status: ::std::option::Option<::std::string::String>,
+    pub(crate) include_linked_accounts: ::std::option::Option<bool>,
 }
 impl ListMonitorsInputBuilder {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -87,6 +94,20 @@ impl ListMonitorsInputBuilder {
     pub fn get_monitor_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_status
     }
+    /// <p>TBD</p>
+    pub fn include_linked_accounts(mut self, input: bool) -> Self {
+        self.include_linked_accounts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>TBD</p>
+    pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_linked_accounts = input;
+        self
+    }
+    /// <p>TBD</p>
+    pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
+        &self.include_linked_accounts
+    }
     /// Consumes the builder and constructs a [`ListMonitorsInput`](crate::operation::list_monitors::ListMonitorsInput).
     pub fn build(
         self,
@@ -95,6 +116,7 @@ impl ListMonitorsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             monitor_status: self.monitor_status,
+            include_linked_accounts: self.include_linked_accounts,
         })
     }
 }

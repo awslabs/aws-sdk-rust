@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::last_modified_time): <p>When the AppImageConfig was last modified.</p>
     ///   - [`kernel_gateway_image_config(Option<KernelGatewayImageConfig>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::kernel_gateway_image_config): <p>The configuration of a KernelGateway app.</p>
     ///   - [`jupyter_lab_app_image_config(Option<JupyterLabAppImageConfig>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::jupyter_lab_app_image_config): <p>The configuration of the JupyterLab app.</p>
+    ///   - [`code_editor_app_image_config(Option<CodeEditorAppImageConfig>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::code_editor_app_image_config): <p>The configuration of the Code Editor app.</p>
     /// - On failure, responds with [`SdkError<DescribeAppImageConfigError>`](crate::operation::describe_app_image_config::DescribeAppImageConfigError)
     pub fn describe_app_image_config(&self) -> crate::operation::describe_app_image_config::builders::DescribeAppImageConfigFluentBuilder {
         crate::operation::describe_app_image_config::builders::DescribeAppImageConfigFluentBuilder::new(self.handle.clone())

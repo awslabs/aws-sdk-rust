@@ -211,6 +211,8 @@ mod reset_graph;
 
 mod restore_graph_from_snapshot;
 
+mod start_import_task;
+
 mod tag_resource;
 
 mod untag_resource;

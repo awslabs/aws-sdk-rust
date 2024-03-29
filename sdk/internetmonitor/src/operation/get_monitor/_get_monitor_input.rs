@@ -5,11 +5,17 @@
 pub struct GetMonitorInput {
     /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
+    /// <p>TBD</p>
+    pub linked_account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMonitorInput {
     /// <p>The name of the monitor.</p>
     pub fn monitor_name(&self) -> ::std::option::Option<&str> {
         self.monitor_name.as_deref()
+    }
+    /// <p>TBD</p>
+    pub fn linked_account_id(&self) -> ::std::option::Option<&str> {
+        self.linked_account_id.as_deref()
     }
 }
 impl GetMonitorInput {
@@ -24,6 +30,7 @@ impl GetMonitorInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMonitorInputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
+    pub(crate) linked_account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMonitorInputBuilder {
     /// <p>The name of the monitor.</p>
@@ -41,10 +48,25 @@ impl GetMonitorInputBuilder {
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }
+    /// <p>TBD</p>
+    pub fn linked_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linked_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>TBD</p>
+    pub fn set_linked_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.linked_account_id = input;
+        self
+    }
+    /// <p>TBD</p>
+    pub fn get_linked_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_account_id
+    }
     /// Consumes the builder and constructs a [`GetMonitorInput`](crate::operation::get_monitor::GetMonitorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_monitor::GetMonitorInput {
             monitor_name: self.monitor_name,
+            linked_account_id: self.linked_account_id,
         })
     }
 }

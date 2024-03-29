@@ -109,6 +109,10 @@ pub(crate) mod shape_get_fuota_task;
 
 pub(crate) mod shape_get_log_levels_by_resource_types;
 
+pub(crate) mod shape_get_metric_configuration;
+
+pub(crate) mod shape_get_metrics;
+
 pub(crate) mod shape_get_multicast_group;
 
 pub(crate) mod shape_get_multicast_group_session;
@@ -223,6 +227,8 @@ pub(crate) mod shape_update_fuota_task;
 
 pub(crate) mod shape_update_log_levels_by_resource_types;
 
+pub(crate) mod shape_update_metric_configuration;
+
 pub(crate) mod shape_update_multicast_group;
 
 pub(crate) mod shape_update_network_analyzer_configuration;
@@ -289,6 +295,8 @@ pub(crate) mod shape_create_wireless_gateway_task_definition_input;
 
 pub(crate) mod shape_create_wireless_gateway_task_input;
 
+pub(crate) mod shape_get_metrics_input;
+
 pub(crate) mod shape_get_position_estimate_input;
 
 pub(crate) mod shape_get_position_estimate_output;
@@ -332,6 +340,8 @@ pub(crate) mod shape_update_event_configuration_by_resource_types_input;
 pub(crate) mod shape_update_fuota_task_input;
 
 pub(crate) mod shape_update_log_levels_by_resource_types_input;
+
+pub(crate) mod shape_update_metric_configuration_input;
 
 pub(crate) mod shape_update_multicast_group_input;
 
@@ -465,6 +475,12 @@ pub(crate) mod shape_sidewalk_update_account;
 
 pub(crate) mod shape_sidewalk_update_import_info;
 
+pub(crate) mod shape_summary_metric_configuration;
+
+pub(crate) mod shape_summary_metric_query;
+
+pub(crate) mod shape_summary_metric_query_results;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
@@ -514,6 +530,8 @@ pub(crate) mod shape_device_certificate_list;
 pub(crate) mod shape_device_creation_file_list;
 
 pub(crate) mod shape_device_profile;
+
+pub(crate) mod shape_dimension;
 
 pub(crate) mod shape_downlink_queue_message;
 
@@ -581,6 +599,8 @@ pub(crate) mod shape_sidewalk_send_data_to_device;
 
 pub(crate) mod shape_sub_bands;
 
+pub(crate) mod shape_summary_metric_query_result;
+
 pub(crate) mod shape_tdscdma_obj;
 
 pub(crate) mod shape_update_abp_v1_0_x;
@@ -617,6 +637,8 @@ pub(crate) mod shape_certificate_list;
 
 pub(crate) mod shape_dak_certificate_metadata;
 
+pub(crate) mod shape_dimensions;
+
 pub(crate) mod shape_event_notification_item_configurations;
 
 pub(crate) mod shape_gsm_local_id;
@@ -636,6 +658,10 @@ pub(crate) mod shape_lo_ra_wan_update_gateway_task_entry;
 pub(crate) mod shape_lte_local_id;
 
 pub(crate) mod shape_lte_nmr_obj;
+
+pub(crate) mod shape_metric_query_timestamps;
+
+pub(crate) mod shape_metric_query_values;
 
 pub(crate) mod shape_participating_gateways;
 
@@ -662,5 +688,7 @@ pub(crate) mod shape_wireless_gateway_event_log_option_list;
 pub(crate) mod shape_gateway_list_item;
 
 pub(crate) mod shape_global_identity;
+
+pub(crate) mod shape_metric_query_value;
 
 pub(crate) mod shape_gateway_list;

@@ -197,6 +197,8 @@ pub(crate) mod shape_offer_product_id_filter;
 
 pub(crate) mod shape_offer_release_date_filter;
 
+pub(crate) mod shape_offer_resale_authorization_id_filter;
+
 pub(crate) mod shape_offer_state_filter;
 
 pub(crate) mod shape_offer_summary;

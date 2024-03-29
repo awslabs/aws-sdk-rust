@@ -15,6 +15,8 @@ pub struct ListHealthEventsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The status of a health event.</p>
     pub event_status: ::std::option::Option<crate::types::HealthEventStatus>,
+    /// <p>TBD</p>
+    pub linked_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListHealthEventsInput {
     /// <p>The name of the monitor.</p>
@@ -41,6 +43,10 @@ impl ListHealthEventsInput {
     pub fn event_status(&self) -> ::std::option::Option<&crate::types::HealthEventStatus> {
         self.event_status.as_ref()
     }
+    /// <p>TBD</p>
+    pub fn linked_account_id(&self) -> ::std::option::Option<&str> {
+        self.linked_account_id.as_deref()
+    }
 }
 impl ListHealthEventsInput {
     /// Creates a new builder-style object to manufacture [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
@@ -59,6 +65,7 @@ pub struct ListHealthEventsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) event_status: ::std::option::Option<crate::types::HealthEventStatus>,
+    pub(crate) linked_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListHealthEventsInputBuilder {
     /// <p>The name of the monitor.</p>
@@ -146,6 +153,20 @@ impl ListHealthEventsInputBuilder {
     pub fn get_event_status(&self) -> &::std::option::Option<crate::types::HealthEventStatus> {
         &self.event_status
     }
+    /// <p>TBD</p>
+    pub fn linked_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linked_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>TBD</p>
+    pub fn set_linked_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.linked_account_id = input;
+        self
+    }
+    /// <p>TBD</p>
+    pub fn get_linked_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_account_id
+    }
     /// Consumes the builder and constructs a [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
     pub fn build(
         self,
@@ -157,6 +178,7 @@ impl ListHealthEventsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             event_status: self.event_status,
+            linked_account_id: self.linked_account_id,
         })
     }
 }

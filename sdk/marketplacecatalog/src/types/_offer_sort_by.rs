@@ -19,6 +19,7 @@
 ///     OfferSortBy::Name => { /* ... */ },
 ///     OfferSortBy::ProductId => { /* ... */ },
 ///     OfferSortBy::ReleaseDate => { /* ... */ },
+///     OfferSortBy::ResaleAuthorizationId => { /* ... */ },
 ///     OfferSortBy::State => { /* ... */ },
 ///     OfferSortBy::Targeting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -63,6 +64,8 @@ pub enum OfferSortBy {
     #[allow(missing_docs)] // documentation missing in model
     ReleaseDate,
     #[allow(missing_docs)] // documentation missing in model
+    ResaleAuthorizationId,
+    #[allow(missing_docs)] // documentation missing in model
     State,
     #[allow(missing_docs)] // documentation missing in model
     Targeting,
@@ -80,6 +83,7 @@ impl ::std::convert::From<&str> for OfferSortBy {
             "Name" => OfferSortBy::Name,
             "ProductId" => OfferSortBy::ProductId,
             "ReleaseDate" => OfferSortBy::ReleaseDate,
+            "ResaleAuthorizationId" => OfferSortBy::ResaleAuthorizationId,
             "State" => OfferSortBy::State,
             "Targeting" => OfferSortBy::Targeting,
             other => OfferSortBy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -104,6 +108,7 @@ impl OfferSortBy {
             OfferSortBy::Name => "Name",
             OfferSortBy::ProductId => "ProductId",
             OfferSortBy::ReleaseDate => "ReleaseDate",
+            OfferSortBy::ResaleAuthorizationId => "ResaleAuthorizationId",
             OfferSortBy::State => "State",
             OfferSortBy::Targeting => "Targeting",
             OfferSortBy::Unknown(value) => value.as_str(),
@@ -119,6 +124,7 @@ impl OfferSortBy {
             "Name",
             "ProductId",
             "ReleaseDate",
+            "ResaleAuthorizationId",
             "State",
             "Targeting",
         ]
@@ -151,6 +157,7 @@ impl ::std::fmt::Display for OfferSortBy {
             OfferSortBy::Name => write!(f, "Name"),
             OfferSortBy::ProductId => write!(f, "ProductId"),
             OfferSortBy::ReleaseDate => write!(f, "ReleaseDate"),
+            OfferSortBy::ResaleAuthorizationId => write!(f, "ResaleAuthorizationId"),
             OfferSortBy::State => write!(f, "State"),
             OfferSortBy::Targeting => write!(f, "Targeting"),
             OfferSortBy::Unknown(value) => write!(f, "{}", value),

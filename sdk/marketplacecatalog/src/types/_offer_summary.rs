@@ -8,6 +8,8 @@ pub struct OfferSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The product ID of the offer.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ResaleAuthorizationId of the offer.</p>
+    pub resale_authorization_id: ::std::option::Option<::std::string::String>,
     /// <p>The release date of the offer.</p>
     pub release_date: ::std::option::Option<::std::string::String>,
     /// <p>The availability end date of the offer.</p>
@@ -27,6 +29,10 @@ impl OfferSummary {
     /// <p>The product ID of the offer.</p>
     pub fn product_id(&self) -> ::std::option::Option<&str> {
         self.product_id.as_deref()
+    }
+    /// <p>The ResaleAuthorizationId of the offer.</p>
+    pub fn resale_authorization_id(&self) -> ::std::option::Option<&str> {
+        self.resale_authorization_id.as_deref()
     }
     /// <p>The release date of the offer.</p>
     pub fn release_date(&self) -> ::std::option::Option<&str> {
@@ -66,6 +72,7 @@ impl OfferSummary {
 pub struct OfferSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resale_authorization_id: ::std::option::Option<::std::string::String>,
     pub(crate) release_date: ::std::option::Option<::std::string::String>,
     pub(crate) availability_end_date: ::std::option::Option<::std::string::String>,
     pub(crate) buyer_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -100,6 +107,20 @@ impl OfferSummaryBuilder {
     /// <p>The product ID of the offer.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_id
+    }
+    /// <p>The ResaleAuthorizationId of the offer.</p>
+    pub fn resale_authorization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resale_authorization_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ResaleAuthorizationId of the offer.</p>
+    pub fn set_resale_authorization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resale_authorization_id = input;
+        self
+    }
+    /// <p>The ResaleAuthorizationId of the offer.</p>
+    pub fn get_resale_authorization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resale_authorization_id
     }
     /// <p>The release date of the offer.</p>
     pub fn release_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +209,7 @@ impl OfferSummaryBuilder {
         crate::types::OfferSummary {
             name: self.name,
             product_id: self.product_id,
+            resale_authorization_id: self.resale_authorization_id,
             release_date: self.release_date,
             availability_end_date: self.availability_end_date,
             buyer_accounts: self.buyer_accounts,

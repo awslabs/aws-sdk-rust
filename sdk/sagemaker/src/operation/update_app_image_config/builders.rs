@@ -150,4 +150,18 @@ impl UpdateAppImageConfigFluentBuilder {
     pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
         self.inner.get_jupyter_lab_app_image_config()
     }
+    /// <p>The Code Editor app running on the image.</p>
+    pub fn code_editor_app_image_config(mut self, input: crate::types::CodeEditorAppImageConfig) -> Self {
+        self.inner = self.inner.code_editor_app_image_config(input);
+        self
+    }
+    /// <p>The Code Editor app running on the image.</p>
+    pub fn set_code_editor_app_image_config(mut self, input: ::std::option::Option<crate::types::CodeEditorAppImageConfig>) -> Self {
+        self.inner = self.inner.set_code_editor_app_image_config(input);
+        self
+    }
+    /// <p>The Code Editor app running on the image.</p>
+    pub fn get_code_editor_app_image_config(&self) -> &::std::option::Option<crate::types::CodeEditorAppImageConfig> {
+        self.inner.get_code_editor_app_image_config()
+    }
 }

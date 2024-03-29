@@ -21,41 +21,47 @@ pub fn ser_offer_filters(
         crate::protocol_serde::shape_offer_product_id_filter::ser_offer_product_id_filter(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.release_date {
+    if let Some(var_7) = &input.resale_authorization_id {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("ReleaseDate").start_object();
-        crate::protocol_serde::shape_offer_release_date_filter::ser_offer_release_date_filter(&mut object_8, var_7)?;
+        let mut object_8 = object.key("ResaleAuthorizationId").start_object();
+        crate::protocol_serde::shape_offer_resale_authorization_id_filter::ser_offer_resale_authorization_id_filter(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.availability_end_date {
+    if let Some(var_9) = &input.release_date {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("AvailabilityEndDate").start_object();
-        crate::protocol_serde::shape_offer_availability_end_date_filter::ser_offer_availability_end_date_filter(&mut object_10, var_9)?;
+        let mut object_10 = object.key("ReleaseDate").start_object();
+        crate::protocol_serde::shape_offer_release_date_filter::ser_offer_release_date_filter(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.buyer_accounts {
+    if let Some(var_11) = &input.availability_end_date {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("BuyerAccounts").start_object();
-        crate::protocol_serde::shape_offer_buyer_accounts_filter::ser_offer_buyer_accounts_filter(&mut object_12, var_11)?;
+        let mut object_12 = object.key("AvailabilityEndDate").start_object();
+        crate::protocol_serde::shape_offer_availability_end_date_filter::ser_offer_availability_end_date_filter(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.state {
+    if let Some(var_13) = &input.buyer_accounts {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("State").start_object();
-        crate::protocol_serde::shape_offer_state_filter::ser_offer_state_filter(&mut object_14, var_13)?;
+        let mut object_14 = object.key("BuyerAccounts").start_object();
+        crate::protocol_serde::shape_offer_buyer_accounts_filter::ser_offer_buyer_accounts_filter(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.targeting {
+    if let Some(var_15) = &input.state {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("Targeting").start_object();
-        crate::protocol_serde::shape_offer_targeting_filter::ser_offer_targeting_filter(&mut object_16, var_15)?;
+        let mut object_16 = object.key("State").start_object();
+        crate::protocol_serde::shape_offer_state_filter::ser_offer_state_filter(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.last_modified_date {
+    if let Some(var_17) = &input.targeting {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("LastModifiedDate").start_object();
-        crate::protocol_serde::shape_offer_last_modified_date_filter::ser_offer_last_modified_date_filter(&mut object_18, var_17)?;
+        let mut object_18 = object.key("Targeting").start_object();
+        crate::protocol_serde::shape_offer_targeting_filter::ser_offer_targeting_filter(&mut object_18, var_17)?;
         object_18.finish();
+    }
+    if let Some(var_19) = &input.last_modified_date {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("LastModifiedDate").start_object();
+        crate::protocol_serde::shape_offer_last_modified_date_filter::ser_offer_last_modified_date_filter(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }

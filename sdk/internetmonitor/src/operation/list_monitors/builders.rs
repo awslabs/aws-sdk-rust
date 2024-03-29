@@ -159,4 +159,18 @@ impl ListMonitorsFluentBuilder {
     pub fn get_monitor_status(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_status()
     }
+    /// <p>TBD</p>
+    pub fn include_linked_accounts(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_linked_accounts(input);
+        self
+    }
+    /// <p>TBD</p>
+    pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_linked_accounts(input);
+        self
+    }
+    /// <p>TBD</p>
+    pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_linked_accounts()
+    }
 }

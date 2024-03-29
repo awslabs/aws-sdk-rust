@@ -229,6 +229,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHealthEv
                         query.push_kv("EventStatus", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
+                if let ::std::option::Option::Some(inner_7) = &_input.linked_account_id {
+                    {
+                        query.push_kv("LinkedAccountId", &::aws_smithy_http::query::fmt_string(inner_7));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
