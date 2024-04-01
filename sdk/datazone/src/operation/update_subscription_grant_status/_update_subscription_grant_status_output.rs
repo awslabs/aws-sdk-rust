@@ -21,7 +21,7 @@ pub struct UpdateSubscriptionGrantStatusOutput {
     pub granted_entity: ::std::option::Option<crate::types::GrantedEntity>,
     /// <p>The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
     pub status: crate::types::SubscriptionGrantOverallStatus,
-    /// <p></p>
+    /// <p>The details of the asset for which the subscription grant is created.</p>
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedAsset>>,
     /// <p>The identifier of the subscription.</p>
     pub subscription_id: ::std::option::Option<::std::string::String>,
@@ -68,7 +68,7 @@ impl UpdateSubscriptionGrantStatusOutput {
     pub fn status(&self) -> &crate::types::SubscriptionGrantOverallStatus {
         &self.status
     }
-    /// <p></p>
+    /// <p>The details of the asset for which the subscription grant is created.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
     pub fn assets(&self) -> &[crate::types::SubscribedAsset] {
@@ -247,19 +247,19 @@ impl UpdateSubscriptionGrantStatusOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_assets`](Self::set_assets).
     ///
-    /// <p></p>
+    /// <p>The details of the asset for which the subscription grant is created.</p>
     pub fn assets(mut self, input: crate::types::SubscribedAsset) -> Self {
         let mut v = self.assets.unwrap_or_default();
         v.push(input);
         self.assets = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>The details of the asset for which the subscription grant is created.</p>
     pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedAsset>>) -> Self {
         self.assets = input;
         self
     }
-    /// <p></p>
+    /// <p>The details of the asset for which the subscription grant is created.</p>
     pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedAsset>> {
         &self.assets
     }

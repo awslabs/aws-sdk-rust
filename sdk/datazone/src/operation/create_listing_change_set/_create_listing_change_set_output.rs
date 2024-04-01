@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateListingChangeSetOutput {
-    /// <p></p>
+    /// <p>The ID of the listing (a record of an asset at a given time).</p>
     pub listing_id: ::std::string::String,
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     pub listing_revision: ::std::string::String,
-    /// <p></p>
+    /// <p>Specifies the status of the listing.</p>
     pub status: crate::types::ListingStatus,
     _request_id: Option<String>,
 }
 impl CreateListingChangeSetOutput {
-    /// <p></p>
+    /// <p>The ID of the listing (a record of an asset at a given time).</p>
     pub fn listing_id(&self) -> &str {
         use std::ops::Deref;
         self.listing_id.deref()
     }
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     pub fn listing_revision(&self) -> &str {
         use std::ops::Deref;
         self.listing_revision.deref()
     }
-    /// <p></p>
+    /// <p>Specifies the status of the listing.</p>
     pub fn status(&self) -> &crate::types::ListingStatus {
         &self.status
     }
@@ -49,48 +49,48 @@ pub struct CreateListingChangeSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateListingChangeSetOutputBuilder {
-    /// <p></p>
+    /// <p>The ID of the listing (a record of an asset at a given time).</p>
     /// This field is required.
     pub fn listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listing_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the listing (a record of an asset at a given time).</p>
     pub fn set_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.listing_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the listing (a record of an asset at a given time).</p>
     pub fn get_listing_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.listing_id
     }
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     /// This field is required.
     pub fn listing_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listing_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     pub fn set_listing_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.listing_revision = input;
         self
     }
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     pub fn get_listing_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.listing_revision
     }
-    /// <p></p>
+    /// <p>Specifies the status of the listing.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ListingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Specifies the status of the listing.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ListingStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p></p>
+    /// <p>Specifies the status of the listing.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ListingStatus> {
         &self.status
     }

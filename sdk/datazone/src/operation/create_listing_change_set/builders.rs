@@ -22,7 +22,7 @@ impl CreateListingChangeSetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateListingChangeSet`.
 ///
-/// <p></p>
+/// <p>Publishes a listing (a record of an asset at a given time) or removes a listing from the catalog.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateListingChangeSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,87 +108,87 @@ impl CreateListingChangeSetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_identifier(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_identifier(input);
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }
-    /// <p></p>
+    /// <p>The ID of the asset.</p>
     pub fn entity_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_identifier(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the asset.</p>
     pub fn set_entity_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_identifier(input);
         self
     }
-    /// <p></p>
+    /// <p>The ID of the asset.</p>
     pub fn get_entity_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entity_identifier()
     }
-    /// <p></p>
+    /// <p>The type of an entity.</p>
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
         self.inner = self.inner.entity_type(input);
         self
     }
-    /// <p></p>
+    /// <p>The type of an entity.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
         self.inner = self.inner.set_entity_type(input);
         self
     }
-    /// <p></p>
+    /// <p>The type of an entity.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
         self.inner.get_entity_type()
     }
-    /// <p></p>
+    /// <p>The revision of an asset.</p>
     pub fn entity_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_revision(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The revision of an asset.</p>
     pub fn set_entity_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_revision(input);
         self
     }
-    /// <p></p>
+    /// <p>The revision of an asset.</p>
     pub fn get_entity_revision(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entity_revision()
     }
-    /// <p></p>
+    /// <p>Specifies whether to publish or unpublish a listing.</p>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.inner = self.inner.action(input);
         self
     }
-    /// <p></p>
+    /// <p>Specifies whether to publish or unpublish a listing.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
-    /// <p></p>
+    /// <p>Specifies whether to publish or unpublish a listing.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
         self.inner.get_action()
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p></p>
+    /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

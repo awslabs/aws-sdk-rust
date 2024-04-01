@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteListingInput {
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The ID of the listing to be deleted.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteListingInput {
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
         self.domain_identifier.as_deref()
     }
-    /// <p></p>
+    /// <p>The ID of the listing to be deleted.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteListingInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteListingInputBuilder {
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_identifier = input;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_identifier
     }
-    /// <p></p>
+    /// <p>The ID of the listing to be deleted.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the listing to be deleted.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the listing to be deleted.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

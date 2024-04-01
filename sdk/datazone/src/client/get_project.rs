@@ -10,8 +10,8 @@ impl super::Client {
     ///   - [`id(String)`](crate::operation::get_project::GetProjectOutput::id): <p>&gt;The ID of the project.</p>
     ///   - [`name(String)`](crate::operation::get_project::GetProjectOutput::name): <p>The name of the project.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_project::GetProjectOutput::description): <p>The description of the project.</p>
-    ///   - [`project_status(Option<ProjectStatus>)`](crate::operation::get_project::GetProjectOutput::project_status): Status of the project
-    ///   - [`failure_reasons(Option<Vec::<ProjectDeletionError>>)`](crate::operation::get_project::GetProjectOutput::failure_reasons): Reasons for failed project deletion
+    ///   - [`project_status(Option<ProjectStatus>)`](crate::operation::get_project::GetProjectOutput::project_status): <p>The status of the project.</p>
+    ///   - [`failure_reasons(Option<Vec::<ProjectDeletionError>>)`](crate::operation::get_project::GetProjectOutput::failure_reasons): <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     ///   - [`created_by(String)`](crate::operation::get_project::GetProjectOutput::created_by): <p>The Amazon DataZone user who created the project.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_project::GetProjectOutput::created_at): <p>The timestamp of when the project was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_project::GetProjectOutput::last_updated_at): <p>The timestamp of when the project was last updated.</p>

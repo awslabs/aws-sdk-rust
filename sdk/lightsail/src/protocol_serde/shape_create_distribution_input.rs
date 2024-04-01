@@ -54,5 +54,11 @@ pub fn ser_create_distribution_input_input(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.certificate_name {
+        object.key("certificateName").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.viewer_minimum_tls_protocol_version {
+        object.key("viewerMinimumTlsProtocolVersion").string(var_19.as_str());
+    }
     Ok(())
 }

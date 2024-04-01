@@ -19,6 +19,15 @@ pub struct UpdateDistributionInput {
     pub cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
     /// <p>Indicates whether to enable the distribution.</p>
     pub is_enabled: ::std::option::Option<bool>,
+    /// <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the distribution.</p>
+    pub viewer_minimum_tls_protocol_version: ::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum>,
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub certificate_name: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as <code>d111111abcdef8.cloudfront.net</code>.</p>
+    /// <p>Set this value to <code>false</code> to attach a new certificate to the distribution.</p>
+    pub use_default_certificate: ::std::option::Option<bool>,
 }
 impl UpdateDistributionInput {
     /// <p>The name of the distribution to update.</p>
@@ -51,6 +60,21 @@ impl UpdateDistributionInput {
     pub fn is_enabled(&self) -> ::std::option::Option<bool> {
         self.is_enabled
     }
+    /// <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the distribution.</p>
+    pub fn viewer_minimum_tls_protocol_version(&self) -> ::std::option::Option<&crate::types::ViewerMinimumTlsProtocolVersionEnum> {
+        self.viewer_minimum_tls_protocol_version.as_ref()
+    }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn certificate_name(&self) -> ::std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as <code>d111111abcdef8.cloudfront.net</code>.</p>
+    /// <p>Set this value to <code>false</code> to attach a new certificate to the distribution.</p>
+    pub fn use_default_certificate(&self) -> ::std::option::Option<bool> {
+        self.use_default_certificate
+    }
 }
 impl UpdateDistributionInput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionInput`](crate::operation::update_distribution::UpdateDistributionInput).
@@ -69,6 +93,9 @@ pub struct UpdateDistributionInputBuilder {
     pub(crate) cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
     pub(crate) cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
     pub(crate) is_enabled: ::std::option::Option<bool>,
+    pub(crate) viewer_minimum_tls_protocol_version: ::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum>,
+    pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
+    pub(crate) use_default_certificate: ::std::option::Option<bool>,
 }
 impl UpdateDistributionInputBuilder {
     /// <p>The name of the distribution to update.</p>
@@ -174,6 +201,60 @@ impl UpdateDistributionInputBuilder {
     pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
         &self.is_enabled
     }
+    /// <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the distribution.</p>
+    pub fn viewer_minimum_tls_protocol_version(mut self, input: crate::types::ViewerMinimumTlsProtocolVersionEnum) -> Self {
+        self.viewer_minimum_tls_protocol_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the distribution.</p>
+    pub fn set_viewer_minimum_tls_protocol_version(
+        mut self,
+        input: ::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum>,
+    ) -> Self {
+        self.viewer_minimum_tls_protocol_version = input;
+        self
+    }
+    /// <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the distribution.</p>
+    pub fn get_viewer_minimum_tls_protocol_version(&self) -> &::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum> {
+        &self.viewer_minimum_tls_protocol_version
+    }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_name = input;
+        self
+    }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
+    }
+    /// <p>Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as <code>d111111abcdef8.cloudfront.net</code>.</p>
+    /// <p>Set this value to <code>false</code> to attach a new certificate to the distribution.</p>
+    pub fn use_default_certificate(mut self, input: bool) -> Self {
+        self.use_default_certificate = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as <code>d111111abcdef8.cloudfront.net</code>.</p>
+    /// <p>Set this value to <code>false</code> to attach a new certificate to the distribution.</p>
+    pub fn set_use_default_certificate(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_default_certificate = input;
+        self
+    }
+    /// <p>Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as <code>d111111abcdef8.cloudfront.net</code>.</p>
+    /// <p>Set this value to <code>false</code> to attach a new certificate to the distribution.</p>
+    pub fn get_use_default_certificate(&self) -> &::std::option::Option<bool> {
+        &self.use_default_certificate
+    }
     /// Consumes the builder and constructs a [`UpdateDistributionInput`](crate::operation::update_distribution::UpdateDistributionInput).
     pub fn build(
         self,
@@ -185,6 +266,9 @@ impl UpdateDistributionInputBuilder {
             cache_behavior_settings: self.cache_behavior_settings,
             cache_behaviors: self.cache_behaviors,
             is_enabled: self.is_enabled,
+            viewer_minimum_tls_protocol_version: self.viewer_minimum_tls_protocol_version,
+            certificate_name: self.certificate_name,
+            use_default_certificate: self.use_default_certificate,
         })
     }
 }

@@ -37,6 +37,7 @@ pub struct RejectChoiceBuilder {
 }
 impl RejectChoiceBuilder {
     /// <p>Specifies the target (for example, a column name) where a prediction can be rejected.</p>
+    /// This field is required.
     pub fn prediction_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prediction_target = ::std::option::Option::Some(input.into());
         self

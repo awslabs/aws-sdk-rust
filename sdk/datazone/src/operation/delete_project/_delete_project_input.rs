@@ -7,7 +7,7 @@ pub struct DeleteProjectInput {
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the project that is to be deleted.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// Optional flag to asynchronously delete child entities within the project
+    /// <p>Specifies the optional flag to delete all child entities within the project.</p>
     pub skip_deletion_check: ::std::option::Option<bool>,
 }
 impl DeleteProjectInput {
@@ -19,7 +19,7 @@ impl DeleteProjectInput {
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// Optional flag to asynchronously delete child entities within the project
+    /// <p>Specifies the optional flag to delete all child entities within the project.</p>
     pub fn skip_deletion_check(&self) -> ::std::option::Option<bool> {
         self.skip_deletion_check
     }
@@ -70,17 +70,17 @@ impl DeleteProjectInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// Optional flag to asynchronously delete child entities within the project
+    /// <p>Specifies the optional flag to delete all child entities within the project.</p>
     pub fn skip_deletion_check(mut self, input: bool) -> Self {
         self.skip_deletion_check = ::std::option::Option::Some(input);
         self
     }
-    /// Optional flag to asynchronously delete child entities within the project
+    /// <p>Specifies the optional flag to delete all child entities within the project.</p>
     pub fn set_skip_deletion_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_deletion_check = input;
         self
     }
-    /// Optional flag to asynchronously delete child entities within the project
+    /// <p>Specifies the optional flag to delete all child entities within the project.</p>
     pub fn get_skip_deletion_check(&self) -> &::std::option::Option<bool> {
         &self.skip_deletion_check
     }

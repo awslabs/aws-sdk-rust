@@ -7,6 +7,9 @@ pub mod accept_predictions;
 /// Types for the `AcceptSubscriptionRequest` operation.
 pub mod accept_subscription_request;
 
+/// Types for the `CancelMetadataGenerationRun` operation.
+pub mod cancel_metadata_generation_run;
+
 /// Types for the `CancelSubscription` operation.
 pub mod cancel_subscription;
 
@@ -157,6 +160,9 @@ pub mod get_iam_portal_login_url;
 /// Types for the `GetListing` operation.
 pub mod get_listing;
 
+/// Types for the `GetMetadataGenerationRun` operation.
+pub mod get_metadata_generation_run;
+
 /// Types for the `GetProject` operation.
 pub mod get_project;
 
@@ -201,6 +207,9 @@ pub mod list_environment_profiles;
 
 /// Types for the `ListEnvironments` operation.
 pub mod list_environments;
+
+/// Types for the `ListMetadataGenerationRuns` operation.
+pub mod list_metadata_generation_runs;
 
 /// Types for the `ListNotifications` operation.
 pub mod list_notifications;
@@ -255,6 +264,9 @@ pub mod search_user_profiles;
 
 /// Types for the `StartDataSourceRun` operation.
 pub mod start_data_source_run;
+
+/// Types for the `StartMetadataGenerationRun` operation.
+pub mod start_metadata_generation_run;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

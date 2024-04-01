@@ -19,7 +19,7 @@ pub struct GetSubscriptionOutput {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The principal that owns the subscription.</p>
     pub subscribed_principal: ::std::option::Option<crate::types::SubscribedPrincipal>,
-    /// <p></p>
+    /// <p>The details of the published asset for which the subscription grant is created.</p>
     pub subscribed_listing: ::std::option::Option<crate::types::SubscribedListing>,
     /// <p>The ID of the subscription request.</p>
     pub subscription_request_id: ::std::option::Option<::std::string::String>,
@@ -63,7 +63,7 @@ impl GetSubscriptionOutput {
     pub fn subscribed_principal(&self) -> ::std::option::Option<&crate::types::SubscribedPrincipal> {
         self.subscribed_principal.as_ref()
     }
-    /// <p></p>
+    /// <p>The details of the published asset for which the subscription grant is created.</p>
     pub fn subscribed_listing(&self) -> ::std::option::Option<&crate::types::SubscribedListing> {
         self.subscribed_listing.as_ref()
     }
@@ -225,18 +225,18 @@ impl GetSubscriptionOutputBuilder {
     pub fn get_subscribed_principal(&self) -> &::std::option::Option<crate::types::SubscribedPrincipal> {
         &self.subscribed_principal
     }
-    /// <p></p>
+    /// <p>The details of the published asset for which the subscription grant is created.</p>
     /// This field is required.
     pub fn subscribed_listing(mut self, input: crate::types::SubscribedListing) -> Self {
         self.subscribed_listing = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The details of the published asset for which the subscription grant is created.</p>
     pub fn set_subscribed_listing(mut self, input: ::std::option::Option<crate::types::SubscribedListing>) -> Self {
         self.subscribed_listing = input;
         self
     }
-    /// <p></p>
+    /// <p>The details of the published asset for which the subscription grant is created.</p>
     pub fn get_subscribed_listing(&self) -> &::std::option::Option<crate::types::SubscribedListing> {
         &self.subscribed_listing
     }

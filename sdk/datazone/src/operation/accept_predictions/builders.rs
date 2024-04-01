@@ -122,31 +122,31 @@ impl AcceptPredictionsFluentBuilder {
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }
-    /// <p></p>
+    /// <p>The identifier of the asset.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the asset.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the asset.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision(input);
         self
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_revision()
     }
@@ -168,17 +168,17 @@ impl AcceptPredictionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_accept_choices`](Self::set_accept_choices).
     ///
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
     pub fn accept_choices(mut self, input: crate::types::AcceptChoice) -> Self {
         self.inner = self.inner.accept_choices(input);
         self
     }
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
     pub fn set_accept_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceptChoice>>) -> Self {
         self.inner = self.inner.set_accept_choices(input);
         self
     }
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
     pub fn get_accept_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceptChoice>> {
         self.inner.get_accept_choices()
     }

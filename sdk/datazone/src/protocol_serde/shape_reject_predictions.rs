@@ -32,6 +32,20 @@ pub fn de_reject_predictions_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::reject_predictions::RejectPredictionsError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::reject_predictions::RejectPredictionsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::reject_predictions::RejectPredictionsError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::reject_predictions::RejectPredictionsError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -7,7 +7,7 @@ pub struct CreateSubscriptionRequestInput {
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon DataZone principals for whom the subscription request is created.</p>
     pub subscribed_principals: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipalInput>>,
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub subscribed_listings: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>>,
     /// <p>The reason for the subscription request.</p>
     pub request_reason: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl CreateSubscriptionRequestInput {
     pub fn subscribed_principals(&self) -> &[crate::types::SubscribedPrincipalInput] {
         self.subscribed_principals.as_deref().unwrap_or_default()
     }
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribed_listings.is_none()`.
     pub fn subscribed_listings(&self) -> &[crate::types::SubscribedListingInput] {
@@ -108,19 +108,19 @@ impl CreateSubscriptionRequestInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subscribed_listings`](Self::set_subscribed_listings).
     ///
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn subscribed_listings(mut self, input: crate::types::SubscribedListingInput) -> Self {
         let mut v = self.subscribed_listings.unwrap_or_default();
         v.push(input);
         self.subscribed_listings = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn set_subscribed_listings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>>) -> Self {
         self.subscribed_listings = input;
         self
     }
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn get_subscribed_listings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>> {
         &self.subscribed_listings
     }

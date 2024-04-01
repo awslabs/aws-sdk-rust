@@ -21,7 +21,7 @@ pub struct JobFlowInstancesConfig {
     pub ec2_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which the cluster runs.</p>
     pub placement: ::std::option::Option<crate::types::PlacementType>,
-    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
+    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
     pub keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,
     /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
     pub termination_protected: ::std::option::Option<bool>,
@@ -82,7 +82,7 @@ impl JobFlowInstancesConfig {
     pub fn placement(&self) -> ::std::option::Option<&crate::types::PlacementType> {
         self.placement.as_ref()
     }
-    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
+    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
     pub fn keep_job_flow_alive_when_no_steps(&self) -> ::std::option::Option<bool> {
         self.keep_job_flow_alive_when_no_steps
     }
@@ -285,17 +285,17 @@ impl JobFlowInstancesConfigBuilder {
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::PlacementType> {
         &self.placement
     }
-    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
+    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
     pub fn keep_job_flow_alive_when_no_steps(mut self, input: bool) -> Self {
         self.keep_job_flow_alive_when_no_steps = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
+    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
     pub fn set_keep_job_flow_alive_when_no_steps(mut self, input: ::std::option::Option<bool>) -> Self {
         self.keep_job_flow_alive_when_no_steps = input;
         self
     }
-    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
+    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
     pub fn get_keep_job_flow_alive_when_no_steps(&self) -> &::std::option::Option<bool> {
         &self.keep_job_flow_alive_when_no_steps
     }

@@ -166,6 +166,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS X-Ray | [aws-sdk-xray](https://crates.io/crates/aws-sdk-xray) ([docs](https://docs.rs/aws-sdk-xray)) |
 | AWS re:Post Private | [aws-sdk-repostspace](https://crates.io/crates/aws-sdk-repostspace) ([docs](https://docs.rs/aws-sdk-repostspace)) |
 | AWSBillingConductor | [aws-sdk-billingconductor](https://crates.io/crates/aws-sdk-billingconductor) ([docs](https://docs.rs/aws-sdk-billingconductor)) |
+| AWSDeadlineCloud | [aws-sdk-deadline](https://crates.io/crates/aws-sdk-deadline) ([docs](https://docs.rs/aws-sdk-deadline)) |
 | AWSKendraFrontendService | [aws-sdk-kendra](https://crates.io/crates/aws-sdk-kendra) ([docs](https://docs.rs/aws-sdk-kendra)) |
 | AWSMainframeModernization | [aws-sdk-m2](https://crates.io/crates/aws-sdk-m2) ([docs](https://docs.rs/aws-sdk-m2)) |
 | AWSMarketplace Metering | [aws-sdk-marketplacemetering](https://crates.io/crates/aws-sdk-marketplacemetering) ([docs](https://docs.rs/aws-sdk-marketplacemetering)) |

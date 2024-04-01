@@ -188,17 +188,17 @@ impl SearchTypesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_search_in`](Self::set_search_in).
     ///
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub fn search_in(mut self, input: crate::types::SearchInItem) -> Self {
         self.inner = self.inner.search_in(input);
         self
     }
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub fn set_search_in(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>>) -> Self {
         self.inner = self.inner.set_search_in(input);
         self
     }
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub fn get_search_in(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>> {
         self.inner.get_search_in()
     }
@@ -230,17 +230,17 @@ impl SearchTypesFluentBuilder {
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::SearchSort> {
         self.inner.get_sort()
     }
-    /// <p></p>
+    /// <p>Specifies whether the search is managed.</p>
     pub fn managed(mut self, input: bool) -> Self {
         self.inner = self.inner.managed(input);
         self
     }
-    /// <p></p>
+    /// <p>Specifies whether the search is managed.</p>
     pub fn set_managed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_managed(input);
         self
     }
-    /// <p></p>
+    /// <p>Specifies whether the search is managed.</p>
     pub fn get_managed(&self) -> &::std::option::Option<bool> {
         self.inner.get_managed()
     }

@@ -12,5 +12,11 @@ pub fn ser_input_origin(
     if let Some(var_3) = &input.protocol_policy {
         object.key("protocolPolicy").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.response_timeout {
+        object.key("responseTimeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
     Ok(())
 }

@@ -2,12 +2,14 @@
 
 /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AcceptChoice {
     /// <p>Specifies the target (for example, a column name) where a prediction can be accepted.</p>
     pub prediction_target: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) that can be accepted.</p>
     pub prediction_choice: ::std::option::Option<i32>,
+    /// <p>The edit of the prediction.</p>
+    pub edited_value: ::std::option::Option<::std::string::String>,
 }
 impl AcceptChoice {
     /// <p>Specifies the target (for example, a column name) where a prediction can be accepted.</p>
@@ -17,6 +19,19 @@ impl AcceptChoice {
     /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) that can be accepted.</p>
     pub fn prediction_choice(&self) -> ::std::option::Option<i32> {
         self.prediction_choice
+    }
+    /// <p>The edit of the prediction.</p>
+    pub fn edited_value(&self) -> ::std::option::Option<&str> {
+        self.edited_value.as_deref()
+    }
+}
+impl ::std::fmt::Debug for AcceptChoice {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AcceptChoice");
+        formatter.field("prediction_target", &self.prediction_target);
+        formatter.field("prediction_choice", &self.prediction_choice);
+        formatter.field("edited_value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl AcceptChoice {
@@ -28,13 +43,15 @@ impl AcceptChoice {
 
 /// A builder for [`AcceptChoice`](crate::types::AcceptChoice).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AcceptChoiceBuilder {
     pub(crate) prediction_target: ::std::option::Option<::std::string::String>,
     pub(crate) prediction_choice: ::std::option::Option<i32>,
+    pub(crate) edited_value: ::std::option::Option<::std::string::String>,
 }
 impl AcceptChoiceBuilder {
     /// <p>Specifies the target (for example, a column name) where a prediction can be accepted.</p>
+    /// This field is required.
     pub fn prediction_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prediction_target = ::std::option::Option::Some(input.into());
         self
@@ -62,11 +79,35 @@ impl AcceptChoiceBuilder {
     pub fn get_prediction_choice(&self) -> &::std::option::Option<i32> {
         &self.prediction_choice
     }
+    /// <p>The edit of the prediction.</p>
+    pub fn edited_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.edited_value = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The edit of the prediction.</p>
+    pub fn set_edited_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.edited_value = input;
+        self
+    }
+    /// <p>The edit of the prediction.</p>
+    pub fn get_edited_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edited_value
+    }
     /// Consumes the builder and constructs a [`AcceptChoice`](crate::types::AcceptChoice).
     pub fn build(self) -> crate::types::AcceptChoice {
         crate::types::AcceptChoice {
             prediction_target: self.prediction_target,
             prediction_choice: self.prediction_choice,
+            edited_value: self.edited_value,
         }
+    }
+}
+impl ::std::fmt::Debug for AcceptChoiceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AcceptChoiceBuilder");
+        formatter.field("prediction_target", &self.prediction_target);
+        formatter.field("prediction_choice", &self.prediction_choice);
+        formatter.field("edited_value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

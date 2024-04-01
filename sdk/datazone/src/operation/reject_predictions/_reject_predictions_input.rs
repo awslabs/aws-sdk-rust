@@ -7,11 +7,11 @@ pub struct RejectPredictionsInput {
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the prediction.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub revision: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>Specifies the rule (or the conditions) under which a prediction can be rejected.</p>
     pub reject_rule: ::std::option::Option<crate::types::RejectRule>,
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be rejected.</p>
     pub reject_choices: ::std::option::Option<::std::vec::Vec<crate::types::RejectChoice>>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -25,15 +25,15 @@ impl RejectPredictionsInput {
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn revision(&self) -> ::std::option::Option<&str> {
         self.revision.as_deref()
     }
-    /// <p></p>
+    /// <p>Specifies the rule (or the conditions) under which a prediction can be rejected.</p>
     pub fn reject_rule(&self) -> ::std::option::Option<&crate::types::RejectRule> {
         self.reject_rule.as_ref()
     }
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be rejected.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reject_choices.is_none()`.
     pub fn reject_choices(&self) -> &[crate::types::RejectChoice] {
@@ -93,31 +93,31 @@ impl RejectPredictionsInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision
     }
-    /// <p></p>
+    /// <p>Specifies the rule (or the conditions) under which a prediction can be rejected.</p>
     pub fn reject_rule(mut self, input: crate::types::RejectRule) -> Self {
         self.reject_rule = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Specifies the rule (or the conditions) under which a prediction can be rejected.</p>
     pub fn set_reject_rule(mut self, input: ::std::option::Option<crate::types::RejectRule>) -> Self {
         self.reject_rule = input;
         self
     }
-    /// <p></p>
+    /// <p>Specifies the rule (or the conditions) under which a prediction can be rejected.</p>
     pub fn get_reject_rule(&self) -> &::std::option::Option<crate::types::RejectRule> {
         &self.reject_rule
     }
@@ -125,19 +125,19 @@ impl RejectPredictionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_reject_choices`](Self::set_reject_choices).
     ///
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be rejected.</p>
     pub fn reject_choices(mut self, input: crate::types::RejectChoice) -> Self {
         let mut v = self.reject_choices.unwrap_or_default();
         v.push(input);
         self.reject_choices = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be rejected.</p>
     pub fn set_reject_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RejectChoice>>) -> Self {
         self.reject_choices = input;
         self
     }
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be rejected.</p>
     pub fn get_reject_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RejectChoice>> {
         &self.reject_choices
     }

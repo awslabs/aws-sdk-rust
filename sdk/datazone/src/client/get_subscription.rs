@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_subscription::GetSubscriptionOutput::created_at): <p>The timestamp of when the subscription was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_subscription::GetSubscriptionOutput::updated_at): <p>The timestamp of when the subscription was updated.</p>
     ///   - [`subscribed_principal(Option<SubscribedPrincipal>)`](crate::operation::get_subscription::GetSubscriptionOutput::subscribed_principal): <p>The principal that owns the subscription.</p>
-    ///   - [`subscribed_listing(Option<SubscribedListing>)`](crate::operation::get_subscription::GetSubscriptionOutput::subscribed_listing): <p></p>
+    ///   - [`subscribed_listing(Option<SubscribedListing>)`](crate::operation::get_subscription::GetSubscriptionOutput::subscribed_listing): <p>The details of the published asset for which the subscription grant is created.</p>
     ///   - [`subscription_request_id(Option<String>)`](crate::operation::get_subscription::GetSubscriptionOutput::subscription_request_id): <p>The ID of the subscription request.</p>
     ///   - [`retain_permissions(Option<bool>)`](crate::operation::get_subscription::GetSubscriptionOutput::retain_permissions): <p>The retain permissions of the subscription.</p>
     /// - On failure, responds with [`SdkError<GetSubscriptionError>`](crate::operation::get_subscription::GetSubscriptionError)

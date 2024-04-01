@@ -1,11 +1,11 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "examples/cross_service",
     "examples/webassembly",
     "examples/test-utils",
-    "examples/lambda",
     "examples/examples",
-    "examples/cross_service",
+    "examples/lambda",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -143,6 +143,7 @@ members = [
     "sdk/datasync",
     "sdk/datazone",
     "sdk/dax",
+    "sdk/deadline",
     "sdk/detective",
     "sdk/devicefarm",
     "sdk/devopsguru",

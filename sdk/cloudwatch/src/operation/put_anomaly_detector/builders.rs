@@ -23,6 +23,7 @@ impl PutAnomalyDetectorInputBuilder {
 /// Fluent builder constructing a request to `PutAnomalyDetector`.
 ///
 /// <p>Creates an anomaly detection model for a CloudWatch metric. You can use the model to display a band of expected normal values when the metric is graphed.</p>
+/// <p>If you have enabled unified cross-account observability, and this account is a monitoring account, the metric can be in the same account or a source account. You can specify the account ID in the object you specify in the <code>SingleMetricAnomalyDetector</code> parameter.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch Anomaly Detection</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAnomalyDetectorFluentBuilder {
@@ -210,7 +211,7 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <li>
     /// <p><code>Stat</code></p></li>
     /// <li>
-    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn single_metric_anomaly_detector(mut self, input: crate::types::SingleMetricAnomalyDetector) -> Self {
@@ -229,7 +230,7 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <li>
     /// <p><code>Stat</code></p></li>
     /// <li>
-    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn set_single_metric_anomaly_detector(mut self, input: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>) -> Self {
@@ -248,7 +249,7 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <li>
     /// <p><code>Stat</code></p></li>
     /// <li>
-    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn get_single_metric_anomaly_detector(&self) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {

@@ -3,21 +3,21 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetListing`](crate::operation::get_listing::builders::GetListingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::set_domain_identifier):<br>required: **true**<br><p></p><br>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::set_identifier):<br>required: **true**<br><p></p><br>
-    ///   - [`listing_revision(impl Into<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::listing_revision) / [`set_listing_revision(Option<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::set_listing_revision):<br>required: **false**<br><p></p><br>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the listing.</p><br>
+    ///   - [`listing_revision(impl Into<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::listing_revision) / [`set_listing_revision(Option<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::set_listing_revision):<br>required: **false**<br><p>The revision of the listing.</p><br>
     /// - On success, responds with [`GetListingOutput`](crate::operation::get_listing::GetListingOutput) with field(s):
-    ///   - [`domain_id(String)`](crate::operation::get_listing::GetListingOutput::domain_id): <p></p>
-    ///   - [`id(String)`](crate::operation::get_listing::GetListingOutput::id): <p></p>
-    ///   - [`listing_revision(String)`](crate::operation::get_listing::GetListingOutput::listing_revision): <p></p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_listing::GetListingOutput::created_at): <p></p>
+    ///   - [`domain_id(String)`](crate::operation::get_listing::GetListingOutput::domain_id): <p>The ID of the Amazon DataZone domain.</p>
+    ///   - [`id(String)`](crate::operation::get_listing::GetListingOutput::id): <p>The ID of the listing.</p>
+    ///   - [`listing_revision(String)`](crate::operation::get_listing::GetListingOutput::listing_revision): <p>The revision of a listing.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_listing::GetListingOutput::created_at): <p>The timestamp of when the listing was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_listing::GetListingOutput::updated_at): <p>The timestamp of when the listing was updated.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::get_listing::GetListingOutput::created_by): <p>The Amazon DataZone user who created the listing.</p>
     ///   - [`updated_by(Option<String>)`](crate::operation::get_listing::GetListingOutput::updated_by): <p>The Amazon DataZone user who updated the listing.</p>
-    ///   - [`item(Option<ListingItem>)`](crate::operation::get_listing::GetListingOutput::item): <p></p>
-    ///   - [`name(Option<String>)`](crate::operation::get_listing::GetListingOutput::name): <p></p>
-    ///   - [`description(Option<String>)`](crate::operation::get_listing::GetListingOutput::description): <p></p>
-    ///   - [`status(Option<ListingStatus>)`](crate::operation::get_listing::GetListingOutput::status): <p></p>
+    ///   - [`item(Option<ListingItem>)`](crate::operation::get_listing::GetListingOutput::item): <p>The details of a listing.</p>
+    ///   - [`name(Option<String>)`](crate::operation::get_listing::GetListingOutput::name): <p>The name of the listing.</p>
+    ///   - [`description(Option<String>)`](crate::operation::get_listing::GetListingOutput::description): <p>The description of the listing.</p>
+    ///   - [`status(Option<ListingStatus>)`](crate::operation::get_listing::GetListingOutput::status): <p>The status of the listing.</p>
     /// - On failure, responds with [`SdkError<GetListingError>`](crate::operation::get_listing::GetListingError)
     pub fn get_listing(&self) -> crate::operation::get_listing::builders::GetListingFluentBuilder {
         crate::operation::get_listing::builders::GetListingFluentBuilder::new(self.handle.clone())

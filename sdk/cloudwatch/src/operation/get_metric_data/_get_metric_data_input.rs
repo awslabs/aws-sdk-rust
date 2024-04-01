@@ -26,6 +26,7 @@ pub struct GetMetricDataInput {
     /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set of data points.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+    /// <p>If you omit this parameter, the default of <code>TimestampDescending</code> is used.</p>
     pub scan_by: ::std::option::Option<crate::types::ScanBy>,
     /// <p>The maximum number of data points the request should return before paginating. If you omit this, the default of 100,800 is used.</p>
     pub max_datapoints: ::std::option::Option<i32>,
@@ -66,6 +67,7 @@ impl GetMetricDataInput {
         self.next_token.as_deref()
     }
     /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+    /// <p>If you omit this parameter, the default of <code>TimestampDescending</code> is used.</p>
     pub fn scan_by(&self) -> ::std::option::Option<&crate::types::ScanBy> {
         self.scan_by.as_ref()
     }
@@ -205,16 +207,19 @@ impl GetMetricDataInputBuilder {
         &self.next_token
     }
     /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+    /// <p>If you omit this parameter, the default of <code>TimestampDescending</code> is used.</p>
     pub fn scan_by(mut self, input: crate::types::ScanBy) -> Self {
         self.scan_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+    /// <p>If you omit this parameter, the default of <code>TimestampDescending</code> is used.</p>
     pub fn set_scan_by(mut self, input: ::std::option::Option<crate::types::ScanBy>) -> Self {
         self.scan_by = input;
         self
     }
     /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+    /// <p>If you omit this parameter, the default of <code>TimestampDescending</code> is used.</p>
     pub fn get_scan_by(&self) -> &::std::option::Option<crate::types::ScanBy> {
         &self.scan_by
     }

@@ -7,7 +7,7 @@ pub struct DeleteDomainInput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// Optional flag to delete all child entities within the domain
+    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
     pub skip_deletion_check: ::std::option::Option<bool>,
 }
 impl DeleteDomainInput {
@@ -19,7 +19,7 @@ impl DeleteDomainInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// Optional flag to delete all child entities within the domain
+    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
     pub fn skip_deletion_check(&self) -> ::std::option::Option<bool> {
         self.skip_deletion_check
     }
@@ -69,17 +69,17 @@ impl DeleteDomainInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// Optional flag to delete all child entities within the domain
+    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
     pub fn skip_deletion_check(mut self, input: bool) -> Self {
         self.skip_deletion_check = ::std::option::Option::Some(input);
         self
     }
-    /// Optional flag to delete all child entities within the domain
+    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
     pub fn set_skip_deletion_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_deletion_check = input;
         self
     }
-    /// Optional flag to delete all child entities within the domain
+    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
     pub fn get_skip_deletion_check(&self) -> &::std::option::Option<bool> {
         &self.skip_deletion_check
     }

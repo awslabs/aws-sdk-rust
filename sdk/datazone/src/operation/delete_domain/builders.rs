@@ -136,17 +136,17 @@ impl DeleteDomainFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// Optional flag to delete all child entities within the domain
+    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
     pub fn skip_deletion_check(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_deletion_check(input);
         self
     }
-    /// Optional flag to delete all child entities within the domain
+    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
     pub fn set_skip_deletion_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_deletion_check(input);
         self
     }
-    /// Optional flag to delete all child entities within the domain
+    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
     pub fn get_skip_deletion_check(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_deletion_check()
     }

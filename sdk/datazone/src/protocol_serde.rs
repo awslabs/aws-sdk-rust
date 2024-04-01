@@ -27,6 +27,8 @@ pub(crate) mod shape_accept_predictions;
 
 pub(crate) mod shape_accept_subscription_request;
 
+pub(crate) mod shape_cancel_metadata_generation_run;
+
 pub(crate) mod shape_cancel_subscription;
 
 pub(crate) mod shape_create_asset;
@@ -127,6 +129,8 @@ pub(crate) mod shape_get_iam_portal_login_url;
 
 pub(crate) mod shape_get_listing;
 
+pub(crate) mod shape_get_metadata_generation_run;
+
 pub(crate) mod shape_get_project;
 
 pub(crate) mod shape_get_subscription;
@@ -156,6 +160,8 @@ pub(crate) mod shape_list_environment_blueprints;
 pub(crate) mod shape_list_environment_profiles;
 
 pub(crate) mod shape_list_environments;
+
+pub(crate) mod shape_list_metadata_generation_runs;
 
 pub(crate) mod shape_list_notifications;
 
@@ -192,6 +198,8 @@ pub(crate) mod shape_search_types;
 pub(crate) mod shape_search_user_profiles;
 
 pub(crate) mod shape_start_data_source_run;
+
+pub(crate) mod shape_start_metadata_generation_run;
 
 pub(crate) mod shape_tag_resource;
 
@@ -301,6 +309,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_data_source_run_input;
 
+pub(crate) mod shape_start_metadata_generation_run_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -408,6 +418,10 @@ pub(crate) mod shape_import_list;
 pub(crate) mod shape_listing_item;
 
 pub(crate) mod shape_member;
+
+pub(crate) mod shape_metadata_generation_run_target;
+
+pub(crate) mod shape_metadata_generation_runs;
 
 pub(crate) mod shape_model;
 
@@ -532,6 +546,8 @@ pub(crate) mod shape_import;
 pub(crate) mod shape_listing_revision;
 
 pub(crate) mod shape_listing_revision_input;
+
+pub(crate) mod shape_metadata_generation_run_item;
 
 pub(crate) mod shape_notification_output;
 

@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`project_id(String)`](crate::operation::get_data_source::GetDataSourceOutput::project_id): <p>The ID of the project where the data source creates and publishes assets.</p>
     ///   - [`environment_id(String)`](crate::operation::get_data_source::GetDataSourceOutput::environment_id): <p>The ID of the environment where this data source creates and publishes assets,</p>
     ///   - [`configuration(Option<DataSourceConfigurationOutput>)`](crate::operation::get_data_source::GetDataSourceOutput::configuration): <p>The configuration of the data source.</p>
-    ///   - [`recommendation(Option<RecommendationConfiguration>)`](crate::operation::get_data_source::GetDataSourceOutput::recommendation): <p></p>
+    ///   - [`recommendation(Option<RecommendationConfiguration>)`](crate::operation::get_data_source::GetDataSourceOutput::recommendation): <p>The recommendation configuration of the data source.</p>
     ///   - [`enable_setting(Option<EnableSetting>)`](crate::operation::get_data_source::GetDataSourceOutput::enable_setting): <p>Specifies whether this data source is enabled or not.</p>
     ///   - [`publish_on_import(Option<bool>)`](crate::operation::get_data_source::GetDataSourceOutput::publish_on_import): <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
     ///   - [`asset_forms_output(Option<Vec::<FormOutput>>)`](crate::operation::get_data_source::GetDataSourceOutput::asset_forms_output): <p>The metadata forms attached to the assets created by this data source.</p>

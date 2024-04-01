@@ -13,8 +13,8 @@ impl super::Client {
     ///   - [`id(String)`](crate::operation::update_project::UpdateProjectOutput::id): <p>The identifier of the project that is to be updated.</p>
     ///   - [`name(String)`](crate::operation::update_project::UpdateProjectOutput::name): <p>The name of the project that is to be updated.</p>
     ///   - [`description(Option<String>)`](crate::operation::update_project::UpdateProjectOutput::description): <p>The description of the project that is to be updated.</p>
-    ///   - [`project_status(Option<ProjectStatus>)`](crate::operation::update_project::UpdateProjectOutput::project_status): Status of the project
-    ///   - [`failure_reasons(Option<Vec::<ProjectDeletionError>>)`](crate::operation::update_project::UpdateProjectOutput::failure_reasons): Reasons for failed project deletion
+    ///   - [`project_status(Option<ProjectStatus>)`](crate::operation::update_project::UpdateProjectOutput::project_status): <p>The status of the project.</p>
+    ///   - [`failure_reasons(Option<Vec::<ProjectDeletionError>>)`](crate::operation::update_project::UpdateProjectOutput::failure_reasons): <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     ///   - [`created_by(String)`](crate::operation::update_project::UpdateProjectOutput::created_by): <p>The Amazon DataZone user who created the project.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::update_project::UpdateProjectOutput::created_at): <p>The timestamp of when the project was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::update_project::UpdateProjectOutput::last_updated_at): <p>The timestamp of when the project was last updated.</p>

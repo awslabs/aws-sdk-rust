@@ -140,6 +140,8 @@ mod accept_predictions;
 
 mod accept_subscription_request;
 
+mod cancel_metadata_generation_run;
+
 mod cancel_subscription;
 
 mod create_asset;
@@ -267,6 +269,8 @@ mod get_iam_portal_login_url;
 
 mod get_listing;
 
+mod get_metadata_generation_run;
+
 mod get_project;
 
 mod get_subscription;
@@ -296,6 +300,8 @@ mod list_environment_blueprints;
 mod list_environment_profiles;
 
 mod list_environments;
+
+mod list_metadata_generation_runs;
 
 mod list_notifications;
 
@@ -332,6 +338,8 @@ mod search_types;
 mod search_user_profiles;
 
 mod start_data_source_run;
+
+mod start_metadata_generation_run;
 
 mod tag_resource;
 

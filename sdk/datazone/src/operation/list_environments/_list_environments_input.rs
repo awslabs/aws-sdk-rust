@@ -19,7 +19,7 @@ pub struct ListEnvironmentsInput {
     pub environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The provider of the environment.</p>
     pub provider: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The name of the environment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of environments to return in a single call to <code>ListEnvironments</code>. When the number of environments to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironments</code> to list the next set of environments.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -59,7 +59,7 @@ impl ListEnvironmentsInput {
     pub fn provider(&self) -> ::std::option::Option<&str> {
         self.provider.as_deref()
     }
-    /// <p></p>
+    /// <p>The name of the environment.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -210,17 +210,17 @@ impl ListEnvironmentsInputBuilder {
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider
     }
-    /// <p></p>
+    /// <p>The name of the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p></p>
+    /// <p>The name of the environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

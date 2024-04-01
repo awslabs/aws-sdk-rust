@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_environments_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_metadata_generation_runs_output_output_next_token(
+    input: &crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_notifications_output_output_next_token(
     input: &crate::operation::list_notifications::ListNotificationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -275,6 +285,16 @@ pub(crate) fn lens_list_environments_output_output_items(
     input: crate::operation::list_environments::ListEnvironmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
     let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_metadata_generation_runs_output_output_items(
+    input: crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunItem>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 

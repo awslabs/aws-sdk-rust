@@ -136,17 +136,17 @@ impl CreateAssetFluentBuilder {
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn external_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_identifier(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn set_external_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_identifier(input);
         self
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn get_external_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_identifier()
     }

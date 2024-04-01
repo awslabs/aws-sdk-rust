@@ -9,7 +9,7 @@ pub struct ListProjectsInput {
     pub user_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a group.</p>
     pub group_identifier: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The name of the project.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>When the number of projects is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of projects, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl ListProjectsInput {
     pub fn group_identifier(&self) -> ::std::option::Option<&str> {
         self.group_identifier.as_deref()
     }
-    /// <p></p>
+    /// <p>The name of the project.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -116,17 +116,17 @@ impl ListProjectsInputBuilder {
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_identifier
     }
-    /// <p></p>
+    /// <p>The name of the project.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The name of the project.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p></p>
+    /// <p>The name of the project.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

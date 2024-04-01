@@ -21,7 +21,7 @@ pub struct GetDataSourceOutput {
     pub environment_id: ::std::string::String,
     /// <p>The configuration of the data source.</p>
     pub configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
-    /// <p></p>
+    /// <p>The recommendation configuration of the data source.</p>
     pub recommendation: ::std::option::Option<crate::types::RecommendationConfiguration>,
     /// <p>Specifies whether this data source is enabled or not.</p>
     pub enable_setting: ::std::option::Option<crate::types::EnableSetting>,
@@ -89,7 +89,7 @@ impl GetDataSourceOutput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationOutput> {
         self.configuration.as_ref()
     }
-    /// <p></p>
+    /// <p>The recommendation configuration of the data source.</p>
     pub fn recommendation(&self) -> ::std::option::Option<&crate::types::RecommendationConfiguration> {
         self.recommendation.as_ref()
     }
@@ -339,17 +339,17 @@ impl GetDataSourceOutputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfigurationOutput> {
         &self.configuration
     }
-    /// <p></p>
+    /// <p>The recommendation configuration of the data source.</p>
     pub fn recommendation(mut self, input: crate::types::RecommendationConfiguration) -> Self {
         self.recommendation = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The recommendation configuration of the data source.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::RecommendationConfiguration>) -> Self {
         self.recommendation = input;
         self
     }
-    /// <p></p>
+    /// <p>The recommendation configuration of the data source.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::RecommendationConfiguration> {
         &self.recommendation
     }

@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_name):<br>required: **true**<br><p>Asset name.</p><br>
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>Amazon DataZone domain where the asset is created.</p><br>
-    ///   - [`external_identifier(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::external_identifier) / [`set_external_identifier(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_external_identifier):<br>required: **false**<br><p></p><br>
+    ///   - [`external_identifier(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::external_identifier) / [`set_external_identifier(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_external_identifier):<br>required: **false**<br><p>The external identifier of the asset.</p><br>
     ///   - [`type_identifier(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::type_identifier) / [`set_type_identifier(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_type_identifier):<br>required: **true**<br><p>The unique identifier of this asset's type.</p><br>
     ///   - [`type_revision(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::type_revision) / [`set_type_revision(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_type_revision):<br>required: **false**<br><p>The revision of this asset's type.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_asset::builders::CreateAssetFluentBuilder::set_description):<br>required: **false**<br><p>Asset description.</p><br>
@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::create_asset::CreateAssetOutput::name): <p>The name of the created asset.</p>
     ///   - [`type_identifier(String)`](crate::operation::create_asset::CreateAssetOutput::type_identifier): <p>The identifier of the created asset type.</p>
     ///   - [`type_revision(String)`](crate::operation::create_asset::CreateAssetOutput::type_revision): <p>The revision type of the asset.</p>
-    ///   - [`external_identifier(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::external_identifier): <p></p>
+    ///   - [`external_identifier(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::external_identifier): <p>The external identifier of the asset.</p>
     ///   - [`revision(String)`](crate::operation::create_asset::CreateAssetOutput::revision): <p>The revision of the asset.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_asset::CreateAssetOutput::description): <p>The description of the created asset.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_asset::CreateAssetOutput::created_at): <p>The timestamp of when the asset was created.</p>
@@ -29,7 +29,7 @@ impl super::Client {
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::create_asset::CreateAssetOutput::glossary_terms): <p>The glossary terms that are attached to the created asset.</p>
     ///   - [`owning_project_id(String)`](crate::operation::create_asset::CreateAssetOutput::owning_project_id): <p>The ID of the Amazon DataZone project that owns the created asset.</p>
     ///   - [`domain_id(String)`](crate::operation::create_asset::CreateAssetOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the asset was created.</p>
-    ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::create_asset::CreateAssetOutput::listing): <p></p>
+    ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::create_asset::CreateAssetOutput::listing): <p>The details of an asset published in an Amazon DataZone catalog.</p>
     ///   - [`forms_output(Vec::<FormOutput>)`](crate::operation::create_asset::CreateAssetOutput::forms_output): <p>The metadata forms that are attached to the created asset.</p>
     ///   - [`read_only_forms_output(Option<Vec::<FormOutput>>)`](crate::operation::create_asset::CreateAssetOutput::read_only_forms_output): <p>The read-only metadata forms that are attached to the created asset.</p>
     ///   - [`prediction_configuration(Option<PredictionConfiguration>)`](crate::operation::create_asset::CreateAssetOutput::prediction_configuration): <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>

@@ -11,6 +11,8 @@ pub struct InputOrigin {
     pub region_name: ::std::option::Option<crate::types::RegionName>,
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
     pub protocol_policy: ::std::option::Option<crate::types::OriginProtocolPolicyEnum>,
+    /// <p>The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    pub response_timeout: ::std::option::Option<i32>,
 }
 impl InputOrigin {
     /// <p>The name of the origin resource.</p>
@@ -24,6 +26,10 @@ impl InputOrigin {
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
     pub fn protocol_policy(&self) -> ::std::option::Option<&crate::types::OriginProtocolPolicyEnum> {
         self.protocol_policy.as_ref()
+    }
+    /// <p>The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    pub fn response_timeout(&self) -> ::std::option::Option<i32> {
+        self.response_timeout
     }
 }
 impl InputOrigin {
@@ -40,6 +46,7 @@ pub struct InputOriginBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<crate::types::RegionName>,
     pub(crate) protocol_policy: ::std::option::Option<crate::types::OriginProtocolPolicyEnum>,
+    pub(crate) response_timeout: ::std::option::Option<i32>,
 }
 impl InputOriginBuilder {
     /// <p>The name of the origin resource.</p>
@@ -84,12 +91,27 @@ impl InputOriginBuilder {
     pub fn get_protocol_policy(&self) -> &::std::option::Option<crate::types::OriginProtocolPolicyEnum> {
         &self.protocol_policy
     }
+    /// <p>The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    pub fn response_timeout(mut self, input: i32) -> Self {
+        self.response_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    pub fn set_response_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.response_timeout = input;
+        self
+    }
+    /// <p>The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
+    pub fn get_response_timeout(&self) -> &::std::option::Option<i32> {
+        &self.response_timeout
+    }
     /// Consumes the builder and constructs a [`InputOrigin`](crate::types::InputOrigin).
     pub fn build(self) -> crate::types::InputOrigin {
         crate::types::InputOrigin {
             name: self.name,
             region_name: self.region_name,
             protocol_policy: self.protocol_policy,
+            response_timeout: self.response_timeout,
         }
     }
 }

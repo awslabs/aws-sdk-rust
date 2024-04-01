@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteListing`](crate::operation::delete_listing::builders::DeleteListingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_listing::builders::DeleteListingFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_listing::builders::DeleteListingFluentBuilder::set_domain_identifier):<br>required: **true**<br><p></p><br>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_listing::builders::DeleteListingFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_listing::builders::DeleteListingFluentBuilder::set_identifier):<br>required: **true**<br><p></p><br>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_listing::builders::DeleteListingFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_listing::builders::DeleteListingFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_listing::builders::DeleteListingFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_listing::builders::DeleteListingFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the listing to be deleted.</p><br>
     /// - On success, responds with [`DeleteListingOutput`](crate::operation::delete_listing::DeleteListingOutput)
     /// - On failure, responds with [`SdkError<DeleteListingError>`](crate::operation::delete_listing::DeleteListingError)
     pub fn delete_listing(&self) -> crate::operation::delete_listing::builders::DeleteListingFluentBuilder {

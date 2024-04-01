@@ -5,13 +5,13 @@
 pub struct AcceptPredictionsInput {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The identifier of the asset.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub revision: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the rule (or the conditions) under which a prediction can be accepted.</p>
     pub accept_rule: ::std::option::Option<crate::types::AcceptRule>,
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
     pub accept_choices: ::std::option::Option<::std::vec::Vec<crate::types::AcceptChoice>>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,11 +21,11 @@ impl AcceptPredictionsInput {
     pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
         self.domain_identifier.as_deref()
     }
-    /// <p></p>
+    /// <p>The identifier of the asset.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn revision(&self) -> ::std::option::Option<&str> {
         self.revision.as_deref()
     }
@@ -33,7 +33,7 @@ impl AcceptPredictionsInput {
     pub fn accept_rule(&self) -> ::std::option::Option<&crate::types::AcceptRule> {
         self.accept_rule.as_ref()
     }
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accept_choices.is_none()`.
     pub fn accept_choices(&self) -> &[crate::types::AcceptChoice] {
@@ -78,32 +78,32 @@ impl AcceptPredictionsInputBuilder {
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_identifier
     }
-    /// <p></p>
+    /// <p>The identifier of the asset.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the asset.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p></p>
+    /// <p>The identifier of the asset.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision
     }
@@ -125,19 +125,19 @@ impl AcceptPredictionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_accept_choices`](Self::set_accept_choices).
     ///
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
     pub fn accept_choices(mut self, input: crate::types::AcceptChoice) -> Self {
         let mut v = self.accept_choices.unwrap_or_default();
         v.push(input);
         self.accept_choices = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
     pub fn set_accept_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceptChoice>>) -> Self {
         self.accept_choices = input;
         self
     }
-    /// <p></p>
+    /// <p>Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.</p>
     pub fn get_accept_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceptChoice>> {
         &self.accept_choices
     }

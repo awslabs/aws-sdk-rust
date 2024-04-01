@@ -25,7 +25,17 @@ impl PutCompositeAlarmInputBuilder {
 /// <p>Creates or updates a <i>composite alarm</i>. When you create a composite alarm, you specify a rule expression for the alarm that takes into account the alarm states of other alarms that you have created. The composite alarm goes into ALARM state only if all conditions of the rule are met.</p>
 /// <p>The alarms specified in a composite alarm's rule expression can include metric alarms and other composite alarms. The rule expression of a composite alarm can include as many as 100 underlying alarms. Any single alarm can be included in the rule expressions of as many as 150 composite alarms.</p>
 /// <p>Using composite alarms can reduce alarm noise. You can create multiple metric alarms, and also create a composite alarm and set up alerts only for the composite alarm. For example, you could create a composite alarm that goes into ALARM state only when more than one of the underlying metric alarms are in ALARM state.</p>
-/// <p>Currently, the only alarm actions that can be taken by composite alarms are notifying SNS topics.</p><note>
+/// <p>Composite alarms can take the following actions:</p>
+/// <ul>
+/// <li>
+/// <p>Notify Amazon SNS topics.</p></li>
+/// <li>
+/// <p>Invoke Lambda functions.</p></li>
+/// <li>
+/// <p>Create OpsItems in Systems Manager Ops Center.</p></li>
+/// <li>
+/// <p>Create incidents in Systems Manager Incident Manager.</p></li>
+/// </ul><note>
 /// <p>It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm B, and composite alarm B also depends on composite alarm A. In this scenario, you can't delete any composite alarm that is part of the cycle because there is always still a composite alarm that depends on that alarm that you want to delete.</p>
 /// <p>To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>false</code>.</p>
 /// <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.</p>
@@ -138,19 +148,58 @@ impl PutCompositeAlarmFluentBuilder {
     /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
     ///
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
+    /// <p>Valid Values: ]</p>
+    /// <p><b>Amazon SNS actions:</b></p>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
+    /// <p><b>Systems Manager actions:</b></p>
+    /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
     pub fn alarm_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_actions(input.into());
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
+    /// <p>Valid Values: ]</p>
+    /// <p><b>Amazon SNS actions:</b></p>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
+    /// <p><b>Systems Manager actions:</b></p>
+    /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
     pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_alarm_actions(input);
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
+    /// <p>Valid Values: ]</p>
+    /// <p><b>Amazon SNS actions:</b></p>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
+    /// <p><b>Systems Manager actions:</b></p>
+    /// <p><code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code></p>
     pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_alarm_actions()
     }
@@ -279,19 +328,52 @@ impl PutCompositeAlarmFluentBuilder {
     /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
     ///
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p>Valid Values: ]</p>
+    /// <p><b>Amazon SNS actions:</b></p>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     pub fn insufficient_data_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.insufficient_data_actions(input.into());
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p>Valid Values: ]</p>
+    /// <p><b>Amazon SNS actions:</b></p>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     pub fn set_insufficient_data_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_insufficient_data_actions(input);
         self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p>Valid Values: ]</p>
+    /// <p><b>Amazon SNS actions:</b></p>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     pub fn get_insufficient_data_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_insufficient_data_actions()
     }
@@ -300,19 +382,52 @@ impl PutCompositeAlarmFluentBuilder {
     /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
     ///
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p>Valid Values: ]</p>
+    /// <p><b>Amazon SNS actions:</b></p>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     pub fn ok_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ok_actions(input.into());
         self
     }
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p>Valid Values: ]</p>
+    /// <p><b>Amazon SNS actions:</b></p>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     pub fn set_ok_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ok_actions(input);
         self
     }
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p>Valid Values: ]</p>
+    /// <p><b>Amazon SNS actions:</b></p>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     pub fn get_ok_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ok_actions()
     }
@@ -320,20 +435,23 @@ impl PutCompositeAlarmFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be able to associate tags with the alarm when you create the alarm, you must have the <code>cloudwatch:TagResource</code> permission.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be able to associate tags with the alarm when you create the alarm, you must have the <code>cloudwatch:TagResource</code> permission.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be able to associate tags with the alarm when you create the alarm, you must have the <code>cloudwatch:TagResource</code> permission.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

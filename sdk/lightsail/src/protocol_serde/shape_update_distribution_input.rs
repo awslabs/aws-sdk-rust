@@ -39,5 +39,14 @@ pub fn ser_update_distribution_input_input(
     if let Some(var_12) = &input.is_enabled {
         object.key("isEnabled").boolean(*var_12);
     }
+    if let Some(var_13) = &input.viewer_minimum_tls_protocol_version {
+        object.key("viewerMinimumTlsProtocolVersion").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.certificate_name {
+        object.key("certificateName").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.use_default_certificate {
+        object.key("useDefaultCertificate").boolean(*var_15);
+    }
     Ok(())
 }

@@ -836,6 +836,21 @@ pub(crate) fn get_listing_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_metadata_generation_run_output_output_correct_errors(
+    mut builder: crate::operation::get_metadata_generation_run::builders::GetMetadataGenerationRunOutputBuilder,
+) -> crate::operation::get_metadata_generation_run::builders::GetMetadataGenerationRunOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_project_output_output_correct_errors(
     mut builder: crate::operation::get_project::builders::GetProjectOutputBuilder,
 ) -> crate::operation::get_project::builders::GetProjectOutputBuilder {
@@ -1226,6 +1241,18 @@ pub(crate) fn start_data_source_run_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_metadata_generation_run_output_output_correct_errors(
+    mut builder: crate::operation::start_metadata_generation_run::builders::StartMetadataGenerationRunOutputBuilder,
+) -> crate::operation::start_metadata_generation_run::builders::StartMetadataGenerationRunOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_data_source_output_output_correct_errors(
     mut builder: crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder,
 ) -> crate::operation::update_data_source::builders::UpdateDataSourceOutputBuilder {
@@ -1508,6 +1535,18 @@ pub(crate) fn data_source_error_message_correct_errors(
     builder
 }
 
+pub(crate) fn metadata_generation_run_target_correct_errors(
+    mut builder: crate::types::builders::MetadataGenerationRunTargetBuilder,
+) -> crate::types::builders::MetadataGenerationRunTargetBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MetadataGenerationTargetType>().ok()
+    }
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cloud_formation_properties_correct_errors(
     mut builder: crate::types::builders::CloudFormationPropertiesBuilder,
 ) -> crate::types::builders::CloudFormationPropertiesBuilder {
@@ -1773,6 +1812,21 @@ pub(crate) fn listing_revision_correct_errors(
     }
     if builder.revision.is_none() {
         builder.revision = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metadata_generation_run_item_correct_errors(
+    mut builder: crate::types::builders::MetadataGenerationRunItemBuilder,
+) -> crate::types::builders::MetadataGenerationRunItemBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.owning_project_id.is_none() {
+        builder.owning_project_id = Some(Default::default())
     }
     builder
 }

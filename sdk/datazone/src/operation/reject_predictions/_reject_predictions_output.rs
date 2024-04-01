@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectPredictionsOutput {
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub domain_id: ::std::string::String,
-    /// <p></p>
+    /// <p>The ID of the asset.</p>
     pub asset_id: ::std::string::String,
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub asset_revision: ::std::string::String,
     _request_id: Option<String>,
 }
 impl RejectPredictionsOutput {
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn domain_id(&self) -> &str {
         use std::ops::Deref;
         self.domain_id.deref()
     }
-    /// <p></p>
+    /// <p>The ID of the asset.</p>
     pub fn asset_id(&self) -> &str {
         use std::ops::Deref;
         self.asset_id.deref()
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn asset_revision(&self) -> &str {
         use std::ops::Deref;
         self.asset_revision.deref()
@@ -50,48 +50,48 @@ pub struct RejectPredictionsOutputBuilder {
     _request_id: Option<String>,
 }
 impl RejectPredictionsOutputBuilder {
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
-    /// <p></p>
+    /// <p>The ID of the asset.</p>
     /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the asset.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the asset.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     /// This field is required.
     pub fn asset_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn set_asset_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_revision = input;
         self
     }
-    /// <p></p>
+    /// <p>The revision that is to be made to the asset.</p>
     pub fn get_asset_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_revision
     }

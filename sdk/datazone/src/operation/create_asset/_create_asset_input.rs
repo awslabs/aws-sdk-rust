@@ -7,7 +7,7 @@ pub struct CreateAssetInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Amazon DataZone domain where the asset is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub external_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of this asset's type.</p>
     pub type_identifier: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl CreateAssetInput {
     pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
         self.domain_identifier.as_deref()
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn external_identifier(&self) -> ::std::option::Option<&str> {
         self.external_identifier.as_deref()
     }
@@ -147,17 +147,17 @@ impl CreateAssetInputBuilder {
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_identifier
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn external_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn set_external_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_identifier = input;
         self
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn get_external_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_identifier
     }

@@ -25,6 +25,11 @@ pub struct CreateDistributionInput {
     /// <p>The tag keys and optional values to add to the distribution during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub certificate_name: ::std::option::Option<::std::string::String>,
+    /// <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+    pub viewer_minimum_tls_protocol_version: ::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum>,
 }
 impl CreateDistributionInput {
     /// <p>The name for the distribution.</p>
@@ -69,6 +74,15 @@ impl CreateDistributionInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn certificate_name(&self) -> ::std::option::Option<&str> {
+        self.certificate_name.as_deref()
+    }
+    /// <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+    pub fn viewer_minimum_tls_protocol_version(&self) -> ::std::option::Option<&crate::types::ViewerMinimumTlsProtocolVersionEnum> {
+        self.viewer_minimum_tls_protocol_version.as_ref()
+    }
 }
 impl CreateDistributionInput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
@@ -89,6 +103,8 @@ pub struct CreateDistributionInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
+    pub(crate) viewer_minimum_tls_protocol_version: ::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum>,
 }
 impl CreateDistributionInputBuilder {
     /// <p>The name for the distribution.</p>
@@ -237,6 +253,40 @@ impl CreateDistributionInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_name = input;
+        self
+    }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
+    }
+    /// <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+    pub fn viewer_minimum_tls_protocol_version(mut self, input: crate::types::ViewerMinimumTlsProtocolVersionEnum) -> Self {
+        self.viewer_minimum_tls_protocol_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+    pub fn set_viewer_minimum_tls_protocol_version(
+        mut self,
+        input: ::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum>,
+    ) -> Self {
+        self.viewer_minimum_tls_protocol_version = input;
+        self
+    }
+    /// <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+    pub fn get_viewer_minimum_tls_protocol_version(&self) -> &::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum> {
+        &self.viewer_minimum_tls_protocol_version
+    }
     /// Consumes the builder and constructs a [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
     pub fn build(
         self,
@@ -250,6 +300,8 @@ impl CreateDistributionInputBuilder {
             bundle_id: self.bundle_id,
             ip_address_type: self.ip_address_type,
             tags: self.tags,
+            certificate_name: self.certificate_name,
+            viewer_minimum_tls_protocol_version: self.viewer_minimum_tls_protocol_version,
         })
     }
 }

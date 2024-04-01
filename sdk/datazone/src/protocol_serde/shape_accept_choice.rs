@@ -12,5 +12,8 @@ pub fn ser_accept_choice(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.edited_value {
+        object.key("editedValue").string(var_3.as_str());
+    }
     Ok(())
 }

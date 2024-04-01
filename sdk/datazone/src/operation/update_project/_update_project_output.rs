@@ -11,9 +11,9 @@ pub struct UpdateProjectOutput {
     pub name: ::std::string::String,
     /// <p>The description of the project that is to be updated.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// Status of the project
+    /// <p>The status of the project.</p>
     pub project_status: ::std::option::Option<crate::types::ProjectStatus>,
-    /// Reasons for failed project deletion
+    /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDeletionError>>,
     /// <p>The Amazon DataZone user who created the project.</p>
     pub created_by: ::std::string::String,
@@ -45,11 +45,11 @@ impl UpdateProjectOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// Status of the project
+    /// <p>The status of the project.</p>
     pub fn project_status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
         self.project_status.as_ref()
     }
-    /// Reasons for failed project deletion
+    /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
     pub fn failure_reasons(&self) -> &[crate::types::ProjectDeletionError] {
@@ -180,17 +180,17 @@ impl UpdateProjectOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// Status of the project
+    /// <p>The status of the project.</p>
     pub fn project_status(mut self, input: crate::types::ProjectStatus) -> Self {
         self.project_status = ::std::option::Option::Some(input);
         self
     }
-    /// Status of the project
+    /// <p>The status of the project.</p>
     pub fn set_project_status(mut self, input: ::std::option::Option<crate::types::ProjectStatus>) -> Self {
         self.project_status = input;
         self
     }
-    /// Status of the project
+    /// <p>The status of the project.</p>
     pub fn get_project_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
         &self.project_status
     }
@@ -198,19 +198,19 @@ impl UpdateProjectOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
     ///
-    /// Reasons for failed project deletion
+    /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn failure_reasons(mut self, input: crate::types::ProjectDeletionError) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
         v.push(input);
         self.failure_reasons = ::std::option::Option::Some(v);
         self
     }
-    /// Reasons for failed project deletion
+    /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDeletionError>>) -> Self {
         self.failure_reasons = input;
         self
     }
-    /// Reasons for failed project deletion
+    /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectDeletionError>> {
         &self.failure_reasons
     }

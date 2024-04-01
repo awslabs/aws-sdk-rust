@@ -145,6 +145,55 @@ impl From<crate::operation::accept_subscription_request::AcceptSubscriptionReque
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError> for Error {
+    fn from(err: crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError) -> Self {
+        match err {
+            crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::cancel_metadata_generation_run::CancelMetadataGenerationRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_subscription::CancelSubscriptionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1819,6 +1868,48 @@ impl From<crate::operation::get_listing::GetListingError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError> for Error {
+    fn from(err: crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError) -> Self {
+        match err {
+            crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_metadata_generation_run::GetMetadataGenerationRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_project::GetProjectError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2348,6 +2439,48 @@ impl From<crate::operation::list_environments::ListEnvironmentsError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError> for Error {
+    fn from(err: crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError) -> Self {
+        match err {
+            crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_notifications::ListNotificationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2690,6 +2823,7 @@ impl From<crate::operation::reject_predictions::RejectPredictionsError> for Erro
     fn from(err: crate::operation::reject_predictions::RejectPredictionsError) -> Self {
         match err {
             crate::operation::reject_predictions::RejectPredictionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reject_predictions::RejectPredictionsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::reject_predictions::RejectPredictionsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::reject_predictions::RejectPredictionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::reject_predictions::RejectPredictionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -2942,6 +3076,54 @@ impl From<crate::operation::start_data_source_run::StartDataSourceRunError> for 
             crate::operation::start_data_source_run::StartDataSourceRunError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_data_source_run::StartDataSourceRunError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::start_data_source_run::StartDataSourceRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError> for Error {
+    fn from(err: crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError) -> Self {
+        match err {
+            crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::start_metadata_generation_run::StartMetadataGenerationRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -21,7 +21,7 @@ pub struct CreateSubscriptionRequestOutput {
     pub request_reason: ::std::string::String,
     /// <p>The subscribed principals of the subscription request.</p>
     pub subscribed_principals: ::std::vec::Vec<crate::types::SubscribedPrincipal>,
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub subscribed_listings: ::std::vec::Vec<crate::types::SubscribedListing>,
     /// <p>The ID of the reviewer of the subscription request.</p>
     pub reviewer_id: ::std::option::Option<::std::string::String>,
@@ -71,7 +71,7 @@ impl CreateSubscriptionRequestOutput {
         use std::ops::Deref;
         self.subscribed_principals.deref()
     }
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn subscribed_listings(&self) -> &[crate::types::SubscribedListing] {
         use std::ops::Deref;
         self.subscribed_listings.deref()
@@ -278,19 +278,19 @@ impl CreateSubscriptionRequestOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_subscribed_listings`](Self::set_subscribed_listings).
     ///
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn subscribed_listings(mut self, input: crate::types::SubscribedListing) -> Self {
         let mut v = self.subscribed_listings.unwrap_or_default();
         v.push(input);
         self.subscribed_listings = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn set_subscribed_listings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListing>>) -> Self {
         self.subscribed_listings = input;
         self
     }
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn get_subscribed_listings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedListing>> {
         &self.subscribed_listings
     }

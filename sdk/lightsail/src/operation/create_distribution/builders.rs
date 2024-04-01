@@ -247,4 +247,38 @@ impl CreateDistributionFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.certificate_name(input.into());
+        self
+    }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_certificate_name(input);
+        self
+    }
+    /// <p>The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a> action to get a list of certificate names that you can specify.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_name()
+    }
+    /// <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+    pub fn viewer_minimum_tls_protocol_version(mut self, input: crate::types::ViewerMinimumTlsProtocolVersionEnum) -> Self {
+        self.inner = self.inner.viewer_minimum_tls_protocol_version(input);
+        self
+    }
+    /// <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+    pub fn set_viewer_minimum_tls_protocol_version(
+        mut self,
+        input: ::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum>,
+    ) -> Self {
+        self.inner = self.inner.set_viewer_minimum_tls_protocol_version(input);
+        self
+    }
+    /// <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+    pub fn get_viewer_minimum_tls_protocol_version(&self) -> &::std::option::Option<crate::types::ViewerMinimumTlsProtocolVersionEnum> {
+        self.inner.get_viewer_minimum_tls_protocol_version()
+    }
 }

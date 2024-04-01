@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`subscription_target_id(String)`](crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput::subscription_target_id): <p>The identifier of the subscription target whose subscription grant status is to be updated.</p>
     ///   - [`granted_entity(Option<GrantedEntity>)`](crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput::granted_entity): <p>The granted entity to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
     ///   - [`status(SubscriptionGrantOverallStatus)`](crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput::status): <p>The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
-    ///   - [`assets(Option<Vec::<SubscribedAsset>>)`](crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput::assets): <p></p>
+    ///   - [`assets(Option<Vec::<SubscribedAsset>>)`](crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput::assets): <p>The details of the asset for which the subscription grant is created.</p>
     ///   - [`subscription_id(Option<String>)`](crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusOutput::subscription_id): <p>The identifier of the subscription.</p>
     /// - On failure, responds with [`SdkError<UpdateSubscriptionGrantStatusError>`](crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusError)
     pub fn update_subscription_grant_status(

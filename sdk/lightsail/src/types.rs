@@ -23,6 +23,8 @@ pub use crate::types::_http_tokens::HttpTokens;
 
 pub use crate::types::_domain_entry::DomainEntry;
 
+pub use crate::types::_viewer_minimum_tls_protocol_version_enum::ViewerMinimumTlsProtocolVersionEnum;
+
 pub use crate::types::_cache_behavior_per_path::CacheBehaviorPerPath;
 
 pub use crate::types::_behavior_enum::BehaviorEnum;
@@ -794,6 +796,8 @@ mod _tag;
 mod _time_period;
 
 mod _treat_missing_data;
+
+mod _viewer_minimum_tls_protocol_version_enum;
 
 /// Builders
 pub mod builders;

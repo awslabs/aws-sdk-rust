@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetListingOutput {
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub domain_id: ::std::string::String,
-    /// <p></p>
+    /// <p>The ID of the listing.</p>
     pub id: ::std::string::String,
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     pub listing_revision: ::std::string::String,
-    /// <p></p>
+    /// <p>The timestamp of when the listing was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the listing was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -17,33 +17,33 @@ pub struct GetListingOutput {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon DataZone user who updated the listing.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The details of a listing.</p>
     pub item: ::std::option::Option<crate::types::ListingItem>,
-    /// <p></p>
+    /// <p>The name of the listing.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The description of the listing.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The status of the listing.</p>
     pub status: ::std::option::Option<crate::types::ListingStatus>,
     _request_id: Option<String>,
 }
 impl GetListingOutput {
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn domain_id(&self) -> &str {
         use std::ops::Deref;
         self.domain_id.deref()
     }
-    /// <p></p>
+    /// <p>The ID of the listing.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     pub fn listing_revision(&self) -> &str {
         use std::ops::Deref;
         self.listing_revision.deref()
     }
-    /// <p></p>
+    /// <p>The timestamp of when the listing was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -59,19 +59,19 @@ impl GetListingOutput {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
-    /// <p></p>
+    /// <p>The details of a listing.</p>
     pub fn item(&self) -> ::std::option::Option<&crate::types::ListingItem> {
         self.item.as_ref()
     }
-    /// <p></p>
+    /// <p>The name of the listing.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p></p>
+    /// <p>The description of the listing.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p></p>
+    /// <p>The status of the listing.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ListingStatus> {
         self.status.as_ref()
     }
@@ -124,62 +124,62 @@ pub struct GetListingOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetListingOutputBuilder {
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
-    /// <p></p>
+    /// <p>The ID of the listing.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the listing.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the listing.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     /// This field is required.
     pub fn listing_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listing_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     pub fn set_listing_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.listing_revision = input;
         self
     }
-    /// <p></p>
+    /// <p>The revision of a listing.</p>
     pub fn get_listing_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.listing_revision
     }
-    /// <p></p>
+    /// <p>The timestamp of when the listing was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The timestamp of when the listing was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p></p>
+    /// <p>The timestamp of when the listing was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
@@ -225,59 +225,59 @@ impl GetListingOutputBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
-    /// <p></p>
+    /// <p>The details of a listing.</p>
     pub fn item(mut self, input: crate::types::ListingItem) -> Self {
         self.item = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The details of a listing.</p>
     pub fn set_item(mut self, input: ::std::option::Option<crate::types::ListingItem>) -> Self {
         self.item = input;
         self
     }
-    /// <p></p>
+    /// <p>The details of a listing.</p>
     pub fn get_item(&self) -> &::std::option::Option<crate::types::ListingItem> {
         &self.item
     }
-    /// <p></p>
+    /// <p>The name of the listing.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The name of the listing.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p></p>
+    /// <p>The name of the listing.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p></p>
+    /// <p>The description of the listing.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The description of the listing.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p></p>
+    /// <p>The description of the listing.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p></p>
+    /// <p>The status of the listing.</p>
     pub fn status(mut self, input: crate::types::ListingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The status of the listing.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ListingStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p></p>
+    /// <p>The status of the listing.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ListingStatus> {
         &self.status
     }

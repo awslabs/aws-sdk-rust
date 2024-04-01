@@ -15,7 +15,7 @@ pub struct SearchInput {
     pub search_scope: ::std::option::Option<crate::types::InventorySearchScope>,
     /// <p>Specifies the text for which to search.</p>
     pub search_text: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub search_in: ::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>>,
     /// <p>Specifies the search filters.</p>
     pub filters: ::std::option::Option<crate::types::FilterClause>,
@@ -49,7 +49,7 @@ impl SearchInput {
     pub fn search_text(&self) -> ::std::option::Option<&str> {
         self.search_text.as_deref()
     }
-    /// <p></p>
+    /// <p>The details of the search.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.search_in.is_none()`.
     pub fn search_in(&self) -> &[crate::types::SearchInItem] {
@@ -183,19 +183,19 @@ impl SearchInputBuilder {
     ///
     /// To override the contents of this collection use [`set_search_in`](Self::set_search_in).
     ///
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub fn search_in(mut self, input: crate::types::SearchInItem) -> Self {
         let mut v = self.search_in.unwrap_or_default();
         v.push(input);
         self.search_in = ::std::option::Option::Some(v);
         self
     }
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub fn set_search_in(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>>) -> Self {
         self.search_in = input;
         self
     }
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub fn get_search_in(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>> {
         &self.search_in
     }

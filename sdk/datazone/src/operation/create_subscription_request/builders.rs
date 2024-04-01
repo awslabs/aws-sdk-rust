@@ -144,17 +144,17 @@ impl CreateSubscriptionRequestFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subscribed_listings`](Self::set_subscribed_listings).
     ///
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn subscribed_listings(mut self, input: crate::types::SubscribedListingInput) -> Self {
         self.inner = self.inner.subscribed_listings(input);
         self
     }
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn set_subscribed_listings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>>) -> Self {
         self.inner = self.inner.set_subscribed_listings(input);
         self
     }
-    /// <p></p>
+    /// <p>The published asset for which the subscription grant is to be created.</p>
     pub fn get_subscribed_listings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedListingInput>> {
         self.inner.get_subscribed_listings()
     }

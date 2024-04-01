@@ -11,7 +11,7 @@ pub struct CreateAssetRevisionOutput {
     pub type_identifier: ::std::string::String,
     /// <p>The revision type of the asset.</p>
     pub type_revision: ::std::string::String,
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub external_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the asset.</p>
     pub revision: ::std::string::String,
@@ -31,7 +31,7 @@ pub struct CreateAssetRevisionOutput {
     pub owning_project_id: ::std::string::String,
     /// <p>The unique identifier of the Amazon DataZone domain where the asset was revised.</p>
     pub domain_id: ::std::string::String,
-    /// <p></p>
+    /// <p>The details of an asset published in an Amazon DataZone catalog.</p>
     pub listing: ::std::option::Option<crate::types::AssetListingDetails>,
     /// <p>The metadata forms that were attached to the asset as part of the asset revision.</p>
     pub forms_output: ::std::vec::Vec<crate::types::FormOutput>,
@@ -62,7 +62,7 @@ impl CreateAssetRevisionOutput {
         use std::ops::Deref;
         self.type_revision.deref()
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn external_identifier(&self) -> ::std::option::Option<&str> {
         self.external_identifier.as_deref()
     }
@@ -107,7 +107,7 @@ impl CreateAssetRevisionOutput {
         use std::ops::Deref;
         self.domain_id.deref()
     }
-    /// <p></p>
+    /// <p>The details of an asset published in an Amazon DataZone catalog.</p>
     pub fn listing(&self) -> ::std::option::Option<&crate::types::AssetListingDetails> {
         self.listing.as_ref()
     }
@@ -249,17 +249,17 @@ impl CreateAssetRevisionOutputBuilder {
     pub fn get_type_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_revision
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn external_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn set_external_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_identifier = input;
         self
     }
-    /// <p></p>
+    /// <p>The external identifier of the asset.</p>
     pub fn get_external_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_identifier
     }
@@ -398,17 +398,17 @@ impl CreateAssetRevisionOutputBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
-    /// <p></p>
+    /// <p>The details of an asset published in an Amazon DataZone catalog.</p>
     pub fn listing(mut self, input: crate::types::AssetListingDetails) -> Self {
         self.listing = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The details of an asset published in an Amazon DataZone catalog.</p>
     pub fn set_listing(mut self, input: ::std::option::Option<crate::types::AssetListingDetails>) -> Self {
         self.listing = input;
         self
     }
-    /// <p></p>
+    /// <p>The details of an asset published in an Amazon DataZone catalog.</p>
     pub fn get_listing(&self) -> &::std::option::Option<crate::types::AssetListingDetails> {
         &self.listing
     }

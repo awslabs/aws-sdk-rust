@@ -22,7 +22,7 @@ impl SearchListingsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchListings`.
 ///
-/// <p>Searches listings in Amazon DataZone.</p>
+/// <p>Searches listings (records of an asset at a given time) in Amazon DataZone.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchListingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -146,17 +146,17 @@ impl SearchListingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_search_in`](Self::set_search_in).
     ///
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub fn search_in(mut self, input: crate::types::SearchInItem) -> Self {
         self.inner = self.inner.search_in(input);
         self
     }
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub fn set_search_in(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>>) -> Self {
         self.inner = self.inner.set_search_in(input);
         self
     }
-    /// <p></p>
+    /// <p>The details of the search.</p>
     pub fn get_search_in(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>> {
         self.inner.get_search_in()
     }

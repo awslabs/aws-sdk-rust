@@ -202,10 +202,19 @@ impl PutMetricAlarmFluentBuilder {
     /// <li>
     /// <p><code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
     /// </ul>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     /// <p><b>SNS notification action:</b></p>
     /// <ul>
     /// <li>
-    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p></li>
     /// </ul>
     /// <p><b>SSM integration actions:</b></p>
     /// <ul>
@@ -243,10 +252,19 @@ impl PutMetricAlarmFluentBuilder {
     /// <li>
     /// <p><code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
     /// </ul>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     /// <p><b>SNS notification action:</b></p>
     /// <ul>
     /// <li>
-    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p></li>
     /// </ul>
     /// <p><b>SSM integration actions:</b></p>
     /// <ul>
@@ -284,10 +302,19 @@ impl PutMetricAlarmFluentBuilder {
     /// <li>
     /// <p><code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
     /// </ul>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     /// <p><b>SNS notification action:</b></p>
     /// <ul>
     /// <li>
-    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p></li>
     /// </ul>
     /// <p><b>SSM integration actions:</b></p>
     /// <ul>
@@ -328,10 +355,19 @@ impl PutMetricAlarmFluentBuilder {
     /// <li>
     /// <p><code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
     /// </ul>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     /// <p><b>SNS notification action:</b></p>
     /// <ul>
     /// <li>
-    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p></li>
     /// </ul>
     /// <p><b>SSM integration actions:</b></p>
     /// <ul>
@@ -369,10 +405,19 @@ impl PutMetricAlarmFluentBuilder {
     /// <li>
     /// <p><code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
     /// </ul>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     /// <p><b>SNS notification action:</b></p>
     /// <ul>
     /// <li>
-    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p></li>
     /// </ul>
     /// <p><b>SSM integration actions:</b></p>
     /// <ul>
@@ -410,10 +455,19 @@ impl PutMetricAlarmFluentBuilder {
     /// <li>
     /// <p><code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
     /// </ul>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     /// <p><b>SNS notification action:</b></p>
     /// <ul>
     /// <li>
-    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p></li>
     /// </ul>
     /// <p><b>SSM integration actions:</b></p>
     /// <ul>
@@ -454,10 +508,19 @@ impl PutMetricAlarmFluentBuilder {
     /// <li>
     /// <p><code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
     /// </ul>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     /// <p><b>SNS notification action:</b></p>
     /// <ul>
     /// <li>
-    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p></li>
     /// </ul>
     /// <p><b>SSM integration actions:</b></p>
     /// <ul>
@@ -495,10 +558,19 @@ impl PutMetricAlarmFluentBuilder {
     /// <li>
     /// <p><code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
     /// </ul>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     /// <p><b>SNS notification action:</b></p>
     /// <ul>
     /// <li>
-    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p></li>
     /// </ul>
     /// <p><b>SSM integration actions:</b></p>
     /// <ul>
@@ -536,10 +608,19 @@ impl PutMetricAlarmFluentBuilder {
     /// <li>
     /// <p><code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
     /// </ul>
+    /// <p><b>Lambda actions:</b></p>
+    /// <ul>
+    /// <li>
+    /// <p>Invoke the latest version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a specific version of a Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code></p></li>
+    /// <li>
+    /// <p>Invoke a function by using an alias Lambda function: <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code></p></li>
+    /// </ul>
     /// <p><b>SNS notification action:</b></p>
     /// <ul>
     /// <li>
-    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code></p></li>
+    /// <p><code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code></p></li>
     /// </ul>
     /// <p><b>SSM integration actions:</b></p>
     /// <ul>

@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::get_asset::GetAssetOutput::name): <p>The name of the asset.</p>
     ///   - [`type_identifier(String)`](crate::operation::get_asset::GetAssetOutput::type_identifier): <p>The ID of the asset type.</p>
     ///   - [`type_revision(String)`](crate::operation::get_asset::GetAssetOutput::type_revision): <p>The revision of the asset type.</p>
-    ///   - [`external_identifier(Option<String>)`](crate::operation::get_asset::GetAssetOutput::external_identifier): <p></p>
+    ///   - [`external_identifier(Option<String>)`](crate::operation::get_asset::GetAssetOutput::external_identifier): <p>The external ID of the asset.</p>
     ///   - [`revision(String)`](crate::operation::get_asset::GetAssetOutput::revision): <p>The revision of the asset.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_asset::GetAssetOutput::description): <p>The description of the Amazon DataZone asset.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_asset::GetAssetOutput::created_at): <p>The timestamp of when the asset was created.</p>
@@ -21,7 +21,7 @@ impl super::Client {
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::get_asset::GetAssetOutput::glossary_terms): <p>The business glossary terms attached to the asset.</p>
     ///   - [`owning_project_id(String)`](crate::operation::get_asset::GetAssetOutput::owning_project_id): <p>The ID of the project that owns the asset.</p>
     ///   - [`domain_id(String)`](crate::operation::get_asset::GetAssetOutput::domain_id): <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
-    ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::get_asset::GetAssetOutput::listing): <p></p>
+    ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::get_asset::GetAssetOutput::listing): <p>The listing of the asset.</p>
     ///   - [`forms_output(Vec::<FormOutput>)`](crate::operation::get_asset::GetAssetOutput::forms_output): <p>The metadata forms attached to the asset.</p>
     ///   - [`read_only_forms_output(Option<Vec::<FormOutput>>)`](crate::operation::get_asset::GetAssetOutput::read_only_forms_output): <p>The read-only metadata forms attached to the asset.</p>
     /// - On failure, responds with [`SdkError<GetAssetError>`](crate::operation::get_asset::GetAssetError)

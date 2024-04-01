@@ -49,6 +49,8 @@ pub struct LightsailDistribution {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The minimum TLS protocol version that the distribution can use to communicate with viewers.</p>
+    pub viewer_minimum_tls_protocol_version: ::std::option::Option<::std::string::String>,
 }
 impl LightsailDistribution {
     /// <p>The name of the distribution.</p>
@@ -142,6 +144,10 @@ impl LightsailDistribution {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The minimum TLS protocol version that the distribution can use to communicate with viewers.</p>
+    pub fn viewer_minimum_tls_protocol_version(&self) -> ::std::option::Option<&str> {
+        self.viewer_minimum_tls_protocol_version.as_deref()
+    }
 }
 impl LightsailDistribution {
     /// Creates a new builder-style object to manufacture [`LightsailDistribution`](crate::types::LightsailDistribution).
@@ -174,6 +180,7 @@ pub struct LightsailDistributionBuilder {
     pub(crate) able_to_update_bundle: ::std::option::Option<bool>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) viewer_minimum_tls_protocol_version: ::std::option::Option<::std::string::String>,
 }
 impl LightsailDistributionBuilder {
     /// <p>The name of the distribution.</p>
@@ -489,6 +496,20 @@ impl LightsailDistributionBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The minimum TLS protocol version that the distribution can use to communicate with viewers.</p>
+    pub fn viewer_minimum_tls_protocol_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.viewer_minimum_tls_protocol_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The minimum TLS protocol version that the distribution can use to communicate with viewers.</p>
+    pub fn set_viewer_minimum_tls_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.viewer_minimum_tls_protocol_version = input;
+        self
+    }
+    /// <p>The minimum TLS protocol version that the distribution can use to communicate with viewers.</p>
+    pub fn get_viewer_minimum_tls_protocol_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.viewer_minimum_tls_protocol_version
+    }
     /// Consumes the builder and constructs a [`LightsailDistribution`](crate::types::LightsailDistribution).
     pub fn build(self) -> crate::types::LightsailDistribution {
         crate::types::LightsailDistribution {
@@ -512,6 +533,7 @@ impl LightsailDistributionBuilder {
             able_to_update_bundle: self.able_to_update_bundle,
             ip_address_type: self.ip_address_type,
             tags: self.tags,
+            viewer_minimum_tls_protocol_version: self.viewer_minimum_tls_protocol_version,
         }
     }
 }

@@ -235,16 +235,19 @@ impl GetMetricDataFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+    /// <p>If you omit this parameter, the default of <code>TimestampDescending</code> is used.</p>
     pub fn scan_by(mut self, input: crate::types::ScanBy) -> Self {
         self.inner = self.inner.scan_by(input);
         self
     }
     /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+    /// <p>If you omit this parameter, the default of <code>TimestampDescending</code> is used.</p>
     pub fn set_scan_by(mut self, input: ::std::option::Option<crate::types::ScanBy>) -> Self {
         self.inner = self.inner.set_scan_by(input);
         self
     }
     /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+    /// <p>If you omit this parameter, the default of <code>TimestampDescending</code> is used.</p>
     pub fn get_scan_by(&self) -> &::std::option::Option<crate::types::ScanBy> {
         self.inner.get_scan_by()
     }

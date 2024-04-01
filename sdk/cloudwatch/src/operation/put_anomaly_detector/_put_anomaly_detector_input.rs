@@ -30,7 +30,7 @@ pub struct PutAnomalyDetectorInput {
     /// <li>
     /// <p><code>Stat</code></p></li>
     /// <li>
-    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
@@ -91,7 +91,7 @@ impl PutAnomalyDetectorInput {
     /// <li>
     /// <p><code>Stat</code></p></li>
     /// <li>
-    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn single_metric_anomaly_detector(&self) -> ::std::option::Option<&crate::types::SingleMetricAnomalyDetector> {
@@ -239,7 +239,7 @@ impl PutAnomalyDetectorInputBuilder {
     /// <li>
     /// <p><code>Stat</code></p></li>
     /// <li>
-    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn single_metric_anomaly_detector(mut self, input: crate::types::SingleMetricAnomalyDetector) -> Self {
@@ -258,7 +258,7 @@ impl PutAnomalyDetectorInputBuilder {
     /// <li>
     /// <p><code>Stat</code></p></li>
     /// <li>
-    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn set_single_metric_anomaly_detector(mut self, input: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>) -> Self {
@@ -277,7 +277,7 @@ impl PutAnomalyDetectorInputBuilder {
     /// <li>
     /// <p><code>Stat</code></p></li>
     /// <li>
-    /// <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn get_single_metric_anomaly_detector(&self) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {

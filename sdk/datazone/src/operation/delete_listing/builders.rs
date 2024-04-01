@@ -22,7 +22,7 @@ impl DeleteListingInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteListing`.
 ///
-/// <p></p>
+/// <p>Deletes a listing (a record of an asset at a given time).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteListingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteListingFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_identifier(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_identifier(input);
         self
     }
-    /// <p></p>
+    /// <p>The ID of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }
-    /// <p></p>
+    /// <p>The ID of the listing to be deleted.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the listing to be deleted.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p></p>
+    /// <p>The ID of the listing to be deleted.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

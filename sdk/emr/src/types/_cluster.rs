@@ -6,7 +6,7 @@
 pub struct Cluster {
     /// <p>The unique identifier for the cluster.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status details about the cluster.</p>
     pub status: ::std::option::Option<crate::types::ClusterStatus>,
@@ -82,7 +82,7 @@ impl Cluster {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -288,17 +288,17 @@ impl ClusterBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::name): <p>The revised name of the asset.</p>
     ///   - [`type_identifier(String)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::type_identifier): <p>The identifier of the revision type.</p>
     ///   - [`type_revision(String)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::type_revision): <p>The revision type of the asset.</p>
-    ///   - [`external_identifier(Option<String>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::external_identifier): <p></p>
+    ///   - [`external_identifier(Option<String>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::external_identifier): <p>The external identifier of the asset.</p>
     ///   - [`revision(String)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::revision): <p>The revision of the asset.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::description): <p>The revised asset description.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::created_at): <p>The timestamp of when the asset revision occured.</p>
@@ -27,7 +27,7 @@ impl super::Client {
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::glossary_terms): <p>The glossary terms that were attached to the asset as part of asset revision.</p>
     ///   - [`owning_project_id(String)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::owning_project_id): <p>The unique identifier of the revised project that owns the asset.</p>
     ///   - [`domain_id(String)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::domain_id): <p>The unique identifier of the Amazon DataZone domain where the asset was revised.</p>
-    ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::listing): <p></p>
+    ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::listing): <p>The details of an asset published in an Amazon DataZone catalog.</p>
     ///   - [`forms_output(Vec::<FormOutput>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::forms_output): <p>The metadata forms that were attached to the asset as part of the asset revision.</p>
     ///   - [`read_only_forms_output(Option<Vec::<FormOutput>>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::read_only_forms_output): <p>The read-only metadata forms that were attached to the asset as part of the asset revision.</p>
     ///   - [`prediction_configuration(Option<PredictionConfiguration>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::prediction_configuration): <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
