@@ -13,7 +13,7 @@ pub struct UpdateProfileInput {
     pub role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
     pub managed_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details.</p>
+    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the default value will be 3600.</p>
     pub duration_seconds: ::std::option::Option<i32>,
 }
 impl UpdateProfileInput {
@@ -41,7 +41,7 @@ impl UpdateProfileInput {
     pub fn managed_policy_arns(&self) -> &[::std::string::String] {
         self.managed_policy_arns.as_deref().unwrap_or_default()
     }
-    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details.</p>
+    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the default value will be 3600.</p>
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
@@ -148,17 +148,17 @@ impl UpdateProfileInputBuilder {
     pub fn get_managed_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.managed_policy_arns
     }
-    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details.</p>
+    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the default value will be 3600.</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details.</p>
+    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the default value will be 3600.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
     }
-    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details.</p>
+    /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the default value will be 3600.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }

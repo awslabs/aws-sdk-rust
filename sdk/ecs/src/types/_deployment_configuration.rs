@@ -29,6 +29,8 @@ pub struct DeploymentConfiguration {
     /// <li>
     /// <p>If a task has an essential container with a health check defined, the service scheduler will wait for both the task to reach a healthy status and the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>
     /// </ul>
+    /// <p>The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.</p>
+    /// <p>The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.</p>
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your service.</p>
     pub minimum_healthy_percent: ::std::option::Option<i32>,
     /// <p>Information about the CloudWatch alarms.</p>
@@ -64,6 +66,8 @@ impl DeploymentConfiguration {
     /// <li>
     /// <p>If a task has an essential container with a health check defined, the service scheduler will wait for both the task to reach a healthy status and the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>
     /// </ul>
+    /// <p>The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.</p>
+    /// <p>The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.</p>
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your service.</p>
     pub fn minimum_healthy_percent(&self) -> ::std::option::Option<i32> {
         self.minimum_healthy_percent
@@ -147,6 +151,8 @@ impl DeploymentConfigurationBuilder {
     /// <li>
     /// <p>If a task has an essential container with a health check defined, the service scheduler will wait for both the task to reach a healthy status and the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>
     /// </ul>
+    /// <p>The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.</p>
+    /// <p>The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.</p>
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your service.</p>
     pub fn minimum_healthy_percent(mut self, input: i32) -> Self {
         self.minimum_healthy_percent = ::std::option::Option::Some(input);
@@ -169,6 +175,8 @@ impl DeploymentConfigurationBuilder {
     /// <li>
     /// <p>If a task has an essential container with a health check defined, the service scheduler will wait for both the task to reach a healthy status and the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>
     /// </ul>
+    /// <p>The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.</p>
+    /// <p>The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.</p>
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your service.</p>
     pub fn set_minimum_healthy_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_healthy_percent = input;
@@ -191,6 +199,8 @@ impl DeploymentConfigurationBuilder {
     /// <li>
     /// <p>If a task has an essential container with a health check defined, the service scheduler will wait for both the task to reach a healthy status and the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>
     /// </ul>
+    /// <p>The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.</p>
+    /// <p>The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.</p>
     /// <p>If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default value and is used to define the lower limit on the number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and is running tasks that use the Fargate launch type, the minimum healthy percent value is not used, although it is returned when describing your service.</p>
     pub fn get_minimum_healthy_percent(&self) -> &::std::option::Option<i32> {
         &self.minimum_healthy_percent

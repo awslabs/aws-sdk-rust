@@ -16,11 +16,35 @@ pub struct AwsApiCallAction {
     pub domain_details: ::std::option::Option<crate::types::AwsApiCallActionDomainDetails>,
     /// <p>Identifies the resources that were affected by the API call.</p>
     pub affected_resources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was first observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub first_seen: ::std::option::Option<::std::string::String>,
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub last_seen: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiCallAction {
@@ -48,13 +72,37 @@ impl AwsApiCallAction {
     pub fn affected_resources(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.affected_resources.as_ref()
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was first observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn first_seen(&self) -> ::std::option::Option<&str> {
         self.first_seen.as_deref()
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn last_seen(&self) -> ::std::option::Option<&str> {
         self.last_seen.as_deref()
     }
@@ -177,37 +225,109 @@ impl AwsApiCallActionBuilder {
     pub fn get_affected_resources(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.affected_resources
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was first observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn first_seen(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_seen = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was first observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn set_first_seen(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_seen = input;
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was first observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn get_first_seen(&self) -> &::std::option::Option<::std::string::String> {
         &self.first_seen
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn last_seen(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_seen = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn set_last_seen(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_seen = input;
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    /// <p>A timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn get_last_seen(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_seen
     }

@@ -217,12 +217,18 @@ pub(crate) fn de_get_unfiltered_table_metadata(
                             .transpose()?,
                     );
                 }
+                "IsMultiDialectView" => {
+                    builder = builder.set_is_multi_dialect_view(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "ResourceArn" => {
                     builder = builder.set_resource_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "IsProtected" => {
+                    builder = builder.set_is_protected(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Permissions" => {
                     builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);

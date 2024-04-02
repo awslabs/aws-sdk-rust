@@ -1639,6 +1639,8 @@ pub(crate) mod shape_union;
 
 pub(crate) mod shape_value_string_list;
 
+pub(crate) mod shape_view_definition;
+
 pub(crate) mod shape_workflow_graph;
 
 pub(crate) mod shape_workflow_run_statistics;
@@ -1779,6 +1781,10 @@ pub(crate) mod shape_transform_config_parameter;
 
 pub(crate) mod shape_upsert_redshift_target_options;
 
+pub(crate) mod shape_view_representation_list;
+
+pub(crate) mod shape_view_sub_objects_list;
+
 pub(crate) mod shape_amazon_redshift_advanced_option;
 
 pub(crate) mod shape_backfill_error;
@@ -1810,6 +1816,8 @@ pub(crate) mod shape_node;
 pub(crate) mod shape_option;
 
 pub(crate) mod shape_other_metadata_value_list_item;
+
+pub(crate) mod shape_view_representation;
 
 pub(crate) mod shape_additional_options;
 

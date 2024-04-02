@@ -437,6 +437,12 @@ pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQ
 
 pub use crate::types::_table::Table;
 
+pub use crate::types::_view_definition::ViewDefinition;
+
+pub use crate::types::_view_representation::ViewRepresentation;
+
+pub use crate::types::_view_dialect::ViewDialect;
+
 pub use crate::types::_federated_table::FederatedTable;
 
 pub use crate::types::_resource_share_type::ResourceShareType;
@@ -586,8 +592,6 @@ pub use crate::types::_column_row_filter::ColumnRowFilter;
 pub use crate::types::_query_session_context::QuerySessionContext;
 
 pub use crate::types::_supported_dialect::SupportedDialect;
-
-pub use crate::types::_view_dialect::ViewDialect;
 
 pub use crate::types::_permission_type::PermissionType;
 
@@ -1571,7 +1575,11 @@ mod _user_defined_function;
 
 mod _user_defined_function_input;
 
+mod _view_definition;
+
 mod _view_dialect;
+
+mod _view_representation;
 
 mod _worker_type;
 

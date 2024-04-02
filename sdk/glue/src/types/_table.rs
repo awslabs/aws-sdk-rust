@@ -63,6 +63,10 @@ pub struct Table {
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.</p>
     pub federated_table: ::std::option::Option<crate::types::FederatedTable>,
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub view_definition: ::std::option::Option<crate::types::ViewDefinition>,
+    /// <p>Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be read by those engines.</p>
+    pub is_multi_dialect_view: ::std::option::Option<bool>,
 }
 impl Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
@@ -169,6 +173,14 @@ impl Table {
     pub fn federated_table(&self) -> ::std::option::Option<&crate::types::FederatedTable> {
         self.federated_table.as_ref()
     }
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub fn view_definition(&self) -> ::std::option::Option<&crate::types::ViewDefinition> {
+        self.view_definition.as_ref()
+    }
+    /// <p>Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be read by those engines.</p>
+    pub fn is_multi_dialect_view(&self) -> ::std::option::Option<bool> {
+        self.is_multi_dialect_view
+    }
 }
 impl Table {
     /// Creates a new builder-style object to manufacture [`Table`](crate::types::Table).
@@ -202,6 +214,8 @@ pub struct TableBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) federated_table: ::std::option::Option<crate::types::FederatedTable>,
+    pub(crate) view_definition: ::std::option::Option<crate::types::ViewDefinition>,
+    pub(crate) is_multi_dialect_view: ::std::option::Option<bool>,
 }
 impl TableBuilder {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
@@ -562,6 +576,34 @@ impl TableBuilder {
     pub fn get_federated_table(&self) -> &::std::option::Option<crate::types::FederatedTable> {
         &self.federated_table
     }
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub fn view_definition(mut self, input: crate::types::ViewDefinition) -> Self {
+        self.view_definition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub fn set_view_definition(mut self, input: ::std::option::Option<crate::types::ViewDefinition>) -> Self {
+        self.view_definition = input;
+        self
+    }
+    /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
+    pub fn get_view_definition(&self) -> &::std::option::Option<crate::types::ViewDefinition> {
+        &self.view_definition
+    }
+    /// <p>Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be read by those engines.</p>
+    pub fn is_multi_dialect_view(mut self, input: bool) -> Self {
+        self.is_multi_dialect_view = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be read by those engines.</p>
+    pub fn set_is_multi_dialect_view(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_multi_dialect_view = input;
+        self
+    }
+    /// <p>Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be read by those engines.</p>
+    pub fn get_is_multi_dialect_view(&self) -> &::std::option::Option<bool> {
+        &self.is_multi_dialect_view
+    }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TableBuilder::name)
@@ -593,6 +635,8 @@ impl TableBuilder {
             catalog_id: self.catalog_id,
             version_id: self.version_id,
             federated_table: self.federated_table,
+            view_definition: self.view_definition,
+            is_multi_dialect_view: self.is_multi_dialect_view,
         })
     }
 }

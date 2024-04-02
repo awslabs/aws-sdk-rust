@@ -8,7 +8,7 @@ pub struct Insight {
     pub insight_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a Security Hub insight.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+    /// <p>One or more attributes used to filter the findings included in the insight. You can filter by up to ten finding attributes. For each attribute, you can provide up to 20 filter values. The insight only includes findings that match the criteria defined in the filters.</p>
     pub filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     /// <p>The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub group_by_attribute: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl Insight {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+    /// <p>One or more attributes used to filter the findings included in the insight. You can filter by up to ten finding attributes. For each attribute, you can provide up to 20 filter values. The insight only includes findings that match the criteria defined in the filters.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::AwsSecurityFindingFilters> {
         self.filters.as_ref()
     }
@@ -78,18 +78,18 @@ impl InsightBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+    /// <p>One or more attributes used to filter the findings included in the insight. You can filter by up to ten finding attributes. For each attribute, you can provide up to 20 filter values. The insight only includes findings that match the criteria defined in the filters.</p>
     /// This field is required.
     pub fn filters(mut self, input: crate::types::AwsSecurityFindingFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+    /// <p>One or more attributes used to filter the findings included in the insight. You can filter by up to ten finding attributes. For each attribute, you can provide up to 20 filter values. The insight only includes findings that match the criteria defined in the filters.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+    /// <p>One or more attributes used to filter the findings included in the insight. You can filter by up to ten finding attributes. For each attribute, you can provide up to 20 filter values. The insight only includes findings that match the criteria defined in the filters.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingFilters> {
         &self.filters
     }

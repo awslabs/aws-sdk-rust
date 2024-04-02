@@ -9,7 +9,19 @@ pub struct AwsIamRoleDetails {
     /// <p>The list of the managed policies that are attached to the role.</p>
     pub attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     /// <p>Indicates when the role was created.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>The list of instance profiles that contain this role.</p>
     pub instance_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>>,
@@ -38,7 +50,19 @@ impl AwsIamRoleDetails {
         self.attached_managed_policies.as_deref().unwrap_or_default()
     }
     /// <p>Indicates when the role was created.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn create_date(&self) -> ::std::option::Option<&str> {
         self.create_date.as_deref()
     }
@@ -133,19 +157,55 @@ impl AwsIamRoleDetailsBuilder {
         &self.attached_managed_policies
     }
     /// <p>Indicates when the role was created.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn create_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the role was created.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn set_create_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_date = input;
         self
     }
     /// <p>Indicates when the role was created.</p>
-    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// <p>This field accepts only the specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)</p></li>
+    /// <li>
+    /// <p><code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)</p></li>
+    /// </ul>
     pub fn get_create_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.create_date
     }

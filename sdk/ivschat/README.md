@@ -10,11 +10,9 @@ __Notes on terminology:__
   - You create service applications using the Amazon IVS Chat API. We refer to these as _applications_.
   - You create front-end client applications (browser and Android/iOS apps) using the Amazon IVS Chat Messaging API. We refer to these as _clients_.
 
-__Resources__
-
-The following resources are part of Amazon IVS Chat:
-  - __LoggingConfiguration__ — A configuration that allows customers to store and record sent messages in a chat room. See the Logging Configuration endpoints for more information.
-  - __Room__ — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages. See the Room endpoints for more information.
+__Key Concepts__
+  - __LoggingConfiguration__ — A configuration that allows customers to store and record sent messages in a chat room.
+  - __Room__ — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages.
 
 __Tagging__
 
@@ -89,7 +87,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-ivschat = "1.18.0"
+aws-sdk-ivschat = "1.18.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

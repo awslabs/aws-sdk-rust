@@ -134,6 +134,12 @@ where
                         "FederatedTable" => {
                             builder = builder.set_federated_table(crate::protocol_serde::shape_federated_table::de_federated_table(tokens)?);
                         }
+                        "ViewDefinition" => {
+                            builder = builder.set_view_definition(crate::protocol_serde::shape_view_definition::de_view_definition(tokens)?);
+                        }
+                        "IsMultiDialectView" => {
+                            builder = builder.set_is_multi_dialect_view(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

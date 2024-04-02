@@ -339,6 +339,10 @@ pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQ
 
 pub use crate::types::_table::TableBuilder;
 
+pub use crate::types::_view_definition::ViewDefinitionBuilder;
+
+pub use crate::types::_view_representation::ViewRepresentationBuilder;
+
 pub use crate::types::_federated_table::FederatedTableBuilder;
 
 pub use crate::types::_sort_criterion::SortCriterionBuilder;
