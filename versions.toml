@@ -2447,6 +2447,10 @@ source_hash = '13ca815eb1f11fda289b697b80b415b68769729b728315d219f9c960f1f66b63'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '8f00d47349f60dd6742497db1de353a32835deca841f48f0b189c8b6966c6869'
+
+[release]
+tag = 'release-2024-04-03'
+
 [release.crates]
 aws-sdk-cleanroomsml = '1.16.0'
 aws-sdk-cloudformation = '1.23.0'
