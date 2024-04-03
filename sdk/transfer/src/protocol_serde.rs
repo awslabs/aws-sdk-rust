@@ -395,6 +395,8 @@ pub(crate) mod shape_protocols;
 
 pub(crate) mod shape_security_policy_options;
 
+pub(crate) mod shape_security_policy_protocols;
+
 pub(crate) mod shape_service_managed_egress_ip_addresses;
 
 pub(crate) mod shape_service_metadata;

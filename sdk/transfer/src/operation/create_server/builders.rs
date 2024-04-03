@@ -505,17 +505,17 @@ impl CreateServerFluentBuilder {
     pub fn get_protocol_details(&self) -> &::std::option::Option<crate::types::ProtocolDetails> {
         self.inner.get_protocol_details()
     }
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specifies the name of the security policy for the server.</p>
     pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_policy_name(input.into());
         self
     }
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specifies the name of the security policy for the server.</p>
     pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_security_policy_name(input);
         self
     }
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specifies the name of the security policy for the server.</p>
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_policy_name()
     }

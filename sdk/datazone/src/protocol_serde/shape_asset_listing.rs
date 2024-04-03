@@ -48,6 +48,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "latestTimeSeriesDataPointForms" => {
+                            builder = builder.set_latest_time_series_data_point_forms(
+                                    crate::protocol_serde::shape_time_series_data_point_summary_form_output_list::de_time_series_data_point_summary_form_output_list(tokens)?
+                                );
+                        }
                         "glossaryTerms" => {
                             builder =
                                 builder.set_glossary_terms(crate::protocol_serde::shape_detailed_glossary_terms::de_detailed_glossary_terms(tokens)?);

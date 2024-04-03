@@ -1393,6 +1393,48 @@ impl From<crate::operation::delete_subscription_target::DeleteSubscriptionTarget
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError> for Error {
+    fn from(err: crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError) -> Self {
+        match err {
+            crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_time_series_data_points::DeleteTimeSeriesDataPointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_asset::GetAssetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2079,6 +2121,48 @@ impl From<crate::operation::get_subscription_target::GetSubscriptionTargetError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError> for Error {
+    fn from(err: crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError) -> Self {
+        match err {
+            crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_time_series_data_point::GetTimeSeriesDataPointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_user_profile::GetUserProfileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2747,6 +2831,96 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError> for Error {
+    fn from(err: crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError) -> Self {
+        match err {
+            crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError> for Error {
+    fn from(err: crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError) -> Self {
+        match err {
+            crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

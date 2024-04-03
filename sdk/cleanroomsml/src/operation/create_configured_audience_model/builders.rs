@@ -182,17 +182,17 @@ impl CreateConfiguredAudienceModelFluentBuilder {
     pub fn get_shared_audience_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedAudienceMetrics>> {
         self.inner.get_shared_audience_metrics()
     }
-    /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
+    /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model. The default value is 500.</p>
     pub fn min_matching_seed_size(mut self, input: i32) -> Self {
         self.inner = self.inner.min_matching_seed_size(input);
         self
     }
-    /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
+    /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model. The default value is 500.</p>
     pub fn set_min_matching_seed_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_matching_seed_size(input);
         self
     }
-    /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model.</p>
+    /// <p>The minimum number of users from the seed audience that must match with users in the training data of the audience model. The default value is 500.</p>
     pub fn get_min_matching_seed_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_min_matching_seed_size()
     }
@@ -230,7 +230,7 @@ impl CreateConfiguredAudienceModelFluentBuilder {
     /// <li>
     /// <p>Tag keys and values are case sensitive.</p></li>
     /// <li>
-    /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
+    /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
@@ -252,7 +252,7 @@ impl CreateConfiguredAudienceModelFluentBuilder {
     /// <li>
     /// <p>Tag keys and values are case sensitive.</p></li>
     /// <li>
-    /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
+    /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -274,7 +274,7 @@ impl CreateConfiguredAudienceModelFluentBuilder {
     /// <li>
     /// <p>Tag keys and values are case sensitive.</p></li>
     /// <li>
-    /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
+    /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()

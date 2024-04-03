@@ -50,7 +50,7 @@ pub struct CreateFunctionInput {
     pub layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Connection settings for an Amazon EFS file system.</p>
     pub file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub image_config: ::std::option::Option<crate::types::ImageConfig>,
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
     pub code_signing_config_arn: ::std::option::Option<::std::string::String>,
@@ -151,7 +151,7 @@ impl CreateFunctionInput {
     pub fn file_system_configs(&self) -> &[crate::types::FileSystemConfig] {
         self.file_system_configs.as_deref().unwrap_or_default()
     }
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub fn image_config(&self) -> ::std::option::Option<&crate::types::ImageConfig> {
         self.image_config.as_ref()
     }
@@ -521,17 +521,17 @@ impl CreateFunctionInputBuilder {
     pub fn get_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
         &self.file_system_configs
     }
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub fn image_config(mut self, input: crate::types::ImageConfig) -> Self {
         self.image_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub fn set_image_config(mut self, input: ::std::option::Option<crate::types::ImageConfig>) -> Self {
         self.image_config = input;
         self
     }
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
         &self.image_config
     }

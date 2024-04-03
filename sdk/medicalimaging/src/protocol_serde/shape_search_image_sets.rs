@@ -146,6 +146,9 @@ pub(crate) fn de_search_image_sets(
                             .transpose()?,
                     );
                 }
+                "sort" => {
+                    builder = builder.set_sort(crate::protocol_serde::shape_sort::de_sort(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

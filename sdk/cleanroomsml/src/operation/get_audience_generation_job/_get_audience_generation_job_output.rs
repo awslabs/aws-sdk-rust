@@ -25,7 +25,7 @@ pub struct GetAudienceGenerationJobOutput {
     pub include_seed_in_output: ::std::option::Option<bool>,
     /// <p>The identifier of the collaboration that this audience generation job is associated with.</p>
     pub collaboration_id: ::std::option::Option<::std::string::String>,
-    /// <p>The relevance scores for different audience sizes.</p>
+    /// <p>The relevance scores for different audience sizes and the recall score of the generated audience.</p>
     pub metrics: ::std::option::Option<crate::types::AudienceQualityMetrics>,
     /// <p>The AWS account that started this audience generation job.</p>
     pub started_by: ::std::option::Option<::std::string::String>,
@@ -81,7 +81,7 @@ impl GetAudienceGenerationJobOutput {
     pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
         self.collaboration_id.as_deref()
     }
-    /// <p>The relevance scores for different audience sizes.</p>
+    /// <p>The relevance scores for different audience sizes and the recall score of the generated audience.</p>
     pub fn metrics(&self) -> ::std::option::Option<&crate::types::AudienceQualityMetrics> {
         self.metrics.as_ref()
     }
@@ -287,17 +287,17 @@ impl GetAudienceGenerationJobOutputBuilder {
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_id
     }
-    /// <p>The relevance scores for different audience sizes.</p>
+    /// <p>The relevance scores for different audience sizes and the recall score of the generated audience.</p>
     pub fn metrics(mut self, input: crate::types::AudienceQualityMetrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The relevance scores for different audience sizes.</p>
+    /// <p>The relevance scores for different audience sizes and the recall score of the generated audience.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::AudienceQualityMetrics>) -> Self {
         self.metrics = input;
         self
     }
-    /// <p>The relevance scores for different audience sizes.</p>
+    /// <p>The relevance scores for different audience sizes and the recall score of the generated audience.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::AudienceQualityMetrics> {
         &self.metrics
     }

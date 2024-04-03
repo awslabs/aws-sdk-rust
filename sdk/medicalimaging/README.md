@@ -1,8 +1,8 @@
 # aws-sdk-medicalimaging
 
-This is the _AWS HealthImaging API Reference_. AWS HealthImaging is a HIPAA-eligible service that helps health care providers and their medical imaging ISV partners store, transform, and apply machine learning to medical images. For an introduction to the service, see the [_AWS HealthImaging Developer Guide_](https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html).
+This is the _AWS HealthImaging API Reference_. AWS HealthImaging is a HIPAA eligible service that empowers healthcare providers, life science organizations, and their software partners to store, analyze, and share medical images in the cloud at petabyte scale. For an introduction to the service, see the [_AWS HealthImaging Developer Guide_](https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html).
 
-The following sections list AWS HealthImaging API actions categorized according to functionality. Links are provided to actions within this Reference, along with links back to corresponding sections in the _AWS HealthImaging Developer Guide_ where you can view console procedures and CLI/SDK code examples.
+The following sections list AWS HealthImaging API actions categorized according to functionality. Links are provided to actions within this Reference, along with links back to corresponding sections in the _AWS HealthImaging Developer Guide_ where you can view tested code examples.
 
 __Data store actions__
   - [CreateDatastore](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_CreateDatastore.html) – See [Creating a data store](https://docs.aws.amazon.com/healthimaging/latest/devguide/create-data-store.html).
@@ -28,9 +28,9 @@ __Image set modification actions__
   - [DeleteImageSet](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_DeleteImageSet.html) – See [Deleting an image set](https://docs.aws.amazon.com/healthimaging/latest/devguide/delete-image-set.html).
 
 __Tagging actions__
-  - [TagResource](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_TagResource.html) – See [Tagging a data store](https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-data-store.html) and [Tagging an image set](https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-image-set.html).
-  - [ListTagsForResource](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListTagsForResource.html) – See [Tagging a data store](https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-data-store.html) and [Tagging an image set](https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-image-set.html).
-  - [UntagResource](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_UntagResource.html) – See [Tagging a data store](https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-data-store.html) and [Tagging an image set](https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-list-untag-image-set.html).
+  - [TagResource](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_TagResource.html) – See [Tagging a resource](https://docs.aws.amazon.com/healthimaging/latest/devguide/tag-resource.html).
+  - [ListTagsForResource](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_ListTagsForResource.html) – See [Listing tags for a resource](https://docs.aws.amazon.com/healthimaging/latest/devguide/list-tag-resource.html).
+  - [UntagResource](https://docs.aws.amazon.com/healthimaging/latest/APIReference/API_UntagResource.html) – See [Untagging a resource](https://docs.aws.amazon.com/healthimaging/latest/devguide/untag-resource.html).
 
 ## Getting Started
 
@@ -44,7 +44,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-medicalimaging = "1.18.0"
+aws-sdk-medicalimaging = "1.19.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

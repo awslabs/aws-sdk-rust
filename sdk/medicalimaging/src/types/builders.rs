@@ -5,6 +5,8 @@ pub use crate::types::_datastore_summary::DatastoreSummaryBuilder;
 
 pub use crate::types::_dicom_updates::DicomUpdatesBuilder;
 
+pub use crate::types::_sort::SortBuilder;
+
 pub use crate::types::_image_sets_metadata_summary::ImageSetsMetadataSummaryBuilder;
 
 pub use crate::types::_dicom_tags::DicomTagsBuilder;

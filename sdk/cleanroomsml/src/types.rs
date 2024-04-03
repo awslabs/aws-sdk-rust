@@ -37,10 +37,6 @@ pub use crate::types::_configured_audience_model_status::ConfiguredAudienceModel
 
 pub use crate::types::_configured_audience_model_summary::ConfiguredAudienceModelSummary;
 
-pub use crate::types::_audience_model_metric::AudienceModelMetric;
-
-pub use crate::types::_audience_model_metric_type::AudienceModelMetricType;
-
 pub use crate::types::_status_details::StatusDetails;
 
 pub use crate::types::_audience_model_status::AudienceModelStatus;
@@ -74,10 +70,6 @@ mod _audience_generation_job_data_source;
 mod _audience_generation_job_status;
 
 mod _audience_generation_job_summary;
-
-mod _audience_model_metric;
-
-mod _audience_model_metric_type;
 
 mod _audience_model_status;
 

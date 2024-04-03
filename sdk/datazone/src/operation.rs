@@ -115,6 +115,9 @@ pub mod delete_subscription_request;
 /// Types for the `DeleteSubscriptionTarget` operation.
 pub mod delete_subscription_target;
 
+/// Types for the `DeleteTimeSeriesDataPoints` operation.
+pub mod delete_time_series_data_points;
+
 /// Types for the `GetAsset` operation.
 pub mod get_asset;
 
@@ -178,6 +181,9 @@ pub mod get_subscription_request_details;
 /// Types for the `GetSubscriptionTarget` operation.
 pub mod get_subscription_target;
 
+/// Types for the `GetTimeSeriesDataPoint` operation.
+pub mod get_time_series_data_point;
+
 /// Types for the `GetUserProfile` operation.
 pub mod get_user_profile;
 
@@ -234,6 +240,12 @@ pub mod list_subscriptions;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTimeSeriesDataPoints` operation.
+pub mod list_time_series_data_points;
+
+/// Types for the `PostTimeSeriesDataPoints` operation.
+pub mod post_time_series_data_points;
 
 /// Types for the `PutEnvironmentBlueprintConfiguration` operation.
 pub mod put_environment_blueprint_configuration;

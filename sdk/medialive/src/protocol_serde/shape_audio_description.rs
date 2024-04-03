@@ -48,6 +48,18 @@ pub fn ser_audio_description(
     if let Some(var_15) = &input.stream_name {
         object.key("streamName").string(var_15.as_str());
     }
+    if let Some(var_16) = &input.audio_dash_roles {
+        let mut array_17 = object.key("audioDashRoles").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.dvb_dash_accessibility {
+        object.key("dvbDashAccessibility").string(var_19.as_str());
+    }
     Ok(())
 }
 
@@ -131,6 +143,17 @@ where
                             builder = builder.set_stream_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "audioDashRoles" => {
+                            builder = builder
+                                .set_audio_dash_roles(crate::protocol_serde::shape_list_of_dash_role_audio::de_list_of_dash_role_audio(tokens)?);
+                        }
+                        "dvbDashAccessibility" => {
+                            builder = builder.set_dvb_dash_accessibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DvbDashAccessibility::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

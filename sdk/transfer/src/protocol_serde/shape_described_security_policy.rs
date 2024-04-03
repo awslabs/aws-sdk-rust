@@ -38,6 +38,23 @@ where
                             builder =
                                 builder.set_tls_ciphers(crate::protocol_serde::shape_security_policy_options::de_security_policy_options(tokens)?);
                         }
+                        "SshHostKeyAlgorithms" => {
+                            builder = builder.set_ssh_host_key_algorithms(
+                                crate::protocol_serde::shape_security_policy_options::de_security_policy_options(tokens)?,
+                            );
+                        }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SecurityPolicyResourceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Protocols" => {
+                            builder = builder.set_protocols(crate::protocol_serde::shape_security_policy_protocols::de_security_policy_protocols(
+                                tokens,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

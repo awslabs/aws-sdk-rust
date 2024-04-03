@@ -21,8 +21,6 @@ pub use crate::types::_s3_config_map::S3ConfigMapBuilder;
 
 pub use crate::types::_configured_audience_model_summary::ConfiguredAudienceModelSummaryBuilder;
 
-pub use crate::types::_audience_model_metric::AudienceModelMetricBuilder;
-
 pub use crate::types::_status_details::StatusDetailsBuilder;
 
 pub use crate::types::_audience_model_summary::AudienceModelSummaryBuilder;

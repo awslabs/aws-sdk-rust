@@ -32,6 +32,10 @@ pub struct DescribeContactOutput {
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>List describing source and destination details for each dataflow edge.</p>
     pub dataflow_list: ::std::option::Option<::std::vec::Vec<crate::types::DataflowDetail>>,
+    /// <p>Projected time in UTC your satellite will rise above the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub visibility_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub visibility_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeContactOutput {
@@ -93,6 +97,14 @@ impl DescribeContactOutput {
     pub fn dataflow_list(&self) -> &[crate::types::DataflowDetail] {
         self.dataflow_list.as_deref().unwrap_or_default()
     }
+    /// <p>Projected time in UTC your satellite will rise above the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub fn visibility_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.visibility_start_time.as_ref()
+    }
+    /// <p>Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub fn visibility_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.visibility_end_time.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeContactOutput {
     fn request_id(&self) -> Option<&str> {
@@ -124,6 +136,8 @@ pub struct DescribeContactOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) dataflow_list: ::std::option::Option<::std::vec::Vec<crate::types::DataflowDetail>>,
+    pub(crate) visibility_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) visibility_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeContactOutputBuilder {
@@ -335,6 +349,34 @@ impl DescribeContactOutputBuilder {
     pub fn get_dataflow_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataflowDetail>> {
         &self.dataflow_list
     }
+    /// <p>Projected time in UTC your satellite will rise above the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub fn visibility_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.visibility_start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Projected time in UTC your satellite will rise above the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub fn set_visibility_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.visibility_start_time = input;
+        self
+    }
+    /// <p>Projected time in UTC your satellite will rise above the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub fn get_visibility_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.visibility_start_time
+    }
+    /// <p>Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub fn visibility_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.visibility_end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub fn set_visibility_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.visibility_end_time = input;
+        self
+    }
+    /// <p>Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
+    pub fn get_visibility_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.visibility_end_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -361,6 +403,8 @@ impl DescribeContactOutputBuilder {
             tags: self.tags,
             region: self.region,
             dataflow_list: self.dataflow_list,
+            visibility_start_time: self.visibility_start_time,
+            visibility_end_time: self.visibility_end_time,
             _request_id: self._request_id,
         }
     }

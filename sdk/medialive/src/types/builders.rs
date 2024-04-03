@@ -199,6 +199,8 @@ pub use crate::types::_output::OutputBuilder;
 
 pub use crate::types::_output_settings::OutputSettingsBuilder;
 
+pub use crate::types::_cmaf_ingest_output_settings::CmafIngestOutputSettingsBuilder;
+
 pub use crate::types::_udp_output_settings::UdpOutputSettingsBuilder;
 
 pub use crate::types::_fec_output_settings::FecOutputSettingsBuilder;
@@ -248,6 +250,8 @@ pub use crate::types::_archive_container_settings::ArchiveContainerSettingsBuild
 pub use crate::types::_raw_settings::RawSettingsBuilder;
 
 pub use crate::types::_output_group_settings::OutputGroupSettingsBuilder;
+
+pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettingsBuilder;
 
 pub use crate::types::_udp_group_settings::UdpGroupSettingsBuilder;
 

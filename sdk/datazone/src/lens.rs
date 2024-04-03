@@ -169,6 +169,16 @@ pub(crate) fn reflens_list_subscriptions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_time_series_data_points_output_output_next_token(
+    input: &crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_output_output_next_token(
     input: &crate::operation::search::SearchOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -350,6 +360,16 @@ pub(crate) fn lens_list_subscriptions_output_output_items(
     input: crate::operation::list_subscriptions::ListSubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionSummary>> {
     let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_time_series_data_points_output_output_items(
+    input: crate::operation::list_time_series_data_points::ListTimeSeriesDataPointsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>> {
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 

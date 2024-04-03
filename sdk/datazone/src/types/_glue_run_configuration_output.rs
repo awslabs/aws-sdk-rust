@@ -12,6 +12,8 @@ pub struct GlueRunConfigurationOutput {
     pub data_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub relational_filter_configurations: ::std::vec::Vec<crate::types::RelationalFilterConfiguration>,
+    /// <p>Specifies whether to automatically import data quality metrics as part of the data source run.</p>
+    pub auto_import_data_quality_result: ::std::option::Option<bool>,
 }
 impl GlueRunConfigurationOutput {
     /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
@@ -31,6 +33,10 @@ impl GlueRunConfigurationOutput {
         use std::ops::Deref;
         self.relational_filter_configurations.deref()
     }
+    /// <p>Specifies whether to automatically import data quality metrics as part of the data source run.</p>
+    pub fn auto_import_data_quality_result(&self) -> ::std::option::Option<bool> {
+        self.auto_import_data_quality_result
+    }
 }
 impl GlueRunConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GlueRunConfigurationOutput`](crate::types::GlueRunConfigurationOutput).
@@ -47,6 +53,7 @@ pub struct GlueRunConfigurationOutputBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role: ::std::option::Option<::std::string::String>,
     pub(crate) relational_filter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
+    pub(crate) auto_import_data_quality_result: ::std::option::Option<bool>,
 }
 impl GlueRunConfigurationOutputBuilder {
     /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
@@ -114,6 +121,20 @@ impl GlueRunConfigurationOutputBuilder {
     pub fn get_relational_filter_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>> {
         &self.relational_filter_configurations
     }
+    /// <p>Specifies whether to automatically import data quality metrics as part of the data source run.</p>
+    pub fn auto_import_data_quality_result(mut self, input: bool) -> Self {
+        self.auto_import_data_quality_result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to automatically import data quality metrics as part of the data source run.</p>
+    pub fn set_auto_import_data_quality_result(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_import_data_quality_result = input;
+        self
+    }
+    /// <p>Specifies whether to automatically import data quality metrics as part of the data source run.</p>
+    pub fn get_auto_import_data_quality_result(&self) -> &::std::option::Option<bool> {
+        &self.auto_import_data_quality_result
+    }
     /// Consumes the builder and constructs a [`GlueRunConfigurationOutput`](crate::types::GlueRunConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`relational_filter_configurations`](crate::types::builders::GlueRunConfigurationOutputBuilder::relational_filter_configurations)
@@ -128,6 +149,7 @@ impl GlueRunConfigurationOutputBuilder {
                     "relational_filter_configurations was not specified but it is required when building GlueRunConfigurationOutput",
                 )
             })?,
+            auto_import_data_quality_result: self.auto_import_data_quality_result,
         })
     }
 }

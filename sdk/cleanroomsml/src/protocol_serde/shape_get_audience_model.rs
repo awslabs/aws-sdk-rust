@@ -119,9 +119,6 @@ pub(crate) fn de_get_audience_model(
                             .transpose()?,
                     );
                 }
-                "metrics" => {
-                    builder = builder.set_metrics(crate::protocol_serde::shape_audience_model_metrics::de_audience_model_metrics(tokens)?);
-                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -15,6 +15,12 @@ pub use crate::types::_dicom_updates::DicomUpdates;
 
 pub use crate::types::_job_status::JobStatus;
 
+pub use crate::types::_sort::Sort;
+
+pub use crate::types::_sort_field::SortField;
+
+pub use crate::types::_sort_order::SortOrder;
+
 pub use crate::types::_image_sets_metadata_summary::ImageSetsMetadataSummary;
 
 pub use crate::types::_dicom_tags::DicomTags;
@@ -94,6 +100,12 @@ mod _search_by_attribute_value;
 mod _search_criteria;
 
 mod _search_filter;
+
+mod _sort;
+
+mod _sort_field;
+
+mod _sort_order;
 
 /// Builders
 pub mod builders;

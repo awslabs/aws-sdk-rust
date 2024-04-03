@@ -6,9 +6,9 @@
 pub struct CreateMissionProfileInput {
     /// <p>Name of a mission profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Amount of time prior to contact start you’d like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
     pub contact_pre_pass_duration_seconds: ::std::option::Option<i32>,
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
     pub contact_post_pass_duration_seconds: ::std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub minimum_viable_contact_duration_seconds: ::std::option::Option<i32>,
@@ -28,11 +28,11 @@ impl CreateMissionProfileInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Amount of time prior to contact start you’d like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
     pub fn contact_pre_pass_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.contact_pre_pass_duration_seconds
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
     pub fn contact_post_pass_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.contact_post_pass_duration_seconds
     }
@@ -100,31 +100,31 @@ impl CreateMissionProfileInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Amount of time prior to contact start you’d like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
     pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
         self.contact_pre_pass_duration_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Amount of time prior to contact start you’d like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
     pub fn set_contact_pre_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.contact_pre_pass_duration_seconds = input;
         self
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Amount of time prior to contact start you’d like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
     pub fn get_contact_pre_pass_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.contact_pre_pass_duration_seconds
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
     pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
         self.contact_post_pass_duration_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
     pub fn set_contact_post_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.contact_post_pass_duration_seconds = input;
         self
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
     pub fn get_contact_post_pass_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.contact_post_pass_duration_seconds
     }

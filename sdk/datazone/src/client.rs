@@ -239,6 +239,8 @@ mod delete_subscription_request;
 
 mod delete_subscription_target;
 
+mod delete_time_series_data_points;
+
 mod get_asset;
 
 mod get_asset_type;
@@ -281,6 +283,8 @@ mod get_subscription_request_details;
 
 mod get_subscription_target;
 
+mod get_time_series_data_point;
+
 mod get_user_profile;
 
 mod list_asset_revisions;
@@ -318,6 +322,10 @@ mod list_subscription_targets;
 mod list_subscriptions;
 
 mod list_tags_for_resource;
+
+mod list_time_series_data_points;
+
+mod post_time_series_data_points;
 
 mod put_environment_blueprint_configuration;
 

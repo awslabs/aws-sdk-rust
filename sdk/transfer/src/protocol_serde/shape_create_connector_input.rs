@@ -36,5 +36,8 @@ pub fn ser_create_connector_input_input(
         crate::protocol_serde::shape_sftp_connector_config::ser_sftp_connector_config(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.security_policy_name {
+        object.key("SecurityPolicyName").string(var_12.as_str());
+    }
     Ok(())
 }

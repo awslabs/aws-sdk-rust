@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSecurityPolicy`](crate::operation::describe_security_policy::builders::DescribeSecurityPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`security_policy_name(impl Into<String>)`](crate::operation::describe_security_policy::builders::DescribeSecurityPolicyFluentBuilder::security_policy_name) / [`set_security_policy_name(Option<String>)`](crate::operation::describe_security_policy::builders::DescribeSecurityPolicyFluentBuilder::set_security_policy_name):<br>required: **true**<br><p>Specifies the name of the security policy that is attached to the server.</p><br>
+    ///   - [`security_policy_name(impl Into<String>)`](crate::operation::describe_security_policy::builders::DescribeSecurityPolicyFluentBuilder::security_policy_name) / [`set_security_policy_name(Option<String>)`](crate::operation::describe_security_policy::builders::DescribeSecurityPolicyFluentBuilder::set_security_policy_name):<br>required: **true**<br><p>Specify the text name of the security policy for which you want the details.</p><br>
     /// - On success, responds with [`DescribeSecurityPolicyOutput`](crate::operation::describe_security_policy::DescribeSecurityPolicyOutput) with field(s):
     ///   - [`security_policy(Option<DescribedSecurityPolicy>)`](crate::operation::describe_security_policy::DescribeSecurityPolicyOutput::security_policy): <p>An array containing the properties of the security policy.</p>
     /// - On failure, responds with [`SdkError<DescribeSecurityPolicyError>`](crate::operation::describe_security_policy::DescribeSecurityPolicyError)

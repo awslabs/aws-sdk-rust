@@ -27,5 +27,8 @@ pub fn ser_update_connector_input_input(
         crate::protocol_serde::shape_sftp_connector_config::ser_sftp_connector_config(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.security_policy_name {
+        object.key("SecurityPolicyName").string(var_9.as_str());
+    }
     Ok(())
 }

@@ -235,6 +235,10 @@ pub(crate) mod shape_stop_db_cluster;
 
 pub(crate) mod shape_stop_db_cluster_input;
 
+pub(crate) mod shape_switchover_global_cluster;
+
+pub(crate) mod shape_switchover_global_cluster_input;
+
 pub(crate) mod shape_authorization_not_found_fault;
 
 pub(crate) mod shape_certificate_not_found_fault;

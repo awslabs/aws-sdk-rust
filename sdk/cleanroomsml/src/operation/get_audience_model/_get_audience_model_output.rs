@@ -21,8 +21,6 @@ pub struct GetAudienceModelOutput {
     pub status: crate::types::AudienceModelStatus,
     /// <p>Details about the status of the audience model.</p>
     pub status_details: ::std::option::Option<crate::types::StatusDetails>,
-    /// <p>Accuracy metrics for the model.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::AudienceModelMetric>>,
     /// <p>The KMS key ARN used for the audience model.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags that are assigned to the audience model.</p>
@@ -71,12 +69,6 @@ impl GetAudienceModelOutput {
     pub fn status_details(&self) -> ::std::option::Option<&crate::types::StatusDetails> {
         self.status_details.as_ref()
     }
-    /// <p>Accuracy metrics for the model.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[crate::types::AudienceModelMetric] {
-        self.metrics.as_deref().unwrap_or_default()
-    }
     /// <p>The KMS key ARN used for the audience model.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
@@ -115,7 +107,6 @@ pub struct GetAudienceModelOutputBuilder {
     pub(crate) training_dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AudienceModelStatus>,
     pub(crate) status_details: ::std::option::Option<crate::types::StatusDetails>,
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::AudienceModelMetric>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -254,26 +245,6 @@ impl GetAudienceModelOutputBuilder {
     pub fn get_status_details(&self) -> &::std::option::Option<crate::types::StatusDetails> {
         &self.status_details
     }
-    /// Appends an item to `metrics`.
-    ///
-    /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
-    ///
-    /// <p>Accuracy metrics for the model.</p>
-    pub fn metrics(mut self, input: crate::types::AudienceModelMetric) -> Self {
-        let mut v = self.metrics.unwrap_or_default();
-        v.push(input);
-        self.metrics = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>Accuracy metrics for the model.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudienceModelMetric>>) -> Self {
-        self.metrics = input;
-        self
-    }
-    /// <p>Accuracy metrics for the model.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudienceModelMetric>> {
-        &self.metrics
-    }
     /// <p>The KMS key ARN used for the audience model.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -382,7 +353,6 @@ impl GetAudienceModelOutputBuilder {
                 )
             })?,
             status_details: self.status_details,
-            metrics: self.metrics,
             kms_key_arn: self.kms_key_arn,
             tags: self.tags,
             description: self.description,

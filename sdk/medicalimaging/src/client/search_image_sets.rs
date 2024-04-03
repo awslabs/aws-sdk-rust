@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p><br>
     /// - On success, responds with [`SearchImageSetsOutput`](crate::operation::search_image_sets::SearchImageSetsOutput) with field(s):
     ///   - [`image_sets_metadata_summaries(Vec::<ImageSetsMetadataSummary>)`](crate::operation::search_image_sets::SearchImageSetsOutput::image_sets_metadata_summaries): <p>The model containing the image set results.</p>
+    ///   - [`sort(Option<Sort>)`](crate::operation::search_image_sets::SearchImageSetsOutput::sort): <p>The sort order for image set search results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_image_sets::SearchImageSetsOutput::next_token): <p>The token for pagination results.</p>
     /// - On failure, responds with [`SdkError<SearchImageSetsError>`](crate::operation::search_image_sets::SearchImageSetsError)
     pub fn search_image_sets(&self) -> crate::operation::search_image_sets::builders::SearchImageSetsFluentBuilder {

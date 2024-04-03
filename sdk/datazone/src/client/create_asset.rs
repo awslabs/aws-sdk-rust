@@ -32,6 +32,7 @@ impl super::Client {
     ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::create_asset::CreateAssetOutput::listing): <p>The details of an asset published in an Amazon DataZone catalog.</p>
     ///   - [`forms_output(Vec::<FormOutput>)`](crate::operation::create_asset::CreateAssetOutput::forms_output): <p>The metadata forms that are attached to the created asset.</p>
     ///   - [`read_only_forms_output(Option<Vec::<FormOutput>>)`](crate::operation::create_asset::CreateAssetOutput::read_only_forms_output): <p>The read-only metadata forms that are attached to the created asset.</p>
+    ///   - [`latest_time_series_data_point_forms_output(Option<Vec::<TimeSeriesDataPointSummaryFormOutput>>)`](crate::operation::create_asset::CreateAssetOutput::latest_time_series_data_point_forms_output): <p>The latest data point that was imported into the time series form for the asset.</p>
     ///   - [`prediction_configuration(Option<PredictionConfiguration>)`](crate::operation::create_asset::CreateAssetOutput::prediction_configuration): <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     /// - On failure, responds with [`SdkError<CreateAssetError>`](crate::operation::create_asset::CreateAssetError)
     pub fn create_asset(&self) -> crate::operation::create_asset::builders::CreateAssetFluentBuilder {

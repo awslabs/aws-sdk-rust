@@ -4,6 +4,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceChange {
+    /// <p>The action that will be taken on the physical resource when the change set is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Delete</code> The resource will be deleted.</p></li>
+    /// <li>
+    /// <p><code>Retain</code> The resource will be retained.</p></li>
+    /// <li>
+    /// <p><code>Snapshot</code> The resource will have a snapshot taken.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndDelete</code> The resource will be replaced and then deleted.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndRetain</code> The resource will be replaced and then retained.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.</p></li>
+    /// </ul>
+    pub policy_action: ::std::option::Option<crate::types::PolicyAction>,
     /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
@@ -25,6 +41,24 @@ pub struct ResourceChange {
     pub module_info: ::std::option::Option<crate::types::ModuleInfo>,
 }
 impl ResourceChange {
+    /// <p>The action that will be taken on the physical resource when the change set is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Delete</code> The resource will be deleted.</p></li>
+    /// <li>
+    /// <p><code>Retain</code> The resource will be retained.</p></li>
+    /// <li>
+    /// <p><code>Snapshot</code> The resource will have a snapshot taken.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndDelete</code> The resource will be replaced and then deleted.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndRetain</code> The resource will be replaced and then retained.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.</p></li>
+    /// </ul>
+    pub fn policy_action(&self) -> ::std::option::Option<&crate::types::PolicyAction> {
+        self.policy_action.as_ref()
+    }
     /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
         self.action.as_ref()
@@ -78,6 +112,7 @@ impl ResourceChange {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceChangeBuilder {
+    pub(crate) policy_action: ::std::option::Option<crate::types::PolicyAction>,
     pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) physical_resource_id: ::std::option::Option<::std::string::String>,
@@ -89,6 +124,62 @@ pub struct ResourceChangeBuilder {
     pub(crate) module_info: ::std::option::Option<crate::types::ModuleInfo>,
 }
 impl ResourceChangeBuilder {
+    /// <p>The action that will be taken on the physical resource when the change set is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Delete</code> The resource will be deleted.</p></li>
+    /// <li>
+    /// <p><code>Retain</code> The resource will be retained.</p></li>
+    /// <li>
+    /// <p><code>Snapshot</code> The resource will have a snapshot taken.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndDelete</code> The resource will be replaced and then deleted.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndRetain</code> The resource will be replaced and then retained.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.</p></li>
+    /// </ul>
+    pub fn policy_action(mut self, input: crate::types::PolicyAction) -> Self {
+        self.policy_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The action that will be taken on the physical resource when the change set is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Delete</code> The resource will be deleted.</p></li>
+    /// <li>
+    /// <p><code>Retain</code> The resource will be retained.</p></li>
+    /// <li>
+    /// <p><code>Snapshot</code> The resource will have a snapshot taken.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndDelete</code> The resource will be replaced and then deleted.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndRetain</code> The resource will be replaced and then retained.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.</p></li>
+    /// </ul>
+    pub fn set_policy_action(mut self, input: ::std::option::Option<crate::types::PolicyAction>) -> Self {
+        self.policy_action = input;
+        self
+    }
+    /// <p>The action that will be taken on the physical resource when the change set is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Delete</code> The resource will be deleted.</p></li>
+    /// <li>
+    /// <p><code>Retain</code> The resource will be retained.</p></li>
+    /// <li>
+    /// <p><code>Snapshot</code> The resource will have a snapshot taken.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndDelete</code> The resource will be replaced and then deleted.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndRetain</code> The resource will be replaced and then retained.</p></li>
+    /// <li>
+    /// <p><code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.</p></li>
+    /// </ul>
+    pub fn get_policy_action(&self) -> &::std::option::Option<crate::types::PolicyAction> {
+        &self.policy_action
+    }
     /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -233,6 +324,7 @@ impl ResourceChangeBuilder {
     /// Consumes the builder and constructs a [`ResourceChange`](crate::types::ResourceChange).
     pub fn build(self) -> crate::types::ResourceChange {
         crate::types::ResourceChange {
+            policy_action: self.policy_action,
             action: self.action,
             logical_resource_id: self.logical_resource_id,
             physical_resource_id: self.physical_resource_id,

@@ -24,6 +24,18 @@ pub fn ser_caption_description(
     if let Some(var_7) = &input.name {
         object.key("name").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.caption_dash_roles {
+        let mut array_9 = object.key("captionDashRoles").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.dvb_dash_accessibility {
+        object.key("dvbDashAccessibility").string(var_11.as_str());
+    }
     Ok(())
 }
 
@@ -79,6 +91,18 @@ where
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "captionDashRoles" => {
+                            builder = builder.set_caption_dash_roles(
+                                crate::protocol_serde::shape_list_of_dash_role_caption::de_list_of_dash_role_caption(tokens)?,
+                            );
+                        }
+                        "dvbDashAccessibility" => {
+                            builder = builder.set_dvb_dash_accessibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DvbDashAccessibility::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

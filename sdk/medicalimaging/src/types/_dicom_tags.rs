@@ -12,11 +12,11 @@ pub struct DicomTags {
     pub dicom_patient_birth_date: ::std::option::Option<::std::string::String>,
     /// <p>The patient sex.</p>
     pub dicom_patient_sex: ::std::option::Option<::std::string::String>,
-    /// <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+    /// <p>The DICOM provided identifier for the Study Instance UID.</p>
     pub dicom_study_instance_uid: ::std::option::Option<::std::string::String>,
-    /// <p>The DICOM provided studyId.</p>
+    /// <p>The DICOM provided identifier for the Study ID.</p>
     pub dicom_study_id: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the study.</p>
+    /// <p>The DICOM provided Study Description.</p>
     pub dicom_study_description: ::std::option::Option<::std::string::String>,
     /// <p>The total number of series in the DICOM study.</p>
     pub dicom_number_of_study_related_series: i32,
@@ -24,6 +24,14 @@ pub struct DicomTags {
     pub dicom_number_of_study_related_instances: i32,
     /// <p>The accession number for the DICOM study.</p>
     pub dicom_accession_number: ::std::option::Option<::std::string::String>,
+    /// <p>The DICOM provided identifier for the Series Instance UID.</p>
+    pub dicom_series_instance_uid: ::std::option::Option<::std::string::String>,
+    /// <p>The DICOM provided identifier for the series Modality.</p>
+    pub dicom_series_modality: ::std::option::Option<::std::string::String>,
+    /// <p>The DICOM provided identifier for the series Body Part Examined.</p>
+    pub dicom_series_body_part: ::std::option::Option<::std::string::String>,
+    /// <p>The DICOM provided identifier for the Series Number.</p>
+    pub dicom_series_number: ::std::option::Option<i32>,
     /// <p>The study date.</p>
     pub dicom_study_date: ::std::option::Option<::std::string::String>,
     /// <p>The study time.</p>
@@ -46,15 +54,15 @@ impl DicomTags {
     pub fn dicom_patient_sex(&self) -> ::std::option::Option<&str> {
         self.dicom_patient_sex.as_deref()
     }
-    /// <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+    /// <p>The DICOM provided identifier for the Study Instance UID.</p>
     pub fn dicom_study_instance_uid(&self) -> ::std::option::Option<&str> {
         self.dicom_study_instance_uid.as_deref()
     }
-    /// <p>The DICOM provided studyId.</p>
+    /// <p>The DICOM provided identifier for the Study ID.</p>
     pub fn dicom_study_id(&self) -> ::std::option::Option<&str> {
         self.dicom_study_id.as_deref()
     }
-    /// <p>The description of the study.</p>
+    /// <p>The DICOM provided Study Description.</p>
     pub fn dicom_study_description(&self) -> ::std::option::Option<&str> {
         self.dicom_study_description.as_deref()
     }
@@ -69,6 +77,22 @@ impl DicomTags {
     /// <p>The accession number for the DICOM study.</p>
     pub fn dicom_accession_number(&self) -> ::std::option::Option<&str> {
         self.dicom_accession_number.as_deref()
+    }
+    /// <p>The DICOM provided identifier for the Series Instance UID.</p>
+    pub fn dicom_series_instance_uid(&self) -> ::std::option::Option<&str> {
+        self.dicom_series_instance_uid.as_deref()
+    }
+    /// <p>The DICOM provided identifier for the series Modality.</p>
+    pub fn dicom_series_modality(&self) -> ::std::option::Option<&str> {
+        self.dicom_series_modality.as_deref()
+    }
+    /// <p>The DICOM provided identifier for the series Body Part Examined.</p>
+    pub fn dicom_series_body_part(&self) -> ::std::option::Option<&str> {
+        self.dicom_series_body_part.as_deref()
+    }
+    /// <p>The DICOM provided identifier for the Series Number.</p>
+    pub fn dicom_series_number(&self) -> ::std::option::Option<i32> {
+        self.dicom_series_number
     }
     /// <p>The study date.</p>
     pub fn dicom_study_date(&self) -> ::std::option::Option<&str> {
@@ -92,6 +116,10 @@ impl ::std::fmt::Debug for DicomTags {
         formatter.field("dicom_number_of_study_related_series", &self.dicom_number_of_study_related_series);
         formatter.field("dicom_number_of_study_related_instances", &self.dicom_number_of_study_related_instances);
         formatter.field("dicom_accession_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("dicom_series_instance_uid", &"*** Sensitive Data Redacted ***");
+        formatter.field("dicom_series_modality", &"*** Sensitive Data Redacted ***");
+        formatter.field("dicom_series_body_part", &"*** Sensitive Data Redacted ***");
+        formatter.field("dicom_series_number", &"*** Sensitive Data Redacted ***");
         formatter.field("dicom_study_date", &"*** Sensitive Data Redacted ***");
         formatter.field("dicom_study_time", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -118,6 +146,10 @@ pub struct DicomTagsBuilder {
     pub(crate) dicom_number_of_study_related_series: ::std::option::Option<i32>,
     pub(crate) dicom_number_of_study_related_instances: ::std::option::Option<i32>,
     pub(crate) dicom_accession_number: ::std::option::Option<::std::string::String>,
+    pub(crate) dicom_series_instance_uid: ::std::option::Option<::std::string::String>,
+    pub(crate) dicom_series_modality: ::std::option::Option<::std::string::String>,
+    pub(crate) dicom_series_body_part: ::std::option::Option<::std::string::String>,
+    pub(crate) dicom_series_number: ::std::option::Option<i32>,
     pub(crate) dicom_study_date: ::std::option::Option<::std::string::String>,
     pub(crate) dicom_study_time: ::std::option::Option<::std::string::String>,
 }
@@ -178,45 +210,45 @@ impl DicomTagsBuilder {
     pub fn get_dicom_patient_sex(&self) -> &::std::option::Option<::std::string::String> {
         &self.dicom_patient_sex
     }
-    /// <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+    /// <p>The DICOM provided identifier for the Study Instance UID.</p>
     pub fn dicom_study_instance_uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dicom_study_instance_uid = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+    /// <p>The DICOM provided identifier for the Study Instance UID.</p>
     pub fn set_dicom_study_instance_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dicom_study_instance_uid = input;
         self
     }
-    /// <p>The DICOM provided identifier for studyInstanceUid.&gt;</p>
+    /// <p>The DICOM provided identifier for the Study Instance UID.</p>
     pub fn get_dicom_study_instance_uid(&self) -> &::std::option::Option<::std::string::String> {
         &self.dicom_study_instance_uid
     }
-    /// <p>The DICOM provided studyId.</p>
+    /// <p>The DICOM provided identifier for the Study ID.</p>
     pub fn dicom_study_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dicom_study_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DICOM provided studyId.</p>
+    /// <p>The DICOM provided identifier for the Study ID.</p>
     pub fn set_dicom_study_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dicom_study_id = input;
         self
     }
-    /// <p>The DICOM provided studyId.</p>
+    /// <p>The DICOM provided identifier for the Study ID.</p>
     pub fn get_dicom_study_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dicom_study_id
     }
-    /// <p>The description of the study.</p>
+    /// <p>The DICOM provided Study Description.</p>
     pub fn dicom_study_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dicom_study_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the study.</p>
+    /// <p>The DICOM provided Study Description.</p>
     pub fn set_dicom_study_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dicom_study_description = input;
         self
     }
-    /// <p>The description of the study.</p>
+    /// <p>The DICOM provided Study Description.</p>
     pub fn get_dicom_study_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.dicom_study_description
     }
@@ -262,6 +294,62 @@ impl DicomTagsBuilder {
     pub fn get_dicom_accession_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.dicom_accession_number
     }
+    /// <p>The DICOM provided identifier for the Series Instance UID.</p>
+    pub fn dicom_series_instance_uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dicom_series_instance_uid = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The DICOM provided identifier for the Series Instance UID.</p>
+    pub fn set_dicom_series_instance_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dicom_series_instance_uid = input;
+        self
+    }
+    /// <p>The DICOM provided identifier for the Series Instance UID.</p>
+    pub fn get_dicom_series_instance_uid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dicom_series_instance_uid
+    }
+    /// <p>The DICOM provided identifier for the series Modality.</p>
+    pub fn dicom_series_modality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dicom_series_modality = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The DICOM provided identifier for the series Modality.</p>
+    pub fn set_dicom_series_modality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dicom_series_modality = input;
+        self
+    }
+    /// <p>The DICOM provided identifier for the series Modality.</p>
+    pub fn get_dicom_series_modality(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dicom_series_modality
+    }
+    /// <p>The DICOM provided identifier for the series Body Part Examined.</p>
+    pub fn dicom_series_body_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dicom_series_body_part = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The DICOM provided identifier for the series Body Part Examined.</p>
+    pub fn set_dicom_series_body_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dicom_series_body_part = input;
+        self
+    }
+    /// <p>The DICOM provided identifier for the series Body Part Examined.</p>
+    pub fn get_dicom_series_body_part(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dicom_series_body_part
+    }
+    /// <p>The DICOM provided identifier for the Series Number.</p>
+    pub fn dicom_series_number(mut self, input: i32) -> Self {
+        self.dicom_series_number = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The DICOM provided identifier for the Series Number.</p>
+    pub fn set_dicom_series_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.dicom_series_number = input;
+        self
+    }
+    /// <p>The DICOM provided identifier for the Series Number.</p>
+    pub fn get_dicom_series_number(&self) -> &::std::option::Option<i32> {
+        &self.dicom_series_number
+    }
     /// <p>The study date.</p>
     pub fn dicom_study_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dicom_study_date = ::std::option::Option::Some(input.into());
@@ -303,6 +391,10 @@ impl DicomTagsBuilder {
             dicom_number_of_study_related_series: self.dicom_number_of_study_related_series.unwrap_or_default(),
             dicom_number_of_study_related_instances: self.dicom_number_of_study_related_instances.unwrap_or_default(),
             dicom_accession_number: self.dicom_accession_number,
+            dicom_series_instance_uid: self.dicom_series_instance_uid,
+            dicom_series_modality: self.dicom_series_modality,
+            dicom_series_body_part: self.dicom_series_body_part,
+            dicom_series_number: self.dicom_series_number,
             dicom_study_date: self.dicom_study_date,
             dicom_study_time: self.dicom_study_time,
         }
@@ -321,6 +413,10 @@ impl ::std::fmt::Debug for DicomTagsBuilder {
         formatter.field("dicom_number_of_study_related_series", &self.dicom_number_of_study_related_series);
         formatter.field("dicom_number_of_study_related_instances", &self.dicom_number_of_study_related_instances);
         formatter.field("dicom_accession_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("dicom_series_instance_uid", &"*** Sensitive Data Redacted ***");
+        formatter.field("dicom_series_modality", &"*** Sensitive Data Redacted ***");
+        formatter.field("dicom_series_body_part", &"*** Sensitive Data Redacted ***");
+        formatter.field("dicom_series_number", &"*** Sensitive Data Redacted ***");
         formatter.field("dicom_study_date", &"*** Sensitive Data Redacted ***");
         formatter.field("dicom_study_time", &"*** Sensitive Data Redacted ***");
         formatter.finish()

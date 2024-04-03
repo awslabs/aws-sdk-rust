@@ -14,7 +14,6 @@ impl super::Client {
     ///   - [`training_dataset_arn(String)`](crate::operation::get_audience_model::GetAudienceModelOutput::training_dataset_arn): <p>The Amazon Resource Name (ARN) of the training dataset that was used for this audience model.</p>
     ///   - [`status(AudienceModelStatus)`](crate::operation::get_audience_model::GetAudienceModelOutput::status): <p>The status of the audience model.</p>
     ///   - [`status_details(Option<StatusDetails>)`](crate::operation::get_audience_model::GetAudienceModelOutput::status_details): <p>Details about the status of the audience model.</p>
-    ///   - [`metrics(Option<Vec::<AudienceModelMetric>>)`](crate::operation::get_audience_model::GetAudienceModelOutput::metrics): <p>Accuracy metrics for the model.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_audience_model::GetAudienceModelOutput::kms_key_arn): <p>The KMS key ARN used for the audience model.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_audience_model::GetAudienceModelOutput::tags): <p>The tags that are assigned to the audience model.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_audience_model::GetAudienceModelOutput::description): <p>The description of the audience model.</p>

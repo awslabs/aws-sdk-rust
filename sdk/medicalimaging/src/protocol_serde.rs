@@ -131,6 +131,8 @@ pub(crate) mod shape_metadata_updates;
 
 pub(crate) mod shape_search_criteria;
 
+pub(crate) mod shape_sort;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_copy_destination_image_set;

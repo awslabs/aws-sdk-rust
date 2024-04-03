@@ -425,6 +425,8 @@ pub use crate::types::_output::Output;
 
 pub use crate::types::_output_settings::OutputSettings;
 
+pub use crate::types::_cmaf_ingest_output_settings::CmafIngestOutputSettings;
+
 pub use crate::types::_udp_output_settings::UdpOutputSettings;
 
 pub use crate::types::_fec_output_settings::FecOutputSettings;
@@ -540,6 +542,14 @@ pub use crate::types::_archive_container_settings::ArchiveContainerSettings;
 pub use crate::types::_raw_settings::RawSettings;
 
 pub use crate::types::_output_group_settings::OutputGroupSettings;
+
+pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettings;
+
+pub use crate::types::_cmaf_ingest_segment_length_units::CmafIngestSegmentLengthUnits;
+
+pub use crate::types::_scte35_type::Scte35Type;
+
+pub use crate::types::_cmaf_nielsen_id3_behavior::CmafNielsenId3Behavior;
 
 pub use crate::types::_udp_group_settings::UdpGroupSettings;
 
@@ -713,6 +723,10 @@ pub use crate::types::_feature_activations_input_prepare_schedule_actions::Featu
 
 pub use crate::types::_caption_description::CaptionDescription;
 
+pub use crate::types::_dvb_dash_accessibility::DvbDashAccessibility;
+
+pub use crate::types::_dash_role_caption::DashRoleCaption;
+
 pub use crate::types::_caption_destination_settings::CaptionDestinationSettings;
 
 pub use crate::types::_webvtt_destination_settings::WebvttDestinationSettings;
@@ -804,6 +818,8 @@ pub use crate::types::_avail_blanking::AvailBlanking;
 pub use crate::types::_avail_blanking_state::AvailBlankingState;
 
 pub use crate::types::_audio_description::AudioDescription;
+
+pub use crate::types::_dash_role_audio::DashRoleAudio;
 
 pub use crate::types::_remix_settings::RemixSettings;
 
@@ -1233,6 +1249,14 @@ mod _channel_state;
 
 mod _channel_summary;
 
+mod _cmaf_ingest_group_settings;
+
+mod _cmaf_ingest_output_settings;
+
+mod _cmaf_ingest_segment_length_units;
+
+mod _cmaf_nielsen_id3_behavior;
+
 mod _color_correction;
 
 mod _color_correction_settings;
@@ -1243,6 +1267,10 @@ mod _color_space_passthrough_settings;
 
 mod _content_type;
 
+mod _dash_role_audio;
+
+mod _dash_role_caption;
+
 mod _device_settings_sync_state;
 
 mod _device_update_status;
@@ -1250,6 +1278,8 @@ mod _device_update_status;
 mod _dolby_e_program_selection;
 
 mod _dolby_vision81_settings;
+
+mod _dvb_dash_accessibility;
 
 mod _dvb_nit_settings;
 
@@ -2002,6 +2032,8 @@ mod _scte35_splice_insert_web_delivery_allowed_behavior;
 mod _scte35_time_signal_apos;
 
 mod _scte35_time_signal_schedule_action_settings;
+
+mod _scte35_type;
 
 mod _scte35_web_delivery_allowed_flag;
 

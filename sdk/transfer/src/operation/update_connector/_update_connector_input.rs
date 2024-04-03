@@ -20,6 +20,8 @@ pub struct UpdateConnectorInput {
     pub logging_role: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub security_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectorInput {
     /// <p>The unique identifier for the connector.</p>
@@ -51,6 +53,10 @@ impl UpdateConnectorInput {
     pub fn sftp_config(&self) -> ::std::option::Option<&crate::types::SftpConnectorConfig> {
         self.sftp_config.as_ref()
     }
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
+        self.security_policy_name.as_deref()
+    }
 }
 impl UpdateConnectorInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
@@ -69,6 +75,7 @@ pub struct UpdateConnectorInputBuilder {
     pub(crate) access_role: ::std::option::Option<::std::string::String>,
     pub(crate) logging_role: ::std::option::Option<::std::string::String>,
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
+    pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectorInputBuilder {
     /// <p>The unique identifier for the connector.</p>
@@ -171,6 +178,20 @@ impl UpdateConnectorInputBuilder {
     pub fn get_sftp_config(&self) -> &::std::option::Option<crate::types::SftpConnectorConfig> {
         &self.sftp_config
     }
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.security_policy_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_policy_name = input;
+        self
+    }
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_policy_name
+    }
     /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
     pub fn build(
         self,
@@ -182,6 +203,7 @@ impl UpdateConnectorInputBuilder {
             access_role: self.access_role,
             logging_role: self.logging_role,
             sftp_config: self.sftp_config,
+            security_policy_name: self.security_policy_name,
         })
     }
 }

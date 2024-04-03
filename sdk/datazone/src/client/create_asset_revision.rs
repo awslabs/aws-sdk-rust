@@ -30,6 +30,7 @@ impl super::Client {
     ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::listing): <p>The details of an asset published in an Amazon DataZone catalog.</p>
     ///   - [`forms_output(Vec::<FormOutput>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::forms_output): <p>The metadata forms that were attached to the asset as part of the asset revision.</p>
     ///   - [`read_only_forms_output(Option<Vec::<FormOutput>>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::read_only_forms_output): <p>The read-only metadata forms that were attached to the asset as part of the asset revision.</p>
+    ///   - [`latest_time_series_data_point_forms_output(Option<Vec::<TimeSeriesDataPointSummaryFormOutput>>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::latest_time_series_data_point_forms_output): <p>The latest data point that was imported into the time series form for the asset.</p>
     ///   - [`prediction_configuration(Option<PredictionConfiguration>)`](crate::operation::create_asset_revision::CreateAssetRevisionOutput::prediction_configuration): <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     /// - On failure, responds with [`SdkError<CreateAssetRevisionError>`](crate::operation::create_asset_revision::CreateAssetRevisionError)
     pub fn create_asset_revision(&self) -> crate::operation::create_asset_revision::builders::CreateAssetRevisionFluentBuilder {

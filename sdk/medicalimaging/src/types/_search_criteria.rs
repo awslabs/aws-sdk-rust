@@ -6,6 +6,8 @@
 pub struct SearchCriteria {
     /// <p>The filters for the search criteria.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
+    /// <p>The sort input for search criteria.</p>
+    pub sort: ::std::option::Option<crate::types::Sort>,
 }
 impl SearchCriteria {
     /// <p>The filters for the search criteria.</p>
@@ -14,11 +16,16 @@ impl SearchCriteria {
     pub fn filters(&self) -> &[crate::types::SearchFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
+    /// <p>The sort input for search criteria.</p>
+    pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
+        self.sort.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SearchCriteria {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchCriteria");
         formatter.field("filters", &"*** Sensitive Data Redacted ***");
+        formatter.field("sort", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -34,6 +41,7 @@ impl SearchCriteria {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SearchCriteriaBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
+    pub(crate) sort: ::std::option::Option<crate::types::Sort>,
 }
 impl SearchCriteriaBuilder {
     /// Appends an item to `filters`.
@@ -56,15 +64,33 @@ impl SearchCriteriaBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>> {
         &self.filters
     }
+    /// <p>The sort input for search criteria.</p>
+    pub fn sort(mut self, input: crate::types::Sort) -> Self {
+        self.sort = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sort input for search criteria.</p>
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
+        self.sort = input;
+        self
+    }
+    /// <p>The sort input for search criteria.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
+        &self.sort
+    }
     /// Consumes the builder and constructs a [`SearchCriteria`](crate::types::SearchCriteria).
     pub fn build(self) -> crate::types::SearchCriteria {
-        crate::types::SearchCriteria { filters: self.filters }
+        crate::types::SearchCriteria {
+            filters: self.filters,
+            sort: self.sort,
+        }
     }
 }
 impl ::std::fmt::Debug for SearchCriteriaBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchCriteriaBuilder");
         formatter.field("filters", &"*** Sensitive Data Redacted ***");
+        formatter.field("sort", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

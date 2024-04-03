@@ -93,6 +93,18 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
                         }
+                        "visibilityStartTime" => {
+                            builder = builder.set_visibility_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "visibilityEndTime" => {
+                            builder = builder.set_visibility_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

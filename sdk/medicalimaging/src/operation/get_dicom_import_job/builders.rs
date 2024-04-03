@@ -22,7 +22,9 @@ impl GetDicomImportJobInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDICOMImportJob`.
 ///
-/// <p>Get the import job properties to learn more about the job or job progress.</p>
+/// <p>Get the import job properties to learn more about the job or job progress.</p><note>
+/// <p>The <code>jobStatus</code> refers to the execution of the import job. Therefore, an import job can return a <code>jobStatus</code> as <code>COMPLETED</code> even if validation issues are discovered during the import process. If a <code>jobStatus</code> returns as <code>COMPLETED</code>, we still recommend you review the output manifests written to S3, as they provide details on the success or failure of individual P10 object imports.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDICOMImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -254,7 +254,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateTrainin
 pub enum CreateTrainingDatasetError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>A resource with that name already exists in this region.</p>
+    /// <p>You can't complete this action because another resource depends on this resource.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request parameters for this request are incorrect.</p>
     ValidationException(crate::types::error::ValidationException),

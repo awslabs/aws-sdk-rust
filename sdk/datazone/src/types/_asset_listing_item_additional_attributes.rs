@@ -6,11 +6,19 @@
 pub struct AssetListingItemAdditionalAttributes {
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
     pub forms: ::std::option::Option<::std::string::String>,
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    pub latest_time_series_data_point_forms: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
 }
 impl AssetListingItemAdditionalAttributes {
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
     pub fn forms(&self) -> ::std::option::Option<&str> {
         self.forms.as_deref()
+    }
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.latest_time_series_data_point_forms.is_none()`.
+    pub fn latest_time_series_data_point_forms(&self) -> &[crate::types::TimeSeriesDataPointSummaryFormOutput] {
+        self.latest_time_series_data_point_forms.as_deref().unwrap_or_default()
     }
 }
 impl AssetListingItemAdditionalAttributes {
@@ -25,6 +33,7 @@ impl AssetListingItemAdditionalAttributes {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetListingItemAdditionalAttributesBuilder {
     pub(crate) forms: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_time_series_data_point_forms: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
 }
 impl AssetListingItemAdditionalAttributesBuilder {
     /// <p>The metadata forms that form additional attributes of the metadata asset.</p>
@@ -41,8 +50,36 @@ impl AssetListingItemAdditionalAttributesBuilder {
     pub fn get_forms(&self) -> &::std::option::Option<::std::string::String> {
         &self.forms
     }
+    /// Appends an item to `latest_time_series_data_point_forms`.
+    ///
+    /// To override the contents of this collection use [`set_latest_time_series_data_point_forms`](Self::set_latest_time_series_data_point_forms).
+    ///
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    pub fn latest_time_series_data_point_forms(mut self, input: crate::types::TimeSeriesDataPointSummaryFormOutput) -> Self {
+        let mut v = self.latest_time_series_data_point_forms.unwrap_or_default();
+        v.push(input);
+        self.latest_time_series_data_point_forms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    pub fn set_latest_time_series_data_point_forms(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
+    ) -> Self {
+        self.latest_time_series_data_point_forms = input;
+        self
+    }
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    pub fn get_latest_time_series_data_point_forms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>> {
+        &self.latest_time_series_data_point_forms
+    }
     /// Consumes the builder and constructs a [`AssetListingItemAdditionalAttributes`](crate::types::AssetListingItemAdditionalAttributes).
     pub fn build(self) -> crate::types::AssetListingItemAdditionalAttributes {
-        crate::types::AssetListingItemAdditionalAttributes { forms: self.forms }
+        crate::types::AssetListingItemAdditionalAttributes {
+            forms: self.forms,
+            latest_time_series_data_point_forms: self.latest_time_series_data_point_forms,
+        }
     }
 }

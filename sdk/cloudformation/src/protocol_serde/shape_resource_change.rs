@@ -7,8 +7,22 @@ pub fn de_resource_change(
     let mut builder = crate::types::ResourceChange::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("Action") /* Action com.amazonaws.cloudformation#ResourceChange$Action */ =>  {
+            s if s.matches("PolicyAction") /* PolicyAction com.amazonaws.cloudformation#ResourceChange$PolicyAction */ =>  {
                 let var_1 =
+                    Some(
+                        Result::<crate::types::PolicyAction, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PolicyAction::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_policy_action(var_1);
+            }
+            ,
+            s if s.matches("Action") /* Action com.amazonaws.cloudformation#ResourceChange$Action */ =>  {
+                let var_2 =
                     Some(
                         Result::<crate::types::ChangeAction, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ChangeAction::from(
@@ -18,23 +32,10 @@ pub fn de_resource_change(
                         ?
                     )
                 ;
-                builder = builder.set_action(var_1);
+                builder = builder.set_action(var_2);
             }
             ,
             s if s.matches("LogicalResourceId") /* LogicalResourceId com.amazonaws.cloudformation#ResourceChange$LogicalResourceId */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_logical_resource_id(var_2);
-            }
-            ,
-            s if s.matches("PhysicalResourceId") /* PhysicalResourceId com.amazonaws.cloudformation#ResourceChange$PhysicalResourceId */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -44,10 +45,10 @@ pub fn de_resource_change(
                         ?
                     )
                 ;
-                builder = builder.set_physical_resource_id(var_3);
+                builder = builder.set_logical_resource_id(var_3);
             }
             ,
-            s if s.matches("ResourceType") /* ResourceType com.amazonaws.cloudformation#ResourceChange$ResourceType */ =>  {
+            s if s.matches("PhysicalResourceId") /* PhysicalResourceId com.amazonaws.cloudformation#ResourceChange$PhysicalResourceId */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -57,11 +58,24 @@ pub fn de_resource_change(
                         ?
                     )
                 ;
-                builder = builder.set_resource_type(var_4);
+                builder = builder.set_physical_resource_id(var_4);
+            }
+            ,
+            s if s.matches("ResourceType") /* ResourceType com.amazonaws.cloudformation#ResourceChange$ResourceType */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_resource_type(var_5);
             }
             ,
             s if s.matches("Replacement") /* Replacement com.amazonaws.cloudformation#ResourceChange$Replacement */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         Result::<crate::types::Replacement, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Replacement::from(
@@ -71,31 +85,31 @@ pub fn de_resource_change(
                         ?
                     )
                 ;
-                builder = builder.set_replacement(var_5);
+                builder = builder.set_replacement(var_6);
             }
             ,
             s if s.matches("Scope") /* Scope com.amazonaws.cloudformation#ResourceChange$Scope */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_scope::de_scope(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_scope(var_6);
+                builder = builder.set_scope(var_7);
             }
             ,
             s if s.matches("Details") /* Details com.amazonaws.cloudformation#ResourceChange$Details */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_resource_change_details::de_resource_change_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_details(var_7);
+                builder = builder.set_details(var_8);
             }
             ,
             s if s.matches("ChangeSetId") /* ChangeSetId com.amazonaws.cloudformation#ResourceChange$ChangeSetId */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -104,17 +118,17 @@ pub fn de_resource_change(
                         ?
                     )
                 ;
-                builder = builder.set_change_set_id(var_8);
+                builder = builder.set_change_set_id(var_9);
             }
             ,
             s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#ResourceChange$ModuleInfo */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_module_info::de_module_info(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_module_info(var_9);
+                builder = builder.set_module_info(var_10);
             }
             ,
             _ => {}

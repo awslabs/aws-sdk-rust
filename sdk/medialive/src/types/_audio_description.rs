@@ -26,6 +26,10 @@ pub struct AudioDescription {
     pub remix_settings: ::std::option::Option<crate::types::RemixSettings>,
     /// Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director Commentary).
     pub stream_name: ::std::option::Option<::std::string::String>,
+    /// Identifies the DASH roles to assign to this audio output. Applies only when the audio output is configured for DVB DASH accessibility signaling.
+    pub audio_dash_roles: ::std::option::Option<::std::vec::Vec<crate::types::DashRoleAudio>>,
+    /// Identifies DVB DASH accessibility signaling in this audio output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub dvb_dash_accessibility: ::std::option::Option<crate::types::DvbDashAccessibility>,
 }
 impl AudioDescription {
     /// Advanced audio normalization settings.
@@ -72,6 +76,16 @@ impl AudioDescription {
     pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
+    /// Identifies the DASH roles to assign to this audio output. Applies only when the audio output is configured for DVB DASH accessibility signaling.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_dash_roles.is_none()`.
+    pub fn audio_dash_roles(&self) -> &[crate::types::DashRoleAudio] {
+        self.audio_dash_roles.as_deref().unwrap_or_default()
+    }
+    /// Identifies DVB DASH accessibility signaling in this audio output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub fn dvb_dash_accessibility(&self) -> ::std::option::Option<&crate::types::DvbDashAccessibility> {
+        self.dvb_dash_accessibility.as_ref()
+    }
 }
 impl AudioDescription {
     /// Creates a new builder-style object to manufacture [`AudioDescription`](crate::types::AudioDescription).
@@ -95,6 +109,8 @@ pub struct AudioDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) remix_settings: ::std::option::Option<crate::types::RemixSettings>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
+    pub(crate) audio_dash_roles: ::std::option::Option<::std::vec::Vec<crate::types::DashRoleAudio>>,
+    pub(crate) dvb_dash_accessibility: ::std::option::Option<crate::types::DvbDashAccessibility>,
 }
 impl AudioDescriptionBuilder {
     /// Advanced audio normalization settings.
@@ -253,6 +269,40 @@ impl AudioDescriptionBuilder {
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_name
     }
+    /// Appends an item to `audio_dash_roles`.
+    ///
+    /// To override the contents of this collection use [`set_audio_dash_roles`](Self::set_audio_dash_roles).
+    ///
+    /// Identifies the DASH roles to assign to this audio output. Applies only when the audio output is configured for DVB DASH accessibility signaling.
+    pub fn audio_dash_roles(mut self, input: crate::types::DashRoleAudio) -> Self {
+        let mut v = self.audio_dash_roles.unwrap_or_default();
+        v.push(input);
+        self.audio_dash_roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// Identifies the DASH roles to assign to this audio output. Applies only when the audio output is configured for DVB DASH accessibility signaling.
+    pub fn set_audio_dash_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashRoleAudio>>) -> Self {
+        self.audio_dash_roles = input;
+        self
+    }
+    /// Identifies the DASH roles to assign to this audio output. Applies only when the audio output is configured for DVB DASH accessibility signaling.
+    pub fn get_audio_dash_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashRoleAudio>> {
+        &self.audio_dash_roles
+    }
+    /// Identifies DVB DASH accessibility signaling in this audio output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub fn dvb_dash_accessibility(mut self, input: crate::types::DvbDashAccessibility) -> Self {
+        self.dvb_dash_accessibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// Identifies DVB DASH accessibility signaling in this audio output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub fn set_dvb_dash_accessibility(mut self, input: ::std::option::Option<crate::types::DvbDashAccessibility>) -> Self {
+        self.dvb_dash_accessibility = input;
+        self
+    }
+    /// Identifies DVB DASH accessibility signaling in this audio output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub fn get_dvb_dash_accessibility(&self) -> &::std::option::Option<crate::types::DvbDashAccessibility> {
+        &self.dvb_dash_accessibility
+    }
     /// Consumes the builder and constructs a [`AudioDescription`](crate::types::AudioDescription).
     pub fn build(self) -> crate::types::AudioDescription {
         crate::types::AudioDescription {
@@ -267,6 +317,8 @@ impl AudioDescriptionBuilder {
             name: self.name,
             remix_settings: self.remix_settings,
             stream_name: self.stream_name,
+            audio_dash_roles: self.audio_dash_roles,
+            dvb_dash_accessibility: self.dvb_dash_accessibility,
         }
     }
 }

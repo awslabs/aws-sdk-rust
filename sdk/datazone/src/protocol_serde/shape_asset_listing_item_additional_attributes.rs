@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "latestTimeSeriesDataPointForms" => {
+                            builder = builder.set_latest_time_series_data_point_forms(
+                                    crate::protocol_serde::shape_time_series_data_point_summary_form_output_list::de_time_series_data_point_summary_form_output_list(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

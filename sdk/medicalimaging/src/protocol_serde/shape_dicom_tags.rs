@@ -84,6 +84,34 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DICOMSeriesInstanceUID" => {
+                            builder = builder.set_dicom_series_instance_uid(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DICOMSeriesModality" => {
+                            builder = builder.set_dicom_series_modality(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DICOMSeriesBodyPart" => {
+                            builder = builder.set_dicom_series_body_part(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DICOMSeriesNumber" => {
+                            builder = builder.set_dicom_series_number(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "DICOMStudyDate" => {
                             builder = builder.set_dicom_study_date(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

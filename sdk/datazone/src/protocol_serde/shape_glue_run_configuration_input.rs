@@ -18,5 +18,8 @@ pub fn ser_glue_run_configuration_input(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.auto_import_data_quality_result {
+        object.key("autoImportDataQualityResult").boolean(*var_5);
+    }
     Ok(())
 }

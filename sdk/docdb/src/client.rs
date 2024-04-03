@@ -268,3 +268,5 @@ mod restore_db_cluster_to_point_in_time;
 mod start_db_cluster;
 
 mod stop_db_cluster;
+
+mod switchover_global_cluster;

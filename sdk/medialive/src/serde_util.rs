@@ -370,6 +370,18 @@ pub(crate) fn caption_selector_correct_errors(
     builder
 }
 
+pub(crate) fn cmaf_ingest_group_settings_correct_errors(
+    mut builder: crate::types::builders::CmafIngestGroupSettingsBuilder,
+) -> crate::types::builders::CmafIngestGroupSettingsBuilder {
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::OutputLocationRefBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn frame_capture_group_settings_correct_errors(
     mut builder: crate::types::builders::FrameCaptureGroupSettingsBuilder,
 ) -> crate::types::builders::FrameCaptureGroupSettingsBuilder {

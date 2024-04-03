@@ -20,6 +20,11 @@ where
                         "readOnlyFormsOutput" => {
                             builder = builder.set_read_only_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(tokens)?);
                         }
+                        "latestTimeSeriesDataPointFormsOutput" => {
+                            builder = builder.set_latest_time_series_data_point_forms_output(
+                                    crate::protocol_serde::shape_time_series_data_point_summary_form_output_list::de_time_series_data_point_summary_form_output_list(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

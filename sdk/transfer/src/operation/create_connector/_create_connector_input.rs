@@ -20,6 +20,8 @@ pub struct CreateConnectorInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub security_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectorInput {
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
@@ -53,6 +55,10 @@ impl CreateConnectorInput {
     pub fn sftp_config(&self) -> ::std::option::Option<&crate::types::SftpConnectorConfig> {
         self.sftp_config.as_ref()
     }
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
+        self.security_policy_name.as_deref()
+    }
 }
 impl CreateConnectorInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
@@ -71,6 +77,7 @@ pub struct CreateConnectorInputBuilder {
     pub(crate) logging_role: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
+    pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectorInputBuilder {
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
@@ -180,6 +187,20 @@ impl CreateConnectorInputBuilder {
     pub fn get_sftp_config(&self) -> &::std::option::Option<crate::types::SftpConnectorConfig> {
         &self.sftp_config
     }
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.security_policy_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_policy_name = input;
+        self
+    }
+    /// <p>Specifies the name of the security policy for the connector.</p>
+    pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_policy_name
+    }
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
     pub fn build(
         self,
@@ -191,6 +212,7 @@ impl CreateConnectorInputBuilder {
             logging_role: self.logging_role,
             tags: self.tags,
             sftp_config: self.sftp_config,
+            security_policy_name: self.security_policy_name,
         })
     }
 }

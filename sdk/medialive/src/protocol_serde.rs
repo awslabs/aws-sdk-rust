@@ -533,6 +533,8 @@ pub(crate) mod shape_burn_in_destination_settings;
 
 pub(crate) mod shape_caption_selector_settings;
 
+pub(crate) mod shape_cmaf_ingest_group_settings;
+
 pub(crate) mod shape_dvb_sub_destination_settings;
 
 pub(crate) mod shape_eac3_atmos_settings;
@@ -582,6 +584,10 @@ pub(crate) mod shape_input_switch_schedule_action_settings;
 pub(crate) mod shape_list_of_audio_selector;
 
 pub(crate) mod shape_list_of_caption_selector;
+
+pub(crate) mod shape_list_of_dash_role_audio;
+
+pub(crate) mod shape_list_of_dash_role_caption;
 
 pub(crate) mod shape_list_of_failover_condition;
 
@@ -676,6 +682,8 @@ pub(crate) mod shape_audio_silence_failover_settings;
 pub(crate) mod shape_audio_track_selection;
 
 pub(crate) mod shape_caption_language_mapping;
+
+pub(crate) mod shape_cmaf_ingest_output_settings;
 
 pub(crate) mod shape_dvb_sub_source_settings;
 

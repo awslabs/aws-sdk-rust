@@ -307,6 +307,16 @@ pub(crate) fn dicom_import_job_properties_correct_errors(
     builder
 }
 
+pub(crate) fn sort_correct_errors(mut builder: crate::types::builders::SortBuilder) -> crate::types::builders::SortBuilder {
+    if builder.sort_order.is_none() {
+        builder.sort_order = "no value was set".parse::<crate::types::SortOrder>().ok()
+    }
+    if builder.sort_field.is_none() {
+        builder.sort_field = "no value was set".parse::<crate::types::SortField>().ok()
+    }
+    builder
+}
+
 pub(crate) fn datastore_summary_correct_errors(
     mut builder: crate::types::builders::DatastoreSummaryBuilder,
 ) -> crate::types::builders::DatastoreSummaryBuilder {

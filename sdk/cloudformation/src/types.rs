@@ -255,6 +255,8 @@ pub use crate::types::_resource_attribute::ResourceAttribute;
 
 pub use crate::types::_replacement::Replacement;
 
+pub use crate::types::_policy_action::PolicyAction;
+
 pub use crate::types::_change_type::ChangeType;
 
 pub use crate::types::_account_limit::AccountLimit;
@@ -378,6 +380,8 @@ mod _parameter_declaration;
 mod _permission_models;
 
 mod _physical_resource_id_context_key_value_pair;
+
+mod _policy_action;
 
 mod _property_difference;
 

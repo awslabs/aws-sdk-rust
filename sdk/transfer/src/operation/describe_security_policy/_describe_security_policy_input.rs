@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSecurityPolicyInput {
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specify the text name of the security policy for which you want the details.</p>
     pub security_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSecurityPolicyInput {
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specify the text name of the security policy for which you want the details.</p>
     pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
         self.security_policy_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeSecurityPolicyInputBuilder {
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSecurityPolicyInputBuilder {
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specify the text name of the security policy for which you want the details.</p>
     /// This field is required.
     pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specify the text name of the security policy for which you want the details.</p>
     pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_policy_name = input;
         self
     }
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specify the text name of the security policy for which you want the details.</p>
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_policy_name
     }

@@ -37,6 +37,8 @@ pub struct GetAssetOutput {
     pub forms_output: ::std::vec::Vec<crate::types::FormOutput>,
     /// <p>The read-only metadata forms attached to the asset.</p>
     pub read_only_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    pub latest_time_series_data_point_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
     _request_id: Option<String>,
 }
 impl GetAssetOutput {
@@ -120,6 +122,12 @@ impl GetAssetOutput {
     pub fn read_only_forms_output(&self) -> &[crate::types::FormOutput] {
         self.read_only_forms_output.as_deref().unwrap_or_default()
     }
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.latest_time_series_data_point_forms_output.is_none()`.
+    pub fn latest_time_series_data_point_forms_output(&self) -> &[crate::types::TimeSeriesDataPointSummaryFormOutput] {
+        self.latest_time_series_data_point_forms_output.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetAssetOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -141,6 +149,10 @@ impl ::std::fmt::Debug for GetAssetOutput {
         formatter.field("listing", &self.listing);
         formatter.field("forms_output", &self.forms_output);
         formatter.field("read_only_forms_output", &self.read_only_forms_output);
+        formatter.field(
+            "latest_time_series_data_point_forms_output",
+            &self.latest_time_series_data_point_forms_output,
+        );
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -178,6 +190,7 @@ pub struct GetAssetOutputBuilder {
     pub(crate) listing: ::std::option::Option<crate::types::AssetListingDetails>,
     pub(crate) forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
     pub(crate) read_only_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
+    pub(crate) latest_time_series_data_point_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
     _request_id: Option<String>,
 }
 impl GetAssetOutputBuilder {
@@ -444,6 +457,31 @@ impl GetAssetOutputBuilder {
     pub fn get_read_only_forms_output(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormOutput>> {
         &self.read_only_forms_output
     }
+    /// Appends an item to `latest_time_series_data_point_forms_output`.
+    ///
+    /// To override the contents of this collection use [`set_latest_time_series_data_point_forms_output`](Self::set_latest_time_series_data_point_forms_output).
+    ///
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    pub fn latest_time_series_data_point_forms_output(mut self, input: crate::types::TimeSeriesDataPointSummaryFormOutput) -> Self {
+        let mut v = self.latest_time_series_data_point_forms_output.unwrap_or_default();
+        v.push(input);
+        self.latest_time_series_data_point_forms_output = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    pub fn set_latest_time_series_data_point_forms_output(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
+    ) -> Self {
+        self.latest_time_series_data_point_forms_output = input;
+        self
+    }
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    pub fn get_latest_time_series_data_point_forms_output(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>> {
+        &self.latest_time_series_data_point_forms_output
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -522,6 +560,7 @@ impl GetAssetOutputBuilder {
                 )
             })?,
             read_only_forms_output: self.read_only_forms_output,
+            latest_time_series_data_point_forms_output: self.latest_time_series_data_point_forms_output,
             _request_id: self._request_id,
         })
     }
@@ -546,6 +585,10 @@ impl ::std::fmt::Debug for GetAssetOutputBuilder {
         formatter.field("listing", &self.listing);
         formatter.field("forms_output", &self.forms_output);
         formatter.field("read_only_forms_output", &self.read_only_forms_output);
+        formatter.field(
+            "latest_time_series_data_point_forms_output",
+            &self.latest_time_series_data_point_forms_output,
+        );
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

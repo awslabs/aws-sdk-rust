@@ -40,6 +40,10 @@ where
                                 crate::protocol_serde::shape_relational_filter_configurations::de_relational_filter_configurations(tokens)?,
                             );
                         }
+                        "autoImportDataQualityResult" => {
+                            builder = builder
+                                .set_auto_import_data_quality_result(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

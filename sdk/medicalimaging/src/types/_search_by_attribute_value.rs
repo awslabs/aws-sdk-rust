@@ -10,12 +10,16 @@ pub enum SearchByAttributeValue {
     DicomAccessionNumber(::std::string::String),
     /// <p>The patient ID input for search.</p>
     DicomPatientId(::std::string::String),
+    /// <p>The Series Instance UID input for search.</p>
+    DicomSeriesInstanceUid(::std::string::String),
     /// <p>The aggregated structure containing DICOM study date and study time for search.</p>
     DicomStudyDateAndTime(crate::types::DicomStudyDateAndTime),
     /// <p>The DICOM study ID for search.</p>
     DicomStudyId(::std::string::String),
     /// <p>The DICOM study instance UID for search.</p>
     DicomStudyInstanceUid(::std::string::String),
+    /// <p>The timestamp input for search.</p>
+    UpdatedAt(::aws_smithy_types::DateTime),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -66,6 +70,19 @@ impl SearchByAttributeValue {
     pub fn is_dicom_patient_id(&self) -> bool {
         self.as_dicom_patient_id().is_ok()
     }
+    /// Tries to convert the enum instance into [`DicomSeriesInstanceUid`](crate::types::SearchByAttributeValue::DicomSeriesInstanceUid), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_dicom_series_instance_uid(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let SearchByAttributeValue::DicomSeriesInstanceUid(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DicomSeriesInstanceUid`](crate::types::SearchByAttributeValue::DicomSeriesInstanceUid).
+    pub fn is_dicom_series_instance_uid(&self) -> bool {
+        self.as_dicom_series_instance_uid().is_ok()
+    }
     /// Tries to convert the enum instance into [`DicomStudyDateAndTime`](crate::types::SearchByAttributeValue::DicomStudyDateAndTime), extracting the inner [`DicomStudyDateAndTime`](crate::types::DicomStudyDateAndTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dicom_study_date_and_time(&self) -> ::std::result::Result<&crate::types::DicomStudyDateAndTime, &Self> {
@@ -105,6 +122,19 @@ impl SearchByAttributeValue {
     pub fn is_dicom_study_instance_uid(&self) -> bool {
         self.as_dicom_study_instance_uid().is_ok()
     }
+    /// Tries to convert the enum instance into [`UpdatedAt`](crate::types::SearchByAttributeValue::UpdatedAt), extracting the inner [`DateTime`](::aws_smithy_types::DateTime).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_updated_at(&self) -> ::std::result::Result<&::aws_smithy_types::DateTime, &Self> {
+        if let SearchByAttributeValue::UpdatedAt(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`UpdatedAt`](crate::types::SearchByAttributeValue::UpdatedAt).
+    pub fn is_updated_at(&self) -> bool {
+        self.as_updated_at().is_ok()
+    }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
@@ -116,9 +146,11 @@ impl ::std::fmt::Debug for SearchByAttributeValue {
             SearchByAttributeValue::CreatedAt(val) => f.debug_tuple("CreatedAt").field(&val).finish(),
             SearchByAttributeValue::DicomAccessionNumber(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             SearchByAttributeValue::DicomPatientId(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            SearchByAttributeValue::DicomSeriesInstanceUid(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             SearchByAttributeValue::DicomStudyDateAndTime(val) => f.debug_tuple("DicomStudyDateAndTime").field(&val).finish(),
             SearchByAttributeValue::DicomStudyId(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             SearchByAttributeValue::DicomStudyInstanceUid(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            SearchByAttributeValue::UpdatedAt(val) => f.debug_tuple("UpdatedAt").field(&val).finish(),
             SearchByAttributeValue::Unknown => f.debug_tuple("Unknown").finish(),
         }
     }

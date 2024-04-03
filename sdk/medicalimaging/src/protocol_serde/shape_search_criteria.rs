@@ -15,5 +15,11 @@ pub fn ser_search_criteria(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.sort {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("sort").start_object();
+        crate::protocol_serde::shape_sort::ser_sort(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

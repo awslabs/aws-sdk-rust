@@ -6,12 +6,18 @@
 pub struct AudienceQualityMetrics {
     /// <p>The relevance scores of the generated audience.</p>
     pub relevance_metrics: ::std::vec::Vec<crate::types::RelevanceMetric>,
+    /// <p>The recall score of the generated audience. Recall is the percentage of the most similar users (by default, the most similar 20%) from a sample of the training data that are included in the seed audience by the audience generation job. Values range from 0-1, larger values indicate a better audience. A recall value approximately equal to the maximum bin size indicates that the audience model is equivalent to random selection.</p>
+    pub recall_metric: ::std::option::Option<f64>,
 }
 impl AudienceQualityMetrics {
     /// <p>The relevance scores of the generated audience.</p>
     pub fn relevance_metrics(&self) -> &[crate::types::RelevanceMetric] {
         use std::ops::Deref;
         self.relevance_metrics.deref()
+    }
+    /// <p>The recall score of the generated audience. Recall is the percentage of the most similar users (by default, the most similar 20%) from a sample of the training data that are included in the seed audience by the audience generation job. Values range from 0-1, larger values indicate a better audience. A recall value approximately equal to the maximum bin size indicates that the audience model is equivalent to random selection.</p>
+    pub fn recall_metric(&self) -> ::std::option::Option<f64> {
+        self.recall_metric
     }
 }
 impl AudienceQualityMetrics {
@@ -26,6 +32,7 @@ impl AudienceQualityMetrics {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudienceQualityMetricsBuilder {
     pub(crate) relevance_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RelevanceMetric>>,
+    pub(crate) recall_metric: ::std::option::Option<f64>,
 }
 impl AudienceQualityMetricsBuilder {
     /// Appends an item to `relevance_metrics`.
@@ -48,6 +55,20 @@ impl AudienceQualityMetricsBuilder {
     pub fn get_relevance_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelevanceMetric>> {
         &self.relevance_metrics
     }
+    /// <p>The recall score of the generated audience. Recall is the percentage of the most similar users (by default, the most similar 20%) from a sample of the training data that are included in the seed audience by the audience generation job. Values range from 0-1, larger values indicate a better audience. A recall value approximately equal to the maximum bin size indicates that the audience model is equivalent to random selection.</p>
+    pub fn recall_metric(mut self, input: f64) -> Self {
+        self.recall_metric = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The recall score of the generated audience. Recall is the percentage of the most similar users (by default, the most similar 20%) from a sample of the training data that are included in the seed audience by the audience generation job. Values range from 0-1, larger values indicate a better audience. A recall value approximately equal to the maximum bin size indicates that the audience model is equivalent to random selection.</p>
+    pub fn set_recall_metric(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.recall_metric = input;
+        self
+    }
+    /// <p>The recall score of the generated audience. Recall is the percentage of the most similar users (by default, the most similar 20%) from a sample of the training data that are included in the seed audience by the audience generation job. Values range from 0-1, larger values indicate a better audience. A recall value approximately equal to the maximum bin size indicates that the audience model is equivalent to random selection.</p>
+    pub fn get_recall_metric(&self) -> &::std::option::Option<f64> {
+        &self.recall_metric
+    }
     /// Consumes the builder and constructs a [`AudienceQualityMetrics`](crate::types::AudienceQualityMetrics).
     /// This method will fail if any of the following fields are not set:
     /// - [`relevance_metrics`](crate::types::builders::AudienceQualityMetricsBuilder::relevance_metrics)
@@ -59,6 +80,7 @@ impl AudienceQualityMetricsBuilder {
                     "relevance_metrics was not specified but it is required when building AudienceQualityMetrics",
                 )
             })?,
+            recall_metric: self.recall_metric,
         })
     }
 }

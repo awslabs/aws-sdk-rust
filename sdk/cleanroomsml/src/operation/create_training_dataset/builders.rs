@@ -22,7 +22,7 @@ impl CreateTrainingDatasetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTrainingDataset`.
 ///
-/// <p>Defines the information necessary to create a training dataset, or seed audience. In Clean Rooms ML, the <code>TrainingDataset</code> is metadata that points to a Glue table, which is read only during <code>AudienceModel</code> creation.</p>
+/// <p>Defines the information necessary to create a training dataset. In Clean Rooms ML, the <code>TrainingDataset</code> is metadata that points to a Glue table, which is read only during <code>AudienceModel</code> creation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrainingDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

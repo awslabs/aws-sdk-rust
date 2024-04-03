@@ -37,6 +37,8 @@ pub struct CreateAssetRevisionOutput {
     pub forms_output: ::std::vec::Vec<crate::types::FormOutput>,
     /// <p>The read-only metadata forms that were attached to the asset as part of the asset revision.</p>
     pub read_only_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    pub latest_time_series_data_point_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     pub prediction_configuration: ::std::option::Option<crate::types::PredictionConfiguration>,
     _request_id: Option<String>,
@@ -122,6 +124,12 @@ impl CreateAssetRevisionOutput {
     pub fn read_only_forms_output(&self) -> &[crate::types::FormOutput] {
         self.read_only_forms_output.as_deref().unwrap_or_default()
     }
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.latest_time_series_data_point_forms_output.is_none()`.
+    pub fn latest_time_series_data_point_forms_output(&self) -> &[crate::types::TimeSeriesDataPointSummaryFormOutput] {
+        self.latest_time_series_data_point_forms_output.as_deref().unwrap_or_default()
+    }
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     pub fn prediction_configuration(&self) -> ::std::option::Option<&crate::types::PredictionConfiguration> {
         self.prediction_configuration.as_ref()
@@ -147,6 +155,10 @@ impl ::std::fmt::Debug for CreateAssetRevisionOutput {
         formatter.field("listing", &self.listing);
         formatter.field("forms_output", &self.forms_output);
         formatter.field("read_only_forms_output", &self.read_only_forms_output);
+        formatter.field(
+            "latest_time_series_data_point_forms_output",
+            &self.latest_time_series_data_point_forms_output,
+        );
         formatter.field("prediction_configuration", &self.prediction_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -185,6 +197,7 @@ pub struct CreateAssetRevisionOutputBuilder {
     pub(crate) listing: ::std::option::Option<crate::types::AssetListingDetails>,
     pub(crate) forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
     pub(crate) read_only_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
+    pub(crate) latest_time_series_data_point_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
     pub(crate) prediction_configuration: ::std::option::Option<crate::types::PredictionConfiguration>,
     _request_id: Option<String>,
 }
@@ -452,6 +465,31 @@ impl CreateAssetRevisionOutputBuilder {
     pub fn get_read_only_forms_output(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormOutput>> {
         &self.read_only_forms_output
     }
+    /// Appends an item to `latest_time_series_data_point_forms_output`.
+    ///
+    /// To override the contents of this collection use [`set_latest_time_series_data_point_forms_output`](Self::set_latest_time_series_data_point_forms_output).
+    ///
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    pub fn latest_time_series_data_point_forms_output(mut self, input: crate::types::TimeSeriesDataPointSummaryFormOutput) -> Self {
+        let mut v = self.latest_time_series_data_point_forms_output.unwrap_or_default();
+        v.push(input);
+        self.latest_time_series_data_point_forms_output = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    pub fn set_latest_time_series_data_point_forms_output(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
+    ) -> Self {
+        self.latest_time_series_data_point_forms_output = input;
+        self
+    }
+    /// <p>The latest data point that was imported into the time series form for the asset.</p>
+    pub fn get_latest_time_series_data_point_forms_output(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>> {
+        &self.latest_time_series_data_point_forms_output
+    }
     /// <p>The configuration of the automatically generated business-friendly metadata for the asset.</p>
     pub fn prediction_configuration(mut self, input: crate::types::PredictionConfiguration) -> Self {
         self.prediction_configuration = ::std::option::Option::Some(input);
@@ -547,6 +585,7 @@ impl CreateAssetRevisionOutputBuilder {
                 )
             })?,
             read_only_forms_output: self.read_only_forms_output,
+            latest_time_series_data_point_forms_output: self.latest_time_series_data_point_forms_output,
             prediction_configuration: self.prediction_configuration,
             _request_id: self._request_id,
         })
@@ -572,6 +611,10 @@ impl ::std::fmt::Debug for CreateAssetRevisionOutputBuilder {
         formatter.field("listing", &self.listing);
         formatter.field("forms_output", &self.forms_output);
         formatter.field("read_only_forms_output", &self.read_only_forms_output);
+        formatter.field(
+            "latest_time_series_data_point_forms_output",
+            &self.latest_time_series_data_point_forms_output,
+        );
         formatter.field("prediction_configuration", &self.prediction_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

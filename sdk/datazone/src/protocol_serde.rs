@@ -99,6 +99,8 @@ pub(crate) mod shape_delete_subscription_request;
 
 pub(crate) mod shape_delete_subscription_target;
 
+pub(crate) mod shape_delete_time_series_data_points;
+
 pub(crate) mod shape_get_asset;
 
 pub(crate) mod shape_get_asset_type;
@@ -141,6 +143,8 @@ pub(crate) mod shape_get_subscription_request_details;
 
 pub(crate) mod shape_get_subscription_target;
 
+pub(crate) mod shape_get_time_series_data_point;
+
 pub(crate) mod shape_get_user_profile;
 
 pub(crate) mod shape_list_asset_revisions;
@@ -178,6 +182,10 @@ pub(crate) mod shape_list_subscription_targets;
 pub(crate) mod shape_list_subscriptions;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_time_series_data_points;
+
+pub(crate) mod shape_post_time_series_data_points;
 
 pub(crate) mod shape_put_environment_blueprint_configuration;
 
@@ -284,6 +292,8 @@ pub(crate) mod shape_create_user_profile_input;
 pub(crate) mod shape_delete_project_membership_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_post_time_series_data_points_input;
 
 pub(crate) mod shape_put_environment_blueprint_configuration_input;
 
@@ -491,6 +501,14 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_term_relations;
 
+pub(crate) mod shape_time_series_data_point_form_input;
+
+pub(crate) mod shape_time_series_data_point_form_output;
+
+pub(crate) mod shape_time_series_data_point_form_output_list;
+
+pub(crate) mod shape_time_series_data_point_summary_form_output_list;
+
 pub(crate) mod shape_user_profile_details;
 
 pub(crate) mod shape_user_profile_summaries;
@@ -588,6 +606,8 @@ pub(crate) mod shape_subscription_request_summary;
 pub(crate) mod shape_subscription_summary;
 
 pub(crate) mod shape_subscription_target_summary;
+
+pub(crate) mod shape_time_series_data_point_summary_form_output;
 
 pub(crate) mod shape_user_profile_summary;
 

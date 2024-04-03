@@ -51,6 +51,12 @@ pub fn ser_output_settings(
         crate::protocol_serde::shape_udp_output_settings::ser_udp_output_settings(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.cmaf_ingest_output_settings {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("cmafIngestOutputSettings").start_object();
+        crate::protocol_serde::shape_cmaf_ingest_output_settings::ser_cmaf_ingest_output_settings(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -105,6 +111,11 @@ where
                         "udpOutputSettings" => {
                             builder =
                                 builder.set_udp_output_settings(crate::protocol_serde::shape_udp_output_settings::de_udp_output_settings(tokens)?);
+                        }
+                        "cmafIngestOutputSettings" => {
+                            builder = builder.set_cmaf_ingest_output_settings(
+                                crate::protocol_serde::shape_cmaf_ingest_output_settings::de_cmaf_ingest_output_settings(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

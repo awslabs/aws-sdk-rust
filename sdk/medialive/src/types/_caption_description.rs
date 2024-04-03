@@ -16,6 +16,10 @@ pub struct CaptionDescription {
     pub language_description: ::std::option::Option<::std::string::String>,
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
     pub name: ::std::option::Option<::std::string::String>,
+    /// Identifies the DASH roles to assign to this captions output. Applies only when the captions output is configured for DVB DASH accessibility signaling.
+    pub caption_dash_roles: ::std::option::Option<::std::vec::Vec<crate::types::DashRoleCaption>>,
+    /// Identifies DVB DASH accessibility signaling in this captions output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub dvb_dash_accessibility: ::std::option::Option<crate::types::DvbDashAccessibility>,
 }
 impl CaptionDescription {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
@@ -42,6 +46,16 @@ impl CaptionDescription {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// Identifies the DASH roles to assign to this captions output. Applies only when the captions output is configured for DVB DASH accessibility signaling.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_dash_roles.is_none()`.
+    pub fn caption_dash_roles(&self) -> &[crate::types::DashRoleCaption] {
+        self.caption_dash_roles.as_deref().unwrap_or_default()
+    }
+    /// Identifies DVB DASH accessibility signaling in this captions output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub fn dvb_dash_accessibility(&self) -> ::std::option::Option<&crate::types::DvbDashAccessibility> {
+        self.dvb_dash_accessibility.as_ref()
+    }
 }
 impl CaptionDescription {
     /// Creates a new builder-style object to manufacture [`CaptionDescription`](crate::types::CaptionDescription).
@@ -60,6 +74,8 @@ pub struct CaptionDescriptionBuilder {
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) language_description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) caption_dash_roles: ::std::option::Option<::std::vec::Vec<crate::types::DashRoleCaption>>,
+    pub(crate) dvb_dash_accessibility: ::std::option::Option<crate::types::DvbDashAccessibility>,
 }
 impl CaptionDescriptionBuilder {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
@@ -148,6 +164,40 @@ impl CaptionDescriptionBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// Appends an item to `caption_dash_roles`.
+    ///
+    /// To override the contents of this collection use [`set_caption_dash_roles`](Self::set_caption_dash_roles).
+    ///
+    /// Identifies the DASH roles to assign to this captions output. Applies only when the captions output is configured for DVB DASH accessibility signaling.
+    pub fn caption_dash_roles(mut self, input: crate::types::DashRoleCaption) -> Self {
+        let mut v = self.caption_dash_roles.unwrap_or_default();
+        v.push(input);
+        self.caption_dash_roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// Identifies the DASH roles to assign to this captions output. Applies only when the captions output is configured for DVB DASH accessibility signaling.
+    pub fn set_caption_dash_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashRoleCaption>>) -> Self {
+        self.caption_dash_roles = input;
+        self
+    }
+    /// Identifies the DASH roles to assign to this captions output. Applies only when the captions output is configured for DVB DASH accessibility signaling.
+    pub fn get_caption_dash_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashRoleCaption>> {
+        &self.caption_dash_roles
+    }
+    /// Identifies DVB DASH accessibility signaling in this captions output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub fn dvb_dash_accessibility(mut self, input: crate::types::DvbDashAccessibility) -> Self {
+        self.dvb_dash_accessibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// Identifies DVB DASH accessibility signaling in this captions output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub fn set_dvb_dash_accessibility(mut self, input: ::std::option::Option<crate::types::DvbDashAccessibility>) -> Self {
+        self.dvb_dash_accessibility = input;
+        self
+    }
+    /// Identifies DVB DASH accessibility signaling in this captions output. Used in Microsoft Smooth Streaming outputs to signal accessibility information to packagers.
+    pub fn get_dvb_dash_accessibility(&self) -> &::std::option::Option<crate::types::DvbDashAccessibility> {
+        &self.dvb_dash_accessibility
+    }
     /// Consumes the builder and constructs a [`CaptionDescription`](crate::types::CaptionDescription).
     pub fn build(self) -> crate::types::CaptionDescription {
         crate::types::CaptionDescription {
@@ -157,6 +207,8 @@ impl CaptionDescriptionBuilder {
             language_code: self.language_code,
             language_description: self.language_description,
             name: self.name,
+            caption_dash_roles: self.caption_dash_roles,
+            dvb_dash_accessibility: self.dvb_dash_accessibility,
         }
     }
 }

@@ -16,9 +16,17 @@ pub fn ser_search_by_attribute_value(
         crate::types::SearchByAttributeValue::DicomStudyInstanceUid(inner) => {
             object_3.key("DICOMStudyInstanceUID").string(inner.as_str());
         }
+        crate::types::SearchByAttributeValue::DicomSeriesInstanceUid(inner) => {
+            object_3.key("DICOMSeriesInstanceUID").string(inner.as_str());
+        }
         crate::types::SearchByAttributeValue::CreatedAt(inner) => {
             object_3
                 .key("createdAt")
+                .date_time(inner, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+        }
+        crate::types::SearchByAttributeValue::UpdatedAt(inner) => {
+            object_3
+                .key("updatedAt")
                 .date_time(inner, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
         }
         crate::types::SearchByAttributeValue::DicomStudyDateAndTime(inner) => {

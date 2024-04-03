@@ -1547,6 +1547,21 @@ pub(crate) fn metadata_generation_run_target_correct_errors(
     builder
 }
 
+pub(crate) fn time_series_data_point_form_output_correct_errors(
+    mut builder: crate::types::builders::TimeSeriesDataPointFormOutputBuilder,
+) -> crate::types::builders::TimeSeriesDataPointFormOutputBuilder {
+    if builder.form_name.is_none() {
+        builder.form_name = Some(Default::default())
+    }
+    if builder.type_identifier.is_none() {
+        builder.type_identifier = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn cloud_formation_properties_correct_errors(
     mut builder: crate::types::builders::CloudFormationPropertiesBuilder,
 ) -> crate::types::builders::CloudFormationPropertiesBuilder {
@@ -2089,6 +2104,21 @@ pub(crate) fn subscription_target_summary_correct_errors(
     }
     if builder.provider.is_none() {
         builder.provider = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn time_series_data_point_summary_form_output_correct_errors(
+    mut builder: crate::types::builders::TimeSeriesDataPointSummaryFormOutputBuilder,
+) -> crate::types::builders::TimeSeriesDataPointSummaryFormOutputBuilder {
+    if builder.form_name.is_none() {
+        builder.form_name = Some(Default::default())
+    }
+    if builder.type_identifier.is_none() {
+        builder.type_identifier = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

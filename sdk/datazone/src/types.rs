@@ -17,6 +17,8 @@ pub use crate::types::_asset_listing::AssetListing;
 
 pub use crate::types::_detailed_glossary_term::DetailedGlossaryTerm;
 
+pub use crate::types::_time_series_data_point_summary_form_output::TimeSeriesDataPointSummaryFormOutput;
+
 pub use crate::types::_term_relations::TermRelations;
 
 pub use crate::types::_glossary_term_status::GlossaryTermStatus;
@@ -232,6 +234,12 @@ pub use crate::types::_reject_choice::RejectChoice;
 pub use crate::types::_reject_rule::RejectRule;
 
 pub use crate::types::_reject_rule_behavior::RejectRuleBehavior;
+
+pub use crate::types::_time_series_data_point_form_output::TimeSeriesDataPointFormOutput;
+
+pub use crate::types::_time_series_entity_type::TimeSeriesEntityType;
+
+pub use crate::types::_time_series_data_point_form_input::TimeSeriesDataPointFormInput;
 
 pub use crate::types::_subscription_target_summary::SubscriptionTargetSummary;
 
@@ -594,6 +602,14 @@ mod _subscription_target_summary;
 mod _task_status;
 
 mod _term_relations;
+
+mod _time_series_data_point_form_input;
+
+mod _time_series_data_point_form_output;
+
+mod _time_series_data_point_summary_form_output;
+
+mod _time_series_entity_type;
 
 mod _timezone;
 

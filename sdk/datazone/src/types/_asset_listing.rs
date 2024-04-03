@@ -14,6 +14,8 @@ pub struct AssetListing {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog.</p>
     pub forms: ::std::option::Option<::std::string::String>,
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    pub latest_time_series_data_point_forms: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
     /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
     /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists.</p>
@@ -39,6 +41,12 @@ impl AssetListing {
     /// <p>The metadata forms attached to an asset published in an Amazon DataZone catalog.</p>
     pub fn forms(&self) -> ::std::option::Option<&str> {
         self.forms.as_deref()
+    }
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.latest_time_series_data_point_forms.is_none()`.
+    pub fn latest_time_series_data_point_forms(&self) -> &[crate::types::TimeSeriesDataPointSummaryFormOutput] {
+        self.latest_time_series_data_point_forms.as_deref().unwrap_or_default()
     }
     /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog.</p>
     ///
@@ -67,6 +75,7 @@ pub struct AssetListingBuilder {
     pub(crate) asset_type: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) forms: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_time_series_data_point_forms: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
 }
@@ -141,6 +150,31 @@ impl AssetListingBuilder {
     pub fn get_forms(&self) -> &::std::option::Option<::std::string::String> {
         &self.forms
     }
+    /// Appends an item to `latest_time_series_data_point_forms`.
+    ///
+    /// To override the contents of this collection use [`set_latest_time_series_data_point_forms`](Self::set_latest_time_series_data_point_forms).
+    ///
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    pub fn latest_time_series_data_point_forms(mut self, input: crate::types::TimeSeriesDataPointSummaryFormOutput) -> Self {
+        let mut v = self.latest_time_series_data_point_forms.unwrap_or_default();
+        v.push(input);
+        self.latest_time_series_data_point_forms = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    pub fn set_latest_time_series_data_point_forms(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
+    ) -> Self {
+        self.latest_time_series_data_point_forms = input;
+        self
+    }
+    /// <p>The latest time series data points forms included in the additional attributes of an asset.</p>
+    pub fn get_latest_time_series_data_point_forms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>> {
+        &self.latest_time_series_data_point_forms
+    }
     /// Appends an item to `glossary_terms`.
     ///
     /// To override the contents of this collection use [`set_glossary_terms`](Self::set_glossary_terms).
@@ -183,6 +217,7 @@ impl AssetListingBuilder {
             asset_type: self.asset_type,
             created_at: self.created_at,
             forms: self.forms,
+            latest_time_series_data_point_forms: self.latest_time_series_data_point_forms,
             glossary_terms: self.glossary_terms,
             owning_project_id: self.owning_project_id,
         }

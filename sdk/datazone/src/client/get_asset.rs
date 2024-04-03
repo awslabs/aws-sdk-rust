@@ -24,6 +24,7 @@ impl super::Client {
     ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::get_asset::GetAssetOutput::listing): <p>The listing of the asset.</p>
     ///   - [`forms_output(Vec::<FormOutput>)`](crate::operation::get_asset::GetAssetOutput::forms_output): <p>The metadata forms attached to the asset.</p>
     ///   - [`read_only_forms_output(Option<Vec::<FormOutput>>)`](crate::operation::get_asset::GetAssetOutput::read_only_forms_output): <p>The read-only metadata forms attached to the asset.</p>
+    ///   - [`latest_time_series_data_point_forms_output(Option<Vec::<TimeSeriesDataPointSummaryFormOutput>>)`](crate::operation::get_asset::GetAssetOutput::latest_time_series_data_point_forms_output): <p>The latest data point that was imported into the time series form for the asset.</p>
     /// - On failure, responds with [`SdkError<GetAssetError>`](crate::operation::get_asset::GetAssetError)
     pub fn get_asset(&self) -> crate::operation::get_asset::builders::GetAssetFluentBuilder {
         crate::operation::get_asset::builders::GetAssetFluentBuilder::new(self.handle.clone())

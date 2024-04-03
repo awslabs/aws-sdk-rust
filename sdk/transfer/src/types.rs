@@ -133,6 +133,10 @@ pub use crate::types::_described_server::DescribedServer;
 
 pub use crate::types::_described_security_policy::DescribedSecurityPolicy;
 
+pub use crate::types::_security_policy_protocol::SecurityPolicyProtocol;
+
+pub use crate::types::_security_policy_resource_type::SecurityPolicyResourceType;
+
 pub use crate::types::_described_profile::DescribedProfile;
 
 pub use crate::types::_described_host_key::DescribedHostKey;
@@ -284,6 +288,10 @@ mod _s3_input_file_location;
 mod _s3_storage_options;
 
 mod _s3_tag;
+
+mod _security_policy_protocol;
+
+mod _security_policy_resource_type;
 
 mod _service_metadata;
 

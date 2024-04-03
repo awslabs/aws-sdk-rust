@@ -17,6 +17,11 @@ where
                         "relevanceMetrics" => {
                             builder = builder.set_relevance_metrics(crate::protocol_serde::shape_relevance_metrics::de_relevance_metrics(tokens)?);
                         }
+                        "recallMetric" => {
+                            builder = builder.set_recall_metric(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

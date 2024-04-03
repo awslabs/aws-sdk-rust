@@ -27,6 +27,8 @@ pub struct DescribedConnector {
     pub sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
     /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
     pub service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The text name of the security policy for the specified connector.</p>
+    pub security_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribedConnector {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
@@ -75,6 +77,10 @@ impl DescribedConnector {
     pub fn service_managed_egress_ip_addresses(&self) -> &[::std::string::String] {
         self.service_managed_egress_ip_addresses.as_deref().unwrap_or_default()
     }
+    /// <p>The text name of the security policy for the specified connector.</p>
+    pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
+        self.security_policy_name.as_deref()
+    }
 }
 impl DescribedConnector {
     /// Creates a new builder-style object to manufacture [`DescribedConnector`](crate::types::DescribedConnector).
@@ -96,6 +102,7 @@ pub struct DescribedConnectorBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
     pub(crate) service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribedConnectorBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
@@ -252,6 +259,20 @@ impl DescribedConnectorBuilder {
     pub fn get_service_managed_egress_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_managed_egress_ip_addresses
     }
+    /// <p>The text name of the security policy for the specified connector.</p>
+    pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.security_policy_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The text name of the security policy for the specified connector.</p>
+    pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_policy_name = input;
+        self
+    }
+    /// <p>The text name of the security policy for the specified connector.</p>
+    pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_policy_name
+    }
     /// Consumes the builder and constructs a [`DescribedConnector`](crate::types::DescribedConnector).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedConnectorBuilder::arn)
@@ -271,6 +292,7 @@ impl DescribedConnectorBuilder {
             tags: self.tags,
             sftp_config: self.sftp_config,
             service_managed_egress_ip_addresses: self.service_managed_egress_ip_addresses,
+            security_policy_name: self.security_policy_name,
         })
     }
 }

@@ -44,7 +44,7 @@ pub struct UpdateFunctionConfigurationInput {
     pub layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Connection settings for an Amazon EFS file system.</p>
     pub file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
-    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub image_config: ::std::option::Option<crate::types::ImageConfig>,
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
@@ -129,7 +129,7 @@ impl UpdateFunctionConfigurationInput {
     pub fn file_system_configs(&self) -> &[crate::types::FileSystemConfig] {
         self.file_system_configs.as_deref().unwrap_or_default()
     }
-    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn image_config(&self) -> ::std::option::Option<&crate::types::ImageConfig> {
         self.image_config.as_ref()
     }
@@ -434,17 +434,17 @@ impl UpdateFunctionConfigurationInputBuilder {
     pub fn get_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
         &self.file_system_configs
     }
-    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn image_config(mut self, input: crate::types::ImageConfig) -> Self {
         self.image_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn set_image_config(mut self, input: ::std::option::Option<crate::types::ImageConfig>) -> Self {
         self.image_config = input;
         self
     }
-    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
         &self.image_config
     }

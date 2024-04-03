@@ -5,6 +5,8 @@
 pub struct SearchImageSetsOutput {
     /// <p>The model containing the image set results.</p>
     pub image_sets_metadata_summaries: ::std::vec::Vec<crate::types::ImageSetsMetadataSummary>,
+    /// <p>The sort order for image set search results.</p>
+    pub sort: ::std::option::Option<crate::types::Sort>,
     /// <p>The token for pagination results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -14,6 +16,10 @@ impl SearchImageSetsOutput {
     pub fn image_sets_metadata_summaries(&self) -> &[crate::types::ImageSetsMetadataSummary] {
         use std::ops::Deref;
         self.image_sets_metadata_summaries.deref()
+    }
+    /// <p>The sort order for image set search results.</p>
+    pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
+        self.sort.as_ref()
     }
     /// <p>The token for pagination results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -37,6 +43,7 @@ impl SearchImageSetsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchImageSetsOutputBuilder {
     pub(crate) image_sets_metadata_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImageSetsMetadataSummary>>,
+    pub(crate) sort: ::std::option::Option<crate::types::Sort>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,6 +70,20 @@ impl SearchImageSetsOutputBuilder {
     /// <p>The model containing the image set results.</p>
     pub fn get_image_sets_metadata_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageSetsMetadataSummary>> {
         &self.image_sets_metadata_summaries
+    }
+    /// <p>The sort order for image set search results.</p>
+    pub fn sort(mut self, input: crate::types::Sort) -> Self {
+        self.sort = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sort order for image set search results.</p>
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
+        self.sort = input;
+        self
+    }
+    /// <p>The sort order for image set search results.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
+        &self.sort
     }
     /// <p>The token for pagination results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +121,7 @@ impl SearchImageSetsOutputBuilder {
                     "image_sets_metadata_summaries was not specified but it is required when building SearchImageSetsOutput",
                 )
             })?,
+            sort: self.sort,
             next_token: self.next_token,
             _request_id: self._request_id,
         })

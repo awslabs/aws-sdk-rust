@@ -115,8 +115,6 @@ pub(crate) mod shape_audience_generation_job_list;
 
 pub(crate) mod shape_audience_model_list;
 
-pub(crate) mod shape_audience_model_metrics;
-
 pub(crate) mod shape_audience_quality_metrics;
 
 pub(crate) mod shape_audience_size;
@@ -144,8 +142,6 @@ pub(crate) mod shape_audience_destination;
 pub(crate) mod shape_audience_export_job_summary;
 
 pub(crate) mod shape_audience_generation_job_summary;
-
-pub(crate) mod shape_audience_model_metric;
 
 pub(crate) mod shape_audience_model_summary;
 

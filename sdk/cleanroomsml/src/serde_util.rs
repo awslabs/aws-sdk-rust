@@ -394,21 +394,6 @@ pub(crate) fn audience_generation_job_summary_correct_errors(
     builder
 }
 
-pub(crate) fn audience_model_metric_correct_errors(
-    mut builder: crate::types::builders::AudienceModelMetricBuilder,
-) -> crate::types::builders::AudienceModelMetricBuilder {
-    if builder.r#type.is_none() {
-        builder.r#type = "no value was set".parse::<crate::types::AudienceModelMetricType>().ok()
-    }
-    if builder.for_top_k_item_predictions.is_none() {
-        builder.for_top_k_item_predictions = Some(Default::default())
-    }
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn audience_model_summary_correct_errors(
     mut builder: crate::types::builders::AudienceModelSummaryBuilder,
 ) -> crate::types::builders::AudienceModelSummaryBuilder {

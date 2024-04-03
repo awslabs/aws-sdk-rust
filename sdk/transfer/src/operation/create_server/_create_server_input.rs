@@ -102,7 +102,7 @@ pub struct CreateServerInput {
     /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
     /// </ul>
     pub protocol_details: ::std::option::Option<crate::types::ProtocolDetails>,
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specifies the name of the security policy for the server.</p>
     pub security_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for servers.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -246,7 +246,7 @@ impl CreateServerInput {
     pub fn protocol_details(&self) -> ::std::option::Option<&crate::types::ProtocolDetails> {
         self.protocol_details.as_ref()
     }
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specifies the name of the security policy for the server.</p>
     pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
         self.security_policy_name.as_deref()
     }
@@ -730,17 +730,17 @@ impl CreateServerInputBuilder {
     pub fn get_protocol_details(&self) -> &::std::option::Option<crate::types::ProtocolDetails> {
         &self.protocol_details
     }
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specifies the name of the security policy for the server.</p>
     pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specifies the name of the security policy for the server.</p>
     pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_policy_name = input;
         self
     }
-    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// <p>Specifies the name of the security policy for the server.</p>
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_policy_name
     }

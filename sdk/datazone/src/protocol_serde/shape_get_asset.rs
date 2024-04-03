@@ -194,6 +194,11 @@ pub(crate) fn de_get_asset(
                             .transpose()?,
                     );
                 }
+                "latestTimeSeriesDataPointFormsOutput" => {
+                    builder = builder.set_latest_time_series_data_point_forms_output(
+                            crate::protocol_serde::shape_time_series_data_point_summary_form_output_list::de_time_series_data_point_summary_form_output_list(tokens)?
+                        );
+                }
                 "listing" => {
                     builder = builder.set_listing(crate::protocol_serde::shape_asset_listing_details::de_asset_listing_details(tokens)?);
                 }

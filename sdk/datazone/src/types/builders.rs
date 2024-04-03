@@ -7,6 +7,8 @@ pub use crate::types::_asset_listing::AssetListingBuilder;
 
 pub use crate::types::_detailed_glossary_term::DetailedGlossaryTermBuilder;
 
+pub use crate::types::_time_series_data_point_summary_form_output::TimeSeriesDataPointSummaryFormOutputBuilder;
+
 pub use crate::types::_term_relations::TermRelationsBuilder;
 
 pub use crate::types::_import::ImportBuilder;
@@ -132,6 +134,10 @@ pub use crate::types::_glossary_item::GlossaryItemBuilder;
 pub use crate::types::_reject_choice::RejectChoiceBuilder;
 
 pub use crate::types::_reject_rule::RejectRuleBuilder;
+
+pub use crate::types::_time_series_data_point_form_output::TimeSeriesDataPointFormOutputBuilder;
+
+pub use crate::types::_time_series_data_point_form_input::TimeSeriesDataPointFormInputBuilder;
 
 pub use crate::types::_subscription_target_summary::SubscriptionTargetSummaryBuilder;
 
