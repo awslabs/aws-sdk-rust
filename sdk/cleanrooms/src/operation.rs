@@ -7,6 +7,9 @@ pub mod batch_get_collaboration_analysis_template;
 /// Types for the `BatchGetSchema` operation.
 pub mod batch_get_schema;
 
+/// Types for the `BatchGetSchemaAnalysisRule` operation.
+pub mod batch_get_schema_analysis_rule;
+
 /// Types for the `CreateAnalysisTemplate` operation.
 pub mod create_analysis_template;
 

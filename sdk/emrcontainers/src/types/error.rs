@@ -7,6 +7,10 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_request_throttled_exception::RequestThrottledException;
 
+pub use crate::types::error::_eks_request_throttled_exception::EksRequestThrottledException;
+
+mod _eks_request_throttled_exception;
+
 mod _internal_server_exception;
 
 mod _request_throttled_exception;

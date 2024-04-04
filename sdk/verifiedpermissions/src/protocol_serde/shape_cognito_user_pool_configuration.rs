@@ -15,5 +15,11 @@ pub fn ser_cognito_user_pool_configuration(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.group_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("groupConfiguration").start_object();
+        crate::protocol_serde::shape_cognito_group_configuration::ser_cognito_group_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

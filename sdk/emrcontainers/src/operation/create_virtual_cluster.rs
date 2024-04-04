@@ -261,6 +261,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateVirtual
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateVirtualClusterError {
+    /// <p>The request exceeded the Amazon EKS API operation limits.</p>
+    EksRequestThrottledException(crate::types::error::EksRequestThrottledException),
     /// <p>This is an internal server exception.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource was not found.</p>
@@ -300,11 +302,16 @@ impl CreateVirtualClusterError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::EksRequestThrottledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `CreateVirtualClusterError::EksRequestThrottledException`.
+    pub fn is_eks_request_throttled_exception(&self) -> bool {
+        matches!(self, Self::EksRequestThrottledException(_))
     }
     /// Returns `true` if the error kind is `CreateVirtualClusterError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -322,6 +329,7 @@ impl CreateVirtualClusterError {
 impl ::std::error::Error for CreateVirtualClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::EksRequestThrottledException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -332,6 +340,7 @@ impl ::std::error::Error for CreateVirtualClusterError {
 impl ::std::fmt::Display for CreateVirtualClusterError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::EksRequestThrottledException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -356,6 +365,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateVirtualClusterError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateVirtualClusterError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::EksRequestThrottledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

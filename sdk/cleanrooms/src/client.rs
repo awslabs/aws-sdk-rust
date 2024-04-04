@@ -140,6 +140,8 @@ mod batch_get_collaboration_analysis_template;
 
 mod batch_get_schema;
 
+mod batch_get_schema_analysis_rule;
+
 mod create_analysis_template;
 
 mod create_collaboration;

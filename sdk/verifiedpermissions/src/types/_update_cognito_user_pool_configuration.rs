@@ -8,6 +8,8 @@ pub struct UpdateCognitoUserPoolConfiguration {
     pub user_pool_arn: ::std::string::String,
     /// <p>The client ID of an app client that is configured for the specified Amazon Cognito user pool.</p>
     pub client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
+    pub group_configuration: ::std::option::Option<crate::types::UpdateCognitoGroupConfiguration>,
 }
 impl UpdateCognitoUserPoolConfiguration {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
@@ -20,6 +22,10 @@ impl UpdateCognitoUserPoolConfiguration {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_ids.is_none()`.
     pub fn client_ids(&self) -> &[::std::string::String] {
         self.client_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
+    pub fn group_configuration(&self) -> ::std::option::Option<&crate::types::UpdateCognitoGroupConfiguration> {
+        self.group_configuration.as_ref()
     }
 }
 impl UpdateCognitoUserPoolConfiguration {
@@ -35,6 +41,7 @@ impl UpdateCognitoUserPoolConfiguration {
 pub struct UpdateCognitoUserPoolConfigurationBuilder {
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) group_configuration: ::std::option::Option<crate::types::UpdateCognitoGroupConfiguration>,
 }
 impl UpdateCognitoUserPoolConfigurationBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
@@ -72,6 +79,20 @@ impl UpdateCognitoUserPoolConfigurationBuilder {
     pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.client_ids
     }
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
+    pub fn group_configuration(mut self, input: crate::types::UpdateCognitoGroupConfiguration) -> Self {
+        self.group_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
+    pub fn set_group_configuration(mut self, input: ::std::option::Option<crate::types::UpdateCognitoGroupConfiguration>) -> Self {
+        self.group_configuration = input;
+        self
+    }
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
+    pub fn get_group_configuration(&self) -> &::std::option::Option<crate::types::UpdateCognitoGroupConfiguration> {
+        &self.group_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateCognitoUserPoolConfiguration`](crate::types::UpdateCognitoUserPoolConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_pool_arn`](crate::types::builders::UpdateCognitoUserPoolConfigurationBuilder::user_pool_arn)
@@ -84,6 +105,7 @@ impl UpdateCognitoUserPoolConfigurationBuilder {
                 )
             })?,
             client_ids: self.client_ids,
+            group_configuration: self.group_configuration,
         })
     }
 }

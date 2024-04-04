@@ -31,14 +31,14 @@
 //!   - __Accept-Encoding:__ gzip, deflate
 //!   - __Content-Type:__ application/json
 //!
-//! __Resources__
+//! __Key Concepts__
+//!   - __Channel__ — Stores configuration data related to your live stream. You first create a channel and then use the channel’s stream key to start your live stream.
+//!   - __Stream key__ — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize streaming. _ __Treat the stream key like a secret, since it allows anyone to stream to the channel.__ _
+//!   - __Playback key pair__ — Video playback may be restricted using playback-authorization tokens, which use public-key encryption. A playback key pair is the public-private pair of keys used to sign and validate the playback-authorization token.
+//!   - __Recording configuration__ — Stores configuration related to recording a live stream and where to store the recorded content. Multiple channels can reference the same recording configuration.
+//!   - __Playback restriction policy__ — Restricts playback by countries and/or origin sites.
 //!
-//! The following resources contain information about your IVS live stream (see [Getting Started with Amazon IVS](https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html)):
-//!   - __Channel__ — Stores configuration data related to your live stream. You first create a channel and then use the channel’s stream key to start your live stream. See the Channel endpoints for more information.
-//!   - __Stream key__ — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize streaming. See the StreamKey endpoints for more information. _ __Treat the stream key like a secret, since it allows anyone to stream to the channel.__ _
-//!   - __Playback key pair__ — Video playback may be restricted using playback-authorization tokens, which use public-key encryption. A playback key pair is the public-private pair of keys used to sign and validate the playback-authorization token. See the PlaybackKeyPair endpoints for more information.
-//!   - __Recording configuration__ — Stores configuration related to recording a live stream and where to store the recorded content. Multiple channels can reference the same recording configuration. See the Recording Configuration endpoints for more information.
-//!   - __Playback restriction policy__ — Restricts playback by countries and/or origin sites. See the Playback Restriction Policy endpoints for more information.
+//! For more information about your IVS live stream, also see [Getting Started with IVS Low-Latency Streaming](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/getting-started.html).
 //!
 //! __Tagging__
 //!
@@ -95,7 +95,7 @@
 //!   - StartViewerSessionRevocation — Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including that version.
 //!   - BatchStartViewerSessionRevocation — Performs StartViewerSessionRevocation on multiple channel ARN and viewer ID pairs simultaneously.
 //!
-//! __RecordingConfiguration Endpoints__
+//! __Recording Configuration Endpoints__
 //!   - CreateRecordingConfiguration — Creates a new recording configuration, used to enable recording to Amazon S3.
 //!   - GetRecordingConfiguration — Gets the recording-configuration metadata for the specified ARN.
 //!   - ListRecordingConfigurations — Gets summary information about all recording configurations in your account, in the Amazon Web Services region where the API request is processed.
@@ -109,7 +109,7 @@
 //!   - StopStream — Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with DeleteStreamKey to prevent further streaming to a channel.
 //!   - PutMetadata — Inserts metadata into the active stream of the specified channel. At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data into a single PutMetadata call.) At most 155 requests per second per account are allowed.
 //!
-//! __StreamKey Endpoints__
+//! __Stream Key Endpoints__
 //!   - CreateStreamKey — Creates a stream key, used to initiate a stream, for the specified channel ARN.
 //!   - GetStreamKey — Gets stream key information for the specified ARN.
 //!   - BatchGetStreamKey — Performs GetStreamKey on multiple ARNs simultaneously.
@@ -133,7 +133,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ivs = "1.19.0"
+//! aws-sdk-ivs = "1.20.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

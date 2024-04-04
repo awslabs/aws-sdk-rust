@@ -196,17 +196,17 @@ impl CreateChannelFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn insecure_ingest(mut self, input: bool) -> Self {
         self.inner = self.inner.insecure_ingest(input);
         self
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn set_insecure_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_insecure_ingest(input);
         self
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn get_insecure_ingest(&self) -> &::std::option::Option<bool> {
         self.inner.get_insecure_ingest()
     }

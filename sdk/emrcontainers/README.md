@@ -1,6 +1,6 @@
 # aws-sdk-emrcontainers
 
-Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS). With this deployment option, you can focus on running analytics workloads while Amazon EMR on EKS builds, configures, and manages containers for open-source applications. For more information about Amazon EMR on EKS concepts and tasks, see [What is shared id="EMR-EKS"/>](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html).
+Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS). With this deployment option, you can focus on running analytics workloads while Amazon EMR on EKS builds, configures, and manages containers for open-source applications. For more information about Amazon EMR on EKS concepts and tasks, see [What is Amazon EMR on EKS](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html).
 
 _Amazon EMR containers_ is the API name for Amazon EMR on EKS. The emr-containers prefix is used in the following scenarios:
   - It is the prefix in the CLI commands for Amazon EMR on EKS. For example, aws emr-containers start-job-run.
@@ -19,7 +19,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-emrcontainers = "1.19.0"
+aws-sdk-emrcontainers = "1.20.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

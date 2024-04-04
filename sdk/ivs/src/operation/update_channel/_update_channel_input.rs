@@ -15,7 +15,7 @@ pub struct UpdateChannelInput {
     pub authorized: ::std::option::Option<bool>,
     /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.</p>
     pub recording_configuration_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub insecure_ingest: ::std::option::Option<bool>,
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub preset: ::std::option::Option<crate::types::TranscodePreset>,
@@ -47,7 +47,7 @@ impl UpdateChannelInput {
     pub fn recording_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.recording_configuration_arn.as_deref()
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn insecure_ingest(&self) -> ::std::option::Option<bool> {
         self.insecure_ingest
     }
@@ -167,17 +167,17 @@ impl UpdateChannelInputBuilder {
     pub fn get_recording_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.recording_configuration_arn
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn insecure_ingest(mut self, input: bool) -> Self {
         self.insecure_ingest = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn set_insecure_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.insecure_ingest = input;
         self
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn get_insecure_ingest(&self) -> &::std::option::Option<bool> {
         &self.insecure_ingest
     }

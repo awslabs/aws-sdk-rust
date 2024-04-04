@@ -229,6 +229,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListVirtualC
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
+                if let ::std::option::Option::Some(inner_9) = &_input.eks_access_entry_integrated {
+                    {
+                        query.push_kv(
+                            "eksAccessEntryIntegrated",
+                            ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
+                        );
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

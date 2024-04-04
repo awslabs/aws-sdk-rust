@@ -31,6 +31,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "groupConfiguration" => {
+                            builder = builder.set_group_configuration(
+                                crate::protocol_serde::shape_cognito_group_configuration_item::de_cognito_group_configuration_item(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

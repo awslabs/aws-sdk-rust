@@ -38,6 +38,18 @@ pub(crate) fn batch_get_schema_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_schema_analysis_rule_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_schema_analysis_rule::builders::BatchGetSchemaAnalysisRuleOutputBuilder,
+) -> crate::operation::batch_get_schema_analysis_rule::builders::BatchGetSchemaAnalysisRuleOutputBuilder {
+    if builder.analysis_rules.is_none() {
+        builder.analysis_rules = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_quota_exceeded_exception_correct_errors(
     mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
 ) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
@@ -1057,6 +1069,9 @@ pub(crate) fn schema_correct_errors(mut builder: crate::types::builders::SchemaB
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::SchemaType>().ok()
     }
+    if builder.schema_status_details.is_none() {
+        builder.schema_status_details = Some(Default::default())
+    }
     builder
 }
 
@@ -1134,6 +1149,24 @@ pub(crate) fn batch_get_collaboration_analysis_template_error_correct_errors(
 ) -> crate::types::builders::BatchGetCollaborationAnalysisTemplateErrorBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_schema_analysis_rule_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetSchemaAnalysisRuleErrorBuilder,
+) -> crate::types::builders::BatchGetSchemaAnalysisRuleErrorBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AnalysisRuleType>().ok()
     }
     if builder.code.is_none() {
         builder.code = Some(Default::default())
@@ -1760,6 +1793,15 @@ pub(crate) fn payment_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn schema_status_detail_correct_errors(
+    mut builder: crate::types::builders::SchemaStatusDetailBuilder,
+) -> crate::types::builders::SchemaStatusDetailBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SchemaStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn analysis_rule_aggregation_correct_errors(
     mut builder: crate::types::builders::AnalysisRuleAggregationBuilder,
 ) -> crate::types::builders::AnalysisRuleAggregationBuilder {
@@ -1885,6 +1927,18 @@ pub(crate) fn protected_query_single_member_output_correct_errors(
 ) -> crate::types::builders::ProtectedQuerySingleMemberOutputBuilder {
     if builder.account_id.is_none() {
         builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn schema_status_reason_correct_errors(
+    mut builder: crate::types::builders::SchemaStatusReasonBuilder,
+) -> crate::types::builders::SchemaStatusReasonBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::SchemaStatusReasonCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

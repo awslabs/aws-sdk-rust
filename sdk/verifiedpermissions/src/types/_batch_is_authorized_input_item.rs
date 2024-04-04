@@ -6,9 +6,9 @@
 pub struct BatchIsAuthorizedInputItem {
     /// <p>Specifies the principal for which the authorization decision is to be made.</p>
     pub principal: ::std::option::Option<crate::types::EntityIdentifier>,
-    /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
+    /// <p>Specifies the requested action to be authorized. For example, <code>PhotoFlash::ReadPhoto</code>.</p>
     pub action: ::std::option::Option<crate::types::ActionIdentifier>,
-    /// <p>Specifies the resource for which the authorization decision is to be made.</p>
+    /// <p>Specifies the resource that you want an authorization decision for. For example, <code>PhotoFlash::Photo</code>.</p>
     pub resource: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
     pub context: ::std::option::Option<crate::types::ContextDefinition>,
@@ -18,11 +18,11 @@ impl BatchIsAuthorizedInputItem {
     pub fn principal(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
         self.principal.as_ref()
     }
-    /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
+    /// <p>Specifies the requested action to be authorized. For example, <code>PhotoFlash::ReadPhoto</code>.</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::ActionIdentifier> {
         self.action.as_ref()
     }
-    /// <p>Specifies the resource for which the authorization decision is to be made.</p>
+    /// <p>Specifies the resource that you want an authorization decision for. For example, <code>PhotoFlash::Photo</code>.</p>
     pub fn resource(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
         self.resource.as_ref()
     }
@@ -62,31 +62,31 @@ impl BatchIsAuthorizedInputItemBuilder {
     pub fn get_principal(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
         &self.principal
     }
-    /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
+    /// <p>Specifies the requested action to be authorized. For example, <code>PhotoFlash::ReadPhoto</code>.</p>
     pub fn action(mut self, input: crate::types::ActionIdentifier) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
+    /// <p>Specifies the requested action to be authorized. For example, <code>PhotoFlash::ReadPhoto</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionIdentifier>) -> Self {
         self.action = input;
         self
     }
-    /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
+    /// <p>Specifies the requested action to be authorized. For example, <code>PhotoFlash::ReadPhoto</code>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ActionIdentifier> {
         &self.action
     }
-    /// <p>Specifies the resource for which the authorization decision is to be made.</p>
+    /// <p>Specifies the resource that you want an authorization decision for. For example, <code>PhotoFlash::Photo</code>.</p>
     pub fn resource(mut self, input: crate::types::EntityIdentifier) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the resource for which the authorization decision is to be made.</p>
+    /// <p>Specifies the resource that you want an authorization decision for. For example, <code>PhotoFlash::Photo</code>.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.resource = input;
         self
     }
-    /// <p>Specifies the resource for which the authorization decision is to be made.</p>
+    /// <p>Specifies the resource that you want an authorization decision for. For example, <code>PhotoFlash::Photo</code>.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
         &self.resource
     }

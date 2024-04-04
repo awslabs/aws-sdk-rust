@@ -107,6 +107,10 @@ pub use crate::types::_analysis_rule::AnalysisRuleBuilder;
 
 pub use crate::types::_schema::SchemaBuilder;
 
+pub use crate::types::_schema_status_detail::SchemaStatusDetailBuilder;
+
+pub use crate::types::_schema_status_reason::SchemaStatusReasonBuilder;
+
 pub use crate::types::_column::ColumnBuilder;
 
 pub use crate::types::_collaboration_privacy_budget_template::CollaborationPrivacyBudgetTemplateBuilder;
@@ -118,6 +122,10 @@ pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTem
 pub use crate::types::_analysis_parameter::AnalysisParameterBuilder;
 
 pub use crate::types::_analysis_schema::AnalysisSchemaBuilder;
+
+pub use crate::types::_batch_get_schema_analysis_rule_error::BatchGetSchemaAnalysisRuleErrorBuilder;
+
+pub use crate::types::_schema_analysis_rule_request::SchemaAnalysisRuleRequestBuilder;
 
 pub use crate::types::_batch_get_schema_error::BatchGetSchemaErrorBuilder;
 

@@ -226,9 +226,9 @@ model_hash = '228b888792ce40aa06e158c9b654f5d46820d2d2a947936808ff6412c1b61b0f'
 
 [crates.aws-sdk-b2bi]
 category = 'AwsSdk'
-version = '1.17.0'
-source_hash = '8ad780753436431869c3f58e8c8da7df90a5b4ef6cfba2ba4c373eac2ce66c08'
-model_hash = '3aa1e0b09e5eac947b6b44ba5802c6d06365145d29a00856912a640ec2b004e4'
+version = '1.18.0'
+source_hash = '16931e5c1e3dabc62fc051c608d29128c2f64ad975e52b6b9c558cb2bae9cd67'
+model_hash = '011bf2aed91e3903e8f2391860b83ff5ae3b0af732378b42fbeb8ca8918dda4a'
 
 [crates.aws-sdk-backup]
 category = 'AwsSdk'
@@ -346,9 +346,9 @@ model_hash = '9745917dd01a57acd3677be5f9b8b4bd87e991d988dc28e6cc018ad35d85ecd2'
 
 [crates.aws-sdk-cleanrooms]
 category = 'AwsSdk'
-version = '1.19.0'
-source_hash = '0f449091354921483fa24fac61347aa5ee4bd112be37cd2c13aa12d9d5da18bc'
-model_hash = '3ae748db4585ccb150b7f7527e41346c78e08db1cf42a42a2f53f1be13d81326'
+version = '1.20.0'
+source_hash = 'dca3c79c123b998ae7cf841ad333aecf3fe221e2d301ce226bbb30c1b5d047ff'
+model_hash = '786180bf196d5fc2ace9cc1b44878ea229952f76ed1594aa705fc2cf8f867992'
 
 [crates.aws-sdk-cleanroomsml]
 category = 'AwsSdk'
@@ -748,9 +748,9 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.30.0'
-source_hash = '749249a36353d404bf0f875b545e284e93bec1f8fbda50e5bd4ceff63db7cd69'
-model_hash = '2f60719e69a7de93ff742e5f13242515cd397b25733d1d665c6bf319f166cb46'
+version = '1.31.0'
+source_hash = 'daa2adcfee1eae2dec4d7b5c4073670eab5d566519e9fb63396c2d4411cb4a0e'
+model_hash = '9db3c12c04eaf355b4a62eef0f77f07189e7d6a55219cacd423d21b2b3aa1e99'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -844,9 +844,9 @@ model_hash = 'dff40cca16ef6e0c56759e2943407b9566bfa59ce9b2ac0e5ff72fcb3d45c3f3'
 
 [crates.aws-sdk-emrcontainers]
 category = 'AwsSdk'
-version = '1.19.0'
-source_hash = '79ffe2a98a82ad9cb1bc71be867d9d55c70c8b0c3bbb4f78c72a99baf7bf2fac'
-model_hash = '059b75ac6b5f241e9a8d0dad9e35c09e13ad6aa874ac0176892a19607a32e412'
+version = '1.20.0'
+source_hash = 'cbb040ef39410fdd158ce523f9bf375674752f95bead0981a84602b11fd43845'
+model_hash = '781bbf5e6668075d12983b605b2214e34cd46b935db7600ff767495eac449c7c'
 
 [crates.aws-sdk-emrserverless]
 category = 'AwsSdk'
@@ -1144,9 +1144,9 @@ model_hash = '6f0059ac2b85df5db40737887e742e8245101b018a5092c1d94c14054f09c114'
 
 [crates.aws-sdk-ivs]
 category = 'AwsSdk'
-version = '1.19.0'
-source_hash = 'fb5d32fc86d69e0e0428fd5d983b67105471f6f39f3dd965443452396ba6c80f'
-model_hash = '6935deb982bb4861cc57334c4c57825c0c4fed79b45ea0dfa88e8ae9052ef82c'
+version = '1.20.0'
+source_hash = 'd4e338bc03549ffdb0315c6182924fb14ea144901885a9a17c7853d90ee1b51c'
+model_hash = '17d4a8d479a922fb6590f10fd6bf8104b45420e464c09a2a5085d31be5b371f4'
 
 [crates.aws-sdk-ivschat]
 category = 'AwsSdk'
@@ -2224,9 +2224,9 @@ model_hash = 'ce72702d8baaff26bc29ba694fab60de0a76b50e1221c9df5a7b2d3645a2a431'
 
 [crates.aws-sdk-verifiedpermissions]
 category = 'AwsSdk'
-version = '1.20.0'
-source_hash = 'd2e105ddec1891170a8b9ae894dabfa4c2801102061c830c7a84866bfe514106'
-model_hash = '8a4e61d7bff32667462b67388d899b1fc9fa26200dc2b2e71ad2e01a7ebdd888'
+version = '1.21.0'
+source_hash = '2e8df1ffceb4f3e29617fba43a5e36f6410d885957d8d0ba65529b2d9461b570'
+model_hash = 'e04292ce8e43a3e69fadbb6e900993476da1831f0cbc403138af9112a9bad9df'
 
 [crates.aws-sdk-voiceid]
 category = 'AwsSdk'
@@ -2447,17 +2447,10 @@ source_hash = '13ca815eb1f11fda289b697b80b415b68769729b728315d219f9c960f1f66b63'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '8f00d47349f60dd6742497db1de353a32835deca841f48f0b189c8b6966c6869'
-
-[release]
-tag = 'release-2024-04-03'
-
 [release.crates]
-aws-sdk-cleanroomsml = '1.16.0'
-aws-sdk-cloudformation = '1.23.0'
-aws-sdk-datazone = '1.21.0'
-aws-sdk-docdb = '1.20.0'
-aws-sdk-groundstation = '1.19.0'
-aws-sdk-lambda = '1.19.0'
-aws-sdk-medialive = '1.22.0'
-aws-sdk-medicalimaging = '1.19.0'
-aws-sdk-transfer = '1.21.0'
+aws-sdk-b2bi = '1.18.0'
+aws-sdk-cleanrooms = '1.20.0'
+aws-sdk-ec2 = '1.31.0'
+aws-sdk-emrcontainers = '1.20.0'
+aws-sdk-ivs = '1.20.0'
+aws-sdk-verifiedpermissions = '1.21.0'

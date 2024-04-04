@@ -79,6 +79,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "srt" => {
+                            builder = builder.set_srt(crate::protocol_serde::shape_srt::de_srt(tokens)?);
+                        }
                         "playbackRestrictionPolicyArn" => {
                             builder = builder.set_playback_restriction_policy_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -183,6 +183,16 @@ pub use crate::types::_analysis_rule_policy_v1::AnalysisRulePolicyV1;
 
 pub use crate::types::_schema::Schema;
 
+pub use crate::types::_schema_status_detail::SchemaStatusDetail;
+
+pub use crate::types::_schema_configuration::SchemaConfiguration;
+
+pub use crate::types::_schema_status_reason::SchemaStatusReason;
+
+pub use crate::types::_schema_status_reason_code::SchemaStatusReasonCode;
+
+pub use crate::types::_schema_status::SchemaStatus;
+
 pub use crate::types::_column::Column;
 
 pub use crate::types::_collaboration_privacy_budget_template::CollaborationPrivacyBudgetTemplate;
@@ -200,6 +210,10 @@ pub use crate::types::_analysis_source::AnalysisSource;
 pub use crate::types::_analysis_format::AnalysisFormat;
 
 pub use crate::types::_analysis_schema::AnalysisSchema;
+
+pub use crate::types::_batch_get_schema_analysis_rule_error::BatchGetSchemaAnalysisRuleError;
+
+pub use crate::types::_schema_analysis_rule_request::SchemaAnalysisRuleRequest;
 
 pub use crate::types::_batch_get_schema_error::BatchGetSchemaError;
 
@@ -260,6 +274,8 @@ mod _analysis_template;
 mod _analysis_template_summary;
 
 mod _batch_get_collaboration_analysis_template_error;
+
+mod _batch_get_schema_analysis_rule_error;
 
 mod _batch_get_schema_error;
 
@@ -430,6 +446,18 @@ mod _result_format;
 mod _scalar_functions;
 
 mod _schema;
+
+mod _schema_analysis_rule_request;
+
+mod _schema_configuration;
+
+mod _schema_status;
+
+mod _schema_status_detail;
+
+mod _schema_status_reason;
+
+mod _schema_status_reason_code;
 
 mod _schema_summary;
 

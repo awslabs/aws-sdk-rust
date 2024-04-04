@@ -9,6 +9,8 @@ pub struct IsAuthorizedWithTokenOutput {
     pub determining_policies: ::std::vec::Vec<crate::types::DeterminingPolicyItem>,
     /// <p>Errors that occurred while making an authorization decision. For example, a policy references an entity or entity attribute that does not exist in the slice.</p>
     pub errors: ::std::vec::Vec<crate::types::EvaluationErrorItem>,
+    /// <p>The identifier of the principal in the ID or access token.</p>
+    pub principal: ::std::option::Option<crate::types::EntityIdentifier>,
     _request_id: Option<String>,
 }
 impl IsAuthorizedWithTokenOutput {
@@ -25,6 +27,10 @@ impl IsAuthorizedWithTokenOutput {
     pub fn errors(&self) -> &[crate::types::EvaluationErrorItem] {
         use std::ops::Deref;
         self.errors.deref()
+    }
+    /// <p>The identifier of the principal in the ID or access token.</p>
+    pub fn principal(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
+        self.principal.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for IsAuthorizedWithTokenOutput {
@@ -46,6 +52,7 @@ pub struct IsAuthorizedWithTokenOutputBuilder {
     pub(crate) decision: ::std::option::Option<crate::types::Decision>,
     pub(crate) determining_policies: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>,
+    pub(crate) principal: ::std::option::Option<crate::types::EntityIdentifier>,
     _request_id: Option<String>,
 }
 impl IsAuthorizedWithTokenOutputBuilder {
@@ -104,6 +111,20 @@ impl IsAuthorizedWithTokenOutputBuilder {
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>> {
         &self.errors
     }
+    /// <p>The identifier of the principal in the ID or access token.</p>
+    pub fn principal(mut self, input: crate::types::EntityIdentifier) -> Self {
+        self.principal = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The identifier of the principal in the ID or access token.</p>
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
+        self.principal = input;
+        self
+    }
+    /// <p>The identifier of the principal in the ID or access token.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
+        &self.principal
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -143,6 +164,7 @@ impl IsAuthorizedWithTokenOutputBuilder {
                     "errors was not specified but it is required when building IsAuthorizedWithTokenOutput",
                 )
             })?,
+            principal: self.principal,
             _request_id: self._request_id,
         })
     }

@@ -3,6 +3,8 @@ pub use crate::types::_playback_restriction_policy::PlaybackRestrictionPolicyBui
 
 pub use crate::types::_channel::ChannelBuilder;
 
+pub use crate::types::_srt::SrtBuilder;
+
 pub use crate::types::_stream_session_summary::StreamSessionSummaryBuilder;
 
 pub use crate::types::_stream_summary::StreamSummaryBuilder;

@@ -6,3 +6,5 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
 pub use crate::types::error::_request_throttled_exception::RequestThrottledExceptionBuilder;
+
+pub use crate::types::error::_eks_request_throttled_exception::EksRequestThrottledExceptionBuilder;

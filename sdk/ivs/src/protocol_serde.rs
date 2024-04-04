@@ -255,6 +255,8 @@ pub(crate) mod shape_recording_configuration_summary;
 
 pub(crate) mod shape_s3_destination_configuration;
 
+pub(crate) mod shape_srt;
+
 pub(crate) mod shape_stream_events;
 
 pub(crate) mod shape_stream_key_summary;

@@ -15,6 +15,7 @@
 ///     X12Version::Version4010 => { /* ... */ },
 ///     X12Version::Version4030 => { /* ... */ },
 ///     X12Version::Version5010 => { /* ... */ },
+///     X12Version::Version5010Hipaa => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum X12Version {
     Version4030,
     #[allow(missing_docs)] // documentation missing in model
     Version5010,
+    #[allow(missing_docs)] // documentation missing in model
+    Version5010Hipaa,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for X12Version {
             "VERSION_4010" => X12Version::Version4010,
             "VERSION_4030" => X12Version::Version4030,
             "VERSION_5010" => X12Version::Version5010,
+            "VERSION_5010_HIPAA" => X12Version::Version5010Hipaa,
             other => X12Version::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +80,13 @@ impl X12Version {
             X12Version::Version4010 => "VERSION_4010",
             X12Version::Version4030 => "VERSION_4030",
             X12Version::Version5010 => "VERSION_5010",
+            X12Version::Version5010Hipaa => "VERSION_5010_HIPAA",
             X12Version::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VERSION_4010", "VERSION_4030", "VERSION_5010"]
+        &["VERSION_4010", "VERSION_4030", "VERSION_5010", "VERSION_5010_HIPAA"]
     }
 }
 impl ::std::convert::AsRef<str> for X12Version {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for X12Version {
             X12Version::Version4010 => write!(f, "VERSION_4010"),
             X12Version::Version4030 => write!(f, "VERSION_4030"),
             X12Version::Version5010 => write!(f, "VERSION_5010"),
+            X12Version::Version5010Hipaa => write!(f, "VERSION_5010_HIPAA"),
             X12Version::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The request exceeded the Amazon EKS API operation limits.</p>
+    EksRequestThrottledException(crate::types::error::EksRequestThrottledException),
     /// <p>This is an internal server exception.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request throttled.</p>
@@ -23,6 +25,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::EksRequestThrottledException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::RequestThrottledException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -48,6 +51,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::EksRequestThrottledException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::RequestThrottledException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -152,6 +156,9 @@ where
 impl From<crate::operation::create_virtual_cluster::CreateVirtualClusterError> for Error {
     fn from(err: crate::operation::create_virtual_cluster::CreateVirtualClusterError) -> Self {
         match err {
+            crate::operation::create_virtual_cluster::CreateVirtualClusterError::EksRequestThrottledException(inner) => {
+                Error::EksRequestThrottledException(inner)
+            }
             crate::operation::create_virtual_cluster::CreateVirtualClusterError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -598,6 +605,7 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::EksRequestThrottledException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::RequestThrottledException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -609,6 +617,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::EksRequestThrottledException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::RequestThrottledException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

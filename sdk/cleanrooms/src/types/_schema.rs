@@ -28,6 +28,8 @@ pub struct Schema {
     pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
     pub r#type: crate::types::SchemaType,
+    /// <p>Details about the status of the schema. Currently, only one entry is present.</p>
+    pub schema_status_details: ::std::vec::Vec<crate::types::SchemaStatusDetail>,
 }
 impl Schema {
     /// <p>The columns for the relation this schema represents.</p>
@@ -86,6 +88,11 @@ impl Schema {
     pub fn r#type(&self) -> &crate::types::SchemaType {
         &self.r#type
     }
+    /// <p>Details about the status of the schema. Currently, only one entry is present.</p>
+    pub fn schema_status_details(&self) -> &[crate::types::SchemaStatusDetail] {
+        use std::ops::Deref;
+        self.schema_status_details.deref()
+    }
 }
 impl Schema {
     /// Creates a new builder-style object to manufacture [`Schema`](crate::types::Schema).
@@ -110,6 +117,7 @@ pub struct SchemaBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) r#type: ::std::option::Option<crate::types::SchemaType>,
+    pub(crate) schema_status_details: ::std::option::Option<::std::vec::Vec<crate::types::SchemaStatusDetail>>,
 }
 impl SchemaBuilder {
     /// Appends an item to `columns`.
@@ -306,6 +314,26 @@ impl SchemaBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SchemaType> {
         &self.r#type
     }
+    /// Appends an item to `schema_status_details`.
+    ///
+    /// To override the contents of this collection use [`set_schema_status_details`](Self::set_schema_status_details).
+    ///
+    /// <p>Details about the status of the schema. Currently, only one entry is present.</p>
+    pub fn schema_status_details(mut self, input: crate::types::SchemaStatusDetail) -> Self {
+        let mut v = self.schema_status_details.unwrap_or_default();
+        v.push(input);
+        self.schema_status_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Details about the status of the schema. Currently, only one entry is present.</p>
+    pub fn set_schema_status_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaStatusDetail>>) -> Self {
+        self.schema_status_details = input;
+        self
+    }
+    /// <p>Details about the status of the schema. Currently, only one entry is present.</p>
+    pub fn get_schema_status_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaStatusDetail>> {
+        &self.schema_status_details
+    }
     /// Consumes the builder and constructs a [`Schema`](crate::types::Schema).
     /// This method will fail if any of the following fields are not set:
     /// - [`columns`](crate::types::builders::SchemaBuilder::columns)
@@ -388,6 +416,7 @@ impl SchemaBuilder {
                     "r#type was not specified but it is required when building Schema",
                 )
             })?,
+            schema_status_details: self.schema_status_details.unwrap_or_default(),
         })
     }
 }

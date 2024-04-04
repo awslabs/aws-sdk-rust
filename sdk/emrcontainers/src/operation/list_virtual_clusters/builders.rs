@@ -216,4 +216,18 @@ impl ListVirtualClustersFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Optional Boolean that specifies whether the operation should return the virtual clusters that have the access entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.</p>
+    pub fn eks_access_entry_integrated(mut self, input: bool) -> Self {
+        self.inner = self.inner.eks_access_entry_integrated(input);
+        self
+    }
+    /// <p>Optional Boolean that specifies whether the operation should return the virtual clusters that have the access entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.</p>
+    pub fn set_eks_access_entry_integrated(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_eks_access_entry_integrated(input);
+        self
+    }
+    /// <p>Optional Boolean that specifies whether the operation should return the virtual clusters that have the access entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.</p>
+    pub fn get_eks_access_entry_integrated(&self) -> &::std::option::Option<bool> {
+        self.inner.get_eks_access_entry_integrated()
+    }
 }

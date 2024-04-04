@@ -26,6 +26,8 @@ pub struct Channel {
     pub insecure_ingest: bool,
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub preset: ::std::option::Option<crate::types::TranscodePreset>,
+    /// <p>Specifies the endpoint and optional passphrase for streaming with the SRT protocol.</p>
+    pub srt: ::std::option::Option<crate::types::Srt>,
     /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
     pub playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
 }
@@ -74,6 +76,10 @@ impl Channel {
     pub fn preset(&self) -> ::std::option::Option<&crate::types::TranscodePreset> {
         self.preset.as_ref()
     }
+    /// <p>Specifies the endpoint and optional passphrase for streaming with the SRT protocol.</p>
+    pub fn srt(&self) -> ::std::option::Option<&crate::types::Srt> {
+        self.srt.as_ref()
+    }
     /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
     pub fn playback_restriction_policy_arn(&self) -> ::std::option::Option<&str> {
         self.playback_restriction_policy_arn.as_deref()
@@ -101,6 +107,7 @@ pub struct ChannelBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) insecure_ingest: ::std::option::Option<bool>,
     pub(crate) preset: ::std::option::Option<crate::types::TranscodePreset>,
+    pub(crate) srt: ::std::option::Option<crate::types::Srt>,
     pub(crate) playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl ChannelBuilder {
@@ -264,6 +271,20 @@ impl ChannelBuilder {
     pub fn get_preset(&self) -> &::std::option::Option<crate::types::TranscodePreset> {
         &self.preset
     }
+    /// <p>Specifies the endpoint and optional passphrase for streaming with the SRT protocol.</p>
+    pub fn srt(mut self, input: crate::types::Srt) -> Self {
+        self.srt = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the endpoint and optional passphrase for streaming with the SRT protocol.</p>
+    pub fn set_srt(mut self, input: ::std::option::Option<crate::types::Srt>) -> Self {
+        self.srt = input;
+        self
+    }
+    /// <p>Specifies the endpoint and optional passphrase for streaming with the SRT protocol.</p>
+    pub fn get_srt(&self) -> &::std::option::Option<crate::types::Srt> {
+        &self.srt
+    }
     /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
     pub fn playback_restriction_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_restriction_policy_arn = ::std::option::Option::Some(input.into());
@@ -292,6 +313,7 @@ impl ChannelBuilder {
             tags: self.tags,
             insecure_ingest: self.insecure_ingest.unwrap_or_default(),
             preset: self.preset,
+            srt: self.srt,
             playback_restriction_policy_arn: self.playback_restriction_policy_arn,
         }
     }

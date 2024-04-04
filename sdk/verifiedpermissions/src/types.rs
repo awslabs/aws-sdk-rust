@@ -7,6 +7,8 @@ pub use crate::types::_resource_conflict::ResourceConflict;
 
 pub use crate::types::_schema_definition::SchemaDefinition;
 
+pub use crate::types::_entity_identifier::EntityIdentifier;
+
 pub use crate::types::_evaluation_error_item::EvaluationErrorItem;
 
 pub use crate::types::_determining_policy_item::DeterminingPolicyItem;
@@ -16,8 +18,6 @@ pub use crate::types::_decision::Decision;
 pub use crate::types::_entities_definition::EntitiesDefinition;
 
 pub use crate::types::_entity_item::EntityItem;
-
-pub use crate::types::_entity_identifier::EntityIdentifier;
 
 pub use crate::types::_attribute_value::AttributeValue;
 
@@ -71,9 +71,13 @@ pub use crate::types::_update_configuration::UpdateConfiguration;
 
 pub use crate::types::_update_cognito_user_pool_configuration::UpdateCognitoUserPoolConfiguration;
 
+pub use crate::types::_update_cognito_group_configuration::UpdateCognitoGroupConfiguration;
+
 pub use crate::types::_configuration_detail::ConfigurationDetail;
 
 pub use crate::types::_cognito_user_pool_configuration_detail::CognitoUserPoolConfigurationDetail;
+
+pub use crate::types::_cognito_group_configuration_detail::CognitoGroupConfigurationDetail;
 
 pub use crate::types::_identity_source_details::IdentitySourceDetails;
 
@@ -83,11 +87,15 @@ pub use crate::types::_configuration::Configuration;
 
 pub use crate::types::_cognito_user_pool_configuration::CognitoUserPoolConfiguration;
 
+pub use crate::types::_cognito_group_configuration::CognitoGroupConfiguration;
+
 pub use crate::types::_identity_source_item::IdentitySourceItem;
 
 pub use crate::types::_configuration_item::ConfigurationItem;
 
 pub use crate::types::_cognito_user_pool_configuration_item::CognitoUserPoolConfigurationItem;
+
+pub use crate::types::_cognito_group_configuration_item::CognitoGroupConfigurationItem;
 
 pub use crate::types::_identity_source_item_details::IdentitySourceItemDetails;
 
@@ -100,6 +108,12 @@ mod _attribute_value;
 mod _batch_is_authorized_input_item;
 
 mod _batch_is_authorized_output_item;
+
+mod _cognito_group_configuration;
+
+mod _cognito_group_configuration_detail;
+
+mod _cognito_group_configuration_item;
 
 mod _cognito_user_pool_configuration;
 
@@ -172,6 +186,8 @@ mod _template_linked_policy_definition;
 mod _template_linked_policy_definition_detail;
 
 mod _template_linked_policy_definition_item;
+
+mod _update_cognito_group_configuration;
 
 mod _update_cognito_user_pool_configuration;
 

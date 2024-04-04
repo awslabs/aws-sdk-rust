@@ -27,6 +27,8 @@ pub(crate) mod shape_batch_get_collaboration_analysis_template;
 
 pub(crate) mod shape_batch_get_schema;
 
+pub(crate) mod shape_batch_get_schema_analysis_rule;
+
 pub(crate) mod shape_create_analysis_template;
 
 pub(crate) mod shape_create_collaboration;
@@ -159,6 +161,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_batch_get_collaboration_analysis_template_input;
 
+pub(crate) mod shape_batch_get_schema_analysis_rule_input;
+
 pub(crate) mod shape_batch_get_schema_input;
 
 pub(crate) mod shape_conflict_exception;
@@ -224,6 +228,8 @@ pub(crate) mod shape_analysis_template;
 pub(crate) mod shape_analysis_template_summary_list;
 
 pub(crate) mod shape_batch_get_collaboration_analysis_template_error_list;
+
+pub(crate) mod shape_batch_get_schema_analysis_rule_error_list;
 
 pub(crate) mod shape_batch_get_schema_error_list;
 
@@ -303,6 +309,10 @@ pub(crate) mod shape_protected_query_summary_list;
 
 pub(crate) mod shape_schema;
 
+pub(crate) mod shape_schema_analysis_rule_list;
+
+pub(crate) mod shape_schema_analysis_rule_request;
+
 pub(crate) mod shape_schema_list;
 
 pub(crate) mod shape_schema_summary_list;
@@ -326,6 +336,8 @@ pub(crate) mod shape_analysis_schema;
 pub(crate) mod shape_analysis_template_summary;
 
 pub(crate) mod shape_batch_get_collaboration_analysis_template_error;
+
+pub(crate) mod shape_batch_get_schema_analysis_rule_error;
 
 pub(crate) mod shape_batch_get_schema_error;
 
@@ -391,6 +403,8 @@ pub(crate) mod shape_protected_query_summary;
 
 pub(crate) mod shape_query_compute_payment_config;
 
+pub(crate) mod shape_schema_status_detail_list;
+
 pub(crate) mod shape_schema_summary;
 
 pub(crate) mod shape_validation_exception_field;
@@ -421,6 +435,8 @@ pub(crate) mod shape_protected_query_s3_output_configuration;
 
 pub(crate) mod shape_query_tables;
 
+pub(crate) mod shape_schema_status_detail;
+
 pub(crate) mod shape_aggregate_column;
 
 pub(crate) mod shape_aggregation_constraint;
@@ -436,6 +452,10 @@ pub(crate) mod shape_differential_privacy_sensitivity_parameters;
 pub(crate) mod shape_protected_query_member_output_list;
 
 pub(crate) mod shape_protected_query_s3_output;
+
+pub(crate) mod shape_schema_configuration_list;
+
+pub(crate) mod shape_schema_status_reason_list;
 
 pub(crate) mod shape_aggregate_column_list;
 
@@ -456,6 +476,8 @@ pub(crate) mod shape_join_operators_list;
 pub(crate) mod shape_protected_query_single_member_output;
 
 pub(crate) mod shape_scalar_functions_list;
+
+pub(crate) mod shape_schema_status_reason;
 
 pub(crate) mod shape_differential_privacy_column_list;
 

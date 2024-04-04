@@ -10,7 +10,7 @@ pub struct BatchIsAuthorizedOutputItem {
     pub decision: crate::types::Decision,
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are two matching policies, where one is a forbid and the other is a permit, then the forbid policy will be the determining policy. In the case of multiple matching permit policies then there would be multiple determining policies. In the case that no policies match, and hence the response is DENY, there would be no determining policies.</p>
     pub determining_policies: ::std::vec::Vec<crate::types::DeterminingPolicyItem>,
-    /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
+    /// <p>Errors that occurred while making an authorization decision. For example, a policy might reference an entity or attribute that doesn't exist in the request.</p>
     pub errors: ::std::vec::Vec<crate::types::EvaluationErrorItem>,
 }
 impl BatchIsAuthorizedOutputItem {
@@ -27,7 +27,7 @@ impl BatchIsAuthorizedOutputItem {
         use std::ops::Deref;
         self.determining_policies.deref()
     }
-    /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
+    /// <p>Errors that occurred while making an authorization decision. For example, a policy might reference an entity or attribute that doesn't exist in the request.</p>
     pub fn errors(&self) -> &[crate::types::EvaluationErrorItem] {
         use std::ops::Deref;
         self.errors.deref()
@@ -104,19 +104,19 @@ impl BatchIsAuthorizedOutputItemBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
+    /// <p>Errors that occurred while making an authorization decision. For example, a policy might reference an entity or attribute that doesn't exist in the request.</p>
     pub fn errors(mut self, input: crate::types::EvaluationErrorItem) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
+    /// <p>Errors that occurred while making an authorization decision. For example, a policy might reference an entity or attribute that doesn't exist in the request.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>Errors that occurred while making an authorization decision, for example, a policy references an Entity or entity Attribute that does not exist in the slice.</p>
+    /// <p>Errors that occurred while making an authorization decision. For example, a policy might reference an entity or attribute that doesn't exist in the request.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>> {
         &self.errors
     }

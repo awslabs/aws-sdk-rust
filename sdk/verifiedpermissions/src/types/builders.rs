@@ -3,13 +3,13 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_resource_conflict::ResourceConflictBuilder;
 
+pub use crate::types::_entity_identifier::EntityIdentifierBuilder;
+
 pub use crate::types::_evaluation_error_item::EvaluationErrorItemBuilder;
 
 pub use crate::types::_determining_policy_item::DeterminingPolicyItemBuilder;
 
 pub use crate::types::_entity_item::EntityItemBuilder;
-
-pub use crate::types::_entity_identifier::EntityIdentifierBuilder;
 
 pub use crate::types::_action_identifier::ActionIdentifierBuilder;
 
@@ -43,15 +43,23 @@ pub use crate::types::_policy_filter::PolicyFilterBuilder;
 
 pub use crate::types::_update_cognito_user_pool_configuration::UpdateCognitoUserPoolConfigurationBuilder;
 
+pub use crate::types::_update_cognito_group_configuration::UpdateCognitoGroupConfigurationBuilder;
+
 pub use crate::types::_cognito_user_pool_configuration_detail::CognitoUserPoolConfigurationDetailBuilder;
+
+pub use crate::types::_cognito_group_configuration_detail::CognitoGroupConfigurationDetailBuilder;
 
 pub use crate::types::_identity_source_details::IdentitySourceDetailsBuilder;
 
 pub use crate::types::_cognito_user_pool_configuration::CognitoUserPoolConfigurationBuilder;
 
+pub use crate::types::_cognito_group_configuration::CognitoGroupConfigurationBuilder;
+
 pub use crate::types::_identity_source_item::IdentitySourceItemBuilder;
 
 pub use crate::types::_cognito_user_pool_configuration_item::CognitoUserPoolConfigurationItemBuilder;
+
+pub use crate::types::_cognito_group_configuration_item::CognitoGroupConfigurationItemBuilder;
 
 pub use crate::types::_identity_source_item_details::IdentitySourceItemDetailsBuilder;
 

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`collaboration_identifier(impl Into<String>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::set_collaboration_identifier):<br>required: **true**<br><p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p><br>
-    ///   - [`names(impl Into<String>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::set_names):<br>required: **true**<br><p>The names for the schema objects to retrieve.&gt;</p><br>
+    ///   - [`names(impl Into<String>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::set_names):<br>required: **true**<br><p>The names for the schema objects to retrieve.</p><br>
     /// - On success, responds with [`BatchGetSchemaOutput`](crate::operation::batch_get_schema::BatchGetSchemaOutput) with field(s):
     ///   - [`schemas(Vec::<Schema>)`](crate::operation::batch_get_schema::BatchGetSchemaOutput::schemas): <p>The retrieved list of schemas.</p>
     ///   - [`errors(Vec::<BatchGetSchemaError>)`](crate::operation::batch_get_schema::BatchGetSchemaOutput::errors): <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>

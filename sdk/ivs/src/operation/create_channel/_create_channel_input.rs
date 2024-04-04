@@ -15,7 +15,7 @@ pub struct CreateChannelInput {
     pub recording_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub insecure_ingest: ::std::option::Option<bool>,
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub preset: ::std::option::Option<crate::types::TranscodePreset>,
@@ -47,7 +47,7 @@ impl CreateChannelInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn insecure_ingest(&self) -> ::std::option::Option<bool> {
         self.insecure_ingest
     }
@@ -172,17 +172,17 @@ impl CreateChannelInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn insecure_ingest(mut self, input: bool) -> Self {
         self.insecure_ingest = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn set_insecure_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.insecure_ingest = input;
         self
     }
-    /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
+    /// <p>Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.</p>
     pub fn get_insecure_ingest(&self) -> &::std::option::Option<bool> {
         &self.insecure_ingest
     }

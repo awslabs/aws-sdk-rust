@@ -17,6 +17,8 @@ pub struct ListVirtualClustersInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of virtual clusters to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Optional Boolean that specifies whether the operation should return the virtual clusters that have the access entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.</p>
+    pub eks_access_entry_integrated: ::std::option::Option<bool>,
 }
 impl ListVirtualClustersInput {
     /// <p>The container provider ID of the virtual cluster.</p>
@@ -49,6 +51,10 @@ impl ListVirtualClustersInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Optional Boolean that specifies whether the operation should return the virtual clusters that have the access entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.</p>
+    pub fn eks_access_entry_integrated(&self) -> ::std::option::Option<bool> {
+        self.eks_access_entry_integrated
+    }
 }
 impl ListVirtualClustersInput {
     /// Creates a new builder-style object to manufacture [`ListVirtualClustersInput`](crate::operation::list_virtual_clusters::ListVirtualClustersInput).
@@ -68,6 +74,7 @@ pub struct ListVirtualClustersInputBuilder {
     pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::VirtualClusterState>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) eks_access_entry_integrated: ::std::option::Option<bool>,
 }
 impl ListVirtualClustersInputBuilder {
     /// <p>The container provider ID of the virtual cluster.</p>
@@ -174,6 +181,20 @@ impl ListVirtualClustersInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Optional Boolean that specifies whether the operation should return the virtual clusters that have the access entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.</p>
+    pub fn eks_access_entry_integrated(mut self, input: bool) -> Self {
+        self.eks_access_entry_integrated = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional Boolean that specifies whether the operation should return the virtual clusters that have the access entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.</p>
+    pub fn set_eks_access_entry_integrated(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.eks_access_entry_integrated = input;
+        self
+    }
+    /// <p>Optional Boolean that specifies whether the operation should return the virtual clusters that have the access entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.</p>
+    pub fn get_eks_access_entry_integrated(&self) -> &::std::option::Option<bool> {
+        &self.eks_access_entry_integrated
+    }
     /// Consumes the builder and constructs a [`ListVirtualClustersInput`](crate::operation::list_virtual_clusters::ListVirtualClustersInput).
     pub fn build(
         self,
@@ -187,6 +208,7 @@ impl ListVirtualClustersInputBuilder {
             states: self.states,
             max_results: self.max_results,
             next_token: self.next_token,
+            eks_access_entry_integrated: self.eks_access_entry_integrated,
         })
     }
 }

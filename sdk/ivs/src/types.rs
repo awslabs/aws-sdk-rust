@@ -3,6 +3,8 @@ pub use crate::types::_playback_restriction_policy::PlaybackRestrictionPolicy;
 
 pub use crate::types::_channel::Channel;
 
+pub use crate::types::_srt::Srt;
+
 pub use crate::types::_transcode_preset::TranscodePreset;
 
 pub use crate::types::_channel_type::ChannelType;
@@ -116,6 +118,8 @@ mod _rendition_configuration_rendition;
 mod _rendition_configuration_rendition_selection;
 
 mod _s3_destination_configuration;
+
+mod _srt;
 
 mod _stream;
 

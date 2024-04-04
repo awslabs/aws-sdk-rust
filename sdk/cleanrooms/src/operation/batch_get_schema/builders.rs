@@ -126,17 +126,17 @@ impl BatchGetSchemaFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
     ///
-    /// <p>The names for the schema objects to retrieve.&gt;</p>
+    /// <p>The names for the schema objects to retrieve.</p>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.names(input.into());
         self
     }
-    /// <p>The names for the schema objects to retrieve.&gt;</p>
+    /// <p>The names for the schema objects to retrieve.</p>
     pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }
-    /// <p>The names for the schema objects to retrieve.&gt;</p>
+    /// <p>The names for the schema objects to retrieve.</p>
     pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_names()
     }

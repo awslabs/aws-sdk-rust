@@ -153,6 +153,9 @@ pub(crate) fn de_is_authorized_with_token(
                 "errors" => {
                     builder = builder.set_errors(crate::protocol_serde::shape_evaluation_error_list::de_evaluation_error_list(tokens)?);
                 }
+                "principal" => {
+                    builder = builder.set_principal(crate::protocol_serde::shape_entity_identifier::de_entity_identifier(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

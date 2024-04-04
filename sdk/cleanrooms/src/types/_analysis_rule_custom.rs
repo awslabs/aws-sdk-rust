@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRuleCustom {
-    /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
+    /// <p>The ARN of the analysis templates that are allowed by the custom analysis rule.</p>
     pub allowed_analyses: ::std::vec::Vec<::std::string::String>,
-    /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
+    /// <p>The IDs of the Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
     pub allowed_analysis_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The differential privacy configuration.</p>
     pub differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>,
 }
 impl AnalysisRuleCustom {
-    /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
+    /// <p>The ARN of the analysis templates that are allowed by the custom analysis rule.</p>
     pub fn allowed_analyses(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.allowed_analyses.deref()
     }
-    /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
+    /// <p>The IDs of the Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_analysis_providers.is_none()`.
     pub fn allowed_analysis_providers(&self) -> &[::std::string::String] {
@@ -48,19 +48,19 @@ impl AnalysisRuleCustomBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_analyses`](Self::set_allowed_analyses).
     ///
-    /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
+    /// <p>The ARN of the analysis templates that are allowed by the custom analysis rule.</p>
     pub fn allowed_analyses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_analyses.unwrap_or_default();
         v.push(input.into());
         self.allowed_analyses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
+    /// <p>The ARN of the analysis templates that are allowed by the custom analysis rule.</p>
     pub fn set_allowed_analyses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_analyses = input;
         self
     }
-    /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
+    /// <p>The ARN of the analysis templates that are allowed by the custom analysis rule.</p>
     pub fn get_allowed_analyses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_analyses
     }
@@ -68,19 +68,19 @@ impl AnalysisRuleCustomBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_analysis_providers`](Self::set_allowed_analysis_providers).
     ///
-    /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
+    /// <p>The IDs of the Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
     pub fn allowed_analysis_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_analysis_providers.unwrap_or_default();
         v.push(input.into());
         self.allowed_analysis_providers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
+    /// <p>The IDs of the Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
     pub fn set_allowed_analysis_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_analysis_providers = input;
         self
     }
-    /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
+    /// <p>The IDs of the Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
     pub fn get_allowed_analysis_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_analysis_providers
     }

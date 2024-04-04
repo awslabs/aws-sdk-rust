@@ -77,6 +77,8 @@ pub(crate) mod shape_create_managed_endpoint_input;
 
 pub(crate) mod shape_create_virtual_cluster_input;
 
+pub(crate) mod shape_eks_request_throttled_exception;
+
 pub(crate) mod shape_get_managed_endpoint_session_credentials_input;
 
 pub(crate) mod shape_internal_server_exception;
