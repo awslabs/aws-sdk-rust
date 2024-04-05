@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchIsAuthorized` operation.
 pub mod batch_is_authorized;
 
+/// Types for the `BatchIsAuthorizedWithToken` operation.
+pub mod batch_is_authorized_with_token;
+
 /// Types for the `CreateIdentitySource` operation.
 pub mod create_identity_source;
 

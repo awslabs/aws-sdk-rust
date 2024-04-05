@@ -7,13 +7,15 @@ pub struct SearchResourcesOutput {
     pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error contains an <code>ErrorCode</code> and <code>Message</code>.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li>
+    /// <p><code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE </code></p></li>
     /// </ul>
     pub query_errors: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>,
     _request_id: Option<String>,
@@ -29,13 +31,15 @@ impl SearchResourcesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error contains an <code>ErrorCode</code> and <code>Message</code>.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li>
+    /// <p><code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE </code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_errors.is_none()`.
@@ -103,13 +107,15 @@ impl SearchResourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_query_errors`](Self::set_query_errors).
     ///
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error contains an <code>ErrorCode</code> and <code>Message</code>.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li>
+    /// <p><code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE </code></p></li>
     /// </ul>
     pub fn query_errors(mut self, input: crate::types::QueryError) -> Self {
         let mut v = self.query_errors.unwrap_or_default();
@@ -117,25 +123,29 @@ impl SearchResourcesOutputBuilder {
         self.query_errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error contains an <code>ErrorCode</code> and <code>Message</code>.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li>
+    /// <p><code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE </code></p></li>
     /// </ul>
     pub fn set_query_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>) -> Self {
         self.query_errors = input;
         self
     }
-    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+    /// <p>A list of <code>QueryError</code> objects. Each error contains an <code>ErrorCode</code> and <code>Message</code>.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_INACTIVE</code></p></li>
     /// <li>
     /// <p><code>CLOUDFORMATION_STACK_NOT_EXISTING</code></p></li>
+    /// <li>
+    /// <p><code>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE </code></p></li>
     /// </ul>
     pub fn get_query_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryError>> {
         &self.query_errors

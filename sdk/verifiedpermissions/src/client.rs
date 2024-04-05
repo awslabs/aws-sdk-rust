@@ -120,6 +120,8 @@ impl Client {
 
 mod batch_is_authorized;
 
+mod batch_is_authorized_with_token;
+
 mod create_identity_source;
 
 mod create_policy;

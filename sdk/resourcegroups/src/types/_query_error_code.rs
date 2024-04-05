@@ -15,6 +15,7 @@
 ///     QueryErrorCode::CloudformationStackInactive => { /* ... */ },
 ///     QueryErrorCode::CloudformationStackNotExisting => { /* ... */ },
 ///     QueryErrorCode::CloudformationStackUnassumableRole => { /* ... */ },
+///     QueryErrorCode::ResourceTypeNotSupported => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum QueryErrorCode {
     CloudformationStackNotExisting,
     #[allow(missing_docs)] // documentation missing in model
     CloudformationStackUnassumableRole,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceTypeNotSupported,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for QueryErrorCode {
             "CLOUDFORMATION_STACK_INACTIVE" => QueryErrorCode::CloudformationStackInactive,
             "CLOUDFORMATION_STACK_NOT_EXISTING" => QueryErrorCode::CloudformationStackNotExisting,
             "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE" => QueryErrorCode::CloudformationStackUnassumableRole,
+            "RESOURCE_TYPE_NOT_SUPPORTED" => QueryErrorCode::ResourceTypeNotSupported,
             other => QueryErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,6 +80,7 @@ impl QueryErrorCode {
             QueryErrorCode::CloudformationStackInactive => "CLOUDFORMATION_STACK_INACTIVE",
             QueryErrorCode::CloudformationStackNotExisting => "CLOUDFORMATION_STACK_NOT_EXISTING",
             QueryErrorCode::CloudformationStackUnassumableRole => "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE",
+            QueryErrorCode::ResourceTypeNotSupported => "RESOURCE_TYPE_NOT_SUPPORTED",
             QueryErrorCode::Unknown(value) => value.as_str(),
         }
     }
@@ -85,6 +90,7 @@ impl QueryErrorCode {
             "CLOUDFORMATION_STACK_INACTIVE",
             "CLOUDFORMATION_STACK_NOT_EXISTING",
             "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE",
+            "RESOURCE_TYPE_NOT_SUPPORTED",
         ]
     }
 }
@@ -111,6 +117,7 @@ impl ::std::fmt::Display for QueryErrorCode {
             QueryErrorCode::CloudformationStackInactive => write!(f, "CLOUDFORMATION_STACK_INACTIVE"),
             QueryErrorCode::CloudformationStackNotExisting => write!(f, "CLOUDFORMATION_STACK_NOT_EXISTING"),
             QueryErrorCode::CloudformationStackUnassumableRole => write!(f, "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE"),
+            QueryErrorCode::ResourceTypeNotSupported => write!(f, "RESOURCE_TYPE_NOT_SUPPORTED"),
             QueryErrorCode::Unknown(value) => write!(f, "{}", value),
         }
     }

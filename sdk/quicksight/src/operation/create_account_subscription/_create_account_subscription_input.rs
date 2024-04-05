@@ -49,6 +49,8 @@ pub struct CreateAccountSubscriptionInput {
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>A 10-digit phone number for the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
     pub contact_number: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccountSubscriptionInput {
     /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
@@ -133,6 +135,10 @@ impl CreateAccountSubscriptionInput {
     pub fn contact_number(&self) -> ::std::option::Option<&str> {
         self.contact_number.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn iam_identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.iam_identity_center_instance_arn.as_deref()
+    }
 }
 impl CreateAccountSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateAccountSubscriptionInput`](crate::operation::create_account_subscription::CreateAccountSubscriptionInput).
@@ -160,6 +166,7 @@ pub struct CreateAccountSubscriptionInputBuilder {
     pub(crate) last_name: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
     pub(crate) contact_number: ::std::option::Option<::std::string::String>,
+    pub(crate) iam_identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccountSubscriptionInputBuilder {
     /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
@@ -443,6 +450,20 @@ impl CreateAccountSubscriptionInputBuilder {
     pub fn get_contact_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_number
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn iam_identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_identity_center_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn set_iam_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_identity_center_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn get_iam_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_identity_center_instance_arn
+    }
     /// Consumes the builder and constructs a [`CreateAccountSubscriptionInput`](crate::operation::create_account_subscription::CreateAccountSubscriptionInput).
     pub fn build(
         self,
@@ -466,6 +487,7 @@ impl CreateAccountSubscriptionInputBuilder {
             last_name: self.last_name,
             email_address: self.email_address,
             contact_number: self.contact_number,
+            iam_identity_center_instance_arn: self.iam_identity_center_instance_arn,
         })
     }
 }

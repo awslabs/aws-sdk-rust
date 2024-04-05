@@ -25,6 +25,10 @@ pub use crate::types::_context_definition::ContextDefinition;
 
 pub use crate::types::_action_identifier::ActionIdentifier;
 
+pub use crate::types::_batch_is_authorized_with_token_output_item::BatchIsAuthorizedWithTokenOutputItem;
+
+pub use crate::types::_batch_is_authorized_with_token_input_item::BatchIsAuthorizedWithTokenInputItem;
+
 pub use crate::types::_batch_is_authorized_output_item::BatchIsAuthorizedOutputItem;
 
 pub use crate::types::_batch_is_authorized_input_item::BatchIsAuthorizedInputItem;
@@ -108,6 +112,10 @@ mod _attribute_value;
 mod _batch_is_authorized_input_item;
 
 mod _batch_is_authorized_output_item;
+
+mod _batch_is_authorized_with_token_input_item;
+
+mod _batch_is_authorized_with_token_output_item;
 
 mod _cognito_group_configuration;
 

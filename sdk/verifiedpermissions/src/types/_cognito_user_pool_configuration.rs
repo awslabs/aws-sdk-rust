@@ -2,7 +2,7 @@
 
 /// <p>The configuration for an identity source that represents a connection to an Amazon Cognito user pool used as an identity provider for Verified Permissions.</p>
 /// <p>This data type is used as a field that is part of an <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_Configuration.html">Configuration</a> structure that is used as a parameter to <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreateIdentitySource.html">CreateIdentitySource</a>.</p>
-/// <p>Example:<code>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds": ["a1b2c3d4e5f6g7h8i9j0kalbmc"],"groupConfiguration": {"groupEntityType": "MyCorp::Group"}}</code></p>
+/// <p>Example:<code>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds": ["a1b2c3d4e5f6g7h8i9j0kalbmc"]}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CognitoUserPoolConfiguration {
@@ -12,7 +12,7 @@ pub struct CognitoUserPoolConfiguration {
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
     /// <p>Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code></p>
     pub client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source.</p>
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
     pub group_configuration: ::std::option::Option<crate::types::CognitoGroupConfiguration>,
 }
 impl CognitoUserPoolConfiguration {
@@ -29,7 +29,7 @@ impl CognitoUserPoolConfiguration {
     pub fn client_ids(&self) -> &[::std::string::String] {
         self.client_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source.</p>
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
     pub fn group_configuration(&self) -> ::std::option::Option<&crate::types::CognitoGroupConfiguration> {
         self.group_configuration.as_ref()
     }
@@ -91,17 +91,17 @@ impl CognitoUserPoolConfigurationBuilder {
     pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.client_ids
     }
-    /// <p>The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source.</p>
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
     pub fn group_configuration(mut self, input: crate::types::CognitoGroupConfiguration) -> Self {
         self.group_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source.</p>
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
     pub fn set_group_configuration(mut self, input: ::std::option::Option<crate::types::CognitoGroupConfiguration>) -> Self {
         self.group_configuration = input;
         self
     }
-    /// <p>The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source.</p>
+    /// <p>The configuration of the user groups from an Amazon Cognito user pool identity source.</p>
     pub fn get_group_configuration(&self) -> &::std::option::Option<crate::types::CognitoGroupConfiguration> {
         &self.group_configuration
     }

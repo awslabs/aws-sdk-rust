@@ -17,15 +17,15 @@ pub struct IsAuthorizedWithTokenInput {
     pub resource: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
     pub context: ::std::option::Option<crate::types::ContextDefinition>,
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
-    /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
     /// <li>
     /// <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
-    /// </note>
+    /// </important>
     pub entities: ::std::option::Option<crate::types::EntitiesDefinition>,
 }
 impl IsAuthorizedWithTokenInput {
@@ -55,15 +55,15 @@ impl IsAuthorizedWithTokenInput {
     pub fn context(&self) -> ::std::option::Option<&crate::types::ContextDefinition> {
         self.context.as_ref()
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
-    /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
     /// <li>
     /// <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
-    /// </note>
+    /// </important>
     pub fn entities(&self) -> ::std::option::Option<&crate::types::EntitiesDefinition> {
         self.entities.as_ref()
     }
@@ -192,41 +192,41 @@ impl IsAuthorizedWithTokenInputBuilder {
     pub fn get_context(&self) -> &::std::option::Option<crate::types::ContextDefinition> {
         &self.context
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
-    /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
     /// <li>
     /// <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
-    /// </note>
+    /// </important>
     pub fn entities(mut self, input: crate::types::EntitiesDefinition) -> Self {
         self.entities = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
-    /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
     /// <li>
     /// <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
-    /// </note>
+    /// </important>
     pub fn set_entities(mut self, input: ::std::option::Option<crate::types::EntitiesDefinition>) -> Self {
         self.entities = input;
         self
     }
-    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><note>
-    /// <p>You can include only resource and action entities in this parameter; you can't include principals.</p>
+    /// <p>Specifies the list of resources and their associated attributes that Verified Permissions can examine when evaluating the policies.</p><important>
+    /// <p>You can't include principals in this parameter, only resource and action entities. This parameter can't include any entities of a type that matches the user or group entity types that you defined in your identity source.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b> <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed to the operation.</p></li>
     /// <li>
     /// <p>For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.</p></li>
     /// </ul>
-    /// </note>
+    /// </important>
     pub fn get_entities(&self) -> &::std::option::Option<crate::types::EntitiesDefinition> {
         &self.entities
     }

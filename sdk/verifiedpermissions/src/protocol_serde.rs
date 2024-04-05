@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_is_authorized;
 
+pub(crate) mod shape_batch_is_authorized_with_token;
+
 pub(crate) mod shape_create_identity_source;
 
 pub(crate) mod shape_create_policy;
@@ -84,6 +86,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_batch_is_authorized_input;
+
+pub(crate) mod shape_batch_is_authorized_with_token_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -151,6 +155,10 @@ pub(crate) mod shape_batch_is_authorized_input_item;
 
 pub(crate) mod shape_batch_is_authorized_output_list;
 
+pub(crate) mod shape_batch_is_authorized_with_token_input_item;
+
+pub(crate) mod shape_batch_is_authorized_with_token_output_list;
+
 pub(crate) mod shape_configuration;
 
 pub(crate) mod shape_configuration_detail;
@@ -200,6 +208,8 @@ pub(crate) mod shape_validation_settings;
 pub(crate) mod shape_attribute_value;
 
 pub(crate) mod shape_batch_is_authorized_output_item;
+
+pub(crate) mod shape_batch_is_authorized_with_token_output_item;
 
 pub(crate) mod shape_client_ids;
 

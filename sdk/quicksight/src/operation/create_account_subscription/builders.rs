@@ -383,4 +383,18 @@ impl CreateAccountSubscriptionFluentBuilder {
     pub fn get_contact_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_number()
     }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn iam_identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.iam_identity_center_instance_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn set_iam_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_iam_identity_center_instance_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+    pub fn get_iam_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_identity_center_instance_arn()
+    }
 }

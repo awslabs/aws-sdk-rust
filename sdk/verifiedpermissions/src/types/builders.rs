@@ -13,6 +13,10 @@ pub use crate::types::_entity_item::EntityItemBuilder;
 
 pub use crate::types::_action_identifier::ActionIdentifierBuilder;
 
+pub use crate::types::_batch_is_authorized_with_token_output_item::BatchIsAuthorizedWithTokenOutputItemBuilder;
+
+pub use crate::types::_batch_is_authorized_with_token_input_item::BatchIsAuthorizedWithTokenInputItemBuilder;
+
 pub use crate::types::_batch_is_authorized_output_item::BatchIsAuthorizedOutputItemBuilder;
 
 pub use crate::types::_batch_is_authorized_input_item::BatchIsAuthorizedInputItemBuilder;

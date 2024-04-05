@@ -1750,9 +1750,9 @@ model_hash = '27c9e9e5a0761cc6e79648630e51a0d6faf2ea5dea8826c722bcc5005fa36786'
 
 [crates.aws-sdk-quicksight]
 category = 'AwsSdk'
-version = '1.21.0'
-source_hash = '90477127eb4961b16389f827637f48245587bd76bb28208a671caff82fa3559c'
-model_hash = '1594c5a9b8d730cd486a0bbed6ef2cb8b3f42a001a07ef19ef0028d521ead728'
+version = '1.22.0'
+source_hash = '9c4621008a0ba8ed945cba96373589320ad8ade47c3d3e27f29f1b8c2dc9433e'
+model_hash = 'c197427fdef115ba1dbefd842ec1dc67c2b011e9129c762679891fd2349d0270'
 
 [crates.aws-sdk-ram]
 category = 'AwsSdk'
@@ -1822,9 +1822,9 @@ model_hash = '6a9b7c6d06bc70080c2046687f333f012f4afd3063dbaa0b8ce2138432087d79'
 
 [crates.aws-sdk-resourcegroups]
 category = 'AwsSdk'
-version = '1.18.0'
-source_hash = 'fb0c88d2d75f37815cae7d391b85f3f70d02c17dd0aa6ed2f025ad38e7b120b0'
-model_hash = '2c0b3773c0c6b9154fcbdefe5299d4b8f0738812ba8457c1d1f10ef8a423c16a'
+version = '1.19.0'
+source_hash = 'd37ad5c64e14176acae98c00f25753447aff84b7ab0bcbb991ccb0beeeac8cd2'
+model_hash = 'c65a607b3b90debdb98200ea090d5028ef6339181f195827d755fcea47456b4b'
 
 [crates.aws-sdk-resourcegroupstagging]
 category = 'AwsSdk'
@@ -2224,9 +2224,9 @@ model_hash = 'ce72702d8baaff26bc29ba694fab60de0a76b50e1221c9df5a7b2d3645a2a431'
 
 [crates.aws-sdk-verifiedpermissions]
 category = 'AwsSdk'
-version = '1.21.0'
-source_hash = '2e8df1ffceb4f3e29617fba43a5e36f6410d885957d8d0ba65529b2d9461b570'
-model_hash = 'e04292ce8e43a3e69fadbb6e900993476da1831f0cbc403138af9112a9bad9df'
+version = '1.22.0'
+source_hash = '8ceb37bf53dc3f3527c50c651f36a99c5b3edb31f1f8902770bc2b809f9630e4'
+model_hash = '3a7f2857bc9577f9877a370d854355b347f86d9b243471c7110dddc5b90e319c'
 
 [crates.aws-sdk-voiceid]
 category = 'AwsSdk'
@@ -2447,14 +2447,7 @@ source_hash = '13ca815eb1f11fda289b697b80b415b68769729b728315d219f9c960f1f66b63'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '8f00d47349f60dd6742497db1de353a32835deca841f48f0b189c8b6966c6869'
-
-[release]
-tag = 'release-2024-04-04'
-
 [release.crates]
-aws-sdk-b2bi = '1.18.0'
-aws-sdk-cleanrooms = '1.20.0'
-aws-sdk-ec2 = '1.31.0'
-aws-sdk-emrcontainers = '1.20.0'
-aws-sdk-ivs = '1.20.0'
-aws-sdk-verifiedpermissions = '1.21.0'
+aws-sdk-quicksight = '1.22.0'
+aws-sdk-resourcegroups = '1.19.0'
+aws-sdk-verifiedpermissions = '1.22.0'
