@@ -118,7 +118,11 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchAs
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "BatchAssociateServiceActionWithProvisioningArtifact",
         )
-        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
+        .with_interceptor(
+            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+            ),
+        )
         .with_interceptor(BatchAssociateServiceActionWithProvisioningArtifactEndpointParamsInterceptor)
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactError,

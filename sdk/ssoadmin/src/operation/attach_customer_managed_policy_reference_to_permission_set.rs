@@ -118,7 +118,11 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AttachC
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "AttachCustomerManagedPolicyReferenceToPermissionSet",
         )
-        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
+        .with_interceptor(
+            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+            ),
+        )
         .with_interceptor(AttachCustomerManagedPolicyReferenceToPermissionSetEndpointParamsInterceptor)
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError,

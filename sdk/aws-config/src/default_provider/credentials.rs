@@ -299,17 +299,21 @@ mod test {
     make_test!(ecs_credentials_invalid_profile);
 
     make_test!(eks_pod_identity_credentials);
+    // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is disabled on Windows because it uses Unix-style paths
+    #[cfg(not(windows))]
     make_test!(eks_pod_identity_no_token_file);
 
     #[cfg(not(feature = "sso"))]
     make_test!(sso_assume_role #[should_panic(expected = "This behavior requires following cargo feature(s) enabled: sso")]);
-    #[cfg(not(feature = "sso"))]
-    make_test!(sso_no_token_file #[should_panic(expected = "This behavior requires following cargo feature(s) enabled: sso")]);
 
     #[cfg(feature = "sso")]
     make_test!(sso_assume_role);
 
-    #[cfg(feature = "sso")]
+    // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is disabled on Windows because it uses Unix-style paths
+    #[cfg(not(any(feature = "sso", windows)))]
+    make_test!(sso_no_token_file #[should_panic(expected = "This behavior requires following cargo feature(s) enabled: sso")]);
+    // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is disabled on Windows because it uses Unix-style paths
+    #[cfg(all(feature = "sso", not(windows)))]
     make_test!(sso_no_token_file);
 
     #[cfg(feature = "credentials-sso")]

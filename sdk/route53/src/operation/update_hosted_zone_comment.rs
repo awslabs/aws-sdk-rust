@@ -115,7 +115,11 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateH
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateHostedZoneComment")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
             .with_interceptor(UpdateHostedZoneCommentEndpointParamsInterceptor)
             .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
                 |input: &mut crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput| &mut input.id,

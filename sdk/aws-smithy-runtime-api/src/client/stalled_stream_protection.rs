@@ -20,17 +20,15 @@ const DEFAULT_GRACE_PERIOD: Duration = Duration::from_secs(5);
 /// When enabled, download streams that stall out will be cancelled.
 #[derive(Clone, Debug)]
 pub struct StalledStreamProtectionConfig {
-    upload_enabled: bool,
-    download_enabled: bool,
+    is_enabled: bool,
     grace_period: Duration,
 }
 
 impl StalledStreamProtectionConfig {
-    /// Create a new config that enables stalled stream protection for both uploads and downloads.
+    /// Create a new config that enables stalled stream protection.
     pub fn enabled() -> Builder {
         Builder {
-            upload_enabled: Some(true),
-            download_enabled: Some(true),
+            is_enabled: Some(true),
             grace_period: None,
         }
     }
@@ -38,25 +36,14 @@ impl StalledStreamProtectionConfig {
     /// Create a new config that disables stalled stream protection.
     pub fn disabled() -> Self {
         Self {
-            upload_enabled: false,
-            download_enabled: false,
+            is_enabled: false,
             grace_period: DEFAULT_GRACE_PERIOD,
         }
     }
 
-    /// Return whether stalled stream protection is enabled for either uploads or downloads.
+    /// Return whether stalled stream protection is enabled.
     pub fn is_enabled(&self) -> bool {
-        self.upload_enabled || self.download_enabled
-    }
-
-    /// True if stalled stream protection is enabled for upload streams.
-    pub fn upload_enabled(&self) -> bool {
-        self.upload_enabled
-    }
-
-    /// True if stalled stream protection is enabled for download streams.
-    pub fn download_enabled(&self) -> bool {
-        self.download_enabled
+        self.is_enabled
     }
 
     /// Return the grace period for stalled stream protection.
@@ -70,8 +57,7 @@ impl StalledStreamProtectionConfig {
 
 #[derive(Clone, Debug)]
 pub struct Builder {
-    upload_enabled: Option<bool>,
-    download_enabled: Option<bool>,
+    is_enabled: Option<bool>,
     grace_period: Option<Duration>,
 }
 
@@ -88,48 +74,22 @@ impl Builder {
         self
     }
 
-    /// Set whether stalled stream protection is enabled for both uploads and downloads.
-    pub fn is_enabled(mut self, enabled: bool) -> Self {
-        self.set_is_enabled(Some(enabled));
+    /// Set whether stalled stream protection is enabled.
+    pub fn is_enabled(mut self, is_enabled: bool) -> Self {
+        self.is_enabled = Some(is_enabled);
         self
     }
 
-    /// Set whether stalled stream protection is enabled for both uploads and downloads.
-    pub fn set_is_enabled(&mut self, enabled: Option<bool>) -> &mut Self {
-        self.set_upload_enabled(enabled);
-        self.set_download_enabled(enabled);
-        self
-    }
-
-    /// Set whether stalled stream protection is enabled for upload streams.
-    pub fn upload_enabled(mut self, enabled: bool) -> Self {
-        self.set_upload_enabled(Some(enabled));
-        self
-    }
-
-    /// Set whether stalled stream protection is enabled for upload streams.
-    pub fn set_upload_enabled(&mut self, enabled: Option<bool>) -> &mut Self {
-        self.upload_enabled = enabled;
-        self
-    }
-
-    /// Set whether stalled stream protection is enabled for download streams.
-    pub fn download_enabled(mut self, enabled: bool) -> Self {
-        self.set_download_enabled(Some(enabled));
-        self
-    }
-
-    /// Set whether stalled stream protection is enabled for download streams.
-    pub fn set_download_enabled(&mut self, enabled: Option<bool>) -> &mut Self {
-        self.download_enabled = enabled;
+    /// Set whether stalled stream protection is enabled.
+    pub fn set_is_enabled(&mut self, is_enabled: Option<bool>) -> &mut Self {
+        self.is_enabled = is_enabled;
         self
     }
 
     /// Build the config.
     pub fn build(self) -> StalledStreamProtectionConfig {
         StalledStreamProtectionConfig {
-            upload_enabled: self.upload_enabled.unwrap_or_default(),
-            download_enabled: self.download_enabled.unwrap_or_default(),
+            is_enabled: self.is_enabled.unwrap_or_default(),
             grace_period: self.grace_period.unwrap_or(DEFAULT_GRACE_PERIOD),
         }
     }
@@ -138,8 +98,7 @@ impl Builder {
 impl From<StalledStreamProtectionConfig> for Builder {
     fn from(config: StalledStreamProtectionConfig) -> Self {
         Builder {
-            upload_enabled: Some(config.upload_enabled),
-            download_enabled: Some(config.download_enabled),
+            is_enabled: Some(config.is_enabled),
             grace_period: Some(config.grace_period),
         }
     }

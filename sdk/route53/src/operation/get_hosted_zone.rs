@@ -111,7 +111,11 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetHost
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetHostedZone")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
             .with_interceptor(GetHostedZoneEndpointParamsInterceptor)
             .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
                 |input: &mut crate::operation::get_hosted_zone::GetHostedZoneInput| &mut input.id,

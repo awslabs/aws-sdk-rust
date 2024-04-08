@@ -514,6 +514,8 @@ mod tests {
         );
     }
 
+    // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is ignored on Windows because it uses Unix-style paths
+    #[cfg_attr(windows, ignore)]
     #[test]
     fn determine_correct_cache_filenames() {
         assert_eq!(
@@ -534,6 +536,8 @@ mod tests {
         );
     }
 
+    // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is ignored on Windows because it uses Unix-style paths
+    #[cfg_attr(windows, ignore)]
     #[tokio::test]
     async fn save_cached_token() {
         let expires_at = SystemTime::UNIX_EPOCH + Duration::from_secs(50_000_000);

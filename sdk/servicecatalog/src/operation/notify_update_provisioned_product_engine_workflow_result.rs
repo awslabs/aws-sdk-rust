@@ -123,7 +123,11 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for NotifyU
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "NotifyUpdateProvisionedProductEngineWorkflowResult",
         )
-        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
+        .with_interceptor(
+            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+            ),
+        )
         .with_interceptor(NotifyUpdateProvisionedProductEngineWorkflowResultEndpointParamsInterceptor)
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError,
