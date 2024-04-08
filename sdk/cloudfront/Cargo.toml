@@ -36,7 +36,7 @@ version = "0.60.7"
 [dependencies.aws-smithy-runtime]
 path = "../aws-smithy-runtime"
 features = ["client"]
-version = "1.1.8"
+version = "1.2.0"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
@@ -68,7 +68,7 @@ version = "0.1.5"
 version = "0.1"
 [dev-dependencies.aws-config]
 path = "../aws-config"
-version = "1.1.9"
+version = "1.1.10"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"

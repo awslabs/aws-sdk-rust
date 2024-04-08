@@ -21,14 +21,15 @@ fn req() -> http::Request<SdkBody> {
 }
 
 fn ok() -> http::Response<SdkBody> {
+    let body = "{ \"TableNames\": [ \"Test\" ] }";
     http::Response::builder()
         .status(200)
         .header("server", "Server")
         .header("content-type", "application/x-amz-json-1.0")
-        .header("content-length", "23")
+        .header("content-length", body.len().to_string())
         .header("connection", "keep-alive")
         .header("x-amz-crc32", "2335643545")
-        .body(SdkBody::from("{ \"TableNames\": [ \"Test\" ] }"))
+        .body(SdkBody::from(body))
         .unwrap()
 }
 

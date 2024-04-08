@@ -271,7 +271,8 @@ where
         let fs = Fs::from_test_dir(dir.join("fs"), "/");
         let network_traffic = std::fs::read_to_string(dir.join("http-traffic.json"))
             .map_err(|e| format!("failed to load http traffic: {}", e))?;
-        let network_traffic: NetworkTraffic = serde_json::from_str(&network_traffic)?;
+        let mut network_traffic: NetworkTraffic = serde_json::from_str(&network_traffic)?;
+        network_traffic.correct_content_lengths();
 
         let metadata: Metadata<O> = serde_json::from_str(
             &std::fs::read_to_string(dir.join("test-case.json"))

@@ -61,7 +61,6 @@
           "response": {
             "Ok": {
               "status": 200,
-              "version": "HTTP/1.1",
               "headers": {
                 "x-amzn-requestid": [
                   "fcfdab03-2bb8-45e9-a284-b789cf7efb63"
@@ -73,7 +72,7 @@
                   "Wed, 24 May 2023 15:51:07 GMT"
                 ],
                 "content-length": [
-                  "104"
+                  "102"
                 ]
               }
             }
@@ -165,7 +164,6 @@
           "response": {
             "Ok": {
               "status": 200,
-              "version": "HTTP/1.1",
               "headers": {
                 "content-type": [
                   "application/x-amz-json-1.0"
@@ -246,13 +244,12 @@
           "response": {
             "Ok": {
               "status": 200,
-              "version": "HTTP/1.1",
               "headers": {
                 "content-type": [
                   "application/x-amz-json-1.0"
                 ],
                 "content-length": [
-                  "104"
+                  "102"
                 ],
                 "date": [
                   "Wed, 24 May 2023 15:51:07 GMT"
@@ -361,7 +358,6 @@
           "response": {
             "Ok": {
               "status": 200,
-              "version": "HTTP/1.1",
               "headers": {
                 "content-type": [
                   "application/x-amz-json-1.0"

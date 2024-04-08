@@ -9,6 +9,7 @@
 //! for _your_ client, since many things can change these defaults on the way to
 //! code generating and constructing a full client.
 
+use crate::client::http::body::content_length_enforcement::EnforceContentLengthRuntimePlugin;
 use crate::client::identity::IdentityCache;
 use crate::client::retries::strategy::StandardRetryStrategy;
 use crate::client::retries::RetryPartition;
@@ -191,6 +192,10 @@ pub fn default_stalled_stream_protection_config_plugin() -> Option<SharedRuntime
     )
 }
 
+fn enforce_content_length_runtime_plugin() -> Option<SharedRuntimePlugin> {
+    Some(EnforceContentLengthRuntimePlugin::new().into_shared())
+}
+
 fn validate_stalled_stream_protection_config(
     components: &RuntimeComponentsBuilder,
     cfg: &ConfigBag,
@@ -264,6 +269,7 @@ pub fn default_plugins(
         default_time_source_plugin(),
         default_timeout_config_plugin(),
         default_stalled_stream_protection_config_plugin(),
+        enforce_content_length_runtime_plugin(),
     ]
     .into_iter()
     .flatten()
