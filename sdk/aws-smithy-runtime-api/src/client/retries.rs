@@ -44,6 +44,15 @@ impl ShouldAttempt {
             _ => panic!("Expected this to be the `YesAfterDelay` variant but it was the `{self:?}` variant instead"),
         }
     }
+
+    /// If this isn't a `No` variant, panic.
+    pub fn expect_no(self) {
+        if ShouldAttempt::No == self {
+            return;
+        }
+
+        panic!("Expected this to be the `No` variant but it was the `{self:?}` variant instead");
+    }
 }
 
 impl_shared_conversions!(convert SharedRetryStrategy from RetryStrategy using SharedRetryStrategy::new);

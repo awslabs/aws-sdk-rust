@@ -1,4 +1,4 @@
-smithy_rs_revision = '31e7b1a9ee4583858f89a0bec1877adf6cc46a8d'
+smithy_rs_revision = '16e404e6ada17bdaeae3e2864c1c192ac59ad85a'
 aws_doc_sdk_examples_revision = '208abff74308c11f700d8321eab0f625393ffdb4'
 
 [manual_interventions]
@@ -6,7 +6,7 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.1.10'
-source_hash = 'e4de94befe4ed1bb40e28b82a3fd03f7aec2c361a0d689e18962e6765de7e5d8'
+source_hash = 'b75a7f322e50b02dd2821d2af58cb9c39e90b10a0c158949408698fcebb30430'
 
 [crates.aws-credential-types]
 category = 'AwsRuntime'
@@ -1889,7 +1889,7 @@ model_hash = '34648839402316ab9da4bef0fe11beb9bc3ec1d05b3ff7d09664ab74c0cb3d2b'
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
 version = '1.22.0'
-source_hash = '01f7ac2c2e99d6bab891a2eb1da8549a401c3055cf3815affebe6fbe77d5ef2a'
+source_hash = '140a1a020e7adfe795b86a38d058080d05e6f46581a202f3661a52ddf7fa806d'
 model_hash = 'd4cf9f91188e26ca9b296ddc7177d3035cd9e87c5e0e7976d9cd65de5b649d53'
 
 [crates.aws-sdk-s3control]
@@ -2355,8 +2355,8 @@ source_hash = '8daf151cb29b803b19be8d5ab4d1fafc2ed06fa995b59199b001cde5dd1f4328'
 
 [crates.aws-smithy-experimental]
 category = 'SmithyRuntime'
-version = '0.1.0'
-source_hash = '32619207188a96368766dba7cc1d9a71083652a2b262126679e3468f9f1b8ef3'
+version = '0.1.1'
+source_hash = '02efe5b80ac52474b9707095d3ba69cd9d3f59155081a22a6bff6ac2ffe64a8f'
 
 [crates.aws-smithy-http]
 category = 'SmithyRuntime'
@@ -2406,12 +2406,12 @@ source_hash = '7df7b6d5edb37a0dd345b46ad14935778a42db8386942fc1b4925b2ec5c9ff54'
 [crates.aws-smithy-runtime]
 category = 'SmithyRuntime'
 version = '1.2.1'
-source_hash = '8ea78c95728f77442a46771018a9ffedce1b8a59870c402bf2ecdbb9e29b512b'
+source_hash = 'e4897999fbb2ac511bed90a96518916043582e76e74a6a1c4db5155897e8a971'
 
 [crates.aws-smithy-runtime-api]
 category = 'SmithyRuntime'
 version = '1.3.0'
-source_hash = '130612fb26af951e7750efb0d154b46cf6fc8afec5c8ae3da2c6a48b96670986'
+source_hash = 'd9e8096cba68ba65da3b7e91bec6eb26b1f31fa9b5939bb2f83766330a54eb8f'
 
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
@@ -2831,6 +2831,7 @@ aws-sdk-workspacesthinclient = '1.18.0'
 aws-sdk-workspacesweb = '1.19.0'
 aws-sdk-xray = '1.19.0'
 aws-smithy-async = '1.2.1'
+aws-smithy-experimental = '0.1.1'
 aws-smithy-mocks-experimental = '0.2.1'
 aws-smithy-runtime = '1.2.1'
 aws-smithy-runtime-api = '1.3.0'

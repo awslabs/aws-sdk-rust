@@ -45,11 +45,14 @@ use aws_smithy_types::retry::ErrorKind;
 
 use crate::hyper_1_0::timeout_middleware::{ConnectTimeout, HttpTimeoutError};
 #[derive(Debug, Eq, PartialEq, Clone, Copy)]
+#[non_exhaustive]
 pub enum CryptoMode {
     #[cfg(feature = "crypto-ring")]
     Ring,
     #[cfg(feature = "crypto-aws-lc")]
     AwsLc,
+    #[cfg(feature = "crypto-aws-lc-fips")]
+    AwsLcFips,
 }
 
 impl CryptoMode {
@@ -60,6 +63,16 @@ impl CryptoMode {
 
             #[cfg(feature = "crypto-ring")]
             CryptoMode::Ring => rustls::crypto::ring::default_provider(),
+
+            #[cfg(feature = "crypto-aws-lc-fips")]
+            CryptoMode::AwsLcFips => {
+                let provider = rustls::crypto::default_fips_provider();
+                assert!(
+                    provider.fips(),
+                    "FIPS was requested but the provider did not support FIPS"
+                );
+                provider
+            }
         }
     }
 }
@@ -113,12 +126,21 @@ mod cached_connectors {
         HttpsConnector<HttpConnector>,
     > = once_cell::sync::Lazy::new(|| make_tls(GaiResolver::new(), CryptoMode::AwsLc.provider()));
 
+    #[cfg(feature = "crypto-aws-lc-fips")]
+    pub(crate) static HTTPS_NATIVE_ROOTS_AWS_LC_FIPS: once_cell::sync::Lazy<
+        HttpsConnector<HttpConnector>,
+    > = once_cell::sync::Lazy::new(|| {
+        make_tls(GaiResolver::new(), CryptoMode::AwsLcFips.provider())
+    });
+
     pub(super) fn cached_https(mode: Inner) -> hyper_rustls::HttpsConnector<HttpConnector> {
         match mode {
             #[cfg(feature = "crypto-ring")]
             Inner::Standard(CryptoMode::Ring) => HTTPS_NATIVE_ROOTS_RING.clone(),
             #[cfg(feature = "crypto-aws-lc")]
             Inner::Standard(CryptoMode::AwsLc) => HTTPS_NATIVE_ROOTS_AWS_LC.clone(),
+            #[cfg(feature = "crypto-aws-lc-fips")]
+            Inner::Standard(CryptoMode::AwsLcFips) => HTTPS_NATIVE_ROOTS_AWS_LC_FIPS.clone(),
             #[allow(unreachable_patterns)]
             Inner::Standard(_) => unreachable!("unexpected mode"),
             Inner::Custom(provider) => make_tls(GaiResolver::new(), provider),
@@ -169,6 +191,8 @@ mod build_connector {
         crypto_provider: CryptoProvider,
     ) -> HttpsConnector<HttpConnector<R>> {
         use hyper_rustls::ConfigBuilderExt;
+        let mut base_connector = HttpConnector::new_with_resolver(resolver);
+        base_connector.enforce_http(false);
         hyper_rustls::HttpsConnectorBuilder::new()
                .with_tls_config(
                 rustls::ClientConfig::builder_with_provider(Arc::new(restrict_ciphers(crypto_provider)))
@@ -180,7 +204,7 @@ mod build_connector {
             .https_or_http()
             .enable_http1()
             .enable_http2()
-            .wrap_connector(HttpConnector::new_with_resolver(resolver))
+            .wrap_connector(base_connector)
     }
 
     pub(super) fn https_with_resolver<R: ResolveDns>(

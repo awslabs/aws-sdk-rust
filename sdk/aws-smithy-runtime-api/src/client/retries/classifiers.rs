@@ -103,6 +103,14 @@ impl RetryAction {
     pub fn client_error() -> Self {
         Self::retryable_error(ErrorKind::ClientError)
     }
+
+    /// Check if a retry is indicated.
+    pub fn should_retry(&self) -> bool {
+        match self {
+            Self::NoActionIndicated | Self::RetryForbidden => false,
+            Self::RetryIndicated(_) => true,
+        }
+    }
 }
 
 /// The reason for a retry.
