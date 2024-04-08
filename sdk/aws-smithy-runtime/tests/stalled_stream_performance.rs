@@ -7,7 +7,7 @@
 
 use aws_smithy_async::rt::sleep::TokioSleep;
 use aws_smithy_async::time::{SystemTimeSource, TimeSource};
-use aws_smithy_runtime::client::http::body::minimum_throughput::MinimumThroughputBody;
+use aws_smithy_runtime::client::http::body::minimum_throughput::MinimumThroughputDownloadBody;
 use aws_smithy_runtime_api::client::stalled_stream_protection::StalledStreamProtectionConfig;
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::byte_stream::ByteStream;
@@ -92,7 +92,7 @@ async fn make_request(address: &str, wrap_body: bool) -> Duration {
             let time_source = SystemTimeSource::new();
             let sleep = TokioSleep::new();
             let opts = StalledStreamProtectionConfig::enabled().build();
-            let mtb = MinimumThroughputBody::new(time_source, sleep, body, opts.into());
+            let mtb = MinimumThroughputDownloadBody::new(time_source, sleep, body, opts.into());
             SdkBody::from_body_0_4(mtb)
         });
     }

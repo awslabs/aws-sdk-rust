@@ -122,11 +122,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutSipM
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutSipMediaApplicationLoggingConfiguration")
-                .with_interceptor(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                    ),
-                )
+                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
                 .with_interceptor(PutSipMediaApplicationLoggingConfigurationEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError,

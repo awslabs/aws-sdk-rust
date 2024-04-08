@@ -118,11 +118,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchDi
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new(
             "BatchDisassociateApprovalRuleTemplateFromRepositories",
         )
-        .with_interceptor(
-            ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-            ),
-        )
+        .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
         .with_interceptor(BatchDisassociateApprovalRuleTemplateFromRepositoriesEndpointParamsInterceptor)
         .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
             crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,

@@ -121,11 +121,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ApplySe
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ApplySecurityGroupsToClientVpnTargetNetwork")
-                .with_interceptor(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                    ),
-                )
+                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
                 .with_interceptor(ApplySecurityGroupsToClientVpnTargetNetworkEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkError,

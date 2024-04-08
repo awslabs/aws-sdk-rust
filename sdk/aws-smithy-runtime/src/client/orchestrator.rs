@@ -5,9 +5,12 @@
 
 use self::auth::orchestrate_auth;
 use crate::client::interceptors::Interceptors;
-use crate::client::orchestrator::endpoints::orchestrate_endpoint;
 use crate::client::orchestrator::http::{log_response_body, read_body};
 use crate::client::timeout::{MaybeTimeout, MaybeTimeoutConfig, TimeoutKind};
+use crate::client::{
+    http::body::minimum_throughput::MaybeUploadThroughputCheckFuture,
+    orchestrator::endpoints::orchestrate_endpoint,
+};
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::http::{HttpClient, HttpConnector, HttpConnectorSettings};
@@ -385,7 +388,12 @@ async fn try_attempt(
             builder.build()
         };
         let connector = http_client.http_connector(&settings, runtime_components);
-        connector.call(request).await.map_err(OrchestratorError::connector)
+        let response_future = MaybeUploadThroughputCheckFuture::new(
+            cfg,
+            runtime_components,
+            connector.call(request),
+        );
+        response_future.await.map_err(OrchestratorError::connector)
     });
     trace!(response = ?response, "received response from service");
     ctx.set_response(response);
