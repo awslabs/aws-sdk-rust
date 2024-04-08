@@ -229,8 +229,14 @@ async fn test_stalled_stream_protection_for_downloads_is_enabled_by_default() {
         err.to_string(),
         "minimum throughput was specified at 1 B/s, but throughput of 0 B/s was observed"
     );
-    // 1s check interval + 5s grace period
-    assert_eq!(start.elapsed().as_secs(), 6);
+    // 5s grace period
+    // TODO(https://github.com/smithy-lang/smithy-rs/issues/3510): Currently comparing against 5 and 6 due to
+    // the behavior change in #3485. Once that feature/fix is released, this should be changed to only check for 5.
+    let elapsed_secs = start.elapsed().as_secs();
+    assert!(
+        elapsed_secs == 5 || elapsed_secs == 6,
+        "elapsed secs should be 5 or 6, but was {elapsed_secs}"
+    )
 }
 
 async fn start_faulty_download_server() -> (impl Future<Output = ()>, SocketAddr) {
