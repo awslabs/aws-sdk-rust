@@ -9,6 +9,7 @@ use aws_sdk_dynamodb::config::{
 };
 use aws_smithy_runtime::client::http::test_util::capture_request;
 use http::Uri;
+use std::env;
 
 /// Iterative test of loading clients from shared configuration
 #[tokio::test]
@@ -34,6 +35,10 @@ async fn shared_config_testbed() {
 #[tokio::test]
 async fn service_config_from_profile() {
     let _ = tracing_subscriber::fmt::try_init();
+
+    // Remove env vars that could interfere with the test
+    env::remove_var("AWS_DEFAULT_REGION");
+    env::remove_var("AWS_REGION");
 
     let config = r#"
 [profile custom]
