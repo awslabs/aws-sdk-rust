@@ -14,6 +14,7 @@
 /// match bootmode {
 ///     BootMode::LegacyBios => { /* ... */ },
 ///     BootMode::Uefi => { /* ... */ },
+///     BootMode::UseSource => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum BootMode {
     LegacyBios,
     #[allow(missing_docs)] // documentation missing in model
     Uefi,
+    #[allow(missing_docs)] // documentation missing in model
+    UseSource,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for BootMode {
         match s {
             "LEGACY_BIOS" => BootMode::LegacyBios,
             "UEFI" => BootMode::Uefi,
+            "USE_SOURCE" => BootMode::UseSource,
             other => BootMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl BootMode {
         match self {
             BootMode::LegacyBios => "LEGACY_BIOS",
             BootMode::Uefi => "UEFI",
+            BootMode::UseSource => "USE_SOURCE",
             BootMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LEGACY_BIOS", "UEFI"]
+        &["LEGACY_BIOS", "UEFI", "USE_SOURCE"]
     }
 }
 impl ::std::convert::AsRef<str> for BootMode {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for BootMode {
         match self {
             BootMode::LegacyBios => write!(f, "LEGACY_BIOS"),
             BootMode::Uefi => write!(f, "UEFI"),
+            BootMode::UseSource => write!(f, "USE_SOURCE"),
             BootMode::Unknown(value) => write!(f, "{}", value),
         }
     }

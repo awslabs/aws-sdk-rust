@@ -22,7 +22,9 @@ impl UpdateLaunchConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateLaunchConfiguration`.
 ///
-/// <p>Updates multiple LaunchConfigurations by Source Server ID.</p>
+/// <p>Updates multiple LaunchConfigurations by Source Server ID.</p><note>
+/// <p>bootMode valid values are <code>LEGACY_BIOS | UEFI</code></p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

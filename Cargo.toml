@@ -131,6 +131,7 @@ members = [
     "sdk/connectcases",
     "sdk/connectcontactlens",
     "sdk/connectparticipant",
+    "sdk/controlcatalog",
     "sdk/controltower",
     "sdk/costandusagereport",
     "sdk/costexplorer",

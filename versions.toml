@@ -596,6 +596,12 @@ version = '1.20.0'
 source_hash = '4d76ef478dfedd5d18982bd12cffc7e09399a5b5bff8f77817866a85fb57c0df'
 model_hash = 'd328bded4142e408e91902c3d2c913c331c3e62b83e9c122b939cbcde39204ca'
 
+[crates.aws-sdk-controlcatalog]
+category = 'AwsSdk'
+version = '1.0.0'
+source_hash = '6aecec162a8aa15ecdfb32fa83437ce79805da6fde170d61ffc80cc00b2848eb'
+model_hash = '337cb82c4f11717de1967dba59c80ed26cb1f2ed09acba611ff53fc251db3301'
+
 [crates.aws-sdk-controltower]
 category = 'AwsSdk'
 version = '1.20.0'
@@ -1469,8 +1475,8 @@ model_hash = '66ee16cbac6d2728aa9ce4e336338114c6f6924bb280ebd47eb649b5efb5909a'
 [crates.aws-sdk-mgn]
 category = 'AwsSdk'
 version = '1.19.0'
-source_hash = '6e7487fed8c164f5bf1e7c74d29dc4b9e30cbe081cfe2b2ad27106a448d82f72'
-model_hash = '145b2b74199de62e3d180a150e21851aacca86b461710676ad8e8c11c79c4a93'
+source_hash = 'f439f4fc0389dfb18ebaf0ce8f604402d3d9e1b203dc8a45bd2d9398ba0339f4'
+model_hash = '32d5a10deec24263409839a3a8b236aa1f0bd6c6407269034b5bd0be6995739a'
 
 [crates.aws-sdk-migrationhub]
 category = 'AwsSdk'
@@ -1559,8 +1565,8 @@ model_hash = '8d93804db37dbbc782a28e21b2b5a5b25131db06333040999ae4fd4af277e50f'
 [crates.aws-sdk-networkmonitor]
 category = 'AwsSdk'
 version = '1.10.0'
-source_hash = '5bdcbc29234c6349bd0717a8817b771b87cbb8fd68249fbc6093b781805a1402'
-model_hash = '469b0f3dd5a6d1ab7962abd71c793aa88d8e46b1fef806fe02c42fbf45a3b607'
+source_hash = '29998c214ce0b3a702bbcd5e28da541b30a583baf524338ad4e122faed77275f'
+model_hash = '0169d21957a7c8861d7784e82495842116c49f63575a58d7d574a6ff2d3a468f'
 
 [crates.aws-sdk-nimble]
 category = 'AwsSdk'
@@ -2543,6 +2549,7 @@ aws-sdk-connectcampaigns = '1.20.0'
 aws-sdk-connectcases = '1.20.0'
 aws-sdk-connectcontactlens = '1.19.0'
 aws-sdk-connectparticipant = '1.20.0'
+aws-sdk-controlcatalog = '1.0.0'
 aws-sdk-controltower = '1.20.0'
 aws-sdk-costandusagereport = '1.19.0'
 aws-sdk-costexplorer = '1.20.0'

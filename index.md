@@ -47,6 +47,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Comprehend Medical | [aws-sdk-comprehendmedical](https://crates.io/crates/aws-sdk-comprehendmedical) ([docs](https://docs.rs/aws-sdk-comprehendmedical)) |
 | AWS Compute Optimizer | [aws-sdk-computeoptimizer](https://crates.io/crates/aws-sdk-computeoptimizer) ([docs](https://docs.rs/aws-sdk-computeoptimizer)) |
 | AWS Config | [aws-sdk-config](https://crates.io/crates/aws-sdk-config) ([docs](https://docs.rs/aws-sdk-config)) |
+| AWS Control Catalog | [aws-sdk-controlcatalog](https://crates.io/crates/aws-sdk-controlcatalog) ([docs](https://docs.rs/aws-sdk-controlcatalog)) |
 | AWS Control Tower | [aws-sdk-controltower](https://crates.io/crates/aws-sdk-controltower) ([docs](https://docs.rs/aws-sdk-controltower)) |
 | AWS Cost Explorer Service | [aws-sdk-costexplorer](https://crates.io/crates/aws-sdk-costexplorer) ([docs](https://docs.rs/aws-sdk-costexplorer)) |
 | AWS Cost and Usage Report Service | [aws-sdk-costandusagereport](https://crates.io/crates/aws-sdk-costandusagereport) ([docs](https://docs.rs/aws-sdk-costandusagereport)) |

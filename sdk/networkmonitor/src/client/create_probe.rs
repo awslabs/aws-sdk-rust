@@ -11,10 +11,10 @@ impl super::Client {
     ///   - [`probe_id(Option<String>)`](crate::operation::create_probe::CreateProbeOutput::probe_id): <p>The ID of the probe for which details are returned.</p>
     ///   - [`probe_arn(Option<String>)`](crate::operation::create_probe::CreateProbeOutput::probe_arn): <p>The ARN of the probe.</p>
     ///   - [`source_arn(String)`](crate::operation::create_probe::CreateProbeOutput::source_arn): <p>The ARN of the probe.</p>
-    ///   - [`destination(String)`](crate::operation::create_probe::CreateProbeOutput::destination): <p>The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.</p>
+    ///   - [`destination(String)`](crate::operation::create_probe::CreateProbeOutput::destination): <p>The destination IP address for the monitor. This must be either an IPv4 or IPv6 address.</p>
     ///   - [`destination_port(Option<i32>)`](crate::operation::create_probe::CreateProbeOutput::destination_port): <p>The port associated with the <code>destination</code>. This is required only if the <code>protocol</code> is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.</p>
-    ///   - [`protocol(Protocol)`](crate::operation::create_probe::CreateProbeOutput::protocol): <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This will be either <code>TCP</code> or <code>ICMP</code>.</p>
-    ///   - [`packet_size(Option<i32>)`](crate::operation::create_probe::CreateProbeOutput::packet_size): <p>The size of the packets sent between the source and destination. This will be a number between <code>56</code> and <code>8500</code>.</p>
+    ///   - [`protocol(Protocol)`](crate::operation::create_probe::CreateProbeOutput::protocol): <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This must be either <code>TCP</code> or <code>ICMP</code>.</p>
+    ///   - [`packet_size(Option<i32>)`](crate::operation::create_probe::CreateProbeOutput::packet_size): <p>The size of the packets sent between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
     ///   - [`address_family(Option<AddressFamily>)`](crate::operation::create_probe::CreateProbeOutput::address_family): <p>Indicates whether the IP address is <code>IPV4</code> or <code>IPV6</code>.</p>
     ///   - [`vpc_id(Option<String>)`](crate::operation::create_probe::CreateProbeOutput::vpc_id): <p>The ID of the source VPC or subnet.</p>
     ///   - [`state(Option<ProbeState>)`](crate::operation::create_probe::CreateProbeOutput::state): <p>The state of the probe.</p>

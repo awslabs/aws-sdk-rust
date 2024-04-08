@@ -11,13 +11,13 @@ pub struct UpdateProbeOutput {
     pub source_arn: ::std::string::String,
     /// <p>The updated destination IP address for the probe.</p>
     pub destination: ::std::string::String,
-    /// <p>The updated destination port. This will be a number between <code>1</code> and <code>65536</code>.</p>
+    /// <p>The updated destination port. This must be a number between <code>1</code> and <code>65536</code>.</p>
     pub destination_port: ::std::option::Option<i32>,
     /// <p>The updated protocol for the probe.</p>
     pub protocol: crate::types::Protocol,
     /// <p>The updated packet size for the probe.</p>
     pub packet_size: ::std::option::Option<i32>,
-    /// <p>The updated IP address family. This will be either <code>IPV4</code> or <code>IPV6</code>.</p>
+    /// <p>The updated IP address family. This must be either <code>IPV4</code> or <code>IPV6</code>.</p>
     pub address_family: ::std::option::Option<crate::types::AddressFamily>,
     /// <p>The updated ID of the source VPC subnet ID.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl UpdateProbeOutput {
         use std::ops::Deref;
         self.destination.deref()
     }
-    /// <p>The updated destination port. This will be a number between <code>1</code> and <code>65536</code>.</p>
+    /// <p>The updated destination port. This must be a number between <code>1</code> and <code>65536</code>.</p>
     pub fn destination_port(&self) -> ::std::option::Option<i32> {
         self.destination_port
     }
@@ -62,7 +62,7 @@ impl UpdateProbeOutput {
     pub fn packet_size(&self) -> ::std::option::Option<i32> {
         self.packet_size
     }
-    /// <p>The updated IP address family. This will be either <code>IPV4</code> or <code>IPV6</code>.</p>
+    /// <p>The updated IP address family. This must be either <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn address_family(&self) -> ::std::option::Option<&crate::types::AddressFamily> {
         self.address_family.as_ref()
     }
@@ -177,17 +177,17 @@ impl UpdateProbeOutputBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination
     }
-    /// <p>The updated destination port. This will be a number between <code>1</code> and <code>65536</code>.</p>
+    /// <p>The updated destination port. This must be a number between <code>1</code> and <code>65536</code>.</p>
     pub fn destination_port(mut self, input: i32) -> Self {
         self.destination_port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated destination port. This will be a number between <code>1</code> and <code>65536</code>.</p>
+    /// <p>The updated destination port. This must be a number between <code>1</code> and <code>65536</code>.</p>
     pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.destination_port = input;
         self
     }
-    /// <p>The updated destination port. This will be a number between <code>1</code> and <code>65536</code>.</p>
+    /// <p>The updated destination port. This must be a number between <code>1</code> and <code>65536</code>.</p>
     pub fn get_destination_port(&self) -> &::std::option::Option<i32> {
         &self.destination_port
     }
@@ -220,17 +220,17 @@ impl UpdateProbeOutputBuilder {
     pub fn get_packet_size(&self) -> &::std::option::Option<i32> {
         &self.packet_size
     }
-    /// <p>The updated IP address family. This will be either <code>IPV4</code> or <code>IPV6</code>.</p>
+    /// <p>The updated IP address family. This must be either <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn address_family(mut self, input: crate::types::AddressFamily) -> Self {
         self.address_family = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated IP address family. This will be either <code>IPV4</code> or <code>IPV6</code>.</p>
+    /// <p>The updated IP address family. This must be either <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn set_address_family(mut self, input: ::std::option::Option<crate::types::AddressFamily>) -> Self {
         self.address_family = input;
         self
     }
-    /// <p>The updated IP address family. This will be either <code>IPV4</code> or <code>IPV6</code>.</p>
+    /// <p>The updated IP address family. This must be either <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn get_address_family(&self) -> &::std::option::Option<crate::types::AddressFamily> {
         &self.address_family
     }

@@ -9,7 +9,7 @@ pub struct CreateMonitorOutput {
     pub monitor_name: ::std::string::String,
     /// <p>The state of the monitor.</p>
     pub state: crate::types::MonitorState,
-    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This will be either <code>30</code> or <code>60</code>.</p>
+    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This must be either <code>30</code> or <code>60</code>.</p>
     pub aggregation_period: ::std::option::Option<i64>,
     /// <p>The list of key-value pairs assigned to the monitor.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -30,7 +30,7 @@ impl CreateMonitorOutput {
     pub fn state(&self) -> &crate::types::MonitorState {
         &self.state
     }
-    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This will be either <code>30</code> or <code>60</code>.</p>
+    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This must be either <code>30</code> or <code>60</code>.</p>
     pub fn aggregation_period(&self) -> ::std::option::Option<i64> {
         self.aggregation_period
     }
@@ -108,17 +108,17 @@ impl CreateMonitorOutputBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::MonitorState> {
         &self.state
     }
-    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This will be either <code>30</code> or <code>60</code>.</p>
+    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This must be either <code>30</code> or <code>60</code>.</p>
     pub fn aggregation_period(mut self, input: i64) -> Self {
         self.aggregation_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This will be either <code>30</code> or <code>60</code>.</p>
+    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This must be either <code>30</code> or <code>60</code>.</p>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.aggregation_period = input;
         self
     }
-    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This will be either <code>30</code> or <code>60</code>.</p>
+    /// <p>The number of seconds that metrics are aggregated by and sent to Amazon CloudWatch. This must be either <code>30</code> or <code>60</code>.</p>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<i64> {
         &self.aggregation_period
     }

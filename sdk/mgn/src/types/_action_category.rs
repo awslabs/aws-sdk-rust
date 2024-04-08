@@ -20,6 +20,7 @@
 ///     ActionCategory::Observability => { /* ... */ },
 ///     ActionCategory::OperatingSystem => { /* ... */ },
 ///     ActionCategory::Other => { /* ... */ },
+///     ActionCategory::Refactoring => { /* ... */ },
 ///     ActionCategory::Security => { /* ... */ },
 ///     ActionCategory::Validation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -66,6 +67,8 @@ pub enum ActionCategory {
     #[allow(missing_docs)] // documentation missing in model
     Other,
     #[allow(missing_docs)] // documentation missing in model
+    Refactoring,
+    #[allow(missing_docs)] // documentation missing in model
     Security,
     #[allow(missing_docs)] // documentation missing in model
     Validation,
@@ -84,6 +87,7 @@ impl ::std::convert::From<&str> for ActionCategory {
             "OBSERVABILITY" => ActionCategory::Observability,
             "OPERATING_SYSTEM" => ActionCategory::OperatingSystem,
             "OTHER" => ActionCategory::Other,
+            "REFACTORING" => ActionCategory::Refactoring,
             "SECURITY" => ActionCategory::Security,
             "VALIDATION" => ActionCategory::Validation,
             other => ActionCategory::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -109,6 +113,7 @@ impl ActionCategory {
             ActionCategory::Observability => "OBSERVABILITY",
             ActionCategory::OperatingSystem => "OPERATING_SYSTEM",
             ActionCategory::Other => "OTHER",
+            ActionCategory::Refactoring => "REFACTORING",
             ActionCategory::Security => "SECURITY",
             ActionCategory::Validation => "VALIDATION",
             ActionCategory::Unknown(value) => value.as_str(),
@@ -125,6 +130,7 @@ impl ActionCategory {
             "OBSERVABILITY",
             "OPERATING_SYSTEM",
             "OTHER",
+            "REFACTORING",
             "SECURITY",
             "VALIDATION",
         ]
@@ -158,6 +164,7 @@ impl ::std::fmt::Display for ActionCategory {
             ActionCategory::Observability => write!(f, "OBSERVABILITY"),
             ActionCategory::OperatingSystem => write!(f, "OPERATING_SYSTEM"),
             ActionCategory::Other => write!(f, "OTHER"),
+            ActionCategory::Refactoring => write!(f, "REFACTORING"),
             ActionCategory::Security => write!(f, "SECURITY"),
             ActionCategory::Validation => write!(f, "VALIDATION"),
             ActionCategory::Unknown(value) => write!(f, "{}", value),

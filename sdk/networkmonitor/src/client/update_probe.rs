@@ -15,10 +15,10 @@ impl super::Client {
     ///   - [`probe_arn(Option<String>)`](crate::operation::update_probe::UpdateProbeOutput::probe_arn): <p>The updated ARN of the probe.</p>
     ///   - [`source_arn(String)`](crate::operation::update_probe::UpdateProbeOutput::source_arn): <p>The updated ARN of the source subnet.</p>
     ///   - [`destination(String)`](crate::operation::update_probe::UpdateProbeOutput::destination): <p>The updated destination IP address for the probe.</p>
-    ///   - [`destination_port(Option<i32>)`](crate::operation::update_probe::UpdateProbeOutput::destination_port): <p>The updated destination port. This will be a number between <code>1</code> and <code>65536</code>.</p>
+    ///   - [`destination_port(Option<i32>)`](crate::operation::update_probe::UpdateProbeOutput::destination_port): <p>The updated destination port. This must be a number between <code>1</code> and <code>65536</code>.</p>
     ///   - [`protocol(Protocol)`](crate::operation::update_probe::UpdateProbeOutput::protocol): <p>The updated protocol for the probe.</p>
     ///   - [`packet_size(Option<i32>)`](crate::operation::update_probe::UpdateProbeOutput::packet_size): <p>The updated packet size for the probe.</p>
-    ///   - [`address_family(Option<AddressFamily>)`](crate::operation::update_probe::UpdateProbeOutput::address_family): <p>The updated IP address family. This will be either <code>IPV4</code> or <code>IPV6</code>.</p>
+    ///   - [`address_family(Option<AddressFamily>)`](crate::operation::update_probe::UpdateProbeOutput::address_family): <p>The updated IP address family. This must be either <code>IPV4</code> or <code>IPV6</code>.</p>
     ///   - [`vpc_id(Option<String>)`](crate::operation::update_probe::UpdateProbeOutput::vpc_id): <p>The updated ID of the source VPC subnet ID.</p>
     ///   - [`state(Option<ProbeState>)`](crate::operation::update_probe::UpdateProbeOutput::state): <p>The state of the updated probe.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::update_probe::UpdateProbeOutput::created_at): <p>The time and date that the probe was created.</p>

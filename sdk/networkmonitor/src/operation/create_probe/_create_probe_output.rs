@@ -9,13 +9,13 @@ pub struct CreateProbeOutput {
     pub probe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the probe.</p>
     pub source_arn: ::std::string::String,
-    /// <p>The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.</p>
+    /// <p>The destination IP address for the monitor. This must be either an IPv4 or IPv6 address.</p>
     pub destination: ::std::string::String,
     /// <p>The port associated with the <code>destination</code>. This is required only if the <code>protocol</code> is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.</p>
     pub destination_port: ::std::option::Option<i32>,
-    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This will be either <code>TCP</code> or <code>ICMP</code>.</p>
+    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This must be either <code>TCP</code> or <code>ICMP</code>.</p>
     pub protocol: crate::types::Protocol,
-    /// <p>The size of the packets sent between the source and destination. This will be a number between <code>56</code> and <code>8500</code>.</p>
+    /// <p>The size of the packets sent between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
     pub packet_size: ::std::option::Option<i32>,
     /// <p>Indicates whether the IP address is <code>IPV4</code> or <code>IPV6</code>.</p>
     pub address_family: ::std::option::Option<crate::types::AddressFamily>,
@@ -45,7 +45,7 @@ impl CreateProbeOutput {
         use std::ops::Deref;
         self.source_arn.deref()
     }
-    /// <p>The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.</p>
+    /// <p>The destination IP address for the monitor. This must be either an IPv4 or IPv6 address.</p>
     pub fn destination(&self) -> &str {
         use std::ops::Deref;
         self.destination.deref()
@@ -54,11 +54,11 @@ impl CreateProbeOutput {
     pub fn destination_port(&self) -> ::std::option::Option<i32> {
         self.destination_port
     }
-    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This will be either <code>TCP</code> or <code>ICMP</code>.</p>
+    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This must be either <code>TCP</code> or <code>ICMP</code>.</p>
     pub fn protocol(&self) -> &crate::types::Protocol {
         &self.protocol
     }
-    /// <p>The size of the packets sent between the source and destination. This will be a number between <code>56</code> and <code>8500</code>.</p>
+    /// <p>The size of the packets sent between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
     pub fn packet_size(&self) -> ::std::option::Option<i32> {
         self.packet_size
     }
@@ -162,18 +162,18 @@ impl CreateProbeOutputBuilder {
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_arn
     }
-    /// <p>The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.</p>
+    /// <p>The destination IP address for the monitor. This must be either an IPv4 or IPv6 address.</p>
     /// This field is required.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.</p>
+    /// <p>The destination IP address for the monitor. This must be either an IPv4 or IPv6 address.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
     }
-    /// <p>The destination IP address for the monitor. This will be either an IPv4 or IPv6 address.</p>
+    /// <p>The destination IP address for the monitor. This must be either an IPv4 or IPv6 address.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination
     }
@@ -191,32 +191,32 @@ impl CreateProbeOutputBuilder {
     pub fn get_destination_port(&self) -> &::std::option::Option<i32> {
         &self.destination_port
     }
-    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This will be either <code>TCP</code> or <code>ICMP</code>.</p>
+    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This must be either <code>TCP</code> or <code>ICMP</code>.</p>
     /// This field is required.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This will be either <code>TCP</code> or <code>ICMP</code>.</p>
+    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This must be either <code>TCP</code> or <code>ICMP</code>.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.protocol = input;
         self
     }
-    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This will be either <code>TCP</code> or <code>ICMP</code>.</p>
+    /// <p>The protocol used for the network traffic between the <code>source</code> and <code>destination</code>. This must be either <code>TCP</code> or <code>ICMP</code>.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         &self.protocol
     }
-    /// <p>The size of the packets sent between the source and destination. This will be a number between <code>56</code> and <code>8500</code>.</p>
+    /// <p>The size of the packets sent between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
     pub fn packet_size(mut self, input: i32) -> Self {
         self.packet_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the packets sent between the source and destination. This will be a number between <code>56</code> and <code>8500</code>.</p>
+    /// <p>The size of the packets sent between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
     pub fn set_packet_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.packet_size = input;
         self
     }
-    /// <p>The size of the packets sent between the source and destination. This will be a number between <code>56</code> and <code>8500</code>.</p>
+    /// <p>The size of the packets sent between the source and destination. This must be a number between <code>56</code> and <code>8500</code>.</p>
     pub fn get_packet_size(&self) -> &::std::option::Option<i32> {
         &self.packet_size
     }
