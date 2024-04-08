@@ -193,6 +193,9 @@ impl RetryClassifierPriority {
     }
 
     /// Create a new `RetryClassifierPriority` that can be overridden by the given priority.
+    ///
+    /// Retry classifiers are run in order from lowest to highest priority. A classifier that
+    /// runs later can override a decision from a classifier that runs earlier.
     pub fn run_before(other: Self) -> Self {
         Self {
             inner: Inner::Other(other.as_i8() - 1),
@@ -206,6 +209,9 @@ impl RetryClassifierPriority {
     }
 
     /// Create a new `RetryClassifierPriority` that can override the given priority.
+    ///
+    /// Retry classifiers are run in order from lowest to highest priority. A classifier that
+    /// runs later can override a decision from a classifier that runs earlier.
     pub fn run_after(other: Self) -> Self {
         Self {
             inner: Inner::Other(other.as_i8() + 1),
@@ -241,9 +247,17 @@ pub trait ClassifyRetry: Send + Sync + fmt::Debug {
     /// Used for debugging purposes.
     fn name(&self) -> &'static str;
 
-    /// The priority of this retry classifier. Classifiers with a higher priority will override the
+    /// The priority of this retry classifier.
+    ///
+    /// Classifiers with a higher priority will override the
     /// results of classifiers with a lower priority. Classifiers with equal priorities make no
     /// guarantees about which will override the other.
+    ///
+    /// Retry classifiers are run in order of increasing priority. Any decision
+    /// (return value other than `NoActionIndicated`) from a higher priority
+    /// classifier will override the decision of a lower priority classifier with one exception:
+    /// [`RetryAction::RetryForbidden`] is treated differently: If ANY classifier returns `RetryForbidden`,
+    /// this request will not be retried.
     fn priority(&self) -> RetryClassifierPriority {
         RetryClassifierPriority::default()
     }

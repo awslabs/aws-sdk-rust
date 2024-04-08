@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::fs_util::{home_dir, Os};
+use aws_runtime::fs_util::{home_dir, Os};
 use aws_smithy_json::deserialize::token::skip_value;
 use aws_smithy_json::deserialize::Token;
 use aws_smithy_json::deserialize::{json_token_iter, EscapeError};

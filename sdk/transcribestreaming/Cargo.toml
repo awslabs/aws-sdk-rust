@@ -20,7 +20,7 @@ version = "1.1.8"
 [dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["event-stream"]
-version = "1.1.8"
+version = "1.1.9"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
@@ -28,7 +28,7 @@ version = "1.2.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "1.2.0"
+version = "1.2.1"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
@@ -60,7 +60,7 @@ version = "1.1.8"
 
 [dependencies.aws-types]
 path = "../aws-types"
-version = "1.1.8"
+version = "1.1.9"
 
 [dependencies.bytes]
 version = "1.0.0"
@@ -95,12 +95,12 @@ version = "1.1.8"
 [dev-dependencies.aws-runtime]
 path = "../aws-runtime"
 features = ["test-util"]
-version = "1.1.8"
+version = "1.1.9"
 
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 features = ["test-util"]
-version = "1.2.0"
+version = "1.2.1"
 
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"

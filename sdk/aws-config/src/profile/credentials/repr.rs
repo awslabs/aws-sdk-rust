@@ -469,18 +469,16 @@ fn credential_process_from_profile(
 
 #[cfg(test)]
 mod tests {
-    use crate::profile::credentials::repr::{resolve_chain, BaseProvider, ProfileChain};
-    use crate::profile::ProfileSet;
+    use crate::profile::credentials::repr::BaseProvider;
     use crate::sensitive_command::CommandWithSensitiveArgs;
     use serde::Deserialize;
-    use std::collections::HashMap;
-    use std::error::Error;
-    use std::fs;
 
+    #[cfg(feature = "test-utils")]
     #[test]
-    fn run_test_cases() -> Result<(), Box<dyn Error>> {
-        let test_cases: Vec<TestCase> =
-            serde_json::from_str(&fs::read_to_string("./test-data/assume-role-tests.json")?)?;
+    fn run_test_cases() -> Result<(), Box<dyn std::error::Error>> {
+        let test_cases: Vec<TestCase> = serde_json::from_str(&std::fs::read_to_string(
+            "./test-data/assume-role-tests.json",
+        )?)?;
         for test_case in test_cases {
             print!("checking: {}...", test_case.docs);
             check(test_case);
@@ -489,7 +487,10 @@ mod tests {
         Ok(())
     }
 
+    #[cfg(feature = "test-utils")]
     fn check(test_case: TestCase) {
+        use aws_runtime::profile::profile_set::ProfileSet;
+        crate::profile::credentials::repr::resolve_chain;
         let source = ProfileSet::new(
             test_case.input.profiles,
             test_case.input.selected_profile,
@@ -514,6 +515,7 @@ mod tests {
         }
     }
 
+    #[cfg(feature = "test-utils")]
     #[derive(Deserialize)]
     struct TestCase {
         docs: String,
@@ -521,6 +523,7 @@ mod tests {
         output: TestOutput,
     }
 
+    #[cfg(feature = "test-utils")]
     #[derive(Deserialize)]
     struct TestInput {
         profiles: HashMap<String, HashMap<String, String>>,
@@ -529,6 +532,7 @@ mod tests {
         sso_sessions: HashMap<String, HashMap<String, String>>,
     }
 
+    #[cfg(feature = "test-utils")]
     fn to_test_output(profile_chain: ProfileChain<'_>) -> Vec<Provider> {
         let mut output = vec![];
         match profile_chain.base {

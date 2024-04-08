@@ -22,9 +22,11 @@
 //! - `exec` which contains a chain representation of providers to implement passing bootstrapped credentials
 //! through a series of providers.
 
+use crate::profile::cell::ErrorTakingOnceCell;
+#[allow(deprecated)]
 use crate::profile::profile_file::ProfileFiles;
 use crate::profile::Profile;
-use crate::profile::{cell::ErrorTakingOnceCell, parser::ProfileFileLoadError};
+use crate::profile::ProfileFileLoadError;
 use crate::provider_config::ProviderConfig;
 use aws_credential_types::{
     provider::{self, error::CredentialsError, future, ProvideCredentials},
@@ -376,6 +378,7 @@ impl Display for ProfileFileError {
 pub struct Builder {
     provider_config: Option<ProviderConfig>,
     profile_override: Option<String>,
+    #[allow(deprecated)]
     profile_files: Option<ProfileFiles>,
     custom_providers: HashMap<Cow<'static, str>, Arc<dyn ProvideCredentials>>,
 }
@@ -443,6 +446,7 @@ impl Builder {
     }
 
     /// Set the profile file that should be used by the [`ProfileFileCredentialsProvider`]
+    #[allow(deprecated)]
     pub fn profile_files(mut self, profile_files: ProfileFiles) -> Self {
         self.profile_files = Some(profile_files);
         self

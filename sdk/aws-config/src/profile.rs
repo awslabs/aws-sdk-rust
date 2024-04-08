@@ -8,16 +8,7 @@
 //! AWS profiles are typically stored in `~/.aws/config` and `~/.aws/credentials`. For more details
 //! see the [`load`] function.
 
-mod parser;
-
-// This can't be included in the other `pub use` statement until
-// https://github.com/rust-lang/rust/pull/87487 is fixed by upgrading
-// to Rust 1.60
-#[doc(inline)]
-pub use parser::ProfileParseError;
-pub(crate) use parser::PropertiesKey;
-#[doc(inline)]
-pub use parser::{load, Profile, ProfileFileLoadError, ProfileSet, Property};
+pub mod parser;
 
 pub mod credentials;
 pub mod profile_file;
@@ -30,7 +21,17 @@ pub mod token;
 pub use token::ProfileFileTokenProvider;
 
 #[doc(inline)]
+pub use aws_runtime::env_config::error::EnvConfigFileLoadError as ProfileFileLoadError;
+#[doc(inline)]
+pub use aws_runtime::env_config::parse::EnvConfigParseError as ProfileParseError;
+#[doc(inline)]
+pub use aws_runtime::env_config::property::Property;
+#[doc(inline)]
+pub use aws_runtime::env_config::section::{EnvConfigSections as ProfileSet, Profile};
+#[doc(inline)]
 pub use credentials::ProfileFileCredentialsProvider;
+#[doc(inline)]
+pub use parser::load;
 #[doc(inline)]
 pub use region::ProfileFileRegionProvider;
 

@@ -25,7 +25,7 @@ version = "1.22.0"
 
 [dev-dependencies.aws-smithy-async]
 path = "../../sdk/aws-smithy-async"
-version = "1.2.0"
+version = "1.2.1"
 
 [dev-dependencies.aws-smithy-runtime]
 path = "../../sdk/aws-smithy-runtime"

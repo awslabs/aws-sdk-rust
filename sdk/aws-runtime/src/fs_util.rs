@@ -5,23 +5,28 @@
 
 use aws_types::os_shim_internal;
 
+/// An operating system, like Windows or Linux
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
-pub(crate) enum Os {
+#[non_exhaustive]
+pub enum Os {
+    /// A Windows-based operating system
     Windows,
-    NotWindows,
+    /// Any Unix-based operating system
+    Unix,
 }
 
 impl Os {
-    pub(crate) fn real() -> Self {
+    /// Returns the current operating system
+    pub fn real() -> Self {
         match std::env::consts::OS {
             "windows" => Os::Windows,
-            _ => Os::NotWindows,
+            _ => Os::Unix,
         }
     }
 }
 
 /// Resolve a home directory given a set of environment variables
-pub(crate) fn home_dir(env_var: &os_shim_internal::Env, os: Os) -> Option<String> {
+pub fn home_dir(env_var: &os_shim_internal::Env, os: Os) -> Option<String> {
     if let Ok(home) = env_var.get("HOME") {
         tracing::debug!(src = "HOME", "loaded home directory");
         return Some(home);
@@ -46,7 +51,7 @@ pub(crate) fn home_dir(env_var: &os_shim_internal::Env, os: Os) -> Option<String
 
 #[cfg(test)]
 mod test {
-    use super::*;
+    use super::{home_dir, Os};
     use aws_types::os_shim_internal::Env;
 
     #[test]
@@ -57,6 +62,6 @@ mod test {
             home_dir(&env, Os::Windows),
             Some("C:\\Users\\name".to_string())
         );
-        assert_eq!(home_dir(&env, Os::NotWindows), None);
+        assert_eq!(home_dir(&env, Os::Unix), None);
     }
 }

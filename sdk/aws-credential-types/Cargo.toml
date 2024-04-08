@@ -25,7 +25,7 @@ zeroize = "1"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "1.2.0"
+version = "1.2.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

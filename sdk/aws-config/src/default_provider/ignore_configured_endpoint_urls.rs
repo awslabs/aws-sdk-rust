@@ -5,7 +5,7 @@
 
 use crate::environment::parse_bool;
 use crate::provider_config::ProviderConfig;
-use crate::standard_property::StandardProperty;
+use aws_runtime::env_config::EnvConfigValue;
 use aws_smithy_types::error::display::DisplayErrorContext;
 
 mod env {
@@ -26,11 +26,13 @@ mod profile_key {
 pub async fn ignore_configured_endpoint_urls_provider(
     provider_config: &ProviderConfig,
 ) -> Option<bool> {
-    StandardProperty::new()
+    let env = provider_config.env();
+    let profiles = provider_config.profile().await;
+
+    EnvConfigValue::new()
         .env(env::IGNORE_CONFIGURED_ENDPOINT_URLS)
         .profile(profile_key::IGNORE_CONFIGURED_ENDPOINT_URLS)
-        .validate(provider_config, parse_bool)
-        .await
+        .validate(&env, profiles, parse_bool)
         .map_err(
             |err| tracing::warn!(err = %DisplayErrorContext(&err), "invalid value for 'ignore configured endpoint URLs' setting"),
         )
@@ -41,6 +43,7 @@ pub async fn ignore_configured_endpoint_urls_provider(
 mod test {
     use super::env;
     use super::ignore_configured_endpoint_urls_provider;
+    #[allow(deprecated)]
     use crate::profile::profile_file::{ProfileFileKind, ProfileFiles};
     use crate::provider_config::ProviderConfig;
     use aws_types::os_shim_internal::{Env, Fs};
@@ -70,8 +73,13 @@ mod test {
             )]))
             .with_profile_config(
                 Some(
+                    #[allow(deprecated)]
                     ProfileFiles::builder()
-                        .with_file(ProfileFileKind::Config, "conf")
+                        .with_file(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "conf",
+                        )
                         .build(),
                 ),
                 None,

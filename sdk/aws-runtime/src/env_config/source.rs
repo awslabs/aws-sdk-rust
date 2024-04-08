@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Code for handling in-memory sources of profile data
+
+use super::error::{CouldNotReadConfigFile, EnvConfigFileLoadError};
+use crate::env_config::file::{EnvConfigFile, EnvConfigFileKind, EnvConfigFiles};
 use crate::fs_util::{home_dir, Os};
-
-use super::error::{CouldNotReadProfileFile, ProfileFileLoadError};
-use crate::profile::profile_file::{ProfileFile, ProfileFileKind, ProfileFiles};
-
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::os_shim_internal;
 use std::borrow::Cow;
@@ -15,35 +15,36 @@ use std::io::ErrorKind;
 use std::path::{Component, Path, PathBuf};
 use std::sync::Arc;
 use tracing::{warn, Instrument};
-
 const HOME_EXPANSION_FAILURE_WARNING: &str =
     "home directory expansion was requested (via `~` character) for the profile \
      config file path, but no home directory could be determined";
 
+#[derive(Debug)]
 /// In-memory source of profile data
-pub(super) struct Source {
+pub struct Source {
     /// Profile file sources
-    pub(super) files: Vec<File>,
+    pub(crate) files: Vec<File>,
 
     /// Profile to use
     ///
     /// Overridden via `$AWS_PROFILE`, defaults to `default`
-    pub(super) profile: Cow<'static, str>,
+    pub profile: Cow<'static, str>,
 }
 
+#[derive(Debug)]
 /// In-memory configuration file
-pub(super) struct File {
-    pub(super) kind: ProfileFileKind,
-    pub(super) path: Option<String>,
-    pub(super) contents: String,
+pub struct File {
+    pub(crate) kind: EnvConfigFileKind,
+    pub(crate) path: Option<String>,
+    pub(crate) contents: String,
 }
 
 /// Load a [`Source`] from a given environment and filesystem.
-pub(super) async fn load(
+pub async fn load(
     proc_env: &os_shim_internal::Env,
     fs: &os_shim_internal::Fs,
-    profile_files: &ProfileFiles,
-) -> Result<Source, ProfileFileLoadError> {
+    profile_files: &EnvConfigFiles,
+) -> Result<Source, EnvConfigFileLoadError> {
     let home = home_dir(proc_env, Os::real());
 
     let mut files = Vec::new();
@@ -85,13 +86,13 @@ fn file_contents_to_string(path: &Path, contents: Vec<u8>) -> String {
 /// * `fs`: Filesystem abstraction
 /// * `environment`: Process environment abstraction
 async fn load_config_file(
-    source: &ProfileFile,
+    source: &EnvConfigFile,
     home_directory: &Option<String>,
     fs: &os_shim_internal::Fs,
     environment: &os_shim_internal::Env,
-) -> Result<File, ProfileFileLoadError> {
+) -> Result<File, EnvConfigFileLoadError> {
     let (path, kind, contents) = match source {
-        ProfileFile::Default(kind) => {
+        EnvConfigFile::Default(kind) => {
             let (path_is_default, path) = environment
                 .get(kind.override_environment_variable())
                 .map(|p| (false, Cow::Owned(p)))
@@ -126,12 +127,12 @@ async fn load_config_file(
             let contents = file_contents_to_string(&expanded, data);
             (Some(Cow::Owned(expanded)), kind, contents)
         }
-        ProfileFile::FilePath { kind, path } => {
+        EnvConfigFile::FilePath { kind, path } => {
             let data = match fs.read_to_end(&path).await {
                 Ok(data) => data,
                 Err(e) => {
-                    return Err(ProfileFileLoadError::CouldNotReadFile(
-                        CouldNotReadProfileFile {
+                    return Err(EnvConfigFileLoadError::CouldNotReadFile(
+                        CouldNotReadConfigFile {
                             path: path.clone(),
                             cause: Arc::new(e),
                         },
@@ -144,7 +145,7 @@ async fn load_config_file(
                 file_contents_to_string(path, data),
             )
         }
-        ProfileFile::FileContents { kind, contents } => (None, kind, contents.clone()),
+        EnvConfigFile::FileContents { kind, contents } => (None, kind, contents.clone()),
     };
     tracing::debug!(path = ?path, size = ?contents.len(), "config file loaded");
     Ok(File {
@@ -198,13 +199,13 @@ fn expand_home(
 
 #[cfg(test)]
 mod tests {
-    use crate::profile::parser::source::{
+    use crate::env_config::error::EnvConfigFileLoadError;
+    use crate::env_config::file::{EnvConfigFile, EnvConfigFileKind, EnvConfigFiles};
+    use crate::env_config::source::{
         expand_home, load, load_config_file, HOME_EXPANSION_FAILURE_WARNING,
     };
-    use crate::profile::parser::ProfileFileLoadError;
-    use crate::profile::profile_file::{ProfileFile, ProfileFileKind, ProfileFiles};
     use aws_types::os_shim_internal::{Env, Fs};
-    use futures_util::FutureExt;
+    use futures_util::future::FutureExt;
     use serde::Deserialize;
     use std::collections::HashMap;
     use std::error::Error;
@@ -276,7 +277,7 @@ mod tests {
         let fs = Fs::from_slice(&[]);
 
         let _src = load_config_file(
-            &ProfileFile::Default(ProfileFileKind::Config),
+            &EnvConfigFile::Default(EnvConfigFileKind::Config),
             &None,
             &fs,
             &env,
@@ -292,7 +293,7 @@ mod tests {
         let fs = Fs::from_slice(&[]);
 
         let _src = load_config_file(
-            &ProfileFile::Default(ProfileFileKind::Config),
+            &EnvConfigFile::Default(EnvConfigFileKind::Config),
             &None,
             &fs,
             &env,
@@ -381,8 +382,8 @@ mod tests {
             ";
         let env = Env::from_slice(&[]);
         let fs = Fs::from_slice(&[]);
-        let profile_files = ProfileFiles::builder()
-            .with_contents(ProfileFileKind::Credentials, contents)
+        let profile_files = EnvConfigFiles::builder()
+            .with_contents(EnvConfigFileKind::Credentials, contents)
             .build();
         let source = load(&env, &fs, &profile_files).await.unwrap();
         assert_eq!(1, source.files.len());
@@ -404,8 +405,11 @@ mod tests {
 
         let fs = Fs::from_map(fs);
         let env = Env::from_slice(&[]);
-        let profile_files = ProfileFiles::builder()
-            .with_file(ProfileFileKind::Credentials, "/custom/path/to/credentials")
+        let profile_files = EnvConfigFiles::builder()
+            .with_file(
+                EnvConfigFileKind::Credentials,
+                "/custom/path/to/credentials",
+            )
             .build();
         let source = load(&env, &fs, &profile_files).await.unwrap();
         assert_eq!(1, source.files.len());
@@ -438,8 +442,8 @@ mod tests {
 
         let fs = Fs::from_map(fs);
         let env = Env::from_slice(&[("HOME", "/user/name")]);
-        let profile_files = ProfileFiles::builder()
-            .with_contents(ProfileFileKind::Config, custom_contents)
+        let profile_files = EnvConfigFiles::builder()
+            .with_contents(EnvConfigFileKind::Config, custom_contents)
             .include_default_credentials_file(true)
             .include_default_config_file(true)
             .build();
@@ -460,8 +464,8 @@ mod tests {
 
         let fs = Fs::from_slice(&[]);
         let env = Env::from_slice(&[("HOME", "/user/name")]);
-        let profile_files = ProfileFiles::builder()
-            .with_contents(ProfileFileKind::Config, custom_contents)
+        let profile_files = EnvConfigFiles::builder()
+            .with_contents(EnvConfigFileKind::Config, custom_contents)
             .include_default_credentials_file(true)
             .include_default_config_file(true)
             .build();
@@ -477,12 +481,12 @@ mod tests {
     async fn misconfigured_programmatic_custom_profile_path_must_error() {
         let fs = Fs::from_slice(&[]);
         let env = Env::from_slice(&[]);
-        let profile_files = ProfileFiles::builder()
-            .with_file(ProfileFileKind::Config, "definitely-doesnt-exist")
+        let profile_files = EnvConfigFiles::builder()
+            .with_file(EnvConfigFileKind::Config, "definitely-doesnt-exist")
             .build();
         assert!(matches!(
             load(&env, &fs, &profile_files).await,
-            Err(ProfileFileLoadError::CouldNotReadFile(_))
+            Err(EnvConfigFileLoadError::CouldNotReadFile(_))
         ));
     }
 }

@@ -24,6 +24,8 @@ pub mod os_shim_internal;
 pub mod region;
 pub mod request_id;
 pub mod sdk_config;
+pub mod service_config;
+
 pub use sdk_config::SdkConfig;
 
 use aws_smithy_types::config_bag::{Storable, StoreReplace};

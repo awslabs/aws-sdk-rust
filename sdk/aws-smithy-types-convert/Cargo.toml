@@ -25,7 +25,7 @@ version = "1.1.8"
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 optional = true
-version = "1.2.0"
+version = "1.2.1"
 
 [dependencies.chrono]
 version = "0.4.35"

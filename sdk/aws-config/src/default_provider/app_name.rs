@@ -4,7 +4,7 @@
  */
 
 use crate::provider_config::ProviderConfig;
-use crate::standard_property::{PropertyResolutionError, StandardProperty};
+use aws_runtime::env_config::{EnvConfigError, EnvConfigValue};
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::app_name::{AppName, InvalidAppName};
 
@@ -56,22 +56,24 @@ impl Builder {
         self
     }
 
-    async fn fallback_app_name(
-        &self,
-    ) -> Result<Option<AppName>, PropertyResolutionError<InvalidAppName>> {
-        StandardProperty::new()
+    async fn fallback_app_name(&self) -> Result<Option<AppName>, EnvConfigError<InvalidAppName>> {
+        let env = self.provider_config.env();
+        let profiles = self.provider_config.profile().await;
+
+        EnvConfigValue::new()
             .profile("sdk-ua-app-id")
-            .validate(&self.provider_config, |name| AppName::new(name.to_string()))
-            .await
+            .validate(&env, profiles, |name| AppName::new(name.to_string()))
     }
 
     /// Build an [`AppName`] from the default chain
     pub async fn app_name(self) -> Option<AppName> {
-        let standard = StandardProperty::new()
+        let env = self.provider_config.env();
+        let profiles = self.provider_config.profile().await;
+
+        let standard = EnvConfigValue::new()
             .env("AWS_SDK_UA_APP_ID")
             .profile("sdk_ua_app_id")
-            .validate(&self.provider_config, |name| AppName::new(name.to_string()))
-            .await;
+            .validate(&env, profiles, |name| AppName::new(name.to_string()));
         let with_fallback = match standard {
             Ok(None) => self.fallback_app_name().await,
             other => other,
@@ -87,6 +89,7 @@ impl Builder {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[allow(deprecated)]
     use crate::profile::profile_file::{ProfileFileKind, ProfileFiles};
     use crate::provider_config::ProviderConfig;
     use crate::test_case::{no_traffic_client, InstantSleep};
@@ -123,8 +126,13 @@ mod tests {
             .http_client(no_traffic_client())
             .profile_name("custom")
             .profile_files(
+                #[allow(deprecated)]
                 ProfileFiles::builder()
-                    .with_file(ProfileFileKind::Config, "test_config")
+                    .with_file(
+                        #[allow(deprecated)]
+                        ProfileFileKind::Config,
+                        "test_config",
+                    )
                     .build(),
             )
             .load()

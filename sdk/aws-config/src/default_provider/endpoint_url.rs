@@ -5,7 +5,7 @@
 
 use crate::environment::parse_url;
 use crate::provider_config::ProviderConfig;
-use crate::standard_property::StandardProperty;
+use aws_runtime::env_config::EnvConfigValue;
 use aws_smithy_types::error::display::DisplayErrorContext;
 
 mod env {
@@ -24,11 +24,13 @@ mod profile_key {
 ///
 /// If invalid values are found, the provider will return None and an error will be logged.
 pub async fn endpoint_url_provider(provider_config: &ProviderConfig) -> Option<String> {
-    StandardProperty::new()
+    let env = provider_config.env();
+    let profiles = provider_config.profile().await;
+
+    EnvConfigValue::new()
         .env(env::ENDPOINT_URL)
         .profile(profile_key::ENDPOINT_URL)
-        .validate(provider_config, parse_url)
-        .await
+        .validate(&env, profiles, parse_url)
         .map_err(
             |err| tracing::warn!(err = %DisplayErrorContext(&err), "invalid value for endpoint URL setting"),
         )
@@ -39,6 +41,7 @@ pub async fn endpoint_url_provider(provider_config: &ProviderConfig) -> Option<S
 mod test {
     use super::endpoint_url_provider;
     use super::env;
+    #[allow(deprecated)]
     use crate::profile::profile_file::{ProfileFileKind, ProfileFiles};
     use crate::provider_config::ProviderConfig;
     use aws_types::os_shim_internal::{Env, Fs};
@@ -61,8 +64,13 @@ mod test {
             .with_env(Env::from_slice(&[(env::ENDPOINT_URL, "http://localhost")]))
             .with_profile_config(
                 Some(
+                    #[allow(deprecated)]
                     ProfileFiles::builder()
-                        .with_file(ProfileFileKind::Config, "conf")
+                        .with_file(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "conf",
+                        )
                         .build(),
                 ),
                 None,

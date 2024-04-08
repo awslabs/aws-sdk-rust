@@ -118,16 +118,15 @@ pub mod identity {
 #[allow(dead_code)]
 const PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 
-#[cfg(test)]
-mod test_case;
-
-mod fs_util;
 mod http_credential_provider;
 mod json_credentials;
+#[cfg(test)]
+mod test_case;
 
 pub mod credential_process;
 pub mod default_provider;
 pub mod ecs;
+mod env_service_config;
 pub mod environment;
 pub mod imds;
 pub mod meta;
@@ -138,7 +137,6 @@ mod sensitive_command;
 #[cfg(feature = "sso")]
 pub mod sso;
 pub mod stalled_stream_protection;
-pub(crate) mod standard_property;
 pub mod sts;
 pub mod timeout;
 pub mod web_identity_token;
@@ -208,6 +206,7 @@ pub async fn load_defaults(version: BehaviorVersion) -> SdkConfig {
 }
 
 mod loader {
+    use crate::env_service_config::EnvServiceConfig;
     use aws_credential_types::provider::{
         token::{ProvideToken, SharedTokenProvider},
         ProvideCredentials, SharedCredentialsProvider,
@@ -233,6 +232,7 @@ mod loader {
         retry_config, timeout_config, use_dual_stack, use_fips,
     };
     use crate::meta::region::ProvideRegion;
+    #[allow(deprecated)]
     use crate::profile::profile_file::ProfileFiles;
     use crate::provider_config::ProviderConfig;
 
@@ -267,6 +267,7 @@ mod loader {
         provider_config: Option<ProviderConfig>,
         http_client: Option<SharedHttpClient>,
         profile_name_override: Option<String>,
+        #[allow(deprecated)]
         profile_files_override: Option<ProfileFiles>,
         use_fips: Option<bool>,
         use_dual_stack: Option<bool>,
@@ -571,6 +572,7 @@ mod loader {
         ///     .load()
         ///     .await;
         /// # }
+        #[allow(deprecated)]
         pub fn profile_files(mut self, profile_files: ProfileFiles) -> Self {
             self.profile_files_override = Some(profile_files);
             self
@@ -807,11 +809,17 @@ mod loader {
                 }
             };
 
+            let profiles = conf.profile().await;
+            let service_config = EnvServiceConfig {
+                env: conf.env(),
+                env_config_sections: profiles.cloned().unwrap_or_default(),
+            };
             let mut builder = SdkConfig::builder()
                 .region(region)
                 .retry_config(retry_config)
                 .timeout_config(timeout_config)
-                .time_source(time_source);
+                .time_source(time_source)
+                .service_config(service_config);
 
             // If an endpoint URL is set programmatically, then our work is done.
             let endpoint_url = if self.endpoint_url.is_some() {
@@ -866,6 +874,7 @@ mod loader {
 
     #[cfg(test)]
     mod test {
+        #[allow(deprecated)]
         use crate::profile::profile_file::{ProfileFileKind, ProfileFiles};
         use crate::test_case::{no_traffic_client, InstantSleep};
         use crate::BehaviorVersion;
@@ -873,15 +882,15 @@ mod loader {
         use aws_credential_types::provider::ProvideCredentials;
         use aws_smithy_async::rt::sleep::TokioSleep;
         use aws_smithy_runtime::client::http::test_util::{infallible_client_fn, NeverClient};
+        use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
         use aws_types::app_name::AppName;
         use aws_types::os_shim_internal::{Env, Fs};
         use std::sync::atomic::{AtomicUsize, Ordering};
         use std::sync::Arc;
-        use tracing_test::traced_test;
 
         #[tokio::test]
-        #[traced_test]
         async fn provider_config_used() {
+            let (_guard, logs_rx) = capture_test_logs();
             let env = Env::from_slice(&[
                 ("AWS_MAX_ATTEMPTS", "10"),
                 ("AWS_REGION", "us-west-4"),
@@ -897,8 +906,13 @@ mod loader {
                 .http_client(NeverClient::new())
                 .profile_name("custom")
                 .profile_files(
+                    #[allow(deprecated)]
                     ProfileFiles::builder()
-                        .with_file(ProfileFileKind::Config, "test_config")
+                        .with_file(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "test_config",
+                        )
                         .build(),
                 )
                 .load()
@@ -916,21 +930,18 @@ mod loader {
                     .access_key_id(),
             );
             assert_eq!(Some(&AppName::new("correct").unwrap()), loader.app_name());
-            logs_assert(|lines| {
-                let num_config_loader_logs = lines
-                    .iter()
-                    .filter(|l| l.contains("provider_config_used"))
-                    .filter(|l| l.contains("config file loaded"))
-                    .count();
-                match num_config_loader_logs {
-                    0 => Err("no config file logs found!".to_string()),
-                    1 => Ok(()),
-                    more => Err(format!(
-                        "the config file was parsed more than once! (parsed {})",
-                        more
-                    )),
-                }
-            });
+
+            let num_config_loader_logs = logs_rx.contents()
+                .lines()
+                // The logger uses fancy formatting, so we have to account for that.
+                .filter(|l| l.contains("config file loaded \u{1b}[3mpath\u{1b}[0m\u{1b}[2m=\u{1b}[0mSome(\"test_config\") \u{1b}[3msize\u{1b}[0m\u{1b}[2m=\u{1b}"))
+                .count();
+
+            match num_config_loader_logs {
+                0 => panic!("no config file logs found!"),
+                1 => (),
+                more => panic!("the config file was parsed more than once! (parsed {more})",),
+            };
         }
 
         fn base_conf() -> ConfigLoader {
@@ -1016,8 +1027,13 @@ mod loader {
                 .env(env)
                 .profile_name("custom")
                 .profile_files(
+                    #[allow(deprecated)]
                     ProfileFiles::builder()
-                        .with_file(ProfileFileKind::Config, "test_config")
+                        .with_file(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "test_config",
+                        )
                         .build(),
                 )
                 .load()
@@ -1029,8 +1045,13 @@ mod loader {
                 .fs(fs)
                 .profile_name("custom")
                 .profile_files(
+                    #[allow(deprecated)]
                     ProfileFiles::builder()
-                        .with_file(ProfileFileKind::Config, "test_config")
+                        .with_file(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "test_config",
+                        )
                         .build(),
                 )
                 .load()
@@ -1052,8 +1073,13 @@ mod loader {
                 .env(env.clone())
                 .profile_name("custom")
                 .profile_files(
+                    #[allow(deprecated)]
                     ProfileFiles::builder()
-                        .with_file(ProfileFileKind::Config, "test_config")
+                        .with_file(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "test_config",
+                        )
                         .build(),
                 )
                 .load()
@@ -1080,8 +1106,13 @@ mod loader {
                 .endpoint_url("http://localhost")
                 .profile_name("custom")
                 .profile_files(
+                    #[allow(deprecated)]
                     ProfileFiles::builder()
-                        .with_file(ProfileFileKind::Config, "test_config")
+                        .with_file(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "test_config",
+                        )
                         .build(),
                 )
                 .load()

@@ -12,7 +12,7 @@
 //! - profiles with invalid names
 //! - profile name normalization (`profile foo` => `foo`)
 
-use crate::profile::parser::source::File;
+use crate::env_config::source::File;
 use std::borrow::Cow;
 use std::collections::HashMap;
 use std::error::Error;
@@ -25,7 +25,7 @@ pub(super) type RawProfileSet<'a> = HashMap<&'a str, HashMap<Cow<'a, str>, Cow<'
 ///
 /// Profile parsing is actually quite strict about what is and is not whitespace, so use this instead
 /// of `.is_whitespace()` / `.trim()`
-pub(super) const WHITESPACE: &[char] = &[' ', '\t'];
+pub(crate) const WHITESPACE: &[char] = &[' ', '\t'];
 const COMMENT: &[char] = &['#', ';'];
 
 /// Location for use during error reporting
@@ -37,7 +37,7 @@ struct Location {
 
 /// An error encountered while parsing a profile
 #[derive(Debug, Clone)]
-pub struct ProfileParseError {
+pub struct EnvConfigParseError {
     /// Location where this error occurred
     location: Location,
 
@@ -45,7 +45,7 @@ pub struct ProfileParseError {
     message: String,
 }
 
-impl Display for ProfileParseError {
+impl Display for EnvConfigParseError {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         write!(
             f,
@@ -55,14 +55,14 @@ impl Display for ProfileParseError {
     }
 }
 
-impl Error for ProfileParseError {}
+impl Error for EnvConfigParseError {}
 
 /// Validate that a line represents a valid subproperty
 ///
 /// - Sub-properties looks like regular properties (`k=v`) that are nested within an existing property.
 /// - Sub-properties must be validated for compatibility with other SDKs, but they are not actually
 /// parsed into structured data.
-fn validate_subproperty(value: &str, location: Location) -> Result<(), ProfileParseError> {
+fn validate_subproperty(value: &str, location: Location) -> Result<(), EnvConfigParseError> {
     if value.trim_matches(WHITESPACE).is_empty() {
         Ok(())
     } else {
@@ -104,7 +104,7 @@ enum State<'a> {
 }
 
 /// Parse `file` into a `RawProfileSet`
-pub(super) fn parse_profile_file(file: &File) -> Result<RawProfileSet<'_>, ProfileParseError> {
+pub(super) fn parse_profile_file(file: &File) -> Result<RawProfileSet<'_>, EnvConfigParseError> {
     let mut parser = Parser {
         data: HashMap::new(),
         state: State::Starting,
@@ -119,7 +119,7 @@ pub(super) fn parse_profile_file(file: &File) -> Result<RawProfileSet<'_>, Profi
 
 impl<'a> Parser<'a> {
     /// Parse `file` containing profile data into `self.data`.
-    fn parse_profile(&mut self, file: &'a str) -> Result<(), ProfileParseError> {
+    fn parse_profile(&mut self, file: &'a str) -> Result<(), EnvConfigParseError> {
         for (line_number, line) in file.lines().enumerate() {
             self.location.line_number = line_number + 1; // store a 1-indexed line number
             if is_empty_line(line) || is_comment_line(line) {
@@ -139,7 +139,7 @@ impl<'a> Parser<'a> {
     /// Parse a property line like `a = b`
     ///
     /// A property line is only valid when we're within a profile definition, `[profile foo]`
-    fn read_property_line(&mut self, line: &'a str) -> Result<(), ProfileParseError> {
+    fn read_property_line(&mut self, line: &'a str) -> Result<(), EnvConfigParseError> {
         let location = &self.location;
         let (current_profile, name) = match &self.state {
             State::Starting => return Err(self.make_error("Expected a profile definition")),
@@ -160,8 +160,8 @@ impl<'a> Parser<'a> {
     }
 
     /// Create a location-tagged error message
-    fn make_error(&self, message: &str) -> ProfileParseError {
-        ProfileParseError {
+    fn make_error(&self, message: &str) -> EnvConfigParseError {
+        EnvConfigParseError {
             location: self.location.clone(),
             message: message.into(),
         }
@@ -170,7 +170,7 @@ impl<'a> Parser<'a> {
     /// Parse the lines of a property after the first line.
     ///
     /// This is triggered by lines that start with whitespace.
-    fn read_property_continuation(&mut self, line: &'a str) -> Result<(), ProfileParseError> {
+    fn read_property_continuation(&mut self, line: &'a str) -> Result<(), EnvConfigParseError> {
         let current_property = match &self.state {
             State::Starting => return Err(self.make_error("Expected a profile definition")),
             State::ReadingProfile {
@@ -200,7 +200,7 @@ impl<'a> Parser<'a> {
         Ok(())
     }
 
-    fn read_profile_line(&mut self, line: &'a str) -> Result<(), ProfileParseError> {
+    fn read_profile_line(&mut self, line: &'a str) -> Result<(), EnvConfigParseError> {
         let line = prepare_line(line, false);
         let profile_name = line
             .strip_prefix('[')
@@ -227,17 +227,17 @@ enum PropertyError {
 }
 
 impl PropertyError {
-    fn into_error(self, ctx: &str, location: Location) -> ProfileParseError {
+    fn into_error(self, ctx: &str, location: Location) -> EnvConfigParseError {
         let mut ctx = ctx.to_string();
         match self {
             PropertyError::NoName => {
                 ctx.get_mut(0..1).unwrap().make_ascii_uppercase();
-                ProfileParseError {
+                EnvConfigParseError {
                     location,
                     message: format!("{} did not have a name", ctx),
                 }
             }
-            PropertyError::NoEquals => ProfileParseError {
+            PropertyError::NoEquals => EnvConfigParseError {
                 location,
                 message: format!("Expected an '=' sign defining a {}", ctx),
             },
@@ -254,6 +254,10 @@ fn parse_property_line(line: &str) -> Result<(Cow<'_, str>, &str), PropertyError
     if k.is_empty() {
         return Err(PropertyError::NoName);
     }
+    // We don't want to blindly use `alloc::str::to_ascii_lowercase` because it
+    // always allocates. Instead, we check for uppercase ascii letters. Then,
+    // we only allocate in the case that there ARE letters that need to be
+    // lower-cased.
     Ok((to_ascii_lowercase(k), v))
 }
 
@@ -296,9 +300,9 @@ fn prepare_line(line: &str, comments_need_whitespace: bool) -> &str {
 #[cfg(test)]
 mod test {
     use super::{parse_profile_file, prepare_line, Location};
-    use crate::profile::parser::parse::{parse_property_line, PropertyError};
-    use crate::profile::parser::source::File;
-    use crate::profile::profile_file::ProfileFileKind;
+    use crate::env_config::file::EnvConfigFileKind;
+    use crate::env_config::parse::{parse_property_line, PropertyError};
+    use crate::env_config::source::File;
     use std::borrow::Cow;
 
     // most test cases covered by the JSON test suite
@@ -346,7 +350,7 @@ mod test {
     #[test]
     fn error_line_numbers() {
         let file = File {
-            kind: ProfileFileKind::Config,
+            kind: EnvConfigFileKind::Config,
             path: Some("~/.aws/config".into()),
             contents: "[default\nk=v".into(),
         };
