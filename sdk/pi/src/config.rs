@@ -1203,39 +1203,10 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &::aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
         builder.set_credentials_provider(input.credentials_provider());
-        builder.set_region(
-            input
-                .service_config()
-                .and_then(|conf| conf.load_config(service_config_key("AWS_REGION", "region")).map(Region::new))
-                .or_else(|| input.region().cloned()),
-        );
-        builder.set_use_fips(
-            input
-                .service_config()
-                .and_then(|conf| {
-                    conf.load_config(service_config_key("AWS_USE_FIPS", "use_fips"))
-                        .map(|it| it.parse().unwrap())
-                })
-                .or_else(|| input.use_fips()),
-        );
-        builder.set_use_dual_stack(
-            input
-                .service_config()
-                .and_then(|conf| {
-                    conf.load_config(service_config_key("AWS_USE_DUAL_STACK", "use_dual_stack"))
-                        .map(|it| it.parse().unwrap())
-                })
-                .or_else(|| input.use_dual_stack()),
-        );
-        builder.set_endpoint_url(
-            input
-                .service_config()
-                .and_then(|conf| {
-                    conf.load_config(service_config_key("AWS_ENDPOINT_URL", "endpoint_url"))
-                        .map(|it| it.parse().unwrap())
-                })
-                .or_else(|| input.endpoint_url().map(|s| s.to_string())),
-        );
+        builder = builder.region(input.region().cloned());
+        builder.set_use_fips(input.use_fips());
+        builder.set_use_dual_stack(input.use_dual_stack());
+        builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
