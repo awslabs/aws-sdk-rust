@@ -30,7 +30,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-secretsmanager = "1.20.1"
+aws-sdk-secretsmanager = "1.21.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
