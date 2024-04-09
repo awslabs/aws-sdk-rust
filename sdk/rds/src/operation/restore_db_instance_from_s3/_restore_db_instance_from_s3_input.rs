@@ -240,6 +240,10 @@ pub struct RestoreDbInstanceFromS3Input {
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbInstanceFromS3Input {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -587,6 +591,12 @@ impl RestoreDbInstanceFromS3Input {
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
     }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
+    }
 }
 impl RestoreDbInstanceFromS3Input {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromS3Input`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input).
@@ -648,6 +658,7 @@ pub struct RestoreDbInstanceFromS3InputBuilder {
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
+    pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -1790,6 +1801,26 @@ impl RestoreDbInstanceFromS3InputBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = input;
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
+    }
     /// Consumes the builder and constructs a [`RestoreDbInstanceFromS3Input`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input).
     pub fn build(
         self,
@@ -1847,6 +1878,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             dedicated_log_volume: self.dedicated_log_volume,
+            ca_certificate_identifier: self.ca_certificate_identifier,
         })
     }
 }

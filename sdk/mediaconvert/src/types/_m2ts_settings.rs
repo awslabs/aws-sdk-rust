@@ -58,6 +58,8 @@ pub struct M2tsSettings {
     pub pmt_interval: ::std::option::Option<i32>,
     /// Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480.
     pub pmt_pid: ::std::option::Option<i32>,
+    /// Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+    pub prevent_buffer_underflow: ::std::option::Option<crate::types::M2tsPreventBufferUnderflow>,
     /// Specify the packet identifier (PID) of the private metadata stream. Default is 503.
     pub private_metadata_pid: ::std::option::Option<i32>,
     /// Use Program number to specify the program number used in the program map table (PMT) for this output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
@@ -200,6 +202,10 @@ impl M2tsSettings {
     pub fn pmt_pid(&self) -> ::std::option::Option<i32> {
         self.pmt_pid
     }
+    /// Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+    pub fn prevent_buffer_underflow(&self) -> ::std::option::Option<&crate::types::M2tsPreventBufferUnderflow> {
+        self.prevent_buffer_underflow.as_ref()
+    }
     /// Specify the packet identifier (PID) of the private metadata stream. Default is 503.
     pub fn private_metadata_pid(&self) -> ::std::option::Option<i32> {
         self.private_metadata_pid
@@ -295,6 +301,7 @@ pub struct M2tsSettingsBuilder {
     pub(crate) pcr_pid: ::std::option::Option<i32>,
     pub(crate) pmt_interval: ::std::option::Option<i32>,
     pub(crate) pmt_pid: ::std::option::Option<i32>,
+    pub(crate) prevent_buffer_underflow: ::std::option::Option<crate::types::M2tsPreventBufferUnderflow>,
     pub(crate) private_metadata_pid: ::std::option::Option<i32>,
     pub(crate) program_number: ::std::option::Option<i32>,
     pub(crate) pts_offset: ::std::option::Option<i32>,
@@ -701,6 +708,20 @@ impl M2tsSettingsBuilder {
     pub fn get_pmt_pid(&self) -> &::std::option::Option<i32> {
         &self.pmt_pid
     }
+    /// Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+    pub fn prevent_buffer_underflow(mut self, input: crate::types::M2tsPreventBufferUnderflow) -> Self {
+        self.prevent_buffer_underflow = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+    pub fn set_prevent_buffer_underflow(mut self, input: ::std::option::Option<crate::types::M2tsPreventBufferUnderflow>) -> Self {
+        self.prevent_buffer_underflow = input;
+        self
+    }
+    /// Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+    pub fn get_prevent_buffer_underflow(&self) -> &::std::option::Option<crate::types::M2tsPreventBufferUnderflow> {
+        &self.prevent_buffer_underflow
+    }
     /// Specify the packet identifier (PID) of the private metadata stream. Default is 503.
     pub fn private_metadata_pid(mut self, input: i32) -> Self {
         self.private_metadata_pid = ::std::option::Option::Some(input);
@@ -927,6 +948,7 @@ impl M2tsSettingsBuilder {
             pcr_pid: self.pcr_pid,
             pmt_interval: self.pmt_interval,
             pmt_pid: self.pmt_pid,
+            prevent_buffer_underflow: self.prevent_buffer_underflow,
             private_metadata_pid: self.private_metadata_pid,
             program_number: self.program_number,
             pts_offset: self.pts_offset,

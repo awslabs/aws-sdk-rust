@@ -20,6 +20,21 @@ pub fn de_create_db_instance_read_replica_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CertificateNotFound" => crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::CertificateNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CertificateNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_certificate_not_found_fault::de_certificate_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DBClusterNotFoundFault" => crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

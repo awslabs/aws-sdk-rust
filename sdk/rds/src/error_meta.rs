@@ -1439,6 +1439,9 @@ where
 impl From<crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError> for Error {
     fn from(err: crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError) -> Self {
         match err {
+            crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::CertificateNotFoundFault(inner) => {
+                Error::CertificateNotFoundFault(inner)
+            }
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbClusterNotFoundFault(inner) => {
                 Error::DbClusterNotFoundFault(inner)
             }
@@ -5604,6 +5607,9 @@ impl From<crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInsta
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::BackupPolicyNotFoundFault(inner) => {
                 Error::BackupPolicyNotFoundFault(inner)
             }
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::CertificateNotFoundFault(inner) => {
+                Error::CertificateNotFoundFault(inner)
+            }
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbClusterSnapshotNotFoundFault(inner) => {
                 Error::DbClusterSnapshotNotFoundFault(inner)
             }
@@ -5697,6 +5703,9 @@ impl From<crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3
             crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::BackupPolicyNotFoundFault(inner) => {
                 Error::BackupPolicyNotFoundFault(inner)
             }
+            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::CertificateNotFoundFault(inner) => {
+                Error::CertificateNotFoundFault(inner)
+            }
             crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbInstanceAlreadyExistsFault(inner) => {
                 Error::DbInstanceAlreadyExistsFault(inner)
             }
@@ -5780,6 +5789,9 @@ impl From<crate::operation::restore_db_instance_to_point_in_time::RestoreDBInsta
             }
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::BackupPolicyNotFoundFault(inner) => {
                 Error::BackupPolicyNotFoundFault(inner)
+            }
+            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::CertificateNotFoundFault(inner) => {
+                Error::CertificateNotFoundFault(inner)
             }
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::DbInstanceAlreadyExistsFault(inner) => {
                 Error::DbInstanceAlreadyExistsFault(inner)

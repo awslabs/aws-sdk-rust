@@ -18,5 +18,8 @@ pub fn ser_email_channel_request(
     if let Some(var_5) = &input.role_arn {
         object.key("RoleArn").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.orchestration_sending_role_arn {
+        object.key("OrchestrationSendingRoleArn").string(var_6.as_str());
+    }
     Ok(())
 }

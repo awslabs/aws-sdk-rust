@@ -222,7 +222,7 @@ pub struct CreateDbClusterInput {
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
-    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters use the <code>provisioned</code> engine mode.</p>
     /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li>
@@ -680,7 +680,7 @@ impl CreateDbClusterInput {
         self.enable_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
-    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters use the <code>provisioned</code> engine mode.</p>
     /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li>
@@ -1857,7 +1857,7 @@ impl CreateDbClusterInputBuilder {
         &self.enable_cloudwatch_logs_exports
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
-    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters use the <code>provisioned</code> engine mode.</p>
     /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li>
@@ -1871,7 +1871,7 @@ impl CreateDbClusterInputBuilder {
         self
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
-    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters use the <code>provisioned</code> engine mode.</p>
     /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li>
@@ -1885,7 +1885,7 @@ impl CreateDbClusterInputBuilder {
         self
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
-    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters use the <code>provisioned</code> engine mode.</p>
     /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li>

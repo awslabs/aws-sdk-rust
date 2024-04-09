@@ -144,73 +144,76 @@ pub fn ser_m2ts_settings(
             ::aws_smithy_types::Number::NegInt((*var_34).into()),
         );
     }
-    if let Some(var_35) = &input.private_metadata_pid {
-        object.key("privateMetadataPid").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_35).into()),
-        );
+    if let Some(var_35) = &input.prevent_buffer_underflow {
+        object.key("preventBufferUnderflow").string(var_35.as_str());
     }
-    if let Some(var_36) = &input.program_number {
-        object.key("programNumber").number(
+    if let Some(var_36) = &input.private_metadata_pid {
+        object.key("privateMetadataPid").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_36).into()),
         );
     }
-    if let Some(var_37) = &input.pts_offset {
-        object.key("ptsOffset").number(
+    if let Some(var_37) = &input.program_number {
+        object.key("programNumber").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_37).into()),
         );
     }
-    if let Some(var_38) = &input.pts_offset_mode {
-        object.key("ptsOffsetMode").string(var_38.as_str());
+    if let Some(var_38) = &input.pts_offset {
+        object.key("ptsOffset").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_38).into()),
+        );
     }
-    if let Some(var_39) = &input.rate_mode {
-        object.key("rateMode").string(var_39.as_str());
+    if let Some(var_39) = &input.pts_offset_mode {
+        object.key("ptsOffsetMode").string(var_39.as_str());
     }
-    if let Some(var_40) = &input.scte35_esam {
+    if let Some(var_40) = &input.rate_mode {
+        object.key("rateMode").string(var_40.as_str());
+    }
+    if let Some(var_41) = &input.scte35_esam {
         #[allow(unused_mut)]
-        let mut object_41 = object.key("scte35Esam").start_object();
-        crate::protocol_serde::shape_m2ts_scte35_esam::ser_m2ts_scte35_esam(&mut object_41, var_40)?;
-        object_41.finish();
+        let mut object_42 = object.key("scte35Esam").start_object();
+        crate::protocol_serde::shape_m2ts_scte35_esam::ser_m2ts_scte35_esam(&mut object_42, var_41)?;
+        object_42.finish();
     }
-    if let Some(var_42) = &input.scte35_pid {
+    if let Some(var_43) = &input.scte35_pid {
         object.key("scte35Pid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_42).into()),
+            ::aws_smithy_types::Number::NegInt((*var_43).into()),
         );
     }
-    if let Some(var_43) = &input.scte35_source {
-        object.key("scte35Source").string(var_43.as_str());
+    if let Some(var_44) = &input.scte35_source {
+        object.key("scte35Source").string(var_44.as_str());
     }
-    if let Some(var_44) = &input.segmentation_markers {
-        object.key("segmentationMarkers").string(var_44.as_str());
+    if let Some(var_45) = &input.segmentation_markers {
+        object.key("segmentationMarkers").string(var_45.as_str());
     }
-    if let Some(var_45) = &input.segmentation_style {
-        object.key("segmentationStyle").string(var_45.as_str());
+    if let Some(var_46) = &input.segmentation_style {
+        object.key("segmentationStyle").string(var_46.as_str());
     }
-    if let Some(var_46) = &input.segmentation_time {
+    if let Some(var_47) = &input.segmentation_time {
         object.key("segmentationTime").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_46).into()),
+            ::aws_smithy_types::Number::Float((*var_47).into()),
         );
     }
-    if let Some(var_47) = &input.timed_metadata_pid {
+    if let Some(var_48) = &input.timed_metadata_pid {
         object.key("timedMetadataPid").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_47).into()),
-        );
-    }
-    if let Some(var_48) = &input.transport_stream_id {
-        object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_48).into()),
         );
     }
-    if let Some(var_49) = &input.video_pid {
-        object.key("videoPid").number(
+    if let Some(var_49) = &input.transport_stream_id {
+        object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_49).into()),
+        );
+    }
+    if let Some(var_50) = &input.video_pid {
+        object.key("videoPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_50).into()),
         );
     }
     Ok(())
@@ -397,6 +400,13 @@ where
                             builder = builder.set_pmt_pid(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "preventBufferUnderflow" => {
+                            builder = builder.set_prevent_buffer_underflow(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::M2tsPreventBufferUnderflow::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

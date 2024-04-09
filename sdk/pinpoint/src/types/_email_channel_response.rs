@@ -32,6 +32,8 @@ pub struct EmailChannelResponse {
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related event data for the channel.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub orchestration_sending_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the email channel.</p>
     pub version: ::std::option::Option<i32>,
 }
@@ -92,6 +94,10 @@ impl EmailChannelResponse {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub fn orchestration_sending_role_arn(&self) -> ::std::option::Option<&str> {
+        self.orchestration_sending_role_arn.as_deref()
+    }
     /// <p>The current version of the email channel.</p>
     pub fn version(&self) -> ::std::option::Option<i32> {
         self.version
@@ -122,6 +128,7 @@ pub struct EmailChannelResponseBuilder {
     pub(crate) messages_per_second: ::std::option::Option<i32>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) orchestration_sending_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
 }
 impl EmailChannelResponseBuilder {
@@ -322,6 +329,20 @@ impl EmailChannelResponseBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub fn orchestration_sending_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.orchestration_sending_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub fn set_orchestration_sending_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.orchestration_sending_role_arn = input;
+        self
+    }
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub fn get_orchestration_sending_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.orchestration_sending_role_arn
+    }
     /// <p>The current version of the email channel.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -353,6 +374,7 @@ impl EmailChannelResponseBuilder {
             messages_per_second: self.messages_per_second,
             platform: self.platform,
             role_arn: self.role_arn,
+            orchestration_sending_role_arn: self.orchestration_sending_role_arn,
             version: self.version,
         }
     }

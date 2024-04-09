@@ -971,7 +971,7 @@ impl CreateDBClusterFluentBuilder {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
-    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters use the <code>provisioned</code> engine mode.</p>
     /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li>
@@ -985,7 +985,7 @@ impl CreateDBClusterFluentBuilder {
         self
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
-    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters use the <code>provisioned</code> engine mode.</p>
     /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li>
@@ -999,7 +999,7 @@ impl CreateDBClusterFluentBuilder {
         self
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
-    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters use the <code>provisioned</code> engine mode.</p>
     /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li>

@@ -247,6 +247,11 @@ pub fn ser_restore_db_instance_from_db_snapshot_input_input_input(
     if let Some(var_95) = &input.dedicated_log_volume {
         scope_94.boolean(*var_95);
     }
+    #[allow(unused_mut)]
+    let mut scope_96 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_97) = &input.ca_certificate_identifier {
+        scope_96.string(var_97);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

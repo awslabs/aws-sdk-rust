@@ -246,6 +246,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDBInsta
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateDBInstanceReadReplicaError {
+    /// <p><code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
+    CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
     /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
@@ -325,6 +327,7 @@ impl CreateDBInstanceReadReplicaError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CertificateNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -350,6 +353,10 @@ impl CreateDBInstanceReadReplicaError {
             Self::TenantDatabaseQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaError::CertificateNotFoundFault`.
+    pub fn is_certificate_not_found_fault(&self) -> bool {
+        matches!(self, Self::CertificateNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateDBInstanceReadReplicaError::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
@@ -447,6 +454,7 @@ impl CreateDBInstanceReadReplicaError {
 impl ::std::error::Error for CreateDBInstanceReadReplicaError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::CertificateNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -477,6 +485,7 @@ impl ::std::error::Error for CreateDBInstanceReadReplicaError {
 impl ::std::fmt::Display for CreateDBInstanceReadReplicaError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::CertificateNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
@@ -521,6 +530,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateDBInstanceReadReplica
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBInstanceReadReplicaError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CertificateNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

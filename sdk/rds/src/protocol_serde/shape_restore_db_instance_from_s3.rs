@@ -54,6 +54,21 @@ pub fn de_restore_db_instance_from_s3_http_error(
             }
             tmp
         }),
+        "CertificateNotFound" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::CertificateNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CertificateNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_certificate_not_found_fault::de_certificate_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DBInstanceAlreadyExists" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbInstanceAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp = {

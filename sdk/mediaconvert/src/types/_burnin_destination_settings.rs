@@ -16,6 +16,14 @@ pub struct BurninDestinationSettings {
     pub fallback_font: ::std::option::Option<crate::types::BurninSubtitleFallbackFont>,
     /// Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present.
     pub font_color: ::std::option::Option<crate::types::BurninSubtitleFontColor>,
+    /// Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+    pub font_file_bold: ::std::option::Option<::std::string::String>,
+    /// Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+    pub font_file_bold_italic: ::std::option::Option<::std::string::String>,
+    /// Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+    pub font_file_italic: ::std::option::Option<::std::string::String>,
+    /// Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+    pub font_file_regular: ::std::option::Option<::std::string::String>,
     /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
     pub font_opacity: ::std::option::Option<i32>,
     /// Specify the Font resolution in DPI (dots per inch).
@@ -38,7 +46,7 @@ pub struct BurninDestinationSettings {
     pub shadow_x_offset: ::std::option::Option<i32>,
     /// Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. Leave Shadow y-offset blank and set Style passthrough to enabled to use the shadow y-offset data from your input captions, if present.
     pub shadow_y_offset: ::std::option::Option<i32>,
-    /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
+    /// To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input captions To ignore the style and position information from your input captions and use default settings: Leave blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. You can also override any fonts by manually specifying custom font files.
     pub style_passthrough: ::std::option::Option<crate::types::BurnInSubtitleStylePassthrough>,
     /// Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read for closed captions.
     pub teletext_spacing: ::std::option::Option<crate::types::BurninSubtitleTeletextSpacing>,
@@ -71,6 +79,22 @@ impl BurninDestinationSettings {
     /// Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present.
     pub fn font_color(&self) -> ::std::option::Option<&crate::types::BurninSubtitleFontColor> {
         self.font_color.as_ref()
+    }
+    /// Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+    pub fn font_file_bold(&self) -> ::std::option::Option<&str> {
+        self.font_file_bold.as_deref()
+    }
+    /// Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+    pub fn font_file_bold_italic(&self) -> ::std::option::Option<&str> {
+        self.font_file_bold_italic.as_deref()
+    }
+    /// Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+    pub fn font_file_italic(&self) -> ::std::option::Option<&str> {
+        self.font_file_italic.as_deref()
+    }
+    /// Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+    pub fn font_file_regular(&self) -> ::std::option::Option<&str> {
+        self.font_file_regular.as_deref()
     }
     /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
     pub fn font_opacity(&self) -> ::std::option::Option<i32> {
@@ -116,7 +140,7 @@ impl BurninDestinationSettings {
     pub fn shadow_y_offset(&self) -> ::std::option::Option<i32> {
         self.shadow_y_offset
     }
-    /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
+    /// To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input captions To ignore the style and position information from your input captions and use default settings: Leave blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. You can also override any fonts by manually specifying custom font files.
     pub fn style_passthrough(&self) -> ::std::option::Option<&crate::types::BurnInSubtitleStylePassthrough> {
         self.style_passthrough.as_ref()
     }
@@ -150,6 +174,10 @@ pub struct BurninDestinationSettingsBuilder {
     pub(crate) background_opacity: ::std::option::Option<i32>,
     pub(crate) fallback_font: ::std::option::Option<crate::types::BurninSubtitleFallbackFont>,
     pub(crate) font_color: ::std::option::Option<crate::types::BurninSubtitleFontColor>,
+    pub(crate) font_file_bold: ::std::option::Option<::std::string::String>,
+    pub(crate) font_file_bold_italic: ::std::option::Option<::std::string::String>,
+    pub(crate) font_file_italic: ::std::option::Option<::std::string::String>,
+    pub(crate) font_file_regular: ::std::option::Option<::std::string::String>,
     pub(crate) font_opacity: ::std::option::Option<i32>,
     pub(crate) font_resolution: ::std::option::Option<i32>,
     pub(crate) font_script: ::std::option::Option<crate::types::FontScript>,
@@ -250,6 +278,62 @@ impl BurninDestinationSettingsBuilder {
     /// Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to use the font color data from your input captions, if present.
     pub fn get_font_color(&self) -> &::std::option::Option<crate::types::BurninSubtitleFontColor> {
         &self.font_color
+    }
+    /// Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+    pub fn font_file_bold(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.font_file_bold = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+    pub fn set_font_file_bold(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.font_file_bold = input;
+        self
+    }
+    /// Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+    pub fn get_font_file_bold(&self) -> &::std::option::Option<::std::string::String> {
+        &self.font_file_bold
+    }
+    /// Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+    pub fn font_file_bold_italic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.font_file_bold_italic = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+    pub fn set_font_file_bold_italic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.font_file_bold_italic = input;
+        self
+    }
+    /// Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+    pub fn get_font_file_bold_italic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.font_file_bold_italic
+    }
+    /// Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+    pub fn font_file_italic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.font_file_italic = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+    pub fn set_font_file_italic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.font_file_italic = input;
+        self
+    }
+    /// Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+    pub fn get_font_file_italic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.font_file_italic
+    }
+    /// Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+    pub fn font_file_regular(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.font_file_regular = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+    pub fn set_font_file_regular(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.font_file_regular = input;
+        self
+    }
+    /// Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+    pub fn get_font_file_regular(&self) -> &::std::option::Option<::std::string::String> {
+        &self.font_file_regular
     }
     /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
     pub fn font_opacity(mut self, input: i32) -> Self {
@@ -405,17 +489,17 @@ impl BurninDestinationSettingsBuilder {
     pub fn get_shadow_y_offset(&self) -> &::std::option::Option<i32> {
         &self.shadow_y_offset
     }
-    /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
+    /// To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input captions To ignore the style and position information from your input captions and use default settings: Leave blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. You can also override any fonts by manually specifying custom font files.
     pub fn style_passthrough(mut self, input: crate::types::BurnInSubtitleStylePassthrough) -> Self {
         self.style_passthrough = ::std::option::Option::Some(input);
         self
     }
-    /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
+    /// To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input captions To ignore the style and position information from your input captions and use default settings: Leave blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. You can also override any fonts by manually specifying custom font files.
     pub fn set_style_passthrough(mut self, input: ::std::option::Option<crate::types::BurnInSubtitleStylePassthrough>) -> Self {
         self.style_passthrough = input;
         self
     }
-    /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
+    /// To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input captions To ignore the style and position information from your input captions and use default settings: Leave blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings. You can also override any fonts by manually specifying custom font files.
     pub fn get_style_passthrough(&self) -> &::std::option::Option<crate::types::BurnInSubtitleStylePassthrough> {
         &self.style_passthrough
     }
@@ -470,6 +554,10 @@ impl BurninDestinationSettingsBuilder {
             background_opacity: self.background_opacity,
             fallback_font: self.fallback_font,
             font_color: self.font_color,
+            font_file_bold: self.font_file_bold,
+            font_file_bold_italic: self.font_file_bold_italic,
+            font_file_italic: self.font_file_italic,
+            font_file_regular: self.font_file_regular,
             font_opacity: self.font_opacity,
             font_resolution: self.font_resolution,
             font_script: self.font_script,

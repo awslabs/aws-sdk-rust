@@ -14,6 +14,8 @@ pub struct EmailChannelRequest {
     pub identity: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub orchestration_sending_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EmailChannelRequest {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
@@ -36,6 +38,10 @@ impl EmailChannelRequest {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub fn orchestration_sending_role_arn(&self) -> ::std::option::Option<&str> {
+        self.orchestration_sending_role_arn.as_deref()
+    }
 }
 impl EmailChannelRequest {
     /// Creates a new builder-style object to manufacture [`EmailChannelRequest`](crate::types::EmailChannelRequest).
@@ -53,6 +59,7 @@ pub struct EmailChannelRequestBuilder {
     pub(crate) from_address: ::std::option::Option<::std::string::String>,
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) orchestration_sending_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EmailChannelRequestBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
@@ -127,6 +134,20 @@ impl EmailChannelRequestBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub fn orchestration_sending_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.orchestration_sending_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub fn set_orchestration_sending_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.orchestration_sending_role_arn = input;
+        self
+    }
+    /// <p>The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon SES.</p>
+    pub fn get_orchestration_sending_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.orchestration_sending_role_arn
+    }
     /// Consumes the builder and constructs a [`EmailChannelRequest`](crate::types::EmailChannelRequest).
     pub fn build(self) -> crate::types::EmailChannelRequest {
         crate::types::EmailChannelRequest {
@@ -135,6 +156,7 @@ impl EmailChannelRequestBuilder {
             from_address: self.from_address,
             identity: self.identity,
             role_arn: self.role_arn,
+            orchestration_sending_role_arn: self.orchestration_sending_role_arn,
         }
     }
 }

@@ -511,6 +511,8 @@ pub use crate::types::_m2ts_scte35_esam::M2tsScte35Esam;
 
 pub use crate::types::_m2ts_rate_mode::M2tsRateMode;
 
+pub use crate::types::_m2ts_prevent_buffer_underflow::M2tsPreventBufferUnderflow;
+
 pub use crate::types::_m2ts_pcr_control::M2tsPcrControl;
 
 pub use crate::types::_m2ts_nielsen_id3::M2tsNielsenId3;
@@ -1934,6 +1936,8 @@ mod _m2ts_klv_metadata;
 mod _m2ts_nielsen_id3;
 
 mod _m2ts_pcr_control;
+
+mod _m2ts_prevent_buffer_underflow;
 
 mod _m2ts_rate_mode;
 

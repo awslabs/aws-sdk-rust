@@ -276,6 +276,11 @@ pub fn ser_create_db_instance_read_replica_input_input_input(
     if let Some(var_103) = &input.upgrade_storage_config {
         scope_102.boolean(*var_103);
     }
+    #[allow(unused_mut)]
+    let mut scope_104 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_105) = &input.ca_certificate_identifier {
+        scope_104.string(var_105);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

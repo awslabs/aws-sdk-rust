@@ -272,6 +272,10 @@ pub struct CreateDbInstanceReadReplicaInput {
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Whether to upgrade the storage file system configuration on the read replica. This option migrates the read replica from the old storage file system layout to the preferred layout.</p>
     pub upgrade_storage_config: ::std::option::Option<bool>,
+    /// <p>The CA certificate identifier to use for the read replica's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceReadReplicaInput {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -641,6 +645,12 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn upgrade_storage_config(&self) -> ::std::option::Option<bool> {
         self.upgrade_storage_config
     }
+    /// <p>The CA certificate identifier to use for the read replica's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
+    }
 }
 impl CreateDbInstanceReadReplicaInput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceReadReplicaInput`](crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaInput).
@@ -697,6 +707,7 @@ pub struct CreateDbInstanceReadReplicaInputBuilder {
     pub(crate) source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) upgrade_storage_config: ::std::option::Option<bool>,
+    pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -1889,6 +1900,26 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn get_upgrade_storage_config(&self) -> &::std::option::Option<bool> {
         &self.upgrade_storage_config
     }
+    /// <p>The CA certificate identifier to use for the read replica's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The CA certificate identifier to use for the read replica's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = input;
+        self
+    }
+    /// <p>The CA certificate identifier to use for the read replica's server certificate.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
+    }
     /// Consumes the builder and constructs a [`CreateDbInstanceReadReplicaInput`](crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaInput).
     pub fn build(
         self,
@@ -1941,6 +1972,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
             source_db_cluster_identifier: self.source_db_cluster_identifier,
             dedicated_log_volume: self.dedicated_log_volume,
             upgrade_storage_config: self.upgrade_storage_config,
+            ca_certificate_identifier: self.ca_certificate_identifier,
         })
     }
 }

@@ -19,8 +19,6 @@ pub struct MessageResult {
     /// <li>
     /// <p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint address.</p></li>
     /// <li>
-    /// <p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
-    /// <li>
     /// <p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
     pub delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
@@ -48,8 +46,6 @@ impl MessageResult {
     /// <p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li>
     /// <li>
     /// <p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint address.</p></li>
-    /// <li>
-    /// <p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li>
     /// <p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
@@ -106,8 +102,6 @@ impl MessageResultBuilder {
     /// <li>
     /// <p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint address.</p></li>
     /// <li>
-    /// <p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
-    /// <li>
     /// <p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
     /// This field is required.
@@ -130,8 +124,6 @@ impl MessageResultBuilder {
     /// <li>
     /// <p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint address.</p></li>
     /// <li>
-    /// <p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
-    /// <li>
     /// <p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
     pub fn set_delivery_status(mut self, input: ::std::option::Option<crate::types::DeliveryStatus>) -> Self {
@@ -152,8 +144,6 @@ impl MessageResultBuilder {
     /// <p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li>
     /// <li>
     /// <p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint address.</p></li>
-    /// <li>
-    /// <p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li>
     /// <p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>

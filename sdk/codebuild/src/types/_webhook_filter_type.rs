@@ -18,6 +18,9 @@
 ///     WebhookFilterType::Event => { /* ... */ },
 ///     WebhookFilterType::FilePath => { /* ... */ },
 ///     WebhookFilterType::HeadRef => { /* ... */ },
+///     WebhookFilterType::ReleaseName => { /* ... */ },
+///     WebhookFilterType::TagName => { /* ... */ },
+///     WebhookFilterType::WorkflowName => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,6 +60,12 @@ pub enum WebhookFilterType {
     FilePath,
     #[allow(missing_docs)] // documentation missing in model
     HeadRef,
+    #[allow(missing_docs)] // documentation missing in model
+    ReleaseName,
+    #[allow(missing_docs)] // documentation missing in model
+    TagName,
+    #[allow(missing_docs)] // documentation missing in model
+    WorkflowName,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -70,6 +79,9 @@ impl ::std::convert::From<&str> for WebhookFilterType {
             "EVENT" => WebhookFilterType::Event,
             "FILE_PATH" => WebhookFilterType::FilePath,
             "HEAD_REF" => WebhookFilterType::HeadRef,
+            "RELEASE_NAME" => WebhookFilterType::ReleaseName,
+            "TAG_NAME" => WebhookFilterType::TagName,
+            "WORKFLOW_NAME" => WebhookFilterType::WorkflowName,
             other => WebhookFilterType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -91,12 +103,25 @@ impl WebhookFilterType {
             WebhookFilterType::Event => "EVENT",
             WebhookFilterType::FilePath => "FILE_PATH",
             WebhookFilterType::HeadRef => "HEAD_REF",
+            WebhookFilterType::ReleaseName => "RELEASE_NAME",
+            WebhookFilterType::TagName => "TAG_NAME",
+            WebhookFilterType::WorkflowName => "WORKFLOW_NAME",
             WebhookFilterType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTOR_ACCOUNT_ID", "BASE_REF", "COMMIT_MESSAGE", "EVENT", "FILE_PATH", "HEAD_REF"]
+        &[
+            "ACTOR_ACCOUNT_ID",
+            "BASE_REF",
+            "COMMIT_MESSAGE",
+            "EVENT",
+            "FILE_PATH",
+            "HEAD_REF",
+            "RELEASE_NAME",
+            "TAG_NAME",
+            "WORKFLOW_NAME",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for WebhookFilterType {
@@ -125,6 +150,9 @@ impl ::std::fmt::Display for WebhookFilterType {
             WebhookFilterType::Event => write!(f, "EVENT"),
             WebhookFilterType::FilePath => write!(f, "FILE_PATH"),
             WebhookFilterType::HeadRef => write!(f, "HEAD_REF"),
+            WebhookFilterType::ReleaseName => write!(f, "RELEASE_NAME"),
+            WebhookFilterType::TagName => write!(f, "TAG_NAME"),
+            WebhookFilterType::WorkflowName => write!(f, "WORKFLOW_NAME"),
             WebhookFilterType::Unknown(value) => write!(f, "{}", value),
         }
     }

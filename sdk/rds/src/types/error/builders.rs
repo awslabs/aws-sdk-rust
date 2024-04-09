@@ -83,6 +83,8 @@ pub use crate::types::error::_db_instance_automated_backup_not_found_fault::DbIn
 
 pub use crate::types::error::_db_instance_already_exists_fault::DbInstanceAlreadyExistsFaultBuilder;
 
+pub use crate::types::error::_certificate_not_found_fault::CertificateNotFoundFaultBuilder;
+
 pub use crate::types::error::_backup_policy_not_found_fault::BackupPolicyNotFoundFaultBuilder;
 
 pub use crate::types::error::_invalid_db_snapshot_state_fault::InvalidDbSnapshotStateFaultBuilder;
@@ -176,8 +178,6 @@ pub use crate::types::error::_db_proxy_endpoint_already_exists_fault::DbProxyEnd
 pub use crate::types::error::_db_proxy_already_exists_fault::DbProxyAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_db_upgrade_dependency_failure_fault::DbUpgradeDependencyFailureFaultBuilder;
-
-pub use crate::types::error::_certificate_not_found_fault::CertificateNotFoundFaultBuilder;
 
 pub use crate::types::error::_invalid_db_cluster_endpoint_state_fault::InvalidDbClusterEndpointStateFaultBuilder;
 

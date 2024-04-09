@@ -264,6 +264,8 @@ pub enum RestoreDBInstanceToPointInTimeError {
     #[allow(missing_docs)] // documentation missing in model
     #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::types::error::BackupPolicyNotFoundFault),
+    /// <p><code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
+    CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
     /// <p>No automated backup for this DB instance was found.</p>
@@ -343,6 +345,7 @@ impl RestoreDBInstanceToPointInTimeError {
         match self {
             Self::AuthorizationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::BackupPolicyNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CertificateNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceAutomatedBackupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -375,6 +378,10 @@ impl RestoreDBInstanceToPointInTimeError {
     /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeError::BackupPolicyNotFoundFault`.
     pub fn is_backup_policy_not_found_fault(&self) -> bool {
         matches!(self, Self::BackupPolicyNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeError::CertificateNotFoundFault`.
+    pub fn is_certificate_not_found_fault(&self) -> bool {
+        matches!(self, Self::CertificateNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RestoreDBInstanceToPointInTimeError::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
@@ -470,6 +477,7 @@ impl ::std::error::Error for RestoreDBInstanceToPointInTimeError {
         match self {
             Self::AuthorizationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::BackupPolicyNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::CertificateNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceAutomatedBackupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -501,6 +509,7 @@ impl ::std::fmt::Display for RestoreDBInstanceToPointInTimeError {
         match self {
             Self::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
             Self::BackupPolicyNotFoundFault(_inner) => _inner.fmt(f),
+            Self::CertificateNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::DbInstanceAutomatedBackupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
@@ -546,6 +555,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBInst
         match self {
             Self::AuthorizationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::BackupPolicyNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CertificateNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceAutomatedBackupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -39,91 +39,103 @@ pub fn ser_dvb_sub_destination_settings(
     if let Some(var_9) = &input.font_color {
         object.key("fontColor").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.font_opacity {
+    if let Some(var_10) = &input.font_file_bold {
+        object.key("fontFileBold").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.font_file_bold_italic {
+        object.key("fontFileBoldItalic").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.font_file_italic {
+        object.key("fontFileItalic").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.font_file_regular {
+        object.key("fontFileRegular").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.font_opacity {
         object.key("fontOpacity").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
-        );
-    }
-    if let Some(var_11) = &input.font_resolution {
-        object.key("fontResolution").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
-        );
-    }
-    if let Some(var_12) = &input.font_script {
-        object.key("fontScript").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.font_size {
-        object.key("fontSize").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
-        );
-    }
-    if let Some(var_14) = &input.height {
-        object.key("height").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_15) = &input.hex_font_color {
-        object.key("hexFontColor").string(var_15.as_str());
+    if let Some(var_15) = &input.font_resolution {
+        object.key("fontResolution").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
     }
-    if let Some(var_16) = &input.outline_color {
-        object.key("outlineColor").string(var_16.as_str());
+    if let Some(var_16) = &input.font_script {
+        object.key("fontScript").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.outline_size {
-        object.key("outlineSize").number(
+    if let Some(var_17) = &input.font_size {
+        object.key("fontSize").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_18) = &input.shadow_color {
-        object.key("shadowColor").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.shadow_opacity {
-        object.key("shadowOpacity").number(
+    if let Some(var_18) = &input.height {
+        object.key("height").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_20) = &input.shadow_x_offset {
-        object.key("shadowXOffset").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
-        );
+    if let Some(var_19) = &input.hex_font_color {
+        object.key("hexFontColor").string(var_19.as_str());
     }
-    if let Some(var_21) = &input.shadow_y_offset {
-        object.key("shadowYOffset").number(
+    if let Some(var_20) = &input.outline_color {
+        object.key("outlineColor").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.outline_size {
+        object.key("outlineSize").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_22) = &input.style_passthrough {
-        object.key("stylePassthrough").string(var_22.as_str());
+    if let Some(var_22) = &input.shadow_color {
+        object.key("shadowColor").string(var_22.as_str());
     }
-    if let Some(var_23) = &input.subtitling_type {
-        object.key("subtitlingType").string(var_23.as_str());
+    if let Some(var_23) = &input.shadow_opacity {
+        object.key("shadowOpacity").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
+        );
     }
-    if let Some(var_24) = &input.teletext_spacing {
-        object.key("teletextSpacing").string(var_24.as_str());
+    if let Some(var_24) = &input.shadow_x_offset {
+        object.key("shadowXOffset").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
+        );
     }
-    if let Some(var_25) = &input.width {
-        object.key("width").number(
+    if let Some(var_25) = &input.shadow_y_offset {
+        object.key("shadowYOffset").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_26) = &input.x_position {
-        object.key("xPosition").number(
+    if let Some(var_26) = &input.style_passthrough {
+        object.key("stylePassthrough").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.subtitling_type {
+        object.key("subtitlingType").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.teletext_spacing {
+        object.key("teletextSpacing").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.width {
+        object.key("width").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_26).into()),
+            ::aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_27) = &input.y_position {
+    if let Some(var_30) = &input.x_position {
+        object.key("xPosition").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_30).into()),
+        );
+    }
+    if let Some(var_31) = &input.y_position {
         object.key("yPosition").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+            ::aws_smithy_types::Number::NegInt((*var_31).into()),
         );
     }
     Ok(())
@@ -204,6 +216,34 @@ where
                             builder = builder.set_font_color(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::DvbSubtitleFontColor::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "fontFileBold" => {
+                            builder = builder.set_font_file_bold(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "fontFileBoldItalic" => {
+                            builder = builder.set_font_file_bold_italic(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "fontFileItalic" => {
+                            builder = builder.set_font_file_italic(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "fontFileRegular" => {
+                            builder = builder.set_font_file_regular(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

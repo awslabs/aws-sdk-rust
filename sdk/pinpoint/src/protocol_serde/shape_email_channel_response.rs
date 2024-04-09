@@ -115,6 +115,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "OrchestrationSendingRoleArn" => {
+                            builder = builder.set_orchestration_sending_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Version" => {
                             builder = builder.set_version(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
