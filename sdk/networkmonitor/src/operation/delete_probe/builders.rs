@@ -22,7 +22,8 @@ impl DeleteProbeInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteProbe`.
 ///
-/// <p>Deletes the specified monitor. Once a probe is deleted you'll no longer incur any billing fees for that probe.</p>
+/// <p>Deletes the specified probe. Once a probe is deleted you'll no longer incur any billing fees for that probe.</p>
+/// <p>This action requires both the <code>monitorName</code> and <code>probeId</code> parameters. Run <code>ListMonitors</code> to get a list of monitor names. Run <code>GetMonitor</code> to get a list of probes and probe IDs. You can only delete a single probe at a time using this action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProbeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +109,31 @@ impl DeleteProbeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the monitor to delete. For a list of the available monitors, use the <code>ListMonitors</code> action.</p>
+    /// <p>The name of the monitor to delete.</p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_name(input.into());
         self
     }
-    /// <p>The name of the monitor to delete. For a list of the available monitors, use the <code>ListMonitors</code> action.</p>
+    /// <p>The name of the monitor to delete.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
-    /// <p>The name of the monitor to delete. For a list of the available monitors, use the <code>ListMonitors</code> action.</p>
+    /// <p>The name of the monitor to delete.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }
-    /// <p>The ID of the probe to delete. Run <code>GetMonitor</code> to get a lst of all probes and probe IDs associated with the monitor.</p>
+    /// <p>The ID of the probe to delete.</p>
     pub fn probe_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.probe_id(input.into());
         self
     }
-    /// <p>The ID of the probe to delete. Run <code>GetMonitor</code> to get a lst of all probes and probe IDs associated with the monitor.</p>
+    /// <p>The ID of the probe to delete.</p>
     pub fn set_probe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_probe_id(input);
         self
     }
-    /// <p>The ID of the probe to delete. Run <code>GetMonitor</code> to get a lst of all probes and probe IDs associated with the monitor.</p>
+    /// <p>The ID of the probe to delete.</p>
     pub fn get_probe_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_probe_id()
     }

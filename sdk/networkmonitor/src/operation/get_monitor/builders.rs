@@ -23,6 +23,7 @@ impl GetMonitorInputBuilder {
 /// Fluent builder constructing a request to `GetMonitor`.
 ///
 /// <p>Returns details about a specific monitor.</p>
+/// <p>This action requires the <code>monitorName</code> parameter. Run <code>ListMonitors</code> to get a list of monitor names.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

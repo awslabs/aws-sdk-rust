@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContentInput {
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub content_id: ::std::option::Option<::std::string::String>,
@@ -15,13 +15,13 @@ pub struct UpdateContentInput {
     pub override_link_out_uri: ::std::option::Option<::std::string::String>,
     /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
     pub remove_override_link_out_uri: ::std::option::Option<bool>,
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q in Connect, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContentInput {
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -45,7 +45,7 @@ impl UpdateContentInput {
     pub fn remove_override_link_out_uri(&self) -> ::std::option::Option<bool> {
         self.remove_override_link_out_uri
     }
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q in Connect, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
@@ -75,18 +75,18 @@ pub struct UpdateContentInputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContentInputBuilder {
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
@@ -165,19 +165,19 @@ impl UpdateContentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q in Connect, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q in Connect, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Amazon Q in Connect, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }

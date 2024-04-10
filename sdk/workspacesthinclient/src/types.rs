@@ -7,8 +7,6 @@ pub use crate::types::_software_set_validation_status::SoftwareSetValidationStat
 
 pub use crate::types::_environment_summary::EnvironmentSummary;
 
-pub use crate::types::_embedded_tag::EmbeddedTag;
-
 pub use crate::types::_software_set_update_mode::SoftwareSetUpdateMode;
 
 pub use crate::types::_maintenance_window::MaintenanceWindow;
@@ -58,8 +56,6 @@ mod _device_software_set_compliance_status;
 mod _device_status;
 
 mod _device_summary;
-
-mod _embedded_tag;
 
 mod _environment;
 

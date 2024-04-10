@@ -201,6 +201,14 @@ pub use crate::types::_collaboration_configured_audience_model_association::Coll
 
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplate;
 
+pub use crate::types::_analysis_template_validation_status_detail::AnalysisTemplateValidationStatusDetail;
+
+pub use crate::types::_analysis_template_validation_status_reason::AnalysisTemplateValidationStatusReason;
+
+pub use crate::types::_analysis_template_validation_status::AnalysisTemplateValidationStatus;
+
+pub use crate::types::_analysis_template_validation_type::AnalysisTemplateValidationType;
+
 pub use crate::types::_analysis_parameter::AnalysisParameter;
 
 pub use crate::types::_parameter_type::ParameterType;
@@ -272,6 +280,14 @@ mod _analysis_source;
 mod _analysis_template;
 
 mod _analysis_template_summary;
+
+mod _analysis_template_validation_status;
+
+mod _analysis_template_validation_status_detail;
+
+mod _analysis_template_validation_status_reason;
+
+mod _analysis_template_validation_type;
 
 mod _batch_get_collaboration_analysis_template_error;
 

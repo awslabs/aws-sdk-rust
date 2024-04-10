@@ -1104,6 +1104,15 @@ pub(crate) fn send_notification_action_definition_correct_errors(
     builder
 }
 
+pub(crate) fn submit_auto_evaluation_action_definition_correct_errors(
+    mut builder: crate::types::builders::SubmitAutoEvaluationActionDefinitionBuilder,
+) -> crate::types::builders::SubmitAutoEvaluationActionDefinitionBuilder {
+    if builder.evaluation_form_id.is_none() {
+        builder.evaluation_form_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn task_action_definition_correct_errors(
     mut builder: crate::types::builders::TaskActionDefinitionBuilder,
 ) -> crate::types::builders::TaskActionDefinitionBuilder {

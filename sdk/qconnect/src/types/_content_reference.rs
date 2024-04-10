@@ -6,7 +6,7 @@
 pub struct ContentReference {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
     pub content_arn: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl ContentReference {
     pub fn knowledge_base_arn(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_arn.as_deref()
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -62,17 +62,17 @@ impl ContentReferenceBuilder {
     pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_arn
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }

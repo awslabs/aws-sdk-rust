@@ -5,7 +5,7 @@
 pub struct CreateSessionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the session.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -13,13 +13,15 @@ pub struct CreateSessionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub tag_filter: ::std::option::Option<crate::types::TagFilter>,
 }
 impl CreateSessionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(&self) -> ::std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
@@ -34,6 +36,10 @@ impl CreateSessionInput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn tag_filter(&self) -> ::std::option::Option<&crate::types::TagFilter> {
+        self.tag_filter.as_ref()
     }
 }
 impl CreateSessionInput {
@@ -52,6 +58,7 @@ pub struct CreateSessionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tag_filter: ::std::option::Option<crate::types::TagFilter>,
 }
 impl CreateSessionInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -68,18 +75,18 @@ impl CreateSessionInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assistant_id
     }
@@ -132,6 +139,20 @@ impl CreateSessionInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn tag_filter(mut self, input: crate::types::TagFilter) -> Self {
+        self.tag_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
+        self.tag_filter = input;
+        self
+    }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
+        &self.tag_filter
+    }
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
     pub fn build(
         self,
@@ -142,6 +163,7 @@ impl CreateSessionInputBuilder {
             name: self.name,
             description: self.description,
             tags: self.tags,
+            tag_filter: self.tag_filter,
         })
     }
 }

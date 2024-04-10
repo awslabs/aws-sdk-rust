@@ -63,6 +63,8 @@ pub use crate::types::_rule_publish_status::RulePublishStatus;
 
 pub use crate::types::_rule_action::RuleAction;
 
+pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvaluationActionDefinition;
+
 pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinition;
 
 pub use crate::types::_update_case_action_definition::UpdateCaseActionDefinition;
@@ -1288,6 +1290,8 @@ mod _string_comparison_type;
 mod _string_condition;
 
 mod _string_reference;
+
+mod _submit_auto_evaluation_action_definition;
 
 mod _successful_request;
 

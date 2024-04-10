@@ -17,15 +17,45 @@ pub fn de_tag_resource_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => crate::operation::tag_resource::TagResourceError::InternalServiceException({
+        "AccessDeniedException" => crate::operation::tag_resource::TagResourceError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ConflictException" => crate::operation::tag_resource::TagResourceError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::tag_resource::TagResourceError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_internal_service_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                    crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
                         crate::operation::tag_resource::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
                     })?,
                 );
@@ -44,6 +74,26 @@ pub fn de_tag_resource_http_error(
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::tag_resource::TagResourceError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::tag_resource::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };

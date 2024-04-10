@@ -1747,6 +1747,18 @@ pub(crate) fn analysis_parameter_correct_errors(
     builder
 }
 
+pub(crate) fn analysis_template_validation_status_detail_correct_errors(
+    mut builder: crate::types::builders::AnalysisTemplateValidationStatusDetailBuilder,
+) -> crate::types::builders::AnalysisTemplateValidationStatusDetailBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AnalysisTemplateValidationType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AnalysisTemplateValidationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn column_correct_errors(mut builder: crate::types::builders::ColumnBuilder) -> crate::types::builders::ColumnBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -1909,6 +1921,15 @@ pub(crate) fn query_compute_payment_config_correct_errors(
 ) -> crate::types::builders::QueryComputePaymentConfigBuilder {
     if builder.is_responsible.is_none() {
         builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn analysis_template_validation_status_reason_correct_errors(
+    mut builder: crate::types::builders::AnalysisTemplateValidationStatusReasonBuilder,
+) -> crate::types::builders::AnalysisTemplateValidationStatusReasonBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

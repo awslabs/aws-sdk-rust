@@ -22,7 +22,7 @@ impl CreateProbeInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateProbe`.
 ///
-/// <p>Create a probe within a monitor. Once you create a probe, and it begins monitoring your network traffic, you'll incur billing charges for that probe.</p>
+/// <p>Create a probe within a monitor. Once you create a probe, and it begins monitoring your network traffic, you'll incur billing charges for that probe. This action requires the <code>monitorName</code> parameter. Run <code>ListMonitors</code> to get a list of monitor names. Note the name of the <code>monitorName</code> you want to create the probe for.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProbeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateProbeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
+    /// <p>The name of the monitor to associated with the probe.</p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_name(input.into());
         self
     }
-    /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
+    /// <p>The name of the monitor to associated with the probe.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
-    /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
+    /// <p>The name of the monitor to associated with the probe.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }

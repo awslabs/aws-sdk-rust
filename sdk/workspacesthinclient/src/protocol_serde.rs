@@ -73,8 +73,6 @@ pub(crate) mod shape_deregister_device_input;
 
 pub(crate) mod shape_internal_server_exception;
 
-pub(crate) mod shape_internal_service_exception;
-
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -112,8 +110,6 @@ pub(crate) mod shape_software_set_list;
 pub(crate) mod shape_tags_map;
 
 pub(crate) mod shape_validation_exception_field_list;
-
-pub(crate) mod shape_embedded_tag;
 
 pub(crate) mod shape_software_list;
 

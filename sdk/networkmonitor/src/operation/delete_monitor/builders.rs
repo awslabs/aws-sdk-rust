@@ -23,6 +23,7 @@ impl DeleteMonitorInputBuilder {
 /// Fluent builder constructing a request to `DeleteMonitor`.
 ///
 /// <p>Deletes a specified monitor.</p>
+/// <p>This action requires the <code>monitorName</code> parameter. Run <code>ListMonitors</code> to get a list of monitor names.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +109,17 @@ impl DeleteMonitorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the monitor to delete. Use the <code>ListMonitors</code> action to get a list of your current monitors.</p>
+    /// <p>The name of the monitor to delete.</p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_name(input.into());
         self
     }
-    /// <p>The name of the monitor to delete. Use the <code>ListMonitors</code> action to get a list of your current monitors.</p>
+    /// <p>The name of the monitor to delete.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
-    /// <p>The name of the monitor to delete. Use the <code>ListMonitors</code> action to get a list of your current monitors.</p>
+    /// <p>The name of the monitor to delete.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }

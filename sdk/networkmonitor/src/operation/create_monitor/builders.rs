@@ -23,6 +23,21 @@ impl CreateMonitorInputBuilder {
 /// Fluent builder constructing a request to `CreateMonitor`.
 ///
 /// <p>Creates a monitor between a source subnet and destination IP address. Within a monitor you'll create one or more probes that monitor network traffic between your source Amazon Web Services VPC subnets and your destination IP addresses. Each probe then aggregates and sends metrics to Amazon CloudWatch.</p>
+/// <p>You can also create a monitor with probes using this command. For each probe, you define the following:</p>
+/// <ul>
+/// <li>
+/// <p><code>source</code>—The subnet IDs where the probes will be created.</p></li>
+/// <li>
+/// <p><code>destination</code>— The target destination IP address for the probe.</p></li>
+/// <li>
+/// <p><code>destinationPort</code>—Required only if the protocol is <code>TCP</code>.</p></li>
+/// <li>
+/// <p><code>protocol</code>—The communication protocol between the source and destination. This will be either <code>TCP</code> or <code>ICMP</code>.</p></li>
+/// <li>
+/// <p><code>packetSize</code>—The size of the packets. This must be a number between <code>56</code> and <code>8500</code>.</p></li>
+/// <li>
+/// <p>(Optional) <code>tags</code> —Key-value pairs created and assigned to the probe.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -140,17 +155,17 @@ impl CreateMonitorFluentBuilder {
     pub fn get_probes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateMonitorProbeInput>> {
         self.inner.get_probes()
     }
-    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
+    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>. <code>60</code> is the default if no period is chosen.</p>
     pub fn aggregation_period(mut self, input: i64) -> Self {
         self.inner = self.inner.aggregation_period(input);
         self
     }
-    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
+    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>. <code>60</code> is the default if no period is chosen.</p>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_aggregation_period(input);
         self
     }
-    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
+    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>. <code>60</code> is the default if no period is chosen.</p>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<i64> {
         self.inner.get_aggregation_period()
     }

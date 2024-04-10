@@ -161,6 +161,12 @@ pub use crate::types::_assistant_summary::AssistantSummary;
 
 pub use crate::types::_session_data::SessionData;
 
+pub use crate::types::_tag_filter::TagFilter;
+
+pub use crate::types::_or_condition::OrCondition;
+
+pub use crate::types::_tag_condition::TagCondition;
+
 pub use crate::types::_session_integration_configuration::SessionIntegrationConfiguration;
 
 pub use crate::types::_assistant_association_data::AssistantAssociationData;
@@ -267,6 +273,8 @@ mod _knowledge_base_type;
 
 mod _notify_recommendations_received_error;
 
+mod _or_condition;
+
 mod _order;
 
 mod _priority;
@@ -346,6 +354,10 @@ mod _source_configuration;
 mod _source_content_data_details;
 
 mod _source_content_type;
+
+mod _tag_condition;
+
+mod _tag_filter;
 
 mod _target_type;
 

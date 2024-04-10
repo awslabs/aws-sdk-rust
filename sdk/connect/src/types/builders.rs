@@ -47,6 +47,8 @@ pub use crate::types::_application::ApplicationBuilder;
 
 pub use crate::types::_rule_action::RuleActionBuilder;
 
+pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvaluationActionDefinitionBuilder;
+
 pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinitionBuilder;
 
 pub use crate::types::_update_case_action_definition::UpdateCaseActionDefinitionBuilder;

@@ -57,6 +57,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "tags" => {
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

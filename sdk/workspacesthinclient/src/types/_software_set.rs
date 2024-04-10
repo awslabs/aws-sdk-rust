@@ -2,7 +2,7 @@
 
 /// <p>Describes a software set.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SoftwareSet {
     /// <p>The ID of the software set.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -18,6 +18,8 @@ pub struct SoftwareSet {
     pub software: ::std::option::Option<::std::vec::Vec<crate::types::Software>>,
     /// <p>The Amazon Resource Name (ARN) of the software set.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The tag keys and optional values for the resource.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SoftwareSet {
     /// <p>The ID of the software set.</p>
@@ -50,6 +52,24 @@ impl SoftwareSet {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The tag keys and optional values for the resource.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
+}
+impl ::std::fmt::Debug for SoftwareSet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SoftwareSet");
+        formatter.field("id", &self.id);
+        formatter.field("version", &self.version);
+        formatter.field("released_at", &self.released_at);
+        formatter.field("supported_until", &self.supported_until);
+        formatter.field("validation_status", &self.validation_status);
+        formatter.field("software", &self.software);
+        formatter.field("arn", &self.arn);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl SoftwareSet {
     /// Creates a new builder-style object to manufacture [`SoftwareSet`](crate::types::SoftwareSet).
@@ -60,7 +80,7 @@ impl SoftwareSet {
 
 /// A builder for [`SoftwareSet`](crate::types::SoftwareSet).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SoftwareSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -69,6 +89,7 @@ pub struct SoftwareSetBuilder {
     pub(crate) validation_status: ::std::option::Option<crate::types::SoftwareSetValidationStatus>,
     pub(crate) software: ::std::option::Option<::std::vec::Vec<crate::types::Software>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SoftwareSetBuilder {
     /// <p>The ID of the software set.</p>
@@ -175,6 +196,26 @@ impl SoftwareSetBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tag keys and optional values for the resource.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tag keys and optional values for the resource.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tag keys and optional values for the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`SoftwareSet`](crate::types::SoftwareSet).
     pub fn build(self) -> crate::types::SoftwareSet {
         crate::types::SoftwareSet {
@@ -185,6 +226,21 @@ impl SoftwareSetBuilder {
             validation_status: self.validation_status,
             software: self.software,
             arn: self.arn,
+            tags: self.tags,
         }
+    }
+}
+impl ::std::fmt::Debug for SoftwareSetBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SoftwareSetBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("version", &self.version);
+        formatter.field("released_at", &self.released_at);
+        formatter.field("supported_until", &self.supported_until);
+        formatter.field("validation_status", &self.validation_status);
+        formatter.field("software", &self.software);
+        formatter.field("arn", &self.arn);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -23,6 +23,21 @@ impl UpdateProbeInputBuilder {
 /// Fluent builder constructing a request to `UpdateProbe`.
 ///
 /// <p>Updates a monitor probe. This action requires both the <code>monitorName</code> and <code>probeId</code> parameters. Run <code>ListMonitors</code> to get a list of monitor names. Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+/// <p>You can update the following para create a monitor with probes using this command. For each probe, you define the following:</p>
+/// <ul>
+/// <li>
+/// <p><code>state</code>—The state of the probe.</p></li>
+/// <li>
+/// <p><code>destination</code>— The target destination IP address for the probe.</p></li>
+/// <li>
+/// <p><code>destinationPort</code>—Required only if the protocol is <code>TCP</code>.</p></li>
+/// <li>
+/// <p><code>protocol</code>—The communication protocol between the source and destination. This will be either <code>TCP</code> or <code>ICMP</code>.</p></li>
+/// <li>
+/// <p><code>packetSize</code>—The size of the packets. This must be a number between <code>56</code> and <code>8500</code>.</p></li>
+/// <li>
+/// <p>(Optional) <code>tags</code> —Key-value pairs created and assigned to the probe.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProbeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +137,17 @@ impl UpdateProbeFluentBuilder {
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }
-    /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+    /// <p>The ID of the probe to update.</p>
     pub fn probe_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.probe_id(input.into());
         self
     }
-    /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+    /// <p>The ID of the probe to update.</p>
     pub fn set_probe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_probe_id(input);
         self
     }
-    /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+    /// <p>The ID of the probe to update.</p>
     pub fn get_probe_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_probe_id()
     }

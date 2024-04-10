@@ -9,8 +9,6 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>Request processing failed due to some unknown error, exception, or failure.</p>
-    InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The resource specified in the request was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Your request exceeds a service quota.</p>
@@ -34,7 +32,6 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
-            Error::InternalServiceException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -63,7 +60,6 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
-            Self::InternalServiceException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
@@ -353,12 +349,14 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -381,8 +379,11 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -405,8 +406,11 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -498,7 +502,6 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
-            Error::InternalServiceException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -513,7 +516,6 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
-            Self::InternalServiceException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

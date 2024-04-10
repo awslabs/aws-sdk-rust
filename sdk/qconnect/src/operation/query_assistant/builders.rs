@@ -22,6 +22,9 @@ impl QueryAssistantInputBuilder {
 }
 /// Fluent builder constructing a request to `QueryAssistant`.
 ///
+/// <important>
+/// <p>This API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024, you will need to create a new Assistant in the Amazon Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.</p>
+/// </important>
 /// <p>Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.</p>
 #[deprecated(
     note = "QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications."
@@ -117,17 +120,17 @@ impl QueryAssistantFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::query_assistant::paginator::QueryAssistantPaginator {
         crate::operation::query_assistant::paginator::QueryAssistantPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assistant_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assistant_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assistant_id()
     }
@@ -173,17 +176,17 @@ impl QueryAssistantFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }

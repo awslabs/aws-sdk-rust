@@ -6,7 +6,7 @@
 pub struct ImportJobSummary {
     /// <p>The identifier of the import job.</p>
     pub import_job_id: ::std::string::String,
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub knowledge_base_id: ::std::string::String,
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub upload_id: ::std::string::String,
@@ -20,7 +20,7 @@ pub struct ImportJobSummary {
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the import job was last modified.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
-    /// <p>The metadata fields of the imported Amazon Q resources.</p>
+    /// <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration information of the external source that the resource data are imported from.</p>
     pub external_source_configuration: ::std::option::Option<crate::types::ExternalSourceConfiguration>,
@@ -31,7 +31,7 @@ impl ImportJobSummary {
         use std::ops::Deref;
         self.import_job_id.deref()
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(&self) -> &str {
         use std::ops::Deref;
         self.knowledge_base_id.deref()
@@ -62,7 +62,7 @@ impl ImportJobSummary {
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
-    /// <p>The metadata fields of the imported Amazon Q resources.</p>
+    /// <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
@@ -109,18 +109,18 @@ impl ImportJobSummaryBuilder {
     pub fn get_import_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_job_id
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The identifier of the knowledge base.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
@@ -218,19 +218,19 @@ impl ImportJobSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
-    /// <p>The metadata fields of the imported Amazon Q resources.</p>
+    /// <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The metadata fields of the imported Amazon Q resources.</p>
+    /// <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.metadata = input;
         self
     }
-    /// <p>The metadata fields of the imported Amazon Q resources.</p>
+    /// <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }

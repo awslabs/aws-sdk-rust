@@ -238,6 +238,7 @@ where
 impl From<crate::operation::create_session::CreateSessionError> for Error {
     fn from(err: crate::operation::create_session::CreateSessionError) -> Self {
         match err {
+            crate::operation::create_session::CreateSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_session::CreateSessionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_session::CreateSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_session::CreateSessionError::ValidationException(inner) => Error::ValidationException(inner),
@@ -1205,6 +1206,30 @@ impl From<crate::operation::update_quick_response::UpdateQuickResponseError> for
             }
             crate::operation::update_quick_response::UpdateQuickResponseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_quick_response::UpdateQuickResponseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_session::UpdateSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_session::UpdateSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_session::UpdateSessionError> for Error {
+    fn from(err: crate::operation::update_session::UpdateSessionError) -> Self {
+        match err {
+            crate::operation::update_session::UpdateSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_session::UpdateSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_session::UpdateSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_session::UpdateSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -32,8 +32,6 @@ pub struct EnvironmentSummary {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The tag keys and optional values for the resource.</p>
-    pub tags: ::std::option::Option<crate::types::EmbeddedTag>,
 }
 impl EnvironmentSummary {
     /// <p>The ID of the environment.</p>
@@ -92,10 +90,6 @@ impl EnvironmentSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The tag keys and optional values for the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::EmbeddedTag> {
-        self.tags.as_ref()
-    }
 }
 impl ::std::fmt::Debug for EnvironmentSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -114,7 +108,6 @@ impl ::std::fmt::Debug for EnvironmentSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("arn", &self.arn);
-        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -143,7 +136,6 @@ pub struct EnvironmentSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<crate::types::EmbeddedTag>,
 }
 impl EnvironmentSummaryBuilder {
     /// <p>The ID of the environment.</p>
@@ -342,20 +334,6 @@ impl EnvironmentSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The tag keys and optional values for the resource.</p>
-    pub fn tags(mut self, input: crate::types::EmbeddedTag) -> Self {
-        self.tags = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The tag keys and optional values for the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<crate::types::EmbeddedTag>) -> Self {
-        self.tags = input;
-        self
-    }
-    /// <p>The tag keys and optional values for the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<crate::types::EmbeddedTag> {
-        &self.tags
-    }
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
     pub fn build(self) -> crate::types::EnvironmentSummary {
         crate::types::EnvironmentSummary {
@@ -373,7 +351,6 @@ impl EnvironmentSummaryBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             arn: self.arn,
-            tags: self.tags,
         }
     }
 }
@@ -394,7 +371,6 @@ impl ::std::fmt::Debug for EnvironmentSummaryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("arn", &self.arn);
-        formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

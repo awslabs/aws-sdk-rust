@@ -16,6 +16,8 @@ pub struct SessionData {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration information for the session integration.</p>
     pub integration_configuration: ::std::option::Option<crate::types::SessionIntegrationConfiguration>,
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub tag_filter: ::std::option::Option<crate::types::TagFilter>,
 }
 impl SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -45,6 +47,10 @@ impl SessionData {
     pub fn integration_configuration(&self) -> ::std::option::Option<&crate::types::SessionIntegrationConfiguration> {
         self.integration_configuration.as_ref()
     }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn tag_filter(&self) -> ::std::option::Option<&crate::types::TagFilter> {
+        self.tag_filter.as_ref()
+    }
 }
 impl SessionData {
     /// Creates a new builder-style object to manufacture [`SessionData`](crate::types::SessionData).
@@ -63,6 +69,7 @@ pub struct SessionDataBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) integration_configuration: ::std::option::Option<crate::types::SessionIntegrationConfiguration>,
+    pub(crate) tag_filter: ::std::option::Option<crate::types::TagFilter>,
 }
 impl SessionDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -158,6 +165,20 @@ impl SessionDataBuilder {
     pub fn get_integration_configuration(&self) -> &::std::option::Option<crate::types::SessionIntegrationConfiguration> {
         &self.integration_configuration
     }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn tag_filter(mut self, input: crate::types::TagFilter) -> Self {
+        self.tag_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
+        self.tag_filter = input;
+        self
+    }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
+        &self.tag_filter
+    }
     /// Consumes the builder and constructs a [`SessionData`](crate::types::SessionData).
     /// This method will fail if any of the following fields are not set:
     /// - [`session_arn`](crate::types::builders::SessionDataBuilder::session_arn)
@@ -186,6 +207,7 @@ impl SessionDataBuilder {
             description: self.description,
             tags: self.tags,
             integration_configuration: self.integration_configuration,
+            tag_filter: self.tag_filter,
         })
     }
 }

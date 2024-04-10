@@ -99,6 +99,11 @@ where
                             builder = builder
                                 .set_analysis_parameters(crate::protocol_serde::shape_analysis_parameter_list::de_analysis_parameter_list(tokens)?);
                         }
+                        "validations" => {
+                            builder = builder.set_validations(
+                                    crate::protocol_serde::shape_analysis_template_validation_status_detail_list::de_analysis_template_validation_status_detail_list(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

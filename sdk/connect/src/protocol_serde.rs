@@ -1369,6 +1369,8 @@ pub(crate) mod shape_sign_in_distribution_list;
 
 pub(crate) mod shape_string_condition;
 
+pub(crate) mod shape_submit_auto_evaluation_action_definition;
+
 pub(crate) mod shape_successful_request;
 
 pub(crate) mod shape_tag_restricted_resource_list;

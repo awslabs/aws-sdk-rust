@@ -91,6 +91,8 @@ pub use crate::types::_assistant_summary::AssistantSummaryBuilder;
 
 pub use crate::types::_session_data::SessionDataBuilder;
 
+pub use crate::types::_tag_condition::TagConditionBuilder;
+
 pub use crate::types::_session_integration_configuration::SessionIntegrationConfigurationBuilder;
 
 pub use crate::types::_assistant_association_data::AssistantAssociationDataBuilder;

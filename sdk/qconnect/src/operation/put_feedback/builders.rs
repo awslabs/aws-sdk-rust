@@ -108,17 +108,17 @@ impl PutFeedbackFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assistant_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assistant_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assistant_id()
     }

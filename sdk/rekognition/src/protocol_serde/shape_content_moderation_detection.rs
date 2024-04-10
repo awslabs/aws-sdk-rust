@@ -45,6 +45,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ContentTypes" => {
+                            builder = builder.set_content_types(crate::protocol_serde::shape_content_types::de_content_types(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

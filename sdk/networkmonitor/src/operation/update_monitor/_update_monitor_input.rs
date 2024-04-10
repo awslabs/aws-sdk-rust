@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMonitorInput {
-    /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
+    /// <p>The name of the monitor to update.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The aggregation time, in seconds, to change to. This must be either <code>30</code> or <code>60</code>.</p>
     pub aggregation_period: ::std::option::Option<i64>,
 }
 impl UpdateMonitorInput {
-    /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
+    /// <p>The name of the monitor to update.</p>
     pub fn monitor_name(&self) -> ::std::option::Option<&str> {
         self.monitor_name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateMonitorInputBuilder {
     pub(crate) aggregation_period: ::std::option::Option<i64>,
 }
 impl UpdateMonitorInputBuilder {
-    /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
+    /// <p>The name of the monitor to update.</p>
     /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
+    /// <p>The name of the monitor to update.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_name = input;
         self
     }
-    /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
+    /// <p>The name of the monitor to update.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }

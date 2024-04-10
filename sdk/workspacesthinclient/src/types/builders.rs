@@ -3,8 +3,6 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_environment_summary::EnvironmentSummaryBuilder;
 
-pub use crate::types::_embedded_tag::EmbeddedTagBuilder;
-
 pub use crate::types::_maintenance_window::MaintenanceWindowBuilder;
 
 pub use crate::types::_device_summary::DeviceSummaryBuilder;

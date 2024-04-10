@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct QueryAssistantInput {
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The text to search for.</p>
     pub query_text: ::std::option::Option<::std::string::String>,
@@ -11,13 +11,13 @@ pub struct QueryAssistantInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about how to query content.</p>
     pub query_condition: ::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>>,
 }
 impl QueryAssistantInput {
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(&self) -> ::std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
@@ -33,7 +33,7 @@ impl QueryAssistantInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
@@ -75,18 +75,18 @@ pub struct QueryAssistantInputBuilder {
     pub(crate) query_condition: ::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>>,
 }
 impl QueryAssistantInputBuilder {
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assistant_id
     }
@@ -133,17 +133,17 @@ impl QueryAssistantInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }

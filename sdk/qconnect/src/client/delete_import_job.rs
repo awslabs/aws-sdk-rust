@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteImportJob`](crate::operation::delete_import_job::builders::DeleteImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::delete_import_job::builders::DeleteImportJobFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::delete_import_job::builders::DeleteImportJobFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p><br>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::delete_import_job::builders::DeleteImportJobFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::delete_import_job::builders::DeleteImportJobFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The identifier of the knowledge base.</p><br>
     ///   - [`import_job_id(impl Into<String>)`](crate::operation::delete_import_job::builders::DeleteImportJobFluentBuilder::import_job_id) / [`set_import_job_id(Option<String>)`](crate::operation::delete_import_job::builders::DeleteImportJobFluentBuilder::set_import_job_id):<br>required: **true**<br><p>The identifier of the import job to be deleted.</p><br>
     /// - On success, responds with [`DeleteImportJobOutput`](crate::operation::delete_import_job::DeleteImportJobOutput)
     /// - On failure, responds with [`SdkError<DeleteImportJobError>`](crate::operation::delete_import_job::DeleteImportJobError)

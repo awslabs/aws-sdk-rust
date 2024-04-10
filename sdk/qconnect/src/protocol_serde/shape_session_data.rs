@@ -50,6 +50,9 @@ where
                                 crate::protocol_serde::shape_session_integration_configuration::de_session_integration_configuration(tokens)?,
                             );
                         }
+                        "tagFilter" => {
+                            builder = builder.set_tag_filter(crate::protocol_serde::shape_tag_filter::de_tag_filter(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

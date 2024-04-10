@@ -6,8 +6,8 @@ impl super::Client {
     ///   - [`monitor_name(impl Into<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::monitor_name) / [`set_monitor_name(Option<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::set_monitor_name):<br>required: **true**<br><p>The name of the monitor that details are returned for.</p><br>
     /// - On success, responds with [`GetMonitorOutput`](crate::operation::get_monitor::GetMonitorOutput) with field(s):
     ///   - [`monitor_arn(String)`](crate::operation::get_monitor::GetMonitorOutput::monitor_arn): <p>The ARN of the selected monitor.</p>
-    ///   - [`monitor_name(String)`](crate::operation::get_monitor::GetMonitorOutput::monitor_name): <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
-    ///   - [`state(MonitorState)`](crate::operation::get_monitor::GetMonitorOutput::state): <p>Returns a list of the state of each monitor.</p>
+    ///   - [`monitor_name(String)`](crate::operation::get_monitor::GetMonitorOutput::monitor_name): <p>The name of the monitor.</p>
+    ///   - [`state(MonitorState)`](crate::operation::get_monitor::GetMonitorOutput::state): <p>Lists the status of the <code>state</code> of each monitor.</p>
     ///   - [`aggregation_period(i64)`](crate::operation::get_monitor::GetMonitorOutput::aggregation_period): <p>The aggregation period for the specified monitor.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_monitor::GetMonitorOutput::tags): <p>The list of key-value pairs assigned to the monitor.</p>
     ///   - [`probes(Option<Vec::<Probe>>)`](crate::operation::get_monitor::GetMonitorOutput::probes): <p>The details about each probe associated with that monitor.</p>

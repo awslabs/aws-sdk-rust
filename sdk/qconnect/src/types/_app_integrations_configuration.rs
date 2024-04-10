@@ -20,7 +20,7 @@ pub struct AppIntegrationsConfiguration {
     /// </important></li>
     /// </ul>
     pub app_integration_arn: ::std::string::String,
-    /// <p>The fields from the source that are made available to your agents in Amazon Q. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
+    /// <p>The fields from the source that are made available to your agents in Amazon Q in Connect. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
     /// <ul>
     /// <li>
     /// <p>For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>.</p></li>
@@ -52,7 +52,7 @@ impl AppIntegrationsConfiguration {
         use std::ops::Deref;
         self.app_integration_arn.deref()
     }
-    /// <p>The fields from the source that are made available to your agents in Amazon Q. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
+    /// <p>The fields from the source that are made available to your agents in Amazon Q in Connect. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
     /// <ul>
     /// <li>
     /// <p>For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>.</p></li>
@@ -144,7 +144,7 @@ impl AppIntegrationsConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_object_fields`](Self::set_object_fields).
     ///
-    /// <p>The fields from the source that are made available to your agents in Amazon Q. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
+    /// <p>The fields from the source that are made available to your agents in Amazon Q in Connect. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
     /// <ul>
     /// <li>
     /// <p>For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>.</p></li>
@@ -160,7 +160,7 @@ impl AppIntegrationsConfigurationBuilder {
         self.object_fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The fields from the source that are made available to your agents in Amazon Q. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
+    /// <p>The fields from the source that are made available to your agents in Amazon Q in Connect. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
     /// <ul>
     /// <li>
     /// <p>For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>.</p></li>
@@ -174,7 +174,7 @@ impl AppIntegrationsConfigurationBuilder {
         self.object_fields = input;
         self
     }
-    /// <p>The fields from the source that are made available to your agents in Amazon Q. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
+    /// <p>The fields from the source that are made available to your agents in Amazon Q in Connect. Optional if ObjectConfiguration is included in the provided DataIntegration.</p>
     /// <ul>
     /// <li>
     /// <p>For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>.</p></li>

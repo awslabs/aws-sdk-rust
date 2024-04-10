@@ -30,6 +30,8 @@ pub struct CollaborationAnalysisTemplate {
     pub source: ::std::option::Option<crate::types::AnalysisSource>,
     /// <p>The analysis parameters that have been specified in the analysis template.</p>
     pub analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
+    /// <p>The validations that were performed.</p>
+    pub validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
 }
 impl CollaborationAnalysisTemplate {
     /// <p>The identifier of the analysis template.</p>
@@ -92,6 +94,12 @@ impl CollaborationAnalysisTemplate {
     pub fn analysis_parameters(&self) -> &[crate::types::AnalysisParameter] {
         self.analysis_parameters.as_deref().unwrap_or_default()
     }
+    /// <p>The validations that were performed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validations.is_none()`.
+    pub fn validations(&self) -> &[crate::types::AnalysisTemplateValidationStatusDetail] {
+        self.validations.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CollaborationAnalysisTemplate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -109,6 +117,7 @@ impl ::std::fmt::Debug for CollaborationAnalysisTemplate {
         formatter.field("format", &self.format);
         formatter.field("source", &"*** Sensitive Data Redacted ***");
         formatter.field("analysis_parameters", &self.analysis_parameters);
+        formatter.field("validations", &self.validations);
         formatter.finish()
     }
 }
@@ -136,6 +145,7 @@ pub struct CollaborationAnalysisTemplateBuilder {
     pub(crate) format: ::std::option::Option<crate::types::AnalysisFormat>,
     pub(crate) source: ::std::option::Option<crate::types::AnalysisSource>,
     pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
+    pub(crate) validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
 }
 impl CollaborationAnalysisTemplateBuilder {
     /// <p>The identifier of the analysis template.</p>
@@ -337,6 +347,26 @@ impl CollaborationAnalysisTemplateBuilder {
     pub fn get_analysis_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>> {
         &self.analysis_parameters
     }
+    /// Appends an item to `validations`.
+    ///
+    /// To override the contents of this collection use [`set_validations`](Self::set_validations).
+    ///
+    /// <p>The validations that were performed.</p>
+    pub fn validations(mut self, input: crate::types::AnalysisTemplateValidationStatusDetail) -> Self {
+        let mut v = self.validations.unwrap_or_default();
+        v.push(input);
+        self.validations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The validations that were performed.</p>
+    pub fn set_validations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>) -> Self {
+        self.validations = input;
+        self
+    }
+    /// <p>The validations that were performed.</p>
+    pub fn get_validations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>> {
+        &self.validations
+    }
     /// Consumes the builder and constructs a [`CollaborationAnalysisTemplate`](crate::types::CollaborationAnalysisTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CollaborationAnalysisTemplateBuilder::id)
@@ -408,6 +438,7 @@ impl CollaborationAnalysisTemplateBuilder {
             })?,
             source: self.source,
             analysis_parameters: self.analysis_parameters,
+            validations: self.validations,
         })
     }
 }
@@ -427,6 +458,7 @@ impl ::std::fmt::Debug for CollaborationAnalysisTemplateBuilder {
         formatter.field("format", &self.format);
         formatter.field("source", &"*** Sensitive Data Redacted ***");
         formatter.field("analysis_parameters", &self.analysis_parameters);
+        formatter.field("validations", &self.validations);
         formatter.finish()
     }
 }

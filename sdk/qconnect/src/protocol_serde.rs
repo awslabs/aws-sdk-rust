@@ -107,6 +107,8 @@ pub(crate) mod shape_update_knowledge_base_template_uri;
 
 pub(crate) mod shape_update_quick_response;
 
+pub(crate) mod shape_update_session;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -164,6 +166,8 @@ pub(crate) mod shape_update_content_input;
 pub(crate) mod shape_update_knowledge_base_template_uri_input;
 
 pub(crate) mod shape_update_quick_response_input;
+
+pub(crate) mod shape_update_session_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -233,6 +237,8 @@ pub(crate) mod shape_session_summaries;
 
 pub(crate) mod shape_source_configuration;
 
+pub(crate) mod shape_tag_filter;
+
 pub(crate) mod shape_tags;
 
 pub(crate) mod shape_app_integrations_configuration;
@@ -263,6 +269,8 @@ pub(crate) mod shape_knowledge_base_summary;
 
 pub(crate) mod shape_notify_recommendations_received_error;
 
+pub(crate) mod shape_or_condition;
+
 pub(crate) mod shape_query_condition_item;
 
 pub(crate) mod shape_quick_response_contents;
@@ -287,6 +295,10 @@ pub(crate) mod shape_session_integration_configuration;
 
 pub(crate) mod shape_session_summary;
 
+pub(crate) mod shape_tag_condition;
+
+pub(crate) mod shape_and_conditions;
+
 pub(crate) mod shape_connect_configuration;
 
 pub(crate) mod shape_contact_attribute_keys;
@@ -298,6 +310,8 @@ pub(crate) mod shape_document;
 pub(crate) mod shape_grouping_values;
 
 pub(crate) mod shape_knowledge_base_association_data;
+
+pub(crate) mod shape_or_conditions;
 
 pub(crate) mod shape_quick_response_content_provider;
 

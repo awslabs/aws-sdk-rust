@@ -5,7 +5,7 @@
 pub struct UpdateProbeInput {
     /// <p>The name of the monitor that the probe was updated for.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
-    /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+    /// <p>The ID of the probe to update.</p>
     pub probe_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the probe update.</p>
     pub state: ::std::option::Option<crate::types::ProbeState>,
@@ -23,7 +23,7 @@ impl UpdateProbeInput {
     pub fn monitor_name(&self) -> ::std::option::Option<&str> {
         self.monitor_name.as_deref()
     }
-    /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+    /// <p>The ID of the probe to update.</p>
     pub fn probe_id(&self) -> ::std::option::Option<&str> {
         self.probe_id.as_deref()
     }
@@ -83,18 +83,18 @@ impl UpdateProbeInputBuilder {
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }
-    /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+    /// <p>The ID of the probe to update.</p>
     /// This field is required.
     pub fn probe_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.probe_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+    /// <p>The ID of the probe to update.</p>
     pub fn set_probe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.probe_id = input;
         self
     }
-    /// <p>Run <code>GetMonitor</code> to get a list of probes and probe IDs.</p>
+    /// <p>The ID of the probe to update.</p>
     pub fn get_probe_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.probe_id
     }

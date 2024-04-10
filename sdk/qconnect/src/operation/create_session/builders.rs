@@ -22,7 +22,7 @@ impl CreateSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSession`.
 ///
-/// <p>Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Amazon Q session for each contact on which Amazon Q is enabled.</p>
+/// <p>Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Amazon Q in Connect session for each contact on which Amazon Q in Connect is enabled.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl CreateSessionFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assistant_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assistant_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assistant_id()
     }
@@ -181,5 +181,19 @@ impl CreateSessionFluentBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
+    }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn tag_filter(mut self, input: crate::types::TagFilter) -> Self {
+        self.inner = self.inner.tag_filter(input);
+        self
+    }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
+        self.inner = self.inner.set_tag_filter(input);
+        self
+    }
+    /// <p>An object that can be used to specify Tag conditions.</p>
+    pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
+        self.inner.get_tag_filter()
     }
 }

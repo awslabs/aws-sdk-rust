@@ -48,6 +48,12 @@ pub fn ser_rule_action(
         crate::protocol_serde::shape_end_associated_tasks_action_definition::ser_end_associated_tasks_action_definition(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.submit_auto_evaluation_action {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("SubmitAutoEvaluationAction").start_object();
+        crate::protocol_serde::shape_submit_auto_evaluation_action_definition::ser_submit_auto_evaluation_action_definition(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -108,6 +114,11 @@ where
                                     crate::protocol_serde::shape_end_associated_tasks_action_definition::de_end_associated_tasks_action_definition(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "SubmitAutoEvaluationAction" => {
+                                builder = builder.set_submit_auto_evaluation_action(
+                                    crate::protocol_serde::shape_submit_auto_evaluation_action_definition::de_submit_auto_evaluation_action_definition(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

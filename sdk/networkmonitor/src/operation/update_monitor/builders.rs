@@ -22,7 +22,7 @@ impl UpdateMonitorInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateMonitor`.
 ///
-/// <p>Updates the <code>aggregationPeriod</code> for a monitor. Monitors support an <code>aggregationPeriod</code> of either <code>30</code> or <code>60</code> seconds.</p>
+/// <p>Updates the <code>aggregationPeriod</code> for a monitor. Monitors support an <code>aggregationPeriod</code> of either <code>30</code> or <code>60</code> seconds. This action requires the <code>monitorName</code> and <code>probeId</code> parameter. Run <code>ListMonitors</code> to get a list of monitor names.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMonitorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateMonitorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
+    /// <p>The name of the monitor to update.</p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_name(input.into());
         self
     }
-    /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
+    /// <p>The name of the monitor to update.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
-    /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
+    /// <p>The name of the monitor to update.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }

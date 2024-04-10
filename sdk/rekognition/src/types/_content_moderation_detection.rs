@@ -14,6 +14,8 @@ pub struct ContentModerationDetection {
     pub end_timestamp_millis: ::std::option::Option<i64>,
     /// <p>The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis.</p>
     pub duration_millis: ::std::option::Option<i64>,
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    pub content_types: ::std::option::Option<::std::vec::Vec<crate::types::ContentType>>,
 }
 impl ContentModerationDetection {
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
@@ -36,6 +38,12 @@ impl ContentModerationDetection {
     pub fn duration_millis(&self) -> ::std::option::Option<i64> {
         self.duration_millis
     }
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content_types.is_none()`.
+    pub fn content_types(&self) -> &[crate::types::ContentType] {
+        self.content_types.as_deref().unwrap_or_default()
+    }
 }
 impl ContentModerationDetection {
     /// Creates a new builder-style object to manufacture [`ContentModerationDetection`](crate::types::ContentModerationDetection).
@@ -53,6 +61,7 @@ pub struct ContentModerationDetectionBuilder {
     pub(crate) start_timestamp_millis: ::std::option::Option<i64>,
     pub(crate) end_timestamp_millis: ::std::option::Option<i64>,
     pub(crate) duration_millis: ::std::option::Option<i64>,
+    pub(crate) content_types: ::std::option::Option<::std::vec::Vec<crate::types::ContentType>>,
 }
 impl ContentModerationDetectionBuilder {
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
@@ -125,6 +134,26 @@ impl ContentModerationDetectionBuilder {
     pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
         &self.duration_millis
     }
+    /// Appends an item to `content_types`.
+    ///
+    /// To override the contents of this collection use [`set_content_types`](Self::set_content_types).
+    ///
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    pub fn content_types(mut self, input: crate::types::ContentType) -> Self {
+        let mut v = self.content_types.unwrap_or_default();
+        v.push(input);
+        self.content_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    pub fn set_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentType>>) -> Self {
+        self.content_types = input;
+        self
+    }
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    pub fn get_content_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentType>> {
+        &self.content_types
+    }
     /// Consumes the builder and constructs a [`ContentModerationDetection`](crate::types::ContentModerationDetection).
     pub fn build(self) -> crate::types::ContentModerationDetection {
         crate::types::ContentModerationDetection {
@@ -133,6 +162,7 @@ impl ContentModerationDetectionBuilder {
             start_timestamp_millis: self.start_timestamp_millis,
             end_timestamp_millis: self.end_timestamp_millis,
             duration_millis: self.duration_millis,
+            content_types: self.content_types,
         }
     }
 }

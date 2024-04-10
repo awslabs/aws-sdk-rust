@@ -154,7 +154,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_embedded_tag::de_embedded_tag(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

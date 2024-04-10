@@ -18,6 +18,7 @@
 ///     ActionType::EndAssociatedTasks => { /* ... */ },
 ///     ActionType::GenerateEventbridgeEvent => { /* ... */ },
 ///     ActionType::SendNotification => { /* ... */ },
+///     ActionType::SubmitAutoEvaluation => { /* ... */ },
 ///     ActionType::UpdateCase => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     SendNotification,
     #[allow(missing_docs)] // documentation missing in model
+    SubmitAutoEvaluation,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateCase,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for ActionType {
             "END_ASSOCIATED_TASKS" => ActionType::EndAssociatedTasks,
             "GENERATE_EVENTBRIDGE_EVENT" => ActionType::GenerateEventbridgeEvent,
             "SEND_NOTIFICATION" => ActionType::SendNotification,
+            "SUBMIT_AUTO_EVALUATION" => ActionType::SubmitAutoEvaluation,
             "UPDATE_CASE" => ActionType::UpdateCase,
             other => ActionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -95,6 +99,7 @@ impl ActionType {
             ActionType::EndAssociatedTasks => "END_ASSOCIATED_TASKS",
             ActionType::GenerateEventbridgeEvent => "GENERATE_EVENTBRIDGE_EVENT",
             ActionType::SendNotification => "SEND_NOTIFICATION",
+            ActionType::SubmitAutoEvaluation => "SUBMIT_AUTO_EVALUATION",
             ActionType::UpdateCase => "UPDATE_CASE",
             ActionType::Unknown(value) => value.as_str(),
         }
@@ -108,6 +113,7 @@ impl ActionType {
             "END_ASSOCIATED_TASKS",
             "GENERATE_EVENTBRIDGE_EVENT",
             "SEND_NOTIFICATION",
+            "SUBMIT_AUTO_EVALUATION",
             "UPDATE_CASE",
         ]
     }
@@ -138,6 +144,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::EndAssociatedTasks => write!(f, "END_ASSOCIATED_TASKS"),
             ActionType::GenerateEventbridgeEvent => write!(f, "GENERATE_EVENTBRIDGE_EVENT"),
             ActionType::SendNotification => write!(f, "SEND_NOTIFICATION"),
+            ActionType::SubmitAutoEvaluation => write!(f, "SUBMIT_AUTO_EVALUATION"),
             ActionType::UpdateCase => write!(f, "UPDATE_CASE"),
             ActionType::Unknown(value) => write!(f, "{}", value),
         }

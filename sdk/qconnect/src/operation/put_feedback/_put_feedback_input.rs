@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFeedbackInput {
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the feedback target.</p>
     pub target_id: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct PutFeedbackInput {
     pub content_feedback: ::std::option::Option<crate::types::ContentFeedbackData>,
 }
 impl PutFeedbackInput {
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub fn assistant_id(&self) -> ::std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct PutFeedbackInputBuilder {
     pub(crate) content_feedback: ::std::option::Option<crate::types::ContentFeedbackData>,
 }
 impl PutFeedbackInputBuilder {
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assistant_id
     }

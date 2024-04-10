@@ -32,6 +32,8 @@ pub struct AnalysisTemplate {
     pub source: ::std::option::Option<crate::types::AnalysisSource>,
     /// <p>The parameters of the analysis template.</p>
     pub analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
+    /// <p>Information about the validations performed on the analysis template.</p>
+    pub validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
 }
 impl AnalysisTemplate {
     /// <p>The identifier for the analysis template.</p>
@@ -99,6 +101,12 @@ impl AnalysisTemplate {
     pub fn analysis_parameters(&self) -> &[crate::types::AnalysisParameter] {
         self.analysis_parameters.as_deref().unwrap_or_default()
     }
+    /// <p>Information about the validations performed on the analysis template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validations.is_none()`.
+    pub fn validations(&self) -> &[crate::types::AnalysisTemplateValidationStatusDetail] {
+        self.validations.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for AnalysisTemplate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -117,6 +125,7 @@ impl ::std::fmt::Debug for AnalysisTemplate {
         formatter.field("format", &self.format);
         formatter.field("source", &"*** Sensitive Data Redacted ***");
         formatter.field("analysis_parameters", &self.analysis_parameters);
+        formatter.field("validations", &self.validations);
         formatter.finish()
     }
 }
@@ -145,6 +154,7 @@ pub struct AnalysisTemplateBuilder {
     pub(crate) format: ::std::option::Option<crate::types::AnalysisFormat>,
     pub(crate) source: ::std::option::Option<crate::types::AnalysisSource>,
     pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
+    pub(crate) validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
 }
 impl AnalysisTemplateBuilder {
     /// <p>The identifier for the analysis template.</p>
@@ -361,6 +371,26 @@ impl AnalysisTemplateBuilder {
     pub fn get_analysis_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>> {
         &self.analysis_parameters
     }
+    /// Appends an item to `validations`.
+    ///
+    /// To override the contents of this collection use [`set_validations`](Self::set_validations).
+    ///
+    /// <p>Information about the validations performed on the analysis template.</p>
+    pub fn validations(mut self, input: crate::types::AnalysisTemplateValidationStatusDetail) -> Self {
+        let mut v = self.validations.unwrap_or_default();
+        v.push(input);
+        self.validations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the validations performed on the analysis template.</p>
+    pub fn set_validations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>) -> Self {
+        self.validations = input;
+        self
+    }
+    /// <p>Information about the validations performed on the analysis template.</p>
+    pub fn get_validations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>> {
+        &self.validations
+    }
     /// Consumes the builder and constructs a [`AnalysisTemplate`](crate::types::AnalysisTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AnalysisTemplateBuilder::id)
@@ -439,6 +469,7 @@ impl AnalysisTemplateBuilder {
             })?,
             source: self.source,
             analysis_parameters: self.analysis_parameters,
+            validations: self.validations,
         })
     }
 }
@@ -459,6 +490,7 @@ impl ::std::fmt::Debug for AnalysisTemplateBuilder {
         formatter.field("format", &self.format);
         formatter.field("source", &"*** Sensitive Data Redacted ***");
         formatter.field("analysis_parameters", &self.analysis_parameters);
+        formatter.field("validations", &self.validations);
         formatter.finish()
     }
 }

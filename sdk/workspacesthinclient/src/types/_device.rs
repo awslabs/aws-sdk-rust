@@ -45,7 +45,7 @@ pub struct Device {
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service key used to encrypt the device.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values for the resource.</p>
-    pub tags: ::std::option::Option<crate::types::EmbeddedTag>,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Device {
     /// <p>The ID of the device.</p>
@@ -129,7 +129,7 @@ impl Device {
         self.kms_key_arn.as_deref()
     }
     /// <p>The tag keys and optional values for the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::EmbeddedTag> {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -191,7 +191,7 @@ pub struct DeviceBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<crate::types::EmbeddedTag>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DeviceBuilder {
     /// <p>The ID of the device.</p>
@@ -474,18 +474,24 @@ impl DeviceBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
     /// <p>The tag keys and optional values for the resource.</p>
-    pub fn tags(mut self, input: crate::types::EmbeddedTag) -> Self {
-        self.tags = ::std::option::Option::Some(input);
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tag keys and optional values for the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<crate::types::EmbeddedTag>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tag keys and optional values for the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<crate::types::EmbeddedTag> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).

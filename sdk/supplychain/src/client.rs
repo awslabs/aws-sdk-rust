@@ -125,3 +125,5 @@ mod create_bill_of_materials_import_job;
 pub mod customize;
 
 mod get_bill_of_materials_import_job;
+
+mod send_data_integration_event;

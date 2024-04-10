@@ -32,7 +32,7 @@ tokio-stream = "0.1.12"
 tracing = "0.1.37"
 aws-config= { version = "1.1.10", path = "../../../sdk/aws-config" }
 aws-sdk-dynamodb= { version = "1.21.0", path = "../../../sdk/dynamodb" }
-aws-sdk-rekognition= { version = "1.20.0", path = "../../../sdk/rekognition" }
+aws-sdk-rekognition= { version = "1.21.0", path = "../../../sdk/rekognition" }
 aws-sdk-s3= { version = "1.22.0", path = "../../../sdk/s3" }
 aws-sdk-sns= { version = "1.20.0", path = "../../../sdk/sns" }
 aws-smithy-runtime= { version = "1.2.1", path = "../../../sdk/aws-smithy-runtime" }

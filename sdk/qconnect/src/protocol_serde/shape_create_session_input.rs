@@ -12,15 +12,21 @@ pub fn ser_create_session_input_input(
     if let Some(var_3) = &input.name {
         object.key("name").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_4) = &input.tag_filter {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("tags").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_5 = object.key("tagFilter").start_object();
+        crate::protocol_serde::shape_tag_filter::ser_tag_filter(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_5.finish();
+        object_7.finish();
     }
     Ok(())
 }

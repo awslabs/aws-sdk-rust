@@ -8,9 +8,9 @@ pub struct AssistantAssociationData {
     pub assistant_association_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
     pub assistant_association_arn: ::std::string::String,
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub assistant_id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
     pub assistant_arn: ::std::string::String,
     /// <p>The type of association.</p>
     pub association_type: crate::types::AssociationType,
@@ -30,12 +30,12 @@ impl AssistantAssociationData {
         use std::ops::Deref;
         self.assistant_association_arn.deref()
     }
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub fn assistant_id(&self) -> &str {
         use std::ops::Deref;
         self.assistant_id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
     pub fn assistant_arn(&self) -> &str {
         use std::ops::Deref;
         self.assistant_arn.deref()
@@ -103,33 +103,33 @@ impl AssistantAssociationDataBuilder {
     pub fn get_assistant_association_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.assistant_association_arn
     }
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q assistant.</p>
+    /// <p>The identifier of the Amazon Q in Connect assistant.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assistant_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
     /// This field is required.
     pub fn assistant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
     pub fn set_assistant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q assistant.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
     pub fn get_assistant_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.assistant_arn
     }

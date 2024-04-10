@@ -17,7 +17,6 @@ pub struct CreateSecurityProfileInput {
     pub allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code></p>
     pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of third-party applications that the security profile will give access to.</p>
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
@@ -58,7 +57,6 @@ impl CreateSecurityProfileInput {
     pub fn tag_restricted_resources(&self) -> &[::std::string::String] {
         self.tag_restricted_resources.as_deref().unwrap_or_default()
     }
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of third-party applications that the security profile will give access to.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
@@ -236,7 +234,6 @@ impl CreateSecurityProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of third-party applications that the security profile will give access to.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         let mut v = self.applications.unwrap_or_default();
@@ -244,13 +241,11 @@ impl CreateSecurityProfileInputBuilder {
         self.applications = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of third-party applications that the security profile will give access to.</p>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.applications = input;
         self
     }
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of third-party applications that the security profile will give access to.</p>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         &self.applications

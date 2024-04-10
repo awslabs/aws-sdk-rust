@@ -235,6 +235,8 @@ pub use crate::types::_content_moderation_sort_by::ContentModerationSortBy;
 
 pub use crate::types::_content_moderation_detection::ContentModerationDetection;
 
+pub use crate::types::_content_type::ContentType;
+
 pub use crate::types::_moderation_label::ModerationLabel;
 
 pub use crate::types::_celebrity_recognition::CelebrityRecognition;
@@ -268,8 +270,6 @@ pub use crate::types::_protective_equipment_type::ProtectiveEquipmentType;
 pub use crate::types::_body_part::BodyPart;
 
 pub use crate::types::_protective_equipment_summarization_attributes::ProtectiveEquipmentSummarizationAttributes;
-
-pub use crate::types::_content_type::ContentType;
 
 pub use crate::types::_human_loop_activation_output::HumanLoopActivationOutput;
 

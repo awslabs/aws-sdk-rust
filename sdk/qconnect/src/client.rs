@@ -246,3 +246,5 @@ mod update_content;
 mod update_knowledge_base_template_uri;
 
 mod update_quick_response;
+
+mod update_session;

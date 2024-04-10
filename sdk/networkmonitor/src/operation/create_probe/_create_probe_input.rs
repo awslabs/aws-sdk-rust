@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProbeInput {
-    /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
+    /// <p>The name of the monitor to associated with the probe.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the details of an individual probe for a monitor.</p>
     pub probe: ::std::option::Option<crate::types::ProbeInput>,
@@ -13,7 +13,7 @@ pub struct CreateProbeInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProbeInput {
-    /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
+    /// <p>The name of the monitor to associated with the probe.</p>
     pub fn monitor_name(&self) -> ::std::option::Option<&str> {
         self.monitor_name.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct CreateProbeInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProbeInputBuilder {
-    /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
+    /// <p>The name of the monitor to associated with the probe.</p>
     /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
+    /// <p>The name of the monitor to associated with the probe.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_name = input;
         self
     }
-    /// <p>The name of the monitor to associated with the probe. To get a list of available monitors, use <code>ListMonitors</code>.</p>
+    /// <p>The name of the monitor to associated with the probe.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }

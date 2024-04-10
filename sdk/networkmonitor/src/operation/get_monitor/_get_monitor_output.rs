@@ -5,9 +5,9 @@
 pub struct GetMonitorOutput {
     /// <p>The ARN of the selected monitor.</p>
     pub monitor_arn: ::std::string::String,
-    /// <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
+    /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::string::String,
-    /// <p>Returns a list of the state of each monitor.</p>
+    /// <p>Lists the status of the <code>state</code> of each monitor.</p>
     pub state: crate::types::MonitorState,
     /// <p>The aggregation period for the specified monitor.</p>
     pub aggregation_period: i64,
@@ -27,12 +27,12 @@ impl GetMonitorOutput {
         use std::ops::Deref;
         self.monitor_arn.deref()
     }
-    /// <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
+    /// <p>The name of the monitor.</p>
     pub fn monitor_name(&self) -> &str {
         use std::ops::Deref;
         self.monitor_name.deref()
     }
-    /// <p>Returns a list of the state of each monitor.</p>
+    /// <p>Lists the status of the <code>state</code> of each monitor.</p>
     pub fn state(&self) -> &crate::types::MonitorState {
         &self.state
     }
@@ -101,33 +101,33 @@ impl GetMonitorOutputBuilder {
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_arn
     }
-    /// <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
+    /// <p>The name of the monitor.</p>
     /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
+    /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_name = input;
         self
     }
-    /// <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
+    /// <p>The name of the monitor.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }
-    /// <p>Returns a list of the state of each monitor.</p>
+    /// <p>Lists the status of the <code>state</code> of each monitor.</p>
     /// This field is required.
     pub fn state(mut self, input: crate::types::MonitorState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns a list of the state of each monitor.</p>
+    /// <p>Lists the status of the <code>state</code> of each monitor.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::MonitorState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Returns a list of the state of each monitor.</p>
+    /// <p>Lists the status of the <code>state</code> of each monitor.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::MonitorState> {
         &self.state
     }

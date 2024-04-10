@@ -26,6 +26,8 @@ pub struct RuleAction {
     /// <p>Information about the end associated tasks action.</p>
     /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
     pub end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
+    /// <p>Information about the submit automated evaluation action.</p>
+    pub submit_auto_evaluation_action: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>,
 }
 impl RuleAction {
     /// <p>The type of action that creates a rule.</p>
@@ -66,6 +68,10 @@ impl RuleAction {
     pub fn end_associated_tasks_action(&self) -> ::std::option::Option<&crate::types::EndAssociatedTasksActionDefinition> {
         self.end_associated_tasks_action.as_ref()
     }
+    /// <p>Information about the submit automated evaluation action.</p>
+    pub fn submit_auto_evaluation_action(&self) -> ::std::option::Option<&crate::types::SubmitAutoEvaluationActionDefinition> {
+        self.submit_auto_evaluation_action.as_ref()
+    }
 }
 impl RuleAction {
     /// Creates a new builder-style object to manufacture [`RuleAction`](crate::types::RuleAction).
@@ -86,6 +92,7 @@ pub struct RuleActionBuilder {
     pub(crate) create_case_action: ::std::option::Option<crate::types::CreateCaseActionDefinition>,
     pub(crate) update_case_action: ::std::option::Option<crate::types::UpdateCaseActionDefinition>,
     pub(crate) end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
+    pub(crate) submit_auto_evaluation_action: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>,
 }
 impl RuleActionBuilder {
     /// <p>The type of action that creates a rule.</p>
@@ -219,6 +226,20 @@ impl RuleActionBuilder {
     pub fn get_end_associated_tasks_action(&self) -> &::std::option::Option<crate::types::EndAssociatedTasksActionDefinition> {
         &self.end_associated_tasks_action
     }
+    /// <p>Information about the submit automated evaluation action.</p>
+    pub fn submit_auto_evaluation_action(mut self, input: crate::types::SubmitAutoEvaluationActionDefinition) -> Self {
+        self.submit_auto_evaluation_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the submit automated evaluation action.</p>
+    pub fn set_submit_auto_evaluation_action(mut self, input: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>) -> Self {
+        self.submit_auto_evaluation_action = input;
+        self
+    }
+    /// <p>Information about the submit automated evaluation action.</p>
+    pub fn get_submit_auto_evaluation_action(&self) -> &::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition> {
+        &self.submit_auto_evaluation_action
+    }
     /// Consumes the builder and constructs a [`RuleAction`](crate::types::RuleAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_type`](crate::types::builders::RuleActionBuilder::action_type)
@@ -237,6 +258,7 @@ impl RuleActionBuilder {
             create_case_action: self.create_case_action,
             update_case_action: self.update_case_action,
             end_associated_tasks_action: self.end_associated_tasks_action,
+            submit_auto_evaluation_action: self.submit_auto_evaluation_action,
         })
     }
 }

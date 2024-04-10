@@ -263,10 +263,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
-    /// <p>Request processing failed due to some unknown error, exception, or failure.</p>
-    InternalServiceException(crate::types::error::InternalServiceException),
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The server encountered an internal error and is unable to complete the request.</p>
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource specified in the request was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the specified constraints.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -302,19 +306,29 @@ impl ListTagsForResourceError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
-    /// Returns `true` if the error kind is `ListTagsForResourceError::InternalServiceException`.
-    pub fn is_internal_service_exception(&self) -> bool {
-        matches!(self, Self::InternalServiceException(_))
+    /// Returns `true` if the error kind is `ListTagsForResourceError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(self, Self::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -324,8 +338,10 @@ impl ListTagsForResourceError {
 impl ::std::error::Error for ListTagsForResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -334,8 +350,10 @@ impl ::std::error::Error for ListTagsForResourceError {
 impl ::std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::InternalServiceException(_inner) => _inner.fmt(f),
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -358,8 +376,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsForResourceError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

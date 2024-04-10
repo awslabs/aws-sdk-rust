@@ -108,17 +108,17 @@ impl DeleteQuickResponseFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
+    /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }

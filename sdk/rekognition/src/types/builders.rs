@@ -177,6 +177,8 @@ pub use crate::types::_get_content_moderation_request_metadata::GetContentModera
 
 pub use crate::types::_content_moderation_detection::ContentModerationDetectionBuilder;
 
+pub use crate::types::_content_type::ContentTypeBuilder;
+
 pub use crate::types::_moderation_label::ModerationLabelBuilder;
 
 pub use crate::types::_celebrity_recognition::CelebrityRecognitionBuilder;
@@ -202,8 +204,6 @@ pub use crate::types::_equipment_detection::EquipmentDetectionBuilder;
 pub use crate::types::_covers_body_part::CoversBodyPartBuilder;
 
 pub use crate::types::_protective_equipment_summarization_attributes::ProtectiveEquipmentSummarizationAttributesBuilder;
-
-pub use crate::types::_content_type::ContentTypeBuilder;
 
 pub use crate::types::_human_loop_activation_output::HumanLoopActivationOutputBuilder;
 

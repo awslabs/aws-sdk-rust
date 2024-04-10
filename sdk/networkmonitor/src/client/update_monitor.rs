@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateMonitor`](crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monitor_name(impl Into<String>)`](crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder::monitor_name) / [`set_monitor_name(Option<String>)`](crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder::set_monitor_name):<br>required: **true**<br><p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p><br>
+    ///   - [`monitor_name(impl Into<String>)`](crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder::monitor_name) / [`set_monitor_name(Option<String>)`](crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder::set_monitor_name):<br>required: **true**<br><p>The name of the monitor to update.</p><br>
     ///   - [`aggregation_period(i64)`](crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder::aggregation_period) / [`set_aggregation_period(Option<i64>)`](crate::operation::update_monitor::builders::UpdateMonitorFluentBuilder::set_aggregation_period):<br>required: **true**<br><p>The aggregation time, in seconds, to change to. This must be either <code>30</code> or <code>60</code>.</p><br>
     /// - On success, responds with [`UpdateMonitorOutput`](crate::operation::update_monitor::UpdateMonitorOutput) with field(s):
     ///   - [`monitor_arn(String)`](crate::operation::update_monitor::UpdateMonitorOutput::monitor_arn): <p>The ARN of the monitor that was updated.</p>

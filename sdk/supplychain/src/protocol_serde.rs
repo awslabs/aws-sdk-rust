@@ -27,6 +27,8 @@ pub(crate) mod shape_create_bill_of_materials_import_job;
 
 pub(crate) mod shape_get_bill_of_materials_import_job;
 
+pub(crate) mod shape_send_data_integration_event;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -44,6 +46,8 @@ pub(crate) mod shape_create_bill_of_materials_import_job_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_send_data_integration_event_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 

@@ -3,7 +3,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityProfileApplicationsOutput {
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -15,7 +14,6 @@ pub struct ListSecurityProfileApplicationsOutput {
     _request_id: Option<String>,
 }
 impl ListSecurityProfileApplicationsOutput {
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
@@ -62,7 +60,6 @@ impl ListSecurityProfileApplicationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         let mut v = self.applications.unwrap_or_default();
@@ -70,13 +67,11 @@ impl ListSecurityProfileApplicationsOutputBuilder {
         self.applications = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.applications = input;
         self
     }
-    /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         &self.applications

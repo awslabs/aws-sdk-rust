@@ -335,6 +335,8 @@ pub(crate) mod shape_analysis_schema;
 
 pub(crate) mod shape_analysis_template_summary;
 
+pub(crate) mod shape_analysis_template_validation_status_detail_list;
+
 pub(crate) mod shape_batch_get_collaboration_analysis_template_error;
 
 pub(crate) mod shape_batch_get_schema_analysis_rule_error;
@@ -417,6 +419,8 @@ pub(crate) mod shape_analysis_rule_list;
 
 pub(crate) mod shape_analysis_rule_policy_v1;
 
+pub(crate) mod shape_analysis_template_validation_status_detail;
+
 pub(crate) mod shape_column;
 
 pub(crate) mod shape_differential_privacy_preview_aggregation_list;
@@ -440,6 +444,8 @@ pub(crate) mod shape_schema_status_detail;
 pub(crate) mod shape_aggregate_column;
 
 pub(crate) mod shape_aggregation_constraint;
+
+pub(crate) mod shape_analysis_template_validation_status_reason_list;
 
 pub(crate) mod shape_differential_privacy_configuration;
 
@@ -466,6 +472,8 @@ pub(crate) mod shape_allowed_analyses_list;
 pub(crate) mod shape_allowed_analysis_provider_list;
 
 pub(crate) mod shape_analysis_rule_column_list;
+
+pub(crate) mod shape_analysis_template_validation_status_reason;
 
 pub(crate) mod shape_differential_privacy_column;
 

@@ -7,7 +7,7 @@ pub struct CreateMonitorInput {
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>Displays a list of all of the probes created for a monitor.</p>
     pub probes: ::std::option::Option<::std::vec::Vec<crate::types::CreateMonitorProbeInput>>,
-    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
+    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>. <code>60</code> is the default if no period is chosen.</p>
     pub aggregation_period: ::std::option::Option<i64>,
     /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl CreateMonitorInput {
     pub fn probes(&self) -> &[crate::types::CreateMonitorProbeInput] {
         self.probes.as_deref().unwrap_or_default()
     }
-    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
+    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>. <code>60</code> is the default if no period is chosen.</p>
     pub fn aggregation_period(&self) -> ::std::option::Option<i64> {
         self.aggregation_period
     }
@@ -91,17 +91,17 @@ impl CreateMonitorInputBuilder {
     pub fn get_probes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateMonitorProbeInput>> {
         &self.probes
     }
-    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
+    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>. <code>60</code> is the default if no period is chosen.</p>
     pub fn aggregation_period(mut self, input: i64) -> Self {
         self.aggregation_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
+    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>. <code>60</code> is the default if no period is chosen.</p>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.aggregation_period = input;
         self
     }
-    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
+    /// <p>The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid values are either <code>30</code> or <code>60</code>. <code>60</code> is the default if no period is chosen.</p>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<i64> {
         &self.aggregation_period
     }

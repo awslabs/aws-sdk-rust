@@ -170,6 +170,49 @@ impl From<crate::operation::get_bill_of_materials_import_job::GetBillOfMaterials
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_data_integration_event::SendDataIntegrationEventError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_data_integration_event::SendDataIntegrationEventError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_data_integration_event::SendDataIntegrationEventError> for Error {
+    fn from(err: crate::operation::send_data_integration_event::SendDataIntegrationEventError) -> Self {
+        match err {
+            crate::operation::send_data_integration_event::SendDataIntegrationEventError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::send_data_integration_event::SendDataIntegrationEventError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::send_data_integration_event::SendDataIntegrationEventError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::send_data_integration_event::SendDataIntegrationEventError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::send_data_integration_event::SendDataIntegrationEventError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::send_data_integration_event::SendDataIntegrationEventError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::send_data_integration_event::SendDataIntegrationEventError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::send_data_integration_event::SendDataIntegrationEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {

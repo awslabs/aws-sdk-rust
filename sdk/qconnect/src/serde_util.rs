@@ -637,6 +637,13 @@ pub(crate) fn document_correct_errors(mut builder: crate::types::builders::Docum
     builder
 }
 
+pub(crate) fn tag_condition_correct_errors(mut builder: crate::types::builders::TagConditionBuilder) -> crate::types::builders::TagConditionBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn content_data_details_correct_errors(
     mut builder: crate::types::builders::ContentDataDetailsBuilder,
 ) -> crate::types::builders::ContentDataDetailsBuilder {

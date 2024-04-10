@@ -20,6 +20,15 @@ pub(crate) fn get_bill_of_materials_import_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn send_data_integration_event_output_output_correct_errors(
+    mut builder: crate::operation::send_data_integration_event::builders::SendDataIntegrationEventOutputBuilder,
+) -> crate::operation::send_data_integration_event::builders::SendDataIntegrationEventOutputBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn bill_of_materials_import_job_correct_errors(
     mut builder: crate::types::builders::BillOfMaterialsImportJobBuilder,
 ) -> crate::types::builders::BillOfMaterialsImportJobBuilder {
