@@ -26,7 +26,7 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
 /// <p>This operation is not supported by directory buckets.</p>
 /// </note>
 /// <p>Associates an access control policy with the specified Multi-Region Access Point. Each Multi-Region Access Point can have only one policy, so a request made to this action replaces any existing policy that is associated with the specified Multi-Region Access Point.</p>
-/// <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around working with Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <p>The following actions are related to <code>PutMultiRegionAccessPointPolicy</code>:</p>
 /// <ul>
 /// <li>

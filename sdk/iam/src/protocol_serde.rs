@@ -699,6 +699,8 @@ pub(crate) mod shape_malformed_policy_document_exception;
 
 pub(crate) mod shape_no_such_entity_exception;
 
+pub(crate) mod shape_open_id_idp_communication_error_exception;
+
 pub(crate) mod shape_password_policy_violation_exception;
 
 pub(crate) mod shape_policy_evaluation_exception;

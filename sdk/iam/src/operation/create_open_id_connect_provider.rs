@@ -254,6 +254,8 @@ pub enum CreateOpenIDConnectProviderError {
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The request failed because IAM cannot connect to the OpenID Connect identity provider URL.</p>
+    OpenIdIdpCommunicationErrorException(crate::types::error::OpenIdIdpCommunicationErrorException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -293,6 +295,7 @@ impl CreateOpenIDConnectProviderError {
             Self::EntityAlreadyExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OpenIdIdpCommunicationErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -313,6 +316,10 @@ impl CreateOpenIDConnectProviderError {
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::LimitExceededException(_))
     }
+    /// Returns `true` if the error kind is `CreateOpenIDConnectProviderError::OpenIdIdpCommunicationErrorException`.
+    pub fn is_open_id_idp_communication_error_exception(&self) -> bool {
+        matches!(self, Self::OpenIdIdpCommunicationErrorException(_))
+    }
     /// Returns `true` if the error kind is `CreateOpenIDConnectProviderError::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(self, Self::ServiceFailureException(_))
@@ -325,6 +332,7 @@ impl ::std::error::Error for CreateOpenIDConnectProviderError {
             Self::EntityAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OpenIdIdpCommunicationErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -337,6 +345,7 @@ impl ::std::fmt::Display for CreateOpenIDConnectProviderError {
             Self::EntityAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::OpenIdIdpCommunicationErrorException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -363,6 +372,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateOpenIDC
             Self::EntityAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OpenIdIdpCommunicationErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

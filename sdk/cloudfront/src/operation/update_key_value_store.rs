@@ -260,7 +260,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateKeyValu
 pub enum UpdateKeyValueStoreError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
-    /// <p>The Key Value Store entity was not found.</p>
+    /// <p>The key value store entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),
@@ -268,6 +268,8 @@ pub enum UpdateKeyValueStoreError {
     InvalidIfMatchVersion(crate::types::error::InvalidIfMatchVersion),
     /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
     PreconditionFailed(crate::types::error::PreconditionFailed),
+    /// <p>This operation is not supported in this region.</p>
+    UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -306,6 +308,7 @@ impl UpdateKeyValueStoreError {
             Self::InvalidArgument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidIfMatchVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PreconditionFailed(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedOperation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -329,6 +332,10 @@ impl UpdateKeyValueStoreError {
     pub fn is_precondition_failed(&self) -> bool {
         matches!(self, Self::PreconditionFailed(_))
     }
+    /// Returns `true` if the error kind is `UpdateKeyValueStoreError::UnsupportedOperation`.
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(self, Self::UnsupportedOperation(_))
+    }
 }
 impl ::std::error::Error for UpdateKeyValueStoreError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -338,6 +345,7 @@ impl ::std::error::Error for UpdateKeyValueStoreError {
             Self::InvalidArgument(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidIfMatchVersion(_inner) => ::std::option::Option::Some(_inner),
             Self::PreconditionFailed(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperation(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -350,6 +358,7 @@ impl ::std::fmt::Display for UpdateKeyValueStoreError {
             Self::InvalidArgument(_inner) => _inner.fmt(f),
             Self::InvalidIfMatchVersion(_inner) => _inner.fmt(f),
             Self::PreconditionFailed(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperation(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -376,6 +385,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateKeyValu
             Self::InvalidArgument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidIfMatchVersion(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PreconditionFailed(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

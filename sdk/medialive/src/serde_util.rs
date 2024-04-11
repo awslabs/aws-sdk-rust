@@ -38,6 +38,15 @@ pub(crate) fn encoder_settings_correct_errors(
     builder
 }
 
+pub(crate) fn monitor_deployment_correct_errors(
+    mut builder: crate::types::builders::MonitorDeploymentBuilder,
+) -> crate::types::builders::MonitorDeploymentBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SignalMapMonitorDeploymentStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn multiplex_program_settings_correct_errors(
     mut builder: crate::types::builders::MultiplexProgramSettingsBuilder,
 ) -> crate::types::builders::MultiplexProgramSettingsBuilder {
@@ -59,11 +68,146 @@ pub(crate) fn multiplex_settings_correct_errors(
     builder
 }
 
+pub(crate) fn successful_monitor_deployment_correct_errors(
+    mut builder: crate::types::builders::SuccessfulMonitorDeploymentBuilder,
+) -> crate::types::builders::SuccessfulMonitorDeploymentBuilder {
+    if builder.details_uri.is_none() {
+        builder.details_uri = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SignalMapMonitorDeploymentStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn cloud_watch_alarm_template_group_summary_correct_errors(
+    mut builder: crate::types::builders::CloudWatchAlarmTemplateGroupSummaryBuilder,
+) -> crate::types::builders::CloudWatchAlarmTemplateGroupSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.template_count.is_none() {
+        builder.template_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cloud_watch_alarm_template_summary_correct_errors(
+    mut builder: crate::types::builders::CloudWatchAlarmTemplateSummaryBuilder,
+) -> crate::types::builders::CloudWatchAlarmTemplateSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.comparison_operator.is_none() {
+        builder.comparison_operator = "no value was set".parse::<crate::types::CloudWatchAlarmTemplateComparisonOperator>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.evaluation_periods.is_none() {
+        builder.evaluation_periods = Some(Default::default())
+    }
+    if builder.group_id.is_none() {
+        builder.group_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.metric_name.is_none() {
+        builder.metric_name = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.period.is_none() {
+        builder.period = Some(Default::default())
+    }
+    if builder.statistic.is_none() {
+        builder.statistic = "no value was set".parse::<crate::types::CloudWatchAlarmTemplateStatistic>().ok()
+    }
+    if builder.target_resource_type.is_none() {
+        builder.target_resource_type = "no value was set".parse::<crate::types::CloudWatchAlarmTemplateTargetResourceType>().ok()
+    }
+    if builder.threshold.is_none() {
+        builder.threshold = Some(Default::default())
+    }
+    if builder.treat_missing_data.is_none() {
+        builder.treat_missing_data = "no value was set".parse::<crate::types::CloudWatchAlarmTemplateTreatMissingData>().ok()
+    }
+    builder
+}
+
 pub(crate) fn color_correction_settings_correct_errors(
     mut builder: crate::types::builders::ColorCorrectionSettingsBuilder,
 ) -> crate::types::builders::ColorCorrectionSettingsBuilder {
     if builder.global_color_corrections.is_none() {
         builder.global_color_corrections = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn event_bridge_rule_template_group_summary_correct_errors(
+    mut builder: crate::types::builders::EventBridgeRuleTemplateGroupSummaryBuilder,
+) -> crate::types::builders::EventBridgeRuleTemplateGroupSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.template_count.is_none() {
+        builder.template_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn event_bridge_rule_template_summary_correct_errors(
+    mut builder: crate::types::builders::EventBridgeRuleTemplateSummaryBuilder,
+) -> crate::types::builders::EventBridgeRuleTemplateSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.event_target_count.is_none() {
+        builder.event_target_count = Some(Default::default())
+    }
+    if builder.event_type.is_none() {
+        builder.event_type = "no value was set".parse::<crate::types::EventBridgeRuleTemplateEventType>().ok()
+    }
+    if builder.group_id.is_none() {
+        builder.group_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn event_bridge_rule_template_target_correct_errors(
+    mut builder: crate::types::builders::EventBridgeRuleTemplateTargetBuilder,
+) -> crate::types::builders::EventBridgeRuleTemplateTargetBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }
@@ -109,6 +253,30 @@ pub(crate) fn schedule_action_correct_errors(
             let builder = crate::types::builders::ScheduleActionStartSettingsBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn signal_map_summary_correct_errors(
+    mut builder: crate::types::builders::SignalMapSummaryBuilder,
+) -> crate::types::builders::SignalMapSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.monitor_deployment_status.is_none() {
+        builder.monitor_deployment_status = "no value was set".parse::<crate::types::SignalMapMonitorDeploymentStatus>().ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SignalMapStatus>().ok()
     }
     builder
 }
@@ -255,6 +423,15 @@ pub(crate) fn input_switch_schedule_action_settings_correct_errors(
 ) -> crate::types::builders::InputSwitchScheduleActionSettingsBuilder {
     if builder.input_attachment_name_reference.is_none() {
         builder.input_attachment_name_reference = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn media_resource_neighbor_correct_errors(
+    mut builder: crate::types::builders::MediaResourceNeighborBuilder,
+) -> crate::types::builders::MediaResourceNeighborBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

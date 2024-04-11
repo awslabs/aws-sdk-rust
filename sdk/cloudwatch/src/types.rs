@@ -39,6 +39,8 @@ pub use crate::types::_metric_math_anomaly_detector::MetricMathAnomalyDetector;
 
 pub use crate::types::_single_metric_anomaly_detector::SingleMetricAnomalyDetector;
 
+pub use crate::types::_metric_characteristics::MetricCharacteristics;
+
 pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfiguration;
 
 pub use crate::types::_range::Range;
@@ -148,6 +150,8 @@ mod _message_data;
 mod _metric;
 
 mod _metric_alarm;
+
+mod _metric_characteristics;
 
 mod _metric_data_query;
 

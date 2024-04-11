@@ -114,7 +114,7 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator {
         crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the engine to describe DB instance options for.</p>
+    /// <p>The name of the database engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -123,6 +123,12 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -154,7 +160,7 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The name of the engine to describe DB instance options for.</p>
+    /// <p>The name of the database engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -163,6 +169,12 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -194,7 +206,7 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The name of the engine to describe DB instance options for.</p>
+    /// <p>The name of the database engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -203,6 +215,12 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -335,21 +353,21 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    /// <p>Constraints: Minimum 20, maximum 1000.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    /// <p>Constraints: Minimum 20, maximum 1000.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    /// <p>Constraints: Minimum 20, maximum 1000.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_records()
     }

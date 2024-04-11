@@ -40,6 +40,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "taskProperties" => {
+                            builder = builder.set_task_properties(
+                                crate::protocol_serde::shape_list_attempt_ecs_task_details::de_list_attempt_ecs_task_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

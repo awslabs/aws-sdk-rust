@@ -367,11 +367,15 @@ pub(crate) mod shape_eks_volumes;
 
 pub(crate) mod shape_image_pull_secrets;
 
+pub(crate) mod shape_list_attempt_ecs_task_details;
+
 pub(crate) mod shape_log_configuration_options_map;
 
 pub(crate) mod shape_network_interface;
 
 pub(crate) mod shape_tmpfs_list;
+
+pub(crate) mod shape_attempt_ecs_task_details;
 
 pub(crate) mod shape_eks_attempt_container_detail;
 
@@ -389,7 +393,11 @@ pub(crate) mod shape_eks_container_environment_variables;
 
 pub(crate) mod shape_eks_container_volume_mounts;
 
+pub(crate) mod shape_list_attempt_task_container_details;
+
 pub(crate) mod shape_task_container_details;
+
+pub(crate) mod shape_attempt_task_container_details;
 
 pub(crate) mod shape_eks_limits;
 

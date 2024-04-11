@@ -6,11 +6,11 @@
 pub struct JobStateTimeLimitAction {
     /// <p>The reason to log for the action being taken.</p>
     pub reason: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the job needed to trigger the action. The only supported value is "<code>RUNNABLE</code>".</p>
+    /// <p>The state of the job needed to trigger the action. The only supported value is <code>RUNNABLE</code>.</p>
     pub state: ::std::option::Option<crate::types::JobStateTimeLimitActionsState>,
     /// <p>The approximate amount of time, in seconds, that must pass with the job in the specified state before the action is taken. The minimum value is 600 (10 minutes) and the maximum value is 86,400 (24 hours).</p>
     pub max_time_seconds: ::std::option::Option<i32>,
-    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is "<code>CANCEL</code>", which will cancel the job.</p>
+    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is <code>CANCEL</code>, which will cancel the job.</p>
     pub action: ::std::option::Option<crate::types::JobStateTimeLimitActionsAction>,
 }
 impl JobStateTimeLimitAction {
@@ -18,7 +18,7 @@ impl JobStateTimeLimitAction {
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>The state of the job needed to trigger the action. The only supported value is "<code>RUNNABLE</code>".</p>
+    /// <p>The state of the job needed to trigger the action. The only supported value is <code>RUNNABLE</code>.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::JobStateTimeLimitActionsState> {
         self.state.as_ref()
     }
@@ -26,7 +26,7 @@ impl JobStateTimeLimitAction {
     pub fn max_time_seconds(&self) -> ::std::option::Option<i32> {
         self.max_time_seconds
     }
-    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is "<code>CANCEL</code>", which will cancel the job.</p>
+    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is <code>CANCEL</code>, which will cancel the job.</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::JobStateTimeLimitActionsAction> {
         self.action.as_ref()
     }
@@ -63,18 +63,18 @@ impl JobStateTimeLimitActionBuilder {
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
-    /// <p>The state of the job needed to trigger the action. The only supported value is "<code>RUNNABLE</code>".</p>
+    /// <p>The state of the job needed to trigger the action. The only supported value is <code>RUNNABLE</code>.</p>
     /// This field is required.
     pub fn state(mut self, input: crate::types::JobStateTimeLimitActionsState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the job needed to trigger the action. The only supported value is "<code>RUNNABLE</code>".</p>
+    /// <p>The state of the job needed to trigger the action. The only supported value is <code>RUNNABLE</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::JobStateTimeLimitActionsState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state of the job needed to trigger the action. The only supported value is "<code>RUNNABLE</code>".</p>
+    /// <p>The state of the job needed to trigger the action. The only supported value is <code>RUNNABLE</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::JobStateTimeLimitActionsState> {
         &self.state
     }
@@ -93,18 +93,18 @@ impl JobStateTimeLimitActionBuilder {
     pub fn get_max_time_seconds(&self) -> &::std::option::Option<i32> {
         &self.max_time_seconds
     }
-    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is "<code>CANCEL</code>", which will cancel the job.</p>
+    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is <code>CANCEL</code>, which will cancel the job.</p>
     /// This field is required.
     pub fn action(mut self, input: crate::types::JobStateTimeLimitActionsAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is "<code>CANCEL</code>", which will cancel the job.</p>
+    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is <code>CANCEL</code>, which will cancel the job.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::JobStateTimeLimitActionsAction>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is "<code>CANCEL</code>", which will cancel the job.</p>
+    /// <p>The action to take when a job is at the head of the job queue in the specified state for the specified period of time. The only supported value is <code>CANCEL</code>, which will cancel the job.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::JobStateTimeLimitActionsAction> {
         &self.action
     }

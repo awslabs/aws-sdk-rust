@@ -5,7 +5,7 @@
 pub struct ImportSourceCredentialsInput {
     /// <p>The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections.</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access token or the app password.</p>
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>The source provider used for this project.</p>
     pub server_type: ::std::option::Option<crate::types::ServerType>,
@@ -19,7 +19,7 @@ impl ImportSourceCredentialsInput {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access token or the app password.</p>
     pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
@@ -79,18 +79,18 @@ impl ImportSourceCredentialsInputBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access token or the app password.</p>
     /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access token or the app password.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
     }
-    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access token or the app password.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }

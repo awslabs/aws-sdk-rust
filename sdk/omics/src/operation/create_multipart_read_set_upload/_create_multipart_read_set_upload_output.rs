@@ -5,7 +5,7 @@
 pub struct CreateMultipartReadSetUploadOutput {
     /// <p>The sequence store ID for the store that the read set will be created in.</p>
     pub sequence_store_id: ::std::string::String,
-    /// <p>he ID for the initiated multipart upload.</p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub upload_id: ::std::string::String,
     /// <p>The file type of the read set source.</p>
     pub source_file_type: crate::types::FileType,
@@ -33,7 +33,7 @@ impl CreateMultipartReadSetUploadOutput {
         use std::ops::Deref;
         self.sequence_store_id.deref()
     }
-    /// <p>he ID for the initiated multipart upload.</p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn upload_id(&self) -> &str {
         use std::ops::Deref;
         self.upload_id.deref()
@@ -123,18 +123,18 @@ impl CreateMultipartReadSetUploadOutputBuilder {
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_store_id
     }
-    /// <p>he ID for the initiated multipart upload.</p>
+    /// <p>The ID for the initiated multipart upload.</p>
     /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>he ID for the initiated multipart upload.</p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
     }
-    /// <p>he ID for the initiated multipart upload.</p>
+    /// <p>The ID for the initiated multipart upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }

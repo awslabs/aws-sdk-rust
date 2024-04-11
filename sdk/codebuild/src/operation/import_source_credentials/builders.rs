@@ -122,17 +122,17 @@ impl ImportSourceCredentialsFluentBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }
-    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access token or the app password.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
         self
     }
-    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access token or the app password.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
     }
-    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password.</p>
+    /// <p>For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access token or the app password.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_token()
     }

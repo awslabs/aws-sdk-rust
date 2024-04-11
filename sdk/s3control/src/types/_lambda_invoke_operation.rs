@@ -6,13 +6,13 @@
 pub struct LambdaInvokeOperation {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
     pub function_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
+    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
     /// <p>Ensure that your Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your Lambda function expects, your function might not work as expected.</p>
     /// </important> <note>
     /// <p><b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to perform custom actions on objects in directory buckets, you must specify <code>2.0</code>.</p>
     /// </note>
     pub invocation_schema_version: ::std::option::Option<::std::string::String>,
-    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
+    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
     pub user_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LambdaInvokeOperation {
@@ -20,7 +20,7 @@ impl LambdaInvokeOperation {
     pub fn function_arn(&self) -> ::std::option::Option<&str> {
         self.function_arn.as_deref()
     }
-    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
+    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
     /// <p>Ensure that your Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your Lambda function expects, your function might not work as expected.</p>
     /// </important> <note>
     /// <p><b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to perform custom actions on objects in directory buckets, you must specify <code>2.0</code>.</p>
@@ -28,7 +28,7 @@ impl LambdaInvokeOperation {
     pub fn invocation_schema_version(&self) -> ::std::option::Option<&str> {
         self.invocation_schema_version.as_deref()
     }
-    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
+    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
     pub fn user_arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_arguments.as_ref()
     }
@@ -63,7 +63,7 @@ impl LambdaInvokeOperationBuilder {
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_arn
     }
-    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
+    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
     /// <p>Ensure that your Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your Lambda function expects, your function might not work as expected.</p>
     /// </important> <note>
     /// <p><b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to perform custom actions on objects in directory buckets, you must specify <code>2.0</code>.</p>
@@ -72,7 +72,7 @@ impl LambdaInvokeOperationBuilder {
         self.invocation_schema_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
+    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
     /// <p>Ensure that your Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your Lambda function expects, your function might not work as expected.</p>
     /// </important> <note>
     /// <p><b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to perform custom actions on objects in directory buckets, you must specify <code>2.0</code>.</p>
@@ -81,7 +81,7 @@ impl LambdaInvokeOperationBuilder {
         self.invocation_schema_version = input;
         self
     }
-    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
+    /// <p>Specifies the schema version for the payload that Batch Operations sends when invoking an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code> is required when you use Batch Operations to invoke Lambda functions that act on directory buckets, or if you need to specify <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p><important>
     /// <p>Ensure that your Lambda function code expects <code>InvocationSchemaVersion</code> <b>2.0</b> and uses bucket name rather than bucket ARN. If the <code>InvocationSchemaVersion</code> does not match what your Lambda function expects, your function might not work as expected.</p>
     /// </important> <note>
     /// <p><b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to perform custom actions on objects in directory buckets, you must specify <code>2.0</code>.</p>
@@ -93,7 +93,7 @@ impl LambdaInvokeOperationBuilder {
     ///
     /// To override the contents of this collection use [`set_user_arguments`](Self::set_user_arguments).
     ///
-    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
+    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
     pub fn user_arguments(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -104,7 +104,7 @@ impl LambdaInvokeOperationBuilder {
         self.user_arguments = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
+    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
     pub fn set_user_arguments(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -112,7 +112,7 @@ impl LambdaInvokeOperationBuilder {
         self.user_arguments = input;
         self
     }
-    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
+    /// <p>Key-value pairs that are passed in the payload that Batch Operations sends when invoking an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b> for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a> in the <i>Amazon Web Services Storage Blog</i>.</p>
     pub fn get_user_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.user_arguments
     }

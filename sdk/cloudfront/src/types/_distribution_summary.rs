@@ -45,7 +45,7 @@ pub struct DistributionSummary {
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
     pub alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
-    /// <p>Whether the primary distribution has a staging distribution enabled.</p>
+    /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     pub staging: bool,
 }
 impl DistributionSummary {
@@ -138,7 +138,7 @@ impl DistributionSummary {
     pub fn alias_icp_recordals(&self) -> &[crate::types::AliasIcpRecordal] {
         self.alias_icp_recordals.as_deref().unwrap_or_default()
     }
-    /// <p>Whether the primary distribution has a staging distribution enabled.</p>
+    /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     pub fn staging(&self) -> bool {
         self.staging
     }
@@ -484,18 +484,18 @@ impl DistributionSummaryBuilder {
     pub fn get_alias_icp_recordals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>> {
         &self.alias_icp_recordals
     }
-    /// <p>Whether the primary distribution has a staging distribution enabled.</p>
+    /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     /// This field is required.
     pub fn staging(mut self, input: bool) -> Self {
         self.staging = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the primary distribution has a staging distribution enabled.</p>
+    /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     pub fn set_staging(mut self, input: ::std::option::Option<bool>) -> Self {
         self.staging = input;
         self
     }
-    /// <p>Whether the primary distribution has a staging distribution enabled.</p>
+    /// <p>A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.</p>
     pub fn get_staging(&self) -> &::std::option::Option<bool> {
         &self.staging
     }

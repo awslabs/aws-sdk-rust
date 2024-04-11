@@ -163,17 +163,17 @@ impl CreateRealtimeLogConfigFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
+    /// <p>The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100 (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.</p>
     pub fn sampling_rate(mut self, input: i64) -> Self {
         self.inner = self.inner.sampling_rate(input);
         self
     }
-    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
+    /// <p>The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100 (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.</p>
     pub fn set_sampling_rate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_sampling_rate(input);
         self
     }
-    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
+    /// <p>The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100 (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.</p>
     pub fn get_sampling_rate(&self) -> &::std::option::Option<i64> {
         self.inner.get_sampling_rate()
     }

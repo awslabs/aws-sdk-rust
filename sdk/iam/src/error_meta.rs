@@ -41,6 +41,8 @@ pub enum Error {
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::types::error::NoSuchEntityException),
+    /// <p>The request failed because IAM cannot connect to the OpenID Connect identity provider URL.</p>
+    OpenIdIdpCommunicationErrorException(crate::types::error::OpenIdIdpCommunicationErrorException),
     /// <p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy.</p>
     PasswordPolicyViolationException(crate::types::error::PasswordPolicyViolationException),
     /// <p>The request failed because a provided policy could not be successfully evaluated. An additional detailed message indicates the source of the failure.</p>
@@ -88,6 +90,7 @@ impl ::std::fmt::Display for Error {
             Error::MalformedCertificateException(inner) => inner.fmt(f),
             Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
             Error::NoSuchEntityException(inner) => inner.fmt(f),
+            Error::OpenIdIdpCommunicationErrorException(inner) => inner.fmt(f),
             Error::PasswordPolicyViolationException(inner) => inner.fmt(f),
             Error::PolicyEvaluationException(inner) => inner.fmt(f),
             Error::PolicyNotAttachableException(inner) => inner.fmt(f),
@@ -136,6 +139,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::MalformedCertificateException(inner) => inner.meta(),
             Self::MalformedPolicyDocumentException(inner) => inner.meta(),
             Self::NoSuchEntityException(inner) => inner.meta(),
+            Self::OpenIdIdpCommunicationErrorException(inner) => inner.meta(),
             Self::PasswordPolicyViolationException(inner) => inner.meta(),
             Self::PolicyEvaluationException(inner) => inner.meta(),
             Self::PolicyNotAttachableException(inner) => inner.meta(),
@@ -556,6 +560,9 @@ impl From<crate::operation::create_open_id_connect_provider::CreateOpenIDConnect
             }
             crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError::OpenIdIdpCommunicationErrorException(inner) => {
+                Error::OpenIdIdpCommunicationErrorException(inner)
             }
             crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError::ServiceFailureException(inner) => {
                 Error::ServiceFailureException(inner)
@@ -4909,6 +4916,7 @@ impl ::std::error::Error for Error {
             Error::MalformedCertificateException(inner) => inner.source(),
             Error::MalformedPolicyDocumentException(inner) => inner.source(),
             Error::NoSuchEntityException(inner) => inner.source(),
+            Error::OpenIdIdpCommunicationErrorException(inner) => inner.source(),
             Error::PasswordPolicyViolationException(inner) => inner.source(),
             Error::PolicyEvaluationException(inner) => inner.source(),
             Error::PolicyNotAttachableException(inner) => inner.source(),
@@ -4943,6 +4951,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::MalformedCertificateException(e) => e.request_id(),
             Self::MalformedPolicyDocumentException(e) => e.request_id(),
             Self::NoSuchEntityException(e) => e.request_id(),
+            Self::OpenIdIdpCommunicationErrorException(e) => e.request_id(),
             Self::PasswordPolicyViolationException(e) => e.request_id(),
             Self::PolicyEvaluationException(e) => e.request_id(),
             Self::PolicyNotAttachableException(e) => e.request_id(),

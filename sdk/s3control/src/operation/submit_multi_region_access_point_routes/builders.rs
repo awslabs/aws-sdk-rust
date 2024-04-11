@@ -41,9 +41,7 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
 /// <p><code>ap-northeast-1</code></p></li>
 /// <li>
 /// <p><code>eu-west-1</code></p></li>
-/// </ul><note>
-/// <p>Your Amazon S3 bucket does not need to be in these five Regions.</p>
-/// </note>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubmitMultiRegionAccessPointRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

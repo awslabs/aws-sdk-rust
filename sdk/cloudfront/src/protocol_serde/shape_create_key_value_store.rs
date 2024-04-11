@@ -95,6 +95,21 @@ pub fn de_create_key_value_store_http_error(
             }
             tmp
         }),
+        "UnsupportedOperation" => crate::operation::create_key_value_store::CreateKeyValueStoreError::UnsupportedOperation({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_key_value_store::CreateKeyValueStoreError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::create_key_value_store::CreateKeyValueStoreError::generic(generic),
     })
 }

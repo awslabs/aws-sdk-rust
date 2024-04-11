@@ -397,6 +397,8 @@ pub(crate) mod shape_sequence_store_detail_list;
 
 pub(crate) mod shape_sequence_store_filter;
 
+pub(crate) mod shape_sequence_store_s3_access;
+
 pub(crate) mod shape_share_details;
 
 pub(crate) mod shape_share_details_list;
@@ -504,6 +506,8 @@ pub(crate) mod shape_workflow_list_item;
 pub(crate) mod shape_format_to_header;
 
 pub(crate) mod shape_read_options;
+
+pub(crate) mod shape_read_set_s3_access;
 
 pub(crate) mod shape_schema;
 

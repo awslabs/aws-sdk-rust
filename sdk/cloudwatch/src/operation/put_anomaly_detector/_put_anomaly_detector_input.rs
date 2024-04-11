@@ -18,6 +18,8 @@ pub struct PutAnomalyDetectorInput {
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
     /// <p>The configuration can also include the time zone to use for the metric.</p>
     pub configuration: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
+    /// <p>Use this object to include parameters to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub metric_characteristics: ::std::option::Option<crate::types::MetricCharacteristics>,
     /// <p>A single metric anomaly detector to be created.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
@@ -79,6 +81,10 @@ impl PutAnomalyDetectorInput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorConfiguration> {
         self.configuration.as_ref()
     }
+    /// <p>Use this object to include parameters to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn metric_characteristics(&self) -> ::std::option::Option<&crate::types::MetricCharacteristics> {
+        self.metric_characteristics.as_ref()
+    }
     /// <p>A single metric anomaly detector to be created.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
@@ -132,6 +138,7 @@ pub struct PutAnomalyDetectorInputBuilder {
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     pub(crate) stat: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
+    pub(crate) metric_characteristics: ::std::option::Option<crate::types::MetricCharacteristics>,
     pub(crate) single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
     pub(crate) metric_math_anomaly_detector: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
 }
@@ -226,6 +233,20 @@ impl PutAnomalyDetectorInputBuilder {
     /// <p>The configuration can also include the time zone to use for the metric.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfiguration> {
         &self.configuration
+    }
+    /// <p>Use this object to include parameters to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn metric_characteristics(mut self, input: crate::types::MetricCharacteristics) -> Self {
+        self.metric_characteristics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this object to include parameters to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn set_metric_characteristics(mut self, input: ::std::option::Option<crate::types::MetricCharacteristics>) -> Self {
+        self.metric_characteristics = input;
+        self
+    }
+    /// <p>Use this object to include parameters to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn get_metric_characteristics(&self) -> &::std::option::Option<crate::types::MetricCharacteristics> {
+        &self.metric_characteristics
     }
     /// <p>A single metric anomaly detector to be created.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
@@ -350,6 +371,7 @@ impl PutAnomalyDetectorInputBuilder {
             dimensions: self.dimensions,
             stat: self.stat,
             configuration: self.configuration,
+            metric_characteristics: self.metric_characteristics,
             single_metric_anomaly_detector: self.single_metric_anomaly_detector,
             metric_math_anomaly_detector: self.metric_math_anomaly_detector,
         })

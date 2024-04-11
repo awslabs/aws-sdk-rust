@@ -176,6 +176,13 @@ pub(crate) fn de_create_sequence_store(
                             .transpose()?,
                     );
                 }
+                "eTagAlgorithmFamily" => {
+                    builder = builder.set_e_tag_algorithm_family(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ETagAlgorithmFamily::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "fallbackLocation" => {
                     builder = builder.set_fallback_location(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

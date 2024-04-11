@@ -29,7 +29,7 @@ impl CreateJobInputBuilder {
 /// Permissions
 /// </dt>
 /// <dd>
-/// <p>For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Granting permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>For information about permissions required to use the Batch Operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-iam-role-policies.html">Granting permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// </dd>
 /// </dl>
 /// <p></p>

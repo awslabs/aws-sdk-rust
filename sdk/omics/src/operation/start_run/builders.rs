@@ -212,17 +212,17 @@ impl StartRunFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_parameters()
     }
-    /// <p>A storage capacity for the run in gigabytes.</p>
+    /// <p>A storage capacity for the run in gibibytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
         self
     }
-    /// <p>A storage capacity for the run in gigabytes.</p>
+    /// <p>A storage capacity for the run in gibibytes.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
-    /// <p>A storage capacity for the run in gigabytes.</p>
+    /// <p>A storage capacity for the run in gibibytes.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_capacity()
     }

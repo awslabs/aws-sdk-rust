@@ -267,6 +267,8 @@ pub enum ListKeyValueStoresError {
     AccessDenied(crate::types::error::AccessDenied),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),
+    /// <p>This operation is not supported in this region.</p>
+    UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -302,6 +304,7 @@ impl ListKeyValueStoresError {
         match self {
             Self::AccessDenied(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedOperation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -313,12 +316,17 @@ impl ListKeyValueStoresError {
     pub fn is_invalid_argument(&self) -> bool {
         matches!(self, Self::InvalidArgument(_))
     }
+    /// Returns `true` if the error kind is `ListKeyValueStoresError::UnsupportedOperation`.
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(self, Self::UnsupportedOperation(_))
+    }
 }
 impl ::std::error::Error for ListKeyValueStoresError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDenied(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgument(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperation(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -328,6 +336,7 @@ impl ::std::fmt::Display for ListKeyValueStoresError {
         match self {
             Self::AccessDenied(_inner) => _inner.fmt(f),
             Self::InvalidArgument(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperation(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -351,6 +360,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListKeyValueS
         match self {
             Self::AccessDenied(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

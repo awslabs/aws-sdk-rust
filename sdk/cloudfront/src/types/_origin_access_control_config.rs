@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginAccessControlConfig {
-    /// <p>A name to identify the origin access control.</p>
+    /// <p>A name to identify the origin access control. You can specify up to 64 characters.</p>
     pub name: ::std::string::String,
     /// <p>A description of the origin access control.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ pub struct OriginAccessControlConfig {
     pub origin_access_control_origin_type: crate::types::OriginAccessControlOriginTypes,
 }
 impl OriginAccessControlConfig {
-    /// <p>A name to identify the origin access control.</p>
+    /// <p>A name to identify the origin access control. You can specify up to 64 characters.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -74,18 +74,18 @@ pub struct OriginAccessControlConfigBuilder {
     pub(crate) origin_access_control_origin_type: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
 }
 impl OriginAccessControlConfigBuilder {
-    /// <p>A name to identify the origin access control.</p>
+    /// <p>A name to identify the origin access control. You can specify up to 64 characters.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name to identify the origin access control.</p>
+    /// <p>A name to identify the origin access control. You can specify up to 64 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A name to identify the origin access control.</p>
+    /// <p>A name to identify the origin access control. You can specify up to 64 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

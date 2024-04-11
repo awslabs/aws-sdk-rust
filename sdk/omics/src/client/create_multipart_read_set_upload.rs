@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadFluentBuilder::set_tags):<br>required: **false**<br><p>Any tags to add to the read set.</p><br>
     /// - On success, responds with [`CreateMultipartReadSetUploadOutput`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput) with field(s):
     ///   - [`sequence_store_id(String)`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput::sequence_store_id): <p>The sequence store ID for the store that the read set will be created in.</p>
-    ///   - [`upload_id(String)`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput::upload_id): <p>he ID for the initiated multipart upload.</p>
+    ///   - [`upload_id(String)`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput::upload_id): <p>The ID for the initiated multipart upload.</p>
     ///   - [`source_file_type(FileType)`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput::source_file_type): <p>The file type of the read set source.</p>
     ///   - [`subject_id(String)`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput::subject_id): <p>The source's subject ID.</p>
     ///   - [`sample_id(String)`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput::sample_id): <p>The source's sample ID.</p>

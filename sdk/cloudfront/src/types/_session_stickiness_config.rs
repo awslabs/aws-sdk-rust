@@ -8,7 +8,7 @@ pub struct SessionStickinessConfig {
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
     pub idle_ttl: i32,
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
-    /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
+    /// <p>The value must be greater than or equal to <code>IdleTTL</code>.</p>
     pub maximum_ttl: i32,
 }
 impl SessionStickinessConfig {
@@ -18,7 +18,7 @@ impl SessionStickinessConfig {
         self.idle_ttl
     }
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
-    /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
+    /// <p>The value must be greater than or equal to <code>IdleTTL</code>.</p>
     pub fn maximum_ttl(&self) -> i32 {
         self.maximum_ttl
     }
@@ -57,20 +57,20 @@ impl SessionStickinessConfigBuilder {
         &self.idle_ttl
     }
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
-    /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
+    /// <p>The value must be greater than or equal to <code>IdleTTL</code>.</p>
     /// This field is required.
     pub fn maximum_ttl(mut self, input: i32) -> Self {
         self.maximum_ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
-    /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
+    /// <p>The value must be greater than or equal to <code>IdleTTL</code>.</p>
     pub fn set_maximum_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_ttl = input;
         self
     }
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
-    /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
+    /// <p>The value must be greater than or equal to <code>IdleTTL</code>.</p>
     pub fn get_maximum_ttl(&self) -> &::std::option::Option<i32> {
         &self.maximum_ttl
     }

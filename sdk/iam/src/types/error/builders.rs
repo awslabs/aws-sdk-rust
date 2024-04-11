@@ -51,4 +51,6 @@ pub use crate::types::error::_report_generation_limit_exceeded_exception::Report
 
 pub use crate::types::error::_delete_conflict_exception::DeleteConflictExceptionBuilder;
 
+pub use crate::types::error::_open_id_idp_communication_error_exception::OpenIdIdpCommunicationErrorExceptionBuilder;
+
 pub use crate::types::error::_invalid_user_type_exception::InvalidUserTypeExceptionBuilder;

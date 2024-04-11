@@ -135,6 +135,18 @@ pub use crate::types::_input_device_request::InputDeviceRequest;
 
 pub use crate::types::_input_destination_request::InputDestinationRequest;
 
+pub use crate::types::_event_bridge_rule_template_event_type::EventBridgeRuleTemplateEventType;
+
+pub use crate::types::_event_bridge_rule_template_target::EventBridgeRuleTemplateTarget;
+
+pub use crate::types::_cloud_watch_alarm_template_treat_missing_data::CloudWatchAlarmTemplateTreatMissingData;
+
+pub use crate::types::_cloud_watch_alarm_template_target_resource_type::CloudWatchAlarmTemplateTargetResourceType;
+
+pub use crate::types::_cloud_watch_alarm_template_statistic::CloudWatchAlarmTemplateStatistic;
+
+pub use crate::types::_cloud_watch_alarm_template_comparison_operator::CloudWatchAlarmTemplateComparisonOperator;
+
 pub use crate::types::_channel::Channel;
 
 pub use crate::types::_vpc_output_settings_description::VpcOutputSettingsDescription;
@@ -951,9 +963,23 @@ pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettings;
 
 pub use crate::types::_account_configuration::AccountConfiguration;
 
+pub use crate::types::_signal_map_status::SignalMapStatus;
+
+pub use crate::types::_monitor_deployment::MonitorDeployment;
+
+pub use crate::types::_signal_map_monitor_deployment_status::SignalMapMonitorDeploymentStatus;
+
+pub use crate::types::_media_resource::MediaResource;
+
+pub use crate::types::_media_resource_neighbor::MediaResourceNeighbor;
+
+pub use crate::types::_successful_monitor_deployment::SuccessfulMonitorDeployment;
+
 pub use crate::types::_channel_pipeline_id_to_restart::ChannelPipelineIdToRestart;
 
 pub use crate::types::_reboot_input_device_force::RebootInputDeviceForce;
+
+pub use crate::types::_signal_map_summary::SignalMapSummary;
 
 pub use crate::types::_offering::Offering;
 
@@ -968,6 +994,14 @@ pub use crate::types::_transferring_input_device_summary::TransferringInputDevic
 pub use crate::types::_input_device_transfer_type::InputDeviceTransferType;
 
 pub use crate::types::_input_device_summary::InputDeviceSummary;
+
+pub use crate::types::_event_bridge_rule_template_summary::EventBridgeRuleTemplateSummary;
+
+pub use crate::types::_event_bridge_rule_template_group_summary::EventBridgeRuleTemplateGroupSummary;
+
+pub use crate::types::_cloud_watch_alarm_template_summary::CloudWatchAlarmTemplateSummary;
+
+pub use crate::types::_cloud_watch_alarm_template_group_summary::CloudWatchAlarmTemplateGroupSummary;
 
 pub use crate::types::_channel_summary::ChannelSummary;
 
@@ -1249,6 +1283,18 @@ mod _channel_state;
 
 mod _channel_summary;
 
+mod _cloud_watch_alarm_template_comparison_operator;
+
+mod _cloud_watch_alarm_template_group_summary;
+
+mod _cloud_watch_alarm_template_statistic;
+
+mod _cloud_watch_alarm_template_summary;
+
+mod _cloud_watch_alarm_template_target_resource_type;
+
+mod _cloud_watch_alarm_template_treat_missing_data;
+
 mod _cmaf_ingest_group_settings;
 
 mod _cmaf_ingest_output_settings;
@@ -1366,6 +1412,14 @@ mod _encoder_settings;
 mod _epoch_locking_settings;
 
 mod _esam;
+
+mod _event_bridge_rule_template_event_type;
+
+mod _event_bridge_rule_template_group_summary;
+
+mod _event_bridge_rule_template_summary;
+
+mod _event_bridge_rule_template_target;
 
 mod _failover_condition;
 
@@ -1795,6 +1849,12 @@ mod _media_package_output_destination_settings;
 
 mod _media_package_output_settings;
 
+mod _media_resource;
+
+mod _media_resource_neighbor;
+
+mod _monitor_deployment;
+
 mod _motion_graphics_activate_schedule_action_settings;
 
 mod _motion_graphics_configuration;
@@ -2037,6 +2097,12 @@ mod _scte35_type;
 
 mod _scte35_web_delivery_allowed_flag;
 
+mod _signal_map_monitor_deployment_status;
+
+mod _signal_map_status;
+
+mod _signal_map_summary;
+
 mod _smooth_group_audio_only_timecode_control;
 
 mod _smooth_group_certificate_mode;
@@ -2072,6 +2138,8 @@ mod _static_image_output_deactivate_schedule_action_settings;
 mod _static_key_settings;
 
 mod _stop_timecode;
+
+mod _successful_monitor_deployment;
 
 mod _teletext_destination_settings;
 

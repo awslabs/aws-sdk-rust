@@ -37,14 +37,19 @@ pub fn ser_put_anomaly_detector_input_input_input(
         crate::protocol_serde::shape_anomaly_detector_configuration::ser_anomaly_detector_configuration(scope_12, var_13)?;
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("SingleMetricAnomalyDetector");
-    if let Some(var_15) = &input.single_metric_anomaly_detector {
-        crate::protocol_serde::shape_single_metric_anomaly_detector::ser_single_metric_anomaly_detector(scope_14, var_15)?;
+    let mut scope_14 = writer.prefix("MetricCharacteristics");
+    if let Some(var_15) = &input.metric_characteristics {
+        crate::protocol_serde::shape_metric_characteristics::ser_metric_characteristics(scope_14, var_15)?;
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("MetricMathAnomalyDetector");
-    if let Some(var_17) = &input.metric_math_anomaly_detector {
-        crate::protocol_serde::shape_metric_math_anomaly_detector::ser_metric_math_anomaly_detector(scope_16, var_17)?;
+    let mut scope_16 = writer.prefix("SingleMetricAnomalyDetector");
+    if let Some(var_17) = &input.single_metric_anomaly_detector {
+        crate::protocol_serde::shape_single_metric_anomaly_detector::ser_single_metric_anomaly_detector(scope_16, var_17)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("MetricMathAnomalyDetector");
+    if let Some(var_19) = &input.metric_math_anomaly_detector {
+        crate::protocol_serde::shape_metric_math_anomaly_detector::ser_metric_math_anomaly_detector(scope_18, var_19)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

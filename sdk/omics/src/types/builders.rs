@@ -55,6 +55,8 @@ pub use crate::types::_activate_read_set_source_item::ActivateReadSetSourceItemB
 
 pub use crate::types::_complete_read_set_upload_part_list_item::CompleteReadSetUploadPartListItemBuilder;
 
+pub use crate::types::_sequence_store_s3_access::SequenceStoreS3AccessBuilder;
+
 pub use crate::types::_sequence_store_detail::SequenceStoreDetailBuilder;
 
 pub use crate::types::_sequence_store_filter::SequenceStoreFilterBuilder;
@@ -66,6 +68,8 @@ pub use crate::types::_e_tag::ETagBuilder;
 pub use crate::types::_read_set_files::ReadSetFilesBuilder;
 
 pub use crate::types::_file_information::FileInformationBuilder;
+
+pub use crate::types::_read_set_s3_access::ReadSetS3AccessBuilder;
 
 pub use crate::types::_sequence_information::SequenceInformationBuilder;
 

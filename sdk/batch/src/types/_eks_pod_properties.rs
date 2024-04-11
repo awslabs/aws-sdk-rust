@@ -11,7 +11,7 @@ pub struct EksPodProperties {
     /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
     /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code></p>
     pub dns_policy: ::std::option::Option<::std::string::String>,
-    /// <p>References a Kubernetes secret resource. This object must start and end with an alphanumeric character, is required to be lowercase, can include periods (.) and hyphens (-), and can't contain more than 253 characters.</p>
+    /// <p>References a Kubernetes secret resource. It holds a list of secrets. These secrets help to gain access to pull an images from a private registry.</p>
     /// <p><code>ImagePullSecret$name</code> is required when this object is used.</p>
     pub image_pull_secrets: ::std::option::Option<::std::vec::Vec<crate::types::ImagePullSecret>>,
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
@@ -41,7 +41,7 @@ impl EksPodProperties {
     pub fn dns_policy(&self) -> ::std::option::Option<&str> {
         self.dns_policy.as_deref()
     }
-    /// <p>References a Kubernetes secret resource. This object must start and end with an alphanumeric character, is required to be lowercase, can include periods (.) and hyphens (-), and can't contain more than 253 characters.</p>
+    /// <p>References a Kubernetes secret resource. It holds a list of secrets. These secrets help to gain access to pull an images from a private registry.</p>
     /// <p><code>ImagePullSecret$name</code> is required when this object is used.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_pull_secrets.is_none()`.
@@ -148,7 +148,7 @@ impl EksPodPropertiesBuilder {
     ///
     /// To override the contents of this collection use [`set_image_pull_secrets`](Self::set_image_pull_secrets).
     ///
-    /// <p>References a Kubernetes secret resource. This object must start and end with an alphanumeric character, is required to be lowercase, can include periods (.) and hyphens (-), and can't contain more than 253 characters.</p>
+    /// <p>References a Kubernetes secret resource. It holds a list of secrets. These secrets help to gain access to pull an images from a private registry.</p>
     /// <p><code>ImagePullSecret$name</code> is required when this object is used.</p>
     pub fn image_pull_secrets(mut self, input: crate::types::ImagePullSecret) -> Self {
         let mut v = self.image_pull_secrets.unwrap_or_default();
@@ -156,13 +156,13 @@ impl EksPodPropertiesBuilder {
         self.image_pull_secrets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>References a Kubernetes secret resource. This object must start and end with an alphanumeric character, is required to be lowercase, can include periods (.) and hyphens (-), and can't contain more than 253 characters.</p>
+    /// <p>References a Kubernetes secret resource. It holds a list of secrets. These secrets help to gain access to pull an images from a private registry.</p>
     /// <p><code>ImagePullSecret$name</code> is required when this object is used.</p>
     pub fn set_image_pull_secrets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImagePullSecret>>) -> Self {
         self.image_pull_secrets = input;
         self
     }
-    /// <p>References a Kubernetes secret resource. This object must start and end with an alphanumeric character, is required to be lowercase, can include periods (.) and hyphens (-), and can't contain more than 253 characters.</p>
+    /// <p>References a Kubernetes secret resource. It holds a list of secrets. These secrets help to gain access to pull an images from a private registry.</p>
     /// <p><code>ImagePullSecret$name</code> is required when this object is used.</p>
     pub fn get_image_pull_secrets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePullSecret>> {
         &self.image_pull_secrets

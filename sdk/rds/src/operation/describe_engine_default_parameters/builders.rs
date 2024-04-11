@@ -134,6 +134,8 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-ee-19</code></p></li>
     /// <li>
+    /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -238,6 +240,8 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-ee-19</code></p></li>
     /// <li>
+    /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -341,6 +345,8 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// <p><code>aurora-postgresql14</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee-19</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>

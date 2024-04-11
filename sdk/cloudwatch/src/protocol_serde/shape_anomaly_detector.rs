@@ -80,24 +80,34 @@ pub fn de_anomaly_detector(
                 builder = builder.set_state_value(var_6);
             }
             ,
-            s if s.matches("SingleMetricAnomalyDetector") /* SingleMetricAnomalyDetector com.amazonaws.cloudwatch#AnomalyDetector$SingleMetricAnomalyDetector */ =>  {
+            s if s.matches("MetricCharacteristics") /* MetricCharacteristics com.amazonaws.cloudwatch#AnomalyDetector$MetricCharacteristics */ =>  {
                 let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_metric_characteristics::de_metric_characteristics(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_metric_characteristics(var_7);
+            }
+            ,
+            s if s.matches("SingleMetricAnomalyDetector") /* SingleMetricAnomalyDetector com.amazonaws.cloudwatch#AnomalyDetector$SingleMetricAnomalyDetector */ =>  {
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_single_metric_anomaly_detector::de_single_metric_anomaly_detector(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_single_metric_anomaly_detector(var_7);
+                builder = builder.set_single_metric_anomaly_detector(var_8);
             }
             ,
             s if s.matches("MetricMathAnomalyDetector") /* MetricMathAnomalyDetector com.amazonaws.cloudwatch#AnomalyDetector$MetricMathAnomalyDetector */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_metric_math_anomaly_detector::de_metric_math_anomaly_detector(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric_math_anomaly_detector(var_8);
+                builder = builder.set_metric_math_anomaly_detector(var_9);
             }
             ,
             _ => {}

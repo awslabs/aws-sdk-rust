@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeyValueStoresInput {
-    /// <p>The marker associated with the Key Value Stores list.</p>
+    /// <p>The marker associated with the key value stores list.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of items in the Key Value Stores list.</p>
+    /// <p>The maximum number of items in the key value stores list.</p>
     pub max_items: ::std::option::Option<i32>,
-    /// <p>The status of the request for the Key Value Stores list.</p>
+    /// <p>The status of the request for the key value stores list.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl ListKeyValueStoresInput {
-    /// <p>The marker associated with the Key Value Stores list.</p>
+    /// <p>The marker associated with the key value stores list.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of items in the Key Value Stores list.</p>
+    /// <p>The maximum number of items in the key value stores list.</p>
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
-    /// <p>The status of the request for the Key Value Stores list.</p>
+    /// <p>The status of the request for the key value stores list.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -40,45 +40,45 @@ pub struct ListKeyValueStoresInputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl ListKeyValueStoresInputBuilder {
-    /// <p>The marker associated with the Key Value Stores list.</p>
+    /// <p>The marker associated with the key value stores list.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The marker associated with the Key Value Stores list.</p>
+    /// <p>The marker associated with the key value stores list.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
-    /// <p>The marker associated with the Key Value Stores list.</p>
+    /// <p>The marker associated with the key value stores list.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
-    /// <p>The maximum number of items in the Key Value Stores list.</p>
+    /// <p>The maximum number of items in the key value stores list.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of items in the Key Value Stores list.</p>
+    /// <p>The maximum number of items in the key value stores list.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
     }
-    /// <p>The maximum number of items in the Key Value Stores list.</p>
+    /// <p>The maximum number of items in the key value stores list.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
-    /// <p>The status of the request for the Key Value Stores list.</p>
+    /// <p>The status of the request for the key value stores list.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the request for the Key Value Stores list.</p>
+    /// <p>The status of the request for the key value stores list.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the request for the Key Value Stores list.</p>
+    /// <p>The status of the request for the key value stores list.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }

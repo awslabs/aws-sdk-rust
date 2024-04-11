@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeKeyValueStore`](crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreFluentBuilder::set_name):<br>required: **true**<br><p>The name of the Key Value Store.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreFluentBuilder::set_name):<br>required: **true**<br><p>The name of the key value store.</p><br>
     /// - On success, responds with [`DescribeKeyValueStoreOutput`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput) with field(s):
-    ///   - [`key_value_store(Option<KeyValueStore>)`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput::key_value_store): <p>The resulting Key Value Store.</p>
-    ///   - [`e_tag(Option<String>)`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput::e_tag): <p>The ETag of the resulting Key Value Store.</p>
+    ///   - [`key_value_store(Option<KeyValueStore>)`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput::key_value_store): <p>The resulting key value store.</p>
+    ///   - [`e_tag(Option<String>)`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput::e_tag): <p>The <code>ETag</code> of the resulting key value store.</p>
     /// - On failure, responds with [`SdkError<DescribeKeyValueStoreError>`](crate::operation::describe_key_value_store::DescribeKeyValueStoreError)
     pub fn describe_key_value_store(&self) -> crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreFluentBuilder {
         crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreFluentBuilder::new(self.handle.clone())

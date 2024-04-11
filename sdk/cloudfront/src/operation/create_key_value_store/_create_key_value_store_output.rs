@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeyValueStoreOutput {
-    /// <p>The resulting Key Value Store.</p>
+    /// <p>The resulting key value store.</p>
     pub key_value_store: ::std::option::Option<crate::types::KeyValueStore>,
-    /// <p>The ETag in the resulting Key Value Store.</p>
+    /// <p>The <code>ETag</code> in the resulting key value store.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
-    /// <p>The location of the resulting Key Value Store.</p>
+    /// <p>The location of the resulting key value store.</p>
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateKeyValueStoreOutput {
-    /// <p>The resulting Key Value Store.</p>
+    /// <p>The resulting key value store.</p>
     pub fn key_value_store(&self) -> ::std::option::Option<&crate::types::KeyValueStore> {
         self.key_value_store.as_ref()
     }
-    /// <p>The ETag in the resulting Key Value Store.</p>
+    /// <p>The <code>ETag</code> in the resulting key value store.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>The location of the resulting Key Value Store.</p>
+    /// <p>The location of the resulting key value store.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -47,45 +47,45 @@ pub struct CreateKeyValueStoreOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateKeyValueStoreOutputBuilder {
-    /// <p>The resulting Key Value Store.</p>
+    /// <p>The resulting key value store.</p>
     pub fn key_value_store(mut self, input: crate::types::KeyValueStore) -> Self {
         self.key_value_store = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resulting Key Value Store.</p>
+    /// <p>The resulting key value store.</p>
     pub fn set_key_value_store(mut self, input: ::std::option::Option<crate::types::KeyValueStore>) -> Self {
         self.key_value_store = input;
         self
     }
-    /// <p>The resulting Key Value Store.</p>
+    /// <p>The resulting key value store.</p>
     pub fn get_key_value_store(&self) -> &::std::option::Option<crate::types::KeyValueStore> {
         &self.key_value_store
     }
-    /// <p>The ETag in the resulting Key Value Store.</p>
+    /// <p>The <code>ETag</code> in the resulting key value store.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ETag in the resulting Key Value Store.</p>
+    /// <p>The <code>ETag</code> in the resulting key value store.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
     }
-    /// <p>The ETag in the resulting Key Value Store.</p>
+    /// <p>The <code>ETag</code> in the resulting key value store.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
-    /// <p>The location of the resulting Key Value Store.</p>
+    /// <p>The location of the resulting key value store.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location of the resulting Key Value Store.</p>
+    /// <p>The location of the resulting key value store.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The location of the resulting Key Value Store.</p>
+    /// <p>The location of the resulting key value store.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

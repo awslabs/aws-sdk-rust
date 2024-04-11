@@ -111,17 +111,47 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
+    /// <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
+    /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
+    /// <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
+    /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
+    /// <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
+    /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }

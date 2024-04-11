@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentSingleWeightConfig {
-    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
+    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of traffic is sent to the staging distribution.</p>
     pub weight: f32,
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
     pub session_stickiness_config: ::std::option::Option<crate::types::SessionStickinessConfig>,
 }
 impl ContinuousDeploymentSingleWeightConfig {
-    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
+    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of traffic is sent to the staging distribution.</p>
     pub fn weight(&self) -> f32 {
         self.weight
     }
@@ -34,18 +34,18 @@ pub struct ContinuousDeploymentSingleWeightConfigBuilder {
     pub(crate) session_stickiness_config: ::std::option::Option<crate::types::SessionStickinessConfig>,
 }
 impl ContinuousDeploymentSingleWeightConfigBuilder {
-    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
+    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of traffic is sent to the staging distribution.</p>
     /// This field is required.
     pub fn weight(mut self, input: f32) -> Self {
         self.weight = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
+    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of traffic is sent to the staging distribution.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<f32>) -> Self {
         self.weight = input;
         self
     }
-    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
+    /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and 0.15. For example, a value of 0.10 means 10% of traffic is sent to the staging distribution.</p>
     pub fn get_weight(&self) -> &::std::option::Option<f32> {
         &self.weight
     }

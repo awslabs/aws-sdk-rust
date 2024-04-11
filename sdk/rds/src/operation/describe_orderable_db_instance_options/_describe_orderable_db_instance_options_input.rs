@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrderableDbInstanceOptionsInput {
-    /// <p>The name of the engine to describe DB instance options for.</p>
+    /// <p>The name of the database engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -13,6 +13,12 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -59,13 +65,13 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    /// <p>Constraints: Minimum 20, maximum 1000.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsInput {
-    /// <p>The name of the engine to describe DB instance options for.</p>
+    /// <p>The name of the database engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -74,6 +80,12 @@ impl DescribeOrderableDbInstanceOptionsInput {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -136,7 +148,7 @@ impl DescribeOrderableDbInstanceOptionsInput {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    /// <p>Constraints: Minimum 20, maximum 1000.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
@@ -167,7 +179,7 @@ pub struct DescribeOrderableDbInstanceOptionsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsInputBuilder {
-    /// <p>The name of the engine to describe DB instance options for.</p>
+    /// <p>The name of the database engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -176,6 +188,12 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -208,7 +226,7 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the engine to describe DB instance options for.</p>
+    /// <p>The name of the database engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -217,6 +235,12 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -248,7 +272,7 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         self.engine = input;
         self
     }
-    /// <p>The name of the engine to describe DB instance options for.</p>
+    /// <p>The name of the database engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li>
@@ -257,6 +281,12 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -391,21 +421,21 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    /// <p>Constraints: Minimum 20, maximum 1000.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    /// <p>Constraints: Minimum 20, maximum 1000.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    /// <p>Constraints: Minimum 20, maximum 1000.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }

@@ -124,6 +124,12 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
     /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -164,6 +170,12 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
     /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -203,6 +215,12 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <p><code>aurora-postgresql</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>

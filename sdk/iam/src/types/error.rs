@@ -51,6 +51,8 @@ pub use crate::types::error::_report_generation_limit_exceeded_exception::Report
 
 pub use crate::types::error::_delete_conflict_exception::DeleteConflictException;
 
+pub use crate::types::error::_open_id_idp_communication_error_exception::OpenIdIdpCommunicationErrorException;
+
 pub use crate::types::error::_invalid_user_type_exception::InvalidUserTypeException;
 
 mod _concurrent_modification_exception;
@@ -90,6 +92,8 @@ mod _malformed_certificate_exception;
 mod _malformed_policy_document_exception;
 
 mod _no_such_entity_exception;
+
+mod _open_id_idp_communication_error_exception;
 
 mod _password_policy_violation_exception;
 

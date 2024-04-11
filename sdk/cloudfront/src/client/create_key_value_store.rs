@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateKeyValueStore`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::set_name):<br>required: **true**<br><p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p><br>
-    ///   - [`comment(impl Into<String>)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::comment) / [`set_comment(Option<String>)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::set_comment):<br>required: **false**<br><p>The comment of the Key Value Store.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::set_name):<br>required: **true**<br><p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p><br>
+    ///   - [`comment(impl Into<String>)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::comment) / [`set_comment(Option<String>)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::set_comment):<br>required: **false**<br><p>The comment of the key value store.</p><br>
     ///   - [`import_source(ImportSource)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::import_source) / [`set_import_source(Option<ImportSource>)`](crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::set_import_source):<br>required: **false**<br><p>The S3 bucket that provides the source for the import. The source must be in a valid JSON format.</p><br>
     /// - On success, responds with [`CreateKeyValueStoreOutput`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput) with field(s):
-    ///   - [`key_value_store(Option<KeyValueStore>)`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput::key_value_store): <p>The resulting Key Value Store.</p>
-    ///   - [`e_tag(Option<String>)`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput::e_tag): <p>The ETag in the resulting Key Value Store.</p>
-    ///   - [`location(Option<String>)`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput::location): <p>The location of the resulting Key Value Store.</p>
+    ///   - [`key_value_store(Option<KeyValueStore>)`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput::key_value_store): <p>The resulting key value store.</p>
+    ///   - [`e_tag(Option<String>)`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput::e_tag): <p>The <code>ETag</code> in the resulting key value store.</p>
+    ///   - [`location(Option<String>)`](crate::operation::create_key_value_store::CreateKeyValueStoreOutput::location): <p>The location of the resulting key value store.</p>
     /// - On failure, responds with [`SdkError<CreateKeyValueStoreError>`](crate::operation::create_key_value_store::CreateKeyValueStoreError)
     pub fn create_key_value_store(&self) -> crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder {
         crate::operation::create_key_value_store::builders::CreateKeyValueStoreFluentBuilder::new(self.handle.clone())

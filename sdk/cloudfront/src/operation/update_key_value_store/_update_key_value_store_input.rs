@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKeyValueStoreInput {
-    /// <p>The name of the Key Value Store to update.</p>
+    /// <p>The name of the key value store to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The comment of the Key Value Store to update.</p>
+    /// <p>The comment of the key value store to update.</p>
     pub comment: ::std::option::Option<::std::string::String>,
-    /// <p>The Key Value Store to update, if a match occurs.</p>
+    /// <p>The key value store to update, if a match occurs.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateKeyValueStoreInput {
-    /// <p>The name of the Key Value Store to update.</p>
+    /// <p>The name of the key value store to update.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The comment of the Key Value Store to update.</p>
+    /// <p>The comment of the key value store to update.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p>The Key Value Store to update, if a match occurs.</p>
+    /// <p>The key value store to update, if a match occurs.</p>
     pub fn if_match(&self) -> ::std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct UpdateKeyValueStoreInputBuilder {
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateKeyValueStoreInputBuilder {
-    /// <p>The name of the Key Value Store to update.</p>
+    /// <p>The name of the key value store to update.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Key Value Store to update.</p>
+    /// <p>The name of the key value store to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the Key Value Store to update.</p>
+    /// <p>The name of the key value store to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The comment of the Key Value Store to update.</p>
+    /// <p>The comment of the key value store to update.</p>
     /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The comment of the Key Value Store to update.</p>
+    /// <p>The comment of the key value store to update.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
-    /// <p>The comment of the Key Value Store to update.</p>
+    /// <p>The comment of the key value store to update.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
-    /// <p>The Key Value Store to update, if a match occurs.</p>
+    /// <p>The key value store to update, if a match occurs.</p>
     /// This field is required.
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Key Value Store to update, if a match occurs.</p>
+    /// <p>The key value store to update, if a match occurs.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
     }
-    /// <p>The Key Value Store to update, if a match occurs.</p>
+    /// <p>The key value store to update, if a match occurs.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }

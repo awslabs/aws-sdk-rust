@@ -154,6 +154,13 @@ pub(crate) fn de_get_sequence_store(
                             .transpose()?,
                     );
                 }
+                "eTagAlgorithmFamily" => {
+                    builder = builder.set_e_tag_algorithm_family(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ETagAlgorithmFamily::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "fallbackLocation" => {
                     builder = builder.set_fallback_location(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -174,6 +181,11 @@ pub(crate) fn de_get_sequence_store(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "s3Access" => {
+                    builder = builder.set_s3_access(crate::protocol_serde::shape_sequence_store_s3_access::de_sequence_store_s3_access(
+                        tokens,
+                    )?);
                 }
                 "sseConfig" => {
                     builder = builder.set_sse_config(crate::protocol_serde::shape_sse_config::de_sse_config(tokens)?);

@@ -57,6 +57,8 @@ pub use crate::types::error::_origin_access_control_already_exists::OriginAccess
 
 pub use crate::types::error::_no_such_origin_access_control::NoSuchOriginAccessControl;
 
+pub use crate::types::error::_unsupported_operation::UnsupportedOperation;
+
 pub use crate::types::error::_entity_not_found::EntityNotFound;
 
 pub use crate::types::error::_too_many_public_keys_in_key_group::TooManyPublicKeysInKeyGroup;
@@ -64,8 +66,6 @@ pub use crate::types::error::_too_many_public_keys_in_key_group::TooManyPublicKe
 pub use crate::types::error::_no_such_resource::NoSuchResource;
 
 pub use crate::types::error::_key_group_already_exists::KeyGroupAlreadyExists;
-
-pub use crate::types::error::_unsupported_operation::UnsupportedOperation;
 
 pub use crate::types::error::_no_such_function_exists::NoSuchFunctionExists;
 

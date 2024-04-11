@@ -12,6 +12,8 @@ pub struct AttemptDetail {
     pub stopped_at: ::std::option::Option<i64>,
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.</p>
+    pub task_properties: ::std::option::Option<::std::vec::Vec<crate::types::AttemptEcsTaskDetails>>,
 }
 impl AttemptDetail {
     /// <p>The details for the container in this job attempt.</p>
@@ -30,6 +32,12 @@ impl AttemptDetail {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
+    /// <p>The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_properties.is_none()`.
+    pub fn task_properties(&self) -> &[crate::types::AttemptEcsTaskDetails] {
+        self.task_properties.as_deref().unwrap_or_default()
+    }
 }
 impl AttemptDetail {
     /// Creates a new builder-style object to manufacture [`AttemptDetail`](crate::types::AttemptDetail).
@@ -46,6 +54,7 @@ pub struct AttemptDetailBuilder {
     pub(crate) started_at: ::std::option::Option<i64>,
     pub(crate) stopped_at: ::std::option::Option<i64>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) task_properties: ::std::option::Option<::std::vec::Vec<crate::types::AttemptEcsTaskDetails>>,
 }
 impl AttemptDetailBuilder {
     /// <p>The details for the container in this job attempt.</p>
@@ -104,6 +113,26 @@ impl AttemptDetailBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
+    /// Appends an item to `task_properties`.
+    ///
+    /// To override the contents of this collection use [`set_task_properties`](Self::set_task_properties).
+    ///
+    /// <p>The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.</p>
+    pub fn task_properties(mut self, input: crate::types::AttemptEcsTaskDetails) -> Self {
+        let mut v = self.task_properties.unwrap_or_default();
+        v.push(input);
+        self.task_properties = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.</p>
+    pub fn set_task_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttemptEcsTaskDetails>>) -> Self {
+        self.task_properties = input;
+        self
+    }
+    /// <p>The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.</p>
+    pub fn get_task_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttemptEcsTaskDetails>> {
+        &self.task_properties
+    }
     /// Consumes the builder and constructs a [`AttemptDetail`](crate::types::AttemptDetail).
     pub fn build(self) -> crate::types::AttemptDetail {
         crate::types::AttemptDetail {
@@ -111,6 +140,7 @@ impl AttemptDetailBuilder {
             started_at: self.started_at,
             stopped_at: self.stopped_at,
             status_reason: self.status_reason,
+            task_properties: self.task_properties,
         }
     }
 }

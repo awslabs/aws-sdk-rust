@@ -39,6 +39,14 @@ pub(crate) mod shape_claim_device;
 
 pub(crate) mod shape_create_channel;
 
+pub(crate) mod shape_create_cloud_watch_alarm_template;
+
+pub(crate) mod shape_create_cloud_watch_alarm_template_group;
+
+pub(crate) mod shape_create_event_bridge_rule_template;
+
+pub(crate) mod shape_create_event_bridge_rule_template_group;
+
 pub(crate) mod shape_create_input;
 
 pub(crate) mod shape_create_input_security_group;
@@ -49,9 +57,19 @@ pub(crate) mod shape_create_multiplex_program;
 
 pub(crate) mod shape_create_partner_input;
 
+pub(crate) mod shape_create_signal_map;
+
 pub(crate) mod shape_create_tags;
 
 pub(crate) mod shape_delete_channel;
+
+pub(crate) mod shape_delete_cloud_watch_alarm_template;
+
+pub(crate) mod shape_delete_cloud_watch_alarm_template_group;
+
+pub(crate) mod shape_delete_event_bridge_rule_template;
+
+pub(crate) mod shape_delete_event_bridge_rule_template_group;
 
 pub(crate) mod shape_delete_input;
 
@@ -64,6 +82,8 @@ pub(crate) mod shape_delete_multiplex_program;
 pub(crate) mod shape_delete_reservation;
 
 pub(crate) mod shape_delete_schedule;
+
+pub(crate) mod shape_delete_signal_map;
 
 pub(crate) mod shape_delete_tags;
 
@@ -91,7 +111,25 @@ pub(crate) mod shape_describe_schedule;
 
 pub(crate) mod shape_describe_thumbnails;
 
+pub(crate) mod shape_get_cloud_watch_alarm_template;
+
+pub(crate) mod shape_get_cloud_watch_alarm_template_group;
+
+pub(crate) mod shape_get_event_bridge_rule_template;
+
+pub(crate) mod shape_get_event_bridge_rule_template_group;
+
+pub(crate) mod shape_get_signal_map;
+
 pub(crate) mod shape_list_channels;
+
+pub(crate) mod shape_list_cloud_watch_alarm_template_groups;
+
+pub(crate) mod shape_list_cloud_watch_alarm_templates;
+
+pub(crate) mod shape_list_event_bridge_rule_template_groups;
+
+pub(crate) mod shape_list_event_bridge_rule_templates;
 
 pub(crate) mod shape_list_input_device_transfers;
 
@@ -109,6 +147,8 @@ pub(crate) mod shape_list_offerings;
 
 pub(crate) mod shape_list_reservations;
 
+pub(crate) mod shape_list_signal_maps;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_purchase_offering;
@@ -121,11 +161,17 @@ pub(crate) mod shape_restart_channel_pipelines;
 
 pub(crate) mod shape_start_channel;
 
+pub(crate) mod shape_start_delete_monitor_deployment;
+
 pub(crate) mod shape_start_input_device;
 
 pub(crate) mod shape_start_input_device_maintenance_window;
 
+pub(crate) mod shape_start_monitor_deployment;
+
 pub(crate) mod shape_start_multiplex;
+
+pub(crate) mod shape_start_update_signal_map;
 
 pub(crate) mod shape_stop_channel;
 
@@ -140,6 +186,14 @@ pub(crate) mod shape_update_account_configuration;
 pub(crate) mod shape_update_channel;
 
 pub(crate) mod shape_update_channel_class;
+
+pub(crate) mod shape_update_cloud_watch_alarm_template;
+
+pub(crate) mod shape_update_cloud_watch_alarm_template_group;
+
+pub(crate) mod shape_update_event_bridge_rule_template;
+
+pub(crate) mod shape_update_event_bridge_rule_template_group;
 
 pub(crate) mod shape_update_input;
 
@@ -179,6 +233,14 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_channel_input;
 
+pub(crate) mod shape_create_cloud_watch_alarm_template_group_input;
+
+pub(crate) mod shape_create_cloud_watch_alarm_template_input;
+
+pub(crate) mod shape_create_event_bridge_rule_template_group_input;
+
+pub(crate) mod shape_create_event_bridge_rule_template_input;
+
 pub(crate) mod shape_create_input_input;
 
 pub(crate) mod shape_create_input_security_group_input;
@@ -188,6 +250,8 @@ pub(crate) mod shape_create_multiplex_input;
 pub(crate) mod shape_create_multiplex_program_input;
 
 pub(crate) mod shape_create_partner_input_input;
+
+pub(crate) mod shape_create_signal_map_input;
 
 pub(crate) mod shape_create_tags_input;
 
@@ -207,6 +271,10 @@ pub(crate) mod shape_reboot_input_device_input;
 
 pub(crate) mod shape_restart_channel_pipelines_input;
 
+pub(crate) mod shape_start_monitor_deployment_input;
+
+pub(crate) mod shape_start_update_signal_map_input;
+
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_transfer_input_device_input;
@@ -218,6 +286,14 @@ pub(crate) mod shape_update_account_configuration_input;
 pub(crate) mod shape_update_channel_class_input;
 
 pub(crate) mod shape_update_channel_input;
+
+pub(crate) mod shape_update_cloud_watch_alarm_template_group_input;
+
+pub(crate) mod shape_update_cloud_watch_alarm_template_input;
+
+pub(crate) mod shape_update_event_bridge_rule_template_group_input;
+
+pub(crate) mod shape_update_event_bridge_rule_template_input;
 
 pub(crate) mod shape_update_input_device_input;
 
@@ -246,6 +322,10 @@ pub(crate) mod shape_cdi_input_specification;
 pub(crate) mod shape_channel;
 
 pub(crate) mod shape_encoder_settings;
+
+pub(crate) mod shape_event_bridge_rule_template_target;
+
+pub(crate) mod shape_failed_media_resource_map;
 
 pub(crate) mod shape_input;
 
@@ -283,6 +363,16 @@ pub(crate) mod shape_list_of_channel_egress_endpoint;
 
 pub(crate) mod shape_list_of_channel_summary;
 
+pub(crate) mod shape_list_of_cloud_watch_alarm_template_group_summary;
+
+pub(crate) mod shape_list_of_cloud_watch_alarm_template_summary;
+
+pub(crate) mod shape_list_of_event_bridge_rule_template_group_summary;
+
+pub(crate) mod shape_list_of_event_bridge_rule_template_summary;
+
+pub(crate) mod shape_list_of_event_bridge_rule_template_target;
+
 pub(crate) mod shape_list_of_input;
 
 pub(crate) mod shape_list_of_input_attachment;
@@ -319,7 +409,11 @@ pub(crate) mod shape_list_of_reservation;
 
 pub(crate) mod shape_list_of_schedule_action;
 
+pub(crate) mod shape_list_of_signal_map_summary;
+
 pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_list_of_string_min7_max11_pattern_aws097;
 
 pub(crate) mod shape_list_of_thumbnail_detail;
 
@@ -334,6 +428,10 @@ pub(crate) mod shape_maintenance_status;
 pub(crate) mod shape_maintenance_update_settings;
 
 pub(crate) mod shape_media_connect_flow_request;
+
+pub(crate) mod shape_media_resource_map;
+
+pub(crate) mod shape_monitor_deployment;
 
 pub(crate) mod shape_multiplex;
 
@@ -352,6 +450,10 @@ pub(crate) mod shape_renewal_settings;
 pub(crate) mod shape_reservation;
 
 pub(crate) mod shape_reservation_resource_specification;
+
+pub(crate) mod shape_successful_monitor_deployment;
+
+pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_tags;
 
@@ -379,7 +481,15 @@ pub(crate) mod shape_channel_egress_endpoint;
 
 pub(crate) mod shape_channel_summary;
 
+pub(crate) mod shape_cloud_watch_alarm_template_group_summary;
+
+pub(crate) mod shape_cloud_watch_alarm_template_summary;
+
 pub(crate) mod shape_color_correction_settings;
+
+pub(crate) mod shape_event_bridge_rule_template_group_summary;
+
+pub(crate) mod shape_event_bridge_rule_template_summary;
 
 pub(crate) mod shape_feature_activations;
 
@@ -417,6 +527,8 @@ pub(crate) mod shape_media_connect_flow;
 
 pub(crate) mod shape_media_package_output_destination_settings;
 
+pub(crate) mod shape_media_resource;
+
 pub(crate) mod shape_motion_graphics_configuration;
 
 pub(crate) mod shape_multiplex_output_destination;
@@ -444,6 +556,8 @@ pub(crate) mod shape_output_group;
 pub(crate) mod shape_pipeline_detail;
 
 pub(crate) mod shape_schedule_action;
+
+pub(crate) mod shape_signal_map_summary;
 
 pub(crate) mod shape_thumbnail_configuration;
 
@@ -486,6 +600,8 @@ pub(crate) mod shape_input_loss_behavior;
 pub(crate) mod shape_list_of_color_correction;
 
 pub(crate) mod shape_list_of_media_package_output_destination_settings;
+
+pub(crate) mod shape_list_of_media_resource_neighbor;
 
 pub(crate) mod shape_list_of_output_destination_settings;
 
@@ -594,6 +710,8 @@ pub(crate) mod shape_list_of_failover_condition;
 pub(crate) mod shape_list_of_output;
 
 pub(crate) mod shape_media_package_group_settings;
+
+pub(crate) mod shape_media_resource_neighbor;
 
 pub(crate) mod shape_motion_graphics_activate_schedule_action_settings;
 

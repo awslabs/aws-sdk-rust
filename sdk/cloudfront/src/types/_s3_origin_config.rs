@@ -4,9 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3OriginConfig {
+    /// <note>
+    /// <p>If you're using origin access control (OAC) instead of origin access identity, specify an empty <code>OriginAccessIdentity</code> element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting access to an Amazon Web Services</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
-    /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i></p>
-    /// <p>where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
+    /// <p><code>origin-access-identity/cloudfront/ID-of-origin-access-identity</code></p>
+    /// <p>The <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
     /// <p>If you want viewers to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
@@ -14,9 +17,12 @@ pub struct S3OriginConfig {
     pub origin_access_identity: ::std::string::String,
 }
 impl S3OriginConfig {
+    /// <note>
+    /// <p>If you're using origin access control (OAC) instead of origin access identity, specify an empty <code>OriginAccessIdentity</code> element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting access to an Amazon Web Services</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
-    /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i></p>
-    /// <p>where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
+    /// <p><code>origin-access-identity/cloudfront/ID-of-origin-access-identity</code></p>
+    /// <p>The <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
     /// <p>If you want viewers to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
@@ -40,9 +46,12 @@ pub struct S3OriginConfigBuilder {
     pub(crate) origin_access_identity: ::std::option::Option<::std::string::String>,
 }
 impl S3OriginConfigBuilder {
+    /// <note>
+    /// <p>If you're using origin access control (OAC) instead of origin access identity, specify an empty <code>OriginAccessIdentity</code> element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting access to an Amazon Web Services</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
-    /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i></p>
-    /// <p>where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
+    /// <p><code>origin-access-identity/cloudfront/ID-of-origin-access-identity</code></p>
+    /// <p>The <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
     /// <p>If you want viewers to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
@@ -52,9 +61,12 @@ impl S3OriginConfigBuilder {
         self.origin_access_identity = ::std::option::Option::Some(input.into());
         self
     }
+    /// <note>
+    /// <p>If you're using origin access control (OAC) instead of origin access identity, specify an empty <code>OriginAccessIdentity</code> element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting access to an Amazon Web Services</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
-    /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i></p>
-    /// <p>where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
+    /// <p><code>origin-access-identity/cloudfront/ID-of-origin-access-identity</code></p>
+    /// <p>The <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
     /// <p>If you want viewers to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
@@ -63,9 +75,12 @@ impl S3OriginConfigBuilder {
         self.origin_access_identity = input;
         self
     }
+    /// <note>
+    /// <p>If you're using origin access control (OAC) instead of origin access identity, specify an empty <code>OriginAccessIdentity</code> element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html">Restricting access to an Amazon Web Services</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
-    /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i></p>
-    /// <p>where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
+    /// <p><code>origin-access-identity/cloudfront/ID-of-origin-access-identity</code></p>
+    /// <p>The <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
     /// <p>If you want viewers to be able to access objects using either the CloudFront URL or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>

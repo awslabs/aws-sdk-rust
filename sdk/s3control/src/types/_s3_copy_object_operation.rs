@@ -9,7 +9,7 @@ pub struct S3CopyObjectOperation {
     /// <li>
     /// <p><b>General purpose buckets</b> - For example, to copy objects to a general purpose bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az2</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az1</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p></li>
     /// </ul>
     pub target_resource: ::std::option::Option<::std::string::String>,
     /// <p></p><note>
@@ -76,7 +76,7 @@ impl S3CopyObjectOperation {
     /// <li>
     /// <p><b>General purpose buckets</b> - For example, to copy objects to a general purpose bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az2</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az1</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p></li>
     /// </ul>
     pub fn target_resource(&self) -> ::std::option::Option<&str> {
         self.target_resource.as_deref()
@@ -213,7 +213,7 @@ impl S3CopyObjectOperationBuilder {
     /// <li>
     /// <p><b>General purpose buckets</b> - For example, to copy objects to a general purpose bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az2</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az1</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p></li>
     /// </ul>
     pub fn target_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_resource = ::std::option::Option::Some(input.into());
@@ -224,7 +224,7 @@ impl S3CopyObjectOperationBuilder {
     /// <li>
     /// <p><b>General purpose buckets</b> - For example, to copy objects to a general purpose bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az2</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az1</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p></li>
     /// </ul>
     pub fn set_target_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_resource = input;
@@ -235,7 +235,7 @@ impl S3CopyObjectOperationBuilder {
     /// <li>
     /// <p><b>General purpose buckets</b> - For example, to copy objects to a general purpose bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p></li>
     /// <li>
-    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az2</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.</p></li>
+    /// <p><b>Directory buckets</b> - For example, to copy objects to a directory bucket named <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az1</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</code>.</p></li>
     /// </ul>
     pub fn get_target_resource(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_resource

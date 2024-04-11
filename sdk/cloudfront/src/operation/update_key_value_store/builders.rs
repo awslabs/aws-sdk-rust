@@ -22,7 +22,7 @@ impl UpdateKeyValueStoreInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateKeyValueStore`.
 ///
-/// <p>Specifies the Key Value Store to update.</p>
+/// <p>Specifies the key value store to update.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKeyValueStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateKeyValueStoreFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Key Value Store to update.</p>
+    /// <p>The name of the key value store to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the Key Value Store to update.</p>
+    /// <p>The name of the key value store to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the Key Value Store to update.</p>
+    /// <p>The name of the key value store to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The comment of the Key Value Store to update.</p>
+    /// <p>The comment of the key value store to update.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
         self
     }
-    /// <p>The comment of the Key Value Store to update.</p>
+    /// <p>The comment of the key value store to update.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
     }
-    /// <p>The comment of the Key Value Store to update.</p>
+    /// <p>The comment of the key value store to update.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_comment()
     }
-    /// <p>The Key Value Store to update, if a match occurs.</p>
+    /// <p>The key value store to update, if a match occurs.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
-    /// <p>The Key Value Store to update, if a match occurs.</p>
+    /// <p>The key value store to update, if a match occurs.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }
-    /// <p>The Key Value Store to update, if a match occurs.</p>
+    /// <p>The key value store to update, if a match occurs.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }

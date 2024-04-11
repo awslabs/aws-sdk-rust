@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyValueStoreInput {
-    /// <p>The name of the Key Value Store.</p>
+    /// <p>The name of the key value store.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Key Value Store to delete, if a match occurs.</p>
+    /// <p>The key value store to delete, if a match occurs.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyValueStoreInput {
-    /// <p>The name of the Key Value Store.</p>
+    /// <p>The name of the key value store.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Key Value Store to delete, if a match occurs.</p>
+    /// <p>The key value store to delete, if a match occurs.</p>
     pub fn if_match(&self) -> ::std::option::Option<&str> {
         self.if_match.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteKeyValueStoreInputBuilder {
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyValueStoreInputBuilder {
-    /// <p>The name of the Key Value Store.</p>
+    /// <p>The name of the key value store.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Key Value Store.</p>
+    /// <p>The name of the key value store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the Key Value Store.</p>
+    /// <p>The name of the key value store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Key Value Store to delete, if a match occurs.</p>
+    /// <p>The key value store to delete, if a match occurs.</p>
     /// This field is required.
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Key Value Store to delete, if a match occurs.</p>
+    /// <p>The key value store to delete, if a match occurs.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
     }
-    /// <p>The Key Value Store to delete, if a match occurs.</p>
+    /// <p>The key value store to delete, if a match occurs.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }

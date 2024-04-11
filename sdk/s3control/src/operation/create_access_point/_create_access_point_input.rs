@@ -27,6 +27,7 @@ pub struct CreateAccessPointInput {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.</p>
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    /// <p>For same account access point when your bucket and access point belong to the same account owner, the <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point are not in the same account, the <code>BucketAccountId</code> is required.</p>
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccessPointInput {
@@ -64,6 +65,7 @@ impl CreateAccessPointInput {
         self.public_access_block_configuration.as_ref()
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    /// <p>For same account access point when your bucket and access point belong to the same account owner, the <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point are not in the same account, the <code>BucketAccountId</code> is required.</p>
     pub fn bucket_account_id(&self) -> ::std::option::Option<&str> {
         self.bucket_account_id.as_deref()
     }
@@ -200,16 +202,19 @@ impl CreateAccessPointInputBuilder {
         &self.public_access_block_configuration
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    /// <p>For same account access point when your bucket and access point belong to the same account owner, the <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point are not in the same account, the <code>BucketAccountId</code> is required.</p>
     pub fn bucket_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    /// <p>For same account access point when your bucket and access point belong to the same account owner, the <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point are not in the same account, the <code>BucketAccountId</code> is required.</p>
     pub fn set_bucket_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_account_id = input;
         self
     }
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+    /// <p>For same account access point when your bucket and access point belong to the same account owner, the <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point are not in the same account, the <code>BucketAccountId</code> is required.</p>
     pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_account_id
     }

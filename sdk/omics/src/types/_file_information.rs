@@ -10,6 +10,8 @@ pub struct FileInformation {
     pub part_size: ::std::option::Option<i64>,
     /// <p>The file's content length.</p>
     pub content_length: ::std::option::Option<i64>,
+    /// <p>The S3 URI metadata of a sequence store.</p>
+    pub s3_access: ::std::option::Option<crate::types::ReadSetS3Access>,
 }
 impl FileInformation {
     /// <p>The file's total parts.</p>
@@ -23,6 +25,10 @@ impl FileInformation {
     /// <p>The file's content length.</p>
     pub fn content_length(&self) -> ::std::option::Option<i64> {
         self.content_length
+    }
+    /// <p>The S3 URI metadata of a sequence store.</p>
+    pub fn s3_access(&self) -> ::std::option::Option<&crate::types::ReadSetS3Access> {
+        self.s3_access.as_ref()
     }
 }
 impl FileInformation {
@@ -39,6 +45,7 @@ pub struct FileInformationBuilder {
     pub(crate) total_parts: ::std::option::Option<i32>,
     pub(crate) part_size: ::std::option::Option<i64>,
     pub(crate) content_length: ::std::option::Option<i64>,
+    pub(crate) s3_access: ::std::option::Option<crate::types::ReadSetS3Access>,
 }
 impl FileInformationBuilder {
     /// <p>The file's total parts.</p>
@@ -83,12 +90,27 @@ impl FileInformationBuilder {
     pub fn get_content_length(&self) -> &::std::option::Option<i64> {
         &self.content_length
     }
+    /// <p>The S3 URI metadata of a sequence store.</p>
+    pub fn s3_access(mut self, input: crate::types::ReadSetS3Access) -> Self {
+        self.s3_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The S3 URI metadata of a sequence store.</p>
+    pub fn set_s3_access(mut self, input: ::std::option::Option<crate::types::ReadSetS3Access>) -> Self {
+        self.s3_access = input;
+        self
+    }
+    /// <p>The S3 URI metadata of a sequence store.</p>
+    pub fn get_s3_access(&self) -> &::std::option::Option<crate::types::ReadSetS3Access> {
+        &self.s3_access
+    }
     /// Consumes the builder and constructs a [`FileInformation`](crate::types::FileInformation).
     pub fn build(self) -> crate::types::FileInformation {
         crate::types::FileInformation {
             total_parts: self.total_parts,
             part_size: self.part_size,
             content_length: self.content_length,
+            s3_access: self.s3_access,
         }
     }
 }

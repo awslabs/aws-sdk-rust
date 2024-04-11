@@ -93,6 +93,10 @@ pub use crate::types::_read_set_activation_job_item_status::ReadSetActivationJob
 
 pub use crate::types::_complete_read_set_upload_part_list_item::CompleteReadSetUploadPartListItem;
 
+pub use crate::types::_e_tag_algorithm_family::ETagAlgorithmFamily;
+
+pub use crate::types::_sequence_store_s3_access::SequenceStoreS3Access;
+
 pub use crate::types::_sequence_store_detail::SequenceStoreDetail;
 
 pub use crate::types::_sequence_store_filter::SequenceStoreFilter;
@@ -110,6 +114,8 @@ pub use crate::types::_creation_type::CreationType;
 pub use crate::types::_read_set_files::ReadSetFiles;
 
 pub use crate::types::_file_information::FileInformation;
+
+pub use crate::types::_read_set_s3_access::ReadSetS3Access;
 
 pub use crate::types::_sequence_information::SequenceInformation;
 
@@ -235,6 +241,8 @@ mod _e_tag;
 
 mod _e_tag_algorithm;
 
+mod _e_tag_algorithm_family;
+
 mod _encryption_type;
 
 mod _export_read_set;
@@ -307,6 +315,8 @@ mod _read_set_list_item;
 
 mod _read_set_part_source;
 
+mod _read_set_s3_access;
+
 mod _read_set_status;
 
 mod _read_set_upload_part_list_filter;
@@ -356,6 +366,8 @@ mod _sequence_information;
 mod _sequence_store_detail;
 
 mod _sequence_store_filter;
+
+mod _sequence_store_s3_access;
 
 mod _share_details;
 

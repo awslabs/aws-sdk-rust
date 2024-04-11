@@ -35,6 +35,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "s3Access" => {
+                            builder = builder.set_s3_access(crate::protocol_serde::shape_read_set_s3_access::de_read_set_s3_access(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

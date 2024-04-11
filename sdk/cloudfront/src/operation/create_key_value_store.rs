@@ -248,14 +248,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateKeyValu
 pub enum CreateKeyValueStoreError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
-    /// <p>The Key Value Store entity already exists. You must provide a unique Key Value Store entity.</p>
+    /// <p>The key value store entity already exists. You must provide a unique key value store entity.</p>
     EntityAlreadyExists(crate::types::error::EntityAlreadyExists),
-    /// <p>The Key Value Store entity limit has been exceeded.</p>
+    /// <p>The key value store entity limit has been exceeded.</p>
     EntityLimitExceeded(crate::types::error::EntityLimitExceeded),
-    /// <p>The Key Value Store entity size limit was exceeded.</p>
+    /// <p>The key value store entity size limit was exceeded.</p>
     EntitySizeLimitExceeded(crate::types::error::EntitySizeLimitExceeded),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),
+    /// <p>This operation is not supported in this region.</p>
+    UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -294,6 +296,7 @@ impl CreateKeyValueStoreError {
             Self::EntityLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EntitySizeLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedOperation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -317,6 +320,10 @@ impl CreateKeyValueStoreError {
     pub fn is_invalid_argument(&self) -> bool {
         matches!(self, Self::InvalidArgument(_))
     }
+    /// Returns `true` if the error kind is `CreateKeyValueStoreError::UnsupportedOperation`.
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(self, Self::UnsupportedOperation(_))
+    }
 }
 impl ::std::error::Error for CreateKeyValueStoreError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -326,6 +333,7 @@ impl ::std::error::Error for CreateKeyValueStoreError {
             Self::EntityLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::EntitySizeLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgument(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperation(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -338,6 +346,7 @@ impl ::std::fmt::Display for CreateKeyValueStoreError {
             Self::EntityLimitExceeded(_inner) => _inner.fmt(f),
             Self::EntitySizeLimitExceeded(_inner) => _inner.fmt(f),
             Self::InvalidArgument(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperation(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -364,6 +373,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateKeyValu
             Self::EntityLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntitySizeLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

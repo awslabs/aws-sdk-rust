@@ -196,4 +196,18 @@ impl CreateSequenceStoreFluentBuilder {
     pub fn get_fallback_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fallback_location()
     }
+    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    pub fn e_tag_algorithm_family(mut self, input: crate::types::ETagAlgorithmFamily) -> Self {
+        self.inner = self.inner.e_tag_algorithm_family(input);
+        self
+    }
+    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    pub fn set_e_tag_algorithm_family(mut self, input: ::std::option::Option<crate::types::ETagAlgorithmFamily>) -> Self {
+        self.inner = self.inner.set_e_tag_algorithm_family(input);
+        self
+    }
+    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    pub fn get_e_tag_algorithm_family(&self) -> &::std::option::Option<crate::types::ETagAlgorithmFamily> {
+        self.inner.get_e_tag_algorithm_family()
+    }
 }

@@ -22,7 +22,7 @@ impl CreateKeyValueStoreInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateKeyValueStore`.
 ///
-/// <p>Specifies the Key Value Store resource to add to your account. In your account, the Key Value Store names must be unique. You can also import Key Value Store data in JSON format from an S3 bucket by providing a valid <code>ImportSource</code> that you own.</p>
+/// <p>Specifies the key value store resource to add to your account. In your account, the key value store names must be unique. You can also import key value store data in JSON format from an S3 bucket by providing a valid <code>ImportSource</code> that you own.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKeyValueStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateKeyValueStoreFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
+    /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
+    /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
+    /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The comment of the Key Value Store.</p>
+    /// <p>The comment of the key value store.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
         self
     }
-    /// <p>The comment of the Key Value Store.</p>
+    /// <p>The comment of the key value store.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
     }
-    /// <p>The comment of the Key Value Store.</p>
+    /// <p>The comment of the key value store.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_comment()
     }

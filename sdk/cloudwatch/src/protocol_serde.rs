@@ -205,6 +205,8 @@ pub(crate) mod shape_limit_exceeded_fault;
 
 pub(crate) mod shape_managed_rule;
 
+pub(crate) mod shape_metric_characteristics;
+
 pub(crate) mod shape_metric_data_query;
 
 pub(crate) mod shape_metric_datum;

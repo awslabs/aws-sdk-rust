@@ -16,7 +16,7 @@
 #![allow(rustdoc::redundant_explicit_links)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! This is the _Amazon CloudFront API Reference_. This guide is for developers who need detailed information about CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the _Amazon CloudFront Developer Guide_.
+//! This is the _Amazon CloudFront API Reference_. This guide is for developers who need detailed information about CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html).
 //!
 //! ## Getting Started
 //!
@@ -30,7 +30,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-cloudfront = "1.19.0"
+//! aws-sdk-cloudfront = "1.20.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

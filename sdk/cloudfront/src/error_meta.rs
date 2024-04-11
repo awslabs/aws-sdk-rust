@@ -15,7 +15,7 @@ pub enum Error {
     CachePolicyInUse(crate::types::error::CachePolicyInUse),
     /// <p>You can't change the value of a public key.</p>
     CannotChangeImmutablePublicKeyFields(crate::types::error::CannotChangeImmutablePublicKeyFields),
-    /// <p>The Key Value Store entity cannot be deleted while it is in use.</p>
+    /// <p>The key value store entity cannot be deleted while it is in use.</p>
     CannotDeleteEntityWhileInUse(crate::types::error::CannotDeleteEntityWhileInUse),
     /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.</p>
     CloudFrontOriginAccessIdentityAlreadyExists(crate::types::error::CloudFrontOriginAccessIdentityAlreadyExists),
@@ -29,13 +29,13 @@ pub enum Error {
     DistributionAlreadyExists(crate::types::error::DistributionAlreadyExists),
     /// <p>The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.</p>
     DistributionNotDisabled(crate::types::error::DistributionNotDisabled),
-    /// <p>The Key Value Store entity already exists. You must provide a unique Key Value Store entity.</p>
+    /// <p>The key value store entity already exists. You must provide a unique key value store entity.</p>
     EntityAlreadyExists(crate::types::error::EntityAlreadyExists),
-    /// <p>The Key Value Store entity limit has been exceeded.</p>
+    /// <p>The key value store entity limit has been exceeded.</p>
     EntityLimitExceeded(crate::types::error::EntityLimitExceeded),
-    /// <p>The Key Value Store entity was not found.</p>
+    /// <p>The key value store entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
-    /// <p>The Key Value Store entity size limit was exceeded.</p>
+    /// <p>The key value store entity size limit was exceeded.</p>
     EntitySizeLimitExceeded(crate::types::error::EntitySizeLimitExceeded),
     /// <p>The specified configuration for field-level encryption already exists.</p>
     FieldLevelEncryptionConfigAlreadyExists(crate::types::error::FieldLevelEncryptionConfigAlreadyExists),
@@ -1369,6 +1369,7 @@ impl From<crate::operation::create_key_value_store::CreateKeyValueStoreError> fo
                 Error::EntitySizeLimitExceeded(inner)
             }
             crate::operation::create_key_value_store::CreateKeyValueStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_key_value_store::CreateKeyValueStoreError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::create_key_value_store::CreateKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2008,6 +2009,7 @@ impl From<crate::operation::delete_key_value_store::DeleteKeyValueStoreError> fo
             crate::operation::delete_key_value_store::DeleteKeyValueStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::delete_key_value_store::DeleteKeyValueStoreError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
             crate::operation::delete_key_value_store::DeleteKeyValueStoreError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_key_value_store::DeleteKeyValueStoreError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::delete_key_value_store::DeleteKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2307,6 +2309,7 @@ impl From<crate::operation::describe_key_value_store::DescribeKeyValueStoreError
             crate::operation::describe_key_value_store::DescribeKeyValueStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::describe_key_value_store::DescribeKeyValueStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::describe_key_value_store::DescribeKeyValueStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::describe_key_value_store::DescribeKeyValueStoreError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::describe_key_value_store::DescribeKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -3664,6 +3667,7 @@ impl From<crate::operation::list_key_value_stores::ListKeyValueStoresError> for 
         match err {
             crate::operation::list_key_value_stores::ListKeyValueStoresError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::list_key_value_stores::ListKeyValueStoresError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_key_value_stores::ListKeyValueStoresError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::list_key_value_stores::ListKeyValueStoresError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4510,6 +4514,7 @@ impl From<crate::operation::update_key_value_store::UpdateKeyValueStoreError> fo
             crate::operation::update_key_value_store::UpdateKeyValueStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::update_key_value_store::UpdateKeyValueStoreError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
             crate::operation::update_key_value_store::UpdateKeyValueStoreError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_key_value_store::UpdateKeyValueStoreError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::update_key_value_store::UpdateKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

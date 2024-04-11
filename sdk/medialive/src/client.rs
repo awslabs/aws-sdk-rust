@@ -152,6 +152,14 @@ mod claim_device;
 
 mod create_channel;
 
+mod create_cloud_watch_alarm_template;
+
+mod create_cloud_watch_alarm_template_group;
+
+mod create_event_bridge_rule_template;
+
+mod create_event_bridge_rule_template_group;
+
 mod create_input;
 
 mod create_input_security_group;
@@ -161,6 +169,8 @@ mod create_multiplex;
 mod create_multiplex_program;
 
 mod create_partner_input;
+
+mod create_signal_map;
 
 mod create_tags;
 
@@ -193,6 +203,14 @@ pub mod customize;
 
 mod delete_channel;
 
+mod delete_cloud_watch_alarm_template;
+
+mod delete_cloud_watch_alarm_template_group;
+
+mod delete_event_bridge_rule_template;
+
+mod delete_event_bridge_rule_template_group;
+
 mod delete_input;
 
 mod delete_input_security_group;
@@ -204,6 +222,8 @@ mod delete_multiplex_program;
 mod delete_reservation;
 
 mod delete_schedule;
+
+mod delete_signal_map;
 
 mod delete_tags;
 
@@ -231,7 +251,25 @@ mod describe_schedule;
 
 mod describe_thumbnails;
 
+mod get_cloud_watch_alarm_template;
+
+mod get_cloud_watch_alarm_template_group;
+
+mod get_event_bridge_rule_template;
+
+mod get_event_bridge_rule_template_group;
+
+mod get_signal_map;
+
 mod list_channels;
+
+mod list_cloud_watch_alarm_template_groups;
+
+mod list_cloud_watch_alarm_templates;
+
+mod list_event_bridge_rule_template_groups;
+
+mod list_event_bridge_rule_templates;
 
 mod list_input_device_transfers;
 
@@ -249,6 +287,8 @@ mod list_offerings;
 
 mod list_reservations;
 
+mod list_signal_maps;
+
 mod list_tags_for_resource;
 
 mod purchase_offering;
@@ -261,11 +301,17 @@ mod restart_channel_pipelines;
 
 mod start_channel;
 
+mod start_delete_monitor_deployment;
+
 mod start_input_device;
 
 mod start_input_device_maintenance_window;
 
+mod start_monitor_deployment;
+
 mod start_multiplex;
+
+mod start_update_signal_map;
 
 mod stop_channel;
 
@@ -280,6 +326,14 @@ mod update_account_configuration;
 mod update_channel;
 
 mod update_channel_class;
+
+mod update_cloud_watch_alarm_template;
+
+mod update_cloud_watch_alarm_template_group;
+
+mod update_event_bridge_rule_template;
+
+mod update_event_bridge_rule_template_group;
 
 mod update_input;
 

@@ -19,7 +19,7 @@ pub struct StartRunInput {
     pub priority: ::std::option::Option<i32>,
     /// <p>Parameters for the run.</p>
     pub parameters: ::std::option::Option<::aws_smithy_types::Document>,
-    /// <p>A storage capacity for the run in gigabytes.</p>
+    /// <p>A storage capacity for the run in gibibytes.</p>
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>An output URI for the run.</p>
     pub output_uri: ::std::option::Option<::std::string::String>,
@@ -65,7 +65,7 @@ impl StartRunInput {
     pub fn parameters(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.parameters.as_ref()
     }
-    /// <p>A storage capacity for the run in gigabytes.</p>
+    /// <p>A storage capacity for the run in gibibytes.</p>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
@@ -230,17 +230,17 @@ impl StartRunInputBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.parameters
     }
-    /// <p>A storage capacity for the run in gigabytes.</p>
+    /// <p>A storage capacity for the run in gibibytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A storage capacity for the run in gigabytes.</p>
+    /// <p>A storage capacity for the run in gibibytes.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
     }
-    /// <p>A storage capacity for the run in gigabytes.</p>
+    /// <p>A storage capacity for the run in gibibytes.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }

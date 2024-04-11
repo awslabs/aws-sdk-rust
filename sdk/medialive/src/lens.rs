@@ -19,6 +19,46 @@ pub(crate) fn reflens_list_channels_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_cloud_watch_alarm_template_groups_output_output_next_token(
+    input: &crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_cloud_watch_alarm_templates_output_output_next_token(
+    input: &crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_event_bridge_rule_template_groups_output_output_next_token(
+    input: &crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_event_bridge_rule_templates_output_output_next_token(
+    input: &crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_input_device_transfers_output_output_next_token(
     input: &crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -99,6 +139,16 @@ pub(crate) fn reflens_list_reservations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_signal_maps_output_output_next_token(
+    input: &crate::operation::list_signal_maps::ListSignalMapsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_schedule_output_output_schedule_actions(
     input: crate::operation::describe_schedule::DescribeScheduleOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
@@ -113,6 +163,46 @@ pub(crate) fn lens_list_channels_output_output_channels(
     input: crate::operation::list_channels::ListChannelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>> {
     let input = match input.channels {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_cloud_watch_alarm_template_groups_output_output_cloud_watch_alarm_template_groups(
+    input: crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchAlarmTemplateGroupSummary>> {
+    let input = match input.cloud_watch_alarm_template_groups {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_cloud_watch_alarm_templates_output_output_cloud_watch_alarm_templates(
+    input: crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchAlarmTemplateSummary>> {
+    let input = match input.cloud_watch_alarm_templates {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_event_bridge_rule_template_groups_output_output_event_bridge_rule_template_groups(
+    input: crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::EventBridgeRuleTemplateGroupSummary>> {
+    let input = match input.event_bridge_rule_template_groups {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_event_bridge_rule_templates_output_output_event_bridge_rule_templates(
+    input: crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::EventBridgeRuleTemplateSummary>> {
+    let input = match input.event_bridge_rule_templates {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -193,6 +283,16 @@ pub(crate) fn lens_list_reservations_output_output_reservations(
     input: crate::operation::list_reservations::ListReservationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
     let input = match input.reservations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_signal_maps_output_output_signal_maps(
+    input: crate::operation::list_signal_maps::ListSignalMapsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SignalMapSummary>> {
+    let input = match input.signal_maps {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -254,14 +254,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteKeyValu
 pub enum DeleteKeyValueStoreError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
-    /// <p>The Key Value Store entity cannot be deleted while it is in use.</p>
+    /// <p>The key value store entity cannot be deleted while it is in use.</p>
     CannotDeleteEntityWhileInUse(crate::types::error::CannotDeleteEntityWhileInUse),
-    /// <p>The Key Value Store entity was not found.</p>
+    /// <p>The key value store entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>The <code>If-Match</code> version is missing or not valid.</p>
     InvalidIfMatchVersion(crate::types::error::InvalidIfMatchVersion),
     /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
     PreconditionFailed(crate::types::error::PreconditionFailed),
+    /// <p>This operation is not supported in this region.</p>
+    UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -300,6 +302,7 @@ impl DeleteKeyValueStoreError {
             Self::EntityNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidIfMatchVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PreconditionFailed(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedOperation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -323,6 +326,10 @@ impl DeleteKeyValueStoreError {
     pub fn is_precondition_failed(&self) -> bool {
         matches!(self, Self::PreconditionFailed(_))
     }
+    /// Returns `true` if the error kind is `DeleteKeyValueStoreError::UnsupportedOperation`.
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(self, Self::UnsupportedOperation(_))
+    }
 }
 impl ::std::error::Error for DeleteKeyValueStoreError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -332,6 +339,7 @@ impl ::std::error::Error for DeleteKeyValueStoreError {
             Self::EntityNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidIfMatchVersion(_inner) => ::std::option::Option::Some(_inner),
             Self::PreconditionFailed(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperation(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -344,6 +352,7 @@ impl ::std::fmt::Display for DeleteKeyValueStoreError {
             Self::EntityNotFound(_inner) => _inner.fmt(f),
             Self::InvalidIfMatchVersion(_inner) => _inner.fmt(f),
             Self::PreconditionFailed(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperation(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -370,6 +379,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteKeyValu
             Self::EntityNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidIfMatchVersion(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PreconditionFailed(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

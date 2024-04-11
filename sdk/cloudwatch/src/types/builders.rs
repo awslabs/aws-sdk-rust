@@ -29,6 +29,8 @@ pub use crate::types::_metric_math_anomaly_detector::MetricMathAnomalyDetectorBu
 
 pub use crate::types::_single_metric_anomaly_detector::SingleMetricAnomalyDetectorBuilder;
 
+pub use crate::types::_metric_characteristics::MetricCharacteristicsBuilder;
+
 pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfigurationBuilder;
 
 pub use crate::types::_range::RangeBuilder;

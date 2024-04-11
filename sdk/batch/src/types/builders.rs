@@ -161,6 +161,10 @@ pub use crate::types::_container_detail::ContainerDetailBuilder;
 
 pub use crate::types::_attempt_detail::AttemptDetailBuilder;
 
+pub use crate::types::_attempt_ecs_task_details::AttemptEcsTaskDetailsBuilder;
+
+pub use crate::types::_attempt_task_container_details::AttemptTaskContainerDetailsBuilder;
+
 pub use crate::types::_attempt_container_detail::AttemptContainerDetailBuilder;
 
 pub use crate::types::_job_queue_detail::JobQueueDetailBuilder;

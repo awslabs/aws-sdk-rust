@@ -22,7 +22,7 @@ impl CreateInvalidationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateInvalidation`.
 ///
-/// <p>Create a new invalidation.</p>
+/// <p>Create a new invalidation. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInvalidationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

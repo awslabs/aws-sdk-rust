@@ -8,9 +8,9 @@ pub struct LifecycleRuleAndOperator {
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
-    /// <p>Minimum object size to which the rule applies.</p>
+    /// <p>The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies to objects with a size that is greater than 7.</p>
     pub object_size_greater_than: ::std::option::Option<i64>,
-    /// <p>Maximum object size to which the rule applies.</p>
+    /// <p>The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies to objects with a size that is less than 77.</p>
     pub object_size_less_than: ::std::option::Option<i64>,
 }
 impl LifecycleRuleAndOperator {
@@ -24,11 +24,11 @@ impl LifecycleRuleAndOperator {
     pub fn tags(&self) -> &[crate::types::S3Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Minimum object size to which the rule applies.</p>
+    /// <p>The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies to objects with a size that is greater than 7.</p>
     pub fn object_size_greater_than(&self) -> ::std::option::Option<i64> {
         self.object_size_greater_than
     }
-    /// <p>Maximum object size to which the rule applies.</p>
+    /// <p>The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies to objects with a size that is less than 77.</p>
     pub fn object_size_less_than(&self) -> ::std::option::Option<i64> {
         self.object_size_less_than
     }
@@ -84,31 +84,31 @@ impl LifecycleRuleAndOperatorBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
         &self.tags
     }
-    /// <p>Minimum object size to which the rule applies.</p>
+    /// <p>The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies to objects with a size that is greater than 7.</p>
     pub fn object_size_greater_than(mut self, input: i64) -> Self {
         self.object_size_greater_than = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Minimum object size to which the rule applies.</p>
+    /// <p>The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies to objects with a size that is greater than 7.</p>
     pub fn set_object_size_greater_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.object_size_greater_than = input;
         self
     }
-    /// <p>Minimum object size to which the rule applies.</p>
+    /// <p>The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies to objects with a size that is greater than 7.</p>
     pub fn get_object_size_greater_than(&self) -> &::std::option::Option<i64> {
         &self.object_size_greater_than
     }
-    /// <p>Maximum object size to which the rule applies.</p>
+    /// <p>The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies to objects with a size that is less than 77.</p>
     pub fn object_size_less_than(mut self, input: i64) -> Self {
         self.object_size_less_than = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum object size to which the rule applies.</p>
+    /// <p>The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies to objects with a size that is less than 77.</p>
     pub fn set_object_size_less_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.object_size_less_than = input;
         self
     }
-    /// <p>Maximum object size to which the rule applies.</p>
+    /// <p>The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies to objects with a size that is less than 77.</p>
     pub fn get_object_size_less_than(&self) -> &::std::option::Option<i64> {
         &self.object_size_less_than
     }

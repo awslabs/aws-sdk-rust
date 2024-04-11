@@ -12,6 +12,8 @@ impl super::Client {
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::sse_config): <p>The store's server-side encryption (SSE) settings.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::creation_time): <p>When the store was created.</p>
     ///   - [`fallback_location(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::fallback_location): <p>An S3 location that is used to store files that have failed a direct upload.</p>
+    ///   - [`s3_access(Option<SequenceStoreS3Access>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::s3_access): <p>The S3 metadata of a sequence store, including the ARN and S3 URI of the S3 bucket.</p>
+    ///   - [`e_tag_algorithm_family(Option<ETagAlgorithmFamily>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::e_tag_algorithm_family): <p>The algorithm family of the ETag.</p>
     /// - On failure, responds with [`SdkError<GetSequenceStoreError>`](crate::operation::get_sequence_store::GetSequenceStoreError)
     pub fn get_sequence_store(&self) -> crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder {
         crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::new(self.handle.clone())

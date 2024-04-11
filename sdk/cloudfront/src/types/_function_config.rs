@@ -8,7 +8,7 @@ pub struct FunctionConfig {
     pub comment: ::std::string::String,
     /// <p>The function's runtime environment version.</p>
     pub runtime: crate::types::FunctionRuntime,
-    /// <p>The configuration for the Key Value Store associations.</p>
+    /// <p>The configuration for the key value store associations.</p>
     pub key_value_store_associations: ::std::option::Option<crate::types::KeyValueStoreAssociations>,
 }
 impl FunctionConfig {
@@ -21,7 +21,7 @@ impl FunctionConfig {
     pub fn runtime(&self) -> &crate::types::FunctionRuntime {
         &self.runtime
     }
-    /// <p>The configuration for the Key Value Store associations.</p>
+    /// <p>The configuration for the key value store associations.</p>
     pub fn key_value_store_associations(&self) -> ::std::option::Option<&crate::types::KeyValueStoreAssociations> {
         self.key_value_store_associations.as_ref()
     }
@@ -72,17 +72,17 @@ impl FunctionConfigBuilder {
     pub fn get_runtime(&self) -> &::std::option::Option<crate::types::FunctionRuntime> {
         &self.runtime
     }
-    /// <p>The configuration for the Key Value Store associations.</p>
+    /// <p>The configuration for the key value store associations.</p>
     pub fn key_value_store_associations(mut self, input: crate::types::KeyValueStoreAssociations) -> Self {
         self.key_value_store_associations = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for the Key Value Store associations.</p>
+    /// <p>The configuration for the key value store associations.</p>
     pub fn set_key_value_store_associations(mut self, input: ::std::option::Option<crate::types::KeyValueStoreAssociations>) -> Self {
         self.key_value_store_associations = input;
         self
     }
-    /// <p>The configuration for the Key Value Store associations.</p>
+    /// <p>The configuration for the key value store associations.</p>
     pub fn get_key_value_store_associations(&self) -> &::std::option::Option<crate::types::KeyValueStoreAssociations> {
         &self.key_value_store_associations
     }

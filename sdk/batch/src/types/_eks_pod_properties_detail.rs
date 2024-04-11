@@ -11,7 +11,7 @@ pub struct EksPodPropertiesDetail {
     /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. If no value was specified for <code>dnsPolicy</code> in the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a> API operation, then no value will be returned for <code>dnsPolicy</code> by either of <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a> or <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a> API operations. The pod spec setting will contain either <code>ClusterFirst</code> or <code>ClusterFirstWithHostNet</code>, depending on the value of the <code>hostNetwork</code> parameter. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
     /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code></p>
     pub dns_policy: ::std::option::Option<::std::string::String>,
-    /// <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+    /// <p>Displays the reference pointer to the Kubernetes secret resource. These secrets help to gain access to pull an images from a private registry.</p>
     pub image_pull_secrets: ::std::option::Option<::std::vec::Vec<crate::types::ImagePullSecret>>,
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerDetail>>,
@@ -42,7 +42,7 @@ impl EksPodPropertiesDetail {
     pub fn dns_policy(&self) -> ::std::option::Option<&str> {
         self.dns_policy.as_deref()
     }
-    /// <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+    /// <p>Displays the reference pointer to the Kubernetes secret resource. These secrets help to gain access to pull an images from a private registry.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_pull_secrets.is_none()`.
     pub fn image_pull_secrets(&self) -> &[crate::types::ImagePullSecret] {
@@ -156,19 +156,19 @@ impl EksPodPropertiesDetailBuilder {
     ///
     /// To override the contents of this collection use [`set_image_pull_secrets`](Self::set_image_pull_secrets).
     ///
-    /// <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+    /// <p>Displays the reference pointer to the Kubernetes secret resource. These secrets help to gain access to pull an images from a private registry.</p>
     pub fn image_pull_secrets(mut self, input: crate::types::ImagePullSecret) -> Self {
         let mut v = self.image_pull_secrets.unwrap_or_default();
         v.push(input);
         self.image_pull_secrets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+    /// <p>Displays the reference pointer to the Kubernetes secret resource. These secrets help to gain access to pull an images from a private registry.</p>
     pub fn set_image_pull_secrets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImagePullSecret>>) -> Self {
         self.image_pull_secrets = input;
         self
     }
-    /// <p>Displays the reference pointer to the Kubernetes secret resource.</p>
+    /// <p>Displays the reference pointer to the Kubernetes secret resource. These secrets help to gain access to pull an images from a private registry.</p>
     pub fn get_image_pull_secrets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePullSecret>> {
         &self.image_pull_secrets
     }

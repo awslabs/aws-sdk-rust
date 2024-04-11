@@ -22,7 +22,7 @@ impl ListKeyValueStoresInputBuilder {
 }
 /// Fluent builder constructing a request to `ListKeyValueStores`.
 ///
-/// <p>Specifies the Key Value Stores to list.</p>
+/// <p>Specifies the key value stores to list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeyValueStoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl ListKeyValueStoresFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_key_value_stores::paginator::ListKeyValueStoresPaginator {
         crate::operation::list_key_value_stores::paginator::ListKeyValueStoresPaginator::new(self.handle, self.inner)
     }
-    /// <p>The marker associated with the Key Value Stores list.</p>
+    /// <p>The marker associated with the key value stores list.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
-    /// <p>The marker associated with the Key Value Stores list.</p>
+    /// <p>The marker associated with the key value stores list.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
-    /// <p>The marker associated with the Key Value Stores list.</p>
+    /// <p>The marker associated with the key value stores list.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_marker()
     }
-    /// <p>The maximum number of items in the Key Value Stores list.</p>
+    /// <p>The maximum number of items in the key value stores list.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
         self
     }
-    /// <p>The maximum number of items in the Key Value Stores list.</p>
+    /// <p>The maximum number of items in the key value stores list.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
     }
-    /// <p>The maximum number of items in the Key Value Stores list.</p>
+    /// <p>The maximum number of items in the key value stores list.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_items()
     }
-    /// <p>The status of the request for the Key Value Stores list.</p>
+    /// <p>The status of the request for the key value stores list.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status(input.into());
         self
     }
-    /// <p>The status of the request for the Key Value Stores list.</p>
+    /// <p>The status of the request for the key value stores list.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status of the request for the Key Value Stores list.</p>
+    /// <p>The status of the request for the key value stores list.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_status()
     }

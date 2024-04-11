@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeyValueStoresOutput {
-    /// <p>The resulting Key Value Stores list.</p>
+    /// <p>The resulting key value stores list.</p>
     pub key_value_store_list: ::std::option::Option<crate::types::KeyValueStoreList>,
     _request_id: Option<String>,
 }
 impl ListKeyValueStoresOutput {
-    /// <p>The resulting Key Value Stores list.</p>
+    /// <p>The resulting key value stores list.</p>
     pub fn key_value_store_list(&self) -> ::std::option::Option<&crate::types::KeyValueStoreList> {
         self.key_value_store_list.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct ListKeyValueStoresOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListKeyValueStoresOutputBuilder {
-    /// <p>The resulting Key Value Stores list.</p>
+    /// <p>The resulting key value stores list.</p>
     pub fn key_value_store_list(mut self, input: crate::types::KeyValueStoreList) -> Self {
         self.key_value_store_list = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resulting Key Value Stores list.</p>
+    /// <p>The resulting key value stores list.</p>
     pub fn set_key_value_store_list(mut self, input: ::std::option::Option<crate::types::KeyValueStoreList>) -> Self {
         self.key_value_store_list = input;
         self
     }
-    /// <p>The resulting Key Value Stores list.</p>
+    /// <p>The resulting key value stores list.</p>
     pub fn get_key_value_store_list(&self) -> &::std::option::Option<crate::types::KeyValueStoreList> {
         &self.key_value_store_list
     }

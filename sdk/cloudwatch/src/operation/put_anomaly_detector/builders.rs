@@ -199,6 +199,20 @@ impl PutAnomalyDetectorFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfiguration> {
         self.inner.get_configuration()
     }
+    /// <p>Use this object to include parameters to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn metric_characteristics(mut self, input: crate::types::MetricCharacteristics) -> Self {
+        self.inner = self.inner.metric_characteristics(input);
+        self
+    }
+    /// <p>Use this object to include parameters to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn set_metric_characteristics(mut self, input: ::std::option::Option<crate::types::MetricCharacteristics>) -> Self {
+        self.inner = self.inner.set_metric_characteristics(input);
+        self
+    }
+    /// <p>Use this object to include parameters to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn get_metric_characteristics(&self) -> &::std::option::Option<crate::types::MetricCharacteristics> {
+        self.inner.get_metric_characteristics()
+    }
     /// <p>A single metric anomaly detector to be created.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>

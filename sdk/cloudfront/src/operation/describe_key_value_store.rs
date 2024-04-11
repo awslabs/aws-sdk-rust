@@ -253,10 +253,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeKeyVa
 pub enum DescribeKeyValueStoreError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
-    /// <p>The Key Value Store entity was not found.</p>
+    /// <p>The key value store entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),
+    /// <p>This operation is not supported in this region.</p>
+    UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -293,6 +295,7 @@ impl DescribeKeyValueStoreError {
             Self::AccessDenied(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EntityNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedOperation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -308,6 +311,10 @@ impl DescribeKeyValueStoreError {
     pub fn is_invalid_argument(&self) -> bool {
         matches!(self, Self::InvalidArgument(_))
     }
+    /// Returns `true` if the error kind is `DescribeKeyValueStoreError::UnsupportedOperation`.
+    pub fn is_unsupported_operation(&self) -> bool {
+        matches!(self, Self::UnsupportedOperation(_))
+    }
 }
 impl ::std::error::Error for DescribeKeyValueStoreError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -315,6 +322,7 @@ impl ::std::error::Error for DescribeKeyValueStoreError {
             Self::AccessDenied(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgument(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedOperation(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -325,6 +333,7 @@ impl ::std::fmt::Display for DescribeKeyValueStoreError {
             Self::AccessDenied(_inner) => _inner.fmt(f),
             Self::EntityNotFound(_inner) => _inner.fmt(f),
             Self::InvalidArgument(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperation(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -349,6 +358,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeKeyVa
             Self::AccessDenied(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntityNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

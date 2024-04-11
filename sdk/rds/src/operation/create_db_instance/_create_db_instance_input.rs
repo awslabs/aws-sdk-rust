@@ -280,6 +280,10 @@ pub struct CreateDbInstanceInput {
     /// <li>
     /// <p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
     /// <li>
+    /// <p><code>custom-oracle-se2</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
     /// <p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
     /// <p><code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p></li>
@@ -1110,6 +1114,10 @@ impl CreateDbInstanceInput {
     /// <p><code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p></li>
     /// <li>
     /// <p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
     /// <li>
     /// <p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
@@ -2696,6 +2704,10 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
     /// <li>
+    /// <p><code>custom-oracle-se2</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
     /// <p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
     /// <p><code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p></li>
@@ -2746,6 +2758,10 @@ impl CreateDbInstanceInputBuilder {
     /// <li>
     /// <p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
     /// <li>
+    /// <p><code>custom-oracle-se2</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
     /// <p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>
     /// <p><code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p></li>
@@ -2794,6 +2810,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p><code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)</p></li>
     /// <li>
     /// <p><code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2</code> (for RDS Custom for Oracle DB instances)</p></li>
+    /// <li>
+    /// <p><code>custom-oracle-se2-cdb</code> (for RDS Custom for Oracle DB instances)</p></li>
     /// <li>
     /// <p><code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p></li>
     /// <li>

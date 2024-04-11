@@ -24,6 +24,8 @@ pub struct DescribeEngineDefaultParametersInput {
     /// <li>
     /// <p><code>custom-oracle-ee-19</code></p></li>
     /// <li>
+    /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -134,6 +136,8 @@ impl DescribeEngineDefaultParametersInput {
     /// <p><code>aurora-postgresql14</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee-19</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
@@ -272,6 +276,8 @@ impl DescribeEngineDefaultParametersInputBuilder {
     /// <li>
     /// <p><code>custom-oracle-ee-19</code></p></li>
     /// <li>
+    /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -377,6 +383,8 @@ impl DescribeEngineDefaultParametersInputBuilder {
     /// <li>
     /// <p><code>custom-oracle-ee-19</code></p></li>
     /// <li>
+    /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
+    /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>
     /// <p><code>db2-se</code></p></li>
@@ -480,6 +488,8 @@ impl DescribeEngineDefaultParametersInputBuilder {
     /// <p><code>aurora-postgresql14</code></p></li>
     /// <li>
     /// <p><code>custom-oracle-ee-19</code></p></li>
+    /// <li>
+    /// <p><code>custom-oracle-ee-cdb-19</code></p></li>
     /// <li>
     /// <p><code>db2-ae</code></p></li>
     /// <li>

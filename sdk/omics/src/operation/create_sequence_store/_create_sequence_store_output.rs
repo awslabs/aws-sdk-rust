@@ -17,6 +17,8 @@ pub struct CreateSequenceStoreOutput {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
     pub fallback_location: ::std::option::Option<::std::string::String>,
+    /// <p>The algorithm family of the ETag.</p>
+    pub e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
     _request_id: Option<String>,
 }
 impl CreateSequenceStoreOutput {
@@ -50,6 +52,10 @@ impl CreateSequenceStoreOutput {
     pub fn fallback_location(&self) -> ::std::option::Option<&str> {
         self.fallback_location.as_deref()
     }
+    /// <p>The algorithm family of the ETag.</p>
+    pub fn e_tag_algorithm_family(&self) -> ::std::option::Option<&crate::types::ETagAlgorithmFamily> {
+        self.e_tag_algorithm_family.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateSequenceStoreOutput {
     fn request_id(&self) -> Option<&str> {
@@ -74,6 +80,7 @@ pub struct CreateSequenceStoreOutputBuilder {
     pub(crate) sse_config: ::std::option::Option<crate::types::SseConfig>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) fallback_location: ::std::option::Option<::std::string::String>,
+    pub(crate) e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
     _request_id: Option<String>,
 }
 impl CreateSequenceStoreOutputBuilder {
@@ -178,6 +185,20 @@ impl CreateSequenceStoreOutputBuilder {
     pub fn get_fallback_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.fallback_location
     }
+    /// <p>The algorithm family of the ETag.</p>
+    pub fn e_tag_algorithm_family(mut self, input: crate::types::ETagAlgorithmFamily) -> Self {
+        self.e_tag_algorithm_family = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The algorithm family of the ETag.</p>
+    pub fn set_e_tag_algorithm_family(mut self, input: ::std::option::Option<crate::types::ETagAlgorithmFamily>) -> Self {
+        self.e_tag_algorithm_family = input;
+        self
+    }
+    /// <p>The algorithm family of the ETag.</p>
+    pub fn get_e_tag_algorithm_family(&self) -> &::std::option::Option<crate::types::ETagAlgorithmFamily> {
+        &self.e_tag_algorithm_family
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -219,6 +240,7 @@ impl CreateSequenceStoreOutputBuilder {
                 )
             })?,
             fallback_location: self.fallback_location,
+            e_tag_algorithm_family: self.e_tag_algorithm_family,
             _request_id: self._request_id,
         })
     }

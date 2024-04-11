@@ -22,7 +22,7 @@ impl DeleteKeyValueStoreInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteKeyValueStore`.
 ///
-/// <p>Specifies the Key Value Store to delete.</p>
+/// <p>Specifies the key value store to delete.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteKeyValueStoreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteKeyValueStoreFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Key Value Store.</p>
+    /// <p>The name of the key value store.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the Key Value Store.</p>
+    /// <p>The name of the key value store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the Key Value Store.</p>
+    /// <p>The name of the key value store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The Key Value Store to delete, if a match occurs.</p>
+    /// <p>The key value store to delete, if a match occurs.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
-    /// <p>The Key Value Store to delete, if a match occurs.</p>
+    /// <p>The key value store to delete, if a match occurs.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }
-    /// <p>The Key Value Store to delete, if a match occurs.</p>
+    /// <p>The key value store to delete, if a match occurs.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }

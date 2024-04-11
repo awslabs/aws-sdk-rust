@@ -13,8 +13,14 @@
 /// # let etagalgorithm = unimplemented!();
 /// match etagalgorithm {
 ///     ETagAlgorithm::BamMd5Up => { /* ... */ },
+///     ETagAlgorithm::BamSha256Up => { /* ... */ },
+///     ETagAlgorithm::BamSha512Up => { /* ... */ },
 ///     ETagAlgorithm::CramMd5Up => { /* ... */ },
+///     ETagAlgorithm::CramSha256Up => { /* ... */ },
+///     ETagAlgorithm::CramSha512Up => { /* ... */ },
 ///     ETagAlgorithm::FastqMd5Up => { /* ... */ },
+///     ETagAlgorithm::FastqSha256Up => { /* ... */ },
+///     ETagAlgorithm::FastqSha512Up => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,9 +51,21 @@ pub enum ETagAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     BamMd5Up,
     #[allow(missing_docs)] // documentation missing in model
+    BamSha256Up,
+    #[allow(missing_docs)] // documentation missing in model
+    BamSha512Up,
+    #[allow(missing_docs)] // documentation missing in model
     CramMd5Up,
     #[allow(missing_docs)] // documentation missing in model
+    CramSha256Up,
+    #[allow(missing_docs)] // documentation missing in model
+    CramSha512Up,
+    #[allow(missing_docs)] // documentation missing in model
     FastqMd5Up,
+    #[allow(missing_docs)] // documentation missing in model
+    FastqSha256Up,
+    #[allow(missing_docs)] // documentation missing in model
+    FastqSha512Up,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -56,8 +74,14 @@ impl ::std::convert::From<&str> for ETagAlgorithm {
     fn from(s: &str) -> Self {
         match s {
             "BAM_MD5up" => ETagAlgorithm::BamMd5Up,
+            "BAM_SHA256up" => ETagAlgorithm::BamSha256Up,
+            "BAM_SHA512up" => ETagAlgorithm::BamSha512Up,
             "CRAM_MD5up" => ETagAlgorithm::CramMd5Up,
+            "CRAM_SHA256up" => ETagAlgorithm::CramSha256Up,
+            "CRAM_SHA512up" => ETagAlgorithm::CramSha512Up,
             "FASTQ_MD5up" => ETagAlgorithm::FastqMd5Up,
+            "FASTQ_SHA256up" => ETagAlgorithm::FastqSha256Up,
+            "FASTQ_SHA512up" => ETagAlgorithm::FastqSha512Up,
             other => ETagAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -74,14 +98,30 @@ impl ETagAlgorithm {
     pub fn as_str(&self) -> &str {
         match self {
             ETagAlgorithm::BamMd5Up => "BAM_MD5up",
+            ETagAlgorithm::BamSha256Up => "BAM_SHA256up",
+            ETagAlgorithm::BamSha512Up => "BAM_SHA512up",
             ETagAlgorithm::CramMd5Up => "CRAM_MD5up",
+            ETagAlgorithm::CramSha256Up => "CRAM_SHA256up",
+            ETagAlgorithm::CramSha512Up => "CRAM_SHA512up",
             ETagAlgorithm::FastqMd5Up => "FASTQ_MD5up",
+            ETagAlgorithm::FastqSha256Up => "FASTQ_SHA256up",
+            ETagAlgorithm::FastqSha512Up => "FASTQ_SHA512up",
             ETagAlgorithm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BAM_MD5up", "CRAM_MD5up", "FASTQ_MD5up"]
+        &[
+            "BAM_MD5up",
+            "BAM_SHA256up",
+            "BAM_SHA512up",
+            "CRAM_MD5up",
+            "CRAM_SHA256up",
+            "CRAM_SHA512up",
+            "FASTQ_MD5up",
+            "FASTQ_SHA256up",
+            "FASTQ_SHA512up",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ETagAlgorithm {
@@ -105,8 +145,14 @@ impl ::std::fmt::Display for ETagAlgorithm {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ETagAlgorithm::BamMd5Up => write!(f, "BAM_MD5up"),
+            ETagAlgorithm::BamSha256Up => write!(f, "BAM_SHA256up"),
+            ETagAlgorithm::BamSha512Up => write!(f, "BAM_SHA512up"),
             ETagAlgorithm::CramMd5Up => write!(f, "CRAM_MD5up"),
+            ETagAlgorithm::CramSha256Up => write!(f, "CRAM_SHA256up"),
+            ETagAlgorithm::CramSha512Up => write!(f, "CRAM_SHA512up"),
             ETagAlgorithm::FastqMd5Up => write!(f, "FASTQ_MD5up"),
+            ETagAlgorithm::FastqSha256Up => write!(f, "FASTQ_SHA256up"),
+            ETagAlgorithm::FastqSha512Up => write!(f, "FASTQ_SHA512up"),
             ETagAlgorithm::Unknown(value) => write!(f, "{}", value),
         }
     }

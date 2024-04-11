@@ -19,8 +19,10 @@ pub struct AnomalyDetector {
     pub stat: ::std::option::Option<::std::string::String>,
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
     pub configuration: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training.</p>
     pub state_value: ::std::option::Option<crate::types::AnomalyDetectorStateValue>,
+    /// <p>This object includes parameters that you can use to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub metric_characteristics: ::std::option::Option<crate::types::MetricCharacteristics>,
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
     pub single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
     /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
@@ -53,9 +55,13 @@ impl AnomalyDetector {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training.</p>
     pub fn state_value(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorStateValue> {
         self.state_value.as_ref()
+    }
+    /// <p>This object includes parameters that you can use to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn metric_characteristics(&self) -> ::std::option::Option<&crate::types::MetricCharacteristics> {
+        self.metric_characteristics.as_ref()
     }
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
     pub fn single_metric_anomaly_detector(&self) -> ::std::option::Option<&crate::types::SingleMetricAnomalyDetector> {
@@ -83,6 +89,7 @@ pub struct AnomalyDetectorBuilder {
     pub(crate) stat: ::std::option::Option<::std::string::String>,
     pub(crate) configuration: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
     pub(crate) state_value: ::std::option::Option<crate::types::AnomalyDetectorStateValue>,
+    pub(crate) metric_characteristics: ::std::option::Option<crate::types::MetricCharacteristics>,
     pub(crate) single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
     pub(crate) metric_math_anomaly_detector: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
 }
@@ -175,19 +182,33 @@ impl AnomalyDetectorBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfiguration> {
         &self.configuration
     }
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training.</p>
     pub fn state_value(mut self, input: crate::types::AnomalyDetectorStateValue) -> Self {
         self.state_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training.</p>
     pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorStateValue>) -> Self {
         self.state_value = input;
         self
     }
-    /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code></p>
+    /// <p>The current status of the anomaly detector's training.</p>
     pub fn get_state_value(&self) -> &::std::option::Option<crate::types::AnomalyDetectorStateValue> {
         &self.state_value
+    }
+    /// <p>This object includes parameters that you can use to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn metric_characteristics(mut self, input: crate::types::MetricCharacteristics) -> Self {
+        self.metric_characteristics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This object includes parameters that you can use to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn set_metric_characteristics(mut self, input: ::std::option::Option<crate::types::MetricCharacteristics>) -> Self {
+        self.metric_characteristics = input;
+        self
+    }
+    /// <p>This object includes parameters that you can use to provide information about your metric to CloudWatch to help it build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
+    pub fn get_metric_characteristics(&self) -> &::std::option::Option<crate::types::MetricCharacteristics> {
+        &self.metric_characteristics
     }
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
     pub fn single_metric_anomaly_detector(mut self, input: crate::types::SingleMetricAnomalyDetector) -> Self {
@@ -226,6 +247,7 @@ impl AnomalyDetectorBuilder {
             stat: self.stat,
             configuration: self.configuration,
             state_value: self.state_value,
+            metric_characteristics: self.metric_characteristics,
             single_metric_anomaly_detector: self.single_metric_anomaly_detector,
             metric_math_anomaly_detector: self.metric_math_anomaly_detector,
         }

@@ -140,6 +140,11 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
     /// <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you increase the allocated storage for a DB instance that uses Provisioned IOPS (<code>gp3</code>, <code>io1</code>, or <code>io2</code> storage type), you must also specify the <code>Iops</code> parameter. You can use the current value for <code>Iops</code>.</p></li>
+    /// </ul>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.inner = self.inner.allocated_storage(input);
         self
@@ -147,6 +152,11 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
     /// <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you increase the allocated storage for a DB instance that uses Provisioned IOPS (<code>gp3</code>, <code>io1</code>, or <code>io2</code> storage type), you must also specify the <code>Iops</code> parameter. You can use the current value for <code>Iops</code>.</p></li>
+    /// </ul>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocated_storage(input);
         self
@@ -154,6 +164,11 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
     /// <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you increase the allocated storage for a DB instance that uses Provisioned IOPS (<code>gp3</code>, <code>io1</code>, or <code>io2</code> storage type), you must also specify the <code>Iops</code> parameter. You can use the current value for <code>Iops</code>.</p></li>
+    /// </ul>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         self.inner.get_allocated_storage()
     }
@@ -856,6 +871,8 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
+    /// <li>
+    /// <p>When you increase the Provisioned IOPS, you must also specify the <code>AllocatedStorage</code> parameter. You can use the current value for <code>AllocatedStorage</code>.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     pub fn iops(mut self, input: i32) -> Self {
@@ -869,6 +886,8 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
+    /// <li>
+    /// <p>When you increase the Provisioned IOPS, you must also specify the <code>AllocatedStorage</code> parameter. You can use the current value for <code>AllocatedStorage</code>.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -882,6 +901,8 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li>
     /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
+    /// <li>
+    /// <p>When you increase the Provisioned IOPS, you must also specify the <code>AllocatedStorage</code> parameter. You can use the current value for <code>AllocatedStorage</code>.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {

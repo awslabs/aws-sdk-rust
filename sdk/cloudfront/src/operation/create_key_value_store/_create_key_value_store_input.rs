@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeyValueStoreInput {
-    /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
+    /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The comment of the Key Value Store.</p>
+    /// <p>The comment of the key value store.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket that provides the source for the import. The source must be in a valid JSON format.</p>
     pub import_source: ::std::option::Option<crate::types::ImportSource>,
 }
 impl CreateKeyValueStoreInput {
-    /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
+    /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The comment of the Key Value Store.</p>
+    /// <p>The comment of the key value store.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
@@ -40,32 +40,32 @@ pub struct CreateKeyValueStoreInputBuilder {
     pub(crate) import_source: ::std::option::Option<crate::types::ImportSource>,
 }
 impl CreateKeyValueStoreInputBuilder {
-    /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
+    /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
+    /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
+    /// <p>The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The comment of the Key Value Store.</p>
+    /// <p>The comment of the key value store.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The comment of the Key Value Store.</p>
+    /// <p>The comment of the key value store.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
-    /// <p>The comment of the Key Value Store.</p>
+    /// <p>The comment of the key value store.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }

@@ -25,6 +25,18 @@ pub mod claim_device;
 /// Types for the `CreateChannel` operation.
 pub mod create_channel;
 
+/// Types for the `CreateCloudWatchAlarmTemplate` operation.
+pub mod create_cloud_watch_alarm_template;
+
+/// Types for the `CreateCloudWatchAlarmTemplateGroup` operation.
+pub mod create_cloud_watch_alarm_template_group;
+
+/// Types for the `CreateEventBridgeRuleTemplate` operation.
+pub mod create_event_bridge_rule_template;
+
+/// Types for the `CreateEventBridgeRuleTemplateGroup` operation.
+pub mod create_event_bridge_rule_template_group;
+
 /// Types for the `CreateInput` operation.
 pub mod create_input;
 
@@ -40,11 +52,26 @@ pub mod create_multiplex_program;
 /// Types for the `CreatePartnerInput` operation.
 pub mod create_partner_input;
 
+/// Types for the `CreateSignalMap` operation.
+pub mod create_signal_map;
+
 /// Types for the `CreateTags` operation.
 pub mod create_tags;
 
 /// Types for the `DeleteChannel` operation.
 pub mod delete_channel;
+
+/// Types for the `DeleteCloudWatchAlarmTemplate` operation.
+pub mod delete_cloud_watch_alarm_template;
+
+/// Types for the `DeleteCloudWatchAlarmTemplateGroup` operation.
+pub mod delete_cloud_watch_alarm_template_group;
+
+/// Types for the `DeleteEventBridgeRuleTemplate` operation.
+pub mod delete_event_bridge_rule_template;
+
+/// Types for the `DeleteEventBridgeRuleTemplateGroup` operation.
+pub mod delete_event_bridge_rule_template_group;
 
 /// Types for the `DeleteInput` operation.
 pub mod delete_input;
@@ -63,6 +90,9 @@ pub mod delete_reservation;
 
 /// Types for the `DeleteSchedule` operation.
 pub mod delete_schedule;
+
+/// Types for the `DeleteSignalMap` operation.
+pub mod delete_signal_map;
 
 /// Types for the `DeleteTags` operation.
 pub mod delete_tags;
@@ -103,8 +133,35 @@ pub mod describe_schedule;
 /// Types for the `DescribeThumbnails` operation.
 pub mod describe_thumbnails;
 
+/// Types for the `GetCloudWatchAlarmTemplate` operation.
+pub mod get_cloud_watch_alarm_template;
+
+/// Types for the `GetCloudWatchAlarmTemplateGroup` operation.
+pub mod get_cloud_watch_alarm_template_group;
+
+/// Types for the `GetEventBridgeRuleTemplate` operation.
+pub mod get_event_bridge_rule_template;
+
+/// Types for the `GetEventBridgeRuleTemplateGroup` operation.
+pub mod get_event_bridge_rule_template_group;
+
+/// Types for the `GetSignalMap` operation.
+pub mod get_signal_map;
+
 /// Types for the `ListChannels` operation.
 pub mod list_channels;
+
+/// Types for the `ListCloudWatchAlarmTemplateGroups` operation.
+pub mod list_cloud_watch_alarm_template_groups;
+
+/// Types for the `ListCloudWatchAlarmTemplates` operation.
+pub mod list_cloud_watch_alarm_templates;
+
+/// Types for the `ListEventBridgeRuleTemplateGroups` operation.
+pub mod list_event_bridge_rule_template_groups;
+
+/// Types for the `ListEventBridgeRuleTemplates` operation.
+pub mod list_event_bridge_rule_templates;
 
 /// Types for the `ListInputDeviceTransfers` operation.
 pub mod list_input_device_transfers;
@@ -130,6 +187,9 @@ pub mod list_offerings;
 /// Types for the `ListReservations` operation.
 pub mod list_reservations;
 
+/// Types for the `ListSignalMaps` operation.
+pub mod list_signal_maps;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -148,14 +208,23 @@ pub mod restart_channel_pipelines;
 /// Types for the `StartChannel` operation.
 pub mod start_channel;
 
+/// Types for the `StartDeleteMonitorDeployment` operation.
+pub mod start_delete_monitor_deployment;
+
 /// Types for the `StartInputDevice` operation.
 pub mod start_input_device;
 
 /// Types for the `StartInputDeviceMaintenanceWindow` operation.
 pub mod start_input_device_maintenance_window;
 
+/// Types for the `StartMonitorDeployment` operation.
+pub mod start_monitor_deployment;
+
 /// Types for the `StartMultiplex` operation.
 pub mod start_multiplex;
+
+/// Types for the `StartUpdateSignalMap` operation.
+pub mod start_update_signal_map;
 
 /// Types for the `StopChannel` operation.
 pub mod stop_channel;
@@ -177,6 +246,18 @@ pub mod update_channel;
 
 /// Types for the `UpdateChannelClass` operation.
 pub mod update_channel_class;
+
+/// Types for the `UpdateCloudWatchAlarmTemplate` operation.
+pub mod update_cloud_watch_alarm_template;
+
+/// Types for the `UpdateCloudWatchAlarmTemplateGroup` operation.
+pub mod update_cloud_watch_alarm_template_group;
+
+/// Types for the `UpdateEventBridgeRuleTemplate` operation.
+pub mod update_event_bridge_rule_template;
+
+/// Types for the `UpdateEventBridgeRuleTemplateGroup` operation.
+pub mod update_event_bridge_rule_template_group;
 
 /// Types for the `UpdateInput` operation.
 pub mod update_input;

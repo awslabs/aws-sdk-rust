@@ -360,6 +360,210 @@ impl From<crate::operation::create_channel::CreateChannelError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError> for Error {
+    fn from(err: crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError) -> Self {
+        match err {
+            crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError> for Error {
+    fn from(err: crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError) -> Self {
+        match err {
+            crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_cloud_watch_alarm_template_group::CreateCloudWatchAlarmTemplateGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError> for Error {
+    fn from(err: crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError) -> Self {
+        match err {
+            crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError> for Error {
+    fn from(err: crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError) -> Self {
+        match err {
+            crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_event_bridge_rule_template_group::CreateEventBridgeRuleTemplateGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_input::CreateInputError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -532,6 +736,35 @@ impl From<crate::operation::create_partner_input::CreatePartnerInputError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_signal_map::CreateSignalMapError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_signal_map::CreateSignalMapError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_signal_map::CreateSignalMapError> for Error {
+    fn from(err: crate::operation::create_signal_map::CreateSignalMapError) -> Self {
+        match err {
+            crate::operation::create_signal_map::CreateSignalMapError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_signal_map::CreateSignalMapError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_signal_map::CreateSignalMapError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_signal_map::CreateSignalMapError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_signal_map::CreateSignalMapError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_signal_map::CreateSignalMapError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_signal_map::CreateSignalMapError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_tags::CreateTagsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -583,6 +816,210 @@ impl From<crate::operation::delete_channel::DeleteChannelError> for Error {
             crate::operation::delete_channel::DeleteChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_channel::DeleteChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_channel::DeleteChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError> for Error {
+    fn from(err: crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError) -> Self {
+        match err {
+            crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template::DeleteCloudWatchAlarmTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError> for Error {
+    fn from(err: crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError) -> Self {
+        match err {
+            crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_cloud_watch_alarm_template_group::DeleteCloudWatchAlarmTemplateGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError> for Error {
+    fn from(err: crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError) -> Self {
+        match err {
+            crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template::DeleteEventBridgeRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError> for Error {
+    fn from(err: crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError) -> Self {
+        match err {
+            crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_event_bridge_rule_template_group::DeleteEventBridgeRuleTemplateGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -782,6 +1219,35 @@ impl From<crate::operation::delete_schedule::DeleteScheduleError> for Error {
             crate::operation::delete_schedule::DeleteScheduleError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_schedule::DeleteScheduleError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_schedule::DeleteScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_signal_map::DeleteSignalMapError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_signal_map::DeleteSignalMapError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_signal_map::DeleteSignalMapError> for Error {
+    fn from(err: crate::operation::delete_signal_map::DeleteSignalMapError) -> Self {
+        match err {
+            crate::operation::delete_signal_map::DeleteSignalMapError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_signal_map::DeleteSignalMapError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_signal_map::DeleteSignalMapError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_signal_map::DeleteSignalMapError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_signal_map::DeleteSignalMapError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_signal_map::DeleteSignalMapError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_signal_map::DeleteSignalMapError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1238,6 +1704,204 @@ impl From<crate::operation::describe_thumbnails::DescribeThumbnailsError> for Er
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError> for Error {
+    fn from(err: crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError) -> Self {
+        match err {
+            crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template::GetCloudWatchAlarmTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError> for Error {
+    fn from(err: crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError) -> Self {
+        match err {
+            crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_cloud_watch_alarm_template_group::GetCloudWatchAlarmTemplateGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError> for Error {
+    fn from(err: crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError) -> Self {
+        match err {
+            crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template::GetEventBridgeRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError> for Error {
+    fn from(err: crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError) -> Self {
+        match err {
+            crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_event_bridge_rule_template_group::GetEventBridgeRuleTemplateGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_signal_map::GetSignalMapError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_signal_map::GetSignalMapError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_signal_map::GetSignalMapError> for Error {
+    fn from(err: crate::operation::get_signal_map::GetSignalMapError) -> Self {
+        match err {
+            crate::operation::get_signal_map::GetSignalMapError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_signal_map::GetSignalMapError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_signal_map::GetSignalMapError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_signal_map::GetSignalMapError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_signal_map::GetSignalMapError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_signal_map::GetSignalMapError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channels::ListChannelsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1262,6 +1926,190 @@ impl From<crate::operation::list_channels::ListChannelsError> for Error {
             crate::operation::list_channels::ListChannelsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_channels::ListChannelsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_channels::ListChannelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError> for Error {
+    fn from(err: crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError) -> Self {
+        match err {
+            crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_template_groups::ListCloudWatchAlarmTemplateGroupsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError> for Error {
+    fn from(err: crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError) -> Self {
+        match err {
+            crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_cloud_watch_alarm_templates::ListCloudWatchAlarmTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError> for Error {
+    fn from(err: crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError) -> Self {
+        match err {
+            crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_event_bridge_rule_template_groups::ListEventBridgeRuleTemplateGroupsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError> for Error {
+    fn from(err: crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError) -> Self {
+        match err {
+            crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_event_bridge_rule_templates::ListEventBridgeRuleTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1527,6 +2375,34 @@ impl From<crate::operation::list_reservations::ListReservationsError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_signal_maps::ListSignalMapsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_signal_maps::ListSignalMapsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_signal_maps::ListSignalMapsError> for Error {
+    fn from(err: crate::operation::list_signal_maps::ListSignalMapsError) -> Self {
+        match err {
+            crate::operation::list_signal_maps::ListSignalMapsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_signal_maps::ListSignalMapsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_signal_maps::ListSignalMapsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_signal_maps::ListSignalMapsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_signal_maps::ListSignalMapsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_signal_maps::ListSignalMapsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1740,6 +2616,52 @@ impl From<crate::operation::start_channel::StartChannelError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError> for Error {
+    fn from(err: crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError) -> Self {
+        match err {
+            crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_delete_monitor_deployment::StartDeleteMonitorDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_input_device::StartInputDeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1831,6 +2753,39 @@ impl From<crate::operation::start_input_device_maintenance_window::StartInputDev
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_monitor_deployment::StartMonitorDeploymentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_monitor_deployment::StartMonitorDeploymentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_monitor_deployment::StartMonitorDeploymentError> for Error {
+    fn from(err: crate::operation::start_monitor_deployment::StartMonitorDeploymentError) -> Self {
+        match err {
+            crate::operation::start_monitor_deployment::StartMonitorDeploymentError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_monitor_deployment::StartMonitorDeploymentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_monitor_deployment::StartMonitorDeploymentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_monitor_deployment::StartMonitorDeploymentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_monitor_deployment::StartMonitorDeploymentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_monitor_deployment::StartMonitorDeploymentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_monitor_deployment::StartMonitorDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_multiplex::StartMultiplexError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1857,6 +2812,39 @@ impl From<crate::operation::start_multiplex::StartMultiplexError> for Error {
             crate::operation::start_multiplex::StartMultiplexError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::start_multiplex::StartMultiplexError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::start_multiplex::StartMultiplexError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_update_signal_map::StartUpdateSignalMapError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_update_signal_map::StartUpdateSignalMapError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_update_signal_map::StartUpdateSignalMapError> for Error {
+    fn from(err: crate::operation::start_update_signal_map::StartUpdateSignalMapError) -> Self {
+        match err {
+            crate::operation::start_update_signal_map::StartUpdateSignalMapError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_update_signal_map::StartUpdateSignalMapError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_update_signal_map::StartUpdateSignalMapError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_update_signal_map::StartUpdateSignalMapError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_update_signal_map::StartUpdateSignalMapError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_update_signal_map::StartUpdateSignalMapError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_update_signal_map::StartUpdateSignalMapError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2095,6 +3083,210 @@ impl From<crate::operation::update_channel_class::UpdateChannelClassError> for E
                 Error::UnprocessableEntityException(inner)
             }
             crate::operation::update_channel_class::UpdateChannelClassError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError> for Error {
+    fn from(err: crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError) -> Self {
+        match err {
+            crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template::UpdateCloudWatchAlarmTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError> for Error {
+    fn from(err: crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError) -> Self {
+        match err {
+            crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_cloud_watch_alarm_template_group::UpdateCloudWatchAlarmTemplateGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError> for Error {
+    fn from(err: crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError) -> Self {
+        match err {
+            crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template::UpdateEventBridgeRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError> for Error {
+    fn from(err: crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError) -> Self {
+        match err {
+            crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_event_bridge_rule_template_group::UpdateEventBridgeRuleTemplateGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

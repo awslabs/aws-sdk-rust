@@ -195,6 +195,10 @@ pub use crate::types::_container_detail::ContainerDetail;
 
 pub use crate::types::_attempt_detail::AttemptDetail;
 
+pub use crate::types::_attempt_ecs_task_details::AttemptEcsTaskDetails;
+
+pub use crate::types::_attempt_task_container_details::AttemptTaskContainerDetails;
+
 pub use crate::types::_attempt_container_detail::AttemptContainerDetail;
 
 pub use crate::types::_job_queue_detail::JobQueueDetail;
@@ -230,6 +234,10 @@ mod _assign_public_ip;
 mod _attempt_container_detail;
 
 mod _attempt_detail;
+
+mod _attempt_ecs_task_details;
+
+mod _attempt_task_container_details;
 
 mod _ce_state;
 

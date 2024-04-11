@@ -45,7 +45,7 @@ pub struct DefaultCacheBehavior {
     pub compress: ::std::option::Option<bool>,
     /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
     pub lambda_function_associations: ::std::option::Option<crate::types::LambdaFunctionAssociations>,
-    /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    /// <p>A list of CloudFront functions that are associated with this cache behavior. Your functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub function_associations: ::std::option::Option<crate::types::FunctionAssociations>,
     /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for encrypting specific fields of data for the default cache behavior.</p>
     pub field_level_encryption_id: ::std::option::Option<::std::string::String>,
@@ -138,7 +138,7 @@ impl DefaultCacheBehavior {
     pub fn lambda_function_associations(&self) -> ::std::option::Option<&crate::types::LambdaFunctionAssociations> {
         self.lambda_function_associations.as_ref()
     }
-    /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    /// <p>A list of CloudFront functions that are associated with this cache behavior. Your functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub fn function_associations(&self) -> ::std::option::Option<&crate::types::FunctionAssociations> {
         self.function_associations.as_ref()
     }
@@ -412,17 +412,17 @@ impl DefaultCacheBehaviorBuilder {
     pub fn get_lambda_function_associations(&self) -> &::std::option::Option<crate::types::LambdaFunctionAssociations> {
         &self.lambda_function_associations
     }
-    /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    /// <p>A list of CloudFront functions that are associated with this cache behavior. Your functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub fn function_associations(mut self, input: crate::types::FunctionAssociations) -> Self {
         self.function_associations = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    /// <p>A list of CloudFront functions that are associated with this cache behavior. Your functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub fn set_function_associations(mut self, input: ::std::option::Option<crate::types::FunctionAssociations>) -> Self {
         self.function_associations = input;
         self
     }
-    /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    /// <p>A list of CloudFront functions that are associated with this cache behavior. Your functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub fn get_function_associations(&self) -> &::std::option::Option<crate::types::FunctionAssociations> {
         &self.function_associations
     }

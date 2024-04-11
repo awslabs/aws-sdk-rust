@@ -4,12 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksAttemptContainerDetail {
+    /// <p>The name of a container.</p>
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub exit_code: ::std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl EksAttemptContainerDetail {
+    /// <p>The name of a container.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
     /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(&self) -> ::std::option::Option<i32> {
         self.exit_code
@@ -30,10 +36,25 @@ impl EksAttemptContainerDetail {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksAttemptContainerDetailBuilder {
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) exit_code: ::std::option::Option<i32>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl EksAttemptContainerDetailBuilder {
+    /// <p>The name of a container.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of a container.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The name of a container.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
         self.exit_code = ::std::option::Option::Some(input);
@@ -65,6 +86,7 @@ impl EksAttemptContainerDetailBuilder {
     /// Consumes the builder and constructs a [`EksAttemptContainerDetail`](crate::types::EksAttemptContainerDetail).
     pub fn build(self) -> crate::types::EksAttemptContainerDetail {
         crate::types::EksAttemptContainerDetail {
+            name: self.name,
             exit_code: self.exit_code,
             reason: self.reason,
         }

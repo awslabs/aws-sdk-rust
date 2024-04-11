@@ -15,6 +15,8 @@ pub struct CreateSequenceStoreInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
     pub fallback_location: ::std::option::Option<::std::string::String>,
+    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    pub e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
 }
 impl CreateSequenceStoreInput {
     /// <p>A name for the store.</p>
@@ -41,6 +43,10 @@ impl CreateSequenceStoreInput {
     pub fn fallback_location(&self) -> ::std::option::Option<&str> {
         self.fallback_location.as_deref()
     }
+    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    pub fn e_tag_algorithm_family(&self) -> ::std::option::Option<&crate::types::ETagAlgorithmFamily> {
+        self.e_tag_algorithm_family.as_ref()
+    }
 }
 impl CreateSequenceStoreInput {
     /// Creates a new builder-style object to manufacture [`CreateSequenceStoreInput`](crate::operation::create_sequence_store::CreateSequenceStoreInput).
@@ -59,6 +65,7 @@ pub struct CreateSequenceStoreInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) fallback_location: ::std::option::Option<::std::string::String>,
+    pub(crate) e_tag_algorithm_family: ::std::option::Option<crate::types::ETagAlgorithmFamily>,
 }
 impl CreateSequenceStoreInputBuilder {
     /// <p>A name for the store.</p>
@@ -152,6 +159,20 @@ impl CreateSequenceStoreInputBuilder {
     pub fn get_fallback_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.fallback_location
     }
+    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    pub fn e_tag_algorithm_family(mut self, input: crate::types::ETagAlgorithmFamily) -> Self {
+        self.e_tag_algorithm_family = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    pub fn set_e_tag_algorithm_family(mut self, input: ::std::option::Option<crate::types::ETagAlgorithmFamily>) -> Self {
+        self.e_tag_algorithm_family = input;
+        self
+    }
+    /// <p>The ETag algorithm family to use for ingested read sets.</p>
+    pub fn get_e_tag_algorithm_family(&self) -> &::std::option::Option<crate::types::ETagAlgorithmFamily> {
+        &self.e_tag_algorithm_family
+    }
     /// Consumes the builder and constructs a [`CreateSequenceStoreInput`](crate::operation::create_sequence_store::CreateSequenceStoreInput).
     pub fn build(
         self,
@@ -164,6 +185,7 @@ impl CreateSequenceStoreInputBuilder {
             tags: self.tags,
             client_token: self.client_token,
             fallback_location: self.fallback_location,
+            e_tag_algorithm_family: self.e_tag_algorithm_family,
         })
     }
 }

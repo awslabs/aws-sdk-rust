@@ -71,6 +71,8 @@ pub use crate::types::_input_device_request::InputDeviceRequestBuilder;
 
 pub use crate::types::_input_destination_request::InputDestinationRequestBuilder;
 
+pub use crate::types::_event_bridge_rule_template_target::EventBridgeRuleTemplateTargetBuilder;
+
 pub use crate::types::_channel::ChannelBuilder;
 
 pub use crate::types::_vpc_output_settings_description::VpcOutputSettingsDescriptionBuilder;
@@ -409,6 +411,16 @@ pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettingsBui
 
 pub use crate::types::_account_configuration::AccountConfigurationBuilder;
 
+pub use crate::types::_monitor_deployment::MonitorDeploymentBuilder;
+
+pub use crate::types::_media_resource::MediaResourceBuilder;
+
+pub use crate::types::_media_resource_neighbor::MediaResourceNeighborBuilder;
+
+pub use crate::types::_successful_monitor_deployment::SuccessfulMonitorDeploymentBuilder;
+
+pub use crate::types::_signal_map_summary::SignalMapSummaryBuilder;
+
 pub use crate::types::_offering::OfferingBuilder;
 
 pub use crate::types::_multiplex_program_summary::MultiplexProgramSummaryBuilder;
@@ -420,6 +432,14 @@ pub use crate::types::_multiplex_settings_summary::MultiplexSettingsSummaryBuild
 pub use crate::types::_transferring_input_device_summary::TransferringInputDeviceSummaryBuilder;
 
 pub use crate::types::_input_device_summary::InputDeviceSummaryBuilder;
+
+pub use crate::types::_event_bridge_rule_template_summary::EventBridgeRuleTemplateSummaryBuilder;
+
+pub use crate::types::_event_bridge_rule_template_group_summary::EventBridgeRuleTemplateGroupSummaryBuilder;
+
+pub use crate::types::_cloud_watch_alarm_template_summary::CloudWatchAlarmTemplateSummaryBuilder;
+
+pub use crate::types::_cloud_watch_alarm_template_group_summary::CloudWatchAlarmTemplateGroupSummaryBuilder;
 
 pub use crate::types::_channel_summary::ChannelSummaryBuilder;
 
