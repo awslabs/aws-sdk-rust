@@ -118,11 +118,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetObje
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetObject")
-            .with_interceptor(
-                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                ),
-            )
+            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
             .with_interceptor(GetObjectEndpointParamsInterceptor)
             .with_interceptor(crate::http_response_checksum::ResponseChecksumInterceptor::new(
                 ["crc32", "crc32c", "sha256", "sha1"].as_slice(),

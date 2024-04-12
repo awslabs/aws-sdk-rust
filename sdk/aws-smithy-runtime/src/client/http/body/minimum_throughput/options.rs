@@ -12,6 +12,7 @@ use std::time::Duration;
 pub struct MinimumThroughputBodyOptions {
     /// The minimum throughput that is acceptable.
     minimum_throughput: Throughput,
+
     /// The 'grace period' after which the minimum throughput will be enforced.
     ///
     /// If this is set to 0, the minimum throughput will be enforced immediately.
@@ -23,9 +24,6 @@ pub struct MinimumThroughputBodyOptions {
     /// It is recommended to set this to a small value (e.g. 200ms) to avoid issues during
     /// stream-startup.
     grace_period: Duration,
-
-    /// The interval at which the throughput is checked.
-    check_interval: Duration,
 
     /// The period of time to consider when computing the throughput
     ///
@@ -44,7 +42,6 @@ impl MinimumThroughputBodyOptions {
         MinimumThroughputBodyOptionsBuilder::new()
             .minimum_throughput(self.minimum_throughput)
             .grace_period(self.grace_period)
-            .check_interval(self.check_interval)
     }
 
     /// The throughput check grace period.
@@ -65,12 +62,10 @@ impl MinimumThroughputBodyOptions {
         self.check_window
     }
 
-    /// The rate at which the throughput is checked.
-    ///
-    /// The actual rate throughput is checked may be higher than this value,
-    /// but it will never be lower.
+    /// Not used. Always returns `Duration::from_millis(500)`.
+    #[deprecated(note = "No longer used. Always returns Duration::from_millis(500)")]
     pub fn check_interval(&self) -> Duration {
-        self.check_interval
+        Duration::from_millis(500)
     }
 }
 
@@ -79,7 +74,6 @@ impl Default for MinimumThroughputBodyOptions {
         Self {
             minimum_throughput: DEFAULT_MINIMUM_THROUGHPUT,
             grace_period: DEFAULT_GRACE_PERIOD,
-            check_interval: DEFAULT_CHECK_INTERVAL,
             check_window: DEFAULT_CHECK_WINDOW,
         }
     }
@@ -89,11 +83,10 @@ impl Default for MinimumThroughputBodyOptions {
 #[derive(Debug, Default, Clone)]
 pub struct MinimumThroughputBodyOptionsBuilder {
     minimum_throughput: Option<Throughput>,
-    check_interval: Option<Duration>,
+    check_window: Option<Duration>,
     grace_period: Option<Duration>,
 }
 
-const DEFAULT_CHECK_INTERVAL: Duration = Duration::from_millis(500);
 const DEFAULT_GRACE_PERIOD: Duration = Duration::from_secs(0);
 const DEFAULT_MINIMUM_THROUGHPUT: Throughput = Throughput {
     bytes_read: 1,
@@ -136,19 +129,30 @@ impl MinimumThroughputBodyOptionsBuilder {
         self
     }
 
-    /// Set the rate at which throughput is checked.
-    ///
-    /// Defaults to 1 second.
-    pub fn check_interval(mut self, check_interval: Duration) -> Self {
-        self.set_check_interval(Some(check_interval));
+    /// No longer used. The check interval is now based on the check window (not currently configurable).
+    #[deprecated(
+        note = "No longer used. The check interval is now based on the check window (not currently configurable). Open an issue if you need to configure the check window."
+    )]
+    pub fn check_interval(self, _check_interval: Duration) -> Self {
         self
     }
 
-    /// Set the rate at which throughput is checked.
-    ///
-    /// Defaults to 1 second.
-    pub fn set_check_interval(&mut self, check_interval: Option<Duration>) -> &mut Self {
-        self.check_interval = check_interval;
+    /// No longer used. The check interval is now based on the check window (not currently configurable).
+    #[deprecated(
+        note = "No longer used. The check interval is now based on the check window (not currently configurable). Open an issue if you need to configure the check window."
+    )]
+    pub fn set_check_interval(&mut self, _check_interval: Option<Duration>) -> &mut Self {
+        self
+    }
+
+    #[allow(unused)]
+    pub(crate) fn check_window(mut self, check_window: Duration) -> Self {
+        self.set_check_window(Some(check_window));
+        self
+    }
+    #[allow(unused)]
+    pub(crate) fn set_check_window(&mut self, check_window: Option<Duration>) -> &mut Self {
+        self.check_window = check_window;
         self
     }
 
@@ -161,8 +165,7 @@ impl MinimumThroughputBodyOptionsBuilder {
             minimum_throughput: self
                 .minimum_throughput
                 .unwrap_or(DEFAULT_MINIMUM_THROUGHPUT),
-            check_interval: self.check_interval.unwrap_or(DEFAULT_CHECK_INTERVAL),
-            check_window: DEFAULT_CHECK_WINDOW,
+            check_window: self.check_window.unwrap_or(DEFAULT_CHECK_WINDOW),
         }
     }
 }
@@ -172,7 +175,6 @@ impl From<StalledStreamProtectionConfig> for MinimumThroughputBodyOptions {
         MinimumThroughputBodyOptions {
             grace_period: value.grace_period(),
             minimum_throughput: DEFAULT_MINIMUM_THROUGHPUT,
-            check_interval: DEFAULT_CHECK_INTERVAL,
             check_window: DEFAULT_CHECK_WINDOW,
         }
     }

@@ -171,7 +171,16 @@ pub fn default_identity_cache_plugin() -> Option<SharedRuntimePlugin> {
 ///
 /// By default, when throughput falls below 1/Bs for more than 5 seconds, the
 /// stream is cancelled.
+#[deprecated(
+    since = "1.2.0",
+    note = "This function wasn't intended to be public, and didn't take the behavior major version as an argument, so it couldn't be evolved over time."
+)]
 pub fn default_stalled_stream_protection_config_plugin() -> Option<SharedRuntimePlugin> {
+    default_stalled_stream_protection_config_plugin_v2(BehaviorVersion::v2023_11_09())
+}
+fn default_stalled_stream_protection_config_plugin_v2(
+    _behavior_version: BehaviorVersion,
+) -> Option<SharedRuntimePlugin> {
     Some(
         default_plugin(
             "default_stalled_stream_protection_config_plugin",
@@ -184,6 +193,8 @@ pub fn default_stalled_stream_protection_config_plugin() -> Option<SharedRuntime
         .with_config(layer("default_stalled_stream_protection_config", |layer| {
             layer.store_put(
                 StalledStreamProtectionConfig::enabled()
+                    // TODO(https://github.com/smithy-lang/smithy-rs/issues/3510): enable behind new behavior version
+                    .upload_enabled(false)
                     .grace_period(Duration::from_secs(5))
                     .build(),
             );
@@ -259,6 +270,10 @@ impl DefaultPluginParams {
 pub fn default_plugins(
     params: DefaultPluginParams,
 ) -> impl IntoIterator<Item = SharedRuntimePlugin> {
+    let behavior_version = params
+        .behavior_version
+        .unwrap_or_else(BehaviorVersion::latest);
+
     [
         default_http_client_plugin(),
         default_identity_cache_plugin(),
@@ -272,7 +287,7 @@ pub fn default_plugins(
         default_timeout_config_plugin(),
         // TODO(https://github.com/smithy-lang/smithy-rs/issues/3523): Reenable this
         /* enforce_content_length_runtime_plugin(), */
-        default_stalled_stream_protection_config_plugin(),
+        default_stalled_stream_protection_config_plugin_v2(behavior_version),
     ]
     .into_iter()
     .flatten()

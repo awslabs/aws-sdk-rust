@@ -121,11 +121,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEC2R
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetEC2RecommendationProjectedMetrics")
-            .with_interceptor(
-                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                ),
-            )
+            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
             .with_interceptor(GetEC2RecommendationProjectedMetricsEndpointParamsInterceptor)
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError,

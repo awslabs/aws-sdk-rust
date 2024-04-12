@@ -122,11 +122,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchDi
         #[allow(unused_mut)]
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("BatchDisassociateAssessmentReportEvidence")
-                .with_interceptor(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                    ),
-                )
+                .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
                 .with_interceptor(BatchDisassociateAssessmentReportEvidenceEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError,
