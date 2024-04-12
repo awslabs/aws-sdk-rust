@@ -223,6 +223,7 @@ mod loader {
     use aws_smithy_types::timeout::TimeoutConfig;
     use aws_types::app_name::AppName;
     use aws_types::docs_for;
+    use aws_types::origin::Origin;
     use aws_types::os_shim_internal::{Env, Fs};
     use aws_types::sdk_config::SharedHttpClient;
     use aws_types::SdkConfig;
@@ -605,7 +606,6 @@ mod loader {
         ///
         /// ```no_run
         /// use aws_config::profile::{ProfileFileCredentialsProvider, ProfileFileRegionProvider};
-        /// use aws_config::profile::profile_file::{ProfileFiles, ProfileFileKind};
         ///
         /// # async fn example() {
         /// let sdk_config = aws_config::from_env()
@@ -624,8 +624,8 @@ mod loader {
         /// exists to set a static endpoint for tools like `LocalStack`. When sending requests to
         /// production AWS services, this method should only be used for service-specific behavior.
         ///
-        /// When this method is used, the [`Region`](aws_types::region::Region) is only used for
-        /// signing; it is not used to route the request.
+        /// When this method is used, the [`Region`](aws_types::region::Region) is only used for signing;
+        /// It is **not** used to route the request.
         ///
         /// # Examples
         ///
@@ -823,6 +823,7 @@ mod loader {
 
             // If an endpoint URL is set programmatically, then our work is done.
             let endpoint_url = if self.endpoint_url.is_some() {
+                builder.insert_origin("endpoint_url", Origin::shared_config());
                 self.endpoint_url
             } else {
                 // Otherwise, check to see if we should ignore EP URLs set in the environment.
@@ -840,7 +841,9 @@ mod loader {
                     None
                 } else {
                     // Otherwise, attempt to resolve one.
-                    endpoint_url::endpoint_url_provider(&conf).await
+                    let (v, origin) = endpoint_url::endpoint_url_provider_with_origin(&conf).await;
+                    builder.insert_origin("endpoint_url", origin);
+                    v
                 }
             };
             builder.set_endpoint_url(endpoint_url);
@@ -884,6 +887,7 @@ mod loader {
         use aws_smithy_runtime::client::http::test_util::{infallible_client_fn, NeverClient};
         use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
         use aws_types::app_name::AppName;
+        use aws_types::origin::Origin;
         use aws_types::os_shim_internal::{Env, Fs};
         use std::sync::atomic::{AtomicUsize, Ordering};
         use std::sync::Arc;
@@ -948,6 +952,78 @@ mod loader {
             defaults(BehaviorVersion::latest())
                 .sleep_impl(InstantSleep)
                 .http_client(no_traffic_client())
+        }
+
+        #[tokio::test]
+        async fn test_origin_programmatic() {
+            let _ = tracing_subscriber::fmt::try_init();
+            let loader = base_conf()
+                .test_credentials()
+                .profile_name("custom")
+                .profile_files(
+                    #[allow(deprecated)]
+                    ProfileFiles::builder()
+                        .with_contents(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "[profile custom]\nendpoint_url = http://localhost:8989",
+                        )
+                        .build(),
+                )
+                .endpoint_url("http://localhost:1111")
+                .load()
+                .await;
+            assert_eq!(Origin::shared_config(), loader.get_origin("endpoint_url"));
+        }
+
+        #[tokio::test]
+        async fn test_origin_env() {
+            let _ = tracing_subscriber::fmt::try_init();
+            let env = Env::from_slice(&[("AWS_ENDPOINT_URL", "http://localhost:7878")]);
+            let loader = base_conf()
+                .test_credentials()
+                .env(env)
+                .profile_name("custom")
+                .profile_files(
+                    #[allow(deprecated)]
+                    ProfileFiles::builder()
+                        .with_contents(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "[profile custom]\nendpoint_url = http://localhost:8989",
+                        )
+                        .build(),
+                )
+                .load()
+                .await;
+            assert_eq!(
+                Origin::shared_environment_variable(),
+                loader.get_origin("endpoint_url")
+            );
+        }
+
+        #[tokio::test]
+        async fn test_origin_fs() {
+            let _ = tracing_subscriber::fmt::try_init();
+            let loader = base_conf()
+                .test_credentials()
+                .profile_name("custom")
+                .profile_files(
+                    #[allow(deprecated)]
+                    ProfileFiles::builder()
+                        .with_contents(
+                            #[allow(deprecated)]
+                            ProfileFileKind::Config,
+                            "[profile custom]\nendpoint_url = http://localhost:8989",
+                        )
+                        .build(),
+                )
+                .load()
+                .await;
+            assert_eq!(
+                Origin::shared_profile_file(),
+                loader.get_origin("endpoint_url")
+            );
         }
 
         #[tokio::test]

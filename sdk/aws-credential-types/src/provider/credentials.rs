@@ -72,7 +72,9 @@ construct credentials from hardcoded values.
 //! ```
 
 use crate::Credentials;
-use aws_smithy_runtime_api::client::identity::{Identity, IdentityFuture, ResolveIdentity};
+use aws_smithy_runtime_api::client::identity::{
+    Identity, IdentityCachePartition, IdentityFuture, ResolveIdentity,
+};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::sync::Arc;
@@ -124,7 +126,7 @@ impl ProvideCredentials for Arc<dyn ProvideCredentials> {
 /// Newtype wrapper around ProvideCredentials that implements Clone using an internal
 /// Arc.
 #[derive(Clone, Debug)]
-pub struct SharedCredentialsProvider(Arc<dyn ProvideCredentials>);
+pub struct SharedCredentialsProvider(Arc<dyn ProvideCredentials>, IdentityCachePartition);
 
 impl SharedCredentialsProvider {
     /// Create a new SharedCredentials provider from `ProvideCredentials`
@@ -132,7 +134,7 @@ impl SharedCredentialsProvider {
     /// The given provider will be wrapped in an internal `Arc`. If your
     /// provider is already in an `Arc`, use `SharedCredentialsProvider::from(provider)` instead.
     pub fn new(provider: impl ProvideCredentials + 'static) -> Self {
-        Self(Arc::new(provider))
+        Self(Arc::new(provider), IdentityCachePartition::new())
     }
 }
 
@@ -144,7 +146,7 @@ impl AsRef<dyn ProvideCredentials> for SharedCredentialsProvider {
 
 impl From<Arc<dyn ProvideCredentials>> for SharedCredentialsProvider {
     fn from(provider: Arc<dyn ProvideCredentials>) -> Self {
-        SharedCredentialsProvider(provider)
+        SharedCredentialsProvider(provider, IdentityCachePartition::new())
     }
 }
 
@@ -172,5 +174,29 @@ impl ResolveIdentity for SharedCredentialsProvider {
 
     fn fallback_on_interrupt(&self) -> Option<Identity> {
         ProvideCredentials::fallback_on_interrupt(self).map(|creds| creds.into())
+    }
+
+    fn cache_partition(&self) -> Option<IdentityCachePartition> {
+        Some(self.1)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use aws_smithy_runtime_api::client::identity::SharedIdentityResolver;
+
+    use super::*;
+
+    #[test]
+    fn reuses_cache_partition() {
+        let creds = Credentials::new("AKID", "SECRET", None, None, "test");
+        let provider = SharedCredentialsProvider::new(creds);
+        let partition = provider.cache_partition();
+        assert!(partition.is_some());
+
+        let identity_resolver = SharedIdentityResolver::new(provider);
+        let identity_partition = identity_resolver.cache_partition();
+
+        assert!(partition.unwrap() == identity_partition);
     }
 }

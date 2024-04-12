@@ -11,9 +11,8 @@
 
 use crate::app_name::AppName;
 use crate::docs_for;
+use crate::origin::Origin;
 use crate::region::Region;
-use std::sync::Arc;
-
 use crate::service_config::LoadServiceConfig;
 use aws_credential_types::provider::token::SharedTokenProvider;
 pub use aws_credential_types::provider::SharedCredentialsProvider;
@@ -28,6 +27,8 @@ pub use aws_smithy_runtime_api::client::stalled_stream_protection::StalledStream
 use aws_smithy_runtime_api::shared::IntoShared;
 pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_smithy_types::timeout::TimeoutConfig;
+use std::collections::HashMap;
+use std::sync::Arc;
 
 /// Unified docstrings to keep crates in sync. Not intended for public use
 pub mod unified_docs {
@@ -71,6 +72,7 @@ pub struct SdkConfig {
     use_dual_stack: Option<bool>,
     behavior_version: Option<BehaviorVersion>,
     service_config: Option<Arc<dyn LoadServiceConfig>>,
+    config_origins: HashMap<&'static str, Origin>,
 }
 
 /// Builder for AWS Shared Configuration
@@ -96,6 +98,7 @@ pub struct Builder {
     use_dual_stack: Option<bool>,
     behavior_version: Option<BehaviorVersion>,
     service_config: Option<Arc<dyn LoadServiceConfig>>,
+    config_origins: HashMap<&'static str, Origin>,
 }
 
 impl Builder {
@@ -633,6 +636,14 @@ impl Builder {
         self
     }
 
+    /// Set the origin of a setting.
+    ///
+    /// This is used internally to understand how to merge config structs while
+    /// respecting precedence of origins.
+    pub fn insert_origin(&mut self, setting: &'static str, origin: Origin) {
+        self.config_origins.insert(setting, origin);
+    }
+
     /// Build a [`SdkConfig`] from this builder.
     pub fn build(self) -> SdkConfig {
         SdkConfig {
@@ -652,6 +663,7 @@ impl Builder {
             behavior_version: self.behavior_version,
             stalled_stream_protection_config: self.stalled_stream_protection_config,
             service_config: self.service_config,
+            config_origins: self.config_origins,
         }
     }
 }
@@ -822,6 +834,17 @@ impl SdkConfig {
         self.clone().into_builder()
     }
 
+    /// Get the origin of a setting.
+    ///
+    /// This is used internally to understand how to merge config structs while
+    /// respecting precedence of origins.
+    pub fn get_origin(&self, setting: &'static str) -> Origin {
+        self.config_origins
+            .get(setting)
+            .cloned()
+            .unwrap_or_default()
+    }
+
     /// Convert this [`SdkConfig`] back to a builder to enable modification
     pub fn into_builder(self) -> Builder {
         Builder {
@@ -841,6 +864,7 @@ impl SdkConfig {
             behavior_version: self.behavior_version,
             stalled_stream_protection_config: self.stalled_stream_protection_config,
             service_config: self.service_config,
+            config_origins: self.config_origins,
         }
     }
 }

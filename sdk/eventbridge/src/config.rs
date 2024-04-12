@@ -1219,7 +1219,19 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder = builder.region(input.region().cloned());
         builder.set_use_fips(input.use_fips());
         builder.set_use_dual_stack(input.use_dual_stack());
-        builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
+        if input.get_origin("endpoint_url").is_client_config() {
+            builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
+        } else {
+            builder.set_endpoint_url(
+                input
+                    .service_config()
+                    .and_then(|conf| {
+                        conf.load_config(service_config_key("AWS_ENDPOINT_URL", "endpoint_url"))
+                            .map(|it| it.parse().unwrap())
+                    })
+                    .or_else(|| input.endpoint_url().map(|s| s.to_string())),
+            );
+        }
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());

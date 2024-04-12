@@ -168,6 +168,13 @@ pub trait ResolveIdentity: Send + Sync + Debug {
     fn cache_location(&self) -> IdentityCacheLocation {
         IdentityCacheLocation::RuntimeComponents
     }
+
+    /// Returns the identity cache partition associated with this identity resolver.
+    ///
+    /// By default this returns `None` and cache partitioning is left up to `SharedIdentityResolver`.
+    fn cache_partition(&self) -> Option<IdentityCachePartition> {
+        None
+    }
 }
 
 /// Cache location for identity caching.
@@ -195,9 +202,16 @@ pub struct SharedIdentityResolver {
 impl SharedIdentityResolver {
     /// Creates a new [`SharedIdentityResolver`] from the given resolver.
     pub fn new(resolver: impl ResolveIdentity + 'static) -> Self {
+        // NOTE: `IdentityCachePartition` is globally unique by construction so even
+        // custom implementations of `ResolveIdentity::cache_partition()` are unique.
+        let partition = match resolver.cache_partition() {
+            Some(p) => p,
+            None => IdentityCachePartition::new(),
+        };
+
         Self {
             inner: Arc::new(resolver),
-            cache_partition: IdentityCachePartition::new(),
+            cache_partition: partition,
         }
     }
 
@@ -221,6 +235,10 @@ impl ResolveIdentity for SharedIdentityResolver {
 
     fn cache_location(&self) -> IdentityCacheLocation {
         self.inner.cache_location()
+    }
+
+    fn cache_partition(&self) -> Option<IdentityCachePartition> {
+        Some(self.cache_partition())
     }
 }
 

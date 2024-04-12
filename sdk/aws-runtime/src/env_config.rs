@@ -5,6 +5,7 @@
 
 use crate::env_config::property::PropertiesKey;
 use crate::env_config::section::EnvConfigSections;
+use aws_types::origin::Origin;
 use aws_types::os_shim_internal::Env;
 use aws_types::service_config::ServiceConfigKey;
 use std::borrow::Cow;
@@ -79,6 +80,20 @@ pub struct EnvConfigSource<'a> {
     key: Cow<'a, str>,
     location: Location<'a>,
     scope: Scope<'a>,
+}
+
+#[allow(clippy::from_over_into)]
+impl Into<Origin> for &EnvConfigSource<'_> {
+    fn into(self) -> Origin {
+        match (&self.scope, &self.location) {
+            (Scope::Global, Location::Environment) => Origin::shared_environment_variable(),
+            (Scope::Global, Location::Profile { .. }) => Origin::shared_profile_file(),
+            (Scope::Service { .. }, Location::Environment) => {
+                Origin::service_environment_variable()
+            }
+            (Scope::Service { .. }, Location::Profile { .. }) => Origin::service_profile_file(),
+        }
+    }
 }
 
 impl<'a> EnvConfigSource<'a> {
@@ -186,7 +201,7 @@ impl<'a> EnvConfigValue<'a> {
         self
     }
 
-    /// Load the value from `provider_config`, validating with `validator`
+    /// Load the value from the env or profile files, validating with `validator`
     pub fn validate<T, E: Error + Send + Sync + 'static>(
         self,
         env: &Env,
@@ -202,6 +217,30 @@ impl<'a> EnvConfigValue<'a> {
                 })
             })
             .transpose()
+    }
+
+    /// Load the value from the env or profile files, validating with `validator`
+    ///
+    /// This version of the function will also return the origin of the config.
+    pub fn validate_and_return_origin<T, E: Error + Send + Sync + 'static>(
+        self,
+        env: &Env,
+        profiles: Option<&EnvConfigSections>,
+        validator: impl Fn(&str) -> Result<T, E>,
+    ) -> Result<(Option<T>, Origin), EnvConfigError<E>> {
+        let value = self.load(env, profiles);
+        match value {
+            Some((v, ctx)) => {
+                let origin: Origin = (&ctx).into();
+                validator(v.as_ref())
+                    .map_err(|err| EnvConfigError {
+                        property_source: format!("{}", ctx),
+                        err,
+                    })
+                    .map(|value| (Some(value), origin))
+            }
+            None => Ok((None, Origin::unknown())),
+        }
     }
 
     /// Load the value from the environment
@@ -222,9 +261,16 @@ impl<'a> EnvConfigValue<'a> {
                 )
             });
 
-            let value = service_config.or(global_config);
-            tracing::trace!("ENV value = {value:?}");
-            value
+            if let Some(v) = service_config {
+                tracing::trace!("(service env) {env_var} = {v:?}");
+                Some(v)
+            } else if let Some(v) = global_config {
+                tracing::trace!("(global env) {env_var} = {v:?}");
+                Some(v)
+            } else {
+                tracing::trace!("(env) no value set for {env_var}");
+                None
+            }
         });
 
         let profile_value = match (profiles, self.profile_key.as_ref()) {
@@ -245,9 +291,16 @@ impl<'a> EnvConfigValue<'a> {
                     )
                 });
 
-                let value = service_config.or(global_config);
-                tracing::trace!("PROFILE value = {value:?}");
-                value
+                if let Some(v) = service_config {
+                    tracing::trace!("(service profile) {profile_key} = {v:?}");
+                    Some(v)
+                } else if let Some(v) = global_config {
+                    tracing::trace!("(global profile) {profile_key} = {v:?}");
+                    Some(v)
+                } else {
+                    tracing::trace!("(service profile) no value set for {profile_key}");
+                    None
+                }
             }
             _ => None,
         };

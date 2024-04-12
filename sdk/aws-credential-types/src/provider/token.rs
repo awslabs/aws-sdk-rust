@@ -14,7 +14,7 @@
 
 use crate::{provider::error::TokenError, provider::future, Token};
 use aws_smithy_runtime_api::client::{
-    identity::{IdentityFuture, ResolveIdentity},
+    identity::{IdentityCachePartition, IdentityFuture, ResolveIdentity},
     runtime_components::RuntimeComponents,
 };
 use aws_smithy_runtime_api::impl_shared_conversions;
@@ -45,7 +45,7 @@ impl ProvideToken for Token {
 ///
 /// Newtype wrapper around [`ProvideToken`] that implements `Clone` using an internal `Arc`.
 #[derive(Clone, Debug)]
-pub struct SharedTokenProvider(Arc<dyn ProvideToken>);
+pub struct SharedTokenProvider(Arc<dyn ProvideToken>, IdentityCachePartition);
 
 impl SharedTokenProvider {
     /// Create a new [`SharedTokenProvider`] from [`ProvideToken`].
@@ -53,7 +53,7 @@ impl SharedTokenProvider {
     /// The given provider will be wrapped in an internal `Arc`. If your
     /// provider is already in an `Arc`, use `SharedTokenProvider::from(provider)` instead.
     pub fn new(provider: impl ProvideToken + 'static) -> Self {
-        Self(Arc::new(provider))
+        Self(Arc::new(provider), IdentityCachePartition::new())
     }
 }
 
@@ -65,7 +65,7 @@ impl AsRef<dyn ProvideToken> for SharedTokenProvider {
 
 impl From<Arc<dyn ProvideToken>> for SharedTokenProvider {
     fn from(provider: Arc<dyn ProvideToken>) -> Self {
-        SharedTokenProvider(provider)
+        SharedTokenProvider(provider, IdentityCachePartition::new())
     }
 }
 
@@ -86,6 +86,30 @@ impl ResolveIdentity for SharedTokenProvider {
     ) -> IdentityFuture<'a> {
         IdentityFuture::new(async move { Ok(self.provide_token().await?.into()) })
     }
+
+    fn cache_partition(&self) -> Option<IdentityCachePartition> {
+        Some(self.1)
+    }
 }
 
 impl_shared_conversions!(convert SharedTokenProvider from ProvideToken using SharedTokenProvider::new);
+
+#[cfg(test)]
+mod tests {
+    use aws_smithy_runtime_api::client::identity::SharedIdentityResolver;
+
+    use super::*;
+
+    #[test]
+    fn reuses_cache_partition() {
+        let token = Token::new("token", None);
+        let provider = SharedTokenProvider::new(token);
+        let partition = provider.cache_partition();
+        assert!(partition.is_some());
+
+        let identity_resolver = SharedIdentityResolver::new(provider);
+        let identity_partition = identity_resolver.cache_partition();
+
+        assert!(partition.unwrap() == identity_partition);
+    }
+}

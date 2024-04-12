@@ -15,11 +15,11 @@ all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "1.1.8"
+version = "1.2.0"
 
 [dependencies.aws-runtime]
 path = "../aws-runtime"
-version = "1.1.9"
+version = "1.2.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -49,7 +49,7 @@ version = "1.1.8"
 
 [dependencies.aws-types]
 path = "../aws-types"
-version = "1.1.9"
+version = "1.2.0"
 
 [dependencies.bytes]
 version = "1.0.0"
@@ -68,7 +68,7 @@ version = "0.1"
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util"]
-version = "1.1.8"
+version = "1.2.0"
 
 [dev-dependencies.tokio]
 version = "1.23.1"

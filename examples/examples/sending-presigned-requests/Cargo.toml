@@ -11,7 +11,7 @@ http = "0.2.6"
 hyper = "0.14"
 reqwest = "0.11"
 hyper-tls = "0.5.0"
-aws-config= { version = "1.1.10", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.2.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-s3= { version = "1.23.0", path = "../../../sdk/s3" }
 
 [dependencies.clap]
