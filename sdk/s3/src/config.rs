@@ -1314,10 +1314,39 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
             str_config.and_then(|it| it.parse::<bool>().ok())
         }));
         builder.set_credentials_provider(input.credentials_provider());
-        builder = builder.region(input.region().cloned());
-        builder.set_use_fips(input.use_fips());
-        builder.set_use_dual_stack(input.use_dual_stack());
-        builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
+        builder.set_region(
+            input
+                .service_config()
+                .and_then(|conf| conf.load_config(service_config_key("AWS_REGION", "region")).map(Region::new))
+                .or_else(|| input.region().cloned()),
+        );
+        builder.set_use_fips(
+            input
+                .service_config()
+                .and_then(|conf| {
+                    conf.load_config(service_config_key("AWS_USE_FIPS", "use_fips"))
+                        .map(|it| it.parse().unwrap())
+                })
+                .or_else(|| input.use_fips()),
+        );
+        builder.set_use_dual_stack(
+            input
+                .service_config()
+                .and_then(|conf| {
+                    conf.load_config(service_config_key("AWS_USE_DUAL_STACK", "use_dual_stack"))
+                        .map(|it| it.parse().unwrap())
+                })
+                .or_else(|| input.use_dual_stack()),
+        );
+        builder.set_endpoint_url(
+            input
+                .service_config()
+                .and_then(|conf| {
+                    conf.load_config(service_config_key("AWS_ENDPOINT_URL", "endpoint_url"))
+                        .map(|it| it.parse().unwrap())
+                })
+                .or_else(|| input.endpoint_url().map(|s| s.to_string())),
+        );
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
@@ -1334,6 +1363,17 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
         }
+        builder.set_disable_multi_region_access_points(input.service_config().and_then(|conf| {
+            let str_config = conf.load_config(service_config_key(
+                "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS",
+                "s3_disable_multi_region_access_points",
+            ));
+            str_config.and_then(|it| it.parse::<bool>().ok())
+        }));
+        builder.set_use_arn_region(input.service_config().and_then(|conf| {
+            let str_config = conf.load_config(service_config_key("AWS_S3_USE_ARN_REGION", "s3_use_arn_region"));
+            str_config.and_then(|it| it.parse::<bool>().ok())
+        }));
         builder.set_app_name(input.app_name().cloned());
 
         builder
