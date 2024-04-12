@@ -36,6 +36,10 @@ impl DisableKeyRotationInputBuilder {
 /// <p><code>EnableKeyRotation</code></p></li>
 /// <li>
 /// <p><code>GetKeyRotationStatus</code></p></li>
+/// <li>
+/// <p><code>ListKeyRotations</code></p></li>
+/// <li>
+/// <p><code>RotateKeyOnDemand</code></p></li>
 /// </ul>
 /// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_key_policies_output_output_next_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_key_rotations_output_output_next_marker(
+    input: &crate::operation::list_key_rotations::ListKeyRotationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_keys_output_output_next_marker(
     input: &crate::operation::list_keys::ListKeysOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -103,6 +113,16 @@ pub(crate) fn lens_list_key_policies_output_output_policy_names(
     input: crate::operation::list_key_policies::ListKeyPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = match input.policy_names {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_key_rotations_output_output_rotations(
+    input: crate::operation::list_key_rotations::ListKeyRotationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RotationsListEntry>> {
+    let input = match input.rotations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

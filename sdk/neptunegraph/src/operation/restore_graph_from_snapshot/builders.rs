@@ -188,17 +188,23 @@ impl RestoreGraphFromSnapshotFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn replica_count(mut self, input: i32) -> Self {
         self.inner = self.inner.replica_count(input);
         self
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_replica_count(input);
         self
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_replica_count()
     }

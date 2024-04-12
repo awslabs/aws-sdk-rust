@@ -22,9 +22,8 @@ impl CreateApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
-/// <p>Creates a Fleet Hub for AWS IoT Device Management web application.</p><note>
-/// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
-/// </note>
+/// <p>Creates a Fleet Hub for IoT Device Management web application.</p>
+/// <p>When creating a Fleet Hub application, you must create an organization instance of IAM Identity Center if you don't already have one. The Fleet Hub application you create must also be in the same Amazon Web Services Region of the organization instance of IAM Identity Center. For more information see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html">Enabling IAM Identity Center</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/organization-instances-identity-center.html">Organization instances of IAM Identity Center</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -152,21 +151,21 @@ impl CreateApplicationFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with Amazon Web Services IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with Amazon Web Services IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with Amazon Web Services IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {

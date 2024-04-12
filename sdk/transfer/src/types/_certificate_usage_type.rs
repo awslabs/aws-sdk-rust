@@ -14,6 +14,7 @@
 /// match certificateusagetype {
 ///     CertificateUsageType::Encryption => { /* ... */ },
 ///     CertificateUsageType::Signing => { /* ... */ },
+///     CertificateUsageType::Tls => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum CertificateUsageType {
     Encryption,
     #[allow(missing_docs)] // documentation missing in model
     Signing,
+    #[allow(missing_docs)] // documentation missing in model
+    Tls,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for CertificateUsageType {
         match s {
             "ENCRYPTION" => CertificateUsageType::Encryption,
             "SIGNING" => CertificateUsageType::Signing,
+            "TLS" => CertificateUsageType::Tls,
             other => CertificateUsageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl CertificateUsageType {
         match self {
             CertificateUsageType::Encryption => "ENCRYPTION",
             CertificateUsageType::Signing => "SIGNING",
+            CertificateUsageType::Tls => "TLS",
             CertificateUsageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENCRYPTION", "SIGNING"]
+        &["ENCRYPTION", "SIGNING", "TLS"]
     }
 }
 impl ::std::convert::AsRef<str> for CertificateUsageType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for CertificateUsageType {
         match self {
             CertificateUsageType::Encryption => write!(f, "ENCRYPTION"),
             CertificateUsageType::Signing => write!(f, "SIGNING"),
+            CertificateUsageType::Tls => write!(f, "TLS"),
             CertificateUsageType::Unknown(value) => write!(f, "{}", value),
         }
     }

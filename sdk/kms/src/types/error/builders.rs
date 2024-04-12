@@ -61,6 +61,8 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBu
 
 pub use crate::types::error::_tag_exception::TagExceptionBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_invalid_grant_id_exception::InvalidGrantIdExceptionBuilder;
 
 pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentExceptionBuilder;

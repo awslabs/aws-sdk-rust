@@ -20,6 +20,11 @@ pub fn ser_describe_change_set_input_input_input(
     if let Some(var_6) = &input.next_token {
         scope_5.string(var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("IncludePropertyValues");
+    if let Some(var_8) = &input.include_property_values {
+        scope_7.boolean(*var_8);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

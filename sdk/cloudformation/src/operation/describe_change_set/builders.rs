@@ -150,4 +150,18 @@ impl DescribeChangeSetFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>If <code>true</code>, the returned changes include detailed changes in the property values.</p>
+    pub fn include_property_values(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_property_values(input);
+        self
+    }
+    /// <p>If <code>true</code>, the returned changes include detailed changes in the property values.</p>
+    pub fn set_include_property_values(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_property_values(input);
+        self
+    }
+    /// <p>If <code>true</code>, the returned changes include detailed changes in the property values.</p>
+    pub fn get_include_property_values(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_property_values()
+    }
 }

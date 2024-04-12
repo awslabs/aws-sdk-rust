@@ -131,6 +131,32 @@ pub fn de_resource_change(
                 builder = builder.set_module_info(var_10);
             }
             ,
+            s if s.matches("BeforeContext") /* BeforeContext com.amazonaws.cloudformation#ResourceChange$BeforeContext */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_before_context(var_11);
+            }
+            ,
+            s if s.matches("AfterContext") /* AfterContext com.amazonaws.cloudformation#ResourceChange$AfterContext */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_after_context(var_12);
+            }
+            ,
             _ => {}
         }
     }

@@ -19,11 +19,11 @@ pub struct DescribeApplicationOutput {
     pub application_creation_date: i64,
     /// <p>The date (in Unix epoch time) when the application was last updated.</p>
     pub application_last_update_date: i64,
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    /// <p>The ARN of the role that the web application assumes when it interacts with Amazon Web Services IoT Core.</p>
     pub role_arn: ::std::string::String,
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
     pub sso_client_id: ::std::option::Option<::std::string::String>,
-    /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+    /// <p>A message that explains any failures included in the <code>applicationState</code> response field. This message explains failures in the <code>CreateApplication</code> and <code>DeleteApplication</code> actions.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -66,7 +66,7 @@ impl DescribeApplicationOutput {
     pub fn application_last_update_date(&self) -> i64 {
         self.application_last_update_date
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    /// <p>The ARN of the role that the web application assumes when it interacts with Amazon Web Services IoT Core.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
@@ -75,7 +75,7 @@ impl DescribeApplicationOutput {
     pub fn sso_client_id(&self) -> ::std::option::Option<&str> {
         self.sso_client_id.as_deref()
     }
-    /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+    /// <p>A message that explains any failures included in the <code>applicationState</code> response field. This message explains failures in the <code>CreateApplication</code> and <code>DeleteApplication</code> actions.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -234,18 +234,18 @@ impl DescribeApplicationOutputBuilder {
     pub fn get_application_last_update_date(&self) -> &::std::option::Option<i64> {
         &self.application_last_update_date
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    /// <p>The ARN of the role that the web application assumes when it interacts with Amazon Web Services IoT Core.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    /// <p>The ARN of the role that the web application assumes when it interacts with Amazon Web Services IoT Core.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    /// <p>The ARN of the role that the web application assumes when it interacts with Amazon Web Services IoT Core.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -263,17 +263,17 @@ impl DescribeApplicationOutputBuilder {
     pub fn get_sso_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sso_client_id
     }
-    /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+    /// <p>A message that explains any failures included in the <code>applicationState</code> response field. This message explains failures in the <code>CreateApplication</code> and <code>DeleteApplication</code> actions.</p>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+    /// <p>A message that explains any failures included in the <code>applicationState</code> response field. This message explains failures in the <code>CreateApplication</code> and <code>DeleteApplication</code> actions.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
-    /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+    /// <p>A message that explains any failures included in the <code>applicationState</code> response field. This message explains failures in the <code>CreateApplication</code> and <code>DeleteApplication</code> actions.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }

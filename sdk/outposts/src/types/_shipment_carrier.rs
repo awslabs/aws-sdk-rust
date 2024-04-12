@@ -14,6 +14,7 @@
 /// match shipmentcarrier {
 ///     ShipmentCarrier::Dbs => { /* ... */ },
 ///     ShipmentCarrier::Dhl => { /* ... */ },
+///     ShipmentCarrier::Expeditors => { /* ... */ },
 ///     ShipmentCarrier::Fedex => { /* ... */ },
 ///     ShipmentCarrier::Ups => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum ShipmentCarrier {
     #[allow(missing_docs)] // documentation missing in model
     Dhl,
     #[allow(missing_docs)] // documentation missing in model
+    Expeditors,
+    #[allow(missing_docs)] // documentation missing in model
     Fedex,
     #[allow(missing_docs)] // documentation missing in model
     Ups,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for ShipmentCarrier {
         match s {
             "DBS" => ShipmentCarrier::Dbs,
             "DHL" => ShipmentCarrier::Dhl,
+            "EXPEDITORS" => ShipmentCarrier::Expeditors,
             "FEDEX" => ShipmentCarrier::Fedex,
             "UPS" => ShipmentCarrier::Ups,
             other => ShipmentCarrier::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl ShipmentCarrier {
         match self {
             ShipmentCarrier::Dbs => "DBS",
             ShipmentCarrier::Dhl => "DHL",
+            ShipmentCarrier::Expeditors => "EXPEDITORS",
             ShipmentCarrier::Fedex => "FEDEX",
             ShipmentCarrier::Ups => "UPS",
             ShipmentCarrier::Unknown(value) => value.as_str(),
@@ -86,7 +91,7 @@ impl ShipmentCarrier {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DBS", "DHL", "FEDEX", "UPS"]
+        &["DBS", "DHL", "EXPEDITORS", "FEDEX", "UPS"]
     }
 }
 impl ::std::convert::AsRef<str> for ShipmentCarrier {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for ShipmentCarrier {
         match self {
             ShipmentCarrier::Dbs => write!(f, "DBS"),
             ShipmentCarrier::Dhl => write!(f, "DHL"),
+            ShipmentCarrier::Expeditors => write!(f, "EXPEDITORS"),
             ShipmentCarrier::Fedex => write!(f, "FEDEX"),
             ShipmentCarrier::Ups => write!(f, "UPS"),
             ShipmentCarrier::Unknown(value) => write!(f, "{}", value),

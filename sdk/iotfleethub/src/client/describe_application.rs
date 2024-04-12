@@ -13,9 +13,9 @@ impl super::Client {
     ///   - [`application_state(ApplicationState)`](crate::operation::describe_application::DescribeApplicationOutput::application_state): <p>The current state of the web application.</p>
     ///   - [`application_creation_date(i64)`](crate::operation::describe_application::DescribeApplicationOutput::application_creation_date): <p>The date (in Unix epoch time) when the application was created.</p>
     ///   - [`application_last_update_date(i64)`](crate::operation::describe_application::DescribeApplicationOutput::application_last_update_date): <p>The date (in Unix epoch time) when the application was last updated.</p>
-    ///   - [`role_arn(String)`](crate::operation::describe_application::DescribeApplicationOutput::role_arn): <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    ///   - [`role_arn(String)`](crate::operation::describe_application::DescribeApplicationOutput::role_arn): <p>The ARN of the role that the web application assumes when it interacts with Amazon Web Services IoT Core.</p>
     ///   - [`sso_client_id(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::sso_client_id): <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
-    ///   - [`error_message(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::error_message): <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
+    ///   - [`error_message(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::error_message): <p>A message that explains any failures included in the <code>applicationState</code> response field. This message explains failures in the <code>CreateApplication</code> and <code>DeleteApplication</code> actions.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_application::DescribeApplicationOutput::tags): <p>A set of key/value pairs that you can use to manage the web application resource.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationError>`](crate::operation::describe_application::DescribeApplicationError)
     pub fn describe_application(&self) -> crate::operation::describe_application::builders::DescribeApplicationFluentBuilder {

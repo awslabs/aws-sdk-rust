@@ -28,6 +28,8 @@ pub enum Error {
     /// <p>Specify an CloudHSM cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p>
     /// <p>CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
     CloudHsmClusterNotRelatedException(crate::types::error::CloudHsmClusterNotRelatedException),
+    /// <p>The request was rejected because an automatic rotation of this key is currently in progress or scheduled to begin within the next 20 minutes.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The request was rejected because the custom key store contains KMS keys. After verifying that you do not need to use the KMS keys, use the <code>ScheduleKeyDeletion</code> operation to delete the KMS keys. After they are deleted, you can delete the custom key store.</p>
     CustomKeyStoreHasCmKsException(crate::types::error::CustomKeyStoreHasCmKsException),
     /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
@@ -163,6 +165,7 @@ impl ::std::fmt::Display for Error {
             Error::CloudHsmClusterNotActiveException(inner) => inner.fmt(f),
             Error::CloudHsmClusterNotFoundException(inner) => inner.fmt(f),
             Error::CloudHsmClusterNotRelatedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::CustomKeyStoreHasCmKsException(inner) => inner.fmt(f),
             Error::CustomKeyStoreInvalidStateException(inner) => inner.fmt(f),
             Error::CustomKeyStoreNameInUseException(inner) => inner.fmt(f),
@@ -231,6 +234,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CloudHsmClusterNotActiveException(inner) => inner.meta(),
             Self::CloudHsmClusterNotFoundException(inner) => inner.meta(),
             Self::CloudHsmClusterNotRelatedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::CustomKeyStoreHasCmKsException(inner) => inner.meta(),
             Self::CustomKeyStoreInvalidStateException(inner) => inner.meta(),
             Self::CustomKeyStoreNameInUseException(inner) => inner.meta(),
@@ -1394,6 +1398,35 @@ impl From<crate::operation::list_key_policies::ListKeyPoliciesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_rotations::ListKeyRotationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_rotations::ListKeyRotationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_key_rotations::ListKeyRotationsError> for Error {
+    fn from(err: crate::operation::list_key_rotations::ListKeyRotationsError) -> Self {
+        match err {
+            crate::operation::list_key_rotations::ListKeyRotationsError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::list_key_rotations::ListKeyRotationsError::InvalidMarkerException(inner) => Error::InvalidMarkerException(inner),
+            crate::operation::list_key_rotations::ListKeyRotationsError::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::operation::list_key_rotations::ListKeyRotationsError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::list_key_rotations::ListKeyRotationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_key_rotations::ListKeyRotationsError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::list_key_rotations::ListKeyRotationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_keys::ListKeysError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1621,6 +1654,40 @@ impl From<crate::operation::revoke_grant::RevokeGrantError> for Error {
             crate::operation::revoke_grant::RevokeGrantError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
             crate::operation::revoke_grant::RevokeGrantError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::revoke_grant::RevokeGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rotate_key_on_demand::RotateKeyOnDemandError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rotate_key_on_demand::RotateKeyOnDemandError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::rotate_key_on_demand::RotateKeyOnDemandError> for Error {
+    fn from(err: crate::operation::rotate_key_on_demand::RotateKeyOnDemandError) -> Self {
+        match err {
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::DisabledException(inner) => Error::DisabledException(inner),
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::rotate_key_on_demand::RotateKeyOnDemandError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1966,6 +2033,7 @@ impl ::std::error::Error for Error {
             Error::CloudHsmClusterNotActiveException(inner) => inner.source(),
             Error::CloudHsmClusterNotFoundException(inner) => inner.source(),
             Error::CloudHsmClusterNotRelatedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::CustomKeyStoreHasCmKsException(inner) => inner.source(),
             Error::CustomKeyStoreInvalidStateException(inner) => inner.source(),
             Error::CustomKeyStoreNameInUseException(inner) => inner.source(),
@@ -2020,6 +2088,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CloudHsmClusterNotActiveException(e) => e.request_id(),
             Self::CloudHsmClusterNotFoundException(e) => e.request_id(),
             Self::CloudHsmClusterNotRelatedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::CustomKeyStoreHasCmKsException(e) => e.request_id(),
             Self::CustomKeyStoreInvalidStateException(e) => e.request_id(),
             Self::CustomKeyStoreNameInUseException(e) => e.request_id(),

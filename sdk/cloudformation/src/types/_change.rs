@@ -4,7 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Change {
-    /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
+    /// <p>The type of entity that CloudFormation changes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Resource</code> This change is for a resource.</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
     pub hook_invocation_count: ::std::option::Option<i32>,
@@ -12,7 +16,11 @@ pub struct Change {
     pub resource_change: ::std::option::Option<crate::types::ResourceChange>,
 }
 impl Change {
-    /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
+    /// <p>The type of entity that CloudFormation changes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Resource</code> This change is for a resource.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
         self.r#type.as_ref()
     }
@@ -41,17 +49,29 @@ pub struct ChangeBuilder {
     pub(crate) resource_change: ::std::option::Option<crate::types::ResourceChange>,
 }
 impl ChangeBuilder {
-    /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
+    /// <p>The type of entity that CloudFormation changes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Resource</code> This change is for a resource.</p></li>
+    /// </ul>
     pub fn r#type(mut self, input: crate::types::ChangeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
+    /// <p>The type of entity that CloudFormation changes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Resource</code> This change is for a resource.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
+    /// <p>The type of entity that CloudFormation changes.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Resource</code> This change is for a resource.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
         &self.r#type
     }

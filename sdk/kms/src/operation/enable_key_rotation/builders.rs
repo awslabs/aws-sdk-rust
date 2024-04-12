@@ -22,10 +22,11 @@ impl EnableKeyRotationInputBuilder {
 }
 /// Fluent builder constructing a request to `EnableKeyRotation`.
 ///
-/// <p>Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic rotation of the key material</a> of the specified symmetric encryption KMS key.</p>
-/// <p>When you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately 365 days) from the enable date and every year thereafter. You can monitor rotation of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable rotation of the key material in a customer managed KMS key, use the <code>DisableKeyRotation</code> operation.</p>
+/// <p>Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable">automatic rotation of the key material</a> of the specified symmetric encryption KMS key.</p>
+/// <p>By default, when you enable automatic rotation of a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately 365 days) from the enable date and every year thereafter. You can use the optional <code>RotationPeriodInDays</code> parameter to specify a custom rotation period when you enable key rotation, or you can use <code>RotationPeriodInDays</code> to modify the rotation period of a key that you previously enabled automatic key rotation on.</p>
+/// <p>You can monitor rotation of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable rotation of the key material in a customer managed KMS key, use the <code>DisableKeyRotation</code> operation. You can use the <code>GetKeyRotationStatus</code> operation to identify any in progress rotations. You can use the <code>ListKeyRotations</code> operation to view the details of completed rotations.</p>
 /// <p>Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric encryption KMS keys</a>. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region keys</a>, set the property on the primary key.</p>
-/// <p>You cannot enable or disable automatic rotation <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned KMS keys</a> varies.</p><note>
+/// <p>You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon Web Services owned KMS keys</a> is managed by the Amazon Web Services service that owns the key.</p><note>
 /// <p>In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys from every three years (approximately 1,095 days) to every year (approximately 365 days).</p>
 /// <p>New Amazon Web Services managed keys are automatically rotated one year after they are created, and approximately every year thereafter.</p>
 /// <p>Existing Amazon Web Services managed keys are automatically rotated one year after their most recent rotation, and every year thereafter.</p>
@@ -39,6 +40,12 @@ impl EnableKeyRotationInputBuilder {
 /// <p><code>DisableKeyRotation</code></p></li>
 /// <li>
 /// <p><code>GetKeyRotationStatus</code></p></li>
+/// <li>
+/// <p><code>ListKeyRotations</code></p></li>
+/// <li>
+/// <p><code>RotateKeyOnDemand</code></p><note>
+/// <p>You can perform on-demand (<code>RotateKeyOnDemand</code>) rotation of the key material in customer managed KMS keys, regardless of whether or not automatic key rotation is enabled.</p>
+/// </note></li>
 /// </ul>
 /// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -166,5 +173,28 @@ impl EnableKeyRotationFluentBuilder {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_id()
+    }
+    /// <p>Use this parameter to specify a custom period of time between each rotation date. If no value is specified, the default value is 365 days.</p>
+    /// <p>The rotation period defines the number of days after you enable automatic key rotation that KMS will rotate your key material, and the number of days between each automatic rotation thereafter.</p>
+    /// <p>You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days"> <code>kms:RotationPeriodInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>RotationPeriodInDays</code> parameter.</p>
+    /// <p></p>
+    pub fn rotation_period_in_days(mut self, input: i32) -> Self {
+        self.inner = self.inner.rotation_period_in_days(input);
+        self
+    }
+    /// <p>Use this parameter to specify a custom period of time between each rotation date. If no value is specified, the default value is 365 days.</p>
+    /// <p>The rotation period defines the number of days after you enable automatic key rotation that KMS will rotate your key material, and the number of days between each automatic rotation thereafter.</p>
+    /// <p>You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days"> <code>kms:RotationPeriodInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>RotationPeriodInDays</code> parameter.</p>
+    /// <p></p>
+    pub fn set_rotation_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_rotation_period_in_days(input);
+        self
+    }
+    /// <p>Use this parameter to specify a custom period of time between each rotation date. If no value is specified, the default value is 365 days.</p>
+    /// <p>The rotation period defines the number of days after you enable automatic key rotation that KMS will rotate your key material, and the number of days between each automatic rotation thereafter.</p>
+    /// <p>You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days"> <code>kms:RotationPeriodInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>RotationPeriodInDays</code> parameter.</p>
+    /// <p></p>
+    pub fn get_rotation_period_in_days(&self) -> &::std::option::Option<i32> {
+        self.inner.get_rotation_period_in_days()
     }
 }

@@ -147,21 +147,21 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
-    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 1000 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
-    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 1000 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
-    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 1000 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()

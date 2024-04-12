@@ -13,6 +13,7 @@
 /// # let datastorestatus = unimplemented!();
 /// match datastorestatus {
 ///     DatastoreStatus::Active => { /* ... */ },
+///     DatastoreStatus::CreateFailed => { /* ... */ },
 ///     DatastoreStatus::Creating => { /* ... */ },
 ///     DatastoreStatus::Deleted => { /* ... */ },
 ///     DatastoreStatus::Deleting => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum DatastoreStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for DatastoreStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => DatastoreStatus::Active,
+            "CREATE_FAILED" => DatastoreStatus::CreateFailed,
             "CREATING" => DatastoreStatus::Creating,
             "DELETED" => DatastoreStatus::Deleted,
             "DELETING" => DatastoreStatus::Deleting,
@@ -78,6 +82,7 @@ impl DatastoreStatus {
     pub fn as_str(&self) -> &str {
         match self {
             DatastoreStatus::Active => "ACTIVE",
+            DatastoreStatus::CreateFailed => "CREATE_FAILED",
             DatastoreStatus::Creating => "CREATING",
             DatastoreStatus::Deleted => "DELETED",
             DatastoreStatus::Deleting => "DELETING",
@@ -86,7 +91,7 @@ impl DatastoreStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETED", "DELETING"]
+        &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETED", "DELETING"]
     }
 }
 impl ::std::convert::AsRef<str> for DatastoreStatus {
@@ -110,6 +115,7 @@ impl ::std::fmt::Display for DatastoreStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DatastoreStatus::Active => write!(f, "ACTIVE"),
+            DatastoreStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             DatastoreStatus::Creating => write!(f, "CREATING"),
             DatastoreStatus::Deleted => write!(f, "DELETED"),
             DatastoreStatus::Deleting => write!(f, "DELETING"),

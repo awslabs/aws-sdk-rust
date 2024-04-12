@@ -24,6 +24,8 @@ pub struct DatastoreProperties {
     pub preload_data_config: ::std::option::Option<crate::types::PreloadDataConfig>,
     /// <p>The identity provider that you selected when you created the data store.</p>
     pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    /// <p>The error cause for the current data store operation.</p>
+    pub error_cause: ::std::option::Option<crate::types::ErrorCause>,
 }
 impl DatastoreProperties {
     /// <p>The AWS-generated ID number for the data store.</p>
@@ -69,6 +71,10 @@ impl DatastoreProperties {
     pub fn identity_provider_configuration(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
         self.identity_provider_configuration.as_ref()
     }
+    /// <p>The error cause for the current data store operation.</p>
+    pub fn error_cause(&self) -> ::std::option::Option<&crate::types::ErrorCause> {
+        self.error_cause.as_ref()
+    }
 }
 impl DatastoreProperties {
     /// Creates a new builder-style object to manufacture [`DatastoreProperties`](crate::types::DatastoreProperties).
@@ -91,6 +97,7 @@ pub struct DatastorePropertiesBuilder {
     pub(crate) sse_configuration: ::std::option::Option<crate::types::SseConfiguration>,
     pub(crate) preload_data_config: ::std::option::Option<crate::types::PreloadDataConfig>,
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    pub(crate) error_cause: ::std::option::Option<crate::types::ErrorCause>,
 }
 impl DatastorePropertiesBuilder {
     /// <p>The AWS-generated ID number for the data store.</p>
@@ -238,6 +245,20 @@ impl DatastorePropertiesBuilder {
     pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
         &self.identity_provider_configuration
     }
+    /// <p>The error cause for the current data store operation.</p>
+    pub fn error_cause(mut self, input: crate::types::ErrorCause) -> Self {
+        self.error_cause = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The error cause for the current data store operation.</p>
+    pub fn set_error_cause(mut self, input: ::std::option::Option<crate::types::ErrorCause>) -> Self {
+        self.error_cause = input;
+        self
+    }
+    /// <p>The error cause for the current data store operation.</p>
+    pub fn get_error_cause(&self) -> &::std::option::Option<crate::types::ErrorCause> {
+        &self.error_cause
+    }
     /// Consumes the builder and constructs a [`DatastoreProperties`](crate::types::DatastoreProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`datastore_id`](crate::types::builders::DatastorePropertiesBuilder::datastore_id)
@@ -282,6 +303,7 @@ impl DatastorePropertiesBuilder {
             sse_configuration: self.sse_configuration,
             preload_data_config: self.preload_data_config,
             identity_provider_configuration: self.identity_provider_configuration,
+            error_cause: self.error_cause,
         })
     }
 }

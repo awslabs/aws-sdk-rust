@@ -161,6 +161,32 @@ pub(crate) fn de_get_key_rotation_status(
                 "KeyRotationEnabled" => {
                     builder = builder.set_key_rotation_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "KeyId" => {
+                    builder = builder.set_key_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "RotationPeriodInDays" => {
+                    builder = builder.set_rotation_period_in_days(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "NextRotationDate" => {
+                    builder = builder.set_next_rotation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "OnDemandRotationStartDate" => {
+                    builder = builder.set_on_demand_rotation_start_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

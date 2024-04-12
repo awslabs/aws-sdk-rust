@@ -209,6 +209,20 @@ impl PutPlaybackConfigurationFluentBuilder {
     pub fn get_dash_configuration(&self) -> &::std::option::Option<crate::types::DashConfigurationForPut> {
         self.inner.get_dash_configuration()
     }
+    /// <p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>
+    pub fn insertion_mode(mut self, input: crate::types::InsertionMode) -> Self {
+        self.inner = self.inner.insertion_mode(input);
+        self
+    }
+    /// <p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>
+    pub fn set_insertion_mode(mut self, input: ::std::option::Option<crate::types::InsertionMode>) -> Self {
+        self.inner = self.inner.set_insertion_mode(input);
+        self
+    }
+    /// <p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>
+    pub fn get_insertion_mode(&self) -> &::std::option::Option<crate::types::InsertionMode> {
+        self.inner.get_insertion_mode()
+    }
     /// <p>The configuration for pre-roll ad insertion.</p>
     pub fn live_pre_roll_configuration(mut self, input: crate::types::LivePreRollConfiguration) -> Self {
         self.inner = self.inner.live_pre_roll_configuration(input);

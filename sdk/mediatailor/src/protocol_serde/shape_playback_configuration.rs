@@ -41,6 +41,13 @@ where
                         "HlsConfiguration" => {
                             builder = builder.set_hls_configuration(crate::protocol_serde::shape_hls_configuration::de_hls_configuration(tokens)?);
                         }
+                        "InsertionMode" => {
+                            builder = builder.set_insertion_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InsertionMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "LivePreRollConfiguration" => {
                             builder = builder.set_live_pre_roll_configuration(
                                 crate::protocol_serde::shape_live_pre_roll_configuration::de_live_pre_roll_configuration(tokens)?,

@@ -30,26 +30,32 @@ pub fn ser_get_unfiltered_table_metadata_input_input(
         }
         array_8.finish();
     }
-    if let Some(var_10) = &input.supported_dialect {
-        #[allow(unused_mut)]
-        let mut object_11 = object.key("SupportedDialect").start_object();
-        crate::protocol_serde::shape_supported_dialect::ser_supported_dialect(&mut object_11, var_10)?;
-        object_11.finish();
+    if let Some(var_10) = &input.parent_resource_arn {
+        object.key("ParentResourceArn").string(var_10.as_str());
     }
-    if let Some(var_12) = &input.permissions {
-        let mut array_13 = object.key("Permissions").start_array();
-        for item_14 in var_12 {
+    if let Some(var_11) = &input.root_resource_arn {
+        object.key("RootResourceArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.supported_dialect {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("SupportedDialect").start_object();
+        crate::protocol_serde::shape_supported_dialect::ser_supported_dialect(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.permissions {
+        let mut array_15 = object.key("Permissions").start_array();
+        for item_16 in var_14 {
             {
-                array_13.value().string(item_14.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
-    if let Some(var_15) = &input.query_session_context {
+    if let Some(var_17) = &input.query_session_context {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("QuerySessionContext").start_object();
-        crate::protocol_serde::shape_query_session_context::ser_query_session_context(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_18 = object.key("QuerySessionContext").start_object();
+        crate::protocol_serde::shape_query_session_context::ser_query_session_context(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }

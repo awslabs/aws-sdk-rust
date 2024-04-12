@@ -76,7 +76,7 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>You have reached the limit of active custom resource types in your account. There is a limit of 100,000. Delete unused resources using <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html">DeleteResourceConfig</a> <code></code>.</p>
     MaxActiveResourcesExceededException(crate::types::error::MaxActiveResourcesExceededException),
-    /// <p>Failed to add the Config rule because the account already contains the maximum number of 150 rules. Consider deleting any deactivated rules before you add new rules.</p>
+    /// <p>Failed to add the Config rule because the account already contains the maximum number of 1000 rules. Consider deleting any deactivated rules before you add new rules.</p>
     MaxNumberOfConfigRulesExceededException(crate::types::error::MaxNumberOfConfigRulesExceededException),
     /// <p>You have reached the limit of the number of configuration recorders you can create.</p>
     MaxNumberOfConfigurationRecordersExceededException(crate::types::error::MaxNumberOfConfigurationRecordersExceededException),

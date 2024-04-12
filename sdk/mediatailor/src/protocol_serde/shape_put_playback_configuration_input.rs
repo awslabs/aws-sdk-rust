@@ -47,45 +47,48 @@ pub fn ser_put_playback_configuration_input_input(
         crate::protocol_serde::shape_dash_configuration_for_put::ser_dash_configuration_for_put(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.live_pre_roll_configuration {
+    if let Some(var_17) = &input.insertion_mode {
+        object.key("InsertionMode").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.live_pre_roll_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("LivePreRollConfiguration").start_object();
-        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("LivePreRollConfiguration").start_object();
+        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.manifest_processing_rules {
+    if let Some(var_20) = &input.manifest_processing_rules {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("ManifestProcessingRules").start_object();
-        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_21 = object.key("ManifestProcessingRules").start_object();
+        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_21, var_20)?;
+        object_21.finish();
     }
-    if let Some(var_21) = &input.name {
-        object.key("Name").string(var_21.as_str());
+    if let Some(var_22) = &input.name {
+        object.key("Name").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.personalization_threshold_seconds {
+    if let Some(var_23) = &input.personalization_threshold_seconds {
         object.key("PersonalizationThresholdSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_23) = &input.slate_ad_url {
-        object.key("SlateAdUrl").string(var_23.as_str());
+    if let Some(var_24) = &input.slate_ad_url {
+        object.key("SlateAdUrl").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.tags {
+    if let Some(var_25) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("tags").start_object();
-        for (key_26, value_27) in var_24 {
+        let mut object_26 = object.key("tags").start_object();
+        for (key_27, value_28) in var_25 {
             {
-                object_25.key(key_26.as_str()).string(value_27.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
-        object_25.finish();
+        object_26.finish();
     }
-    if let Some(var_28) = &input.transcode_profile_name {
-        object.key("TranscodeProfileName").string(var_28.as_str());
+    if let Some(var_29) = &input.transcode_profile_name {
+        object.key("TranscodeProfileName").string(var_29.as_str());
     }
-    if let Some(var_29) = &input.video_content_source_url {
-        object.key("VideoContentSourceUrl").string(var_29.as_str());
+    if let Some(var_30) = &input.video_content_source_url {
+        object.key("VideoContentSourceUrl").string(var_30.as_str());
     }
     Ok(())
 }

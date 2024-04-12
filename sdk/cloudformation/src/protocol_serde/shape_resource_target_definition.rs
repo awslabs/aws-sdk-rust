@@ -48,6 +48,59 @@ pub fn de_resource_target_definition(
                 builder = builder.set_requires_recreation(var_3);
             }
             ,
+            s if s.matches("Path") /* Path com.amazonaws.cloudformation#ResourceTargetDefinition$Path */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_path(var_4);
+            }
+            ,
+            s if s.matches("BeforeValue") /* BeforeValue com.amazonaws.cloudformation#ResourceTargetDefinition$BeforeValue */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_before_value(var_5);
+            }
+            ,
+            s if s.matches("AfterValue") /* AfterValue com.amazonaws.cloudformation#ResourceTargetDefinition$AfterValue */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_after_value(var_6);
+            }
+            ,
+            s if s.matches("AttributeChangeType") /* AttributeChangeType com.amazonaws.cloudformation#ResourceTargetDefinition$AttributeChangeType */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::AttributeChangeType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AttributeChangeType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_attribute_change_type(var_7);
+            }
+            ,
             _ => {}
         }
     }

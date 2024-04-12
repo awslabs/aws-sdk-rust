@@ -9,7 +9,7 @@ pub struct DescribeConfigRuleEvaluationStatusInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of rule evaluation results that you want returned.</p>
-    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 1000 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub limit: ::std::option::Option<i32>,
 }
@@ -25,7 +25,7 @@ impl DescribeConfigRuleEvaluationStatusInput {
         self.next_token.as_deref()
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
-    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 1000 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
@@ -82,21 +82,21 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
         &self.next_token
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
-    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 1000 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
-    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 1000 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
-    /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
+    /// <p>This parameter is required if the rule limit for your account is more than the default of 1000 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit

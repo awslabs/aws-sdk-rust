@@ -22,9 +22,7 @@ impl DescribeApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeApplication`.
 ///
-/// <p>Gets information about a Fleet Hub for AWS IoT Device Management web application.</p><note>
-/// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
-/// </note>
+/// <p>Gets information about a Fleet Hub for IoT Device Management web application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

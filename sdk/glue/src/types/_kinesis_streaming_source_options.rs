@@ -15,9 +15,9 @@ pub struct KinesisStreamingSourceOptions {
     /// <p>The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.</p>
     /// <p>Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue version 4.0 or later.</p>
     pub starting_position: ::std::option::Option<crate::types::StartingPosition>,
-    /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+    /// <p>The maximum time spent for the job executor to read records for the current batch from the Kinesis data stream, specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this time. The default value is <code>1000</code>.</p>
     pub max_fetch_time_in_ms: ::std::option::Option<i64>,
-    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The client can exceed this limit if the streaming job has already read extra records from Kinesis (in the same get-records call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a multiple of <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.</p>
     pub max_fetch_records_per_shard: ::std::option::Option<i64>,
     /// <p>The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.</p>
     pub max_record_per_read: ::std::option::Option<i64>,
@@ -70,11 +70,11 @@ impl KinesisStreamingSourceOptions {
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::StartingPosition> {
         self.starting_position.as_ref()
     }
-    /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+    /// <p>The maximum time spent for the job executor to read records for the current batch from the Kinesis data stream, specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this time. The default value is <code>1000</code>.</p>
     pub fn max_fetch_time_in_ms(&self) -> ::std::option::Option<i64> {
         self.max_fetch_time_in_ms
     }
-    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The client can exceed this limit if the streaming job has already read extra records from Kinesis (in the same get-records call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a multiple of <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.</p>
     pub fn max_fetch_records_per_shard(&self) -> ::std::option::Option<i64> {
         self.max_fetch_records_per_shard
     }
@@ -242,31 +242,31 @@ impl KinesisStreamingSourceOptionsBuilder {
     pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::StartingPosition> {
         &self.starting_position
     }
-    /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+    /// <p>The maximum time spent for the job executor to read records for the current batch from the Kinesis data stream, specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this time. The default value is <code>1000</code>.</p>
     pub fn max_fetch_time_in_ms(mut self, input: i64) -> Self {
         self.max_fetch_time_in_ms = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+    /// <p>The maximum time spent for the job executor to read records for the current batch from the Kinesis data stream, specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this time. The default value is <code>1000</code>.</p>
     pub fn set_max_fetch_time_in_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_fetch_time_in_ms = input;
         self
     }
-    /// <p>The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.</p>
+    /// <p>The maximum time spent for the job executor to read records for the current batch from the Kinesis data stream, specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this time. The default value is <code>1000</code>.</p>
     pub fn get_max_fetch_time_in_ms(&self) -> &::std::option::Option<i64> {
         &self.max_fetch_time_in_ms
     }
-    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The client can exceed this limit if the streaming job has already read extra records from Kinesis (in the same get-records call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a multiple of <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.</p>
     pub fn max_fetch_records_per_shard(mut self, input: i64) -> Self {
         self.max_fetch_records_per_shard = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The client can exceed this limit if the streaming job has already read extra records from Kinesis (in the same get-records call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a multiple of <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.</p>
     pub fn set_max_fetch_records_per_shard(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_fetch_records_per_shard = input;
         self
     }
-    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.</p>
+    /// <p>The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The client can exceed this limit if the streaming job has already read extra records from Kinesis (in the same get-records call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a multiple of <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.</p>
     pub fn get_max_fetch_records_per_shard(&self) -> &::std::option::Option<i64> {
         &self.max_fetch_records_per_shard
     }

@@ -22,9 +22,7 @@ impl UpdateApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateApplication`.
 ///
-/// <p>Updates information about a Fleet Hub for a AWS IoT Device Management web application.</p><note>
-/// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
-/// </note>
+/// <p>Updates information about a Fleet Hub for IoT Device Management web application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

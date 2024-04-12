@@ -17,6 +17,8 @@ pub use crate::types::_grant_constraints::GrantConstraintsBuilder;
 
 pub use crate::types::_key_list_entry::KeyListEntryBuilder;
 
+pub use crate::types::_rotations_list_entry::RotationsListEntryBuilder;
+
 pub use crate::types::_alias_list_entry::AliasListEntryBuilder;
 
 pub use crate::types::_recipient_info::RecipientInfoBuilder;

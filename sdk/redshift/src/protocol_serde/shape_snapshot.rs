@@ -495,6 +495,19 @@ pub fn de_snapshot(
                 builder = builder.set_master_password_secret_kms_key_id(var_36);
             }
             ,
+            s if s.matches("SnapshotArn") /* SnapshotArn com.amazonaws.redshift#Snapshot$SnapshotArn */ =>  {
+                let var_37 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_snapshot_arn(var_37);
+            }
+            ,
             _ => {}
         }
     }

@@ -45,6 +45,10 @@ pub use crate::types::_grant_operation::GrantOperation;
 
 pub use crate::types::_key_list_entry::KeyListEntry;
 
+pub use crate::types::_rotations_list_entry::RotationsListEntry;
+
+pub use crate::types::_rotation_type::RotationType;
+
 pub use crate::types::_alias_list_entry::AliasListEntry;
 
 pub use crate::types::_wrapping_key_spec::WrappingKeySpec;
@@ -124,6 +128,10 @@ mod _multi_region_key_type;
 mod _origin_type;
 
 mod _recipient_info;
+
+mod _rotation_type;
+
+mod _rotations_list_entry;
 
 mod _signing_algorithm_spec;
 

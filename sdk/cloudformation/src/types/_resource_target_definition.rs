@@ -10,6 +10,22 @@ pub struct ResourceTargetDefinition {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the <i>CloudFormation User Guide</i>.</p>
     pub requires_recreation: ::std::option::Option<crate::types::RequiresRecreation>,
+    /// <p>The property path of the property.</p>
+    pub path: ::std::option::Option<::std::string::String>,
+    /// <p>The value of the property before the change is executed. Large values can be truncated.</p>
+    pub before_value: ::std::option::Option<::std::string::String>,
+    /// <p>The value of the property after the change is executed. Large values can be truncated.</p>
+    pub after_value: ::std::option::Option<::std::string::String>,
+    /// <p>The type of change to be made to the property if the change is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Add</code> The item will be added.</p></li>
+    /// <li>
+    /// <p><code>Remove</code> The item will be removed.</p></li>
+    /// <li>
+    /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// </ul>
+    pub attribute_change_type: ::std::option::Option<crate::types::AttributeChangeType>,
 }
 impl ResourceTargetDefinition {
     /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
@@ -23,6 +39,30 @@ impl ResourceTargetDefinition {
     /// <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this property causes the resource to be recreated. The value can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn requires_recreation(&self) -> ::std::option::Option<&crate::types::RequiresRecreation> {
         self.requires_recreation.as_ref()
+    }
+    /// <p>The property path of the property.</p>
+    pub fn path(&self) -> ::std::option::Option<&str> {
+        self.path.as_deref()
+    }
+    /// <p>The value of the property before the change is executed. Large values can be truncated.</p>
+    pub fn before_value(&self) -> ::std::option::Option<&str> {
+        self.before_value.as_deref()
+    }
+    /// <p>The value of the property after the change is executed. Large values can be truncated.</p>
+    pub fn after_value(&self) -> ::std::option::Option<&str> {
+        self.after_value.as_deref()
+    }
+    /// <p>The type of change to be made to the property if the change is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Add</code> The item will be added.</p></li>
+    /// <li>
+    /// <p><code>Remove</code> The item will be removed.</p></li>
+    /// <li>
+    /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// </ul>
+    pub fn attribute_change_type(&self) -> ::std::option::Option<&crate::types::AttributeChangeType> {
+        self.attribute_change_type.as_ref()
     }
 }
 impl ResourceTargetDefinition {
@@ -39,6 +79,10 @@ pub struct ResourceTargetDefinitionBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::ResourceAttribute>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) requires_recreation: ::std::option::Option<crate::types::RequiresRecreation>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) before_value: ::std::option::Option<::std::string::String>,
+    pub(crate) after_value: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_change_type: ::std::option::Option<crate::types::AttributeChangeType>,
 }
 impl ResourceTargetDefinitionBuilder {
     /// <p>Indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
@@ -83,12 +127,96 @@ impl ResourceTargetDefinitionBuilder {
     pub fn get_requires_recreation(&self) -> &::std::option::Option<crate::types::RequiresRecreation> {
         &self.requires_recreation
     }
+    /// <p>The property path of the property.</p>
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The property path of the property.</p>
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.path = input;
+        self
+    }
+    /// <p>The property path of the property.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
+    /// <p>The value of the property before the change is executed. Large values can be truncated.</p>
+    pub fn before_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.before_value = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The value of the property before the change is executed. Large values can be truncated.</p>
+    pub fn set_before_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.before_value = input;
+        self
+    }
+    /// <p>The value of the property before the change is executed. Large values can be truncated.</p>
+    pub fn get_before_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_value
+    }
+    /// <p>The value of the property after the change is executed. Large values can be truncated.</p>
+    pub fn after_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.after_value = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The value of the property after the change is executed. Large values can be truncated.</p>
+    pub fn set_after_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.after_value = input;
+        self
+    }
+    /// <p>The value of the property after the change is executed. Large values can be truncated.</p>
+    pub fn get_after_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_value
+    }
+    /// <p>The type of change to be made to the property if the change is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Add</code> The item will be added.</p></li>
+    /// <li>
+    /// <p><code>Remove</code> The item will be removed.</p></li>
+    /// <li>
+    /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// </ul>
+    pub fn attribute_change_type(mut self, input: crate::types::AttributeChangeType) -> Self {
+        self.attribute_change_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of change to be made to the property if the change is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Add</code> The item will be added.</p></li>
+    /// <li>
+    /// <p><code>Remove</code> The item will be removed.</p></li>
+    /// <li>
+    /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// </ul>
+    pub fn set_attribute_change_type(mut self, input: ::std::option::Option<crate::types::AttributeChangeType>) -> Self {
+        self.attribute_change_type = input;
+        self
+    }
+    /// <p>The type of change to be made to the property if the change is executed.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Add</code> The item will be added.</p></li>
+    /// <li>
+    /// <p><code>Remove</code> The item will be removed.</p></li>
+    /// <li>
+    /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// </ul>
+    pub fn get_attribute_change_type(&self) -> &::std::option::Option<crate::types::AttributeChangeType> {
+        &self.attribute_change_type
+    }
     /// Consumes the builder and constructs a [`ResourceTargetDefinition`](crate::types::ResourceTargetDefinition).
     pub fn build(self) -> crate::types::ResourceTargetDefinition {
         crate::types::ResourceTargetDefinition {
             attribute: self.attribute,
             name: self.name,
             requires_recreation: self.requires_recreation,
+            path: self.path,
+            before_value: self.before_value,
+            after_value: self.after_value,
+            attribute_change_type: self.attribute_change_type,
         }
     }
 }

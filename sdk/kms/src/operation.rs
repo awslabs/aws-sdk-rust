@@ -97,6 +97,9 @@ pub mod list_grants;
 /// Types for the `ListKeyPolicies` operation.
 pub mod list_key_policies;
 
+/// Types for the `ListKeyRotations` operation.
+pub mod list_key_rotations;
+
 /// Types for the `ListKeys` operation.
 pub mod list_keys;
 
@@ -120,6 +123,9 @@ pub mod retire_grant;
 
 /// Types for the `RevokeGrant` operation.
 pub mod revoke_grant;
+
+/// Types for the `RotateKeyOnDemand` operation.
+pub mod rotate_key_on_demand;
 
 /// Types for the `ScheduleKeyDeletion` operation.
 pub mod schedule_key_deletion;

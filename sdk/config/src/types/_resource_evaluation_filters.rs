@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceEvaluationFilters {
-    /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
+    /// <p>Filters all resource evaluations results based on an evaluation mode.</p><important>
+    /// <p>Currently, <code>DECTECTIVE</code> is not supported as a valid value. Ignore other documentation stating otherwise.</p>
+    /// </important>
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
     /// <p>Returns a <code>TimeWindow</code> object.</p>
     pub time_window: ::std::option::Option<crate::types::TimeWindow>,
@@ -12,7 +14,9 @@ pub struct ResourceEvaluationFilters {
     pub evaluation_context_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ResourceEvaluationFilters {
-    /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
+    /// <p>Filters all resource evaluations results based on an evaluation mode.</p><important>
+    /// <p>Currently, <code>DECTECTIVE</code> is not supported as a valid value. Ignore other documentation stating otherwise.</p>
+    /// </important>
     pub fn evaluation_mode(&self) -> ::std::option::Option<&crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
@@ -41,17 +45,23 @@ pub struct ResourceEvaluationFiltersBuilder {
     pub(crate) evaluation_context_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ResourceEvaluationFiltersBuilder {
-    /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
+    /// <p>Filters all resource evaluations results based on an evaluation mode.</p><important>
+    /// <p>Currently, <code>DECTECTIVE</code> is not supported as a valid value. Ignore other documentation stating otherwise.</p>
+    /// </important>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
         self.evaluation_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
+    /// <p>Filters all resource evaluations results based on an evaluation mode.</p><important>
+    /// <p>Currently, <code>DECTECTIVE</code> is not supported as a valid value. Ignore other documentation stating otherwise.</p>
+    /// </important>
     pub fn set_evaluation_mode(mut self, input: ::std::option::Option<crate::types::EvaluationMode>) -> Self {
         self.evaluation_mode = input;
         self
     }
-    /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
+    /// <p>Filters all resource evaluations results based on an evaluation mode.</p><important>
+    /// <p>Currently, <code>DECTECTIVE</code> is not supported as a valid value. Ignore other documentation stating otherwise.</p>
+    /// </important>
     pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
         &self.evaluation_mode
     }

@@ -74,6 +74,9 @@ where
                                 crate::protocol_serde::shape_identity_provider_configuration::de_identity_provider_configuration(tokens)?,
                             );
                         }
+                        "ErrorCause" => {
+                            builder = builder.set_error_cause(crate::protocol_serde::shape_error_cause::de_error_cause(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

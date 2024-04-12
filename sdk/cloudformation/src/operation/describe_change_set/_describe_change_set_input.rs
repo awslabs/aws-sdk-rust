@@ -10,6 +10,8 @@ pub struct DescribeChangeSetInput {
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>If <code>true</code>, the returned changes include detailed changes in the property values.</p>
+    pub include_property_values: ::std::option::Option<bool>,
 }
 impl DescribeChangeSetInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
@@ -23,6 +25,10 @@ impl DescribeChangeSetInput {
     /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>If <code>true</code>, the returned changes include detailed changes in the property values.</p>
+    pub fn include_property_values(&self) -> ::std::option::Option<bool> {
+        self.include_property_values
     }
 }
 impl DescribeChangeSetInput {
@@ -39,6 +45,7 @@ pub struct DescribeChangeSetInputBuilder {
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_property_values: ::std::option::Option<bool>,
 }
 impl DescribeChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
@@ -84,6 +91,20 @@ impl DescribeChangeSetInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>If <code>true</code>, the returned changes include detailed changes in the property values.</p>
+    pub fn include_property_values(mut self, input: bool) -> Self {
+        self.include_property_values = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, the returned changes include detailed changes in the property values.</p>
+    pub fn set_include_property_values(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_property_values = input;
+        self
+    }
+    /// <p>If <code>true</code>, the returned changes include detailed changes in the property values.</p>
+    pub fn get_include_property_values(&self) -> &::std::option::Option<bool> {
+        &self.include_property_values
+    }
     /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
     pub fn build(
         self,
@@ -92,6 +113,7 @@ impl DescribeChangeSetInputBuilder {
             change_set_name: self.change_set_name,
             stack_name: self.stack_name,
             next_token: self.next_token,
+            include_property_values: self.include_property_values,
         })
     }
 }

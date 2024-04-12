@@ -87,6 +87,8 @@ pub struct Snapshot {
     pub master_password_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>
     pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+    pub snapshot_arn: ::std::option::Option<::std::string::String>,
 }
 impl Snapshot {
     /// <p>The snapshot identifier that is provided in the request.</p>
@@ -250,6 +252,10 @@ impl Snapshot {
     pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_password_secret_kms_key_id.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+        self.snapshot_arn.as_deref()
+    }
 }
 impl Snapshot {
     /// Creates a new builder-style object to manufacture [`Snapshot`](crate::types::Snapshot).
@@ -298,6 +304,7 @@ pub struct SnapshotBuilder {
     pub(crate) snapshot_retention_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) master_password_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
 }
 impl SnapshotBuilder {
     /// <p>The snapshot identifier that is provided in the request.</p>
@@ -855,6 +862,20 @@ impl SnapshotBuilder {
     pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_password_secret_kms_key_id
     }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+    pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+    pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
+    }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
@@ -894,6 +915,7 @@ impl SnapshotBuilder {
             snapshot_retention_start_time: self.snapshot_retention_start_time,
             master_password_secret_arn: self.master_password_secret_arn,
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
+            snapshot_arn: self.snapshot_arn,
         }
     }
 }

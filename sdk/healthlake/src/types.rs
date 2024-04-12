@@ -17,6 +17,10 @@ pub use crate::types::_export_job_properties::ExportJobProperties;
 
 pub use crate::types::_datastore_properties::DatastoreProperties;
 
+pub use crate::types::_error_cause::ErrorCause;
+
+pub use crate::types::_error_category::ErrorCategory;
+
 pub use crate::types::_identity_provider_configuration::IdentityProviderConfiguration;
 
 pub use crate::types::_authorization_strategy::AuthorizationStrategy;
@@ -46,6 +50,10 @@ mod _datastore_filter;
 mod _datastore_properties;
 
 mod _datastore_status;
+
+mod _error_category;
+
+mod _error_cause;
 
 mod _export_job_properties;
 

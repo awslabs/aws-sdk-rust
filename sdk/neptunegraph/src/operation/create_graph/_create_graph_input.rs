@@ -14,7 +14,9 @@ pub struct CreateGraphInput {
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of dimensions for vector embeddings that will be loaded into the graph. The value is specified as <code>dimension=</code>value. Max = 65,535</p>
     pub vector_search_configuration: ::std::option::Option<crate::types::VectorSearchConfiguration>,
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub replica_count: ::std::option::Option<i32>,
     /// <p>Indicates whether or not to enable deletion protection on the graph. The graph can’t be deleted when deletion protection is enabled. (<code>true</code> or <code>false</code>).</p>
     pub deletion_protection: ::std::option::Option<bool>,
@@ -43,7 +45,9 @@ impl CreateGraphInput {
     pub fn vector_search_configuration(&self) -> ::std::option::Option<&crate::types::VectorSearchConfiguration> {
         self.vector_search_configuration.as_ref()
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn replica_count(&self) -> ::std::option::Option<i32> {
         self.replica_count
     }
@@ -157,17 +161,23 @@ impl CreateGraphInputBuilder {
     pub fn get_vector_search_configuration(&self) -> &::std::option::Option<crate::types::VectorSearchConfiguration> {
         &self.vector_search_configuration
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn replica_count(mut self, input: i32) -> Self {
         self.replica_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.replica_count = input;
         self
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
         &self.replica_count
     }

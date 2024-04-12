@@ -1,6 +1,6 @@
 # aws-sdk-iotfleethub
 
-With Fleet Hub for AWS IoT Device Management you can build stand-alone web applications for monitoring the health of your device fleets.
+With Fleet Hub for IoT Device Management you can build stand-alone web applications for monitoring the health of your device fleets.
 
 ## Getting Started
 

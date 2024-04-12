@@ -87,6 +87,8 @@ pub(crate) mod shape_list_grants;
 
 pub(crate) mod shape_list_key_policies;
 
+pub(crate) mod shape_list_key_rotations;
+
 pub(crate) mod shape_list_keys;
 
 pub(crate) mod shape_list_resource_tags;
@@ -102,6 +104,8 @@ pub(crate) mod shape_replicate_key;
 pub(crate) mod shape_retire_grant;
 
 pub(crate) mod shape_revoke_grant;
+
+pub(crate) mod shape_rotate_key_on_demand;
 
 pub(crate) mod shape_schedule_key_deletion;
 
@@ -144,6 +148,8 @@ pub(crate) mod shape_cloud_hsm_cluster_not_active_exception;
 pub(crate) mod shape_cloud_hsm_cluster_not_found_exception;
 
 pub(crate) mod shape_cloud_hsm_cluster_not_related_exception;
+
+pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_connect_custom_key_store_input;
 
@@ -257,6 +263,8 @@ pub(crate) mod shape_list_grants_input;
 
 pub(crate) mod shape_list_key_policies_input;
 
+pub(crate) mod shape_list_key_rotations_input;
+
 pub(crate) mod shape_list_keys_input;
 
 pub(crate) mod shape_list_resource_tags_input;
@@ -276,6 +284,8 @@ pub(crate) mod shape_replicate_key_input;
 pub(crate) mod shape_retire_grant_input;
 
 pub(crate) mod shape_revoke_grant_input;
+
+pub(crate) mod shape_rotate_key_on_demand_input;
 
 pub(crate) mod shape_schedule_key_deletion_input;
 
@@ -343,6 +353,8 @@ pub(crate) mod shape_policy_name_list;
 
 pub(crate) mod shape_recipient_info;
 
+pub(crate) mod shape_rotations_list;
+
 pub(crate) mod shape_signing_algorithm_spec_list;
 
 pub(crate) mod shape_tag;
@@ -362,6 +374,8 @@ pub(crate) mod shape_key_list_entry;
 pub(crate) mod shape_mac_algorithm_spec_list;
 
 pub(crate) mod shape_multi_region_configuration;
+
+pub(crate) mod shape_rotations_list_entry;
 
 pub(crate) mod shape_xks_key_configuration_type;
 

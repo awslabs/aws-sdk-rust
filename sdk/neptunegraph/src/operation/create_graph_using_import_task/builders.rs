@@ -186,17 +186,23 @@ impl CreateGraphUsingImportTaskFluentBuilder {
     pub fn get_vector_search_configuration(&self) -> &::std::option::Option<crate::types::VectorSearchConfiguration> {
         self.inner.get_vector_search_configuration()
     }
-    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p>
+    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn replica_count(mut self, input: i32) -> Self {
         self.inner = self.inner.replica_count(input);
         self
     }
-    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p>
+    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_replica_count(input);
         self
     }
-    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p>
+    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_replica_count()
     }

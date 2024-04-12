@@ -61,6 +61,8 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_tag_exception::TagException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_invalid_grant_id_exception::InvalidGrantIdException;
 
 pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentException;
@@ -104,6 +106,8 @@ mod _cloud_hsm_cluster_not_active_exception;
 mod _cloud_hsm_cluster_not_found_exception;
 
 mod _cloud_hsm_cluster_not_related_exception;
+
+mod _conflict_exception;
 
 mod _custom_key_store_has_cmks_exception;
 

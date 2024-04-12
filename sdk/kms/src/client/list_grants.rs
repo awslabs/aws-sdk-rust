@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`ListGrantsOutput`](crate::operation::list_grants::ListGrantsOutput) with field(s):
     ///   - [`grants(Option<Vec::<GrantListEntry>>)`](crate::operation::list_grants::ListGrantsOutput::grants): <p>A list of grants.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_grants::ListGrantsOutput::next_marker): <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
-    ///   - [`truncated(bool)`](crate::operation::list_grants::ListGrantsOutput::truncated): <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
+    ///   - [`truncated(bool)`](crate::operation::list_grants::ListGrantsOutput::truncated): <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in this response to the <code>Marker</code> parameter in a subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListGrantsError>`](crate::operation::list_grants::ListGrantsError)
     pub fn list_grants(&self) -> crate::operation::list_grants::builders::ListGrantsFluentBuilder {
         crate::operation::list_grants::builders::ListGrantsFluentBuilder::new(self.handle.clone())

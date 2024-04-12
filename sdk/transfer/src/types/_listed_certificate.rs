@@ -8,7 +8,15 @@ pub struct ListedCertificate {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub certificate_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
+    /// <li>
+    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
+    /// <li>
+    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
+    /// </ul>
     pub usage: ::std::option::Option<crate::types::CertificateUsageType>,
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
     pub status: ::std::option::Option<crate::types::CertificateStatusType>,
@@ -30,7 +38,15 @@ impl ListedCertificate {
     pub fn certificate_id(&self) -> ::std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
-    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
+    /// <li>
+    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
+    /// <li>
+    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
+    /// </ul>
     pub fn usage(&self) -> ::std::option::Option<&crate::types::CertificateUsageType> {
         self.usage.as_ref()
     }
@@ -104,17 +120,41 @@ impl ListedCertificateBuilder {
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_id
     }
-    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
+    /// <li>
+    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
+    /// <li>
+    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
+    /// </ul>
     pub fn usage(mut self, input: crate::types::CertificateUsageType) -> Self {
         self.usage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
+    /// <li>
+    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
+    /// <li>
+    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
+    /// </ul>
     pub fn set_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsageType>) -> Self {
         self.usage = input;
         self
     }
-    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
+    /// <li>
+    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
+    /// <li>
+    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
+    /// </ul>
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::CertificateUsageType> {
         &self.usage
     }

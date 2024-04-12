@@ -249,6 +249,8 @@ pub use crate::types::_evaluation_type::EvaluationType;
 
 pub use crate::types::_resource_target_definition::ResourceTargetDefinition;
 
+pub use crate::types::_attribute_change_type::AttributeChangeType;
+
 pub use crate::types::_requires_recreation::RequiresRecreation;
 
 pub use crate::types::_resource_attribute::ResourceAttribute;
@@ -282,6 +284,8 @@ mod _account_gate_result;
 mod _account_gate_status;
 
 mod _account_limit;
+
+mod _attribute_change_type;
 
 mod _auto_deployment;
 

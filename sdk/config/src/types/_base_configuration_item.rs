@@ -46,7 +46,9 @@ pub struct BaseConfigurationItem {
     pub supplementary_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The recording frequency that Config uses to record configuration changes for the resource.</p>
     pub recording_frequency: ::std::option::Option<crate::types::RecordingFrequency>,
-    /// <p>The time when configuration changes for the resource were delivered.</p>
+    /// <p>The time when configuration changes for the resource were delivered.</p><note>
+    /// <p>This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using daily recording, this field will be populated. However, if you are using continuous recording, this field will be omitted since the delivery time is instantaneous as the CI is available right away. For more information on daily recording and continuous recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording Frequency</a> in the <i>Config Developer Guide</i>.</p>
+    /// </note>
     pub configuration_item_delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BaseConfigurationItem {
@@ -122,7 +124,9 @@ impl BaseConfigurationItem {
     pub fn recording_frequency(&self) -> ::std::option::Option<&crate::types::RecordingFrequency> {
         self.recording_frequency.as_ref()
     }
-    /// <p>The time when configuration changes for the resource were delivered.</p>
+    /// <p>The time when configuration changes for the resource were delivered.</p><note>
+    /// <p>This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using daily recording, this field will be populated. However, if you are using continuous recording, this field will be omitted since the delivery time is instantaneous as the CI is available right away. For more information on daily recording and continuous recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording Frequency</a> in the <i>Config Developer Guide</i>.</p>
+    /// </note>
     pub fn configuration_item_delivery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.configuration_item_delivery_time.as_ref()
     }
@@ -417,17 +421,23 @@ impl BaseConfigurationItemBuilder {
     pub fn get_recording_frequency(&self) -> &::std::option::Option<crate::types::RecordingFrequency> {
         &self.recording_frequency
     }
-    /// <p>The time when configuration changes for the resource were delivered.</p>
+    /// <p>The time when configuration changes for the resource were delivered.</p><note>
+    /// <p>This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using daily recording, this field will be populated. However, if you are using continuous recording, this field will be omitted since the delivery time is instantaneous as the CI is available right away. For more information on daily recording and continuous recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording Frequency</a> in the <i>Config Developer Guide</i>.</p>
+    /// </note>
     pub fn configuration_item_delivery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.configuration_item_delivery_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when configuration changes for the resource were delivered.</p>
+    /// <p>The time when configuration changes for the resource were delivered.</p><note>
+    /// <p>This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using daily recording, this field will be populated. However, if you are using continuous recording, this field will be omitted since the delivery time is instantaneous as the CI is available right away. For more information on daily recording and continuous recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording Frequency</a> in the <i>Config Developer Guide</i>.</p>
+    /// </note>
     pub fn set_configuration_item_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.configuration_item_delivery_time = input;
         self
     }
-    /// <p>The time when configuration changes for the resource were delivered.</p>
+    /// <p>The time when configuration changes for the resource were delivered.</p><note>
+    /// <p>This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using daily recording, this field will be populated. However, if you are using continuous recording, this field will be omitted since the delivery time is instantaneous as the CI is available right away. For more information on daily recording and continuous recording, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency">Recording Frequency</a> in the <i>Config Developer Guide</i>.</p>
+    /// </note>
     pub fn get_configuration_item_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.configuration_item_delivery_time
     }

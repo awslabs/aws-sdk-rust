@@ -15,7 +15,9 @@ pub struct RestoreGraphFromSnapshotInput {
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Adds metadata tags to the snapshot. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub replica_count: ::std::option::Option<i32>,
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
     pub public_connectivity: ::std::option::Option<bool>,
@@ -43,7 +45,9 @@ impl RestoreGraphFromSnapshotInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn replica_count(&self) -> ::std::option::Option<i32> {
         self.replica_count
     }
@@ -156,17 +160,23 @@ impl RestoreGraphFromSnapshotInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn replica_count(mut self, input: i32) -> Self {
         self.replica_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.replica_count = input;
         self
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p><important>
+    /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
+    /// </important>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
         &self.replica_count
     }

@@ -227,6 +227,8 @@ mod list_grants;
 
 mod list_key_policies;
 
+mod list_key_rotations;
+
 mod list_keys;
 
 mod list_resource_tags;
@@ -242,6 +244,8 @@ mod replicate_key;
 mod retire_grant;
 
 mod revoke_grant;
+
+mod rotate_key_on_demand;
 
 mod schedule_key_deletion;
 

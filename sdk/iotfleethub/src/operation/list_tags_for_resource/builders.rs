@@ -22,9 +22,7 @@ impl ListTagsForResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Lists the tags for the specified resource.</p><note>
-/// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
-/// </note>
+/// <p>Lists the tags for the specified resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

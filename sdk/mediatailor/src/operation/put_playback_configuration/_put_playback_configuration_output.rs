@@ -19,6 +19,8 @@ pub struct PutPlaybackConfigurationOutput {
     pub dash_configuration: ::std::option::Option<crate::types::DashConfiguration>,
     /// <p>The configuration for HLS content.</p>
     pub hls_configuration: ::std::option::Option<crate::types::HlsConfiguration>,
+    /// <p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>
+    pub insertion_mode: crate::types::InsertionMode,
     /// <p>The configuration for pre-roll ad insertion.</p>
     pub live_pre_roll_configuration: ::std::option::Option<crate::types::LivePreRollConfiguration>,
     /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
@@ -77,6 +79,10 @@ impl PutPlaybackConfigurationOutput {
     /// <p>The configuration for HLS content.</p>
     pub fn hls_configuration(&self) -> ::std::option::Option<&crate::types::HlsConfiguration> {
         self.hls_configuration.as_ref()
+    }
+    /// <p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>
+    pub fn insertion_mode(&self) -> &crate::types::InsertionMode {
+        &self.insertion_mode
     }
     /// <p>The configuration for pre-roll ad insertion.</p>
     pub fn live_pre_roll_configuration(&self) -> ::std::option::Option<&crate::types::LivePreRollConfiguration> {
@@ -152,6 +158,7 @@ pub struct PutPlaybackConfigurationOutputBuilder {
     >,
     pub(crate) dash_configuration: ::std::option::Option<crate::types::DashConfiguration>,
     pub(crate) hls_configuration: ::std::option::Option<crate::types::HlsConfiguration>,
+    pub(crate) insertion_mode: ::std::option::Option<crate::types::InsertionMode>,
     pub(crate) live_pre_roll_configuration: ::std::option::Option<crate::types::LivePreRollConfiguration>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     pub(crate) manifest_processing_rules: ::std::option::Option<crate::types::ManifestProcessingRules>,
@@ -283,6 +290,20 @@ impl PutPlaybackConfigurationOutputBuilder {
     /// <p>The configuration for HLS content.</p>
     pub fn get_hls_configuration(&self) -> &::std::option::Option<crate::types::HlsConfiguration> {
         &self.hls_configuration
+    }
+    /// <p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>
+    pub fn insertion_mode(mut self, input: crate::types::InsertionMode) -> Self {
+        self.insertion_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>
+    pub fn set_insertion_mode(mut self, input: ::std::option::Option<crate::types::InsertionMode>) -> Self {
+        self.insertion_mode = input;
+        self
+    }
+    /// <p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>
+    pub fn get_insertion_mode(&self) -> &::std::option::Option<crate::types::InsertionMode> {
+        &self.insertion_mode
     }
     /// <p>The configuration for pre-roll ad insertion.</p>
     pub fn live_pre_roll_configuration(mut self, input: crate::types::LivePreRollConfiguration) -> Self {
@@ -477,6 +498,11 @@ impl PutPlaybackConfigurationOutputBuilder {
             configuration_aliases: self.configuration_aliases,
             dash_configuration: self.dash_configuration,
             hls_configuration: self.hls_configuration,
+            insertion_mode: self.insertion_mode.unwrap_or(
+                "STITCHED_ONLY"
+                    .parse::<crate::types::InsertionMode>()
+                    .expect("static value validated to member"),
+            ),
             live_pre_roll_configuration: self.live_pre_roll_configuration,
             log_configuration: self.log_configuration,
             manifest_processing_rules: self.manifest_processing_rules,

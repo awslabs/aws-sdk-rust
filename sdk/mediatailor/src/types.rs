@@ -39,6 +39,8 @@ pub use crate::types::_log_configuration::LogConfiguration;
 
 pub use crate::types::_live_pre_roll_configuration::LivePreRollConfiguration;
 
+pub use crate::types::_insertion_mode::InsertionMode;
+
 pub use crate::types::_hls_configuration::HlsConfiguration;
 
 pub use crate::types::_dash_configuration::DashConfiguration;
@@ -176,6 +178,8 @@ mod _hls_playlist_settings;
 mod _http_configuration;
 
 mod _http_package_configuration;
+
+mod _insertion_mode;
 
 mod _key_value_pair;
 

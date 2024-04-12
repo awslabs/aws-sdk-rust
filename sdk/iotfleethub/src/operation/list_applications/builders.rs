@@ -22,9 +22,7 @@ impl ListApplicationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListApplications`.
 ///
-/// <p>Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current account.</p><note>
-/// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
-/// </note>
+/// <p>Gets a list of Fleet Hub for IoT Device Management web applications for the current account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

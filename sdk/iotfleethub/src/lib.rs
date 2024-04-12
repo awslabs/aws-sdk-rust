@@ -17,7 +17,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! With Fleet Hub for AWS IoT Device Management you can build stand-alone web applications for monitoring the health of your device fleets.
+//! With Fleet Hub for IoT Device Management you can build stand-alone web applications for monitoring the health of your device fleets.
 //!
 //! ## Getting Started
 //!

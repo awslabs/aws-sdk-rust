@@ -22,7 +22,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
 }
 /// Fluent builder constructing a request to `GetUnfilteredTableMetadata`.
 ///
-/// <p>Retrieves table metadata from the Data Catalog that contains unfiltered metadata.</p>
+/// <p>Allows a third-party analytical engine to retrieve unfiltered table metadata from the Data Catalog.</p>
 /// <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetTable</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUnfilteredTableMetadataFluentBuilder {
@@ -183,19 +183,83 @@ impl GetUnfilteredTableMetadataFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
     ///
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>Indicates the level of filtering a third-party analytical engine is capable of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API operation. Accepted values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>COLUMN_PERMISSION</code> - Column permissions ensure that users can access only specific columns in the table. If there are particular columns contain sensitive data, data lake administrators can define column filters that exclude access to specific columns.</p></li>
+    /// <li>
+    /// <p><code>CELL_FILTER_PERMISSION</code> - Cell-level filtering combines column filtering (include or exclude columns) and row filter expressions to restrict access to individual elements in the table.</p></li>
+    /// <li>
+    /// <p><code>NESTED_PERMISSION</code> - Nested permissions combines cell-level filtering and nested column filtering to restrict access to columns and/or nested columns in specific rows based on row filter expressions.</p></li>
+    /// <li>
+    /// <p><code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines nested permission with nested cell-level filtering. This allows different subsets of nested columns to be restricted based on an array of row filter expressions.</p></li>
+    /// </ul>
+    /// <p>Note: Each of these permission types follows a hierarchical order where each subsequent permission type includes all permission of the previous type.</p>
+    /// <p>Important: If you provide a supported permission type that doesn't match the user's level of permissions on the table, then Lake Formation raises an exception. For example, if the third-party engine calling the <code>GetUnfilteredTableMetadata</code> operation can enforce only column-level filtering, and the user has nested cell filtering applied on the table, Lake Formation throws an exception, and will not return unfiltered table metadata and data access credentials.</p>
     pub fn supported_permission_types(mut self, input: crate::types::PermissionType) -> Self {
         self.inner = self.inner.supported_permission_types(input);
         self
     }
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>Indicates the level of filtering a third-party analytical engine is capable of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API operation. Accepted values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>COLUMN_PERMISSION</code> - Column permissions ensure that users can access only specific columns in the table. If there are particular columns contain sensitive data, data lake administrators can define column filters that exclude access to specific columns.</p></li>
+    /// <li>
+    /// <p><code>CELL_FILTER_PERMISSION</code> - Cell-level filtering combines column filtering (include or exclude columns) and row filter expressions to restrict access to individual elements in the table.</p></li>
+    /// <li>
+    /// <p><code>NESTED_PERMISSION</code> - Nested permissions combines cell-level filtering and nested column filtering to restrict access to columns and/or nested columns in specific rows based on row filter expressions.</p></li>
+    /// <li>
+    /// <p><code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines nested permission with nested cell-level filtering. This allows different subsets of nested columns to be restricted based on an array of row filter expressions.</p></li>
+    /// </ul>
+    /// <p>Note: Each of these permission types follows a hierarchical order where each subsequent permission type includes all permission of the previous type.</p>
+    /// <p>Important: If you provide a supported permission type that doesn't match the user's level of permissions on the table, then Lake Formation raises an exception. For example, if the third-party engine calling the <code>GetUnfilteredTableMetadata</code> operation can enforce only column-level filtering, and the user has nested cell filtering applied on the table, Lake Formation throws an exception, and will not return unfiltered table metadata and data access credentials.</p>
     pub fn set_supported_permission_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
     }
-    /// <p>(Required) A list of supported permission types.</p>
+    /// <p>Indicates the level of filtering a third-party analytical engine is capable of enforcing when calling the <code>GetUnfilteredTableMetadata</code> API operation. Accepted values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>COLUMN_PERMISSION</code> - Column permissions ensure that users can access only specific columns in the table. If there are particular columns contain sensitive data, data lake administrators can define column filters that exclude access to specific columns.</p></li>
+    /// <li>
+    /// <p><code>CELL_FILTER_PERMISSION</code> - Cell-level filtering combines column filtering (include or exclude columns) and row filter expressions to restrict access to individual elements in the table.</p></li>
+    /// <li>
+    /// <p><code>NESTED_PERMISSION</code> - Nested permissions combines cell-level filtering and nested column filtering to restrict access to columns and/or nested columns in specific rows based on row filter expressions.</p></li>
+    /// <li>
+    /// <p><code>NESTED_CELL_PERMISSION</code> - Nested cell permissions combines nested permission with nested cell-level filtering. This allows different subsets of nested columns to be restricted based on an array of row filter expressions.</p></li>
+    /// </ul>
+    /// <p>Note: Each of these permission types follows a hierarchical order where each subsequent permission type includes all permission of the previous type.</p>
+    /// <p>Important: If you provide a supported permission type that doesn't match the user's level of permissions on the table, then Lake Formation raises an exception. For example, if the third-party engine calling the <code>GetUnfilteredTableMetadata</code> operation can enforce only column-level filtering, and the user has nested cell filtering applied on the table, Lake Formation throws an exception, and will not return unfiltered table metadata and data access credentials.</p>
     pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         self.inner.get_supported_permission_types()
+    }
+    /// <p>The resource ARN of the view.</p>
+    pub fn parent_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.parent_resource_arn(input.into());
+        self
+    }
+    /// <p>The resource ARN of the view.</p>
+    pub fn set_parent_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_parent_resource_arn(input);
+        self
+    }
+    /// <p>The resource ARN of the view.</p>
+    pub fn get_parent_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_resource_arn()
+    }
+    /// <p>The resource ARN of the root view in a chain of nested views.</p>
+    pub fn root_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.root_resource_arn(input.into());
+        self
+    }
+    /// <p>The resource ARN of the root view in a chain of nested views.</p>
+    pub fn set_root_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_root_resource_arn(input);
+        self
+    }
+    /// <p>The resource ARN of the root view in a chain of nested views.</p>
+    pub fn get_root_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_root_resource_arn()
     }
     /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
     pub fn supported_dialect(mut self, input: crate::types::SupportedDialect) -> Self {
