@@ -7,7 +7,7 @@ on:
     branches:
     - 'canary*'
 env:
-  tool_rust_version: 1.75.0
+  tool_rust_version: 1.74.1
   rust_nightly_version: nightly-2024-02-07
 
 jobs:
