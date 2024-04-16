@@ -2453,6 +2453,10 @@ source_hash = '30050d39ed8dcd2e445b0ff09151be716f55af87851b2f453fc32de2d49c33de'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6ccfcf7d20b971f5c972c6629ceb0dfce361961690ec588ab466eff6bf8ca9be'
+
+[release]
+tag = 'release-2024-04-16'
+
 [release.crates]
 aws-sdk-bedrockagent = '1.20.0'
 aws-sdk-emrserverless = '1.21.0'
