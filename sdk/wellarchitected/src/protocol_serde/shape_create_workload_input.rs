@@ -54,69 +54,75 @@ pub fn ser_create_workload_input_input(
     if let Some(var_17) = &input.industry_type {
         object.key("IndustryType").string(var_17.as_str());
     }
-    if let Some(var_18) = &input.lenses {
-        let mut array_19 = object.key("Lenses").start_array();
-        for item_20 in var_18 {
-            {
-                array_19.value().string(item_20.as_str());
-            }
-        }
-        array_19.finish();
-    }
-    if let Some(var_21) = &input.non_aws_regions {
-        let mut array_22 = object.key("NonAwsRegions").start_array();
-        for item_23 in var_21 {
-            {
-                array_22.value().string(item_23.as_str());
-            }
-        }
-        array_22.finish();
-    }
-    if let Some(var_24) = &input.notes {
-        object.key("Notes").string(var_24.as_str());
-    }
-    if let Some(var_25) = &input.pillar_priorities {
-        let mut array_26 = object.key("PillarPriorities").start_array();
-        for item_27 in var_25 {
-            {
-                array_26.value().string(item_27.as_str());
-            }
-        }
-        array_26.finish();
-    }
-    if let Some(var_28) = &input.profile_arns {
-        let mut array_29 = object.key("ProfileArns").start_array();
-        for item_30 in var_28 {
-            {
-                array_29.value().string(item_30.as_str());
-            }
-        }
-        array_29.finish();
-    }
-    if let Some(var_31) = &input.review_owner {
-        object.key("ReviewOwner").string(var_31.as_str());
-    }
-    if let Some(var_32) = &input.review_template_arns {
-        let mut array_33 = object.key("ReviewTemplateArns").start_array();
-        for item_34 in var_32 {
-            {
-                array_33.value().string(item_34.as_str());
-            }
-        }
-        array_33.finish();
-    }
-    if let Some(var_35) = &input.tags {
+    if let Some(var_18) = &input.jira_configuration {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("Tags").start_object();
-        for (key_37, value_38) in var_35 {
+        let mut object_19 = object.key("JiraConfiguration").start_object();
+        crate::protocol_serde::shape_workload_jira_configuration_input::ser_workload_jira_configuration_input(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.lenses {
+        let mut array_21 = object.key("Lenses").start_array();
+        for item_22 in var_20 {
             {
-                object_36.key(key_37.as_str()).string(value_38.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        object_36.finish();
+        array_21.finish();
     }
-    if let Some(var_39) = &input.workload_name {
-        object.key("WorkloadName").string(var_39.as_str());
+    if let Some(var_23) = &input.non_aws_regions {
+        let mut array_24 = object.key("NonAwsRegions").start_array();
+        for item_25 in var_23 {
+            {
+                array_24.value().string(item_25.as_str());
+            }
+        }
+        array_24.finish();
+    }
+    if let Some(var_26) = &input.notes {
+        object.key("Notes").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.pillar_priorities {
+        let mut array_28 = object.key("PillarPriorities").start_array();
+        for item_29 in var_27 {
+            {
+                array_28.value().string(item_29.as_str());
+            }
+        }
+        array_28.finish();
+    }
+    if let Some(var_30) = &input.profile_arns {
+        let mut array_31 = object.key("ProfileArns").start_array();
+        for item_32 in var_30 {
+            {
+                array_31.value().string(item_32.as_str());
+            }
+        }
+        array_31.finish();
+    }
+    if let Some(var_33) = &input.review_owner {
+        object.key("ReviewOwner").string(var_33.as_str());
+    }
+    if let Some(var_34) = &input.review_template_arns {
+        let mut array_35 = object.key("ReviewTemplateArns").start_array();
+        for item_36 in var_34 {
+            {
+                array_35.value().string(item_36.as_str());
+            }
+        }
+        array_35.finish();
+    }
+    if let Some(var_37) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_38 = object.key("Tags").start_object();
+        for (key_39, value_40) in var_37 {
+            {
+                object_38.key(key_39.as_str()).string(value_40.as_str());
+            }
+        }
+        object_38.finish();
+    }
+    if let Some(var_41) = &input.workload_name {
+        object.key("WorkloadName").string(var_41.as_str());
     }
     Ok(())
 }

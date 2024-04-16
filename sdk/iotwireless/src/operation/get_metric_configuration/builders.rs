@@ -22,7 +22,7 @@ impl GetMetricConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMetricConfiguration`.
 ///
-/// <p>Get the metric configuration status for this account.</p>
+/// <p>Get the metric configuration status for this AWS account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMetricConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

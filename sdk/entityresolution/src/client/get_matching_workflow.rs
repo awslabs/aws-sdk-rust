@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::created_at): <p>The timestamp of when the workflow was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::updated_at): <p>The timestamp of when the workflow was last updated.</p>
     ///   - [`incremental_run_config(Option<IncrementalRunConfig>)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::incremental_run_config): <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
-    ///   - [`role_arn(String)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    ///   - [`role_arn(String)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_matching_workflow::GetMatchingWorkflowOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetMatchingWorkflowError>`](crate::operation::get_matching_workflow::GetMatchingWorkflowError)
     pub fn get_matching_workflow(&self) -> crate::operation::get_matching_workflow::builders::GetMatchingWorkflowFluentBuilder {

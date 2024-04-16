@@ -63,6 +63,8 @@ pub(crate) mod shape_list_batch_job_definitions;
 
 pub(crate) mod shape_list_batch_job_executions;
 
+pub(crate) mod shape_list_batch_job_restart_points;
+
 pub(crate) mod shape_list_data_set_import_history;
 
 pub(crate) mod shape_list_data_sets;
@@ -147,6 +149,8 @@ pub(crate) mod shape_batch_job_execution_summary_list;
 
 pub(crate) mod shape_batch_job_identifier;
 
+pub(crate) mod shape_batch_job_step_list;
+
 pub(crate) mod shape_data_set_import_config;
 
 pub(crate) mod shape_data_set_import_summary;
@@ -168,6 +172,8 @@ pub(crate) mod shape_engine_versions_summary_list;
 pub(crate) mod shape_environment_summary_list;
 
 pub(crate) mod shape_high_availability_config;
+
+pub(crate) mod shape_job_step_restart_marker;
 
 pub(crate) mod shape_log_group_summaries;
 
@@ -211,6 +217,8 @@ pub(crate) mod shape_fsx_storage_configuration;
 
 pub(crate) mod shape_gdg_detail_attributes;
 
+pub(crate) mod shape_job_step;
+
 pub(crate) mod shape_log_group_summary;
 
 pub(crate) mod shape_maintenance_schedule;
@@ -218,6 +226,8 @@ pub(crate) mod shape_maintenance_schedule;
 pub(crate) mod shape_po_detail_attributes;
 
 pub(crate) mod shape_ps_detail_attributes;
+
+pub(crate) mod shape_restart_batch_job_identifier;
 
 pub(crate) mod shape_s3_batch_job_identifier;
 

@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsConfiguration {
-    /// <p>The ARN of the vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the vector store.</p>
     pub resource_arn: ::std::string::String,
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
     pub credentials_secret_arn: ::std::string::String,
     /// <p>The name of your Amazon RDS database.</p>
     pub database_name: ::std::string::String,
@@ -16,12 +16,12 @@ pub struct RdsConfiguration {
     pub field_mapping: ::std::option::Option<crate::types::RdsFieldMapping>,
 }
 impl RdsConfiguration {
-    /// <p>The ARN of the vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the vector store.</p>
     pub fn resource_arn(&self) -> &str {
         use std::ops::Deref;
         self.resource_arn.deref()
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
     pub fn credentials_secret_arn(&self) -> &str {
         use std::ops::Deref;
         self.credentials_secret_arn.deref()
@@ -59,33 +59,33 @@ pub struct RdsConfigurationBuilder {
     pub(crate) field_mapping: ::std::option::Option<crate::types::RdsFieldMapping>,
 }
 impl RdsConfigurationBuilder {
-    /// <p>The ARN of the vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the vector store.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the vector store.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ARN of the vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the vector store.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
     /// This field is required.
     pub fn credentials_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials_secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
     pub fn set_credentials_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials_secret_arn = input;
         self
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Amazon RDS database.</p>
     pub fn get_credentials_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credentials_secret_arn
     }

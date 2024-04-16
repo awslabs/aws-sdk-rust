@@ -458,6 +458,15 @@ pub(crate) fn high_availability_config_correct_errors(
     builder
 }
 
+pub(crate) fn job_step_restart_marker_correct_errors(
+    mut builder: crate::types::builders::JobStepRestartMarkerBuilder,
+) -> crate::types::builders::JobStepRestartMarkerBuilder {
+    if builder.from_step.is_none() {
+        builder.from_step = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn application_summary_correct_errors(
     mut builder: crate::types::builders::ApplicationSummaryBuilder,
 ) -> crate::types::builders::ApplicationSummaryBuilder {
@@ -637,6 +646,21 @@ pub(crate) fn ps_detail_attributes_correct_errors(
     }
     if builder.encoding.is_none() {
         builder.encoding = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn restart_batch_job_identifier_correct_errors(
+    mut builder: crate::types::builders::RestartBatchJobIdentifierBuilder,
+) -> crate::types::builders::RestartBatchJobIdentifierBuilder {
+    if builder.execution_id.is_none() {
+        builder.execution_id = Some(Default::default())
+    }
+    if builder.job_step_restart_marker.is_none() {
+        builder.job_step_restart_marker = {
+            let builder = crate::types::builders::JobStepRestartMarkerBuilder::default();
+            crate::serde_util::job_step_restart_marker_correct_errors(builder).build().ok()
+        }
     }
     builder
 }

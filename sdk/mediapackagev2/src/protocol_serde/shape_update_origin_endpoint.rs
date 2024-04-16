@@ -231,6 +231,9 @@ pub(crate) fn de_update_origin_endpoint(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "DashManifests" => {
+                    builder = builder.set_dash_manifests(crate::protocol_serde::shape_get_dash_manifests::de_get_dash_manifests(tokens)?);
+                }
                 "Description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

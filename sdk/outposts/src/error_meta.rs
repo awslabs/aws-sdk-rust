@@ -64,6 +64,32 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_capacity_task::CancelCapacityTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_capacity_task::CancelCapacityTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_capacity_task::CancelCapacityTaskError> for Error {
+    fn from(err: crate::operation::cancel_capacity_task::CancelCapacityTaskError) -> Self {
+        match err {
+            crate::operation::cancel_capacity_task::CancelCapacityTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_capacity_task::CancelCapacityTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_capacity_task::CancelCapacityTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_capacity_task::CancelCapacityTaskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::cancel_capacity_task::CancelCapacityTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_capacity_task::CancelCapacityTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_order::CancelOrderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -222,6 +248,31 @@ impl From<crate::operation::delete_site::DeleteSiteError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_task::GetCapacityTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_task::GetCapacityTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_task::GetCapacityTaskError> for Error {
+    fn from(err: crate::operation::get_capacity_task::GetCapacityTaskError) -> Self {
+        match err {
+            crate::operation::get_capacity_task::GetCapacityTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_capacity_task::GetCapacityTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_capacity_task::GetCapacityTaskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_capacity_task::GetCapacityTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_capacity_task::GetCapacityTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_catalog_item::GetCatalogItemError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -354,6 +405,52 @@ impl From<crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError> for Error {
+    fn from(err: crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError) -> Self {
+        match err {
+            crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_site::GetSiteError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -426,6 +523,31 @@ impl From<crate::operation::list_assets::ListAssetsError> for Error {
             crate::operation::list_assets::ListAssetsError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_assets::ListAssetsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_assets::ListAssetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capacity_tasks::ListCapacityTasksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capacity_tasks::ListCapacityTasksError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_capacity_tasks::ListCapacityTasksError> for Error {
+    fn from(err: crate::operation::list_capacity_tasks::ListCapacityTasksError) -> Self {
+        match err {
+            crate::operation::list_capacity_tasks::ListCapacityTasksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_capacity_tasks::ListCapacityTasksError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_capacity_tasks::ListCapacityTasksError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_capacity_tasks::ListCapacityTasksError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_capacity_tasks::ListCapacityTasksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -549,6 +671,32 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_capacity_task::StartCapacityTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_capacity_task::StartCapacityTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_capacity_task::StartCapacityTaskError> for Error {
+    fn from(err: crate::operation::start_capacity_task::StartCapacityTaskError) -> Self {
+        match err {
+            crate::operation::start_capacity_task::StartCapacityTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_capacity_task::StartCapacityTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_capacity_task::StartCapacityTaskError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_capacity_task::StartCapacityTaskError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_capacity_task::StartCapacityTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_capacity_task::StartCapacityTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

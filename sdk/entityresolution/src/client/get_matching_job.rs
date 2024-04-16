@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_matching_job::GetMatchingJobOutput::end_time): <p>The time at which the job has finished.</p>
     ///   - [`metrics(Option<JobMetrics>)`](crate::operation::get_matching_job::GetMatchingJobOutput::metrics): <p>Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.</p>
     ///   - [`error_details(Option<ErrorDetails>)`](crate::operation::get_matching_job::GetMatchingJobOutput::error_details): <p>An object containing an error message, if there was an error.</p>
+    ///   - [`output_source_config(Option<Vec::<JobOutputSource>>)`](crate::operation::get_matching_job::GetMatchingJobOutput::output_source_config): <p>A list of <code>OutputSource</code> objects.</p>
     /// - On failure, responds with [`SdkError<GetMatchingJobError>`](crate::operation::get_matching_job::GetMatchingJobError)
     pub fn get_matching_job(&self) -> crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder {
         crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::new(self.handle.clone())

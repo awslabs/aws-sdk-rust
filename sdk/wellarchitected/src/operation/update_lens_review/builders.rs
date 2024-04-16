@@ -186,4 +186,18 @@ impl UpdateLensReviewFluentBuilder {
     pub fn get_pillar_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_pillar_notes()
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(mut self, input: crate::types::JiraSelectedQuestionConfiguration) -> Self {
+        self.inner = self.inner.jira_configuration(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::JiraSelectedQuestionConfiguration>) -> Self {
+        self.inner = self.inner.set_jira_configuration(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::JiraSelectedQuestionConfiguration> {
+        self.inner.get_jira_configuration()
+    }
 }

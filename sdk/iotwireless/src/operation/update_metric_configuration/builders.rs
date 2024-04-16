@@ -22,7 +22,7 @@ impl UpdateMetricConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateMetricConfiguration`.
 ///
-/// <p>Update the metric configuration.</p>
+/// <p>Update the summary metric configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMetricConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

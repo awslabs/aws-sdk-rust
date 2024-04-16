@@ -17,6 +17,7 @@
 ///     BatchJobExecutionStatus::Dispatch => { /* ... */ },
 ///     BatchJobExecutionStatus::Failed => { /* ... */ },
 ///     BatchJobExecutionStatus::Holding => { /* ... */ },
+///     BatchJobExecutionStatus::Purged => { /* ... */ },
 ///     BatchJobExecutionStatus::Running => { /* ... */ },
 ///     BatchJobExecutionStatus::Submitting => { /* ... */ },
 ///     BatchJobExecutionStatus::Succeeded => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum BatchJobExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Holding,
     #[allow(missing_docs)] // documentation missing in model
+    Purged,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Submitting,
@@ -78,6 +81,7 @@ impl ::std::convert::From<&str> for BatchJobExecutionStatus {
             "Dispatching" => BatchJobExecutionStatus::Dispatch,
             "Failed" => BatchJobExecutionStatus::Failed,
             "Holding" => BatchJobExecutionStatus::Holding,
+            "Purged" => BatchJobExecutionStatus::Purged,
             "Running" => BatchJobExecutionStatus::Running,
             "Submitting" => BatchJobExecutionStatus::Submitting,
             "Succeeded" => BatchJobExecutionStatus::Succeeded,
@@ -102,6 +106,7 @@ impl BatchJobExecutionStatus {
             BatchJobExecutionStatus::Dispatch => "Dispatching",
             BatchJobExecutionStatus::Failed => "Failed",
             BatchJobExecutionStatus::Holding => "Holding",
+            BatchJobExecutionStatus::Purged => "Purged",
             BatchJobExecutionStatus::Running => "Running",
             BatchJobExecutionStatus::Submitting => "Submitting",
             BatchJobExecutionStatus::Succeeded => "Succeeded",
@@ -117,6 +122,7 @@ impl BatchJobExecutionStatus {
             "Dispatching",
             "Failed",
             "Holding",
+            "Purged",
             "Running",
             "Submitting",
             "Succeeded",
@@ -149,6 +155,7 @@ impl ::std::fmt::Display for BatchJobExecutionStatus {
             BatchJobExecutionStatus::Dispatch => write!(f, "Dispatching"),
             BatchJobExecutionStatus::Failed => write!(f, "Failed"),
             BatchJobExecutionStatus::Holding => write!(f, "Holding"),
+            BatchJobExecutionStatus::Purged => write!(f, "Purged"),
             BatchJobExecutionStatus::Running => write!(f, "Running"),
             BatchJobExecutionStatus::Submitting => write!(f, "Submitting"),
             BatchJobExecutionStatus::Succeeded => write!(f, "Succeeded"),

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenSearchServerlessConfiguration {
-    /// <p>The ARN of the OpenSearch Service vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
     pub collection_arn: ::std::string::String,
     /// <p>The name of the vector store.</p>
     pub vector_index_name: ::std::string::String,
@@ -12,7 +12,7 @@ pub struct OpenSearchServerlessConfiguration {
     pub field_mapping: ::std::option::Option<crate::types::OpenSearchServerlessFieldMapping>,
 }
 impl OpenSearchServerlessConfiguration {
-    /// <p>The ARN of the OpenSearch Service vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
     pub fn collection_arn(&self) -> &str {
         use std::ops::Deref;
         self.collection_arn.deref()
@@ -43,18 +43,18 @@ pub struct OpenSearchServerlessConfigurationBuilder {
     pub(crate) field_mapping: ::std::option::Option<crate::types::OpenSearchServerlessFieldMapping>,
 }
 impl OpenSearchServerlessConfigurationBuilder {
-    /// <p>The ARN of the OpenSearch Service vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
     /// This field is required.
     pub fn collection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the OpenSearch Service vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
     pub fn set_collection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_arn = input;
         self
     }
-    /// <p>The ARN of the OpenSearch Service vector store.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OpenSearch Service vector store.</p>
     pub fn get_collection_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_arn
     }

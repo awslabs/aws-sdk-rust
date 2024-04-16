@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolutionTechniques {
-    /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
     pub resolution_type: crate::types::ResolutionType,
     /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
     pub rule_based_properties: ::std::option::Option<crate::types::RuleBasedProperties>,
@@ -12,7 +12,7 @@ pub struct ResolutionTechniques {
     pub provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
 impl ResolutionTechniques {
-    /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
     pub fn resolution_type(&self) -> &crate::types::ResolutionType {
         &self.resolution_type
     }
@@ -41,18 +41,18 @@ pub struct ResolutionTechniquesBuilder {
     pub(crate) provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
 impl ResolutionTechniquesBuilder {
-    /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
     /// This field is required.
     pub fn resolution_type(mut self, input: crate::types::ResolutionType) -> Self {
         self.resolution_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
     pub fn set_resolution_type(mut self, input: ::std::option::Option<crate::types::ResolutionType>) -> Self {
         self.resolution_type = input;
         self
     }
-    /// <p>The type of matching. There are two types of matching: <code>RULE_MATCHING</code> and <code>ML_MATCHING</code>.</p>
+    /// <p>The type of matching. There are three types of matching: <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and <code>PROVIDER</code>.</p>
     pub fn get_resolution_type(&self) -> &::std::option::Option<crate::types::ResolutionType> {
         &self.resolution_type
     }

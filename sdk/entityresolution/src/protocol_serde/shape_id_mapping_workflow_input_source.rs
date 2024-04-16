@@ -6,8 +6,11 @@ pub fn ser_id_mapping_workflow_input_source(
     {
         object.key("inputSourceARN").string(input.input_source_arn.as_str());
     }
-    {
-        object.key("schemaName").string(input.schema_name.as_str());
+    if let Some(var_1) = &input.schema_name {
+        object.key("schemaName").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.r#type {
+        object.key("type").string(var_2.as_str());
     }
     Ok(())
 }
@@ -38,6 +41,13 @@ where
                             builder = builder.set_schema_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IdNamespaceType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

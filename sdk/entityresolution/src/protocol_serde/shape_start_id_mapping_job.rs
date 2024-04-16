@@ -150,6 +150,16 @@ pub fn de_start_id_mapping_job_http_response(
     })
 }
 
+pub fn ser_start_id_mapping_job_input(
+    input: &crate::operation::start_id_mapping_job::StartIdMappingJobInput,
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_start_id_mapping_job_input::ser_start_id_mapping_job_input_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
+}
+
 pub(crate) fn de_start_id_mapping_job(
     value: &[u8],
     mut builder: crate::operation::start_id_mapping_job::builders::StartIdMappingJobOutputBuilder,
@@ -167,6 +177,11 @@ pub(crate) fn de_start_id_mapping_job(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                    );
+                }
+                "outputSourceConfig" => {
+                    builder = builder.set_output_source_config(
+                        crate::protocol_serde::shape_id_mapping_job_output_source_config::de_id_mapping_job_output_source_config(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

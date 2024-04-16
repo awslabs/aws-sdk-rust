@@ -246,6 +246,24 @@ impl UpdateOriginEndpointFluentBuilder {
     pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         self.inner.get_low_latency_hls_manifests()
     }
+    /// Appends an item to `DashManifests`.
+    ///
+    /// To override the contents of this collection use [`set_dash_manifests`](Self::set_dash_manifests).
+    ///
+    /// <p>A DASH manifest configuration.</p>
+    pub fn dash_manifests(mut self, input: crate::types::CreateDashManifestConfiguration) -> Self {
+        self.inner = self.inner.dash_manifests(input);
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn set_dash_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>) -> Self {
+        self.inner = self.inner.set_dash_manifests(input);
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
+        self.inner.get_dash_manifests()
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.e_tag(input.into());

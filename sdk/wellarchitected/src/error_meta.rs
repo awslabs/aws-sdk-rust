@@ -779,6 +779,31 @@ impl From<crate::operation::get_consolidated_report::GetConsolidatedReportError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_global_settings::GetGlobalSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_global_settings::GetGlobalSettingsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_global_settings::GetGlobalSettingsError> for Error {
+    fn from(err: crate::operation::get_global_settings::GetGlobalSettingsError) -> Self {
+        match err {
+            crate::operation::get_global_settings::GetGlobalSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_global_settings::GetGlobalSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_global_settings::GetGlobalSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_global_settings::GetGlobalSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_global_settings::GetGlobalSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lens::GetLensError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1782,6 +1807,33 @@ impl From<crate::operation::update_global_settings::UpdateGlobalSettingsError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_integration::UpdateIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_integration::UpdateIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_integration::UpdateIntegrationError> for Error {
+    fn from(err: crate::operation::update_integration::UpdateIntegrationError) -> Self {
+        match err {
+            crate::operation::update_integration::UpdateIntegrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_integration::UpdateIntegrationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_integration::UpdateIntegrationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_integration::UpdateIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_integration::UpdateIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_integration::UpdateIntegrationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_integration::UpdateIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_lens_review::UpdateLensReviewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2075,6 +2127,9 @@ impl From<crate::operation::upgrade_lens_review::UpgradeLensReviewError> for Err
             crate::operation::upgrade_lens_review::UpgradeLensReviewError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::upgrade_lens_review::UpgradeLensReviewError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::upgrade_lens_review::UpgradeLensReviewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::upgrade_lens_review::UpgradeLensReviewError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::upgrade_lens_review::UpgradeLensReviewError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2109,6 +2164,9 @@ impl From<crate::operation::upgrade_profile_version::UpgradeProfileVersionError>
             }
             crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::upgrade_profile_version::UpgradeProfileVersionError::ValidationException(inner) => Error::ValidationException(inner),

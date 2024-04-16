@@ -8,7 +8,7 @@ pub struct AgentVersion {
     pub agent_id: ::std::string::String,
     /// <p>The name of the agent that the version belongs to.</p>
     pub agent_name: ::std::string::String,
-    /// <p>The ARN of the agent that the version belongs to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the agent that the version belongs to.</p>
     pub agent_arn: ::std::string::String,
     /// <p>The version number.</p>
     pub version: ::std::string::String,
@@ -23,9 +23,9 @@ pub struct AgentVersion {
     /// <p>The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.</p>
     pub idle_session_ttl_in_seconds: i32,
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub agent_resource_role_arn: ::std::string::String,
-    /// <p>The ARN of the KMS key that encrypts the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
     pub customer_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the version was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -49,7 +49,7 @@ impl AgentVersion {
         use std::ops::Deref;
         self.agent_name.deref()
     }
-    /// <p>The ARN of the agent that the version belongs to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the agent that the version belongs to.</p>
     pub fn agent_arn(&self) -> &str {
         use std::ops::Deref;
         self.agent_arn.deref()
@@ -80,12 +80,12 @@ impl AgentVersion {
     pub fn idle_session_ttl_in_seconds(&self) -> i32 {
         self.idle_session_ttl_in_seconds
     }
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub fn agent_resource_role_arn(&self) -> &str {
         use std::ops::Deref;
         self.agent_resource_role_arn.deref()
     }
-    /// <p>The ARN of the KMS key that encrypts the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
     pub fn customer_encryption_key_arn(&self) -> ::std::option::Option<&str> {
         self.customer_encryption_key_arn.as_deref()
     }
@@ -195,18 +195,18 @@ impl AgentVersionBuilder {
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_name
     }
-    /// <p>The ARN of the agent that the version belongs to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the agent that the version belongs to.</p>
     /// This field is required.
     pub fn agent_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the agent that the version belongs to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the agent that the version belongs to.</p>
     pub fn set_agent_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_arn = input;
         self
     }
-    /// <p>The ARN of the agent that the version belongs to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the agent that the version belongs to.</p>
     pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_arn
     }
@@ -300,32 +300,32 @@ impl AgentVersionBuilder {
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.idle_session_ttl_in_seconds
     }
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     /// This field is required.
     pub fn agent_resource_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_resource_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub fn set_agent_resource_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_resource_role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub fn get_agent_resource_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_resource_role_arn
     }
-    /// <p>The ARN of the KMS key that encrypts the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
     pub fn customer_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the KMS key that encrypts the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
     pub fn set_customer_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_encryption_key_arn = input;
         self
     }
-    /// <p>The ARN of the KMS key that encrypts the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
     pub fn get_customer_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_encryption_key_arn
     }

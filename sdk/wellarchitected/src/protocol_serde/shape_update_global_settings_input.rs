@@ -6,8 +6,14 @@ pub fn ser_update_global_settings_input_input(
     if let Some(var_1) = &input.discovery_integration_status {
         object.key("DiscoveryIntegrationStatus").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.organization_sharing_status {
-        object.key("OrganizationSharingStatus").string(var_2.as_str());
+    if let Some(var_2) = &input.jira_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("JiraConfiguration").start_object();
+        crate::protocol_serde::shape_account_jira_configuration_input::ser_account_jira_configuration_input(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.organization_sharing_status {
+        object.key("OrganizationSharingStatus").string(var_4.as_str());
     }
     Ok(())
 }

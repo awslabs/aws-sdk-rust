@@ -50,7 +50,6 @@ impl IdMappingTechniquesBuilder {
         &self.id_mapping_type
     }
     /// <p>An object which defines any additional configurations required by the provider service.</p>
-    /// This field is required.
     pub fn provider_properties(mut self, input: crate::types::ProviderProperties) -> Self {
         self.provider_properties = ::std::option::Option::Some(input);
         self

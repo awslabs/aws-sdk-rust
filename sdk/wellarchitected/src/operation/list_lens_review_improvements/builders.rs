@@ -22,7 +22,7 @@ impl ListLensReviewImprovementsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListLensReviewImprovements`.
 ///
-/// <p>List lens review improvements.</p>
+/// <p>List the improvements of a particular lens review.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLensReviewImprovementsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

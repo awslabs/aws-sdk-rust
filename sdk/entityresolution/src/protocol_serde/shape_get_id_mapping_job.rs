@@ -144,6 +144,11 @@ pub(crate) fn de_get_id_mapping_job(
                 "metrics" => {
                     builder = builder.set_metrics(crate::protocol_serde::shape_id_mapping_job_metrics::de_id_mapping_job_metrics(tokens)?);
                 }
+                "outputSourceConfig" => {
+                    builder = builder.set_output_source_config(
+                        crate::protocol_serde::shape_id_mapping_job_output_source_config::de_id_mapping_job_output_source_config(tokens)?,
+                    );
+                }
                 "startTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

@@ -29,7 +29,7 @@ impl CreateKnowledgeBaseInputBuilder {
 /// <li>
 /// <p>Provide the <code>name</code> and an optional <code>description</code>.</p></li>
 /// <li>
-/// <p>Provide the ARN with permissions to create a knowledge base in the <code>roleArn</code> field.</p></li>
+/// <p>Provide the Amazon Resource Name (ARN) with permissions to create a knowledge base in the <code>roleArn</code> field.</p></li>
 /// <li>
 /// <p>Provide the embedding model to use in the <code>embeddingModelArn</code> field in the <code>knowledgeBaseConfiguration</code> object.</p></li>
 /// <li>
@@ -172,17 +172,17 @@ impl CreateKnowledgeBaseFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }

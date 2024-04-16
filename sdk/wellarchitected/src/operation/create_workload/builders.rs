@@ -615,4 +615,18 @@ impl CreateWorkloadFluentBuilder {
     pub fn get_review_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_review_template_arns()
     }
+    /// <p>Jira configuration settings when creating a workload.</p>
+    pub fn jira_configuration(mut self, input: crate::types::WorkloadJiraConfigurationInput) -> Self {
+        self.inner = self.inner.jira_configuration(input);
+        self
+    }
+    /// <p>Jira configuration settings when creating a workload.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::WorkloadJiraConfigurationInput>) -> Self {
+        self.inner = self.inner.set_jira_configuration(input);
+        self
+    }
+    /// <p>Jira configuration settings when creating a workload.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::WorkloadJiraConfigurationInput> {
+        self.inner.get_jira_configuration()
+    }
 }

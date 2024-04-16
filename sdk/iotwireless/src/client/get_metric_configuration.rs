@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_metric_configuration::builders::GetMetricConfigurationFluentBuilder::send) it.
     /// - On success, responds with [`GetMetricConfigurationOutput`](crate::operation::get_metric_configuration::GetMetricConfigurationOutput) with field(s):
-    ///   - [`summary_metric(Option<SummaryMetricConfiguration>)`](crate::operation::get_metric_configuration::GetMetricConfigurationOutput::summary_metric): <p>The account's configuration status for summary metric aggregation.</p>
+    ///   - [`summary_metric(Option<SummaryMetricConfiguration>)`](crate::operation::get_metric_configuration::GetMetricConfigurationOutput::summary_metric): <p>The configuration status of the AWS account for summary metric aggregation.</p>
     /// - On failure, responds with [`SdkError<GetMetricConfigurationError>`](crate::operation::get_metric_configuration::GetMetricConfigurationError)
     pub fn get_metric_configuration(&self) -> crate::operation::get_metric_configuration::builders::GetMetricConfigurationFluentBuilder {
         crate::operation::get_metric_configuration::builders::GetMetricConfigurationFluentBuilder::new(self.handle.clone())

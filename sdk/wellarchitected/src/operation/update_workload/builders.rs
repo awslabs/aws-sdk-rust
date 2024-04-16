@@ -546,4 +546,18 @@ impl UpdateWorkloadFluentBuilder {
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_applications()
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(mut self, input: crate::types::WorkloadJiraConfigurationInput) -> Self {
+        self.inner = self.inner.jira_configuration(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::WorkloadJiraConfigurationInput>) -> Self {
+        self.inner = self.inner.set_jira_configuration(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::WorkloadJiraConfigurationInput> {
+        self.inner.get_jira_configuration()
+    }
 }

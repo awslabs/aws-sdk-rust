@@ -71,6 +71,8 @@ pub(crate) mod shape_get_answer;
 
 pub(crate) mod shape_get_consolidated_report;
 
+pub(crate) mod shape_get_global_settings;
+
 pub(crate) mod shape_get_lens;
 
 pub(crate) mod shape_get_lens_review;
@@ -140,6 +142,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_answer;
 
 pub(crate) mod shape_update_global_settings;
+
+pub(crate) mod shape_update_integration;
 
 pub(crate) mod shape_update_lens_review;
 
@@ -227,6 +231,8 @@ pub(crate) mod shape_update_answer_input;
 
 pub(crate) mod shape_update_global_settings_input;
 
+pub(crate) mod shape_update_integration_input;
+
 pub(crate) mod shape_update_lens_review_input;
 
 pub(crate) mod shape_update_profile_input;
@@ -251,6 +257,10 @@ pub(crate) mod shape_upgrade_review_template_lens_review_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_account_jira_configuration_input;
+
+pub(crate) mod shape_account_jira_configuration_output;
+
 pub(crate) mod shape_answer;
 
 pub(crate) mod shape_answer_summaries;
@@ -264,6 +274,8 @@ pub(crate) mod shape_choice_update;
 pub(crate) mod shape_consolidated_report_metrics;
 
 pub(crate) mod shape_improvement_summaries;
+
+pub(crate) mod shape_jira_selected_question_configuration;
 
 pub(crate) mod shape_lens;
 
@@ -321,6 +333,8 @@ pub(crate) mod shape_workload;
 
 pub(crate) mod shape_workload_discovery_config;
 
+pub(crate) mod shape_workload_jira_configuration_input;
+
 pub(crate) mod shape_workload_share;
 
 pub(crate) mod shape_workload_share_summaries;
@@ -340,6 +354,8 @@ pub(crate) mod shape_choices;
 pub(crate) mod shape_consolidated_report_metric;
 
 pub(crate) mod shape_improvement_summary;
+
+pub(crate) mod shape_jira_configuration;
 
 pub(crate) mod shape_lens_review_summary;
 
@@ -377,6 +393,8 @@ pub(crate) mod shape_risk_counts;
 
 pub(crate) mod shape_selected_choices;
 
+pub(crate) mod shape_selected_pillar;
+
 pub(crate) mod shape_share_invitation_summary;
 
 pub(crate) mod shape_template_questions;
@@ -390,6 +408,8 @@ pub(crate) mod shape_workload_account_ids;
 pub(crate) mod shape_workload_applications;
 
 pub(crate) mod shape_workload_aws_regions;
+
+pub(crate) mod shape_workload_jira_configuration_output;
 
 pub(crate) mod shape_workload_lenses;
 
@@ -427,6 +447,8 @@ pub(crate) mod shape_profile_template_question;
 
 pub(crate) mod shape_review_template_pillar_review_summary;
 
+pub(crate) mod shape_selected_pillars;
+
 pub(crate) mod shape_workload_profile;
 
 pub(crate) mod shape_workload_resource_definition;
@@ -458,6 +480,8 @@ pub(crate) mod shape_profile_choice;
 pub(crate) mod shape_profile_template_choice;
 
 pub(crate) mod shape_question_difference;
+
+pub(crate) mod shape_selected_question_ids;
 
 pub(crate) mod shape_pillar_metric;
 

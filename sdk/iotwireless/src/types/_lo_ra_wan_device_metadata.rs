@@ -16,6 +16,8 @@ pub struct LoRaWanDeviceMetadata {
     pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>Information about the gateways accessed by the device.</p>
     pub gateways: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
+    /// <p>Information about the LoRaWAN public network accessed by the device.</p>
+    pub public_gateways: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanPublicGatewayMetadata>>,
 }
 impl LoRaWanDeviceMetadata {
     /// <p>The DevEUI value.</p>
@@ -44,6 +46,12 @@ impl LoRaWanDeviceMetadata {
     pub fn gateways(&self) -> &[crate::types::LoRaWanGatewayMetadata] {
         self.gateways.as_deref().unwrap_or_default()
     }
+    /// <p>Information about the LoRaWAN public network accessed by the device.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_gateways.is_none()`.
+    pub fn public_gateways(&self) -> &[crate::types::LoRaWanPublicGatewayMetadata] {
+        self.public_gateways.as_deref().unwrap_or_default()
+    }
 }
 impl LoRaWanDeviceMetadata {
     /// Creates a new builder-style object to manufacture [`LoRaWanDeviceMetadata`](crate::types::LoRaWanDeviceMetadata).
@@ -62,6 +70,7 @@ pub struct LoRaWanDeviceMetadataBuilder {
     pub(crate) frequency: ::std::option::Option<i32>,
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) gateways: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
+    pub(crate) public_gateways: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanPublicGatewayMetadata>>,
 }
 impl LoRaWanDeviceMetadataBuilder {
     /// <p>The DevEUI value.</p>
@@ -154,6 +163,26 @@ impl LoRaWanDeviceMetadataBuilder {
     pub fn get_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>> {
         &self.gateways
     }
+    /// Appends an item to `public_gateways`.
+    ///
+    /// To override the contents of this collection use [`set_public_gateways`](Self::set_public_gateways).
+    ///
+    /// <p>Information about the LoRaWAN public network accessed by the device.</p>
+    pub fn public_gateways(mut self, input: crate::types::LoRaWanPublicGatewayMetadata) -> Self {
+        let mut v = self.public_gateways.unwrap_or_default();
+        v.push(input);
+        self.public_gateways = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the LoRaWAN public network accessed by the device.</p>
+    pub fn set_public_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanPublicGatewayMetadata>>) -> Self {
+        self.public_gateways = input;
+        self
+    }
+    /// <p>Information about the LoRaWAN public network accessed by the device.</p>
+    pub fn get_public_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoRaWanPublicGatewayMetadata>> {
+        &self.public_gateways
+    }
     /// Consumes the builder and constructs a [`LoRaWanDeviceMetadata`](crate::types::LoRaWanDeviceMetadata).
     pub fn build(self) -> crate::types::LoRaWanDeviceMetadata {
         crate::types::LoRaWanDeviceMetadata {
@@ -163,6 +192,7 @@ impl LoRaWanDeviceMetadataBuilder {
             frequency: self.frequency,
             timestamp: self.timestamp,
             gateways: self.gateways,
+            public_gateways: self.public_gateways,
         }
     }
 }

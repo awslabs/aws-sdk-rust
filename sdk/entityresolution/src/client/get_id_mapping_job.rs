@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_id_mapping_job::GetIdMappingJobOutput::end_time): <p>The time at which the job has finished.</p>
     ///   - [`metrics(Option<IdMappingJobMetrics>)`](crate::operation::get_id_mapping_job::GetIdMappingJobOutput::metrics): <p>Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.</p>
     ///   - [`error_details(Option<ErrorDetails>)`](crate::operation::get_id_mapping_job::GetIdMappingJobOutput::error_details): <p>An object containing an error message, if there was an error.</p>
+    ///   - [`output_source_config(Option<Vec::<IdMappingJobOutputSource>>)`](crate::operation::get_id_mapping_job::GetIdMappingJobOutput::output_source_config): <p>A list of <code>OutputSource</code> objects.</p>
     /// - On failure, responds with [`SdkError<GetIdMappingJobError>`](crate::operation::get_id_mapping_job::GetIdMappingJobError)
     pub fn get_id_mapping_job(&self) -> crate::operation::get_id_mapping_job::builders::GetIdMappingJobFluentBuilder {
         crate::operation::get_id_mapping_job::builders::GetIdMappingJobFluentBuilder::new(self.handle.clone())

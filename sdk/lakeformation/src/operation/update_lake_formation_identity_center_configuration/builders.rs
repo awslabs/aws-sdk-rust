@@ -130,6 +130,33 @@ impl UpdateLakeFormationIdentityCenterConfigurationFluentBuilder {
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog_id()
     }
+    /// Appends an item to `ShareRecipients`.
+    ///
+    /// To override the contents of this collection use [`set_share_recipients`](Self::set_share_recipients).
+    ///
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, then the resource share is updated with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null, both the list of share recipients and the resource share remain unchanged.</p>
+    /// <p>If the <code>ShareRecipients</code> value is an empty list, then the existing share recipients list will be cleared, and the resource share will be deleted.</p>
+    pub fn share_recipients(mut self, input: crate::types::DataLakePrincipal) -> Self {
+        self.inner = self.inner.share_recipients(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, then the resource share is updated with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null, both the list of share recipients and the resource share remain unchanged.</p>
+    /// <p>If the <code>ShareRecipients</code> value is an empty list, then the existing share recipients list will be cleared, and the resource share will be deleted.</p>
+    pub fn set_share_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>) -> Self {
+        self.inner = self.inner.set_share_recipients(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, then the resource share is updated with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null, both the list of share recipients and the resource share remain unchanged.</p>
+    /// <p>If the <code>ShareRecipients</code> value is an empty list, then the existing share recipients list will be cleared, and the resource share will be deleted.</p>
+    pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
+        self.inner.get_share_recipients()
+    }
     /// <p>Allows to enable or disable the IAM Identity Center connection.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.inner = self.inner.application_status(input);

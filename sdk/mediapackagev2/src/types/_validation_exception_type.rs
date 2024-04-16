@@ -14,6 +14,8 @@
 /// match validationexceptiontype {
 ///     ValidationExceptionType::CencIvIncompatible => { /* ... */ },
 ///     ValidationExceptionType::ContainerTypeImmutable => { /* ... */ },
+///     ValidationExceptionType::DirectModeWithTimingSource => { /* ... */ },
+///     ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => { /* ... */ },
 ///     ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => { /* ... */ },
 ///     ValidationExceptionType::EncryptionContractShared => { /* ... */ },
 ///     ValidationExceptionType::EncryptionContractUnencrypted => { /* ... */ },
@@ -26,6 +28,7 @@
 ///     ValidationExceptionType::InvalidPolicy => { /* ... */ },
 ///     ValidationExceptionType::InvalidRoleArn => { /* ... */ },
 ///     ValidationExceptionType::InvalidTimeDelaySeconds => { /* ... */ },
+///     ValidationExceptionType::ManifestDrmSystemsIncompatible => { /* ... */ },
 ///     ValidationExceptionType::ManifestNameCollision => { /* ... */ },
 ///     ValidationExceptionType::MemberDoesNotMatchPattern => { /* ... */ },
 ///     ValidationExceptionType::MemberInvalid => { /* ... */ },
@@ -35,11 +38,16 @@
 ///     ValidationExceptionType::MemberMinLength => { /* ... */ },
 ///     ValidationExceptionType::MemberMinValue => { /* ... */ },
 ///     ValidationExceptionType::MemberMissing => { /* ... */ },
+///     ValidationExceptionType::NoneModeWithTimingSource => { /* ... */ },
 ///     ValidationExceptionType::NumManifestsHigh => { /* ... */ },
 ///     ValidationExceptionType::NumManifestsLow => { /* ... */ },
+///     ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => { /* ... */ },
 ///     ValidationExceptionType::RoleArnInvalidFormat => { /* ... */ },
 ///     ValidationExceptionType::RoleArnLengthOutOfRange => { /* ... */ },
 ///     ValidationExceptionType::RoleArnNotAssumable => { /* ... */ },
+///     ValidationExceptionType::TimingSourceMissing => { /* ... */ },
+///     ValidationExceptionType::TsContainerTypeWithDashManifest => { /* ... */ },
+///     ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => { /* ... */ },
 ///     ValidationExceptionType::UrlInvalid => { /* ... */ },
 ///     ValidationExceptionType::UrlLinkLocalAddress => { /* ... */ },
 ///     ValidationExceptionType::UrlLocalAddress => { /* ... */ },
@@ -81,6 +89,10 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     ContainerTypeImmutable,
     #[allow(missing_docs)] // documentation missing in model
+    DirectModeWithTimingSource,
+    #[allow(missing_docs)] // documentation missing in model
+    DrmSignalingMismatchSegmentEncryptionStatus,
+    #[allow(missing_docs)] // documentation missing in model
     DrmSystemsEncryptionMethodIncompatible,
     #[allow(missing_docs)] // documentation missing in model
     EncryptionContractShared,
@@ -105,6 +117,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     InvalidTimeDelaySeconds,
     #[allow(missing_docs)] // documentation missing in model
+    ManifestDrmSystemsIncompatible,
+    #[allow(missing_docs)] // documentation missing in model
     ManifestNameCollision,
     #[allow(missing_docs)] // documentation missing in model
     MemberDoesNotMatchPattern,
@@ -123,15 +137,25 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     MemberMissing,
     #[allow(missing_docs)] // documentation missing in model
+    NoneModeWithTimingSource,
+    #[allow(missing_docs)] // documentation missing in model
     NumManifestsHigh,
     #[allow(missing_docs)] // documentation missing in model
     NumManifestsLow,
+    #[allow(missing_docs)] // documentation missing in model
+    PeriodTriggersNoneSpecifiedWithAdditionalValues,
     #[allow(missing_docs)] // documentation missing in model
     RoleArnInvalidFormat,
     #[allow(missing_docs)] // documentation missing in model
     RoleArnLengthOutOfRange,
     #[allow(missing_docs)] // documentation missing in model
     RoleArnNotAssumable,
+    #[allow(missing_docs)] // documentation missing in model
+    TimingSourceMissing,
+    #[allow(missing_docs)] // documentation missing in model
+    TsContainerTypeWithDashManifest,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatePeriodSmallerThanSegmentDuration,
     #[allow(missing_docs)] // documentation missing in model
     UrlInvalid,
     #[allow(missing_docs)] // documentation missing in model
@@ -159,6 +183,8 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
         match s {
             "CENC_IV_INCOMPATIBLE" => ValidationExceptionType::CencIvIncompatible,
             "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
+            "DIRECT_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::DirectModeWithTimingSource,
+            "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS" => ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus,
             "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE" => ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible,
             "ENCRYPTION_CONTRACT_SHARED" => ValidationExceptionType::EncryptionContractShared,
             "ENCRYPTION_CONTRACT_UNENCRYPTED" => ValidationExceptionType::EncryptionContractUnencrypted,
@@ -173,6 +199,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "INVALID_POLICY" => ValidationExceptionType::InvalidPolicy,
             "INVALID_ROLE_ARN" => ValidationExceptionType::InvalidRoleArn,
             "INVALID_TIME_DELAY_SECONDS" => ValidationExceptionType::InvalidTimeDelaySeconds,
+            "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE" => ValidationExceptionType::ManifestDrmSystemsIncompatible,
             "MANIFEST_NAME_COLLISION" => ValidationExceptionType::ManifestNameCollision,
             "MEMBER_DOES_NOT_MATCH_PATTERN" => ValidationExceptionType::MemberDoesNotMatchPattern,
             "MEMBER_INVALID" => ValidationExceptionType::MemberInvalid,
@@ -182,11 +209,16 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "MEMBER_MIN_LENGTH" => ValidationExceptionType::MemberMinLength,
             "MEMBER_MIN_VALUE" => ValidationExceptionType::MemberMinValue,
             "MEMBER_MISSING" => ValidationExceptionType::MemberMissing,
+            "NONE_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::NoneModeWithTimingSource,
             "NUM_MANIFESTS_HIGH" => ValidationExceptionType::NumManifestsHigh,
             "NUM_MANIFESTS_LOW" => ValidationExceptionType::NumManifestsLow,
+            "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES" => ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues,
             "ROLE_ARN_INVALID_FORMAT" => ValidationExceptionType::RoleArnInvalidFormat,
             "ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
             "ROLE_ARN_NOT_ASSUMABLE" => ValidationExceptionType::RoleArnNotAssumable,
+            "TIMING_SOURCE_MISSING" => ValidationExceptionType::TimingSourceMissing,
+            "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST" => ValidationExceptionType::TsContainerTypeWithDashManifest,
+            "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION" => ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration,
             "URL_INVALID" => ValidationExceptionType::UrlInvalid,
             "URL_LINK_LOCAL_ADDRESS" => ValidationExceptionType::UrlLinkLocalAddress,
             "URL_LOCAL_ADDRESS" => ValidationExceptionType::UrlLocalAddress,
@@ -213,6 +245,8 @@ impl ValidationExceptionType {
         match self {
             ValidationExceptionType::CencIvIncompatible => "CENC_IV_INCOMPATIBLE",
             ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
+            ValidationExceptionType::DirectModeWithTimingSource => "DIRECT_MODE_WITH_TIMING_SOURCE",
+            ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
             ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
             ValidationExceptionType::EncryptionContractShared => "ENCRYPTION_CONTRACT_SHARED",
             ValidationExceptionType::EncryptionContractUnencrypted => "ENCRYPTION_CONTRACT_UNENCRYPTED",
@@ -227,6 +261,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::InvalidPolicy => "INVALID_POLICY",
             ValidationExceptionType::InvalidRoleArn => "INVALID_ROLE_ARN",
             ValidationExceptionType::InvalidTimeDelaySeconds => "INVALID_TIME_DELAY_SECONDS",
+            ValidationExceptionType::ManifestDrmSystemsIncompatible => "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE",
             ValidationExceptionType::ManifestNameCollision => "MANIFEST_NAME_COLLISION",
             ValidationExceptionType::MemberDoesNotMatchPattern => "MEMBER_DOES_NOT_MATCH_PATTERN",
             ValidationExceptionType::MemberInvalid => "MEMBER_INVALID",
@@ -236,11 +271,16 @@ impl ValidationExceptionType {
             ValidationExceptionType::MemberMinLength => "MEMBER_MIN_LENGTH",
             ValidationExceptionType::MemberMinValue => "MEMBER_MIN_VALUE",
             ValidationExceptionType::MemberMissing => "MEMBER_MISSING",
+            ValidationExceptionType::NoneModeWithTimingSource => "NONE_MODE_WITH_TIMING_SOURCE",
             ValidationExceptionType::NumManifestsHigh => "NUM_MANIFESTS_HIGH",
             ValidationExceptionType::NumManifestsLow => "NUM_MANIFESTS_LOW",
+            ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
             ValidationExceptionType::RoleArnInvalidFormat => "ROLE_ARN_INVALID_FORMAT",
             ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             ValidationExceptionType::RoleArnNotAssumable => "ROLE_ARN_NOT_ASSUMABLE",
+            ValidationExceptionType::TimingSourceMissing => "TIMING_SOURCE_MISSING",
+            ValidationExceptionType::TsContainerTypeWithDashManifest => "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
+            ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
             ValidationExceptionType::UrlInvalid => "URL_INVALID",
             ValidationExceptionType::UrlLinkLocalAddress => "URL_LINK_LOCAL_ADDRESS",
             ValidationExceptionType::UrlLocalAddress => "URL_LOCAL_ADDRESS",
@@ -258,6 +298,8 @@ impl ValidationExceptionType {
         &[
             "CENC_IV_INCOMPATIBLE",
             "CONTAINER_TYPE_IMMUTABLE",
+            "DIRECT_MODE_WITH_TIMING_SOURCE",
+            "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
             "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE",
             "ENCRYPTION_CONTRACT_SHARED",
             "ENCRYPTION_CONTRACT_UNENCRYPTED",
@@ -270,6 +312,7 @@ impl ValidationExceptionType {
             "INVALID_POLICY",
             "INVALID_ROLE_ARN",
             "INVALID_TIME_DELAY_SECONDS",
+            "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE",
             "MANIFEST_NAME_COLLISION",
             "MEMBER_DOES_NOT_MATCH_PATTERN",
             "MEMBER_INVALID",
@@ -279,11 +322,16 @@ impl ValidationExceptionType {
             "MEMBER_MIN_LENGTH",
             "MEMBER_MIN_VALUE",
             "MEMBER_MISSING",
+            "NONE_MODE_WITH_TIMING_SOURCE",
             "NUM_MANIFESTS_HIGH",
             "NUM_MANIFESTS_LOW",
+            "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
             "ROLE_ARN_INVALID_FORMAT",
             "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             "ROLE_ARN_NOT_ASSUMABLE",
+            "TIMING_SOURCE_MISSING",
+            "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST",
+            "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION",
             "URL_INVALID",
             "URL_LINK_LOCAL_ADDRESS",
             "URL_LOCAL_ADDRESS",
@@ -318,6 +366,8 @@ impl ::std::fmt::Display for ValidationExceptionType {
         match self {
             ValidationExceptionType::CencIvIncompatible => write!(f, "CENC_IV_INCOMPATIBLE"),
             ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
+            ValidationExceptionType::DirectModeWithTimingSource => write!(f, "DIRECT_MODE_WITH_TIMING_SOURCE"),
+            ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => write!(f, "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS"),
             ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => write!(f, "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE"),
             ValidationExceptionType::EncryptionContractShared => write!(f, "ENCRYPTION_CONTRACT_SHARED"),
             ValidationExceptionType::EncryptionContractUnencrypted => write!(f, "ENCRYPTION_CONTRACT_UNENCRYPTED"),
@@ -332,6 +382,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::InvalidPolicy => write!(f, "INVALID_POLICY"),
             ValidationExceptionType::InvalidRoleArn => write!(f, "INVALID_ROLE_ARN"),
             ValidationExceptionType::InvalidTimeDelaySeconds => write!(f, "INVALID_TIME_DELAY_SECONDS"),
+            ValidationExceptionType::ManifestDrmSystemsIncompatible => write!(f, "MANIFEST_DRM_SYSTEMS_INCOMPATIBLE"),
             ValidationExceptionType::ManifestNameCollision => write!(f, "MANIFEST_NAME_COLLISION"),
             ValidationExceptionType::MemberDoesNotMatchPattern => write!(f, "MEMBER_DOES_NOT_MATCH_PATTERN"),
             ValidationExceptionType::MemberInvalid => write!(f, "MEMBER_INVALID"),
@@ -341,11 +392,18 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::MemberMinLength => write!(f, "MEMBER_MIN_LENGTH"),
             ValidationExceptionType::MemberMinValue => write!(f, "MEMBER_MIN_VALUE"),
             ValidationExceptionType::MemberMissing => write!(f, "MEMBER_MISSING"),
+            ValidationExceptionType::NoneModeWithTimingSource => write!(f, "NONE_MODE_WITH_TIMING_SOURCE"),
             ValidationExceptionType::NumManifestsHigh => write!(f, "NUM_MANIFESTS_HIGH"),
             ValidationExceptionType::NumManifestsLow => write!(f, "NUM_MANIFESTS_LOW"),
+            ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => {
+                write!(f, "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES")
+            }
             ValidationExceptionType::RoleArnInvalidFormat => write!(f, "ROLE_ARN_INVALID_FORMAT"),
             ValidationExceptionType::RoleArnLengthOutOfRange => write!(f, "ROLE_ARN_LENGTH_OUT_OF_RANGE"),
             ValidationExceptionType::RoleArnNotAssumable => write!(f, "ROLE_ARN_NOT_ASSUMABLE"),
+            ValidationExceptionType::TimingSourceMissing => write!(f, "TIMING_SOURCE_MISSING"),
+            ValidationExceptionType::TsContainerTypeWithDashManifest => write!(f, "TS_CONTAINER_TYPE_WITH_DASH_MANIFEST"),
+            ValidationExceptionType::UpdatePeriodSmallerThanSegmentDuration => write!(f, "UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION"),
             ValidationExceptionType::UrlInvalid => write!(f, "URL_INVALID"),
             ValidationExceptionType::UrlLinkLocalAddress => write!(f, "URL_LINK_LOCAL_ADDRESS"),
             ValidationExceptionType::UrlLocalAddress => write!(f, "URL_LOCAL_ADDRESS"),

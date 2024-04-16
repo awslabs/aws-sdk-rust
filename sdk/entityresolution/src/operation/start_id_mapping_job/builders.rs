@@ -122,4 +122,22 @@ impl StartIdMappingJobFluentBuilder {
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_name()
     }
+    /// Appends an item to `outputSourceConfig`.
+    ///
+    /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
+    ///
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn output_source_config(mut self, input: crate::types::IdMappingJobOutputSource) -> Self {
+        self.inner = self.inner.output_source_config(input);
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>) -> Self {
+        self.inner = self.inner.set_output_source_config(input);
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>> {
+        self.inner.get_output_source_config()
+    }
 }

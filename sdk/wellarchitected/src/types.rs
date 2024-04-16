@@ -11,6 +11,12 @@ pub use crate::types::_permission_type::PermissionType;
 
 pub use crate::types::_workload::Workload;
 
+pub use crate::types::_workload_jira_configuration_output::WorkloadJiraConfigurationOutput;
+
+pub use crate::types::_issue_management_type::IssueManagementType;
+
+pub use crate::types::_workload_issue_management_status::WorkloadIssueManagementStatus;
+
 pub use crate::types::_risk::Risk;
 
 pub use crate::types::_workload_profile::WorkloadProfile;
@@ -24,6 +30,8 @@ pub use crate::types::_trusted_advisor_integration_status::TrustedAdvisorIntegra
 pub use crate::types::_workload_improvement_status::WorkloadImprovementStatus;
 
 pub use crate::types::_workload_environment::WorkloadEnvironment;
+
+pub use crate::types::_workload_jira_configuration_input::WorkloadJiraConfigurationInput;
 
 pub use crate::types::_share_invitation::ShareInvitation;
 
@@ -75,13 +83,27 @@ pub use crate::types::_profile_question_update::ProfileQuestionUpdate;
 
 pub use crate::types::_lens_review::LensReview;
 
+pub use crate::types::_jira_selected_question_configuration::JiraSelectedQuestionConfiguration;
+
+pub use crate::types::_selected_pillar::SelectedPillar;
+
 pub use crate::types::_pillar_review_summary::PillarReviewSummary;
+
+pub use crate::types::_integrating_service::IntegratingService;
+
+pub use crate::types::_account_jira_configuration_input::AccountJiraConfigurationInput;
+
+pub use crate::types::_integration_status_input::IntegrationStatusInput;
+
+pub use crate::types::_account_jira_issue_management_status::AccountJiraIssueManagementStatus;
 
 pub use crate::types::_discovery_integration_status::DiscoveryIntegrationStatus;
 
 pub use crate::types::_organization_sharing_status::OrganizationSharingStatus;
 
 pub use crate::types::_answer::Answer;
+
+pub use crate::types::_jira_configuration::JiraConfiguration;
 
 pub use crate::types::_workload_share_summary::WorkloadShareSummary;
 
@@ -167,6 +189,10 @@ pub use crate::types::_lens_review_report::LensReviewReport;
 
 pub use crate::types::_lens::Lens;
 
+pub use crate::types::_account_jira_configuration_output::AccountJiraConfigurationOutput;
+
+pub use crate::types::_integration_status::IntegrationStatus;
+
 pub use crate::types::_consolidated_report_metric::ConsolidatedReportMetric;
 
 pub use crate::types::_lens_metric::LensMetric;
@@ -180,6 +206,12 @@ pub use crate::types::_best_practice::BestPractice;
 pub use crate::types::_metric_type::MetricType;
 
 pub use crate::types::_report_format::ReportFormat;
+
+mod _account_jira_configuration_input;
+
+mod _account_jira_configuration_output;
+
+mod _account_jira_issue_management_status;
 
 mod _additional_resource_type;
 
@@ -230,6 +262,18 @@ mod _discovery_integration_status;
 mod _import_lens_status;
 
 mod _improvement_summary;
+
+mod _integrating_service;
+
+mod _integration_status;
+
+mod _integration_status_input;
+
+mod _issue_management_type;
+
+mod _jira_configuration;
+
+mod _jira_selected_question_configuration;
 
 mod _lens;
 
@@ -327,6 +371,8 @@ mod _review_template_update_status;
 
 mod _risk;
 
+mod _selected_pillar;
+
 mod _share_invitation;
 
 mod _share_invitation_action;
@@ -354,6 +400,12 @@ mod _workload_discovery_config;
 mod _workload_environment;
 
 mod _workload_improvement_status;
+
+mod _workload_issue_management_status;
+
+mod _workload_jira_configuration_input;
+
+mod _workload_jira_configuration_output;
 
 mod _workload_profile;
 

@@ -40,6 +40,8 @@ pub struct Answer {
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the question is not applicable to your workload.</p>
     pub reason: ::std::option::Option<crate::types::AnswerReason>,
+    /// <p>Configuration of the Jira integration.</p>
+    pub jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
 }
 impl Answer {
     /// <p>The ID of the question.</p>
@@ -112,6 +114,10 @@ impl Answer {
     pub fn reason(&self) -> ::std::option::Option<&crate::types::AnswerReason> {
         self.reason.as_ref()
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::JiraConfiguration> {
+        self.jira_configuration.as_ref()
+    }
 }
 impl Answer {
     /// Creates a new builder-style object to manufacture [`Answer`](crate::types::Answer).
@@ -138,6 +144,7 @@ pub struct AnswerBuilder {
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::AnswerReason>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
 }
 impl AnswerBuilder {
     /// <p>The ID of the question.</p>
@@ -378,6 +385,20 @@ impl AnswerBuilder {
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::AnswerReason> {
         &self.reason
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(mut self, input: crate::types::JiraConfiguration) -> Self {
+        self.jira_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::JiraConfiguration>) -> Self {
+        self.jira_configuration = input;
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::JiraConfiguration> {
+        &self.jira_configuration
+    }
     /// Consumes the builder and constructs a [`Answer`](crate::types::Answer).
     pub fn build(self) -> crate::types::Answer {
         crate::types::Answer {
@@ -395,6 +416,7 @@ impl AnswerBuilder {
             risk: self.risk,
             notes: self.notes,
             reason: self.reason,
+            jira_configuration: self.jira_configuration,
         }
     }
 }

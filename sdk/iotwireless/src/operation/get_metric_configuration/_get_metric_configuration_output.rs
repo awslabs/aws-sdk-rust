@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricConfigurationOutput {
-    /// <p>The account's configuration status for summary metric aggregation.</p>
+    /// <p>The configuration status of the AWS account for summary metric aggregation.</p>
     pub summary_metric: ::std::option::Option<crate::types::SummaryMetricConfiguration>,
     _request_id: Option<String>,
 }
 impl GetMetricConfigurationOutput {
-    /// <p>The account's configuration status for summary metric aggregation.</p>
+    /// <p>The configuration status of the AWS account for summary metric aggregation.</p>
     pub fn summary_metric(&self) -> ::std::option::Option<&crate::types::SummaryMetricConfiguration> {
         self.summary_metric.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetMetricConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetMetricConfigurationOutputBuilder {
-    /// <p>The account's configuration status for summary metric aggregation.</p>
+    /// <p>The configuration status of the AWS account for summary metric aggregation.</p>
     pub fn summary_metric(mut self, input: crate::types::SummaryMetricConfiguration) -> Self {
         self.summary_metric = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The account's configuration status for summary metric aggregation.</p>
+    /// <p>The configuration status of the AWS account for summary metric aggregation.</p>
     pub fn set_summary_metric(mut self, input: ::std::option::Option<crate::types::SummaryMetricConfiguration>) -> Self {
         self.summary_metric = input;
         self
     }
-    /// <p>The account's configuration status for summary metric aggregation.</p>
+    /// <p>The configuration status of the AWS account for summary metric aggregation.</p>
     pub fn get_summary_metric(&self) -> &::std::option::Option<crate::types::SummaryMetricConfiguration> {
         &self.summary_metric
     }

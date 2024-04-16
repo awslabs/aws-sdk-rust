@@ -76,6 +76,9 @@ where
                                 crate::protocol_serde::shape_list_low_latency_hls_manifests::de_list_low_latency_hls_manifests(tokens)?,
                             );
                         }
+                        "DashManifests" => {
+                            builder = builder.set_dash_manifests(crate::protocol_serde::shape_list_dash_manifests::de_list_dash_manifests(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

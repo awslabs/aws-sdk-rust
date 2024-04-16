@@ -28,9 +28,9 @@ impl CreateAgentInputBuilder {
 /// <p>Specify the following fields for security purposes.</p>
 /// <ul>
 /// <li>
-/// <p><code>agentResourceRoleArn</code> – The ARN of the role with permissions to create an agent.</p></li>
+/// <p><code>agentResourceRoleArn</code> – The Amazon Resource Name (ARN) of the role with permissions to invoke API operations on an agent.</p></li>
 /// <li>
-/// <p>(Optional) <code>customerEncryptionKeyArn</code> – The ARN of a KMS key to encrypt the creation of the agent.</p></li>
+/// <p>(Optional) <code>customerEncryptionKeyArn</code> – The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the agent.</p></li>
 /// <li>
 /// <p>(Optional) <code>idleSessionTTLinSeconds</code> – Specify the number of seconds for which the agent should maintain session information. After this time expires, the subsequent <code>InvokeAgent</code> request begins a new session.</p></li>
 /// </ul></li>
@@ -211,31 +211,31 @@ impl CreateAgentFluentBuilder {
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_idle_session_ttl_in_seconds()
     }
-    /// <p>The ARN of the IAM role with permissions to create the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub fn agent_resource_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_resource_role_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM role with permissions to create the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub fn set_agent_resource_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_resource_role_arn(input);
         self
     }
-    /// <p>The ARN of the IAM role with permissions to create the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub fn get_agent_resource_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_resource_role_arn()
     }
-    /// <p>The ARN of the KMS key with which to encrypt the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the agent.</p>
     pub fn customer_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_encryption_key_arn(input.into());
         self
     }
-    /// <p>The ARN of the KMS key with which to encrypt the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the agent.</p>
     pub fn set_customer_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_encryption_key_arn(input);
         self
     }
-    /// <p>The ARN of the KMS key with which to encrypt the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the agent.</p>
     pub fn get_customer_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_encryption_key_arn()
     }

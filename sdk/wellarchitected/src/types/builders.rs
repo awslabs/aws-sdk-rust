@@ -5,9 +5,13 @@ pub use crate::types::_workload_share::WorkloadShareBuilder;
 
 pub use crate::types::_workload::WorkloadBuilder;
 
+pub use crate::types::_workload_jira_configuration_output::WorkloadJiraConfigurationOutputBuilder;
+
 pub use crate::types::_workload_profile::WorkloadProfileBuilder;
 
 pub use crate::types::_workload_discovery_config::WorkloadDiscoveryConfigBuilder;
+
+pub use crate::types::_workload_jira_configuration_input::WorkloadJiraConfigurationInputBuilder;
 
 pub use crate::types::_share_invitation::ShareInvitationBuilder;
 
@@ -39,9 +43,17 @@ pub use crate::types::_profile_question_update::ProfileQuestionUpdateBuilder;
 
 pub use crate::types::_lens_review::LensReviewBuilder;
 
+pub use crate::types::_jira_selected_question_configuration::JiraSelectedQuestionConfigurationBuilder;
+
+pub use crate::types::_selected_pillar::SelectedPillarBuilder;
+
 pub use crate::types::_pillar_review_summary::PillarReviewSummaryBuilder;
 
+pub use crate::types::_account_jira_configuration_input::AccountJiraConfigurationInputBuilder;
+
 pub use crate::types::_answer::AnswerBuilder;
+
+pub use crate::types::_jira_configuration::JiraConfigurationBuilder;
 
 pub use crate::types::_workload_share_summary::WorkloadShareSummaryBuilder;
 
@@ -102,6 +114,8 @@ pub use crate::types::_question_difference::QuestionDifferenceBuilder;
 pub use crate::types::_lens_review_report::LensReviewReportBuilder;
 
 pub use crate::types::_lens::LensBuilder;
+
+pub use crate::types::_account_jira_configuration_output::AccountJiraConfigurationOutputBuilder;
 
 pub use crate::types::_consolidated_report_metric::ConsolidatedReportMetricBuilder;
 

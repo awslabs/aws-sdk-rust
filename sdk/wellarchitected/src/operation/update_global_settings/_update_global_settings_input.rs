@@ -7,6 +7,8 @@ pub struct UpdateGlobalSettingsInput {
     pub organization_sharing_status: ::std::option::Option<crate::types::OrganizationSharingStatus>,
     /// <p>The status of discovery support settings.</p>
     pub discovery_integration_status: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,
+    /// <p>The status of Jira integration settings.</p>
+    pub jira_configuration: ::std::option::Option<crate::types::AccountJiraConfigurationInput>,
 }
 impl UpdateGlobalSettingsInput {
     /// <p>The status of organization sharing settings.</p>
@@ -16,6 +18,10 @@ impl UpdateGlobalSettingsInput {
     /// <p>The status of discovery support settings.</p>
     pub fn discovery_integration_status(&self) -> ::std::option::Option<&crate::types::DiscoveryIntegrationStatus> {
         self.discovery_integration_status.as_ref()
+    }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::AccountJiraConfigurationInput> {
+        self.jira_configuration.as_ref()
     }
 }
 impl UpdateGlobalSettingsInput {
@@ -31,6 +37,7 @@ impl UpdateGlobalSettingsInput {
 pub struct UpdateGlobalSettingsInputBuilder {
     pub(crate) organization_sharing_status: ::std::option::Option<crate::types::OrganizationSharingStatus>,
     pub(crate) discovery_integration_status: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::AccountJiraConfigurationInput>,
 }
 impl UpdateGlobalSettingsInputBuilder {
     /// <p>The status of organization sharing settings.</p>
@@ -61,6 +68,20 @@ impl UpdateGlobalSettingsInputBuilder {
     pub fn get_discovery_integration_status(&self) -> &::std::option::Option<crate::types::DiscoveryIntegrationStatus> {
         &self.discovery_integration_status
     }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn jira_configuration(mut self, input: crate::types::AccountJiraConfigurationInput) -> Self {
+        self.jira_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::AccountJiraConfigurationInput>) -> Self {
+        self.jira_configuration = input;
+        self
+    }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::AccountJiraConfigurationInput> {
+        &self.jira_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
     pub fn build(
         self,
@@ -69,6 +90,7 @@ impl UpdateGlobalSettingsInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_global_settings::UpdateGlobalSettingsInput {
             organization_sharing_status: self.organization_sharing_status,
             discovery_integration_status: self.discovery_integration_status,
+            jira_configuration: self.jira_configuration,
         })
     }
 }

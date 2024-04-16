@@ -135,6 +135,11 @@ pub(crate) fn de_get_provider_service(
                 "anonymizedOutput" => {
                     builder = builder.set_anonymized_output(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "providerComponentSchema" => {
+                    builder = builder.set_provider_component_schema(
+                        crate::protocol_serde::shape_provider_component_schema::de_provider_component_schema(tokens)?,
+                    );
+                }
                 "providerConfigurationDefinition" => {
                     builder = builder.set_provider_configuration_definition(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                 }
@@ -146,10 +151,18 @@ pub(crate) fn de_get_provider_service(
                 "providerEntityOutputDefinition" => {
                     builder = builder.set_provider_entity_output_definition(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                 }
+                "providerIdNameSpaceConfiguration" => {
+                    builder = builder.set_provider_id_name_space_configuration(
+                        crate::protocol_serde::shape_provider_id_name_space_configuration::de_provider_id_name_space_configuration(tokens)?,
+                    );
+                }
                 "providerIntermediateDataAccessConfiguration" => {
                     builder = builder.set_provider_intermediate_data_access_configuration(
                             crate::protocol_serde::shape_provider_intermediate_data_access_configuration::de_provider_intermediate_data_access_configuration(tokens)?
                         );
+                }
+                "providerJobConfiguration" => {
+                    builder = builder.set_provider_job_configuration(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                 }
                 "providerName" => {
                     builder = builder.set_provider_name(

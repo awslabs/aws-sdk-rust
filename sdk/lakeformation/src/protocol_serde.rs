@@ -299,6 +299,8 @@ pub(crate) mod shape_data_cells_filter_list;
 
 pub(crate) mod shape_data_lake_principal;
 
+pub(crate) mod shape_data_lake_principal_list;
+
 pub(crate) mod shape_data_lake_settings;
 
 pub(crate) mod shape_database_lf_tags_list;
@@ -372,8 +374,6 @@ pub(crate) mod shape_column_names;
 pub(crate) mod shape_column_wildcard;
 
 pub(crate) mod shape_data_cells_filter_resource;
-
-pub(crate) mod shape_data_lake_principal_list;
 
 pub(crate) mod shape_data_location_resource;
 

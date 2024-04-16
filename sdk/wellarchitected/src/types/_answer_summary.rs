@@ -26,6 +26,8 @@ pub struct AnswerSummary {
     pub reason: ::std::option::Option<crate::types::AnswerReason>,
     /// <p>The type of the question.</p>
     pub question_type: ::std::option::Option<crate::types::QuestionType>,
+    /// <p>Configuration of the Jira integration.</p>
+    pub jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
 }
 impl AnswerSummary {
     /// <p>The ID of the question.</p>
@@ -76,6 +78,10 @@ impl AnswerSummary {
     pub fn question_type(&self) -> ::std::option::Option<&crate::types::QuestionType> {
         self.question_type.as_ref()
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::JiraConfiguration> {
+        self.jira_configuration.as_ref()
+    }
 }
 impl AnswerSummary {
     /// Creates a new builder-style object to manufacture [`AnswerSummary`](crate::types::AnswerSummary).
@@ -98,6 +104,7 @@ pub struct AnswerSummaryBuilder {
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
     pub(crate) reason: ::std::option::Option<crate::types::AnswerReason>,
     pub(crate) question_type: ::std::option::Option<crate::types::QuestionType>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
 }
 impl AnswerSummaryBuilder {
     /// <p>The ID of the question.</p>
@@ -264,6 +271,20 @@ impl AnswerSummaryBuilder {
     pub fn get_question_type(&self) -> &::std::option::Option<crate::types::QuestionType> {
         &self.question_type
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(mut self, input: crate::types::JiraConfiguration) -> Self {
+        self.jira_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::JiraConfiguration>) -> Self {
+        self.jira_configuration = input;
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::JiraConfiguration> {
+        &self.jira_configuration
+    }
     /// Consumes the builder and constructs a [`AnswerSummary`](crate::types::AnswerSummary).
     pub fn build(self) -> crate::types::AnswerSummary {
         crate::types::AnswerSummary {
@@ -277,6 +298,7 @@ impl AnswerSummaryBuilder {
             risk: self.risk,
             reason: self.reason,
             question_type: self.question_type,
+            jira_configuration: self.jira_configuration,
         }
     }
 }

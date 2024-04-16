@@ -203,6 +203,8 @@ mod list_batch_job_definitions;
 
 mod list_batch_job_executions;
 
+mod list_batch_job_restart_points;
+
 mod list_data_set_import_history;
 
 mod list_data_sets;

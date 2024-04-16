@@ -13,6 +13,10 @@ pub use crate::types::_efs_storage_configuration::EfsStorageConfigurationBuilder
 
 pub use crate::types::_environment_summary::EnvironmentSummaryBuilder;
 
+pub use crate::types::_restart_batch_job_identifier::RestartBatchJobIdentifierBuilder;
+
+pub use crate::types::_job_step_restart_marker::JobStepRestartMarkerBuilder;
+
 pub use crate::types::_s3_batch_job_identifier::S3BatchJobIdentifierBuilder;
 
 pub use crate::types::_script_batch_job_identifier::ScriptBatchJobIdentifierBuilder;
@@ -26,6 +30,8 @@ pub use crate::types::_data_set_summary::DataSetSummaryBuilder;
 pub use crate::types::_data_set_import_task::DataSetImportTaskBuilder;
 
 pub use crate::types::_data_set_import_summary::DataSetImportSummaryBuilder;
+
+pub use crate::types::_job_step::JobStepBuilder;
 
 pub use crate::types::_batch_job_execution_summary::BatchJobExecutionSummaryBuilder;
 

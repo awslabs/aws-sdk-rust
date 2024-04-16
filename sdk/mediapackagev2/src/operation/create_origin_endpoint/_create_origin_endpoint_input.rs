@@ -23,6 +23,8 @@ pub struct CreateOriginEndpointInput {
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    /// <p>A DASH manifest configuration.</p>
+    pub dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -73,6 +75,12 @@ impl CreateOriginEndpointInput {
     pub fn low_latency_hls_manifests(&self) -> &[crate::types::CreateLowLatencyHlsManifestConfiguration] {
         self.low_latency_hls_manifests.as_deref().unwrap_or_default()
     }
+    /// <p>A DASH manifest configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dash_manifests.is_none()`.
+    pub fn dash_manifests(&self) -> &[crate::types::CreateDashManifestConfiguration] {
+        self.dash_manifests.as_deref().unwrap_or_default()
+    }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -101,6 +109,7 @@ pub struct CreateOriginEndpointInputBuilder {
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOriginEndpointInputBuilder {
@@ -263,6 +272,26 @@ impl CreateOriginEndpointInputBuilder {
     pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
+    /// Appends an item to `dash_manifests`.
+    ///
+    /// To override the contents of this collection use [`set_dash_manifests`](Self::set_dash_manifests).
+    ///
+    /// <p>A DASH manifest configuration.</p>
+    pub fn dash_manifests(mut self, input: crate::types::CreateDashManifestConfiguration) -> Self {
+        let mut v = self.dash_manifests.unwrap_or_default();
+        v.push(input);
+        self.dash_manifests = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn set_dash_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>) -> Self {
+        self.dash_manifests = input;
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
+        &self.dash_manifests
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -305,6 +334,7 @@ impl CreateOriginEndpointInputBuilder {
             startover_window_seconds: self.startover_window_seconds,
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
+            dash_manifests: self.dash_manifests,
             tags: self.tags,
         })
     }

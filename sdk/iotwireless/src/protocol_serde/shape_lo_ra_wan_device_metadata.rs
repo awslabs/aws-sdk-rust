@@ -54,6 +54,13 @@ where
                                 crate::protocol_serde::shape_lo_ra_wan_gateway_metadata_list::de_lo_ra_wan_gateway_metadata_list(tokens)?,
                             );
                         }
+                        "PublicGateways" => {
+                            builder = builder.set_public_gateways(
+                                crate::protocol_serde::shape_lo_ra_wan_public_gateway_metadata_list::de_lo_ra_wan_public_gateway_metadata_list(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -144,6 +144,11 @@ pub(crate) fn de_get_matching_job(
                 "metrics" => {
                     builder = builder.set_metrics(crate::protocol_serde::shape_job_metrics::de_job_metrics(tokens)?);
                 }
+                "outputSourceConfig" => {
+                    builder = builder.set_output_source_config(crate::protocol_serde::shape_job_output_source_config::de_job_output_source_config(
+                        tokens,
+                    )?);
+                }
                 "startTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

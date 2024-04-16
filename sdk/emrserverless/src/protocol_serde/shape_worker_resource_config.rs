@@ -12,6 +12,9 @@ pub fn ser_worker_resource_config(
     if let Some(var_1) = &input.disk {
         object.key("disk").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.disk_type {
+        object.key("diskType").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -46,6 +49,13 @@ where
                         }
                         "disk" => {
                             builder = builder.set_disk(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "diskType" => {
+                            builder = builder.set_disk_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

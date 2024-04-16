@@ -17,6 +17,8 @@ pub struct UpdateLensReviewInput {
     /// <p>List of pillar notes of a lens review in a workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub pillar_notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Configuration of the Jira integration.</p>
+    pub jira_configuration: ::std::option::Option<crate::types::JiraSelectedQuestionConfiguration>,
 }
 impl UpdateLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -40,6 +42,10 @@ impl UpdateLensReviewInput {
     pub fn pillar_notes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.pillar_notes.as_ref()
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::JiraSelectedQuestionConfiguration> {
+        self.jira_configuration.as_ref()
+    }
 }
 impl UpdateLensReviewInput {
     /// Creates a new builder-style object to manufacture [`UpdateLensReviewInput`](crate::operation::update_lens_review::UpdateLensReviewInput).
@@ -56,6 +62,7 @@ pub struct UpdateLensReviewInputBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_notes: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::JiraSelectedQuestionConfiguration>,
 }
 impl UpdateLensReviewInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -140,6 +147,20 @@ impl UpdateLensReviewInputBuilder {
     pub fn get_pillar_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.pillar_notes
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(mut self, input: crate::types::JiraSelectedQuestionConfiguration) -> Self {
+        self.jira_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::JiraSelectedQuestionConfiguration>) -> Self {
+        self.jira_configuration = input;
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::JiraSelectedQuestionConfiguration> {
+        &self.jira_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateLensReviewInput`](crate::operation::update_lens_review::UpdateLensReviewInput).
     pub fn build(
         self,
@@ -149,6 +170,7 @@ impl UpdateLensReviewInputBuilder {
             lens_alias: self.lens_alias,
             lens_notes: self.lens_notes,
             pillar_notes: self.pillar_notes,
+            jira_configuration: self.jira_configuration,
         })
     }
 }

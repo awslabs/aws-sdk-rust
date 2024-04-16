@@ -140,4 +140,18 @@ impl GetMatchIdFluentBuilder {
     pub fn get_record(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_record()
     }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn apply_normalization(mut self, input: bool) -> Self {
+        self.inner = self.inner.apply_normalization(input);
+        self
+    }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn set_apply_normalization(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_apply_normalization(input);
+        self
+    }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn get_apply_normalization(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_normalization()
+    }
 }

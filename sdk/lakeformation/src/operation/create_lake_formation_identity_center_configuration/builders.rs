@@ -158,4 +158,28 @@ impl CreateLakeFormationIdentityCenterConfigurationFluentBuilder {
     pub fn get_external_filtering(&self) -> &::std::option::Option<crate::types::ExternalFilteringConfiguration> {
         self.inner.get_external_filtering()
     }
+    /// Appends an item to `ShareRecipients`.
+    ///
+    /// To override the contents of this collection use [`set_share_recipients`](Self::set_share_recipients).
+    ///
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn share_recipients(mut self, input: crate::types::DataLakePrincipal) -> Self {
+        self.inner = self.inner.share_recipients(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn set_share_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>) -> Self {
+        self.inner = self.inner.set_share_recipients(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
+        self.inner.get_share_recipients()
+    }
 }

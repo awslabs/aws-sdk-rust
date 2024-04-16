@@ -115,9 +115,13 @@ pub(crate) mod shape_channel_groups_list;
 
 pub(crate) mod shape_channel_list;
 
+pub(crate) mod shape_create_dash_manifest_configuration;
+
 pub(crate) mod shape_create_hls_manifest_configuration;
 
 pub(crate) mod shape_create_low_latency_hls_manifest_configuration;
+
+pub(crate) mod shape_get_dash_manifests;
 
 pub(crate) mod shape_get_hls_manifests;
 
@@ -135,9 +139,13 @@ pub(crate) mod shape_channel_group_list_configuration;
 
 pub(crate) mod shape_channel_list_configuration;
 
+pub(crate) mod shape_dash_utc_timing;
+
 pub(crate) mod shape_encryption;
 
 pub(crate) mod shape_filter_configuration;
+
+pub(crate) mod shape_get_dash_manifest_configuration;
 
 pub(crate) mod shape_get_hls_manifest_configuration;
 
@@ -149,9 +157,15 @@ pub(crate) mod shape_origin_endpoint_list_configuration;
 
 pub(crate) mod shape_scte;
 
+pub(crate) mod shape_scte_dash;
+
 pub(crate) mod shape_scte_hls;
 
+pub(crate) mod shape_dash_period_triggers;
+
 pub(crate) mod shape_encryption_method;
+
+pub(crate) mod shape_list_dash_manifests;
 
 pub(crate) mod shape_list_hls_manifests;
 
@@ -164,6 +178,8 @@ pub(crate) mod shape_speke_key_provider;
 pub(crate) mod shape_drm_systems;
 
 pub(crate) mod shape_encryption_contract_configuration;
+
+pub(crate) mod shape_list_dash_manifest_configuration;
 
 pub(crate) mod shape_list_hls_manifest_configuration;
 

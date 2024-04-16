@@ -8,11 +8,11 @@ pub struct KnowledgeBase {
     pub knowledge_base_id: ::std::string::String,
     /// <p>The name of the knowledge base.</p>
     pub name: ::std::string::String,
-    /// <p>The ARN of the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: ::std::string::String,
     /// <p>The description of the knowledge base.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the knowledge base. The ARN must begin with <code>AmazonBedrockExecutionRoleForKnowledgeBase_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub role_arn: ::std::string::String,
     /// <p>Contains details about the embeddings configuration of the knowledge base.</p>
     pub knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>,
@@ -50,7 +50,7 @@ impl KnowledgeBase {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The ARN of the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn knowledge_base_arn(&self) -> &str {
         use std::ops::Deref;
         self.knowledge_base_arn.deref()
@@ -59,7 +59,7 @@ impl KnowledgeBase {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the knowledge base. The ARN must begin with <code>AmazonBedrockExecutionRoleForKnowledgeBase_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
@@ -157,18 +157,18 @@ impl KnowledgeBaseBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The ARN of the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     /// This field is required.
     pub fn knowledge_base_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn set_knowledge_base_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_arn = input;
         self
     }
-    /// <p>The ARN of the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_arn
     }
@@ -186,18 +186,18 @@ impl KnowledgeBaseBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the knowledge base. The ARN must begin with <code>AmazonBedrockExecutionRoleForKnowledgeBase_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the knowledge base. The ARN must begin with <code>AmazonBedrockExecutionRoleForKnowledgeBase_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role with permissions to invoke API operations on the knowledge base. The ARN must begin with <code>AmazonBedrockExecutionRoleForKnowledgeBase_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

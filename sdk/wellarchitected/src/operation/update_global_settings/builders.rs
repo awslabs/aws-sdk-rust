@@ -22,7 +22,7 @@ impl UpdateGlobalSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGlobalSettings`.
 ///
-/// <p>Updates whether the Amazon Web Services account is opted into organization sharing and discovery integration features.</p>
+/// <p>Update whether the Amazon Web Services account is opted into organization sharing and discovery integration features.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -135,5 +135,19 @@ impl UpdateGlobalSettingsFluentBuilder {
     /// <p>The status of discovery support settings.</p>
     pub fn get_discovery_integration_status(&self) -> &::std::option::Option<crate::types::DiscoveryIntegrationStatus> {
         self.inner.get_discovery_integration_status()
+    }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn jira_configuration(mut self, input: crate::types::AccountJiraConfigurationInput) -> Self {
+        self.inner = self.inner.jira_configuration(input);
+        self
+    }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::AccountJiraConfigurationInput>) -> Self {
+        self.inner = self.inner.set_jira_configuration(input);
+        self
+    }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::AccountJiraConfigurationInput> {
+        self.inner.get_jira_configuration()
     }
 }

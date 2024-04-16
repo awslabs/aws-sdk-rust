@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerSideEncryptionConfiguration {
-    /// <p>The ARN of the KMS key used to encrypt the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the resource.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {
-    /// <p>The ARN of the KMS key used to encrypt the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the resource.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct ServerSideEncryptionConfigurationBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServerSideEncryptionConfigurationBuilder {
-    /// <p>The ARN of the KMS key used to encrypt the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the resource.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the KMS key used to encrypt the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the resource.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>The ARN of the KMS key used to encrypt the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the resource.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }

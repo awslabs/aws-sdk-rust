@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricsInput {
-    /// <p>The list of queries to retrieve summary metrics.</p>
+    /// <p>The list of queries to retrieve the summary metrics.</p>
     pub summary_metric_queries: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQuery>>,
 }
 impl GetMetricsInput {
-    /// <p>The list of queries to retrieve summary metrics.</p>
+    /// <p>The list of queries to retrieve the summary metrics.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summary_metric_queries.is_none()`.
     pub fn summary_metric_queries(&self) -> &[crate::types::SummaryMetricQuery] {
@@ -32,19 +32,19 @@ impl GetMetricsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_summary_metric_queries`](Self::set_summary_metric_queries).
     ///
-    /// <p>The list of queries to retrieve summary metrics.</p>
+    /// <p>The list of queries to retrieve the summary metrics.</p>
     pub fn summary_metric_queries(mut self, input: crate::types::SummaryMetricQuery) -> Self {
         let mut v = self.summary_metric_queries.unwrap_or_default();
         v.push(input);
         self.summary_metric_queries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of queries to retrieve summary metrics.</p>
+    /// <p>The list of queries to retrieve the summary metrics.</p>
     pub fn set_summary_metric_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQuery>>) -> Self {
         self.summary_metric_queries = input;
         self
     }
-    /// <p>The list of queries to retrieve summary metrics.</p>
+    /// <p>The list of queries to retrieve the summary metrics.</p>
     pub fn get_summary_metric_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQuery>> {
         &self.summary_metric_queries
     }

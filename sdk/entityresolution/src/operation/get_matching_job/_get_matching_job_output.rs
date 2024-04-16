@@ -15,6 +15,8 @@ pub struct GetMatchingJobOutput {
     pub metrics: ::std::option::Option<crate::types::JobMetrics>,
     /// <p>An object containing an error message, if there was an error.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::JobOutputSource>>,
     _request_id: Option<String>,
 }
 impl GetMatchingJobOutput {
@@ -43,6 +45,12 @@ impl GetMatchingJobOutput {
     pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
+    pub fn output_source_config(&self) -> &[crate::types::JobOutputSource] {
+        self.output_source_config.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetMatchingJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -66,6 +74,7 @@ pub struct GetMatchingJobOutputBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metrics: ::std::option::Option<crate::types::JobMetrics>,
     pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,
+    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::JobOutputSource>>,
     _request_id: Option<String>,
 }
 impl GetMatchingJobOutputBuilder {
@@ -156,6 +165,26 @@ impl GetMatchingJobOutputBuilder {
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
         &self.error_details
     }
+    /// Appends an item to `output_source_config`.
+    ///
+    /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
+    ///
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn output_source_config(mut self, input: crate::types::JobOutputSource) -> Self {
+        let mut v = self.output_source_config.unwrap_or_default();
+        v.push(input);
+        self.output_source_config = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobOutputSource>>) -> Self {
+        self.output_source_config = input;
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobOutputSource>> {
+        &self.output_source_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -195,6 +224,7 @@ impl GetMatchingJobOutputBuilder {
             end_time: self.end_time,
             metrics: self.metrics,
             error_details: self.error_details,
+            output_source_config: self.output_source_config,
             _request_id: self._request_id,
         })
     }

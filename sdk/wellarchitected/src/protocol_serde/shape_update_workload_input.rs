@@ -57,32 +57,38 @@ pub fn ser_update_workload_input_input(
     if let Some(var_18) = &input.is_review_owner_update_acknowledged {
         object.key("IsReviewOwnerUpdateAcknowledged").boolean(*var_18);
     }
-    if let Some(var_19) = &input.non_aws_regions {
-        let mut array_20 = object.key("NonAwsRegions").start_array();
-        for item_21 in var_19 {
+    if let Some(var_19) = &input.jira_configuration {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("JiraConfiguration").start_object();
+        crate::protocol_serde::shape_workload_jira_configuration_input::ser_workload_jira_configuration_input(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.non_aws_regions {
+        let mut array_22 = object.key("NonAwsRegions").start_array();
+        for item_23 in var_21 {
             {
-                array_20.value().string(item_21.as_str());
+                array_22.value().string(item_23.as_str());
             }
         }
-        array_20.finish();
+        array_22.finish();
     }
-    if let Some(var_22) = &input.notes {
-        object.key("Notes").string(var_22.as_str());
+    if let Some(var_24) = &input.notes {
+        object.key("Notes").string(var_24.as_str());
     }
-    if let Some(var_23) = &input.pillar_priorities {
-        let mut array_24 = object.key("PillarPriorities").start_array();
-        for item_25 in var_23 {
+    if let Some(var_25) = &input.pillar_priorities {
+        let mut array_26 = object.key("PillarPriorities").start_array();
+        for item_27 in var_25 {
             {
-                array_24.value().string(item_25.as_str());
+                array_26.value().string(item_27.as_str());
             }
         }
-        array_24.finish();
+        array_26.finish();
     }
-    if let Some(var_26) = &input.review_owner {
-        object.key("ReviewOwner").string(var_26.as_str());
+    if let Some(var_28) = &input.review_owner {
+        object.key("ReviewOwner").string(var_28.as_str());
     }
-    if let Some(var_27) = &input.workload_name {
-        object.key("WorkloadName").string(var_27.as_str());
+    if let Some(var_29) = &input.workload_name {
+        object.key("WorkloadName").string(var_29.as_str());
     }
     Ok(())
 }

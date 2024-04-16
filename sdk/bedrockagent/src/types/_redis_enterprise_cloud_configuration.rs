@@ -8,7 +8,7 @@ pub struct RedisEnterpriseCloudConfiguration {
     pub endpoint: ::std::string::String,
     /// <p>The name of the vector index.</p>
     pub vector_index_name: ::std::string::String,
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
     pub credentials_secret_arn: ::std::string::String,
     /// <p>Contains the names of the fields to which to map information about the vector store.</p>
     pub field_mapping: ::std::option::Option<crate::types::RedisEnterpriseCloudFieldMapping>,
@@ -24,7 +24,7 @@ impl RedisEnterpriseCloudConfiguration {
         use std::ops::Deref;
         self.vector_index_name.deref()
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
     pub fn credentials_secret_arn(&self) -> &str {
         use std::ops::Deref;
         self.credentials_secret_arn.deref()
@@ -81,18 +81,18 @@ impl RedisEnterpriseCloudConfigurationBuilder {
     pub fn get_vector_index_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vector_index_name
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
     /// This field is required.
     pub fn credentials_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials_secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
     pub fn set_credentials_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials_secret_arn = input;
         self
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Redis Enterprise Cloud database.</p>
     pub fn get_credentials_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credentials_secret_arn
     }
