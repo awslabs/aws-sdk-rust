@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRetrieverInput {
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of your retriever.</p>
     pub retriever_id: ::std::option::Option<::std::string::String>,
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub configuration: ::std::option::Option<crate::types::RetrieverConfiguration>,
     /// <p>The name of your retriever.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct UpdateRetrieverInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRetrieverInput {
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -23,7 +23,7 @@ impl UpdateRetrieverInput {
     pub fn retriever_id(&self) -> ::std::option::Option<&str> {
         self.retriever_id.as_deref()
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::RetrieverConfiguration> {
         self.configuration.as_ref()
     }
@@ -54,18 +54,18 @@ pub struct UpdateRetrieverInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRetrieverInputBuilder {
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
@@ -84,17 +84,17 @@ impl UpdateRetrieverInputBuilder {
     pub fn get_retriever_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.retriever_id
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn configuration(mut self, input: crate::types::RetrieverConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RetrieverConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RetrieverConfiguration> {
         &self.configuration
     }

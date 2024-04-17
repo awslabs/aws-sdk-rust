@@ -6,7 +6,7 @@
 pub struct GroupStatusDetail {
     /// <p>The status of a group.</p>
     pub status: ::std::option::Option<crate::types::GroupStatus>,
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The details of an error associated a group status.</p>
     pub error_detail: ::std::option::Option<crate::types::ErrorDetail>,
@@ -16,7 +16,7 @@ impl GroupStatusDetail {
     pub fn status(&self) -> ::std::option::Option<&crate::types::GroupStatus> {
         self.status.as_ref()
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -55,17 +55,17 @@ impl GroupStatusDetailBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GroupStatus> {
         &self.status
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }

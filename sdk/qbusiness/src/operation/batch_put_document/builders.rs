@@ -22,15 +22,15 @@ impl BatchPutDocumentInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchPutDocument`.
 ///
-/// <p>Adds one or more documents to an Amazon Q index.</p>
+/// <p>Adds one or more documents to an Amazon Q Business index.</p>
 /// <p>You use this API to:</p>
 /// <ul>
 /// <li>
-/// <p>ingest your structured and unstructured documents and documents stored in an Amazon S3 bucket into an Amazon Q index.</p></li>
+/// <p>ingest your structured and unstructured documents and documents stored in an Amazon S3 bucket into an Amazon Q Business index.</p></li>
 /// <li>
-/// <p>add custom attributes to documents in an Amazon Q index.</p></li>
+/// <p>add custom attributes to documents in an Amazon Q Business index.</p></li>
 /// <li>
-/// <p>attach an access control list to the documents added to an Amazon Q index.</p></li>
+/// <p>attach an access control list to the documents added to an Amazon Q Business index.</p></li>
 /// </ul>
 /// <p>You can see the progress of the deletion, and any error messages related to the process, by using CloudWatch.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -118,31 +118,31 @@ impl BatchPutDocumentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q Business index to add the documents to.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q Business index to add the documents to.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q Business index to add the documents to.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }

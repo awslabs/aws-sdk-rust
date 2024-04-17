@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIndexOutput {
-    /// <p>The identifier of the Amazon Q application associated with the index.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the index.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q index.</p>
+    /// <p>The identifier of the Amazon Q Business index.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Amazon Q index.</p>
+    /// <p>The name of the Amazon Q Business index.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business index.</p>
     pub index_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub status: ::std::option::Option<crate::types::IndexStatus>,
-    /// <p>The description for the Amazon Q index.</p>
+    /// <p>The description for the Amazon Q Business index.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Unix timestamp when the Amazon Q index was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Unix timestamp when the Amazon Q index was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The storage capacity units chosen for your Amazon Q index.</p>
+    /// <p>The storage capacity units chosen for your Amazon Q Business index.</p>
     pub capacity_configuration: ::std::option::Option<crate::types::IndexCapacityConfiguration>,
     /// <p>Configuration information for document attributes or metadata. Document metadata are fields associated with your documents. For example, the company department name associated with each document. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/doc-attributes-types.html#doc-attributes">Understanding document attributes</a>.</p>
     pub document_attribute_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeConfiguration>>,
@@ -30,19 +30,19 @@ pub struct GetIndexOutput {
     _request_id: Option<String>,
 }
 impl GetIndexOutput {
-    /// <p>The identifier of the Amazon Q application associated with the index.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the index.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q index.</p>
+    /// <p>The identifier of the Amazon Q Business index.</p>
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The name of the Amazon Q index.</p>
+    /// <p>The name of the Amazon Q Business index.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business index.</p>
     pub fn index_arn(&self) -> ::std::option::Option<&str> {
         self.index_arn.as_deref()
     }
@@ -50,19 +50,19 @@ impl GetIndexOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::IndexStatus> {
         self.status.as_ref()
     }
-    /// <p>The description for the Amazon Q index.</p>
+    /// <p>The description for the Amazon Q Business index.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Unix timestamp when the Amazon Q index was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix timestamp when the Amazon Q index was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The storage capacity units chosen for your Amazon Q index.</p>
+    /// <p>The storage capacity units chosen for your Amazon Q Business index.</p>
     pub fn capacity_configuration(&self) -> ::std::option::Option<&crate::types::IndexCapacityConfiguration> {
         self.capacity_configuration.as_ref()
     }
@@ -112,59 +112,59 @@ pub struct GetIndexOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetIndexOutputBuilder {
-    /// <p>The identifier of the Amazon Q application associated with the index.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the index.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application associated with the index.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application associated with the index.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the Amazon Q index.</p>
+    /// <p>The identifier of the Amazon Q Business index.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index.</p>
+    /// <p>The identifier of the Amazon Q Business index.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q index.</p>
+    /// <p>The identifier of the Amazon Q Business index.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }
-    /// <p>The name of the Amazon Q index.</p>
+    /// <p>The name of the Amazon Q Business index.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon Q index.</p>
+    /// <p>The name of the Amazon Q Business index.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The name of the Amazon Q index.</p>
+    /// <p>The name of the Amazon Q Business index.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business index.</p>
     pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business index.</p>
     pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q index.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business index.</p>
     pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_arn
     }
@@ -182,59 +182,59 @@ impl GetIndexOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IndexStatus> {
         &self.status
     }
-    /// <p>The description for the Amazon Q index.</p>
+    /// <p>The description for the Amazon Q Business index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description for the Amazon Q index.</p>
+    /// <p>The description for the Amazon Q Business index.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description for the Amazon Q index.</p>
+    /// <p>The description for the Amazon Q Business index.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Unix timestamp when the Amazon Q index was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q index was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q index was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The Unix timestamp when the Amazon Q index was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q index was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q index was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business index was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The storage capacity units chosen for your Amazon Q index.</p>
+    /// <p>The storage capacity units chosen for your Amazon Q Business index.</p>
     pub fn capacity_configuration(mut self, input: crate::types::IndexCapacityConfiguration) -> Self {
         self.capacity_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage capacity units chosen for your Amazon Q index.</p>
+    /// <p>The storage capacity units chosen for your Amazon Q Business index.</p>
     pub fn set_capacity_configuration(mut self, input: ::std::option::Option<crate::types::IndexCapacityConfiguration>) -> Self {
         self.capacity_configuration = input;
         self
     }
-    /// <p>The storage capacity units chosen for your Amazon Q index.</p>
+    /// <p>The storage capacity units chosen for your Amazon Q Business index.</p>
     pub fn get_capacity_configuration(&self) -> &::std::option::Option<crate::types::IndexCapacityConfiguration> {
         &self.capacity_configuration
     }

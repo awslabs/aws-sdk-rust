@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsInput {
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q applications.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business applications.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of Amazon Q applications to return.</p>
+    /// <p>The maximum number of Amazon Q Business applications to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListApplicationsInput {
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q applications.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business applications.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of Amazon Q applications to return.</p>
+    /// <p>The maximum number of Amazon Q Business applications to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -33,31 +33,31 @@ pub struct ListApplicationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListApplicationsInputBuilder {
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q applications.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business applications.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q applications.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business applications.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q applications.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business applications.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of Amazon Q applications to return.</p>
+    /// <p>The maximum number of Amazon Q Business applications to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of Amazon Q applications to return.</p>
+    /// <p>The maximum number of Amazon Q Business applications to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of Amazon Q applications to return.</p>
+    /// <p>The maximum number of Amazon Q Business applications to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

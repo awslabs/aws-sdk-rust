@@ -6,6 +6,7 @@ pub struct DeleteFleetsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the EC2 Fleets.</p>
+    /// <p>Constraints: In a single request, you can specify up to 25 <code>instant</code> fleet IDs and up to 100 <code>maintain</code> or <code>request</code> fleet IDs.</p>
     pub fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
@@ -18,6 +19,7 @@ impl DeleteFleetsInput {
         self.dry_run
     }
     /// <p>The IDs of the EC2 Fleets.</p>
+    /// <p>Constraints: In a single request, you can specify up to 25 <code>instant</code> fleet IDs and up to 100 <code>maintain</code> or <code>request</code> fleet IDs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_ids.is_none()`.
     pub fn fleet_ids(&self) -> &[::std::string::String] {
@@ -65,6 +67,7 @@ impl DeleteFleetsInputBuilder {
     /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
     ///
     /// <p>The IDs of the EC2 Fleets.</p>
+    /// <p>Constraints: In a single request, you can specify up to 25 <code>instant</code> fleet IDs and up to 100 <code>maintain</code> or <code>request</code> fleet IDs.</p>
     pub fn fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fleet_ids.unwrap_or_default();
         v.push(input.into());
@@ -72,11 +75,13 @@ impl DeleteFleetsInputBuilder {
         self
     }
     /// <p>The IDs of the EC2 Fleets.</p>
+    /// <p>Constraints: In a single request, you can specify up to 25 <code>instant</code> fleet IDs and up to 100 <code>maintain</code> or <code>request</code> fleet IDs.</p>
     pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fleet_ids = input;
         self
     }
     /// <p>The IDs of the EC2 Fleets.</p>
+    /// <p>Constraints: In a single request, you can specify up to 25 <code>instant</code> fleet IDs and up to 100 <code>maintain</code> or <code>request</code> fleet IDs.</p>
     pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.fleet_ids
     }

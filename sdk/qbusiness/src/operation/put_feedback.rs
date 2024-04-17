@@ -218,17 +218,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutFeedbackR
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_4 = &_input.user_id;
-                let inner_4 = inner_4
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "cannot be empty or unset"))?;
-                if inner_4.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "user_id",
-                        "cannot be empty or unset",
-                    ));
+                if let ::std::option::Option::Some(inner_4) = &_input.user_id {
+                    {
+                        query.push_kv("userId", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
                 }
-                query.push_kv("userId", &::aws_smithy_http::query::fmt_string(inner_4));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -296,13 +290,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutFeedbackEn
 pub enum PutFeedbackError {
     /// <p>You don't have access to perform this action. Make sure you have the required permission policies and user accounts and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An issue occurred with the internal server used for your Amazon Q service. Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
+    /// <p>An issue occurred with the internal server used for your Amazon Q Business service. Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource you want to use doesn’t exist. Make sure you have provided the correct resource and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to throttling. Reduce the number of requests and try again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input doesn't meet the constraints set by the Amazon Q service. Provide the correct input and try again.</p>
+    /// <p>The input doesn't meet the constraints set by the Amazon Q Business service. Provide the correct input and try again.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

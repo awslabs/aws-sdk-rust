@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIndicesOutput {
-    /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of information on the items in one or more indexes.</p>
     pub indices: ::std::option::Option<::std::vec::Vec<crate::types::Index>>,
     _request_id: Option<String>,
 }
 impl ListIndicesOutput {
-    /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -42,17 +42,17 @@ pub struct ListIndicesOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListIndicesOutputBuilder {
-    /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

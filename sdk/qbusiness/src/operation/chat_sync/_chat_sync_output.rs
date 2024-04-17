@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChatSyncOutput {
-    /// <p>The identifier of the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>An AI-generated message in a conversation.</p>
     pub system_message: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of an Amazon Q AI generated message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business AI generated message within the conversation.</p>
     pub system_message_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of an Amazon Q end user text input message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business end user text input message within the conversation.</p>
     pub user_message_id: ::std::option::Option<::std::string::String>,
-    /// <p>A request from Amazon Q to the end user for information Amazon Q needs to successfully complete a requested plugin action.</p>
+    /// <p>A request from Amazon Q Business to the end user for information Amazon Q Business needs to successfully complete a requested plugin action.</p>
     pub action_review: ::std::option::Option<crate::types::ActionReview>,
     /// <p>The source documents used to generate the conversation response.</p>
     pub source_attributions: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SourceAttribution>>>,
@@ -20,7 +20,7 @@ pub struct ChatSyncOutput {
     _request_id: Option<String>,
 }
 impl ChatSyncOutput {
-    /// <p>The identifier of the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn conversation_id(&self) -> ::std::option::Option<&str> {
         self.conversation_id.as_deref()
     }
@@ -28,15 +28,15 @@ impl ChatSyncOutput {
     pub fn system_message(&self) -> ::std::option::Option<&str> {
         self.system_message.as_deref()
     }
-    /// <p>The identifier of an Amazon Q AI generated message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business AI generated message within the conversation.</p>
     pub fn system_message_id(&self) -> ::std::option::Option<&str> {
         self.system_message_id.as_deref()
     }
-    /// <p>The identifier of an Amazon Q end user text input message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business end user text input message within the conversation.</p>
     pub fn user_message_id(&self) -> ::std::option::Option<&str> {
         self.user_message_id.as_deref()
     }
-    /// <p>A request from Amazon Q to the end user for information Amazon Q needs to successfully complete a requested plugin action.</p>
+    /// <p>A request from Amazon Q Business to the end user for information Amazon Q Business needs to successfully complete a requested plugin action.</p>
     pub fn action_review(&self) -> ::std::option::Option<&crate::types::ActionReview> {
         self.action_review.as_ref()
     }
@@ -79,17 +79,17 @@ pub struct ChatSyncOutputBuilder {
     _request_id: Option<String>,
 }
 impl ChatSyncOutputBuilder {
-    /// <p>The identifier of the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conversation_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.conversation_id
     }
@@ -107,45 +107,45 @@ impl ChatSyncOutputBuilder {
     pub fn get_system_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.system_message
     }
-    /// <p>The identifier of an Amazon Q AI generated message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business AI generated message within the conversation.</p>
     pub fn system_message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.system_message_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of an Amazon Q AI generated message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business AI generated message within the conversation.</p>
     pub fn set_system_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.system_message_id = input;
         self
     }
-    /// <p>The identifier of an Amazon Q AI generated message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business AI generated message within the conversation.</p>
     pub fn get_system_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.system_message_id
     }
-    /// <p>The identifier of an Amazon Q end user text input message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business end user text input message within the conversation.</p>
     pub fn user_message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_message_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of an Amazon Q end user text input message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business end user text input message within the conversation.</p>
     pub fn set_user_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_message_id = input;
         self
     }
-    /// <p>The identifier of an Amazon Q end user text input message within the conversation.</p>
+    /// <p>The identifier of an Amazon Q Business end user text input message within the conversation.</p>
     pub fn get_user_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_message_id
     }
-    /// <p>A request from Amazon Q to the end user for information Amazon Q needs to successfully complete a requested plugin action.</p>
+    /// <p>A request from Amazon Q Business to the end user for information Amazon Q Business needs to successfully complete a requested plugin action.</p>
     pub fn action_review(mut self, input: crate::types::ActionReview) -> Self {
         self.action_review = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A request from Amazon Q to the end user for information Amazon Q needs to successfully complete a requested plugin action.</p>
+    /// <p>A request from Amazon Q Business to the end user for information Amazon Q Business needs to successfully complete a requested plugin action.</p>
     pub fn set_action_review(mut self, input: ::std::option::Option<crate::types::ActionReview>) -> Self {
         self.action_review = input;
         self
     }
-    /// <p>A request from Amazon Q to the end user for information Amazon Q needs to successfully complete a requested plugin action.</p>
+    /// <p>A request from Amazon Q Business to the end user for information Amazon Q Business needs to successfully complete a requested plugin action.</p>
     pub fn get_action_review(&self) -> &::std::option::Option<crate::types::ActionReview> {
         &self.action_review
     }

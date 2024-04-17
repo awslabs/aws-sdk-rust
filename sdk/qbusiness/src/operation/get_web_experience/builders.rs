@@ -22,7 +22,7 @@ impl GetWebExperienceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetWebExperience`.
 ///
-/// <p>Gets information about an existing Amazon Q web experience.</p>
+/// <p>Gets information about an existing Amazon Q Business web experience.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWebExperienceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetWebExperienceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the web experience.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the web experience.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the web experience.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub fn web_experience_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.web_experience_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub fn set_web_experience_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_web_experience_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_web_experience_id()
     }

@@ -22,7 +22,7 @@ impl UpdateDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDataSource`.
 ///
-/// <p>Updates an existing Amazon Q data source connector.</p>
+/// <p>Updates an existing Amazon Q Business data source connector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateDataSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
@@ -164,17 +164,17 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>Provides the configuration information for an Amazon Q data source.</p>
+    /// <p>Provides the configuration information for an Amazon Q Business data source.</p>
     pub fn configuration(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>Provides the configuration information for an Amazon Q data source.</p>
+    /// <p>Provides the configuration information for an Amazon Q Business data source.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>Provides the configuration information for an Amazon Q data source.</p>
+    /// <p>Provides the configuration information for an Amazon Q Business data source.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_configuration()
     }

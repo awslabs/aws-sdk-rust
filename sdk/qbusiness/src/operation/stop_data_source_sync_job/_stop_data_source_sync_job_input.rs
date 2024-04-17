@@ -5,9 +5,9 @@
 pub struct StopDataSourceSyncJobInput {
     /// <p>The identifier of the data source connector.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
+    /// <p>The identifier of the Amazon Q Business application that the data source is connected to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
+    /// <p>The identifier of the index used with the Amazon Q Business data source connector.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
 }
 impl StopDataSourceSyncJobInput {
@@ -15,11 +15,11 @@ impl StopDataSourceSyncJobInput {
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
+    /// <p>The identifier of the Amazon Q Business application that the data source is connected to.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
+    /// <p>The identifier of the index used with the Amazon Q Business data source connector.</p>
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -55,33 +55,33 @@ impl StopDataSourceSyncJobInputBuilder {
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
-    /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
+    /// <p>The identifier of the Amazon Q Business application that the data source is connected to.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
+    /// <p>The identifier of the Amazon Q Business application that the data source is connected to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
+    /// <p>The identifier of the Amazon Q Business application that the data source is connected to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
+    /// <p>The identifier of the index used with the Amazon Q Business data source connector.</p>
     /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
+    /// <p>The identifier of the index used with the Amazon Q Business data source connector.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
     }
-    /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
+    /// <p>The identifier of the index used with the Amazon Q Business data source connector.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }

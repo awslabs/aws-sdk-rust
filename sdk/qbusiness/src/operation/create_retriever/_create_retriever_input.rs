@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRetrieverInput {
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of retriever you are using.</p>
     pub r#type: ::std::option::Option<crate::types::RetrieverType>,
     /// <p>The name of your retriever.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub configuration: ::std::option::Option<crate::types::RetrieverConfiguration>,
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A token that you provide to identify the request to create your Amazon Q application retriever.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application retriever.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that identify or categorize the retriever. You can also use tags to help control access to the retriever. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRetrieverInput {
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -31,15 +31,15 @@ impl CreateRetrieverInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::RetrieverConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application retriever.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application retriever.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -70,18 +70,18 @@ pub struct CreateRetrieverInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRetrieverInputBuilder {
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
@@ -115,46 +115,46 @@ impl CreateRetrieverInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     /// This field is required.
     pub fn configuration(mut self, input: crate::types::RetrieverConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RetrieverConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RetrieverConfiguration> {
         &self.configuration
     }
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application retriever.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application retriever.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application retriever.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application retriever.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application retriever.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application retriever.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

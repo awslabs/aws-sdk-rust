@@ -22,7 +22,7 @@ impl DescribeInstanceTypesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeInstanceTypes`.
 ///
-/// <p>Describes the details of the instance types that are offered in a location. The results can be filtered by the attributes of the instance types.</p>
+/// <p>Describes the specified instance types. By default, all instance types for the current Region are described. Alternatively, you can filter the results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -132,17 +132,17 @@ impl DescribeInstanceTypesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub fn instance_types(mut self, input: crate::types::InstanceType) -> Self {
         self.inner = self.inner.instance_types(input);
         self
     }
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>) -> Self {
         self.inner = self.inner.set_instance_types(input);
         self
     }
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
         self.inner.get_instance_types()
     }

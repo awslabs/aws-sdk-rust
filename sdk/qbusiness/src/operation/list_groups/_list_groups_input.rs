@@ -11,7 +11,7 @@ pub struct ListGroupsInput {
     pub updated_earlier_than: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the data source for getting a list of groups mapped to users.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned groups that are mapped to users.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -33,7 +33,7 @@ impl ListGroupsInput {
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -120,17 +120,17 @@ impl ListGroupsInputBuilder {
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

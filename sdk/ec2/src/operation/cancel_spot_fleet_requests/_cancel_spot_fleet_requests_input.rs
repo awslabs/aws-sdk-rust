@@ -7,6 +7,7 @@ pub struct CancelSpotFleetRequestsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the Spot Fleet requests.</p>
+    /// <p>Constraint: You can specify up to 100 IDs in a single request.</p>
     pub spot_fleet_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the Spot Fleet request is canceled, specify <code>no-terminate-instances</code>.</p>
@@ -18,6 +19,7 @@ impl CancelSpotFleetRequestsInput {
         self.dry_run
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
+    /// <p>Constraint: You can specify up to 100 IDs in a single request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_fleet_request_ids.is_none()`.
     pub fn spot_fleet_request_ids(&self) -> &[::std::string::String] {
@@ -64,6 +66,7 @@ impl CancelSpotFleetRequestsInputBuilder {
     /// To override the contents of this collection use [`set_spot_fleet_request_ids`](Self::set_spot_fleet_request_ids).
     ///
     /// <p>The IDs of the Spot Fleet requests.</p>
+    /// <p>Constraint: You can specify up to 100 IDs in a single request.</p>
     pub fn spot_fleet_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.spot_fleet_request_ids.unwrap_or_default();
         v.push(input.into());
@@ -71,11 +74,13 @@ impl CancelSpotFleetRequestsInputBuilder {
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
+    /// <p>Constraint: You can specify up to 100 IDs in a single request.</p>
     pub fn set_spot_fleet_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.spot_fleet_request_ids = input;
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
+    /// <p>Constraint: You can specify up to 100 IDs in a single request.</p>
     pub fn get_spot_fleet_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.spot_fleet_request_ids
     }

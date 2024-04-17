@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWebExperienceInput {
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business web experience.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q web experience being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience being deleted.</p>
     pub web_experience_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWebExperienceInput {
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business web experience.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q web experience being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience being deleted.</p>
     pub fn web_experience_id(&self) -> ::std::option::Option<&str> {
         self.web_experience_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct DeleteWebExperienceInputBuilder {
     pub(crate) web_experience_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWebExperienceInputBuilder {
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business web experience.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business web experience.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business web experience.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the Amazon Q web experience being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience being deleted.</p>
     /// This field is required.
     pub fn web_experience_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_experience_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q web experience being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience being deleted.</p>
     pub fn set_web_experience_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_experience_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q web experience being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience being deleted.</p>
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.web_experience_id
     }

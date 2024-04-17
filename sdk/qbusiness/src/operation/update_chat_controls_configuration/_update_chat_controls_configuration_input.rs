@@ -5,7 +5,7 @@
 pub struct UpdateChatControlsConfigurationInput {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
+    /// <p>A token that you provide to identify the request to update a Amazon Q Business application chat configuration.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The response scope configured for your application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub response_scope: ::std::option::Option<crate::types::ResponseScope>,
@@ -15,13 +15,15 @@ pub struct UpdateChatControlsConfigurationInput {
     pub topic_configurations_to_create_or_update: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     /// <p>The configured topic specific chat controls you want to delete.</p>
     pub topic_configurations_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub creator_mode_configuration: ::std::option::Option<crate::types::CreatorModeConfiguration>,
 }
 impl UpdateChatControlsConfigurationInput {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
+    /// <p>A token that you provide to identify the request to update a Amazon Q Business application chat configuration.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -45,6 +47,10 @@ impl UpdateChatControlsConfigurationInput {
     pub fn topic_configurations_to_delete(&self) -> &[crate::types::TopicConfiguration] {
         self.topic_configurations_to_delete.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn creator_mode_configuration(&self) -> ::std::option::Option<&crate::types::CreatorModeConfiguration> {
+        self.creator_mode_configuration.as_ref()
+    }
 }
 impl UpdateChatControlsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateChatControlsConfigurationInput`](crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput).
@@ -63,6 +69,7 @@ pub struct UpdateChatControlsConfigurationInputBuilder {
     pub(crate) blocked_phrases_configuration_update: ::std::option::Option<crate::types::BlockedPhrasesConfigurationUpdate>,
     pub(crate) topic_configurations_to_create_or_update: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) topic_configurations_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    pub(crate) creator_mode_configuration: ::std::option::Option<crate::types::CreatorModeConfiguration>,
 }
 impl UpdateChatControlsConfigurationInputBuilder {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
@@ -80,17 +87,17 @@ impl UpdateChatControlsConfigurationInputBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
+    /// <p>A token that you provide to identify the request to update a Amazon Q Business application chat configuration.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
+    /// <p>A token that you provide to identify the request to update a Amazon Q Business application chat configuration.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
+    /// <p>A token that you provide to identify the request to update a Amazon Q Business application chat configuration.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -165,6 +172,20 @@ impl UpdateChatControlsConfigurationInputBuilder {
     pub fn get_topic_configurations_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
         &self.topic_configurations_to_delete
     }
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn creator_mode_configuration(mut self, input: crate::types::CreatorModeConfiguration) -> Self {
+        self.creator_mode_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn set_creator_mode_configuration(mut self, input: ::std::option::Option<crate::types::CreatorModeConfiguration>) -> Self {
+        self.creator_mode_configuration = input;
+        self
+    }
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn get_creator_mode_configuration(&self) -> &::std::option::Option<crate::types::CreatorModeConfiguration> {
+        &self.creator_mode_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateChatControlsConfigurationInput`](crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput).
     pub fn build(
         self,
@@ -180,6 +201,7 @@ impl UpdateChatControlsConfigurationInputBuilder {
                 blocked_phrases_configuration_update: self.blocked_phrases_configuration_update,
                 topic_configurations_to_create_or_update: self.topic_configurations_to_create_or_update,
                 topic_configurations_to_delete: self.topic_configurations_to_delete,
+                creator_mode_configuration: self.creator_mode_configuration,
             },
         )
     }

@@ -22,7 +22,7 @@ impl DeleteDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataSource`.
 ///
-/// <p>Deletes an Amazon Q data source connector. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>.</p>
+/// <p>Deletes an Amazon Q Business data source connector. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteDataSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application used with the data source connector.</p>
+    /// <p>The identifier of the Amazon Q Business application used with the data source connector.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application used with the data source connector.</p>
+    /// <p>The identifier of the Amazon Q Business application used with the data source connector.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application used with the data source connector.</p>
+    /// <p>The identifier of the Amazon Q Business application used with the data source connector.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

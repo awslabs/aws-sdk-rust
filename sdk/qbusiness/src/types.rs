@@ -113,6 +113,10 @@ pub use crate::types::_data_source::DataSource;
 
 pub use crate::types::_user_alias::UserAlias;
 
+pub use crate::types::_creator_mode_configuration::CreatorModeConfiguration;
+
+pub use crate::types::_creator_mode_control::CreatorModeControl;
+
 pub use crate::types::_topic_configuration::TopicConfiguration;
 
 pub use crate::types::_rule::Rule;
@@ -189,7 +193,15 @@ pub use crate::types::_group_status_detail::GroupStatusDetail;
 
 pub use crate::types::_group_status::GroupStatus;
 
+pub use crate::types::_applied_creator_mode_configuration::AppliedCreatorModeConfiguration;
+
 pub use crate::types::_blocked_phrases_configuration::BlockedPhrasesConfiguration;
+
+pub use crate::types::_chat_mode_configuration::ChatModeConfiguration;
+
+pub use crate::types::_plugin_configuration::PluginConfiguration;
+
+pub use crate::types::_chat_mode::ChatMode;
 
 pub use crate::types::_attribute_filter::AttributeFilter;
 
@@ -245,6 +257,8 @@ mod _application_status;
 
 mod _applied_attachments_configuration;
 
+mod _applied_creator_mode_configuration;
+
 mod _attachment_input;
 
 mod _attachment_output;
@@ -267,6 +281,10 @@ mod _blocked_phrases_configuration;
 
 mod _blocked_phrases_configuration_update;
 
+mod _chat_mode;
+
+mod _chat_mode_configuration;
+
 mod _content_blocker_rule;
 
 mod _content_retrieval_rule;
@@ -274,6 +292,10 @@ mod _content_retrieval_rule;
 mod _content_type;
 
 mod _conversation;
+
+mod _creator_mode_configuration;
+
+mod _creator_mode_control;
 
 mod _data_source;
 
@@ -380,6 +402,8 @@ mod _o_auth2_client_credential_configuration;
 mod _plugin;
 
 mod _plugin_auth_configuration;
+
+mod _plugin_configuration;
 
 mod _plugin_state;
 

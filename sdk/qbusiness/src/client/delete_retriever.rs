@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRetriever`](crate::operation::delete_retriever::builders::DeleteRetrieverFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_retriever::builders::DeleteRetrieverFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_retriever::builders::DeleteRetrieverFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier of the Amazon Q application using the retriever.</p><br>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_retriever::builders::DeleteRetrieverFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_retriever::builders::DeleteRetrieverFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier of the Amazon Q Business application using the retriever.</p><br>
     ///   - [`retriever_id(impl Into<String>)`](crate::operation::delete_retriever::builders::DeleteRetrieverFluentBuilder::retriever_id) / [`set_retriever_id(Option<String>)`](crate::operation::delete_retriever::builders::DeleteRetrieverFluentBuilder::set_retriever_id):<br>required: **true**<br><p>The identifier of the retriever being deleted.</p><br>
     /// - On success, responds with [`DeleteRetrieverOutput`](crate::operation::delete_retriever::DeleteRetrieverOutput)
     /// - On failure, responds with [`SdkError<DeleteRetrieverError>`](crate::operation::delete_retriever::DeleteRetrieverError)

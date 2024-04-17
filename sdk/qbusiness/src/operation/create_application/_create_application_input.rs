@@ -3,23 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
+    pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A description for the Amazon Q Business application.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
 }
 impl CreateApplicationInput {
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -27,21 +29,25 @@ impl CreateApplicationInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
+    pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_center_instance_arn.as_deref()
+    }
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -63,6 +69,7 @@ impl CreateApplicationInput {
 pub struct CreateApplicationInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_center_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -70,18 +77,18 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
 }
 impl CreateApplicationInputBuilder {
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
@@ -100,31 +107,45 @@ impl CreateApplicationInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
+    pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
+    pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
+    pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_instance_arn
+    }
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
-    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
@@ -132,33 +153,33 @@ impl CreateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -183,6 +204,7 @@ impl CreateApplicationInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
             display_name: self.display_name,
             role_arn: self.role_arn,
+            identity_center_instance_arn: self.identity_center_instance_arn,
             description: self.description,
             encryption_configuration: self.encryption_configuration,
             tags: self.tags,

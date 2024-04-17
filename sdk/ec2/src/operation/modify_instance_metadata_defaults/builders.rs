@@ -23,7 +23,7 @@ impl ModifyInstanceMetadataDefaultsInputBuilder {
 /// Fluent builder constructing a request to `ModifyInstanceMetadataDefaults`.
 ///
 /// <p>Modifies the default instance metadata service (IMDS) settings at the account level in the specified Amazon Web Services  Region.</p><note>
-/// <p>To remove a parameter's account-level default setting, specify <code>no-preference</code>. At instance launch, the value will come from the AMI, or from the launch parameter if specified. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>To remove a parameter's account-level default setting, specify <code>no-preference</code>. If an account-level setting is cleared with <code>no-preference</code>, then the instance launch considers the other instance metadata settings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyInstanceMetadataDefaultsFluentBuilder {
@@ -142,23 +142,20 @@ impl ModifyInstanceMetadataDefaultsFluentBuilder {
     pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::MetadataDefaultHttpTokensState> {
         self.inner.get_http_tokens()
     }
-    /// <p>The maximum number of hops that the metadata token can travel.</p>
-    /// <p>Minimum: <code>1</code></p>
-    /// <p>Maximum: <code>64</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel. To indicate no preference, specify <code>-1</code>.</p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no preference</p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
         self.inner = self.inner.http_put_response_hop_limit(input);
         self
     }
-    /// <p>The maximum number of hops that the metadata token can travel.</p>
-    /// <p>Minimum: <code>1</code></p>
-    /// <p>Maximum: <code>64</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel. To indicate no preference, specify <code>-1</code>.</p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no preference</p>
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_http_put_response_hop_limit(input);
         self
     }
-    /// <p>The maximum number of hops that the metadata token can travel.</p>
-    /// <p>Minimum: <code>1</code></p>
-    /// <p>Maximum: <code>64</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel. To indicate no preference, specify <code>-1</code>.</p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no preference</p>
     pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_http_put_response_hop_limit()
     }

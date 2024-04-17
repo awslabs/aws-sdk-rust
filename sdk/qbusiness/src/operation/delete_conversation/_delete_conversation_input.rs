@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConversationInput {
-    /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation being deleted.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the conversation.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user who is deleting the conversation.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConversationInput {
-    /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation being deleted.</p>
     pub fn conversation_id(&self) -> ::std::option::Option<&str> {
         self.conversation_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the conversation.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -40,38 +40,37 @@ pub struct DeleteConversationInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConversationInputBuilder {
-    /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation being deleted.</p>
     /// This field is required.
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation being deleted.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conversation_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation being deleted.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.conversation_id
     }
-    /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the conversation.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the conversation.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the conversation.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
     /// <p>The identifier of the user who is deleting the conversation.</p>
-    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

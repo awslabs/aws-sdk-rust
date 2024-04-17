@@ -22,7 +22,7 @@ impl CreateIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateIndex`.
 ///
-/// <p>Creates an Amazon Q index.</p>
+/// <p>Creates an Amazon Q Business index.</p>
 /// <p>To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p>
 /// <p>Once the index is active, you can index your documents using the <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchPutDocument.html"> <code>BatchPutDocument</code> </a> API or the <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataSource.html"> <code>CreateDataSource</code> </a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,45 +110,45 @@ impl CreateIndexFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application using the index.</p>
+    /// <p>The identifier of the Amazon Q Business application using the index.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application using the index.</p>
+    /// <p>The identifier of the Amazon Q Business application using the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application using the index.</p>
+    /// <p>The identifier of the Amazon Q Business application using the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>A name for the Amazon Q index.</p>
+    /// <p>A name for the Amazon Q Business index.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>A name for the Amazon Q index.</p>
+    /// <p>A name for the Amazon Q Business index.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>A name for the Amazon Q index.</p>
+    /// <p>A name for the Amazon Q Business index.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>A description for the Amazon Q index.</p>
+    /// <p>A description for the Amazon Q Business index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description for the Amazon Q index.</p>
+    /// <p>A description for the Amazon Q Business index.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description for the Amazon Q index.</p>
+    /// <p>A description for the Amazon Q Business index.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

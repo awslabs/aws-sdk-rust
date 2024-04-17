@@ -22,7 +22,7 @@ impl ChatSyncInputBuilder {
 }
 /// Fluent builder constructing a request to `ChatSync`.
 ///
-/// <p>Starts or continues a non-streaming Amazon Q conversation.</p>
+/// <p>Starts or continues a non-streaming Amazon Q Business conversation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChatSyncFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl ChatSyncFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business conversation.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business conversation.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business conversation.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
@@ -177,31 +177,31 @@ impl ChatSyncFluentBuilder {
     pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentInput>> {
         self.inner.get_attachments()
     }
-    /// <p>A request from an end user to perform an Amazon Q plugin action.</p>
+    /// <p>A request from an end user to perform an Amazon Q Business plugin action.</p>
     pub fn action_execution(mut self, input: crate::types::ActionExecution) -> Self {
         self.inner = self.inner.action_execution(input);
         self
     }
-    /// <p>A request from an end user to perform an Amazon Q plugin action.</p>
+    /// <p>A request from an end user to perform an Amazon Q Business plugin action.</p>
     pub fn set_action_execution(mut self, input: ::std::option::Option<crate::types::ActionExecution>) -> Self {
         self.inner = self.inner.set_action_execution(input);
         self
     }
-    /// <p>A request from an end user to perform an Amazon Q plugin action.</p>
+    /// <p>A request from an end user to perform an Amazon Q Business plugin action.</p>
     pub fn get_action_execution(&self) -> &::std::option::Option<crate::types::ActionExecution> {
         self.inner.get_action_execution()
     }
-    /// <p>The identifier of the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conversation_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conversation_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q conversation.</p>
+    /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_conversation_id()
     }
@@ -219,19 +219,74 @@ impl ChatSyncFluentBuilder {
     pub fn get_parent_message_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_parent_message_id()
     }
-    /// <p>Enables filtering of Amazon Q web experience responses based on document attributes or metadata fields.</p>
+    /// <p>Enables filtering of Amazon Q Business web experience responses based on document attributes or metadata fields.</p>
     pub fn attribute_filter(mut self, input: crate::types::AttributeFilter) -> Self {
         self.inner = self.inner.attribute_filter(input);
         self
     }
-    /// <p>Enables filtering of Amazon Q web experience responses based on document attributes or metadata fields.</p>
+    /// <p>Enables filtering of Amazon Q Business web experience responses based on document attributes or metadata fields.</p>
     pub fn set_attribute_filter(mut self, input: ::std::option::Option<crate::types::AttributeFilter>) -> Self {
         self.inner = self.inner.set_attribute_filter(input);
         self
     }
-    /// <p>Enables filtering of Amazon Q web experience responses based on document attributes or metadata fields.</p>
+    /// <p>Enables filtering of Amazon Q Business web experience responses based on document attributes or metadata fields.</p>
     pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
         self.inner.get_attribute_filter()
+    }
+    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
+    /// <li>
+    /// <p><code>CREATOR_MODE</code> - By selecting this mode, users can choose to generate responses only from the LLM knowledge, without consulting connected data sources, for a chat request.</p></li>
+    /// <li>
+    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation settings</a>.</p>
+    pub fn chat_mode(mut self, input: crate::types::ChatMode) -> Self {
+        self.inner = self.inner.chat_mode(input);
+        self
+    }
+    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
+    /// <li>
+    /// <p><code>CREATOR_MODE</code> - By selecting this mode, users can choose to generate responses only from the LLM knowledge, without consulting connected data sources, for a chat request.</p></li>
+    /// <li>
+    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation settings</a>.</p>
+    pub fn set_chat_mode(mut self, input: ::std::option::Option<crate::types::ChatMode>) -> Self {
+        self.inner = self.inner.set_chat_mode(input);
+        self
+    }
+    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
+    /// <li>
+    /// <p><code>CREATOR_MODE</code> - By selecting this mode, users can choose to generate responses only from the LLM knowledge, without consulting connected data sources, for a chat request.</p></li>
+    /// <li>
+    /// <p><code>PLUGIN_MODE</code> - By selecting this mode, users can choose to use plugins in chat.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin controls and guardrails</a>, <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>, and <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation settings</a>.</p>
+    pub fn get_chat_mode(&self) -> &::std::option::Option<crate::types::ChatMode> {
+        self.inner.get_chat_mode()
+    }
+    /// <p>The chat mode configuration for an Amazon Q Business application.</p>
+    pub fn chat_mode_configuration(mut self, input: crate::types::ChatModeConfiguration) -> Self {
+        self.inner = self.inner.chat_mode_configuration(input);
+        self
+    }
+    /// <p>The chat mode configuration for an Amazon Q Business application.</p>
+    pub fn set_chat_mode_configuration(mut self, input: ::std::option::Option<crate::types::ChatModeConfiguration>) -> Self {
+        self.inner = self.inner.set_chat_mode_configuration(input);
+        self
+    }
+    /// <p>The chat mode configuration for an Amazon Q Business application.</p>
+    pub fn get_chat_mode_configuration(&self) -> &::std::option::Option<crate::types::ChatModeConfiguration> {
+        self.inner.get_chat_mode_configuration()
     }
     /// <p>A token that you provide to identify a chat request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

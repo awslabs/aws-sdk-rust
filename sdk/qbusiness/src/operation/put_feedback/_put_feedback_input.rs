@@ -77,7 +77,6 @@ impl PutFeedbackInputBuilder {
         &self.application_id
     }
     /// <p>The identifier of the user giving the feedback.</p>
-    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

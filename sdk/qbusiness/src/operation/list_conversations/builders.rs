@@ -22,7 +22,7 @@ impl ListConversationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListConversations`.
 ///
-/// <p>Lists one or more Amazon Q conversations.</p>
+/// <p>Lists one or more Amazon Q Business conversations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConversationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListConversationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_conversations::paginator::ListConversationsPaginator {
         crate::operation::list_conversations::paginator::ListConversationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q Business web experience conversation.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q Business web experience conversation.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q Business web experience conversation.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q conversations.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business conversations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q conversations.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business conversations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q conversations.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business conversations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of Amazon Q conversations to return.</p>
+    /// <p>The maximum number of Amazon Q Business conversations to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of Amazon Q conversations to return.</p>
+    /// <p>The maximum number of Amazon Q Business conversations to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of Amazon Q conversations to return.</p>
+    /// <p>The maximum number of Amazon Q Business conversations to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

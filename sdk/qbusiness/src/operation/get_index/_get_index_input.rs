@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIndexInput {
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIndexInput {
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetIndexInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIndexInputBuilder {
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }

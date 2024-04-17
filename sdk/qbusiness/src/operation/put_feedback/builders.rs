@@ -22,7 +22,7 @@ impl PutFeedbackInputBuilder {
 }
 /// Fluent builder constructing a request to `PutFeedback`.
 ///
-/// <p>Enables your end user to to provide feedback on their Amazon Q generated chat responses.</p>
+/// <p>Enables your end user to provide feedback on their Amazon Q Business generated chat responses.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutFeedbackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

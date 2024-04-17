@@ -3,18 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChatControlsConfigurationOutput {
-    /// <p>The response scope configured for a Amazon Q application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
+    /// <p>The response scope configured for a Amazon Q Business application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub response_scope: ::std::option::Option<crate::types::ResponseScope>,
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub blocked_phrases: ::std::option::Option<crate::types::BlockedPhrasesConfiguration>,
-    /// <p>The topic specific controls configured for a Amazon Q application.</p>
+    /// <p>The topic specific controls configured for a Amazon Q Business application.</p>
     pub topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub creator_mode_configuration: ::std::option::Option<crate::types::AppliedCreatorModeConfiguration>,
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business chat controls configured.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetChatControlsConfigurationOutput {
-    /// <p>The response scope configured for a Amazon Q application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
+    /// <p>The response scope configured for a Amazon Q Business application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn response_scope(&self) -> ::std::option::Option<&crate::types::ResponseScope> {
         self.response_scope.as_ref()
     }
@@ -22,13 +24,17 @@ impl GetChatControlsConfigurationOutput {
     pub fn blocked_phrases(&self) -> ::std::option::Option<&crate::types::BlockedPhrasesConfiguration> {
         self.blocked_phrases.as_ref()
     }
-    /// <p>The topic specific controls configured for a Amazon Q application.</p>
+    /// <p>The topic specific controls configured for a Amazon Q Business application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_configurations.is_none()`.
     pub fn topic_configurations(&self) -> &[crate::types::TopicConfiguration] {
         self.topic_configurations.as_deref().unwrap_or_default()
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn creator_mode_configuration(&self) -> ::std::option::Option<&crate::types::AppliedCreatorModeConfiguration> {
+        self.creator_mode_configuration.as_ref()
+    }
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business chat controls configured.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -52,21 +58,22 @@ pub struct GetChatControlsConfigurationOutputBuilder {
     pub(crate) response_scope: ::std::option::Option<crate::types::ResponseScope>,
     pub(crate) blocked_phrases: ::std::option::Option<crate::types::BlockedPhrasesConfiguration>,
     pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    pub(crate) creator_mode_configuration: ::std::option::Option<crate::types::AppliedCreatorModeConfiguration>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetChatControlsConfigurationOutputBuilder {
-    /// <p>The response scope configured for a Amazon Q application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
+    /// <p>The response scope configured for a Amazon Q Business application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn response_scope(mut self, input: crate::types::ResponseScope) -> Self {
         self.response_scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The response scope configured for a Amazon Q application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
+    /// <p>The response scope configured for a Amazon Q Business application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn set_response_scope(mut self, input: ::std::option::Option<crate::types::ResponseScope>) -> Self {
         self.response_scope = input;
         self
     }
-    /// <p>The response scope configured for a Amazon Q application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
+    /// <p>The response scope configured for a Amazon Q Business application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn get_response_scope(&self) -> &::std::option::Option<crate::types::ResponseScope> {
         &self.response_scope
     }
@@ -88,33 +95,47 @@ impl GetChatControlsConfigurationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_topic_configurations`](Self::set_topic_configurations).
     ///
-    /// <p>The topic specific controls configured for a Amazon Q application.</p>
+    /// <p>The topic specific controls configured for a Amazon Q Business application.</p>
     pub fn topic_configurations(mut self, input: crate::types::TopicConfiguration) -> Self {
         let mut v = self.topic_configurations.unwrap_or_default();
         v.push(input);
         self.topic_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The topic specific controls configured for a Amazon Q application.</p>
+    /// <p>The topic specific controls configured for a Amazon Q Business application.</p>
     pub fn set_topic_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>) -> Self {
         self.topic_configurations = input;
         self
     }
-    /// <p>The topic specific controls configured for a Amazon Q application.</p>
+    /// <p>The topic specific controls configured for a Amazon Q Business application.</p>
     pub fn get_topic_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
         &self.topic_configurations
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn creator_mode_configuration(mut self, input: crate::types::AppliedCreatorModeConfiguration) -> Self {
+        self.creator_mode_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn set_creator_mode_configuration(mut self, input: ::std::option::Option<crate::types::AppliedCreatorModeConfiguration>) -> Self {
+        self.creator_mode_configuration = input;
+        self
+    }
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn get_creator_mode_configuration(&self) -> &::std::option::Option<crate::types::AppliedCreatorModeConfiguration> {
+        &self.creator_mode_configuration
+    }
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business chat controls configured.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business chat controls configured.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business chat controls configured.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -133,6 +154,7 @@ impl GetChatControlsConfigurationOutputBuilder {
             response_scope: self.response_scope,
             blocked_phrases: self.blocked_phrases,
             topic_configurations: self.topic_configurations,
+            creator_mode_configuration: self.creator_mode_configuration,
             next_token: self.next_token,
             _request_id: self._request_id,
         }

@@ -22,7 +22,7 @@ impl StartDataSourceSyncJobInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDataSourceSyncJob`.
 ///
-/// <p>Starts a data source connector synchronization job. If a synchronization job is already in progress, Amazon Q returns a <code>ConflictException</code>.</p>
+/// <p>Starts a data source connector synchronization job. If a synchronization job is already in progress, Amazon Q Business returns a <code>ConflictException</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDataSourceSyncJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl StartDataSourceSyncJobFluentBuilder {
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }
-    /// <p>The identifier of Amazon Q application the data source is connected to.</p>
+    /// <p>The identifier of Amazon Q Business application the data source is connected to.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of Amazon Q application the data source is connected to.</p>
+    /// <p>The identifier of Amazon Q Business application the data source is connected to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of Amazon Q application the data source is connected to.</p>
+    /// <p>The identifier of Amazon Q Business application the data source is connected to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

@@ -22,7 +22,7 @@ impl GetPluginInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPlugin`.
 ///
-/// <p>Gets information about an existing Amazon Q plugin.</p>
+/// <p>Gets information about an existing Amazon Q Business plugin.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPluginFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

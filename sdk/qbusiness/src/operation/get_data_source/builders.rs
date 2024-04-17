@@ -22,7 +22,7 @@ impl GetDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDataSource`.
 ///
-/// <p>Gets information about an existing Amazon Q data source connector.</p>
+/// <p>Gets information about an existing Amazon Q Business data source connector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetDataSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

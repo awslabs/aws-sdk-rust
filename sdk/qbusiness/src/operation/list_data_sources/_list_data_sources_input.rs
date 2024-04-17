@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSourcesInput {
-    /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the data source connectors.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index used with one or more data source connectors.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business data source connectors.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of data source connectors to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListDataSourcesInput {
-    /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the data source connectors.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -21,7 +21,7 @@ impl ListDataSourcesInput {
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business data source connectors.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct ListDataSourcesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListDataSourcesInputBuilder {
-    /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the data source connectors.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the data source connectors.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the data source connectors.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
@@ -77,17 +77,17 @@ impl ListDataSourcesInputBuilder {
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business data source connectors.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business data source connectors.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business data source connectors.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

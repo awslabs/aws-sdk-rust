@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockedPhrasesConfiguration {
-    /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+    /// <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
     pub blocked_phrases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
     pub system_message_override: ::std::option::Option<::std::string::String>,
 }
 impl BlockedPhrasesConfiguration {
-    /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+    /// <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocked_phrases.is_none()`.
     pub fn blocked_phrases(&self) -> &[::std::string::String] {
@@ -40,19 +40,19 @@ impl BlockedPhrasesConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_blocked_phrases`](Self::set_blocked_phrases).
     ///
-    /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+    /// <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
     pub fn blocked_phrases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.blocked_phrases.unwrap_or_default();
         v.push(input.into());
         self.blocked_phrases = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+    /// <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
     pub fn set_blocked_phrases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.blocked_phrases = input;
         self
     }
-    /// <p>A list of phrases blocked from a Amazon Q web experience chat.</p>
+    /// <p>A list of phrases blocked from a Amazon Q Business web experience chat.</p>
     pub fn get_blocked_phrases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.blocked_phrases
     }

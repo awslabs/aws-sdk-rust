@@ -12,7 +12,7 @@ pub struct ActionReviewPayloadField {
     pub r#type: ::std::option::Option<crate::types::ActionPayloadFieldType>,
     /// <p>The field value.</p>
     pub value: ::std::option::Option<::aws_smithy_types::Document>,
-    /// <p>Information about the field values that an end user can use to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
+    /// <p>Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business to perform the requested plugin action.</p>
     pub allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::ActionReviewPayloadFieldAllowedValue>>,
     /// <p>Information about whether the field is required.</p>
     pub required: ::std::option::Option<bool>,
@@ -34,7 +34,7 @@ impl ActionReviewPayloadField {
     pub fn value(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.value.as_ref()
     }
-    /// <p>Information about the field values that an end user can use to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
+    /// <p>Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business to perform the requested plugin action.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
     pub fn allowed_values(&self) -> &[crate::types::ActionReviewPayloadFieldAllowedValue] {
@@ -124,19 +124,19 @@ impl ActionReviewPayloadFieldBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
     ///
-    /// <p>Information about the field values that an end user can use to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
+    /// <p>Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business to perform the requested plugin action.</p>
     pub fn allowed_values(mut self, input: crate::types::ActionReviewPayloadFieldAllowedValue) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
         v.push(input);
         self.allowed_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the field values that an end user can use to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
+    /// <p>Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business to perform the requested plugin action.</p>
     pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionReviewPayloadFieldAllowedValue>>) -> Self {
         self.allowed_values = input;
         self
     }
-    /// <p>Information about the field values that an end user can use to provide to Amazon Q for Amazon Q to perform the requested plugin action.</p>
+    /// <p>Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business to perform the requested plugin action.</p>
     pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionReviewPayloadFieldAllowedValue>> {
         &self.allowed_values
     }

@@ -13,7 +13,7 @@ pub struct GetPluginOutput {
     pub r#type: ::std::option::Option<crate::types::PluginType>,
     /// <p>The source URL used for plugin configuration.</p>
     pub server_url: ::std::option::Option<::std::string::String>,
-    /// <p>Authentication configuration information for an Amazon Q plugin.</p>
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.</p>
     pub plugin_arn: ::std::option::Option<::std::string::String>,
@@ -46,7 +46,7 @@ impl GetPluginOutput {
     pub fn server_url(&self) -> ::std::option::Option<&str> {
         self.server_url.as_deref()
     }
-    /// <p>Authentication configuration information for an Amazon Q plugin.</p>
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub fn auth_configuration(&self) -> ::std::option::Option<&crate::types::PluginAuthConfiguration> {
         self.auth_configuration.as_ref()
     }
@@ -166,17 +166,17 @@ impl GetPluginOutputBuilder {
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_url
     }
-    /// <p>Authentication configuration information for an Amazon Q plugin.</p>
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub fn auth_configuration(mut self, input: crate::types::PluginAuthConfiguration) -> Self {
         self.auth_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Authentication configuration information for an Amazon Q plugin.</p>
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub fn set_auth_configuration(mut self, input: ::std::option::Option<crate::types::PluginAuthConfiguration>) -> Self {
         self.auth_configuration = input;
         self
     }
-    /// <p>Authentication configuration information for an Amazon Q plugin.</p>
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub fn get_auth_configuration(&self) -> &::std::option::Option<crate::types::PluginAuthConfiguration> {
         &self.auth_configuration
     }

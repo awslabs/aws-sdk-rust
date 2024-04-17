@@ -92,6 +92,15 @@ pub(crate) fn license_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn applied_creator_mode_configuration_correct_errors(
+    mut builder: crate::types::builders::AppliedCreatorModeConfigurationBuilder,
+) -> crate::types::builders::AppliedCreatorModeConfigurationBuilder {
+    if builder.creator_mode_control.is_none() {
+        builder.creator_mode_control = "no value was set".parse::<crate::types::CreatorModeControl>().ok()
+    }
+    builder
+}
+
 pub(crate) fn data_source_vpc_configuration_correct_errors(
     mut builder: crate::types::builders::DataSourceVpcConfigurationBuilder,
 ) -> crate::types::builders::DataSourceVpcConfigurationBuilder {

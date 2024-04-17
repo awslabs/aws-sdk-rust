@@ -207,6 +207,8 @@ pub(crate) mod shape_applications;
 
 pub(crate) mod shape_applied_attachments_configuration;
 
+pub(crate) mod shape_applied_creator_mode_configuration;
+
 pub(crate) mod shape_attachment_input;
 
 pub(crate) mod shape_attachments_configuration;
@@ -219,7 +221,11 @@ pub(crate) mod shape_blocked_phrases_configuration;
 
 pub(crate) mod shape_blocked_phrases_configuration_update;
 
+pub(crate) mod shape_chat_mode_configuration;
+
 pub(crate) mod shape_conversations;
+
+pub(crate) mod shape_creator_mode_configuration;
 
 pub(crate) mod shape_data_source_sync_jobs;
 
@@ -342,6 +348,8 @@ pub(crate) mod shape_native_index_configuration;
 pub(crate) mod shape_o_auth2_client_credential_configuration;
 
 pub(crate) mod shape_plugin;
+
+pub(crate) mod shape_plugin_configuration;
 
 pub(crate) mod shape_retriever;
 

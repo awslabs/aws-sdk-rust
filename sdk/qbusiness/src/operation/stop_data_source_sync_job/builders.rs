@@ -22,7 +22,7 @@ impl StopDataSourceSyncJobInputBuilder {
 }
 /// Fluent builder constructing a request to `StopDataSourceSyncJob`.
 ///
-/// <p>Stops an Amazon Q data source connector synchronization job already in progress.</p>
+/// <p>Stops an Amazon Q Business data source connector synchronization job already in progress.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDataSourceSyncJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +122,31 @@ impl StopDataSourceSyncJobFluentBuilder {
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }
-    /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
+    /// <p>The identifier of the Amazon Q Business application that the data source is connected to.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
+    /// <p>The identifier of the Amazon Q Business application that the data source is connected to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application that the data source is connected to.</p>
+    /// <p>The identifier of the Amazon Q Business application that the data source is connected to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
+    /// <p>The identifier of the index used with the Amazon Q Business data source connector.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
-    /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
+    /// <p>The identifier of the index used with the Amazon Q Business data source connector.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
+    /// <p>The identifier of the index used with the Amazon Q Business data source connector.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }

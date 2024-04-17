@@ -22,7 +22,7 @@ impl DeleteChatControlsConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteChatControlsConfiguration`.
 ///
-/// <p>Deletes chat controls configured for an existing Amazon Q application.</p>
+/// <p>Deletes chat controls configured for an existing Amazon Q Business application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteChatControlsConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

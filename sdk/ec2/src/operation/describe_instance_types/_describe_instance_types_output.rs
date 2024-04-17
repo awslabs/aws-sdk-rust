@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypesOutput {
-    /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type.</p>
     pub instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceTypesOutput {
-    /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
     pub fn instance_types(&self) -> &[crate::types::InstanceTypeInfo] {
@@ -46,19 +46,19 @@ impl DescribeInstanceTypesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
-    /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type.</p>
     pub fn instance_types(mut self, input: crate::types::InstanceTypeInfo) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
         v.push(input);
         self.instance_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type.</p>
     pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>>) -> Self {
         self.instance_types = input;
         self
     }
-    /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance type.</p>
     pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>> {
         &self.instance_types
     }

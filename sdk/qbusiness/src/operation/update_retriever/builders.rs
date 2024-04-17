@@ -22,7 +22,7 @@ impl UpdateRetrieverInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRetriever`.
 ///
-/// <p>Updates the retriever used for your Amazon Q application.</p>
+/// <p>Updates the retriever used for your Amazon Q Business application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRetrieverFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateRetrieverFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of your Amazon Q application.</p>
+    /// <p>The identifier of your Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
@@ -136,17 +136,17 @@ impl UpdateRetrieverFluentBuilder {
     pub fn get_retriever_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_retriever_id()
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn configuration(mut self, input: crate::types::RetrieverConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RetrieverConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
+    /// <p>Provides information on how the retriever used for your Amazon Q Business application is configured.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RetrieverConfiguration> {
         self.inner.get_configuration()
     }

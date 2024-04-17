@@ -5,7 +5,7 @@
 pub struct ListDataSourceSyncJobsOutput {
     /// <p>A history of synchronization jobs for the data source connector.</p>
     pub history: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>>,
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListDataSourceSyncJobsOutput {
     pub fn history(&self) -> &[crate::types::DataSourceSyncJob] {
         self.history.as_deref().unwrap_or_default()
     }
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListDataSourceSyncJobsOutputBuilder {
     pub fn get_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>> {
         &self.history
     }
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

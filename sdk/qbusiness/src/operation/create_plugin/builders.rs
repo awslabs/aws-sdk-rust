@@ -22,7 +22,7 @@ impl CreatePluginInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePlugin`.
 ///
-/// <p>Creates an Amazon Q plugin.</p>
+/// <p>Creates an Amazon Q Business plugin.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePluginFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -164,17 +164,17 @@ impl CreatePluginFluentBuilder {
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_url()
     }
-    /// <p>Authentication configuration information for an Amazon Q plugin.</p>
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub fn auth_configuration(mut self, input: crate::types::PluginAuthConfiguration) -> Self {
         self.inner = self.inner.auth_configuration(input);
         self
     }
-    /// <p>Authentication configuration information for an Amazon Q plugin.</p>
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub fn set_auth_configuration(mut self, input: ::std::option::Option<crate::types::PluginAuthConfiguration>) -> Self {
         self.inner = self.inner.set_auth_configuration(input);
         self
     }
-    /// <p>Authentication configuration information for an Amazon Q plugin.</p>
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub fn get_auth_configuration(&self) -> &::std::option::Option<crate::types::PluginAuthConfiguration> {
         self.inner.get_auth_configuration()
     }
@@ -196,17 +196,17 @@ impl CreatePluginFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q plugin.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business plugin.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q plugin.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business plugin.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q plugin.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business plugin.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

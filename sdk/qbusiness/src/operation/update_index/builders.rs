@@ -22,7 +22,7 @@ impl UpdateIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateIndex`.
 ///
-/// <p>Updates an Amazon Q index.</p>
+/// <p>Updates an Amazon Q Business index.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIndexFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +108,73 @@ impl UpdateIndexFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the Amazon Q index.</p>
+    /// <p>The identifier of the Amazon Q Business index.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index.</p>
+    /// <p>The identifier of the Amazon Q Business index.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q index.</p>
+    /// <p>The identifier of the Amazon Q Business index.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }
-    /// <p>The name of the Amazon Q index.</p>
+    /// <p>The name of the Amazon Q Business index.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>The name of the Amazon Q index.</p>
+    /// <p>The name of the Amazon Q Business index.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>The name of the Amazon Q index.</p>
+    /// <p>The name of the Amazon Q Business index.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The description of the Amazon Q index.</p>
+    /// <p>The description of the Amazon Q Business index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The description of the Amazon Q index.</p>
+    /// <p>The description of the Amazon Q Business index.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The description of the Amazon Q index.</p>
+    /// <p>The description of the Amazon Q Business index.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The storage capacity units you want to provision for your Amazon Q index. You can add and remove capacity to fit your usage needs.</p>
+    /// <p>The storage capacity units you want to provision for your Amazon Q Business index. You can add and remove capacity to fit your usage needs.</p>
     pub fn capacity_configuration(mut self, input: crate::types::IndexCapacityConfiguration) -> Self {
         self.inner = self.inner.capacity_configuration(input);
         self
     }
-    /// <p>The storage capacity units you want to provision for your Amazon Q index. You can add and remove capacity to fit your usage needs.</p>
+    /// <p>The storage capacity units you want to provision for your Amazon Q Business index. You can add and remove capacity to fit your usage needs.</p>
     pub fn set_capacity_configuration(mut self, input: ::std::option::Option<crate::types::IndexCapacityConfiguration>) -> Self {
         self.inner = self.inner.set_capacity_configuration(input);
         self
     }
-    /// <p>The storage capacity units you want to provision for your Amazon Q index. You can add and remove capacity to fit your usage needs.</p>
+    /// <p>The storage capacity units you want to provision for your Amazon Q Business index. You can add and remove capacity to fit your usage needs.</p>
     pub fn get_capacity_configuration(&self) -> &::std::option::Option<crate::types::IndexCapacityConfiguration> {
         self.inner.get_capacity_configuration()
     }

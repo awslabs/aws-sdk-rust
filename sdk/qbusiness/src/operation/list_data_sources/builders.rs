@@ -22,7 +22,7 @@ impl ListDataSourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDataSources`.
 ///
-/// <p>Lists the Amazon Q data source connectors that you have created.</p>
+/// <p>Lists the Amazon Q Business data source connectors that you have created.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListDataSourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_data_sources::paginator::ListDataSourcesPaginator {
         crate::operation::list_data_sources::paginator::ListDataSourcesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the data source connectors.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the data source connectors.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the data source connectors.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the data source connectors.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
@@ -142,17 +142,17 @@ impl ListDataSourcesFluentBuilder {
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business data source connectors.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business data source connectors.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q data source connectors.</p>
+    /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business data source connectors.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

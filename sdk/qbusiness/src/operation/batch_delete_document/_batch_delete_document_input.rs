@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDocumentInput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
+    /// <p>The identifier of the Amazon Q Business index that contains the documents to delete.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
-    /// <p>Documents deleted from the Amazon Q index.</p>
+    /// <p>Documents deleted from the Amazon Q Business index.</p>
     pub documents: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDocument>>,
     /// <p>The identifier of the data source sync during which the documents were deleted.</p>
     pub data_source_sync_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteDocumentInput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
+    /// <p>The identifier of the Amazon Q Business index that contains the documents to delete.</p>
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>Documents deleted from the Amazon Q index.</p>
+    /// <p>Documents deleted from the Amazon Q Business index.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.documents.is_none()`.
     pub fn documents(&self) -> &[crate::types::DeleteDocument] {
@@ -49,33 +49,33 @@ pub struct BatchDeleteDocumentInputBuilder {
     pub(crate) data_source_sync_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteDocumentInputBuilder {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
+    /// <p>The identifier of the Amazon Q Business index that contains the documents to delete.</p>
     /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
+    /// <p>The identifier of the Amazon Q Business index that contains the documents to delete.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
+    /// <p>The identifier of the Amazon Q Business index that contains the documents to delete.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }
@@ -83,19 +83,19 @@ impl BatchDeleteDocumentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_documents`](Self::set_documents).
     ///
-    /// <p>Documents deleted from the Amazon Q index.</p>
+    /// <p>Documents deleted from the Amazon Q Business index.</p>
     pub fn documents(mut self, input: crate::types::DeleteDocument) -> Self {
         let mut v = self.documents.unwrap_or_default();
         v.push(input);
         self.documents = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Documents deleted from the Amazon Q index.</p>
+    /// <p>Documents deleted from the Amazon Q Business index.</p>
     pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDocument>>) -> Self {
         self.documents = input;
         self
     }
-    /// <p>Documents deleted from the Amazon Q index.</p>
+    /// <p>Documents deleted from the Amazon Q Business index.</p>
     pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteDocument>> {
         &self.documents
     }

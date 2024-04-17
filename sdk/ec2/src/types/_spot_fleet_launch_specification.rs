@@ -5,6 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SpotFleetLaunchSpecification {
     /// <p>The security groups.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>Deprecated.</p>
     pub addressing_type: ::std::option::Option<::std::string::String>,
@@ -25,8 +26,8 @@ pub struct SpotFleetLaunchSpecification {
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Enable or disable monitoring for the instances.</p>
     pub monitoring: ::std::option::Option<crate::types::SpotFleetMonitoring>,
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>The network interfaces.</p><note>
+    /// <p><code>SpotFleetLaunchSpecification</code> does not support Elastic Fabric Adapter (EFA). You must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a> instead.</p>
     /// </note>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     /// <p>The placement information.</p>
@@ -38,6 +39,7 @@ pub struct SpotFleetLaunchSpecification {
     /// </important>
     pub spot_price: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub user_data: ::std::option::Option<::std::string::String>,
@@ -53,6 +55,7 @@ pub struct SpotFleetLaunchSpecification {
 }
 impl SpotFleetLaunchSpecification {
     /// <p>The security groups.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
     pub fn security_groups(&self) -> &[crate::types::GroupIdentifier] {
@@ -97,8 +100,8 @@ impl SpotFleetLaunchSpecification {
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::SpotFleetMonitoring> {
         self.monitoring.as_ref()
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>The network interfaces.</p><note>
+    /// <p><code>SpotFleetLaunchSpecification</code> does not support Elastic Fabric Adapter (EFA). You must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a> instead.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
@@ -120,6 +123,7 @@ impl SpotFleetLaunchSpecification {
         self.spot_price.as_deref()
     }
     /// <p>The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
@@ -207,6 +211,7 @@ impl SpotFleetLaunchSpecificationBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The security groups.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub fn security_groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input);
@@ -214,11 +219,13 @@ impl SpotFleetLaunchSpecificationBuilder {
         self
     }
     /// <p>The security groups.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The security groups.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
         &self.security_groups
     }
@@ -361,8 +368,8 @@ impl SpotFleetLaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>The network interfaces.</p><note>
+    /// <p><code>SpotFleetLaunchSpecification</code> does not support Elastic Fabric Adapter (EFA). You must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a> instead.</p>
     /// </note>
     pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
@@ -370,8 +377,8 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>The network interfaces.</p><note>
+    /// <p><code>SpotFleetLaunchSpecification</code> does not support Elastic Fabric Adapter (EFA). You must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a> instead.</p>
     /// </note>
     pub fn set_network_interfaces(
         mut self,
@@ -380,8 +387,8 @@ impl SpotFleetLaunchSpecificationBuilder {
         self.network_interfaces = input;
         self
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p><note>
-    /// <p><code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
+    /// <p>The network interfaces.</p><note>
+    /// <p><code>SpotFleetLaunchSpecification</code> does not support Elastic Fabric Adapter (EFA). You must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a> instead.</p>
     /// </note>
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
         &self.network_interfaces
@@ -435,16 +442,19 @@ impl SpotFleetLaunchSpecificationBuilder {
         &self.spot_price
     }
     /// <p>The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
     /// <p>The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }

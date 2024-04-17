@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataSourceOutput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index linked to the data source connector.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ pub struct GetDataSourceOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the data source connector. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
-    /// <p>The schedule for Amazon Q to update the index.</p>
+    /// <p>The schedule for Amazon Q Business to update the index.</p>
     pub sync_schedule: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -39,7 +39,7 @@ pub struct GetDataSourceOutput {
     _request_id: Option<String>,
 }
 impl GetDataSourceOutput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -87,7 +87,7 @@ impl GetDataSourceOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
-    /// <p>The schedule for Amazon Q to update the index.</p>
+    /// <p>The schedule for Amazon Q Business to update the index.</p>
     pub fn sync_schedule(&self) -> ::std::option::Option<&str> {
         self.sync_schedule.as_deref()
     }
@@ -140,17 +140,17 @@ pub struct GetDataSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetDataSourceOutputBuilder {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
@@ -308,17 +308,17 @@ impl GetDataSourceOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
         &self.status
     }
-    /// <p>The schedule for Amazon Q to update the index.</p>
+    /// <p>The schedule for Amazon Q Business to update the index.</p>
     pub fn sync_schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_schedule = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The schedule for Amazon Q to update the index.</p>
+    /// <p>The schedule for Amazon Q Business to update the index.</p>
     pub fn set_sync_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_schedule = input;
         self
     }
-    /// <p>The schedule for Amazon Q to update the index.</p>
+    /// <p>The schedule for Amazon Q Business to update the index.</p>
     pub fn get_sync_schedule(&self) -> &::std::option::Option<::std::string::String> {
         &self.sync_schedule
     }

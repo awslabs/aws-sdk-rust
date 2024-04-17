@@ -24,6 +24,7 @@ impl GetConsoleScreenshotInputBuilder {
 ///
 /// <p>Retrieve a JPG-format screenshot of a running instance to help with troubleshooting.</p>
 /// <p>The returned content is Base64-encoded.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/troubleshoot-unreachable-instance.html#instance-console-console-output">Instance console output</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConsoleScreenshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

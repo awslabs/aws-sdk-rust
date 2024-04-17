@@ -22,7 +22,7 @@ impl CreateApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
-/// <p>Creates an Amazon Q application.</p>
+/// <p>Creates an Amazon Q Business application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
@@ -136,31 +136,45 @@ impl CreateApplicationFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
+    pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identity_center_instance_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
+    pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identity_center_instance_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting to—your Amazon Q Business application.</p>
+    pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_center_instance_arn()
+    }
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);
         self
     }
-    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
-    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
@@ -168,31 +182,31 @@ impl CreateApplicationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business application. You can also use tags to help control access to the application. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q application.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business application.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

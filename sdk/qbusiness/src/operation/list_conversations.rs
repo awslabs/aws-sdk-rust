@@ -193,17 +193,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListConversa
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_2 = &_input.user_id;
-                let inner_2 = inner_2
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "cannot be empty or unset"))?;
-                if inner_2.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "user_id",
-                        "cannot be empty or unset",
-                    ));
+                if let ::std::option::Option::Some(inner_2) = &_input.user_id {
+                    {
+                        query.push_kv("userId", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
                 }
-                query.push_kv("userId", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
@@ -277,7 +271,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListConversat
 pub enum ListConversationsError {
     /// <p>You don't have access to perform this action. Make sure you have the required permission policies and user accounts and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An issue occurred with the internal server used for your Amazon Q service. Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
+    /// <p>An issue occurred with the internal server used for your Amazon Q Business service. Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a> for help.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>You don't have permissions to perform the action because your license is inactive. Ask your admin to activate your license and try again after your licence is active.</p>
     LicenseNotFoundException(crate::types::error::LicenseNotFoundException),
@@ -285,7 +279,7 @@ pub enum ListConversationsError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to throttling. Reduce the number of requests and try again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input doesn't meet the constraints set by the Amazon Q service. Provide the correct input and try again.</p>
+    /// <p>The input doesn't meet the constraints set by the Amazon Q Business service. Provide the correct input and try again.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

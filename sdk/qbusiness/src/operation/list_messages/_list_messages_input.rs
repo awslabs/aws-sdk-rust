@@ -3,31 +3,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMessagesInput {
-    /// <p>The identifier of the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the Amazon Q application.</p>
+    /// <p>The identifier for the Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q Business web experience conversation.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of messages.</p>
+    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q Business returns a next token as a pagination token to retrieve the next set of messages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of messages to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListMessagesInput {
-    /// <p>The identifier of the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation.</p>
     pub fn conversation_id(&self) -> ::std::option::Option<&str> {
         self.conversation_id.as_deref()
     }
-    /// <p>The identifier for the Amazon Q application.</p>
+    /// <p>The identifier for the Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q Business web experience conversation.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of messages.</p>
+    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q Business returns a next token as a pagination token to retrieve the next set of messages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -54,62 +54,61 @@ pub struct ListMessagesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListMessagesInputBuilder {
-    /// <p>The identifier of the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation.</p>
     /// This field is required.
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conversation_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.conversation_id
     }
-    /// <p>The identifier for the Amazon Q application.</p>
+    /// <p>The identifier for the Amazon Q Business application.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the Amazon Q application.</p>
+    /// <p>The identifier for the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier for the Amazon Q application.</p>
+    /// <p>The identifier for the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
-    /// This field is required.
+    /// <p>The identifier of the user involved in the Amazon Q Business web experience conversation.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q Business web experience conversation.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The identifier of the user involved in the Amazon Q web experience conversation.</p>
+    /// <p>The identifier of the user involved in the Amazon Q Business web experience conversation.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
-    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of messages.</p>
+    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q Business returns a next token as a pagination token to retrieve the next set of messages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of messages.</p>
+    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q Business returns a next token as a pagination token to retrieve the next set of messages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of messages.</p>
+    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q Business returns a next token as a pagination token to retrieve the next set of messages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

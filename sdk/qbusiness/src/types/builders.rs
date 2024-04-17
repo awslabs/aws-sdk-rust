@@ -63,6 +63,8 @@ pub use crate::types::_data_source::DataSourceBuilder;
 
 pub use crate::types::_user_alias::UserAliasBuilder;
 
+pub use crate::types::_creator_mode_configuration::CreatorModeConfigurationBuilder;
+
 pub use crate::types::_topic_configuration::TopicConfigurationBuilder;
 
 pub use crate::types::_rule::RuleBuilder;
@@ -115,7 +117,11 @@ pub use crate::types::_conversation::ConversationBuilder;
 
 pub use crate::types::_group_status_detail::GroupStatusDetailBuilder;
 
+pub use crate::types::_applied_creator_mode_configuration::AppliedCreatorModeConfigurationBuilder;
+
 pub use crate::types::_blocked_phrases_configuration::BlockedPhrasesConfigurationBuilder;
+
+pub use crate::types::_plugin_configuration::PluginConfigurationBuilder;
 
 pub use crate::types::_attribute_filter::AttributeFilterBuilder;
 

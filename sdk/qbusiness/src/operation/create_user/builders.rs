@@ -154,17 +154,17 @@ impl CreateUserFluentBuilder {
     pub fn get_user_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAlias>> {
         self.inner.get_user_aliases()
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

@@ -9,7 +9,7 @@ pub struct CreateUserInput {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of user aliases in the mapping.</p>
     pub user_aliases: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserInput {
@@ -27,7 +27,7 @@ impl CreateUserInput {
     pub fn user_aliases(&self) -> &[crate::types::UserAlias] {
         self.user_aliases.as_deref().unwrap_or_default()
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -99,17 +99,17 @@ impl CreateUserInputBuilder {
     pub fn get_user_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAlias>> {
         &self.user_aliases
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

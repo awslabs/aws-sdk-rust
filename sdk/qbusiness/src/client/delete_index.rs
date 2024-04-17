@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIndex`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier of the Amazon Q application the Amazon Q index is linked to.</p><br>
-    ///   - [`index_id(impl Into<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the Amazon Q index.</p><br>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier of the Amazon Q Business application the Amazon Q Business index is linked to.</p><br>
+    ///   - [`index_id(impl Into<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the Amazon Q Business index.</p><br>
     /// - On success, responds with [`DeleteIndexOutput`](crate::operation::delete_index::DeleteIndexOutput)
     /// - On failure, responds with [`SdkError<DeleteIndexError>`](crate::operation::delete_index::DeleteIndexError)
     pub fn delete_index(&self) -> crate::operation::delete_index::builders::DeleteIndexFluentBuilder {

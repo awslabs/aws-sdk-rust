@@ -134,6 +134,11 @@ pub(crate) fn de_get_chat_controls_configuration(
                     builder = builder
                         .set_blocked_phrases(crate::protocol_serde::shape_blocked_phrases_configuration::de_blocked_phrases_configuration(tokens)?);
                 }
+                "creatorModeConfiguration" => {
+                    builder = builder.set_creator_mode_configuration(
+                        crate::protocol_serde::shape_applied_creator_mode_configuration::de_applied_creator_mode_configuration(tokens)?,
+                    );
+                }
                 "nextToken" => {
                     builder = builder.set_next_token(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

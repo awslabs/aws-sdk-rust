@@ -3,31 +3,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q permission to access Amazon CloudWatch logs and metrics.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q Business permission to access Amazon CloudWatch logs and metrics.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
 }
 impl UpdateApplicationInput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q permission to access Amazon CloudWatch logs and metrics.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q Business permission to access Amazon CloudWatch logs and metrics.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -54,60 +54,60 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
 }
 impl UpdateApplicationInputBuilder {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>A name for the Amazon Q application.</p>
+    /// <p>A name for the Amazon Q Business application.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q permission to access Amazon CloudWatch logs and metrics.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q Business permission to access Amazon CloudWatch logs and metrics.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q permission to access Amazon CloudWatch logs and metrics.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q Business permission to access Amazon CloudWatch logs and metrics.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q permission to access Amazon CloudWatch logs and metrics.</p>
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q Business permission to access Amazon CloudWatch logs and metrics.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

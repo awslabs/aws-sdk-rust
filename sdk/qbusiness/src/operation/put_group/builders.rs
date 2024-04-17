@@ -23,7 +23,7 @@ impl PutGroupInputBuilder {
 /// Fluent builder constructing a request to `PutGroup`.
 ///
 /// <p>Create, or updates, a mapping of users—who have access to a document—to groups.</p>
-/// <p>You can also map sub groups to groups. For example, the group "Company Intellectual Property Teams" includes sub groups "Research" and "Engineering". These sub groups include their own list of users or people who work in these teams. Only users who work in research and engineering, and therefore belong in the intellectual property group, can see top-secret company documents in their Amazon Q chat results.</p>
+/// <p>You can also map sub groups to groups. For example, the group "Company Intellectual Property Teams" includes sub groups "Research" and "Engineering". These sub groups include their own list of users or people who work in these teams. Only users who work in research and engineering, and therefore belong in the intellectual property group, can see top-secret company documents in their Amazon Q Business chat results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -173,17 +173,17 @@ impl PutGroupFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
         self.inner.get_type()
     }
-    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q chat results only from document a user has access to.</p>
+    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q Business chat results only from document a user has access to.</p>
     pub fn group_members(mut self, input: crate::types::GroupMembers) -> Self {
         self.inner = self.inner.group_members(input);
         self
     }
-    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q chat results only from document a user has access to.</p>
+    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q Business chat results only from document a user has access to.</p>
     pub fn set_group_members(mut self, input: ::std::option::Option<crate::types::GroupMembers>) -> Self {
         self.inner = self.inner.set_group_members(input);
         self
     }
-    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q chat results only from document a user has access to.</p>
+    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q Business chat results only from document a user has access to.</p>
     pub fn get_group_members(&self) -> &::std::option::Option<crate::types::GroupMembers> {
         self.inner.get_group_members()
     }

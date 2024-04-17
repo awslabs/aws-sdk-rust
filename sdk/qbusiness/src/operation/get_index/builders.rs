@@ -22,7 +22,7 @@ impl GetIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `GetIndex`.
 ///
-/// <p>Gets information about an existing Amazon Q index.</p>
+/// <p>Gets information about an existing Amazon Q Business index.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIndexFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,31 +99,31 @@ impl GetIndexFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }

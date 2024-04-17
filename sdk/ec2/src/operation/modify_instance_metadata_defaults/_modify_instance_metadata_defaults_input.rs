@@ -11,9 +11,8 @@ pub struct ModifyInstanceMetadataDefaultsInput {
     /// <p><code>required</code> – IMDSv2 is required, which means that IMDSv1 is disabled, and you must use IMDSv2.</p></li>
     /// </ul>
     pub http_tokens: ::std::option::Option<crate::types::MetadataDefaultHttpTokensState>,
-    /// <p>The maximum number of hops that the metadata token can travel.</p>
-    /// <p>Minimum: <code>1</code></p>
-    /// <p>Maximum: <code>64</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel. To indicate no preference, specify <code>-1</code>.</p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no preference</p>
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>Enables or disables the IMDS endpoint on an instance. When disabled, the instance metadata can't be accessed.</p>
     pub http_endpoint: ::std::option::Option<crate::types::DefaultInstanceMetadataEndpointState>,
@@ -33,9 +32,8 @@ impl ModifyInstanceMetadataDefaultsInput {
     pub fn http_tokens(&self) -> ::std::option::Option<&crate::types::MetadataDefaultHttpTokensState> {
         self.http_tokens.as_ref()
     }
-    /// <p>The maximum number of hops that the metadata token can travel.</p>
-    /// <p>Minimum: <code>1</code></p>
-    /// <p>Maximum: <code>64</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel. To indicate no preference, specify <code>-1</code>.</p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no preference</p>
     pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
     }
@@ -102,23 +100,20 @@ impl ModifyInstanceMetadataDefaultsInputBuilder {
     pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::MetadataDefaultHttpTokensState> {
         &self.http_tokens
     }
-    /// <p>The maximum number of hops that the metadata token can travel.</p>
-    /// <p>Minimum: <code>1</code></p>
-    /// <p>Maximum: <code>64</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel. To indicate no preference, specify <code>-1</code>.</p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no preference</p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
         self.http_put_response_hop_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of hops that the metadata token can travel.</p>
-    /// <p>Minimum: <code>1</code></p>
-    /// <p>Maximum: <code>64</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel. To indicate no preference, specify <code>-1</code>.</p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no preference</p>
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
     }
-    /// <p>The maximum number of hops that the metadata token can travel.</p>
-    /// <p>Minimum: <code>1</code></p>
-    /// <p>Maximum: <code>64</code></p>
+    /// <p>The maximum number of hops that the metadata token can travel. To indicate no preference, specify <code>-1</code>.</p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code>, and <code>-1</code> to indicate no preference</p>
     pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
         &self.http_put_response_hop_limit
     }
