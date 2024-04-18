@@ -17,6 +17,8 @@ pub use crate::types::_configuration_overrides::ConfigurationOverrides;
 
 pub use crate::types::_monitoring_configuration::MonitoringConfiguration;
 
+pub use crate::types::_prometheus_monitoring_configuration::PrometheusMonitoringConfiguration;
+
 pub use crate::types::_cloud_watch_logging_configuration::CloudWatchLoggingConfiguration;
 
 pub use crate::types::_managed_persistence_monitoring_configuration::ManagedPersistenceMonitoringConfiguration;
@@ -96,6 +98,8 @@ mod _maximum_allowed_resources;
 mod _monitoring_configuration;
 
 mod _network_configuration;
+
+mod _prometheus_monitoring_configuration;
 
 mod _resource_utilization;
 

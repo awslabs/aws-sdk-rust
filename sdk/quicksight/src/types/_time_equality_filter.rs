@@ -19,6 +19,8 @@ pub struct TimeEqualityFilter {
     /// <p>The rolling date input for the <code>TimeEquality</code> filter.</p>
     /// <p>This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.</p>
     pub rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl TimeEqualityFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -49,6 +51,10 @@ impl TimeEqualityFilter {
     pub fn rolling_date(&self) -> ::std::option::Option<&crate::types::RollingDateConfiguration> {
         self.rolling_date.as_ref()
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(&self) -> ::std::option::Option<&crate::types::DefaultFilterControlConfiguration> {
+        self.default_filter_control_configuration.as_ref()
+    }
 }
 impl TimeEqualityFilter {
     /// Creates a new builder-style object to manufacture [`TimeEqualityFilter`](crate::types::TimeEqualityFilter).
@@ -67,6 +73,7 @@ pub struct TimeEqualityFilterBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     pub(crate) rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
+    pub(crate) default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl TimeEqualityFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -164,6 +171,20 @@ impl TimeEqualityFilterBuilder {
     pub fn get_rolling_date(&self) -> &::std::option::Option<crate::types::RollingDateConfiguration> {
         &self.rolling_date
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(mut self, input: crate::types::DefaultFilterControlConfiguration) -> Self {
+        self.default_filter_control_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn set_default_filter_control_configuration(mut self, input: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>) -> Self {
+        self.default_filter_control_configuration = input;
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn get_default_filter_control_configuration(&self) -> &::std::option::Option<crate::types::DefaultFilterControlConfiguration> {
+        &self.default_filter_control_configuration
+    }
     /// Consumes the builder and constructs a [`TimeEqualityFilter`](crate::types::TimeEqualityFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::TimeEqualityFilterBuilder::filter_id)
@@ -180,6 +201,7 @@ impl TimeEqualityFilterBuilder {
             parameter_name: self.parameter_name,
             time_granularity: self.time_granularity,
             rolling_date: self.rolling_date,
+            default_filter_control_configuration: self.default_filter_control_configuration,
         })
     }
 }

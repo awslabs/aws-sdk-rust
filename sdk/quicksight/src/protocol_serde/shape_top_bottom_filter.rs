@@ -36,6 +36,12 @@ pub fn ser_top_bottom_filter(
     if let Some(var_8) = &input.parameter_name {
         object.key("ParameterName").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.default_filter_control_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("DefaultFilterControlConfiguration").start_object();
+        crate::protocol_serde::shape_default_filter_control_configuration::ser_default_filter_control_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -88,6 +94,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "DefaultFilterControlConfiguration" => {
+                            builder = builder.set_default_filter_control_configuration(
+                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

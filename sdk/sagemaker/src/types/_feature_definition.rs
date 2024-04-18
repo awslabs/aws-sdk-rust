@@ -8,7 +8,7 @@ pub struct FeatureDefinition {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
@@ -33,7 +33,7 @@ impl FeatureDefinition {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
@@ -82,7 +82,7 @@ impl FeatureDefinitionBuilder {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
@@ -95,7 +95,7 @@ impl FeatureDefinitionBuilder {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
@@ -107,7 +107,7 @@ impl FeatureDefinitionBuilder {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>

@@ -24,6 +24,12 @@ pub fn ser_monitoring_configuration(
         crate::protocol_serde::shape_cloud_watch_logging_configuration::ser_cloud_watch_logging_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.prometheus_monitoring_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("prometheusMonitoringConfiguration").start_object();
+        crate::protocol_serde::shape_prometheus_monitoring_configuration::ser_prometheus_monitoring_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -55,6 +61,11 @@ where
                         "cloudWatchLoggingConfiguration" => {
                             builder = builder.set_cloud_watch_logging_configuration(
                                 crate::protocol_serde::shape_cloud_watch_logging_configuration::de_cloud_watch_logging_configuration(tokens)?,
+                            );
+                        }
+                        "prometheusMonitoringConfiguration" => {
+                            builder = builder.set_prometheus_monitoring_configuration(
+                                crate::protocol_serde::shape_prometheus_monitoring_configuration::de_prometheus_monitoring_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

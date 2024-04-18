@@ -28,6 +28,8 @@ pub struct ProfileDetail {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the default value will be 3600.</p>
     pub duration_seconds: ::std::option::Option<i32>,
+    /// <p>A mapping applied to the authenticating end-entity certificate.</p>
+    pub attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>>,
 }
 impl ProfileDetail {
     /// <p>The unique identifier of the profile.</p>
@@ -82,6 +84,12 @@ impl ProfileDetail {
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
+    /// <p>A mapping applied to the authenticating end-entity certificate.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_mappings.is_none()`.
+    pub fn attribute_mappings(&self) -> &[crate::types::AttributeMapping] {
+        self.attribute_mappings.as_deref().unwrap_or_default()
+    }
 }
 impl ProfileDetail {
     /// Creates a new builder-style object to manufacture [`ProfileDetail`](crate::types::ProfileDetail).
@@ -106,6 +114,7 @@ pub struct ProfileDetailBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
+    pub(crate) attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>>,
 }
 impl ProfileDetailBuilder {
     /// <p>The unique identifier of the profile.</p>
@@ -288,6 +297,26 @@ impl ProfileDetailBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }
+    /// Appends an item to `attribute_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_attribute_mappings`](Self::set_attribute_mappings).
+    ///
+    /// <p>A mapping applied to the authenticating end-entity certificate.</p>
+    pub fn attribute_mappings(mut self, input: crate::types::AttributeMapping) -> Self {
+        let mut v = self.attribute_mappings.unwrap_or_default();
+        v.push(input);
+        self.attribute_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A mapping applied to the authenticating end-entity certificate.</p>
+    pub fn set_attribute_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>>) -> Self {
+        self.attribute_mappings = input;
+        self
+    }
+    /// <p>A mapping applied to the authenticating end-entity certificate.</p>
+    pub fn get_attribute_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>> {
+        &self.attribute_mappings
+    }
     /// Consumes the builder and constructs a [`ProfileDetail`](crate::types::ProfileDetail).
     pub fn build(self) -> crate::types::ProfileDetail {
         crate::types::ProfileDetail {
@@ -303,6 +332,7 @@ impl ProfileDetailBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             duration_seconds: self.duration_seconds,
+            attribute_mappings: self.attribute_mappings,
         }
     }
 }

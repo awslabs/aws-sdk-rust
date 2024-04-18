@@ -12,6 +12,8 @@ pub struct RemoteIpDetails {
     pub geo_location: ::std::option::Option<crate::types::GeoLocation>,
     /// <p>The IPv4 remote address of the connection.</p>
     pub ip_address_v4: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 remote address of the connection.</p>
+    pub ip_address_v6: ::std::option::Option<::std::string::String>,
     /// <p>The ISP organization information of the remote IP address.</p>
     pub organization: ::std::option::Option<crate::types::Organization>,
 }
@@ -32,6 +34,10 @@ impl RemoteIpDetails {
     pub fn ip_address_v4(&self) -> ::std::option::Option<&str> {
         self.ip_address_v4.as_deref()
     }
+    /// <p>The IPv6 remote address of the connection.</p>
+    pub fn ip_address_v6(&self) -> ::std::option::Option<&str> {
+        self.ip_address_v6.as_deref()
+    }
     /// <p>The ISP organization information of the remote IP address.</p>
     pub fn organization(&self) -> ::std::option::Option<&crate::types::Organization> {
         self.organization.as_ref()
@@ -44,6 +50,7 @@ impl ::std::fmt::Debug for RemoteIpDetails {
         formatter.field("country", &self.country);
         formatter.field("geo_location", &self.geo_location);
         formatter.field("ip_address_v4", &"*** Sensitive Data Redacted ***");
+        formatter.field("ip_address_v6", &"*** Sensitive Data Redacted ***");
         formatter.field("organization", &self.organization);
         formatter.finish()
     }
@@ -63,6 +70,7 @@ pub struct RemoteIpDetailsBuilder {
     pub(crate) country: ::std::option::Option<crate::types::Country>,
     pub(crate) geo_location: ::std::option::Option<crate::types::GeoLocation>,
     pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_v6: ::std::option::Option<::std::string::String>,
     pub(crate) organization: ::std::option::Option<crate::types::Organization>,
 }
 impl RemoteIpDetailsBuilder {
@@ -122,6 +130,20 @@ impl RemoteIpDetailsBuilder {
     pub fn get_ip_address_v4(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address_v4
     }
+    /// <p>The IPv6 remote address of the connection.</p>
+    pub fn ip_address_v6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address_v6 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IPv6 remote address of the connection.</p>
+    pub fn set_ip_address_v6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address_v6 = input;
+        self
+    }
+    /// <p>The IPv6 remote address of the connection.</p>
+    pub fn get_ip_address_v6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_v6
+    }
     /// <p>The ISP organization information of the remote IP address.</p>
     pub fn organization(mut self, input: crate::types::Organization) -> Self {
         self.organization = ::std::option::Option::Some(input);
@@ -143,6 +165,7 @@ impl RemoteIpDetailsBuilder {
             country: self.country,
             geo_location: self.geo_location,
             ip_address_v4: self.ip_address_v4,
+            ip_address_v6: self.ip_address_v6,
             organization: self.organization,
         }
     }
@@ -154,6 +177,7 @@ impl ::std::fmt::Debug for RemoteIpDetailsBuilder {
         formatter.field("country", &self.country);
         formatter.field("geo_location", &self.geo_location);
         formatter.field("ip_address_v4", &"*** Sensitive Data Redacted ***");
+        formatter.field("ip_address_v6", &"*** Sensitive Data Redacted ***");
         formatter.field("organization", &self.organization);
         formatter.finish()
     }

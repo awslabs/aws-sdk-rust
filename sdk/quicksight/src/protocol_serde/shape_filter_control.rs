@@ -45,6 +45,12 @@ pub fn ser_filter_control(
         crate::protocol_serde::shape_filter_relative_date_time_control::ser_filter_relative_date_time_control(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.cross_sheet {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("CrossSheet").start_object();
+        crate::protocol_serde::shape_filter_cross_sheet_control::ser_filter_cross_sheet_control(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -92,6 +98,11 @@ where
                         "RelativeDateTime" => {
                             builder = builder.set_relative_date_time(
                                 crate::protocol_serde::shape_filter_relative_date_time_control::de_filter_relative_date_time_control(tokens)?,
+                            );
+                        }
+                        "CrossSheet" => {
+                            builder = builder.set_cross_sheet(
+                                crate::protocol_serde::shape_filter_cross_sheet_control::de_filter_cross_sheet_control(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

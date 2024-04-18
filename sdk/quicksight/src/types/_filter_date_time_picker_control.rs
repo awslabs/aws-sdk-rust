@@ -12,12 +12,12 @@ pub struct FilterDateTimePickerControl {
     pub source_filter_id: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
-    /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
     /// <li>
-    /// <p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::SheetControlDateTimePickerType>,
 }
@@ -41,12 +41,12 @@ impl FilterDateTimePickerControl {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::DateTimePickerControlDisplayOptions> {
         self.display_options.as_ref()
     }
-    /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
     /// <li>
-    /// <p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlDateTimePickerType> {
         self.r#type.as_ref()
@@ -129,34 +129,34 @@ impl FilterDateTimePickerControlBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::DateTimePickerControlDisplayOptions> {
         &self.display_options
     }
-    /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
     /// <li>
-    /// <p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SheetControlDateTimePickerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
     /// <li>
-    /// <p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SheetControlDateTimePickerType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p></li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
     /// <li>
-    /// <p><code>DATE_RANGE</code>: The filter condition is a date time range.</p></li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SheetControlDateTimePickerType> {
         &self.r#type

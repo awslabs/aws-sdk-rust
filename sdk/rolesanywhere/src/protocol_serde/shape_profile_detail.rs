@@ -82,6 +82,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "attributeMappings" => {
+                            builder = builder.set_attribute_mappings(crate::protocol_serde::shape_attribute_mappings::de_attribute_mappings(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

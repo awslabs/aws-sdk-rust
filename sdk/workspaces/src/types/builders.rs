@@ -11,6 +11,8 @@ pub use crate::types::_stop_request::StopRequestBuilder;
 
 pub use crate::types::_start_request::StartRequestBuilder;
 
+pub use crate::types::_account_link::AccountLinkBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_rebuild_request::RebuildRequestBuilder;

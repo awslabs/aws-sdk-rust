@@ -247,6 +247,70 @@ pub use crate::types::_filter::Filter;
 
 pub use crate::types::_top_bottom_filter::TopBottomFilter;
 
+pub use crate::types::_default_filter_control_configuration::DefaultFilterControlConfiguration;
+
+pub use crate::types::_default_filter_control_options::DefaultFilterControlOptions;
+
+pub use crate::types::_default_relative_date_time_control_options::DefaultRelativeDateTimeControlOptions;
+
+pub use crate::types::_relative_date_time_control_display_options::RelativeDateTimeControlDisplayOptions;
+
+pub use crate::types::_sheet_control_info_icon_label_options::SheetControlInfoIconLabelOptions;
+
+pub use crate::types::_label_options::LabelOptions;
+
+pub use crate::types::_font_configuration::FontConfiguration;
+
+pub use crate::types::_font_style::FontStyle;
+
+pub use crate::types::_font_weight::FontWeight;
+
+pub use crate::types::_font_weight_name::FontWeightName;
+
+pub use crate::types::_font_decoration::FontDecoration;
+
+pub use crate::types::_font_size::FontSize;
+
+pub use crate::types::_relative_font_size::RelativeFontSize;
+
+pub use crate::types::_default_slider_control_options::DefaultSliderControlOptions;
+
+pub use crate::types::_sheet_control_slider_type::SheetControlSliderType;
+
+pub use crate::types::_slider_control_display_options::SliderControlDisplayOptions;
+
+pub use crate::types::_default_text_area_control_options::DefaultTextAreaControlOptions;
+
+pub use crate::types::_text_area_control_display_options::TextAreaControlDisplayOptions;
+
+pub use crate::types::_text_control_placeholder_options::TextControlPlaceholderOptions;
+
+pub use crate::types::_default_text_field_control_options::DefaultTextFieldControlOptions;
+
+pub use crate::types::_text_field_control_display_options::TextFieldControlDisplayOptions;
+
+pub use crate::types::_default_filter_drop_down_control_options::DefaultFilterDropDownControlOptions;
+
+pub use crate::types::_filter_selectable_values::FilterSelectableValues;
+
+pub use crate::types::_sheet_control_list_type::SheetControlListType;
+
+pub use crate::types::_drop_down_control_display_options::DropDownControlDisplayOptions;
+
+pub use crate::types::_list_control_select_all_options::ListControlSelectAllOptions;
+
+pub use crate::types::_default_filter_list_control_options::DefaultFilterListControlOptions;
+
+pub use crate::types::_list_control_display_options::ListControlDisplayOptions;
+
+pub use crate::types::_list_control_search_options::ListControlSearchOptions;
+
+pub use crate::types::_default_date_time_picker_control_options::DefaultDateTimePickerControlOptions;
+
+pub use crate::types::_date_time_picker_control_display_options::DateTimePickerControlDisplayOptions;
+
+pub use crate::types::_sheet_control_date_time_picker_type::SheetControlDateTimePickerType;
+
 pub use crate::types::_time_granularity::TimeGranularity;
 
 pub use crate::types::_aggregation_sort_configuration::AggregationSortConfiguration;
@@ -474,22 +538,6 @@ pub use crate::types::_radar_chart_axes_range_scale::RadarChartAxesRangeScale;
 pub use crate::types::_legend_options::LegendOptions;
 
 pub use crate::types::_legend_position::LegendPosition;
-
-pub use crate::types::_label_options::LabelOptions;
-
-pub use crate::types::_font_configuration::FontConfiguration;
-
-pub use crate::types::_font_style::FontStyle;
-
-pub use crate::types::_font_weight::FontWeight;
-
-pub use crate::types::_font_weight_name::FontWeightName;
-
-pub use crate::types::_font_decoration::FontDecoration;
-
-pub use crate::types::_font_size::FontSize;
-
-pub use crate::types::_relative_font_size::RelativeFontSize;
 
 pub use crate::types::_chart_axis_label_options::ChartAxisLabelOptions;
 
@@ -1239,53 +1287,25 @@ pub use crate::types::_table_aggregated_field_wells::TableAggregatedFieldWells;
 
 pub use crate::types::_filter_control::FilterControl;
 
-pub use crate::types::_filter_relative_date_time_control::FilterRelativeDateTimeControl;
-
-pub use crate::types::_relative_date_time_control_display_options::RelativeDateTimeControlDisplayOptions;
-
-pub use crate::types::_sheet_control_info_icon_label_options::SheetControlInfoIconLabelOptions;
-
-pub use crate::types::_filter_slider_control::FilterSliderControl;
-
-pub use crate::types::_sheet_control_slider_type::SheetControlSliderType;
-
-pub use crate::types::_slider_control_display_options::SliderControlDisplayOptions;
-
-pub use crate::types::_filter_text_area_control::FilterTextAreaControl;
-
-pub use crate::types::_text_area_control_display_options::TextAreaControlDisplayOptions;
-
-pub use crate::types::_text_control_placeholder_options::TextControlPlaceholderOptions;
-
-pub use crate::types::_filter_text_field_control::FilterTextFieldControl;
-
-pub use crate::types::_text_field_control_display_options::TextFieldControlDisplayOptions;
-
-pub use crate::types::_filter_drop_down_control::FilterDropDownControl;
+pub use crate::types::_filter_cross_sheet_control::FilterCrossSheetControl;
 
 pub use crate::types::_cascading_control_configuration::CascadingControlConfiguration;
 
 pub use crate::types::_cascading_control_source::CascadingControlSource;
 
-pub use crate::types::_filter_selectable_values::FilterSelectableValues;
+pub use crate::types::_filter_relative_date_time_control::FilterRelativeDateTimeControl;
 
-pub use crate::types::_sheet_control_list_type::SheetControlListType;
+pub use crate::types::_filter_slider_control::FilterSliderControl;
 
-pub use crate::types::_drop_down_control_display_options::DropDownControlDisplayOptions;
+pub use crate::types::_filter_text_area_control::FilterTextAreaControl;
 
-pub use crate::types::_list_control_select_all_options::ListControlSelectAllOptions;
+pub use crate::types::_filter_text_field_control::FilterTextFieldControl;
+
+pub use crate::types::_filter_drop_down_control::FilterDropDownControl;
 
 pub use crate::types::_filter_list_control::FilterListControl;
 
-pub use crate::types::_list_control_display_options::ListControlDisplayOptions;
-
-pub use crate::types::_list_control_search_options::ListControlSearchOptions;
-
 pub use crate::types::_filter_date_time_picker_control::FilterDateTimePickerControl;
-
-pub use crate::types::_sheet_control_date_time_picker_type::SheetControlDateTimePickerType;
-
-pub use crate::types::_date_time_picker_control_display_options::DateTimePickerControlDisplayOptions;
 
 pub use crate::types::_parameter_control::ParameterControl;
 
@@ -1909,6 +1929,8 @@ pub use crate::types::_dashboard::Dashboard;
 
 pub use crate::types::_dashboard_version::DashboardVersion;
 
+pub use crate::types::_asset_bundle_import_job_warning::AssetBundleImportJobWarning;
+
 pub use crate::types::_asset_bundle_import_source_description::AssetBundleImportSourceDescription;
 
 pub use crate::types::_asset_bundle_import_job_error::AssetBundleImportJobError;
@@ -2104,6 +2126,8 @@ mod _asset_bundle_import_job_theme_override_tags;
 mod _asset_bundle_import_job_vpc_connection_override_parameters;
 
 mod _asset_bundle_import_job_vpc_connection_override_tags;
+
+mod _asset_bundle_import_job_warning;
 
 mod _asset_bundle_import_source;
 
@@ -2533,6 +2557,16 @@ mod _decimal_value_when_unset_configuration;
 
 mod _default_aggregation;
 
+mod _default_date_time_picker_control_options;
+
+mod _default_filter_control_configuration;
+
+mod _default_filter_control_options;
+
+mod _default_filter_drop_down_control_options;
+
+mod _default_filter_list_control_options;
+
 mod _default_formatting;
 
 mod _default_free_form_layout_configuration;
@@ -2545,7 +2579,15 @@ mod _default_new_sheet_configuration;
 
 mod _default_paginated_layout_configuration;
 
+mod _default_relative_date_time_control_options;
+
 mod _default_section_based_layout_configuration;
+
+mod _default_slider_control_options;
+
+mod _default_text_area_control_options;
+
+mod _default_text_field_control_options;
 
 mod _destination_parameter_value_configuration;
 
@@ -2626,6 +2668,8 @@ mod _filter;
 mod _filter_class;
 
 mod _filter_control;
+
+mod _filter_cross_sheet_control;
 
 mod _filter_date_time_picker_control;
 

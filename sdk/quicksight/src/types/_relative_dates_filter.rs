@@ -44,6 +44,8 @@ pub struct RelativeDatesFilter {
     pub null_option: crate::types::FilterNullOption,
     /// <p>The configuration for the exclude period of the filter.</p>
     pub exclude_period_configuration: ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl RelativeDatesFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -107,6 +109,10 @@ impl RelativeDatesFilter {
     pub fn exclude_period_configuration(&self) -> ::std::option::Option<&crate::types::ExcludePeriodConfiguration> {
         self.exclude_period_configuration.as_ref()
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(&self) -> ::std::option::Option<&crate::types::DefaultFilterControlConfiguration> {
+        self.default_filter_control_configuration.as_ref()
+    }
 }
 impl RelativeDatesFilter {
     /// Creates a new builder-style object to manufacture [`RelativeDatesFilter`](crate::types::RelativeDatesFilter).
@@ -129,6 +135,7 @@ pub struct RelativeDatesFilterBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) null_option: ::std::option::Option<crate::types::FilterNullOption>,
     pub(crate) exclude_period_configuration: ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
+    pub(crate) default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl RelativeDatesFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -337,6 +344,20 @@ impl RelativeDatesFilterBuilder {
     pub fn get_exclude_period_configuration(&self) -> &::std::option::Option<crate::types::ExcludePeriodConfiguration> {
         &self.exclude_period_configuration
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(mut self, input: crate::types::DefaultFilterControlConfiguration) -> Self {
+        self.default_filter_control_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn set_default_filter_control_configuration(mut self, input: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>) -> Self {
+        self.default_filter_control_configuration = input;
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn get_default_filter_control_configuration(&self) -> &::std::option::Option<crate::types::DefaultFilterControlConfiguration> {
+        &self.default_filter_control_configuration
+    }
     /// Consumes the builder and constructs a [`RelativeDatesFilter`](crate::types::RelativeDatesFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::RelativeDatesFilterBuilder::filter_id)
@@ -375,6 +396,7 @@ impl RelativeDatesFilterBuilder {
                 )
             })?,
             exclude_period_configuration: self.exclude_period_configuration,
+            default_filter_control_configuration: self.default_filter_control_configuration,
         })
     }
 }

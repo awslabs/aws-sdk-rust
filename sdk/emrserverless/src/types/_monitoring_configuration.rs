@@ -10,6 +10,8 @@ pub struct MonitoringConfiguration {
     pub managed_persistence_monitoring_configuration: ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
     /// <p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>
     pub cloud_watch_logging_configuration: ::std::option::Option<crate::types::CloudWatchLoggingConfiguration>,
+    /// <p>The monitoring configuration object you can configure to send metrics to Amazon Managed Service for Prometheus for a job run.</p>
+    pub prometheus_monitoring_configuration: ::std::option::Option<crate::types::PrometheusMonitoringConfiguration>,
 }
 impl MonitoringConfiguration {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
@@ -23,6 +25,10 @@ impl MonitoringConfiguration {
     /// <p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>
     pub fn cloud_watch_logging_configuration(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingConfiguration> {
         self.cloud_watch_logging_configuration.as_ref()
+    }
+    /// <p>The monitoring configuration object you can configure to send metrics to Amazon Managed Service for Prometheus for a job run.</p>
+    pub fn prometheus_monitoring_configuration(&self) -> ::std::option::Option<&crate::types::PrometheusMonitoringConfiguration> {
+        self.prometheus_monitoring_configuration.as_ref()
     }
 }
 impl MonitoringConfiguration {
@@ -39,6 +45,7 @@ pub struct MonitoringConfigurationBuilder {
     pub(crate) s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     pub(crate) managed_persistence_monitoring_configuration: ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
     pub(crate) cloud_watch_logging_configuration: ::std::option::Option<crate::types::CloudWatchLoggingConfiguration>,
+    pub(crate) prometheus_monitoring_configuration: ::std::option::Option<crate::types::PrometheusMonitoringConfiguration>,
 }
 impl MonitoringConfigurationBuilder {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
@@ -88,12 +95,27 @@ impl MonitoringConfigurationBuilder {
     pub fn get_cloud_watch_logging_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingConfiguration> {
         &self.cloud_watch_logging_configuration
     }
+    /// <p>The monitoring configuration object you can configure to send metrics to Amazon Managed Service for Prometheus for a job run.</p>
+    pub fn prometheus_monitoring_configuration(mut self, input: crate::types::PrometheusMonitoringConfiguration) -> Self {
+        self.prometheus_monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The monitoring configuration object you can configure to send metrics to Amazon Managed Service for Prometheus for a job run.</p>
+    pub fn set_prometheus_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::PrometheusMonitoringConfiguration>) -> Self {
+        self.prometheus_monitoring_configuration = input;
+        self
+    }
+    /// <p>The monitoring configuration object you can configure to send metrics to Amazon Managed Service for Prometheus for a job run.</p>
+    pub fn get_prometheus_monitoring_configuration(&self) -> &::std::option::Option<crate::types::PrometheusMonitoringConfiguration> {
+        &self.prometheus_monitoring_configuration
+    }
     /// Consumes the builder and constructs a [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
     pub fn build(self) -> crate::types::MonitoringConfiguration {
         crate::types::MonitoringConfiguration {
             s3_monitoring_configuration: self.s3_monitoring_configuration,
             managed_persistence_monitoring_configuration: self.managed_persistence_monitoring_configuration,
             cloud_watch_logging_configuration: self.cloud_watch_logging_configuration,
+            prometheus_monitoring_configuration: self.prometheus_monitoring_configuration,
         }
     }
 }

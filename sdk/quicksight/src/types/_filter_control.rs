@@ -19,6 +19,8 @@ pub struct FilterControl {
     pub slider: ::std::option::Option<crate::types::FilterSliderControl>,
     /// <p>A control from a date filter that is used to specify the relative date.</p>
     pub relative_date_time: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
+    /// <p>A control from a filter that is scoped across more than one sheet. This represents your filter control on a sheet</p>
+    pub cross_sheet: ::std::option::Option<crate::types::FilterCrossSheetControl>,
 }
 impl FilterControl {
     /// <p>A control from a date filter that is used to specify date and time.</p>
@@ -49,6 +51,10 @@ impl FilterControl {
     pub fn relative_date_time(&self) -> ::std::option::Option<&crate::types::FilterRelativeDateTimeControl> {
         self.relative_date_time.as_ref()
     }
+    /// <p>A control from a filter that is scoped across more than one sheet. This represents your filter control on a sheet</p>
+    pub fn cross_sheet(&self) -> ::std::option::Option<&crate::types::FilterCrossSheetControl> {
+        self.cross_sheet.as_ref()
+    }
 }
 impl FilterControl {
     /// Creates a new builder-style object to manufacture [`FilterControl`](crate::types::FilterControl).
@@ -68,6 +74,7 @@ pub struct FilterControlBuilder {
     pub(crate) text_area: ::std::option::Option<crate::types::FilterTextAreaControl>,
     pub(crate) slider: ::std::option::Option<crate::types::FilterSliderControl>,
     pub(crate) relative_date_time: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
+    pub(crate) cross_sheet: ::std::option::Option<crate::types::FilterCrossSheetControl>,
 }
 impl FilterControlBuilder {
     /// <p>A control from a date filter that is used to specify date and time.</p>
@@ -168,6 +175,20 @@ impl FilterControlBuilder {
     pub fn get_relative_date_time(&self) -> &::std::option::Option<crate::types::FilterRelativeDateTimeControl> {
         &self.relative_date_time
     }
+    /// <p>A control from a filter that is scoped across more than one sheet. This represents your filter control on a sheet</p>
+    pub fn cross_sheet(mut self, input: crate::types::FilterCrossSheetControl) -> Self {
+        self.cross_sheet = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A control from a filter that is scoped across more than one sheet. This represents your filter control on a sheet</p>
+    pub fn set_cross_sheet(mut self, input: ::std::option::Option<crate::types::FilterCrossSheetControl>) -> Self {
+        self.cross_sheet = input;
+        self
+    }
+    /// <p>A control from a filter that is scoped across more than one sheet. This represents your filter control on a sheet</p>
+    pub fn get_cross_sheet(&self) -> &::std::option::Option<crate::types::FilterCrossSheetControl> {
+        &self.cross_sheet
+    }
     /// Consumes the builder and constructs a [`FilterControl`](crate::types::FilterControl).
     pub fn build(self) -> crate::types::FilterControl {
         crate::types::FilterControl {
@@ -178,6 +199,7 @@ impl FilterControlBuilder {
             text_area: self.text_area,
             slider: self.slider,
             relative_date_time: self.relative_date_time,
+            cross_sheet: self.cross_sheet,
         }
     }
 }

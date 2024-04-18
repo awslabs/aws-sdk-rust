@@ -29,6 +29,12 @@ pub fn ser_time_equality_filter(
         crate::protocol_serde::shape_rolling_date_configuration::ser_rolling_date_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.default_filter_control_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("DefaultFilterControlConfiguration").start_object();
+        crate::protocol_serde::shape_default_filter_control_configuration::ser_default_filter_control_configuration(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -80,6 +86,11 @@ where
                         "RollingDate" => {
                             builder = builder.set_rolling_date(
                                 crate::protocol_serde::shape_rolling_date_configuration::de_rolling_date_configuration(tokens)?,
+                            );
+                        }
+                        "DefaultFilterControlConfiguration" => {
+                            builder = builder.set_default_filter_control_configuration(
+                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

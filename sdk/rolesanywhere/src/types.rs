@@ -27,15 +27,27 @@ pub use crate::types::_subject_summary::SubjectSummary;
 
 pub use crate::types::_profile_detail::ProfileDetail;
 
+pub use crate::types::_attribute_mapping::AttributeMapping;
+
+pub use crate::types::_mapping_rule::MappingRule;
+
+pub use crate::types::_certificate_field::CertificateField;
+
 pub use crate::types::_crl_detail::CrlDetail;
 
 pub use crate::types::_notification_setting_key::NotificationSettingKey;
+
+mod _attribute_mapping;
+
+mod _certificate_field;
 
 mod _credential_summary;
 
 mod _crl_detail;
 
 mod _instance_property;
+
+mod _mapping_rule;
 
 mod _notification_channel;
 

@@ -42,6 +42,12 @@ pub fn ser_numeric_range_filter(
     {
         object.key("NullOption").string(input.null_option.as_str());
     }
+    if let Some(var_12) = &input.default_filter_control_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("DefaultFilterControlConfiguration").start_object();
+        crate::protocol_serde::shape_default_filter_control_configuration::ser_default_filter_control_configuration(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }
 
@@ -102,6 +108,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::FilterNullOption::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "DefaultFilterControlConfiguration" => {
+                            builder = builder.set_default_filter_control_configuration(
+                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

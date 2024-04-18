@@ -167,6 +167,8 @@ mod create_trust_anchor;
 /// ```
 pub mod customize;
 
+mod delete_attribute_mapping;
+
 mod delete_crl;
 
 mod delete_profile;
@@ -204,6 +206,8 @@ mod list_subjects;
 mod list_tags_for_resource;
 
 mod list_trust_anchors;
+
+mod put_attribute_mapping;
 
 mod put_notification_settings;
 

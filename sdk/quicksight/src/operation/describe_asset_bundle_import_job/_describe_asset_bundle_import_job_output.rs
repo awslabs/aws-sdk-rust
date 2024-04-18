@@ -46,6 +46,8 @@ pub struct DescribeAssetBundleImportJobOutput {
     pub override_tags: ::std::option::Option<crate::types::AssetBundleImportJobOverrideTags>,
     /// <p>An optional validation strategy override for all analyses and dashboards to be applied to the resource configuration before import.</p>
     pub override_validation_strategy: ::std::option::Option<crate::types::AssetBundleImportJobOverrideValidationStrategy>,
+    /// <p>An array of warning records that describe all permitted errors that are encountered during the import job.</p>
+    pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobWarning>>,
     _request_id: Option<String>,
 }
 impl DescribeAssetBundleImportJobOutput {
@@ -126,6 +128,12 @@ impl DescribeAssetBundleImportJobOutput {
     pub fn override_validation_strategy(&self) -> ::std::option::Option<&crate::types::AssetBundleImportJobOverrideValidationStrategy> {
         self.override_validation_strategy.as_ref()
     }
+    /// <p>An array of warning records that describe all permitted errors that are encountered during the import job.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[crate::types::AssetBundleImportJobWarning] {
+        self.warnings.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeAssetBundleImportJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -158,6 +166,7 @@ pub struct DescribeAssetBundleImportJobOutputBuilder {
     pub(crate) override_permissions: ::std::option::Option<crate::types::AssetBundleImportJobOverridePermissions>,
     pub(crate) override_tags: ::std::option::Option<crate::types::AssetBundleImportJobOverrideTags>,
     pub(crate) override_validation_strategy: ::std::option::Option<crate::types::AssetBundleImportJobOverrideValidationStrategy>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobWarning>>,
     _request_id: Option<String>,
 }
 impl DescribeAssetBundleImportJobOutputBuilder {
@@ -425,6 +434,26 @@ impl DescribeAssetBundleImportJobOutputBuilder {
     pub fn get_override_validation_strategy(&self) -> &::std::option::Option<crate::types::AssetBundleImportJobOverrideValidationStrategy> {
         &self.override_validation_strategy
     }
+    /// Appends an item to `warnings`.
+    ///
+    /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+    ///
+    /// <p>An array of warning records that describe all permitted errors that are encountered during the import job.</p>
+    pub fn warnings(mut self, input: crate::types::AssetBundleImportJobWarning) -> Self {
+        let mut v = self.warnings.unwrap_or_default();
+        v.push(input);
+        self.warnings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of warning records that describe all permitted errors that are encountered during the import job.</p>
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobWarning>>) -> Self {
+        self.warnings = input;
+        self
+    }
+    /// <p>An array of warning records that describe all permitted errors that are encountered during the import job.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobWarning>> {
+        &self.warnings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -452,6 +481,7 @@ impl DescribeAssetBundleImportJobOutputBuilder {
             override_permissions: self.override_permissions,
             override_tags: self.override_tags,
             override_validation_strategy: self.override_validation_strategy,
+            warnings: self.warnings,
             _request_id: self._request_id,
         }
     }

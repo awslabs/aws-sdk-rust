@@ -11,6 +11,8 @@ pub struct CategoryFilter {
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
     pub configuration: ::std::option::Option<crate::types::CategoryFilterConfiguration>,
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl CategoryFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -25,6 +27,10 @@ impl CategoryFilter {
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::CategoryFilterConfiguration> {
         self.configuration.as_ref()
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(&self) -> ::std::option::Option<&crate::types::DefaultFilterControlConfiguration> {
+        self.default_filter_control_configuration.as_ref()
     }
 }
 impl CategoryFilter {
@@ -41,6 +47,7 @@ pub struct CategoryFilterBuilder {
     pub(crate) filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) configuration: ::std::option::Option<crate::types::CategoryFilterConfiguration>,
+    pub(crate) default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl CategoryFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -88,6 +95,20 @@ impl CategoryFilterBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CategoryFilterConfiguration> {
         &self.configuration
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(mut self, input: crate::types::DefaultFilterControlConfiguration) -> Self {
+        self.default_filter_control_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn set_default_filter_control_configuration(mut self, input: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>) -> Self {
+        self.default_filter_control_configuration = input;
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn get_default_filter_control_configuration(&self) -> &::std::option::Option<crate::types::DefaultFilterControlConfiguration> {
+        &self.default_filter_control_configuration
+    }
     /// Consumes the builder and constructs a [`CategoryFilter`](crate::types::CategoryFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::CategoryFilterBuilder::filter_id)
@@ -101,6 +122,7 @@ impl CategoryFilterBuilder {
             })?,
             column: self.column,
             configuration: self.configuration,
+            default_filter_control_configuration: self.default_filter_control_configuration,
         })
     }
 }

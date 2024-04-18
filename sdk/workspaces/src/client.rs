@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociateConnectionAlias`](crate::operation::associate_connection_alias) operation has
-/// a [`Client::associate_connection_alias`], function which returns a builder for that operation.
+/// For example, the [`AcceptAccountLinkInvitation`](crate::operation::accept_account_link_invitation) operation has
+/// a [`Client::accept_account_link_invitation`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_connection_alias()
-///     .alias_id("example")
+/// let result = client.accept_account_link_invitation()
+///     .link_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod accept_account_link_invitation;
+
 mod associate_connection_alias;
 
 mod associate_ip_groups;
@@ -145,6 +147,8 @@ mod associate_workspace_application;
 mod authorize_ip_rules;
 
 mod copy_workspace_image;
+
+mod create_account_link_invitation;
 
 mod create_connect_client_add_in;
 
@@ -175,7 +179,7 @@ mod create_workspaces;
 /// # let client: aws_sdk_workspaces::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.associate_connection_alias()
+/// let result = client.accept_account_link_invitation()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -190,6 +194,8 @@ mod create_workspaces;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_account_link_invitation;
 
 mod delete_client_branding;
 
@@ -257,9 +263,13 @@ mod disassociate_ip_groups;
 
 mod disassociate_workspace_application;
 
+mod get_account_link;
+
 mod import_client_branding;
 
 mod import_workspace_image;
+
+mod list_account_links;
 
 mod list_available_management_cidr_ranges;
 
@@ -288,6 +298,8 @@ mod reboot_workspaces;
 mod rebuild_workspaces;
 
 mod register_workspace_directory;
+
+mod reject_account_link_invitation;
 
 mod restore_workspace;
 

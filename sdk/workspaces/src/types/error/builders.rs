@@ -15,6 +15,12 @@ pub use crate::types::error::_invalid_resource_state_exception::InvalidResourceS
 
 pub use crate::types::error::_resource_associated_exception::ResourceAssociatedExceptionBuilder;
 
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
+pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_workspaces_default_role_not_found_exception::WorkspacesDefaultRoleNotFoundExceptionBuilder;
 
 pub use crate::types::error::_unsupported_network_configuration_exception::UnsupportedNetworkConfigurationExceptionBuilder;

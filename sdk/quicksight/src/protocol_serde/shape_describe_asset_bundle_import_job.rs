@@ -197,6 +197,11 @@ pub(crate) fn de_describe_asset_bundle_import_job(
                         crate::protocol_serde::shape_asset_bundle_import_job_error_list::de_asset_bundle_import_job_error_list(tokens)?,
                     );
                 }
+                "Warnings" => {
+                    builder = builder.set_warnings(
+                        crate::protocol_serde::shape_asset_bundle_import_job_warning_list::de_asset_bundle_import_job_warning_list(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

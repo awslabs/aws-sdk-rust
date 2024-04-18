@@ -267,6 +267,8 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
@@ -291,6 +293,8 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
@@ -301,6 +305,8 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
     /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
     /// <li>
     /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
@@ -310,6 +316,8 @@ impl CreateFilterFluentBuilder {
     /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.protocol</p></li>
     /// <li>
@@ -468,6 +476,8 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
@@ -492,6 +502,8 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
@@ -502,6 +514,8 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
     /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
     /// <li>
     /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
@@ -511,6 +525,8 @@ impl CreateFilterFluentBuilder {
     /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.protocol</p></li>
     /// <li>
@@ -669,6 +685,8 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
+    /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p></li>
     /// <li>
     /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p></li>
@@ -693,6 +711,8 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
+    /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p></li>
@@ -703,6 +723,8 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4</p></li>
     /// <li>
+    /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6</p></li>
+    /// <li>
     /// <p>service.action.kubernetesApiCallAction.namespace</p></li>
     /// <li>
     /// <p>service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn</p></li>
@@ -712,6 +734,8 @@ impl CreateFilterFluentBuilder {
     /// <p>service.action.kubernetesApiCallAction.statusCode</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p></li>
+    /// <li>
+    /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV6</p></li>
     /// <li>
     /// <p>service.action.networkConnectionAction.protocol</p></li>
     /// <li>

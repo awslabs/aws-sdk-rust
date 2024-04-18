@@ -30,6 +30,8 @@ pub struct TimeRangeFilter {
     pub exclude_period_configuration: ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl TimeRangeFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -77,6 +79,10 @@ impl TimeRangeFilter {
     pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
         self.time_granularity.as_ref()
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(&self) -> ::std::option::Option<&crate::types::DefaultFilterControlConfiguration> {
+        self.default_filter_control_configuration.as_ref()
+    }
 }
 impl TimeRangeFilter {
     /// Creates a new builder-style object to manufacture [`TimeRangeFilter`](crate::types::TimeRangeFilter).
@@ -98,6 +104,7 @@ pub struct TimeRangeFilterBuilder {
     pub(crate) null_option: ::std::option::Option<crate::types::FilterNullOption>,
     pub(crate) exclude_period_configuration: ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
     pub(crate) time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
+    pub(crate) default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl TimeRangeFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -253,6 +260,20 @@ impl TimeRangeFilterBuilder {
     pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
         &self.time_granularity
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(mut self, input: crate::types::DefaultFilterControlConfiguration) -> Self {
+        self.default_filter_control_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn set_default_filter_control_configuration(mut self, input: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>) -> Self {
+        self.default_filter_control_configuration = input;
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn get_default_filter_control_configuration(&self) -> &::std::option::Option<crate::types::DefaultFilterControlConfiguration> {
+        &self.default_filter_control_configuration
+    }
     /// Consumes the builder and constructs a [`TimeRangeFilter`](crate::types::TimeRangeFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::TimeRangeFilterBuilder::filter_id)
@@ -278,6 +299,7 @@ impl TimeRangeFilterBuilder {
             })?,
             exclude_period_configuration: self.exclude_period_configuration,
             time_granularity: self.time_granularity,
+            default_filter_control_configuration: self.default_filter_control_configuration,
         })
     }
 }
