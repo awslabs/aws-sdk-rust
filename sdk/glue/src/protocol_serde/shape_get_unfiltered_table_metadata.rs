@@ -233,6 +233,13 @@ pub(crate) fn de_get_unfiltered_table_metadata(
                 "Permissions" => {
                     builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);
                 }
+                "RowFilter" => {
+                    builder = builder.set_row_filter(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

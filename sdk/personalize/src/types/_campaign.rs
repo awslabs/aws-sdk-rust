@@ -8,7 +8,7 @@ pub struct Campaign {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub campaign_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub min_provisioned_tps: ::std::option::Option<i32>,
@@ -41,7 +41,7 @@ impl Campaign {
     pub fn campaign_arn(&self) -> ::std::option::Option<&str> {
         self.campaign_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
     pub fn solution_version_arn(&self) -> ::std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
@@ -132,17 +132,17 @@ impl CampaignBuilder {
     pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.campaign_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
     pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
     pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.solution_version_arn
     }

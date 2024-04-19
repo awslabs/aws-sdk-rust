@@ -958,9 +958,9 @@ model_hash = '1c9b741bc3e334b115433f12c61354859f1aaa6edbe099468935557582f524af'
 
 [crates.aws-sdk-glue]
 category = 'AwsSdk'
-version = '1.25.0'
-source_hash = '183fdc794daa30c3634240228b5fa0d051b22b2463075ccde98115953fd6583b'
-model_hash = 'c341b29fd2163e84d5b09d7bcd1af300eb8adc152a6f6e73ffb187c268e4d886'
+version = '1.26.0'
+source_hash = '7826abc5de9a3e411ba3e6d7ec4228a3cd11ef03d1e0c6afadf958adbd008c5c'
+model_hash = '91face96f37f916113fd7a18d8e1e833447642dbe8fe0c7d2a41f0e02650a484'
 
 [crates.aws-sdk-grafana]
 category = 'AwsSdk'
@@ -1048,9 +1048,9 @@ model_hash = '2caa013a9be3248e6f9d486f9c939588dbd041fb54938465981cded9a212bb24'
 
 [crates.aws-sdk-internetmonitor]
 category = 'AwsSdk'
-version = '1.22.0'
-source_hash = '9bc99a575a1b1df9219b1f0b7520e1d9b43c4471a49ed98c3bfdbe25e11ea8cd'
-model_hash = 'e7c42b2509282d55ff77f527d15b2b18754f69587ea699f5364e69be15e52e62'
+version = '1.23.0'
+source_hash = 'bcc80ae7d4cff012fcce42c370547eefdd8ef9f823a5cd89924bf33c7bb9ff98'
+model_hash = '91bb7b586fd8cb6e550c5a2bb0a4ac7649a33c350624d2803e4bad752cd27a51'
 
 [crates.aws-sdk-iot]
 category = 'AwsSdk'
@@ -1654,9 +1654,9 @@ model_hash = 'dcd33f1b50d80dc3d4502f1f156b4d6d74444f011da309c399ea95b0e99f6e47'
 
 [crates.aws-sdk-personalize]
 category = 'AwsSdk'
-version = '1.20.0'
-source_hash = 'f19001142f60b7a4ecad59f87d36378853f9cc1c2a94ceeab61dbcfe8a064b4a'
-model_hash = 'a84c325f0892c5c4c1465bd42dd6375ffe7471c41c9c11f166fb91a580b2a6f2'
+version = '1.21.0'
+source_hash = '6db0de29c9a190374700dd25171bf4202142dce9d9d57da90d77f2b0e1fee7ef'
+model_hash = 'b1fe258d66542ec952a777799d53c9c6289b9391a23eebf1c18f8c389afb406a'
 
 [crates.aws-sdk-personalizeevents]
 category = 'AwsSdk'
@@ -2453,15 +2453,7 @@ source_hash = '30050d39ed8dcd2e445b0ff09151be716f55af87851b2f453fc32de2d49c33de'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6ccfcf7d20b971f5c972c6629ceb0dfce361961690ec588ab466eff6bf8ca9be'
-
-[release]
-tag = 'release-2024-04-18'
-
 [release.crates]
-aws-sdk-drs = '1.23.0'
-aws-sdk-emrserverless = '1.22.0'
-aws-sdk-guardduty = '1.24.0'
-aws-sdk-quicksight = '1.25.0'
-aws-sdk-rolesanywhere = '1.23.0'
-aws-sdk-sagemaker = '1.34.0'
-aws-sdk-workspaces = '1.21.0'
+aws-sdk-glue = '1.26.0'
+aws-sdk-internetmonitor = '1.23.0'
+aws-sdk-personalize = '1.21.0'

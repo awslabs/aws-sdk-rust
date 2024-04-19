@@ -24,6 +24,7 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataOutput::resource_arn): <p>The resource ARN of the parent resource extracted from the request.</p>
     ///   - [`is_protected(bool)`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataOutput::is_protected): <p>A flag that instructs the engine not to push user-provided operations into the logical plan of the view during query planning. However, if set this flag does not guarantee that the engine will comply. Refer to the engine's documentation to understand the guarantees provided, if any.</p>
     ///   - [`permissions(Option<Vec::<Permission>>)`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataOutput::permissions): <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
+    ///   - [`row_filter(Option<String>)`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataOutput::row_filter): <p>The filter that applies to the table. For example when applying the filter in SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using an <code>AND</code> operator with any other predicates applied by the user querying the table.</p>
     /// - On failure, responds with [`SdkError<GetUnfilteredTableMetadataError>`](crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataError)
     pub fn get_unfiltered_table_metadata(
         &self,

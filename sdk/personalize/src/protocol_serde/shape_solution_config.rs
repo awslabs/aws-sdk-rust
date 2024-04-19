@@ -50,6 +50,12 @@ pub fn ser_solution_config(
         crate::protocol_serde::shape_training_data_config::ser_training_data_config(&mut object_17, var_16)?;
         object_17.finish();
     }
+    if let Some(var_18) = &input.auto_training_config {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("autoTrainingConfig").start_object();
+        crate::protocol_serde::shape_auto_training_config::ser_auto_training_config(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }
 
@@ -97,6 +103,10 @@ where
                         "trainingDataConfig" => {
                             builder =
                                 builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?);
+                        }
+                        "autoTrainingConfig" => {
+                            builder =
+                                builder.set_auto_training_config(crate::protocol_serde::shape_auto_training_config::de_auto_training_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

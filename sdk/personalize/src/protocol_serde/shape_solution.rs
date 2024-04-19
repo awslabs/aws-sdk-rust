@@ -34,6 +34,9 @@ where
                         "performAutoML" => {
                             builder = builder.set_perform_auto_ml(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "performAutoTraining" => {
+                            builder = builder.set_perform_auto_training(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "recipeArn" => {
                             builder = builder.set_recipe_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

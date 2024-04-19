@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImpactedLocation {
-    /// <p>The name of the network at an impacted location.</p>
+    /// <p>The name of the internet service provider (ISP) or network (ASN).</p>
     pub as_name: ::std::string::String,
     /// <p>The Autonomous System Number (ASN) of the network at an impacted location.</p>
     pub as_number: i64,
@@ -38,7 +38,7 @@ pub struct ImpactedLocation {
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImpactedLocation {
-    /// <p>The name of the network at an impacted location.</p>
+    /// <p>The name of the internet service provider (ISP) or network (ASN).</p>
     pub fn as_name(&self) -> &str {
         use std::ops::Deref;
         self.as_name.deref()
@@ -132,18 +132,18 @@ pub struct ImpactedLocationBuilder {
     pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImpactedLocationBuilder {
-    /// <p>The name of the network at an impacted location.</p>
+    /// <p>The name of the internet service provider (ISP) or network (ASN).</p>
     /// This field is required.
     pub fn as_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.as_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the network at an impacted location.</p>
+    /// <p>The name of the internet service provider (ISP) or network (ASN).</p>
     pub fn set_as_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.as_name = input;
         self
     }
-    /// <p>The name of the network at an impacted location.</p>
+    /// <p>The name of the internet service provider (ISP) or network (ASN).</p>
     pub fn get_as_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.as_name
     }

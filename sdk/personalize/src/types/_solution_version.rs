@@ -24,9 +24,7 @@ pub struct SolutionVersion {
     pub solution_config: ::std::option::Option<crate::types::SolutionConfig>,
     /// <p>The time used to train the model. You are billed for the time it takes to train a model. This field is visible only after Amazon Personalize successfully trains a model.</p>
     pub training_hours: ::std::option::Option<f64>,
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
-    /// </important>
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
     pub training_mode: ::std::option::Option<crate::types::TrainingMode>,
     /// <p>If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.</p>
     pub tuned_hpo_params: ::std::option::Option<crate::types::TunedHpoParams>,
@@ -53,6 +51,8 @@ pub struct SolutionVersion {
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution was last updated.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub training_type: ::std::option::Option<crate::types::TrainingType>,
 }
 impl SolutionVersion {
     /// <p>The name of the solution version.</p>
@@ -95,9 +95,7 @@ impl SolutionVersion {
     pub fn training_hours(&self) -> ::std::option::Option<f64> {
         self.training_hours
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
-    /// </important>
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
     pub fn training_mode(&self) -> ::std::option::Option<&crate::types::TrainingMode> {
         self.training_mode.as_ref()
     }
@@ -136,6 +134,10 @@ impl SolutionVersion {
     pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub fn training_type(&self) -> ::std::option::Option<&crate::types::TrainingType> {
+        self.training_type.as_ref()
+    }
 }
 impl SolutionVersion {
     /// Creates a new builder-style object to manufacture [`SolutionVersion`](crate::types::SolutionVersion).
@@ -164,6 +166,7 @@ pub struct SolutionVersionBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) training_type: ::std::option::Option<crate::types::TrainingType>,
 }
 impl SolutionVersionBuilder {
     /// <p>The name of the solution version.</p>
@@ -306,23 +309,17 @@ impl SolutionVersionBuilder {
     pub fn get_training_hours(&self) -> &::std::option::Option<f64> {
         &self.training_hours
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
-    /// </important>
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
     pub fn training_mode(mut self, input: crate::types::TrainingMode) -> Self {
         self.training_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
-    /// </important>
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
     pub fn set_training_mode(mut self, input: ::std::option::Option<crate::types::TrainingMode>) -> Self {
         self.training_mode = input;
         self
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p><important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
-    /// </important>
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
     pub fn get_training_mode(&self) -> &::std::option::Option<crate::types::TrainingMode> {
         &self.training_mode
     }
@@ -441,6 +438,20 @@ impl SolutionVersionBuilder {
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub fn training_type(mut self, input: crate::types::TrainingType) -> Self {
+        self.training_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub fn set_training_type(mut self, input: ::std::option::Option<crate::types::TrainingType>) -> Self {
+        self.training_type = input;
+        self
+    }
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub fn get_training_type(&self) -> &::std::option::Option<crate::types::TrainingType> {
+        &self.training_type
+    }
     /// Consumes the builder and constructs a [`SolutionVersion`](crate::types::SolutionVersion).
     pub fn build(self) -> crate::types::SolutionVersion {
         crate::types::SolutionVersion {
@@ -460,6 +471,7 @@ impl SolutionVersionBuilder {
             failure_reason: self.failure_reason,
             creation_date_time: self.creation_date_time,
             last_updated_date_time: self.last_updated_date_time,
+            training_type: self.training_type,
         }
     }
 }

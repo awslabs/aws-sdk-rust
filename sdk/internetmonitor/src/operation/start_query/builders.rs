@@ -213,17 +213,17 @@ impl StartQueryFluentBuilder {
     pub fn get_filter_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterParameter>> {
         self.inner.get_filter_parameters()
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn linked_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.linked_account_id(input.into());
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn set_linked_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_linked_account_id(input);
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn get_linked_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_linked_account_id()
     }

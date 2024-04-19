@@ -5,7 +5,9 @@
 pub struct CreateCampaignInput {
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub min_provisioned_tps: ::std::option::Option<i32>,
@@ -19,7 +21,9 @@ impl CreateCampaignInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub fn solution_version_arn(&self) -> ::std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
@@ -71,18 +75,24 @@ impl CreateCampaignInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     /// This field is required.
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.solution_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.solution_version_arn
     }

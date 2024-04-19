@@ -15,6 +15,10 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_solution_version_summary::SolutionVersionSummary;
 
+pub use crate::types::_training_type::TrainingType;
+
+pub use crate::types::_training_mode::TrainingMode;
+
 pub use crate::types::_solution_summary::SolutionSummary;
 
 pub use crate::types::_dataset_schema_summary::DatasetSchemaSummary;
@@ -55,9 +59,9 @@ pub use crate::types::_solution_version::SolutionVersion;
 
 pub use crate::types::_tuned_hpo_params::TunedHpoParams;
 
-pub use crate::types::_training_mode::TrainingMode;
-
 pub use crate::types::_solution_config::SolutionConfig;
+
+pub use crate::types::_auto_training_config::AutoTrainingConfig;
 
 pub use crate::types::_optimization_objective::OptimizationObjective;
 
@@ -156,6 +160,8 @@ mod _algorithm_image;
 mod _auto_ml_config;
 
 mod _auto_ml_result;
+
+mod _auto_training_config;
 
 mod _batch_inference_job;
 
@@ -296,6 +302,8 @@ mod _theme_generation_config;
 mod _training_data_config;
 
 mod _training_mode;
+
+mod _training_type;
 
 mod _tuned_hpo_params;
 

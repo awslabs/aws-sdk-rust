@@ -22,7 +22,14 @@ impl UpdateCampaignInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCampaign`.
 ///
-/// <p>Updates a campaign to deploy a retrained solution version with an existing campaign, change your campaign's <code>minProvisionedTPS</code>, or modify your campaign's configuration, such as the exploration configuration.</p>
+/// <p>Updates a campaign to deploy a retrained solution version with an existing campaign, change your campaign's <code>minProvisionedTPS</code>, or modify your campaign's configuration. For example, you can set <code>enableMetadataWithRecommendations</code> to true for an existing campaign.</p>
+/// <p>To update a campaign to start automatically using the latest solution version, specify the following:</p>
+/// <ul>
+/// <li>
+/// <p>For the <code>SolutionVersionArn</code> parameter, specify the Amazon Resource Name (ARN) of your solution in <code>SolutionArn/$LATEST</code> format.</p></li>
+/// <li>
+/// <p>In the <code>campaignConfig</code>, set <code>syncWithLatestSolutionVersion</code> to <code>true</code>.</p></li>
+/// </ul>
 /// <p>To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the campaign status using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> operation.</p><note>
 /// <p>You can still get recommendations from a campaign while an update is in progress. The campaign will use the previous solution version and campaign configuration to generate recommendations until the latest campaign update status is <code>Active</code>.</p>
 /// </note>
@@ -126,17 +133,23 @@ impl UpdateCampaignFluentBuilder {
     pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_campaign_arn()
     }
-    /// <p>The ARN of a new solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());
         self
     }
-    /// <p>The ARN of a new solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }
-    /// <p>The ARN of a new solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_solution_version_arn()
     }

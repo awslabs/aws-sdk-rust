@@ -18,6 +18,8 @@ pub struct SolutionConfig {
     pub optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
     /// <p>Specifies the training data configuration to use when creating a custom solution version (trained model).</p>
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
+    /// <p>Specifies the automatic training configuration to use.</p>
+    pub auto_training_config: ::std::option::Option<crate::types::AutoTrainingConfig>,
 }
 impl SolutionConfig {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
@@ -50,6 +52,10 @@ impl SolutionConfig {
     pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
         self.training_data_config.as_ref()
     }
+    /// <p>Specifies the automatic training configuration to use.</p>
+    pub fn auto_training_config(&self) -> ::std::option::Option<&crate::types::AutoTrainingConfig> {
+        self.auto_training_config.as_ref()
+    }
 }
 impl SolutionConfig {
     /// Creates a new builder-style object to manufacture [`SolutionConfig`](crate::types::SolutionConfig).
@@ -69,6 +75,7 @@ pub struct SolutionConfigBuilder {
     pub(crate) auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
     pub(crate) optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
     pub(crate) training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
+    pub(crate) auto_training_config: ::std::option::Option<crate::types::AutoTrainingConfig>,
 }
 impl SolutionConfigBuilder {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
@@ -199,6 +206,20 @@ impl SolutionConfigBuilder {
     pub fn get_training_data_config(&self) -> &::std::option::Option<crate::types::TrainingDataConfig> {
         &self.training_data_config
     }
+    /// <p>Specifies the automatic training configuration to use.</p>
+    pub fn auto_training_config(mut self, input: crate::types::AutoTrainingConfig) -> Self {
+        self.auto_training_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the automatic training configuration to use.</p>
+    pub fn set_auto_training_config(mut self, input: ::std::option::Option<crate::types::AutoTrainingConfig>) -> Self {
+        self.auto_training_config = input;
+        self
+    }
+    /// <p>Specifies the automatic training configuration to use.</p>
+    pub fn get_auto_training_config(&self) -> &::std::option::Option<crate::types::AutoTrainingConfig> {
+        &self.auto_training_config
+    }
     /// Consumes the builder and constructs a [`SolutionConfig`](crate::types::SolutionConfig).
     pub fn build(self) -> crate::types::SolutionConfig {
         crate::types::SolutionConfig {
@@ -209,6 +230,7 @@ impl SolutionConfigBuilder {
             auto_ml_config: self.auto_ml_config,
             optimization_objective: self.optimization_objective,
             training_data_config: self.training_data_config,
+            auto_training_config: self.auto_training_config,
         }
     }
 }

@@ -28,3 +28,7 @@ pub use crate::types::_network_impairment::NetworkImpairmentBuilder;
 pub use crate::types::_network::NetworkBuilder;
 
 pub use crate::types::_health_event::HealthEventBuilder;
+
+pub use crate::types::_client_location::ClientLocationBuilder;
+
+pub use crate::types::_internet_event_summary::InternetEventSummaryBuilder;

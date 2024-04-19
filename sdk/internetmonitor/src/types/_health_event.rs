@@ -18,7 +18,7 @@ pub struct HealthEvent {
     pub last_updated_at: ::aws_smithy_types::DateTime,
     /// <p>The locations impacted by the health event.</p>
     pub impacted_locations: ::std::vec::Vec<crate::types::ImpactedLocation>,
-    /// <p>Health event list member.</p>
+    /// <p>The status of a health event.</p>
     pub status: crate::types::HealthEventStatus,
     /// <p>The impact on total traffic that a health event has, in increased latency or reduced availability. This is the percentage of how much latency has increased or availability has decreased during the event, compared to what is typical for traffic from this client location to the Amazon Web Services location using this client network.</p>
     pub percent_of_total_traffic_impacted: ::std::option::Option<f64>,
@@ -59,7 +59,7 @@ impl HealthEvent {
         use std::ops::Deref;
         self.impacted_locations.deref()
     }
-    /// <p>Health event list member.</p>
+    /// <p>The status of a health event.</p>
     pub fn status(&self) -> &crate::types::HealthEventStatus {
         &self.status
     }
@@ -208,18 +208,18 @@ impl HealthEventBuilder {
     pub fn get_impacted_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>> {
         &self.impacted_locations
     }
-    /// <p>Health event list member.</p>
+    /// <p>The status of a health event.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::HealthEventStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Health event list member.</p>
+    /// <p>The status of a health event.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::HealthEventStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Health event list member.</p>
+    /// <p>The status of a health event.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::HealthEventStatus> {
         &self.status
     }

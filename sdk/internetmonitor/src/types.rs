@@ -49,7 +49,17 @@ pub use crate::types::_network::Network;
 
 pub use crate::types::_health_event::HealthEvent;
 
+pub use crate::types::_internet_event_status::InternetEventStatus;
+
+pub use crate::types::_internet_event_type::InternetEventType;
+
+pub use crate::types::_client_location::ClientLocation;
+
+pub use crate::types::_internet_event_summary::InternetEventSummary;
+
 mod _availability_measurement;
+
+mod _client_location;
 
 mod _filter_parameter;
 
@@ -62,6 +72,12 @@ mod _health_event_status;
 mod _health_events_config;
 
 mod _impacted_location;
+
+mod _internet_event_status;
+
+mod _internet_event_summary;
+
+mod _internet_event_type;
 
 mod _internet_health;
 

@@ -38,6 +38,33 @@ pub(crate) fn get_health_event_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_internet_event_output_output_correct_errors(
+    mut builder: crate::operation::get_internet_event::builders::GetInternetEventOutputBuilder,
+) -> crate::operation::get_internet_event::builders::GetInternetEventOutputBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    if builder.event_arn.is_none() {
+        builder.event_arn = Some(Default::default())
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.client_location.is_none() {
+        builder.client_location = {
+            let builder = crate::types::builders::ClientLocationBuilder::default();
+            crate::serde_util::client_location_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.event_type.is_none() {
+        builder.event_type = "no value was set".parse::<crate::types::InternetEventType>().ok()
+    }
+    if builder.event_status.is_none() {
+        builder.event_status = "no value was set".parse::<crate::types::InternetEventStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_monitor_output_output_correct_errors(
     mut builder: crate::operation::get_monitor::builders::GetMonitorOutputBuilder,
 ) -> crate::operation::get_monitor::builders::GetMonitorOutputBuilder {
@@ -92,6 +119,15 @@ pub(crate) fn list_health_events_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_internet_events_output_output_correct_errors(
+    mut builder: crate::operation::list_internet_events::builders::ListInternetEventsOutputBuilder,
+) -> crate::operation::list_internet_events::builders::ListInternetEventsOutputBuilder {
+    if builder.internet_events.is_none() {
+        builder.internet_events = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_monitors_output_output_correct_errors(
     mut builder: crate::operation::list_monitors::builders::ListMonitorsOutputBuilder,
 ) -> crate::operation::list_monitors::builders::ListMonitorsOutputBuilder {
@@ -118,6 +154,30 @@ pub(crate) fn update_monitor_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::MonitorConfigState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn client_location_correct_errors(
+    mut builder: crate::types::builders::ClientLocationBuilder,
+) -> crate::types::builders::ClientLocationBuilder {
+    if builder.as_name.is_none() {
+        builder.as_name = Some(Default::default())
+    }
+    if builder.as_number.is_none() {
+        builder.as_number = Some(Default::default())
+    }
+    if builder.country.is_none() {
+        builder.country = Some(Default::default())
+    }
+    if builder.city.is_none() {
+        builder.city = Some(Default::default())
+    }
+    if builder.latitude.is_none() {
+        builder.latitude = Some(Default::default())
+    }
+    if builder.longitude.is_none() {
+        builder.longitude = Some(Default::default())
     }
     builder
 }
@@ -161,6 +221,33 @@ pub(crate) fn impacted_location_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::HealthEventStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn internet_event_summary_correct_errors(
+    mut builder: crate::types::builders::InternetEventSummaryBuilder,
+) -> crate::types::builders::InternetEventSummaryBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    if builder.event_arn.is_none() {
+        builder.event_arn = Some(Default::default())
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.client_location.is_none() {
+        builder.client_location = {
+            let builder = crate::types::builders::ClientLocationBuilder::default();
+            crate::serde_util::client_location_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.event_type.is_none() {
+        builder.event_type = "no value was set".parse::<crate::types::InternetEventType>().ok()
+    }
+    if builder.event_status.is_none() {
+        builder.event_status = "no value was set".parse::<crate::types::InternetEventStatus>().ok()
     }
     builder
 }

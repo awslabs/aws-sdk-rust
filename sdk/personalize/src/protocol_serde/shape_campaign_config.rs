@@ -16,6 +16,9 @@ pub fn ser_campaign_config(
     if let Some(var_5) = &input.enable_metadata_with_recommendations {
         object.key("enableMetadataWithRecommendations").boolean(*var_5);
     }
+    if let Some(var_6) = &input.sync_with_latest_solution_version {
+        object.key("syncWithLatestSolutionVersion").boolean(*var_6);
+    }
     Ok(())
 }
 
@@ -41,6 +44,10 @@ where
                         "enableMetadataWithRecommendations" => {
                             builder = builder
                                 .set_enable_metadata_with_recommendations(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "syncWithLatestSolutionVersion" => {
+                            builder = builder
+                                .set_sync_with_latest_solution_version(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

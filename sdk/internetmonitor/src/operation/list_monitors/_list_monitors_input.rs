@@ -10,7 +10,7 @@ pub struct ListMonitorsInput {
     /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
     /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
     pub monitor_status: ::std::option::Option<::std::string::String>,
-    /// <p>TBD</p>
+    /// <p>A boolean option that you can set to <code>TRUE</code> to include monitors for linked accounts in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub include_linked_accounts: ::std::option::Option<bool>,
 }
 impl ListMonitorsInput {
@@ -27,7 +27,7 @@ impl ListMonitorsInput {
     pub fn monitor_status(&self) -> ::std::option::Option<&str> {
         self.monitor_status.as_deref()
     }
-    /// <p>TBD</p>
+    /// <p>A boolean option that you can set to <code>TRUE</code> to include monitors for linked accounts in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn include_linked_accounts(&self) -> ::std::option::Option<bool> {
         self.include_linked_accounts
     }
@@ -94,17 +94,17 @@ impl ListMonitorsInputBuilder {
     pub fn get_monitor_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_status
     }
-    /// <p>TBD</p>
+    /// <p>A boolean option that you can set to <code>TRUE</code> to include monitors for linked accounts in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn include_linked_accounts(mut self, input: bool) -> Self {
         self.include_linked_accounts = ::std::option::Option::Some(input);
         self
     }
-    /// <p>TBD</p>
+    /// <p>A boolean option that you can set to <code>TRUE</code> to include monitors for linked accounts in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_linked_accounts = input;
         self
     }
-    /// <p>TBD</p>
+    /// <p>A boolean option that you can set to <code>TRUE</code> to include monitors for linked accounts in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
         &self.include_linked_accounts
     }

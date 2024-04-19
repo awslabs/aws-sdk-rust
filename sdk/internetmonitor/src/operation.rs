@@ -10,6 +10,9 @@ pub mod delete_monitor;
 /// Types for the `GetHealthEvent` operation.
 pub mod get_health_event;
 
+/// Types for the `GetInternetEvent` operation.
+pub mod get_internet_event;
+
 /// Types for the `GetMonitor` operation.
 pub mod get_monitor;
 
@@ -21,6 +24,9 @@ pub mod get_query_status;
 
 /// Types for the `ListHealthEvents` operation.
 pub mod list_health_events;
+
+/// Types for the `ListInternetEvents` operation.
+pub mod list_internet_events;
 
 /// Types for the `ListMonitors` operation.
 pub mod list_monitors;

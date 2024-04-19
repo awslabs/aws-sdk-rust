@@ -13,6 +13,10 @@ pub struct SolutionVersionSummary {
     /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
+    pub training_mode: ::std::option::Option<crate::types::TrainingMode>,
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub training_type: ::std::option::Option<crate::types::TrainingType>,
     /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution version was last updated.</p>
@@ -33,6 +37,14 @@ impl SolutionVersionSummary {
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
+    }
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
+    pub fn training_mode(&self) -> ::std::option::Option<&crate::types::TrainingMode> {
+        self.training_mode.as_ref()
+    }
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub fn training_type(&self) -> ::std::option::Option<&crate::types::TrainingType> {
+        self.training_type.as_ref()
     }
     /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
     pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -60,6 +72,8 @@ impl SolutionVersionSummary {
 pub struct SolutionVersionSummaryBuilder {
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) training_mode: ::std::option::Option<crate::types::TrainingMode>,
+    pub(crate) training_type: ::std::option::Option<crate::types::TrainingType>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -108,6 +122,34 @@ impl SolutionVersionSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
+    pub fn training_mode(mut self, input: crate::types::TrainingMode) -> Self {
+        self.training_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
+    pub fn set_training_mode(mut self, input: ::std::option::Option<crate::types::TrainingMode>) -> Self {
+        self.training_mode = input;
+        self
+    }
+    /// <p>The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.</p>
+    pub fn get_training_mode(&self) -> &::std::option::Option<crate::types::TrainingMode> {
+        &self.training_mode
+    }
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub fn training_type(mut self, input: crate::types::TrainingType) -> Self {
+        self.training_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub fn set_training_type(mut self, input: ::std::option::Option<crate::types::TrainingType>) -> Self {
+        self.training_type = input;
+        self
+    }
+    /// <p>Whether the solution version was created automatically or manually.</p>
+    pub fn get_training_type(&self) -> &::std::option::Option<crate::types::TrainingType> {
+        &self.training_type
+    }
     /// <p>The date and time (in Unix time) that this version of a solution was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -155,6 +197,8 @@ impl SolutionVersionSummaryBuilder {
         crate::types::SolutionVersionSummary {
             solution_version_arn: self.solution_version_arn,
             status: self.status,
+            training_mode: self.training_mode,
+            training_type: self.training_type,
             creation_date_time: self.creation_date_time,
             last_updated_date_time: self.last_updated_date_time,
             failure_reason: self.failure_reason,
