@@ -3,7 +3,7 @@ async fn resolve_endpoint(
     client: &crate::Client,
 ) -> Result<(::aws_smithy_types::endpoint::Endpoint, ::std::time::SystemTime), ::aws_smithy_runtime_api::box_error::BoxError> {
     let describe_endpoints = client.describe_endpoints().send().await?;
-    let endpoint = describe_endpoints.endpoints().get(0).unwrap();
+    let endpoint = describe_endpoints.endpoints().first().unwrap();
     let expiry = client.config().time_source().expect("checked when ep discovery was enabled").now()
         + ::std::time::Duration::from_secs(endpoint.cache_period_in_minutes() as u64 * 60);
     Ok((

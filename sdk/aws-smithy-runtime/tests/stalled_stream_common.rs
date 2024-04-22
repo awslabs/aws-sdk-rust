@@ -4,6 +4,8 @@
  */
 
 #![cfg(all(feature = "client", feature = "test-util"))]
+// Extra imports are used by stalled_stream_download and stalled_stream_upload as conveniences
+#![allow(unused_imports)]
 
 pub use aws_smithy_async::{
     test_util::tick_advance_sleep::{
