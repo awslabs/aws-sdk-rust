@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoverInstancesInput {
-    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to <code>HttpName</code> to distinguish the two.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
@@ -43,7 +43,7 @@ pub struct DiscoverInstancesInput {
     pub health_status: ::std::option::Option<crate::types::HealthStatusFilter>,
 }
 impl DiscoverInstancesInput {
-    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to <code>HttpName</code> to distinguish the two.</p>
     pub fn namespace_name(&self) -> ::std::option::Option<&str> {
         self.namespace_name.as_deref()
     }
@@ -113,18 +113,18 @@ pub struct DiscoverInstancesInputBuilder {
     pub(crate) health_status: ::std::option::Option<crate::types::HealthStatusFilter>,
 }
 impl DiscoverInstancesInputBuilder {
-    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to <code>HttpName</code> to distinguish the two.</p>
     /// This field is required.
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to <code>HttpName</code> to distinguish the two.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_name = input;
         self
     }
-    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to <code>HttpName</code> to distinguish the two.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace_name
     }

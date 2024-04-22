@@ -201,6 +201,8 @@ pub(crate) mod shape_data_source_configuration;
 
 pub(crate) mod shape_data_source_summaries;
 
+pub(crate) mod shape_function_schema;
+
 pub(crate) mod shape_ingestion_job;
 
 pub(crate) mod shape_ingestion_job_filter;
@@ -247,6 +249,8 @@ pub(crate) mod shape_data_source_summary;
 
 pub(crate) mod shape_failure_reasons;
 
+pub(crate) mod shape_function;
+
 pub(crate) mod shape_ingestion_job_statistics;
 
 pub(crate) mod shape_ingestion_job_summary;
@@ -277,9 +281,13 @@ pub(crate) mod shape_agent_alias_history_event;
 
 pub(crate) mod shape_fixed_size_chunking_configuration;
 
+pub(crate) mod shape_functions;
+
 pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_open_search_serverless_field_mapping;
+
+pub(crate) mod shape_parameter_detail;
 
 pub(crate) mod shape_pinecone_field_mapping;
 
@@ -290,5 +298,7 @@ pub(crate) mod shape_rds_field_mapping;
 pub(crate) mod shape_redis_enterprise_cloud_field_mapping;
 
 pub(crate) mod shape_s3_prefixes;
+
+pub(crate) mod shape_parameter_map;
 
 pub(crate) mod shape_stop_sequences;

@@ -251,6 +251,8 @@ mod list_workflows;
 
 mod send_workflow_step_state;
 
+mod start_directory_listing;
+
 mod start_file_transfer;
 
 mod start_server;

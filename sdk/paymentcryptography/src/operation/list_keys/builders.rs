@@ -28,11 +28,11 @@ impl crate::operation::list_keys::builders::ListKeysInputBuilder {
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
-/// <p><code>CreateKey</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a></p></li>
 /// <li>
-/// <p><code>DeleteKey</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a></p></li>
 /// <li>
-/// <p><code>GetKey</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetKey.html">GetKey</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeysFluentBuilder {

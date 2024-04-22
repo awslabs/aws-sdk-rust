@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OwnershipSettingsSummary {
-    /// <p>The user profile who is the owner of the private space.</p>
+    /// <p>The user profile who is the owner of the space.</p>
     pub owner_user_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl OwnershipSettingsSummary {
-    /// <p>The user profile who is the owner of the private space.</p>
+    /// <p>The user profile who is the owner of the space.</p>
     pub fn owner_user_profile_name(&self) -> ::std::option::Option<&str> {
         self.owner_user_profile_name.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct OwnershipSettingsSummaryBuilder {
     pub(crate) owner_user_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl OwnershipSettingsSummaryBuilder {
-    /// <p>The user profile who is the owner of the private space.</p>
+    /// <p>The user profile who is the owner of the space.</p>
     pub fn owner_user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_user_profile_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user profile who is the owner of the private space.</p>
+    /// <p>The user profile who is the owner of the space.</p>
     pub fn set_owner_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_user_profile_name = input;
         self
     }
-    /// <p>The user profile who is the owner of the private space.</p>
+    /// <p>The user profile who is the owner of the space.</p>
     pub fn get_owner_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_user_profile_name
     }

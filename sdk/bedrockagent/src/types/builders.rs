@@ -81,6 +81,10 @@ pub use crate::types::_agent_summary::AgentSummaryBuilder;
 
 pub use crate::types::_agent_action_group::AgentActionGroupBuilder;
 
+pub use crate::types::_function::FunctionBuilder;
+
+pub use crate::types::_parameter_detail::ParameterDetailBuilder;
+
 pub use crate::types::_s3_identifier::S3IdentifierBuilder;
 
 pub use crate::types::_action_group_summary::ActionGroupSummaryBuilder;

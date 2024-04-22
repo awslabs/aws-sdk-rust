@@ -238,4 +238,18 @@ impl CreateAgentActionGroupFluentBuilder {
     pub fn get_action_group_state(&self) -> &::std::option::Option<crate::types::ActionGroupState> {
         self.inner.get_action_group_state()
     }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn function_schema(mut self, input: crate::types::FunctionSchema) -> Self {
+        self.inner = self.inner.function_schema(input);
+        self
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn set_function_schema(mut self, input: ::std::option::Option<crate::types::FunctionSchema>) -> Self {
+        self.inner = self.inner.set_function_schema(input);
+        self
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn get_function_schema(&self) -> &::std::option::Option<crate::types::FunctionSchema> {
+        self.inner.get_function_schema()
+    }
 }

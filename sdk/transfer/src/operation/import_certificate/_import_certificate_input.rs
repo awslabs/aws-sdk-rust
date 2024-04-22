@@ -3,15 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
-    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
-    /// <li>
-    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
-    /// <li>
-    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
-    /// </ul>
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub usage: ::std::option::Option<crate::types::CertificateUsageType>,
     /// <ul>
     /// <li>
@@ -39,15 +31,7 @@ pub struct ImportCertificateInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportCertificateInput {
-    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
-    /// <li>
-    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
-    /// <li>
-    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
-    /// </ul>
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn usage(&self) -> ::std::option::Option<&crate::types::CertificateUsageType> {
         self.usage.as_ref()
     }
@@ -127,42 +111,18 @@ pub struct ImportCertificateInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportCertificateInputBuilder {
-    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
-    /// <li>
-    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
-    /// <li>
-    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
-    /// </ul>
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     /// This field is required.
     pub fn usage(mut self, input: crate::types::CertificateUsageType) -> Self {
         self.usage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
-    /// <li>
-    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
-    /// <li>
-    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
-    /// </ul>
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn set_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsageType>) -> Self {
         self.usage = input;
         self
     }
-    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
-    /// <li>
-    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
-    /// <li>
-    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
-    /// </ul>
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::CertificateUsageType> {
         &self.usage
     }

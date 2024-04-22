@@ -28,11 +28,11 @@ impl crate::operation::restore_key::builders::RestoreKeyInputBuilder {
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
-/// <p><code>DeleteKey</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a></p></li>
 /// <li>
-/// <p><code>StartKeyUsage</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a></p></li>
 /// <li>
-/// <p><code>StopKeyUsage</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreKeyFluentBuilder {

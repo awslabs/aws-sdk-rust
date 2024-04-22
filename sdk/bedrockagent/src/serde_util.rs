@@ -978,6 +978,13 @@ pub(crate) fn fixed_size_chunking_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn function_correct_errors(mut builder: crate::types::builders::FunctionBuilder) -> crate::types::builders::FunctionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn open_search_serverless_field_mapping_correct_errors(
     mut builder: crate::types::builders::OpenSearchServerlessFieldMappingBuilder,
 ) -> crate::types::builders::OpenSearchServerlessFieldMappingBuilder {
@@ -1034,6 +1041,15 @@ pub(crate) fn redis_enterprise_cloud_field_mapping_correct_errors(
     }
     if builder.metadata_field.is_none() {
         builder.metadata_field = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn parameter_detail_correct_errors(
+    mut builder: crate::types::builders::ParameterDetailBuilder,
+) -> crate::types::builders::ParameterDetailBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::Type>().ok()
     }
     builder
 }

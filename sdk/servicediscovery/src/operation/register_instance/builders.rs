@@ -224,10 +224,10 @@ impl RegisterInstanceFluentBuilder {
     /// <p>The attributes that apply to the records that are defined in the service.</p></li>
     /// <li>
     /// <p>For each attribute, the applicable value.</p></li>
-    /// </ul><note>
+    /// </ul><important>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
-    /// </note>
-    /// <p>Supported attribute keys include the following:</p>
+    /// </important>
+    /// <p>The following are the supported attribute keys.</p>
     /// <dl>
     /// <dt>
     /// AWS_ALIAS_DNS_NAME
@@ -246,6 +246,8 @@ impl RegisterInstanceFluentBuilder {
     /// <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p></li>
     /// <li>
     /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
+    /// <li>
+    /// <p>The <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US) Regions.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -306,10 +308,10 @@ impl RegisterInstanceFluentBuilder {
     /// <p>The attributes that apply to the records that are defined in the service.</p></li>
     /// <li>
     /// <p>For each attribute, the applicable value.</p></li>
-    /// </ul><note>
+    /// </ul><important>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
-    /// </note>
-    /// <p>Supported attribute keys include the following:</p>
+    /// </important>
+    /// <p>The following are the supported attribute keys.</p>
     /// <dl>
     /// <dt>
     /// AWS_ALIAS_DNS_NAME
@@ -328,6 +330,8 @@ impl RegisterInstanceFluentBuilder {
     /// <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p></li>
     /// <li>
     /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
+    /// <li>
+    /// <p>The <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US) Regions.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -388,10 +392,10 @@ impl RegisterInstanceFluentBuilder {
     /// <p>The attributes that apply to the records that are defined in the service.</p></li>
     /// <li>
     /// <p>For each attribute, the applicable value.</p></li>
-    /// </ul><note>
+    /// </ul><important>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
-    /// </note>
-    /// <p>Supported attribute keys include the following:</p>
+    /// </important>
+    /// <p>The following are the supported attribute keys.</p>
     /// <dl>
     /// <dt>
     /// AWS_ALIAS_DNS_NAME
@@ -410,6 +414,8 @@ impl RegisterInstanceFluentBuilder {
     /// <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p></li>
     /// <li>
     /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
+    /// <li>
+    /// <p>The <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US) Regions.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>

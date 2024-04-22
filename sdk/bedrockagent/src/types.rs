@@ -117,11 +117,21 @@ pub use crate::types::_agent_action_group::AgentActionGroup;
 
 pub use crate::types::_action_group_state::ActionGroupState;
 
+pub use crate::types::_function_schema::FunctionSchema;
+
+pub use crate::types::_function::Function;
+
+pub use crate::types::_parameter_detail::ParameterDetail;
+
+pub use crate::types::_type_::Type;
+
 pub use crate::types::_api_schema::ApiSchema;
 
 pub use crate::types::_s3_identifier::S3Identifier;
 
 pub use crate::types::_action_group_executor::ActionGroupExecutor;
+
+pub use crate::types::_custom_control_method::CustomControlMethod;
 
 pub use crate::types::_action_group_signature::ActionGroupSignature;
 
@@ -169,6 +179,8 @@ mod _chunking_strategy;
 
 mod _creation_mode;
 
+mod _custom_control_method;
+
 mod _data_source;
 
 mod _data_source_configuration;
@@ -180,6 +192,10 @@ mod _data_source_summary;
 mod _data_source_type;
 
 mod _fixed_size_chunking_configuration;
+
+mod _function;
+
+mod _function_schema;
 
 mod _inference_configuration;
 
@@ -219,6 +235,8 @@ mod _open_search_serverless_configuration;
 
 mod _open_search_serverless_field_mapping;
 
+mod _parameter_detail;
+
 mod _pinecone_configuration;
 
 mod _pinecone_field_mapping;
@@ -248,6 +266,8 @@ mod _server_side_encryption_configuration;
 mod _sort_order;
 
 mod _storage_configuration;
+
+mod _type_;
 
 mod _validation_exception_field;
 

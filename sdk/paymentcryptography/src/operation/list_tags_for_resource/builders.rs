@@ -28,9 +28,9 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
-/// <p><code>TagResource</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a></p></li>
 /// <li>
-/// <p><code>UntagResource</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UntagResource.html">UntagResource</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {

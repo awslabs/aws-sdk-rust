@@ -108,17 +108,17 @@ impl DiscoverInstancesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to <code>HttpName</code> to distinguish the two.</p>
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
-    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to <code>HttpName</code> to distinguish the two.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
-    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to <code>HttpName</code> to distinguish the two.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace_name()
     }

@@ -1,4 +1,4 @@
-smithy_rs_revision = '6b59ba26c41a03983de7321795681da137dffc02'
+smithy_rs_revision = 'c0f535972014ef90f48ace7be6e1caa6474973ae'
 aws_doc_sdk_examples_revision = '85778d68832c75a9306cb32e10cbc9887840e2d4'
 
 [manual_interventions]
@@ -269,14 +269,14 @@ model_hash = '248c797886ffec26ca0ccbf2c050012114fee961c9ac31b2050d2533c79ba55a'
 [crates.aws-sdk-bedrockagent]
 category = 'AwsSdk'
 version = '1.21.0'
-source_hash = '4c1bb8f99452cd4786a48f81c3757b2335a5ae4617d1796f99ec748a0fa891ea'
-model_hash = '83cd1c21ba40e52c081ee6a7c2762142c293a1b3d388c17fffe5dd30fd9a0e03'
+source_hash = 'd30a671ad979dc61bb2a04d656f0f3bc06acc71dfbbd0979a27129c3039a27ff'
+model_hash = 'c63f4f08d9dbcb6a340ab46c5e28562aca7cb62aa9b1fe2d29127c0ce0300bb3'
 
 [crates.aws-sdk-bedrockagentruntime]
 category = 'AwsSdk'
 version = '1.20.0'
-source_hash = '9129f960643ab990adc08097807f9b3e0db7e9a9d4fcad8bb15e36237fbcd84b'
-model_hash = '88198b60e953854fc19d6592ac3225b9dc665c03149b7fa9e773b75f1d78db27'
+source_hash = 'b51488668c8c3a71c1624e6dfda6a2ef55139f71b9aed40b3664915e7d7447fa'
+model_hash = '1ea03ab40e39b2d92f0b6d2a900fa56669602226355a19ab4dec7eba9b9dfa91'
 
 [crates.aws-sdk-bedrockruntime]
 category = 'AwsSdk'
@@ -1637,8 +1637,8 @@ model_hash = 'febaa3d19e9d98c7c7888395b77777d20b9914187a054b1443a86e9a0a5ab35f'
 [crates.aws-sdk-paymentcryptography]
 category = 'AwsSdk'
 version = '1.23.0'
-source_hash = '16aa7e11a05d4737f9916aa2f48fd6d74b32a0280539fc5c08673dab9d72a8d8'
-model_hash = '0d6dc60e196f4dc4c068966fd968cf62134bfa31528e598983a1549eb91a9b62'
+source_hash = '01f5ce3f2ae0da045c0289e9ec0579c24855c5452f24bdbd3b8e613b506db335'
+model_hash = '5a775a0a2b19bcf6c08746ee7c01569397309ea828425bcfb9dff8b803693111'
 
 [crates.aws-sdk-paymentcryptographydata]
 category = 'AwsSdk'
@@ -1799,8 +1799,8 @@ model_hash = '1645d194dc34314c0275a1f38bb0fd1e3e85047cc9924258cfe663c0b12504d8'
 [crates.aws-sdk-redshiftserverless]
 category = 'AwsSdk'
 version = '1.22.0'
-source_hash = '84e47bc25b29b56a9054e79784da174082cb3794a5383322a4c968a356c592d2'
-model_hash = 'd33fc0b5a409253ebd7574b66431d059b8a0807d38865e8df65ecba85e8b9524'
+source_hash = 'ecf882784c1884b9a084c6ef36886a2d59c746085e887c636aef391356592575'
+model_hash = 'b32f2e2917988b09661ba0f44f64d5cc830b3a079f471be568329f49cb5791f4'
 
 [crates.aws-sdk-rekognition]
 category = 'AwsSdk'
@@ -1862,6 +1862,12 @@ version = '1.22.0'
 source_hash = '331b600546d7732b6e281385c6b79d9fcb46f52354bd95a2f7189c92b05616b3'
 model_hash = '3c5fcda69ee82c2a93d68e023a451df9b08472221cde4b4fca74869940aa24f6'
 
+[crates.aws-sdk-route53profiles]
+category = 'AwsSdk'
+version = '1.0.0'
+source_hash = '6664d7016ee10fb4f587496c9d3c37c3b2d9342b30607a0d4b7999f6b3ababed'
+model_hash = '95c8e18ad0fb84f3d7748ea424e408f47a9985b4367e03fdf4abba15b14cbe67'
+
 [crates.aws-sdk-route53recoverycluster]
 category = 'AwsSdk'
 version = '1.21.0'
@@ -1913,8 +1919,8 @@ model_hash = 'f9e4b75c464276658ad02e6fb32ece96389662d9e55fe7db3a5a057bd9fb5b03'
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
 version = '1.35.0'
-source_hash = '21b74983a3e84b61d8f0943e6887c0d608bcb61f200c8fe4f8c5e0c35b56ff36'
-model_hash = 'c8f62017cbdc4ba68a81fc52dd1ea27532b5e1ab58676c2e70aa7c1410eaee8a'
+source_hash = '1f8bb91221ac71f939dcfc8585640b641af798d071645bbafa86a5d9487a9e62'
+model_hash = '524fe9e1736e8a52248a8a69d235c5569842713de20f4ebfae7ae8d418517cfc'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2009,8 +2015,8 @@ model_hash = 'c63e3916a6662a06c0529acd65673fd2d96100fa137c40154ccd23807661c012'
 [crates.aws-sdk-servicediscovery]
 category = 'AwsSdk'
 version = '1.21.0'
-source_hash = '3c3749ba13443b8511c137d5c9f29229d74123137a20e4e12f2ba040dba4a4f1'
-model_hash = '30acf25612d9e2274c18fe37524efb8ddd2d2681d5dc95db3d8707c4230dfc63'
+source_hash = 'e1eb22e8d020e5e1dc4927c65dbe54282b3c3b149ce3be2ff768cf633f3d715f'
+model_hash = '5b1be1b41a74b0420a8cc678ed474c7f05abf941ea89e1793cd07bb0adf0ced0'
 
 [crates.aws-sdk-servicequotas]
 category = 'AwsSdk'
@@ -2213,8 +2219,8 @@ model_hash = 'b6e54b8b7c1dfefaa67fbc4f5c237a2bbaad7916305a9b588ce31a4134abbce1'
 [crates.aws-sdk-transfer]
 category = 'AwsSdk'
 version = '1.24.0'
-source_hash = '94d016ded038ad666ebcde25a289dea6e8c04af36418afc885ad2fecf40b1ff1'
-model_hash = '525302054cfcf26228b6f1b6e5bb60d6d415229a814ec58d9ec229e18c17f94d'
+source_hash = '15ddd06ab49555d22cd4621785e1a2502518ba6a4d6f8948dd90c287d7f1d908'
+model_hash = '6d53528046f3d8d29ea4c3e9c1fa7bcd44c595370ccc29495b5f92180763eafa'
 
 [crates.aws-sdk-translate]
 category = 'AwsSdk'
@@ -2759,6 +2765,7 @@ aws-sdk-robomaker = '1.21.0'
 aws-sdk-rolesanywhere = '1.24.0'
 aws-sdk-route53 = '1.22.0'
 aws-sdk-route53domains = '1.22.0'
+aws-sdk-route53profiles = '1.0.0'
 aws-sdk-route53recoverycluster = '1.21.0'
 aws-sdk-route53recoverycontrolconfig = '1.21.0'
 aws-sdk-route53recoveryreadiness = '1.21.0'

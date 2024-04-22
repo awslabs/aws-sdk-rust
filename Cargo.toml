@@ -342,6 +342,7 @@ members = [
     "sdk/rolesanywhere",
     "sdk/route53",
     "sdk/route53domains",
+    "sdk/route53profiles",
     "sdk/route53recoverycluster",
     "sdk/route53recoverycontrolconfig",
     "sdk/route53recoveryreadiness",

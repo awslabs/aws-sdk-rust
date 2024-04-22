@@ -33,6 +33,15 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                         crate::types::ResponseStream::Trace(parsed),
                     ))
                 }
+                "returnControl" => {
+                    let parsed = crate::protocol_serde::shape_return_control_payload::de_return_control_payload_payload(&message.payload()[..])
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ReturnControl: {}", err))
+                        })?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::ResponseStream::ReturnControl(parsed),
+                    ))
+                }
                 _unknown_variant => Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                     crate::types::ResponseStream::Unknown,
                 )),

@@ -28,13 +28,13 @@ impl crate::operation::list_aliases::builders::ListAliasesInputBuilder {
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
-/// <p><code>CreateAlias</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a></p></li>
 /// <li>
-/// <p><code>DeleteAlias</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a></p></li>
 /// <li>
-/// <p><code>GetAlias</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a></p></li>
 /// <li>
-/// <p><code>UpdateAlias</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAliasesFluentBuilder {

@@ -10,6 +10,8 @@ pub struct TracePart {
     pub agent_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the session with the agent.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the agent.</p>
+    pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub trace: ::std::option::Option<crate::types::Trace>,
 }
@@ -26,6 +28,10 @@ impl TracePart {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
+    /// <p>The version of the agent.</p>
+    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+        self.agent_version.as_deref()
+    }
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub fn trace(&self) -> ::std::option::Option<&crate::types::Trace> {
         self.trace.as_ref()
@@ -37,6 +43,7 @@ impl ::std::fmt::Debug for TracePart {
         formatter.field("agent_id", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
         formatter.field("session_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
         formatter.field("trace", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -55,6 +62,7 @@ pub struct TracePartBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) trace: ::std::option::Option<crate::types::Trace>,
 }
 impl TracePartBuilder {
@@ -100,6 +108,20 @@ impl TracePartBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
+    /// <p>The version of the agent.</p>
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the agent.</p>
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_version = input;
+        self
+    }
+    /// <p>The version of the agent.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
+    }
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub fn trace(mut self, input: crate::types::Trace) -> Self {
         self.trace = ::std::option::Option::Some(input);
@@ -120,6 +142,7 @@ impl TracePartBuilder {
             agent_id: self.agent_id,
             agent_alias_id: self.agent_alias_id,
             session_id: self.session_id,
+            agent_version: self.agent_version,
             trace: self.trace,
         }
     }
@@ -130,6 +153,7 @@ impl ::std::fmt::Debug for TracePartBuilder {
         formatter.field("agent_id", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
         formatter.field("session_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
         formatter.field("trace", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

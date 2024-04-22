@@ -55,6 +55,10 @@ pub use crate::types::_export_key_cryptogram::ExportKeyCryptogram;
 
 pub use crate::types::_export_tr34_key_block::ExportTr34KeyBlock;
 
+pub use crate::types::_key_block_headers::KeyBlockHeaders;
+
+pub use crate::types::_key_exportability::KeyExportability;
+
 pub use crate::types::_export_tr31_key_block::ExportTr31KeyBlock;
 
 mod _alias;
@@ -85,9 +89,13 @@ mod _key_algorithm;
 
 mod _key_attributes;
 
+mod _key_block_headers;
+
 mod _key_check_value_algorithm;
 
 mod _key_class;
+
+mod _key_exportability;
 
 mod _key_material_type;
 

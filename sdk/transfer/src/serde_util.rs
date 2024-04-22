@@ -413,6 +413,18 @@ pub(crate) fn list_workflows_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_directory_listing_output_output_correct_errors(
+    mut builder: crate::operation::start_directory_listing::builders::StartDirectoryListingOutputBuilder,
+) -> crate::operation::start_directory_listing::builders::StartDirectoryListingOutputBuilder {
+    if builder.listing_id.is_none() {
+        builder.listing_id = Some(Default::default())
+    }
+    if builder.output_file_name.is_none() {
+        builder.output_file_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_file_transfer_output_output_correct_errors(
     mut builder: crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder,
 ) -> crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder {

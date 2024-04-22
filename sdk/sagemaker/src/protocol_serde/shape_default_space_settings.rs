@@ -27,6 +27,36 @@ pub fn ser_default_space_settings(
         crate::protocol_serde::shape_kernel_gateway_app_settings::ser_kernel_gateway_app_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.jupyter_lab_app_settings {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("JupyterLabAppSettings").start_object();
+        crate::protocol_serde::shape_jupyter_lab_app_settings::ser_jupyter_lab_app_settings(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.space_storage_settings {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("SpaceStorageSettings").start_object();
+        crate::protocol_serde::shape_default_space_storage_settings::ser_default_space_storage_settings(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.custom_posix_user_config {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("CustomPosixUserConfig").start_object();
+        crate::protocol_serde::shape_custom_posix_user_config::ser_custom_posix_user_config(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.custom_file_system_configs {
+        let mut array_16 = object.key("CustomFileSystemConfigs").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_custom_file_system_config::ser_custom_file_system_config(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +93,26 @@ where
                         "KernelGatewayAppSettings" => {
                             builder = builder.set_kernel_gateway_app_settings(
                                 crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens)?,
+                            );
+                        }
+                        "JupyterLabAppSettings" => {
+                            builder = builder.set_jupyter_lab_app_settings(
+                                crate::protocol_serde::shape_jupyter_lab_app_settings::de_jupyter_lab_app_settings(tokens)?,
+                            );
+                        }
+                        "SpaceStorageSettings" => {
+                            builder = builder.set_space_storage_settings(
+                                crate::protocol_serde::shape_default_space_storage_settings::de_default_space_storage_settings(tokens)?,
+                            );
+                        }
+                        "CustomPosixUserConfig" => {
+                            builder = builder.set_custom_posix_user_config(
+                                crate::protocol_serde::shape_custom_posix_user_config::de_custom_posix_user_config(tokens)?,
+                            );
+                        }
+                        "CustomFileSystemConfigs" => {
+                            builder = builder.set_custom_file_system_configs(
+                                crate::protocol_serde::shape_custom_file_system_configs::de_custom_file_system_configs(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

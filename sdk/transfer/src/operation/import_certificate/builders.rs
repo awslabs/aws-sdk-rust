@@ -108,41 +108,17 @@ impl ImportCertificateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
-    /// <li>
-    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
-    /// <li>
-    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
-    /// </ul>
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn usage(mut self, input: crate::types::CertificateUsageType) -> Self {
         self.inner = self.inner.usage(input);
         self
     }
-    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
-    /// <li>
-    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
-    /// <li>
-    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
-    /// </ul>
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn set_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsageType>) -> Self {
         self.inner = self.inner.set_usage(input);
         self
     }
-    /// <p>Specifies how this certificate is used. It can be used in the following ways:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>SIGNING</code>: For signing AS2 messages</p></li>
-    /// <li>
-    /// <p><code>ENCRYPTION</code>: For encrypting AS2 messages</p></li>
-    /// <li>
-    /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
-    /// </ul>
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::CertificateUsageType> {
         self.inner.get_usage()
     }

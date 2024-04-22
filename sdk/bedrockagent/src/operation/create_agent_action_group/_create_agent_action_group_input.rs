@@ -22,6 +22,8 @@ pub struct CreateAgentActionGroupInput {
     pub api_schema: ::std::option::Option<crate::types::ApiSchema>,
     /// <p>Specifies whether the action group is available for the agent to invoke or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub action_group_state: ::std::option::Option<crate::types::ActionGroupState>,
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub function_schema: ::std::option::Option<crate::types::FunctionSchema>,
 }
 impl CreateAgentActionGroupInput {
     /// <p>The unique identifier of the agent for which to create the action group.</p>
@@ -61,6 +63,10 @@ impl CreateAgentActionGroupInput {
     pub fn action_group_state(&self) -> ::std::option::Option<&crate::types::ActionGroupState> {
         self.action_group_state.as_ref()
     }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn function_schema(&self) -> ::std::option::Option<&crate::types::FunctionSchema> {
+        self.function_schema.as_ref()
+    }
 }
 impl CreateAgentActionGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateAgentActionGroupInput`](crate::operation::create_agent_action_group::CreateAgentActionGroupInput).
@@ -82,6 +88,7 @@ pub struct CreateAgentActionGroupInputBuilder {
     pub(crate) action_group_executor: ::std::option::Option<crate::types::ActionGroupExecutor>,
     pub(crate) api_schema: ::std::option::Option<crate::types::ApiSchema>,
     pub(crate) action_group_state: ::std::option::Option<crate::types::ActionGroupState>,
+    pub(crate) function_schema: ::std::option::Option<crate::types::FunctionSchema>,
 }
 impl CreateAgentActionGroupInputBuilder {
     /// <p>The unique identifier of the agent for which to create the action group.</p>
@@ -216,6 +223,20 @@ impl CreateAgentActionGroupInputBuilder {
     pub fn get_action_group_state(&self) -> &::std::option::Option<crate::types::ActionGroupState> {
         &self.action_group_state
     }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn function_schema(mut self, input: crate::types::FunctionSchema) -> Self {
+        self.function_schema = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn set_function_schema(mut self, input: ::std::option::Option<crate::types::FunctionSchema>) -> Self {
+        self.function_schema = input;
+        self
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn get_function_schema(&self) -> &::std::option::Option<crate::types::FunctionSchema> {
+        &self.function_schema
+    }
     /// Consumes the builder and constructs a [`CreateAgentActionGroupInput`](crate::operation::create_agent_action_group::CreateAgentActionGroupInput).
     pub fn build(
         self,
@@ -233,6 +254,7 @@ impl CreateAgentActionGroupInputBuilder {
             action_group_executor: self.action_group_executor,
             api_schema: self.api_schema,
             action_group_state: self.action_group_state,
+            function_schema: self.function_schema,
         })
     }
 }

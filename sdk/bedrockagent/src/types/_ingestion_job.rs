@@ -8,7 +8,7 @@
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetIngestionJob.html#API_agent_GetIngestionJob_ResponseSyntax">GetIngestionJob response</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListIngestionJob.html#API_agent_ListIngestionJob_ResponseSyntax">ListIngestionJob response</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListIngestionJobs.html#API_agent_ListIngestionJobs_ResponseSyntax">ListIngestionJob response</a></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

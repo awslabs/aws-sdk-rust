@@ -88,6 +88,8 @@ pub(crate) mod shape_session_state;
 
 pub(crate) mod shape_citation;
 
+pub(crate) mod shape_invocation_result_member;
+
 pub(crate) mod shape_knowledge_base_retrieval_result;
 
 pub(crate) mod shape_knowledge_base_retrieve_and_generate_configuration;
@@ -96,7 +98,13 @@ pub(crate) mod shape_knowledge_base_vector_search_configuration;
 
 pub(crate) mod shape_payload_part;
 
+pub(crate) mod shape_return_control_payload;
+
 pub(crate) mod shape_trace_part;
+
+pub(crate) mod shape_api_result;
+
+pub(crate) mod shape_function_result;
 
 pub(crate) mod shape_generated_response_part;
 
@@ -114,7 +122,11 @@ pub(crate) mod shape_retrieved_references;
 
 pub(crate) mod shape_attribution;
 
+pub(crate) mod shape_content_body;
+
 pub(crate) mod shape_filter_attribute;
+
+pub(crate) mod shape_invocation_inputs;
 
 pub(crate) mod shape_prompt_template;
 
@@ -128,6 +140,8 @@ pub(crate) mod shape_trace;
 
 pub(crate) mod shape_failure_trace;
 
+pub(crate) mod shape_invocation_input_member;
+
 pub(crate) mod shape_orchestration_trace;
 
 pub(crate) mod shape_post_processing_trace;
@@ -135,6 +149,10 @@ pub(crate) mod shape_post_processing_trace;
 pub(crate) mod shape_pre_processing_trace;
 
 pub(crate) mod shape_span;
+
+pub(crate) mod shape_api_invocation_input;
+
+pub(crate) mod shape_function_invocation_input;
 
 pub(crate) mod shape_invocation_input;
 
@@ -152,7 +170,13 @@ pub(crate) mod shape_action_group_invocation_input;
 
 pub(crate) mod shape_action_group_invocation_output;
 
+pub(crate) mod shape_api_parameters;
+
+pub(crate) mod shape_api_request_body;
+
 pub(crate) mod shape_final_response;
+
+pub(crate) mod shape_function_parameters;
 
 pub(crate) mod shape_inference_configuration;
 
@@ -166,6 +190,12 @@ pub(crate) mod shape_pre_processing_parsed_response;
 
 pub(crate) mod shape_reprompt_response;
 
+pub(crate) mod shape_api_content_map;
+
+pub(crate) mod shape_api_parameter;
+
+pub(crate) mod shape_function_parameter;
+
 pub(crate) mod shape_parameters;
 
 pub(crate) mod shape_request_body;
@@ -175,3 +205,7 @@ pub(crate) mod shape_stop_sequences;
 pub(crate) mod shape_content_map;
 
 pub(crate) mod shape_parameter;
+
+pub(crate) mod shape_property_parameters;
+
+pub(crate) mod shape_parameter_list;

@@ -6,7 +6,7 @@
 pub struct SpaceSettingsSummary {
     /// <p>The type of app created within the space.</p>
     pub app_type: ::std::option::Option<crate::types::AppType>,
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
 }
 impl SpaceSettingsSummary {
@@ -14,7 +14,7 @@ impl SpaceSettingsSummary {
     pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
         self.app_type.as_ref()
     }
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::SpaceStorageSettings> {
         self.space_storage_settings.as_ref()
     }
@@ -48,17 +48,17 @@ impl SpaceSettingsSummaryBuilder {
     pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
         &self.app_type
     }
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub fn space_storage_settings(mut self, input: crate::types::SpaceStorageSettings) -> Self {
         self.space_storage_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::SpaceStorageSettings>) -> Self {
         self.space_storage_settings = input;
         self
     }
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::SpaceStorageSettings> {
         &self.space_storage_settings
     }

@@ -27,7 +27,7 @@ impl crate::operation::start_key_usage::builders::StartKeyUsageInputBuilder {
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
-/// <p><code>StopKeyUsage</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartKeyUsageFluentBuilder {

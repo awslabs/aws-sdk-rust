@@ -25,7 +25,7 @@ pub enum ResponseStreamError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>Input validation failed. Check your request parameters and retry the request.</p>
     ValidationException(crate::types::error::ValidationException),
-    /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
+    /// <p>The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The number of requests exceeds the service quota. Resubmit your request later.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),

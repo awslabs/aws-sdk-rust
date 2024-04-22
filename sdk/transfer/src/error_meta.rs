@@ -1266,6 +1266,40 @@ impl From<crate::operation::send_workflow_step_state::SendWorkflowStepStateError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_directory_listing::StartDirectoryListingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_directory_listing::StartDirectoryListingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_directory_listing::StartDirectoryListingError> for Error {
+    fn from(err: crate::operation::start_directory_listing::StartDirectoryListingError) -> Self {
+        match err {
+            crate::operation::start_directory_listing::StartDirectoryListingError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::start_directory_listing::StartDirectoryListingError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_directory_listing::StartDirectoryListingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_directory_listing::StartDirectoryListingError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_directory_listing::StartDirectoryListingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_directory_listing::StartDirectoryListingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_file_transfer::StartFileTransferError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

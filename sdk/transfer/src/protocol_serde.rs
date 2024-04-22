@@ -111,6 +111,8 @@ pub(crate) mod shape_list_workflows;
 
 pub(crate) mod shape_send_workflow_step_state;
 
+pub(crate) mod shape_start_directory_listing;
+
 pub(crate) mod shape_start_file_transfer;
 
 pub(crate) mod shape_start_server;
@@ -252,6 +254,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_send_workflow_step_state_input;
 
 pub(crate) mod shape_service_unavailable_exception;
+
+pub(crate) mod shape_start_directory_listing_input;
 
 pub(crate) mod shape_start_file_transfer_input;
 

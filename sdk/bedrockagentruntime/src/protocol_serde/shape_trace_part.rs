@@ -48,6 +48,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "agentVersion" => {
+                            builder = builder.set_agent_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "trace" => {
                             builder = builder.set_trace(crate::protocol_serde::shape_trace::de_trace(tokens)?);
                         }

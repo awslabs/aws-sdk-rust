@@ -27,8 +27,14 @@ pub fn ser_create_agent_action_group_input_input(
     if let Some(var_8) = &input.description {
         object.key("description").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.parent_action_group_signature {
-        object.key("parentActionGroupSignature").string(var_9.as_str());
+    if let Some(var_9) = &input.function_schema {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("functionSchema").start_object();
+        crate::protocol_serde::shape_function_schema::ser_function_schema(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.parent_action_group_signature {
+        object.key("parentActionGroupSignature").string(var_11.as_str());
     }
     Ok(())
 }

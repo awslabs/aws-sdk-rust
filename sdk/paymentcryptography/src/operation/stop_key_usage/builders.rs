@@ -23,14 +23,14 @@ impl crate::operation::stop_key_usage::builders::StopKeyUsageInputBuilder {
 /// Fluent builder constructing a request to `StopKeyUsage`.
 ///
 /// <p>Disables an Amazon Web Services Payment Cryptography key, which makes it inactive within Amazon Web Services Payment Cryptography.</p>
-/// <p>You can use this operation instead of <code>DeleteKey</code> to deactivate a key. You can enable the key in the future by calling <code>StartKeyUsage</code>.</p>
+/// <p>You can use this operation instead of <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a> to deactivate a key. You can enable the key in the future by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
-/// <p><code>DeleteKey</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a></p></li>
 /// <li>
-/// <p><code>StartKeyUsage</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopKeyUsageFluentBuilder {

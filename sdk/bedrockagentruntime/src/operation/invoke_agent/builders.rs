@@ -22,7 +22,7 @@ impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `InvokeAgent`.
 ///
-/// <p>Sends a prompt for the agent to process and respond to.</p><note>
+/// <p>Sends a prompt for the agent to process and respond to. Use return control event type for function calling.</p><note>
 /// <p>The CLI doesn't support <code>InvokeAgent</code>.</p>
 /// </note>
 /// <ul>
@@ -33,7 +33,9 @@ impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
 /// <li>
 /// <p>End a conversation by setting <code>endSession</code> to <code>true</code>.</p></li>
 /// <li>
-/// <p>Include attributes for the session or prompt in the <code>sessionState</code> object.</p></li>
+/// <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or parameters returned from the action group.</p></li>
+/// <li>
+/// <p>Use return control event type for function calling.</p></li>
 /// </ul>
 /// <p>The response is returned in the <code>bytes</code> field of the <code>chunk</code> object.</p>
 /// <ul>

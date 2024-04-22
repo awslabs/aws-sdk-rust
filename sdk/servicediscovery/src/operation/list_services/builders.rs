@@ -22,7 +22,7 @@ impl crate::operation::list_services::builders::ListServicesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListServices`.
 ///
-/// <p>Lists summary information for all the services that are associated with one or more specified namespaces.</p>
+/// <p>Lists summary information for all the services that are associated with one or more namespaces.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServicesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
