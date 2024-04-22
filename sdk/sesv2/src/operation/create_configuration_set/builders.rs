@@ -3,7 +3,7 @@ pub use crate::operation::create_configuration_set::_create_configuration_set_ou
 
 pub use crate::operation::create_configuration_set::_create_configuration_set_input::CreateConfigurationSetInputBuilder;
 
-impl CreateConfigurationSetInputBuilder {
+impl crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateConfigurationSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateConfigurationSetFluentBuilder {
     pub fn get_sending_options(&self) -> &::std::option::Option<crate::types::SendingOptions> {
         self.inner.get_sending_options()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

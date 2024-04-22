@@ -3,7 +3,7 @@ pub use crate::operation::create_nodegroup::_create_nodegroup_output::CreateNode
 
 pub use crate::operation::create_nodegroup::_create_nodegroup_input::CreateNodegroupInputBuilder;
 
-impl CreateNodegroupInputBuilder {
+impl crate::operation::create_nodegroup::builders::CreateNodegroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl CreateNodegroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -168,6 +168,7 @@ impl CreateNodegroupFluentBuilder {
     pub fn get_disk_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_disk_size()
     }
+    ///
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -186,6 +187,7 @@ impl CreateNodegroupFluentBuilder {
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnets()
     }
+    ///
     /// Appends an item to `instanceTypes`.
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
@@ -246,6 +248,7 @@ impl CreateNodegroupFluentBuilder {
     pub fn get_node_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_role()
     }
+    ///
     /// Adds a key-value pair to `labels`.
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
@@ -264,6 +267,7 @@ impl CreateNodegroupFluentBuilder {
     pub fn get_labels(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_labels()
     }
+    ///
     /// Appends an item to `taints`.
     ///
     /// To override the contents of this collection use [`set_taints`](Self::set_taints).
@@ -282,6 +286,7 @@ impl CreateNodegroupFluentBuilder {
     pub fn get_taints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Taint>> {
         self.inner.get_taints()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::get_voice_connector_proxy::_get_voice_connector_proxy_
 
 pub use crate::operation::get_voice_connector_proxy::_get_voice_connector_proxy_input::GetVoiceConnectorProxyInputBuilder;
 
-impl GetVoiceConnectorProxyInputBuilder {
+impl crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl GetVoiceConnectorProxyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

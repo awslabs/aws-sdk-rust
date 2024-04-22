@@ -3,7 +3,7 @@ pub use crate::operation::list_reports_for_report_group::_list_reports_for_repor
 
 pub use crate::operation::list_reports_for_report_group::_list_reports_for_report_group_input::ListReportsForReportGroupInputBuilder;
 
-impl ListReportsForReportGroupInputBuilder {
+impl crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListReportsForReportGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

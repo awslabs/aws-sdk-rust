@@ -3,7 +3,7 @@ pub use crate::operation::list_incident_records::_list_incident_records_output::
 
 pub use crate::operation::list_incident_records::_list_incident_records_input::ListIncidentRecordsInputBuilder;
 
-impl ListIncidentRecordsInputBuilder {
+impl crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListIncidentRecordsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListIncidentRecordsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator {
         crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

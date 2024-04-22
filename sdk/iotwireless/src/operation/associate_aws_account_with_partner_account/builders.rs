@@ -3,7 +3,7 @@ pub use crate::operation::associate_aws_account_with_partner_account::_associate
 
 pub use crate::operation::associate_aws_account_with_partner_account::_associate_aws_account_with_partner_account_input::AssociateAwsAccountWithPartnerAccountInputBuilder;
 
-impl AssociateAwsAccountWithPartnerAccountInputBuilder {
+impl crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl AssociateAwsAccountWithPartnerAccountFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -140,6 +140,7 @@ impl AssociateAwsAccountWithPartnerAccountFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

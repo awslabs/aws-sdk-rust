@@ -3,7 +3,7 @@ pub use crate::operation::start_recommendation_report_generation::_start_recomme
 
 pub use crate::operation::start_recommendation_report_generation::_start_recommendation_report_generation_input::StartRecommendationReportGenerationInputBuilder;
 
-impl StartRecommendationReportGenerationInputBuilder {
+impl crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl StartRecommendationReportGenerationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl StartRecommendationReportGenerationFluentBuilder {
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
         self.inner.get_output_format()
     }
+    ///
     /// Appends an item to `groupIdFilter`.
     ///
     /// To override the contents of this collection use [`set_group_id_filter`](Self::set_group_id_filter).

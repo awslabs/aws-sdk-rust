@@ -3,7 +3,7 @@ pub use crate::operation::update_context::_update_context_output::UpdateContextO
 
 pub use crate::operation::update_context::_update_context_input::UpdateContextInputBuilder;
 
-impl UpdateContextInputBuilder {
+impl crate::operation::update_context::builders::UpdateContextInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateContextFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateContextFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Adds a key-value pair to `Properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
@@ -154,6 +155,7 @@ impl UpdateContextFluentBuilder {
     pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_properties()
     }
+    ///
     /// Appends an item to `PropertiesToRemove`.
     ///
     /// To override the contents of this collection use [`set_properties_to_remove`](Self::set_properties_to_remove).

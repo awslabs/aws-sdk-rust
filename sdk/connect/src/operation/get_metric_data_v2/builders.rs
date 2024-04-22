@@ -3,7 +3,7 @@ pub use crate::operation::get_metric_data_v2::_get_metric_data_v2_output::GetMet
 
 pub use crate::operation::get_metric_data_v2::_get_metric_data_v2_input::GetMetricDataV2InputBuilder;
 
-impl GetMetricDataV2InputBuilder {
+impl crate::operation::get_metric_data_v2::builders::GetMetricDataV2InputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl GetMetricDataV2FluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -238,6 +238,7 @@ impl GetMetricDataV2FluentBuilder {
     pub fn get_interval(&self) -> &::std::option::Option<crate::types::IntervalDetails> {
         self.inner.get_interval()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -340,6 +341,7 @@ impl GetMetricDataV2FluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterV2>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `Groupings`.
     ///
     /// To override the contents of this collection use [`set_groupings`](Self::set_groupings).
@@ -364,6 +366,7 @@ impl GetMetricDataV2FluentBuilder {
     pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_groupings()
     }
+    ///
     /// Appends an item to `Metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).

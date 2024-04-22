@@ -3,7 +3,7 @@ pub use crate::operation::get_conformance_pack_compliance_summary::_get_conforma
 
 pub use crate::operation::get_conformance_pack_compliance_summary::_get_conformance_pack_compliance_summary_input::GetConformancePackComplianceSummaryInputBuilder;
 
-impl GetConformancePackComplianceSummaryInputBuilder {
+impl crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetConformancePackComplianceSummaryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -120,6 +120,7 @@ impl GetConformancePackComplianceSummaryFluentBuilder {
             self.inner,
         )
     }
+    ///
     /// Appends an item to `ConformancePackNames`.
     ///
     /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).

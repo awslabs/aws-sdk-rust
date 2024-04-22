@@ -3,7 +3,7 @@ pub use crate::operation::create_node_from_template_job::_create_node_from_templ
 
 pub use crate::operation::create_node_from_template_job::_create_node_from_template_job_input::CreateNodeFromTemplateJobInputBuilder;
 
-impl CreateNodeFromTemplateJobInputBuilder {
+impl crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateNodeFromTemplateJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateNodeFromTemplateJobFluentBuilder {
     pub fn get_node_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_description()
     }
+    ///
     /// Adds a key-value pair to `TemplateParameters`.
     ///
     /// To override the contents of this collection use [`set_template_parameters`](Self::set_template_parameters).
@@ -203,6 +204,7 @@ impl CreateNodeFromTemplateJobFluentBuilder {
     pub fn get_template_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_template_parameters()
     }
+    ///
     /// Appends an item to `JobTags`.
     ///
     /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).

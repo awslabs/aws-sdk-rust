@@ -3,7 +3,7 @@ pub use crate::operation::put_signing_profile::_put_signing_profile_output::PutS
 
 pub use crate::operation::put_signing_profile::_put_signing_profile_input::PutSigningProfileInputBuilder;
 
-impl PutSigningProfileInputBuilder {
+impl crate::operation::put_signing_profile::builders::PutSigningProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutSigningProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl PutSigningProfileFluentBuilder {
     pub fn get_overrides(&self) -> &::std::option::Option<crate::types::SigningPlatformOverrides> {
         self.inner.get_overrides()
     }
+    ///
     /// Adds a key-value pair to `signingParameters`.
     ///
     /// To override the contents of this collection use [`set_signing_parameters`](Self::set_signing_parameters).
@@ -203,6 +204,7 @@ impl PutSigningProfileFluentBuilder {
     pub fn get_signing_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_signing_parameters()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

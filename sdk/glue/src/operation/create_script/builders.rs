@@ -3,7 +3,7 @@ pub use crate::operation::create_script::_create_script_output::CreateScriptOutp
 
 pub use crate::operation::create_script::_create_script_input::CreateScriptInputBuilder;
 
-impl CreateScriptInputBuilder {
+impl crate::operation::create_script::builders::CreateScriptInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl CreateScriptFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `DagNodes`.
     ///
     /// To override the contents of this collection use [`set_dag_nodes`](Self::set_dag_nodes).
@@ -126,6 +127,7 @@ impl CreateScriptFluentBuilder {
     pub fn get_dag_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNode>> {
         self.inner.get_dag_nodes()
     }
+    ///
     /// Appends an item to `DagEdges`.
     ///
     /// To override the contents of this collection use [`set_dag_edges`](Self::set_dag_edges).

@@ -3,7 +3,7 @@ pub use crate::operation::put_managed_rule_set_versions::_put_managed_rule_set_v
 
 pub use crate::operation::put_managed_rule_set_versions::_put_managed_rule_set_versions_input::PutManagedRuleSetVersionsInputBuilder;
 
-impl PutManagedRuleSetVersionsInputBuilder {
+impl crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl PutManagedRuleSetVersionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -207,6 +207,7 @@ impl PutManagedRuleSetVersionsFluentBuilder {
     pub fn get_recommended_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recommended_version()
     }
+    ///
     /// Adds a key-value pair to `VersionsToPublish`.
     ///
     /// To override the contents of this collection use [`set_versions_to_publish`](Self::set_versions_to_publish).

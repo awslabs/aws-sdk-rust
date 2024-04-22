@@ -3,7 +3,7 @@ pub use crate::operation::get_cloud_watch_alarm_template_group::_get_cloud_watch
 
 pub use crate::operation::get_cloud_watch_alarm_template_group::_get_cloud_watch_alarm_template_group_input::GetCloudWatchAlarmTemplateGroupInputBuilder;
 
-impl GetCloudWatchAlarmTemplateGroupInputBuilder {
+impl crate::operation::get_cloud_watch_alarm_template_group::builders::GetCloudWatchAlarmTemplateGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetCloudWatchAlarmTemplateGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

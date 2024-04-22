@@ -3,7 +3,7 @@ pub use crate::operation::update_monitor::_update_monitor_output::UpdateMonitorO
 
 pub use crate::operation::update_monitor::_update_monitor_input::UpdateMonitorInputBuilder;
 
-impl UpdateMonitorInputBuilder {
+impl crate::operation::update_monitor::builders::UpdateMonitorInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateMonitorFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl UpdateMonitorFluentBuilder {
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_name()
     }
+    ///
     /// Appends an item to `ResourcesToAdd`.
     ///
     /// To override the contents of this collection use [`set_resources_to_add`](Self::set_resources_to_add).
@@ -150,6 +151,7 @@ impl UpdateMonitorFluentBuilder {
     pub fn get_resources_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resources_to_add()
     }
+    ///
     /// Appends an item to `ResourcesToRemove`.
     ///
     /// To override the contents of this collection use [`set_resources_to_remove`](Self::set_resources_to_remove).

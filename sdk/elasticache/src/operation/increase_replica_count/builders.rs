@@ -3,7 +3,7 @@ pub use crate::operation::increase_replica_count::_increase_replica_count_output
 
 pub use crate::operation::increase_replica_count::_increase_replica_count_input::IncreaseReplicaCountInputBuilder;
 
-impl IncreaseReplicaCountInputBuilder {
+impl crate::operation::increase_replica_count::builders::IncreaseReplicaCountInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl IncreaseReplicaCountFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl IncreaseReplicaCountFluentBuilder {
     pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_new_replica_count()
     }
+    ///
     /// Appends an item to `ReplicaConfiguration`.
     ///
     /// To override the contents of this collection use [`set_replica_configuration`](Self::set_replica_configuration).

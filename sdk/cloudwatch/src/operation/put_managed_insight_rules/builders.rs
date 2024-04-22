@@ -3,7 +3,7 @@ pub use crate::operation::put_managed_insight_rules::_put_managed_insight_rules_
 
 pub use crate::operation::put_managed_insight_rules::_put_managed_insight_rules_input::PutManagedInsightRulesInputBuilder;
 
-impl PutManagedInsightRulesInputBuilder {
+impl crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl PutManagedInsightRulesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `ManagedRules`.
     ///
     /// To override the contents of this collection use [`set_managed_rules`](Self::set_managed_rules).

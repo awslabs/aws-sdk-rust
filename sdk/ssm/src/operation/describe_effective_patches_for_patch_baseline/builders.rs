@@ -3,7 +3,7 @@ pub use crate::operation::describe_effective_patches_for_patch_baseline::_descri
 
 pub use crate::operation::describe_effective_patches_for_patch_baseline::_describe_effective_patches_for_patch_baseline_input::DescribeEffectivePatchesForPatchBaselineInputBuilder;
 
-impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
+impl crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl DescribeEffectivePatchesForPatchBaselineFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

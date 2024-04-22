@@ -3,7 +3,7 @@ pub use crate::operation::start_workspaces::_start_workspaces_output::StartWorks
 
 pub use crate::operation::start_workspaces::_start_workspaces_input::StartWorkspacesInputBuilder;
 
-impl StartWorkspacesInputBuilder {
+impl crate::operation::start_workspaces::builders::StartWorkspacesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl StartWorkspacesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `StartWorkspaceRequests`.
     ///
     /// To override the contents of this collection use [`set_start_workspace_requests`](Self::set_start_workspace_requests).

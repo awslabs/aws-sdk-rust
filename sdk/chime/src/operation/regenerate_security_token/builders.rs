@@ -3,7 +3,7 @@ pub use crate::operation::regenerate_security_token::_regenerate_security_token_
 
 pub use crate::operation::regenerate_security_token::_regenerate_security_token_input::RegenerateSecurityTokenInputBuilder;
 
-impl RegenerateSecurityTokenInputBuilder {
+impl crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RegenerateSecurityTokenFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

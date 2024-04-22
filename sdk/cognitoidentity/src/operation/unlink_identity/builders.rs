@@ -3,7 +3,7 @@ pub use crate::operation::unlink_identity::_unlink_identity_output::UnlinkIdenti
 
 pub use crate::operation::unlink_identity::_unlink_identity_input::UnlinkIdentityInputBuilder;
 
-impl UnlinkIdentityInputBuilder {
+impl crate::operation::unlink_identity::builders::UnlinkIdentityInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UnlinkIdentityFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl UnlinkIdentityFluentBuilder {
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_id()
     }
+    ///
     /// Adds a key-value pair to `Logins`.
     ///
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
@@ -141,6 +142,7 @@ impl UnlinkIdentityFluentBuilder {
     pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_logins()
     }
+    ///
     /// Appends an item to `LoginsToRemove`.
     ///
     /// To override the contents of this collection use [`set_logins_to_remove`](Self::set_logins_to_remove).

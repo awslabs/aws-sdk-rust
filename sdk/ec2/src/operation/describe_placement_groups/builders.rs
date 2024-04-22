@@ -3,7 +3,7 @@ pub use crate::operation::describe_placement_groups::_describe_placement_groups_
 
 pub use crate::operation::describe_placement_groups::_describe_placement_groups_input::DescribePlacementGroupsInputBuilder;
 
-impl DescribePlacementGroupsInputBuilder {
+impl crate::operation::describe_placement_groups::builders::DescribePlacementGroupsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl DescribePlacementGroupsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -188,6 +189,7 @@ impl DescribePlacementGroupsFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `GroupNames`.
     ///
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
@@ -209,6 +211,7 @@ impl DescribePlacementGroupsFluentBuilder {
     pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_group_names()
     }
+    ///
     /// Appends an item to `GroupIds`.
     ///
     /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).

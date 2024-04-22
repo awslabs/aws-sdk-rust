@@ -3,7 +3,7 @@ pub use crate::operation::put_secret_value::_put_secret_value_output::PutSecretV
 
 pub use crate::operation::put_secret_value::_put_secret_value_input::PutSecretValueInputBuilder;
 
-impl PutSecretValueInputBuilder {
+impl crate::operation::put_secret_value::builders::PutSecretValueInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl PutSecretValueFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -226,6 +226,7 @@ impl PutSecretValueFluentBuilder {
     pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_string()
     }
+    ///
     /// Appends an item to `VersionStages`.
     ///
     /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).

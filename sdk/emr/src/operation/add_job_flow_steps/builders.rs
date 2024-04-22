@@ -3,7 +3,7 @@ pub use crate::operation::add_job_flow_steps::_add_job_flow_steps_output::AddJob
 
 pub use crate::operation::add_job_flow_steps::_add_job_flow_steps_input::AddJobFlowStepsInputBuilder;
 
-impl AddJobFlowStepsInputBuilder {
+impl crate::operation::add_job_flow_steps::builders::AddJobFlowStepsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl AddJobFlowStepsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl AddJobFlowStepsFluentBuilder {
     pub fn get_job_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_flow_id()
     }
+    ///
     /// Appends an item to `Steps`.
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).

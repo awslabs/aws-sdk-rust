@@ -3,7 +3,7 @@ pub use crate::operation::create_graphql_api::_create_graphql_api_output::Create
 
 pub use crate::operation::create_graphql_api::_create_graphql_api_input::CreateGraphqlApiInputBuilder;
 
-impl CreateGraphqlApiInputBuilder {
+impl crate::operation::create_graphql_api::builders::CreateGraphqlApiInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateGraphqlApiFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateGraphqlApiFluentBuilder {
     pub fn get_open_id_connect_config(&self) -> &::std::option::Option<crate::types::OpenIdConnectConfig> {
         self.inner.get_open_id_connect_config()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -196,6 +197,7 @@ impl CreateGraphqlApiFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `additionalAuthenticationProviders`.
     ///
     /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).

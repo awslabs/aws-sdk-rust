@@ -3,7 +3,7 @@ pub use crate::operation::register_container_instance::_register_container_insta
 
 pub use crate::operation::register_container_instance::_register_container_instance_input::RegisterContainerInstanceInputBuilder;
 
-impl RegisterContainerInstanceInputBuilder {
+impl crate::operation::register_container_instance::builders::RegisterContainerInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl RegisterContainerInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl RegisterContainerInstanceFluentBuilder {
     pub fn get_instance_identity_document_signature(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_identity_document_signature()
     }
+    ///
     /// Appends an item to `totalResources`.
     ///
     /// To override the contents of this collection use [`set_total_resources`](Self::set_total_resources).
@@ -199,6 +200,7 @@ impl RegisterContainerInstanceFluentBuilder {
     pub fn get_container_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_container_instance_arn()
     }
+    ///
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -217,6 +219,7 @@ impl RegisterContainerInstanceFluentBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         self.inner.get_attributes()
     }
+    ///
     /// Appends an item to `platformDevices`.
     ///
     /// To override the contents of this collection use [`set_platform_devices`](Self::set_platform_devices).
@@ -235,6 +238,7 @@ impl RegisterContainerInstanceFluentBuilder {
     pub fn get_platform_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>> {
         self.inner.get_platform_devices()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

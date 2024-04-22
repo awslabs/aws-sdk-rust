@@ -3,7 +3,7 @@ pub use crate::operation::list_sites::_list_sites_output::ListSitesOutputBuilder
 
 pub use crate::operation::list_sites::_list_sites_input::ListSitesInputBuilder;
 
-impl ListSitesInputBuilder {
+impl crate::operation::list_sites::builders::ListSitesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -94,12 +94,12 @@ impl ListSitesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl ListSitesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `OperatingAddressCountryCodeFilter`.
     ///
     /// To override the contents of this collection use [`set_operating_address_country_code_filter`](Self::set_operating_address_country_code_filter).
@@ -155,6 +156,7 @@ impl ListSitesFluentBuilder {
     pub fn get_operating_address_country_code_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_operating_address_country_code_filter()
     }
+    ///
     /// Appends an item to `OperatingAddressStateOrRegionFilter`.
     ///
     /// To override the contents of this collection use [`set_operating_address_state_or_region_filter`](Self::set_operating_address_state_or_region_filter).
@@ -173,6 +175,7 @@ impl ListSitesFluentBuilder {
     pub fn get_operating_address_state_or_region_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_operating_address_state_or_region_filter()
     }
+    ///
     /// Appends an item to `OperatingAddressCityFilter`.
     ///
     /// To override the contents of this collection use [`set_operating_address_city_filter`](Self::set_operating_address_city_filter).

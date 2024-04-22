@@ -3,7 +3,7 @@ pub use crate::operation::update_index::_update_index_output::UpdateIndexOutputB
 
 pub use crate::operation::update_index::_update_index_input::UpdateIndexInputBuilder;
 
-impl UpdateIndexInputBuilder {
+impl crate::operation::update_index::builders::UpdateIndexInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateIndexFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateIndexFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `DocumentMetadataConfigurationUpdates`.
     ///
     /// To override the contents of this collection use [`set_document_metadata_configuration_updates`](Self::set_document_metadata_configuration_updates).
@@ -204,6 +205,7 @@ impl UpdateIndexFluentBuilder {
     pub fn get_capacity_units(&self) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
         self.inner.get_capacity_units()
     }
+    ///
     /// Appends an item to `UserTokenConfigurations`.
     ///
     /// To override the contents of this collection use [`set_user_token_configurations`](Self::set_user_token_configurations).

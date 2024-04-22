@@ -3,7 +3,7 @@ pub use crate::operation::update_queue::_update_queue_output::UpdateQueueOutputB
 
 pub use crate::operation::update_queue::_update_queue_input::UpdateQueueInputBuilder;
 
-impl UpdateQueueInputBuilder {
+impl crate::operation::update_queue::builders::UpdateQueueInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateQueueFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -234,6 +234,7 @@ impl UpdateQueueFluentBuilder {
     pub fn get_job_run_as_user(&self) -> &::std::option::Option<crate::types::JobRunAsUser> {
         self.inner.get_job_run_as_user()
     }
+    ///
     /// Appends an item to `requiredFileSystemLocationNamesToAdd`.
     ///
     /// To override the contents of this collection use [`set_required_file_system_location_names_to_add`](Self::set_required_file_system_location_names_to_add).
@@ -252,6 +253,7 @@ impl UpdateQueueFluentBuilder {
     pub fn get_required_file_system_location_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_required_file_system_location_names_to_add()
     }
+    ///
     /// Appends an item to `requiredFileSystemLocationNamesToRemove`.
     ///
     /// To override the contents of this collection use [`set_required_file_system_location_names_to_remove`](Self::set_required_file_system_location_names_to_remove).
@@ -270,6 +272,7 @@ impl UpdateQueueFluentBuilder {
     pub fn get_required_file_system_location_names_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_required_file_system_location_names_to_remove()
     }
+    ///
     /// Appends an item to `allowedStorageProfileIdsToAdd`.
     ///
     /// To override the contents of this collection use [`set_allowed_storage_profile_ids_to_add`](Self::set_allowed_storage_profile_ids_to_add).
@@ -288,6 +291,7 @@ impl UpdateQueueFluentBuilder {
     pub fn get_allowed_storage_profile_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_storage_profile_ids_to_add()
     }
+    ///
     /// Appends an item to `allowedStorageProfileIdsToRemove`.
     ///
     /// To override the contents of this collection use [`set_allowed_storage_profile_ids_to_remove`](Self::set_allowed_storage_profile_ids_to_remove).

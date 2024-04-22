@@ -3,7 +3,7 @@ pub use crate::operation::put_compliance_items::_put_compliance_items_output::Pu
 
 pub use crate::operation::put_compliance_items::_put_compliance_items_input::PutComplianceItemsInputBuilder;
 
-impl PutComplianceItemsInputBuilder {
+impl crate::operation::put_compliance_items::builders::PutComplianceItemsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -132,12 +132,12 @@ impl PutComplianceItemsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -197,6 +197,7 @@ impl PutComplianceItemsFluentBuilder {
     pub fn get_execution_summary(&self) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
         self.inner.get_execution_summary()
     }
+    ///
     /// Appends an item to `Items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).

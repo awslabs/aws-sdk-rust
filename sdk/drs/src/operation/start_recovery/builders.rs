@@ -3,7 +3,7 @@ pub use crate::operation::start_recovery::_start_recovery_output::StartRecoveryO
 
 pub use crate::operation::start_recovery::_start_recovery_input::StartRecoveryInputBuilder;
 
-impl StartRecoveryInputBuilder {
+impl crate::operation::start_recovery::builders::StartRecoveryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl StartRecoveryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `sourceServers`.
     ///
     /// To override the contents of this collection use [`set_source_servers`](Self::set_source_servers).
@@ -140,6 +141,7 @@ impl StartRecoveryFluentBuilder {
     pub fn get_is_drill(&self) -> &::std::option::Option<bool> {
         self.inner.get_is_drill()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

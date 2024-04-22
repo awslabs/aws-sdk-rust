@@ -3,7 +3,7 @@ pub use crate::operation::create_target_group::_create_target_group_output::Crea
 
 pub use crate::operation::create_target_group::_create_target_group_input::CreateTargetGroupInputBuilder;
 
-impl CreateTargetGroupInputBuilder {
+impl crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl CreateTargetGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -367,6 +367,7 @@ impl CreateTargetGroupFluentBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetTypeEnum> {
         self.inner.get_target_type()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

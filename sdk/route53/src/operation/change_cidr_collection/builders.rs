@@ -3,7 +3,7 @@ pub use crate::operation::change_cidr_collection::_change_cidr_collection_output
 
 pub use crate::operation::change_cidr_collection::_change_cidr_collection_input::ChangeCidrCollectionInputBuilder;
 
-impl ChangeCidrCollectionInputBuilder {
+impl crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -110,12 +110,12 @@ impl ChangeCidrCollectionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -168,6 +168,7 @@ impl ChangeCidrCollectionFluentBuilder {
     pub fn get_collection_version(&self) -> &::std::option::Option<i64> {
         self.inner.get_collection_version()
     }
+    ///
     /// Appends an item to `Changes`.
     ///
     /// To override the contents of this collection use [`set_changes`](Self::set_changes).

@@ -3,7 +3,7 @@ pub use crate::operation::describe_log_groups::_describe_log_groups_output::Desc
 
 pub use crate::operation::describe_log_groups::_describe_log_groups_input::DescribeLogGroupsInputBuilder;
 
-impl DescribeLogGroupsInputBuilder {
+impl crate::operation::describe_log_groups::builders::DescribeLogGroupsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DescribeLogGroupsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -116,6 +116,7 @@ impl DescribeLogGroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_log_groups::paginator::DescribeLogGroupsPaginator {
         crate::operation::describe_log_groups::paginator::DescribeLogGroupsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `accountIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_account_identifiers`](Self::set_account_identifiers).

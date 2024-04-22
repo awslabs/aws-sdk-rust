@@ -3,7 +3,7 @@ pub use crate::operation::describe_update_actions::_describe_update_actions_outp
 
 pub use crate::operation::describe_update_actions::_describe_update_actions_input::DescribeUpdateActionsInputBuilder;
 
-impl DescribeUpdateActionsInputBuilder {
+impl crate::operation::describe_update_actions::builders::DescribeUpdateActionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeUpdateActionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl DescribeUpdateActionsFluentBuilder {
     pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_update_name()
     }
+    ///
     /// Appends an item to `ReplicationGroupIds`.
     ///
     /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
@@ -146,6 +147,7 @@ impl DescribeUpdateActionsFluentBuilder {
     pub fn get_replication_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_replication_group_ids()
     }
+    ///
     /// Appends an item to `CacheClusterIds`.
     ///
     /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
@@ -178,6 +180,7 @@ impl DescribeUpdateActionsFluentBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
+    ///
     /// Appends an item to `ServiceUpdateStatus`.
     ///
     /// To override the contents of this collection use [`set_service_update_status`](Self::set_service_update_status).
@@ -210,6 +213,7 @@ impl DescribeUpdateActionsFluentBuilder {
     pub fn get_service_update_time_range(&self) -> &::std::option::Option<crate::types::TimeRangeFilter> {
         self.inner.get_service_update_time_range()
     }
+    ///
     /// Appends an item to `UpdateActionStatus`.
     ///
     /// To override the contents of this collection use [`set_update_action_status`](Self::set_update_action_status).

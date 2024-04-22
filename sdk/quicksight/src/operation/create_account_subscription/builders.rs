@@ -3,7 +3,7 @@ pub use crate::operation::create_account_subscription::_create_account_subscript
 
 pub use crate::operation::create_account_subscription::_create_account_subscription_input::CreateAccountSubscriptionInputBuilder;
 
-impl CreateAccountSubscriptionInputBuilder {
+impl crate::operation::create_account_subscription::builders::CreateAccountSubscriptionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CreateAccountSubscriptionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -264,6 +264,7 @@ impl CreateAccountSubscriptionFluentBuilder {
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }
+    ///
     /// Appends an item to `AdminGroup`.
     ///
     /// To override the contents of this collection use [`set_admin_group`](Self::set_admin_group).
@@ -285,6 +286,7 @@ impl CreateAccountSubscriptionFluentBuilder {
     pub fn get_admin_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_admin_group()
     }
+    ///
     /// Appends an item to `AuthorGroup`.
     ///
     /// To override the contents of this collection use [`set_author_group`](Self::set_author_group).
@@ -306,6 +308,7 @@ impl CreateAccountSubscriptionFluentBuilder {
     pub fn get_author_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_author_group()
     }
+    ///
     /// Appends an item to `ReaderGroup`.
     ///
     /// To override the contents of this collection use [`set_reader_group`](Self::set_reader_group).

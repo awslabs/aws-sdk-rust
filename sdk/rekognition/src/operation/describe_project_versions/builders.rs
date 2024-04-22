@@ -3,7 +3,7 @@ pub use crate::operation::describe_project_versions::_describe_project_versions_
 
 pub use crate::operation::describe_project_versions::_describe_project_versions_input::DescribeProjectVersionsInputBuilder;
 
-impl DescribeProjectVersionsInputBuilder {
+impl crate::operation::describe_project_versions::builders::DescribeProjectVersionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeProjectVersionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -129,6 +129,7 @@ impl DescribeProjectVersionsFluentBuilder {
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_arn()
     }
+    ///
     /// Appends an item to `VersionNames`.
     ///
     /// To override the contents of this collection use [`set_version_names`](Self::set_version_names).

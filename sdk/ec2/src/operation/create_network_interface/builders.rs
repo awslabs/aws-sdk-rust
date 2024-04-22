@@ -3,7 +3,7 @@ pub use crate::operation::create_network_interface::_create_network_interface_ou
 
 pub use crate::operation::create_network_interface::_create_network_interface_input::CreateNetworkInterfaceInputBuilder;
 
-impl CreateNetworkInterfaceInputBuilder {
+impl crate::operation::create_network_interface::builders::CreateNetworkInterfaceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateNetworkInterfaceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `Groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -176,6 +177,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_ipv6_address_count()
     }
+    ///
     /// Appends an item to `Ipv6Addresses`.
     ///
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
@@ -211,6 +213,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_private_ip_address()
     }
+    ///
     /// Appends an item to `PrivateIpAddresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
@@ -249,6 +252,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     pub fn get_secondary_private_ip_address_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_secondary_private_ip_address_count()
     }
+    ///
     /// Appends an item to `Ipv4Prefixes`.
     ///
     /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
@@ -287,6 +291,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     pub fn get_ipv4_prefix_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_ipv4_prefix_count()
     }
+    ///
     /// Appends an item to `Ipv6Prefixes`.
     ///
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).
@@ -356,6 +361,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subnet_id()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

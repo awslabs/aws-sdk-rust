@@ -3,7 +3,7 @@ pub use crate::operation::update_security_profile::_update_security_profile_outp
 
 pub use crate::operation::update_security_profile::_update_security_profile_input::UpdateSecurityProfileInputBuilder;
 
-impl UpdateSecurityProfileInputBuilder {
+impl crate::operation::update_security_profile::builders::UpdateSecurityProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateSecurityProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn get_security_profile_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_profile_description()
     }
+    ///
     /// Appends an item to `behaviors`.
     ///
     /// To override the contents of this collection use [`set_behaviors`](Self::set_behaviors).
@@ -155,6 +156,7 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn get_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Behavior>> {
         self.inner.get_behaviors()
     }
+    ///
     /// Adds a key-value pair to `alertTargets`.
     ///
     /// To override the contents of this collection use [`set_alert_targets`](Self::set_alert_targets).
@@ -176,6 +178,7 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn get_alert_targets(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>> {
         self.inner.get_alert_targets()
     }
+    ///
     /// Appends an item to `additionalMetricsToRetain`.
     ///
     /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
@@ -200,6 +203,7 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn get_additional_metrics_to_retain(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_metrics_to_retain()
     }
+    ///
     /// Appends an item to `additionalMetricsToRetainV2`.
     ///
     /// To override the contents of this collection use [`set_additional_metrics_to_retain_v2`](Self::set_additional_metrics_to_retain_v2).

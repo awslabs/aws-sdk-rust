@@ -3,7 +3,7 @@ pub use crate::operation::start_capacity_task::_start_capacity_task_output::Star
 
 pub use crate::operation::start_capacity_task::_start_capacity_task_input::StartCapacityTaskInputBuilder;
 
-impl StartCapacityTaskInputBuilder {
+impl crate::operation::start_capacity_task::builders::StartCapacityTaskInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartCapacityTaskFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl StartCapacityTaskFluentBuilder {
     pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_order_id()
     }
+    ///
     /// Appends an item to `InstancePools`.
     ///
     /// To override the contents of this collection use [`set_instance_pools`](Self::set_instance_pools).

@@ -3,7 +3,7 @@ pub use crate::operation::put_object::_put_object_output::PutObjectOutputBuilder
 
 pub use crate::operation::put_object::_put_object_input::PutObjectInputBuilder;
 
-impl PutObjectInputBuilder {
+impl crate::operation::put_object::builders::PutObjectInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -158,12 +158,12 @@ impl PutObjectFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -696,6 +696,7 @@ impl PutObjectFluentBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key()
     }
+    ///
     /// Adds a key-value pair to `Metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).

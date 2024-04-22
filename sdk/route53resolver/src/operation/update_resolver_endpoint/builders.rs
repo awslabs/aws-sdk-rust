@@ -3,7 +3,7 @@ pub use crate::operation::update_resolver_endpoint::_update_resolver_endpoint_ou
 
 pub use crate::operation::update_resolver_endpoint::_update_resolver_endpoint_input::UpdateResolverEndpointInputBuilder;
 
-impl UpdateResolverEndpointInputBuilder {
+impl crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateResolverEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl UpdateResolverEndpointFluentBuilder {
     pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
         self.inner.get_resolver_endpoint_type()
     }
+    ///
     /// Appends an item to `UpdateIpAddresses`.
     ///
     /// To override the contents of this collection use [`set_update_ip_addresses`](Self::set_update_ip_addresses).
@@ -171,6 +172,7 @@ impl UpdateResolverEndpointFluentBuilder {
     pub fn get_update_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
         self.inner.get_update_ip_addresses()
     }
+    ///
     /// Appends an item to `Protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).

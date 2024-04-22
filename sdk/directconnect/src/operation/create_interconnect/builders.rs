@@ -3,7 +3,7 @@ pub use crate::operation::create_interconnect::_create_interconnect_output::Crea
 
 pub use crate::operation::create_interconnect::_create_interconnect_input::CreateInterconnectInputBuilder;
 
-impl CreateInterconnectInputBuilder {
+impl crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CreateInterconnectFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -169,6 +169,7 @@ impl CreateInterconnectFluentBuilder {
     pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_lag_id()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

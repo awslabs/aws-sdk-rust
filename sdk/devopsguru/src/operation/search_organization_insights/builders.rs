@@ -3,7 +3,7 @@ pub use crate::operation::search_organization_insights::_search_organization_ins
 
 pub use crate::operation::search_organization_insights::_search_organization_insights_input::SearchOrganizationInsightsInputBuilder;
 
-impl SearchOrganizationInsightsInputBuilder {
+impl crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl SearchOrganizationInsightsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl SearchOrganizationInsightsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator {
         crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).

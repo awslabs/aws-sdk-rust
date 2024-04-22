@@ -3,7 +3,7 @@ pub use crate::operation::update_region_settings::_update_region_settings_output
 
 pub use crate::operation::update_region_settings::_update_region_settings_input::UpdateRegionSettingsInputBuilder;
 
-impl UpdateRegionSettingsInputBuilder {
+impl crate::operation::update_region_settings::builders::UpdateRegionSettingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl UpdateRegionSettingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Adds a key-value pair to `ResourceTypeOptInPreference`.
     ///
     /// To override the contents of this collection use [`set_resource_type_opt_in_preference`](Self::set_resource_type_opt_in_preference).
@@ -133,6 +134,7 @@ impl UpdateRegionSettingsFluentBuilder {
     pub fn get_resource_type_opt_in_preference(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         self.inner.get_resource_type_opt_in_preference()
     }
+    ///
     /// Adds a key-value pair to `ResourceTypeManagementPreference`.
     ///
     /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).

@@ -3,7 +3,7 @@ pub use crate::operation::list_filters::_list_filters_output::ListFiltersOutputB
 
 pub use crate::operation::list_filters::_list_filters_input::ListFiltersInputBuilder;
 
-impl ListFiltersInputBuilder {
+impl crate::operation::list_filters::builders::ListFiltersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListFiltersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListFiltersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_filters::paginator::ListFiltersPaginator {
         crate::operation::list_filters::paginator::ListFiltersPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `arns`.
     ///
     /// To override the contents of this collection use [`set_arns`](Self::set_arns).

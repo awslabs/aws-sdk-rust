@@ -3,7 +3,7 @@ pub use crate::operation::increase_node_groups_in_global_replication_group::_inc
 
 pub use crate::operation::increase_node_groups_in_global_replication_group::_increase_node_groups_in_global_replication_group_input::IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder;
 
-impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
+impl crate::operation::increase_node_groups_in_global_replication_group::builders::IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
     pub fn get_node_group_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_node_group_count()
     }
+    ///
     /// Appends an item to `RegionalConfigurations`.
     ///
     /// To override the contents of this collection use [`set_regional_configurations`](Self::set_regional_configurations).

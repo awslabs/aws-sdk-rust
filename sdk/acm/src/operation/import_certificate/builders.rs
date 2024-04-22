@@ -3,7 +3,7 @@ pub use crate::operation::import_certificate::_import_certificate_output::Import
 
 pub use crate::operation::import_certificate::_import_certificate_input::ImportCertificateInputBuilder;
 
-impl ImportCertificateInputBuilder {
+impl crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -131,12 +131,12 @@ impl ImportCertificateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -196,6 +196,7 @@ impl ImportCertificateFluentBuilder {
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_certificate_chain()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

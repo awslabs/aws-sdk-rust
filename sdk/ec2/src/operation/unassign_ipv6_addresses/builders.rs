@@ -3,7 +3,7 @@ pub use crate::operation::unassign_ipv6_addresses::_unassign_ipv6_addresses_outp
 
 pub use crate::operation::unassign_ipv6_addresses::_unassign_ipv6_addresses_input::UnassignIpv6AddressesInputBuilder;
 
-impl UnassignIpv6AddressesInputBuilder {
+impl crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl UnassignIpv6AddressesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `Ipv6Addresses`.
     ///
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
@@ -126,6 +127,7 @@ impl UnassignIpv6AddressesFluentBuilder {
     pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ipv6_addresses()
     }
+    ///
     /// Appends an item to `Ipv6Prefixes`.
     ///
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).

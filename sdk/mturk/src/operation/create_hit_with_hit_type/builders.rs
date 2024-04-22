@@ -3,7 +3,7 @@ pub use crate::operation::create_hit_with_hit_type::_create_hit_with_hit_type_ou
 
 pub use crate::operation::create_hit_with_hit_type::_create_hit_with_hit_type_input::CreateHitWithHitTypeInputBuilder;
 
-impl CreateHitWithHitTypeInputBuilder {
+impl crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl CreateHITWithHITTypeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -259,6 +259,7 @@ impl CreateHITWithHITTypeFluentBuilder {
     pub fn get_hit_layout_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hit_layout_id()
     }
+    ///
     /// Appends an item to `HITLayoutParameters`.
     ///
     /// To override the contents of this collection use [`set_hit_layout_parameters`](Self::set_hit_layout_parameters).

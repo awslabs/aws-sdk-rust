@@ -3,7 +3,7 @@ pub use crate::operation::import_snapshot::_import_snapshot_output::ImportSnapsh
 
 pub use crate::operation::import_snapshot::_import_snapshot_input::ImportSnapshotInputBuilder;
 
-impl ImportSnapshotInputBuilder {
+impl crate::operation::import_snapshot::builders::ImportSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ImportSnapshotFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -263,6 +263,7 @@ impl ImportSnapshotFluentBuilder {
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_name()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

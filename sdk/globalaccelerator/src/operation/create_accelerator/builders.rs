@@ -3,7 +3,7 @@ pub use crate::operation::create_accelerator::_create_accelerator_output::Create
 
 pub use crate::operation::create_accelerator::_create_accelerator_input::CreateAcceleratorInputBuilder;
 
-impl CreateAcceleratorInputBuilder {
+impl crate::operation::create_accelerator::builders::CreateAcceleratorInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateAcceleratorFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl CreateAcceleratorFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
     }
+    ///
     /// Appends an item to `IpAddresses`.
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
@@ -199,6 +200,7 @@ impl CreateAcceleratorFluentBuilder {
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idempotency_token()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

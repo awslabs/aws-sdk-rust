@@ -3,7 +3,7 @@ pub use crate::operation::untag_policy::_untag_policy_output::UntagPolicyOutputB
 
 pub use crate::operation::untag_policy::_untag_policy_input::UntagPolicyInputBuilder;
 
-impl UntagPolicyInputBuilder {
+impl crate::operation::untag_policy::builders::UntagPolicyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UntagPolicyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -125,6 +125,7 @@ impl UntagPolicyFluentBuilder {
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_arn()
     }
+    ///
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).

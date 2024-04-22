@@ -3,7 +3,7 @@ pub use crate::operation::create_account::_create_account_output::CreateAccountO
 
 pub use crate::operation::create_account::_create_account_input::CreateAccountInputBuilder;
 
-impl CreateAccountInputBuilder {
+impl crate::operation::create_account::builders::CreateAccountInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -123,12 +123,12 @@ impl CreateAccountFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -281,6 +281,7 @@ impl CreateAccountFluentBuilder {
     pub fn get_iam_user_access_to_billing(&self) -> &::std::option::Option<crate::types::IamUserAccessToBilling> {
         self.inner.get_iam_user_access_to_billing()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

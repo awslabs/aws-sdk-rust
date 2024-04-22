@@ -3,7 +3,7 @@ pub use crate::operation::create_job::_create_job_output::CreateJobOutputBuilder
 
 pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 
-impl CreateJobInputBuilder {
+impl crate::operation::create_job::builders::CreateJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -94,12 +94,12 @@ impl CreateJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -117,6 +117,7 @@ impl CreateJobFluentBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
+    ///
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -259,6 +260,7 @@ impl CreateJobFluentBuilder {
     pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
         self.inner.get_timeout_config()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -331,6 +333,7 @@ impl CreateJobFluentBuilder {
     pub fn get_job_executions_retry_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
         self.inner.get_job_executions_retry_config()
     }
+    ///
     /// Adds a key-value pair to `documentParameters`.
     ///
     /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
@@ -376,6 +379,7 @@ impl CreateJobFluentBuilder {
     pub fn get_scheduling_config(&self) -> &::std::option::Option<crate::types::SchedulingConfig> {
         self.inner.get_scheduling_config()
     }
+    ///
     /// Appends an item to `destinationPackageVersions`.
     ///
     /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).

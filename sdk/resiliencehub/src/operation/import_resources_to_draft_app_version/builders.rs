@@ -3,7 +3,7 @@ pub use crate::operation::import_resources_to_draft_app_version::_import_resourc
 
 pub use crate::operation::import_resources_to_draft_app_version::_import_resources_to_draft_app_version_input::ImportResourcesToDraftAppVersionInputBuilder;
 
-impl ImportResourcesToDraftAppVersionInputBuilder {
+impl crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_arn()
     }
+    ///
     /// Appends an item to `sourceArns`.
     ///
     /// To override the contents of this collection use [`set_source_arns`](Self::set_source_arns).
@@ -140,6 +141,7 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     pub fn get_source_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_source_arns()
     }
+    ///
     /// Appends an item to `terraformSources`.
     ///
     /// To override the contents of this collection use [`set_terraform_sources`](Self::set_terraform_sources).
@@ -172,6 +174,7 @@ impl ImportResourcesToDraftAppVersionFluentBuilder {
     pub fn get_import_strategy(&self) -> &::std::option::Option<crate::types::ResourceImportStrategyType> {
         self.inner.get_import_strategy()
     }
+    ///
     /// Appends an item to `eksSources`.
     ///
     /// To override the contents of this collection use [`set_eks_sources`](Self::set_eks_sources).

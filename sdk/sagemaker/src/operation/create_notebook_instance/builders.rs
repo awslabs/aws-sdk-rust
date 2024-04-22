@@ -3,7 +3,7 @@ pub use crate::operation::create_notebook_instance::_create_notebook_instance_ou
 
 pub use crate::operation::create_notebook_instance::_create_notebook_instance_input::CreateNotebookInstanceInputBuilder;
 
-impl CreateNotebookInstanceInputBuilder {
+impl crate::operation::create_notebook_instance::builders::CreateNotebookInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -113,12 +113,12 @@ impl CreateNotebookInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateNotebookInstanceFluentBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subnet_id()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -216,6 +217,7 @@ impl CreateNotebookInstanceFluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -279,6 +281,7 @@ impl CreateNotebookInstanceFluentBuilder {
     pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
         self.inner.get_volume_size_in_gb()
     }
+    ///
     /// Appends an item to `AcceleratorTypes`.
     ///
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
@@ -311,6 +314,7 @@ impl CreateNotebookInstanceFluentBuilder {
     pub fn get_default_code_repository(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_code_repository()
     }
+    ///
     /// Appends an item to `AdditionalCodeRepositories`.
     ///
     /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).

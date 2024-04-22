@@ -3,7 +3,7 @@ pub use crate::operation::describe_network_acls::_describe_network_acls_output::
 
 pub use crate::operation::describe_network_acls::_describe_network_acls_input::DescribeNetworkAclsInputBuilder;
 
-impl DescribeNetworkAclsInputBuilder {
+impl crate::operation::describe_network_acls::builders::DescribeNetworkAclsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeNetworkAclsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl DescribeNetworkAclsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_network_acls::paginator::DescribeNetworkAclsPaginator {
         crate::operation::describe_network_acls::paginator::DescribeNetworkAclsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -285,6 +286,7 @@ impl DescribeNetworkAclsFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `NetworkAclIds`.
     ///
     /// To override the contents of this collection use [`set_network_acl_ids`](Self::set_network_acl_ids).

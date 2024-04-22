@@ -3,7 +3,7 @@ pub use crate::operation::update_domain_nameservers::_update_domain_nameservers_
 
 pub use crate::operation::update_domain_nameservers::_update_domain_nameservers_input::UpdateDomainNameserversInputBuilder;
 
-impl UpdateDomainNameserversInputBuilder {
+impl crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateDomainNameserversFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -140,6 +140,7 @@ impl UpdateDomainNameserversFluentBuilder {
     pub fn get_fi_auth_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fi_auth_key()
     }
+    ///
     /// Appends an item to `Nameservers`.
     ///
     /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).

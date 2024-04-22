@@ -3,7 +3,7 @@ pub use crate::operation::get_identity_policies::_get_identity_policies_output::
 
 pub use crate::operation::get_identity_policies::_get_identity_policies_input::GetIdentityPoliciesInputBuilder;
 
-impl GetIdentityPoliciesInputBuilder {
+impl crate::operation::get_identity_policies::builders::GetIdentityPoliciesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl GetIdentityPoliciesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -129,6 +129,7 @@ impl GetIdentityPoliciesFluentBuilder {
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity()
     }
+    ///
     /// Appends an item to `PolicyNames`.
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).

@@ -3,7 +3,7 @@ pub use crate::operation::create_association::_create_association_output::Create
 
 pub use crate::operation::create_association::_create_association_input::CreateAssociationInputBuilder;
 
-impl CreateAssociationInputBuilder {
+impl crate::operation::create_association::builders::CreateAssociationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateAssociationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -180,6 +180,7 @@ impl CreateAssociationFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
+    ///
     /// Adds a key-value pair to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -203,6 +204,7 @@ impl CreateAssociationFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_parameters()
     }
+    ///
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -359,6 +361,7 @@ impl CreateAssociationFluentBuilder {
     pub fn get_apply_only_at_cron_interval(&self) -> &::std::option::Option<bool> {
         self.inner.get_apply_only_at_cron_interval()
     }
+    ///
     /// Appends an item to `CalendarNames`.
     ///
     /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
@@ -377,6 +380,7 @@ impl CreateAssociationFluentBuilder {
     pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_calendar_names()
     }
+    ///
     /// Appends an item to `TargetLocations`.
     ///
     /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
@@ -450,6 +454,7 @@ impl CreateAssociationFluentBuilder {
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration()
     }
+    ///
     /// Appends an item to `TargetMaps`.
     ///
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
@@ -473,6 +478,7 @@ impl CreateAssociationFluentBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>> {
         self.inner.get_target_maps()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

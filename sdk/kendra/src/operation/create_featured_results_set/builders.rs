@@ -3,7 +3,7 @@ pub use crate::operation::create_featured_results_set::_create_featured_results_
 
 pub use crate::operation::create_featured_results_set::_create_featured_results_set_input::CreateFeaturedResultsSetInputBuilder;
 
-impl CreateFeaturedResultsSetInputBuilder {
+impl crate::operation::create_featured_results_set::builders::CreateFeaturedResultsSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateFeaturedResultsSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl CreateFeaturedResultsSetFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeaturedResultsSetStatus> {
         self.inner.get_status()
     }
+    ///
     /// Appends an item to `QueryTexts`.
     ///
     /// To override the contents of this collection use [`set_query_texts`](Self::set_query_texts).
@@ -197,6 +198,7 @@ impl CreateFeaturedResultsSetFluentBuilder {
     pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_query_texts()
     }
+    ///
     /// Appends an item to `FeaturedDocuments`.
     ///
     /// To override the contents of this collection use [`set_featured_documents`](Self::set_featured_documents).
@@ -215,6 +217,7 @@ impl CreateFeaturedResultsSetFluentBuilder {
     pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>> {
         self.inner.get_featured_documents()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

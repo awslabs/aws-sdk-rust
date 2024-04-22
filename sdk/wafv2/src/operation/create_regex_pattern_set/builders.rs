@@ -3,7 +3,7 @@ pub use crate::operation::create_regex_pattern_set::_create_regex_pattern_set_ou
 
 pub use crate::operation::create_regex_pattern_set::_create_regex_pattern_set_input::CreateRegexPatternSetInputBuilder;
 
-impl CreateRegexPatternSetInputBuilder {
+impl crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateRegexPatternSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -171,6 +171,7 @@ impl CreateRegexPatternSetFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `RegularExpressionList`.
     ///
     /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
@@ -189,6 +190,7 @@ impl CreateRegexPatternSetFluentBuilder {
     pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
         self.inner.get_regular_expression_list()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

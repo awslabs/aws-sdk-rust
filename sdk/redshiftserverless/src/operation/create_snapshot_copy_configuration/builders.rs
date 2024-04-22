@@ -3,7 +3,7 @@ pub use crate::operation::create_snapshot_copy_configuration::_create_snapshot_c
 
 pub use crate::operation::create_snapshot_copy_configuration::_create_snapshot_copy_configuration_input::CreateSnapshotCopyConfigurationInputBuilder;
 
-impl CreateSnapshotCopyConfigurationInputBuilder {
+impl crate::operation::create_snapshot_copy_configuration::builders::CreateSnapshotCopyConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSnapshotCopyConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::get_context_keys_for_principal_policy::_get_context_ke
 
 pub use crate::operation::get_context_keys_for_principal_policy::_get_context_keys_for_principal_policy_input::GetContextKeysForPrincipalPolicyInputBuilder;
 
-impl GetContextKeysForPrincipalPolicyInputBuilder {
+impl crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl GetContextKeysForPrincipalPolicyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl GetContextKeysForPrincipalPolicyFluentBuilder {
     pub fn get_policy_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_source_arn()
     }
+    ///
     /// Appends an item to `PolicyInputList`.
     ///
     /// To override the contents of this collection use [`set_policy_input_list`](Self::set_policy_input_list).

@@ -3,7 +3,7 @@ pub use crate::operation::create_vpc_endpoint::_create_vpc_endpoint_output::Crea
 
 pub use crate::operation::create_vpc_endpoint::_create_vpc_endpoint_input::CreateVpcEndpointInputBuilder;
 
-impl CreateVpcEndpointInputBuilder {
+impl crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateVpcEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -181,6 +181,7 @@ impl CreateVpcEndpointFluentBuilder {
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_document()
     }
+    ///
     /// Appends an item to `RouteTableIds`.
     ///
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
@@ -199,6 +200,7 @@ impl CreateVpcEndpointFluentBuilder {
     pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_route_table_ids()
     }
+    ///
     /// Appends an item to `SubnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -217,6 +219,7 @@ impl CreateVpcEndpointFluentBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -297,6 +300,7 @@ impl CreateVpcEndpointFluentBuilder {
     pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_private_dns_enabled()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -315,6 +319,7 @@ impl CreateVpcEndpointFluentBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
+    ///
     /// Appends an item to `SubnetConfigurations`.
     ///
     /// To override the contents of this collection use [`set_subnet_configurations`](Self::set_subnet_configurations).

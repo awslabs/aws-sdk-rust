@@ -3,7 +3,7 @@ pub use crate::operation::calculate_route::_calculate_route_output::CalculateRou
 
 pub use crate::operation::calculate_route::_calculate_route_input::CalculateRouteInputBuilder;
 
-impl CalculateRouteInputBuilder {
+impl crate::operation::calculate_route::builders::CalculateRouteInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl CalculateRouteFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -134,6 +134,7 @@ impl CalculateRouteFluentBuilder {
     pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_calculator_name()
     }
+    ///
     /// Appends an item to `DeparturePosition`.
     ///
     /// To override the contents of this collection use [`set_departure_position`](Self::set_departure_position).
@@ -173,6 +174,7 @@ impl CalculateRouteFluentBuilder {
     pub fn get_departure_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_departure_position()
     }
+    ///
     /// Appends an item to `DestinationPosition`.
     ///
     /// To override the contents of this collection use [`set_destination_position`](Self::set_destination_position).
@@ -212,6 +214,7 @@ impl CalculateRouteFluentBuilder {
     pub fn get_destination_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_destination_position()
     }
+    ///
     /// Appends an item to `WaypointPositions`.
     ///
     /// To override the contents of this collection use [`set_waypoint_positions`](Self::set_waypoint_positions).

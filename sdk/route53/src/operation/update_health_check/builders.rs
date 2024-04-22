@@ -3,7 +3,7 @@ pub use crate::operation::update_health_check::_update_health_check_output::Upda
 
 pub use crate::operation::update_health_check::_update_health_check_input::UpdateHealthCheckInputBuilder;
 
-impl UpdateHealthCheckInputBuilder {
+impl crate::operation::update_health_check::builders::UpdateHealthCheckInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateHealthCheckFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -494,6 +494,7 @@ impl UpdateHealthCheckFluentBuilder {
     pub fn get_health_threshold(&self) -> &::std::option::Option<i32> {
         self.inner.get_health_threshold()
     }
+    ///
     /// Appends an item to `ChildHealthChecks`.
     ///
     /// To override the contents of this collection use [`set_child_health_checks`](Self::set_child_health_checks).
@@ -532,6 +533,7 @@ impl UpdateHealthCheckFluentBuilder {
     pub fn get_enable_sni(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_sni()
     }
+    ///
     /// Appends an item to `Regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -602,6 +604,7 @@ impl UpdateHealthCheckFluentBuilder {
     pub fn get_insufficient_data_health_status(&self) -> &::std::option::Option<crate::types::InsufficientDataHealthStatus> {
         self.inner.get_insufficient_data_health_status()
     }
+    ///
     /// Appends an item to `ResetElements`.
     ///
     /// To override the contents of this collection use [`set_reset_elements`](Self::set_reset_elements).

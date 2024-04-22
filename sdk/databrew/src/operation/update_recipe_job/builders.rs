@@ -3,7 +3,7 @@ pub use crate::operation::update_recipe_job::_update_recipe_job_output::UpdateRe
 
 pub use crate::operation::update_recipe_job::_update_recipe_job_input::UpdateRecipeJobInputBuilder;
 
-impl UpdateRecipeJobInputBuilder {
+impl crate::operation::update_recipe_job::builders::UpdateRecipeJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateRecipeJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -210,6 +210,7 @@ impl UpdateRecipeJobFluentBuilder {
     pub fn get_max_retries(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_retries()
     }
+    ///
     /// Appends an item to `Outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -228,6 +229,7 @@ impl UpdateRecipeJobFluentBuilder {
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
         self.inner.get_outputs()
     }
+    ///
     /// Appends an item to `DataCatalogOutputs`.
     ///
     /// To override the contents of this collection use [`set_data_catalog_outputs`](Self::set_data_catalog_outputs).
@@ -246,6 +248,7 @@ impl UpdateRecipeJobFluentBuilder {
     pub fn get_data_catalog_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataCatalogOutput>> {
         self.inner.get_data_catalog_outputs()
     }
+    ///
     /// Appends an item to `DatabaseOutputs`.
     ///
     /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).

@@ -3,7 +3,7 @@ pub use crate::operation::reject_inbound_connection::_reject_inbound_connection_
 
 pub use crate::operation::reject_inbound_connection::_reject_inbound_connection_input::RejectInboundConnectionInputBuilder;
 
-impl RejectInboundConnectionInputBuilder {
+impl crate::operation::reject_inbound_connection::builders::RejectInboundConnectionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RejectInboundConnectionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

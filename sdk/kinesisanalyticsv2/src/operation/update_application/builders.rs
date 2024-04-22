@@ -3,7 +3,7 @@ pub use crate::operation::update_application::_update_application_output::Update
 
 pub use crate::operation::update_application::_update_application_input::UpdateApplicationInputBuilder;
 
-impl UpdateApplicationInputBuilder {
+impl crate::operation::update_application::builders::UpdateApplicationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateApplicationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_run_configuration_update(&self) -> &::std::option::Option<crate::types::RunConfigurationUpdate> {
         self.inner.get_run_configuration_update()
     }
+    ///
     /// Appends an item to `CloudWatchLoggingOptionUpdates`.
     ///
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_updates`](Self::set_cloud_watch_logging_option_updates).

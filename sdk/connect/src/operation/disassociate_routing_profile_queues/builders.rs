@@ -3,7 +3,7 @@ pub use crate::operation::disassociate_routing_profile_queues::_disassociate_rou
 
 pub use crate::operation::disassociate_routing_profile_queues::_disassociate_routing_profile_queues_input::DisassociateRoutingProfileQueuesInputBuilder;
 
-impl DisassociateRoutingProfileQueuesInputBuilder {
+impl crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl DisassociateRoutingProfileQueuesFluentBuilder {
     pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_routing_profile_id()
     }
+    ///
     /// Appends an item to `QueueReferences`.
     ///
     /// To override the contents of this collection use [`set_queue_references`](Self::set_queue_references).

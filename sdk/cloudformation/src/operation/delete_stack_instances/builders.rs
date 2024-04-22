@@ -3,7 +3,7 @@ pub use crate::operation::delete_stack_instances::_delete_stack_instances_output
 
 pub use crate::operation::delete_stack_instances::_delete_stack_instances_input::DeleteStackInstancesInputBuilder;
 
-impl DeleteStackInstancesInputBuilder {
+impl crate::operation::delete_stack_instances::builders::DeleteStackInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DeleteStackInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl DeleteStackInstancesFluentBuilder {
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
+    ///
     /// Appends an item to `Accounts`.
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
@@ -160,6 +161,7 @@ impl DeleteStackInstancesFluentBuilder {
     pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         self.inner.get_deployment_targets()
     }
+    ///
     /// Appends an item to `Regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).

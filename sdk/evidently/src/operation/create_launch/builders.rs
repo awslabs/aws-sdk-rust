@@ -3,7 +3,7 @@ pub use crate::operation::create_launch::_create_launch_output::CreateLaunchOutp
 
 pub use crate::operation::create_launch::_create_launch_input::CreateLaunchInputBuilder;
 
-impl CreateLaunchInputBuilder {
+impl crate::operation::create_launch::builders::CreateLaunchInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateLaunchFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -166,6 +166,7 @@ impl CreateLaunchFluentBuilder {
     pub fn get_scheduled_splits_config(&self) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchConfig> {
         self.inner.get_scheduled_splits_config()
     }
+    ///
     /// Appends an item to `metricMonitors`.
     ///
     /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).
@@ -184,6 +185,7 @@ impl CreateLaunchFluentBuilder {
     pub fn get_metric_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>> {
         self.inner.get_metric_monitors()
     }
+    ///
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -216,6 +218,7 @@ impl CreateLaunchFluentBuilder {
     pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_randomization_salt()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

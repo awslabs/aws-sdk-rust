@@ -3,7 +3,7 @@ pub use crate::operation::describe_vpc_classic_link_dns_support::_describe_vpc_c
 
 pub use crate::operation::describe_vpc_classic_link_dns_support::_describe_vpc_classic_link_dns_support_input::DescribeVpcClassicLinkDnsSupportInputBuilder;
 
-impl DescribeVpcClassicLinkDnsSupportInputBuilder {
+impl crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DescribeVpcClassicLinkDnsSupportFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -145,6 +145,7 @@ impl DescribeVpcClassicLinkDnsSupportFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `VpcIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).

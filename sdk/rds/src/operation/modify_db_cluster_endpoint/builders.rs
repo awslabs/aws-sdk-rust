@@ -3,7 +3,7 @@ pub use crate::operation::modify_db_cluster_endpoint::_modify_db_cluster_endpoin
 
 pub use crate::operation::modify_db_cluster_endpoint::_modify_db_cluster_endpoint_input::ModifyDbClusterEndpointInputBuilder;
 
-impl ModifyDbClusterEndpointInputBuilder {
+impl crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl ModifyDBClusterEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl ModifyDBClusterEndpointFluentBuilder {
     pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_type()
     }
+    ///
     /// Appends an item to `StaticMembers`.
     ///
     /// To override the contents of this collection use [`set_static_members`](Self::set_static_members).
@@ -156,6 +157,7 @@ impl ModifyDBClusterEndpointFluentBuilder {
     pub fn get_static_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_static_members()
     }
+    ///
     /// Appends an item to `ExcludedMembers`.
     ///
     /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).

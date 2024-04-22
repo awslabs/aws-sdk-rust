@@ -3,7 +3,7 @@ pub use crate::operation::list_replace_permission_associations_work::_list_repla
 
 pub use crate::operation::list_replace_permission_associations_work::_list_replace_permission_associations_work_input::ListReplacePermissionAssociationsWorkInputBuilder;
 
-impl ListReplacePermissionAssociationsWorkInputBuilder {
+impl crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl ListReplacePermissionAssociationsWorkFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl ListReplacePermissionAssociationsWorkFluentBuilder {
             self.inner,
         )
     }
+    ///
     /// Appends an item to `workIds`.
     ///
     /// To override the contents of this collection use [`set_work_ids`](Self::set_work_ids).

@@ -3,7 +3,7 @@ pub use crate::operation::add_policy_statement::_add_policy_statement_output::Ad
 
 pub use crate::operation::add_policy_statement::_add_policy_statement_input::AddPolicyStatementInputBuilder;
 
-impl AddPolicyStatementInputBuilder {
+impl crate::operation::add_policy_statement::builders::AddPolicyStatementInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl AddPolicyStatementFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl AddPolicyStatementFluentBuilder {
     pub fn get_effect(&self) -> &::std::option::Option<crate::types::StatementEffect> {
         self.inner.get_effect()
     }
+    ///
     /// Appends an item to `action`.
     ///
     /// To override the contents of this collection use [`set_action`](Self::set_action).
@@ -171,6 +172,7 @@ impl AddPolicyStatementFluentBuilder {
     pub fn get_action(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_action()
     }
+    ///
     /// Appends an item to `principal`.
     ///
     /// To override the contents of this collection use [`set_principal`](Self::set_principal).

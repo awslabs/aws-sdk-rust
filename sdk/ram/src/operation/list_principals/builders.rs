@@ -3,7 +3,7 @@ pub use crate::operation::list_principals::_list_principals_output::ListPrincipa
 
 pub use crate::operation::list_principals::_list_principals_input::ListPrincipalsInputBuilder;
 
-impl ListPrincipalsInputBuilder {
+impl crate::operation::list_principals::builders::ListPrincipalsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListPrincipalsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -160,6 +160,7 @@ impl ListPrincipalsFluentBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
+    ///
     /// Appends an item to `principals`.
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
@@ -240,6 +241,7 @@ impl ListPrincipalsFluentBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
     }
+    ///
     /// Appends an item to `resourceShareArns`.
     ///
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).

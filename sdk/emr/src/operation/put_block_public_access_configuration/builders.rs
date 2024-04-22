@@ -3,7 +3,7 @@ pub use crate::operation::put_block_public_access_configuration::_put_block_publ
 
 pub use crate::operation::put_block_public_access_configuration::_put_block_public_access_configuration_input::PutBlockPublicAccessConfigurationInputBuilder;
 
-impl PutBlockPublicAccessConfigurationInputBuilder {
+impl crate::operation::put_block_public_access_configuration::builders::PutBlockPublicAccessConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutBlockPublicAccessConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

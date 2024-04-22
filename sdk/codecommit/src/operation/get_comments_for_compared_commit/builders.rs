@@ -3,7 +3,7 @@ pub use crate::operation::get_comments_for_compared_commit::_get_comments_for_co
 
 pub use crate::operation::get_comments_for_compared_commit::_get_comments_for_compared_commit_input::GetCommentsForComparedCommitInputBuilder;
 
-impl GetCommentsForComparedCommitInputBuilder {
+impl crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl GetCommentsForComparedCommitFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::get_application_component_details::_get_application_co
 
 pub use crate::operation::get_application_component_details::_get_application_component_details_input::GetApplicationComponentDetailsInputBuilder;
 
-impl GetApplicationComponentDetailsInputBuilder {
+impl crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetApplicationComponentDetailsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

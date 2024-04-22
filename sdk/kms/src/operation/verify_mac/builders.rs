@@ -3,7 +3,7 @@ pub use crate::operation::verify_mac::_verify_mac_output::VerifyMacOutputBuilder
 
 pub use crate::operation::verify_mac::_verify_mac_input::VerifyMacInputBuilder;
 
-impl VerifyMacInputBuilder {
+impl crate::operation::verify_mac::builders::VerifyMacInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl VerifyMacFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -171,6 +171,7 @@ impl VerifyMacFluentBuilder {
     pub fn get_mac(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_mac()
     }
+    ///
     /// Appends an item to `GrantTokens`.
     ///
     /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).

@@ -3,7 +3,7 @@ pub use crate::operation::update_vpc_endpoint::_update_vpc_endpoint_output::Upda
 
 pub use crate::operation::update_vpc_endpoint::_update_vpc_endpoint_input::UpdateVpcEndpointInputBuilder;
 
-impl UpdateVpcEndpointInputBuilder {
+impl crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateVpcEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateVpcEndpointFluentBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
+    ///
     /// Appends an item to `addSubnetIds`.
     ///
     /// To override the contents of this collection use [`set_add_subnet_ids`](Self::set_add_subnet_ids).
@@ -140,6 +141,7 @@ impl UpdateVpcEndpointFluentBuilder {
     pub fn get_add_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_subnet_ids()
     }
+    ///
     /// Appends an item to `removeSubnetIds`.
     ///
     /// To override the contents of this collection use [`set_remove_subnet_ids`](Self::set_remove_subnet_ids).
@@ -158,6 +160,7 @@ impl UpdateVpcEndpointFluentBuilder {
     pub fn get_remove_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_subnet_ids()
     }
+    ///
     /// Appends an item to `addSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_add_security_group_ids`](Self::set_add_security_group_ids).
@@ -176,6 +179,7 @@ impl UpdateVpcEndpointFluentBuilder {
     pub fn get_add_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_security_group_ids()
     }
+    ///
     /// Appends an item to `removeSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_remove_security_group_ids`](Self::set_remove_security_group_ids).

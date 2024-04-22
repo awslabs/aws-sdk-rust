@@ -3,7 +3,7 @@ pub use crate::operation::list_log_sources::_list_log_sources_output::ListLogSou
 
 pub use crate::operation::list_log_sources::_list_log_sources_input::ListLogSourcesInputBuilder;
 
-impl ListLogSourcesInputBuilder {
+impl crate::operation::list_log_sources::builders::ListLogSourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListLogSourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListLogSourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_log_sources::paginator::ListLogSourcesPaginator {
         crate::operation::list_log_sources::paginator::ListLogSourcesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `accounts`.
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
@@ -132,6 +133,7 @@ impl ListLogSourcesFluentBuilder {
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_accounts()
     }
+    ///
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -150,6 +152,7 @@ impl ListLogSourcesFluentBuilder {
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_regions()
     }
+    ///
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).

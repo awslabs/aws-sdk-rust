@@ -3,7 +3,7 @@ pub use crate::operation::create_verified_access_endpoint::_create_verified_acce
 
 pub use crate::operation::create_verified_access_endpoint::_create_verified_access_endpoint_input::CreateVerifiedAccessEndpointInputBuilder;
 
-impl CreateVerifiedAccessEndpointInputBuilder {
+impl crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateVerifiedAccessEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl CreateVerifiedAccessEndpointFluentBuilder {
     pub fn get_endpoint_domain_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_domain_prefix()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -266,6 +267,7 @@ impl CreateVerifiedAccessEndpointFluentBuilder {
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_document()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

@@ -3,7 +3,7 @@ pub use crate::operation::predict::_predict_output::PredictOutputBuilder;
 
 pub use crate::operation::predict::_predict_input::PredictInputBuilder;
 
-impl PredictInputBuilder {
+impl crate::operation::predict::builders::PredictInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -91,12 +91,12 @@ impl PredictFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl PredictFluentBuilder {
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ml_model_id()
     }
+    ///
     /// Adds a key-value pair to `Record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).

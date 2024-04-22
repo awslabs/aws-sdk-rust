@@ -3,7 +3,7 @@ pub use crate::operation::send_message::_send_message_output::SendMessageOutputB
 
 pub use crate::operation::send_message::_send_message_input::SendMessageInputBuilder;
 
-impl SendMessageInputBuilder {
+impl crate::operation::send_message::builders::SendMessageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl SendMessageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -175,6 +175,7 @@ impl SendMessageFluentBuilder {
     pub fn get_delay_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_delay_seconds()
     }
+    ///
     /// Adds a key-value pair to `MessageAttributes`.
     ///
     /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
@@ -198,6 +199,7 @@ impl SendMessageFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
         self.inner.get_message_attributes()
     }
+    ///
     /// Adds a key-value pair to `MessageSystemAttributes`.
     ///
     /// To override the contents of this collection use [`set_message_system_attributes`](Self::set_message_system_attributes).

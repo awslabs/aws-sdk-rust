@@ -3,7 +3,7 @@ pub use crate::operation::put_hypervisor_property_mappings::_put_hypervisor_prop
 
 pub use crate::operation::put_hypervisor_property_mappings::_put_hypervisor_property_mappings_input::PutHypervisorPropertyMappingsInputBuilder;
 
-impl PutHypervisorPropertyMappingsInputBuilder {
+impl crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
     pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hypervisor_arn()
     }
+    ///
     /// Appends an item to `VmwareToAwsTagMappings`.
     ///
     /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).

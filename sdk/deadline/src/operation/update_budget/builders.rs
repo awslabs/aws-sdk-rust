@@ -3,7 +3,7 @@ pub use crate::operation::update_budget::_update_budget_output::UpdateBudgetOutp
 
 pub use crate::operation::update_budget::_update_budget_input::UpdateBudgetInputBuilder;
 
-impl UpdateBudgetInputBuilder {
+impl crate::operation::update_budget::builders::UpdateBudgetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateBudgetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -224,6 +224,7 @@ impl UpdateBudgetFluentBuilder {
     pub fn get_approximate_dollar_limit(&self) -> &::std::option::Option<f32> {
         self.inner.get_approximate_dollar_limit()
     }
+    ///
     /// Appends an item to `actionsToAdd`.
     ///
     /// To override the contents of this collection use [`set_actions_to_add`](Self::set_actions_to_add).
@@ -242,6 +243,7 @@ impl UpdateBudgetFluentBuilder {
     pub fn get_actions_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetActionToAdd>> {
         self.inner.get_actions_to_add()
     }
+    ///
     /// Appends an item to `actionsToRemove`.
     ///
     /// To override the contents of this collection use [`set_actions_to_remove`](Self::set_actions_to_remove).

@@ -3,7 +3,7 @@ pub use crate::operation::start_next_pending_job_execution::_start_next_pending_
 
 pub use crate::operation::start_next_pending_job_execution::_start_next_pending_job_execution_input::StartNextPendingJobExecutionInputBuilder;
 
-impl StartNextPendingJobExecutionInputBuilder {
+impl crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartNextPendingJobExecutionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl StartNextPendingJobExecutionFluentBuilder {
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_thing_name()
     }
+    ///
     /// Adds a key-value pair to `statusDetails`.
     ///
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).

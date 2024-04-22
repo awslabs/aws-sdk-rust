@@ -3,7 +3,7 @@ pub use crate::operation::update_review_template_answer::_update_review_template
 
 pub use crate::operation::update_review_template_answer::_update_review_template_answer_input::UpdateReviewTemplateAnswerInputBuilder;
 
-impl UpdateReviewTemplateAnswerInputBuilder {
+impl crate::operation::update_review_template_answer::builders::UpdateReviewTemplateAnswerInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateReviewTemplateAnswerFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -159,6 +159,7 @@ impl UpdateReviewTemplateAnswerFluentBuilder {
     pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_question_id()
     }
+    ///
     /// Appends an item to `SelectedChoices`.
     ///
     /// To override the contents of this collection use [`set_selected_choices`](Self::set_selected_choices).
@@ -180,6 +181,7 @@ impl UpdateReviewTemplateAnswerFluentBuilder {
     pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_selected_choices()
     }
+    ///
     /// Adds a key-value pair to `ChoiceUpdates`.
     ///
     /// To override the contents of this collection use [`set_choice_updates`](Self::set_choice_updates).

@@ -3,7 +3,7 @@ pub use crate::operation::start_outbound_voice_contact::_start_outbound_voice_co
 
 pub use crate::operation::start_outbound_voice_contact::_start_outbound_voice_contact_input::StartOutboundVoiceContactInputBuilder;
 
-impl StartOutboundVoiceContactInputBuilder {
+impl crate::operation::start_outbound_voice_contact::builders::StartOutboundVoiceContactInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl StartOutboundVoiceContactFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl StartOutboundVoiceContactFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Adds a key-value pair to `References`.
     ///
     /// To override the contents of this collection use [`set_references`](Self::set_references).
@@ -264,6 +265,7 @@ impl StartOutboundVoiceContactFluentBuilder {
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
     }
+    ///
     /// Adds a key-value pair to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).

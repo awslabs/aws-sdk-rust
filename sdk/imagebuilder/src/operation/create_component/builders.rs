@@ -3,7 +3,7 @@ pub use crate::operation::create_component::_create_component_output::CreateComp
 
 pub use crate::operation::create_component::_create_component_input::CreateComponentInputBuilder;
 
-impl CreateComponentInputBuilder {
+impl crate::operation::create_component::builders::CreateComponentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl CreateComponentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -229,6 +229,7 @@ impl CreateComponentFluentBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
         self.inner.get_platform()
     }
+    ///
     /// Appends an item to `supportedOsVersions`.
     ///
     /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
@@ -292,6 +293,7 @@ impl CreateComponentFluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

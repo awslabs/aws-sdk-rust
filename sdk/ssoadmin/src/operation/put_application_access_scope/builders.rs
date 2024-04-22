@@ -3,7 +3,7 @@ pub use crate::operation::put_application_access_scope::_put_application_access_
 
 pub use crate::operation::put_application_access_scope::_put_application_access_scope_input::PutApplicationAccessScopeInputBuilder;
 
-impl PutApplicationAccessScopeInputBuilder {
+impl crate::operation::put_application_access_scope::builders::PutApplicationAccessScopeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutApplicationAccessScopeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl PutApplicationAccessScopeFluentBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scope()
     }
+    ///
     /// Appends an item to `AuthorizedTargets`.
     ///
     /// To override the contents of this collection use [`set_authorized_targets`](Self::set_authorized_targets).

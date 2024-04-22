@@ -3,7 +3,7 @@ pub use crate::operation::modify_vpc_endpoint_service_permissions::_modify_vpc_e
 
 pub use crate::operation::modify_vpc_endpoint_service_permissions::_modify_vpc_endpoint_service_permissions_input::ModifyVpcEndpointServicePermissionsInputBuilder;
 
-impl ModifyVpcEndpointServicePermissionsInputBuilder {
+impl crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl ModifyVpcEndpointServicePermissionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl ModifyVpcEndpointServicePermissionsFluentBuilder {
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_id()
     }
+    ///
     /// Appends an item to `AddAllowedPrincipals`.
     ///
     /// To override the contents of this collection use [`set_add_allowed_principals`](Self::set_add_allowed_principals).
@@ -156,6 +157,7 @@ impl ModifyVpcEndpointServicePermissionsFluentBuilder {
     pub fn get_add_allowed_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_allowed_principals()
     }
+    ///
     /// Appends an item to `RemoveAllowedPrincipals`.
     ///
     /// To override the contents of this collection use [`set_remove_allowed_principals`](Self::set_remove_allowed_principals).

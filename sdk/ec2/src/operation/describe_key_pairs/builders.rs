@@ -3,7 +3,7 @@ pub use crate::operation::describe_key_pairs::_describe_key_pairs_output::Descri
 
 pub use crate::operation::describe_key_pairs::_describe_key_pairs_input::DescribeKeyPairsInputBuilder;
 
-impl DescribeKeyPairsInputBuilder {
+impl crate::operation::describe_key_pairs::builders::DescribeKeyPairsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl DescribeKeyPairsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -181,6 +182,7 @@ impl DescribeKeyPairsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `KeyNames`.
     ///
     /// To override the contents of this collection use [`set_key_names`](Self::set_key_names).
@@ -202,6 +204,7 @@ impl DescribeKeyPairsFluentBuilder {
     pub fn get_key_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_key_names()
     }
+    ///
     /// Appends an item to `KeyPairIds`.
     ///
     /// To override the contents of this collection use [`set_key_pair_ids`](Self::set_key_pair_ids).

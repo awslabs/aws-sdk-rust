@@ -3,7 +3,7 @@ pub use crate::operation::create_model_customization_job::_create_model_customiz
 
 pub use crate::operation::create_model_customization_job::_create_model_customization_job_input::CreateModelCustomizationJobInputBuilder;
 
-impl CreateModelCustomizationJobInputBuilder {
+impl crate::operation::create_model_customization_job::builders::CreateModelCustomizationJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateModelCustomizationJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -209,6 +209,7 @@ impl CreateModelCustomizationJobFluentBuilder {
     pub fn get_custom_model_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_model_kms_key_id()
     }
+    ///
     /// Appends an item to `jobTags`.
     ///
     /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
@@ -227,6 +228,7 @@ impl CreateModelCustomizationJobFluentBuilder {
     pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_job_tags()
     }
+    ///
     /// Appends an item to `customModelTags`.
     ///
     /// To override the contents of this collection use [`set_custom_model_tags`](Self::set_custom_model_tags).
@@ -287,6 +289,7 @@ impl CreateModelCustomizationJobFluentBuilder {
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         self.inner.get_output_data_config()
     }
+    ///
     /// Adds a key-value pair to `hyperParameters`.
     ///
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).

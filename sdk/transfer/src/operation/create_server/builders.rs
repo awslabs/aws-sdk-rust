@@ -3,7 +3,7 @@ pub use crate::operation::create_server::_create_server_output::CreateServerOutp
 
 pub use crate::operation::create_server::_create_server_input::CreateServerInputBuilder;
 
-impl CreateServerInputBuilder {
+impl crate::operation::create_server::builders::CreateServerInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateServerFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -374,6 +374,7 @@ impl CreateServerFluentBuilder {
     pub fn get_pre_authentication_login_banner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pre_authentication_login_banner()
     }
+    ///
     /// Appends an item to `Protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -519,6 +520,7 @@ impl CreateServerFluentBuilder {
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_policy_name()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -554,6 +556,7 @@ impl CreateServerFluentBuilder {
     pub fn get_workflow_details(&self) -> &::std::option::Option<crate::types::WorkflowDetails> {
         self.inner.get_workflow_details()
     }
+    ///
     /// Appends an item to `StructuredLogDestinations`.
     ///
     /// To override the contents of this collection use [`set_structured_log_destinations`](Self::set_structured_log_destinations).

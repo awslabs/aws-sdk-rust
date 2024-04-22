@@ -3,7 +3,7 @@ pub use crate::operation::create_event_bridge_rule_template::_create_event_bridg
 
 pub use crate::operation::create_event_bridge_rule_template::_create_event_bridge_rule_template_input::CreateEventBridgeRuleTemplateInputBuilder;
 
-impl CreateEventBridgeRuleTemplateInputBuilder {
+impl crate::operation::create_event_bridge_rule_template::builders::CreateEventBridgeRuleTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateEventBridgeRuleTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateEventBridgeRuleTemplateFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `EventTargets`.
     ///
     /// To override the contents of this collection use [`set_event_targets`](Self::set_event_targets).
@@ -182,6 +183,7 @@ impl CreateEventBridgeRuleTemplateFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

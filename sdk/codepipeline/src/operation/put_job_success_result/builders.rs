@@ -3,7 +3,7 @@ pub use crate::operation::put_job_success_result::_put_job_success_result_output
 
 pub use crate::operation::put_job_success_result::_put_job_success_result_input::PutJobSuccessResultInputBuilder;
 
-impl PutJobSuccessResultInputBuilder {
+impl crate::operation::put_job_success_result::builders::PutJobSuccessResultInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutJobSuccessResultFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl PutJobSuccessResultFluentBuilder {
     pub fn get_execution_details(&self) -> &::std::option::Option<crate::types::ExecutionDetails> {
         self.inner.get_execution_details()
     }
+    ///
     /// Adds a key-value pair to `outputVariables`.
     ///
     /// To override the contents of this collection use [`set_output_variables`](Self::set_output_variables).

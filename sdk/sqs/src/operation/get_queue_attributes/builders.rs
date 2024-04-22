@@ -3,7 +3,7 @@ pub use crate::operation::get_queue_attributes::_get_queue_attributes_output::Ge
 
 pub use crate::operation::get_queue_attributes::_get_queue_attributes_input::GetQueueAttributesInputBuilder;
 
-impl GetQueueAttributesInputBuilder {
+impl crate::operation::get_queue_attributes::builders::GetQueueAttributesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl GetQueueAttributesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -127,6 +127,7 @@ impl GetQueueAttributesFluentBuilder {
     pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_url()
     }
+    ///
     /// Appends an item to `AttributeNames`.
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).

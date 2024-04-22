@@ -3,7 +3,7 @@ pub use crate::operation::disassociate_ip_groups::_disassociate_ip_groups_output
 
 pub use crate::operation::disassociate_ip_groups::_disassociate_ip_groups_input::DisassociateIpGroupsInputBuilder;
 
-impl DisassociateIpGroupsInputBuilder {
+impl crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DisassociateIpGroupsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl DisassociateIpGroupsFluentBuilder {
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }
+    ///
     /// Appends an item to `GroupIds`.
     ///
     /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).

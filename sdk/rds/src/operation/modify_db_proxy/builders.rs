@@ -3,7 +3,7 @@ pub use crate::operation::modify_db_proxy::_modify_db_proxy_output::ModifyDbProx
 
 pub use crate::operation::modify_db_proxy::_modify_db_proxy_input::ModifyDbProxyInputBuilder;
 
-impl ModifyDbProxyInputBuilder {
+impl crate::operation::modify_db_proxy::builders::ModifyDbProxyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ModifyDBProxyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl ModifyDBProxyFluentBuilder {
     pub fn get_new_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_new_db_proxy_name()
     }
+    ///
     /// Appends an item to `Auth`.
     ///
     /// To override the contents of this collection use [`set_auth`](Self::set_auth).
@@ -210,6 +211,7 @@ impl ModifyDBProxyFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).

@@ -3,7 +3,7 @@ pub use crate::operation::put_object_lock_configuration::_put_object_lock_config
 
 pub use crate::operation::put_object_lock_configuration::_put_object_lock_configuration_input::PutObjectLockConfigurationInputBuilder;
 
-impl PutObjectLockConfigurationInputBuilder {
+impl crate::operation::put_object_lock_configuration::builders::PutObjectLockConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl PutObjectLockConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

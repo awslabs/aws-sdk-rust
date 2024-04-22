@@ -3,7 +3,7 @@ pub use crate::operation::create_configured_table::_create_configured_table_outp
 
 pub use crate::operation::create_configured_table::_create_configured_table_input::CreateConfiguredTableInputBuilder;
 
-impl CreateConfiguredTableInputBuilder {
+impl crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateConfiguredTableFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateConfiguredTableFluentBuilder {
     pub fn get_table_reference(&self) -> &::std::option::Option<crate::types::TableReference> {
         self.inner.get_table_reference()
     }
+    ///
     /// Appends an item to `allowedColumns`.
     ///
     /// To override the contents of this collection use [`set_allowed_columns`](Self::set_allowed_columns).
@@ -182,6 +183,7 @@ impl CreateConfiguredTableFluentBuilder {
     pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
         self.inner.get_analysis_method()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::create_automation_rule::_create_automation_rule_output
 
 pub use crate::operation::create_automation_rule::_create_automation_rule_input::CreateAutomationRuleInputBuilder;
 
-impl CreateAutomationRuleInputBuilder {
+impl crate::operation::create_automation_rule::builders::CreateAutomationRuleInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl CreateAutomationRuleFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -210,6 +211,7 @@ impl CreateAutomationRuleFluentBuilder {
     pub fn get_criteria(&self) -> &::std::option::Option<crate::types::AutomationRulesFindingFilters> {
         self.inner.get_criteria()
     }
+    ///
     /// Appends an item to `Actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).

@@ -3,7 +3,7 @@ pub use crate::operation::create_quantum_task::_create_quantum_task_output::Crea
 
 pub use crate::operation::create_quantum_task::_create_quantum_task_input::CreateQuantumTaskInputBuilder;
 
-impl CreateQuantumTaskInputBuilder {
+impl crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateQuantumTaskFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_action()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -238,6 +239,7 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn get_job_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_token()
     }
+    ///
     /// Appends an item to `associations`.
     ///
     /// To override the contents of this collection use [`set_associations`](Self::set_associations).

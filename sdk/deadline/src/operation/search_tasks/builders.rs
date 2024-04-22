@@ -3,7 +3,7 @@ pub use crate::operation::search_tasks::_search_tasks_output::SearchTasksOutputB
 
 pub use crate::operation::search_tasks::_search_tasks_input::SearchTasksInputBuilder;
 
-impl SearchTasksInputBuilder {
+impl crate::operation::search_tasks::builders::SearchTasksInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SearchTasksFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl SearchTasksFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
+    ///
     /// Appends an item to `queueIds`.
     ///
     /// To override the contents of this collection use [`set_queue_ids`](Self::set_queue_ids).
@@ -168,6 +169,7 @@ impl SearchTasksFluentBuilder {
     pub fn get_filter_expressions(&self) -> &::std::option::Option<crate::types::SearchGroupedFilterExpressions> {
         self.inner.get_filter_expressions()
     }
+    ///
     /// Appends an item to `sortExpressions`.
     ///
     /// To override the contents of this collection use [`set_sort_expressions`](Self::set_sort_expressions).

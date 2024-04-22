@@ -3,7 +3,7 @@ pub use crate::operation::describe_scheduled_instance_availability::_describe_sc
 
 pub use crate::operation::describe_scheduled_instance_availability::_describe_scheduled_instance_availability_input::DescribeScheduledInstanceAvailabilityInputBuilder;
 
-impl DescribeScheduledInstanceAvailabilityInputBuilder {
+impl crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl DescribeScheduledInstanceAvailabilityFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

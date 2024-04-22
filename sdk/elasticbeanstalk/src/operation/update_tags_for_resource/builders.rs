@@ -3,7 +3,7 @@ pub use crate::operation::update_tags_for_resource::_update_tags_for_resource_ou
 
 pub use crate::operation::update_tags_for_resource::_update_tags_for_resource_input::UpdateTagsForResourceInputBuilder;
 
-impl UpdateTagsForResourceInputBuilder {
+impl crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -116,12 +116,12 @@ impl UpdateTagsForResourceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl UpdateTagsForResourceFluentBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
+    ///
     /// Appends an item to `TagsToAdd`.
     ///
     /// To override the contents of this collection use [`set_tags_to_add`](Self::set_tags_to_add).
@@ -163,6 +164,7 @@ impl UpdateTagsForResourceFluentBuilder {
     pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags_to_add()
     }
+    ///
     /// Appends an item to `TagsToRemove`.
     ///
     /// To override the contents of this collection use [`set_tags_to_remove`](Self::set_tags_to_remove).

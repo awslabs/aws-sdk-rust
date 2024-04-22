@@ -3,7 +3,7 @@ pub use crate::operation::get_event_prediction::_get_event_prediction_output::Ge
 
 pub use crate::operation::get_event_prediction::_get_event_prediction_input::GetEventPredictionInputBuilder;
 
-impl GetEventPredictionInputBuilder {
+impl crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetEventPredictionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl GetEventPredictionFluentBuilder {
     pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_type_name()
     }
+    ///
     /// Appends an item to `entities`.
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
@@ -196,6 +197,7 @@ impl GetEventPredictionFluentBuilder {
     pub fn get_event_timestamp(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_timestamp()
     }
+    ///
     /// Adds a key-value pair to `eventVariables`.
     ///
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
@@ -242,6 +244,7 @@ impl GetEventPredictionFluentBuilder {
     pub fn get_event_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_event_variables()
     }
+    ///
     /// Adds a key-value pair to `externalModelEndpointDataBlobs`.
     ///
     /// To override the contents of this collection use [`set_external_model_endpoint_data_blobs`](Self::set_external_model_endpoint_data_blobs).

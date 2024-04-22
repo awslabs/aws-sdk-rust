@@ -3,7 +3,7 @@ pub use crate::operation::update_metric_attribution::_update_metric_attribution_
 
 pub use crate::operation::update_metric_attribution::_update_metric_attribution_input::UpdateMetricAttributionInputBuilder;
 
-impl UpdateMetricAttributionInputBuilder {
+impl crate::operation::update_metric_attribution::builders::UpdateMetricAttributionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl UpdateMetricAttributionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `addMetrics`.
     ///
     /// To override the contents of this collection use [`set_add_metrics`](Self::set_add_metrics).
@@ -126,6 +127,7 @@ impl UpdateMetricAttributionFluentBuilder {
     pub fn get_add_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
         self.inner.get_add_metrics()
     }
+    ///
     /// Appends an item to `removeMetrics`.
     ///
     /// To override the contents of this collection use [`set_remove_metrics`](Self::set_remove_metrics).

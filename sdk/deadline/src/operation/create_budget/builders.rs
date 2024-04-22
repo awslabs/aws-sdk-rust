@@ -3,7 +3,7 @@ pub use crate::operation::create_budget::_create_budget_output::CreateBudgetOutp
 
 pub use crate::operation::create_budget::_create_budget_input::CreateBudgetInputBuilder;
 
-impl CreateBudgetInputBuilder {
+impl crate::operation::create_budget::builders::CreateBudgetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateBudgetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl CreateBudgetFluentBuilder {
     pub fn get_approximate_dollar_limit(&self) -> &::std::option::Option<f32> {
         self.inner.get_approximate_dollar_limit()
     }
+    ///
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).

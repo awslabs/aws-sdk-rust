@@ -3,7 +3,7 @@ pub use crate::operation::describe_events::_describe_events_output::DescribeEven
 
 pub use crate::operation::describe_events::_describe_events_input::DescribeEventsInputBuilder;
 
-impl DescribeEventsInputBuilder {
+impl crate::operation::describe_events::builders::DescribeEventsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeEventsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -187,6 +187,7 @@ impl DescribeEventsFluentBuilder {
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration()
     }
+    ///
     /// Appends an item to `EventCategories`.
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
@@ -205,6 +206,7 @@ impl DescribeEventsFluentBuilder {
     pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_categories()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

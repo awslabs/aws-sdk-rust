@@ -3,7 +3,7 @@ pub use crate::operation::publish_layer_version::_publish_layer_version_output::
 
 pub use crate::operation::publish_layer_version::_publish_layer_version_input::PublishLayerVersionInputBuilder;
 
-impl PublishLayerVersionInputBuilder {
+impl crate::operation::publish_layer_version::builders::PublishLayerVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl PublishLayerVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl PublishLayerVersionFluentBuilder {
     pub fn get_content(&self) -> &::std::option::Option<crate::types::LayerVersionContentInput> {
         self.inner.get_content()
     }
+    ///
     /// Appends an item to `CompatibleRuntimes`.
     ///
     /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
@@ -210,6 +211,7 @@ impl PublishLayerVersionFluentBuilder {
     pub fn get_license_info(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_info()
     }
+    ///
     /// Appends an item to `CompatibleArchitectures`.
     ///
     /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).

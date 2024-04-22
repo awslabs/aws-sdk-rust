@@ -3,7 +3,7 @@ pub use crate::operation::create_vpc_endpoint_service_configuration::_create_vpc
 
 pub use crate::operation::create_vpc_endpoint_service_configuration::_create_vpc_endpoint_service_configuration_input::CreateVpcEndpointServiceConfigurationInputBuilder;
 
-impl CreateVpcEndpointServiceConfigurationInputBuilder {
+impl crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -162,6 +162,7 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_private_dns_name()
     }
+    ///
     /// Appends an item to `NetworkLoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_network_load_balancer_arns`](Self::set_network_load_balancer_arns).
@@ -180,6 +181,7 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_network_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_network_load_balancer_arns()
     }
+    ///
     /// Appends an item to `GatewayLoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_gateway_load_balancer_arns`](Self::set_gateway_load_balancer_arns).
@@ -198,6 +200,7 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_gateway_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_gateway_load_balancer_arns()
     }
+    ///
     /// Appends an item to `SupportedIpAddressTypes`.
     ///
     /// To override the contents of this collection use [`set_supported_ip_address_types`](Self::set_supported_ip_address_types).
@@ -230,6 +233,7 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

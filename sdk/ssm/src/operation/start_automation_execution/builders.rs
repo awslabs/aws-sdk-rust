@@ -3,7 +3,7 @@ pub use crate::operation::start_automation_execution::_start_automation_executio
 
 pub use crate::operation::start_automation_execution::_start_automation_execution_input::StartAutomationExecutionInputBuilder;
 
-impl StartAutomationExecutionInputBuilder {
+impl crate::operation::start_automation_execution::builders::StartAutomationExecutionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartAutomationExecutionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl StartAutomationExecutionFluentBuilder {
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_document_version()
     }
+    ///
     /// Adds a key-value pair to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -201,6 +202,7 @@ impl StartAutomationExecutionFluentBuilder {
     pub fn get_target_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_parameter_name()
     }
+    ///
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -219,6 +221,7 @@ impl StartAutomationExecutionFluentBuilder {
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
         self.inner.get_targets()
     }
+    ///
     /// Appends an item to `TargetMaps`.
     ///
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
@@ -273,6 +276,7 @@ impl StartAutomationExecutionFluentBuilder {
     pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_max_errors()
     }
+    ///
     /// Appends an item to `TargetLocations`.
     ///
     /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
@@ -291,6 +295,7 @@ impl StartAutomationExecutionFluentBuilder {
     pub fn get_target_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
         self.inner.get_target_locations()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

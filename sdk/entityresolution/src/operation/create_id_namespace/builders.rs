@@ -3,7 +3,7 @@ pub use crate::operation::create_id_namespace::_create_id_namespace_output::Crea
 
 pub use crate::operation::create_id_namespace::_create_id_namespace_input::CreateIdNamespaceInputBuilder;
 
-impl CreateIdNamespaceInputBuilder {
+impl crate::operation::create_id_namespace::builders::CreateIdNamespaceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateIdNamespaceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateIdNamespaceFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `inputSourceConfig`.
     ///
     /// To override the contents of this collection use [`set_input_source_config`](Self::set_input_source_config).
@@ -154,6 +155,7 @@ impl CreateIdNamespaceFluentBuilder {
     pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceInputSource>> {
         self.inner.get_input_source_config()
     }
+    ///
     /// Appends an item to `idMappingWorkflowProperties`.
     ///
     /// To override the contents of this collection use [`set_id_mapping_workflow_properties`](Self::set_id_mapping_workflow_properties).
@@ -211,6 +213,7 @@ impl CreateIdNamespaceFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::create_trail::_create_trail_output::CreateTrailOutputB
 
 pub use crate::operation::create_trail::_create_trail_input::CreateTrailInputBuilder;
 
-impl CreateTrailInputBuilder {
+impl crate::operation::create_trail::builders::CreateTrailInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateTrailFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -343,6 +343,7 @@ impl CreateTrailFluentBuilder {
     pub fn get_is_organization_trail(&self) -> &::std::option::Option<bool> {
         self.inner.get_is_organization_trail()
     }
+    ///
     /// Appends an item to `TagsList`.
     ///
     /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).

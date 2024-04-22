@@ -3,7 +3,7 @@ pub use crate::operation::batch_is_authorized_with_token::_batch_is_authorized_w
 
 pub use crate::operation::batch_is_authorized_with_token::_batch_is_authorized_with_token_input::BatchIsAuthorizedWithTokenInputBuilder;
 
-impl BatchIsAuthorizedWithTokenInputBuilder {
+impl crate::operation::batch_is_authorized_with_token::builders::BatchIsAuthorizedWithTokenInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl BatchIsAuthorizedWithTokenFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -198,6 +198,7 @@ impl BatchIsAuthorizedWithTokenFluentBuilder {
     pub fn get_entities(&self) -> &::std::option::Option<crate::types::EntitiesDefinition> {
         self.inner.get_entities()
     }
+    ///
     /// Appends an item to `requests`.
     ///
     /// To override the contents of this collection use [`set_requests`](Self::set_requests).

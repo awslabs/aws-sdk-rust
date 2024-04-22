@@ -3,7 +3,7 @@ pub use crate::operation::update_extension_association::_update_extension_associ
 
 pub use crate::operation::update_extension_association::_update_extension_association_input::UpdateExtensionAssociationInputBuilder;
 
-impl UpdateExtensionAssociationInputBuilder {
+impl crate::operation::update_extension_association::builders::UpdateExtensionAssociationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateExtensionAssociationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateExtensionAssociationFluentBuilder {
     pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_extension_association_id()
     }
+    ///
     /// Adds a key-value pair to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).

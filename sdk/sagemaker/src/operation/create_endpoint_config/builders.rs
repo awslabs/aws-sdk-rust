@@ -3,7 +3,7 @@ pub use crate::operation::create_endpoint_config::_create_endpoint_config_output
 
 pub use crate::operation::create_endpoint_config::_create_endpoint_config_input::CreateEndpointConfigInputBuilder;
 
-impl CreateEndpointConfigInputBuilder {
+impl crate::operation::create_endpoint_config::builders::CreateEndpointConfigInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl CreateEndpointConfigFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl CreateEndpointConfigFluentBuilder {
     pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_config_name()
     }
+    ///
     /// Appends an item to `ProductionVariants`.
     ///
     /// To override the contents of this collection use [`set_production_variants`](Self::set_production_variants).
@@ -160,6 +161,7 @@ impl CreateEndpointConfigFluentBuilder {
     pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::DataCaptureConfig> {
         self.inner.get_data_capture_config()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -268,6 +270,7 @@ impl CreateEndpointConfigFluentBuilder {
     pub fn get_explainer_config(&self) -> &::std::option::Option<crate::types::ExplainerConfig> {
         self.inner.get_explainer_config()
     }
+    ///
     /// Appends an item to `ShadowProductionVariants`.
     ///
     /// To override the contents of this collection use [`set_shadow_production_variants`](Self::set_shadow_production_variants).

@@ -3,7 +3,7 @@ pub use crate::operation::update_account_audit_configuration::_update_account_au
 
 pub use crate::operation::update_account_audit_configuration::_update_account_audit_configuration_input::UpdateAccountAuditConfigurationInputBuilder;
 
-impl UpdateAccountAuditConfigurationInputBuilder {
+impl crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
     /// Adds a key-value pair to `auditNotificationTargetConfigurations`.
     ///
     /// To override the contents of this collection use [`set_audit_notification_target_configurations`](Self::set_audit_notification_target_configurations).
@@ -150,6 +151,7 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>> {
         self.inner.get_audit_notification_target_configurations()
     }
+    ///
     /// Adds a key-value pair to `auditCheckConfigurations`.
     ///
     /// To override the contents of this collection use [`set_audit_check_configurations`](Self::set_audit_check_configurations).

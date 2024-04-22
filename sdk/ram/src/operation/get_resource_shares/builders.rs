@@ -3,7 +3,7 @@ pub use crate::operation::get_resource_shares::_get_resource_shares_output::GetR
 
 pub use crate::operation::get_resource_shares::_get_resource_shares_input::GetResourceSharesInputBuilder;
 
-impl GetResourceSharesInputBuilder {
+impl crate::operation::get_resource_shares::builders::GetResourceSharesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetResourceSharesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl GetResourceSharesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_resource_shares::paginator::GetResourceSharesPaginator {
         crate::operation::get_resource_shares::paginator::GetResourceSharesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `resourceShareArns`.
     ///
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
@@ -192,6 +193,7 @@ impl GetResourceSharesFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `tagFilters`.
     ///
     /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).

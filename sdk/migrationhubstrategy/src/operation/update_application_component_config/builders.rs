@@ -3,7 +3,7 @@ pub use crate::operation::update_application_component_config::_update_applicati
 
 pub use crate::operation::update_application_component_config::_update_application_component_config_input::UpdateApplicationComponentConfigInputBuilder;
 
-impl UpdateApplicationComponentConfigInputBuilder {
+impl crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateApplicationComponentConfigFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateApplicationComponentConfigFluentBuilder {
     pub fn get_strategy_option(&self) -> &::std::option::Option<crate::types::StrategyOption> {
         self.inner.get_strategy_option()
     }
+    ///
     /// Appends an item to `sourceCodeList`.
     ///
     /// To override the contents of this collection use [`set_source_code_list`](Self::set_source_code_list).

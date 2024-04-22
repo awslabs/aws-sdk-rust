@@ -3,7 +3,7 @@ pub use crate::operation::get_byte_match_set::_get_byte_match_set_output::GetByt
 
 pub use crate::operation::get_byte_match_set::_get_byte_match_set_input::GetByteMatchSetInputBuilder;
 
-impl GetByteMatchSetInputBuilder {
+impl crate::operation::get_byte_match_set::builders::GetByteMatchSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl GetByteMatchSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

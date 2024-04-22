@@ -3,7 +3,7 @@ pub use crate::operation::get_insights::_get_insights_output::GetInsightsOutputB
 
 pub use crate::operation::get_insights::_get_insights_input::GetInsightsInputBuilder;
 
-impl GetInsightsInputBuilder {
+impl crate::operation::get_insights::builders::GetInsightsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetInsightsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl GetInsightsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_insights::paginator::GetInsightsPaginator {
         crate::operation::get_insights::paginator::GetInsightsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `InsightArns`.
     ///
     /// To override the contents of this collection use [`set_insight_arns`](Self::set_insight_arns).

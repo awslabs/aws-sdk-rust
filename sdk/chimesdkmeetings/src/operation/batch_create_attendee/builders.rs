@@ -3,7 +3,7 @@ pub use crate::operation::batch_create_attendee::_batch_create_attendee_output::
 
 pub use crate::operation::batch_create_attendee::_batch_create_attendee_input::BatchCreateAttendeeInputBuilder;
 
-impl BatchCreateAttendeeInputBuilder {
+impl crate::operation::batch_create_attendee::builders::BatchCreateAttendeeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchCreateAttendeeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl BatchCreateAttendeeFluentBuilder {
     pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_meeting_id()
     }
+    ///
     /// Appends an item to `Attendees`.
     ///
     /// To override the contents of this collection use [`set_attendees`](Self::set_attendees).

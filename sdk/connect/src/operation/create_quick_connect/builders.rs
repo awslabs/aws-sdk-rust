@@ -3,7 +3,7 @@ pub use crate::operation::create_quick_connect::_create_quick_connect_output::Cr
 
 pub use crate::operation::create_quick_connect::_create_quick_connect_input::CreateQuickConnectInputBuilder;
 
-impl CreateQuickConnectInputBuilder {
+impl crate::operation::create_quick_connect::builders::CreateQuickConnectInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateQuickConnectFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateQuickConnectFluentBuilder {
     pub fn get_quick_connect_config(&self) -> &::std::option::Option<crate::types::QuickConnectConfig> {
         self.inner.get_quick_connect_config()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

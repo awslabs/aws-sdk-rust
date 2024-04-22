@@ -3,7 +3,7 @@ pub use crate::operation::batch_update_custom_vocabulary_item::_batch_update_cus
 
 pub use crate::operation::batch_update_custom_vocabulary_item::_batch_update_custom_vocabulary_item_input::BatchUpdateCustomVocabularyItemInputBuilder;
 
-impl BatchUpdateCustomVocabularyItemInputBuilder {
+impl crate::operation::batch_update_custom_vocabulary_item::builders::BatchUpdateCustomVocabularyItemInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchUpdateCustomVocabularyItemFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl BatchUpdateCustomVocabularyItemFluentBuilder {
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_locale_id()
     }
+    ///
     /// Appends an item to `customVocabularyItemList`.
     ///
     /// To override the contents of this collection use [`set_custom_vocabulary_item_list`](Self::set_custom_vocabulary_item_list).

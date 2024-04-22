@@ -3,7 +3,7 @@ pub use crate::operation::search_products_as_admin::_search_products_as_admin_ou
 
 pub use crate::operation::search_products_as_admin::_search_products_as_admin_input::SearchProductsAsAdminInputBuilder;
 
-impl SearchProductsAsAdminInputBuilder {
+impl crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SearchProductsAsAdminFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -160,6 +160,7 @@ impl SearchProductsAsAdminFluentBuilder {
     pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_portfolio_id()
     }
+    ///
     /// Adds a key-value pair to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

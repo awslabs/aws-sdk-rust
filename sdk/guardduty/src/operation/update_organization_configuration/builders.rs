@@ -3,7 +3,7 @@ pub use crate::operation::update_organization_configuration::_update_organizatio
 
 pub use crate::operation::update_organization_configuration::_update_organization_configuration_input::UpdateOrganizationConfigurationInputBuilder;
 
-impl UpdateOrganizationConfigurationInputBuilder {
+impl crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -161,6 +161,7 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::OrganizationDataSourceConfigurations> {
         self.inner.get_data_sources()
     }
+    ///
     /// Appends an item to `Features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).

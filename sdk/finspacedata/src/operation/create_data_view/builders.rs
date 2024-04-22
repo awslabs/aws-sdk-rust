@@ -3,7 +3,7 @@ pub use crate::operation::create_data_view::_create_data_view_output::CreateData
 
 pub use crate::operation::create_data_view::_create_data_view_input::CreateDataViewInputBuilder;
 
-impl CreateDataViewInputBuilder {
+impl crate::operation::create_data_view::builders::CreateDataViewInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateDataViewFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl CreateDataViewFluentBuilder {
     pub fn get_auto_update(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_update()
     }
+    ///
     /// Appends an item to `sortColumns`.
     ///
     /// To override the contents of this collection use [`set_sort_columns`](Self::set_sort_columns).
@@ -169,6 +170,7 @@ impl CreateDataViewFluentBuilder {
     pub fn get_sort_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sort_columns()
     }
+    ///
     /// Appends an item to `partitionColumns`.
     ///
     /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).

@@ -3,7 +3,7 @@ pub use crate::operation::update_entity::_update_entity_output::UpdateEntityOutp
 
 pub use crate::operation::update_entity::_update_entity_input::UpdateEntityInputBuilder;
 
-impl UpdateEntityInputBuilder {
+impl crate::operation::update_entity::builders::UpdateEntityInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateEntityFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateEntityFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Adds a key-value pair to `componentUpdates`.
     ///
     /// To override the contents of this collection use [`set_component_updates`](Self::set_component_updates).
@@ -187,6 +188,7 @@ impl UpdateEntityFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>> {
         self.inner.get_component_updates()
     }
+    ///
     /// Adds a key-value pair to `compositeComponentUpdates`.
     ///
     /// To override the contents of this collection use [`set_composite_component_updates`](Self::set_composite_component_updates).

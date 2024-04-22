@@ -3,7 +3,7 @@ pub use crate::operation::describe_instance_patch_states_for_patch_group::_descr
 
 pub use crate::operation::describe_instance_patch_states_for_patch_group::_describe_instance_patch_states_for_patch_group_input::DescribeInstancePatchStatesForPatchGroupInputBuilder;
 
-impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
+impl crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -140,6 +140,7 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
     pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_patch_group()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

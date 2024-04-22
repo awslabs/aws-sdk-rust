@@ -3,7 +3,7 @@ pub use crate::operation::create_fleet::_create_fleet_output::CreateFleetOutputB
 
 pub use crate::operation::create_fleet::_create_fleet_input::CreateFleetInputBuilder;
 
-impl CreateFleetInputBuilder {
+impl crate::operation::create_fleet::builders::CreateFleetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -108,12 +108,12 @@ impl CreateFleetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -201,6 +201,7 @@ impl CreateFleetFluentBuilder {
     pub fn get_server_launch_parameters(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_launch_parameters()
     }
+    ///
     /// Appends an item to `LogPaths`.
     ///
     /// To override the contents of this collection use [`set_log_paths`](Self::set_log_paths).
@@ -233,6 +234,7 @@ impl CreateFleetFluentBuilder {
     pub fn get_ec2_instance_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
         self.inner.get_ec2_instance_type()
     }
+    ///
     /// Appends an item to `EC2InboundPermissions`.
     ///
     /// To override the contents of this collection use [`set_ec2_inbound_permissions`](Self::set_ec2_inbound_permissions).
@@ -317,6 +319,7 @@ impl CreateFleetFluentBuilder {
     pub fn get_resource_creation_limit_policy(&self) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
         self.inner.get_resource_creation_limit_policy()
     }
+    ///
     /// Appends an item to `MetricGroups`.
     ///
     /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
@@ -414,6 +417,7 @@ impl CreateFleetFluentBuilder {
     pub fn get_certificate_configuration(&self) -> &::std::option::Option<crate::types::CertificateConfiguration> {
         self.inner.get_certificate_configuration()
     }
+    ///
     /// Appends an item to `Locations`.
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
@@ -435,6 +439,7 @@ impl CreateFleetFluentBuilder {
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
         self.inner.get_locations()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

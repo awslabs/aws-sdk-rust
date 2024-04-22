@@ -3,7 +3,7 @@ pub use crate::operation::get_personalized_ranking::_get_personalized_ranking_ou
 
 pub use crate::operation::get_personalized_ranking::_get_personalized_ranking_input::GetPersonalizedRankingInputBuilder;
 
-impl GetPersonalizedRankingInputBuilder {
+impl crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl GetPersonalizedRankingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,6 +124,7 @@ impl GetPersonalizedRankingFluentBuilder {
     pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_campaign_arn()
     }
+    ///
     /// Appends an item to `inputList`.
     ///
     /// To override the contents of this collection use [`set_input_list`](Self::set_input_list).
@@ -156,6 +157,7 @@ impl GetPersonalizedRankingFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
+    ///
     /// Adds a key-value pair to `context`.
     ///
     /// To override the contents of this collection use [`set_context`](Self::set_context).
@@ -188,6 +190,7 @@ impl GetPersonalizedRankingFluentBuilder {
     pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_filter_arn()
     }
+    ///
     /// Adds a key-value pair to `filterValues`.
     ///
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
@@ -215,6 +218,7 @@ impl GetPersonalizedRankingFluentBuilder {
     pub fn get_filter_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_filter_values()
     }
+    ///
     /// Adds a key-value pair to `metadataColumns`.
     ///
     /// To override the contents of this collection use [`set_metadata_columns`](Self::set_metadata_columns).

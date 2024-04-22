@@ -3,7 +3,7 @@ pub use crate::operation::delete_endpoint_config::_delete_endpoint_config_output
 
 pub use crate::operation::delete_endpoint_config::_delete_endpoint_config_input::DeleteEndpointConfigInputBuilder;
 
-impl DeleteEndpointConfigInputBuilder {
+impl crate::operation::delete_endpoint_config::builders::DeleteEndpointConfigInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DeleteEndpointConfigFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

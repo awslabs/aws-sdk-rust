@@ -3,7 +3,7 @@ pub use crate::operation::create_control::_create_control_output::CreateControlO
 
 pub use crate::operation::create_control::_create_control_input::CreateControlInputBuilder;
 
-impl CreateControlInputBuilder {
+impl crate::operation::create_control::builders::CreateControlInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateControlFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateControlFluentBuilder {
     pub fn get_action_plan_instructions(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_action_plan_instructions()
     }
+    ///
     /// Appends an item to `controlMappingSources`.
     ///
     /// To override the contents of this collection use [`set_control_mapping_sources`](Self::set_control_mapping_sources).
@@ -196,6 +197,7 @@ impl CreateControlFluentBuilder {
     pub fn get_control_mapping_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateControlMappingSource>> {
         self.inner.get_control_mapping_sources()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

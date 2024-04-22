@@ -3,7 +3,7 @@ pub use crate::operation::create_replicator::_create_replicator_output::CreateRe
 
 pub use crate::operation::create_replicator::_create_replicator_input::CreateReplicatorInputBuilder;
 
-impl CreateReplicatorInputBuilder {
+impl crate::operation::create_replicator::builders::CreateReplicatorInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateReplicatorFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateReplicatorFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `KafkaClusters`.
     ///
     /// To override the contents of this collection use [`set_kafka_clusters`](Self::set_kafka_clusters).
@@ -140,6 +141,7 @@ impl CreateReplicatorFluentBuilder {
     pub fn get_kafka_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KafkaCluster>> {
         self.inner.get_kafka_clusters()
     }
+    ///
     /// Appends an item to `ReplicationInfoList`.
     ///
     /// To override the contents of this collection use [`set_replication_info_list`](Self::set_replication_info_list).
@@ -186,6 +188,7 @@ impl CreateReplicatorFluentBuilder {
     pub fn get_service_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_execution_role_arn()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

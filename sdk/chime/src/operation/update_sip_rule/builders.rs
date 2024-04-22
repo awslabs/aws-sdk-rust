@@ -3,7 +3,7 @@ pub use crate::operation::update_sip_rule::_update_sip_rule_output::UpdateSipRul
 
 pub use crate::operation::update_sip_rule::_update_sip_rule_input::UpdateSipRuleInputBuilder;
 
-impl UpdateSipRuleInputBuilder {
+impl crate::operation::update_sip_rule::builders::UpdateSipRuleInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl UpdateSipRuleFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl UpdateSipRuleFluentBuilder {
     pub fn get_disabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_disabled()
     }
+    ///
     /// Appends an item to `TargetApplications`.
     ///
     /// To override the contents of this collection use [`set_target_applications`](Self::set_target_applications).

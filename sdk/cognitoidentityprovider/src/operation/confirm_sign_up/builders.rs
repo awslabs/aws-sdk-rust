@@ -3,7 +3,7 @@ pub use crate::operation::confirm_sign_up::_confirm_sign_up_output::ConfirmSignU
 
 pub use crate::operation::confirm_sign_up::_confirm_sign_up_input::ConfirmSignUpInputBuilder;
 
-impl ConfirmSignUpInputBuilder {
+impl crate::operation::confirm_sign_up::builders::ConfirmSignUpInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl ConfirmSignUpFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -209,6 +209,7 @@ impl ConfirmSignUpFluentBuilder {
     pub fn get_user_context_data(&self) -> &::std::option::Option<crate::types::UserContextDataType> {
         self.inner.get_user_context_data()
     }
+    ///
     /// Adds a key-value pair to `ClientMetadata`.
     ///
     /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).

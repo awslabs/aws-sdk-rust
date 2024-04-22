@@ -3,7 +3,7 @@ pub use crate::operation::create_flow::_create_flow_output::CreateFlowOutputBuil
 
 pub use crate::operation::create_flow::_create_flow_input::CreateFlowInputBuilder;
 
-impl CreateFlowInputBuilder {
+impl crate::operation::create_flow::builders::CreateFlowInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateFlowFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateFlowFluentBuilder {
     pub fn get_source_flow_config(&self) -> &::std::option::Option<crate::types::SourceFlowConfig> {
         self.inner.get_source_flow_config()
     }
+    ///
     /// Appends an item to `destinationFlowConfigList`.
     ///
     /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
@@ -196,6 +197,7 @@ impl CreateFlowFluentBuilder {
     pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
         self.inner.get_destination_flow_config_list()
     }
+    ///
     /// Appends an item to `tasks`.
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
@@ -214,6 +216,7 @@ impl CreateFlowFluentBuilder {
     pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
         self.inner.get_tasks()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

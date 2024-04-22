@@ -3,7 +3,7 @@ pub use crate::operation::query_what_if_forecast::_query_what_if_forecast_output
 
 pub use crate::operation::query_what_if_forecast::_query_what_if_forecast_input::QueryWhatIfForecastInputBuilder;
 
-impl QueryWhatIfForecastInputBuilder {
+impl crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl QueryWhatIfForecastFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl QueryWhatIfForecastFluentBuilder {
     pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_end_date()
     }
+    ///
     /// Adds a key-value pair to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

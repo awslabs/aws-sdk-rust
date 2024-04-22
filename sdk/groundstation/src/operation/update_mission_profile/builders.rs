@@ -3,7 +3,7 @@ pub use crate::operation::update_mission_profile::_update_mission_profile_output
 
 pub use crate::operation::update_mission_profile::_update_mission_profile_input::UpdateMissionProfileInputBuilder;
 
-impl UpdateMissionProfileInputBuilder {
+impl crate::operation::update_mission_profile::builders::UpdateMissionProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateMissionProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl UpdateMissionProfileFluentBuilder {
     pub fn get_minimum_viable_contact_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_minimum_viable_contact_duration_seconds()
     }
+    ///
     /// Appends an item to `dataflowEdges`.
     ///
     /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).

@@ -3,7 +3,7 @@ pub use crate::operation::list_organization_service_access_status::_list_organiz
 
 pub use crate::operation::list_organization_service_access_status::_list_organization_service_access_status_input::ListOrganizationServiceAccessStatusInputBuilder;
 
-impl ListOrganizationServiceAccessStatusInputBuilder {
+impl crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ListOrganizationServiceAccessStatusFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

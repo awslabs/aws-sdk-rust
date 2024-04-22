@@ -3,7 +3,7 @@ pub use crate::operation::start_build::_start_build_output::StartBuildOutputBuil
 
 pub use crate::operation::start_build::_start_build_input::StartBuildInputBuilder;
 
-impl StartBuildInputBuilder {
+impl crate::operation::start_build::builders::StartBuildInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl StartBuildFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl StartBuildFluentBuilder {
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_name()
     }
+    ///
     /// Appends an item to `secondarySourcesOverride`.
     ///
     /// To override the contents of this collection use [`set_secondary_sources_override`](Self::set_secondary_sources_override).
@@ -141,6 +142,7 @@ impl StartBuildFluentBuilder {
     pub fn get_secondary_sources_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
         self.inner.get_secondary_sources_override()
     }
+    ///
     /// Appends an item to `secondarySourcesVersionOverride`.
     ///
     /// To override the contents of this collection use [`set_secondary_sources_version_override`](Self::set_secondary_sources_version_override).
@@ -274,6 +276,7 @@ impl StartBuildFluentBuilder {
     pub fn get_artifacts_override(&self) -> &::std::option::Option<crate::types::ProjectArtifacts> {
         self.inner.get_artifacts_override()
     }
+    ///
     /// Appends an item to `secondaryArtifactsOverride`.
     ///
     /// To override the contents of this collection use [`set_secondary_artifacts_override`](Self::set_secondary_artifacts_override).
@@ -292,6 +295,7 @@ impl StartBuildFluentBuilder {
     pub fn get_secondary_artifacts_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
         self.inner.get_secondary_artifacts_override()
     }
+    ///
     /// Appends an item to `environmentVariablesOverride`.
     ///
     /// To override the contents of this collection use [`set_environment_variables_override`](Self::set_environment_variables_override).

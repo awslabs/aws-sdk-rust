@@ -3,7 +3,7 @@ pub use crate::operation::update_license_configuration::_update_license_configur
 
 pub use crate::operation::update_license_configuration::_update_license_configuration_input::UpdateLicenseConfigurationInputBuilder;
 
-impl UpdateLicenseConfigurationInputBuilder {
+impl crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateLicenseConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateLicenseConfigurationFluentBuilder {
     pub fn get_license_configuration_status(&self) -> &::std::option::Option<crate::types::LicenseConfigurationStatus> {
         self.inner.get_license_configuration_status()
     }
+    ///
     /// Appends an item to `LicenseRules`.
     ///
     /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
@@ -210,6 +211,7 @@ impl UpdateLicenseConfigurationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `ProductInformationList`.
     ///
     /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).

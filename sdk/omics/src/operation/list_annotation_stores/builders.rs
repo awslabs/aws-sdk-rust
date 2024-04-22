@@ -3,7 +3,7 @@ pub use crate::operation::list_annotation_stores::_list_annotation_stores_output
 
 pub use crate::operation::list_annotation_stores::_list_annotation_stores_input::ListAnnotationStoresInputBuilder;
 
-impl ListAnnotationStoresInputBuilder {
+impl crate::operation::list_annotation_stores::builders::ListAnnotationStoresInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListAnnotationStoresFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListAnnotationStoresFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator {
         crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ids`.
     ///
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).

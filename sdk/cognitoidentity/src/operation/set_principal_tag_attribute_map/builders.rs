@@ -3,7 +3,7 @@ pub use crate::operation::set_principal_tag_attribute_map::_set_principal_tag_at
 
 pub use crate::operation::set_principal_tag_attribute_map::_set_principal_tag_attribute_map_input::SetPrincipalTagAttributeMapInputBuilder;
 
-impl SetPrincipalTagAttributeMapInputBuilder {
+impl crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
     pub fn get_use_defaults(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_defaults()
     }
+    ///
     /// Adds a key-value pair to `PrincipalTags`.
     ///
     /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).

@@ -3,7 +3,9 @@ pub use crate::operation::list_associated_approval_rule_templates_for_repository
 
 pub use crate::operation::list_associated_approval_rule_templates_for_repository::_list_associated_approval_rule_templates_for_repository_input::ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder;
 
-impl ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
+impl
+    crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder
+{
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,10 +27,10 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
 /// <p>Lists all approval rule templates that are associated with a specified repository.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput,
@@ -103,12 +105,12 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

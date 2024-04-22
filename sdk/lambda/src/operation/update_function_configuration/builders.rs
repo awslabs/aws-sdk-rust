@@ -3,7 +3,7 @@ pub use crate::operation::update_function_configuration::_update_function_config
 
 pub use crate::operation::update_function_configuration::_update_function_configuration_input::UpdateFunctionConfigurationInputBuilder;
 
-impl UpdateFunctionConfigurationInputBuilder {
+impl crate::operation::update_function_configuration::builders::UpdateFunctionConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl UpdateFunctionConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -326,6 +326,7 @@ impl UpdateFunctionConfigurationFluentBuilder {
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_revision_id()
     }
+    ///
     /// Appends an item to `Layers`.
     ///
     /// To override the contents of this collection use [`set_layers`](Self::set_layers).
@@ -344,6 +345,7 @@ impl UpdateFunctionConfigurationFluentBuilder {
     pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_layers()
     }
+    ///
     /// Appends an item to `FileSystemConfigs`.
     ///
     /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).

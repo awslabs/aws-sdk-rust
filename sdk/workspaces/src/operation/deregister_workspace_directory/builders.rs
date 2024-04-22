@@ -3,7 +3,7 @@ pub use crate::operation::deregister_workspace_directory::_deregister_workspace_
 
 pub use crate::operation::deregister_workspace_directory::_deregister_workspace_directory_input::DeregisterWorkspaceDirectoryInputBuilder;
 
-impl DeregisterWorkspaceDirectoryInputBuilder {
+impl crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DeregisterWorkspaceDirectoryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

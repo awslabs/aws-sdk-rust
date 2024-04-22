@@ -3,7 +3,7 @@ pub use crate::operation::create_web_acl::_create_web_acl_output::CreateWebAclOu
 
 pub use crate::operation::create_web_acl::_create_web_acl_input::CreateWebAclInputBuilder;
 
-impl CreateWebAclInputBuilder {
+impl crate::operation::create_web_acl::builders::CreateWebAclInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateWebACLFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -186,6 +186,7 @@ impl CreateWebACLFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `Rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -218,6 +219,7 @@ impl CreateWebACLFluentBuilder {
     pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
         self.inner.get_visibility_config()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -236,6 +238,7 @@ impl CreateWebACLFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Adds a key-value pair to `CustomResponseBodies`.
     ///
     /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
@@ -293,6 +296,7 @@ impl CreateWebACLFluentBuilder {
     pub fn get_challenge_config(&self) -> &::std::option::Option<crate::types::ChallengeConfig> {
         self.inner.get_challenge_config()
     }
+    ///
     /// Appends an item to `TokenDomains`.
     ///
     /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).

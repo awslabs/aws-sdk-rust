@@ -3,7 +3,7 @@ pub use crate::operation::create_ops_item::_create_ops_item_output::CreateOpsIte
 
 pub use crate::operation::create_ops_item::_create_ops_item_input::CreateOpsItemInputBuilder;
 
-impl CreateOpsItemInputBuilder {
+impl crate::operation::create_ops_item::builders::CreateOpsItemInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateOpsItemFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -176,6 +176,7 @@ impl CreateOpsItemFluentBuilder {
     pub fn get_ops_item_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ops_item_type()
     }
+    ///
     /// Adds a key-value pair to `OperationalData`.
     ///
     /// To override the contents of this collection use [`set_operational_data`](Self::set_operational_data).
@@ -209,6 +210,7 @@ impl CreateOpsItemFluentBuilder {
     pub fn get_operational_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>> {
         self.inner.get_operational_data()
     }
+    ///
     /// Appends an item to `Notifications`.
     ///
     /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
@@ -241,6 +243,7 @@ impl CreateOpsItemFluentBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
+    ///
     /// Appends an item to `RelatedOpsItems`.
     ///
     /// To override the contents of this collection use [`set_related_ops_items`](Self::set_related_ops_items).
@@ -293,6 +296,7 @@ impl CreateOpsItemFluentBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_title()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

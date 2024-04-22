@@ -3,7 +3,7 @@ pub use crate::operation::disassociate_phone_numbers_from_voice_connector_group:
 
 pub use crate::operation::disassociate_phone_numbers_from_voice_connector_group::_disassociate_phone_numbers_from_voice_connector_group_input::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder;
 
-impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
+impl crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,10 +25,10 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
 /// <p>Disassociates the specified phone numbers from the specified Amazon Chime SDK Voice Connector group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput,
@@ -106,12 +106,12 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -129,6 +129,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupFluentBuilder {
     pub fn get_voice_connector_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_voice_connector_group_id()
     }
+    ///
     /// Appends an item to `E164PhoneNumbers`.
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).

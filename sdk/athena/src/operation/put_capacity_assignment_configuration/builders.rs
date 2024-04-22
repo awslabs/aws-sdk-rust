@@ -3,7 +3,7 @@ pub use crate::operation::put_capacity_assignment_configuration::_put_capacity_a
 
 pub use crate::operation::put_capacity_assignment_configuration::_put_capacity_assignment_configuration_input::PutCapacityAssignmentConfigurationInputBuilder;
 
-impl PutCapacityAssignmentConfigurationInputBuilder {
+impl crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutCapacityAssignmentConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl PutCapacityAssignmentConfigurationFluentBuilder {
     pub fn get_capacity_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_capacity_reservation_name()
     }
+    ///
     /// Appends an item to `CapacityAssignments`.
     ///
     /// To override the contents of this collection use [`set_capacity_assignments`](Self::set_capacity_assignments).

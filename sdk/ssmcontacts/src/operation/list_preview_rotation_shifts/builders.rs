@@ -3,7 +3,7 @@ pub use crate::operation::list_preview_rotation_shifts::_list_preview_rotation_s
 
 pub use crate::operation::list_preview_rotation_shifts::_list_preview_rotation_shifts_input::ListPreviewRotationShiftsInputBuilder;
 
-impl ListPreviewRotationShiftsInputBuilder {
+impl crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl ListPreviewRotationShiftsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -158,6 +158,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
+    ///
     /// Appends an item to `Members`.
     ///
     /// To override the contents of this collection use [`set_members`](Self::set_members).
@@ -204,6 +205,7 @@ impl ListPreviewRotationShiftsFluentBuilder {
     pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::RecurrenceSettings> {
         self.inner.get_recurrence()
     }
+    ///
     /// Appends an item to `Overrides`.
     ///
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).

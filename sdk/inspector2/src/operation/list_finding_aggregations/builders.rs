@@ -3,7 +3,7 @@ pub use crate::operation::list_finding_aggregations::_list_finding_aggregations_
 
 pub use crate::operation::list_finding_aggregations::_list_finding_aggregations_input::ListFindingAggregationsInputBuilder;
 
-impl ListFindingAggregationsInputBuilder {
+impl crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListFindingAggregationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -156,6 +156,7 @@ impl ListFindingAggregationsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `accountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).

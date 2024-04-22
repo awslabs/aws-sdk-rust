@@ -3,7 +3,7 @@ pub use crate::operation::label_parameter_version::_label_parameter_version_outp
 
 pub use crate::operation::label_parameter_version::_label_parameter_version_input::LabelParameterVersionInputBuilder;
 
-impl LabelParameterVersionInputBuilder {
+impl crate::operation::label_parameter_version::builders::LabelParameterVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -118,12 +118,12 @@ impl LabelParameterVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -161,6 +161,7 @@ impl LabelParameterVersionFluentBuilder {
     pub fn get_parameter_version(&self) -> &::std::option::Option<i64> {
         self.inner.get_parameter_version()
     }
+    ///
     /// Appends an item to `Labels`.
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).

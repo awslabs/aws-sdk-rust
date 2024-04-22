@@ -3,7 +3,7 @@ pub use crate::operation::copy_snapshot_and_update_volume::_copy_snapshot_and_up
 
 pub use crate::operation::copy_snapshot_and_update_volume::_copy_snapshot_and_update_volume_input::CopySnapshotAndUpdateVolumeInputBuilder;
 
-impl CopySnapshotAndUpdateVolumeInputBuilder {
+impl crate::operation::copy_snapshot_and_update_volume::builders::CopySnapshotAndUpdateVolumeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CopySnapshotAndUpdateVolumeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -188,6 +188,7 @@ impl CopySnapshotAndUpdateVolumeFluentBuilder {
     pub fn get_copy_strategy(&self) -> &::std::option::Option<crate::types::OpenZfsCopyStrategy> {
         self.inner.get_copy_strategy()
     }
+    ///
     /// Appends an item to `Options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).

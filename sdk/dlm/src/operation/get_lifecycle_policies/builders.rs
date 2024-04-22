@@ -3,7 +3,7 @@ pub use crate::operation::get_lifecycle_policies::_get_lifecycle_policies_output
 
 pub use crate::operation::get_lifecycle_policies::_get_lifecycle_policies_input::GetLifecyclePoliciesInputBuilder;
 
-impl GetLifecyclePoliciesInputBuilder {
+impl crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl GetLifecyclePoliciesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `PolicyIds`.
     ///
     /// To override the contents of this collection use [`set_policy_ids`](Self::set_policy_ids).
@@ -141,6 +142,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::GettablePolicyStateValues> {
         self.inner.get_state()
     }
+    ///
     /// Appends an item to `ResourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -159,6 +161,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>> {
         self.inner.get_resource_types()
     }
+    ///
     /// Appends an item to `TargetTags`.
     ///
     /// To override the contents of this collection use [`set_target_tags`](Self::set_target_tags).
@@ -180,6 +183,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     pub fn get_target_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_tags()
     }
+    ///
     /// Appends an item to `TagsToAdd`.
     ///
     /// To override the contents of this collection use [`set_tags_to_add`](Self::set_tags_to_add).

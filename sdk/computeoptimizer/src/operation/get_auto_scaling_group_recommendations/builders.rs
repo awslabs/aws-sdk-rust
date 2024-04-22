@@ -3,7 +3,7 @@ pub use crate::operation::get_auto_scaling_group_recommendations::_get_auto_scal
 
 pub use crate::operation::get_auto_scaling_group_recommendations::_get_auto_scaling_group_recommendations_input::GetAutoScalingGroupRecommendationsInputBuilder;
 
-impl GetAutoScalingGroupRecommendationsInputBuilder {
+impl crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `accountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -133,6 +134,7 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
+    ///
     /// Appends an item to `autoScalingGroupArns`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_group_arns`](Self::set_auto_scaling_group_arns).
@@ -182,6 +184,7 @@ impl GetAutoScalingGroupRecommendationsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

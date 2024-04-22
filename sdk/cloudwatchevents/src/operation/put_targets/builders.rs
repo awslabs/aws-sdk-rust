@@ -3,7 +3,7 @@ pub use crate::operation::put_targets::_put_targets_output::PutTargetsOutputBuil
 
 pub use crate::operation::put_targets::_put_targets_input::PutTargetsInputBuilder;
 
-impl PutTargetsInputBuilder {
+impl crate::operation::put_targets::builders::PutTargetsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -174,12 +174,12 @@ impl PutTargetsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -211,6 +211,7 @@ impl PutTargetsFluentBuilder {
     pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_bus_name()
     }
+    ///
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).

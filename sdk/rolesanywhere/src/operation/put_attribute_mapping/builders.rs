@@ -3,7 +3,7 @@ pub use crate::operation::put_attribute_mapping::_put_attribute_mapping_output::
 
 pub use crate::operation::put_attribute_mapping::_put_attribute_mapping_input::PutAttributeMappingInputBuilder;
 
-impl PutAttributeMappingInputBuilder {
+impl crate::operation::put_attribute_mapping::builders::PutAttributeMappingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutAttributeMappingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl PutAttributeMappingFluentBuilder {
     pub fn get_certificate_field(&self) -> &::std::option::Option<crate::types::CertificateField> {
         self.inner.get_certificate_field()
     }
+    ///
     /// Appends an item to `mappingRules`.
     ///
     /// To override the contents of this collection use [`set_mapping_rules`](Self::set_mapping_rules).

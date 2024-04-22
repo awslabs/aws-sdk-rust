@@ -3,7 +3,7 @@ pub use crate::operation::create_domain_name::_create_domain_name_output::Create
 
 pub use crate::operation::create_domain_name::_create_domain_name_input::CreateDomainNameInputBuilder;
 
-impl CreateDomainNameInputBuilder {
+impl crate::operation::create_domain_name::builders::CreateDomainNameInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateDomainNameFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateDomainNameFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
+    ///
     /// Appends an item to `DomainNameConfigurations`.
     ///
     /// To override the contents of this collection use [`set_domain_name_configurations`](Self::set_domain_name_configurations).
@@ -154,6 +155,7 @@ impl CreateDomainNameFluentBuilder {
     pub fn get_mutual_tls_authentication(&self) -> &::std::option::Option<crate::types::MutualTlsAuthenticationInput> {
         self.inner.get_mutual_tls_authentication()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

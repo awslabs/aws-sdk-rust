@@ -3,7 +3,7 @@ pub use crate::operation::invoke::_invoke_output::InvokeOutputBuilder;
 
 pub use crate::operation::invoke::_invoke_input::InvokeInputBuilder;
 
-impl InvokeInputBuilder {
+impl crate::operation::invoke::builders::InvokeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -92,12 +92,12 @@ impl InvokeFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::invoke::InvokeOutput, crate::operation::invoke::InvokeError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

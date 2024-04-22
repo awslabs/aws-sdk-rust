@@ -3,7 +3,7 @@ pub use crate::operation::reboot_cache_cluster::_reboot_cache_cluster_output::Re
 
 pub use crate::operation::reboot_cache_cluster::_reboot_cache_cluster_input::RebootCacheClusterInputBuilder;
 
-impl RebootCacheClusterInputBuilder {
+impl crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl RebootCacheClusterFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -126,6 +126,7 @@ impl RebootCacheClusterFluentBuilder {
     pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_cluster_id()
     }
+    ///
     /// Appends an item to `CacheNodeIdsToReboot`.
     ///
     /// To override the contents of this collection use [`set_cache_node_ids_to_reboot`](Self::set_cache_node_ids_to_reboot).

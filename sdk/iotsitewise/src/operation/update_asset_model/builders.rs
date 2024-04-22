@@ -3,7 +3,7 @@ pub use crate::operation::update_asset_model::_update_asset_model_output::Update
 
 pub use crate::operation::update_asset_model::_update_asset_model_input::UpdateAssetModelInputBuilder;
 
-impl UpdateAssetModelInputBuilder {
+impl crate::operation::update_asset_model::builders::UpdateAssetModelInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl UpdateAssetModelFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl UpdateAssetModelFluentBuilder {
     pub fn get_asset_model_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_model_description()
     }
+    ///
     /// Appends an item to `assetModelProperties`.
     ///
     /// To override the contents of this collection use [`set_asset_model_properties`](Self::set_asset_model_properties).
@@ -174,6 +175,7 @@ impl UpdateAssetModelFluentBuilder {
     pub fn get_asset_model_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
         self.inner.get_asset_model_properties()
     }
+    ///
     /// Appends an item to `assetModelHierarchies`.
     ///
     /// To override the contents of this collection use [`set_asset_model_hierarchies`](Self::set_asset_model_hierarchies).
@@ -195,6 +197,7 @@ impl UpdateAssetModelFluentBuilder {
     pub fn get_asset_model_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>> {
         self.inner.get_asset_model_hierarchies()
     }
+    ///
     /// Appends an item to `assetModelCompositeModels`.
     ///
     /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).

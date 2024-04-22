@@ -3,7 +3,7 @@ pub use crate::operation::put_project_events::_put_project_events_output::PutPro
 
 pub use crate::operation::put_project_events::_put_project_events_input::PutProjectEventsInputBuilder;
 
-impl PutProjectEventsInputBuilder {
+impl crate::operation::put_project_events::builders::PutProjectEventsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutProjectEventsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl PutProjectEventsFluentBuilder {
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project()
     }
+    ///
     /// Appends an item to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).

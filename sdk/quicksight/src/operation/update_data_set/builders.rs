@@ -3,7 +3,7 @@ pub use crate::operation::update_data_set::_update_data_set_output::UpdateDataSe
 
 pub use crate::operation::update_data_set::_update_data_set_input::UpdateDataSetInputBuilder;
 
-impl UpdateDataSetInputBuilder {
+impl crate::operation::update_data_set::builders::UpdateDataSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDataSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateDataSetFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Adds a key-value pair to `PhysicalTableMap`.
     ///
     /// To override the contents of this collection use [`set_physical_table_map`](Self::set_physical_table_map).
@@ -171,6 +172,7 @@ impl UpdateDataSetFluentBuilder {
     pub fn get_physical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>> {
         self.inner.get_physical_table_map()
     }
+    ///
     /// Adds a key-value pair to `LogicalTableMap`.
     ///
     /// To override the contents of this collection use [`set_logical_table_map`](Self::set_logical_table_map).
@@ -206,6 +208,7 @@ impl UpdateDataSetFluentBuilder {
     pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::DataSetImportMode> {
         self.inner.get_import_mode()
     }
+    ///
     /// Appends an item to `ColumnGroups`.
     ///
     /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
@@ -224,6 +227,7 @@ impl UpdateDataSetFluentBuilder {
     pub fn get_column_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>> {
         self.inner.get_column_groups()
     }
+    ///
     /// Adds a key-value pair to `FieldFolders`.
     ///
     /// To override the contents of this collection use [`set_field_folders`](Self::set_field_folders).
@@ -276,6 +280,7 @@ impl UpdateDataSetFluentBuilder {
     pub fn get_row_level_permission_tag_configuration(&self) -> &::std::option::Option<crate::types::RowLevelPermissionTagConfiguration> {
         self.inner.get_row_level_permission_tag_configuration()
     }
+    ///
     /// Appends an item to `ColumnLevelPermissionRules`.
     ///
     /// To override the contents of this collection use [`set_column_level_permission_rules`](Self::set_column_level_permission_rules).
@@ -311,6 +316,7 @@ impl UpdateDataSetFluentBuilder {
     pub fn get_data_set_usage_configuration(&self) -> &::std::option::Option<crate::types::DataSetUsageConfiguration> {
         self.inner.get_data_set_usage_configuration()
     }
+    ///
     /// Appends an item to `DatasetParameters`.
     ///
     /// To override the contents of this collection use [`set_dataset_parameters`](Self::set_dataset_parameters).

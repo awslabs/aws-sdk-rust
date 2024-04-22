@@ -3,7 +3,7 @@ pub use crate::operation::describe_replace_root_volume_tasks::_describe_replace_
 
 pub use crate::operation::describe_replace_root_volume_tasks::_describe_replace_root_volume_tasks_input::DescribeReplaceRootVolumeTasksInputBuilder;
 
-impl DescribeReplaceRootVolumeTasksInputBuilder {
+impl crate::operation::describe_replace_root_volume_tasks::builders::DescribeReplaceRootVolumeTasksInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeReplaceRootVolumeTasksFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeReplaceRootVolumeTasksFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_replace_root_volume_tasks::paginator::DescribeReplaceRootVolumeTasksPaginator {
         crate::operation::describe_replace_root_volume_tasks::paginator::DescribeReplaceRootVolumeTasksPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ReplaceRootVolumeTaskIds`.
     ///
     /// To override the contents of this collection use [`set_replace_root_volume_task_ids`](Self::set_replace_root_volume_task_ids).
@@ -132,6 +133,7 @@ impl DescribeReplaceRootVolumeTasksFluentBuilder {
     pub fn get_replace_root_volume_task_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_replace_root_volume_task_ids()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

@@ -3,7 +3,7 @@ pub use crate::operation::put_composite_alarm::_put_composite_alarm_output::PutC
 
 pub use crate::operation::put_composite_alarm::_put_composite_alarm_input::PutCompositeAlarmInputBuilder;
 
-impl PutCompositeAlarmInputBuilder {
+impl crate::operation::put_composite_alarm::builders::PutCompositeAlarmInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -120,12 +120,12 @@ impl PutCompositeAlarmFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl PutCompositeAlarmFluentBuilder {
     pub fn get_actions_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_actions_enabled()
     }
+    ///
     /// Appends an item to `AlarmActions`.
     ///
     /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
@@ -323,6 +324,7 @@ impl PutCompositeAlarmFluentBuilder {
     pub fn get_alarm_rule(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alarm_rule()
     }
+    ///
     /// Appends an item to `InsufficientDataActions`.
     ///
     /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
@@ -377,6 +379,7 @@ impl PutCompositeAlarmFluentBuilder {
     pub fn get_insufficient_data_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_insufficient_data_actions()
     }
+    ///
     /// Appends an item to `OKActions`.
     ///
     /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
@@ -431,6 +434,7 @@ impl PutCompositeAlarmFluentBuilder {
     pub fn get_ok_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ok_actions()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

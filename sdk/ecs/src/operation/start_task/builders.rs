@@ -3,7 +3,7 @@ pub use crate::operation::start_task::_start_task_output::StartTaskOutputBuilder
 
 pub use crate::operation::start_task::_start_task_input::StartTaskInputBuilder;
 
-impl StartTaskInputBuilder {
+impl crate::operation::start_task::builders::StartTaskInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -98,12 +98,12 @@ impl StartTaskFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -121,6 +121,7 @@ impl StartTaskFluentBuilder {
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster()
     }
+    ///
     /// Appends an item to `containerInstances`.
     ///
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
@@ -260,6 +261,7 @@ impl StartTaskFluentBuilder {
     pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_started_by()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -343,6 +345,7 @@ impl StartTaskFluentBuilder {
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_definition()
     }
+    ///
     /// Appends an item to `volumeConfigurations`.
     ///
     /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).

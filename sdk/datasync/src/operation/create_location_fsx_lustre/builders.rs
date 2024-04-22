@@ -3,7 +3,7 @@ pub use crate::operation::create_location_fsx_lustre::_create_location_fsx_lustr
 
 pub use crate::operation::create_location_fsx_lustre::_create_location_fsx_lustre_input::CreateLocationFsxLustreInputBuilder;
 
-impl CreateLocationFsxLustreInputBuilder {
+impl crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateLocationFsxLustreFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl CreateLocationFsxLustreFluentBuilder {
     pub fn get_fsx_filesystem_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fsx_filesystem_arn()
     }
+    ///
     /// Appends an item to `SecurityGroupArns`.
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
@@ -155,6 +156,7 @@ impl CreateLocationFsxLustreFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

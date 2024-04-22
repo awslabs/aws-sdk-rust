@@ -3,7 +3,7 @@ pub use crate::operation::start_sessions_statistics_aggregation::_start_sessions
 
 pub use crate::operation::start_sessions_statistics_aggregation::_start_sessions_statistics_aggregation_input::StartSessionsStatisticsAggregationInputBuilder;
 
-impl StartSessionsStatisticsAggregationInputBuilder {
+impl crate::operation::start_sessions_statistics_aggregation::builders::StartSessionsStatisticsAggregationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartSessionsStatisticsAggregationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl StartSessionsStatisticsAggregationFluentBuilder {
     pub fn get_period(&self) -> &::std::option::Option<crate::types::Period> {
         self.inner.get_period()
     }
+    ///
     /// Appends an item to `groupBy`.
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
@@ -210,6 +211,7 @@ impl StartSessionsStatisticsAggregationFluentBuilder {
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageGroupByField>> {
         self.inner.get_group_by()
     }
+    ///
     /// Appends an item to `statistics`.
     ///
     /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).

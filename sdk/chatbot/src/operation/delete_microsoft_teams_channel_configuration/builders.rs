@@ -3,7 +3,7 @@ pub use crate::operation::delete_microsoft_teams_channel_configuration::_delete_
 
 pub use crate::operation::delete_microsoft_teams_channel_configuration::_delete_microsoft_teams_channel_configuration_input::DeleteMicrosoftTeamsChannelConfigurationInputBuilder;
 
-impl DeleteMicrosoftTeamsChannelConfigurationInputBuilder {
+impl crate::operation::delete_microsoft_teams_channel_configuration::builders::DeleteMicrosoftTeamsChannelConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl DeleteMicrosoftTeamsChannelConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

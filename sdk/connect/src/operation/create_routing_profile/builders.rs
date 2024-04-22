@@ -3,7 +3,7 @@ pub use crate::operation::create_routing_profile::_create_routing_profile_output
 
 pub use crate::operation::create_routing_profile::_create_routing_profile_input::CreateRoutingProfileInputBuilder;
 
-impl CreateRoutingProfileInputBuilder {
+impl crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateRoutingProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateRoutingProfileFluentBuilder {
     pub fn get_default_outbound_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_outbound_queue_id()
     }
+    ///
     /// Appends an item to `QueueConfigs`.
     ///
     /// To override the contents of this collection use [`set_queue_configs`](Self::set_queue_configs).
@@ -185,6 +186,7 @@ impl CreateRoutingProfileFluentBuilder {
     pub fn get_queue_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
         self.inner.get_queue_configs()
     }
+    ///
     /// Appends an item to `MediaConcurrencies`.
     ///
     /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
@@ -203,6 +205,7 @@ impl CreateRoutingProfileFluentBuilder {
     pub fn get_media_concurrencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
         self.inner.get_media_concurrencies()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

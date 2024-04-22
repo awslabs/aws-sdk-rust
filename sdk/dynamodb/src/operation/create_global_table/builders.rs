@@ -3,7 +3,7 @@ pub use crate::operation::create_global_table::_create_global_table_output::Crea
 
 pub use crate::operation::create_global_table::_create_global_table_input::CreateGlobalTableInputBuilder;
 
-impl CreateGlobalTableInputBuilder {
+impl crate::operation::create_global_table::builders::CreateGlobalTableInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -129,12 +129,12 @@ impl CreateGlobalTableFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -152,6 +152,7 @@ impl CreateGlobalTableFluentBuilder {
     pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_table_name()
     }
+    ///
     /// Appends an item to `ReplicationGroup`.
     ///
     /// To override the contents of this collection use [`set_replication_group`](Self::set_replication_group).

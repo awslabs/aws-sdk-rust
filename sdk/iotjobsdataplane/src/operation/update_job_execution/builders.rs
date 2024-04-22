@@ -3,7 +3,7 @@ pub use crate::operation::update_job_execution::_update_job_execution_output::Up
 
 pub use crate::operation::update_job_execution::_update_job_execution_input::UpdateJobExecutionInputBuilder;
 
-impl UpdateJobExecutionInputBuilder {
+impl crate::operation::update_job_execution::builders::UpdateJobExecutionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateJobExecutionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateJobExecutionFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobExecutionStatus> {
         self.inner.get_status()
     }
+    ///
     /// Adds a key-value pair to `statusDetails`.
     ///
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).

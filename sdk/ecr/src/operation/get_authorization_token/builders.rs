@@ -3,7 +3,7 @@ pub use crate::operation::get_authorization_token::_get_authorization_token_outp
 
 pub use crate::operation::get_authorization_token::_get_authorization_token_input::GetAuthorizationTokenInputBuilder;
 
-impl GetAuthorizationTokenInputBuilder {
+impl crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl GetAuthorizationTokenFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `registryIds`.
     ///
     /// To override the contents of this collection use [`set_registry_ids`](Self::set_registry_ids).

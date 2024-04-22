@@ -3,7 +3,7 @@ pub use crate::operation::create_batch_inference_job::_create_batch_inference_jo
 
 pub use crate::operation::create_batch_inference_job::_create_batch_inference_job_input::CreateBatchInferenceJobInputBuilder;
 
-impl CreateBatchInferenceJobInputBuilder {
+impl crate::operation::create_batch_inference_job::builders::CreateBatchInferenceJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CreateBatchInferenceJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -225,6 +225,7 @@ impl CreateBatchInferenceJobFluentBuilder {
     pub fn get_batch_inference_job_config(&self) -> &::std::option::Option<crate::types::BatchInferenceJobConfig> {
         self.inner.get_batch_inference_job_config()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

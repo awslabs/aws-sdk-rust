@@ -3,7 +3,7 @@ pub use crate::operation::create_vpc_connection::_create_vpc_connection_output::
 
 pub use crate::operation::create_vpc_connection::_create_vpc_connection_input::CreateVpcConnectionInputBuilder;
 
-impl CreateVpcConnectionInputBuilder {
+impl crate::operation::create_vpc_connection::builders::CreateVpcConnectionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateVpcConnectionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateVpcConnectionFluentBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
+    ///
     /// Appends an item to `ClientSubnets`.
     ///
     /// To override the contents of this collection use [`set_client_subnets`](Self::set_client_subnets).
@@ -168,6 +169,7 @@ impl CreateVpcConnectionFluentBuilder {
     pub fn get_client_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_client_subnets()
     }
+    ///
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -186,6 +188,7 @@ impl CreateVpcConnectionFluentBuilder {
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

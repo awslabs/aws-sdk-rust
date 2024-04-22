@@ -3,7 +3,7 @@ pub use crate::operation::update_org_ec2_deep_inspection_configuration::_update_
 
 pub use crate::operation::update_org_ec2_deep_inspection_configuration::_update_org_ec2_deep_inspection_configuration_input::UpdateOrgEc2DeepInspectionConfigurationInputBuilder;
 
-impl UpdateOrgEc2DeepInspectionConfigurationInputBuilder {
+impl crate::operation::update_org_ec2_deep_inspection_configuration::builders::UpdateOrgEc2DeepInspectionConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,15 +103,16 @@ impl UpdateOrgEc2DeepInspectionConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `orgPackagePaths`.
     ///
     /// To override the contents of this collection use [`set_org_package_paths`](Self::set_org_package_paths).

@@ -3,7 +3,7 @@ pub use crate::operation::list_recommendation_templates::_list_recommendation_te
 
 pub use crate::operation::list_recommendation_templates::_list_recommendation_templates_input::ListRecommendationTemplatesInputBuilder;
 
-impl ListRecommendationTemplatesInputBuilder {
+impl crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListRecommendationTemplatesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl ListRecommendationTemplatesFluentBuilder {
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
         self.inner.get_reverse_order()
     }
+    ///
     /// Appends an item to `status`.
     ///
     /// To override the contents of this collection use [`set_status`](Self::set_status).

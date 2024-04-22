@@ -3,7 +3,7 @@ pub use crate::operation::create_dataflow_endpoint_group::_create_dataflow_endpo
 
 pub use crate::operation::create_dataflow_endpoint_group::_create_dataflow_endpoint_group_input::CreateDataflowEndpointGroupInputBuilder;
 
-impl CreateDataflowEndpointGroupInputBuilder {
+impl crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,15 +101,16 @@ impl CreateDataflowEndpointGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `endpointDetails`.
     ///
     /// To override the contents of this collection use [`set_endpoint_details`](Self::set_endpoint_details).
@@ -128,6 +129,7 @@ impl CreateDataflowEndpointGroupFluentBuilder {
     pub fn get_endpoint_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>> {
         self.inner.get_endpoint_details()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

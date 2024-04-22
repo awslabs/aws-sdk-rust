@@ -3,7 +3,7 @@ pub use crate::operation::describe_transit_gateway_route_tables::_describe_trans
 
 pub use crate::operation::describe_transit_gateway_route_tables::_describe_transit_gateway_route_tables_input::DescribeTransitGatewayRouteTablesInputBuilder;
 
-impl DescribeTransitGatewayRouteTablesInputBuilder {
+impl crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeTransitGatewayRouteTablesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeTransitGatewayRouteTablesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_transit_gateway_route_tables::paginator::DescribeTransitGatewayRouteTablesPaginator {
         crate::operation::describe_transit_gateway_route_tables::paginator::DescribeTransitGatewayRouteTablesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `TransitGatewayRouteTableIds`.
     ///
     /// To override the contents of this collection use [`set_transit_gateway_route_table_ids`](Self::set_transit_gateway_route_table_ids).
@@ -132,6 +133,7 @@ impl DescribeTransitGatewayRouteTablesFluentBuilder {
     pub fn get_transit_gateway_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_transit_gateway_route_table_ids()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

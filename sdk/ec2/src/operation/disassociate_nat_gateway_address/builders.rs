@@ -3,7 +3,7 @@ pub use crate::operation::disassociate_nat_gateway_address::_disassociate_nat_ga
 
 pub use crate::operation::disassociate_nat_gateway_address::_disassociate_nat_gateway_address_input::DisassociateNatGatewayAddressInputBuilder;
 
-impl DisassociateNatGatewayAddressInputBuilder {
+impl crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DisassociateNatGatewayAddressFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,6 +124,7 @@ impl DisassociateNatGatewayAddressFluentBuilder {
     pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_nat_gateway_id()
     }
+    ///
     /// Appends an item to `AssociationIds`.
     ///
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).

@@ -3,7 +3,7 @@ pub use crate::operation::delete_inbound_cross_cluster_search_connection::_delet
 
 pub use crate::operation::delete_inbound_cross_cluster_search_connection::_delete_inbound_cross_cluster_search_connection_input::DeleteInboundCrossClusterSearchConnectionInputBuilder;
 
-impl DeleteInboundCrossClusterSearchConnectionInputBuilder {
+impl crate::operation::delete_inbound_cross_cluster_search_connection::builders::DeleteInboundCrossClusterSearchConnectionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl DeleteInboundCrossClusterSearchConnectionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

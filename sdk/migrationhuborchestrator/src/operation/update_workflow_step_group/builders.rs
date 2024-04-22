@@ -3,7 +3,7 @@ pub use crate::operation::update_workflow_step_group::_update_workflow_step_grou
 
 pub use crate::operation::update_workflow_step_group::_update_workflow_step_group_input::UpdateWorkflowStepGroupInputBuilder;
 
-impl UpdateWorkflowStepGroupInputBuilder {
+impl crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateWorkflowStepGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateWorkflowStepGroupFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).
@@ -182,6 +183,7 @@ impl UpdateWorkflowStepGroupFluentBuilder {
     pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_next()
     }
+    ///
     /// Appends an item to `previous`.
     ///
     /// To override the contents of this collection use [`set_previous`](Self::set_previous).

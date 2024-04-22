@@ -3,7 +3,7 @@ pub use crate::operation::list_deployment_instances::_list_deployment_instances_
 
 pub use crate::operation::list_deployment_instances::_list_deployment_instances_input::ListDeploymentInstancesInputBuilder;
 
-impl ListDeploymentInstancesInputBuilder {
+impl crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl ListDeploymentInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -146,6 +146,7 @@ impl ListDeploymentInstancesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `instanceStatusFilter`.
     ///
     /// To override the contents of this collection use [`set_instance_status_filter`](Self::set_instance_status_filter).
@@ -206,6 +207,7 @@ impl ListDeploymentInstancesFluentBuilder {
     pub fn get_instance_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>> {
         self.inner.get_instance_status_filter()
     }
+    ///
     /// Appends an item to `instanceTypeFilter`.
     ///
     /// To override the contents of this collection use [`set_instance_type_filter`](Self::set_instance_type_filter).

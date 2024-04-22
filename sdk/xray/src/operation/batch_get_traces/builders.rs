@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_traces::_batch_get_traces_output::BatchGetTr
 
 pub use crate::operation::batch_get_traces::_batch_get_traces_input::BatchGetTracesInputBuilder;
 
-impl BatchGetTracesInputBuilder {
+impl crate::operation::batch_get_traces::builders::BatchGetTracesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchGetTracesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl BatchGetTracesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator {
         crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `TraceIds`.
     ///
     /// To override the contents of this collection use [`set_trace_ids`](Self::set_trace_ids).

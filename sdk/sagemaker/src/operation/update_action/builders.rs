@@ -3,7 +3,7 @@ pub use crate::operation::update_action::_update_action_output::UpdateActionOutp
 
 pub use crate::operation::update_action::_update_action_input::UpdateActionInputBuilder;
 
-impl UpdateActionInputBuilder {
+impl crate::operation::update_action::builders::UpdateActionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateActionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateActionFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
         self.inner.get_status()
     }
+    ///
     /// Adds a key-value pair to `Properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
@@ -168,6 +169,7 @@ impl UpdateActionFluentBuilder {
     pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_properties()
     }
+    ///
     /// Appends an item to `PropertiesToRemove`.
     ///
     /// To override the contents of this collection use [`set_properties_to_remove`](Self::set_properties_to_remove).

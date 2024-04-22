@@ -3,7 +3,7 @@ pub use crate::operation::add_upload_buffer::_add_upload_buffer_output::AddUploa
 
 pub use crate::operation::add_upload_buffer::_add_upload_buffer_input::AddUploadBufferInputBuilder;
 
-impl AddUploadBufferInputBuilder {
+impl crate::operation::add_upload_buffer::builders::AddUploadBufferInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl AddUploadBufferFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl AddUploadBufferFluentBuilder {
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_arn()
     }
+    ///
     /// Appends an item to `DiskIds`.
     ///
     /// To override the contents of this collection use [`set_disk_ids`](Self::set_disk_ids).

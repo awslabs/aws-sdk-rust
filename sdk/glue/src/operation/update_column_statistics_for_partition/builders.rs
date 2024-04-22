@@ -3,7 +3,7 @@ pub use crate::operation::update_column_statistics_for_partition::_update_column
 
 pub use crate::operation::update_column_statistics_for_partition::_update_column_statistics_for_partition_input::UpdateColumnStatisticsForPartitionInputBuilder;
 
-impl UpdateColumnStatisticsForPartitionInputBuilder {
+impl crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateColumnStatisticsForPartitionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl UpdateColumnStatisticsForPartitionFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
+    ///
     /// Appends an item to `PartitionValues`.
     ///
     /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
@@ -169,6 +170,7 @@ impl UpdateColumnStatisticsForPartitionFluentBuilder {
     pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_partition_values()
     }
+    ///
     /// Appends an item to `ColumnStatisticsList`.
     ///
     /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).

@@ -3,7 +3,7 @@ pub use crate::operation::update_review_template::_update_review_template_output
 
 pub use crate::operation::update_review_template::_update_review_template_input::UpdateReviewTemplateInputBuilder;
 
-impl UpdateReviewTemplateInputBuilder {
+impl crate::operation::update_review_template::builders::UpdateReviewTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateReviewTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -167,6 +167,7 @@ impl UpdateReviewTemplateFluentBuilder {
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notes()
     }
+    ///
     /// Appends an item to `LensesToAssociate`.
     ///
     /// To override the contents of this collection use [`set_lenses_to_associate`](Self::set_lenses_to_associate).
@@ -185,6 +186,7 @@ impl UpdateReviewTemplateFluentBuilder {
     pub fn get_lenses_to_associate(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_lenses_to_associate()
     }
+    ///
     /// Appends an item to `LensesToDisassociate`.
     ///
     /// To override the contents of this collection use [`set_lenses_to_disassociate`](Self::set_lenses_to_disassociate).

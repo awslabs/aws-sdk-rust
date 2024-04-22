@@ -3,7 +3,7 @@ pub use crate::operation::checkout_borrow_license::_checkout_borrow_license_outp
 
 pub use crate::operation::checkout_borrow_license::_checkout_borrow_license_input::CheckoutBorrowLicenseInputBuilder;
 
-impl CheckoutBorrowLicenseInputBuilder {
+impl crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CheckoutBorrowLicenseFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CheckoutBorrowLicenseFluentBuilder {
     pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_arn()
     }
+    ///
     /// Appends an item to `Entitlements`.
     ///
     /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
@@ -168,6 +169,7 @@ impl CheckoutBorrowLicenseFluentBuilder {
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_id()
     }
+    ///
     /// Appends an item to `CheckoutMetadata`.
     ///
     /// To override the contents of this collection use [`set_checkout_metadata`](Self::set_checkout_metadata).

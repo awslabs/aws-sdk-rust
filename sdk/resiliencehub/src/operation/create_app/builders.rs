@@ -3,7 +3,7 @@ pub use crate::operation::create_app::_create_app_output::CreateAppOutputBuilder
 
 pub use crate::operation::create_app::_create_app_input::CreateAppInputBuilder;
 
-impl CreateAppInputBuilder {
+impl crate::operation::create_app::builders::CreateAppInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -94,12 +94,12 @@ impl CreateAppFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -145,6 +145,7 @@ impl CreateAppFluentBuilder {
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_arn()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -205,6 +206,7 @@ impl CreateAppFluentBuilder {
     pub fn get_permission_model(&self) -> &::std::option::Option<crate::types::PermissionModel> {
         self.inner.get_permission_model()
     }
+    ///
     /// Appends an item to `eventSubscriptions`.
     ///
     /// To override the contents of this collection use [`set_event_subscriptions`](Self::set_event_subscriptions).

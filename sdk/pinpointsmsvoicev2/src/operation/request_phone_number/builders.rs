@@ -3,7 +3,7 @@ pub use crate::operation::request_phone_number::_request_phone_number_output::Re
 
 pub use crate::operation::request_phone_number::_request_phone_number_input::RequestPhoneNumberInputBuilder;
 
-impl RequestPhoneNumberInputBuilder {
+impl crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RequestPhoneNumberFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl RequestPhoneNumberFluentBuilder {
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
         self.inner.get_message_type()
     }
+    ///
     /// Appends an item to `NumberCapabilities`.
     ///
     /// To override the contents of this collection use [`set_number_capabilities`](Self::set_number_capabilities).
@@ -224,6 +225,7 @@ impl RequestPhoneNumberFluentBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection_enabled()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

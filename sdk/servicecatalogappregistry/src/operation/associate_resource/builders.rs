@@ -3,7 +3,7 @@ pub use crate::operation::associate_resource::_associate_resource_output::Associ
 
 pub use crate::operation::associate_resource::_associate_resource_input::AssociateResourceInputBuilder;
 
-impl AssociateResourceInputBuilder {
+impl crate::operation::associate_resource::builders::AssociateResourceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -118,12 +118,12 @@ impl AssociateResourceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -169,6 +169,7 @@ impl AssociateResourceFluentBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource()
     }
+    ///
     /// Appends an item to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).

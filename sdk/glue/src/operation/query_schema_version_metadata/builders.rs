@@ -3,7 +3,7 @@ pub use crate::operation::query_schema_version_metadata::_query_schema_version_m
 
 pub use crate::operation::query_schema_version_metadata::_query_schema_version_metadata_input::QuerySchemaVersionMetadataInputBuilder;
 
-impl QuerySchemaVersionMetadataInputBuilder {
+impl crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl QuerySchemaVersionMetadataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl QuerySchemaVersionMetadataFluentBuilder {
     pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_schema_version_id()
     }
+    ///
     /// Appends an item to `MetadataList`.
     ///
     /// To override the contents of this collection use [`set_metadata_list`](Self::set_metadata_list).

@@ -3,7 +3,7 @@ pub use crate::operation::create_smb_file_share::_create_smb_file_share_output::
 
 pub use crate::operation::create_smb_file_share::_create_smb_file_share_input::CreateSmbFileShareInputBuilder;
 
-impl CreateSmbFileShareInputBuilder {
+impl crate::operation::create_smb_file_share::builders::CreateSmbFileShareInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateSMBFileShareFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -347,6 +347,7 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn get_access_based_enumeration(&self) -> &::std::option::Option<bool> {
         self.inner.get_access_based_enumeration()
     }
+    ///
     /// Appends an item to `AdminUserList`.
     ///
     /// To override the contents of this collection use [`set_admin_user_list`](Self::set_admin_user_list).
@@ -371,6 +372,7 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn get_admin_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_admin_user_list()
     }
+    ///
     /// Appends an item to `ValidUserList`.
     ///
     /// To override the contents of this collection use [`set_valid_user_list`](Self::set_valid_user_list).
@@ -389,6 +391,7 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn get_valid_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_valid_user_list()
     }
+    ///
     /// Appends an item to `InvalidUserList`.
     ///
     /// To override the contents of this collection use [`set_invalid_user_list`](Self::set_invalid_user_list).
@@ -452,6 +455,7 @@ impl CreateSMBFileShareFluentBuilder {
     pub fn get_case_sensitivity(&self) -> &::std::option::Option<crate::types::CaseSensitivity> {
         self.inner.get_case_sensitivity()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

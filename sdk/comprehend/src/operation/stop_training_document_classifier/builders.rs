@@ -3,7 +3,7 @@ pub use crate::operation::stop_training_document_classifier::_stop_training_docu
 
 pub use crate::operation::stop_training_document_classifier::_stop_training_document_classifier_input::StopTrainingDocumentClassifierInputBuilder;
 
-impl StopTrainingDocumentClassifierInputBuilder {
+impl crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl StopTrainingDocumentClassifierFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

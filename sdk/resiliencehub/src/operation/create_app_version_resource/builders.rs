@@ -3,7 +3,7 @@ pub use crate::operation::create_app_version_resource::_create_app_version_resou
 
 pub use crate::operation::create_app_version_resource::_create_app_version_resource_input::CreateAppVersionResourceInputBuilder;
 
-impl CreateAppVersionResourceInputBuilder {
+impl crate::operation::create_app_version_resource::builders::CreateAppVersionResourceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -108,12 +108,12 @@ impl CreateAppVersionResourceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -215,6 +215,7 @@ impl CreateAppVersionResourceFluentBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
     }
+    ///
     /// Appends an item to `appComponents`.
     ///
     /// To override the contents of this collection use [`set_app_components`](Self::set_app_components).
@@ -233,6 +234,7 @@ impl CreateAppVersionResourceFluentBuilder {
     pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_app_components()
     }
+    ///
     /// Adds a key-value pair to `additionalInfo`.
     ///
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).

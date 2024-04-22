@@ -3,7 +3,7 @@ pub use crate::operation::describe_spot_price_history::_describe_spot_price_hist
 
 pub use crate::operation::describe_spot_price_history::_describe_spot_price_history_input::DescribeSpotPriceHistoryInputBuilder;
 
-impl DescribeSpotPriceHistoryInputBuilder {
+impl crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator {
         crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -211,6 +212,7 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
+    ///
     /// Appends an item to `InstanceTypes`.
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
@@ -257,6 +259,7 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `ProductDescriptions`.
     ///
     /// To override the contents of this collection use [`set_product_descriptions`](Self::set_product_descriptions).

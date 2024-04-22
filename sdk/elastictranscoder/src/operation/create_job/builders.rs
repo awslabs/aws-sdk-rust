@@ -3,7 +3,7 @@ pub use crate::operation::create_job::_create_job_output::CreateJobOutputBuilder
 
 pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 
-impl CreateJobInputBuilder {
+impl crate::operation::create_job::builders::CreateJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -94,12 +94,12 @@ impl CreateJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -131,6 +131,7 @@ impl CreateJobFluentBuilder {
     pub fn get_input(&self) -> &::std::option::Option<crate::types::JobInput> {
         self.inner.get_input()
     }
+    ///
     /// Appends an item to `Inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -163,6 +164,7 @@ impl CreateJobFluentBuilder {
     pub fn get_output(&self) -> &::std::option::Option<crate::types::CreateJobOutput> {
         self.inner.get_output()
     }
+    ///
     /// Appends an item to `Outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -195,6 +197,7 @@ impl CreateJobFluentBuilder {
     pub fn get_output_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_key_prefix()
     }
+    ///
     /// Appends an item to `Playlists`.
     ///
     /// To override the contents of this collection use [`set_playlists`](Self::set_playlists).
@@ -216,6 +219,7 @@ impl CreateJobFluentBuilder {
     pub fn get_playlists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateJobPlaylist>> {
         self.inner.get_playlists()
     }
+    ///
     /// Adds a key-value pair to `UserMetadata`.
     ///
     /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).

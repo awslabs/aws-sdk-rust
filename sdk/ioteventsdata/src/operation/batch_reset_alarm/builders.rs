@@ -3,7 +3,7 @@ pub use crate::operation::batch_reset_alarm::_batch_reset_alarm_output::BatchRes
 
 pub use crate::operation::batch_reset_alarm::_batch_reset_alarm_input::BatchResetAlarmInputBuilder;
 
-impl BatchResetAlarmInputBuilder {
+impl crate::operation::batch_reset_alarm::builders::BatchResetAlarmInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl BatchResetAlarmFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `resetActionRequests`.
     ///
     /// To override the contents of this collection use [`set_reset_action_requests`](Self::set_reset_action_requests).

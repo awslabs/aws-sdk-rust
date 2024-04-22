@@ -3,7 +3,7 @@ pub use crate::operation::create_game_session_queue::_create_game_session_queue_
 
 pub use crate::operation::create_game_session_queue::_create_game_session_queue_input::CreateGameSessionQueueInputBuilder;
 
-impl CreateGameSessionQueueInputBuilder {
+impl crate::operation::create_game_session_queue::builders::CreateGameSessionQueueInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -108,12 +108,12 @@ impl CreateGameSessionQueueFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -145,6 +145,7 @@ impl CreateGameSessionQueueFluentBuilder {
     pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_timeout_in_seconds()
     }
+    ///
     /// Appends an item to `PlayerLatencyPolicies`.
     ///
     /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
@@ -163,6 +164,7 @@ impl CreateGameSessionQueueFluentBuilder {
     pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
         self.inner.get_player_latency_policies()
     }
+    ///
     /// Appends an item to `Destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -237,6 +239,7 @@ impl CreateGameSessionQueueFluentBuilder {
     pub fn get_notification_target(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_notification_target()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::batch_delete_table_rows::_batch_delete_table_rows_outp
 
 pub use crate::operation::batch_delete_table_rows::_batch_delete_table_rows_input::BatchDeleteTableRowsInputBuilder;
 
-impl BatchDeleteTableRowsInputBuilder {
+impl crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchDeleteTableRowsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl BatchDeleteTableRowsFluentBuilder {
     pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_id()
     }
+    ///
     /// Appends an item to `rowIds`.
     ///
     /// To override the contents of this collection use [`set_row_ids`](Self::set_row_ids).

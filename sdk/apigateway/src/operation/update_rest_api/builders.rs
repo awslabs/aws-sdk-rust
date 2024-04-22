@@ -3,7 +3,7 @@ pub use crate::operation::update_rest_api::_update_rest_api_output::UpdateRestAp
 
 pub use crate::operation::update_rest_api::_update_rest_api_input::UpdateRestApiInputBuilder;
 
-impl UpdateRestApiInputBuilder {
+impl crate::operation::update_rest_api::builders::UpdateRestApiInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateRestApiFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateRestApiFluentBuilder {
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rest_api_id()
     }
+    ///
     /// Appends an item to `patchOperations`.
     ///
     /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).

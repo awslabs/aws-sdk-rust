@@ -3,7 +3,7 @@ pub use crate::operation::list_lifecycle_policies::_list_lifecycle_policies_outp
 
 pub use crate::operation::list_lifecycle_policies::_list_lifecycle_policies_input::ListLifecyclePoliciesInputBuilder;
 
-impl ListLifecyclePoliciesInputBuilder {
+impl crate::operation::list_lifecycle_policies::builders::ListLifecyclePoliciesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListLifecyclePoliciesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl ListLifecyclePoliciesFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
         self.inner.get_type()
     }
+    ///
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).

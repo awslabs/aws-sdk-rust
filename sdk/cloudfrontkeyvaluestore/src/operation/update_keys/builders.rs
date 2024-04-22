@@ -3,7 +3,7 @@ pub use crate::operation::update_keys::_update_keys_output::UpdateKeysOutputBuil
 
 pub use crate::operation::update_keys::_update_keys_input::UpdateKeysInputBuilder;
 
-impl UpdateKeysInputBuilder {
+impl crate::operation::update_keys::builders::UpdateKeysInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateKeysFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateKeysFluentBuilder {
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }
+    ///
     /// Appends an item to `Puts`.
     ///
     /// To override the contents of this collection use [`set_puts`](Self::set_puts).
@@ -154,6 +155,7 @@ impl UpdateKeysFluentBuilder {
     pub fn get_puts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutKeyRequestListItem>> {
         self.inner.get_puts()
     }
+    ///
     /// Appends an item to `Deletes`.
     ///
     /// To override the contents of this collection use [`set_deletes`](Self::set_deletes).

@@ -3,7 +3,7 @@ pub use crate::operation::update_package_group_origin_configuration::_update_pac
 
 pub use crate::operation::update_package_group_origin_configuration::_update_package_group_origin_configuration_input::UpdatePackageGroupOriginConfigurationInputBuilder;
 
-impl UpdatePackageGroupOriginConfigurationInputBuilder {
+impl crate::operation::update_package_group_origin_configuration::builders::UpdatePackageGroupOriginConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl UpdatePackageGroupOriginConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl UpdatePackageGroupOriginConfigurationFluentBuilder {
     pub fn get_package_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package_group()
     }
+    ///
     /// Adds a key-value pair to `restrictions`.
     ///
     /// To override the contents of this collection use [`set_restrictions`](Self::set_restrictions).
@@ -181,6 +182,7 @@ impl UpdatePackageGroupOriginConfigurationFluentBuilder {
     > {
         self.inner.get_restrictions()
     }
+    ///
     /// Appends an item to `addAllowedRepositories`.
     ///
     /// To override the contents of this collection use [`set_add_allowed_repositories`](Self::set_add_allowed_repositories).
@@ -202,6 +204,7 @@ impl UpdatePackageGroupOriginConfigurationFluentBuilder {
     pub fn get_add_allowed_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageGroupAllowedRepository>> {
         self.inner.get_add_allowed_repositories()
     }
+    ///
     /// Appends an item to `removeAllowedRepositories`.
     ///
     /// To override the contents of this collection use [`set_remove_allowed_repositories`](Self::set_remove_allowed_repositories).

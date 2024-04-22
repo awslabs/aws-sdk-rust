@@ -3,7 +3,7 @@ pub use crate::operation::create_capability::_create_capability_output::CreateCa
 
 pub use crate::operation::create_capability::_create_capability_input::CreateCapabilityInputBuilder;
 
-impl CreateCapabilityInputBuilder {
+impl crate::operation::create_capability::builders::CreateCapabilityInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateCapabilityFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateCapabilityFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CapabilityConfiguration> {
         self.inner.get_configuration()
     }
+    ///
     /// Appends an item to `instructionsDocuments`.
     ///
     /// To override the contents of this collection use [`set_instructions_documents`](Self::set_instructions_documents).
@@ -182,6 +183,7 @@ impl CreateCapabilityFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::validate_configuration_settings::_validate_configurati
 
 pub use crate::operation::validate_configuration_settings::_validate_configuration_settings_input::ValidateConfigurationSettingsInputBuilder;
 
-impl ValidateConfigurationSettingsInputBuilder {
+impl crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ValidateConfigurationSettingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -157,6 +157,7 @@ impl ValidateConfigurationSettingsFluentBuilder {
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_name()
     }
+    ///
     /// Appends an item to `OptionSettings`.
     ///
     /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).

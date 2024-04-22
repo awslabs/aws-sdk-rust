@@ -3,7 +3,7 @@ pub use crate::operation::untag_mfa_device::_untag_mfa_device_output::UntagMfaDe
 
 pub use crate::operation::untag_mfa_device::_untag_mfa_device_input::UntagMfaDeviceInputBuilder;
 
-impl UntagMfaDeviceInputBuilder {
+impl crate::operation::untag_mfa_device::builders::UntagMfaDeviceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UntagMFADeviceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -125,6 +125,7 @@ impl UntagMFADeviceFluentBuilder {
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serial_number()
     }
+    ///
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).

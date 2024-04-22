@@ -3,7 +3,7 @@ pub use crate::operation::update_access_entry::_update_access_entry_output::Upda
 
 pub use crate::operation::update_access_entry::_update_access_entry_input::UpdateAccessEntryInputBuilder;
 
-impl UpdateAccessEntryInputBuilder {
+impl crate::operation::update_access_entry::builders::UpdateAccessEntryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateAccessEntryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateAccessEntryFluentBuilder {
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_arn()
     }
+    ///
     /// Appends an item to `kubernetesGroups`.
     ///
     /// To override the contents of this collection use [`set_kubernetes_groups`](Self::set_kubernetes_groups).

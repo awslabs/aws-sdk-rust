@@ -3,7 +3,7 @@ pub use crate::operation::update_workteam::_update_workteam_output::UpdateWorkte
 
 pub use crate::operation::update_workteam::_update_workteam_input::UpdateWorkteamInputBuilder;
 
-impl UpdateWorkteamInputBuilder {
+impl crate::operation::update_workteam::builders::UpdateWorkteamInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateWorkteamFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateWorkteamFluentBuilder {
     pub fn get_workteam_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workteam_name()
     }
+    ///
     /// Appends an item to `MemberDefinitions`.
     ///
     /// To override the contents of this collection use [`set_member_definitions`](Self::set_member_definitions).

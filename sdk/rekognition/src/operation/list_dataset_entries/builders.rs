@@ -3,7 +3,7 @@ pub use crate::operation::list_dataset_entries::_list_dataset_entries_output::Li
 
 pub use crate::operation::list_dataset_entries::_list_dataset_entries_input::ListDatasetEntriesInputBuilder;
 
-impl ListDatasetEntriesInputBuilder {
+impl crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl ListDatasetEntriesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -134,6 +134,7 @@ impl ListDatasetEntriesFluentBuilder {
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_arn()
     }
+    ///
     /// Appends an item to `ContainsLabels`.
     ///
     /// To override the contents of this collection use [`set_contains_labels`](Self::set_contains_labels).

@@ -3,7 +3,7 @@ pub use crate::operation::admin_set_user_password::_admin_set_user_password_outp
 
 pub use crate::operation::admin_set_user_password::_admin_set_user_password_input::AdminSetUserPasswordInputBuilder;
 
-impl AdminSetUserPasswordInputBuilder {
+impl crate::operation::admin_set_user_password::builders::AdminSetUserPasswordInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl AdminSetUserPasswordFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

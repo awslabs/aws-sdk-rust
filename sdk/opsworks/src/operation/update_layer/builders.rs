@@ -3,7 +3,7 @@ pub use crate::operation::update_layer::_update_layer_output::UpdateLayerOutputB
 
 pub use crate::operation::update_layer::_update_layer_input::UpdateLayerInputBuilder;
 
-impl UpdateLayerInputBuilder {
+impl crate::operation::update_layer::builders::UpdateLayerInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateLayerFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl UpdateLayerFluentBuilder {
     pub fn get_shortname(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_shortname()
     }
+    ///
     /// Adds a key-value pair to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -217,6 +218,7 @@ impl UpdateLayerFluentBuilder {
     pub fn get_custom_json(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_json()
     }
+    ///
     /// Appends an item to `CustomSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
@@ -235,6 +237,7 @@ impl UpdateLayerFluentBuilder {
     pub fn get_custom_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_custom_security_group_ids()
     }
+    ///
     /// Appends an item to `Packages`.
     ///
     /// To override the contents of this collection use [`set_packages`](Self::set_packages).
@@ -253,6 +256,7 @@ impl UpdateLayerFluentBuilder {
     pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_packages()
     }
+    ///
     /// Appends an item to `VolumeConfigurations`.
     ///
     /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).

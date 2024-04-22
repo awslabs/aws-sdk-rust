@@ -3,7 +3,7 @@ pub use crate::operation::disable_enhanced_monitoring::_disable_enhanced_monitor
 
 pub use crate::operation::disable_enhanced_monitoring::_disable_enhanced_monitoring_input::DisableEnhancedMonitoringInputBuilder;
 
-impl DisableEnhancedMonitoringInputBuilder {
+impl crate::operation::disable_enhanced_monitoring::builders::DisableEnhancedMonitoringInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DisableEnhancedMonitoringFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,6 +124,7 @@ impl DisableEnhancedMonitoringFluentBuilder {
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stream_name()
     }
+    ///
     /// Appends an item to `ShardLevelMetrics`.
     ///
     /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).

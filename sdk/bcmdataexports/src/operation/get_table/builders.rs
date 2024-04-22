@@ -3,7 +3,7 @@ pub use crate::operation::get_table::_get_table_output::GetTableOutputBuilder;
 
 pub use crate::operation::get_table::_get_table_input::GetTableInputBuilder;
 
-impl GetTableInputBuilder {
+impl crate::operation::get_table::builders::GetTableInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -90,12 +90,12 @@ impl GetTableFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -113,6 +113,7 @@ impl GetTableFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
+    ///
     /// Adds a key-value pair to `TableProperties`.
     ///
     /// To override the contents of this collection use [`set_table_properties`](Self::set_table_properties).

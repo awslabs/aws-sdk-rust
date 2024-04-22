@@ -3,7 +3,7 @@ pub use crate::operation::update_log_levels_by_resource_types::_update_log_level
 
 pub use crate::operation::update_log_levels_by_resource_types::_update_log_levels_by_resource_types_input::UpdateLogLevelsByResourceTypesInputBuilder;
 
-impl UpdateLogLevelsByResourceTypesInputBuilder {
+impl crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
     pub fn get_default_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
         self.inner.get_default_log_level()
     }
+    ///
     /// Appends an item to `WirelessDeviceLogOptions`.
     ///
     /// To override the contents of this collection use [`set_wireless_device_log_options`](Self::set_wireless_device_log_options).
@@ -140,6 +141,7 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
     pub fn get_wireless_device_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>> {
         self.inner.get_wireless_device_log_options()
     }
+    ///
     /// Appends an item to `WirelessGatewayLogOptions`.
     ///
     /// To override the contents of this collection use [`set_wireless_gateway_log_options`](Self::set_wireless_gateway_log_options).

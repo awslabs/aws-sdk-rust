@@ -3,7 +3,7 @@ pub use crate::operation::get_coverage_statistics::_get_coverage_statistics_outp
 
 pub use crate::operation::get_coverage_statistics::_get_coverage_statistics_input::GetCoverageStatisticsInputBuilder;
 
-impl GetCoverageStatisticsInputBuilder {
+impl crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetCoverageStatisticsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl GetCoverageStatisticsFluentBuilder {
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         self.inner.get_filter_criteria()
     }
+    ///
     /// Appends an item to `StatisticsType`.
     ///
     /// To override the contents of this collection use [`set_statistics_type`](Self::set_statistics_type).

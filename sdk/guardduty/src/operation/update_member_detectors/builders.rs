@@ -3,7 +3,7 @@ pub use crate::operation::update_member_detectors::_update_member_detectors_outp
 
 pub use crate::operation::update_member_detectors::_update_member_detectors_input::UpdateMemberDetectorsInputBuilder;
 
-impl UpdateMemberDetectorsInputBuilder {
+impl crate::operation::update_member_detectors::builders::UpdateMemberDetectorsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateMemberDetectorsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,6 +124,7 @@ impl UpdateMemberDetectorsFluentBuilder {
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
     }
+    ///
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -159,6 +160,7 @@ impl UpdateMemberDetectorsFluentBuilder {
     pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
         self.inner.get_data_sources()
     }
+    ///
     /// Appends an item to `Features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).

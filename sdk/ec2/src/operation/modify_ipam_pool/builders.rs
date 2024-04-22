@@ -3,7 +3,7 @@ pub use crate::operation::modify_ipam_pool::_modify_ipam_pool_output::ModifyIpam
 
 pub use crate::operation::modify_ipam_pool::_modify_ipam_pool_input::ModifyIpamPoolInputBuilder;
 
-impl ModifyIpamPoolInputBuilder {
+impl crate::operation::modify_ipam_pool::builders::ModifyIpamPoolInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ModifyIpamPoolFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -224,6 +224,7 @@ impl ModifyIpamPoolFluentBuilder {
     pub fn get_clear_allocation_default_netmask_length(&self) -> &::std::option::Option<bool> {
         self.inner.get_clear_allocation_default_netmask_length()
     }
+    ///
     /// Appends an item to `AddAllocationResourceTags`.
     ///
     /// To override the contents of this collection use [`set_add_allocation_resource_tags`](Self::set_add_allocation_resource_tags).
@@ -242,6 +243,7 @@ impl ModifyIpamPoolFluentBuilder {
     pub fn get_add_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
         self.inner.get_add_allocation_resource_tags()
     }
+    ///
     /// Appends an item to `RemoveAllocationResourceTags`.
     ///
     /// To override the contents of this collection use [`set_remove_allocation_resource_tags`](Self::set_remove_allocation_resource_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::update_model_package::_update_model_package_output::Up
 
 pub use crate::operation::update_model_package::_update_model_package_input::UpdateModelPackageInputBuilder;
 
-impl UpdateModelPackageInputBuilder {
+impl crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateModelPackageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateModelPackageFluentBuilder {
     pub fn get_approval_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_approval_description()
     }
+    ///
     /// Adds a key-value pair to `CustomerMetadataProperties`.
     ///
     /// To override the contents of this collection use [`set_customer_metadata_properties`](Self::set_customer_metadata_properties).
@@ -177,6 +178,7 @@ impl UpdateModelPackageFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_customer_metadata_properties()
     }
+    ///
     /// Appends an item to `CustomerMetadataPropertiesToRemove`.
     ///
     /// To override the contents of this collection use [`set_customer_metadata_properties_to_remove`](Self::set_customer_metadata_properties_to_remove).
@@ -195,6 +197,7 @@ impl UpdateModelPackageFluentBuilder {
     pub fn get_customer_metadata_properties_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_customer_metadata_properties_to_remove()
     }
+    ///
     /// Appends an item to `AdditionalInferenceSpecificationsToAdd`.
     ///
     /// To override the contents of this collection use [`set_additional_inference_specifications_to_add`](Self::set_additional_inference_specifications_to_add).

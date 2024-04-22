@@ -3,7 +3,7 @@ pub use crate::operation::create_project::_create_project_output::CreateProjectO
 
 pub use crate::operation::create_project::_create_project_input::CreateProjectInputBuilder;
 
-impl CreateProjectInputBuilder {
+impl crate::operation::create_project::builders::CreateProjectInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateProjectFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateProjectFluentBuilder {
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ProjectSource> {
         self.inner.get_source()
     }
+    ///
     /// Appends an item to `secondarySources`.
     ///
     /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
@@ -218,6 +219,7 @@ impl CreateProjectFluentBuilder {
     pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_version()
     }
+    ///
     /// Appends an item to `secondarySourceVersions`.
     ///
     /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
@@ -250,6 +252,7 @@ impl CreateProjectFluentBuilder {
     pub fn get_artifacts(&self) -> &::std::option::Option<crate::types::ProjectArtifacts> {
         self.inner.get_artifacts()
     }
+    ///
     /// Appends an item to `secondaryArtifacts`.
     ///
     /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
@@ -361,6 +364,7 @@ impl CreateProjectFluentBuilder {
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_encryption_key()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -424,6 +428,7 @@ impl CreateProjectFluentBuilder {
     pub fn get_logs_config(&self) -> &::std::option::Option<crate::types::LogsConfig> {
         self.inner.get_logs_config()
     }
+    ///
     /// Appends an item to `fileSystemLocations`.
     ///
     /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).

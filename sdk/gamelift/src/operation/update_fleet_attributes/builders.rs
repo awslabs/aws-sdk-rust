@@ -3,7 +3,7 @@ pub use crate::operation::update_fleet_attributes::_update_fleet_attributes_outp
 
 pub use crate::operation::update_fleet_attributes::_update_fleet_attributes_input::UpdateFleetAttributesInputBuilder;
 
-impl UpdateFleetAttributesInputBuilder {
+impl crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl UpdateFleetAttributesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -200,6 +200,7 @@ impl UpdateFleetAttributesFluentBuilder {
     pub fn get_resource_creation_limit_policy(&self) -> &::std::option::Option<crate::types::ResourceCreationLimitPolicy> {
         self.inner.get_resource_creation_limit_policy()
     }
+    ///
     /// Appends an item to `MetricGroups`.
     ///
     /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).

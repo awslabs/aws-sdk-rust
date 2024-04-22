@@ -3,7 +3,7 @@ pub use crate::operation::describe_conditional_forwarders::_describe_conditional
 
 pub use crate::operation::describe_conditional_forwarders::_describe_conditional_forwarders_input::DescribeConditionalForwardersInputBuilder;
 
-impl DescribeConditionalForwardersInputBuilder {
+impl crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeConditionalForwardersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl DescribeConditionalForwardersFluentBuilder {
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_id()
     }
+    ///
     /// Appends an item to `RemoteDomainNames`.
     ///
     /// To override the contents of this collection use [`set_remote_domain_names`](Self::set_remote_domain_names).

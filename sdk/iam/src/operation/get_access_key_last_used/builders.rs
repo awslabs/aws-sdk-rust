@@ -3,7 +3,7 @@ pub use crate::operation::get_access_key_last_used::_get_access_key_last_used_ou
 
 pub use crate::operation::get_access_key_last_used::_get_access_key_last_used_input::GetAccessKeyLastUsedInputBuilder;
 
-impl GetAccessKeyLastUsedInputBuilder {
+impl crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetAccessKeyLastUsedFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

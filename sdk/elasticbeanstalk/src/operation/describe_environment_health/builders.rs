@@ -3,7 +3,7 @@ pub use crate::operation::describe_environment_health::_describe_environment_hea
 
 pub use crate::operation::describe_environment_health::_describe_environment_health_input::DescribeEnvironmentHealthInputBuilder;
 
-impl DescribeEnvironmentHealthInputBuilder {
+impl crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeEnvironmentHealthFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl DescribeEnvironmentHealthFluentBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
+    ///
     /// Appends an item to `AttributeNames`.
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).

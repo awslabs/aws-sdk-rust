@@ -3,7 +3,7 @@ pub use crate::operation::batch_delete_table_version::_batch_delete_table_versio
 
 pub use crate::operation::batch_delete_table_version::_batch_delete_table_version_input::BatchDeleteTableVersionInputBuilder;
 
-impl BatchDeleteTableVersionInputBuilder {
+impl crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchDeleteTableVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl BatchDeleteTableVersionFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
+    ///
     /// Appends an item to `VersionIds`.
     ///
     /// To override the contents of this collection use [`set_version_ids`](Self::set_version_ids).

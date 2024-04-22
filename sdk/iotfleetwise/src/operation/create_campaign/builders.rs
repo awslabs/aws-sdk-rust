@@ -3,7 +3,7 @@ pub use crate::operation::create_campaign::_create_campaign_output::CreateCampai
 
 pub use crate::operation::create_campaign::_create_campaign_input::CreateCampaignInputBuilder;
 
-impl CreateCampaignInputBuilder {
+impl crate::operation::create_campaign::builders::CreateCampaignInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateCampaignFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -284,6 +284,7 @@ impl CreateCampaignFluentBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
+    ///
     /// Appends an item to `signalsToCollect`.
     ///
     /// To override the contents of this collection use [`set_signals_to_collect`](Self::set_signals_to_collect).
@@ -316,6 +317,7 @@ impl CreateCampaignFluentBuilder {
     pub fn get_collection_scheme(&self) -> &::std::option::Option<crate::types::CollectionScheme> {
         self.inner.get_collection_scheme()
     }
+    ///
     /// Appends an item to `dataExtraDimensions`.
     ///
     /// To override the contents of this collection use [`set_data_extra_dimensions`](Self::set_data_extra_dimensions).
@@ -340,6 +342,7 @@ impl CreateCampaignFluentBuilder {
     pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_data_extra_dimensions()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -358,6 +361,7 @@ impl CreateCampaignFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `dataDestinationConfigs`.
     ///
     /// To override the contents of this collection use [`set_data_destination_configs`](Self::set_data_destination_configs).

@@ -3,7 +3,7 @@ pub use crate::operation::generate_embed_url_for_registered_user::_generate_embe
 
 pub use crate::operation::generate_embed_url_for_registered_user::_generate_embed_url_for_registered_user_input::GenerateEmbedUrlForRegisteredUserInputBuilder;
 
-impl GenerateEmbedUrlForRegisteredUserInputBuilder {
+impl crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl GenerateEmbedUrlForRegisteredUserFluentBuilder {
     pub fn get_experience_configuration(&self) -> &::std::option::Option<crate::types::RegisteredUserEmbeddingExperienceConfiguration> {
         self.inner.get_experience_configuration()
     }
+    ///
     /// Appends an item to `AllowedDomains`.
     ///
     /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).

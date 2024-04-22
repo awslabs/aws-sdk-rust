@@ -3,7 +3,7 @@ pub use crate::operation::update_hub::_update_hub_output::UpdateHubOutputBuilder
 
 pub use crate::operation::update_hub::_update_hub_input::UpdateHubInputBuilder;
 
-impl UpdateHubInputBuilder {
+impl crate::operation::update_hub::builders::UpdateHubInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -95,12 +95,12 @@ impl UpdateHubFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -146,6 +146,7 @@ impl UpdateHubFluentBuilder {
     pub fn get_hub_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hub_display_name()
     }
+    ///
     /// Appends an item to `HubSearchKeywords`.
     ///
     /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).

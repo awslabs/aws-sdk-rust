@@ -3,7 +3,7 @@ pub use crate::operation::update_job_queue::_update_job_queue_output::UpdateJobQ
 
 pub use crate::operation::update_job_queue::_update_job_queue_input::UpdateJobQueueInputBuilder;
 
-impl UpdateJobQueueInputBuilder {
+impl crate::operation::update_job_queue::builders::UpdateJobQueueInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateJobQueueFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateJobQueueFluentBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
+    ///
     /// Appends an item to `computeEnvironmentOrder`.
     ///
     /// To override the contents of this collection use [`set_compute_environment_order`](Self::set_compute_environment_order).
@@ -188,6 +189,7 @@ impl UpdateJobQueueFluentBuilder {
     pub fn get_compute_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>> {
         self.inner.get_compute_environment_order()
     }
+    ///
     /// Appends an item to `jobStateTimeLimitActions`.
     ///
     /// To override the contents of this collection use [`set_job_state_time_limit_actions`](Self::set_job_state_time_limit_actions).

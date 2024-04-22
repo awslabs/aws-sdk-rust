@@ -3,7 +3,7 @@ pub use crate::operation::create_connect_peer::_create_connect_peer_output::Crea
 
 pub use crate::operation::create_connect_peer::_create_connect_peer_input::CreateConnectPeerInputBuilder;
 
-impl CreateConnectPeerInputBuilder {
+impl crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateConnectPeerFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateConnectPeerFluentBuilder {
     pub fn get_bgp_options(&self) -> &::std::option::Option<crate::types::BgpOptions> {
         self.inner.get_bgp_options()
     }
+    ///
     /// Appends an item to `InsideCidrBlocks`.
     ///
     /// To override the contents of this collection use [`set_inside_cidr_blocks`](Self::set_inside_cidr_blocks).
@@ -182,6 +183,7 @@ impl CreateConnectPeerFluentBuilder {
     pub fn get_inside_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_inside_cidr_blocks()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

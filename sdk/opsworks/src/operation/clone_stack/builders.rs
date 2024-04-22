@@ -3,7 +3,7 @@ pub use crate::operation::clone_stack::_clone_stack_output::CloneStackOutputBuil
 
 pub use crate::operation::clone_stack::_clone_stack_input::CloneStackInputBuilder;
 
-impl CloneStackInputBuilder {
+impl crate::operation::clone_stack::builders::CloneStackInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CloneStackFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -210,6 +210,7 @@ impl CloneStackFluentBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
+    ///
     /// Adds a key-value pair to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -589,6 +590,7 @@ impl CloneStackFluentBuilder {
     pub fn get_clone_permissions(&self) -> &::std::option::Option<bool> {
         self.inner.get_clone_permissions()
     }
+    ///
     /// Appends an item to `CloneAppIds`.
     ///
     /// To override the contents of this collection use [`set_clone_app_ids`](Self::set_clone_app_ids).

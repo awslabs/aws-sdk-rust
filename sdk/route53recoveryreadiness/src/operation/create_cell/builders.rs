@@ -3,7 +3,7 @@ pub use crate::operation::create_cell::_create_cell_output::CreateCellOutputBuil
 
 pub use crate::operation::create_cell::_create_cell_input::CreateCellInputBuilder;
 
-impl CreateCellInputBuilder {
+impl crate::operation::create_cell::builders::CreateCellInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateCellFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateCellFluentBuilder {
     pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cell_name()
     }
+    ///
     /// Appends an item to `Cells`.
     ///
     /// To override the contents of this collection use [`set_cells`](Self::set_cells).
@@ -140,6 +141,7 @@ impl CreateCellFluentBuilder {
     pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cells()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

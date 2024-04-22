@@ -3,7 +3,7 @@ pub use crate::operation::describe_registration_versions::_describe_registration
 
 pub use crate::operation::describe_registration_versions::_describe_registration_versions_input::DescribeRegistrationVersionsInputBuilder;
 
-impl DescribeRegistrationVersionsInputBuilder {
+impl crate::operation::describe_registration_versions::builders::DescribeRegistrationVersionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeRegistrationVersionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl DescribeRegistrationVersionsFluentBuilder {
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_registration_id()
     }
+    ///
     /// Appends an item to `VersionNumbers`.
     ///
     /// To override the contents of this collection use [`set_version_numbers`](Self::set_version_numbers).
@@ -146,6 +147,7 @@ impl DescribeRegistrationVersionsFluentBuilder {
     pub fn get_version_numbers(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
         self.inner.get_version_numbers()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

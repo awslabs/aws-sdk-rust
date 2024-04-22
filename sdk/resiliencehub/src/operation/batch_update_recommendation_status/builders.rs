@@ -3,7 +3,7 @@ pub use crate::operation::batch_update_recommendation_status::_batch_update_reco
 
 pub use crate::operation::batch_update_recommendation_status::_batch_update_recommendation_status_input::BatchUpdateRecommendationStatusInputBuilder;
 
-impl BatchUpdateRecommendationStatusInputBuilder {
+impl crate::operation::batch_update_recommendation_status::builders::BatchUpdateRecommendationStatusInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchUpdateRecommendationStatusFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl BatchUpdateRecommendationStatusFluentBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_arn()
     }
+    ///
     /// Appends an item to `requestEntries`.
     ///
     /// To override the contents of this collection use [`set_request_entries`](Self::set_request_entries).

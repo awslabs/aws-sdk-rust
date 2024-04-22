@@ -3,7 +3,7 @@ pub use crate::operation::create_change_set::_create_change_set_output::CreateCh
 
 pub use crate::operation::create_change_set::_create_change_set_input::CreateChangeSetInputBuilder;
 
-impl CreateChangeSetInputBuilder {
+impl crate::operation::create_change_set::builders::CreateChangeSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateChangeSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -173,6 +173,7 @@ impl CreateChangeSetFluentBuilder {
     pub fn get_use_previous_template(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_previous_template()
     }
+    ///
     /// Appends an item to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -191,6 +192,7 @@ impl CreateChangeSetFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
+    ///
     /// Appends an item to `Capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
@@ -332,6 +334,7 @@ impl CreateChangeSetFluentBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
         self.inner.get_capabilities()
     }
+    ///
     /// Appends an item to `ResourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -390,6 +393,7 @@ impl CreateChangeSetFluentBuilder {
     pub fn get_rollback_configuration(&self) -> &::std::option::Option<crate::types::RollbackConfiguration> {
         self.inner.get_rollback_configuration()
     }
+    ///
     /// Appends an item to `NotificationARNs`.
     ///
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
@@ -408,6 +412,7 @@ impl CreateChangeSetFluentBuilder {
     pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_notification_arns()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -491,6 +496,7 @@ impl CreateChangeSetFluentBuilder {
     pub fn get_change_set_type(&self) -> &::std::option::Option<crate::types::ChangeSetType> {
         self.inner.get_change_set_type()
     }
+    ///
     /// Appends an item to `ResourcesToImport`.
     ///
     /// To override the contents of this collection use [`set_resources_to_import`](Self::set_resources_to_import).

@@ -3,7 +3,7 @@ pub use crate::operation::create_configuration_policy::_create_configuration_pol
 
 pub use crate::operation::create_configuration_policy::_create_configuration_policy_input::CreateConfigurationPolicyInputBuilder;
 
-impl CreateConfigurationPolicyInputBuilder {
+impl crate::operation::create_configuration_policy::builders::CreateConfigurationPolicyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateConfigurationPolicyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateConfigurationPolicyFluentBuilder {
     pub fn get_configuration_policy(&self) -> &::std::option::Option<crate::types::Policy> {
         self.inner.get_configuration_policy()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::admin_set_user_settings::_admin_set_user_settings_outp
 
 pub use crate::operation::admin_set_user_settings::_admin_set_user_settings_input::AdminSetUserSettingsInputBuilder;
 
-impl AdminSetUserSettingsInputBuilder {
+impl crate::operation::admin_set_user_settings::builders::AdminSetUserSettingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -108,12 +108,12 @@ impl AdminSetUserSettingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -145,6 +145,7 @@ impl AdminSetUserSettingsFluentBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }
+    ///
     /// Appends an item to `MFAOptions`.
     ///
     /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).

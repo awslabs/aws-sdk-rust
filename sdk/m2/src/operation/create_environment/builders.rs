@@ -3,7 +3,7 @@ pub use crate::operation::create_environment::_create_environment_output::Create
 
 pub use crate::operation::create_environment::_create_environment_input::CreateEnvironmentInputBuilder;
 
-impl CreateEnvironmentInputBuilder {
+impl crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateEnvironmentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }
+    ///
     /// Appends an item to `subnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -196,6 +197,7 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
+    ///
     /// Appends an item to `securityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -214,6 +216,7 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
+    ///
     /// Appends an item to `storageConfigurations`.
     ///
     /// To override the contents of this collection use [`set_storage_configurations`](Self::set_storage_configurations).
@@ -260,6 +263,7 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_high_availability_config(&self) -> &::std::option::Option<crate::types::HighAvailabilityConfig> {
         self.inner.get_high_availability_config()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

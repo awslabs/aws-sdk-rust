@@ -3,7 +3,7 @@ pub use crate::operation::create_contact_list::_create_contact_list_output::Crea
 
 pub use crate::operation::create_contact_list::_create_contact_list_input::CreateContactListInputBuilder;
 
-impl CreateContactListInputBuilder {
+impl crate::operation::create_contact_list::builders::CreateContactListInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateContactListFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateContactListFluentBuilder {
     pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_list_name()
     }
+    ///
     /// Appends an item to `Topics`.
     ///
     /// To override the contents of this collection use [`set_topics`](Self::set_topics).
@@ -154,6 +155,7 @@ impl CreateContactListFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::put_registry_scanning_configuration::_put_registry_sca
 
 pub use crate::operation::put_registry_scanning_configuration::_put_registry_scanning_configuration_input::PutRegistryScanningConfigurationInputBuilder;
 
-impl PutRegistryScanningConfigurationInputBuilder {
+impl crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutRegistryScanningConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl PutRegistryScanningConfigurationFluentBuilder {
     pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
         self.inner.get_scan_type()
     }
+    ///
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).

@@ -3,7 +3,7 @@ pub use crate::operation::get_unfiltered_table_metadata::_get_unfiltered_table_m
 
 pub use crate::operation::get_unfiltered_table_metadata::_get_unfiltered_table_metadata_input::GetUnfilteredTableMetadataInputBuilder;
 
-impl GetUnfilteredTableMetadataInputBuilder {
+impl crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetUnfilteredTableMetadataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl GetUnfilteredTableMetadataFluentBuilder {
     pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
         self.inner.get_audit_context()
     }
+    ///
     /// Appends an item to `SupportedPermissionTypes`.
     ///
     /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
@@ -275,6 +276,7 @@ impl GetUnfilteredTableMetadataFluentBuilder {
     pub fn get_supported_dialect(&self) -> &::std::option::Option<crate::types::SupportedDialect> {
         self.inner.get_supported_dialect()
     }
+    ///
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).

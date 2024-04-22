@@ -3,7 +3,7 @@ pub use crate::operation::create_service_network_vpc_association::_create_servic
 
 pub use crate::operation::create_service_network_vpc_association::_create_service_network_vpc_association_input::CreateServiceNetworkVpcAssociationInputBuilder;
 
-impl CreateServiceNetworkVpcAssociationInputBuilder {
+impl crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
     pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_identifier()
     }
+    ///
     /// Appends an item to `securityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -171,6 +172,7 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

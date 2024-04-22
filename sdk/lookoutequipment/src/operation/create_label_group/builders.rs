@@ -3,7 +3,7 @@ pub use crate::operation::create_label_group::_create_label_group_output::Create
 
 pub use crate::operation::create_label_group::_create_label_group_input::CreateLabelGroupInputBuilder;
 
-impl CreateLabelGroupInputBuilder {
+impl crate::operation::create_label_group::builders::CreateLabelGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateLabelGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -125,6 +125,7 @@ impl CreateLabelGroupFluentBuilder {
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_group_name()
     }
+    ///
     /// Appends an item to `FaultCodes`.
     ///
     /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
@@ -160,6 +161,7 @@ impl CreateLabelGroupFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

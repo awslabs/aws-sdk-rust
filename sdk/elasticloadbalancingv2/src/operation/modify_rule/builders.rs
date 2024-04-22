@@ -3,7 +3,7 @@ pub use crate::operation::modify_rule::_modify_rule_output::ModifyRuleOutputBuil
 
 pub use crate::operation::modify_rule::_modify_rule_input::ModifyRuleInputBuilder;
 
-impl ModifyRuleInputBuilder {
+impl crate::operation::modify_rule::builders::ModifyRuleInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ModifyRuleFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl ModifyRuleFluentBuilder {
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rule_arn()
     }
+    ///
     /// Appends an item to `Conditions`.
     ///
     /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
@@ -141,6 +142,7 @@ impl ModifyRuleFluentBuilder {
     pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
         self.inner.get_conditions()
     }
+    ///
     /// Appends an item to `Actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).

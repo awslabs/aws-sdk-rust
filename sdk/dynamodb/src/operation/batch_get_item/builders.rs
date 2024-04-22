@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_item::_batch_get_item_output::BatchGetItemOu
 
 pub use crate::operation::batch_get_item::_batch_get_item_input::BatchGetItemInputBuilder;
 
-impl BatchGetItemInputBuilder {
+impl crate::operation::batch_get_item::builders::BatchGetItemInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,15 +111,16 @@ impl BatchGetItemFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Adds a key-value pair to `RequestItems`.
     ///
     /// To override the contents of this collection use [`set_request_items`](Self::set_request_items).

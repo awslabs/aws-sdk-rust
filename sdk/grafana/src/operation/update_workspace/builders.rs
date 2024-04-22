@@ -3,7 +3,7 @@ pub use crate::operation::update_workspace::_update_workspace_output::UpdateWork
 
 pub use crate::operation::update_workspace::_update_workspace_input::UpdateWorkspaceInputBuilder;
 
-impl UpdateWorkspaceInputBuilder {
+impl crate::operation::update_workspace::builders::UpdateWorkspaceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateWorkspaceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -181,6 +181,7 @@ impl UpdateWorkspaceFluentBuilder {
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
+    ///
     /// Appends an item to `workspaceDataSources`.
     ///
     /// To override the contents of this collection use [`set_workspace_data_sources`](Self::set_workspace_data_sources).
@@ -241,6 +242,7 @@ impl UpdateWorkspaceFluentBuilder {
     pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_name()
     }
+    ///
     /// Appends an item to `workspaceNotificationDestinations`.
     ///
     /// To override the contents of this collection use [`set_workspace_notification_destinations`](Self::set_workspace_notification_destinations).
@@ -262,6 +264,7 @@ impl UpdateWorkspaceFluentBuilder {
     pub fn get_workspace_notification_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
         self.inner.get_workspace_notification_destinations()
     }
+    ///
     /// Appends an item to `workspaceOrganizationalUnits`.
     ///
     /// To override the contents of this collection use [`set_workspace_organizational_units`](Self::set_workspace_organizational_units).

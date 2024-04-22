@@ -3,7 +3,7 @@ pub use crate::operation::create_launch_configuration_template::_create_launch_c
 
 pub use crate::operation::create_launch_configuration_template::_create_launch_configuration_template_input::CreateLaunchConfigurationTemplateInputBuilder;
 
-impl CreateLaunchConfigurationTemplateInputBuilder {
+impl crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_map_auto_tagging_mpe_id()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

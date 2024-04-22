@@ -3,7 +3,7 @@ pub use crate::operation::create_custom_metadata::_create_custom_metadata_output
 
 pub use crate::operation::create_custom_metadata::_create_custom_metadata_input::CreateCustomMetadataInputBuilder;
 
-impl CreateCustomMetadataInputBuilder {
+impl crate::operation::create_custom_metadata::builders::CreateCustomMetadataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateCustomMetadataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateCustomMetadataFluentBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_id()
     }
+    ///
     /// Adds a key-value pair to `CustomMetadata`.
     ///
     /// To override the contents of this collection use [`set_custom_metadata`](Self::set_custom_metadata).

@@ -3,7 +3,7 @@ pub use crate::operation::update_slot_type::_update_slot_type_output::UpdateSlot
 
 pub use crate::operation::update_slot_type::_update_slot_type_input::UpdateSlotTypeInputBuilder;
 
-impl UpdateSlotTypeInputBuilder {
+impl crate::operation::update_slot_type::builders::UpdateSlotTypeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateSlotTypeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateSlotTypeFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `slotTypeValues`.
     ///
     /// To override the contents of this collection use [`set_slot_type_values`](Self::set_slot_type_values).

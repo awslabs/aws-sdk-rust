@@ -3,7 +3,7 @@ pub use crate::operation::describe_delivery_stream::_describe_delivery_stream_ou
 
 pub use crate::operation::describe_delivery_stream::_describe_delivery_stream_input::DescribeDeliveryStreamInputBuilder;
 
-impl DescribeDeliveryStreamInputBuilder {
+impl crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeDeliveryStreamFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::re_encrypt::_re_encrypt_output::ReEncryptOutputBuilder
 
 pub use crate::operation::re_encrypt::_re_encrypt_input::ReEncryptInputBuilder;
 
-impl ReEncryptInputBuilder {
+impl crate::operation::re_encrypt::builders::ReEncryptInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -128,12 +128,12 @@ impl ReEncryptFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl ReEncryptFluentBuilder {
     pub fn get_ciphertext_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_ciphertext_blob()
     }
+    ///
     /// Adds a key-value pair to `SourceEncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_source_encryption_context`](Self::set_source_encryption_context).
@@ -294,6 +295,7 @@ impl ReEncryptFluentBuilder {
     pub fn get_destination_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_key_id()
     }
+    ///
     /// Adds a key-value pair to `DestinationEncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_destination_encryption_context`](Self::set_destination_encryption_context).
@@ -373,6 +375,7 @@ impl ReEncryptFluentBuilder {
     pub fn get_destination_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
         self.inner.get_destination_encryption_algorithm()
     }
+    ///
     /// Appends an item to `GrantTokens`.
     ///
     /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).

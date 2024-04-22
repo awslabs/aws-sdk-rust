@@ -3,7 +3,7 @@ pub use crate::operation::create_report_group::_create_report_group_output::Crea
 
 pub use crate::operation::create_report_group::_create_report_group_input::CreateReportGroupInputBuilder;
 
-impl CreateReportGroupInputBuilder {
+impl crate::operation::create_report_group::builders::CreateReportGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateReportGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateReportGroupFluentBuilder {
     pub fn get_export_config(&self) -> &::std::option::Option<crate::types::ReportExportConfig> {
         self.inner.get_export_config()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

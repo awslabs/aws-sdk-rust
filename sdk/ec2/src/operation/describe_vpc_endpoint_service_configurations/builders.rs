@@ -3,7 +3,7 @@ pub use crate::operation::describe_vpc_endpoint_service_configurations::_describ
 
 pub use crate::operation::describe_vpc_endpoint_service_configurations::_describe_vpc_endpoint_service_configurations_input::DescribeVpcEndpointServiceConfigurationsInputBuilder;
 
-impl DescribeVpcEndpointServiceConfigurationsInputBuilder {
+impl crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl DescribeVpcEndpointServiceConfigurationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl DescribeVpcEndpointServiceConfigurationsFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `ServiceIds`.
     ///
     /// To override the contents of this collection use [`set_service_ids`](Self::set_service_ids).
@@ -155,6 +156,7 @@ impl DescribeVpcEndpointServiceConfigurationsFluentBuilder {
     pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_service_ids()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

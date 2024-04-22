@@ -3,7 +3,7 @@ pub use crate::operation::update_dev_endpoint::_update_dev_endpoint_output::Upda
 
 pub use crate::operation::update_dev_endpoint::_update_dev_endpoint_input::UpdateDevEndpointInputBuilder;
 
-impl UpdateDevEndpointInputBuilder {
+impl crate::operation::update_dev_endpoint::builders::UpdateDevEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDevEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateDevEndpointFluentBuilder {
     pub fn get_public_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_public_key()
     }
+    ///
     /// Appends an item to `AddPublicKeys`.
     ///
     /// To override the contents of this collection use [`set_add_public_keys`](Self::set_add_public_keys).
@@ -154,6 +155,7 @@ impl UpdateDevEndpointFluentBuilder {
     pub fn get_add_public_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_public_keys()
     }
+    ///
     /// Appends an item to `DeletePublicKeys`.
     ///
     /// To override the contents of this collection use [`set_delete_public_keys`](Self::set_delete_public_keys).
@@ -200,6 +202,7 @@ impl UpdateDevEndpointFluentBuilder {
     pub fn get_update_etl_libraries(&self) -> &::std::option::Option<bool> {
         self.inner.get_update_etl_libraries()
     }
+    ///
     /// Appends an item to `DeleteArguments`.
     ///
     /// To override the contents of this collection use [`set_delete_arguments`](Self::set_delete_arguments).
@@ -218,6 +221,7 @@ impl UpdateDevEndpointFluentBuilder {
     pub fn get_delete_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_delete_arguments()
     }
+    ///
     /// Adds a key-value pair to `AddArguments`.
     ///
     /// To override the contents of this collection use [`set_add_arguments`](Self::set_add_arguments).

@@ -3,7 +3,7 @@ pub use crate::operation::get_relational_database_metric_data::_get_relational_d
 
 pub use crate::operation::get_relational_database_metric_data::_get_relational_database_metric_data_input::GetRelationalDatabaseMetricDataInputBuilder;
 
-impl GetRelationalDatabaseMetricDataInputBuilder {
+impl crate::operation::get_relational_database_metric_data::builders::GetRelationalDatabaseMetricDataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -325,6 +325,7 @@ impl GetRelationalDatabaseMetricDataFluentBuilder {
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::MetricUnit> {
         self.inner.get_unit()
     }
+    ///
     /// Appends an item to `statistics`.
     ///
     /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).

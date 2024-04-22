@@ -3,7 +3,7 @@ pub use crate::operation::describe_host_reservations::_describe_host_reservation
 
 pub use crate::operation::describe_host_reservations::_describe_host_reservations_input::DescribeHostReservationsInputBuilder;
 
-impl DescribeHostReservationsInputBuilder {
+impl crate::operation::describe_host_reservations::builders::DescribeHostReservationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeHostReservationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeHostReservationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_host_reservations::paginator::DescribeHostReservationsPaginator {
         crate::operation::describe_host_reservations::paginator::DescribeHostReservationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
@@ -168,6 +169,7 @@ impl DescribeHostReservationsFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filter()
     }
+    ///
     /// Appends an item to `HostReservationIdSet`.
     ///
     /// To override the contents of this collection use [`set_host_reservation_id_set`](Self::set_host_reservation_id_set).

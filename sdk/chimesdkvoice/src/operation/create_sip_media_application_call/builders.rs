@@ -3,7 +3,7 @@ pub use crate::operation::create_sip_media_application_call::_create_sip_media_a
 
 pub use crate::operation::create_sip_media_application_call::_create_sip_media_application_call_input::CreateSipMediaApplicationCallInputBuilder;
 
-impl CreateSipMediaApplicationCallInputBuilder {
+impl crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSipMediaApplicationCallFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateSipMediaApplicationCallFluentBuilder {
     pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sip_media_application_id()
     }
+    ///
     /// Adds a key-value pair to `SipHeaders`.
     ///
     /// To override the contents of this collection use [`set_sip_headers`](Self::set_sip_headers).
@@ -171,6 +172,7 @@ impl CreateSipMediaApplicationCallFluentBuilder {
     pub fn get_sip_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_sip_headers()
     }
+    ///
     /// Adds a key-value pair to `ArgumentsMap`.
     ///
     /// To override the contents of this collection use [`set_arguments_map`](Self::set_arguments_map).

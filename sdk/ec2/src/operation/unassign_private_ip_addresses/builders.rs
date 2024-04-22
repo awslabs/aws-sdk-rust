@@ -3,7 +3,7 @@ pub use crate::operation::unassign_private_ip_addresses::_unassign_private_ip_ad
 
 pub use crate::operation::unassign_private_ip_addresses::_unassign_private_ip_addresses_input::UnassignPrivateIpAddressesInputBuilder;
 
-impl UnassignPrivateIpAddressesInputBuilder {
+impl crate::operation::unassign_private_ip_addresses::builders::UnassignPrivateIpAddressesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UnassignPrivateIpAddressesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UnassignPrivateIpAddressesFluentBuilder {
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_interface_id()
     }
+    ///
     /// Appends an item to `PrivateIpAddresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
@@ -140,6 +141,7 @@ impl UnassignPrivateIpAddressesFluentBuilder {
     pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_private_ip_addresses()
     }
+    ///
     /// Appends an item to `Ipv4Prefixes`.
     ///
     /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).

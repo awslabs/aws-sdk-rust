@@ -3,7 +3,7 @@ pub use crate::operation::describe_trust_store_associations::_describe_trust_sto
 
 pub use crate::operation::describe_trust_store_associations::_describe_trust_store_associations_input::DescribeTrustStoreAssociationsInputBuilder;
 
-impl DescribeTrustStoreAssociationsInputBuilder {
+impl crate::operation::describe_trust_store_associations::builders::DescribeTrustStoreAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeTrustStoreAssociationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

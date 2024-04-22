@@ -3,7 +3,7 @@ pub use crate::operation::update_dashboard_permissions::_update_dashboard_permis
 
 pub use crate::operation::update_dashboard_permissions::_update_dashboard_permissions_input::UpdateDashboardPermissionsInputBuilder;
 
-impl UpdateDashboardPermissionsInputBuilder {
+impl crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDashboardPermissionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateDashboardPermissionsFluentBuilder {
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dashboard_id()
     }
+    ///
     /// Appends an item to `GrantPermissions`.
     ///
     /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
@@ -154,6 +155,7 @@ impl UpdateDashboardPermissionsFluentBuilder {
     pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_grant_permissions()
     }
+    ///
     /// Appends an item to `RevokePermissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -172,6 +174,7 @@ impl UpdateDashboardPermissionsFluentBuilder {
     pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_revoke_permissions()
     }
+    ///
     /// Appends an item to `GrantLinkPermissions`.
     ///
     /// To override the contents of this collection use [`set_grant_link_permissions`](Self::set_grant_link_permissions).
@@ -190,6 +193,7 @@ impl UpdateDashboardPermissionsFluentBuilder {
     pub fn get_grant_link_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_grant_link_permissions()
     }
+    ///
     /// Appends an item to `RevokeLinkPermissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_link_permissions`](Self::set_revoke_link_permissions).

@@ -3,7 +3,7 @@ pub use crate::operation::create_experiment::_create_experiment_output::CreateEx
 
 pub use crate::operation::create_experiment::_create_experiment_input::CreateExperimentInputBuilder;
 
-impl CreateExperimentInputBuilder {
+impl crate::operation::create_experiment::builders::CreateExperimentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateExperimentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl CreateExperimentFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `treatments`.
     ///
     /// To override the contents of this collection use [`set_treatments`](Self::set_treatments).
@@ -171,6 +172,7 @@ impl CreateExperimentFluentBuilder {
     pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
         self.inner.get_treatments()
     }
+    ///
     /// Appends an item to `metricGoals`.
     ///
     /// To override the contents of this collection use [`set_metric_goals`](Self::set_metric_goals).
@@ -248,6 +250,7 @@ impl CreateExperimentFluentBuilder {
     pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_segment()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

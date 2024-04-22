@@ -3,7 +3,7 @@ pub use crate::operation::put_registration_field_value::_put_registration_field_
 
 pub use crate::operation::put_registration_field_value::_put_registration_field_value_input::PutRegistrationFieldValueInputBuilder;
 
-impl PutRegistrationFieldValueInputBuilder {
+impl crate::operation::put_registration_field_value::builders::PutRegistrationFieldValueInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutRegistrationFieldValueFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl PutRegistrationFieldValueFluentBuilder {
     pub fn get_field_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_field_path()
     }
+    ///
     /// Appends an item to `SelectChoices`.
     ///
     /// To override the contents of this collection use [`set_select_choices`](Self::set_select_choices).

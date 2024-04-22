@@ -3,7 +3,7 @@ pub use crate::operation::modify_ipam::_modify_ipam_output::ModifyIpamOutputBuil
 
 pub use crate::operation::modify_ipam::_modify_ipam_input::ModifyIpamInputBuilder;
 
-impl ModifyIpamInputBuilder {
+impl crate::operation::modify_ipam::builders::ModifyIpamInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ModifyIpamFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl ModifyIpamFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `AddOperatingRegions`.
     ///
     /// To override the contents of this collection use [`set_add_operating_regions`](Self::set_add_operating_regions).
@@ -171,6 +172,7 @@ impl ModifyIpamFluentBuilder {
     pub fn get_add_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
         self.inner.get_add_operating_regions()
     }
+    ///
     /// Appends an item to `RemoveOperatingRegions`.
     ///
     /// To override the contents of this collection use [`set_remove_operating_regions`](Self::set_remove_operating_regions).

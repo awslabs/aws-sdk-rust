@@ -3,7 +3,7 @@ pub use crate::operation::search_place_index_for_text::_search_place_index_for_t
 
 pub use crate::operation::search_place_index_for_text::_search_place_index_for_text_input::SearchPlaceIndexForTextInputBuilder;
 
-impl SearchPlaceIndexForTextInputBuilder {
+impl crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl SearchPlaceIndexForTextFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -140,6 +140,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_text()
     }
+    ///
     /// Appends an item to `BiasPosition`.
     ///
     /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
@@ -170,6 +171,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_bias_position()
     }
+    ///
     /// Appends an item to `FilterBBox`.
     ///
     /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
@@ -200,6 +202,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     pub fn get_filter_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_filter_b_box()
     }
+    ///
     /// Appends an item to `FilterCountries`.
     ///
     /// To override the contents of this collection use [`set_filter_countries`](Self::set_filter_countries).
@@ -273,6 +276,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_language()
     }
+    ///
     /// Appends an item to `FilterCategories`.
     ///
     /// To override the contents of this collection use [`set_filter_categories`](Self::set_filter_categories).

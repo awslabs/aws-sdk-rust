@@ -3,7 +3,7 @@ pub use crate::operation::create_player_sessions::_create_player_sessions_output
 
 pub use crate::operation::create_player_sessions::_create_player_sessions_input::CreatePlayerSessionsInputBuilder;
 
-impl CreatePlayerSessionsInputBuilder {
+impl crate::operation::create_player_sessions::builders::CreatePlayerSessionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CreatePlayerSessionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -127,6 +127,7 @@ impl CreatePlayerSessionsFluentBuilder {
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_session_id()
     }
+    ///
     /// Appends an item to `PlayerIds`.
     ///
     /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
@@ -145,6 +146,7 @@ impl CreatePlayerSessionsFluentBuilder {
     pub fn get_player_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_player_ids()
     }
+    ///
     /// Adds a key-value pair to `PlayerDataMap`.
     ///
     /// To override the contents of this collection use [`set_player_data_map`](Self::set_player_data_map).

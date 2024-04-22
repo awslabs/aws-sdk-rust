@@ -3,7 +3,7 @@ pub use crate::operation::start_replication_task_assessment_run::_start_replicat
 
 pub use crate::operation::start_replication_task_assessment_run::_start_replication_task_assessment_run_input::StartReplicationTaskAssessmentRunInputBuilder;
 
-impl StartReplicationTaskAssessmentRunInputBuilder {
+impl crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -225,6 +225,7 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
     pub fn get_assessment_run_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_run_name()
     }
+    ///
     /// Appends an item to `IncludeOnly`.
     ///
     /// To override the contents of this collection use [`set_include_only`](Self::set_include_only).
@@ -252,6 +253,7 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
     pub fn get_include_only(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_include_only()
     }
+    ///
     /// Appends an item to `Exclude`.
     ///
     /// To override the contents of this collection use [`set_exclude`](Self::set_exclude).

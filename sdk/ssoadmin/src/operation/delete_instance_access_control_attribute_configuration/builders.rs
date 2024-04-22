@@ -3,7 +3,9 @@ pub use crate::operation::delete_instance_access_control_attribute_configuration
 
 pub use crate::operation::delete_instance_access_control_attribute_configuration::_delete_instance_access_control_attribute_configuration_input::DeleteInstanceAccessControlAttributeConfigurationInputBuilder;
 
-impl DeleteInstanceAccessControlAttributeConfigurationInputBuilder {
+impl
+    crate::operation::delete_instance_access_control_attribute_configuration::builders::DeleteInstanceAccessControlAttributeConfigurationInputBuilder
+{
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,10 +27,10 @@ impl DeleteInstanceAccessControlAttributeConfigurationInputBuilder {
 /// <p>Disables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance and deletes all of the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity source and any custom attributes you have previously configured will not be passed. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInstanceAccessControlAttributeConfigurationFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_instance_access_control_attribute_configuration::builders::DeleteInstanceAccessControlAttributeConfigurationInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::delete_instance_access_control_attribute_configuration::builders::DeleteInstanceAccessControlAttributeConfigurationInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationOutput,
@@ -103,12 +105,12 @@ impl DeleteInstanceAccessControlAttributeConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

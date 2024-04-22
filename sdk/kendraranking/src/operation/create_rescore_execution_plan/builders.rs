@@ -3,7 +3,7 @@ pub use crate::operation::create_rescore_execution_plan::_create_rescore_executi
 
 pub use crate::operation::create_rescore_execution_plan::_create_rescore_execution_plan_input::CreateRescoreExecutionPlanInputBuilder;
 
-impl CreateRescoreExecutionPlanInputBuilder {
+impl crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateRescoreExecutionPlanFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl CreateRescoreExecutionPlanFluentBuilder {
     pub fn get_capacity_units(&self) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
         self.inner.get_capacity_units()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

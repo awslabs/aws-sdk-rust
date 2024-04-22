@@ -3,7 +3,7 @@ pub use crate::operation::update_size_constraint_set::_update_size_constraint_se
 
 pub use crate::operation::update_size_constraint_set::_update_size_constraint_set_input::UpdateSizeConstraintSetInputBuilder;
 
-impl UpdateSizeConstraintSetInputBuilder {
+impl crate::operation::update_size_constraint_set::builders::UpdateSizeConstraintSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -127,12 +127,12 @@ impl UpdateSizeConstraintSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateSizeConstraintSetFluentBuilder {
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_change_token()
     }
+    ///
     /// Appends an item to `Updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).

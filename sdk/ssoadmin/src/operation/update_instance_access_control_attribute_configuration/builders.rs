@@ -3,7 +3,9 @@ pub use crate::operation::update_instance_access_control_attribute_configuration
 
 pub use crate::operation::update_instance_access_control_attribute_configuration::_update_instance_access_control_attribute_configuration_input::UpdateInstanceAccessControlAttributeConfigurationInputBuilder;
 
-impl UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
+impl
+    crate::operation::update_instance_access_control_attribute_configuration::builders::UpdateInstanceAccessControlAttributeConfigurationInputBuilder
+{
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,10 +27,10 @@ impl UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
 /// <p>Updates the IAM Identity Center identity store attributes that you can use with the IAM Identity Center instance for attributes-based access control (ABAC). When using an external identity provider as an identity source, you can pass attributes through the SAML assertion as an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center replaces the attribute value with the value from the IAM Identity Center identity store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_instance_access_control_attribute_configuration::builders::UpdateInstanceAccessControlAttributeConfigurationInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_instance_access_control_attribute_configuration::builders::UpdateInstanceAccessControlAttributeConfigurationInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationOutput,
@@ -103,12 +105,12 @@ impl UpdateInstanceAccessControlAttributeConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

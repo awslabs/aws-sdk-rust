@@ -3,7 +3,7 @@ pub use crate::operation::update_broker_storage::_update_broker_storage_output::
 
 pub use crate::operation::update_broker_storage::_update_broker_storage_input::UpdateBrokerStorageInputBuilder;
 
-impl UpdateBrokerStorageInputBuilder {
+impl crate::operation::update_broker_storage::builders::UpdateBrokerStorageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateBrokerStorageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateBrokerStorageFluentBuilder {
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_current_version()
     }
+    ///
     /// Appends an item to `TargetBrokerEBSVolumeInfo`.
     ///
     /// To override the contents of this collection use [`set_target_broker_ebs_volume_info`](Self::set_target_broker_ebs_volume_info).

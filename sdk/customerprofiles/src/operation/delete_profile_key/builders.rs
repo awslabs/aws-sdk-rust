@@ -3,7 +3,7 @@ pub use crate::operation::delete_profile_key::_delete_profile_key_output::Delete
 
 pub use crate::operation::delete_profile_key::_delete_profile_key_input::DeleteProfileKeyInputBuilder;
 
-impl DeleteProfileKeyInputBuilder {
+impl crate::operation::delete_profile_key::builders::DeleteProfileKeyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DeleteProfileKeyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl DeleteProfileKeyFluentBuilder {
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_name()
     }
+    ///
     /// Appends an item to `Values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).

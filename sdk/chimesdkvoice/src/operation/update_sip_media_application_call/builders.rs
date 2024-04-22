@@ -3,7 +3,7 @@ pub use crate::operation::update_sip_media_application_call::_update_sip_media_a
 
 pub use crate::operation::update_sip_media_application_call::_update_sip_media_application_call_input::UpdateSipMediaApplicationCallInputBuilder;
 
-impl UpdateSipMediaApplicationCallInputBuilder {
+impl crate::operation::update_sip_media_application_call::builders::UpdateSipMediaApplicationCallInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transaction_id()
     }
+    ///
     /// Adds a key-value pair to `Arguments`.
     ///
     /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).

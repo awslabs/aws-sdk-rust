@@ -3,7 +3,7 @@ pub use crate::operation::associate_resolver_endpoint_ip_address::_associate_res
 
 pub use crate::operation::associate_resolver_endpoint_ip_address::_associate_resolver_endpoint_ip_address_input::AssociateResolverEndpointIpAddressInputBuilder;
 
-impl AssociateResolverEndpointIpAddressInputBuilder {
+impl crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl AssociateResolverEndpointIpAddressFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::run_pipeline_activity::_run_pipeline_activity_output::
 
 pub use crate::operation::run_pipeline_activity::_run_pipeline_activity_input::RunPipelineActivityInputBuilder;
 
-impl RunPipelineActivityInputBuilder {
+impl crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RunPipelineActivityFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl RunPipelineActivityFluentBuilder {
     pub fn get_pipeline_activity(&self) -> &::std::option::Option<crate::types::PipelineActivity> {
         self.inner.get_pipeline_activity()
     }
+    ///
     /// Appends an item to `payloads`.
     ///
     /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).

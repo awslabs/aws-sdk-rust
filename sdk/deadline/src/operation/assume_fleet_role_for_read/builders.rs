@@ -3,7 +3,7 @@ pub use crate::operation::assume_fleet_role_for_read::_assume_fleet_role_for_rea
 
 pub use crate::operation::assume_fleet_role_for_read::_assume_fleet_role_for_read_input::AssumeFleetRoleForReadInputBuilder;
 
-impl AssumeFleetRoleForReadInputBuilder {
+impl crate::operation::assume_fleet_role_for_read::builders::AssumeFleetRoleForReadInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl AssumeFleetRoleForReadFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

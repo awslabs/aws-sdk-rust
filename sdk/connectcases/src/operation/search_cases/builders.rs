@@ -3,7 +3,7 @@ pub use crate::operation::search_cases::_search_cases_output::SearchCasesOutputB
 
 pub use crate::operation::search_cases::_search_cases_input::SearchCasesInputBuilder;
 
-impl SearchCasesInputBuilder {
+impl crate::operation::search_cases::builders::SearchCasesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl SearchCasesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -186,6 +186,7 @@ impl SearchCasesFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::CaseFilter> {
         self.inner.get_filter()
     }
+    ///
     /// Appends an item to `sorts`.
     ///
     /// To override the contents of this collection use [`set_sorts`](Self::set_sorts).
@@ -204,6 +205,7 @@ impl SearchCasesFluentBuilder {
     pub fn get_sorts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sort>> {
         self.inner.get_sorts()
     }
+    ///
     /// Appends an item to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).

@@ -3,7 +3,7 @@ pub use crate::operation::update_detector::_update_detector_output::UpdateDetect
 
 pub use crate::operation::update_detector::_update_detector_input::UpdateDetectorInputBuilder;
 
-impl UpdateDetectorInputBuilder {
+impl crate::operation::update_detector::builders::UpdateDetectorInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateDetectorFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -172,6 +172,7 @@ impl UpdateDetectorFluentBuilder {
     pub fn get_data_sources(&self) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
         self.inner.get_data_sources()
     }
+    ///
     /// Appends an item to `Features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).

@@ -3,7 +3,7 @@ pub use crate::operation::update_event_bridge_rule_template::_update_event_bridg
 
 pub use crate::operation::update_event_bridge_rule_template::_update_event_bridge_rule_template_input::UpdateEventBridgeRuleTemplateInputBuilder;
 
-impl UpdateEventBridgeRuleTemplateInputBuilder {
+impl crate::operation::update_event_bridge_rule_template::builders::UpdateEventBridgeRuleTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateEventBridgeRuleTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateEventBridgeRuleTemplateFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `EventTargets`.
     ///
     /// To override the contents of this collection use [`set_event_targets`](Self::set_event_targets).

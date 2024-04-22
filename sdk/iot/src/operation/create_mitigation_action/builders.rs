@@ -3,7 +3,7 @@ pub use crate::operation::create_mitigation_action::_create_mitigation_action_ou
 
 pub use crate::operation::create_mitigation_action::_create_mitigation_action_input::CreateMitigationActionInputBuilder;
 
-impl CreateMitigationActionInputBuilder {
+impl crate::operation::create_mitigation_action::builders::CreateMitigationActionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateMitigationActionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl CreateMitigationActionFluentBuilder {
     pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
         self.inner.get_action_params()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

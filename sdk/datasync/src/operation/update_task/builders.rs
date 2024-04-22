@@ -3,7 +3,7 @@ pub use crate::operation::update_task::_update_task_output::UpdateTaskOutputBuil
 
 pub use crate::operation::update_task::_update_task_input::UpdateTaskInputBuilder;
 
-impl UpdateTaskInputBuilder {
+impl crate::operation::update_task::builders::UpdateTaskInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateTaskFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl UpdateTaskFluentBuilder {
     pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
         self.inner.get_options()
     }
+    ///
     /// Appends an item to `Excludes`.
     ///
     /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
@@ -199,6 +200,7 @@ impl UpdateTaskFluentBuilder {
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_watch_log_group_arn()
     }
+    ///
     /// Appends an item to `Includes`.
     ///
     /// To override the contents of this collection use [`set_includes`](Self::set_includes).

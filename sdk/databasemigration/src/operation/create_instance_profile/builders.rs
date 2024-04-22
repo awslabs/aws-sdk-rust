@@ -3,7 +3,7 @@ pub use crate::operation::create_instance_profile::_create_instance_profile_outp
 
 pub use crate::operation::create_instance_profile::_create_instance_profile_input::CreateInstanceProfileInputBuilder;
 
-impl CreateInstanceProfileInputBuilder {
+impl crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateInstanceProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -156,6 +156,7 @@ impl CreateInstanceProfileFluentBuilder {
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         self.inner.get_publicly_accessible()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -230,6 +231,7 @@ impl CreateInstanceProfileFluentBuilder {
     pub fn get_subnet_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subnet_group_identifier()
     }
+    ///
     /// Appends an item to `VpcSecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).

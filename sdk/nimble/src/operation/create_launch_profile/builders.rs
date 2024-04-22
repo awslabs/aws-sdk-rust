@@ -3,7 +3,7 @@ pub use crate::operation::create_launch_profile::_create_launch_profile_output::
 
 pub use crate::operation::create_launch_profile::_create_launch_profile_input::CreateLaunchProfileInputBuilder;
 
-impl CreateLaunchProfileInputBuilder {
+impl crate::operation::create_launch_profile::builders::CreateLaunchProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateLaunchProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateLaunchProfileFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `ec2SubnetIds`.
     ///
     /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
@@ -154,6 +155,7 @@ impl CreateLaunchProfileFluentBuilder {
     pub fn get_ec2_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ec2_subnet_ids()
     }
+    ///
     /// Appends an item to `launchProfileProtocolVersions`.
     ///
     /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
@@ -200,6 +202,7 @@ impl CreateLaunchProfileFluentBuilder {
     pub fn get_stream_configuration(&self) -> &::std::option::Option<crate::types::StreamConfigurationCreate> {
         self.inner.get_stream_configuration()
     }
+    ///
     /// Appends an item to `studioComponentIds`.
     ///
     /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
@@ -232,6 +235,7 @@ impl CreateLaunchProfileFluentBuilder {
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_id()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

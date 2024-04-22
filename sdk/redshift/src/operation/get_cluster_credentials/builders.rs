@@ -3,7 +3,7 @@ pub use crate::operation::get_cluster_credentials::_get_cluster_credentials_outp
 
 pub use crate::operation::get_cluster_credentials::_get_cluster_credentials_input::GetClusterCredentialsInputBuilder;
 
-impl GetClusterCredentialsInputBuilder {
+impl crate::operation::get_cluster_credentials::builders::GetClusterCredentialsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl GetClusterCredentialsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -269,6 +269,7 @@ impl GetClusterCredentialsFluentBuilder {
     pub fn get_auto_create(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_create()
     }
+    ///
     /// Appends an item to `DbGroups`.
     ///
     /// To override the contents of this collection use [`set_db_groups`](Self::set_db_groups).

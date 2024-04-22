@@ -3,7 +3,7 @@ pub use crate::operation::delete_faces::_delete_faces_output::DeleteFacesOutputB
 
 pub use crate::operation::delete_faces::_delete_faces_input::DeleteFacesInputBuilder;
 
-impl DeleteFacesInputBuilder {
+impl crate::operation::delete_faces::builders::DeleteFacesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DeleteFacesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl DeleteFacesFluentBuilder {
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_collection_id()
     }
+    ///
     /// Appends an item to `FaceIds`.
     ///
     /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).

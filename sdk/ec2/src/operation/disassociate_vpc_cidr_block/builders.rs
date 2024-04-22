@@ -3,7 +3,7 @@ pub use crate::operation::disassociate_vpc_cidr_block::_disassociate_vpc_cidr_bl
 
 pub use crate::operation::disassociate_vpc_cidr_block::_disassociate_vpc_cidr_block_input::DisassociateVpcCidrBlockInputBuilder;
 
-impl DisassociateVpcCidrBlockInputBuilder {
+impl crate::operation::disassociate_vpc_cidr_block::builders::DisassociateVpcCidrBlockInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DisassociateVpcCidrBlockFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_asset_property_value::_batch_get_asset_prope
 
 pub use crate::operation::batch_get_asset_property_value::_batch_get_asset_property_value_input::BatchGetAssetPropertyValueInputBuilder;
 
-impl BatchGetAssetPropertyValueInputBuilder {
+impl crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchGetAssetPropertyValueFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl BatchGetAssetPropertyValueFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator {
         crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).

@@ -3,7 +3,7 @@ pub use crate::operation::update_wireless_gateway::_update_wireless_gateway_outp
 
 pub use crate::operation::update_wireless_gateway::_update_wireless_gateway_input::UpdateWirelessGatewayInputBuilder;
 
-impl UpdateWirelessGatewayInputBuilder {
+impl crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateWirelessGatewayFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateWirelessGatewayFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `JoinEuiFilters`.
     ///
     /// To override the contents of this collection use [`set_join_eui_filters`](Self::set_join_eui_filters).
@@ -168,6 +169,7 @@ impl UpdateWirelessGatewayFluentBuilder {
     pub fn get_join_eui_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         self.inner.get_join_eui_filters()
     }
+    ///
     /// Appends an item to `NetIdFilters`.
     ///
     /// To override the contents of this collection use [`set_net_id_filters`](Self::set_net_id_filters).

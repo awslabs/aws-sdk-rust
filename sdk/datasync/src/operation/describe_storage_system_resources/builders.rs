@@ -3,7 +3,7 @@ pub use crate::operation::describe_storage_system_resources::_describe_storage_s
 
 pub use crate::operation::describe_storage_system_resources::_describe_storage_system_resources_input::DescribeStorageSystemResourcesInputBuilder;
 
-impl DescribeStorageSystemResourcesInputBuilder {
+impl crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::DiscoveryResourceType> {
         self.inner.get_resource_type()
     }
+    ///
     /// Appends an item to `ResourceIds`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
@@ -160,6 +161,7 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_ids()
     }
+    ///
     /// Adds a key-value pair to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).

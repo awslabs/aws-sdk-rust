@@ -3,7 +3,7 @@ pub use crate::operation::list_savings_plans_purchase_recommendation_generation:
 
 pub use crate::operation::list_savings_plans_purchase_recommendation_generation::_list_savings_plans_purchase_recommendation_generation_input::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder;
 
-impl ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
+impl crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,10 +25,10 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
 /// <p>Retrieves a list of your historical recommendation generations within the past 30 days.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput,
@@ -103,12 +103,12 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -126,6 +126,7 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
     pub fn get_generation_status(&self) -> &::std::option::Option<crate::types::GenerationStatus> {
         self.inner.get_generation_status()
     }
+    ///
     /// Appends an item to `RecommendationIds`.
     ///
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).

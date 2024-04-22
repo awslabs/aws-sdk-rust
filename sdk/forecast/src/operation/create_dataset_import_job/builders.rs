@@ -3,7 +3,7 @@ pub use crate::operation::create_dataset_import_job::_create_dataset_import_job_
 
 pub use crate::operation::create_dataset_import_job::_create_dataset_import_job_input::CreateDatasetImportJobInputBuilder;
 
-impl CreateDatasetImportJobInputBuilder {
+impl crate::operation::create_dataset_import_job::builders::CreateDatasetImportJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CreateDatasetImportJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -262,6 +262,7 @@ impl CreateDatasetImportJobFluentBuilder {
     pub fn get_geolocation_format(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_geolocation_format()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::update_app_version::_update_app_version_output::Update
 
 pub use crate::operation::update_app_version::_update_app_version_input::UpdateAppVersionInputBuilder;
 
-impl UpdateAppVersionInputBuilder {
+impl crate::operation::update_app_version::builders::UpdateAppVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateAppVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,6 +124,7 @@ impl UpdateAppVersionFluentBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_arn()
     }
+    ///
     /// Adds a key-value pair to `additionalInfo`.
     ///
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).

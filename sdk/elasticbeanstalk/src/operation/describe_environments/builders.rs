@@ -3,7 +3,7 @@ pub use crate::operation::describe_environments::_describe_environments_output::
 
 pub use crate::operation::describe_environments::_describe_environments_input::DescribeEnvironmentsInputBuilder;
 
-impl DescribeEnvironmentsInputBuilder {
+impl crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeEnvironmentsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl DescribeEnvironmentsFluentBuilder {
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_label()
     }
+    ///
     /// Appends an item to `EnvironmentIds`.
     ///
     /// To override the contents of this collection use [`set_environment_ids`](Self::set_environment_ids).
@@ -154,6 +155,7 @@ impl DescribeEnvironmentsFluentBuilder {
     pub fn get_environment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_environment_ids()
     }
+    ///
     /// Appends an item to `EnvironmentNames`.
     ///
     /// To override the contents of this collection use [`set_environment_names`](Self::set_environment_names).

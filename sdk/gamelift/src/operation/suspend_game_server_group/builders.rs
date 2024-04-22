@@ -3,7 +3,7 @@ pub use crate::operation::suspend_game_server_group::_suspend_game_server_group_
 
 pub use crate::operation::suspend_game_server_group::_suspend_game_server_group_input::SuspendGameServerGroupInputBuilder;
 
-impl SuspendGameServerGroupInputBuilder {
+impl crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl SuspendGameServerGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -130,6 +130,7 @@ impl SuspendGameServerGroupFluentBuilder {
     pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_server_group_name()
     }
+    ///
     /// Appends an item to `SuspendActions`.
     ///
     /// To override the contents of this collection use [`set_suspend_actions`](Self::set_suspend_actions).

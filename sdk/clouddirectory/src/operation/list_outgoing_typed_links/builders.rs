@@ -3,7 +3,7 @@ pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_
 
 pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_input::ListOutgoingTypedLinksInputBuilder;
 
-impl ListOutgoingTypedLinksInputBuilder {
+impl crate::operation::list_outgoing_typed_links::builders::ListOutgoingTypedLinksInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListOutgoingTypedLinksFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl ListOutgoingTypedLinksFluentBuilder {
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
         self.inner.get_object_reference()
     }
+    ///
     /// Appends an item to `FilterAttributeRanges`.
     ///
     /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).

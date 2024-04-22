@@ -3,7 +3,7 @@ pub use crate::operation::put_workflow_run_properties::_put_workflow_run_propert
 
 pub use crate::operation::put_workflow_run_properties::_put_workflow_run_properties_input::PutWorkflowRunPropertiesInputBuilder;
 
-impl PutWorkflowRunPropertiesInputBuilder {
+impl crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutWorkflowRunPropertiesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl PutWorkflowRunPropertiesFluentBuilder {
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_run_id()
     }
+    ///
     /// Adds a key-value pair to `RunProperties`.
     ///
     /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).

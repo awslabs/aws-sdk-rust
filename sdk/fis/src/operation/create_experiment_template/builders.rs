@@ -3,7 +3,7 @@ pub use crate::operation::create_experiment_template::_create_experiment_templat
 
 pub use crate::operation::create_experiment_template::_create_experiment_template_input::CreateExperimentTemplateInputBuilder;
 
-impl CreateExperimentTemplateInputBuilder {
+impl crate::operation::create_experiment_template::builders::CreateExperimentTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl CreateExperimentTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -146,6 +146,7 @@ impl CreateExperimentTemplateFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `stopConditions`.
     ///
     /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
@@ -167,6 +168,7 @@ impl CreateExperimentTemplateFluentBuilder {
     pub fn get_stop_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateExperimentTemplateStopConditionInput>> {
         self.inner.get_stop_conditions()
     }
+    ///
     /// Adds a key-value pair to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -190,6 +192,7 @@ impl CreateExperimentTemplateFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>> {
         self.inner.get_targets()
     }
+    ///
     /// Adds a key-value pair to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -227,6 +230,7 @@ impl CreateExperimentTemplateFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

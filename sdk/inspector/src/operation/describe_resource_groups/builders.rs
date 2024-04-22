@@ -3,7 +3,7 @@ pub use crate::operation::describe_resource_groups::_describe_resource_groups_ou
 
 pub use crate::operation::describe_resource_groups::_describe_resource_groups_input::DescribeResourceGroupsInputBuilder;
 
-impl DescribeResourceGroupsInputBuilder {
+impl crate::operation::describe_resource_groups::builders::DescribeResourceGroupsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl DescribeResourceGroupsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `resourceGroupArns`.
     ///
     /// To override the contents of this collection use [`set_resource_group_arns`](Self::set_resource_group_arns).

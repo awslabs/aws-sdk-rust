@@ -3,7 +3,7 @@ pub use crate::operation::create_cross_account_attachment::_create_cross_account
 
 pub use crate::operation::create_cross_account_attachment::_create_cross_account_attachment_input::CreateCrossAccountAttachmentInputBuilder;
 
-impl CreateCrossAccountAttachmentInputBuilder {
+impl crate::operation::create_cross_account_attachment::builders::CreateCrossAccountAttachmentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl CreateCrossAccountAttachmentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -126,6 +126,7 @@ impl CreateCrossAccountAttachmentFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `Principals`.
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
@@ -144,6 +145,7 @@ impl CreateCrossAccountAttachmentFluentBuilder {
     pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_principals()
     }
+    ///
     /// Appends an item to `Resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -176,6 +178,7 @@ impl CreateCrossAccountAttachmentFluentBuilder {
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idempotency_token()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

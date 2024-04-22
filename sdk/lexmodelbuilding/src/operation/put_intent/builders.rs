@@ -3,7 +3,7 @@ pub use crate::operation::put_intent::_put_intent_output::PutIntentOutputBuilder
 
 pub use crate::operation::put_intent::_put_intent_input::PutIntentInputBuilder;
 
-impl PutIntentInputBuilder {
+impl crate::operation::put_intent::builders::PutIntentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -117,12 +117,12 @@ impl PutIntentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -160,6 +160,7 @@ impl PutIntentFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `slots`.
     ///
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
@@ -178,6 +179,7 @@ impl PutIntentFluentBuilder {
     pub fn get_slots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Slot>> {
         self.inner.get_slots()
     }
+    ///
     /// Appends an item to `sampleUtterances`.
     ///
     /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
@@ -411,6 +413,7 @@ impl PutIntentFluentBuilder {
     pub fn get_kendra_configuration(&self) -> &::std::option::Option<crate::types::KendraConfiguration> {
         self.inner.get_kendra_configuration()
     }
+    ///
     /// Appends an item to `inputContexts`.
     ///
     /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
@@ -429,6 +432,7 @@ impl PutIntentFluentBuilder {
     pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
         self.inner.get_input_contexts()
     }
+    ///
     /// Appends an item to `outputContexts`.
     ///
     /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).

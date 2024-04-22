@@ -3,7 +3,7 @@ pub use crate::operation::put_metric_data::_put_metric_data_output::PutMetricDat
 
 pub use crate::operation::put_metric_data::_put_metric_data_input::PutMetricDataInputBuilder;
 
-impl PutMetricDataInputBuilder {
+impl crate::operation::put_metric_data::builders::PutMetricDataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -112,12 +112,12 @@ impl PutMetricDataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl PutMetricDataFluentBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
+    ///
     /// Appends an item to `MetricData`.
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).

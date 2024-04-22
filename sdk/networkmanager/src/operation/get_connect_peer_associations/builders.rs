@@ -3,7 +3,7 @@ pub use crate::operation::get_connect_peer_associations::_get_connect_peer_assoc
 
 pub use crate::operation::get_connect_peer_associations::_get_connect_peer_associations_input::GetConnectPeerAssociationsInputBuilder;
 
-impl GetConnectPeerAssociationsInputBuilder {
+impl crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetConnectPeerAssociationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl GetConnectPeerAssociationsFluentBuilder {
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_network_id()
     }
+    ///
     /// Appends an item to `ConnectPeerIds`.
     ///
     /// To override the contents of this collection use [`set_connect_peer_ids`](Self::set_connect_peer_ids).

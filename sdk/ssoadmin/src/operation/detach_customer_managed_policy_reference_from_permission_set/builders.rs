@@ -3,29 +3,29 @@ pub use crate::operation::detach_customer_managed_policy_reference_from_permissi
 
 pub use crate::operation::detach_customer_managed_policy_reference_from_permission_set::_detach_customer_managed_policy_reference_from_permission_set_input::DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder;
 
-impl DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
-    /// Sends a request with this input using the given client.
+impl crate::operation::detach_customer_managed_policy_reference_from_permission_set::builders::DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
+                    /// Sends a request with this input using the given client.
                     pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
                         crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput,
                         ::aws_smithy_runtime_api::client::result::SdkError<
                             crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError,
                             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
                         >
-    >{
-        let mut fluent_builder = client.detach_customer_managed_policy_reference_from_permission_set();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
-}
+                    > {
+                        let mut fluent_builder = client.detach_customer_managed_policy_reference_from_permission_set();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+                }
 /// Fluent builder constructing a request to `DetachCustomerManagedPolicyReferenceFromPermissionSet`.
 ///
 /// <p>Detaches the specified customer managed policy from the specified <code>PermissionSet</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::detach_customer_managed_policy_reference_from_permission_set::builders::DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::detach_customer_managed_policy_reference_from_permission_set::builders::DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput,
@@ -88,12 +88,12 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

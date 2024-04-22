@@ -3,7 +3,7 @@ pub use crate::operation::batch_stop::_batch_stop_output::BatchStopOutputBuilder
 
 pub use crate::operation::batch_stop::_batch_stop_input::BatchStopInputBuilder;
 
-impl BatchStopInputBuilder {
+impl crate::operation::batch_stop::builders::BatchStopInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,15 +93,16 @@ impl BatchStopFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `ChannelIds`.
     ///
     /// To override the contents of this collection use [`set_channel_ids`](Self::set_channel_ids).
@@ -120,6 +121,7 @@ impl BatchStopFluentBuilder {
     pub fn get_channel_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_channel_ids()
     }
+    ///
     /// Appends an item to `MultiplexIds`.
     ///
     /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).

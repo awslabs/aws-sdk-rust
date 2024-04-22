@@ -3,7 +3,7 @@ pub use crate::operation::create_network_analyzer_configuration::_create_network
 
 pub use crate::operation::create_network_analyzer_configuration::_create_network_analyzer_configuration_input::CreateNetworkAnalyzerConfigurationInputBuilder;
 
-impl CreateNetworkAnalyzerConfigurationInputBuilder {
+impl crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
         self.inner.get_trace_content()
     }
+    ///
     /// Appends an item to `WirelessDevices`.
     ///
     /// To override the contents of this collection use [`set_wireless_devices`](Self::set_wireless_devices).
@@ -154,6 +155,7 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_wireless_devices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_wireless_devices()
     }
+    ///
     /// Appends an item to `WirelessGateways`.
     ///
     /// To override the contents of this collection use [`set_wireless_gateways`](Self::set_wireless_gateways).
@@ -186,6 +188,7 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -218,6 +221,7 @@ impl CreateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    ///
     /// Appends an item to `MulticastGroups`.
     ///
     /// To override the contents of this collection use [`set_multicast_groups`](Self::set_multicast_groups).

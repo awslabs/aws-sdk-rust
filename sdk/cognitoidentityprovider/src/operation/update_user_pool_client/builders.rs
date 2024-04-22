@@ -3,7 +3,7 @@ pub use crate::operation::update_user_pool_client::_update_user_pool_client_outp
 
 pub use crate::operation::update_user_pool_client::_update_user_pool_client_input::UpdateUserPoolClientInputBuilder;
 
-impl UpdateUserPoolClientInputBuilder {
+impl crate::operation::update_user_pool_client::builders::UpdateUserPoolClientInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl UpdateUserPoolClientFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -245,6 +245,7 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_token_validity_units(&self) -> &::std::option::Option<crate::types::TokenValidityUnitsType> {
         self.inner.get_token_validity_units()
     }
+    ///
     /// Appends an item to `ReadAttributes`.
     ///
     /// To override the contents of this collection use [`set_read_attributes`](Self::set_read_attributes).
@@ -266,6 +267,7 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_read_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_read_attributes()
     }
+    ///
     /// Appends an item to `WriteAttributes`.
     ///
     /// To override the contents of this collection use [`set_write_attributes`](Self::set_write_attributes).
@@ -290,6 +292,7 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_write_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_write_attributes()
     }
+    ///
     /// Appends an item to `ExplicitAuthFlows`.
     ///
     /// To override the contents of this collection use [`set_explicit_auth_flows`](Self::set_explicit_auth_flows).
@@ -356,6 +359,7 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_explicit_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>> {
         self.inner.get_explicit_auth_flows()
     }
+    ///
     /// Appends an item to `SupportedIdentityProviders`.
     ///
     /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
@@ -374,6 +378,7 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_supported_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_supported_identity_providers()
     }
+    ///
     /// Appends an item to `CallbackURLs`.
     ///
     /// To override the contents of this collection use [`set_callback_urls`](Self::set_callback_urls).
@@ -428,6 +433,7 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_callback_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_callback_urls()
     }
+    ///
     /// Appends an item to `LogoutURLs`.
     ///
     /// To override the contents of this collection use [`set_logout_urls`](Self::set_logout_urls).
@@ -496,6 +502,7 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_default_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_redirect_uri()
     }
+    ///
     /// Appends an item to `AllowedOAuthFlows`.
     ///
     /// To override the contents of this collection use [`set_allowed_o_auth_flows`](Self::set_allowed_o_auth_flows).
@@ -574,6 +581,7 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_allowed_o_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>> {
         self.inner.get_allowed_o_auth_flows()
     }
+    ///
     /// Appends an item to `AllowedOAuthScopes`.
     ///
     /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).

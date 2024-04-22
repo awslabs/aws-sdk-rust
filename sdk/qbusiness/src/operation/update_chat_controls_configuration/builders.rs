@@ -3,7 +3,7 @@ pub use crate::operation::update_chat_controls_configuration::_update_chat_contr
 
 pub use crate::operation::update_chat_controls_configuration::_update_chat_controls_configuration_input::UpdateChatControlsConfigurationInputBuilder;
 
-impl UpdateChatControlsConfigurationInputBuilder {
+impl crate::operation::update_chat_controls_configuration::builders::UpdateChatControlsConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     pub fn get_blocked_phrases_configuration_update(&self) -> &::std::option::Option<crate::types::BlockedPhrasesConfigurationUpdate> {
         self.inner.get_blocked_phrases_configuration_update()
     }
+    ///
     /// Appends an item to `topicConfigurationsToCreateOrUpdate`.
     ///
     /// To override the contents of this collection use [`set_topic_configurations_to_create_or_update`](Self::set_topic_configurations_to_create_or_update).
@@ -185,6 +186,7 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     pub fn get_topic_configurations_to_create_or_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
         self.inner.get_topic_configurations_to_create_or_update()
     }
+    ///
     /// Appends an item to `topicConfigurationsToDelete`.
     ///
     /// To override the contents of this collection use [`set_topic_configurations_to_delete`](Self::set_topic_configurations_to_delete).

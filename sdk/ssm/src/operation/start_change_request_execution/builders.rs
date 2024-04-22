@@ -3,7 +3,7 @@ pub use crate::operation::start_change_request_execution::_start_change_request_
 
 pub use crate::operation::start_change_request_execution::_start_change_request_execution_input::StartChangeRequestExecutionInputBuilder;
 
-impl StartChangeRequestExecutionInputBuilder {
+impl crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartChangeRequestExecutionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -156,6 +156,7 @@ impl StartChangeRequestExecutionFluentBuilder {
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_document_version()
     }
+    ///
     /// Adds a key-value pair to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -230,6 +231,7 @@ impl StartChangeRequestExecutionFluentBuilder {
     pub fn get_auto_approve(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_approve()
     }
+    ///
     /// Appends an item to `Runbooks`.
     ///
     /// To override the contents of this collection use [`set_runbooks`](Self::set_runbooks).
@@ -254,6 +256,7 @@ impl StartChangeRequestExecutionFluentBuilder {
     pub fn get_runbooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Runbook>> {
         self.inner.get_runbooks()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

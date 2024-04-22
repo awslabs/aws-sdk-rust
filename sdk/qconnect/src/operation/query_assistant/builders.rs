@@ -3,7 +3,7 @@ pub use crate::operation::query_assistant::_query_assistant_output::QueryAssista
 
 pub use crate::operation::query_assistant::_query_assistant_input::QueryAssistantInputBuilder;
 
-impl QueryAssistantInputBuilder {
+impl crate::operation::query_assistant::builders::QueryAssistantInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl QueryAssistantFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -190,6 +190,7 @@ impl QueryAssistantFluentBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }
+    ///
     /// Appends an item to `queryCondition`.
     ///
     /// To override the contents of this collection use [`set_query_condition`](Self::set_query_condition).

@@ -3,7 +3,7 @@ pub use crate::operation::describe_load_based_auto_scaling::_describe_load_based
 
 pub use crate::operation::describe_load_based_auto_scaling::_describe_load_based_auto_scaling_input::DescribeLoadBasedAutoScalingInputBuilder;
 
-impl DescribeLoadBasedAutoScalingInputBuilder {
+impl crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,15 +102,16 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `LayerIds`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).

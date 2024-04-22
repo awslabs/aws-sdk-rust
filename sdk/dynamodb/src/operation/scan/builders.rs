@@ -3,7 +3,7 @@ pub use crate::operation::scan::_scan_output::ScanOutputBuilder;
 
 pub use crate::operation::scan::_scan_input::ScanInputBuilder;
 
-impl ScanInputBuilder {
+impl crate::operation::scan::builders::ScanInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -94,12 +94,12 @@ impl ScanFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::scan::ScanOutput, crate::operation::scan::ScanError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -140,6 +140,7 @@ impl ScanFluentBuilder {
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_name()
     }
+    ///
     /// Appends an item to `AttributesToGet`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
@@ -231,6 +232,7 @@ impl ScanFluentBuilder {
     pub fn get_select(&self) -> &::std::option::Option<crate::types::Select> {
         self.inner.get_select()
     }
+    ///
     /// Adds a key-value pair to `ScanFilter`.
     ///
     /// To override the contents of this collection use [`set_scan_filter`](Self::set_scan_filter).
@@ -266,6 +268,7 @@ impl ScanFluentBuilder {
     pub fn get_conditional_operator(&self) -> &::std::option::Option<crate::types::ConditionalOperator> {
         self.inner.get_conditional_operator()
     }
+    ///
     /// Adds a key-value pair to `ExclusiveStartKey`.
     ///
     /// To override the contents of this collection use [`set_exclusive_start_key`](Self::set_exclusive_start_key).
@@ -425,6 +428,7 @@ impl ScanFluentBuilder {
     pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_filter_expression()
     }
+    ///
     /// Adds a key-value pair to `ExpressionAttributeNames`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
@@ -530,6 +534,7 @@ impl ScanFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_expression_attribute_names()
     }
+    ///
     /// Adds a key-value pair to `ExpressionAttributeValues`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).

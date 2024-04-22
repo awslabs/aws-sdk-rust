@@ -3,7 +3,7 @@ pub use crate::operation::put_environment_blueprint_configuration::_put_environm
 
 pub use crate::operation::put_environment_blueprint_configuration::_put_environment_blueprint_configuration_input::PutEnvironmentBlueprintConfigurationInputBuilder;
 
-impl PutEnvironmentBlueprintConfigurationInputBuilder {
+impl crate::operation::put_environment_blueprint_configuration::builders::PutEnvironmentBlueprintConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl PutEnvironmentBlueprintConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl PutEnvironmentBlueprintConfigurationFluentBuilder {
     pub fn get_manage_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_manage_access_role_arn()
     }
+    ///
     /// Appends an item to `enabledRegions`.
     ///
     /// To override the contents of this collection use [`set_enabled_regions`](Self::set_enabled_regions).
@@ -183,6 +184,7 @@ impl PutEnvironmentBlueprintConfigurationFluentBuilder {
     pub fn get_enabled_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_enabled_regions()
     }
+    ///
     /// Adds a key-value pair to `regionalParameters`.
     ///
     /// To override the contents of this collection use [`set_regional_parameters`](Self::set_regional_parameters).

@@ -3,7 +3,7 @@ pub use crate::operation::update_container_instances_state::_update_container_in
 
 pub use crate::operation::update_container_instances_state::_update_container_instances_state_input::UpdateContainerInstancesStateInputBuilder;
 
-impl UpdateContainerInstancesStateInputBuilder {
+impl crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -113,12 +113,12 @@ impl UpdateContainerInstancesStateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateContainerInstancesStateFluentBuilder {
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster()
     }
+    ///
     /// Appends an item to `containerInstances`.
     ///
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).

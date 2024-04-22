@@ -3,7 +3,7 @@ pub use crate::operation::update_id_namespace::_update_id_namespace_output::Upda
 
 pub use crate::operation::update_id_namespace::_update_id_namespace_input::UpdateIdNamespaceInputBuilder;
 
-impl UpdateIdNamespaceInputBuilder {
+impl crate::operation::update_id_namespace::builders::UpdateIdNamespaceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateIdNamespaceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateIdNamespaceFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `inputSourceConfig`.
     ///
     /// To override the contents of this collection use [`set_input_source_config`](Self::set_input_source_config).
@@ -154,6 +155,7 @@ impl UpdateIdNamespaceFluentBuilder {
     pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdNamespaceInputSource>> {
         self.inner.get_input_source_config()
     }
+    ///
     /// Appends an item to `idMappingWorkflowProperties`.
     ///
     /// To override the contents of this collection use [`set_id_mapping_workflow_properties`](Self::set_id_mapping_workflow_properties).

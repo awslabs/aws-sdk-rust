@@ -3,7 +3,7 @@ pub use crate::operation::create_sync_job::_create_sync_job_output::CreateSyncJo
 
 pub use crate::operation::create_sync_job::_create_sync_job_input::CreateSyncJobInputBuilder;
 
-impl CreateSyncJobInputBuilder {
+impl crate::operation::create_sync_job::builders::CreateSyncJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSyncJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -156,6 +156,7 @@ impl CreateSyncJobFluentBuilder {
     pub fn get_sync_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sync_role()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

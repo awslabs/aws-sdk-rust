@@ -3,7 +3,7 @@ pub use crate::operation::update_auto_scaling_group::_update_auto_scaling_group_
 
 pub use crate::operation::update_auto_scaling_group::_update_auto_scaling_group_input::UpdateAutoScalingGroupInputBuilder;
 
-impl UpdateAutoScalingGroupInputBuilder {
+impl crate::operation::update_auto_scaling_group::builders::UpdateAutoScalingGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -112,12 +112,12 @@ impl UpdateAutoScalingGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -242,6 +242,7 @@ impl UpdateAutoScalingGroupFluentBuilder {
     pub fn get_default_cooldown(&self) -> &::std::option::Option<i32> {
         self.inner.get_default_cooldown()
     }
+    ///
     /// Appends an item to `AvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -328,6 +329,7 @@ impl UpdateAutoScalingGroupFluentBuilder {
     pub fn get_vpc_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_zone_identifier()
     }
+    ///
     /// Appends an item to `TerminationPolicies`.
     ///
     /// To override the contents of this collection use [`set_termination_policies`](Self::set_termination_policies).

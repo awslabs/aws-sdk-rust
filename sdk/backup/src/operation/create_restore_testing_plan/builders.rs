@@ -3,7 +3,7 @@ pub use crate::operation::create_restore_testing_plan::_create_restore_testing_p
 
 pub use crate::operation::create_restore_testing_plan::_create_restore_testing_plan_input::CreateRestoreTestingPlanInputBuilder;
 
-impl CreateRestoreTestingPlanInputBuilder {
+impl crate::operation::create_restore_testing_plan::builders::CreateRestoreTestingPlanInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateRestoreTestingPlanFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -140,6 +140,7 @@ impl CreateRestoreTestingPlanFluentBuilder {
     pub fn get_restore_testing_plan(&self) -> &::std::option::Option<crate::types::RestoreTestingPlanForCreate> {
         self.inner.get_restore_testing_plan()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

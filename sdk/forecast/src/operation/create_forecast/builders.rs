@@ -3,7 +3,7 @@ pub use crate::operation::create_forecast::_create_forecast_output::CreateForeca
 
 pub use crate::operation::create_forecast::_create_forecast_input::CreateForecastInputBuilder;
 
-impl CreateForecastInputBuilder {
+impl crate::operation::create_forecast::builders::CreateForecastInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl CreateForecastFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -144,6 +144,7 @@ impl CreateForecastFluentBuilder {
     pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_predictor_arn()
     }
+    ///
     /// Appends an item to `ForecastTypes`.
     ///
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
@@ -165,6 +166,7 @@ impl CreateForecastFluentBuilder {
     pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_forecast_types()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

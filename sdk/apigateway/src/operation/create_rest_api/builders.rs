@@ -3,7 +3,7 @@ pub use crate::operation::create_rest_api::_create_rest_api_output::CreateRestAp
 
 pub use crate::operation::create_rest_api::_create_rest_api_input::CreateRestApiInputBuilder;
 
-impl CreateRestApiInputBuilder {
+impl crate::operation::create_rest_api::builders::CreateRestApiInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateRestApiFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateRestApiFluentBuilder {
     pub fn get_clone_from(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_clone_from()
     }
+    ///
     /// Appends an item to `binaryMediaTypes`.
     ///
     /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
@@ -238,6 +239,7 @@ impl CreateRestApiFluentBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

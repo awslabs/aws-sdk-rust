@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_user_access_tasks::_batch_get_user_access_ta
 
 pub use crate::operation::batch_get_user_access_tasks::_batch_get_user_access_tasks_input::BatchGetUserAccessTasksInputBuilder;
 
-impl BatchGetUserAccessTasksInputBuilder {
+impl crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl BatchGetUserAccessTasksFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl BatchGetUserAccessTasksFluentBuilder {
     pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_bundle_identifier()
     }
+    ///
     /// Appends an item to `taskIdList`.
     ///
     /// To override the contents of this collection use [`set_task_id_list`](Self::set_task_id_list).

@@ -3,7 +3,7 @@ pub use crate::operation::put_backup_vault_notifications::_put_backup_vault_noti
 
 pub use crate::operation::put_backup_vault_notifications::_put_backup_vault_notifications_input::PutBackupVaultNotificationsInputBuilder;
 
-impl PutBackupVaultNotificationsInputBuilder {
+impl crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutBackupVaultNotificationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl PutBackupVaultNotificationsFluentBuilder {
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sns_topic_arn()
     }
+    ///
     /// Appends an item to `BackupVaultEvents`.
     ///
     /// To override the contents of this collection use [`set_backup_vault_events`](Self::set_backup_vault_events).

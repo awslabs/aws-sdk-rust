@@ -3,7 +3,7 @@ pub use crate::operation::put_permission::_put_permission_output::PutPermissionO
 
 pub use crate::operation::put_permission::_put_permission_input::PutPermissionInputBuilder;
 
-impl PutPermissionInputBuilder {
+impl crate::operation::put_permission::builders::PutPermissionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl PutPermissionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl PutPermissionFluentBuilder {
     pub fn get_action_group(&self) -> &::std::option::Option<crate::types::ActionGroup> {
         self.inner.get_action_group()
     }
+    ///
     /// Appends an item to `principals`.
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).

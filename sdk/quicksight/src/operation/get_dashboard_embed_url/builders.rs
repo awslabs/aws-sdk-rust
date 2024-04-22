@@ -3,7 +3,7 @@ pub use crate::operation::get_dashboard_embed_url::_get_dashboard_embed_url_outp
 
 pub use crate::operation::get_dashboard_embed_url::_get_dashboard_embed_url_input::GetDashboardEmbedUrlInputBuilder;
 
-impl GetDashboardEmbedUrlInputBuilder {
+impl crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -114,12 +114,12 @@ impl GetDashboardEmbedUrlFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -276,6 +276,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
+    ///
     /// Appends an item to `AdditionalDashboardIds`.
     ///
     /// To override the contents of this collection use [`set_additional_dashboard_ids`](Self::set_additional_dashboard_ids).

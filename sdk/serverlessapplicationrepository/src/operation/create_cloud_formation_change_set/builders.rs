@@ -3,7 +3,7 @@ pub use crate::operation::create_cloud_formation_change_set::_create_cloud_forma
 
 pub use crate::operation::create_cloud_formation_change_set::_create_cloud_formation_change_set_input::CreateCloudFormationChangeSetInputBuilder;
 
-impl CreateCloudFormationChangeSetInputBuilder {
+impl crate::operation::create_cloud_formation_change_set::builders::CreateCloudFormationChangeSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateCloudFormationChangeSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateCloudFormationChangeSetFluentBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
+    ///
     /// Appends an item to `Capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
@@ -197,6 +198,7 @@ impl CreateCloudFormationChangeSetFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `NotificationArns`.
     ///
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
@@ -215,6 +217,7 @@ impl CreateCloudFormationChangeSetFluentBuilder {
     pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_notification_arns()
     }
+    ///
     /// Appends an item to `ParameterOverrides`.
     ///
     /// To override the contents of this collection use [`set_parameter_overrides`](Self::set_parameter_overrides).
@@ -233,6 +236,7 @@ impl CreateCloudFormationChangeSetFluentBuilder {
     pub fn get_parameter_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
         self.inner.get_parameter_overrides()
     }
+    ///
     /// Appends an item to `ResourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -296,6 +300,7 @@ impl CreateCloudFormationChangeSetFluentBuilder {
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_name()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

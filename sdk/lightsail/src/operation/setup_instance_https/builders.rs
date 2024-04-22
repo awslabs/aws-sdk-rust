@@ -3,7 +3,7 @@ pub use crate::operation::setup_instance_https::_setup_instance_https_output::Se
 
 pub use crate::operation::setup_instance_https::_setup_instance_https_input::SetupInstanceHttpsInputBuilder;
 
-impl SetupInstanceHttpsInputBuilder {
+impl crate::operation::setup_instance_https::builders::SetupInstanceHttpsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl SetupInstanceHttpsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl SetupInstanceHttpsFluentBuilder {
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_email_address()
     }
+    ///
     /// Appends an item to `domainNames`.
     ///
     /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).

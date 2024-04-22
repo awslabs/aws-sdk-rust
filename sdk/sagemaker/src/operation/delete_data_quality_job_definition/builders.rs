@@ -3,7 +3,7 @@ pub use crate::operation::delete_data_quality_job_definition::_delete_data_quali
 
 pub use crate::operation::delete_data_quality_job_definition::_delete_data_quality_job_definition_input::DeleteDataQualityJobDefinitionInputBuilder;
 
-impl DeleteDataQualityJobDefinitionInputBuilder {
+impl crate::operation::delete_data_quality_job_definition::builders::DeleteDataQualityJobDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DeleteDataQualityJobDefinitionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

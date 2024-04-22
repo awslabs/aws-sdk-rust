@@ -3,7 +3,7 @@ pub use crate::operation::update_application_settings::_update_application_setti
 
 pub use crate::operation::update_application_settings::_update_application_settings_input::UpdateApplicationSettingsInputBuilder;
 
-impl UpdateApplicationSettingsInputBuilder {
+impl crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateApplicationSettingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateApplicationSettingsFluentBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
+    ///
     /// Appends an item to `CredentialsToAddOrUpdate`.
     ///
     /// To override the contents of this collection use [`set_credentials_to_add_or_update`](Self::set_credentials_to_add_or_update).
@@ -140,6 +141,7 @@ impl UpdateApplicationSettingsFluentBuilder {
     pub fn get_credentials_to_add_or_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         self.inner.get_credentials_to_add_or_update()
     }
+    ///
     /// Appends an item to `CredentialsToRemove`.
     ///
     /// To override the contents of this collection use [`set_credentials_to_remove`](Self::set_credentials_to_remove).

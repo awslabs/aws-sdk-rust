@@ -3,7 +3,7 @@ pub use crate::operation::put_method::_put_method_output::PutMethodOutputBuilder
 
 pub use crate::operation::put_method::_put_method_input::PutMethodInputBuilder;
 
-impl PutMethodInputBuilder {
+impl crate::operation::put_method::builders::PutMethodInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl PutMethodFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -200,6 +200,7 @@ impl PutMethodFluentBuilder {
     pub fn get_operation_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_name()
     }
+    ///
     /// Adds a key-value pair to `requestParameters`.
     ///
     /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
@@ -218,6 +219,7 @@ impl PutMethodFluentBuilder {
     pub fn get_request_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         self.inner.get_request_parameters()
     }
+    ///
     /// Adds a key-value pair to `requestModels`.
     ///
     /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
@@ -257,6 +259,7 @@ impl PutMethodFluentBuilder {
     pub fn get_request_validator_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_validator_id()
     }
+    ///
     /// Appends an item to `authorizationScopes`.
     ///
     /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).

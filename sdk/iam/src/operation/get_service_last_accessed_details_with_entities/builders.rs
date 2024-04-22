@@ -3,7 +3,7 @@ pub use crate::operation::get_service_last_accessed_details_with_entities::_get_
 
 pub use crate::operation::get_service_last_accessed_details_with_entities::_get_service_last_accessed_details_with_entities_input::GetServiceLastAccessedDetailsWithEntitiesInputBuilder;
 
-impl GetServiceLastAccessedDetailsWithEntitiesInputBuilder {
+impl crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -115,12 +115,12 @@ impl GetServiceLastAccessedDetailsWithEntitiesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

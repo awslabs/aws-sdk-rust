@@ -3,7 +3,7 @@ pub use crate::operation::enable_logging::_enable_logging_output::EnableLoggingO
 
 pub use crate::operation::enable_logging::_enable_logging_input::EnableLoggingInputBuilder;
 
-impl EnableLoggingInputBuilder {
+impl crate::operation::enable_logging::builders::EnableLoggingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl EnableLoggingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -245,6 +245,7 @@ impl EnableLoggingFluentBuilder {
     pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
         self.inner.get_log_destination_type()
     }
+    ///
     /// Appends an item to `LogExports`.
     ///
     /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).

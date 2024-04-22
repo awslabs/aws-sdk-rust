@@ -3,7 +3,7 @@ pub use crate::operation::describe_public_ipv4_pools::_describe_public_ipv4_pool
 
 pub use crate::operation::describe_public_ipv4_pools::_describe_public_ipv4_pools_input::DescribePublicIpv4PoolsInputBuilder;
 
-impl DescribePublicIpv4PoolsInputBuilder {
+impl crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribePublicIpv4PoolsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribePublicIpv4PoolsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator {
         crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `PoolIds`.
     ///
     /// To override the contents of this collection use [`set_pool_ids`](Self::set_pool_ids).
@@ -160,6 +161,7 @@ impl DescribePublicIpv4PoolsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

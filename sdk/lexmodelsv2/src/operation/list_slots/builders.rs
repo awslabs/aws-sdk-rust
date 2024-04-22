@@ -3,7 +3,7 @@ pub use crate::operation::list_slots::_list_slots_output::ListSlotsOutputBuilder
 
 pub use crate::operation::list_slots::_list_slots_input::ListSlotsInputBuilder;
 
-impl ListSlotsInputBuilder {
+impl crate::operation::list_slots::builders::ListSlotsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl ListSlotsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl ListSlotsFluentBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SlotSortBy> {
         self.inner.get_sort_by()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

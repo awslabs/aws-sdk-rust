@@ -3,7 +3,7 @@ pub use crate::operation::create_session::_create_session_output::CreateSessionO
 
 pub use crate::operation::create_session::_create_session_input::CreateSessionInputBuilder;
 
-impl CreateSessionInputBuilder {
+impl crate::operation::create_session::builders::CreateSessionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSessionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl CreateSessionFluentBuilder {
     pub fn get_idle_timeout(&self) -> &::std::option::Option<i32> {
         self.inner.get_idle_timeout()
     }
+    ///
     /// Adds a key-value pair to `DefaultArguments`.
     ///
     /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
@@ -337,6 +338,7 @@ impl CreateSessionFluentBuilder {
     pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_glue_version()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

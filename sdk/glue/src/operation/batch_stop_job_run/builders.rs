@@ -3,7 +3,7 @@ pub use crate::operation::batch_stop_job_run::_batch_stop_job_run_output::BatchS
 
 pub use crate::operation::batch_stop_job_run::_batch_stop_job_run_input::BatchStopJobRunInputBuilder;
 
-impl BatchStopJobRunInputBuilder {
+impl crate::operation::batch_stop_job_run::builders::BatchStopJobRunInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchStopJobRunFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl BatchStopJobRunFluentBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
+    ///
     /// Appends an item to `JobRunIds`.
     ///
     /// To override the contents of this collection use [`set_job_run_ids`](Self::set_job_run_ids).

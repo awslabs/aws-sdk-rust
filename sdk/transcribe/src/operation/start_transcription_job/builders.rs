@@ -3,7 +3,7 @@ pub use crate::operation::start_transcription_job::_start_transcription_job_outp
 
 pub use crate::operation::start_transcription_job::_start_transcription_job_input::StartTranscriptionJobInputBuilder;
 
-impl StartTranscriptionJobInputBuilder {
+impl crate::operation::start_transcription_job::builders::StartTranscriptionJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl StartTranscriptionJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -364,6 +364,7 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_encryption_kms_key_id()
     }
+    ///
     /// Adds a key-value pair to `KMSEncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_kms_encryption_context`](Self::set_kms_encryption_context).
@@ -503,6 +504,7 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn get_identify_multiple_languages(&self) -> &::std::option::Option<bool> {
         self.inner.get_identify_multiple_languages()
     }
+    ///
     /// Appends an item to `LanguageOptions`.
     ///
     /// To override the contents of this collection use [`set_language_options`](Self::set_language_options).
@@ -544,6 +546,7 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn get_subtitles(&self) -> &::std::option::Option<crate::types::Subtitles> {
         self.inner.get_subtitles()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -565,6 +568,7 @@ impl StartTranscriptionJobFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Adds a key-value pair to `LanguageIdSettings`.
     ///
     /// To override the contents of this collection use [`set_language_id_settings`](Self::set_language_id_settings).
@@ -597,6 +601,7 @@ impl StartTranscriptionJobFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>> {
         self.inner.get_language_id_settings()
     }
+    ///
     /// Appends an item to `ToxicityDetection`.
     ///
     /// To override the contents of this collection use [`set_toxicity_detection`](Self::set_toxicity_detection).

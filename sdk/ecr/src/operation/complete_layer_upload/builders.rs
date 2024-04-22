@@ -3,7 +3,7 @@ pub use crate::operation::complete_layer_upload::_complete_layer_upload_output::
 
 pub use crate::operation::complete_layer_upload::_complete_layer_upload_input::CompleteLayerUploadInputBuilder;
 
-impl CompleteLayerUploadInputBuilder {
+impl crate::operation::complete_layer_upload::builders::CompleteLayerUploadInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CompleteLayerUploadFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl CompleteLayerUploadFluentBuilder {
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_upload_id()
     }
+    ///
     /// Appends an item to `layerDigests`.
     ///
     /// To override the contents of this collection use [`set_layer_digests`](Self::set_layer_digests).

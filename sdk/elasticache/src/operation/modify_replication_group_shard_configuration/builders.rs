@@ -3,7 +3,7 @@ pub use crate::operation::modify_replication_group_shard_configuration::_modify_
 
 pub use crate::operation::modify_replication_group_shard_configuration::_modify_replication_group_shard_configuration_input::ModifyReplicationGroupShardConfigurationInputBuilder;
 
-impl ModifyReplicationGroupShardConfigurationInputBuilder {
+impl crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl ModifyReplicationGroupShardConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -157,6 +157,7 @@ impl ModifyReplicationGroupShardConfigurationFluentBuilder {
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         self.inner.get_apply_immediately()
     }
+    ///
     /// Appends an item to `ReshardingConfiguration`.
     ///
     /// To override the contents of this collection use [`set_resharding_configuration`](Self::set_resharding_configuration).
@@ -178,6 +179,7 @@ impl ModifyReplicationGroupShardConfigurationFluentBuilder {
     pub fn get_resharding_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>> {
         self.inner.get_resharding_configuration()
     }
+    ///
     /// Appends an item to `NodeGroupsToRemove`.
     ///
     /// To override the contents of this collection use [`set_node_groups_to_remove`](Self::set_node_groups_to_remove).
@@ -199,6 +201,7 @@ impl ModifyReplicationGroupShardConfigurationFluentBuilder {
     pub fn get_node_groups_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_node_groups_to_remove()
     }
+    ///
     /// Appends an item to `NodeGroupsToRetain`.
     ///
     /// To override the contents of this collection use [`set_node_groups_to_retain`](Self::set_node_groups_to_retain).

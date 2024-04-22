@@ -3,7 +3,7 @@ pub use crate::operation::get_resources::_get_resources_output::GetResourcesOutp
 
 pub use crate::operation::get_resources::_get_resources_input::GetResourcesInputBuilder;
 
-impl GetResourcesInputBuilder {
+impl crate::operation::get_resources::builders::GetResourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl GetResourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl GetResourcesFluentBuilder {
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pagination_token()
     }
+    ///
     /// Appends an item to `TagFilters`.
     ///
     /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
@@ -257,6 +258,7 @@ impl GetResourcesFluentBuilder {
     pub fn get_tags_per_page(&self) -> &::std::option::Option<i32> {
         self.inner.get_tags_per_page()
     }
+    ///
     /// Appends an item to `ResourceTypeFilters`.
     ///
     /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
@@ -315,6 +317,7 @@ impl GetResourcesFluentBuilder {
     pub fn get_exclude_compliant_resources(&self) -> &::std::option::Option<bool> {
         self.inner.get_exclude_compliant_resources()
     }
+    ///
     /// Appends an item to `ResourceARNList`.
     ///
     /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).

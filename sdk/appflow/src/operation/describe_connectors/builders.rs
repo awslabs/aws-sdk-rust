@@ -3,7 +3,7 @@ pub use crate::operation::describe_connectors::_describe_connectors_output::Desc
 
 pub use crate::operation::describe_connectors::_describe_connectors_input::DescribeConnectorsInputBuilder;
 
-impl DescribeConnectorsInputBuilder {
+impl crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeConnectorsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeConnectorsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator {
         crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `connectorTypes`.
     ///
     /// To override the contents of this collection use [`set_connector_types`](Self::set_connector_types).

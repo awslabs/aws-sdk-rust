@@ -3,7 +3,7 @@ pub use crate::operation::get_images::_get_images_output::GetImagesOutputBuilder
 
 pub use crate::operation::get_images::_get_images_input::GetImagesInputBuilder;
 
-impl GetImagesInputBuilder {
+impl crate::operation::get_images::builders::GetImagesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl GetImagesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl GetImagesFluentBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         self.inner.get_format()
     }
+    ///
     /// Adds a key-value pair to `FormatConfig`.
     ///
     /// To override the contents of this collection use [`set_format_config`](Self::set_format_config).

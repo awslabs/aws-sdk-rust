@@ -3,7 +3,7 @@ pub use crate::operation::describe_route_tables::_describe_route_tables_output::
 
 pub use crate::operation::describe_route_tables::_describe_route_tables_input::DescribeRouteTablesInputBuilder;
 
-impl DescribeRouteTablesInputBuilder {
+impl crate::operation::describe_route_tables::builders::DescribeRouteTablesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DescribeRouteTablesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -116,6 +116,7 @@ impl DescribeRouteTablesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_route_tables::paginator::DescribeRouteTablesPaginator {
         crate::operation::describe_route_tables::paginator::DescribeRouteTablesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -298,6 +299,7 @@ impl DescribeRouteTablesFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `RouteTableIds`.
     ///
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).

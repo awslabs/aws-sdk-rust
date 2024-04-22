@@ -3,7 +3,7 @@ pub use crate::operation::update_changeset::_update_changeset_output::UpdateChan
 
 pub use crate::operation::update_changeset::_update_changeset_input::UpdateChangesetInputBuilder;
 
-impl UpdateChangesetInputBuilder {
+impl crate::operation::update_changeset::builders::UpdateChangesetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateChangesetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl UpdateChangesetFluentBuilder {
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_changeset_id()
     }
+    ///
     /// Adds a key-value pair to `sourceParams`.
     ///
     /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
@@ -184,6 +185,7 @@ impl UpdateChangesetFluentBuilder {
     pub fn get_source_params(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_source_params()
     }
+    ///
     /// Adds a key-value pair to `formatParams`.
     ///
     /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).

@@ -3,7 +3,7 @@ pub use crate::operation::send_email::_send_email_output::SendEmailOutputBuilder
 
 pub use crate::operation::send_email::_send_email_input::SendEmailInputBuilder;
 
-impl SendEmailInputBuilder {
+impl crate::operation::send_email::builders::SendEmailInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SendEmailFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl SendEmailFluentBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         self.inner.get_destination()
     }
+    ///
     /// Appends an item to `ReplyToAddresses`.
     ///
     /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
@@ -182,6 +183,7 @@ impl SendEmailFluentBuilder {
     pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
         self.inner.get_content()
     }
+    ///
     /// Appends an item to `EmailTags`.
     ///
     /// To override the contents of this collection use [`set_email_tags`](Self::set_email_tags).

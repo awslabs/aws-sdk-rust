@@ -3,7 +3,7 @@ pub use crate::operation::post_time_series_data_points::_post_time_series_data_p
 
 pub use crate::operation::post_time_series_data_points::_post_time_series_data_points_input::PostTimeSeriesDataPointsInputBuilder;
 
-impl PostTimeSeriesDataPointsInputBuilder {
+impl crate::operation::post_time_series_data_points::builders::PostTimeSeriesDataPointsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PostTimeSeriesDataPointsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl PostTimeSeriesDataPointsFluentBuilder {
     pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::TimeSeriesEntityType> {
         self.inner.get_entity_type()
     }
+    ///
     /// Appends an item to `forms`.
     ///
     /// To override the contents of this collection use [`set_forms`](Self::set_forms).

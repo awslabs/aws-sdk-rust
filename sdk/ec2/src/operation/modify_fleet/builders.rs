@@ -3,7 +3,7 @@ pub use crate::operation::modify_fleet::_modify_fleet_output::ModifyFleetOutputB
 
 pub use crate::operation::modify_fleet::_modify_fleet_input::ModifyFleetInputBuilder;
 
-impl ModifyFleetInputBuilder {
+impl crate::operation::modify_fleet::builders::ModifyFleetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl ModifyFleetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -147,6 +147,7 @@ impl ModifyFleetFluentBuilder {
     pub fn get_excess_capacity_termination_policy(&self) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
         self.inner.get_excess_capacity_termination_policy()
     }
+    ///
     /// Appends an item to `LaunchTemplateConfigs`.
     ///
     /// To override the contents of this collection use [`set_launch_template_configs`](Self::set_launch_template_configs).

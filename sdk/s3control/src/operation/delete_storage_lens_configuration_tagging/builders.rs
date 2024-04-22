@@ -3,7 +3,7 @@ pub use crate::operation::delete_storage_lens_configuration_tagging::_delete_sto
 
 pub use crate::operation::delete_storage_lens_configuration_tagging::_delete_storage_lens_configuration_tagging_input::DeleteStorageLensConfigurationTaggingInputBuilder;
 
-impl DeleteStorageLensConfigurationTaggingInputBuilder {
+impl crate::operation::delete_storage_lens_configuration_tagging::builders::DeleteStorageLensConfigurationTaggingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl DeleteStorageLensConfigurationTaggingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

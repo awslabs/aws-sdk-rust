@@ -3,7 +3,7 @@ pub use crate::operation::put_session::_put_session_output::PutSessionOutputBuil
 
 pub use crate::operation::put_session::_put_session_input::PutSessionInputBuilder;
 
-impl PutSessionInputBuilder {
+impl crate::operation::put_session::builders::PutSessionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl PutSessionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl PutSessionFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
+    ///
     /// Adds a key-value pair to `sessionAttributes`.
     ///
     /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
@@ -190,6 +191,7 @@ impl PutSessionFluentBuilder {
     pub fn get_dialog_action(&self) -> &::std::option::Option<crate::types::DialogAction> {
         self.inner.get_dialog_action()
     }
+    ///
     /// Appends an item to `recentIntentSummaryView`.
     ///
     /// To override the contents of this collection use [`set_recent_intent_summary_view`](Self::set_recent_intent_summary_view).
@@ -318,6 +320,7 @@ impl PutSessionFluentBuilder {
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept()
     }
+    ///
     /// Appends an item to `activeContexts`.
     ///
     /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).

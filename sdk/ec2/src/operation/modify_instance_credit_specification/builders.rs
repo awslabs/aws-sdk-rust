@@ -3,7 +3,7 @@ pub use crate::operation::modify_instance_credit_specification::_modify_instance
 
 pub use crate::operation::modify_instance_credit_specification::_modify_instance_credit_specification_input::ModifyInstanceCreditSpecificationInputBuilder;
 
-impl ModifyInstanceCreditSpecificationInputBuilder {
+impl crate::operation::modify_instance_credit_specification::builders::ModifyInstanceCreditSpecificationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ModifyInstanceCreditSpecificationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl ModifyInstanceCreditSpecificationFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `InstanceCreditSpecifications`.
     ///
     /// To override the contents of this collection use [`set_instance_credit_specifications`](Self::set_instance_credit_specifications).

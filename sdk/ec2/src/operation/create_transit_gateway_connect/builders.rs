@@ -3,7 +3,7 @@ pub use crate::operation::create_transit_gateway_connect::_create_transit_gatewa
 
 pub use crate::operation::create_transit_gateway_connect::_create_transit_gateway_connect_input::CreateTransitGatewayConnectInputBuilder;
 
-impl CreateTransitGatewayConnectInputBuilder {
+impl crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateTransitGatewayConnectFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl CreateTransitGatewayConnectFluentBuilder {
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions> {
         self.inner.get_options()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

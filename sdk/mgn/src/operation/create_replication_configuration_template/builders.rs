@@ -3,7 +3,7 @@ pub use crate::operation::create_replication_configuration_template::_create_rep
 
 pub use crate::operation::create_replication_configuration_template::_create_replication_configuration_template_input::CreateReplicationConfigurationTemplateInputBuilder;
 
-impl CreateReplicationConfigurationTemplateInputBuilder {
+impl crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -140,6 +140,7 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     pub fn get_associate_default_security_group(&self) -> &::std::option::Option<bool> {
         self.inner.get_associate_default_security_group()
     }
+    ///
     /// Appends an item to `replicationServersSecurityGroupsIDs`.
     ///
     /// To override the contents of this collection use [`set_replication_servers_security_groups_ids`](Self::set_replication_servers_security_groups_ids).
@@ -273,6 +274,7 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     pub fn get_create_public_ip(&self) -> &::std::option::Option<bool> {
         self.inner.get_create_public_ip()
     }
+    ///
     /// Adds a key-value pair to `stagingAreaTags`.
     ///
     /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
@@ -312,6 +314,7 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     pub fn get_use_fips_endpoint(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_fips_endpoint()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

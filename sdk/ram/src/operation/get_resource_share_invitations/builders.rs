@@ -3,7 +3,7 @@ pub use crate::operation::get_resource_share_invitations::_get_resource_share_in
 
 pub use crate::operation::get_resource_share_invitations::_get_resource_share_invitations_input::GetResourceShareInvitationsInputBuilder;
 
-impl GetResourceShareInvitationsInputBuilder {
+impl crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetResourceShareInvitationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl GetResourceShareInvitationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator {
         crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `resourceShareInvitationArns`.
     ///
     /// To override the contents of this collection use [`set_resource_share_invitation_arns`](Self::set_resource_share_invitation_arns).
@@ -132,6 +133,7 @@ impl GetResourceShareInvitationsFluentBuilder {
     pub fn get_resource_share_invitation_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_share_invitation_arns()
     }
+    ///
     /// Appends an item to `resourceShareArns`.
     ///
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).

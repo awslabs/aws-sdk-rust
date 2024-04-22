@@ -3,7 +3,7 @@ pub use crate::operation::modify_fpga_image_attribute::_modify_fpga_image_attrib
 
 pub use crate::operation::modify_fpga_image_attribute::_modify_fpga_image_attribute_input::ModifyFpgaImageAttributeInputBuilder;
 
-impl ModifyFpgaImageAttributeInputBuilder {
+impl crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ModifyFpgaImageAttributeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
     pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::OperationType> {
         self.inner.get_operation_type()
     }
+    ///
     /// Appends an item to `UserIds`.
     ///
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
@@ -182,6 +183,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
     pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_ids()
     }
+    ///
     /// Appends an item to `UserGroups`.
     ///
     /// To override the contents of this collection use [`set_user_groups`](Self::set_user_groups).
@@ -200,6 +202,7 @@ impl ModifyFpgaImageAttributeFluentBuilder {
     pub fn get_user_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_groups()
     }
+    ///
     /// Appends an item to `ProductCodes`.
     ///
     /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).

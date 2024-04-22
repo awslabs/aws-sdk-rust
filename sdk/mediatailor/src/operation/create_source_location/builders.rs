@@ -3,7 +3,7 @@ pub use crate::operation::create_source_location::_create_source_location_output
 
 pub use crate::operation::create_source_location::_create_source_location_input::CreateSourceLocationInputBuilder;
 
-impl CreateSourceLocationInputBuilder {
+impl crate::operation::create_source_location::builders::CreateSourceLocationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSourceLocationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl CreateSourceLocationFluentBuilder {
     pub fn get_http_configuration(&self) -> &::std::option::Option<crate::types::HttpConfiguration> {
         self.inner.get_http_configuration()
     }
+    ///
     /// Appends an item to `SegmentDeliveryConfigurations`.
     ///
     /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
@@ -188,6 +189,7 @@ impl CreateSourceLocationFluentBuilder {
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_location_name()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

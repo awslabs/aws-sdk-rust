@@ -3,7 +3,7 @@ pub use crate::operation::describe_registration_attachments::_describe_registrat
 
 pub use crate::operation::describe_registration_attachments::_describe_registration_attachments_input::DescribeRegistrationAttachmentsInputBuilder;
 
-impl DescribeRegistrationAttachmentsInputBuilder {
+impl crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeRegistrationAttachmentsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeRegistrationAttachmentsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_registration_attachments::paginator::DescribeRegistrationAttachmentsPaginator {
         crate::operation::describe_registration_attachments::paginator::DescribeRegistrationAttachmentsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `RegistrationAttachmentIds`.
     ///
     /// To override the contents of this collection use [`set_registration_attachment_ids`](Self::set_registration_attachment_ids).
@@ -132,6 +133,7 @@ impl DescribeRegistrationAttachmentsFluentBuilder {
     pub fn get_registration_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_registration_attachment_ids()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

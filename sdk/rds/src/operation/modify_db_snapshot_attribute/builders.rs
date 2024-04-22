@@ -3,7 +3,7 @@ pub use crate::operation::modify_db_snapshot_attribute::_modify_db_snapshot_attr
 
 pub use crate::operation::modify_db_snapshot_attribute::_modify_db_snapshot_attribute_input::ModifyDbSnapshotAttributeInputBuilder;
 
-impl ModifyDbSnapshotAttributeInputBuilder {
+impl crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl ModifyDBSnapshotAttributeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl ModifyDBSnapshotAttributeFluentBuilder {
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attribute_name()
     }
+    ///
     /// Appends an item to `ValuesToAdd`.
     ///
     /// To override the contents of this collection use [`set_values_to_add`](Self::set_values_to_add).
@@ -171,6 +172,7 @@ impl ModifyDBSnapshotAttributeFluentBuilder {
     pub fn get_values_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_values_to_add()
     }
+    ///
     /// Appends an item to `ValuesToRemove`.
     ///
     /// To override the contents of this collection use [`set_values_to_remove`](Self::set_values_to_remove).

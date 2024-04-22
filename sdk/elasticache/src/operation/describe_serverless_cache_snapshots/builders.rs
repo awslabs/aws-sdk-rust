@@ -3,7 +3,7 @@ pub use crate::operation::describe_serverless_cache_snapshots::_describe_serverl
 
 pub use crate::operation::describe_serverless_cache_snapshots::_describe_serverless_cache_snapshots_input::DescribeServerlessCacheSnapshotsInputBuilder;
 
-impl DescribeServerlessCacheSnapshotsInputBuilder {
+impl crate::operation::describe_serverless_cache_snapshots::builders::DescribeServerlessCacheSnapshotsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeServerlessCacheSnapshotsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::create_bot::_create_bot_output::CreateBotOutputBuilder
 
 pub use crate::operation::create_bot::_create_bot_input::CreateBotInputBuilder;
 
-impl CreateBotInputBuilder {
+impl crate::operation::create_bot::builders::CreateBotInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl CreateBotFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateBotFluentBuilder {
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_idle_session_ttl_in_seconds()
     }
+    ///
     /// Adds a key-value pair to `botTags`.
     ///
     /// To override the contents of this collection use [`set_bot_tags`](Self::set_bot_tags).
@@ -196,6 +197,7 @@ impl CreateBotFluentBuilder {
     pub fn get_bot_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_bot_tags()
     }
+    ///
     /// Adds a key-value pair to `testBotAliasTags`.
     ///
     /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
@@ -235,6 +237,7 @@ impl CreateBotFluentBuilder {
     pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
         self.inner.get_bot_type()
     }
+    ///
     /// Appends an item to `botMembers`.
     ///
     /// To override the contents of this collection use [`set_bot_members`](Self::set_bot_members).

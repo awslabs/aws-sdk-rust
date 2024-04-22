@@ -3,7 +3,7 @@ pub use crate::operation::update_flow_output::_update_flow_output_output::Update
 
 pub use crate::operation::update_flow_output::_update_flow_output_input::UpdateFlowOutputInputBuilder;
 
-impl UpdateFlowOutputInputBuilder {
+impl crate::operation::update_flow_output::builders::UpdateFlowOutputInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl UpdateFlowOutputFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `CidrAllowList`.
     ///
     /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
@@ -196,6 +197,7 @@ impl UpdateFlowOutputFluentBuilder {
     pub fn get_max_latency(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_latency()
     }
+    ///
     /// Appends an item to `MediaStreamOutputConfigurations`.
     ///
     /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).

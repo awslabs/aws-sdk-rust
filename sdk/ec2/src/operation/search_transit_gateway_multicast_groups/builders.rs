@@ -3,7 +3,7 @@ pub use crate::operation::search_transit_gateway_multicast_groups::_search_trans
 
 pub use crate::operation::search_transit_gateway_multicast_groups::_search_transit_gateway_multicast_groups_input::SearchTransitGatewayMulticastGroupsInputBuilder;
 
-impl SearchTransitGatewayMulticastGroupsInputBuilder {
+impl crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl SearchTransitGatewayMulticastGroupsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -134,6 +134,7 @@ impl SearchTransitGatewayMulticastGroupsFluentBuilder {
     pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_multicast_domain_id()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

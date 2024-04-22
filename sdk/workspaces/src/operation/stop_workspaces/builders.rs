@@ -3,7 +3,7 @@ pub use crate::operation::stop_workspaces::_stop_workspaces_output::StopWorkspac
 
 pub use crate::operation::stop_workspaces::_stop_workspaces_input::StopWorkspacesInputBuilder;
 
-impl StopWorkspacesInputBuilder {
+impl crate::operation::stop_workspaces::builders::StopWorkspacesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl StopWorkspacesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `StopWorkspaceRequests`.
     ///
     /// To override the contents of this collection use [`set_stop_workspace_requests`](Self::set_stop_workspace_requests).

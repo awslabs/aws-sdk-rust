@@ -3,7 +3,7 @@ pub use crate::operation::update_program::_update_program_output::UpdateProgramO
 
 pub use crate::operation::update_program::_update_program_input::UpdateProgramInputBuilder;
 
-impl UpdateProgramInputBuilder {
+impl crate::operation::update_program::builders::UpdateProgramInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl UpdateProgramFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `AdBreaks`.
     ///
     /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
@@ -168,6 +169,7 @@ impl UpdateProgramFluentBuilder {
     pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::UpdateProgramScheduleConfiguration> {
         self.inner.get_schedule_configuration()
     }
+    ///
     /// Appends an item to `AudienceMedia`.
     ///
     /// To override the contents of this collection use [`set_audience_media`](Self::set_audience_media).

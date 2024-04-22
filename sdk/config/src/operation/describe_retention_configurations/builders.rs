@@ -3,7 +3,7 @@ pub use crate::operation::describe_retention_configurations::_describe_retention
 
 pub use crate::operation::describe_retention_configurations::_describe_retention_configurations_input::DescribeRetentionConfigurationsInputBuilder;
 
-impl DescribeRetentionConfigurationsInputBuilder {
+impl crate::operation::describe_retention_configurations::builders::DescribeRetentionConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DescribeRetentionConfigurationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -116,6 +116,7 @@ impl DescribeRetentionConfigurationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_retention_configurations::paginator::DescribeRetentionConfigurationsPaginator {
         crate::operation::describe_retention_configurations::paginator::DescribeRetentionConfigurationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `RetentionConfigurationNames`.
     ///
     /// To override the contents of this collection use [`set_retention_configuration_names`](Self::set_retention_configuration_names).

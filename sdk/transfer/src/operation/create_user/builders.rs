@@ -3,7 +3,7 @@ pub use crate::operation::create_user::_create_user_output::CreateUserOutputBuil
 
 pub use crate::operation::create_user::_create_user_input::CreateUserInputBuilder;
 
-impl CreateUserInputBuilder {
+impl crate::operation::create_user::builders::CreateUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl CreateUserFluentBuilder {
     pub fn get_home_directory_type(&self) -> &::std::option::Option<crate::types::HomeDirectoryType> {
         self.inner.get_home_directory_type()
     }
+    ///
     /// Appends an item to `HomeDirectoryMappings`.
     ///
     /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
@@ -299,6 +300,7 @@ impl CreateUserFluentBuilder {
     pub fn get_ssh_public_key_body(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ssh_public_key_body()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

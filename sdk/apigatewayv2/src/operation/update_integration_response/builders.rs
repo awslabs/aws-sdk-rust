@@ -3,7 +3,7 @@ pub use crate::operation::update_integration_response::_update_integration_respo
 
 pub use crate::operation::update_integration_response::_update_integration_response_input::UpdateIntegrationResponseInputBuilder;
 
-impl UpdateIntegrationResponseInputBuilder {
+impl crate::operation::update_integration_response::builders::UpdateIntegrationResponseInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateIntegrationResponseFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -187,6 +187,7 @@ impl UpdateIntegrationResponseFluentBuilder {
     pub fn get_integration_response_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_integration_response_key()
     }
+    ///
     /// Adds a key-value pair to `ResponseParameters`.
     ///
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
@@ -242,6 +243,7 @@ impl UpdateIntegrationResponseFluentBuilder {
     pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_response_parameters()
     }
+    ///
     /// Adds a key-value pair to `ResponseTemplates`.
     ///
     /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).

@@ -3,7 +3,7 @@ pub use crate::operation::describe_accelerators::_describe_accelerators_output::
 
 pub use crate::operation::describe_accelerators::_describe_accelerators_input::DescribeAcceleratorsInputBuilder;
 
-impl DescribeAcceleratorsInputBuilder {
+impl crate::operation::describe_accelerators::builders::DescribeAcceleratorsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeAcceleratorsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl DescribeAcceleratorsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginator {
         crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `acceleratorIds`.
     ///
     /// To override the contents of this collection use [`set_accelerator_ids`](Self::set_accelerator_ids).
@@ -133,6 +134,7 @@ impl DescribeAcceleratorsFluentBuilder {
     pub fn get_accelerator_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_accelerator_ids()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

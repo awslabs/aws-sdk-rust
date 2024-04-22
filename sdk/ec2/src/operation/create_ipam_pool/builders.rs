@@ -3,7 +3,7 @@ pub use crate::operation::create_ipam_pool::_create_ipam_pool_output::CreateIpam
 
 pub use crate::operation::create_ipam_pool::_create_ipam_pool_input::CreateIpamPoolInputBuilder;
 
-impl CreateIpamPoolInputBuilder {
+impl crate::operation::create_ipam_pool::builders::CreateIpamPoolInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateIpamPoolFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -269,6 +269,7 @@ impl CreateIpamPoolFluentBuilder {
     pub fn get_allocation_default_netmask_length(&self) -> &::std::option::Option<i32> {
         self.inner.get_allocation_default_netmask_length()
     }
+    ///
     /// Appends an item to `AllocationResourceTags`.
     ///
     /// To override the contents of this collection use [`set_allocation_resource_tags`](Self::set_allocation_resource_tags).
@@ -287,6 +288,7 @@ impl CreateIpamPoolFluentBuilder {
     pub fn get_allocation_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestIpamResourceTag>> {
         self.inner.get_allocation_resource_tags()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

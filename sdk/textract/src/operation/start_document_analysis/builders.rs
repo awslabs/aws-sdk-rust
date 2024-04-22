@@ -3,7 +3,7 @@ pub use crate::operation::start_document_analysis::_start_document_analysis_outp
 
 pub use crate::operation::start_document_analysis::_start_document_analysis_input::StartDocumentAnalysisInputBuilder;
 
-impl StartDocumentAnalysisInputBuilder {
+impl crate::operation::start_document_analysis::builders::StartDocumentAnalysisInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl StartDocumentAnalysisFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -125,6 +125,7 @@ impl StartDocumentAnalysisFluentBuilder {
     pub fn get_document_location(&self) -> &::std::option::Option<crate::types::DocumentLocation> {
         self.inner.get_document_location()
     }
+    ///
     /// Appends an item to `FeatureTypes`.
     ///
     /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).

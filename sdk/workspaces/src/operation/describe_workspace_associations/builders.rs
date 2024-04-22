@@ -3,7 +3,7 @@ pub use crate::operation::describe_workspace_associations::_describe_workspace_a
 
 pub use crate::operation::describe_workspace_associations::_describe_workspace_associations_input::DescribeWorkspaceAssociationsInputBuilder;
 
-impl DescribeWorkspaceAssociationsInputBuilder {
+impl crate::operation::describe_workspace_associations::builders::DescribeWorkspaceAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeWorkspaceAssociationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl DescribeWorkspaceAssociationsFluentBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
+    ///
     /// Appends an item to `AssociatedResourceTypes`.
     ///
     /// To override the contents of this collection use [`set_associated_resource_types`](Self::set_associated_resource_types).

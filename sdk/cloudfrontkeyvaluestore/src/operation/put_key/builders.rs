@@ -3,7 +3,7 @@ pub use crate::operation::put_key::_put_key_output::PutKeyOutputBuilder;
 
 pub use crate::operation::put_key::_put_key_input::PutKeyInputBuilder;
 
-impl PutKeyInputBuilder {
+impl crate::operation::put_key::builders::PutKeyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -89,12 +89,12 @@ impl PutKeyFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::put_key::PutKeyOutput, crate::operation::put_key::PutKeyError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

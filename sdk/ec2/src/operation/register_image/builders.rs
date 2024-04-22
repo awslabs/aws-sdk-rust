@@ -3,7 +3,7 @@ pub use crate::operation::register_image::_register_image_output::RegisterImageO
 
 pub use crate::operation::register_image::_register_image_input::RegisterImageInputBuilder;
 
-impl RegisterImageInputBuilder {
+impl crate::operation::register_image::builders::RegisterImageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -117,12 +117,12 @@ impl RegisterImageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -157,6 +157,7 @@ impl RegisterImageFluentBuilder {
     pub fn get_architecture(&self) -> &::std::option::Option<crate::types::ArchitectureValues> {
         self.inner.get_architecture()
     }
+    ///
     /// Appends an item to `BlockDeviceMappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
@@ -257,6 +258,7 @@ impl RegisterImageFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `BillingProducts`.
     ///
     /// To override the contents of this collection use [`set_billing_products`](Self::set_billing_products).
@@ -414,6 +416,7 @@ impl RegisterImageFluentBuilder {
     pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::ImdsSupportValues> {
         self.inner.get_imds_support()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

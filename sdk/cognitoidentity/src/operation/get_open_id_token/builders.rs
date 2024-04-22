@@ -3,7 +3,7 @@ pub use crate::operation::get_open_id_token::_get_open_id_token_output::GetOpenI
 
 pub use crate::operation::get_open_id_token::_get_open_id_token_input::GetOpenIdTokenInputBuilder;
 
-impl GetOpenIdTokenInputBuilder {
+impl crate::operation::get_open_id_token::builders::GetOpenIdTokenInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl GetOpenIdTokenFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,6 +124,7 @@ impl GetOpenIdTokenFluentBuilder {
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_id()
     }
+    ///
     /// Adds a key-value pair to `Logins`.
     ///
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).

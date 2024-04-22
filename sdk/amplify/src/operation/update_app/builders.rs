@@ -3,7 +3,7 @@ pub use crate::operation::update_app::_update_app_output::UpdateAppOutputBuilder
 
 pub use crate::operation::update_app::_update_app_input::UpdateAppInputBuilder;
 
-impl UpdateAppInputBuilder {
+impl crate::operation::update_app::builders::UpdateAppInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl UpdateAppFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -172,6 +172,7 @@ impl UpdateAppFluentBuilder {
     pub fn get_iam_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_service_role_arn()
     }
+    ///
     /// Adds a key-value pair to `environmentVariables`.
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
@@ -253,6 +254,7 @@ impl UpdateAppFluentBuilder {
     pub fn get_basic_auth_credentials(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_basic_auth_credentials()
     }
+    ///
     /// Appends an item to `customRules`.
     ///
     /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
@@ -313,6 +315,7 @@ impl UpdateAppFluentBuilder {
     pub fn get_enable_auto_branch_creation(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_auto_branch_creation()
     }
+    ///
     /// Appends an item to `autoBranchCreationPatterns`.
     ///
     /// To override the contents of this collection use [`set_auto_branch_creation_patterns`](Self::set_auto_branch_creation_patterns).

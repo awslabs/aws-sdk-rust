@@ -3,7 +3,7 @@ pub use crate::operation::list_attacks::_list_attacks_output::ListAttacksOutputB
 
 pub use crate::operation::list_attacks::_list_attacks_input::ListAttacksInputBuilder;
 
-impl ListAttacksInputBuilder {
+impl crate::operation::list_attacks::builders::ListAttacksInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListAttacksFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListAttacksFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_attacks::paginator::ListAttacksPaginator {
         crate::operation::list_attacks::paginator::ListAttacksPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ResourceArns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).

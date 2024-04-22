@@ -3,7 +3,7 @@ pub use crate::operation::put_apps_list::_put_apps_list_output::PutAppsListOutpu
 
 pub use crate::operation::put_apps_list::_put_apps_list_input::PutAppsListInputBuilder;
 
-impl PutAppsListInputBuilder {
+impl crate::operation::put_apps_list::builders::PutAppsListInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutAppsListFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl PutAppsListFluentBuilder {
     pub fn get_apps_list(&self) -> &::std::option::Option<crate::types::AppsListData> {
         self.inner.get_apps_list()
     }
+    ///
     /// Appends an item to `TagList`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).

@@ -3,7 +3,7 @@ pub use crate::operation::create_fargate_profile::_create_fargate_profile_output
 
 pub use crate::operation::create_fargate_profile::_create_fargate_profile_input::CreateFargateProfileInputBuilder;
 
-impl CreateFargateProfileInputBuilder {
+impl crate::operation::create_fargate_profile::builders::CreateFargateProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CreateFargateProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -155,6 +155,7 @@ impl CreateFargateProfileFluentBuilder {
     pub fn get_pod_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pod_execution_role_arn()
     }
+    ///
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -173,6 +174,7 @@ impl CreateFargateProfileFluentBuilder {
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnets()
     }
+    ///
     /// Appends an item to `selectors`.
     ///
     /// To override the contents of this collection use [`set_selectors`](Self::set_selectors).
@@ -205,6 +207,7 @@ impl CreateFargateProfileFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

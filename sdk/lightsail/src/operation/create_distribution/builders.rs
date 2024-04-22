@@ -3,7 +3,7 @@ pub use crate::operation::create_distribution::_create_distribution_output::Crea
 
 pub use crate::operation::create_distribution::_create_distribution_input::CreateDistributionInputBuilder;
 
-impl CreateDistributionInputBuilder {
+impl crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateDistributionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -168,6 +168,7 @@ impl CreateDistributionFluentBuilder {
     pub fn get_cache_behavior_settings(&self) -> &::std::option::Option<crate::types::CacheSettings> {
         self.inner.get_cache_behavior_settings()
     }
+    ///
     /// Appends an item to `cacheBehaviors`.
     ///
     /// To override the contents of this collection use [`set_cache_behaviors`](Self::set_cache_behaviors).
@@ -226,6 +227,7 @@ impl CreateDistributionFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

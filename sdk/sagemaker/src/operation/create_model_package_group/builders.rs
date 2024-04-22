@@ -3,7 +3,7 @@ pub use crate::operation::create_model_package_group::_create_model_package_grou
 
 pub use crate::operation::create_model_package_group::_create_model_package_group_input::CreateModelPackageGroupInputBuilder;
 
-impl CreateModelPackageGroupInputBuilder {
+impl crate::operation::create_model_package_group::builders::CreateModelPackageGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateModelPackageGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateModelPackageGroupFluentBuilder {
     pub fn get_model_package_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_package_group_description()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

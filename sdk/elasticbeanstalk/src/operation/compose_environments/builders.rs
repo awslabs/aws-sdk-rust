@@ -3,7 +3,7 @@ pub use crate::operation::compose_environments::_compose_environments_output::Co
 
 pub use crate::operation::compose_environments::_compose_environments_input::ComposeEnvironmentsInputBuilder;
 
-impl ComposeEnvironmentsInputBuilder {
+impl crate::operation::compose_environments::builders::ComposeEnvironmentsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ComposeEnvironmentsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl ComposeEnvironmentsFluentBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_name()
     }
+    ///
     /// Appends an item to `VersionLabels`.
     ///
     /// To override the contents of this collection use [`set_version_labels`](Self::set_version_labels).

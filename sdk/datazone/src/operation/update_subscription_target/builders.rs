@@ -3,7 +3,7 @@ pub use crate::operation::update_subscription_target::_update_subscription_targe
 
 pub use crate::operation::update_subscription_target::_update_subscription_target_input::UpdateSubscriptionTargetInputBuilder;
 
-impl UpdateSubscriptionTargetInputBuilder {
+impl crate::operation::update_subscription_target::builders::UpdateSubscriptionTargetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateSubscriptionTargetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateSubscriptionTargetFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `authorizedPrincipals`.
     ///
     /// To override the contents of this collection use [`set_authorized_principals`](Self::set_authorized_principals).
@@ -182,6 +183,7 @@ impl UpdateSubscriptionTargetFluentBuilder {
     pub fn get_authorized_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_authorized_principals()
     }
+    ///
     /// Appends an item to `applicableAssetTypes`.
     ///
     /// To override the contents of this collection use [`set_applicable_asset_types`](Self::set_applicable_asset_types).
@@ -200,6 +202,7 @@ impl UpdateSubscriptionTargetFluentBuilder {
     pub fn get_applicable_asset_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_applicable_asset_types()
     }
+    ///
     /// Appends an item to `subscriptionTargetConfig`.
     ///
     /// To override the contents of this collection use [`set_subscription_target_config`](Self::set_subscription_target_config).

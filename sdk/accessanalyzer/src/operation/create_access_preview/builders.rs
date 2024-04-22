@@ -3,7 +3,7 @@ pub use crate::operation::create_access_preview::_create_access_preview_output::
 
 pub use crate::operation::create_access_preview::_create_access_preview_input::CreateAccessPreviewInputBuilder;
 
-impl CreateAccessPreviewInputBuilder {
+impl crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateAccessPreviewFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateAccessPreviewFluentBuilder {
     pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_analyzer_arn()
     }
+    ///
     /// Adds a key-value pair to `configurations`.
     ///
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).

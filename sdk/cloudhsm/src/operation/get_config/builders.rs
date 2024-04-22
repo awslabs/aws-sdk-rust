@@ -3,7 +3,7 @@ pub use crate::operation::get_config::_get_config_output::GetConfigOutputBuilder
 
 pub use crate::operation::get_config::_get_config_input::GetConfigInputBuilder;
 
-impl GetConfigInputBuilder {
+impl crate::operation::get_config::builders::GetConfigInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -96,12 +96,12 @@ impl GetConfigFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -133,6 +133,7 @@ impl GetConfigFluentBuilder {
     pub fn get_client_version(&self) -> &::std::option::Option<crate::types::ClientVersion> {
         self.inner.get_client_version()
     }
+    ///
     /// Appends an item to `HapgList`.
     ///
     /// To override the contents of this collection use [`set_hapg_list`](Self::set_hapg_list).

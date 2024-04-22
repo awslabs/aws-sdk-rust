@@ -3,7 +3,7 @@ pub use crate::operation::batch_delete_rum_metric_definitions::_batch_delete_rum
 
 pub use crate::operation::batch_delete_rum_metric_definitions::_batch_delete_rum_metric_definitions_input::BatchDeleteRumMetricDefinitionsInputBuilder;
 
-impl BatchDeleteRumMetricDefinitionsInputBuilder {
+impl crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -155,6 +155,7 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_arn()
     }
+    ///
     /// Appends an item to `MetricDefinitionIds`.
     ///
     /// To override the contents of this collection use [`set_metric_definition_ids`](Self::set_metric_definition_ids).

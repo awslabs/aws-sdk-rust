@@ -3,7 +3,7 @@ pub use crate::operation::assign_ipv6_addresses::_assign_ipv6_addresses_output::
 
 pub use crate::operation::assign_ipv6_addresses::_assign_ipv6_addresses_input::AssignIpv6AddressesInputBuilder;
 
-impl AssignIpv6AddressesInputBuilder {
+impl crate::operation::assign_ipv6_addresses::builders::AssignIpv6AddressesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl AssignIpv6AddressesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,6 +124,7 @@ impl AssignIpv6AddressesFluentBuilder {
     pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_ipv6_address_count()
     }
+    ///
     /// Appends an item to `Ipv6Addresses`.
     ///
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
@@ -156,6 +157,7 @@ impl AssignIpv6AddressesFluentBuilder {
     pub fn get_ipv6_prefix_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_ipv6_prefix_count()
     }
+    ///
     /// Appends an item to `Ipv6Prefixes`.
     ///
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).

@@ -3,7 +3,7 @@ pub use crate::operation::get_instance_types_from_instance_requirements::_get_in
 
 pub use crate::operation::get_instance_types_from_instance_requirements::_get_instance_types_from_instance_requirements_input::GetInstanceTypesFromInstanceRequirementsInputBuilder;
 
-impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
+impl crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -108,12 +108,12 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `ArchitectureTypes`.
     ///
     /// To override the contents of this collection use [`set_architecture_types`](Self::set_architecture_types).
@@ -160,6 +161,7 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
     pub fn get_architecture_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>> {
         self.inner.get_architecture_types()
     }
+    ///
     /// Appends an item to `VirtualizationTypes`.
     ///
     /// To override the contents of this collection use [`set_virtualization_types`](Self::set_virtualization_types).

@@ -3,7 +3,7 @@ pub use crate::operation::describe_mac_hosts::_describe_mac_hosts_output::Descri
 
 pub use crate::operation::describe_mac_hosts::_describe_mac_hosts_input::DescribeMacHostsInputBuilder;
 
-impl DescribeMacHostsInputBuilder {
+impl crate::operation::describe_mac_hosts::builders::DescribeMacHostsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeMacHostsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeMacHostsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_mac_hosts::paginator::DescribeMacHostsPaginator {
         crate::operation::describe_mac_hosts::paginator::DescribeMacHostsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -150,6 +151,7 @@ impl DescribeMacHostsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `HostIds`.
     ///
     /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).

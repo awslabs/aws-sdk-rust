@@ -3,7 +3,7 @@ pub use crate::operation::delete_environment_blueprint_configuration::_delete_en
 
 pub use crate::operation::delete_environment_blueprint_configuration::_delete_environment_blueprint_configuration_input::DeleteEnvironmentBlueprintConfigurationInputBuilder;
 
-impl DeleteEnvironmentBlueprintConfigurationInputBuilder {
+impl crate::operation::delete_environment_blueprint_configuration::builders::DeleteEnvironmentBlueprintConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl DeleteEnvironmentBlueprintConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::purchase_scheduled_instances::_purchase_scheduled_inst
 
 pub use crate::operation::purchase_scheduled_instances::_purchase_scheduled_instances_input::PurchaseScheduledInstancesInputBuilder;
 
-impl PurchaseScheduledInstancesInputBuilder {
+impl crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl PurchaseScheduledInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -141,6 +141,7 @@ impl PurchaseScheduledInstancesFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `PurchaseRequests`.
     ///
     /// To override the contents of this collection use [`set_purchase_requests`](Self::set_purchase_requests).

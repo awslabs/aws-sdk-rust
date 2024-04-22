@@ -3,7 +3,7 @@ pub use crate::operation::create_connector::_create_connector_output::CreateConn
 
 pub use crate::operation::create_connector::_create_connector_input::CreateConnectorInputBuilder;
 
-impl CreateConnectorInputBuilder {
+impl crate::operation::create_connector::builders::CreateConnectorInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateConnectorFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateConnectorFluentBuilder {
     pub fn get_capacity(&self) -> &::std::option::Option<crate::types::Capacity> {
         self.inner.get_capacity()
     }
+    ///
     /// Adds a key-value pair to `connectorConfiguration`.
     ///
     /// To override the contents of this collection use [`set_connector_configuration`](Self::set_connector_configuration).
@@ -245,6 +246,7 @@ impl CreateConnectorFluentBuilder {
     pub fn get_log_delivery(&self) -> &::std::option::Option<crate::types::LogDelivery> {
         self.inner.get_log_delivery()
     }
+    ///
     /// Appends an item to `plugins`.
     ///
     /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
@@ -300,6 +302,7 @@ impl CreateConnectorFluentBuilder {
     pub fn get_worker_configuration(&self) -> &::std::option::Option<crate::types::WorkerConfiguration> {
         self.inner.get_worker_configuration()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

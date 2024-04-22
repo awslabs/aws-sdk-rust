@@ -3,7 +3,7 @@ pub use crate::operation::forgot_password::_forgot_password_output::ForgotPasswo
 
 pub use crate::operation::forgot_password::_forgot_password_input::ForgotPasswordInputBuilder;
 
-impl ForgotPasswordInputBuilder {
+impl crate::operation::forgot_password::builders::ForgotPasswordInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl ForgotPasswordFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -185,6 +185,7 @@ impl ForgotPasswordFluentBuilder {
     pub fn get_analytics_metadata(&self) -> &::std::option::Option<crate::types::AnalyticsMetadataType> {
         self.inner.get_analytics_metadata()
     }
+    ///
     /// Adds a key-value pair to `ClientMetadata`.
     ///
     /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).

@@ -3,7 +3,7 @@ pub use crate::operation::create_feature::_create_feature_output::CreateFeatureO
 
 pub use crate::operation::create_feature::_create_feature_input::CreateFeatureInputBuilder;
 
-impl CreateFeatureInputBuilder {
+impl crate::operation::create_feature::builders::CreateFeatureInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateFeatureFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl CreateFeatureFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `variations`.
     ///
     /// To override the contents of this collection use [`set_variations`](Self::set_variations).
@@ -203,6 +204,7 @@ impl CreateFeatureFluentBuilder {
     pub fn get_default_variation(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_variation()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -233,6 +235,7 @@ impl CreateFeatureFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Adds a key-value pair to `entityOverrides`.
     ///
     /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).

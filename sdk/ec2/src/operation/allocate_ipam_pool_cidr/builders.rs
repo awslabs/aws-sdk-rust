@@ -3,7 +3,7 @@ pub use crate::operation::allocate_ipam_pool_cidr::_allocate_ipam_pool_cidr_outp
 
 pub use crate::operation::allocate_ipam_pool_cidr::_allocate_ipam_pool_cidr_input::AllocateIpamPoolCidrInputBuilder;
 
-impl AllocateIpamPoolCidrInputBuilder {
+impl crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl AllocateIpamPoolCidrFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -251,6 +251,7 @@ impl AllocateIpamPoolCidrFluentBuilder {
     pub fn get_preview_next_cidr(&self) -> &::std::option::Option<bool> {
         self.inner.get_preview_next_cidr()
     }
+    ///
     /// Appends an item to `AllowedCidrs`.
     ///
     /// To override the contents of this collection use [`set_allowed_cidrs`](Self::set_allowed_cidrs).
@@ -269,6 +270,7 @@ impl AllocateIpamPoolCidrFluentBuilder {
     pub fn get_allowed_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_cidrs()
     }
+    ///
     /// Appends an item to `DisallowedCidrs`.
     ///
     /// To override the contents of this collection use [`set_disallowed_cidrs`](Self::set_disallowed_cidrs).

@@ -3,7 +3,7 @@ pub use crate::operation::create_open_id_connect_provider::_create_open_id_conne
 
 pub use crate::operation::create_open_id_connect_provider::_create_open_id_connect_provider_input::CreateOpenIdConnectProviderInputBuilder;
 
-impl CreateOpenIdConnectProviderInputBuilder {
+impl crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -117,12 +117,12 @@ impl CreateOpenIDConnectProviderFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_url()
     }
+    ///
     /// Appends an item to `ClientIDList`.
     ///
     /// To override the contents of this collection use [`set_client_id_list`](Self::set_client_id_list).
@@ -167,6 +168,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
     pub fn get_client_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_client_id_list()
     }
+    ///
     /// Appends an item to `ThumbprintList`.
     ///
     /// To override the contents of this collection use [`set_thumbprint_list`](Self::set_thumbprint_list).
@@ -197,6 +199,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
     pub fn get_thumbprint_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_thumbprint_list()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

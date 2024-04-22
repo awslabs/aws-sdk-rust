@@ -3,7 +3,7 @@ pub use crate::operation::list_phone_numbers_v2::_list_phone_numbers_v2_output::
 
 pub use crate::operation::list_phone_numbers_v2::_list_phone_numbers_v2_input::ListPhoneNumbersV2InputBuilder;
 
-impl ListPhoneNumbersV2InputBuilder {
+impl crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2InputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl ListPhoneNumbersV2FluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl ListPhoneNumbersV2FluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `PhoneNumberCountryCodes`.
     ///
     /// To override the contents of this collection use [`set_phone_number_country_codes`](Self::set_phone_number_country_codes).
@@ -196,6 +197,7 @@ impl ListPhoneNumbersV2FluentBuilder {
     pub fn get_phone_number_country_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>> {
         self.inner.get_phone_number_country_codes()
     }
+    ///
     /// Appends an item to `PhoneNumberTypes`.
     ///
     /// To override the contents of this collection use [`set_phone_number_types`](Self::set_phone_number_types).

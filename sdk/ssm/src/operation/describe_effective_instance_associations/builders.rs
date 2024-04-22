@@ -3,7 +3,7 @@ pub use crate::operation::describe_effective_instance_associations::_describe_ef
 
 pub use crate::operation::describe_effective_instance_associations::_describe_effective_instance_associations_input::DescribeEffectiveInstanceAssociationsInputBuilder;
 
-impl DescribeEffectiveInstanceAssociationsInputBuilder {
+impl crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DescribeEffectiveInstanceAssociationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

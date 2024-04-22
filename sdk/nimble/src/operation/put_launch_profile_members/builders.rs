@@ -3,7 +3,7 @@ pub use crate::operation::put_launch_profile_members::_put_launch_profile_member
 
 pub use crate::operation::put_launch_profile_members::_put_launch_profile_members_input::PutLaunchProfileMembersInputBuilder;
 
-impl PutLaunchProfileMembersInputBuilder {
+impl crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutLaunchProfileMembersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl PutLaunchProfileMembersFluentBuilder {
     pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_launch_profile_id()
     }
+    ///
     /// Appends an item to `members`.
     ///
     /// To override the contents of this collection use [`set_members`](Self::set_members).

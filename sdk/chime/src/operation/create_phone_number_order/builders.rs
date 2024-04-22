@@ -3,7 +3,7 @@ pub use crate::operation::create_phone_number_order::_create_phone_number_order_
 
 pub use crate::operation::create_phone_number_order::_create_phone_number_order_input::CreatePhoneNumberOrderInputBuilder;
 
-impl CreatePhoneNumberOrderInputBuilder {
+impl crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreatePhoneNumberOrderFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreatePhoneNumberOrderFluentBuilder {
     pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
         self.inner.get_product_type()
     }
+    ///
     /// Appends an item to `E164PhoneNumbers`.
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).

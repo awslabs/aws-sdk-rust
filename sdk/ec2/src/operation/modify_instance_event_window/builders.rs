@@ -3,7 +3,7 @@ pub use crate::operation::modify_instance_event_window::_modify_instance_event_w
 
 pub use crate::operation::modify_instance_event_window::_modify_instance_event_window_input::ModifyInstanceEventWindowInputBuilder;
 
-impl ModifyInstanceEventWindowInputBuilder {
+impl crate::operation::modify_instance_event_window::builders::ModifyInstanceEventWindowInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl ModifyInstanceEventWindowFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl ModifyInstanceEventWindowFluentBuilder {
     pub fn get_instance_event_window_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_event_window_id()
     }
+    ///
     /// Appends an item to `TimeRanges`.
     ///
     /// To override the contents of this collection use [`set_time_ranges`](Self::set_time_ranges).

@@ -3,7 +3,7 @@ pub use crate::operation::start_game_session_placement::_start_game_session_plac
 
 pub use crate::operation::start_game_session_placement::_start_game_session_placement_input::StartGameSessionPlacementInputBuilder;
 
-impl StartGameSessionPlacementInputBuilder {
+impl crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -115,12 +115,12 @@ impl StartGameSessionPlacementFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -152,6 +152,7 @@ impl StartGameSessionPlacementFluentBuilder {
     pub fn get_game_session_queue_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_session_queue_name()
     }
+    ///
     /// Appends an item to `GameProperties`.
     ///
     /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
@@ -198,6 +199,7 @@ impl StartGameSessionPlacementFluentBuilder {
     pub fn get_game_session_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_session_name()
     }
+    ///
     /// Appends an item to `PlayerLatencies`.
     ///
     /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
@@ -216,6 +218,7 @@ impl StartGameSessionPlacementFluentBuilder {
     pub fn get_player_latencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>> {
         self.inner.get_player_latencies()
     }
+    ///
     /// Appends an item to `DesiredPlayerSessions`.
     ///
     /// To override the contents of this collection use [`set_desired_player_sessions`](Self::set_desired_player_sessions).

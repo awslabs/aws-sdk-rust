@@ -3,7 +3,7 @@ pub use crate::operation::delete_column_statistics_for_partition::_delete_column
 
 pub use crate::operation::delete_column_statistics_for_partition::_delete_column_statistics_for_partition_input::DeleteColumnStatisticsForPartitionInputBuilder;
 
-impl DeleteColumnStatisticsForPartitionInputBuilder {
+impl crate::operation::delete_column_statistics_for_partition::builders::DeleteColumnStatisticsForPartitionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DeleteColumnStatisticsForPartitionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl DeleteColumnStatisticsForPartitionFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
+    ///
     /// Appends an item to `PartitionValues`.
     ///
     /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).

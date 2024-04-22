@@ -3,7 +3,7 @@ pub use crate::operation::describe_cases::_describe_cases_output::DescribeCasesO
 
 pub use crate::operation::describe_cases::_describe_cases_input::DescribeCasesInputBuilder;
 
-impl DescribeCasesInputBuilder {
+impl crate::operation::describe_cases::builders::DescribeCasesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -114,12 +114,12 @@ impl DescribeCasesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -129,6 +129,7 @@ impl DescribeCasesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_cases::paginator::DescribeCasesPaginator {
         crate::operation::describe_cases::paginator::DescribeCasesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `caseIdList`.
     ///
     /// To override the contents of this collection use [`set_case_id_list`](Self::set_case_id_list).

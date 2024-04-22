@@ -3,7 +3,7 @@ pub use crate::operation::list_utterance_analytics_data::_list_utterance_analyti
 
 pub use crate::operation::list_utterance_analytics_data::_list_utterance_analytics_data_input::ListUtteranceAnalyticsDataInputBuilder;
 
-impl ListUtteranceAnalyticsDataInputBuilder {
+impl crate::operation::list_utterance_analytics_data::builders::ListUtteranceAnalyticsDataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -113,12 +113,12 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -184,6 +184,7 @@ impl ListUtteranceAnalyticsDataFluentBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::UtteranceDataSortBy> {
         self.inner.get_sort_by()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

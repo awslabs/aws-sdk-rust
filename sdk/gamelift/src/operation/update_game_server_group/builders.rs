@@ -3,7 +3,7 @@ pub use crate::operation::update_game_server_group::_update_game_server_group_ou
 
 pub use crate::operation::update_game_server_group::_update_game_server_group_input::UpdateGameServerGroupInputBuilder;
 
-impl UpdateGameServerGroupInputBuilder {
+impl crate::operation::update_game_server_group::builders::UpdateGameServerGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl UpdateGameServerGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -140,6 +140,7 @@ impl UpdateGameServerGroupFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
     /// Appends an item to `InstanceDefinitions`.
     ///
     /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).

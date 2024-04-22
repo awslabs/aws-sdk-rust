@@ -3,7 +3,7 @@ pub use crate::operation::restore_table_from_backup::_restore_table_from_backup_
 
 pub use crate::operation::restore_table_from_backup::_restore_table_from_backup_input::RestoreTableFromBackupInputBuilder;
 
-impl RestoreTableFromBackupInputBuilder {
+impl crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -115,12 +115,12 @@ impl RestoreTableFromBackupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -166,6 +166,7 @@ impl RestoreTableFromBackupFluentBuilder {
     pub fn get_billing_mode_override(&self) -> &::std::option::Option<crate::types::BillingMode> {
         self.inner.get_billing_mode_override()
     }
+    ///
     /// Appends an item to `GlobalSecondaryIndexOverride`.
     ///
     /// To override the contents of this collection use [`set_global_secondary_index_override`](Self::set_global_secondary_index_override).
@@ -184,6 +185,7 @@ impl RestoreTableFromBackupFluentBuilder {
     pub fn get_global_secondary_index_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
         self.inner.get_global_secondary_index_override()
     }
+    ///
     /// Appends an item to `LocalSecondaryIndexOverride`.
     ///
     /// To override the contents of this collection use [`set_local_secondary_index_override`](Self::set_local_secondary_index_override).

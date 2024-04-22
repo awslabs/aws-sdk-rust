@@ -3,7 +3,7 @@ pub use crate::operation::describe_portfolio_shares::_describe_portfolio_shares_
 
 pub use crate::operation::describe_portfolio_shares::_describe_portfolio_shares_input::DescribePortfolioSharesInputBuilder;
 
-impl DescribePortfolioSharesInputBuilder {
+impl crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DescribePortfolioSharesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

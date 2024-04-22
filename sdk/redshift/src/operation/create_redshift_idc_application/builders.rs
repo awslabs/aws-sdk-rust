@@ -3,7 +3,7 @@ pub use crate::operation::create_redshift_idc_application::_create_redshift_idc_
 
 pub use crate::operation::create_redshift_idc_application::_create_redshift_idc_application_input::CreateRedshiftIdcApplicationInputBuilder;
 
-impl CreateRedshiftIdcApplicationInputBuilder {
+impl crate::operation::create_redshift_idc_application::builders::CreateRedshiftIdcApplicationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateRedshiftIdcApplicationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateRedshiftIdcApplicationFluentBuilder {
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_role_arn()
     }
+    ///
     /// Appends an item to `AuthorizedTokenIssuerList`.
     ///
     /// To override the contents of this collection use [`set_authorized_token_issuer_list`](Self::set_authorized_token_issuer_list).
@@ -196,6 +197,7 @@ impl CreateRedshiftIdcApplicationFluentBuilder {
     pub fn get_authorized_token_issuer_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>> {
         self.inner.get_authorized_token_issuer_list()
     }
+    ///
     /// Appends an item to `ServiceIntegrations`.
     ///
     /// To override the contents of this collection use [`set_service_integrations`](Self::set_service_integrations).

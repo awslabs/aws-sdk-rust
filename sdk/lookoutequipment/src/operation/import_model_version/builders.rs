@@ -3,7 +3,7 @@ pub use crate::operation::import_model_version::_import_model_version_output::Im
 
 pub use crate::operation::import_model_version::_import_model_version_input::ImportModelVersionInputBuilder;
 
-impl ImportModelVersionInputBuilder {
+impl crate::operation::import_model_version::builders::ImportModelVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ImportModelVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl ImportModelVersionFluentBuilder {
     pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_side_kms_key_id()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

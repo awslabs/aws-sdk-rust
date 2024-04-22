@@ -3,7 +3,7 @@ pub use crate::operation::put_integration::_put_integration_output::PutIntegrati
 
 pub use crate::operation::put_integration::_put_integration_input::PutIntegrationInputBuilder;
 
-impl PutIntegrationInputBuilder {
+impl crate::operation::put_integration::builders::PutIntegrationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl PutIntegrationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -152,6 +152,7 @@ impl PutIntegrationFluentBuilder {
     pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_object_type_name()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -184,6 +185,7 @@ impl PutIntegrationFluentBuilder {
     pub fn get_flow_definition(&self) -> &::std::option::Option<crate::types::FlowDefinition> {
         self.inner.get_flow_definition()
     }
+    ///
     /// Adds a key-value pair to `ObjectTypeNames`.
     ///
     /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).

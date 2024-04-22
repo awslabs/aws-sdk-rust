@@ -3,7 +3,7 @@ pub use crate::operation::synthesize_speech::_synthesize_speech_output::Synthesi
 
 pub use crate::operation::synthesize_speech::_synthesize_speech_input::SynthesizeSpeechInputBuilder;
 
-impl SynthesizeSpeechInputBuilder {
+impl crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SynthesizeSpeechFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -231,6 +231,7 @@ impl SynthesizeSpeechFluentBuilder {
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         self.inner.get_language_code()
     }
+    ///
     /// Appends an item to `LexiconNames`.
     ///
     /// To override the contents of this collection use [`set_lexicon_names`](Self::set_lexicon_names).
@@ -286,6 +287,7 @@ impl SynthesizeSpeechFluentBuilder {
     pub fn get_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sample_rate()
     }
+    ///
     /// Appends an item to `SpeechMarkTypes`.
     ///
     /// To override the contents of this collection use [`set_speech_mark_types`](Self::set_speech_mark_types).

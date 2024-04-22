@@ -3,7 +3,7 @@ pub use crate::operation::describe_conformance_packs::_describe_conformance_pack
 
 pub use crate::operation::describe_conformance_packs::_describe_conformance_packs_input::DescribeConformancePacksInputBuilder;
 
-impl DescribeConformancePacksInputBuilder {
+impl crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeConformancePacksFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeConformancePacksFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator {
         crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ConformancePackNames`.
     ///
     /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).

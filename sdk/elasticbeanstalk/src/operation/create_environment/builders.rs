@@ -3,7 +3,7 @@ pub use crate::operation::create_environment::_create_environment_output::Create
 
 pub use crate::operation::create_environment::_create_environment_input::CreateEnvironmentInputBuilder;
 
-impl CreateEnvironmentInputBuilder {
+impl crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateEnvironmentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -198,6 +198,7 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::EnvironmentTier> {
         self.inner.get_tier()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -293,6 +294,7 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_platform_arn()
     }
+    ///
     /// Appends an item to `OptionSettings`.
     ///
     /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
@@ -311,6 +313,7 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
         self.inner.get_option_settings()
     }
+    ///
     /// Appends an item to `OptionsToRemove`.
     ///
     /// To override the contents of this collection use [`set_options_to_remove`](Self::set_options_to_remove).

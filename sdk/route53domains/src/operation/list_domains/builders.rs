@@ -3,7 +3,7 @@ pub use crate::operation::list_domains::_list_domains_output::ListDomainsOutputB
 
 pub use crate::operation::list_domains::_list_domains_input::ListDomainsInputBuilder;
 
-impl ListDomainsInputBuilder {
+impl crate::operation::list_domains::builders::ListDomainsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListDomainsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListDomainsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_domains::paginator::ListDomainsPaginator {
         crate::operation::list_domains::paginator::ListDomainsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `FilterConditions`.
     ///
     /// To override the contents of this collection use [`set_filter_conditions`](Self::set_filter_conditions).

@@ -3,7 +3,7 @@ pub use crate::operation::import_workspace_image::_import_workspace_image_output
 
 pub use crate::operation::import_workspace_image::_import_workspace_image_input::ImportWorkspaceImageInputBuilder;
 
-impl ImportWorkspaceImageInputBuilder {
+impl crate::operation::import_workspace_image::builders::ImportWorkspaceImageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ImportWorkspaceImageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -173,6 +173,7 @@ impl ImportWorkspaceImageFluentBuilder {
     pub fn get_image_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_description()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -191,6 +192,7 @@ impl ImportWorkspaceImageFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `Applications`.
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).

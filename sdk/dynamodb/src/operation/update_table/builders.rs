@@ -3,7 +3,7 @@ pub use crate::operation::update_table::_update_table_output::UpdateTableOutputB
 
 pub use crate::operation::update_table::_update_table_input::UpdateTableInputBuilder;
 
-impl UpdateTableInputBuilder {
+impl crate::operation::update_table::builders::UpdateTableInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,15 +111,16 @@ impl UpdateTableFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `AttributeDefinitions`.
     ///
     /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
@@ -198,6 +199,7 @@ impl UpdateTableFluentBuilder {
     pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         self.inner.get_provisioned_throughput()
     }
+    ///
     /// Appends an item to `GlobalSecondaryIndexUpdates`.
     ///
     /// To override the contents of this collection use [`set_global_secondary_index_updates`](Self::set_global_secondary_index_updates).
@@ -283,6 +285,7 @@ impl UpdateTableFluentBuilder {
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::SseSpecification> {
         self.inner.get_sse_specification()
     }
+    ///
     /// Appends an item to `ReplicaUpdates`.
     ///
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).

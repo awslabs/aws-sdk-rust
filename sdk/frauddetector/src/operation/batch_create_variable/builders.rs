@@ -3,7 +3,7 @@ pub use crate::operation::batch_create_variable::_batch_create_variable_output::
 
 pub use crate::operation::batch_create_variable::_batch_create_variable_input::BatchCreateVariableInputBuilder;
 
-impl BatchCreateVariableInputBuilder {
+impl crate::operation::batch_create_variable::builders::BatchCreateVariableInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl BatchCreateVariableFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `variableEntries`.
     ///
     /// To override the contents of this collection use [`set_variable_entries`](Self::set_variable_entries).
@@ -126,6 +127,7 @@ impl BatchCreateVariableFluentBuilder {
     pub fn get_variable_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>> {
         self.inner.get_variable_entries()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

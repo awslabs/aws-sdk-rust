@@ -3,7 +3,7 @@ pub use crate::operation::update_incident_record::_update_incident_record_output
 
 pub use crate::operation::update_incident_record::_update_incident_record_input::UpdateIncidentRecordInputBuilder;
 
-impl UpdateIncidentRecordInputBuilder {
+impl crate::operation::update_incident_record::builders::UpdateIncidentRecordInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateIncidentRecordFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -245,6 +245,7 @@ impl UpdateIncidentRecordFluentBuilder {
     pub fn get_chat_channel(&self) -> &::std::option::Option<crate::types::ChatChannel> {
         self.inner.get_chat_channel()
     }
+    ///
     /// Appends an item to `notificationTargets`.
     ///
     /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).

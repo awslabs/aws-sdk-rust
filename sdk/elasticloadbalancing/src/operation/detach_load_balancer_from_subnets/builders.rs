@@ -3,7 +3,7 @@ pub use crate::operation::detach_load_balancer_from_subnets::_detach_load_balanc
 
 pub use crate::operation::detach_load_balancer_from_subnets::_detach_load_balancer_from_subnets_input::DetachLoadBalancerFromSubnetsInputBuilder;
 
-impl DetachLoadBalancerFromSubnetsInputBuilder {
+impl crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DetachLoadBalancerFromSubnetsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl DetachLoadBalancerFromSubnetsFluentBuilder {
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_load_balancer_name()
     }
+    ///
     /// Appends an item to `Subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).

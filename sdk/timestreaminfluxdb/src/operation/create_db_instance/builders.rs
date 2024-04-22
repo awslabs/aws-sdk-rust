@@ -3,7 +3,7 @@ pub use crate::operation::create_db_instance::_create_db_instance_output::Create
 
 pub use crate::operation::create_db_instance::_create_db_instance_input::CreateDbInstanceInputBuilder;
 
-impl CreateDbInstanceInputBuilder {
+impl crate::operation::create_db_instance::builders::CreateDbInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateDbInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl CreateDbInstanceFluentBuilder {
     pub fn get_db_instance_type(&self) -> &::std::option::Option<crate::types::DbInstanceType> {
         self.inner.get_db_instance_type()
     }
+    ///
     /// Appends an item to `vpcSubnetIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_subnet_ids`](Self::set_vpc_subnet_ids).
@@ -210,6 +211,7 @@ impl CreateDbInstanceFluentBuilder {
     pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_subnet_ids()
     }
+    ///
     /// Appends an item to `vpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -339,6 +341,7 @@ impl CreateDbInstanceFluentBuilder {
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfiguration> {
         self.inner.get_log_delivery_configuration()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

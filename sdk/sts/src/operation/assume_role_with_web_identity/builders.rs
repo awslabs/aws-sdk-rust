@@ -3,7 +3,7 @@ pub use crate::operation::assume_role_with_web_identity::_assume_role_with_web_i
 
 pub use crate::operation::assume_role_with_web_identity::_assume_role_with_web_identity_input::AssumeRoleWithWebIdentityInputBuilder;
 
-impl AssumeRoleWithWebIdentityInputBuilder {
+impl crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -132,12 +132,12 @@ impl AssumeRoleWithWebIdentityFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl AssumeRoleWithWebIdentityFluentBuilder {
     pub fn get_provider_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provider_id()
     }
+    ///
     /// Appends an item to `PolicyArns`.
     ///
     /// To override the contents of this collection use [`set_policy_arns`](Self::set_policy_arns).

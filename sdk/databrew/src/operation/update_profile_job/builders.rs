@@ -3,7 +3,7 @@ pub use crate::operation::update_profile_job::_update_profile_job_output::Update
 
 pub use crate::operation::update_profile_job::_update_profile_job_input::UpdateProfileJobInputBuilder;
 
-impl UpdateProfileJobInputBuilder {
+impl crate::operation::update_profile_job::builders::UpdateProfileJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateProfileJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -238,6 +238,7 @@ impl UpdateProfileJobFluentBuilder {
     pub fn get_output_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         self.inner.get_output_location()
     }
+    ///
     /// Appends an item to `ValidationConfigurations`.
     ///
     /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).

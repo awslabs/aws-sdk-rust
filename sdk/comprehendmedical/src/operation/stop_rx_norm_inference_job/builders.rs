@@ -3,7 +3,7 @@ pub use crate::operation::stop_rx_norm_inference_job::_stop_rx_norm_inference_jo
 
 pub use crate::operation::stop_rx_norm_inference_job::_stop_rx_norm_inference_job_input::StopRxNormInferenceJobInputBuilder;
 
-impl StopRxNormInferenceJobInputBuilder {
+impl crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StopRxNormInferenceJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

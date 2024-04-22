@@ -3,7 +3,7 @@ pub use crate::operation::create_infrastructure_configuration::_create_infrastru
 
 pub use crate::operation::create_infrastructure_configuration::_create_infrastructure_configuration_input::CreateInfrastructureConfigurationInputBuilder;
 
-impl CreateInfrastructureConfigurationInputBuilder {
+impl crate::operation::create_infrastructure_configuration::builders::CreateInfrastructureConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateInfrastructureConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateInfrastructureConfigurationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `instanceTypes`.
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
@@ -168,6 +169,7 @@ impl CreateInfrastructureConfigurationFluentBuilder {
     pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_profile_name()
     }
+    ///
     /// Appends an item to `securityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -262,6 +264,7 @@ impl CreateInfrastructureConfigurationFluentBuilder {
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sns_topic_arn()
     }
+    ///
     /// Adds a key-value pair to `resourceTags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
@@ -297,6 +300,7 @@ impl CreateInfrastructureConfigurationFluentBuilder {
     pub fn get_instance_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
         self.inner.get_instance_metadata_options()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

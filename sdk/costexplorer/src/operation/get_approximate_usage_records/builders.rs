@@ -3,7 +3,7 @@ pub use crate::operation::get_approximate_usage_records::_get_approximate_usage_
 
 pub use crate::operation::get_approximate_usage_records::_get_approximate_usage_records_input::GetApproximateUsageRecordsInputBuilder;
 
-impl GetApproximateUsageRecordsInputBuilder {
+impl crate::operation::get_approximate_usage_records::builders::GetApproximateUsageRecordsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetApproximateUsageRecordsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl GetApproximateUsageRecordsFluentBuilder {
     pub fn get_granularity(&self) -> &::std::option::Option<crate::types::Granularity> {
         self.inner.get_granularity()
     }
+    ///
     /// Appends an item to `Services`.
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).

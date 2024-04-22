@@ -3,7 +3,7 @@ pub use crate::operation::list_received_licenses::_list_received_licenses_output
 
 pub use crate::operation::list_received_licenses::_list_received_licenses_input::ListReceivedLicensesInputBuilder;
 
-impl ListReceivedLicensesInputBuilder {
+impl crate::operation::list_received_licenses::builders::ListReceivedLicensesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl ListReceivedLicensesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `LicenseArns`.
     ///
     /// To override the contents of this collection use [`set_license_arns`](Self::set_license_arns).
@@ -126,6 +127,7 @@ impl ListReceivedLicensesFluentBuilder {
     pub fn get_license_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_license_arns()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

@@ -3,7 +3,7 @@ pub use crate::operation::analyze_document::_analyze_document_output::AnalyzeDoc
 
 pub use crate::operation::analyze_document::_analyze_document_input::AnalyzeDocumentInputBuilder;
 
-impl AnalyzeDocumentInputBuilder {
+impl crate::operation::analyze_document::builders::AnalyzeDocumentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -119,12 +119,12 @@ impl AnalyzeDocumentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -145,6 +145,7 @@ impl AnalyzeDocumentFluentBuilder {
     pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
         self.inner.get_document()
     }
+    ///
     /// Appends an item to `FeatureTypes`.
     ///
     /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).

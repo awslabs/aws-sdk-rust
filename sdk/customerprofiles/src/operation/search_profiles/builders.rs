@@ -3,7 +3,7 @@ pub use crate::operation::search_profiles::_search_profiles_output::SearchProfil
 
 pub use crate::operation::search_profiles::_search_profiles_input::SearchProfilesInputBuilder;
 
-impl SearchProfilesInputBuilder {
+impl crate::operation::search_profiles::builders::SearchProfilesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl SearchProfilesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -168,6 +168,7 @@ impl SearchProfilesFluentBuilder {
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_name()
     }
+    ///
     /// Appends an item to `Values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -186,6 +187,7 @@ impl SearchProfilesFluentBuilder {
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_values()
     }
+    ///
     /// Appends an item to `AdditionalSearchKeys`.
     ///
     /// To override the contents of this collection use [`set_additional_search_keys`](Self::set_additional_search_keys).

@@ -3,7 +3,7 @@ pub use crate::operation::put_access_point_configuration_for_object_lambda::_put
 
 pub use crate::operation::put_access_point_configuration_for_object_lambda::_put_access_point_configuration_for_object_lambda_input::PutAccessPointConfigurationForObjectLambdaInputBuilder;
 
-impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
+impl crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -114,12 +114,12 @@ impl PutAccessPointConfigurationForObjectLambdaFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

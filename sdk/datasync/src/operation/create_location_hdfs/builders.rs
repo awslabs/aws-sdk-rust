@@ -3,7 +3,7 @@ pub use crate::operation::create_location_hdfs::_create_location_hdfs_output::Cr
 
 pub use crate::operation::create_location_hdfs::_create_location_hdfs_input::CreateLocationHdfsInputBuilder;
 
-impl CreateLocationHdfsInputBuilder {
+impl crate::operation::create_location_hdfs::builders::CreateLocationHdfsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateLocationHdfsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl CreateLocationHdfsFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
+    ///
     /// Appends an item to `NameNodes`.
     ///
     /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
@@ -291,6 +292,7 @@ impl CreateLocationHdfsFluentBuilder {
     pub fn get_kerberos_krb5_conf(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_kerberos_krb5_conf()
     }
+    ///
     /// Appends an item to `AgentArns`.
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
@@ -309,6 +311,7 @@ impl CreateLocationHdfsFluentBuilder {
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_agent_arns()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::subscribe::_subscribe_output::SubscribeOutputBuilder;
 
 pub use crate::operation::subscribe::_subscribe_input::SubscribeInputBuilder;
 
-impl SubscribeInputBuilder {
+impl crate::operation::subscribe::builders::SubscribeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -95,12 +95,12 @@ impl SubscribeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -266,6 +266,7 @@ impl SubscribeFluentBuilder {
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint()
     }
+    ///
     /// Adds a key-value pair to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).

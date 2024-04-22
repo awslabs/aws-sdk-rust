@@ -3,7 +3,7 @@ pub use crate::operation::resolve_app_version_resources::_resolve_app_version_re
 
 pub use crate::operation::resolve_app_version_resources::_resolve_app_version_resources_input::ResolveAppVersionResourcesInputBuilder;
 
-impl ResolveAppVersionResourcesInputBuilder {
+impl crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ResolveAppVersionResourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

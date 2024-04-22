@@ -3,7 +3,7 @@ pub use crate::operation::remove_trust_store_revocations::_remove_trust_store_re
 
 pub use crate::operation::remove_trust_store_revocations::_remove_trust_store_revocations_input::RemoveTrustStoreRevocationsInputBuilder;
 
-impl RemoveTrustStoreRevocationsInputBuilder {
+impl crate::operation::remove_trust_store_revocations::builders::RemoveTrustStoreRevocationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RemoveTrustStoreRevocationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl RemoveTrustStoreRevocationsFluentBuilder {
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trust_store_arn()
     }
+    ///
     /// Appends an item to `RevocationIds`.
     ///
     /// To override the contents of this collection use [`set_revocation_ids`](Self::set_revocation_ids).

@@ -3,7 +3,7 @@ pub use crate::operation::start_update_signal_map::_start_update_signal_map_outp
 
 pub use crate::operation::start_update_signal_map::_start_update_signal_map_input::StartUpdateSignalMapInputBuilder;
 
-impl StartUpdateSignalMapInputBuilder {
+impl crate::operation::start_update_signal_map::builders::StartUpdateSignalMapInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl StartUpdateSignalMapFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `CloudWatchAlarmTemplateGroupIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_cloud_watch_alarm_template_group_identifiers`](Self::set_cloud_watch_alarm_template_group_identifiers).
@@ -154,6 +155,7 @@ impl StartUpdateSignalMapFluentBuilder {
     pub fn get_discovery_entry_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_discovery_entry_point_arn()
     }
+    ///
     /// Appends an item to `EventBridgeRuleTemplateGroupIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_event_bridge_rule_template_group_identifiers`](Self::set_event_bridge_rule_template_group_identifiers).

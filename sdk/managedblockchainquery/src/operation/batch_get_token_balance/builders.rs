@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_token_balance::_batch_get_token_balance_outp
 
 pub use crate::operation::batch_get_token_balance::_batch_get_token_balance_input::BatchGetTokenBalanceInputBuilder;
 
-impl BatchGetTokenBalanceInputBuilder {
+impl crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,15 +101,16 @@ impl BatchGetTokenBalanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `getTokenBalanceInputs`.
     ///
     /// To override the contents of this collection use [`set_get_token_balance_inputs`](Self::set_get_token_balance_inputs).

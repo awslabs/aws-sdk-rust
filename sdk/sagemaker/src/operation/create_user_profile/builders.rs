@@ -3,7 +3,7 @@ pub use crate::operation::create_user_profile::_create_user_profile_output::Crea
 
 pub use crate::operation::create_user_profile::_create_user_profile_input::CreateUserProfileInputBuilder;
 
-impl CreateUserProfileInputBuilder {
+impl crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateUserProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateUserProfileFluentBuilder {
     pub fn get_single_sign_on_user_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_single_sign_on_user_value()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::remove_custom_routing_endpoints::_remove_custom_routin
 
 pub use crate::operation::remove_custom_routing_endpoints::_remove_custom_routing_endpoints_input::RemoveCustomRoutingEndpointsInputBuilder;
 
-impl RemoveCustomRoutingEndpointsInputBuilder {
+impl crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl RemoveCustomRoutingEndpointsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `EndpointIds`.
     ///
     /// To override the contents of this collection use [`set_endpoint_ids`](Self::set_endpoint_ids).

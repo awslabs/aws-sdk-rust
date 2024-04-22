@@ -3,32 +3,29 @@ pub use crate::operation::list_collaboration_configured_audience_model_associati
 
 pub use crate::operation::list_collaboration_configured_audience_model_associations::_list_collaboration_configured_audience_model_associations_input::ListCollaborationConfiguredAudienceModelAssociationsInputBuilder;
 
-impl ListCollaborationConfiguredAudienceModelAssociationsInputBuilder {
-    /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_collaboration_configured_audience_model_associations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
-}
+impl crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsInputBuilder {
+                    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_collaboration_configured_audience_model_associations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+                }
 /// Fluent builder constructing a request to `ListCollaborationConfiguredAudienceModelAssociations`.
 ///
 /// <p>Lists configured audience model associations within a collaboration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCollaborationConfiguredAudienceModelAssociationsFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput,
@@ -99,12 +96,12 @@ impl ListCollaborationConfiguredAudienceModelAssociationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

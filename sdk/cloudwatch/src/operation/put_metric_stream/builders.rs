@@ -3,7 +3,7 @@ pub use crate::operation::put_metric_stream::_put_metric_stream_output::PutMetri
 
 pub use crate::operation::put_metric_stream::_put_metric_stream_input::PutMetricStreamInputBuilder;
 
-impl PutMetricStreamInputBuilder {
+impl crate::operation::put_metric_stream::builders::PutMetricStreamInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -113,12 +113,12 @@ impl PutMetricStreamFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl PutMetricStreamFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `IncludeFilters`.
     ///
     /// To override the contents of this collection use [`set_include_filters`](Self::set_include_filters).
@@ -163,6 +164,7 @@ impl PutMetricStreamFluentBuilder {
     pub fn get_include_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>> {
         self.inner.get_include_filters()
     }
+    ///
     /// Appends an item to `ExcludeFilters`.
     ///
     /// To override the contents of this collection use [`set_exclude_filters`](Self::set_exclude_filters).
@@ -244,6 +246,7 @@ impl PutMetricStreamFluentBuilder {
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::MetricStreamOutputFormat> {
         self.inner.get_output_format()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -268,6 +271,7 @@ impl PutMetricStreamFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `StatisticsConfigurations`.
     ///
     /// To override the contents of this collection use [`set_statistics_configurations`](Self::set_statistics_configurations).

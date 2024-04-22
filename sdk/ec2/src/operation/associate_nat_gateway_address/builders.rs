@@ -3,7 +3,7 @@ pub use crate::operation::associate_nat_gateway_address::_associate_nat_gateway_
 
 pub use crate::operation::associate_nat_gateway_address::_associate_nat_gateway_address_input::AssociateNatGatewayAddressInputBuilder;
 
-impl AssociateNatGatewayAddressInputBuilder {
+impl crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl AssociateNatGatewayAddressFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -125,6 +125,7 @@ impl AssociateNatGatewayAddressFluentBuilder {
     pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_nat_gateway_id()
     }
+    ///
     /// Appends an item to `AllocationIds`.
     ///
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
@@ -143,6 +144,7 @@ impl AssociateNatGatewayAddressFluentBuilder {
     pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allocation_ids()
     }
+    ///
     /// Appends an item to `PrivateIpAddresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).

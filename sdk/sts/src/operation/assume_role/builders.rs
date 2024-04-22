@@ -3,7 +3,7 @@ pub use crate::operation::assume_role::_assume_role_output::AssumeRoleOutputBuil
 
 pub use crate::operation::assume_role::_assume_role_input::AssumeRoleInputBuilder;
 
-impl AssumeRoleInputBuilder {
+impl crate::operation::assume_role::builders::AssumeRoleInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -122,12 +122,12 @@ impl AssumeRoleFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl AssumeRoleFluentBuilder {
     pub fn get_role_session_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_session_name()
     }
+    ///
     /// Appends an item to `PolicyArns`.
     ///
     /// To override the contents of this collection use [`set_policy_arns`](Self::set_policy_arns).
@@ -247,6 +248,7 @@ impl AssumeRoleFluentBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration_seconds()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -283,6 +285,7 @@ impl AssumeRoleFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `TransitiveTagKeys`.
     ///
     /// To override the contents of this collection use [`set_transitive_tag_keys`](Self::set_transitive_tag_keys).
@@ -378,6 +381,7 @@ impl AssumeRoleFluentBuilder {
     pub fn get_source_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_identity()
     }
+    ///
     /// Appends an item to `ProvidedContexts`.
     ///
     /// To override the contents of this collection use [`set_provided_contexts`](Self::set_provided_contexts).

@@ -3,7 +3,7 @@ pub use crate::operation::test_authorization::_test_authorization_output::TestAu
 
 pub use crate::operation::test_authorization::_test_authorization_input::TestAuthorizationInputBuilder;
 
-impl TestAuthorizationInputBuilder {
+impl crate::operation::test_authorization::builders::TestAuthorizationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl TestAuthorizationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl TestAuthorizationFluentBuilder {
     pub fn get_cognito_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cognito_identity_pool_id()
     }
+    ///
     /// Appends an item to `authInfos`.
     ///
     /// To override the contents of this collection use [`set_auth_infos`](Self::set_auth_infos).
@@ -169,6 +170,7 @@ impl TestAuthorizationFluentBuilder {
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_id()
     }
+    ///
     /// Appends an item to `policyNamesToAdd`.
     ///
     /// To override the contents of this collection use [`set_policy_names_to_add`](Self::set_policy_names_to_add).
@@ -187,6 +189,7 @@ impl TestAuthorizationFluentBuilder {
     pub fn get_policy_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_names_to_add()
     }
+    ///
     /// Appends an item to `policyNamesToSkip`.
     ///
     /// To override the contents of this collection use [`set_policy_names_to_skip`](Self::set_policy_names_to_skip).

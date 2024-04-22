@@ -3,7 +3,7 @@ pub use crate::operation::list_intent_paths::_list_intent_paths_output::ListInte
 
 pub use crate::operation::list_intent_paths::_list_intent_paths_input::ListIntentPathsInputBuilder;
 
-impl ListIntentPathsInputBuilder {
+impl crate::operation::list_intent_paths::builders::ListIntentPathsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl ListIntentPathsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -195,6 +195,7 @@ impl ListIntentPathsFluentBuilder {
     pub fn get_intent_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_intent_path()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

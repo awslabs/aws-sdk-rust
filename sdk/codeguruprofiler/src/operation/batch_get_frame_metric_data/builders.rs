@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_frame_metric_data::_batch_get_frame_metric_d
 
 pub use crate::operation::batch_get_frame_metric_data::_batch_get_frame_metric_data_input::BatchGetFrameMetricDataInputBuilder;
 
-impl BatchGetFrameMetricDataInputBuilder {
+impl crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchGetFrameMetricDataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -202,6 +202,7 @@ impl BatchGetFrameMetricDataFluentBuilder {
     pub fn get_target_resolution(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         self.inner.get_target_resolution()
     }
+    ///
     /// Appends an item to `frameMetrics`.
     ///
     /// To override the contents of this collection use [`set_frame_metrics`](Self::set_frame_metrics).

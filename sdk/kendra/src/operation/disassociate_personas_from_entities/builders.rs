@@ -3,7 +3,7 @@ pub use crate::operation::disassociate_personas_from_entities::_disassociate_per
 
 pub use crate::operation::disassociate_personas_from_entities::_disassociate_personas_from_entities_input::DisassociatePersonasFromEntitiesInputBuilder;
 
-impl DisassociatePersonasFromEntitiesInputBuilder {
+impl crate::operation::disassociate_personas_from_entities::builders::DisassociatePersonasFromEntitiesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DisassociatePersonasFromEntitiesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl DisassociatePersonasFromEntitiesFluentBuilder {
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }
+    ///
     /// Appends an item to `EntityIds`.
     ///
     /// To override the contents of this collection use [`set_entity_ids`](Self::set_entity_ids).

@@ -3,7 +3,7 @@ pub use crate::operation::search_associated_transcripts::_search_associated_tran
 
 pub use crate::operation::search_associated_transcripts::_search_associated_transcripts_input::SearchAssociatedTranscriptsInputBuilder;
 
-impl SearchAssociatedTranscriptsInputBuilder {
+impl crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SearchAssociatedTranscriptsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl SearchAssociatedTranscriptsFluentBuilder {
     pub fn get_search_order(&self) -> &::std::option::Option<crate::types::SearchOrder> {
         self.inner.get_search_order()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

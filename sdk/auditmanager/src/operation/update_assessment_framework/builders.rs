@@ -3,7 +3,7 @@ pub use crate::operation::update_assessment_framework::_update_assessment_framew
 
 pub use crate::operation::update_assessment_framework::_update_assessment_framework_input::UpdateAssessmentFrameworkInputBuilder;
 
-impl UpdateAssessmentFrameworkInputBuilder {
+impl crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateAssessmentFrameworkFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateAssessmentFrameworkFluentBuilder {
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compliance_type()
     }
+    ///
     /// Appends an item to `controlSets`.
     ///
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).

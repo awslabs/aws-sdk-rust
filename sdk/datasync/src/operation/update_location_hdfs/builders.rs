@@ -3,7 +3,7 @@ pub use crate::operation::update_location_hdfs::_update_location_hdfs_output::Up
 
 pub use crate::operation::update_location_hdfs::_update_location_hdfs_input::UpdateLocationHdfsInputBuilder;
 
-impl UpdateLocationHdfsInputBuilder {
+impl crate::operation::update_location_hdfs::builders::UpdateLocationHdfsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateLocationHdfsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateLocationHdfsFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
+    ///
     /// Appends an item to `NameNodes`.
     ///
     /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
@@ -280,6 +281,7 @@ impl UpdateLocationHdfsFluentBuilder {
     pub fn get_kerberos_krb5_conf(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_kerberos_krb5_conf()
     }
+    ///
     /// Appends an item to `AgentArns`.
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).

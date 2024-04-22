@@ -3,7 +3,7 @@ pub use crate::operation::set_load_balancer_policies_for_backend_server::_set_lo
 
 pub use crate::operation::set_load_balancer_policies_for_backend_server::_set_load_balancer_policies_for_backend_server_input::SetLoadBalancerPoliciesForBackendServerInputBuilder;
 
-impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
+impl crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl SetLoadBalancerPoliciesForBackendServerFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl SetLoadBalancerPoliciesForBackendServerFluentBuilder {
     pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_instance_port()
     }
+    ///
     /// Appends an item to `PolicyNames`.
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).

@@ -3,7 +3,7 @@ pub use crate::operation::create_mission_profile::_create_mission_profile_output
 
 pub use crate::operation::create_mission_profile::_create_mission_profile_input::CreateMissionProfileInputBuilder;
 
-impl CreateMissionProfileInputBuilder {
+impl crate::operation::create_mission_profile::builders::CreateMissionProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateMissionProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl CreateMissionProfileFluentBuilder {
     pub fn get_minimum_viable_contact_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_minimum_viable_contact_duration_seconds()
     }
+    ///
     /// Appends an item to `dataflowEdges`.
     ///
     /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
@@ -197,6 +198,7 @@ impl CreateMissionProfileFluentBuilder {
     pub fn get_tracking_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tracking_config_arn()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

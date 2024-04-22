@@ -3,7 +3,7 @@ pub use crate::operation::update_trial_component::_update_trial_component_output
 
 pub use crate::operation::update_trial_component::_update_trial_component_input::UpdateTrialComponentInputBuilder;
 
-impl UpdateTrialComponentInputBuilder {
+impl crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateTrialComponentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl UpdateTrialComponentFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
+    ///
     /// Adds a key-value pair to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -201,6 +202,7 @@ impl UpdateTrialComponentFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>> {
         self.inner.get_parameters()
     }
+    ///
     /// Appends an item to `ParametersToRemove`.
     ///
     /// To override the contents of this collection use [`set_parameters_to_remove`](Self::set_parameters_to_remove).
@@ -219,6 +221,7 @@ impl UpdateTrialComponentFluentBuilder {
     pub fn get_parameters_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_parameters_to_remove()
     }
+    ///
     /// Adds a key-value pair to `InputArtifacts`.
     ///
     /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
@@ -242,6 +245,7 @@ impl UpdateTrialComponentFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>> {
         self.inner.get_input_artifacts()
     }
+    ///
     /// Appends an item to `InputArtifactsToRemove`.
     ///
     /// To override the contents of this collection use [`set_input_artifacts_to_remove`](Self::set_input_artifacts_to_remove).
@@ -260,6 +264,7 @@ impl UpdateTrialComponentFluentBuilder {
     pub fn get_input_artifacts_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_input_artifacts_to_remove()
     }
+    ///
     /// Adds a key-value pair to `OutputArtifacts`.
     ///
     /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
@@ -283,6 +288,7 @@ impl UpdateTrialComponentFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>> {
         self.inner.get_output_artifacts()
     }
+    ///
     /// Appends an item to `OutputArtifactsToRemove`.
     ///
     /// To override the contents of this collection use [`set_output_artifacts_to_remove`](Self::set_output_artifacts_to_remove).

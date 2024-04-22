@@ -3,7 +3,7 @@ pub use crate::operation::start_query_execution::_start_query_execution_output::
 
 pub use crate::operation::start_query_execution::_start_query_execution_input::StartQueryExecutionInputBuilder;
 
-impl StartQueryExecutionInputBuilder {
+impl crate::operation::start_query_execution::builders::StartQueryExecutionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartQueryExecutionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -184,6 +184,7 @@ impl StartQueryExecutionFluentBuilder {
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_work_group()
     }
+    ///
     /// Appends an item to `ExecutionParameters`.
     ///
     /// To override the contents of this collection use [`set_execution_parameters`](Self::set_execution_parameters).

@@ -3,7 +3,7 @@ pub use crate::operation::update_routing_control_state::_update_routing_control_
 
 pub use crate::operation::update_routing_control_state::_update_routing_control_state_input::UpdateRoutingControlStateInputBuilder;
 
-impl UpdateRoutingControlStateInputBuilder {
+impl crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl UpdateRoutingControlStateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -146,6 +146,7 @@ impl UpdateRoutingControlStateFluentBuilder {
     pub fn get_routing_control_state(&self) -> &::std::option::Option<crate::types::RoutingControlState> {
         self.inner.get_routing_control_state()
     }
+    ///
     /// Appends an item to `SafetyRulesToOverride`.
     ///
     /// To override the contents of this collection use [`set_safety_rules_to_override`](Self::set_safety_rules_to_override).

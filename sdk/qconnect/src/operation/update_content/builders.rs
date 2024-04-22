@@ -3,7 +3,7 @@ pub use crate::operation::update_content::_update_content_output::UpdateContentO
 
 pub use crate::operation::update_content::_update_content_input::UpdateContentInputBuilder;
 
-impl UpdateContentInputBuilder {
+impl crate::operation::update_content::builders::UpdateContentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateContentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl UpdateContentFluentBuilder {
     pub fn get_remove_override_link_out_uri(&self) -> &::std::option::Option<bool> {
         self.inner.get_remove_override_link_out_uri()
     }
+    ///
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).

@@ -3,7 +3,7 @@ pub use crate::operation::get_compliance_summary::_get_compliance_summary_output
 
 pub use crate::operation::get_compliance_summary::_get_compliance_summary_input::GetComplianceSummaryInputBuilder;
 
-impl GetComplianceSummaryInputBuilder {
+impl crate::operation::get_compliance_summary::builders::GetComplianceSummaryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl GetComplianceSummaryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -117,6 +117,7 @@ impl GetComplianceSummaryFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator {
         crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `TargetIdFilters`.
     ///
     /// To override the contents of this collection use [`set_target_id_filters`](Self::set_target_id_filters).
@@ -135,6 +136,7 @@ impl GetComplianceSummaryFluentBuilder {
     pub fn get_target_id_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_id_filters()
     }
+    ///
     /// Appends an item to `RegionFilters`.
     ///
     /// To override the contents of this collection use [`set_region_filters`](Self::set_region_filters).
@@ -153,6 +155,7 @@ impl GetComplianceSummaryFluentBuilder {
     pub fn get_region_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_region_filters()
     }
+    ///
     /// Appends an item to `ResourceTypeFilters`.
     ///
     /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
@@ -201,6 +204,7 @@ impl GetComplianceSummaryFluentBuilder {
     pub fn get_resource_type_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_type_filters()
     }
+    ///
     /// Appends an item to `TagKeyFilters`.
     ///
     /// To override the contents of this collection use [`set_tag_key_filters`](Self::set_tag_key_filters).
@@ -219,6 +223,7 @@ impl GetComplianceSummaryFluentBuilder {
     pub fn get_tag_key_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_key_filters()
     }
+    ///
     /// Appends an item to `GroupBy`.
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).

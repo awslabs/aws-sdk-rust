@@ -3,7 +3,7 @@ pub use crate::operation::get_cost_categories::_get_cost_categories_output::GetC
 
 pub use crate::operation::get_cost_categories::_get_cost_categories_input::GetCostCategoriesInputBuilder;
 
-impl GetCostCategoriesInputBuilder {
+impl crate::operation::get_cost_categories::builders::GetCostCategoriesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl GetCostCategoriesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -325,6 +325,7 @@ impl GetCostCategoriesFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
         self.inner.get_filter()
     }
+    ///
     /// Appends an item to `SortBy`.
     ///
     /// To override the contents of this collection use [`set_sort_by`](Self::set_sort_by).

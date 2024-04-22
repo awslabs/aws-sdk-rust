@@ -3,7 +3,7 @@ pub use crate::operation::get_metric_statistics::_get_metric_statistics_output::
 
 pub use crate::operation::get_metric_statistics::_get_metric_statistics_input::GetMetricStatisticsInputBuilder;
 
-impl GetMetricStatisticsInputBuilder {
+impl crate::operation::get_metric_statistics::builders::GetMetricStatisticsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -123,12 +123,12 @@ impl GetMetricStatisticsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -160,6 +160,7 @@ impl GetMetricStatisticsFluentBuilder {
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_metric_name()
     }
+    ///
     /// Appends an item to `Dimensions`.
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
@@ -283,6 +284,7 @@ impl GetMetricStatisticsFluentBuilder {
     pub fn get_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_period()
     }
+    ///
     /// Appends an item to `Statistics`.
     ///
     /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).
@@ -301,6 +303,7 @@ impl GetMetricStatisticsFluentBuilder {
     pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Statistic>> {
         self.inner.get_statistics()
     }
+    ///
     /// Appends an item to `ExtendedStatistics`.
     ///
     /// To override the contents of this collection use [`set_extended_statistics`](Self::set_extended_statistics).

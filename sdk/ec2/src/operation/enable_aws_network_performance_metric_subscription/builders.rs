@@ -3,7 +3,7 @@ pub use crate::operation::enable_aws_network_performance_metric_subscription::_e
 
 pub use crate::operation::enable_aws_network_performance_metric_subscription::_enable_aws_network_performance_metric_subscription_input::EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder;
 
-impl EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
+impl crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

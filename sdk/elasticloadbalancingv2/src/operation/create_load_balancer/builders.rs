@@ -3,7 +3,7 @@ pub use crate::operation::create_load_balancer::_create_load_balancer_output::Cr
 
 pub use crate::operation::create_load_balancer::_create_load_balancer_input::CreateLoadBalancerInputBuilder;
 
-impl CreateLoadBalancerInputBuilder {
+impl crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl CreateLoadBalancerFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -135,6 +135,7 @@ impl CreateLoadBalancerFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `Subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -168,6 +169,7 @@ impl CreateLoadBalancerFluentBuilder {
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnets()
     }
+    ///
     /// Appends an item to `SubnetMappings`.
     ///
     /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
@@ -201,6 +203,7 @@ impl CreateLoadBalancerFluentBuilder {
     pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
         self.inner.get_subnet_mappings()
     }
+    ///
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -242,6 +245,7 @@ impl CreateLoadBalancerFluentBuilder {
     pub fn get_scheme(&self) -> &::std::option::Option<crate::types::LoadBalancerSchemeEnum> {
         self.inner.get_scheme()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

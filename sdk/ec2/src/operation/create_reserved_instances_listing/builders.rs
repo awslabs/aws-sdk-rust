@@ -3,7 +3,7 @@ pub use crate::operation::create_reserved_instances_listing::_create_reserved_in
 
 pub use crate::operation::create_reserved_instances_listing::_create_reserved_instances_listing_input::CreateReservedInstancesListingInputBuilder;
 
-impl CreateReservedInstancesListingInputBuilder {
+impl crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CreateReservedInstancesListingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -141,6 +141,7 @@ impl CreateReservedInstancesListingFluentBuilder {
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_instance_count()
     }
+    ///
     /// Appends an item to `PriceSchedules`.
     ///
     /// To override the contents of this collection use [`set_price_schedules`](Self::set_price_schedules).

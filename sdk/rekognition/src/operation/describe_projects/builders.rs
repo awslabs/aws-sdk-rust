@@ -3,7 +3,7 @@ pub use crate::operation::describe_projects::_describe_projects_output::Describe
 
 pub use crate::operation::describe_projects::_describe_projects_input::DescribeProjectsInputBuilder;
 
-impl DescribeProjectsInputBuilder {
+impl crate::operation::describe_projects::builders::DescribeProjectsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeProjectsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl DescribeProjectsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `ProjectNames`.
     ///
     /// To override the contents of this collection use [`set_project_names`](Self::set_project_names).
@@ -161,6 +162,7 @@ impl DescribeProjectsFluentBuilder {
     pub fn get_project_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_project_names()
     }
+    ///
     /// Appends an item to `Features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).

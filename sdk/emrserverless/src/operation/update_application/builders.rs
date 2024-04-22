@@ -3,7 +3,7 @@ pub use crate::operation::update_application::_update_application_output::Update
 
 pub use crate::operation::update_application::_update_application_input::UpdateApplicationInputBuilder;
 
-impl UpdateApplicationInputBuilder {
+impl crate::operation::update_application::builders::UpdateApplicationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateApplicationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Adds a key-value pair to `initialCapacity`.
     ///
     /// To override the contents of this collection use [`set_initial_capacity`](Self::set_initial_capacity).
@@ -243,6 +244,7 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfigurationInput> {
         self.inner.get_image_configuration()
     }
+    ///
     /// Adds a key-value pair to `workerTypeSpecifications`.
     ///
     /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
@@ -284,6 +286,7 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_release_label()
     }
+    ///
     /// Appends an item to `runtimeConfiguration`.
     ///
     /// To override the contents of this collection use [`set_runtime_configuration`](Self::set_runtime_configuration).

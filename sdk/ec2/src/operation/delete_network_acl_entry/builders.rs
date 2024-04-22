@@ -3,7 +3,7 @@ pub use crate::operation::delete_network_acl_entry::_delete_network_acl_entry_ou
 
 pub use crate::operation::delete_network_acl_entry::_delete_network_acl_entry_input::DeleteNetworkAclEntryInputBuilder;
 
-impl DeleteNetworkAclEntryInputBuilder {
+impl crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DeleteNetworkAclEntryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

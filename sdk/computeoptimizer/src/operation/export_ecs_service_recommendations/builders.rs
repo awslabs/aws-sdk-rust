@@ -3,7 +3,7 @@ pub use crate::operation::export_ecs_service_recommendations::_export_ecs_servic
 
 pub use crate::operation::export_ecs_service_recommendations::_export_ecs_service_recommendations_input::ExportEcsServiceRecommendationsInputBuilder;
 
-impl ExportEcsServiceRecommendationsInputBuilder {
+impl crate::operation::export_ecs_service_recommendations::builders::ExportEcsServiceRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,15 +101,16 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `accountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -140,6 +141,7 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -158,6 +160,7 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `fieldsToExport`.
     ///
     /// To override the contents of this collection use [`set_fields_to_export`](Self::set_fields_to_export).

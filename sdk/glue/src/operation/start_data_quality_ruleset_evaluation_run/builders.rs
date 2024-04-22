@@ -3,7 +3,7 @@ pub use crate::operation::start_data_quality_ruleset_evaluation_run::_start_data
 
 pub use crate::operation::start_data_quality_ruleset_evaluation_run::_start_data_quality_ruleset_evaluation_run_input::StartDataQualityRulesetEvaluationRunInputBuilder;
 
-impl StartDataQualityRulesetEvaluationRunInputBuilder {
+impl crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -195,6 +195,7 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
     pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
         self.inner.get_additional_run_options()
     }
+    ///
     /// Appends an item to `RulesetNames`.
     ///
     /// To override the contents of this collection use [`set_ruleset_names`](Self::set_ruleset_names).
@@ -213,6 +214,7 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
     pub fn get_ruleset_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ruleset_names()
     }
+    ///
     /// Adds a key-value pair to `AdditionalDataSources`.
     ///
     /// To override the contents of this collection use [`set_additional_data_sources`](Self::set_additional_data_sources).

@@ -3,7 +3,7 @@ pub use crate::operation::update_records::_update_records_output::UpdateRecordsO
 
 pub use crate::operation::update_records::_update_records_input::UpdateRecordsInputBuilder;
 
-impl UpdateRecordsInputBuilder {
+impl crate::operation::update_records::builders::UpdateRecordsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl UpdateRecordsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -167,6 +167,7 @@ impl UpdateRecordsFluentBuilder {
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_id()
     }
+    ///
     /// Appends an item to `RecordPatches`.
     ///
     /// To override the contents of this collection use [`set_record_patches`](Self::set_record_patches).

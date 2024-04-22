@@ -3,7 +3,7 @@ pub use crate::operation::update_product::_update_product_output::UpdateProductO
 
 pub use crate::operation::update_product::_update_product_input::UpdateProductInputBuilder;
 
-impl UpdateProductInputBuilder {
+impl crate::operation::update_product::builders::UpdateProductInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateProductFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -252,6 +252,7 @@ impl UpdateProductFluentBuilder {
     pub fn get_support_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_support_url()
     }
+    ///
     /// Appends an item to `AddTags`.
     ///
     /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
@@ -270,6 +271,7 @@ impl UpdateProductFluentBuilder {
     pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_add_tags()
     }
+    ///
     /// Appends an item to `RemoveTags`.
     ///
     /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).

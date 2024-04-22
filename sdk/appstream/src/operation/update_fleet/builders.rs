@@ -3,7 +3,7 @@ pub use crate::operation::update_fleet::_update_fleet_output::UpdateFleetOutputB
 
 pub use crate::operation::update_fleet::_update_fleet_input::UpdateFleetInputBuilder;
 
-impl UpdateFleetInputBuilder {
+impl crate::operation::update_fleet::builders::UpdateFleetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -110,12 +110,12 @@ impl UpdateFleetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -588,6 +588,7 @@ impl UpdateFleetFluentBuilder {
     pub fn get_idle_disconnect_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_idle_disconnect_timeout_in_seconds()
     }
+    ///
     /// Appends an item to `AttributesToDelete`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
@@ -668,6 +669,7 @@ impl UpdateFleetFluentBuilder {
     pub fn get_max_concurrent_sessions(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_concurrent_sessions()
     }
+    ///
     /// Appends an item to `UsbDeviceFilterStrings`.
     ///
     /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).

@@ -3,7 +3,7 @@ pub use crate::operation::modify_document_permission::_modify_document_permissio
 
 pub use crate::operation::modify_document_permission::_modify_document_permission_input::ModifyDocumentPermissionInputBuilder;
 
-impl ModifyDocumentPermissionInputBuilder {
+impl crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ModifyDocumentPermissionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl ModifyDocumentPermissionFluentBuilder {
     pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::DocumentPermissionType> {
         self.inner.get_permission_type()
     }
+    ///
     /// Appends an item to `AccountIdsToAdd`.
     ///
     /// To override the contents of this collection use [`set_account_ids_to_add`](Self::set_account_ids_to_add).
@@ -154,6 +155,7 @@ impl ModifyDocumentPermissionFluentBuilder {
     pub fn get_account_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids_to_add()
     }
+    ///
     /// Appends an item to `AccountIdsToRemove`.
     ///
     /// To override the contents of this collection use [`set_account_ids_to_remove`](Self::set_account_ids_to_remove).

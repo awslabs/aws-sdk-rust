@@ -3,7 +3,7 @@ pub use crate::operation::create_user::_create_user_output::CreateUserOutputBuil
 
 pub use crate::operation::create_user::_create_user_input::CreateUserInputBuilder;
 
-impl CreateUserInputBuilder {
+impl crate::operation::create_user::builders::CreateUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl CreateUserFluentBuilder {
     pub fn get_profile_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profile_url()
     }
+    ///
     /// Appends an item to `Emails`.
     ///
     /// To override the contents of this collection use [`set_emails`](Self::set_emails).
@@ -210,6 +211,7 @@ impl CreateUserFluentBuilder {
     pub fn get_emails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Email>> {
         self.inner.get_emails()
     }
+    ///
     /// Appends an item to `Addresses`.
     ///
     /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
@@ -228,6 +230,7 @@ impl CreateUserFluentBuilder {
     pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
         self.inner.get_addresses()
     }
+    ///
     /// Appends an item to `PhoneNumbers`.
     ///
     /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).

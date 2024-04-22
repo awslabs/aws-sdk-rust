@@ -3,7 +3,7 @@ pub use crate::operation::update_ops_item::_update_ops_item_output::UpdateOpsIte
 
 pub use crate::operation::update_ops_item::_update_ops_item_input::UpdateOpsItemInputBuilder;
 
-impl UpdateOpsItemInputBuilder {
+impl crate::operation::update_ops_item::builders::UpdateOpsItemInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateOpsItemFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl UpdateOpsItemFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Adds a key-value pair to `OperationalData`.
     ///
     /// To override the contents of this collection use [`set_operational_data`](Self::set_operational_data).
@@ -159,6 +160,7 @@ impl UpdateOpsItemFluentBuilder {
     pub fn get_operational_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>> {
         self.inner.get_operational_data()
     }
+    ///
     /// Appends an item to `OperationalDataToDelete`.
     ///
     /// To override the contents of this collection use [`set_operational_data_to_delete`](Self::set_operational_data_to_delete).
@@ -177,6 +179,7 @@ impl UpdateOpsItemFluentBuilder {
     pub fn get_operational_data_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_operational_data_to_delete()
     }
+    ///
     /// Appends an item to `Notifications`.
     ///
     /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
@@ -209,6 +212,7 @@ impl UpdateOpsItemFluentBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
+    ///
     /// Appends an item to `RelatedOpsItems`.
     ///
     /// To override the contents of this collection use [`set_related_ops_items`](Self::set_related_ops_items).

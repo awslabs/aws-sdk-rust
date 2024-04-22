@@ -3,7 +3,7 @@ pub use crate::operation::list_on_premises_instances::_list_on_premises_instance
 
 pub use crate::operation::list_on_premises_instances::_list_on_premises_instances_input::ListOnPremisesInstancesInputBuilder;
 
-impl ListOnPremisesInstancesInputBuilder {
+impl crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ListOnPremisesInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -141,6 +141,7 @@ impl ListOnPremisesInstancesFluentBuilder {
     pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         self.inner.get_registration_status()
     }
+    ///
     /// Appends an item to `tagFilters`.
     ///
     /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).

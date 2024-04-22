@@ -3,7 +3,7 @@ pub use crate::operation::create_component_type::_create_component_type_output::
 
 pub use crate::operation::create_component_type::_create_component_type_input::CreateComponentTypeInputBuilder;
 
-impl CreateComponentTypeInputBuilder {
+impl crate::operation::create_component_type::builders::CreateComponentTypeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateComponentTypeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateComponentTypeFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Adds a key-value pair to `propertyDefinitions`.
     ///
     /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
@@ -187,6 +188,7 @@ impl CreateComponentTypeFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyDefinitionRequest>> {
         self.inner.get_property_definitions()
     }
+    ///
     /// Appends an item to `extendsFrom`.
     ///
     /// To override the contents of this collection use [`set_extends_from`](Self::set_extends_from).
@@ -205,6 +207,7 @@ impl CreateComponentTypeFluentBuilder {
     pub fn get_extends_from(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_extends_from()
     }
+    ///
     /// Adds a key-value pair to `functions`.
     ///
     /// To override the contents of this collection use [`set_functions`](Self::set_functions).
@@ -226,6 +229,7 @@ impl CreateComponentTypeFluentBuilder {
     pub fn get_functions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>> {
         self.inner.get_functions()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -244,6 +248,7 @@ impl CreateComponentTypeFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Adds a key-value pair to `propertyGroups`.
     ///
     /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
@@ -281,6 +286,7 @@ impl CreateComponentTypeFluentBuilder {
     pub fn get_component_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_component_type_name()
     }
+    ///
     /// Adds a key-value pair to `compositeComponentTypes`.
     ///
     /// To override the contents of this collection use [`set_composite_component_types`](Self::set_composite_component_types).

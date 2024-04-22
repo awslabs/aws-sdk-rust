@@ -3,7 +3,7 @@ pub use crate::operation::describe_fpga_images::_describe_fpga_images_output::De
 
 pub use crate::operation::describe_fpga_images::_describe_fpga_images_input::DescribeFpgaImagesInputBuilder;
 
-impl DescribeFpgaImagesInputBuilder {
+impl crate::operation::describe_fpga_images::builders::DescribeFpgaImagesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeFpgaImagesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl DescribeFpgaImagesFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `FpgaImageIds`.
     ///
     /// To override the contents of this collection use [`set_fpga_image_ids`](Self::set_fpga_image_ids).
@@ -146,6 +147,7 @@ impl DescribeFpgaImagesFluentBuilder {
     pub fn get_fpga_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_fpga_image_ids()
     }
+    ///
     /// Appends an item to `Owners`.
     ///
     /// To override the contents of this collection use [`set_owners`](Self::set_owners).
@@ -164,6 +166,7 @@ impl DescribeFpgaImagesFluentBuilder {
     pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_owners()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

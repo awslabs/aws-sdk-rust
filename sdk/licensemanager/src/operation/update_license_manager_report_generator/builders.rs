@@ -3,7 +3,7 @@ pub use crate::operation::update_license_manager_report_generator::_update_licen
 
 pub use crate::operation::update_license_manager_report_generator::_update_license_manager_report_generator_input::UpdateLicenseManagerReportGeneratorInputBuilder;
 
-impl UpdateLicenseManagerReportGeneratorInputBuilder {
+impl crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     pub fn get_report_generator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_report_generator_name()
     }
+    ///
     /// Appends an item to `Type`.
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).

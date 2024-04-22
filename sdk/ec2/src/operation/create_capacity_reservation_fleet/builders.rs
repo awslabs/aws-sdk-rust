@@ -3,7 +3,7 @@ pub use crate::operation::create_capacity_reservation_fleet::_create_capacity_re
 
 pub use crate::operation::create_capacity_reservation_fleet::_create_capacity_reservation_fleet_input::CreateCapacityReservationFleetInputBuilder;
 
-impl CreateCapacityReservationFleetInputBuilder {
+impl crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateCapacityReservationFleetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl CreateCapacityReservationFleetFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `InstanceTypeSpecifications`.
     ///
     /// To override the contents of this collection use [`set_instance_type_specifications`](Self::set_instance_type_specifications).
@@ -240,6 +241,7 @@ impl CreateCapacityReservationFleetFluentBuilder {
     pub fn get_instance_match_criteria(&self) -> &::std::option::Option<crate::types::FleetInstanceMatchCriteria> {
         self.inner.get_instance_match_criteria()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

@@ -3,7 +3,7 @@ pub use crate::operation::create_token_with_iam::_create_token_with_iam_output::
 
 pub use crate::operation::create_token_with_iam::_create_token_with_iam_input::CreateTokenWithIamInputBuilder;
 
-impl CreateTokenWithIamInputBuilder {
+impl crate::operation::create_token_with_iam::builders::CreateTokenWithIamInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateTokenWithIAMFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -193,6 +193,7 @@ impl CreateTokenWithIAMFluentBuilder {
     pub fn get_assertion(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assertion()
     }
+    ///
     /// Appends an item to `scope`.
     ///
     /// To override the contents of this collection use [`set_scope`](Self::set_scope).

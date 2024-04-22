@@ -3,7 +3,7 @@ pub use crate::operation::get_ecs_service_recommendations::_get_ecs_service_reco
 
 pub use crate::operation::get_ecs_service_recommendations::_get_ecs_service_recommendations_input::GetEcsServiceRecommendationsInputBuilder;
 
-impl GetEcsServiceRecommendationsInputBuilder {
+impl crate::operation::get_ecs_service_recommendations::builders::GetEcsServiceRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl GetECSServiceRecommendationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `serviceArns`.
     ///
     /// To override the contents of this collection use [`set_service_arns`](Self::set_service_arns).
@@ -164,6 +165,7 @@ impl GetECSServiceRecommendationsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -182,6 +184,7 @@ impl GetECSServiceRecommendationsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `accountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).

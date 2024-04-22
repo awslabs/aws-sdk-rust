@@ -3,7 +3,7 @@ pub use crate::operation::associate_subnets::_associate_subnets_output::Associat
 
 pub use crate::operation::associate_subnets::_associate_subnets_input::AssociateSubnetsInputBuilder;
 
-impl AssociateSubnetsInputBuilder {
+impl crate::operation::associate_subnets::builders::AssociateSubnetsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl AssociateSubnetsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -163,6 +163,7 @@ impl AssociateSubnetsFluentBuilder {
     pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_name()
     }
+    ///
     /// Appends an item to `SubnetMappings`.
     ///
     /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).

@@ -3,7 +3,7 @@ pub use crate::operation::batch_stop_update_action::_batch_stop_update_action_ou
 
 pub use crate::operation::batch_stop_update_action::_batch_stop_update_action_input::BatchStopUpdateActionInputBuilder;
 
-impl BatchStopUpdateActionInputBuilder {
+impl crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl BatchStopUpdateActionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `ReplicationGroupIds`.
     ///
     /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
@@ -126,6 +127,7 @@ impl BatchStopUpdateActionFluentBuilder {
     pub fn get_replication_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_replication_group_ids()
     }
+    ///
     /// Appends an item to `CacheClusterIds`.
     ///
     /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).

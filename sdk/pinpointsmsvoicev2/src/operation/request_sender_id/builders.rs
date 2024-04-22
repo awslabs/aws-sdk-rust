@@ -3,7 +3,7 @@ pub use crate::operation::request_sender_id::_request_sender_id_output::RequestS
 
 pub use crate::operation::request_sender_id::_request_sender_id_input::RequestSenderIdInputBuilder;
 
-impl RequestSenderIdInputBuilder {
+impl crate::operation::request_sender_id::builders::RequestSenderIdInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RequestSenderIdFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl RequestSenderIdFluentBuilder {
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iso_country_code()
     }
+    ///
     /// Appends an item to `MessageTypes`.
     ///
     /// To override the contents of this collection use [`set_message_types`](Self::set_message_types).
@@ -168,6 +169,7 @@ impl RequestSenderIdFluentBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection_enabled()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

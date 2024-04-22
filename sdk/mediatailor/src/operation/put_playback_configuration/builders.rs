@@ -3,7 +3,7 @@ pub use crate::operation::put_playback_configuration::_put_playback_configuratio
 
 pub use crate::operation::put_playback_configuration::_put_playback_configuration_input::PutPlaybackConfigurationInputBuilder;
 
-impl PutPlaybackConfigurationInputBuilder {
+impl crate::operation::put_playback_configuration::builders::PutPlaybackConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutPlaybackConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl PutPlaybackConfigurationFluentBuilder {
     pub fn get_cdn_configuration(&self) -> &::std::option::Option<crate::types::CdnConfiguration> {
         self.inner.get_cdn_configuration()
     }
+    ///
     /// Adds a key-value pair to `ConfigurationAliases`.
     ///
     /// To override the contents of this collection use [`set_configuration_aliases`](Self::set_configuration_aliases).
@@ -293,6 +294,7 @@ impl PutPlaybackConfigurationFluentBuilder {
     pub fn get_slate_ad_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_slate_ad_url()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

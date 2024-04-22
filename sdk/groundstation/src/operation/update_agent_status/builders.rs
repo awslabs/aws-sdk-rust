@@ -3,7 +3,7 @@ pub use crate::operation::update_agent_status::_update_agent_status_output::Upda
 
 pub use crate::operation::update_agent_status::_update_agent_status_input::UpdateAgentStatusInputBuilder;
 
-impl UpdateAgentStatusInputBuilder {
+impl crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl UpdateAgentStatusFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl UpdateAgentStatusFluentBuilder {
     pub fn get_aggregate_status(&self) -> &::std::option::Option<crate::types::AggregateStatus> {
         self.inner.get_aggregate_status()
     }
+    ///
     /// Appends an item to `componentStatuses`.
     ///
     /// To override the contents of this collection use [`set_component_statuses`](Self::set_component_statuses).

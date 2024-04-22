@@ -3,7 +3,7 @@ pub use crate::operation::describe_buckets::_describe_buckets_output::DescribeBu
 
 pub use crate::operation::describe_buckets::_describe_buckets_input::DescribeBucketsInputBuilder;
 
-impl DescribeBucketsInputBuilder {
+impl crate::operation::describe_buckets::builders::DescribeBucketsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeBucketsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeBucketsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_buckets::paginator::DescribeBucketsPaginator {
         crate::operation::describe_buckets::paginator::DescribeBucketsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Adds a key-value pair to `criteria`.
     ///
     /// To override the contents of this collection use [`set_criteria`](Self::set_criteria).

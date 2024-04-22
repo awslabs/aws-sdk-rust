@@ -3,7 +3,7 @@ pub use crate::operation::query_lineage::_query_lineage_output::QueryLineageOutp
 
 pub use crate::operation::query_lineage::_query_lineage_input::QueryLineageInputBuilder;
 
-impl QueryLineageInputBuilder {
+impl crate::operation::query_lineage::builders::QueryLineageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl QueryLineageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl QueryLineageFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::query_lineage::paginator::QueryLineagePaginator {
         crate::operation::query_lineage::paginator::QueryLineagePaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `StartArns`.
     ///
     /// To override the contents of this collection use [`set_start_arns`](Self::set_start_arns).

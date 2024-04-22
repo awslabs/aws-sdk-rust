@@ -3,7 +3,7 @@ pub use crate::operation::create_identity_pool::_create_identity_pool_output::Cr
 
 pub use crate::operation::create_identity_pool::_create_identity_pool_input::CreateIdentityPoolInputBuilder;
 
-impl CreateIdentityPoolInputBuilder {
+impl crate::operation::create_identity_pool::builders::CreateIdentityPoolInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -112,12 +112,12 @@ impl CreateIdentityPoolFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -163,6 +163,7 @@ impl CreateIdentityPoolFluentBuilder {
     pub fn get_allow_classic_flow(&self) -> &::std::option::Option<bool> {
         self.inner.get_allow_classic_flow()
     }
+    ///
     /// Adds a key-value pair to `SupportedLoginProviders`.
     ///
     /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
@@ -205,6 +206,7 @@ impl CreateIdentityPoolFluentBuilder {
     pub fn get_developer_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_developer_provider_name()
     }
+    ///
     /// Appends an item to `OpenIdConnectProviderARNs`.
     ///
     /// To override the contents of this collection use [`set_open_id_connect_provider_arns`](Self::set_open_id_connect_provider_arns).
@@ -223,6 +225,7 @@ impl CreateIdentityPoolFluentBuilder {
     pub fn get_open_id_connect_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_open_id_connect_provider_arns()
     }
+    ///
     /// Appends an item to `CognitoIdentityProviders`.
     ///
     /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
@@ -241,6 +244,7 @@ impl CreateIdentityPoolFluentBuilder {
     pub fn get_cognito_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>> {
         self.inner.get_cognito_identity_providers()
     }
+    ///
     /// Appends an item to `SamlProviderARNs`.
     ///
     /// To override the contents of this collection use [`set_saml_provider_arns`](Self::set_saml_provider_arns).
@@ -259,6 +263,7 @@ impl CreateIdentityPoolFluentBuilder {
     pub fn get_saml_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_saml_provider_arns()
     }
+    ///
     /// Adds a key-value pair to `IdentityPoolTags`.
     ///
     /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).

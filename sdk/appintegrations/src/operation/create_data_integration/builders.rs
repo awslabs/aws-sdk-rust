@@ -3,7 +3,7 @@ pub use crate::operation::create_data_integration::_create_data_integration_outp
 
 pub use crate::operation::create_data_integration::_create_data_integration_input::CreateDataIntegrationInputBuilder;
 
-impl CreateDataIntegrationInputBuilder {
+impl crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateDataIntegrationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -180,6 +180,7 @@ impl CreateDataIntegrationFluentBuilder {
     pub fn get_schedule_config(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
         self.inner.get_schedule_config()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -226,6 +227,7 @@ impl CreateDataIntegrationFluentBuilder {
     pub fn get_file_configuration(&self) -> &::std::option::Option<crate::types::FileConfiguration> {
         self.inner.get_file_configuration()
     }
+    ///
     /// Adds a key-value pair to `ObjectConfiguration`.
     ///
     /// To override the contents of this collection use [`set_object_configuration`](Self::set_object_configuration).

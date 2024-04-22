@@ -3,7 +3,7 @@ pub use crate::operation::create_assessment_template::_create_assessment_templat
 
 pub use crate::operation::create_assessment_template::_create_assessment_template_input::CreateAssessmentTemplateInputBuilder;
 
-impl CreateAssessmentTemplateInputBuilder {
+impl crate::operation::create_assessment_template::builders::CreateAssessmentTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateAssessmentTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateAssessmentTemplateFluentBuilder {
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration_in_seconds()
     }
+    ///
     /// Appends an item to `rulesPackageArns`.
     ///
     /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
@@ -168,6 +169,7 @@ impl CreateAssessmentTemplateFluentBuilder {
     pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_rules_package_arns()
     }
+    ///
     /// Appends an item to `userAttributesForFindings`.
     ///
     /// To override the contents of this collection use [`set_user_attributes_for_findings`](Self::set_user_attributes_for_findings).

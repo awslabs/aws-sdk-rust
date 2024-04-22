@@ -3,7 +3,7 @@ pub use crate::operation::run_instances::_run_instances_output::RunInstancesOutp
 
 pub use crate::operation::run_instances::_run_instances_input::RunInstancesInputBuilder;
 
-impl RunInstancesInputBuilder {
+impl crate::operation::run_instances::builders::RunInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -117,15 +117,16 @@ impl RunInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `BlockDeviceMappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
@@ -189,6 +190,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_ipv6_address_count()
     }
+    ///
     /// Appends an item to `Ipv6Addresses`.
     ///
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
@@ -332,6 +334,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ramdisk_id()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -353,6 +356,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
+    ///
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -521,6 +525,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::ShutdownBehavior> {
         self.inner.get_instance_initiated_shutdown_behavior()
     }
+    ///
     /// Appends an item to `NetworkInterfaces`.
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
@@ -562,6 +567,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_private_ip_address()
     }
+    ///
     /// Appends an item to `ElasticGpuSpecification`.
     ///
     /// To override the contents of this collection use [`set_elastic_gpu_specification`](Self::set_elastic_gpu_specification).
@@ -586,6 +592,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
         self.inner.get_elastic_gpu_specification()
     }
+    ///
     /// Appends an item to `ElasticInferenceAccelerators`.
     ///
     /// To override the contents of this collection use [`set_elastic_inference_accelerators`](Self::set_elastic_inference_accelerators).
@@ -613,6 +620,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
         self.inner.get_elastic_inference_accelerators()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -763,6 +771,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_hibernation_options(&self) -> &::std::option::Option<crate::types::HibernationOptionsRequest> {
         self.inner.get_hibernation_options()
     }
+    ///
     /// Appends an item to `LicenseSpecifications`.
     ///
     /// To override the contents of this collection use [`set_license_specifications`](Self::set_license_specifications).

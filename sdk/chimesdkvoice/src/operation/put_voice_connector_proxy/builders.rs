@@ -3,7 +3,7 @@ pub use crate::operation::put_voice_connector_proxy::_put_voice_connector_proxy_
 
 pub use crate::operation::put_voice_connector_proxy::_put_voice_connector_proxy_input::PutVoiceConnectorProxyInputBuilder;
 
-impl PutVoiceConnectorProxyInputBuilder {
+impl crate::operation::put_voice_connector_proxy::builders::PutVoiceConnectorProxyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutVoiceConnectorProxyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl PutVoiceConnectorProxyFluentBuilder {
     pub fn get_default_session_expiry_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_default_session_expiry_minutes()
     }
+    ///
     /// Appends an item to `PhoneNumberPoolCountries`.
     ///
     /// To override the contents of this collection use [`set_phone_number_pool_countries`](Self::set_phone_number_pool_countries).
