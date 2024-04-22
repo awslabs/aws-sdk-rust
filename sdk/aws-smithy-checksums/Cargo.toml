@@ -28,7 +28,7 @@ tracing = "0.1"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.60.7"
+version = "0.60.8"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

@@ -27,7 +27,7 @@ version = "1.2.0"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
-version = "1.2.0"
+version = "1.2.1"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -44,7 +44,7 @@ version = "0.60.4"
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
 features = ["event-stream"]
-version = "0.60.7"
+version = "0.60.8"
 
 [dependencies.aws-smithy-json]
 path = "../aws-smithy-json"
@@ -66,7 +66,7 @@ version = "1.1.8"
 
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"
-version = "0.60.7"
+version = "0.60.8"
 
 [dependencies.aws-types]
 path = "../aws-types"

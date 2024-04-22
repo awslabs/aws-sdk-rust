@@ -6,7 +6,7 @@
 //! Utilities for writing Smithy values into a query string.
 //!
 //! Formatting values into the query string as specified in
-//! [httpQuery](https://awslabs.github.io/smithy/1.0/spec/core/http-traits.html#httpquery-trait)
+//! [httpQuery](https://smithy.io/2.0/spec/http-bindings.html#httpquery-trait)
 
 use crate::urlencode::BASE_SET;
 use aws_smithy_types::date_time::{DateTimeFormatError, Format};

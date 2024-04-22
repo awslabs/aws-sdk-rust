@@ -53,7 +53,7 @@ version = "1.2.1"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.60.7"
+version = "0.60.8"
 
 [dependencies.aws-smithy-json]
 path = "../aws-smithy-json"

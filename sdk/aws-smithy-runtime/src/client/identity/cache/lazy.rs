@@ -354,7 +354,7 @@ impl ResolveCachedIdentity for LazyCache {
                             // `cache.get_or_load`, logging inside `cache.get_or_load` ensures that it is emitted
                             // only once for the first thread that succeeds in populating a cache value.
                             let printable = DateTime::from(expiration);
-                            tracing::info!(
+                            tracing::debug!(
                                 new_expiration=%printable,
                                 valid_for=?expiration.duration_since(time_source.now()).unwrap_or_default(),
                                 partition=?partition,
