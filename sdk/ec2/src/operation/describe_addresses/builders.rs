@@ -3,7 +3,7 @@ pub use crate::operation::describe_addresses::_describe_addresses_output::Descri
 
 pub use crate::operation::describe_addresses::_describe_addresses_input::DescribeAddressesInputBuilder;
 
-impl DescribeAddressesInputBuilder {
+impl crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl DescribeAddressesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -210,6 +211,7 @@ impl DescribeAddressesFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `PublicIps`.
     ///
     /// To override the contents of this collection use [`set_public_ips`](Self::set_public_ips).
@@ -231,6 +233,7 @@ impl DescribeAddressesFluentBuilder {
     pub fn get_public_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_public_ips()
     }
+    ///
     /// Appends an item to `AllocationIds`.
     ///
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).

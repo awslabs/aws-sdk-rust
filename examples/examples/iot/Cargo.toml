@@ -7,8 +7,8 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "1.2.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-iot= { version = "1.23.0", path = "../../../sdk/iot" }
+aws-config= { version = "1.2.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-sdk-iot= { version = "1.24.0", path = "../../../sdk/iot" }
 aws-types= { version = "1.2.0", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]

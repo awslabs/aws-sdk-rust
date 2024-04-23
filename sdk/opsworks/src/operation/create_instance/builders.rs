@@ -3,7 +3,7 @@ pub use crate::operation::create_instance::_create_instance_output::CreateInstan
 
 pub use crate::operation::create_instance::_create_instance_input::CreateInstanceInputBuilder;
 
-impl CreateInstanceInputBuilder {
+impl crate::operation::create_instance::builders::CreateInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl CreateInstanceFluentBuilder {
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_id()
     }
+    ///
     /// Appends an item to `LayerIds`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -349,6 +350,7 @@ impl CreateInstanceFluentBuilder {
     pub fn get_root_device_type(&self) -> &::std::option::Option<crate::types::RootDeviceType> {
         self.inner.get_root_device_type()
     }
+    ///
     /// Appends an item to `BlockDeviceMappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).

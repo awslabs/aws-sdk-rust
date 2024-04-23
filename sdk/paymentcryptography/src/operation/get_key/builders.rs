@@ -3,7 +3,7 @@ pub use crate::operation::get_key::_get_key_output::GetKeyOutputBuilder;
 
 pub use crate::operation::get_key::_get_key_input::GetKeyInputBuilder;
 
-impl GetKeyInputBuilder {
+impl crate::operation::get_key::builders::GetKeyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -27,11 +27,11 @@ impl GetKeyInputBuilder {
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
-/// <p><code>CreateKey</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a></p></li>
 /// <li>
-/// <p><code>DeleteKey</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a></p></li>
 /// <li>
-/// <p><code>ListKeys</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListKeys.html">ListKeys</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKeyFluentBuilder {
@@ -99,12 +99,12 @@ impl GetKeyFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::get_key::GetKeyOutput, crate::operation::get_key::GetKeyError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -7,7 +7,7 @@ pub struct GetHealthEventInput {
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The internally-generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub linked_account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHealthEventInput {
@@ -19,7 +19,7 @@ impl GetHealthEventInput {
     pub fn event_id(&self) -> ::std::option::Option<&str> {
         self.event_id.as_deref()
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn linked_account_id(&self) -> ::std::option::Option<&str> {
         self.linked_account_id.as_deref()
     }
@@ -70,17 +70,17 @@ impl GetHealthEventInputBuilder {
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn linked_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.linked_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn set_linked_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.linked_account_id = input;
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn get_linked_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.linked_account_id
     }

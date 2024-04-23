@@ -3,7 +3,7 @@ pub use crate::operation::update_integration::_update_integration_output::Update
 
 pub use crate::operation::update_integration::_update_integration_input::UpdateIntegrationInputBuilder;
 
-impl UpdateIntegrationInputBuilder {
+impl crate::operation::update_integration::builders::UpdateIntegrationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateIntegrationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -329,6 +329,7 @@ impl UpdateIntegrationFluentBuilder {
     pub fn get_payload_format_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payload_format_version()
     }
+    ///
     /// Adds a key-value pair to `RequestParameters`.
     ///
     /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
@@ -384,6 +385,7 @@ impl UpdateIntegrationFluentBuilder {
     pub fn get_request_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_parameters()
     }
+    ///
     /// Adds a key-value pair to `RequestTemplates`.
     ///
     /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
@@ -409,6 +411,7 @@ impl UpdateIntegrationFluentBuilder {
     pub fn get_request_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_templates()
     }
+    ///
     /// Adds a key-value pair to `ResponseParameters`.
     ///
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).

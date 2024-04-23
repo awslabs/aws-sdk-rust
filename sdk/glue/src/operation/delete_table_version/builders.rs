@@ -3,7 +3,7 @@ pub use crate::operation::delete_table_version::_delete_table_version_output::De
 
 pub use crate::operation::delete_table_version::_delete_table_version_input::DeleteTableVersionInputBuilder;
 
-impl DeleteTableVersionInputBuilder {
+impl crate::operation::delete_table_version::builders::DeleteTableVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DeleteTableVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

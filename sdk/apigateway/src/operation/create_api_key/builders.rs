@@ -3,7 +3,7 @@ pub use crate::operation::create_api_key::_create_api_key_output::CreateApiKeyOu
 
 pub use crate::operation::create_api_key::_create_api_key_input::CreateApiKeyInputBuilder;
 
-impl CreateApiKeyInputBuilder {
+impl crate::operation::create_api_key::builders::CreateApiKeyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateApiKeyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateApiKeyFluentBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_value()
     }
+    ///
     /// Appends an item to `stageKeys`.
     ///
     /// To override the contents of this collection use [`set_stage_keys`](Self::set_stage_keys).
@@ -210,6 +211,7 @@ impl CreateApiKeyFluentBuilder {
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_id()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

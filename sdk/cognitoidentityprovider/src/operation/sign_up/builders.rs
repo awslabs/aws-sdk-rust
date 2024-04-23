@@ -3,7 +3,7 @@ pub use crate::operation::sign_up::_sign_up_output::SignUpOutputBuilder;
 
 pub use crate::operation::sign_up::_sign_up_input::SignUpInputBuilder;
 
-impl SignUpInputBuilder {
+impl crate::operation::sign_up::builders::SignUpInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -94,12 +94,12 @@ impl SignUpFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::sign_up::SignUpOutput, crate::operation::sign_up::SignUpError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -159,6 +159,7 @@ impl SignUpFluentBuilder {
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_password()
     }
+    ///
     /// Appends an item to `UserAttributes`.
     ///
     /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
@@ -180,6 +181,7 @@ impl SignUpFluentBuilder {
     pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
         self.inner.get_user_attributes()
     }
+    ///
     /// Appends an item to `ValidationData`.
     ///
     /// To override the contents of this collection use [`set_validation_data`](Self::set_validation_data).
@@ -232,6 +234,7 @@ impl SignUpFluentBuilder {
     pub fn get_user_context_data(&self) -> &::std::option::Option<crate::types::UserContextDataType> {
         self.inner.get_user_context_data()
     }
+    ///
     /// Adds a key-value pair to `ClientMetadata`.
     ///
     /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).

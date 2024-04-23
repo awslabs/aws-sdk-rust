@@ -3,32 +3,29 @@ pub use crate::operation::batch_disassociate_approval_rule_template_from_reposit
 
 pub use crate::operation::batch_disassociate_approval_rule_template_from_repositories::_batch_disassociate_approval_rule_template_from_repositories_input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder;
 
-impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
-    /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_disassociate_approval_rule_template_from_repositories();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
-}
+impl crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
+                    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_disassociate_approval_rule_template_from_repositories();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+                }
 /// Fluent builder constructing a request to `BatchDisassociateApprovalRuleTemplateFromRepositories`.
 ///
 /// <p>Removes the association between an approval rule template and one or more specified repositories.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput,
@@ -99,12 +96,12 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +119,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesFluentBuilder {
     pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_approval_rule_template_name()
     }
+    ///
     /// Appends an item to `repositoryNames`.
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).

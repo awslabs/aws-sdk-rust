@@ -3,7 +3,7 @@ pub use crate::operation::decrease_replication_factor::_decrease_replication_fac
 
 pub use crate::operation::decrease_replication_factor::_decrease_replication_factor_input::DecreaseReplicationFactorInputBuilder;
 
-impl DecreaseReplicationFactorInputBuilder {
+impl crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DecreaseReplicationFactorFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl DecreaseReplicationFactorFluentBuilder {
     pub fn get_new_replication_factor(&self) -> &::std::option::Option<i32> {
         self.inner.get_new_replication_factor()
     }
+    ///
     /// Appends an item to `AvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -156,6 +157,7 @@ impl DecreaseReplicationFactorFluentBuilder {
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
     }
+    ///
     /// Appends an item to `NodeIdsToRemove`.
     ///
     /// To override the contents of this collection use [`set_node_ids_to_remove`](Self::set_node_ids_to_remove).

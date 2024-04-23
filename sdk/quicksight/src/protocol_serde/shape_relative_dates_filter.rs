@@ -45,6 +45,12 @@ pub fn ser_relative_dates_filter(
         crate::protocol_serde::shape_exclude_period_configuration::ser_exclude_period_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.default_filter_control_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("DefaultFilterControlConfiguration").start_object();
+        crate::protocol_serde::shape_default_filter_control_configuration::ser_default_filter_control_configuration(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }
 
@@ -123,6 +129,11 @@ where
                         "ExcludePeriodConfiguration" => {
                             builder = builder.set_exclude_period_configuration(
                                 crate::protocol_serde::shape_exclude_period_configuration::de_exclude_period_configuration(tokens)?,
+                            );
+                        }
+                        "DefaultFilterControlConfiguration" => {
+                            builder = builder.set_default_filter_control_configuration(
+                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

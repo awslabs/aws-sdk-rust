@@ -6,12 +6,18 @@
 pub struct ExportTr31KeyBlock {
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
     pub wrapping_key_identifier: ::std::string::String,
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub key_block_headers: ::std::option::Option<crate::types::KeyBlockHeaders>,
 }
 impl ExportTr31KeyBlock {
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
     pub fn wrapping_key_identifier(&self) -> &str {
         use std::ops::Deref;
         self.wrapping_key_identifier.deref()
+    }
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub fn key_block_headers(&self) -> ::std::option::Option<&crate::types::KeyBlockHeaders> {
+        self.key_block_headers.as_ref()
     }
 }
 impl ExportTr31KeyBlock {
@@ -26,6 +32,7 @@ impl ExportTr31KeyBlock {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTr31KeyBlockBuilder {
     pub(crate) wrapping_key_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) key_block_headers: ::std::option::Option<crate::types::KeyBlockHeaders>,
 }
 impl ExportTr31KeyBlockBuilder {
     /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
@@ -43,6 +50,20 @@ impl ExportTr31KeyBlockBuilder {
     pub fn get_wrapping_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapping_key_identifier
     }
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub fn key_block_headers(mut self, input: crate::types::KeyBlockHeaders) -> Self {
+        self.key_block_headers = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub fn set_key_block_headers(mut self, input: ::std::option::Option<crate::types::KeyBlockHeaders>) -> Self {
+        self.key_block_headers = input;
+        self
+    }
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub fn get_key_block_headers(&self) -> &::std::option::Option<crate::types::KeyBlockHeaders> {
+        &self.key_block_headers
+    }
     /// Consumes the builder and constructs a [`ExportTr31KeyBlock`](crate::types::ExportTr31KeyBlock).
     /// This method will fail if any of the following fields are not set:
     /// - [`wrapping_key_identifier`](crate::types::builders::ExportTr31KeyBlockBuilder::wrapping_key_identifier)
@@ -54,6 +75,7 @@ impl ExportTr31KeyBlockBuilder {
                     "wrapping_key_identifier was not specified but it is required when building ExportTr31KeyBlock",
                 )
             })?,
+            key_block_headers: self.key_block_headers,
         })
     }
 }

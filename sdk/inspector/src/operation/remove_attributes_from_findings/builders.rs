@@ -3,7 +3,7 @@ pub use crate::operation::remove_attributes_from_findings::_remove_attributes_fr
 
 pub use crate::operation::remove_attributes_from_findings::_remove_attributes_from_findings_input::RemoveAttributesFromFindingsInputBuilder;
 
-impl RemoveAttributesFromFindingsInputBuilder {
+impl crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl RemoveAttributesFromFindingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `findingArns`.
     ///
     /// To override the contents of this collection use [`set_finding_arns`](Self::set_finding_arns).
@@ -126,6 +127,7 @@ impl RemoveAttributesFromFindingsFluentBuilder {
     pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_finding_arns()
     }
+    ///
     /// Appends an item to `attributeKeys`.
     ///
     /// To override the contents of this collection use [`set_attribute_keys`](Self::set_attribute_keys).

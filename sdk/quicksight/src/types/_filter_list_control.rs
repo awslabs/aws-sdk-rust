@@ -12,7 +12,7 @@ pub struct FilterListControl {
     pub source_filter_id: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::ListControlDisplayOptions>,
-    /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>
@@ -45,7 +45,7 @@ impl FilterListControl {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::ListControlDisplayOptions> {
         self.display_options.as_ref()
     }
-    /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>
@@ -143,7 +143,7 @@ impl FilterListControlBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::ListControlDisplayOptions> {
         &self.display_options
     }
-    /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>
@@ -154,7 +154,7 @@ impl FilterListControlBuilder {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>
@@ -165,7 +165,7 @@ impl FilterListControlBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterListControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from the list.</p></li>

@@ -3,23 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationOutput {
-    /// <p>The name of the Amazon Q application.</p>
+    /// <p>The name of the Amazon Q Business application.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business application.</p>
+    pub identity_center_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM with permissions to access your CloudWatch logs and metrics.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the Amazon Q application.</p>
+    /// <p>The status of the Amazon Q Business application.</p>
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the synchronization to fail.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
@@ -28,39 +30,43 @@ pub struct GetApplicationOutput {
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
-    /// <p>The name of the Amazon Q application.</p>
+    /// <p>The name of the Amazon Q Business application.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business application.</p>
+    pub fn identity_center_application_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_center_application_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM with permissions to access your CloudWatch logs and metrics.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The status of the Amazon Q application.</p>
+    /// <p>The status of the Amazon Q Business application.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
         self.status.as_ref()
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -92,6 +98,7 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_center_application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -103,47 +110,61 @@ pub struct GetApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
-    /// <p>The name of the Amazon Q application.</p>
+    /// <p>The name of the Amazon Q Business application.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon Q application.</p>
+    /// <p>The name of the Amazon Q Business application.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The name of the Amazon Q application.</p>
+    /// <p>The name of the Amazon Q Business application.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business application.</p>
+    pub fn identity_center_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business application.</p>
+    pub fn set_identity_center_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_application_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business application.</p>
+    pub fn get_identity_center_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_application_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM with permissions to access your CloudWatch logs and metrics.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,73 +180,73 @@ impl GetApplicationOutputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The status of the Amazon Q application.</p>
+    /// <p>The status of the Amazon Q Business application.</p>
     pub fn status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the Amazon Q application.</p>
+    /// <p>The status of the Amazon Q Business application.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the Amazon Q application.</p>
+    /// <p>The status of the Amazon Q Business application.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
         &self.status
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description for the Amazon Q application.</p>
+    /// <p>A description for the Amazon Q Business application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
-    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q doesn't support asymmetric keys.</p>
+    /// <p>The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric keys.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business application was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
@@ -272,6 +293,7 @@ impl GetApplicationOutputBuilder {
             display_name: self.display_name,
             application_id: self.application_id,
             application_arn: self.application_arn,
+            identity_center_application_arn: self.identity_center_application_arn,
             role_arn: self.role_arn,
             status: self.status,
             description: self.description,

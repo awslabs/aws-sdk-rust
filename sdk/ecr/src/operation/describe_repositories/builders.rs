@@ -3,7 +3,7 @@ pub use crate::operation::describe_repositories::_describe_repositories_output::
 
 pub use crate::operation::describe_repositories::_describe_repositories_input::DescribeRepositoriesInputBuilder;
 
-impl DescribeRepositoriesInputBuilder {
+impl crate::operation::describe_repositories::builders::DescribeRepositoriesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeRepositoriesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl DescribeRepositoriesFluentBuilder {
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_registry_id()
     }
+    ///
     /// Appends an item to `repositoryNames`.
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).

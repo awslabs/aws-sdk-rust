@@ -3,7 +3,7 @@ pub use crate::operation::create_changeset::_create_changeset_output::CreateChan
 
 pub use crate::operation::create_changeset::_create_changeset_input::CreateChangesetInputBuilder;
 
-impl CreateChangesetInputBuilder {
+impl crate::operation::create_changeset::builders::CreateChangesetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateChangesetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -175,6 +175,7 @@ impl CreateChangesetFluentBuilder {
     pub fn get_change_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
         self.inner.get_change_type()
     }
+    ///
     /// Adds a key-value pair to `sourceParams`.
     ///
     /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
@@ -208,6 +209,7 @@ impl CreateChangesetFluentBuilder {
     pub fn get_source_params(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_source_params()
     }
+    ///
     /// Adds a key-value pair to `formatParams`.
     ///
     /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).

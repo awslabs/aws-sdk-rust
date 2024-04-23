@@ -3,7 +3,7 @@ pub use crate::operation::admin_create_user::_admin_create_user_output::AdminCre
 
 pub use crate::operation::admin_create_user::_admin_create_user_input::AdminCreateUserInputBuilder;
 
-impl AdminCreateUserInputBuilder {
+impl crate::operation::admin_create_user::builders::AdminCreateUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -115,12 +115,12 @@ impl AdminCreateUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -176,6 +176,7 @@ impl AdminCreateUserFluentBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }
+    ///
     /// Appends an item to `UserAttributes`.
     ///
     /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
@@ -221,6 +222,7 @@ impl AdminCreateUserFluentBuilder {
     pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
         self.inner.get_user_attributes()
     }
+    ///
     /// Appends an item to `ValidationData`.
     ///
     /// To override the contents of this collection use [`set_validation_data`](Self::set_validation_data).
@@ -302,6 +304,7 @@ impl AdminCreateUserFluentBuilder {
     pub fn get_message_action(&self) -> &::std::option::Option<crate::types::MessageActionType> {
         self.inner.get_message_action()
     }
+    ///
     /// Appends an item to `DesiredDeliveryMediums`.
     ///
     /// To override the contents of this collection use [`set_desired_delivery_mediums`](Self::set_desired_delivery_mediums).
@@ -320,6 +323,7 @@ impl AdminCreateUserFluentBuilder {
     pub fn get_desired_delivery_mediums(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliveryMediumType>> {
         self.inner.get_desired_delivery_mediums()
     }
+    ///
     /// Adds a key-value pair to `ClientMetadata`.
     ///
     /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).

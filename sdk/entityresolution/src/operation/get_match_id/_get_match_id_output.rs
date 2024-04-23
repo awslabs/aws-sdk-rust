@@ -5,12 +5,18 @@
 pub struct GetMatchIdOutput {
     /// <p>The unique identifiers for this group of match records.</p>
     pub match_id: ::std::option::Option<::std::string::String>,
+    /// <p>The rule the record matched on.</p>
+    pub match_rule: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMatchIdOutput {
     /// <p>The unique identifiers for this group of match records.</p>
     pub fn match_id(&self) -> ::std::option::Option<&str> {
         self.match_id.as_deref()
+    }
+    /// <p>The rule the record matched on.</p>
+    pub fn match_rule(&self) -> ::std::option::Option<&str> {
+        self.match_rule.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMatchIdOutput {
@@ -30,6 +36,7 @@ impl GetMatchIdOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMatchIdOutputBuilder {
     pub(crate) match_id: ::std::option::Option<::std::string::String>,
+    pub(crate) match_rule: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMatchIdOutputBuilder {
@@ -47,6 +54,20 @@ impl GetMatchIdOutputBuilder {
     pub fn get_match_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.match_id
     }
+    /// <p>The rule the record matched on.</p>
+    pub fn match_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.match_rule = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The rule the record matched on.</p>
+    pub fn set_match_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.match_rule = input;
+        self
+    }
+    /// <p>The rule the record matched on.</p>
+    pub fn get_match_rule(&self) -> &::std::option::Option<::std::string::String> {
+        &self.match_rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl GetMatchIdOutputBuilder {
     pub fn build(self) -> crate::operation::get_match_id::GetMatchIdOutput {
         crate::operation::get_match_id::GetMatchIdOutput {
             match_id: self.match_id,
+            match_rule: self.match_rule,
             _request_id: self._request_id,
         }
     }

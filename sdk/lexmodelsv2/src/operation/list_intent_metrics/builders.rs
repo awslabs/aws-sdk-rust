@@ -3,7 +3,7 @@ pub use crate::operation::list_intent_metrics::_list_intent_metrics_output::List
 
 pub use crate::operation::list_intent_metrics::_list_intent_metrics_input::ListIntentMetricsInputBuilder;
 
-impl ListIntentMetricsInputBuilder {
+impl crate::operation::list_intent_metrics::builders::ListIntentMetricsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -113,12 +113,12 @@ impl ListIntentMetricsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -170,6 +170,7 @@ impl ListIntentMetricsFluentBuilder {
     pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_date_time()
     }
+    ///
     /// Appends an item to `metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
@@ -188,6 +189,7 @@ impl ListIntentMetricsFluentBuilder {
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>> {
         self.inner.get_metrics()
     }
+    ///
     /// Appends an item to `binBy`.
     ///
     /// To override the contents of this collection use [`set_bin_by`](Self::set_bin_by).
@@ -206,6 +208,7 @@ impl ListIntentMetricsFluentBuilder {
     pub fn get_bin_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
         self.inner.get_bin_by()
     }
+    ///
     /// Appends an item to `groupBy`.
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
@@ -242,6 +245,7 @@ impl ListIntentMetricsFluentBuilder {
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>> {
         self.inner.get_group_by()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

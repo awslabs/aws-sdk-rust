@@ -3,7 +3,7 @@ pub use crate::operation::list_realtime_contact_analysis_segments_v2::_list_real
 
 pub use crate::operation::list_realtime_contact_analysis_segments_v2::_list_realtime_contact_analysis_segments_v2_input::ListRealtimeContactAnalysisSegmentsV2InputBuilder;
 
-impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
+impl crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl ListRealtimeContactAnalysisSegmentsV2FluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -193,6 +193,7 @@ impl ListRealtimeContactAnalysisSegmentsV2FluentBuilder {
     pub fn get_output_type(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisOutputType> {
         self.inner.get_output_type()
     }
+    ///
     /// Appends an item to `SegmentTypes`.
     ///
     /// To override the contents of this collection use [`set_segment_types`](Self::set_segment_types).

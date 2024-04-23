@@ -3,7 +3,7 @@ pub use crate::operation::update_application::_update_application_output::Update
 
 pub use crate::operation::update_application::_update_application_input::UpdateApplicationInputBuilder;
 
-impl UpdateApplicationInputBuilder {
+impl crate::operation::update_application::builders::UpdateApplicationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateApplicationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -220,6 +220,7 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_block_arn()
     }
+    ///
     /// Appends an item to `AttributesToDelete`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).

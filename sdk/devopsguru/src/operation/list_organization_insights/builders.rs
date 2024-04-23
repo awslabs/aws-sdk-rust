@@ -3,7 +3,7 @@ pub use crate::operation::list_organization_insights::_list_organization_insight
 
 pub use crate::operation::list_organization_insights::_list_organization_insights_input::ListOrganizationInsightsInputBuilder;
 
-impl ListOrganizationInsightsInputBuilder {
+impl crate::operation::list_organization_insights::builders::ListOrganizationInsightsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListOrganizationInsightsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl ListOrganizationInsightsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -160,6 +161,7 @@ impl ListOrganizationInsightsFluentBuilder {
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
+    ///
     /// Appends an item to `OrganizationalUnitIds`.
     ///
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).

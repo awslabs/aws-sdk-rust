@@ -3,7 +3,7 @@ pub use crate::operation::describe_device_ec2_instances::_describe_device_ec2_in
 
 pub use crate::operation::describe_device_ec2_instances::_describe_device_ec2_instances_input::DescribeDeviceEc2InstancesInputBuilder;
 
-impl DescribeDeviceEc2InstancesInputBuilder {
+impl crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
     pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_managed_device_id()
     }
+    ///
     /// Appends an item to `instanceIds`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).

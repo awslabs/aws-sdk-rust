@@ -19,6 +19,8 @@ pub struct ImprovementSummary {
     pub improvement_plan_url: ::std::option::Option<::std::string::String>,
     /// <p>The improvement plan details.</p>
     pub improvement_plans: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
+    /// <p>Configuration of the Jira integration.</p>
+    pub jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
 }
 impl ImprovementSummary {
     /// <p>The ID of the question.</p>
@@ -50,6 +52,10 @@ impl ImprovementSummary {
     pub fn improvement_plans(&self) -> &[crate::types::ChoiceImprovementPlan] {
         self.improvement_plans.as_deref().unwrap_or_default()
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::JiraConfiguration> {
+        self.jira_configuration.as_ref()
+    }
 }
 impl ImprovementSummary {
     /// Creates a new builder-style object to manufacture [`ImprovementSummary`](crate::types::ImprovementSummary).
@@ -68,6 +74,7 @@ pub struct ImprovementSummaryBuilder {
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
     pub(crate) improvement_plan_url: ::std::option::Option<::std::string::String>,
     pub(crate) improvement_plans: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
 }
 impl ImprovementSummaryBuilder {
     /// <p>The ID of the question.</p>
@@ -169,6 +176,20 @@ impl ImprovementSummaryBuilder {
     pub fn get_improvement_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>> {
         &self.improvement_plans
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(mut self, input: crate::types::JiraConfiguration) -> Self {
+        self.jira_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::JiraConfiguration>) -> Self {
+        self.jira_configuration = input;
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::JiraConfiguration> {
+        &self.jira_configuration
+    }
     /// Consumes the builder and constructs a [`ImprovementSummary`](crate::types::ImprovementSummary).
     pub fn build(self) -> crate::types::ImprovementSummary {
         crate::types::ImprovementSummary {
@@ -178,6 +199,7 @@ impl ImprovementSummaryBuilder {
             risk: self.risk,
             improvement_plan_url: self.improvement_plan_url,
             improvement_plans: self.improvement_plans,
+            jira_configuration: self.jira_configuration,
         }
     }
 }

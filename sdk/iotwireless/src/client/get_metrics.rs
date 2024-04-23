@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMetrics`](crate::operation::get_metrics::builders::GetMetricsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`summary_metric_queries(SummaryMetricQuery)`](crate::operation::get_metrics::builders::GetMetricsFluentBuilder::summary_metric_queries) / [`set_summary_metric_queries(Option<Vec::<SummaryMetricQuery>>)`](crate::operation::get_metrics::builders::GetMetricsFluentBuilder::set_summary_metric_queries):<br>required: **false**<br><p>The list of queries to retrieve summary metrics.</p><br>
+    ///   - [`summary_metric_queries(SummaryMetricQuery)`](crate::operation::get_metrics::builders::GetMetricsFluentBuilder::summary_metric_queries) / [`set_summary_metric_queries(Option<Vec::<SummaryMetricQuery>>)`](crate::operation::get_metrics::builders::GetMetricsFluentBuilder::set_summary_metric_queries):<br>required: **false**<br><p>The list of queries to retrieve the summary metrics.</p><br>
     /// - On success, responds with [`GetMetricsOutput`](crate::operation::get_metrics::GetMetricsOutput) with field(s):
-    ///   - [`summary_metric_query_results(Option<Vec::<SummaryMetricQueryResult>>)`](crate::operation::get_metrics::GetMetricsOutput::summary_metric_query_results): <p>The list of retrieved metrics.</p>
+    ///   - [`summary_metric_query_results(Option<Vec::<SummaryMetricQueryResult>>)`](crate::operation::get_metrics::GetMetricsOutput::summary_metric_query_results): <p>The list of summary metrics that were retrieved.</p>
     /// - On failure, responds with [`SdkError<GetMetricsError>`](crate::operation::get_metrics::GetMetricsError)
     pub fn get_metrics(&self) -> crate::operation::get_metrics::builders::GetMetricsFluentBuilder {
         crate::operation::get_metrics::builders::GetMetricsFluentBuilder::new(self.handle.clone())

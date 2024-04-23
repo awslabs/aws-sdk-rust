@@ -3,7 +3,7 @@ pub use crate::operation::add_permission::_add_permission_output::AddPermissionO
 
 pub use crate::operation::add_permission::_add_permission_input::AddPermissionInputBuilder;
 
-impl AddPermissionInputBuilder {
+impl crate::operation::add_permission::builders::AddPermissionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl AddPermissionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl AddPermissionFluentBuilder {
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label()
     }
+    ///
     /// Appends an item to `AWSAccountId`.
     ///
     /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
@@ -156,6 +157,7 @@ impl AddPermissionFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_aws_account_id()
     }
+    ///
     /// Appends an item to `ActionName`.
     ///
     /// To override the contents of this collection use [`set_action_name`](Self::set_action_name).

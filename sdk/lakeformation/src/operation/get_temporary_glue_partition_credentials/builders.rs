@@ -3,7 +3,7 @@ pub use crate::operation::get_temporary_glue_partition_credentials::_get_tempora
 
 pub use crate::operation::get_temporary_glue_partition_credentials::_get_temporary_glue_partition_credentials_input::GetTemporaryGluePartitionCredentialsInputBuilder;
 
-impl GetTemporaryGluePartitionCredentialsInputBuilder {
+impl crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
     pub fn get_partition(&self) -> &::std::option::Option<crate::types::PartitionValueList> {
         self.inner.get_partition()
     }
+    ///
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -185,6 +186,7 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
     pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
         self.inner.get_audit_context()
     }
+    ///
     /// Appends an item to `SupportedPermissionTypes`.
     ///
     /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).

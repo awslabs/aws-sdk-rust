@@ -3,7 +3,7 @@ pub use crate::operation::start_composition::_start_composition_output::StartCom
 
 pub use crate::operation::start_composition::_start_composition_input::StartCompositionInputBuilder;
 
-impl StartCompositionInputBuilder {
+impl crate::operation::start_composition::builders::StartCompositionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -112,12 +112,12 @@ impl StartCompositionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -163,6 +163,7 @@ impl StartCompositionFluentBuilder {
     pub fn get_layout(&self) -> &::std::option::Option<crate::types::LayoutConfiguration> {
         self.inner.get_layout()
     }
+    ///
     /// Appends an item to `destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -181,6 +182,7 @@ impl StartCompositionFluentBuilder {
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationConfiguration>> {
         self.inner.get_destinations()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::put_dial_request_batch::_put_dial_request_batch_output
 
 pub use crate::operation::put_dial_request_batch::_put_dial_request_batch_input::PutDialRequestBatchInputBuilder;
 
-impl PutDialRequestBatchInputBuilder {
+impl crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutDialRequestBatchFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl PutDialRequestBatchFluentBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
+    ///
     /// Appends an item to `dialRequests`.
     ///
     /// To override the contents of this collection use [`set_dial_requests`](Self::set_dial_requests).

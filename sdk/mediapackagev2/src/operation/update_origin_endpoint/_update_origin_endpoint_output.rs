@@ -31,6 +31,8 @@ pub struct UpdateOriginEndpointOutput {
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A DASH manifest configuration.</p>
+    pub dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetDashManifestConfiguration>>,
     _request_id: Option<String>,
 }
 impl UpdateOriginEndpointOutput {
@@ -98,6 +100,12 @@ impl UpdateOriginEndpointOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>A DASH manifest configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dash_manifests.is_none()`.
+    pub fn dash_manifests(&self) -> &[crate::types::GetDashManifestConfiguration] {
+        self.dash_manifests.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateOriginEndpointOutput {
     fn request_id(&self) -> Option<&str> {
@@ -129,6 +137,7 @@ pub struct UpdateOriginEndpointOutputBuilder {
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetDashManifestConfiguration>>,
     _request_id: Option<String>,
 }
 impl UpdateOriginEndpointOutputBuilder {
@@ -357,6 +366,26 @@ impl UpdateOriginEndpointOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Appends an item to `dash_manifests`.
+    ///
+    /// To override the contents of this collection use [`set_dash_manifests`](Self::set_dash_manifests).
+    ///
+    /// <p>A DASH manifest configuration.</p>
+    pub fn dash_manifests(mut self, input: crate::types::GetDashManifestConfiguration) -> Self {
+        let mut v = self.dash_manifests.unwrap_or_default();
+        v.push(input);
+        self.dash_manifests = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn set_dash_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetDashManifestConfiguration>>) -> Self {
+        self.dash_manifests = input;
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetDashManifestConfiguration>> {
+        &self.dash_manifests
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -429,6 +458,7 @@ impl UpdateOriginEndpointOutputBuilder {
             low_latency_hls_manifests: self.low_latency_hls_manifests,
             e_tag: self.e_tag,
             tags: self.tags,
+            dash_manifests: self.dash_manifests,
             _request_id: self._request_id,
         })
     }

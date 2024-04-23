@@ -211,6 +211,8 @@ mod get_answer;
 
 mod get_consolidated_report;
 
+mod get_global_settings;
+
 mod get_lens;
 
 mod get_lens_review;
@@ -280,6 +282,8 @@ mod untag_resource;
 mod update_answer;
 
 mod update_global_settings;
+
+mod update_integration;
 
 mod update_lens_review;
 

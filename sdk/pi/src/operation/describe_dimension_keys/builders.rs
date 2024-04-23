@@ -3,7 +3,7 @@ pub use crate::operation::describe_dimension_keys::_describe_dimension_keys_outp
 
 pub use crate::operation::describe_dimension_keys::_describe_dimension_keys_input::DescribeDimensionKeysInputBuilder;
 
-impl DescribeDimensionKeysInputBuilder {
+impl crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DescribeDimensionKeysFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -304,6 +304,7 @@ impl DescribeDimensionKeysFluentBuilder {
     pub fn get_group_by(&self) -> &::std::option::Option<crate::types::DimensionGroup> {
         self.inner.get_group_by()
     }
+    ///
     /// Appends an item to `AdditionalMetrics`.
     ///
     /// To override the contents of this collection use [`set_additional_metrics`](Self::set_additional_metrics).
@@ -336,6 +337,7 @@ impl DescribeDimensionKeysFluentBuilder {
     pub fn get_partition_by(&self) -> &::std::option::Option<crate::types::DimensionGroup> {
         self.inner.get_partition_by()
     }
+    ///
     /// Adds a key-value pair to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).

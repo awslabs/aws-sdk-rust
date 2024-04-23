@@ -3,7 +3,7 @@ pub use crate::operation::get_aws_network_performance_data::_get_aws_network_per
 
 pub use crate::operation::get_aws_network_performance_data::_get_aws_network_performance_data_input::GetAwsNetworkPerformanceDataInputBuilder;
 
-impl GetAwsNetworkPerformanceDataInputBuilder {
+impl crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator {
         crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `DataQueries`.
     ///
     /// To override the contents of this collection use [`set_data_queries`](Self::set_data_queries).

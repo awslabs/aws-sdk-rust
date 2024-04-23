@@ -3,7 +3,7 @@ pub use crate::operation::add_tags_to_on_premises_instances::_add_tags_to_on_pre
 
 pub use crate::operation::add_tags_to_on_premises_instances::_add_tags_to_on_premises_instances_input::AddTagsToOnPremisesInstancesInputBuilder;
 
-impl AddTagsToOnPremisesInstancesInputBuilder {
+impl crate::operation::add_tags_to_on_premises_instances::builders::AddTagsToOnPremisesInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -129,6 +130,7 @@ impl AddTagsToOnPremisesInstancesFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `instanceNames`.
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).

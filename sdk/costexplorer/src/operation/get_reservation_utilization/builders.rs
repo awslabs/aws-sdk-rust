@@ -3,7 +3,7 @@ pub use crate::operation::get_reservation_utilization::_get_reservation_utilizat
 
 pub use crate::operation::get_reservation_utilization::_get_reservation_utilization_input::GetReservationUtilizationInputBuilder;
 
-impl GetReservationUtilizationInputBuilder {
+impl crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetReservationUtilizationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl GetReservationUtilizationFluentBuilder {
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
         self.inner.get_time_period()
     }
+    ///
     /// Appends an item to `GroupBy`.
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).

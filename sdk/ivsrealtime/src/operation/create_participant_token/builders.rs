@@ -3,7 +3,7 @@ pub use crate::operation::create_participant_token::_create_participant_token_ou
 
 pub use crate::operation::create_participant_token::_create_participant_token_input::CreateParticipantTokenInputBuilder;
 
-impl CreateParticipantTokenInputBuilder {
+impl crate::operation::create_participant_token::builders::CreateParticipantTokenInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateParticipantTokenFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl CreateParticipantTokenFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
+    ///
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -169,6 +170,7 @@ impl CreateParticipantTokenFluentBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
+    ///
     /// Appends an item to `capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).

@@ -3,7 +3,7 @@ pub use crate::operation::describe_ip_groups::_describe_ip_groups_output::Descri
 
 pub use crate::operation::describe_ip_groups::_describe_ip_groups_input::DescribeIpGroupsInputBuilder;
 
-impl DescribeIpGroupsInputBuilder {
+impl crate::operation::describe_ip_groups::builders::DescribeIpGroupsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl DescribeIpGroupsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `GroupIds`.
     ///
     /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).

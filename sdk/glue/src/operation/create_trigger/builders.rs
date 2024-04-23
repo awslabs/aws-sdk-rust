@@ -3,7 +3,7 @@ pub use crate::operation::create_trigger::_create_trigger_output::CreateTriggerO
 
 pub use crate::operation::create_trigger::_create_trigger_input::CreateTriggerInputBuilder;
 
-impl CreateTriggerInputBuilder {
+impl crate::operation::create_trigger::builders::CreateTriggerInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateTriggerFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -184,6 +184,7 @@ impl CreateTriggerFluentBuilder {
     pub fn get_predicate(&self) -> &::std::option::Option<crate::types::Predicate> {
         self.inner.get_predicate()
     }
+    ///
     /// Appends an item to `Actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -230,6 +231,7 @@ impl CreateTriggerFluentBuilder {
     pub fn get_start_on_creation(&self) -> &::std::option::Option<bool> {
         self.inner.get_start_on_creation()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

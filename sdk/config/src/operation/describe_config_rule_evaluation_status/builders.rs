@@ -3,7 +3,7 @@ pub use crate::operation::describe_config_rule_evaluation_status::_describe_conf
 
 pub use crate::operation::describe_config_rule_evaluation_status::_describe_config_rule_evaluation_status_input::DescribeConfigRuleEvaluationStatusInputBuilder;
 
-impl DescribeConfigRuleEvaluationStatusInputBuilder {
+impl crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator {
         crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ConfigRuleNames`.
     ///
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).

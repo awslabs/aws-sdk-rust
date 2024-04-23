@@ -7,10 +7,16 @@ pub struct DescribeLakeFormationIdentityCenterConfigurationOutput {
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if external filtering is enabled.</p>
     pub external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources as the <code>ShareRecipients</code>.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    /// <p>The Amazon Resource Name (ARN) of the RAM share.</p>
+    pub resource_share: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeLakeFormationIdentityCenterConfigurationOutput {
@@ -22,13 +28,25 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutput {
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
     /// <p>Indicates if external filtering is enabled.</p>
     pub fn external_filtering(&self) -> ::std::option::Option<&crate::types::ExternalFilteringConfiguration> {
         self.external_filtering.as_ref()
+    }
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources as the <code>ShareRecipients</code>.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.share_recipients.is_none()`.
+    pub fn share_recipients(&self) -> &[crate::types::DataLakePrincipal] {
+        self.share_recipients.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the RAM share.</p>
+    pub fn resource_share(&self) -> ::std::option::Option<&str> {
+        self.resource_share.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLakeFormationIdentityCenterConfigurationOutput {
@@ -51,6 +69,8 @@ pub struct DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
+    pub(crate) share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    pub(crate) resource_share: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
@@ -82,17 +102,17 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
@@ -109,6 +129,46 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
     /// <p>Indicates if external filtering is enabled.</p>
     pub fn get_external_filtering(&self) -> &::std::option::Option<crate::types::ExternalFilteringConfiguration> {
         &self.external_filtering
+    }
+    /// Appends an item to `share_recipients`.
+    ///
+    /// To override the contents of this collection use [`set_share_recipients`](Self::set_share_recipients).
+    ///
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources as the <code>ShareRecipients</code>.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn share_recipients(mut self, input: crate::types::DataLakePrincipal) -> Self {
+        let mut v = self.share_recipients.unwrap_or_default();
+        v.push(input);
+        self.share_recipients = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources as the <code>ShareRecipients</code>.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn set_share_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>) -> Self {
+        self.share_recipients = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources as the <code>ShareRecipients</code>.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
+        &self.share_recipients
+    }
+    /// <p>The Amazon Resource Name (ARN) of the RAM share.</p>
+    pub fn resource_share(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_share = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the RAM share.</p>
+    pub fn set_resource_share(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_share = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the RAM share.</p>
+    pub fn get_resource_share(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -128,6 +188,8 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
             instance_arn: self.instance_arn,
             application_arn: self.application_arn,
             external_filtering: self.external_filtering,
+            share_recipients: self.share_recipients,
+            resource_share: self.resource_share,
             _request_id: self._request_id,
         }
     }

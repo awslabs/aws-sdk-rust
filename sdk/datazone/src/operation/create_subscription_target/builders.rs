@@ -3,7 +3,7 @@ pub use crate::operation::create_subscription_target::_create_subscription_targe
 
 pub use crate::operation::create_subscription_target::_create_subscription_target_input::CreateSubscriptionTargetInputBuilder;
 
-impl CreateSubscriptionTargetInputBuilder {
+impl crate::operation::create_subscription_target::builders::CreateSubscriptionTargetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSubscriptionTargetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateSubscriptionTargetFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_type()
     }
+    ///
     /// Appends an item to `subscriptionTargetConfig`.
     ///
     /// To override the contents of this collection use [`set_subscription_target_config`](Self::set_subscription_target_config).
@@ -182,6 +183,7 @@ impl CreateSubscriptionTargetFluentBuilder {
     pub fn get_subscription_target_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>> {
         self.inner.get_subscription_target_config()
     }
+    ///
     /// Appends an item to `authorizedPrincipals`.
     ///
     /// To override the contents of this collection use [`set_authorized_principals`](Self::set_authorized_principals).
@@ -214,6 +216,7 @@ impl CreateSubscriptionTargetFluentBuilder {
     pub fn get_manage_access_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_manage_access_role()
     }
+    ///
     /// Appends an item to `applicableAssetTypes`.
     ///
     /// To override the contents of this collection use [`set_applicable_asset_types`](Self::set_applicable_asset_types).

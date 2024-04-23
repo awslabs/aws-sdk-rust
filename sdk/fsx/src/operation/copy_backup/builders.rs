@@ -3,7 +3,7 @@ pub use crate::operation::copy_backup::_copy_backup_output::CopyBackupOutputBuil
 
 pub use crate::operation::copy_backup::_copy_backup_input::CopyBackupInputBuilder;
 
-impl CopyBackupInputBuilder {
+impl crate::operation::copy_backup::builders::CopyBackupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl CopyBackupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -221,6 +221,7 @@ impl CopyBackupFluentBuilder {
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_tags()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

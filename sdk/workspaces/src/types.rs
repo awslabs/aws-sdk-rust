@@ -11,6 +11,10 @@ pub use crate::types::_stop_request::StopRequest;
 
 pub use crate::types::_start_request::StartRequest;
 
+pub use crate::types::_account_link::AccountLink;
+
+pub use crate::types::_account_link_status_enum::AccountLinkStatusEnum;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_tenancy::Tenancy;
@@ -185,6 +189,8 @@ pub use crate::types::_dedicated_tenancy_support_result_enum::DedicatedTenancySu
 
 pub use crate::types::_dedicated_tenancy_modification_state_enum::DedicatedTenancyModificationStateEnum;
 
+pub use crate::types::_dedicated_tenancy_account_type::DedicatedTenancyAccountType;
+
 pub use crate::types::_work_space_application_deployment::WorkSpaceApplicationDeployment;
 
 pub use crate::types::_client_device_type::ClientDeviceType;
@@ -200,6 +206,10 @@ pub use crate::types::_failed_create_standby_workspaces_request::FailedCreateSta
 pub use crate::types::_standby_workspace::StandbyWorkspace;
 
 mod _access_property_value;
+
+mod _account_link;
+
+mod _account_link_status_enum;
 
 mod _account_modification;
 
@@ -252,6 +262,8 @@ mod _connection_state;
 mod _data_replication;
 
 mod _data_replication_settings;
+
+mod _dedicated_tenancy_account_type;
 
 mod _dedicated_tenancy_modification_state_enum;
 

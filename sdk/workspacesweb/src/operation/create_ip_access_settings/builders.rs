@@ -3,7 +3,7 @@ pub use crate::operation::create_ip_access_settings::_create_ip_access_settings_
 
 pub use crate::operation::create_ip_access_settings::_create_ip_access_settings_input::CreateIpAccessSettingsInputBuilder;
 
-impl CreateIpAccessSettingsInputBuilder {
+impl crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateIpAccessSettingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateIpAccessSettingsFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -168,6 +169,7 @@ impl CreateIpAccessSettingsFluentBuilder {
     pub fn get_customer_managed_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_managed_key()
     }
+    ///
     /// Adds a key-value pair to `additionalEncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_additional_encryption_context`](Self::set_additional_encryption_context).
@@ -195,6 +197,7 @@ impl CreateIpAccessSettingsFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_additional_encryption_context()
     }
+    ///
     /// Appends an item to `ipRules`.
     ///
     /// To override the contents of this collection use [`set_ip_rules`](Self::set_ip_rules).

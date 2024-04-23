@@ -49,6 +49,24 @@ pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInput;
 
 pub use crate::types::_response_stream::ResponseStream;
 
+pub use crate::types::_return_control_payload::ReturnControlPayload;
+
+pub use crate::types::_invocation_input_member::InvocationInputMember;
+
+pub use crate::types::_function_invocation_input::FunctionInvocationInput;
+
+pub use crate::types::_function_parameter::FunctionParameter;
+
+pub use crate::types::_api_invocation_input::ApiInvocationInput;
+
+pub use crate::types::_api_request_body::ApiRequestBody;
+
+pub use crate::types::_property_parameters::PropertyParameters;
+
+pub use crate::types::_parameter::Parameter;
+
+pub use crate::types::_api_parameter::ApiParameter;
+
 pub use crate::types::_trace_part::TracePart;
 
 pub use crate::types::_trace::Trace;
@@ -93,8 +111,6 @@ pub use crate::types::_action_group_invocation_input::ActionGroupInvocationInput
 
 pub use crate::types::_request_body::RequestBody;
 
-pub use crate::types::_parameter::Parameter;
-
 pub use crate::types::_invocation_type::InvocationType;
 
 pub use crate::types::_rationale::Rationale;
@@ -111,13 +127,33 @@ pub use crate::types::_attribution::Attribution;
 
 pub use crate::types::_session_state::SessionState;
 
+pub use crate::types::_invocation_result_member::InvocationResultMember;
+
+pub use crate::types::_function_result::FunctionResult;
+
+pub use crate::types::_response_state::ResponseState;
+
+pub use crate::types::_content_body::ContentBody;
+
+pub use crate::types::_api_result::ApiResult;
+
 mod _action_group_invocation_input;
 
 mod _action_group_invocation_output;
 
+mod _api_invocation_input;
+
+mod _api_parameter;
+
+mod _api_request_body;
+
+mod _api_result;
+
 mod _attribution;
 
 mod _citation;
+
+mod _content_body;
 
 mod _creation_mode;
 
@@ -127,6 +163,12 @@ mod _filter_attribute;
 
 mod _final_response;
 
+mod _function_invocation_input;
+
+mod _function_parameter;
+
+mod _function_result;
+
 mod _generated_response_part;
 
 mod _generation_configuration;
@@ -134,6 +176,10 @@ mod _generation_configuration;
 mod _inference_configuration;
 
 mod _invocation_input;
+
+mod _invocation_input_member;
+
+mod _invocation_result_member;
 
 mod _invocation_type;
 
@@ -177,11 +223,15 @@ mod _prompt_template;
 
 mod _prompt_type;
 
+mod _property_parameters;
+
 mod _rationale;
 
 mod _reprompt_response;
 
 mod _request_body;
+
+mod _response_state;
 
 mod _response_stream;
 
@@ -206,6 +256,8 @@ mod _retrieve_and_generate_session_configuration;
 mod _retrieve_and_generate_type;
 
 mod _retrieved_reference;
+
+mod _return_control_payload;
 
 mod _search_type;
 

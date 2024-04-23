@@ -3,7 +3,7 @@ pub use crate::operation::register_instance::_register_instance_output::Register
 
 pub use crate::operation::register_instance::_register_instance_input::RegisterInstanceInputBuilder;
 
-impl RegisterInstanceInputBuilder {
+impl crate::operation::register_instance::builders::RegisterInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -120,12 +120,12 @@ impl RegisterInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -213,6 +213,7 @@ impl RegisterInstanceFluentBuilder {
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_creator_request_id()
     }
+    ///
     /// Adds a key-value pair to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -223,10 +224,10 @@ impl RegisterInstanceFluentBuilder {
     /// <p>The attributes that apply to the records that are defined in the service.</p></li>
     /// <li>
     /// <p>For each attribute, the applicable value.</p></li>
-    /// </ul><note>
+    /// </ul><important>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
-    /// </note>
-    /// <p>Supported attribute keys include the following:</p>
+    /// </important>
+    /// <p>The following are the supported attribute keys.</p>
     /// <dl>
     /// <dt>
     /// AWS_ALIAS_DNS_NAME
@@ -245,6 +246,8 @@ impl RegisterInstanceFluentBuilder {
     /// <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p></li>
     /// <li>
     /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
+    /// <li>
+    /// <p>The <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US) Regions.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -305,10 +308,10 @@ impl RegisterInstanceFluentBuilder {
     /// <p>The attributes that apply to the records that are defined in the service.</p></li>
     /// <li>
     /// <p>For each attribute, the applicable value.</p></li>
-    /// </ul><note>
+    /// </ul><important>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
-    /// </note>
-    /// <p>Supported attribute keys include the following:</p>
+    /// </important>
+    /// <p>The following are the supported attribute keys.</p>
     /// <dl>
     /// <dt>
     /// AWS_ALIAS_DNS_NAME
@@ -327,6 +330,8 @@ impl RegisterInstanceFluentBuilder {
     /// <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p></li>
     /// <li>
     /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
+    /// <li>
+    /// <p>The <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US) Regions.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -387,10 +392,10 @@ impl RegisterInstanceFluentBuilder {
     /// <p>The attributes that apply to the records that are defined in the service.</p></li>
     /// <li>
     /// <p>For each attribute, the applicable value.</p></li>
-    /// </ul><note>
+    /// </ul><important>
     /// <p>Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.</p>
-    /// </note>
-    /// <p>Supported attribute keys include the following:</p>
+    /// </important>
+    /// <p>The following are the supported attribute keys.</p>
     /// <dl>
     /// <dt>
     /// AWS_ALIAS_DNS_NAME
@@ -409,6 +414,8 @@ impl RegisterInstanceFluentBuilder {
     /// <p>Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p></li>
     /// <li>
     /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p></li>
+    /// <li>
+    /// <p>The <code>AWS_ALIAS_DNS_NAME</code> is not supported in the GovCloud (US) Regions.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>

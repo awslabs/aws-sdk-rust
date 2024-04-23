@@ -3,7 +3,7 @@ pub use crate::operation::cancel_spot_fleet_requests::_cancel_spot_fleet_request
 
 pub use crate::operation::cancel_spot_fleet_requests::_cancel_spot_fleet_requests_input::CancelSpotFleetRequestsInputBuilder;
 
-impl CancelSpotFleetRequestsInputBuilder {
+impl crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,6 +25,11 @@ impl CancelSpotFleetRequestsInputBuilder {
 /// <p>Cancels the specified Spot Fleet requests.</p>
 /// <p>After you cancel a Spot Fleet request, the Spot Fleet launches no new instances.</p>
 /// <p>You must also specify whether a canceled Spot Fleet request should terminate its instances. If you choose to terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you terminate them manually.</p>
+/// <p class="title"><b>Restrictions</b></p>
+/// <ul>
+/// <li>
+/// <p>You can delete up to 100 fleets in a single request. If you exceed the specified number, no fleets are deleted.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -101,12 +106,12 @@ impl CancelSpotFleetRequestsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,21 +129,25 @@ impl CancelSpotFleetRequestsFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `SpotFleetRequestIds`.
     ///
     /// To override the contents of this collection use [`set_spot_fleet_request_ids`](Self::set_spot_fleet_request_ids).
     ///
     /// <p>The IDs of the Spot Fleet requests.</p>
+    /// <p>Constraint: You can specify up to 100 IDs in a single request.</p>
     pub fn spot_fleet_request_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spot_fleet_request_ids(input.into());
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
+    /// <p>Constraint: You can specify up to 100 IDs in a single request.</p>
     pub fn set_spot_fleet_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_spot_fleet_request_ids(input);
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
+    /// <p>Constraint: You can specify up to 100 IDs in a single request.</p>
     pub fn get_spot_fleet_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_spot_fleet_request_ids()
     }

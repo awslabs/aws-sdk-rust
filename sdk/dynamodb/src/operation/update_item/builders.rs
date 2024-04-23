@@ -3,7 +3,7 @@ pub use crate::operation::update_item::_update_item_output::UpdateItemOutputBuil
 
 pub use crate::operation::update_item::_update_item_input::UpdateItemInputBuilder;
 
-impl UpdateItemInputBuilder {
+impl crate::operation::update_item::builders::UpdateItemInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateItemFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl UpdateItemFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
+    ///
     /// Adds a key-value pair to `Key`.
     ///
     /// To override the contents of this collection use [`set_key`](Self::set_key).
@@ -144,6 +145,7 @@ impl UpdateItemFluentBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         self.inner.get_key()
     }
+    ///
     /// Adds a key-value pair to `AttributeUpdates`.
     ///
     /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
@@ -167,6 +169,7 @@ impl UpdateItemFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValueUpdate>> {
         self.inner.get_attribute_updates()
     }
+    ///
     /// Adds a key-value pair to `Expected`.
     ///
     /// To override the contents of this collection use [`set_expected`](Self::set_expected).
@@ -482,6 +485,7 @@ impl UpdateItemFluentBuilder {
     pub fn get_condition_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_condition_expression()
     }
+    ///
     /// Adds a key-value pair to `ExpressionAttributeNames`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
@@ -587,6 +591,7 @@ impl UpdateItemFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_expression_attribute_names()
     }
+    ///
     /// Adds a key-value pair to `ExpressionAttributeValues`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).

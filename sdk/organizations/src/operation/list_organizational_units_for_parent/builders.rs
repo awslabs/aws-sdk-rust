@@ -3,7 +3,7 @@ pub use crate::operation::list_organizational_units_for_parent::_list_organizati
 
 pub use crate::operation::list_organizational_units_for_parent::_list_organizational_units_for_parent_input::ListOrganizationalUnitsForParentInputBuilder;
 
-impl ListOrganizationalUnitsForParentInputBuilder {
+impl crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl ListOrganizationalUnitsForParentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::list_retrievers::_list_retrievers_output::ListRetrieve
 
 pub use crate::operation::list_retrievers::_list_retrievers_input::ListRetrieversInputBuilder;
 
-impl ListRetrieversInputBuilder {
+impl crate::operation::list_retrievers::builders::ListRetrieversInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl ListRetrieversInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRetrievers`.
 ///
-/// <p>Lists the retriever used by an Amazon Q application.</p>
+/// <p>Lists the retriever used by an Amazon Q Business application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRetrieversFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,12 +99,12 @@ impl ListRetrieversFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,31 +114,31 @@ impl ListRetrieversFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_retrievers::paginator::ListRetrieversPaginator {
         crate::operation::list_retrievers::paginator::ListRetrieversPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of retrievers.</p>
+    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q Business returns a next token as a pagination token to retrieve the next set of retrievers.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of retrievers.</p>
+    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q Business returns a next token as a pagination token to retrieve the next set of retrievers.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q returns a next token as a pagination token to retrieve the next set of retrievers.</p>
+    /// <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q Business returns a next token as a pagination token to retrieve the next set of retrievers.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

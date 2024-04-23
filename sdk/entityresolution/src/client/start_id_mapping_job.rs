@@ -4,8 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workflow_name(impl Into<String>)`](crate::operation::start_id_mapping_job::builders::StartIdMappingJobFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::start_id_mapping_job::builders::StartIdMappingJobFluentBuilder::set_workflow_name):<br>required: **true**<br><p>The name of the ID mapping job to be retrieved.</p><br>
+    ///   - [`output_source_config(IdMappingJobOutputSource)`](crate::operation::start_id_mapping_job::builders::StartIdMappingJobFluentBuilder::output_source_config) / [`set_output_source_config(Option<Vec::<IdMappingJobOutputSource>>)`](crate::operation::start_id_mapping_job::builders::StartIdMappingJobFluentBuilder::set_output_source_config):<br>required: **false**<br><p>A list of <code>OutputSource</code> objects.</p><br>
     /// - On success, responds with [`StartIdMappingJobOutput`](crate::operation::start_id_mapping_job::StartIdMappingJobOutput) with field(s):
     ///   - [`job_id(String)`](crate::operation::start_id_mapping_job::StartIdMappingJobOutput::job_id): <p>The ID of the job.</p>
+    ///   - [`output_source_config(Option<Vec::<IdMappingJobOutputSource>>)`](crate::operation::start_id_mapping_job::StartIdMappingJobOutput::output_source_config): <p>A list of <code>OutputSource</code> objects.</p>
     /// - On failure, responds with [`SdkError<StartIdMappingJobError>`](crate::operation::start_id_mapping_job::StartIdMappingJobError)
     pub fn start_id_mapping_job(&self) -> crate::operation::start_id_mapping_job::builders::StartIdMappingJobFluentBuilder {
         crate::operation::start_id_mapping_job::builders::StartIdMappingJobFluentBuilder::new(self.handle.clone())

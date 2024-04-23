@@ -3,7 +3,7 @@ pub use crate::operation::create_lag::_create_lag_output::CreateLagOutputBuilder
 
 pub use crate::operation::create_lag::_create_lag_input::CreateLagInputBuilder;
 
-impl CreateLagInputBuilder {
+impl crate::operation::create_lag::builders::CreateLagInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -97,12 +97,12 @@ impl CreateLagFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -176,6 +176,7 @@ impl CreateLagFluentBuilder {
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connection_id()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -194,6 +195,7 @@ impl CreateLagFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `childConnectionTags`.
     ///
     /// To override the contents of this collection use [`set_child_connection_tags`](Self::set_child_connection_tags).

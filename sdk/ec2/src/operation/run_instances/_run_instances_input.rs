@@ -38,14 +38,14 @@ pub struct RunInstancesInput {
     /// </important>
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>[Default VPC] The names of the security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the subnet to launch the instance into.</p>
-    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The user data script to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Linux instance at launch</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run commands on your Windows instance at launch</a>. If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
     pub user_data: ::std::option::Option<::std::string::String>,
@@ -68,19 +68,18 @@ pub struct RunInstancesInput {
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code></p>
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
-    /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
+    /// <p>The network interfaces to associate with the instance.</p>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>An elastic GPU to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub elastic_gpu_specification: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
-    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
-    /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
-    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// <p>An elastic inference accelerator to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
     /// </note>
     pub elastic_inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
     /// <p>The tags to apply to the resources that are created during instance launch.</p>
@@ -193,14 +192,14 @@ impl RunInstancesInput {
         self.ramdisk_id.as_deref()
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>[Default VPC] The names of the security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
@@ -208,7 +207,7 @@ impl RunInstancesInput {
         self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
-    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
@@ -249,7 +248,7 @@ impl RunInstancesInput {
     pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<&crate::types::ShutdownBehavior> {
         self.instance_initiated_shutdown_behavior.as_ref()
     }
-    /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
+    /// <p>The network interfaces to associate with the instance.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
     pub fn network_interfaces(&self) -> &[crate::types::InstanceNetworkInterfaceSpecification] {
@@ -261,17 +260,16 @@ impl RunInstancesInput {
     pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
-    /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>An elastic GPU to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specification.is_none()`.
     pub fn elastic_gpu_specification(&self) -> &[crate::types::ElasticGpuSpecification] {
         self.elastic_gpu_specification.as_deref().unwrap_or_default()
     }
-    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
-    /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
-    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// <p>An elastic inference accelerator to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerators.is_none()`.
@@ -674,7 +672,7 @@ impl RunInstancesInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
@@ -682,13 +680,13 @@ impl RunInstancesInputBuilder {
         self
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
@@ -697,7 +695,7 @@ impl RunInstancesInputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>[Default VPC] The names of the security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
@@ -706,32 +704,32 @@ impl RunInstancesInputBuilder {
         self
     }
     /// <p>[Default VPC] The names of the security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>[Default VPC] The names of the security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
-    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
-    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
-    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
@@ -866,14 +864,14 @@ impl RunInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
+    /// <p>The network interfaces to associate with the instance.</p>
     pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
         self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
+    /// <p>The network interfaces to associate with the instance.</p>
     pub fn set_network_interfaces(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
@@ -881,7 +879,7 @@ impl RunInstancesInputBuilder {
         self.network_interfaces = input;
         self
     }
-    /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
+    /// <p>The network interfaces to associate with the instance.</p>
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
         &self.network_interfaces
     }
@@ -909,8 +907,8 @@ impl RunInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_elastic_gpu_specification`](Self::set_elastic_gpu_specification).
     ///
-    /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>An elastic GPU to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub fn elastic_gpu_specification(mut self, input: crate::types::ElasticGpuSpecification) -> Self {
         let mut v = self.elastic_gpu_specification.unwrap_or_default();
@@ -918,15 +916,15 @@ impl RunInstancesInputBuilder {
         self.elastic_gpu_specification = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>An elastic GPU to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub fn set_elastic_gpu_specification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
         self.elastic_gpu_specification = input;
         self
     }
-    /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>An elastic GPU to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
         &self.elastic_gpu_specification
@@ -935,9 +933,8 @@ impl RunInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_elastic_inference_accelerators`](Self::set_elastic_inference_accelerators).
     ///
-    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
-    /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
-    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// <p>An elastic inference accelerator to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
     /// </note>
     pub fn elastic_inference_accelerators(mut self, input: crate::types::ElasticInferenceAccelerator) -> Self {
         let mut v = self.elastic_inference_accelerators.unwrap_or_default();
@@ -945,9 +942,8 @@ impl RunInstancesInputBuilder {
         self.elastic_inference_accelerators = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
-    /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
-    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// <p>An elastic inference accelerator to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
     /// </note>
     pub fn set_elastic_inference_accelerators(
         mut self,
@@ -956,9 +952,8 @@ impl RunInstancesInputBuilder {
         self.elastic_inference_accelerators = input;
         self
     }
-    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
-    /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
-    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// <p>An elastic inference accelerator to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
     /// </note>
     pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
         &self.elastic_inference_accelerators

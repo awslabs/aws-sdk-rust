@@ -3,7 +3,7 @@ pub use crate::operation::describe_reserved_instances::_describe_reserved_instan
 
 pub use crate::operation::describe_reserved_instances::_describe_reserved_instances_input::DescribeReservedInstancesInputBuilder;
 
-impl DescribeReservedInstancesInputBuilder {
+impl crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,15 +102,16 @@ impl DescribeReservedInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -227,6 +228,7 @@ impl DescribeReservedInstancesFluentBuilder {
     pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClassType> {
         self.inner.get_offering_class()
     }
+    ///
     /// Appends an item to `ReservedInstancesIds`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).

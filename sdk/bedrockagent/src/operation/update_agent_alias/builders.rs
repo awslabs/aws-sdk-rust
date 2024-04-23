@@ -3,7 +3,7 @@ pub use crate::operation::update_agent_alias::_update_agent_alias_output::Update
 
 pub use crate::operation::update_agent_alias::_update_agent_alias_input::UpdateAgentAliasInputBuilder;
 
-impl UpdateAgentAliasInputBuilder {
+impl crate::operation::update_agent_alias::builders::UpdateAgentAliasInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateAgentAliasFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateAgentAliasFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `routingConfiguration`.
     ///
     /// To override the contents of this collection use [`set_routing_configuration`](Self::set_routing_configuration).

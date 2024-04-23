@@ -3,7 +3,7 @@ pub use crate::operation::describe_instance_types::_describe_instance_types_outp
 
 pub use crate::operation::describe_instance_types::_describe_instance_types_input::DescribeInstanceTypesInputBuilder;
 
-impl DescribeInstanceTypesInputBuilder {
+impl crate::operation::describe_instance_types::builders::DescribeInstanceTypesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl DescribeInstanceTypesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeInstanceTypes`.
 ///
-/// <p>Describes the details of the instance types that are offered in a location. The results can be filtered by the attributes of the instance types.</p>
+/// <p>Describes the specified instance types. By default, all instance types for the current Region are described. Alternatively, you can filter the results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,12 +99,12 @@ impl DescribeInstanceTypesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,24 +128,26 @@ impl DescribeInstanceTypesFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `InstanceTypes`.
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub fn instance_types(mut self, input: crate::types::InstanceType) -> Self {
         self.inner = self.inner.instance_types(input);
         self
     }
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>) -> Self {
         self.inner = self.inner.set_instance_types(input);
         self
     }
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
         self.inner.get_instance_types()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

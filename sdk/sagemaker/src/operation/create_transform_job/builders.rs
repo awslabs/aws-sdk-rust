@@ -3,7 +3,7 @@ pub use crate::operation::create_transform_job::_create_transform_job_output::Cr
 
 pub use crate::operation::create_transform_job::_create_transform_job_input::CreateTransformJobInputBuilder;
 
-impl CreateTransformJobInputBuilder {
+impl crate::operation::create_transform_job::builders::CreateTransformJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -114,12 +114,12 @@ impl CreateTransformJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -222,6 +222,7 @@ impl CreateTransformJobFluentBuilder {
     pub fn get_batch_strategy(&self) -> &::std::option::Option<crate::types::BatchStrategy> {
         self.inner.get_batch_strategy()
     }
+    ///
     /// Adds a key-value pair to `Environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
@@ -313,6 +314,7 @@ impl CreateTransformJobFluentBuilder {
     pub fn get_data_processing(&self) -> &::std::option::Option<crate::types::DataProcessing> {
         self.inner.get_data_processing()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::describe_data_repository_associations::_describe_data_
 
 pub use crate::operation::describe_data_repository_associations::_describe_data_repository_associations_input::DescribeDataRepositoryAssociationsInputBuilder;
 
-impl DescribeDataRepositoryAssociationsInputBuilder {
+impl crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DescribeDataRepositoryAssociationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -116,6 +116,7 @@ impl DescribeDataRepositoryAssociationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator {
         crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `AssociationIds`.
     ///
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
@@ -134,6 +135,7 @@ impl DescribeDataRepositoryAssociationsFluentBuilder {
     pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_association_ids()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

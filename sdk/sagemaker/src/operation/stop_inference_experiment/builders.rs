@@ -3,7 +3,7 @@ pub use crate::operation::stop_inference_experiment::_stop_inference_experiment_
 
 pub use crate::operation::stop_inference_experiment::_stop_inference_experiment_input::StopInferenceExperimentInputBuilder;
 
-impl StopInferenceExperimentInputBuilder {
+impl crate::operation::stop_inference_experiment::builders::StopInferenceExperimentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StopInferenceExperimentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl StopInferenceExperimentFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Adds a key-value pair to `ModelVariantActions`.
     ///
     /// To override the contents of this collection use [`set_model_variant_actions`](Self::set_model_variant_actions).
@@ -169,6 +170,7 @@ impl StopInferenceExperimentFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>> {
         self.inner.get_model_variant_actions()
     }
+    ///
     /// Appends an item to `DesiredModelVariants`.
     ///
     /// To override the contents of this collection use [`set_desired_model_variants`](Self::set_desired_model_variants).

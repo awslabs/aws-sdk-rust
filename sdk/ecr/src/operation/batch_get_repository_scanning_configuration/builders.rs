@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_repository_scanning_configuration::_batch_ge
 
 pub use crate::operation::batch_get_repository_scanning_configuration::_batch_get_repository_scanning_configuration_input::BatchGetRepositoryScanningConfigurationInputBuilder;
 
-impl BatchGetRepositoryScanningConfigurationInputBuilder {
+impl crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,15 +103,16 @@ impl BatchGetRepositoryScanningConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `repositoryNames`.
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).

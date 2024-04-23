@@ -3,7 +3,7 @@ pub use crate::operation::accept_direct_connect_gateway_association_proposal::_a
 
 pub use crate::operation::accept_direct_connect_gateway_association_proposal::_accept_direct_connect_gateway_association_proposal_input::AcceptDirectConnectGatewayAssociationProposalInputBuilder;
 
-impl AcceptDirectConnectGatewayAssociationProposalInputBuilder {
+impl crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl AcceptDirectConnectGatewayAssociationProposalFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -157,6 +157,7 @@ impl AcceptDirectConnectGatewayAssociationProposalFluentBuilder {
     pub fn get_associated_gateway_owner_account(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_associated_gateway_owner_account()
     }
+    ///
     /// Appends an item to `overrideAllowedPrefixesToDirectConnectGateway`.
     ///
     /// To override the contents of this collection use [`set_override_allowed_prefixes_to_direct_connect_gateway`](Self::set_override_allowed_prefixes_to_direct_connect_gateway).

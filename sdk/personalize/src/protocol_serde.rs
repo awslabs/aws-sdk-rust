@@ -419,6 +419,8 @@ pub(crate) mod shape_auto_ml_config;
 
 pub(crate) mod shape_auto_ml_result;
 
+pub(crate) mod shape_auto_training_config;
+
 pub(crate) mod shape_batch_inference_job_summary;
 
 pub(crate) mod shape_batch_segment_job_summary;

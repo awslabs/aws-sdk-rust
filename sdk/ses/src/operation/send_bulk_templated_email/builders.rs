@@ -3,7 +3,7 @@ pub use crate::operation::send_bulk_templated_email::_send_bulk_templated_email_
 
 pub use crate::operation::send_bulk_templated_email::_send_bulk_templated_email_input::SendBulkTemplatedEmailInputBuilder;
 
-impl SendBulkTemplatedEmailInputBuilder {
+impl crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -116,12 +116,12 @@ impl SendBulkTemplatedEmailFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -168,6 +168,7 @@ impl SendBulkTemplatedEmailFluentBuilder {
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_arn()
     }
+    ///
     /// Appends an item to `ReplyToAddresses`.
     ///
     /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
@@ -234,6 +235,7 @@ impl SendBulkTemplatedEmailFluentBuilder {
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_set_name()
     }
+    ///
     /// Appends an item to `DefaultTags`.
     ///
     /// To override the contents of this collection use [`set_default_tags`](Self::set_default_tags).
@@ -297,6 +299,7 @@ impl SendBulkTemplatedEmailFluentBuilder {
     pub fn get_default_template_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_template_data()
     }
+    ///
     /// Appends an item to `Destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).

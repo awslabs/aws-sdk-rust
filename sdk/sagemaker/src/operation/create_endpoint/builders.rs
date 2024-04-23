@@ -3,7 +3,7 @@ pub use crate::operation::create_endpoint::_create_endpoint_output::CreateEndpoi
 
 pub use crate::operation::create_endpoint::_create_endpoint_input::CreateEndpointInputBuilder;
 
-impl CreateEndpointInputBuilder {
+impl crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -122,12 +122,12 @@ impl CreateEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -173,6 +173,7 @@ impl CreateEndpointFluentBuilder {
     pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
         self.inner.get_deployment_config()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

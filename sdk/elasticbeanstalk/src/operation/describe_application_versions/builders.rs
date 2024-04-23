@@ -3,7 +3,7 @@ pub use crate::operation::describe_application_versions::_describe_application_v
 
 pub use crate::operation::describe_application_versions::_describe_application_versions_input::DescribeApplicationVersionsInputBuilder;
 
-impl DescribeApplicationVersionsInputBuilder {
+impl crate::operation::describe_application_versions::builders::DescribeApplicationVersionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeApplicationVersionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl DescribeApplicationVersionsFluentBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
+    ///
     /// Appends an item to `VersionLabels`.
     ///
     /// To override the contents of this collection use [`set_version_labels`](Self::set_version_labels).

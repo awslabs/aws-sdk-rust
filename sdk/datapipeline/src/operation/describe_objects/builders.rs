@@ -3,7 +3,7 @@ pub use crate::operation::describe_objects::_describe_objects_output::DescribeOb
 
 pub use crate::operation::describe_objects::_describe_objects_input::DescribeObjectsInputBuilder;
 
-impl DescribeObjectsInputBuilder {
+impl crate::operation::describe_objects::builders::DescribeObjectsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl DescribeObjectsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -135,6 +135,7 @@ impl DescribeObjectsFluentBuilder {
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_id()
     }
+    ///
     /// Appends an item to `objectIds`.
     ///
     /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).

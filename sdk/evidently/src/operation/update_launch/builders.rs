@@ -3,7 +3,7 @@ pub use crate::operation::update_launch::_update_launch_output::UpdateLaunchOutp
 
 pub use crate::operation::update_launch::_update_launch_input::UpdateLaunchInputBuilder;
 
-impl UpdateLaunchInputBuilder {
+impl crate::operation::update_launch::builders::UpdateLaunchInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateLaunchFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl UpdateLaunchFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -169,6 +170,7 @@ impl UpdateLaunchFluentBuilder {
     pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>> {
         self.inner.get_groups()
     }
+    ///
     /// Appends an item to `metricMonitors`.
     ///
     /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).

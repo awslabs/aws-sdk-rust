@@ -3,7 +3,7 @@ pub use crate::operation::create_client_vpn_endpoint::_create_client_vpn_endpoin
 
 pub use crate::operation::create_client_vpn_endpoint::_create_client_vpn_endpoint_input::CreateClientVpnEndpointInputBuilder;
 
-impl CreateClientVpnEndpointInputBuilder {
+impl crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateClientVpnEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateClientVpnEndpointFluentBuilder {
     pub fn get_server_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_certificate_arn()
     }
+    ///
     /// Appends an item to `AuthenticationOptions`.
     ///
     /// To override the contents of this collection use [`set_authentication_options`](Self::set_authentication_options).
@@ -201,6 +202,7 @@ impl CreateClientVpnEndpointFluentBuilder {
     pub fn get_connection_log_options(&self) -> &::std::option::Option<crate::types::ConnectionLogOptions> {
         self.inner.get_connection_log_options()
     }
+    ///
     /// Appends an item to `DnsServers`.
     ///
     /// To override the contents of this collection use [`set_dns_servers`](Self::set_dns_servers).
@@ -318,6 +320,7 @@ impl CreateClientVpnEndpointFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -336,6 +339,7 @@ impl CreateClientVpnEndpointFluentBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).

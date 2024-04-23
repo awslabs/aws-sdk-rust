@@ -3,7 +3,7 @@ pub use crate::operation::query::_query_output::QueryOutputBuilder;
 
 pub use crate::operation::query::_query_input::QueryInputBuilder;
 
-impl QueryInputBuilder {
+impl crate::operation::query::builders::QueryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -96,12 +96,12 @@ impl QueryFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::query::QueryOutput, crate::operation::query::QueryError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -198,6 +198,7 @@ impl QueryFluentBuilder {
     pub fn get_select(&self) -> &::std::option::Option<crate::types::Select> {
         self.inner.get_select()
     }
+    ///
     /// Appends an item to `AttributesToGet`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
@@ -247,6 +248,7 @@ impl QueryFluentBuilder {
     pub fn get_consistent_read(&self) -> &::std::option::Option<bool> {
         self.inner.get_consistent_read()
     }
+    ///
     /// Adds a key-value pair to `KeyConditions`.
     ///
     /// To override the contents of this collection use [`set_key_conditions`](Self::set_key_conditions).
@@ -268,6 +270,7 @@ impl QueryFluentBuilder {
     pub fn get_key_conditions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Condition>> {
         self.inner.get_key_conditions()
     }
+    ///
     /// Adds a key-value pair to `QueryFilter`.
     ///
     /// To override the contents of this collection use [`set_query_filter`](Self::set_query_filter).
@@ -323,6 +326,7 @@ impl QueryFluentBuilder {
     pub fn get_scan_index_forward(&self) -> &::std::option::Option<bool> {
         self.inner.get_scan_index_forward()
     }
+    ///
     /// Adds a key-value pair to `ExclusiveStartKey`.
     ///
     /// To override the contents of this collection use [`set_exclusive_start_key`](Self::set_exclusive_start_key).
@@ -558,6 +562,7 @@ impl QueryFluentBuilder {
     pub fn get_key_condition_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_condition_expression()
     }
+    ///
     /// Adds a key-value pair to `ExpressionAttributeNames`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
@@ -663,6 +668,7 @@ impl QueryFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_expression_attribute_names()
     }
+    ///
     /// Adds a key-value pair to `ExpressionAttributeValues`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).

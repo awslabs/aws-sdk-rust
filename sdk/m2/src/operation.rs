@@ -61,6 +61,9 @@ pub mod list_batch_job_definitions;
 /// Types for the `ListBatchJobExecutions` operation.
 pub mod list_batch_job_executions;
 
+/// Types for the `ListBatchJobRestartPoints` operation.
+pub mod list_batch_job_restart_points;
+
 /// Types for the `ListDataSetImportHistory` operation.
 pub mod list_data_set_import_history;
 

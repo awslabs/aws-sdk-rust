@@ -4,41 +4,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricQueryValue {
-    /// <p>The minimum of the values of the all data points collected during the period.</p>
+    /// <p>The minimum of the values of all data points collected during the aggregation period.</p>
     pub min: ::std::option::Option<f64>,
-    /// <p>The maximum of the values of the all data points collected during the period.</p>
+    /// <p>The maximum of the values of all the data points collected during the aggregation period.</p>
     pub max: ::std::option::Option<f64>,
-    /// <p>The sum of the values of the all data points collected during the period.</p>
+    /// <p>The sum of the values of all data points collected during the aggregation period.</p>
     pub sum: ::std::option::Option<f64>,
-    /// <p>The average of the values of the all data points collected during the period.</p>
+    /// <p>The average of the values of all data points collected during the aggregation period.</p>
     pub avg: ::std::option::Option<f64>,
-    /// <p>The standard deviation of the values of the all data points collected during the period.</p>
+    /// <p>The standard deviation of the values of all data points collected during the aggregation period.</p>
     pub std: ::std::option::Option<f64>,
-    /// <p>The 90th percentile of the values of the all data points collected during the period.</p>
+    /// <p>The 90th percentile of the values of all data points collected during the aggregation period.</p>
     pub p90: ::std::option::Option<f64>,
 }
 impl MetricQueryValue {
-    /// <p>The minimum of the values of the all data points collected during the period.</p>
+    /// <p>The minimum of the values of all data points collected during the aggregation period.</p>
     pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
     }
-    /// <p>The maximum of the values of the all data points collected during the period.</p>
+    /// <p>The maximum of the values of all the data points collected during the aggregation period.</p>
     pub fn max(&self) -> ::std::option::Option<f64> {
         self.max
     }
-    /// <p>The sum of the values of the all data points collected during the period.</p>
+    /// <p>The sum of the values of all data points collected during the aggregation period.</p>
     pub fn sum(&self) -> ::std::option::Option<f64> {
         self.sum
     }
-    /// <p>The average of the values of the all data points collected during the period.</p>
+    /// <p>The average of the values of all data points collected during the aggregation period.</p>
     pub fn avg(&self) -> ::std::option::Option<f64> {
         self.avg
     }
-    /// <p>The standard deviation of the values of the all data points collected during the period.</p>
+    /// <p>The standard deviation of the values of all data points collected during the aggregation period.</p>
     pub fn std(&self) -> ::std::option::Option<f64> {
         self.std
     }
-    /// <p>The 90th percentile of the values of the all data points collected during the period.</p>
+    /// <p>The 90th percentile of the values of all data points collected during the aggregation period.</p>
     pub fn p90(&self) -> ::std::option::Option<f64> {
         self.p90
     }
@@ -62,87 +62,87 @@ pub struct MetricQueryValueBuilder {
     pub(crate) p90: ::std::option::Option<f64>,
 }
 impl MetricQueryValueBuilder {
-    /// <p>The minimum of the values of the all data points collected during the period.</p>
+    /// <p>The minimum of the values of all data points collected during the aggregation period.</p>
     pub fn min(mut self, input: f64) -> Self {
         self.min = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum of the values of the all data points collected during the period.</p>
+    /// <p>The minimum of the values of all data points collected during the aggregation period.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min = input;
         self
     }
-    /// <p>The minimum of the values of the all data points collected during the period.</p>
+    /// <p>The minimum of the values of all data points collected during the aggregation period.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
         &self.min
     }
-    /// <p>The maximum of the values of the all data points collected during the period.</p>
+    /// <p>The maximum of the values of all the data points collected during the aggregation period.</p>
     pub fn max(mut self, input: f64) -> Self {
         self.max = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum of the values of the all data points collected during the period.</p>
+    /// <p>The maximum of the values of all the data points collected during the aggregation period.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
     }
-    /// <p>The maximum of the values of the all data points collected during the period.</p>
+    /// <p>The maximum of the values of all the data points collected during the aggregation period.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
         &self.max
     }
-    /// <p>The sum of the values of the all data points collected during the period.</p>
+    /// <p>The sum of the values of all data points collected during the aggregation period.</p>
     pub fn sum(mut self, input: f64) -> Self {
         self.sum = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The sum of the values of the all data points collected during the period.</p>
+    /// <p>The sum of the values of all data points collected during the aggregation period.</p>
     pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
     }
-    /// <p>The sum of the values of the all data points collected during the period.</p>
+    /// <p>The sum of the values of all data points collected during the aggregation period.</p>
     pub fn get_sum(&self) -> &::std::option::Option<f64> {
         &self.sum
     }
-    /// <p>The average of the values of the all data points collected during the period.</p>
+    /// <p>The average of the values of all data points collected during the aggregation period.</p>
     pub fn avg(mut self, input: f64) -> Self {
         self.avg = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The average of the values of the all data points collected during the period.</p>
+    /// <p>The average of the values of all data points collected during the aggregation period.</p>
     pub fn set_avg(mut self, input: ::std::option::Option<f64>) -> Self {
         self.avg = input;
         self
     }
-    /// <p>The average of the values of the all data points collected during the period.</p>
+    /// <p>The average of the values of all data points collected during the aggregation period.</p>
     pub fn get_avg(&self) -> &::std::option::Option<f64> {
         &self.avg
     }
-    /// <p>The standard deviation of the values of the all data points collected during the period.</p>
+    /// <p>The standard deviation of the values of all data points collected during the aggregation period.</p>
     pub fn std(mut self, input: f64) -> Self {
         self.std = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The standard deviation of the values of the all data points collected during the period.</p>
+    /// <p>The standard deviation of the values of all data points collected during the aggregation period.</p>
     pub fn set_std(mut self, input: ::std::option::Option<f64>) -> Self {
         self.std = input;
         self
     }
-    /// <p>The standard deviation of the values of the all data points collected during the period.</p>
+    /// <p>The standard deviation of the values of all data points collected during the aggregation period.</p>
     pub fn get_std(&self) -> &::std::option::Option<f64> {
         &self.std
     }
-    /// <p>The 90th percentile of the values of the all data points collected during the period.</p>
+    /// <p>The 90th percentile of the values of all data points collected during the aggregation period.</p>
     pub fn p90(mut self, input: f64) -> Self {
         self.p90 = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The 90th percentile of the values of the all data points collected during the period.</p>
+    /// <p>The 90th percentile of the values of all data points collected during the aggregation period.</p>
     pub fn set_p90(mut self, input: ::std::option::Option<f64>) -> Self {
         self.p90 = input;
         self
     }
-    /// <p>The 90th percentile of the values of the all data points collected during the period.</p>
+    /// <p>The 90th percentile of the values of all data points collected during the aggregation period.</p>
     pub fn get_p90(&self) -> &::std::option::Option<f64> {
         &self.p90
     }

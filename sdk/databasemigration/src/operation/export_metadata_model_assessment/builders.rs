@@ -3,7 +3,7 @@ pub use crate::operation::export_metadata_model_assessment::_export_metadata_mod
 
 pub use crate::operation::export_metadata_model_assessment::_export_metadata_model_assessment_input::ExportMetadataModelAssessmentInputBuilder;
 
-impl ExportMetadataModelAssessmentInputBuilder {
+impl crate::operation::export_metadata_model_assessment::builders::ExportMetadataModelAssessmentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ExportMetadataModelAssessmentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl ExportMetadataModelAssessmentFluentBuilder {
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_name()
     }
+    ///
     /// Appends an item to `AssessmentReportTypes`.
     ///
     /// To override the contents of this collection use [`set_assessment_report_types`](Self::set_assessment_report_types).

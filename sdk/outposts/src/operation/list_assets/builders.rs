@@ -3,7 +3,7 @@ pub use crate::operation::list_assets::_list_assets_output::ListAssetsOutputBuil
 
 pub use crate::operation::list_assets::_list_assets_input::ListAssetsInputBuilder;
 
-impl ListAssetsInputBuilder {
+impl crate::operation::list_assets::builders::ListAssetsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ListAssetsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -129,6 +129,7 @@ impl ListAssetsFluentBuilder {
     pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_outpost_identifier()
     }
+    ///
     /// Appends an item to `HostIdFilter`.
     ///
     /// To override the contents of this collection use [`set_host_id_filter`](Self::set_host_id_filter).
@@ -175,6 +176,7 @@ impl ListAssetsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `StatusFilter`.
     ///
     /// To override the contents of this collection use [`set_status_filter`](Self::set_status_filter).

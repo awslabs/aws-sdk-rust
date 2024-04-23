@@ -3,7 +3,7 @@ pub use crate::operation::create_kx_cluster::_create_kx_cluster_output::CreateKx
 
 pub use crate::operation::create_kx_cluster::_create_kx_cluster_input::CreateKxClusterInputBuilder;
 
-impl CreateKxClusterInputBuilder {
+impl crate::operation::create_kx_cluster::builders::CreateKxClusterInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateKxClusterFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -214,6 +214,7 @@ impl CreateKxClusterFluentBuilder {
     pub fn get_tickerplant_log_configuration(&self) -> &::std::option::Option<crate::types::TickerplantLogConfiguration> {
         self.inner.get_tickerplant_log_configuration()
     }
+    ///
     /// Appends an item to `databases`.
     ///
     /// To override the contents of this collection use [`set_databases`](Self::set_databases).
@@ -232,6 +233,7 @@ impl CreateKxClusterFluentBuilder {
     pub fn get_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
         self.inner.get_databases()
     }
+    ///
     /// Appends an item to `cacheStorageConfigurations`.
     ///
     /// To override the contents of this collection use [`set_cache_storage_configurations`](Self::set_cache_storage_configurations).
@@ -337,6 +339,7 @@ impl CreateKxClusterFluentBuilder {
     pub fn get_initialization_script(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_initialization_script()
     }
+    ///
     /// Appends an item to `commandLineArguments`.
     ///
     /// To override the contents of this collection use [`set_command_line_arguments`](Self::set_command_line_arguments).
@@ -443,6 +446,7 @@ impl CreateKxClusterFluentBuilder {
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone_id()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

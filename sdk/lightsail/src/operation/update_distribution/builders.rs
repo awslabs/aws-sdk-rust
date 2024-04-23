@@ -3,7 +3,7 @@ pub use crate::operation::update_distribution::_update_distribution_output::Upda
 
 pub use crate::operation::update_distribution::_update_distribution_input::UpdateDistributionInputBuilder;
 
-impl UpdateDistributionInputBuilder {
+impl crate::operation::update_distribution::builders::UpdateDistributionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateDistributionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -177,6 +177,7 @@ impl UpdateDistributionFluentBuilder {
     pub fn get_cache_behavior_settings(&self) -> &::std::option::Option<crate::types::CacheSettings> {
         self.inner.get_cache_behavior_settings()
     }
+    ///
     /// Appends an item to `cacheBehaviors`.
     ///
     /// To override the contents of this collection use [`set_cache_behaviors`](Self::set_cache_behaviors).

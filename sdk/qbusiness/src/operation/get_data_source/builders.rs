@@ -3,7 +3,7 @@ pub use crate::operation::get_data_source::_get_data_source_output::GetDataSourc
 
 pub use crate::operation::get_data_source::_get_data_source_input::GetDataSourceInputBuilder;
 
-impl GetDataSourceInputBuilder {
+impl crate::operation::get_data_source::builders::GetDataSourceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl GetDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDataSource`.
 ///
-/// <p>Gets information about an existing Amazon Q data source connector.</p>
+/// <p>Gets information about an existing Amazon Q Business data source connector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,26 +99,26 @@ impl GetDataSourceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

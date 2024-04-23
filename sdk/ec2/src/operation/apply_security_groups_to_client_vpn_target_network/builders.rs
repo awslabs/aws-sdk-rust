@@ -3,7 +3,7 @@ pub use crate::operation::apply_security_groups_to_client_vpn_target_network::_a
 
 pub use crate::operation::apply_security_groups_to_client_vpn_target_network::_apply_security_groups_to_client_vpn_target_network_input::ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder;
 
-impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
+impl crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).

@@ -3,7 +3,7 @@ pub use crate::operation::reset_parameter_group::_reset_parameter_group_output::
 
 pub use crate::operation::reset_parameter_group::_reset_parameter_group_input::ResetParameterGroupInputBuilder;
 
-impl ResetParameterGroupInputBuilder {
+impl crate::operation::reset_parameter_group::builders::ResetParameterGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ResetParameterGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl ResetParameterGroupFluentBuilder {
     pub fn get_all_parameters(&self) -> &::std::option::Option<bool> {
         self.inner.get_all_parameters()
     }
+    ///
     /// Appends an item to `ParameterNames`.
     ///
     /// To override the contents of this collection use [`set_parameter_names`](Self::set_parameter_names).

@@ -3,7 +3,7 @@ pub use crate::operation::describe_local_gateway_virtual_interfaces::_describe_l
 
 pub use crate::operation::describe_local_gateway_virtual_interfaces::_describe_local_gateway_virtual_interfaces_input::DescribeLocalGatewayVirtualInterfacesInputBuilder;
 
-impl DescribeLocalGatewayVirtualInterfacesInputBuilder {
+impl crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DescribeLocalGatewayVirtualInterfacesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl DescribeLocalGatewayVirtualInterfacesFluentBuilder {
             self.inner,
         )
     }
+    ///
     /// Appends an item to `LocalGatewayVirtualInterfaceIds`.
     ///
     /// To override the contents of this collection use [`set_local_gateway_virtual_interface_ids`](Self::set_local_gateway_virtual_interface_ids).
@@ -140,6 +141,7 @@ impl DescribeLocalGatewayVirtualInterfacesFluentBuilder {
     pub fn get_local_gateway_virtual_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_local_gateway_virtual_interface_ids()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

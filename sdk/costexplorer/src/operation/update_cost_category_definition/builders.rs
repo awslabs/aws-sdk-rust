@@ -3,7 +3,7 @@ pub use crate::operation::update_cost_category_definition::_update_cost_category
 
 pub use crate::operation::update_cost_category_definition::_update_cost_category_definition_input::UpdateCostCategoryDefinitionInputBuilder;
 
-impl UpdateCostCategoryDefinitionInputBuilder {
+impl crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     pub fn get_rule_version(&self) -> &::std::option::Option<crate::types::CostCategoryRuleVersion> {
         self.inner.get_rule_version()
     }
+    ///
     /// Appends an item to `Rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -182,6 +183,7 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_value()
     }
+    ///
     /// Appends an item to `SplitChargeRules`.
     ///
     /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).

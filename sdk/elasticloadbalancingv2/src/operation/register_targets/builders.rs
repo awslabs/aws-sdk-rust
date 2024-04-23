@@ -3,7 +3,7 @@ pub use crate::operation::register_targets::_register_targets_output::RegisterTa
 
 pub use crate::operation::register_targets::_register_targets_input::RegisterTargetsInputBuilder;
 
-impl RegisterTargetsInputBuilder {
+impl crate::operation::register_targets::builders::RegisterTargetsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl RegisterTargetsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -125,6 +125,7 @@ impl RegisterTargetsFluentBuilder {
     pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_group_arn()
     }
+    ///
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).

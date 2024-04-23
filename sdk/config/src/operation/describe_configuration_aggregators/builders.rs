@@ -3,7 +3,7 @@ pub use crate::operation::describe_configuration_aggregators::_describe_configur
 
 pub use crate::operation::describe_configuration_aggregators::_describe_configuration_aggregators_input::DescribeConfigurationAggregatorsInputBuilder;
 
-impl DescribeConfigurationAggregatorsInputBuilder {
+impl crate::operation::describe_configuration_aggregators::builders::DescribeConfigurationAggregatorsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeConfigurationAggregatorsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeConfigurationAggregatorsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_configuration_aggregators::paginator::DescribeConfigurationAggregatorsPaginator {
         crate::operation::describe_configuration_aggregators::paginator::DescribeConfigurationAggregatorsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ConfigurationAggregatorNames`.
     ///
     /// To override the contents of this collection use [`set_configuration_aggregator_names`](Self::set_configuration_aggregator_names).

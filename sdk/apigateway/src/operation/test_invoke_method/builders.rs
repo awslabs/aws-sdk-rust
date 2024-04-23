@@ -3,7 +3,7 @@ pub use crate::operation::test_invoke_method::_test_invoke_method_output::TestIn
 
 pub use crate::operation::test_invoke_method::_test_invoke_method_input::TestInvokeMethodInputBuilder;
 
-impl TestInvokeMethodInputBuilder {
+impl crate::operation::test_invoke_method::builders::TestInvokeMethodInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl TestInvokeMethodFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl TestInvokeMethodFluentBuilder {
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_body()
     }
+    ///
     /// Adds a key-value pair to `headers`.
     ///
     /// To override the contents of this collection use [`set_headers`](Self::set_headers).
@@ -196,6 +197,7 @@ impl TestInvokeMethodFluentBuilder {
     pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_headers()
     }
+    ///
     /// Adds a key-value pair to `multiValueHeaders`.
     ///
     /// To override the contents of this collection use [`set_multi_value_headers`](Self::set_multi_value_headers).
@@ -233,6 +235,7 @@ impl TestInvokeMethodFluentBuilder {
     pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_certificate_id()
     }
+    ///
     /// Adds a key-value pair to `stageVariables`.
     ///
     /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).

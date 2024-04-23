@@ -3,7 +3,7 @@ pub use crate::operation::create_provisioned_product_plan::_create_provisioned_p
 
 pub use crate::operation::create_provisioned_product_plan::_create_provisioned_product_plan_input::CreateProvisionedProductPlanInputBuilder;
 
-impl CreateProvisionedProductPlanInputBuilder {
+impl crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateProvisionedProductPlanFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -171,6 +171,7 @@ impl CreateProvisionedProductPlanFluentBuilder {
     pub fn get_plan_type(&self) -> &::std::option::Option<crate::types::ProvisionedProductPlanType> {
         self.inner.get_plan_type()
     }
+    ///
     /// Appends an item to `NotificationArns`.
     ///
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
@@ -245,6 +246,7 @@ impl CreateProvisionedProductPlanFluentBuilder {
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provisioning_artifact_id()
     }
+    ///
     /// Appends an item to `ProvisioningParameters`.
     ///
     /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
@@ -277,6 +279,7 @@ impl CreateProvisionedProductPlanFluentBuilder {
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idempotency_token()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

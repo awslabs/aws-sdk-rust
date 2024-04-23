@@ -14,7 +14,7 @@ pub struct SpaceSettings {
     pub jupyter_lab_app_settings: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>,
     /// <p>The type of app created within the space.</p>
     pub app_type: ::std::option::Option<crate::types::AppType>,
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
     pub custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
@@ -40,7 +40,7 @@ impl SpaceSettings {
     pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
         self.app_type.as_ref()
     }
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::SpaceStorageSettings> {
         self.space_storage_settings.as_ref()
     }
@@ -141,17 +141,17 @@ impl SpaceSettingsBuilder {
     pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
         &self.app_type
     }
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub fn space_storage_settings(mut self, input: crate::types::SpaceStorageSettings) -> Self {
         self.space_storage_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::SpaceStorageSettings>) -> Self {
         self.space_storage_settings = input;
         self
     }
-    /// <p>The storage settings for a private space.</p>
+    /// <p>The storage settings for a space.</p>
     pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::SpaceStorageSettings> {
         &self.space_storage_settings
     }

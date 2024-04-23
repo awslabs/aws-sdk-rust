@@ -3,7 +3,7 @@ pub use crate::operation::create_detector_version::_create_detector_version_outp
 
 pub use crate::operation::create_detector_version::_create_detector_version_input::CreateDetectorVersionInputBuilder;
 
-impl CreateDetectorVersionInputBuilder {
+impl crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateDetectorVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateDetectorVersionFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `externalModelEndpoints`.
     ///
     /// To override the contents of this collection use [`set_external_model_endpoints`](Self::set_external_model_endpoints).
@@ -154,6 +155,7 @@ impl CreateDetectorVersionFluentBuilder {
     pub fn get_external_model_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_external_model_endpoints()
     }
+    ///
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -172,6 +174,7 @@ impl CreateDetectorVersionFluentBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
         self.inner.get_rules()
     }
+    ///
     /// Appends an item to `modelVersions`.
     ///
     /// To override the contents of this collection use [`set_model_versions`](Self::set_model_versions).
@@ -216,6 +219,7 @@ impl CreateDetectorVersionFluentBuilder {
     pub fn get_rule_execution_mode(&self) -> &::std::option::Option<crate::types::RuleExecutionMode> {
         self.inner.get_rule_execution_mode()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

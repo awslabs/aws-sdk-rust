@@ -3,7 +3,7 @@ pub use crate::operation::start_speech_synthesis_task::_start_speech_synthesis_t
 
 pub use crate::operation::start_speech_synthesis_task::_start_speech_synthesis_task_input::StartSpeechSynthesisTaskInputBuilder;
 
-impl StartSpeechSynthesisTaskInputBuilder {
+impl crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         self.inner.get_language_code()
     }
+    ///
     /// Appends an item to `LexiconNames`.
     ///
     /// To override the contents of this collection use [`set_lexicon_names`](Self::set_lexicon_names).
@@ -233,6 +234,7 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sns_topic_arn()
     }
+    ///
     /// Appends an item to `SpeechMarkTypes`.
     ///
     /// To override the contents of this collection use [`set_speech_mark_types`](Self::set_speech_mark_types).

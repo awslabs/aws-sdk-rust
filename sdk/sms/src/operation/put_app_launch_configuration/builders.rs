@@ -3,7 +3,7 @@ pub use crate::operation::put_app_launch_configuration::_put_app_launch_configur
 
 pub use crate::operation::put_app_launch_configuration::_put_app_launch_configuration_input::PutAppLaunchConfigurationInputBuilder;
 
-impl PutAppLaunchConfigurationInputBuilder {
+impl crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutAppLaunchConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl PutAppLaunchConfigurationFluentBuilder {
     pub fn get_auto_launch(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_launch()
     }
+    ///
     /// Appends an item to `serverGroupLaunchConfigurations`.
     ///
     /// To override the contents of this collection use [`set_server_group_launch_configurations`](Self::set_server_group_launch_configurations).

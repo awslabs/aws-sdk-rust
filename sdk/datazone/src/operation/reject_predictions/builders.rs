@@ -3,7 +3,7 @@ pub use crate::operation::reject_predictions::_reject_predictions_output::Reject
 
 pub use crate::operation::reject_predictions::_reject_predictions_input::RejectPredictionsInputBuilder;
 
-impl RejectPredictionsInputBuilder {
+impl crate::operation::reject_predictions::builders::RejectPredictionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RejectPredictionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl RejectPredictionsFluentBuilder {
     pub fn get_reject_rule(&self) -> &::std::option::Option<crate::types::RejectRule> {
         self.inner.get_reject_rule()
     }
+    ///
     /// Appends an item to `rejectChoices`.
     ///
     /// To override the contents of this collection use [`set_reject_choices`](Self::set_reject_choices).

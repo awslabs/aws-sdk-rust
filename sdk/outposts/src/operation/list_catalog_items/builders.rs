@@ -3,7 +3,7 @@ pub use crate::operation::list_catalog_items::_list_catalog_items_output::ListCa
 
 pub use crate::operation::list_catalog_items::_list_catalog_items_input::ListCatalogItemsInputBuilder;
 
-impl ListCatalogItemsInputBuilder {
+impl crate::operation::list_catalog_items::builders::ListCatalogItemsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ListCatalogItemsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl ListCatalogItemsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `ItemClassFilter`.
     ///
     /// To override the contents of this collection use [`set_item_class_filter`](Self::set_item_class_filter).
@@ -161,6 +162,7 @@ impl ListCatalogItemsFluentBuilder {
     pub fn get_item_class_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>> {
         self.inner.get_item_class_filter()
     }
+    ///
     /// Appends an item to `SupportedStorageFilter`.
     ///
     /// To override the contents of this collection use [`set_supported_storage_filter`](Self::set_supported_storage_filter).
@@ -179,6 +181,7 @@ impl ListCatalogItemsFluentBuilder {
     pub fn get_supported_storage_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
         self.inner.get_supported_storage_filter()
     }
+    ///
     /// Appends an item to `EC2FamilyFilter`.
     ///
     /// To override the contents of this collection use [`set_ec2_family_filter`](Self::set_ec2_family_filter).

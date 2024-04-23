@@ -3,7 +3,7 @@ pub use crate::operation::search_transit_gateway_routes::_search_transit_gateway
 
 pub use crate::operation::search_transit_gateway_routes::_search_transit_gateway_routes_input::SearchTransitGatewayRoutesInputBuilder;
 
-impl SearchTransitGatewayRoutesInputBuilder {
+impl crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SearchTransitGatewayRoutesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl SearchTransitGatewayRoutesFluentBuilder {
     pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_route_table_id()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -206,17 +207,17 @@ impl SearchTransitGatewayRoutesFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
-    /// <p>The maximum number of routes to return.</p>
+    /// <p>The maximum number of routes to return. If a value is not provided, the default is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of routes to return.</p>
+    /// <p>The maximum number of routes to return. If a value is not provided, the default is 1000.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of routes to return.</p>
+    /// <p>The maximum number of routes to return. If a value is not provided, the default is 1000.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

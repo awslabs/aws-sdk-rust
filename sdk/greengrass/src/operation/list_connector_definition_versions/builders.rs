@@ -3,7 +3,7 @@ pub use crate::operation::list_connector_definition_versions::_list_connector_de
 
 pub use crate::operation::list_connector_definition_versions::_list_connector_definition_versions_input::ListConnectorDefinitionVersionsInputBuilder;
 
-impl ListConnectorDefinitionVersionsInputBuilder {
+impl crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListConnectorDefinitionVersionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

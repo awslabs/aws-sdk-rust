@@ -12,6 +12,14 @@ pub struct DefaultSpaceSettings {
     pub jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     /// <p>The KernelGateway app settings.</p>
     pub kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
+    /// <p>The settings for the JupyterLab application.</p>
+    pub jupyter_lab_app_settings: ::std::option::Option<crate::types::JupyterLabAppSettings>,
+    /// <p>The default storage settings for a space.</p>
+    pub space_storage_settings: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>,
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    pub custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
 }
 impl DefaultSpaceSettings {
     /// <p>The ARN of the execution role for the space.</p>
@@ -32,6 +40,24 @@ impl DefaultSpaceSettings {
     pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
         self.kernel_gateway_app_settings.as_ref()
     }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterLabAppSettings> {
+        self.jupyter_lab_app_settings.as_ref()
+    }
+    /// <p>The default storage settings for a space.</p>
+    pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceStorageSettings> {
+        self.space_storage_settings.as_ref()
+    }
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub fn custom_posix_user_config(&self) -> ::std::option::Option<&crate::types::CustomPosixUserConfig> {
+        self.custom_posix_user_config.as_ref()
+    }
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_file_system_configs.is_none()`.
+    pub fn custom_file_system_configs(&self) -> &[crate::types::CustomFileSystemConfig] {
+        self.custom_file_system_configs.as_deref().unwrap_or_default()
+    }
 }
 impl DefaultSpaceSettings {
     /// Creates a new builder-style object to manufacture [`DefaultSpaceSettings`](crate::types::DefaultSpaceSettings).
@@ -48,6 +74,10 @@ pub struct DefaultSpaceSettingsBuilder {
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     pub(crate) kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
+    pub(crate) jupyter_lab_app_settings: ::std::option::Option<crate::types::JupyterLabAppSettings>,
+    pub(crate) space_storage_settings: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>,
+    pub(crate) custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
+    pub(crate) custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
 }
 impl DefaultSpaceSettingsBuilder {
     /// <p>The ARN of the execution role for the space.</p>
@@ -112,6 +142,68 @@ impl DefaultSpaceSettingsBuilder {
     pub fn get_kernel_gateway_app_settings(&self) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
         &self.kernel_gateway_app_settings
     }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn jupyter_lab_app_settings(mut self, input: crate::types::JupyterLabAppSettings) -> Self {
+        self.jupyter_lab_app_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn set_jupyter_lab_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterLabAppSettings>) -> Self {
+        self.jupyter_lab_app_settings = input;
+        self
+    }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn get_jupyter_lab_app_settings(&self) -> &::std::option::Option<crate::types::JupyterLabAppSettings> {
+        &self.jupyter_lab_app_settings
+    }
+    /// <p>The default storage settings for a space.</p>
+    pub fn space_storage_settings(mut self, input: crate::types::DefaultSpaceStorageSettings) -> Self {
+        self.space_storage_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default storage settings for a space.</p>
+    pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>) -> Self {
+        self.space_storage_settings = input;
+        self
+    }
+    /// <p>The default storage settings for a space.</p>
+    pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceStorageSettings> {
+        &self.space_storage_settings
+    }
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub fn custom_posix_user_config(mut self, input: crate::types::CustomPosixUserConfig) -> Self {
+        self.custom_posix_user_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub fn set_custom_posix_user_config(mut self, input: ::std::option::Option<crate::types::CustomPosixUserConfig>) -> Self {
+        self.custom_posix_user_config = input;
+        self
+    }
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub fn get_custom_posix_user_config(&self) -> &::std::option::Option<crate::types::CustomPosixUserConfig> {
+        &self.custom_posix_user_config
+    }
+    /// Appends an item to `custom_file_system_configs`.
+    ///
+    /// To override the contents of this collection use [`set_custom_file_system_configs`](Self::set_custom_file_system_configs).
+    ///
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    pub fn custom_file_system_configs(mut self, input: crate::types::CustomFileSystemConfig) -> Self {
+        let mut v = self.custom_file_system_configs.unwrap_or_default();
+        v.push(input);
+        self.custom_file_system_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    pub fn set_custom_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>) -> Self {
+        self.custom_file_system_configs = input;
+        self
+    }
+    /// <p>The settings for assigning a custom file system to a domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    pub fn get_custom_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>> {
+        &self.custom_file_system_configs
+    }
     /// Consumes the builder and constructs a [`DefaultSpaceSettings`](crate::types::DefaultSpaceSettings).
     pub fn build(self) -> crate::types::DefaultSpaceSettings {
         crate::types::DefaultSpaceSettings {
@@ -119,6 +211,10 @@ impl DefaultSpaceSettingsBuilder {
             security_groups: self.security_groups,
             jupyter_server_app_settings: self.jupyter_server_app_settings,
             kernel_gateway_app_settings: self.kernel_gateway_app_settings,
+            jupyter_lab_app_settings: self.jupyter_lab_app_settings,
+            space_storage_settings: self.space_storage_settings,
+            custom_posix_user_config: self.custom_posix_user_config,
+            custom_file_system_configs: self.custom_file_system_configs,
         }
     }
 }

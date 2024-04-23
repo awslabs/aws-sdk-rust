@@ -3,7 +3,7 @@ pub use crate::operation::create_location_azure_blob::_create_location_azure_blo
 
 pub use crate::operation::create_location_azure_blob::_create_location_azure_blob_input::CreateLocationAzureBlobInputBuilder;
 
-impl CreateLocationAzureBlobInputBuilder {
+impl crate::operation::create_location_azure_blob::builders::CreateLocationAzureBlobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateLocationAzureBlobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -193,6 +193,7 @@ impl CreateLocationAzureBlobFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
+    ///
     /// Appends an item to `AgentArns`.
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
@@ -214,6 +215,7 @@ impl CreateLocationAzureBlobFluentBuilder {
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_agent_arns()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

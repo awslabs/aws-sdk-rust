@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-cloudwatch = "1.24.0"
+//! aws-sdk-cloudwatch = "1.25.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

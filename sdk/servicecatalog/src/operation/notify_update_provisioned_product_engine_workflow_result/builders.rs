@@ -3,32 +3,29 @@ pub use crate::operation::notify_update_provisioned_product_engine_workflow_resu
 
 pub use crate::operation::notify_update_provisioned_product_engine_workflow_result::_notify_update_provisioned_product_engine_workflow_result_input::NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder;
 
-impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
-    /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.notify_update_provisioned_product_engine_workflow_result();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
-}
+impl crate::operation::notify_update_provisioned_product_engine_workflow_result::builders::NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
+                    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.notify_update_provisioned_product_engine_workflow_result();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+                }
 /// Fluent builder constructing a request to `NotifyUpdateProvisionedProductEngineWorkflowResult`.
 ///
 /// <p>Notifies the result of the update engine execution.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::notify_update_provisioned_product_engine_workflow_result::builders::NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::notify_update_provisioned_product_engine_workflow_result::builders::NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultOutput,
@@ -103,12 +100,12 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -168,6 +165,7 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_failure_reason()
     }
+    ///
     /// Appends an item to `Outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).

@@ -30,6 +30,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ipAddressV6" => {
+                            builder = builder.set_ip_address_v6(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "organization" => {
                             builder = builder.set_organization(crate::protocol_serde::shape_organization::de_organization(tokens)?);
                         }

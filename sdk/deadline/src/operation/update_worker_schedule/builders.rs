@@ -3,7 +3,7 @@ pub use crate::operation::update_worker_schedule::_update_worker_schedule_output
 
 pub use crate::operation::update_worker_schedule::_update_worker_schedule_input::UpdateWorkerScheduleInputBuilder;
 
-impl UpdateWorkerScheduleInputBuilder {
+impl crate::operation::update_worker_schedule::builders::UpdateWorkerScheduleInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateWorkerScheduleFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateWorkerScheduleFluentBuilder {
     pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_worker_id()
     }
+    ///
     /// Adds a key-value pair to `updatedSessionActions`.
     ///
     /// To override the contents of this collection use [`set_updated_session_actions`](Self::set_updated_session_actions).

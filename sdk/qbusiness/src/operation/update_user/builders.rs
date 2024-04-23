@@ -3,7 +3,7 @@ pub use crate::operation::update_user::_update_user_output::UpdateUserOutputBuil
 
 pub use crate::operation::update_user::_update_user_input::UpdateUserInputBuilder;
 
-impl UpdateUserInputBuilder {
+impl crate::operation::update_user::builders::UpdateUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateUserFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
+    ///
     /// Appends an item to `userAliasesToUpdate`.
     ///
     /// To override the contents of this collection use [`set_user_aliases_to_update`](Self::set_user_aliases_to_update).
@@ -154,6 +155,7 @@ impl UpdateUserFluentBuilder {
     pub fn get_user_aliases_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAlias>> {
         self.inner.get_user_aliases_to_update()
     }
+    ///
     /// Appends an item to `userAliasesToDelete`.
     ///
     /// To override the contents of this collection use [`set_user_aliases_to_delete`](Self::set_user_aliases_to_delete).

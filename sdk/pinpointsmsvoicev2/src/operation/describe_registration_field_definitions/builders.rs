@@ -3,7 +3,7 @@ pub use crate::operation::describe_registration_field_definitions::_describe_reg
 
 pub use crate::operation::describe_registration_field_definitions::_describe_registration_field_definitions_input::DescribeRegistrationFieldDefinitionsInputBuilder;
 
-impl DescribeRegistrationFieldDefinitionsInputBuilder {
+impl crate::operation::describe_registration_field_definitions::builders::DescribeRegistrationFieldDefinitionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeRegistrationFieldDefinitionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -148,6 +148,7 @@ impl DescribeRegistrationFieldDefinitionsFluentBuilder {
     pub fn get_section_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_section_path()
     }
+    ///
     /// Appends an item to `FieldPaths`.
     ///
     /// To override the contents of this collection use [`set_field_paths`](Self::set_field_paths).

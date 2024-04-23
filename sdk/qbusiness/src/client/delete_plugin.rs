@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePlugin`](crate::operation::delete_plugin::builders::DeletePluginFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_plugin::builders::DeletePluginFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_plugin::builders::DeletePluginFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier the application attached to the Amazon Q plugin.</p><br>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_plugin::builders::DeletePluginFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_plugin::builders::DeletePluginFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier the application attached to the Amazon Q Business plugin.</p><br>
     ///   - [`plugin_id(impl Into<String>)`](crate::operation::delete_plugin::builders::DeletePluginFluentBuilder::plugin_id) / [`set_plugin_id(Option<String>)`](crate::operation::delete_plugin::builders::DeletePluginFluentBuilder::set_plugin_id):<br>required: **true**<br><p>The identifier of the plugin being deleted.</p><br>
     /// - On success, responds with [`DeletePluginOutput`](crate::operation::delete_plugin::DeletePluginOutput)
     /// - On failure, responds with [`SdkError<DeletePluginError>`](crate::operation::delete_plugin::DeletePluginError)

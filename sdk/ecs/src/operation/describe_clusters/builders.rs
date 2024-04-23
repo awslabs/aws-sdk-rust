@@ -3,7 +3,7 @@ pub use crate::operation::describe_clusters::_describe_clusters_output::Describe
 
 pub use crate::operation::describe_clusters::_describe_clusters_input::DescribeClustersInputBuilder;
 
-impl DescribeClustersInputBuilder {
+impl crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl DescribeClustersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `clusters`.
     ///
     /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
@@ -126,6 +127,7 @@ impl DescribeClustersFluentBuilder {
     pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_clusters()
     }
+    ///
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).

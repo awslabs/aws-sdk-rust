@@ -3,7 +3,7 @@ pub use crate::operation::create_microsoft_ad::_create_microsoft_ad_output::Crea
 
 pub use crate::operation::create_microsoft_ad::_create_microsoft_ad_input::CreateMicrosoftAdInputBuilder;
 
-impl CreateMicrosoftAdInputBuilder {
+impl crate::operation::create_microsoft_ad::builders::CreateMicrosoftAdInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateMicrosoftADFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -196,6 +196,7 @@ impl CreateMicrosoftADFluentBuilder {
     pub fn get_edition(&self) -> &::std::option::Option<crate::types::DirectoryEdition> {
         self.inner.get_edition()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

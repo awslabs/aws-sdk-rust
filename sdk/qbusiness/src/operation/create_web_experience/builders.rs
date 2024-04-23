@@ -3,7 +3,7 @@ pub use crate::operation::create_web_experience::_create_web_experience_output::
 
 pub use crate::operation::create_web_experience::_create_web_experience_input::CreateWebExperienceInputBuilder;
 
-impl CreateWebExperienceInputBuilder {
+impl crate::operation::create_web_experience::builders::CreateWebExperienceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl CreateWebExperienceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateWebExperience`.
 ///
-/// <p>Creates an Amazon Q web experience.</p>
+/// <p>Creates an Amazon Q Business web experience.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWebExperienceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,68 +99,68 @@ impl CreateWebExperienceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The title for your Amazon Q web experience.</p>
+    /// <p>The title for your Amazon Q Business web experience.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
         self
     }
-    /// <p>The title for your Amazon Q web experience.</p>
+    /// <p>The title for your Amazon Q Business web experience.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self
     }
-    /// <p>The title for your Amazon Q web experience.</p>
+    /// <p>The title for your Amazon Q Business web experience.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_title()
     }
-    /// <p>A subtitle to personalize your Amazon Q web experience.</p>
+    /// <p>A subtitle to personalize your Amazon Q Business web experience.</p>
     pub fn subtitle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subtitle(input.into());
         self
     }
-    /// <p>A subtitle to personalize your Amazon Q web experience.</p>
+    /// <p>A subtitle to personalize your Amazon Q Business web experience.</p>
     pub fn set_subtitle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subtitle(input);
         self
     }
-    /// <p>A subtitle to personalize your Amazon Q web experience.</p>
+    /// <p>A subtitle to personalize your Amazon Q Business web experience.</p>
     pub fn get_subtitle(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subtitle()
     }
-    /// <p>The customized welcome message for end users of an Amazon Q web experience.</p>
+    /// <p>The customized welcome message for end users of an Amazon Q Business web experience.</p>
     pub fn welcome_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.welcome_message(input.into());
         self
     }
-    /// <p>The customized welcome message for end users of an Amazon Q web experience.</p>
+    /// <p>The customized welcome message for end users of an Amazon Q Business web experience.</p>
     pub fn set_welcome_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_welcome_message(input);
         self
     }
-    /// <p>The customized welcome message for end users of an Amazon Q web experience.</p>
+    /// <p>The customized welcome message for end users of an Amazon Q Business web experience.</p>
     pub fn get_welcome_message(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_welcome_message()
     }
@@ -178,35 +178,50 @@ impl CreateWebExperienceFluentBuilder {
     pub fn get_sample_prompts_control_mode(&self) -> &::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode> {
         self.inner.get_sample_prompts_control_mode()
     }
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.role_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_role_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q web experience. You can also use tags to help control access to the web experience. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business web experience. You can also use tags to help control access to the web experience. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q web experience. You can also use tags to help control access to the web experience. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business web experience. You can also use tags to help control access to the web experience. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of key-value pairs that identify or categorize your Amazon Q web experience. You can also use tags to help control access to the web experience. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    /// <p>A list of key-value pairs that identify or categorize your Amazon Q Business web experience. You can also use tags to help control access to the web experience. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>A token you provide to identify a request to create an Amazon Q web experience.</p>
+    /// <p>A token you provide to identify a request to create an Amazon Q Business web experience.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A token you provide to identify a request to create an Amazon Q web experience.</p>
+    /// <p>A token you provide to identify a request to create an Amazon Q Business web experience.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A token you provide to identify a request to create an Amazon Q web experience.</p>
+    /// <p>A token you provide to identify a request to create an Amazon Q Business web experience.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

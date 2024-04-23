@@ -3,7 +3,7 @@ pub use crate::operation::untag_resources::_untag_resources_output::UntagResourc
 
 pub use crate::operation::untag_resources::_untag_resources_input::UntagResourcesInputBuilder;
 
-impl UntagResourcesInputBuilder {
+impl crate::operation::untag_resources::builders::UntagResourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -113,15 +113,16 @@ impl UntagResourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `ResourceARNList`.
     ///
     /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
@@ -143,6 +144,7 @@ impl UntagResourcesFluentBuilder {
     pub fn get_resource_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arn_list()
     }
+    ///
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).

@@ -3,7 +3,7 @@ pub use crate::operation::create_game_session::_create_game_session_output::Crea
 
 pub use crate::operation::create_game_session::_create_game_session_input::CreateGameSessionInputBuilder;
 
-impl CreateGameSessionInputBuilder {
+impl crate::operation::create_game_session::builders::CreateGameSessionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -115,12 +115,12 @@ impl CreateGameSessionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -180,6 +180,7 @@ impl CreateGameSessionFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `GameProperties`.
     ///
     /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).

@@ -3,7 +3,7 @@ pub use crate::operation::run_task::_run_task_output::RunTaskOutputBuilder;
 
 pub use crate::operation::run_task::_run_task_input::RunTaskInputBuilder;
 
-impl RunTaskInputBuilder {
+impl crate::operation::run_task::builders::RunTaskInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,15 +104,16 @@ impl RunTaskFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `capacityProviderStrategy`.
     ///
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
@@ -282,6 +283,7 @@ impl RunTaskFluentBuilder {
     pub fn get_overrides(&self) -> &::std::option::Option<crate::types::TaskOverride> {
         self.inner.get_overrides()
     }
+    ///
     /// Appends an item to `placementConstraints`.
     ///
     /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
@@ -300,6 +302,7 @@ impl RunTaskFluentBuilder {
     pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>> {
         self.inner.get_placement_constraints()
     }
+    ///
     /// Appends an item to `placementStrategy`.
     ///
     /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
@@ -383,6 +386,7 @@ impl RunTaskFluentBuilder {
     pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_started_by()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -495,6 +499,7 @@ impl RunTaskFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `volumeConfigurations`.
     ///
     /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).

@@ -3,7 +3,7 @@ pub use crate::operation::describe_savings_plans_offering_rates::_describe_savin
 
 pub use crate::operation::describe_savings_plans_offering_rates::_describe_savings_plans_offering_rates_input::DescribeSavingsPlansOfferingRatesInputBuilder;
 
-impl DescribeSavingsPlansOfferingRatesInputBuilder {
+impl crate::operation::describe_savings_plans_offering_rates::builders::DescribeSavingsPlansOfferingRatesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `savingsPlanOfferingIds`.
     ///
     /// To override the contents of this collection use [`set_savings_plan_offering_ids`](Self::set_savings_plan_offering_ids).
@@ -126,6 +127,7 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     pub fn get_savings_plan_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_savings_plan_offering_ids()
     }
+    ///
     /// Appends an item to `savingsPlanPaymentOptions`.
     ///
     /// To override the contents of this collection use [`set_savings_plan_payment_options`](Self::set_savings_plan_payment_options).
@@ -144,6 +146,7 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     pub fn get_savings_plan_payment_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>> {
         self.inner.get_savings_plan_payment_options()
     }
+    ///
     /// Appends an item to `savingsPlanTypes`.
     ///
     /// To override the contents of this collection use [`set_savings_plan_types`](Self::set_savings_plan_types).
@@ -162,6 +165,7 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     pub fn get_savings_plan_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>> {
         self.inner.get_savings_plan_types()
     }
+    ///
     /// Appends an item to `products`.
     ///
     /// To override the contents of this collection use [`set_products`](Self::set_products).
@@ -180,6 +184,7 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>> {
         self.inner.get_products()
     }
+    ///
     /// Appends an item to `serviceCodes`.
     ///
     /// To override the contents of this collection use [`set_service_codes`](Self::set_service_codes).
@@ -198,6 +203,7 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     pub fn get_service_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateServiceCode>> {
         self.inner.get_service_codes()
     }
+    ///
     /// Appends an item to `usageTypes`.
     ///
     /// To override the contents of this collection use [`set_usage_types`](Self::set_usage_types).
@@ -216,6 +222,7 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     pub fn get_usage_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_usage_types()
     }
+    ///
     /// Appends an item to `operations`.
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
@@ -234,6 +241,7 @@ impl DescribeSavingsPlansOfferingRatesFluentBuilder {
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_operations()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

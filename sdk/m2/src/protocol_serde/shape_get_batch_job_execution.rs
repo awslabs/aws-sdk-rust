@@ -180,6 +180,10 @@ pub(crate) fn de_get_batch_job_execution(
                             .transpose()?,
                     );
                 }
+                "jobStepRestartMarker" => {
+                    builder = builder
+                        .set_job_step_restart_marker(crate::protocol_serde::shape_job_step_restart_marker::de_job_step_restart_marker(tokens)?);
+                }
                 "jobType" => {
                     builder = builder.set_job_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

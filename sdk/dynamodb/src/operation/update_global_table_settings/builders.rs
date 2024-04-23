@@ -3,7 +3,7 @@ pub use crate::operation::update_global_table_settings::_update_global_table_set
 
 pub use crate::operation::update_global_table_settings::_update_global_table_settings_input::UpdateGlobalTableSettingsInputBuilder;
 
-impl UpdateGlobalTableSettingsInputBuilder {
+impl crate::operation::update_global_table_settings::builders::UpdateGlobalTableSettingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateGlobalTableSettingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -189,6 +189,7 @@ impl UpdateGlobalTableSettingsFluentBuilder {
     ) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
         self.inner.get_global_table_provisioned_write_capacity_auto_scaling_settings_update()
     }
+    ///
     /// Appends an item to `GlobalTableGlobalSecondaryIndexSettingsUpdate`.
     ///
     /// To override the contents of this collection use [`set_global_table_global_secondary_index_settings_update`](Self::set_global_table_global_secondary_index_settings_update).
@@ -212,6 +213,7 @@ impl UpdateGlobalTableSettingsFluentBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate>> {
         self.inner.get_global_table_global_secondary_index_settings_update()
     }
+    ///
     /// Appends an item to `ReplicaSettingsUpdate`.
     ///
     /// To override the contents of this collection use [`set_replica_settings_update`](Self::set_replica_settings_update).

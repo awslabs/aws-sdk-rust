@@ -9,6 +9,9 @@ pub struct CampaignConfig {
     /// <p>Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response. For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling metadata in recommendations for a campaign</a>.</p>
     /// <p>If you enable metadata in recommendations, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub enable_metadata_with_recommendations: ::std::option::Option<bool>,
+    /// <p>Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is <code>False</code> and you must manually update the campaign to deploy the latest solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
+    pub sync_with_latest_solution_version: ::std::option::Option<bool>,
 }
 impl CampaignConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
@@ -19,6 +22,11 @@ impl CampaignConfig {
     /// <p>If you enable metadata in recommendations, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub fn enable_metadata_with_recommendations(&self) -> ::std::option::Option<bool> {
         self.enable_metadata_with_recommendations
+    }
+    /// <p>Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is <code>False</code> and you must manually update the campaign to deploy the latest solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
+    pub fn sync_with_latest_solution_version(&self) -> ::std::option::Option<bool> {
+        self.sync_with_latest_solution_version
     }
 }
 impl CampaignConfig {
@@ -34,6 +42,7 @@ impl CampaignConfig {
 pub struct CampaignConfigBuilder {
     pub(crate) item_exploration_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) enable_metadata_with_recommendations: ::std::option::Option<bool>,
+    pub(crate) sync_with_latest_solution_version: ::std::option::Option<bool>,
 }
 impl CampaignConfigBuilder {
     /// Adds a key-value pair to `item_exploration_config`.
@@ -80,11 +89,29 @@ impl CampaignConfigBuilder {
     pub fn get_enable_metadata_with_recommendations(&self) -> &::std::option::Option<bool> {
         &self.enable_metadata_with_recommendations
     }
+    /// <p>Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is <code>False</code> and you must manually update the campaign to deploy the latest solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
+    pub fn sync_with_latest_solution_version(mut self, input: bool) -> Self {
+        self.sync_with_latest_solution_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is <code>False</code> and you must manually update the campaign to deploy the latest solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
+    pub fn set_sync_with_latest_solution_version(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.sync_with_latest_solution_version = input;
+        self
+    }
+    /// <p>Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is <code>False</code> and you must manually update the campaign to deploy the latest solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
+    pub fn get_sync_with_latest_solution_version(&self) -> &::std::option::Option<bool> {
+        &self.sync_with_latest_solution_version
+    }
     /// Consumes the builder and constructs a [`CampaignConfig`](crate::types::CampaignConfig).
     pub fn build(self) -> crate::types::CampaignConfig {
         crate::types::CampaignConfig {
             item_exploration_config: self.item_exploration_config,
             enable_metadata_with_recommendations: self.enable_metadata_with_recommendations,
+            sync_with_latest_solution_version: self.sync_with_latest_solution_version,
         }
     }
 }

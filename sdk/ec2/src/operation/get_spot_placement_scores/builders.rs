@@ -3,7 +3,7 @@ pub use crate::operation::get_spot_placement_scores::_get_spot_placement_scores_
 
 pub use crate::operation::get_spot_placement_scores::_get_spot_placement_scores_input::GetSpotPlacementScoresInputBuilder;
 
-impl GetSpotPlacementScoresInputBuilder {
+impl crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl GetSpotPlacementScoresFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -116,6 +116,7 @@ impl GetSpotPlacementScoresFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator {
         crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `InstanceTypes`.
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
@@ -182,6 +183,7 @@ impl GetSpotPlacementScoresFluentBuilder {
     pub fn get_single_availability_zone(&self) -> &::std::option::Option<bool> {
         self.inner.get_single_availability_zone()
     }
+    ///
     /// Appends an item to `RegionNames`.
     ///
     /// To override the contents of this collection use [`set_region_names`](Self::set_region_names).

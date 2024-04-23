@@ -3,7 +3,7 @@ pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_
 
 pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_input::PurchaseHostReservationInputBuilder;
 
-impl PurchaseHostReservationInputBuilder {
+impl crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PurchaseHostReservationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl PurchaseHostReservationFluentBuilder {
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
         self.inner.get_currency_code()
     }
+    ///
     /// Appends an item to `HostIdSet`.
     ///
     /// To override the contents of this collection use [`set_host_id_set`](Self::set_host_id_set).
@@ -182,6 +183,7 @@ impl PurchaseHostReservationFluentBuilder {
     pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_offering_id()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

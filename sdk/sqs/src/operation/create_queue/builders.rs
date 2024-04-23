@@ -3,7 +3,7 @@ pub use crate::operation::create_queue::_create_queue_output::CreateQueueOutputB
 
 pub use crate::operation::create_queue::_create_queue_input::CreateQueueInputBuilder;
 
-impl CreateQueueInputBuilder {
+impl crate::operation::create_queue::builders::CreateQueueInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -121,12 +121,12 @@ impl CreateQueueFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -171,6 +171,7 @@ impl CreateQueueFluentBuilder {
     pub fn get_queue_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_name()
     }
+    ///
     /// Adds a key-value pair to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -477,6 +478,7 @@ impl CreateQueueFluentBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>> {
         self.inner.get_attributes()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

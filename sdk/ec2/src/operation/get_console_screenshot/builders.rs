@@ -3,7 +3,7 @@ pub use crate::operation::get_console_screenshot::_get_console_screenshot_output
 
 pub use crate::operation::get_console_screenshot::_get_console_screenshot_input::GetConsoleScreenshotInputBuilder;
 
-impl GetConsoleScreenshotInputBuilder {
+impl crate::operation::get_console_screenshot::builders::GetConsoleScreenshotInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -24,6 +24,7 @@ impl GetConsoleScreenshotInputBuilder {
 ///
 /// <p>Retrieve a JPG-format screenshot of a running instance to help with troubleshooting.</p>
 /// <p>The returned content is Base64-encoded.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/troubleshoot-unreachable-instance.html#instance-console-console-output">Instance console output</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConsoleScreenshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -100,12 +101,12 @@ impl GetConsoleScreenshotFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::disassociate_instance_event_window::_disassociate_inst
 
 pub use crate::operation::disassociate_instance_event_window::_disassociate_instance_event_window_input::DisassociateInstanceEventWindowInputBuilder;
 
-impl DisassociateInstanceEventWindowInputBuilder {
+impl crate::operation::disassociate_instance_event_window::builders::DisassociateInstanceEventWindowInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DisassociateInstanceEventWindowFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

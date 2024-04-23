@@ -3,7 +3,7 @@ pub use crate::operation::create_cluster::_create_cluster_output::CreateClusterO
 
 pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterInputBuilder;
 
-impl CreateClusterInputBuilder {
+impl crate::operation::create_cluster::builders::CreateClusterInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateClusterFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,6 +124,7 @@ impl CreateClusterFluentBuilder {
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -193,6 +194,7 @@ impl CreateClusterFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `settings`.
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
@@ -225,6 +227,7 @@ impl CreateClusterFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ClusterConfiguration> {
         self.inner.get_configuration()
     }
+    ///
     /// Appends an item to `capacityProviders`.
     ///
     /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
@@ -252,6 +255,7 @@ impl CreateClusterFluentBuilder {
     pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_capacity_providers()
     }
+    ///
     /// Appends an item to `defaultCapacityProviderStrategy`.
     ///
     /// To override the contents of this collection use [`set_default_capacity_provider_strategy`](Self::set_default_capacity_provider_strategy).

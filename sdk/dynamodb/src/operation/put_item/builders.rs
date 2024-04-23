@@ -3,7 +3,7 @@ pub use crate::operation::put_item::_put_item_output::PutItemOutputBuilder;
 
 pub use crate::operation::put_item::_put_item_input::PutItemInputBuilder;
 
-impl PutItemInputBuilder {
+impl crate::operation::put_item::builders::PutItemInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -96,12 +96,12 @@ impl PutItemFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -119,6 +119,7 @@ impl PutItemFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
+    ///
     /// Adds a key-value pair to `Item`.
     ///
     /// To override the contents of this collection use [`set_item`](Self::set_item).
@@ -155,6 +156,7 @@ impl PutItemFluentBuilder {
     pub fn get_item(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         self.inner.get_item()
     }
+    ///
     /// Adds a key-value pair to `Expected`.
     ///
     /// To override the contents of this collection use [`set_expected`](Self::set_expected).
@@ -336,6 +338,7 @@ impl PutItemFluentBuilder {
     pub fn get_condition_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_condition_expression()
     }
+    ///
     /// Adds a key-value pair to `ExpressionAttributeNames`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
@@ -441,6 +444,7 @@ impl PutItemFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_expression_attribute_names()
     }
+    ///
     /// Adds a key-value pair to `ExpressionAttributeValues`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).

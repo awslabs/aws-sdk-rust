@@ -12,6 +12,7 @@
 /// ```text
 /// # let trainingmode = unimplemented!();
 /// match trainingmode {
+///     TrainingMode::Autotrain => { /* ... */ },
 ///     TrainingMode::Full => { /* ... */ },
 ///     TrainingMode::Update => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum TrainingMode {
     #[allow(missing_docs)] // documentation missing in model
+    Autotrain,
+    #[allow(missing_docs)] // documentation missing in model
     Full,
     #[allow(missing_docs)] // documentation missing in model
     Update,
@@ -52,6 +55,7 @@ pub enum TrainingMode {
 impl ::std::convert::From<&str> for TrainingMode {
     fn from(s: &str) -> Self {
         match s {
+            "AUTOTRAIN" => TrainingMode::Autotrain,
             "FULL" => TrainingMode::Full,
             "UPDATE" => TrainingMode::Update,
             other => TrainingMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl TrainingMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TrainingMode::Autotrain => "AUTOTRAIN",
             TrainingMode::Full => "FULL",
             TrainingMode::Update => "UPDATE",
             TrainingMode::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl TrainingMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL", "UPDATE"]
+        &["AUTOTRAIN", "FULL", "UPDATE"]
     }
 }
 impl ::std::convert::AsRef<str> for TrainingMode {
@@ -99,6 +104,7 @@ impl TrainingMode {
 impl ::std::fmt::Display for TrainingMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TrainingMode::Autotrain => write!(f, "AUTOTRAIN"),
             TrainingMode::Full => write!(f, "FULL"),
             TrainingMode::Update => write!(f, "UPDATE"),
             TrainingMode::Unknown(value) => write!(f, "{}", value),

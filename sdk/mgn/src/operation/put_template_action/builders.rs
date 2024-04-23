@@ -3,7 +3,7 @@ pub use crate::operation::put_template_action::_put_template_action_output::PutT
 
 pub use crate::operation::put_template_action::_put_template_action_input::PutTemplateActionInputBuilder;
 
-impl PutTemplateActionInputBuilder {
+impl crate::operation::put_template_action::builders::PutTemplateActionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutTemplateActionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -234,6 +234,7 @@ impl PutTemplateActionFluentBuilder {
     pub fn get_must_succeed_for_cutover(&self) -> &::std::option::Option<bool> {
         self.inner.get_must_succeed_for_cutover()
     }
+    ///
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -275,6 +276,7 @@ impl PutTemplateActionFluentBuilder {
     pub fn get_operating_system(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operating_system()
     }
+    ///
     /// Adds a key-value pair to `externalParameters`.
     ///
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).

@@ -3,7 +3,7 @@ pub use crate::operation::register_task_definition::_register_task_definition_ou
 
 pub use crate::operation::register_task_definition::_register_task_definition_input::RegisterTaskDefinitionInputBuilder;
 
-impl RegisterTaskDefinitionInputBuilder {
+impl crate::operation::register_task_definition::builders::RegisterTaskDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl RegisterTaskDefinitionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -187,6 +187,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     pub fn get_network_mode(&self) -> &::std::option::Option<crate::types::NetworkMode> {
         self.inner.get_network_mode()
     }
+    ///
     /// Appends an item to `containerDefinitions`.
     ///
     /// To override the contents of this collection use [`set_container_definitions`](Self::set_container_definitions).
@@ -205,6 +206,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     pub fn get_container_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
         self.inner.get_container_definitions()
     }
+    ///
     /// Appends an item to `volumes`.
     ///
     /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
@@ -223,6 +225,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
         self.inner.get_volumes()
     }
+    ///
     /// Appends an item to `placementConstraints`.
     ///
     /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
@@ -244,6 +247,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>> {
         self.inner.get_placement_constraints()
     }
+    ///
     /// Appends an item to `requiresCompatibilities`.
     ///
     /// To override the contents of this collection use [`set_requires_compatibilities`](Self::set_requires_compatibilities).
@@ -428,6 +432,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -596,6 +601,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     pub fn get_proxy_configuration(&self) -> &::std::option::Option<crate::types::ProxyConfiguration> {
         self.inner.get_proxy_configuration()
     }
+    ///
     /// Appends an item to `inferenceAccelerators`.
     ///
     /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).

@@ -1493,6 +1493,18 @@ pub(crate) fn filled_map_visual_correct_errors(
     builder
 }
 
+pub(crate) fn filter_cross_sheet_control_correct_errors(
+    mut builder: crate::types::builders::FilterCrossSheetControlBuilder,
+) -> crate::types::builders::FilterCrossSheetControlBuilder {
+    if builder.filter_control_id.is_none() {
+        builder.filter_control_id = Some(Default::default())
+    }
+    if builder.source_filter_id.is_none() {
+        builder.source_filter_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn filter_date_time_picker_control_correct_errors(
     mut builder: crate::types::builders::FilterDateTimePickerControlBuilder,
 ) -> crate::types::builders::FilterDateTimePickerControlBuilder {
@@ -2081,6 +2093,21 @@ pub(crate) fn word_cloud_visual_correct_errors(
     builder
 }
 
+pub(crate) fn default_filter_control_configuration_correct_errors(
+    mut builder: crate::types::builders::DefaultFilterControlConfigurationBuilder,
+) -> crate::types::builders::DefaultFilterControlConfigurationBuilder {
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.control_options.is_none() {
+        builder.control_options = {
+            let builder = crate::types::builders::DefaultFilterControlOptionsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn exclude_period_configuration_correct_errors(
     mut builder: crate::types::builders::ExcludePeriodConfigurationBuilder,
 ) -> crate::types::builders::ExcludePeriodConfigurationBuilder {
@@ -2333,6 +2360,21 @@ pub(crate) fn date_time_hierarchy_correct_errors(
 ) -> crate::types::builders::DateTimeHierarchyBuilder {
     if builder.hierarchy_id.is_none() {
         builder.hierarchy_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn default_slider_control_options_correct_errors(
+    mut builder: crate::types::builders::DefaultSliderControlOptionsBuilder,
+) -> crate::types::builders::DefaultSliderControlOptionsBuilder {
+    if builder.maximum_value.is_none() {
+        builder.maximum_value = Some(Default::default())
+    }
+    if builder.minimum_value.is_none() {
+        builder.minimum_value = Some(Default::default())
+    }
+    if builder.step_size.is_none() {
+        builder.step_size = Some(Default::default())
     }
     builder
 }

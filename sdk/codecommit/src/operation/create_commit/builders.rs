@@ -3,7 +3,7 @@ pub use crate::operation::create_commit::_create_commit_output::CreateCommitOutp
 
 pub use crate::operation::create_commit::_create_commit_input::CreateCommitInputBuilder;
 
-impl CreateCommitInputBuilder {
+impl crate::operation::create_commit::builders::CreateCommitInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateCommitFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl CreateCommitFluentBuilder {
     pub fn get_keep_empty_folders(&self) -> &::std::option::Option<bool> {
         self.inner.get_keep_empty_folders()
     }
+    ///
     /// Appends an item to `putFiles`.
     ///
     /// To override the contents of this collection use [`set_put_files`](Self::set_put_files).
@@ -224,6 +225,7 @@ impl CreateCommitFluentBuilder {
     pub fn get_put_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutFileEntry>> {
         self.inner.get_put_files()
     }
+    ///
     /// Appends an item to `deleteFiles`.
     ///
     /// To override the contents of this collection use [`set_delete_files`](Self::set_delete_files).
@@ -242,6 +244,7 @@ impl CreateCommitFluentBuilder {
     pub fn get_delete_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFileEntry>> {
         self.inner.get_delete_files()
     }
+    ///
     /// Appends an item to `setFileModes`.
     ///
     /// To override the contents of this collection use [`set_set_file_modes`](Self::set_set_file_modes).

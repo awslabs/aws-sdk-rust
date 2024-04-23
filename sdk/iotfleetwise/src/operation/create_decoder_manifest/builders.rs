@@ -3,7 +3,7 @@ pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_outp
 
 pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_input::CreateDecoderManifestInputBuilder;
 
-impl CreateDecoderManifestInputBuilder {
+impl crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl CreateDecoderManifestFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -160,6 +160,7 @@ impl CreateDecoderManifestFluentBuilder {
     pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_manifest_arn()
     }
+    ///
     /// Appends an item to `signalDecoders`.
     ///
     /// To override the contents of this collection use [`set_signal_decoders`](Self::set_signal_decoders).
@@ -178,6 +179,7 @@ impl CreateDecoderManifestFluentBuilder {
     pub fn get_signal_decoders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
         self.inner.get_signal_decoders()
     }
+    ///
     /// Appends an item to `networkInterfaces`.
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
@@ -196,6 +198,7 @@ impl CreateDecoderManifestFluentBuilder {
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         self.inner.get_network_interfaces()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

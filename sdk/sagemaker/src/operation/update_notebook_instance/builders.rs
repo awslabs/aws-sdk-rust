@@ -3,7 +3,7 @@ pub use crate::operation::update_notebook_instance::_update_notebook_instance_ou
 
 pub use crate::operation::update_notebook_instance::_update_notebook_instance_input::UpdateNotebookInstanceInputBuilder;
 
-impl UpdateNotebookInstanceInputBuilder {
+impl crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateNotebookInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -212,6 +212,7 @@ impl UpdateNotebookInstanceFluentBuilder {
     pub fn get_default_code_repository(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_code_repository()
     }
+    ///
     /// Appends an item to `AdditionalCodeRepositories`.
     ///
     /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
@@ -230,6 +231,7 @@ impl UpdateNotebookInstanceFluentBuilder {
     pub fn get_additional_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_code_repositories()
     }
+    ///
     /// Appends an item to `AcceleratorTypes`.
     ///
     /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).

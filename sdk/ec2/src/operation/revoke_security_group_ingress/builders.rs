@@ -3,7 +3,7 @@ pub use crate::operation::revoke_security_group_ingress::_revoke_security_group_
 
 pub use crate::operation::revoke_security_group_ingress::_revoke_security_group_ingress_input::RevokeSecurityGroupIngressInputBuilder;
 
-impl RevokeSecurityGroupIngressInputBuilder {
+impl crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl RevokeSecurityGroupIngressFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -169,6 +169,7 @@ impl RevokeSecurityGroupIngressFluentBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_name()
     }
+    ///
     /// Appends an item to `IpPermissions`.
     ///
     /// To override the contents of this collection use [`set_ip_permissions`](Self::set_ip_permissions).
@@ -257,6 +258,7 @@ impl RevokeSecurityGroupIngressFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `SecurityGroupRuleIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_rule_ids`](Self::set_security_group_rule_ids).

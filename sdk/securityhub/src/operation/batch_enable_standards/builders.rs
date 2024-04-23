@@ -3,7 +3,7 @@ pub use crate::operation::batch_enable_standards::_batch_enable_standards_output
 
 pub use crate::operation::batch_enable_standards::_batch_enable_standards_input::BatchEnableStandardsInputBuilder;
 
-impl BatchEnableStandardsInputBuilder {
+impl crate::operation::batch_enable_standards::builders::BatchEnableStandardsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl BatchEnableStandardsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `StandardsSubscriptionRequests`.
     ///
     /// To override the contents of this collection use [`set_standards_subscription_requests`](Self::set_standards_subscription_requests).

@@ -3,7 +3,7 @@ pub use crate::operation::delete_plugin::_delete_plugin_output::DeletePluginOutp
 
 pub use crate::operation::delete_plugin::_delete_plugin_input::DeletePluginInputBuilder;
 
-impl DeletePluginInputBuilder {
+impl crate::operation::delete_plugin::builders::DeletePluginInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl DeletePluginInputBuilder {
 }
 /// Fluent builder constructing a request to `DeletePlugin`.
 ///
-/// <p>Deletes an Amazon Q plugin.</p>
+/// <p>Deletes an Amazon Q Business plugin.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePluginFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,26 +99,26 @@ impl DeletePluginFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier the application attached to the Amazon Q plugin.</p>
+    /// <p>The identifier the application attached to the Amazon Q Business plugin.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier the application attached to the Amazon Q plugin.</p>
+    /// <p>The identifier the application attached to the Amazon Q Business plugin.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier the application attached to the Amazon Q plugin.</p>
+    /// <p>The identifier the application attached to the Amazon Q Business plugin.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

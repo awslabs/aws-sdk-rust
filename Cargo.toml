@@ -1,11 +1,11 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/webassembly",
-    "examples/test-utils",
     "examples/cross_service",
-    "examples/lambda",
     "examples/examples",
+    "examples/test-utils",
+    "examples/lambda",
+    "examples/webassembly",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -342,6 +342,7 @@ members = [
     "sdk/rolesanywhere",
     "sdk/route53",
     "sdk/route53domains",
+    "sdk/route53profiles",
     "sdk/route53recoverycluster",
     "sdk/route53recoverycontrolconfig",
     "sdk/route53recoveryreadiness",

@@ -3,7 +3,7 @@ pub use crate::operation::create_document::_create_document_output::CreateDocume
 
 pub use crate::operation::create_document::_create_document_input::CreateDocumentInputBuilder;
 
-impl CreateDocumentInputBuilder {
+impl crate::operation::create_document::builders::CreateDocumentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateDocumentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -149,6 +149,7 @@ impl CreateDocumentFluentBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()
     }
+    ///
     /// Appends an item to `Requires`.
     ///
     /// To override the contents of this collection use [`set_requires`](Self::set_requires).
@@ -167,6 +168,7 @@ impl CreateDocumentFluentBuilder {
     pub fn get_requires(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
         self.inner.get_requires()
     }
+    ///
     /// Appends an item to `Attachments`.
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
@@ -305,6 +307,7 @@ impl CreateDocumentFluentBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_type()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

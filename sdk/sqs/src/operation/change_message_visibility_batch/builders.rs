@@ -3,7 +3,7 @@ pub use crate::operation::change_message_visibility_batch::_change_message_visib
 
 pub use crate::operation::change_message_visibility_batch::_change_message_visibility_batch_input::ChangeMessageVisibilityBatchInputBuilder;
 
-impl ChangeMessageVisibilityBatchInputBuilder {
+impl crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl ChangeMessageVisibilityBatchFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -127,6 +127,7 @@ impl ChangeMessageVisibilityBatchFluentBuilder {
     pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_url()
     }
+    ///
     /// Appends an item to `Entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).

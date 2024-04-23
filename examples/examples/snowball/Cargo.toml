@@ -7,8 +7,8 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "1.2.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-snowball= { version = "1.20.0", path = "../../../sdk/snowball" }
+aws-config= { version = "1.2.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-sdk-snowball= { version = "1.21.0", path = "../../../sdk/snowball" }
 
 [dependencies.tokio]
 version = "1.20.1"

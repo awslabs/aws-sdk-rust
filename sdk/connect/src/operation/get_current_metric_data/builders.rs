@@ -3,7 +3,7 @@ pub use crate::operation::get_current_metric_data::_get_current_metric_data_outp
 
 pub use crate::operation::get_current_metric_data::_get_current_metric_data_input::GetCurrentMetricDataInputBuilder;
 
-impl GetCurrentMetricDataInputBuilder {
+impl crate::operation::get_current_metric_data::builders::GetCurrentMetricDataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetCurrentMetricDataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -182,6 +182,7 @@ impl GetCurrentMetricDataFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::Filters> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `Groupings`.
     ///
     /// To override the contents of this collection use [`set_groupings`](Self::set_groupings).
@@ -230,6 +231,7 @@ impl GetCurrentMetricDataFluentBuilder {
     pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grouping>> {
         self.inner.get_groupings()
     }
+    ///
     /// Appends an item to `CurrentMetrics`.
     ///
     /// To override the contents of this collection use [`set_current_metrics`](Self::set_current_metrics).
@@ -573,6 +575,7 @@ impl GetCurrentMetricDataFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `SortCriteria`.
     ///
     /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).

@@ -3,7 +3,7 @@ pub use crate::operation::create_training_job::_create_training_job_output::Crea
 
 pub use crate::operation::create_training_job::_create_training_job_input::CreateTrainingJobInputBuilder;
 
-impl CreateTrainingJobInputBuilder {
+impl crate::operation::create_training_job::builders::CreateTrainingJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -126,12 +126,12 @@ impl CreateTrainingJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -149,6 +149,7 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_training_job_name()
     }
+    ///
     /// Adds a key-value pair to `HyperParameters`.
     ///
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
@@ -220,6 +221,7 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
     /// Appends an item to `InputDataConfig`.
     ///
     /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
@@ -309,6 +311,7 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::StoppingCondition> {
         self.inner.get_stopping_condition()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -400,6 +403,7 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_debug_hook_config(&self) -> &::std::option::Option<crate::types::DebugHookConfig> {
         self.inner.get_debug_hook_config()
     }
+    ///
     /// Appends an item to `DebugRuleConfigurations`.
     ///
     /// To override the contents of this collection use [`set_debug_rule_configurations`](Self::set_debug_rule_configurations).
@@ -484,6 +488,7 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_profiler_config(&self) -> &::std::option::Option<crate::types::ProfilerConfig> {
         self.inner.get_profiler_config()
     }
+    ///
     /// Appends an item to `ProfilerRuleConfigurations`.
     ///
     /// To override the contents of this collection use [`set_profiler_rule_configurations`](Self::set_profiler_rule_configurations).
@@ -505,6 +510,7 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_profiler_rule_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>> {
         self.inner.get_profiler_rule_configurations()
     }
+    ///
     /// Adds a key-value pair to `Environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).

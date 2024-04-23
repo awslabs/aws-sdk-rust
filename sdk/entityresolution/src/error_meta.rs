@@ -68,6 +68,35 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_policy_statement::AddPolicyStatementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_policy_statement::AddPolicyStatementError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::add_policy_statement::AddPolicyStatementError> for Error {
+    fn from(err: crate::operation::add_policy_statement::AddPolicyStatementError) -> Self {
+        match err {
+            crate::operation::add_policy_statement::AddPolicyStatementError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::add_policy_statement::AddPolicyStatementError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::add_policy_statement::AddPolicyStatementError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::add_policy_statement::AddPolicyStatementError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::add_policy_statement::AddPolicyStatementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::add_policy_statement::AddPolicyStatementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::add_policy_statement::AddPolicyStatementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError, R>>
     for Error
 where
@@ -105,6 +134,33 @@ impl From<crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowE
                 Error::ValidationException(inner)
             }
             crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_id_namespace::CreateIdNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_id_namespace::CreateIdNamespaceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_id_namespace::CreateIdNamespaceError> for Error {
+    fn from(err: crate::operation::create_id_namespace::CreateIdNamespaceError) -> Self {
+        match err {
+            crate::operation::create_id_namespace::CreateIdNamespaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_id_namespace::CreateIdNamespaceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_id_namespace::CreateIdNamespaceError::ExceedsLimitException(inner) => Error::ExceedsLimitException(inner),
+            crate::operation::create_id_namespace::CreateIdNamespaceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_id_namespace::CreateIdNamespaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_id_namespace::CreateIdNamespaceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_id_namespace::CreateIdNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -195,6 +251,7 @@ impl From<crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowE
             crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -205,6 +262,31 @@ impl From<crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowE
                 Error::ValidationException(inner)
             }
             crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_id_namespace::DeleteIdNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_id_namespace::DeleteIdNamespaceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_id_namespace::DeleteIdNamespaceError> for Error {
+    fn from(err: crate::operation::delete_id_namespace::DeleteIdNamespaceError) -> Self {
+        match err {
+            crate::operation::delete_id_namespace::DeleteIdNamespaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_id_namespace::DeleteIdNamespaceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_id_namespace::DeleteIdNamespaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_id_namespace::DeleteIdNamespaceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_id_namespace::DeleteIdNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -230,12 +312,48 @@ impl From<crate::operation::delete_matching_workflow::DeleteMatchingWorkflowErro
             crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
             crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_policy_statement::DeletePolicyStatementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_policy_statement::DeletePolicyStatementError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_policy_statement::DeletePolicyStatementError> for Error {
+    fn from(err: crate::operation::delete_policy_statement::DeletePolicyStatementError) -> Self {
+        match err {
+            crate::operation::delete_policy_statement::DeletePolicyStatementError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_policy_statement::DeletePolicyStatementError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_policy_statement::DeletePolicyStatementError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_policy_statement::DeletePolicyStatementError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_policy_statement::DeletePolicyStatementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_policy_statement::DeletePolicyStatementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_policy_statement::DeletePolicyStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -325,6 +443,32 @@ impl From<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_id_namespace::GetIdNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_id_namespace::GetIdNamespaceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_id_namespace::GetIdNamespaceError> for Error {
+    fn from(err: crate::operation::get_id_namespace::GetIdNamespaceError) -> Self {
+        match err {
+            crate::operation::get_id_namespace::GetIdNamespaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_id_namespace::GetIdNamespaceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_id_namespace::GetIdNamespaceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_id_namespace::GetIdNamespaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_id_namespace::GetIdNamespaceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_id_namespace::GetIdNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_match_id::GetMatchIdError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -404,6 +548,32 @@ impl From<crate::operation::get_matching_workflow::GetMatchingWorkflowError> for
             crate::operation::get_matching_workflow::GetMatchingWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_matching_workflow::GetMatchingWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_matching_workflow::GetMatchingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy::GetPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy::GetPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_policy::GetPolicyError> for Error {
+    fn from(err: crate::operation::get_policy::GetPolicyError) -> Self {
+        match err {
+            crate::operation::get_policy::GetPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_policy::GetPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_policy::GetPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_policy::GetPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_policy::GetPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_policy::GetPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -518,6 +688,31 @@ impl From<crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsErr
             crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_id_namespaces::ListIdNamespacesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_id_namespaces::ListIdNamespacesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_id_namespaces::ListIdNamespacesError> for Error {
+    fn from(err: crate::operation::list_id_namespaces::ListIdNamespacesError) -> Self {
+        match err {
+            crate::operation::list_id_namespaces::ListIdNamespacesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_id_namespaces::ListIdNamespacesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_id_namespaces::ListIdNamespacesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_id_namespaces::ListIdNamespacesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_id_namespaces::ListIdNamespacesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -655,6 +850,33 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_policy::PutPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_policy::PutPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_policy::PutPolicyError> for Error {
+    fn from(err: crate::operation::put_policy::PutPolicyError) -> Self {
+        match err {
+            crate::operation::put_policy::PutPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_policy::PutPolicyError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_policy::PutPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_policy::PutPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_policy::PutPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_policy::PutPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_policy::PutPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -799,6 +1021,34 @@ impl From<crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowE
                 Error::ValidationException(inner)
             }
             crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_id_namespace::UpdateIdNamespaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_id_namespace::UpdateIdNamespaceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_id_namespace::UpdateIdNamespaceError> for Error {
+    fn from(err: crate::operation::update_id_namespace::UpdateIdNamespaceError) -> Self {
+        match err {
+            crate::operation::update_id_namespace::UpdateIdNamespaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_id_namespace::UpdateIdNamespaceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_id_namespace::UpdateIdNamespaceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_id_namespace::UpdateIdNamespaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_id_namespace::UpdateIdNamespaceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_id_namespace::UpdateIdNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

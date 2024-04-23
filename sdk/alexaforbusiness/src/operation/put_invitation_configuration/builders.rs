@@ -3,7 +3,7 @@ pub use crate::operation::put_invitation_configuration::_put_invitation_configur
 
 pub use crate::operation::put_invitation_configuration::_put_invitation_configuration_input::PutInvitationConfigurationInputBuilder;
 
-impl PutInvitationConfigurationInputBuilder {
+impl crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl PutInvitationConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl PutInvitationConfigurationFluentBuilder {
     pub fn get_contact_email(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_email()
     }
+    ///
     /// Appends an item to `PrivateSkillIds`.
     ///
     /// To override the contents of this collection use [`set_private_skill_ids`](Self::set_private_skill_ids).

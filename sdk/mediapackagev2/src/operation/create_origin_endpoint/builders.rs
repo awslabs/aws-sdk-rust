@@ -3,7 +3,7 @@ pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_output
 
 pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_input::CreateOriginEndpointInputBuilder;
 
-impl CreateOriginEndpointInputBuilder {
+impl crate::operation::create_origin_endpoint::builders::CreateOriginEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateOriginEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -220,6 +220,7 @@ impl CreateOriginEndpointFluentBuilder {
     pub fn get_startover_window_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_startover_window_seconds()
     }
+    ///
     /// Appends an item to `HlsManifests`.
     ///
     /// To override the contents of this collection use [`set_hls_manifests`](Self::set_hls_manifests).
@@ -238,6 +239,7 @@ impl CreateOriginEndpointFluentBuilder {
     pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>> {
         self.inner.get_hls_manifests()
     }
+    ///
     /// Appends an item to `LowLatencyHlsManifests`.
     ///
     /// To override the contents of this collection use [`set_low_latency_hls_manifests`](Self::set_low_latency_hls_manifests).
@@ -259,6 +261,26 @@ impl CreateOriginEndpointFluentBuilder {
     pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         self.inner.get_low_latency_hls_manifests()
     }
+    ///
+    /// Appends an item to `DashManifests`.
+    ///
+    /// To override the contents of this collection use [`set_dash_manifests`](Self::set_dash_manifests).
+    ///
+    /// <p>A DASH manifest configuration.</p>
+    pub fn dash_manifests(mut self, input: crate::types::CreateDashManifestConfiguration) -> Self {
+        self.inner = self.inner.dash_manifests(input);
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn set_dash_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>) -> Self {
+        self.inner = self.inner.set_dash_manifests(input);
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
+        self.inner.get_dash_manifests()
+    }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

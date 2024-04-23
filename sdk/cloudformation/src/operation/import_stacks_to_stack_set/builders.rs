@@ -3,7 +3,7 @@ pub use crate::operation::import_stacks_to_stack_set::_import_stacks_to_stack_se
 
 pub use crate::operation::import_stacks_to_stack_set::_import_stacks_to_stack_set_input::ImportStacksToStackSetInputBuilder;
 
-impl ImportStacksToStackSetInputBuilder {
+impl crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ImportStacksToStackSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl ImportStacksToStackSetFluentBuilder {
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
+    ///
     /// Appends an item to `StackIds`.
     ///
     /// To override the contents of this collection use [`set_stack_ids`](Self::set_stack_ids).
@@ -160,6 +161,7 @@ impl ImportStacksToStackSetFluentBuilder {
     pub fn get_stack_ids_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_ids_url()
     }
+    ///
     /// Appends an item to `OrganizationalUnitIds`.
     ///
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).

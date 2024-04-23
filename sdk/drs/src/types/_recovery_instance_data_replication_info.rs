@@ -18,6 +18,8 @@ pub struct RecoveryInstanceDataReplicationInfo {
     pub data_replication_error: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
     /// <p>AWS Availability zone into which data is being replicated.</p>
     pub staging_availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the staging Outpost</p>
+    pub staging_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDataReplicationInfo {
     /// <p>Data replication lag duration.</p>
@@ -50,6 +52,10 @@ impl RecoveryInstanceDataReplicationInfo {
     pub fn staging_availability_zone(&self) -> ::std::option::Option<&str> {
         self.staging_availability_zone.as_deref()
     }
+    /// <p>The ARN of the staging Outpost</p>
+    pub fn staging_outpost_arn(&self) -> ::std::option::Option<&str> {
+        self.staging_outpost_arn.as_deref()
+    }
 }
 impl RecoveryInstanceDataReplicationInfo {
     /// Creates a new builder-style object to manufacture [`RecoveryInstanceDataReplicationInfo`](crate::types::RecoveryInstanceDataReplicationInfo).
@@ -69,6 +75,7 @@ pub struct RecoveryInstanceDataReplicationInfoBuilder {
     pub(crate) data_replication_initiation: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiation>,
     pub(crate) data_replication_error: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
     pub(crate) staging_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) staging_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDataReplicationInfoBuilder {
     /// <p>Data replication lag duration.</p>
@@ -178,6 +185,20 @@ impl RecoveryInstanceDataReplicationInfoBuilder {
     pub fn get_staging_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.staging_availability_zone
     }
+    /// <p>The ARN of the staging Outpost</p>
+    pub fn staging_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.staging_outpost_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the staging Outpost</p>
+    pub fn set_staging_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.staging_outpost_arn = input;
+        self
+    }
+    /// <p>The ARN of the staging Outpost</p>
+    pub fn get_staging_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.staging_outpost_arn
+    }
     /// Consumes the builder and constructs a [`RecoveryInstanceDataReplicationInfo`](crate::types::RecoveryInstanceDataReplicationInfo).
     pub fn build(self) -> crate::types::RecoveryInstanceDataReplicationInfo {
         crate::types::RecoveryInstanceDataReplicationInfo {
@@ -188,6 +209,7 @@ impl RecoveryInstanceDataReplicationInfoBuilder {
             data_replication_initiation: self.data_replication_initiation,
             data_replication_error: self.data_replication_error,
             staging_availability_zone: self.staging_availability_zone,
+            staging_outpost_arn: self.staging_outpost_arn,
         }
     }
 }

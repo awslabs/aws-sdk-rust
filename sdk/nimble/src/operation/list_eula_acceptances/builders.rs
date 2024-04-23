@@ -3,7 +3,7 @@ pub use crate::operation::list_eula_acceptances::_list_eula_acceptances_output::
 
 pub use crate::operation::list_eula_acceptances::_list_eula_acceptances_input::ListEulaAcceptancesInputBuilder;
 
-impl ListEulaAcceptancesInputBuilder {
+impl crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListEulaAcceptancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListEulaAcceptancesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator {
         crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `eulaIds`.
     ///
     /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).

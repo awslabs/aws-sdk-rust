@@ -3,7 +3,7 @@ pub use crate::operation::create_instance::_create_instance_output::CreateInstan
 
 pub use crate::operation::create_instance::_create_instance_input::CreateInstanceInputBuilder;
 
-impl CreateInstanceInputBuilder {
+impl crate::operation::create_instance::builders::CreateInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -194,6 +194,7 @@ impl CreateInstanceFluentBuilder {
     pub fn get_outbound_calls_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_outbound_calls_enabled()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

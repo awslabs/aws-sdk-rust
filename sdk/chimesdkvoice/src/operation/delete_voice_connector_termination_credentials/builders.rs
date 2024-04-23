@@ -3,7 +3,7 @@ pub use crate::operation::delete_voice_connector_termination_credentials::_delet
 
 pub use crate::operation::delete_voice_connector_termination_credentials::_delete_voice_connector_termination_credentials_input::DeleteVoiceConnectorTerminationCredentialsInputBuilder;
 
-impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
+impl crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl DeleteVoiceConnectorTerminationCredentialsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -129,6 +129,7 @@ impl DeleteVoiceConnectorTerminationCredentialsFluentBuilder {
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_voice_connector_id()
     }
+    ///
     /// Appends an item to `Usernames`.
     ///
     /// To override the contents of this collection use [`set_usernames`](Self::set_usernames).

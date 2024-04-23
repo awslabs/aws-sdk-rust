@@ -3,7 +3,7 @@ pub use crate::operation::search::_search_output::SearchOutputBuilder;
 
 pub use crate::operation::search::_search_input::SearchInputBuilder;
 
-impl SearchInputBuilder {
+impl crate::operation::search::builders::SearchInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -86,12 +86,12 @@ impl SearchFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::search::SearchOutput, crate::operation::search::SearchError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -185,6 +185,7 @@ impl SearchFluentBuilder {
     pub fn get_search_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_search_text()
     }
+    ///
     /// Appends an item to `searchIn`.
     ///
     /// To override the contents of this collection use [`set_search_in`](Self::set_search_in).
@@ -231,6 +232,7 @@ impl SearchFluentBuilder {
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::SearchSort> {
         self.inner.get_sort()
     }
+    ///
     /// Appends an item to `additionalAttributes`.
     ///
     /// To override the contents of this collection use [`set_additional_attributes`](Self::set_additional_attributes).

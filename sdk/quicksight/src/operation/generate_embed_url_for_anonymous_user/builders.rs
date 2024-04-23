@@ -3,7 +3,7 @@ pub use crate::operation::generate_embed_url_for_anonymous_user::_generate_embed
 
 pub use crate::operation::generate_embed_url_for_anonymous_user::_generate_embed_url_for_anonymous_user_input::GenerateEmbedUrlForAnonymousUserInputBuilder;
 
-impl GenerateEmbedUrlForAnonymousUserInputBuilder {
+impl crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -110,12 +110,12 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -161,6 +161,7 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
+    ///
     /// Appends an item to `SessionTags`.
     ///
     /// To override the contents of this collection use [`set_session_tags`](Self::set_session_tags).
@@ -182,6 +183,7 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     pub fn get_session_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionTag>> {
         self.inner.get_session_tags()
     }
+    ///
     /// Appends an item to `AuthorizedResourceArns`.
     ///
     /// To override the contents of this collection use [`set_authorized_resource_arns`](Self::set_authorized_resource_arns).
@@ -223,6 +225,7 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     pub fn get_experience_configuration(&self) -> &::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration> {
         self.inner.get_experience_configuration()
     }
+    ///
     /// Appends an item to `AllowedDomains`.
     ///
     /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).

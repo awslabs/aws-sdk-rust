@@ -3,7 +3,7 @@ pub use crate::operation::create_workspace::_create_workspace_output::CreateWork
 
 pub use crate::operation::create_workspace::_create_workspace_input::CreateWorkspaceInputBuilder;
 
-impl CreateWorkspaceInputBuilder {
+impl crate::operation::create_workspace::builders::CreateWorkspaceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateWorkspaceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -194,6 +194,7 @@ impl CreateWorkspaceFluentBuilder {
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_set_name()
     }
+    ///
     /// Appends an item to `workspaceDataSources`.
     ///
     /// To override the contents of this collection use [`set_workspace_data_sources`](Self::set_workspace_data_sources).
@@ -243,6 +244,7 @@ impl CreateWorkspaceFluentBuilder {
     pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_name()
     }
+    ///
     /// Appends an item to `workspaceNotificationDestinations`.
     ///
     /// To override the contents of this collection use [`set_workspace_notification_destinations`](Self::set_workspace_notification_destinations).
@@ -264,6 +266,7 @@ impl CreateWorkspaceFluentBuilder {
     pub fn get_workspace_notification_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
         self.inner.get_workspace_notification_destinations()
     }
+    ///
     /// Appends an item to `workspaceOrganizationalUnits`.
     ///
     /// To override the contents of this collection use [`set_workspace_organizational_units`](Self::set_workspace_organizational_units).
@@ -296,6 +299,7 @@ impl CreateWorkspaceFluentBuilder {
     pub fn get_workspace_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_role_arn()
     }
+    ///
     /// Appends an item to `authenticationProviders`.
     ///
     /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
@@ -314,6 +318,7 @@ impl CreateWorkspaceFluentBuilder {
     pub fn get_authentication_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
         self.inner.get_authentication_providers()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

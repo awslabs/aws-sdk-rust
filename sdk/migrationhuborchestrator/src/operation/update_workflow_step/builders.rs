@@ -3,7 +3,7 @@ pub use crate::operation::update_workflow_step::_update_workflow_step_output::Up
 
 pub use crate::operation::update_workflow_step::_update_workflow_step_input::UpdateWorkflowStepInputBuilder;
 
-impl UpdateWorkflowStepInputBuilder {
+impl crate::operation::update_workflow_step::builders::UpdateWorkflowStepInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateWorkflowStepFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -209,6 +209,7 @@ impl UpdateWorkflowStepFluentBuilder {
     pub fn get_workflow_step_automation_configuration(&self) -> &::std::option::Option<crate::types::WorkflowStepAutomationConfiguration> {
         self.inner.get_workflow_step_automation_configuration()
     }
+    ///
     /// Appends an item to `stepTarget`.
     ///
     /// To override the contents of this collection use [`set_step_target`](Self::set_step_target).
@@ -227,6 +228,7 @@ impl UpdateWorkflowStepFluentBuilder {
     pub fn get_step_target(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_step_target()
     }
+    ///
     /// Appends an item to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -245,6 +247,7 @@ impl UpdateWorkflowStepFluentBuilder {
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
         self.inner.get_outputs()
     }
+    ///
     /// Appends an item to `previous`.
     ///
     /// To override the contents of this collection use [`set_previous`](Self::set_previous).
@@ -263,6 +266,7 @@ impl UpdateWorkflowStepFluentBuilder {
     pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_previous()
     }
+    ///
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).

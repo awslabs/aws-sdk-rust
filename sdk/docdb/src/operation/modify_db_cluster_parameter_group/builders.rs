@@ -3,7 +3,7 @@ pub use crate::operation::modify_db_cluster_parameter_group::_modify_db_cluster_
 
 pub use crate::operation::modify_db_cluster_parameter_group::_modify_db_cluster_parameter_group_input::ModifyDbClusterParameterGroupInputBuilder;
 
-impl ModifyDbClusterParameterGroupInputBuilder {
+impl crate::operation::modify_db_cluster_parameter_group::builders::ModifyDbClusterParameterGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl ModifyDBClusterParameterGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -126,6 +126,7 @@ impl ModifyDBClusterParameterGroupFluentBuilder {
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()
     }
+    ///
     /// Appends an item to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).

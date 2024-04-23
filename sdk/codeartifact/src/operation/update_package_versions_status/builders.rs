@@ -3,7 +3,7 @@ pub use crate::operation::update_package_versions_status::_update_package_versio
 
 pub use crate::operation::update_package_versions_status::_update_package_versions_status_input::UpdatePackageVersionsStatusInputBuilder;
 
-impl UpdatePackageVersionsStatusInputBuilder {
+impl crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdatePackageVersionsStatusFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -222,6 +222,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_package()
     }
+    ///
     /// Appends an item to `versions`.
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
@@ -240,6 +241,7 @@ impl UpdatePackageVersionsStatusFluentBuilder {
     pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_versions()
     }
+    ///
     /// Adds a key-value pair to `versionRevisions`.
     ///
     /// To override the contents of this collection use [`set_version_revisions`](Self::set_version_revisions).

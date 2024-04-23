@@ -3,7 +3,7 @@ pub use crate::operation::describe_regions::_describe_regions_output::DescribeRe
 
 pub use crate::operation::describe_regions::_describe_regions_input::DescribeRegionsInputBuilder;
 
-impl DescribeRegionsInputBuilder {
+impl crate::operation::describe_regions::builders::DescribeRegionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,15 +103,16 @@ impl DescribeRegionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -154,6 +155,7 @@ impl DescribeRegionsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `RegionNames`.
     ///
     /// To override the contents of this collection use [`set_region_names`](Self::set_region_names).

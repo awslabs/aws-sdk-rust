@@ -3,7 +3,7 @@ pub use crate::operation::create_trial_component::_create_trial_component_output
 
 pub use crate::operation::create_trial_component::_create_trial_component_input::CreateTrialComponentInputBuilder;
 
-impl CreateTrialComponentInputBuilder {
+impl crate::operation::create_trial_component::builders::CreateTrialComponentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateTrialComponentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -205,6 +205,7 @@ impl CreateTrialComponentFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
+    ///
     /// Adds a key-value pair to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -228,6 +229,7 @@ impl CreateTrialComponentFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>> {
         self.inner.get_parameters()
     }
+    ///
     /// Adds a key-value pair to `InputArtifacts`.
     ///
     /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
@@ -251,6 +253,7 @@ impl CreateTrialComponentFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>> {
         self.inner.get_input_artifacts()
     }
+    ///
     /// Adds a key-value pair to `OutputArtifacts`.
     ///
     /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
@@ -288,6 +291,7 @@ impl CreateTrialComponentFluentBuilder {
     pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         self.inner.get_metadata_properties()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

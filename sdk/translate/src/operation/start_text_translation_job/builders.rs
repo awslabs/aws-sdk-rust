@@ -3,7 +3,7 @@ pub use crate::operation::start_text_translation_job::_start_text_translation_jo
 
 pub use crate::operation::start_text_translation_job::_start_text_translation_job_input::StartTextTranslationJobInputBuilder;
 
-impl StartTextTranslationJobInputBuilder {
+impl crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl StartTextTranslationJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl StartTextTranslationJobFluentBuilder {
     pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_language_code()
     }
+    ///
     /// Appends an item to `TargetLanguageCodes`.
     ///
     /// To override the contents of this collection use [`set_target_language_codes`](Self::set_target_language_codes).
@@ -200,6 +201,7 @@ impl StartTextTranslationJobFluentBuilder {
     pub fn get_target_language_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_language_codes()
     }
+    ///
     /// Appends an item to `TerminologyNames`.
     ///
     /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
@@ -230,6 +232,7 @@ impl StartTextTranslationJobFluentBuilder {
     pub fn get_terminology_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_terminology_names()
     }
+    ///
     /// Appends an item to `ParallelDataNames`.
     ///
     /// To override the contents of this collection use [`set_parallel_data_names`](Self::set_parallel_data_names).

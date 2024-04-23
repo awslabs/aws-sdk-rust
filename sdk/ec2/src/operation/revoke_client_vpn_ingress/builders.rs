@@ -3,7 +3,7 @@ pub use crate::operation::revoke_client_vpn_ingress::_revoke_client_vpn_ingress_
 
 pub use crate::operation::revoke_client_vpn_ingress::_revoke_client_vpn_ingress_input::RevokeClientVpnIngressInputBuilder;
 
-impl RevokeClientVpnIngressInputBuilder {
+impl crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RevokeClientVpnIngressFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::describe_compilation_job::_describe_compilation_job_ou
 
 pub use crate::operation::describe_compilation_job::_describe_compilation_job_input::DescribeCompilationJobInputBuilder;
 
-impl DescribeCompilationJobInputBuilder {
+impl crate::operation::describe_compilation_job::builders::DescribeCompilationJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeCompilationJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

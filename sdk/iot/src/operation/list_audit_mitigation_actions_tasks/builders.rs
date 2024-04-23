@@ -3,7 +3,7 @@ pub use crate::operation::list_audit_mitigation_actions_tasks::_list_audit_mitig
 
 pub use crate::operation::list_audit_mitigation_actions_tasks::_list_audit_mitigation_actions_tasks_input::ListAuditMitigationActionsTasksInputBuilder;
 
-impl ListAuditMitigationActionsTasksInputBuilder {
+impl crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ListAuditMitigationActionsTasksFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

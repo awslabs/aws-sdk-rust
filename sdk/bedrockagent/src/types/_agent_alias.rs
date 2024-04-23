@@ -10,7 +10,7 @@ pub struct AgentAlias {
     pub agent_alias_id: ::std::string::String,
     /// <p>The name of the alias of the agent.</p>
     pub agent_alias_name: ::std::string::String,
-    /// <p>The ARN of the alias of the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
     pub agent_alias_arn: ::std::string::String,
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -55,7 +55,7 @@ impl AgentAlias {
         use std::ops::Deref;
         self.agent_alias_name.deref()
     }
-    /// <p>The ARN of the alias of the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
     pub fn agent_alias_arn(&self) -> &str {
         use std::ops::Deref;
         self.agent_alias_arn.deref()
@@ -173,18 +173,18 @@ impl AgentAliasBuilder {
     pub fn get_agent_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_alias_name
     }
-    /// <p>The ARN of the alias of the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
     /// This field is required.
     pub fn agent_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_alias_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the alias of the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
     pub fn set_agent_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_alias_arn = input;
         self
     }
-    /// <p>The ARN of the alias of the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the alias of the agent.</p>
     pub fn get_agent_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_alias_arn
     }

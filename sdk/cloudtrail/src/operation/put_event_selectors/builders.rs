@@ -3,7 +3,7 @@ pub use crate::operation::put_event_selectors::_put_event_selectors_output::PutE
 
 pub use crate::operation::put_event_selectors::_put_event_selectors_input::PutEventSelectorsInputBuilder;
 
-impl PutEventSelectorsInputBuilder {
+impl crate::operation::put_event_selectors::builders::PutEventSelectorsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -116,12 +116,12 @@ impl PutEventSelectorsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -181,6 +181,7 @@ impl PutEventSelectorsFluentBuilder {
     pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trail_name()
     }
+    ///
     /// Appends an item to `EventSelectors`.
     ///
     /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
@@ -199,6 +200,7 @@ impl PutEventSelectorsFluentBuilder {
     pub fn get_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSelector>> {
         self.inner.get_event_selectors()
     }
+    ///
     /// Appends an item to `AdvancedEventSelectors`.
     ///
     /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).

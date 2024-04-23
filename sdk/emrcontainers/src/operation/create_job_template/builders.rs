@@ -3,7 +3,7 @@ pub use crate::operation::create_job_template::_create_job_template_output::Crea
 
 pub use crate::operation::create_job_template::_create_job_template_input::CreateJobTemplateInputBuilder;
 
-impl CreateJobTemplateInputBuilder {
+impl crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateJobTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateJobTemplateFluentBuilder {
     pub fn get_job_template_data(&self) -> &::std::option::Option<crate::types::JobTemplateData> {
         self.inner.get_job_template_data()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

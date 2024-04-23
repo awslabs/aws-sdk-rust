@@ -21,6 +21,8 @@ pub struct UpdateOriginEndpointInput {
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    /// <p>A DASH manifest configuration.</p>
+    pub dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
@@ -65,6 +67,12 @@ impl UpdateOriginEndpointInput {
     pub fn low_latency_hls_manifests(&self) -> &[crate::types::CreateLowLatencyHlsManifestConfiguration] {
         self.low_latency_hls_manifests.as_deref().unwrap_or_default()
     }
+    /// <p>A DASH manifest configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dash_manifests.is_none()`.
+    pub fn dash_manifests(&self) -> &[crate::types::CreateDashManifestConfiguration] {
+        self.dash_manifests.as_deref().unwrap_or_default()
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
@@ -90,6 +98,7 @@ pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOriginEndpointInputBuilder {
@@ -238,6 +247,26 @@ impl UpdateOriginEndpointInputBuilder {
     pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
+    /// Appends an item to `dash_manifests`.
+    ///
+    /// To override the contents of this collection use [`set_dash_manifests`](Self::set_dash_manifests).
+    ///
+    /// <p>A DASH manifest configuration.</p>
+    pub fn dash_manifests(mut self, input: crate::types::CreateDashManifestConfiguration) -> Self {
+        let mut v = self.dash_manifests.unwrap_or_default();
+        v.push(input);
+        self.dash_manifests = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn set_dash_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>>) -> Self {
+        self.dash_manifests = input;
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateDashManifestConfiguration>> {
+        &self.dash_manifests
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -267,6 +296,7 @@ impl UpdateOriginEndpointInputBuilder {
             startover_window_seconds: self.startover_window_seconds,
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
+            dash_manifests: self.dash_manifests,
             e_tag: self.e_tag,
         })
     }

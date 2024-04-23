@@ -3,7 +3,7 @@ pub use crate::operation::update_acl::_update_acl_output::UpdateAclOutputBuilder
 
 pub use crate::operation::update_acl::_update_acl_input::UpdateAclInputBuilder;
 
-impl UpdateAclInputBuilder {
+impl crate::operation::update_acl::builders::UpdateAclInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl UpdateACLFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -116,6 +116,7 @@ impl UpdateACLFluentBuilder {
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_acl_name()
     }
+    ///
     /// Appends an item to `UserNamesToAdd`.
     ///
     /// To override the contents of this collection use [`set_user_names_to_add`](Self::set_user_names_to_add).
@@ -134,6 +135,7 @@ impl UpdateACLFluentBuilder {
     pub fn get_user_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_names_to_add()
     }
+    ///
     /// Appends an item to `UserNamesToRemove`.
     ///
     /// To override the contents of this collection use [`set_user_names_to_remove`](Self::set_user_names_to_remove).

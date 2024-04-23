@@ -3,7 +3,7 @@ pub use crate::operation::update_user_pool::_update_user_pool_output::UpdateUser
 
 pub use crate::operation::update_user_pool::_update_user_pool_input::UpdateUserPoolInputBuilder;
 
-impl UpdateUserPoolInputBuilder {
+impl crate::operation::update_user_pool::builders::UpdateUserPoolInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -114,12 +114,12 @@ impl UpdateUserPoolFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -182,6 +182,7 @@ impl UpdateUserPoolFluentBuilder {
     pub fn get_lambda_config(&self) -> &::std::option::Option<crate::types::LambdaConfigType> {
         self.inner.get_lambda_config()
     }
+    ///
     /// Appends an item to `AutoVerifiedAttributes`.
     ///
     /// To override the contents of this collection use [`set_auto_verified_attributes`](Self::set_auto_verified_attributes).
@@ -370,6 +371,7 @@ impl UpdateUserPoolFluentBuilder {
     pub fn get_sms_configuration(&self) -> &::std::option::Option<crate::types::SmsConfigurationType> {
         self.inner.get_sms_configuration()
     }
+    ///
     /// Adds a key-value pair to `UserPoolTags`.
     ///
     /// To override the contents of this collection use [`set_user_pool_tags`](Self::set_user_pool_tags).

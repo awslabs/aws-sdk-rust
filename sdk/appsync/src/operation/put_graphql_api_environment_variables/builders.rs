@@ -3,7 +3,7 @@ pub use crate::operation::put_graphql_api_environment_variables::_put_graphql_ap
 
 pub use crate::operation::put_graphql_api_environment_variables::_put_graphql_api_environment_variables_input::PutGraphqlApiEnvironmentVariablesInputBuilder;
 
-impl PutGraphqlApiEnvironmentVariablesInputBuilder {
+impl crate::operation::put_graphql_api_environment_variables::builders::PutGraphqlApiEnvironmentVariablesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -126,12 +126,12 @@ impl PutGraphqlApiEnvironmentVariablesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -149,6 +149,7 @@ impl PutGraphqlApiEnvironmentVariablesFluentBuilder {
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_api_id()
     }
+    ///
     /// Adds a key-value pair to `environmentVariables`.
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).

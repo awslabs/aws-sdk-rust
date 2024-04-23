@@ -3,7 +3,7 @@ pub use crate::operation::describe_task_sets::_describe_task_sets_output::Descri
 
 pub use crate::operation::describe_task_sets::_describe_task_sets_input::DescribeTaskSetsInputBuilder;
 
-impl DescribeTaskSetsInputBuilder {
+impl crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeTaskSetsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl DescribeTaskSetsFluentBuilder {
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service()
     }
+    ///
     /// Appends an item to `taskSets`.
     ///
     /// To override the contents of this collection use [`set_task_sets`](Self::set_task_sets).
@@ -154,6 +155,7 @@ impl DescribeTaskSetsFluentBuilder {
     pub fn get_task_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_task_sets()
     }
+    ///
     /// Appends an item to `include`.
     ///
     /// To override the contents of this collection use [`set_include`](Self::set_include).

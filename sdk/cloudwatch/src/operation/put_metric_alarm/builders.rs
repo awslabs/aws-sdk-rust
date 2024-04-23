@@ -3,7 +3,7 @@ pub use crate::operation::put_metric_alarm::_put_metric_alarm_output::PutMetricA
 
 pub use crate::operation::put_metric_alarm::_put_metric_alarm_input::PutMetricAlarmInputBuilder;
 
-impl PutMetricAlarmInputBuilder {
+impl crate::operation::put_metric_alarm::builders::PutMetricAlarmInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -119,12 +119,12 @@ impl PutMetricAlarmFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -173,6 +173,7 @@ impl PutMetricAlarmFluentBuilder {
     pub fn get_actions_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_actions_enabled()
     }
+    ///
     /// Appends an item to `OKActions`.
     ///
     /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
@@ -326,6 +327,7 @@ impl PutMetricAlarmFluentBuilder {
     pub fn get_ok_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ok_actions()
     }
+    ///
     /// Appends an item to `AlarmActions`.
     ///
     /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
@@ -479,6 +481,7 @@ impl PutMetricAlarmFluentBuilder {
     pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_alarm_actions()
     }
+    ///
     /// Appends an item to `InsufficientDataActions`.
     ///
     /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
@@ -769,6 +772,7 @@ impl PutMetricAlarmFluentBuilder {
     pub fn get_extended_statistic(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_extended_statistic()
     }
+    ///
     /// Appends an item to `Dimensions`.
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
@@ -938,6 +942,7 @@ impl PutMetricAlarmFluentBuilder {
     pub fn get_evaluate_low_sample_count_percentile(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_evaluate_low_sample_count_percentile()
     }
+    ///
     /// Appends an item to `Metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
@@ -965,6 +970,7 @@ impl PutMetricAlarmFluentBuilder {
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
         self.inner.get_metrics()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

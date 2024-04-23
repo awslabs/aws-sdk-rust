@@ -15,7 +15,7 @@
 )]
 
 //! Abstractions for Smithy
-//! [XML Binding Traits](https://awslabs.github.io/smithy/1.0/spec/core/xml-traits.html)
+//! [XML Binding Traits](https://smithy.io/2.0/spec/protocol-traits.html#xml-bindings)
 
 pub mod decode;
 pub mod encode;

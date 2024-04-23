@@ -3,7 +3,7 @@ pub use crate::operation::create_annotation_store_version::_create_annotation_st
 
 pub use crate::operation::create_annotation_store_version::_create_annotation_store_version_input::CreateAnnotationStoreVersionInputBuilder;
 
-impl CreateAnnotationStoreVersionInputBuilder {
+impl crate::operation::create_annotation_store_version::builders::CreateAnnotationStoreVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateAnnotationStoreVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateAnnotationStoreVersionFluentBuilder {
     pub fn get_version_options(&self) -> &::std::option::Option<crate::types::VersionOptions> {
         self.inner.get_version_options()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

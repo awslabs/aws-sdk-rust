@@ -3,7 +3,7 @@ pub use crate::operation::update_identity_provider::_update_identity_provider_ou
 
 pub use crate::operation::update_identity_provider::_update_identity_provider_input::UpdateIdentityProviderInputBuilder;
 
-impl UpdateIdentityProviderInputBuilder {
+impl crate::operation::update_identity_provider::builders::UpdateIdentityProviderInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -108,12 +108,12 @@ impl UpdateIdentityProviderFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -145,6 +145,7 @@ impl UpdateIdentityProviderFluentBuilder {
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provider_name()
     }
+    ///
     /// Adds a key-value pair to `ProviderDetails`.
     ///
     /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
@@ -311,6 +312,7 @@ impl UpdateIdentityProviderFluentBuilder {
     pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_provider_details()
     }
+    ///
     /// Adds a key-value pair to `AttributeMapping`.
     ///
     /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
@@ -336,6 +338,7 @@ impl UpdateIdentityProviderFluentBuilder {
     pub fn get_attribute_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attribute_mapping()
     }
+    ///
     /// Appends an item to `IdpIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).

@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelOrder`](crate::operation::cancel_order) operation has
-/// a [`Client::cancel_order`], function which returns a builder for that operation.
+/// For example, the [`CancelCapacityTask`](crate::operation::cancel_capacity_task) operation has
+/// a [`Client::cancel_capacity_task`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_order()
-///     .order_id("example")
+/// let result = client.cancel_capacity_task()
+///     .capacity_task_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod cancel_capacity_task;
+
 mod cancel_order;
 
 mod create_order;
@@ -155,7 +157,7 @@ mod create_site;
 /// # let client: aws_sdk_outposts::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.cancel_order()
+/// let result = client.cancel_capacity_task()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -175,6 +177,8 @@ mod delete_outpost;
 
 mod delete_site;
 
+mod get_capacity_task;
+
 mod get_catalog_item;
 
 mod get_connection;
@@ -185,11 +189,15 @@ mod get_outpost;
 
 mod get_outpost_instance_types;
 
+mod get_outpost_supported_instance_types;
+
 mod get_site;
 
 mod get_site_address;
 
 mod list_assets;
+
+mod list_capacity_tasks;
 
 mod list_catalog_items;
 
@@ -200,6 +208,8 @@ mod list_outposts;
 mod list_sites;
 
 mod list_tags_for_resource;
+
+mod start_capacity_task;
 
 mod start_connection;
 

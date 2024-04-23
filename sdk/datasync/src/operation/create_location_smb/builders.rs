@@ -3,7 +3,7 @@ pub use crate::operation::create_location_smb::_create_location_smb_output::Crea
 
 pub use crate::operation::create_location_smb::_create_location_smb_input::CreateLocationSmbInputBuilder;
 
-impl CreateLocationSmbInputBuilder {
+impl crate::operation::create_location_smb::builders::CreateLocationSmbInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateLocationSmbFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -197,6 +197,7 @@ impl CreateLocationSmbFluentBuilder {
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_password()
     }
+    ///
     /// Appends an item to `AgentArns`.
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
@@ -229,6 +230,7 @@ impl CreateLocationSmbFluentBuilder {
     pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
         self.inner.get_mount_options()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

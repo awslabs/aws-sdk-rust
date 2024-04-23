@@ -19,6 +19,10 @@ pub use crate::types::_subject_summary::SubjectSummaryBuilder;
 
 pub use crate::types::_profile_detail::ProfileDetailBuilder;
 
+pub use crate::types::_attribute_mapping::AttributeMappingBuilder;
+
+pub use crate::types::_mapping_rule::MappingRuleBuilder;
+
 pub use crate::types::_crl_detail::CrlDetailBuilder;
 
 pub use crate::types::_notification_setting_key::NotificationSettingKeyBuilder;

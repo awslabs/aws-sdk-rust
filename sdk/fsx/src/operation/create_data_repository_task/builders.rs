@@ -3,7 +3,7 @@ pub use crate::operation::create_data_repository_task::_create_data_repository_t
 
 pub use crate::operation::create_data_repository_task::_create_data_repository_task_input::CreateDataRepositoryTaskInputBuilder;
 
-impl CreateDataRepositoryTaskInputBuilder {
+impl crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateDataRepositoryTaskFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -155,6 +155,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataRepositoryTaskType> {
         self.inner.get_type()
     }
+    ///
     /// Appends an item to `Paths`.
     ///
     /// To override the contents of this collection use [`set_paths`](Self::set_paths).
@@ -245,6 +246,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

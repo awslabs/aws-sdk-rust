@@ -3,7 +3,7 @@ pub use crate::operation::update_lake_formation_identity_center_configuration::_
 
 pub use crate::operation::update_lake_formation_identity_center_configuration::_update_lake_formation_identity_center_configuration_input::UpdateLakeFormationIdentityCenterConfigurationInputBuilder;
 
-impl UpdateLakeFormationIdentityCenterConfigurationInputBuilder {
+impl crate::operation::update_lake_formation_identity_center_configuration::builders::UpdateLakeFormationIdentityCenterConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl UpdateLakeFormationIdentityCenterConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -129,6 +129,34 @@ impl UpdateLakeFormationIdentityCenterConfigurationFluentBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog_id()
+    }
+    ///
+    /// Appends an item to `ShareRecipients`.
+    ///
+    /// To override the contents of this collection use [`set_share_recipients`](Self::set_share_recipients).
+    ///
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, then the resource share is updated with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null, both the list of share recipients and the resource share remain unchanged.</p>
+    /// <p>If the <code>ShareRecipients</code> value is an empty list, then the existing share recipients list will be cleared, and the resource share will be deleted.</p>
+    pub fn share_recipients(mut self, input: crate::types::DataLakePrincipal) -> Self {
+        self.inner = self.inner.share_recipients(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, then the resource share is updated with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null, both the list of share recipients and the resource share remain unchanged.</p>
+    /// <p>If the <code>ShareRecipients</code> value is an empty list, then the existing share recipients list will be cleared, and the resource share will be deleted.</p>
+    pub fn set_share_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>) -> Self {
+        self.inner = self.inner.set_share_recipients(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, then the resource share is updated with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null, both the list of share recipients and the resource share remain unchanged.</p>
+    /// <p>If the <code>ShareRecipients</code> value is an empty list, then the existing share recipients list will be cleared, and the resource share will be deleted.</p>
+    pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
+        self.inner.get_share_recipients()
     }
     /// <p>Allows to enable or disable the IAM Identity Center connection.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {

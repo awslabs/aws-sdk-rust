@@ -3,7 +3,7 @@ pub use crate::operation::list_graph_snapshots::_list_graph_snapshots_output::Li
 
 pub use crate::operation::list_graph_snapshots::_list_graph_snapshots_input::ListGraphSnapshotsInputBuilder;
 
-impl ListGraphSnapshotsInputBuilder {
+impl crate::operation::list_graph_snapshots::builders::ListGraphSnapshotsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListGraphSnapshotsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

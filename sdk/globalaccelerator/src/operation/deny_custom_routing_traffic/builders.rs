@@ -3,7 +3,7 @@ pub use crate::operation::deny_custom_routing_traffic::_deny_custom_routing_traf
 
 pub use crate::operation::deny_custom_routing_traffic::_deny_custom_routing_traffic_input::DenyCustomRoutingTrafficInputBuilder;
 
-impl DenyCustomRoutingTrafficInputBuilder {
+impl crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DenyCustomRoutingTrafficFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl DenyCustomRoutingTrafficFluentBuilder {
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_id()
     }
+    ///
     /// Appends an item to `DestinationAddresses`.
     ///
     /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
@@ -155,6 +156,7 @@ impl DenyCustomRoutingTrafficFluentBuilder {
     pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_destination_addresses()
     }
+    ///
     /// Appends an item to `DestinationPorts`.
     ///
     /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).

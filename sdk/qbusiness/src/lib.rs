@@ -17,13 +17,13 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! This is the _Amazon Q (for business use)_ API Reference. Amazon Q is a fully managed, generative-AI powered enterprise chat assistant that you can deploy within your organization. Amazon Q enhances employee productivity by supporting key tasks such as question-answering, knowledge discovery, writing email messages, summarizing text, drafting document outlines, and brainstorming ideas. Users ask questions of Amazon Q and get answers that are presented in a conversational manner. For an introduction to the service, see the [_Amazon Q (for business use) Developer Guide_](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/what-is.html).
+//! This is the _Amazon Q Business_ API Reference. Amazon Q Business is a fully managed, generative-AI powered enterprise chat assistant that you can deploy within your organization. Amazon Q Business enhances employee productivity by supporting key tasks such as question-answering, knowledge discovery, writing email messages, summarizing text, drafting document outlines, and brainstorming ideas. Users ask questions of Amazon Q Business and get answers that are presented in a conversational manner. For an introduction to the service, see the [_Amazon Q Business User Guide_](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/what-is.html).
 //!
-//! For an overview of the Amazon Q APIs, see [Overview of Amazon Q API operations](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/api-ref.html#api-overview).
+//! For an overview of the Amazon Q Business APIs, see [Overview of Amazon Q Business API operations](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/api-ref.html#api-overview).
 //!
-//! For information about the IAM access control permissions you need to use this API, see [IAM roles for Amazon Q](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html) in the _Amazon Q (for business use) Developer Guide_.
+//! For information about the IAM access control permissions you need to use this API, see [IAM roles for Amazon Q Business](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html) in the _Amazon Q Business User Guide_.
 //!
-//! You can use the following AWS SDKs to access Amazon Q APIs:
+//! You can use the following AWS SDKs to access Amazon Q Business APIs:
 //!   - [AWS SDK for C++](https://docs.aws.amazon.com/sdk-for-cpp)
 //!   - [AWS SDK for Go](https://docs.aws.amazon.com/sdk-for-go)
 //!   - [AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java)
@@ -32,9 +32,9 @@
 //!   - [AWS SDK for Python (Boto3)](https://docs.aws.amazon.com/pythonsdk)
 //!   - [AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby)
 //!
-//! The following resources provide additional information about using the Amazon Q API:
-//!   - _ [Setting up for Amazon Q](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/setting-up.html) _
-//!   - _ [Amazon Q CLI Reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/qbusiness/index.html) _
+//! The following resources provide additional information about using the Amazon Q Business API:
+//!   - _ [Setting up for Amazon Q Business](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/setting-up.html) _
+//!   - _ [Amazon Q Business CLI Reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/qbusiness/index.html) _
 //!   - _ [Amazon Web Services General Reference](https://docs.aws.amazon.com/general/latest/gr/amazonq.html) _
 //!
 //! ## Getting Started
@@ -49,7 +49,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-qbusiness = "1.18.0"
+//! aws-sdk-qbusiness = "1.20.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

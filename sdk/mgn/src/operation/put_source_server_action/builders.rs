@@ -3,7 +3,7 @@ pub use crate::operation::put_source_server_action::_put_source_server_action_ou
 
 pub use crate::operation::put_source_server_action::_put_source_server_action_input::PutSourceServerActionInputBuilder;
 
-impl PutSourceServerActionInputBuilder {
+impl crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutSourceServerActionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -234,6 +234,7 @@ impl PutSourceServerActionFluentBuilder {
     pub fn get_must_succeed_for_cutover(&self) -> &::std::option::Option<bool> {
         self.inner.get_must_succeed_for_cutover()
     }
+    ///
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -261,6 +262,7 @@ impl PutSourceServerActionFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::SsmParameterStoreParameter>>> {
         self.inner.get_parameters()
     }
+    ///
     /// Adds a key-value pair to `externalParameters`.
     ///
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).

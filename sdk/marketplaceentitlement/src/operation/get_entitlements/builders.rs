@@ -3,7 +3,7 @@ pub use crate::operation::get_entitlements::_get_entitlements_output::GetEntitle
 
 pub use crate::operation::get_entitlements::_get_entitlements_input::GetEntitlementsInputBuilder;
 
-impl GetEntitlementsInputBuilder {
+impl crate::operation::get_entitlements::builders::GetEntitlementsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetEntitlementsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl GetEntitlementsFluentBuilder {
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_product_code()
     }
+    ///
     /// Adds a key-value pair to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).

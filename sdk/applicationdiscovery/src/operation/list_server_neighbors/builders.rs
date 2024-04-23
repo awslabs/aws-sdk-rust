@@ -3,7 +3,7 @@ pub use crate::operation::list_server_neighbors::_list_server_neighbors_output::
 
 pub use crate::operation::list_server_neighbors::_list_server_neighbors_input::ListServerNeighborsInputBuilder;
 
-impl ListServerNeighborsInputBuilder {
+impl crate::operation::list_server_neighbors::builders::ListServerNeighborsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListServerNeighborsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl ListServerNeighborsFluentBuilder {
     pub fn get_port_information_needed(&self) -> &::std::option::Option<bool> {
         self.inner.get_port_information_needed()
     }
+    ///
     /// Appends an item to `neighborConfigurationIds`.
     ///
     /// To override the contents of this collection use [`set_neighbor_configuration_ids`](Self::set_neighbor_configuration_ids).

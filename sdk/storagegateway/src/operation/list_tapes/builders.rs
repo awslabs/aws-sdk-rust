@@ -3,7 +3,7 @@ pub use crate::operation::list_tapes::_list_tapes_output::ListTapesOutputBuilder
 
 pub use crate::operation::list_tapes::_list_tapes_input::ListTapesInputBuilder;
 
-impl ListTapesInputBuilder {
+impl crate::operation::list_tapes::builders::ListTapesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -94,12 +94,12 @@ impl ListTapesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -109,6 +109,7 @@ impl ListTapesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_tapes::paginator::ListTapesPaginator {
         crate::operation::list_tapes::paginator::ListTapesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `TapeARNs`.
     ///
     /// To override the contents of this collection use [`set_tape_arns`](Self::set_tape_arns).

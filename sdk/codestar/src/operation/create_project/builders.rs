@@ -3,7 +3,7 @@ pub use crate::operation::create_project::_create_project_output::CreateProjectO
 
 pub use crate::operation::create_project::_create_project_input::CreateProjectInputBuilder;
 
-impl CreateProjectInputBuilder {
+impl crate::operation::create_project::builders::CreateProjectInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateProjectFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateProjectFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    ///
     /// Appends an item to `sourceCode`.
     ///
     /// To override the contents of this collection use [`set_source_code`](Self::set_source_code).
@@ -196,6 +197,7 @@ impl CreateProjectFluentBuilder {
     pub fn get_toolchain(&self) -> &::std::option::Option<crate::types::Toolchain> {
         self.inner.get_toolchain()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

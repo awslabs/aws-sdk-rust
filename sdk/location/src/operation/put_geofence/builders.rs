@@ -3,7 +3,7 @@ pub use crate::operation::put_geofence::_put_geofence_output::PutGeofenceOutputB
 
 pub use crate::operation::put_geofence::_put_geofence_input::PutGeofenceInputBuilder;
 
-impl PutGeofenceInputBuilder {
+impl crate::operation::put_geofence::builders::PutGeofenceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutGeofenceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -156,6 +156,7 @@ impl PutGeofenceFluentBuilder {
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::GeofenceGeometry> {
         self.inner.get_geometry()
     }
+    ///
     /// Adds a key-value pair to `GeofenceProperties`.
     ///
     /// To override the contents of this collection use [`set_geofence_properties`](Self::set_geofence_properties).

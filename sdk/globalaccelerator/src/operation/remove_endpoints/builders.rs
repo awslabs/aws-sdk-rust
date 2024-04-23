@@ -3,7 +3,7 @@ pub use crate::operation::remove_endpoints::_remove_endpoints_output::RemoveEndp
 
 pub use crate::operation::remove_endpoints::_remove_endpoints_input::RemoveEndpointsInputBuilder;
 
-impl RemoveEndpointsInputBuilder {
+impl crate::operation::remove_endpoints::builders::RemoveEndpointsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,15 +106,16 @@ impl RemoveEndpointsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `EndpointIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_endpoint_identifiers`](Self::set_endpoint_identifiers).

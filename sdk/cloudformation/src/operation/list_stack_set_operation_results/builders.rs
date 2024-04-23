@@ -3,7 +3,7 @@ pub use crate::operation::list_stack_set_operation_results::_list_stack_set_oper
 
 pub use crate::operation::list_stack_set_operation_results::_list_stack_set_operation_results_input::ListStackSetOperationResultsInputBuilder;
 
-impl ListStackSetOperationResultsInputBuilder {
+impl crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListStackSetOperationResultsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -208,6 +208,7 @@ impl ListStackSetOperationResultsFluentBuilder {
     pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
         self.inner.get_call_as()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

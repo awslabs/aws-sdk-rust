@@ -3,7 +3,7 @@ pub use crate::operation::start_label_detection::_start_label_detection_output::
 
 pub use crate::operation::start_label_detection::_start_label_detection_input::StartLabelDetectionInputBuilder;
 
-impl StartLabelDetectionInputBuilder {
+impl crate::operation::start_label_detection::builders::StartLabelDetectionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl StartLabelDetectionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -187,6 +187,7 @@ impl StartLabelDetectionFluentBuilder {
     pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_tag()
     }
+    ///
     /// Appends an item to `Features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).

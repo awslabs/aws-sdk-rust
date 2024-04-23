@@ -3,7 +3,7 @@ pub use crate::operation::describe_instance_event_notification_attributes::_desc
 
 pub use crate::operation::describe_instance_event_notification_attributes::_describe_instance_event_notification_attributes_input::DescribeInstanceEventNotificationAttributesInputBuilder;
 
-impl DescribeInstanceEventNotificationAttributesInputBuilder {
+impl crate::operation::describe_instance_event_notification_attributes::builders::DescribeInstanceEventNotificationAttributesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl DescribeInstanceEventNotificationAttributesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

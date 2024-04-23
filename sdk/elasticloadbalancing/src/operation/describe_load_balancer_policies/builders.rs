@@ -3,7 +3,7 @@ pub use crate::operation::describe_load_balancer_policies::_describe_load_balanc
 
 pub use crate::operation::describe_load_balancer_policies::_describe_load_balancer_policies_input::DescribeLoadBalancerPoliciesInputBuilder;
 
-impl DescribeLoadBalancerPoliciesInputBuilder {
+impl crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeLoadBalancerPoliciesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl DescribeLoadBalancerPoliciesFluentBuilder {
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_load_balancer_name()
     }
+    ///
     /// Appends an item to `PolicyNames`.
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).

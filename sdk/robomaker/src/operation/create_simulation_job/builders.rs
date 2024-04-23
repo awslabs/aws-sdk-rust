@@ -3,7 +3,7 @@ pub use crate::operation::create_simulation_job::_create_simulation_job_output::
 
 pub use crate::operation::create_simulation_job::_create_simulation_job_input::CreateSimulationJobInputBuilder;
 
-impl CreateSimulationJobInputBuilder {
+impl crate::operation::create_simulation_job::builders::CreateSimulationJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateSimulationJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -236,6 +236,7 @@ impl CreateSimulationJobFluentBuilder {
     pub fn get_failure_behavior(&self) -> &::std::option::Option<crate::types::FailureBehavior> {
         self.inner.get_failure_behavior()
     }
+    ///
     /// Appends an item to `robotApplications`.
     ///
     /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
@@ -254,6 +255,7 @@ impl CreateSimulationJobFluentBuilder {
     pub fn get_robot_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>> {
         self.inner.get_robot_applications()
     }
+    ///
     /// Appends an item to `simulationApplications`.
     ///
     /// To override the contents of this collection use [`set_simulation_applications`](Self::set_simulation_applications).
@@ -272,6 +274,7 @@ impl CreateSimulationJobFluentBuilder {
     pub fn get_simulation_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>> {
         self.inner.get_simulation_applications()
     }
+    ///
     /// Appends an item to `dataSources`.
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
@@ -296,6 +299,7 @@ impl CreateSimulationJobFluentBuilder {
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceConfig>> {
         self.inner.get_data_sources()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

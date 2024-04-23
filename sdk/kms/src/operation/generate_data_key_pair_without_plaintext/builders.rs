@@ -3,7 +3,7 @@ pub use crate::operation::generate_data_key_pair_without_plaintext::_generate_da
 
 pub use crate::operation::generate_data_key_pair_without_plaintext::_generate_data_key_pair_without_plaintext_input::GenerateDataKeyPairWithoutPlaintextInputBuilder;
 
-impl GenerateDataKeyPairWithoutPlaintextInputBuilder {
+impl crate::operation::generate_data_key_pair_without_plaintext::builders::GenerateDataKeyPairWithoutPlaintextInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -122,15 +122,16 @@ impl GenerateDataKeyPairWithoutPlaintextFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Adds a key-value pair to `EncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
@@ -238,6 +239,7 @@ impl GenerateDataKeyPairWithoutPlaintextFluentBuilder {
     pub fn get_key_pair_spec(&self) -> &::std::option::Option<crate::types::DataKeyPairSpec> {
         self.inner.get_key_pair_spec()
     }
+    ///
     /// Appends an item to `GrantTokens`.
     ///
     /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).

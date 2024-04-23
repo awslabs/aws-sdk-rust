@@ -3,7 +3,7 @@ pub use crate::operation::create_custom_data_identifier::_create_custom_data_ide
 
 pub use crate::operation::create_custom_data_identifier::_create_custom_data_identifier_input::CreateCustomDataIdentifierInputBuilder;
 
-impl CreateCustomDataIdentifierInputBuilder {
+impl crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateCustomDataIdentifierFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl CreateCustomDataIdentifierFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `ignoreWords`.
     ///
     /// To override the contents of this collection use [`set_ignore_words`](Self::set_ignore_words).
@@ -157,6 +158,7 @@ impl CreateCustomDataIdentifierFluentBuilder {
     pub fn get_ignore_words(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ignore_words()
     }
+    ///
     /// Appends an item to `keywords`.
     ///
     /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
@@ -220,6 +222,7 @@ impl CreateCustomDataIdentifierFluentBuilder {
     pub fn get_regex(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_regex()
     }
+    ///
     /// Appends an item to `severityLevels`.
     ///
     /// To override the contents of this collection use [`set_severity_levels`](Self::set_severity_levels).
@@ -241,6 +244,7 @@ impl CreateCustomDataIdentifierFluentBuilder {
     pub fn get_severity_levels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>> {
         self.inner.get_severity_levels()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

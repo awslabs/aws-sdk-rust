@@ -11,6 +11,18 @@ pub(crate) fn create_trust_anchor_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_attribute_mapping_output_output_correct_errors(
+    mut builder: crate::operation::delete_attribute_mapping::builders::DeleteAttributeMappingOutputBuilder,
+) -> crate::operation::delete_attribute_mapping::builders::DeleteAttributeMappingOutputBuilder {
+    if builder.profile.is_none() {
+        builder.profile = {
+            let builder = crate::types::builders::ProfileDetailBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn delete_crl_output_output_correct_errors(
     mut builder: crate::operation::delete_crl::builders::DeleteCrlOutputBuilder,
 ) -> crate::operation::delete_crl::builders::DeleteCrlOutputBuilder {
@@ -119,6 +131,18 @@ pub(crate) fn import_crl_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn put_attribute_mapping_output_output_correct_errors(
+    mut builder: crate::operation::put_attribute_mapping::builders::PutAttributeMappingOutputBuilder,
+) -> crate::operation::put_attribute_mapping::builders::PutAttributeMappingOutputBuilder {
+    if builder.profile.is_none() {
+        builder.profile = {
+            let builder = crate::types::builders::ProfileDetailBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn put_notification_settings_output_output_correct_errors(
     mut builder: crate::operation::put_notification_settings::builders::PutNotificationSettingsOutputBuilder,
 ) -> crate::operation::put_notification_settings::builders::PutNotificationSettingsOutputBuilder {
@@ -185,6 +209,13 @@ pub(crate) fn notification_setting_detail_correct_errors(
     }
     if builder.event.is_none() {
         builder.event = "no value was set".parse::<crate::types::NotificationEvent>().ok()
+    }
+    builder
+}
+
+pub(crate) fn mapping_rule_correct_errors(mut builder: crate::types::builders::MappingRuleBuilder) -> crate::types::builders::MappingRuleBuilder {
+    if builder.specifier.is_none() {
+        builder.specifier = Some(Default::default())
     }
     builder
 }

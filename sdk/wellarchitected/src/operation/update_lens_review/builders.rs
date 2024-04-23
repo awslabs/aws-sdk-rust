@@ -3,7 +3,7 @@ pub use crate::operation::update_lens_review::_update_lens_review_output::Update
 
 pub use crate::operation::update_lens_review::_update_lens_review_input::UpdateLensReviewInputBuilder;
 
-impl UpdateLensReviewInputBuilder {
+impl crate::operation::update_lens_review::builders::UpdateLensReviewInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateLensReviewFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -162,6 +162,7 @@ impl UpdateLensReviewFluentBuilder {
     pub fn get_lens_notes(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_lens_notes()
     }
+    ///
     /// Adds a key-value pair to `PillarNotes`.
     ///
     /// To override the contents of this collection use [`set_pillar_notes`](Self::set_pillar_notes).
@@ -185,5 +186,19 @@ impl UpdateLensReviewFluentBuilder {
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn get_pillar_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_pillar_notes()
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(mut self, input: crate::types::JiraSelectedQuestionConfiguration) -> Self {
+        self.inner = self.inner.jira_configuration(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::JiraSelectedQuestionConfiguration>) -> Self {
+        self.inner = self.inner.set_jira_configuration(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::JiraSelectedQuestionConfiguration> {
+        self.inner.get_jira_configuration()
     }
 }

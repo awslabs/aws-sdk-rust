@@ -207,19 +207,12 @@ pub(crate) fn parse_credential_process_json_credentials(
 }
 
 fn parse_expiration(expiration: impl AsRef<str>) -> Result<SystemTime, InvalidJsonCredentials> {
-    SystemTime::try_from(
-        OffsetDateTime::parse(expiration.as_ref(), &Rfc3339).map_err(|err| {
-            InvalidJsonCredentials::InvalidField {
-                field: "Expiration",
-                err: err.into(),
-            }
-        })?,
-    )
-    .map_err(|_| {
-        InvalidJsonCredentials::Other(
-            "credential expiration time cannot be represented by a DateTime".into(),
-        )
-    })
+    OffsetDateTime::parse(expiration.as_ref(), &Rfc3339)
+        .map(SystemTime::from)
+        .map_err(|err| InvalidJsonCredentials::InvalidField {
+            field: "Expiration",
+            err: err.into(),
+        })
 }
 
 #[cfg(test)]

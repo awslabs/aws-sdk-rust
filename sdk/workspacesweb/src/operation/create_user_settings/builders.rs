@@ -3,7 +3,7 @@ pub use crate::operation::create_user_settings::_create_user_settings_output::Cr
 
 pub use crate::operation::create_user_settings::_create_user_settings_input::CreateUserSettingsInputBuilder;
 
-impl CreateUserSettingsInputBuilder {
+impl crate::operation::create_user_settings::builders::CreateUserSettingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateUserSettingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateUserSettingsFluentBuilder {
     pub fn get_print_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
         self.inner.get_print_allowed()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -272,6 +273,7 @@ impl CreateUserSettingsFluentBuilder {
     pub fn get_customer_managed_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_managed_key()
     }
+    ///
     /// Adds a key-value pair to `additionalEncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_additional_encryption_context`](Self::set_additional_encryption_context).

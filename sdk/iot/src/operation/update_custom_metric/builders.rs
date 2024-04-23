@@ -3,7 +3,7 @@ pub use crate::operation::update_custom_metric::_update_custom_metric_output::Up
 
 pub use crate::operation::update_custom_metric::_update_custom_metric_input::UpdateCustomMetricInputBuilder;
 
-impl UpdateCustomMetricInputBuilder {
+impl crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateCustomMetricFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

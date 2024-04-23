@@ -3,7 +3,7 @@ pub use crate::operation::restore_db_cluster_from_snapshot::_restore_db_cluster_
 
 pub use crate::operation::restore_db_cluster_from_snapshot::_restore_db_cluster_from_snapshot_input::RestoreDbClusterFromSnapshotInputBuilder;
 
-impl RestoreDbClusterFromSnapshotInputBuilder {
+impl crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDbClusterFromSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,15 +104,16 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `AvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -384,6 +385,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_option_group_name()
     }
+    ///
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -405,6 +407,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -528,6 +531,7 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     pub fn get_backtrack_window(&self) -> &::std::option::Option<i64> {
         self.inner.get_backtrack_window()
     }
+    ///
     /// Appends an item to `EnableCloudwatchLogsExports`.
     ///
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).

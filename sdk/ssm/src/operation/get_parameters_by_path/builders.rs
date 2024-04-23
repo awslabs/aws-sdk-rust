@@ -3,7 +3,7 @@ pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_output
 
 pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_input::GetParametersByPathInputBuilder;
 
-impl GetParametersByPathInputBuilder {
+impl crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetParametersByPathFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -149,6 +149,7 @@ impl GetParametersByPathFluentBuilder {
     pub fn get_recursive(&self) -> &::std::option::Option<bool> {
         self.inner.get_recursive()
     }
+    ///
     /// Appends an item to `ParameterFilters`.
     ///
     /// To override the contents of this collection use [`set_parameter_filters`](Self::set_parameter_filters).

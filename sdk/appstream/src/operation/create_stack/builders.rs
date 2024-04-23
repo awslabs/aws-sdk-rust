@@ -3,7 +3,7 @@ pub use crate::operation::create_stack::_create_stack_output::CreateStackOutputB
 
 pub use crate::operation::create_stack::_create_stack_input::CreateStackInputBuilder;
 
-impl CreateStackInputBuilder {
+impl crate::operation::create_stack::builders::CreateStackInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateStackFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateStackFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
+    ///
     /// Appends an item to `StorageConnectors`.
     ///
     /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
@@ -196,6 +197,7 @@ impl CreateStackFluentBuilder {
     pub fn get_feedback_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feedback_url()
     }
+    ///
     /// Appends an item to `UserSettings`.
     ///
     /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
@@ -228,6 +230,7 @@ impl CreateStackFluentBuilder {
     pub fn get_application_settings(&self) -> &::std::option::Option<crate::types::ApplicationSettings> {
         self.inner.get_application_settings()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -258,6 +261,7 @@ impl CreateStackFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `AccessEndpoints`.
     ///
     /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
@@ -276,6 +280,7 @@ impl CreateStackFluentBuilder {
     pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         self.inner.get_access_endpoints()
     }
+    ///
     /// Appends an item to `EmbedHostDomains`.
     ///
     /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).

@@ -3,7 +3,7 @@ pub use crate::operation::start_query::_start_query_output::StartQueryOutputBuil
 
 pub use crate::operation::start_query::_start_query_input::StartQueryInputBuilder;
 
-impl StartQueryInputBuilder {
+impl crate::operation::start_query::builders::StartQueryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl StartQueryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl StartQueryFluentBuilder {
     pub fn get_query_type(&self) -> &::std::option::Option<crate::types::QueryType> {
         self.inner.get_query_type()
     }
+    ///
     /// Appends an item to `FilterParameters`.
     ///
     /// To override the contents of this collection use [`set_filter_parameters`](Self::set_filter_parameters).
@@ -213,17 +214,17 @@ impl StartQueryFluentBuilder {
     pub fn get_filter_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterParameter>> {
         self.inner.get_filter_parameters()
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn linked_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.linked_account_id(input.into());
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn set_linked_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_linked_account_id(input);
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn get_linked_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_linked_account_id()
     }

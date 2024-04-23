@@ -3,7 +3,7 @@ pub use crate::operation::get_supported_resource_types::_get_supported_resource_
 
 pub use crate::operation::get_supported_resource_types::_get_supported_resource_types_input::GetSupportedResourceTypesInputBuilder;
 
-impl GetSupportedResourceTypesInputBuilder {
+impl crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetSupportedResourceTypesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

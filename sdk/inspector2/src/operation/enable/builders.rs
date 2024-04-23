@@ -3,7 +3,7 @@ pub use crate::operation::enable::_enable_output::EnableOutputBuilder;
 
 pub use crate::operation::enable::_enable_input::EnableInputBuilder;
 
-impl EnableInputBuilder {
+impl crate::operation::enable::builders::EnableInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -86,15 +86,16 @@ impl EnableFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::enable::EnableOutput, crate::operation::enable::EnableError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `accountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -113,6 +114,7 @@ impl EnableFluentBuilder {
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
+    ///
     /// Appends an item to `resourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).

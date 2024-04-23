@@ -3,7 +3,7 @@ pub use crate::operation::get_item::_get_item_output::GetItemOutputBuilder;
 
 pub use crate::operation::get_item::_get_item_input::GetItemInputBuilder;
 
-impl GetItemInputBuilder {
+impl crate::operation::get_item::builders::GetItemInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -91,12 +91,12 @@ impl GetItemFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl GetItemFluentBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }
+    ///
     /// Adds a key-value pair to `Key`.
     ///
     /// To override the contents of this collection use [`set_key`](Self::set_key).
@@ -135,6 +136,7 @@ impl GetItemFluentBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         self.inner.get_key()
     }
+    ///
     /// Appends an item to `AttributesToGet`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
@@ -228,6 +230,7 @@ impl GetItemFluentBuilder {
     pub fn get_projection_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_projection_expression()
     }
+    ///
     /// Adds a key-value pair to `ExpressionAttributeNames`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).

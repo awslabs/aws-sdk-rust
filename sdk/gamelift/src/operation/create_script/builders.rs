@@ -3,7 +3,7 @@ pub use crate::operation::create_script::_create_script_output::CreateScriptOutp
 
 pub use crate::operation::create_script::_create_script_input::CreateScriptInputBuilder;
 
-impl CreateScriptInputBuilder {
+impl crate::operation::create_script::builders::CreateScriptInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -112,12 +112,12 @@ impl CreateScriptFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -180,6 +180,7 @@ impl CreateScriptFluentBuilder {
     pub fn get_zip_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_zip_file()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

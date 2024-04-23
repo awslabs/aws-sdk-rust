@@ -49,6 +49,8 @@ pub use crate::types::_tuned_hpo_params::TunedHpoParamsBuilder;
 
 pub use crate::types::_solution_config::SolutionConfigBuilder;
 
+pub use crate::types::_auto_training_config::AutoTrainingConfigBuilder;
+
 pub use crate::types::_optimization_objective::OptimizationObjectiveBuilder;
 
 pub use crate::types::_auto_ml_config::AutoMlConfigBuilder;

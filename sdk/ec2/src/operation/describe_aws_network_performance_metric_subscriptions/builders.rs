@@ -3,7 +3,7 @@ pub use crate::operation::describe_aws_network_performance_metric_subscriptions:
 
 pub use crate::operation::describe_aws_network_performance_metric_subscriptions::_describe_aws_network_performance_metric_subscriptions_input::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder;
 
-impl DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder {
+impl crate::operation::describe_aws_network_performance_metric_subscriptions::builders::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,10 +25,10 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder {
 /// <p>Describes the current Infrastructure Performance metric subscriptions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_aws_network_performance_metric_subscriptions::builders::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::describe_aws_network_performance_metric_subscriptions::builders::DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
@@ -103,12 +103,12 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -149,6 +149,7 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

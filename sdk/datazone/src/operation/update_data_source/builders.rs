@@ -3,7 +3,7 @@ pub use crate::operation::update_data_source::_update_data_source_output::Update
 
 pub use crate::operation::update_data_source::_update_data_source_input::UpdateDataSourceInputBuilder;
 
-impl UpdateDataSourceInputBuilder {
+impl crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDataSourceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_publish_on_import(&self) -> &::std::option::Option<bool> {
         self.inner.get_publish_on_import()
     }
+    ///
     /// Appends an item to `assetFormsInput`.
     ///
     /// To override the contents of this collection use [`set_asset_forms_input`](Self::set_asset_forms_input).

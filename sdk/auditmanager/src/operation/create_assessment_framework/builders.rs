@@ -3,7 +3,7 @@ pub use crate::operation::create_assessment_framework::_create_assessment_framew
 
 pub use crate::operation::create_assessment_framework::_create_assessment_framework_input::CreateAssessmentFrameworkInputBuilder;
 
-impl CreateAssessmentFrameworkInputBuilder {
+impl crate::operation::create_assessment_framework::builders::CreateAssessmentFrameworkInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateAssessmentFrameworkFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateAssessmentFrameworkFluentBuilder {
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compliance_type()
     }
+    ///
     /// Appends an item to `controlSets`.
     ///
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
@@ -168,6 +169,7 @@ impl CreateAssessmentFrameworkFluentBuilder {
     pub fn get_control_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>> {
         self.inner.get_control_sets()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

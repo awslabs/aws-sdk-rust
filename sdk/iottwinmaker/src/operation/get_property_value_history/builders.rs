@@ -3,7 +3,7 @@ pub use crate::operation::get_property_value_history::_get_property_value_histor
 
 pub use crate::operation::get_property_value_history::_get_property_value_history_input::GetPropertyValueHistoryInputBuilder;
 
-impl GetPropertyValueHistoryInputBuilder {
+impl crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetPropertyValueHistoryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -185,6 +185,7 @@ impl GetPropertyValueHistoryFluentBuilder {
     pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_component_type_id()
     }
+    ///
     /// Appends an item to `selectedProperties`.
     ///
     /// To override the contents of this collection use [`set_selected_properties`](Self::set_selected_properties).
@@ -203,6 +204,7 @@ impl GetPropertyValueHistoryFluentBuilder {
     pub fn get_selected_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_selected_properties()
     }
+    ///
     /// Appends an item to `propertyFilters`.
     ///
     /// To override the contents of this collection use [`set_property_filters`](Self::set_property_filters).

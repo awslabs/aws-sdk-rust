@@ -3,7 +3,7 @@ pub use crate::operation::create_subscriber::_create_subscriber_output::CreateSu
 
 pub use crate::operation::create_subscriber::_create_subscriber_input::CreateSubscriberInputBuilder;
 
-impl CreateSubscriberInputBuilder {
+impl crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSubscriberFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateSubscriberFluentBuilder {
     pub fn get_subscriber_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscriber_description()
     }
+    ///
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -168,6 +169,7 @@ impl CreateSubscriberFluentBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
         self.inner.get_sources()
     }
+    ///
     /// Appends an item to `accessTypes`.
     ///
     /// To override the contents of this collection use [`set_access_types`](Self::set_access_types).
@@ -186,6 +188,7 @@ impl CreateSubscriberFluentBuilder {
     pub fn get_access_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessType>> {
         self.inner.get_access_types()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

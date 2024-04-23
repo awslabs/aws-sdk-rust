@@ -3,7 +3,7 @@ pub use crate::operation::put_webhook::_put_webhook_output::PutWebhookOutputBuil
 
 pub use crate::operation::put_webhook::_put_webhook_input::PutWebhookInputBuilder;
 
-impl PutWebhookInputBuilder {
+impl crate::operation::put_webhook::builders::PutWebhookInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutWebhookFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl PutWebhookFluentBuilder {
     pub fn get_webhook(&self) -> &::std::option::Option<crate::types::WebhookDefinition> {
         self.inner.get_webhook()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

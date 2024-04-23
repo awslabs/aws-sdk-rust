@@ -3,7 +3,7 @@ pub use crate::operation::post_text::_post_text_output::PostTextOutputBuilder;
 
 pub use crate::operation::post_text::_post_text_input::PostTextInputBuilder;
 
-impl PostTextInputBuilder {
+impl crate::operation::post_text::builders::PostTextInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -119,12 +119,12 @@ impl PostTextFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -203,6 +203,7 @@ impl PostTextFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
+    ///
     /// Adds a key-value pair to `sessionAttributes`.
     ///
     /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
@@ -231,6 +232,7 @@ impl PostTextFluentBuilder {
     pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_session_attributes()
     }
+    ///
     /// Adds a key-value pair to `requestAttributes`.
     ///
     /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
@@ -276,6 +278,7 @@ impl PostTextFluentBuilder {
     pub fn get_input_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_text()
     }
+    ///
     /// Appends an item to `activeContexts`.
     ///
     /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).

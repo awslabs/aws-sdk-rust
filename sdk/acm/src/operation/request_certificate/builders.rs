@@ -3,7 +3,7 @@ pub use crate::operation::request_certificate::_request_certificate_output::Requ
 
 pub use crate::operation::request_certificate::_request_certificate_input::RequestCertificateInputBuilder;
 
-impl RequestCertificateInputBuilder {
+impl crate::operation::request_certificate::builders::RequestCertificateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl RequestCertificateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl RequestCertificateFluentBuilder {
     pub fn get_validation_method(&self) -> &::std::option::Option<crate::types::ValidationMethod> {
         self.inner.get_validation_method()
     }
+    ///
     /// Appends an item to `SubjectAlternativeNames`.
     ///
     /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
@@ -202,6 +203,7 @@ impl RequestCertificateFluentBuilder {
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idempotency_token()
     }
+    ///
     /// Appends an item to `DomainValidationOptions`.
     ///
     /// To override the contents of this collection use [`set_domain_validation_options`](Self::set_domain_validation_options).
@@ -251,6 +253,7 @@ impl RequestCertificateFluentBuilder {
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_authority_arn()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

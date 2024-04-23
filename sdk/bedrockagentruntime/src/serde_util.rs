@@ -73,3 +73,21 @@ pub(crate) fn retrieval_result_location_correct_errors(
     }
     builder
 }
+
+pub(crate) fn api_invocation_input_correct_errors(
+    mut builder: crate::types::builders::ApiInvocationInputBuilder,
+) -> crate::types::builders::ApiInvocationInputBuilder {
+    if builder.action_group.is_none() {
+        builder.action_group = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn function_invocation_input_correct_errors(
+    mut builder: crate::types::builders::FunctionInvocationInputBuilder,
+) -> crate::types::builders::FunctionInvocationInputBuilder {
+    if builder.action_group.is_none() {
+        builder.action_group = Some(Default::default())
+    }
+    builder
+}

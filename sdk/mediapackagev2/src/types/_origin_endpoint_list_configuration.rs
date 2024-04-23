@@ -24,6 +24,8 @@ pub struct OriginEndpointListConfiguration {
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
+    /// <p>A DASH manifest configuration.</p>
+    pub dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListDashManifestConfiguration>>,
 }
 impl OriginEndpointListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -74,6 +76,12 @@ impl OriginEndpointListConfiguration {
     pub fn low_latency_hls_manifests(&self) -> &[crate::types::ListLowLatencyHlsManifestConfiguration] {
         self.low_latency_hls_manifests.as_deref().unwrap_or_default()
     }
+    /// <p>A DASH manifest configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dash_manifests.is_none()`.
+    pub fn dash_manifests(&self) -> &[crate::types::ListDashManifestConfiguration] {
+        self.dash_manifests.as_deref().unwrap_or_default()
+    }
 }
 impl OriginEndpointListConfiguration {
     /// Creates a new builder-style object to manufacture [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
@@ -96,6 +104,7 @@ pub struct OriginEndpointListConfigurationBuilder {
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
+    pub(crate) dash_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListDashManifestConfiguration>>,
 }
 impl OriginEndpointListConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -258,6 +267,26 @@ impl OriginEndpointListConfigurationBuilder {
     pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
+    /// Appends an item to `dash_manifests`.
+    ///
+    /// To override the contents of this collection use [`set_dash_manifests`](Self::set_dash_manifests).
+    ///
+    /// <p>A DASH manifest configuration.</p>
+    pub fn dash_manifests(mut self, input: crate::types::ListDashManifestConfiguration) -> Self {
+        let mut v = self.dash_manifests.unwrap_or_default();
+        v.push(input);
+        self.dash_manifests = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn set_dash_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListDashManifestConfiguration>>) -> Self {
+        self.dash_manifests = input;
+        self
+    }
+    /// <p>A DASH manifest configuration.</p>
+    pub fn get_dash_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListDashManifestConfiguration>> {
+        &self.dash_manifests
+    }
     /// Consumes the builder and constructs a [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::OriginEndpointListConfigurationBuilder::arn)
@@ -302,6 +331,7 @@ impl OriginEndpointListConfigurationBuilder {
             modified_at: self.modified_at,
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
+            dash_manifests: self.dash_manifests,
         })
     }
 }

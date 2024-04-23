@@ -12,9 +12,9 @@ pub struct ParameterSliderControl {
     pub source_parameter_name: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
-    pub maximum_value: f64,
     /// <p>The larger value that is displayed at the right of the slider.</p>
+    pub maximum_value: f64,
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub minimum_value: f64,
     /// <p>The number of increments that the slider bar is divided into.</p>
     pub step_size: f64,
@@ -39,11 +39,11 @@ impl ParameterSliderControl {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::SliderControlDisplayOptions> {
         self.display_options.as_ref()
     }
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn maximum_value(&self) -> f64 {
         self.maximum_value
     }
-    /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn minimum_value(&self) -> f64 {
         self.minimum_value
     }
@@ -131,33 +131,33 @@ impl ParameterSliderControlBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::SliderControlDisplayOptions> {
         &self.display_options
     }
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// <p>The larger value that is displayed at the right of the slider.</p>
     /// This field is required.
     pub fn maximum_value(mut self, input: f64) -> Self {
         self.maximum_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn set_maximum_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum_value = input;
         self
     }
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn get_maximum_value(&self) -> &::std::option::Option<f64> {
         &self.maximum_value
     }
-    /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     /// This field is required.
     pub fn minimum_value(mut self, input: f64) -> Self {
         self.minimum_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn set_minimum_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum_value = input;
         self
     }
-    /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn get_minimum_value(&self) -> &::std::option::Option<f64> {
         &self.minimum_value
     }

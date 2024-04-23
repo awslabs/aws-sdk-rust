@@ -3,7 +3,7 @@ pub use crate::operation::create_knowledge_base::_create_knowledge_base_output::
 
 pub use crate::operation::create_knowledge_base::_create_knowledge_base_input::CreateKnowledgeBaseInputBuilder;
 
-impl CreateKnowledgeBaseInputBuilder {
+impl crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -29,7 +29,7 @@ impl CreateKnowledgeBaseInputBuilder {
 /// <li>
 /// <p>Provide the <code>name</code> and an optional <code>description</code>.</p></li>
 /// <li>
-/// <p>Provide the ARN with permissions to create a knowledge base in the <code>roleArn</code> field.</p></li>
+/// <p>Provide the Amazon Resource Name (ARN) with permissions to create a knowledge base in the <code>roleArn</code> field.</p></li>
 /// <li>
 /// <p>Provide the embedding model to use in the <code>embeddingModelArn</code> field in the <code>knowledgeBaseConfiguration</code> object.</p></li>
 /// <li>
@@ -121,12 +121,12 @@ impl CreateKnowledgeBaseFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -172,17 +172,17 @@ impl CreateKnowledgeBaseFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The ARN of the IAM role with permissions to create the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
@@ -214,6 +214,7 @@ impl CreateKnowledgeBaseFluentBuilder {
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         self.inner.get_storage_configuration()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

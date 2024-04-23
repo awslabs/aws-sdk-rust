@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_code_snippet::_batch_get_code_snippet_output
 
 pub use crate::operation::batch_get_code_snippet::_batch_get_code_snippet_input::BatchGetCodeSnippetInputBuilder;
 
-impl BatchGetCodeSnippetInputBuilder {
+impl crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl BatchGetCodeSnippetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `findingArns`.
     ///
     /// To override the contents of this collection use [`set_finding_arns`](Self::set_finding_arns).

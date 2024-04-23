@@ -7,7 +7,7 @@ pub struct CreateFeatureGroupInput {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
@@ -17,7 +17,7 @@ pub struct CreateFeatureGroupInput {
     /// <p>This name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.</p></li>
     /// </ul>
@@ -69,7 +69,7 @@ impl CreateFeatureGroupInput {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
@@ -81,7 +81,7 @@ impl CreateFeatureGroupInput {
     /// <p>This name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.</p></li>
     /// </ul>
@@ -177,7 +177,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
@@ -190,7 +190,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
@@ -202,7 +202,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>The name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
@@ -214,7 +214,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>This name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.</p></li>
     /// </ul>
@@ -228,7 +228,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>This name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.</p></li>
     /// </ul>
@@ -241,7 +241,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>This name:</p>
     /// <ul>
     /// <li>
-    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <p>Must start with an alphanumeric character.</p></li>
     /// <li>
     /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.</p></li>
     /// </ul>

@@ -3,7 +3,7 @@ pub use crate::operation::validate_pipeline_definition::_validate_pipeline_defin
 
 pub use crate::operation::validate_pipeline_definition::_validate_pipeline_definition_input::ValidatePipelineDefinitionInputBuilder;
 
-impl ValidatePipelineDefinitionInputBuilder {
+impl crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -128,12 +128,12 @@ impl ValidatePipelineDefinitionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_id()
     }
+    ///
     /// Appends an item to `pipelineObjects`.
     ///
     /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
@@ -169,6 +170,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
     pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
         self.inner.get_pipeline_objects()
     }
+    ///
     /// Appends an item to `parameterObjects`.
     ///
     /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
@@ -187,6 +189,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
     pub fn get_parameter_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
         self.inner.get_parameter_objects()
     }
+    ///
     /// Appends an item to `parameterValues`.
     ///
     /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).

@@ -3,7 +3,7 @@ pub use crate::operation::create_license_version::_create_license_version_output
 
 pub use crate::operation::create_license_version::_create_license_version_input::CreateLicenseVersionInputBuilder;
 
-impl CreateLicenseVersionInputBuilder {
+impl crate::operation::create_license_version::builders::CreateLicenseVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateLicenseVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl CreateLicenseVersionFluentBuilder {
     pub fn get_validity(&self) -> &::std::option::Option<crate::types::DatetimeRange> {
         self.inner.get_validity()
     }
+    ///
     /// Appends an item to `LicenseMetadata`.
     ///
     /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
@@ -210,6 +211,7 @@ impl CreateLicenseVersionFluentBuilder {
     pub fn get_license_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
         self.inner.get_license_metadata()
     }
+    ///
     /// Appends an item to `Entitlements`.
     ///
     /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).

@@ -3,7 +3,7 @@ pub use crate::operation::put_integration::_put_integration_output::PutIntegrati
 
 pub use crate::operation::put_integration::_put_integration_input::PutIntegrationInputBuilder;
 
-impl PutIntegrationInputBuilder {
+impl crate::operation::put_integration::builders::PutIntegrationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutIntegrationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -234,6 +234,7 @@ impl PutIntegrationFluentBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_credentials()
     }
+    ///
     /// Adds a key-value pair to `requestParameters`.
     ///
     /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
@@ -259,6 +260,7 @@ impl PutIntegrationFluentBuilder {
     pub fn get_request_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_parameters()
     }
+    ///
     /// Adds a key-value pair to `requestTemplates`.
     ///
     /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
@@ -312,6 +314,7 @@ impl PutIntegrationFluentBuilder {
     pub fn get_cache_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_namespace()
     }
+    ///
     /// Appends an item to `cacheKeyParameters`.
     ///
     /// To override the contents of this collection use [`set_cache_key_parameters`](Self::set_cache_key_parameters).

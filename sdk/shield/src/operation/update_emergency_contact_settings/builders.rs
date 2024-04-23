@@ -3,7 +3,7 @@ pub use crate::operation::update_emergency_contact_settings::_update_emergency_c
 
 pub use crate::operation::update_emergency_contact_settings::_update_emergency_contact_settings_input::UpdateEmergencyContactSettingsInputBuilder;
 
-impl UpdateEmergencyContactSettingsInputBuilder {
+impl crate::operation::update_emergency_contact_settings::builders::UpdateEmergencyContactSettingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl UpdateEmergencyContactSettingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `EmergencyContactList`.
     ///
     /// To override the contents of this collection use [`set_emergency_contact_list`](Self::set_emergency_contact_list).

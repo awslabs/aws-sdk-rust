@@ -3,7 +3,7 @@ pub use crate::operation::create_signal_map::_create_signal_map_output::CreateSi
 
 pub use crate::operation::create_signal_map::_create_signal_map_input::CreateSignalMapInputBuilder;
 
-impl CreateSignalMapInputBuilder {
+impl crate::operation::create_signal_map::builders::CreateSignalMapInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl CreateSignalMapFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `CloudWatchAlarmTemplateGroupIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_cloud_watch_alarm_template_group_identifiers`](Self::set_cloud_watch_alarm_template_group_identifiers).
@@ -154,6 +155,7 @@ impl CreateSignalMapFluentBuilder {
     pub fn get_discovery_entry_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_discovery_entry_point_arn()
     }
+    ///
     /// Appends an item to `EventBridgeRuleTemplateGroupIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_event_bridge_rule_template_group_identifiers`](Self::set_event_bridge_rule_template_group_identifiers).
@@ -186,6 +188,7 @@ impl CreateSignalMapFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::search_provisioned_products::_search_provisioned_produ
 
 pub use crate::operation::search_provisioned_products::_search_provisioned_products_input::SearchProvisionedProductsInputBuilder;
 
-impl SearchProvisionedProductsInputBuilder {
+impl crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SearchProvisionedProductsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -160,6 +160,7 @@ impl SearchProvisionedProductsFluentBuilder {
     pub fn get_access_level_filter(&self) -> &::std::option::Option<crate::types::AccessLevelFilter> {
         self.inner.get_access_level_filter()
     }
+    ///
     /// Adds a key-value pair to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

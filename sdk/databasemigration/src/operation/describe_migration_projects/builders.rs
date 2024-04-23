@@ -3,7 +3,7 @@ pub use crate::operation::describe_migration_projects::_describe_migration_proje
 
 pub use crate::operation::describe_migration_projects::_describe_migration_projects_input::DescribeMigrationProjectsInputBuilder;
 
-impl DescribeMigrationProjectsInputBuilder {
+impl crate::operation::describe_migration_projects::builders::DescribeMigrationProjectsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeMigrationProjectsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeMigrationProjectsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_migration_projects::paginator::DescribeMigrationProjectsPaginator {
         crate::operation::describe_migration_projects::paginator::DescribeMigrationProjectsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

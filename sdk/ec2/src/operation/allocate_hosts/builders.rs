@@ -3,7 +3,7 @@ pub use crate::operation::allocate_hosts::_allocate_hosts_output::AllocateHostsO
 
 pub use crate::operation::allocate_hosts::_allocate_hosts_input::AllocateHostsInputBuilder;
 
-impl AllocateHostsInputBuilder {
+impl crate::operation::allocate_hosts::builders::AllocateHostsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl AllocateHostsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -201,6 +201,7 @@ impl AllocateHostsFluentBuilder {
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
         self.inner.get_quantity()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -267,6 +268,7 @@ impl AllocateHostsFluentBuilder {
     pub fn get_host_maintenance(&self) -> &::std::option::Option<crate::types::HostMaintenance> {
         self.inner.get_host_maintenance()
     }
+    ///
     /// Appends an item to `AssetIds`.
     ///
     /// To override the contents of this collection use [`set_asset_ids`](Self::set_asset_ids).

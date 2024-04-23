@@ -3,7 +3,7 @@ pub use crate::operation::list_code_reviews::_list_code_reviews_output::ListCode
 
 pub use crate::operation::list_code_reviews::_list_code_reviews_input::ListCodeReviewsInputBuilder;
 
-impl ListCodeReviewsInputBuilder {
+impl crate::operation::list_code_reviews::builders::ListCodeReviewsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListCodeReviewsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListCodeReviewsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator {
         crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ProviderTypes`.
     ///
     /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).
@@ -132,6 +133,7 @@ impl ListCodeReviewsFluentBuilder {
     pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
         self.inner.get_provider_types()
     }
+    ///
     /// Appends an item to `States`.
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
@@ -183,6 +185,7 @@ impl ListCodeReviewsFluentBuilder {
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobState>> {
         self.inner.get_states()
     }
+    ///
     /// Appends an item to `RepositoryNames`.
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).

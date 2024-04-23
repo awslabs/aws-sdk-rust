@@ -3,7 +3,7 @@ pub use crate::operation::list_icd10_cm_inference_jobs::_list_icd10_cm_inference
 
 pub use crate::operation::list_icd10_cm_inference_jobs::_list_icd10_cm_inference_jobs_input::ListIcd10CmInferenceJobsInputBuilder;
 
-impl ListIcd10CmInferenceJobsInputBuilder {
+impl crate::operation::list_icd10_cm_inference_jobs::builders::ListIcd10CmInferenceJobsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListICD10CMInferenceJobsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

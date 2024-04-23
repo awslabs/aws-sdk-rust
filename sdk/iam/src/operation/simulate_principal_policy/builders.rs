@@ -3,7 +3,7 @@ pub use crate::operation::simulate_principal_policy::_simulate_principal_policy_
 
 pub use crate::operation::simulate_principal_policy::_simulate_principal_policy_input::SimulatePrincipalPolicyInputBuilder;
 
-impl SimulatePrincipalPolicyInputBuilder {
+impl crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl SimulatePrincipalPolicyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl SimulatePrincipalPolicyFluentBuilder {
     pub fn get_policy_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_source_arn()
     }
+    ///
     /// Appends an item to `PolicyInputList`.
     ///
     /// To override the contents of this collection use [`set_policy_input_list`](Self::set_policy_input_list).
@@ -187,6 +188,7 @@ impl SimulatePrincipalPolicyFluentBuilder {
     pub fn get_policy_input_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_input_list()
     }
+    ///
     /// Appends an item to `PermissionsBoundaryPolicyInputList`.
     ///
     /// To override the contents of this collection use [`set_permissions_boundary_policy_input_list`](Self::set_permissions_boundary_policy_input_list).
@@ -235,6 +237,7 @@ impl SimulatePrincipalPolicyFluentBuilder {
     pub fn get_permissions_boundary_policy_input_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_permissions_boundary_policy_input_list()
     }
+    ///
     /// Appends an item to `ActionNames`.
     ///
     /// To override the contents of this collection use [`set_action_names`](Self::set_action_names).
@@ -253,6 +256,7 @@ impl SimulatePrincipalPolicyFluentBuilder {
     pub fn get_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_action_names()
     }
+    ///
     /// Appends an item to `ResourceArns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -370,6 +374,7 @@ impl SimulatePrincipalPolicyFluentBuilder {
     pub fn get_caller_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_caller_arn()
     }
+    ///
     /// Appends an item to `ContextEntries`.
     ///
     /// To override the contents of this collection use [`set_context_entries`](Self::set_context_entries).

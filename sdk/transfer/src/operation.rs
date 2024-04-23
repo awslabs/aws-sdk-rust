@@ -133,6 +133,9 @@ pub mod list_workflows;
 /// Types for the `SendWorkflowStepState` operation.
 pub mod send_workflow_step_state;
 
+/// Types for the `StartDirectoryListing` operation.
+pub mod start_directory_listing;
+
 /// Types for the `StartFileTransfer` operation.
 pub mod start_file_transfer;
 

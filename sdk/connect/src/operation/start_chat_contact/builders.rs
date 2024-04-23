@@ -3,7 +3,7 @@ pub use crate::operation::start_chat_contact::_start_chat_contact_output::StartC
 
 pub use crate::operation::start_chat_contact::_start_chat_contact_input::StartChatContactInputBuilder;
 
-impl StartChatContactInputBuilder {
+impl crate::operation::start_chat_contact::builders::StartChatContactInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl StartChatContactFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -149,6 +149,7 @@ impl StartChatContactFluentBuilder {
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_flow_id()
     }
+    ///
     /// Adds a key-value pair to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -226,6 +227,7 @@ impl StartChatContactFluentBuilder {
     pub fn get_chat_duration_in_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_chat_duration_in_minutes()
     }
+    ///
     /// Appends an item to `SupportedMessagingContentTypes`.
     ///
     /// To override the contents of this collection use [`set_supported_messaging_content_types`](Self::set_supported_messaging_content_types).
@@ -287,6 +289,7 @@ impl StartChatContactFluentBuilder {
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_related_contact_id()
     }
+    ///
     /// Adds a key-value pair to `SegmentAttributes`.
     ///
     /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).

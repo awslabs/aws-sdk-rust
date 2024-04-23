@@ -16,12 +16,14 @@ pub struct CreateAgentActionGroupInput {
     /// <p>To allow your agent to request the user for additional information when trying to complete a task, set this field to <code>AMAZON.UserInput</code>. You must leave the <code>description</code>, <code>apiSchema</code>, and <code>actionGroupExecutor</code> fields blank for this action group.</p>
     /// <p>During orchestration, if your agent determines that it needs to invoke an API in an action group, but doesn't have enough information to complete the API request, it will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a> reprompting the user for more information.</p>
     pub parent_action_group_signature: ::std::option::Option<crate::types::ActionGroupSignature>,
-    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub action_group_executor: ::std::option::Option<crate::types::ActionGroupExecutor>,
     /// <p>Contains either details about the S3 object containing the OpenAPI schema for the action group or the JSON or YAML-formatted payload defining the schema. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action group OpenAPI schemas</a>.</p>
     pub api_schema: ::std::option::Option<crate::types::ApiSchema>,
     /// <p>Specifies whether the action group is available for the agent to invoke or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub action_group_state: ::std::option::Option<crate::types::ActionGroupState>,
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub function_schema: ::std::option::Option<crate::types::FunctionSchema>,
 }
 impl CreateAgentActionGroupInput {
     /// <p>The unique identifier of the agent for which to create the action group.</p>
@@ -49,7 +51,7 @@ impl CreateAgentActionGroupInput {
     pub fn parent_action_group_signature(&self) -> ::std::option::Option<&crate::types::ActionGroupSignature> {
         self.parent_action_group_signature.as_ref()
     }
-    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn action_group_executor(&self) -> ::std::option::Option<&crate::types::ActionGroupExecutor> {
         self.action_group_executor.as_ref()
     }
@@ -60,6 +62,10 @@ impl CreateAgentActionGroupInput {
     /// <p>Specifies whether the action group is available for the agent to invoke or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub fn action_group_state(&self) -> ::std::option::Option<&crate::types::ActionGroupState> {
         self.action_group_state.as_ref()
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn function_schema(&self) -> ::std::option::Option<&crate::types::FunctionSchema> {
+        self.function_schema.as_ref()
     }
 }
 impl CreateAgentActionGroupInput {
@@ -82,6 +88,7 @@ pub struct CreateAgentActionGroupInputBuilder {
     pub(crate) action_group_executor: ::std::option::Option<crate::types::ActionGroupExecutor>,
     pub(crate) api_schema: ::std::option::Option<crate::types::ApiSchema>,
     pub(crate) action_group_state: ::std::option::Option<crate::types::ActionGroupState>,
+    pub(crate) function_schema: ::std::option::Option<crate::types::FunctionSchema>,
 }
 impl CreateAgentActionGroupInputBuilder {
     /// <p>The unique identifier of the agent for which to create the action group.</p>
@@ -174,17 +181,17 @@ impl CreateAgentActionGroupInputBuilder {
     pub fn get_parent_action_group_signature(&self) -> &::std::option::Option<crate::types::ActionGroupSignature> {
         &self.parent_action_group_signature
     }
-    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn action_group_executor(mut self, input: crate::types::ActionGroupExecutor) -> Self {
         self.action_group_executor = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn set_action_group_executor(mut self, input: ::std::option::Option<crate::types::ActionGroupExecutor>) -> Self {
         self.action_group_executor = input;
         self
     }
-    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn get_action_group_executor(&self) -> &::std::option::Option<crate::types::ActionGroupExecutor> {
         &self.action_group_executor
     }
@@ -216,6 +223,20 @@ impl CreateAgentActionGroupInputBuilder {
     pub fn get_action_group_state(&self) -> &::std::option::Option<crate::types::ActionGroupState> {
         &self.action_group_state
     }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn function_schema(mut self, input: crate::types::FunctionSchema) -> Self {
+        self.function_schema = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn set_function_schema(mut self, input: ::std::option::Option<crate::types::FunctionSchema>) -> Self {
+        self.function_schema = input;
+        self
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn get_function_schema(&self) -> &::std::option::Option<crate::types::FunctionSchema> {
+        &self.function_schema
+    }
     /// Consumes the builder and constructs a [`CreateAgentActionGroupInput`](crate::operation::create_agent_action_group::CreateAgentActionGroupInput).
     pub fn build(
         self,
@@ -233,6 +254,7 @@ impl CreateAgentActionGroupInputBuilder {
             action_group_executor: self.action_group_executor,
             api_schema: self.api_schema,
             action_group_state: self.action_group_state,
+            function_schema: self.function_schema,
         })
     }
 }

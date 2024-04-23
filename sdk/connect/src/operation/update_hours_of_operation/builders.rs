@@ -3,7 +3,7 @@ pub use crate::operation::update_hours_of_operation::_update_hours_of_operation_
 
 pub use crate::operation::update_hours_of_operation::_update_hours_of_operation_input::UpdateHoursOfOperationInputBuilder;
 
-impl UpdateHoursOfOperationInputBuilder {
+impl crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateHoursOfOperationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl UpdateHoursOfOperationFluentBuilder {
     pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_time_zone()
     }
+    ///
     /// Appends an item to `Config`.
     ///
     /// To override the contents of this collection use [`set_config`](Self::set_config).

@@ -102,6 +102,36 @@ impl From<crate::operation::create_trust_anchor::CreateTrustAnchorError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_attribute_mapping::DeleteAttributeMappingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_attribute_mapping::DeleteAttributeMappingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_attribute_mapping::DeleteAttributeMappingError> for Error {
+    fn from(err: crate::operation::delete_attribute_mapping::DeleteAttributeMappingError) -> Self {
+        match err {
+            crate::operation::delete_attribute_mapping::DeleteAttributeMappingError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_attribute_mapping::DeleteAttributeMappingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_attribute_mapping::DeleteAttributeMappingError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_attribute_mapping::DeleteAttributeMappingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_crl::DeleteCrlError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -545,6 +575,32 @@ impl From<crate::operation::list_trust_anchors::ListTrustAnchorsError> for Error
             crate::operation::list_trust_anchors::ListTrustAnchorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_trust_anchors::ListTrustAnchorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_trust_anchors::ListTrustAnchorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_attribute_mapping::PutAttributeMappingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_attribute_mapping::PutAttributeMappingError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_attribute_mapping::PutAttributeMappingError> for Error {
+    fn from(err: crate::operation::put_attribute_mapping::PutAttributeMappingError) -> Self {
+        match err {
+            crate::operation::put_attribute_mapping::PutAttributeMappingError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_attribute_mapping::PutAttributeMappingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_attribute_mapping::PutAttributeMappingError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_attribute_mapping::PutAttributeMappingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

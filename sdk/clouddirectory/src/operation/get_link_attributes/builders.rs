@@ -3,7 +3,7 @@ pub use crate::operation::get_link_attributes::_get_link_attributes_output::GetL
 
 pub use crate::operation::get_link_attributes::_get_link_attributes_input::GetLinkAttributesInputBuilder;
 
-impl GetLinkAttributesInputBuilder {
+impl crate::operation::get_link_attributes::builders::GetLinkAttributesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetLinkAttributesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl GetLinkAttributesFluentBuilder {
     pub fn get_typed_link_specifier(&self) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
         self.inner.get_typed_link_specifier()
     }
+    ///
     /// Appends an item to `AttributeNames`.
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).

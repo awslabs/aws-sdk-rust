@@ -24,6 +24,7 @@
 ///     AssetBundleExportJobDataSourcePropertyToOverride::Name => { /* ... */ },
 ///     AssetBundleExportJobDataSourcePropertyToOverride::Password => { /* ... */ },
 ///     AssetBundleExportJobDataSourcePropertyToOverride::Port => { /* ... */ },
+///     AssetBundleExportJobDataSourcePropertyToOverride::ProductType => { /* ... */ },
 ///     AssetBundleExportJobDataSourcePropertyToOverride::RoleArn => { /* ... */ },
 ///     AssetBundleExportJobDataSourcePropertyToOverride::SecretArn => { /* ... */ },
 ///     AssetBundleExportJobDataSourcePropertyToOverride::Username => { /* ... */ },
@@ -81,6 +82,8 @@ pub enum AssetBundleExportJobDataSourcePropertyToOverride {
     #[allow(missing_docs)] // documentation missing in model
     Port,
     #[allow(missing_docs)] // documentation missing in model
+    ProductType,
+    #[allow(missing_docs)] // documentation missing in model
     RoleArn,
     #[allow(missing_docs)] // documentation missing in model
     SecretArn,
@@ -109,6 +112,7 @@ impl ::std::convert::From<&str> for AssetBundleExportJobDataSourcePropertyToOver
             "Name" => AssetBundleExportJobDataSourcePropertyToOverride::Name,
             "Password" => AssetBundleExportJobDataSourcePropertyToOverride::Password,
             "Port" => AssetBundleExportJobDataSourcePropertyToOverride::Port,
+            "ProductType" => AssetBundleExportJobDataSourcePropertyToOverride::ProductType,
             "RoleArn" => AssetBundleExportJobDataSourcePropertyToOverride::RoleArn,
             "SecretArn" => AssetBundleExportJobDataSourcePropertyToOverride::SecretArn,
             "Username" => AssetBundleExportJobDataSourcePropertyToOverride::Username,
@@ -143,6 +147,7 @@ impl AssetBundleExportJobDataSourcePropertyToOverride {
             AssetBundleExportJobDataSourcePropertyToOverride::Name => "Name",
             AssetBundleExportJobDataSourcePropertyToOverride::Password => "Password",
             AssetBundleExportJobDataSourcePropertyToOverride::Port => "Port",
+            AssetBundleExportJobDataSourcePropertyToOverride::ProductType => "ProductType",
             AssetBundleExportJobDataSourcePropertyToOverride::RoleArn => "RoleArn",
             AssetBundleExportJobDataSourcePropertyToOverride::SecretArn => "SecretArn",
             AssetBundleExportJobDataSourcePropertyToOverride::Username => "Username",
@@ -166,6 +171,7 @@ impl AssetBundleExportJobDataSourcePropertyToOverride {
             "Name",
             "Password",
             "Port",
+            "ProductType",
             "RoleArn",
             "SecretArn",
             "Username",
@@ -206,6 +212,7 @@ impl ::std::fmt::Display for AssetBundleExportJobDataSourcePropertyToOverride {
             AssetBundleExportJobDataSourcePropertyToOverride::Name => write!(f, "Name"),
             AssetBundleExportJobDataSourcePropertyToOverride::Password => write!(f, "Password"),
             AssetBundleExportJobDataSourcePropertyToOverride::Port => write!(f, "Port"),
+            AssetBundleExportJobDataSourcePropertyToOverride::ProductType => write!(f, "ProductType"),
             AssetBundleExportJobDataSourcePropertyToOverride::RoleArn => write!(f, "RoleArn"),
             AssetBundleExportJobDataSourcePropertyToOverride::SecretArn => write!(f, "SecretArn"),
             AssetBundleExportJobDataSourcePropertyToOverride::Username => write!(f, "Username"),

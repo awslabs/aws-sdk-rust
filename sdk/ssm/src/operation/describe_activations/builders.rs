@@ -3,7 +3,7 @@ pub use crate::operation::describe_activations::_describe_activations_output::De
 
 pub use crate::operation::describe_activations::_describe_activations_input::DescribeActivationsInputBuilder;
 
-impl DescribeActivationsInputBuilder {
+impl crate::operation::describe_activations::builders::DescribeActivationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeActivationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeActivationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_activations::paginator::DescribeActivationsPaginator {
         crate::operation::describe_activations::paginator::DescribeActivationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

@@ -3,7 +3,7 @@ pub use crate::operation::transfer_domain::_transfer_domain_output::TransferDoma
 
 pub use crate::operation::transfer_domain::_transfer_domain_input::TransferDomainInputBuilder;
 
-impl TransferDomainInputBuilder {
+impl crate::operation::transfer_domain::builders::TransferDomainInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -114,12 +114,12 @@ impl TransferDomainFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -201,6 +201,7 @@ impl TransferDomainFluentBuilder {
     pub fn get_duration_in_years(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration_in_years()
     }
+    ///
     /// Appends an item to `Nameservers`.
     ///
     /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).

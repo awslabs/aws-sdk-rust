@@ -3,7 +3,7 @@ pub use crate::operation::create_license_configuration::_create_license_configur
 
 pub use crate::operation::create_license_configuration::_create_license_configuration_input::CreateLicenseConfigurationInputBuilder;
 
-impl CreateLicenseConfigurationInputBuilder {
+impl crate::operation::create_license_configuration::builders::CreateLicenseConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateLicenseConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     pub fn get_license_count_hard_limit(&self) -> &::std::option::Option<bool> {
         self.inner.get_license_count_hard_limit()
     }
+    ///
     /// Appends an item to `LicenseRules`.
     ///
     /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
@@ -230,6 +231,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     pub fn get_license_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_license_rules()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -262,6 +264,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
         self.inner.get_disassociate_when_not_found()
     }
+    ///
     /// Appends an item to `ProductInformationList`.
     ///
     /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).

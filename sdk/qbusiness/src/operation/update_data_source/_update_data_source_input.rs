@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataSourceInput {
-    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index attached to the data source connector.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct UpdateDataSourceInput {
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A name of the data source connector.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>Provides the configuration information for an Amazon Q data source.</p>
+    /// <p>Provides the configuration information for an Amazon Q Business data source.</p>
     pub configuration: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Provides configuration information needed to connect to an Amazon VPC (Virtual Private Cloud).</p>
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
@@ -26,7 +26,7 @@ pub struct UpdateDataSourceInput {
     pub document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
 }
 impl UpdateDataSourceInput {
-    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -42,7 +42,7 @@ impl UpdateDataSourceInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>Provides the configuration information for an Amazon Q data source.</p>
+    /// <p>Provides the configuration information for an Amazon Q Business data source.</p>
     pub fn configuration(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.configuration.as_ref()
     }
@@ -91,18 +91,18 @@ pub struct UpdateDataSourceInputBuilder {
     pub(crate) document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
 }
 impl UpdateDataSourceInputBuilder {
-    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source is attached to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
@@ -150,17 +150,17 @@ impl UpdateDataSourceInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>Provides the configuration information for an Amazon Q data source.</p>
+    /// <p>Provides the configuration information for an Amazon Q Business data source.</p>
     pub fn configuration(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the configuration information for an Amazon Q data source.</p>
+    /// <p>Provides the configuration information for an Amazon Q Business data source.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.configuration = input;
         self
     }
-    /// <p>Provides the configuration information for an Amazon Q data source.</p>
+    /// <p>Provides the configuration information for an Amazon Q Business data source.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.configuration
     }

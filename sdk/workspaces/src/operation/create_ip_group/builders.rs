@@ -3,7 +3,7 @@ pub use crate::operation::create_ip_group::_create_ip_group_output::CreateIpGrou
 
 pub use crate::operation::create_ip_group::_create_ip_group_input::CreateIpGroupInputBuilder;
 
-impl CreateIpGroupInputBuilder {
+impl crate::operation::create_ip_group::builders::CreateIpGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateIpGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl CreateIpGroupFluentBuilder {
     pub fn get_group_desc(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_desc()
     }
+    ///
     /// Appends an item to `UserRules`.
     ///
     /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
@@ -156,6 +157,7 @@ impl CreateIpGroupFluentBuilder {
     pub fn get_user_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
         self.inner.get_user_rules()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

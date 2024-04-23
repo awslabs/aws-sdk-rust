@@ -3,7 +3,7 @@ pub use crate::operation::start_annotation_import_job::_start_annotation_import_
 
 pub use crate::operation::start_annotation_import_job::_start_annotation_import_job_input::StartAnnotationImportJobInputBuilder;
 
-impl StartAnnotationImportJobInputBuilder {
+impl crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartAnnotationImportJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl StartAnnotationImportJobFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -196,6 +197,7 @@ impl StartAnnotationImportJobFluentBuilder {
     pub fn get_run_left_normalization(&self) -> &::std::option::Option<bool> {
         self.inner.get_run_left_normalization()
     }
+    ///
     /// Adds a key-value pair to `annotationFields`.
     ///
     /// To override the contents of this collection use [`set_annotation_fields`](Self::set_annotation_fields).

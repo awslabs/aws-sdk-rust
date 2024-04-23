@@ -3,7 +3,7 @@ pub use crate::operation::put_event_type::_put_event_type_output::PutEventTypeOu
 
 pub use crate::operation::put_event_type::_put_event_type_input::PutEventTypeInputBuilder;
 
-impl PutEventTypeInputBuilder {
+impl crate::operation::put_event_type::builders::PutEventTypeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutEventTypeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl PutEventTypeFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `eventVariables`.
     ///
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
@@ -154,6 +155,7 @@ impl PutEventTypeFluentBuilder {
     pub fn get_event_variables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_variables()
     }
+    ///
     /// Appends an item to `labels`.
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
@@ -172,6 +174,7 @@ impl PutEventTypeFluentBuilder {
     pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_labels()
     }
+    ///
     /// Appends an item to `entityTypes`.
     ///
     /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
@@ -204,6 +207,7 @@ impl PutEventTypeFluentBuilder {
     pub fn get_event_ingestion(&self) -> &::std::option::Option<crate::types::EventIngestion> {
         self.inner.get_event_ingestion()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::add_working_storage::_add_working_storage_output::AddW
 
 pub use crate::operation::add_working_storage::_add_working_storage_input::AddWorkingStorageInputBuilder;
 
-impl AddWorkingStorageInputBuilder {
+impl crate::operation::add_working_storage::builders::AddWorkingStorageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl AddWorkingStorageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -125,6 +125,7 @@ impl AddWorkingStorageFluentBuilder {
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_arn()
     }
+    ///
     /// Appends an item to `DiskIds`.
     ///
     /// To override the contents of this collection use [`set_disk_ids`](Self::set_disk_ids).

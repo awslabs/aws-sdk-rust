@@ -3,7 +3,7 @@ pub use crate::operation::put_rule_groups_namespace::_put_rule_groups_namespace_
 
 pub use crate::operation::put_rule_groups_namespace::_put_rule_groups_namespace_input::PutRuleGroupsNamespaceInputBuilder;
 
-impl PutRuleGroupsNamespaceInputBuilder {
+impl crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl PutRuleGroupsNamespaceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

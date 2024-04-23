@@ -3,7 +3,7 @@ pub use crate::operation::instantiate_sol_network_instance::_instantiate_sol_net
 
 pub use crate::operation::instantiate_sol_network_instance::_instantiate_sol_network_instance_input::InstantiateSolNetworkInstanceInputBuilder;
 
-impl InstantiateSolNetworkInstanceInputBuilder {
+impl crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -152,6 +152,7 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
     pub fn get_additional_params_for_ns(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_additional_params_for_ns()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

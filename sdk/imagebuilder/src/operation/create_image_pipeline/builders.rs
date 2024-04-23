@@ -3,7 +3,7 @@ pub use crate::operation::create_image_pipeline::_create_image_pipeline_output::
 
 pub use crate::operation::create_image_pipeline::_create_image_pipeline_input::CreateImagePipelineInputBuilder;
 
-impl CreateImagePipelineInputBuilder {
+impl crate::operation::create_image_pipeline::builders::CreateImagePipelineInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateImagePipelineFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -248,6 +248,7 @@ impl CreateImagePipelineFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
         self.inner.get_status()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -294,6 +295,7 @@ impl CreateImagePipelineFluentBuilder {
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         self.inner.get_image_scanning_configuration()
     }
+    ///
     /// Appends an item to `workflows`.
     ///
     /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).

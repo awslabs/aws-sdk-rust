@@ -3,7 +3,7 @@ pub use crate::operation::create_ruleset::_create_ruleset_output::CreateRulesetO
 
 pub use crate::operation::create_ruleset::_create_ruleset_input::CreateRulesetInputBuilder;
 
-impl CreateRulesetInputBuilder {
+impl crate::operation::create_ruleset::builders::CreateRulesetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateRulesetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateRulesetFluentBuilder {
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_arn()
     }
+    ///
     /// Appends an item to `Rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -168,6 +169,7 @@ impl CreateRulesetFluentBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
         self.inner.get_rules()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

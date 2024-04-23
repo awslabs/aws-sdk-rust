@@ -6,7 +6,7 @@
 pub struct PineconeConfiguration {
     /// <p>The endpoint URL for your index management page.</p>
     pub connection_string: ::std::string::String,
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
     pub credentials_secret_arn: ::std::string::String,
     /// <p>The namespace to be used to write new data to your database.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl PineconeConfiguration {
         use std::ops::Deref;
         self.connection_string.deref()
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
     pub fn credentials_secret_arn(&self) -> &str {
         use std::ops::Deref;
         self.credentials_secret_arn.deref()
@@ -65,18 +65,18 @@ impl PineconeConfigurationBuilder {
     pub fn get_connection_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_string
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
     /// This field is required.
     pub fn credentials_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials_secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
     pub fn set_credentials_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials_secret_arn = input;
         self
     }
-    /// <p>The ARN of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that is linked to your Pinecone API key.</p>
     pub fn get_credentials_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credentials_secret_arn
     }

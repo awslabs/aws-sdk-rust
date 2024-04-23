@@ -3,7 +3,7 @@ pub use crate::operation::list_cost_allocation_tags::_list_cost_allocation_tags_
 
 pub use crate::operation::list_cost_allocation_tags::_list_cost_allocation_tags_input::ListCostAllocationTagsInputBuilder;
 
-impl ListCostAllocationTagsInputBuilder {
+impl crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListCostAllocationTagsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl ListCostAllocationTagsFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CostAllocationTagStatus> {
         self.inner.get_status()
     }
+    ///
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).

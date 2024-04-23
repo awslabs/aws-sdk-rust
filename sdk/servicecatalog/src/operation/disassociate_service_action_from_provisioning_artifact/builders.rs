@@ -3,7 +3,9 @@ pub use crate::operation::disassociate_service_action_from_provisioning_artifact
 
 pub use crate::operation::disassociate_service_action_from_provisioning_artifact::_disassociate_service_action_from_provisioning_artifact_input::DisassociateServiceActionFromProvisioningArtifactInputBuilder;
 
-impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
+impl
+    crate::operation::disassociate_service_action_from_provisioning_artifact::builders::DisassociateServiceActionFromProvisioningArtifactInputBuilder
+{
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,10 +27,10 @@ impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
 /// <p>Disassociates the specified self-service action association from the specified provisioning artifact.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateServiceActionFromProvisioningArtifactFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_service_action_from_provisioning_artifact::builders::DisassociateServiceActionFromProvisioningArtifactInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::disassociate_service_action_from_provisioning_artifact::builders::DisassociateServiceActionFromProvisioningArtifactInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactOutput,
@@ -103,12 +105,12 @@ impl DisassociateServiceActionFromProvisioningArtifactFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

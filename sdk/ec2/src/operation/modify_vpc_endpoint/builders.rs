@@ -3,7 +3,7 @@ pub use crate::operation::modify_vpc_endpoint::_modify_vpc_endpoint_output::Modi
 
 pub use crate::operation::modify_vpc_endpoint::_modify_vpc_endpoint_input::ModifyVpcEndpointInputBuilder;
 
-impl ModifyVpcEndpointInputBuilder {
+impl crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ModifyVpcEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl ModifyVpcEndpointFluentBuilder {
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_document()
     }
+    ///
     /// Appends an item to `AddRouteTableIds`.
     ///
     /// To override the contents of this collection use [`set_add_route_table_ids`](Self::set_add_route_table_ids).
@@ -182,6 +183,7 @@ impl ModifyVpcEndpointFluentBuilder {
     pub fn get_add_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_route_table_ids()
     }
+    ///
     /// Appends an item to `RemoveRouteTableIds`.
     ///
     /// To override the contents of this collection use [`set_remove_route_table_ids`](Self::set_remove_route_table_ids).
@@ -200,6 +202,7 @@ impl ModifyVpcEndpointFluentBuilder {
     pub fn get_remove_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_route_table_ids()
     }
+    ///
     /// Appends an item to `AddSubnetIds`.
     ///
     /// To override the contents of this collection use [`set_add_subnet_ids`](Self::set_add_subnet_ids).
@@ -218,6 +221,7 @@ impl ModifyVpcEndpointFluentBuilder {
     pub fn get_add_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_subnet_ids()
     }
+    ///
     /// Appends an item to `RemoveSubnetIds`.
     ///
     /// To override the contents of this collection use [`set_remove_subnet_ids`](Self::set_remove_subnet_ids).
@@ -236,6 +240,7 @@ impl ModifyVpcEndpointFluentBuilder {
     pub fn get_remove_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_subnet_ids()
     }
+    ///
     /// Appends an item to `AddSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_add_security_group_ids`](Self::set_add_security_group_ids).
@@ -254,6 +259,7 @@ impl ModifyVpcEndpointFluentBuilder {
     pub fn get_add_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_security_group_ids()
     }
+    ///
     /// Appends an item to `RemoveSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_remove_security_group_ids`](Self::set_remove_security_group_ids).
@@ -314,6 +320,7 @@ impl ModifyVpcEndpointFluentBuilder {
     pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_private_dns_enabled()
     }
+    ///
     /// Appends an item to `SubnetConfigurations`.
     ///
     /// To override the contents of this collection use [`set_subnet_configurations`](Self::set_subnet_configurations).

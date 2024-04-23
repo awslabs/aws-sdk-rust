@@ -3,7 +3,7 @@ pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_
 
 pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_input::ModifyReservedInstancesInputBuilder;
 
-impl ModifyReservedInstancesInputBuilder {
+impl crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl ModifyReservedInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `ReservedInstancesIds`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
@@ -141,6 +142,7 @@ impl ModifyReservedInstancesFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `TargetConfigurations`.
     ///
     /// To override the contents of this collection use [`set_target_configurations`](Self::set_target_configurations).

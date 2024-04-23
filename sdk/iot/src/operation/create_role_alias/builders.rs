@@ -3,7 +3,7 @@ pub use crate::operation::create_role_alias::_create_role_alias_output::CreateRo
 
 pub use crate::operation::create_role_alias::_create_role_alias_input::CreateRoleAliasInputBuilder;
 
-impl CreateRoleAliasInputBuilder {
+impl crate::operation::create_role_alias::builders::CreateRoleAliasInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateRoleAliasFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl CreateRoleAliasFluentBuilder {
     pub fn get_credential_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_credential_duration_seconds()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

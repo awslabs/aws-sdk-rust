@@ -31,6 +31,14 @@ pub use crate::types::_outpost::Outpost;
 
 pub use crate::types::_supported_hardware_type::SupportedHardwareType;
 
+pub use crate::types::_capacity_task_failure::CapacityTaskFailure;
+
+pub use crate::types::_capacity_task_failure_type::CapacityTaskFailureType;
+
+pub use crate::types::_capacity_task_status::CapacityTaskStatus;
+
+pub use crate::types::_instance_type_capacity::InstanceTypeCapacity;
+
 pub use crate::types::_order_summary::OrderSummary;
 
 pub use crate::types::_line_item_status::LineItemStatus;
@@ -48,6 +56,8 @@ pub use crate::types::_ec2_capacity::Ec2Capacity;
 pub use crate::types::_catalog_item_status::CatalogItemStatus;
 
 pub use crate::types::_catalog_item_class::CatalogItemClass;
+
+pub use crate::types::_capacity_task_summary::CapacityTaskSummary;
 
 pub use crate::types::_asset_info::AssetInfo;
 
@@ -93,6 +103,14 @@ mod _asset_state;
 
 mod _asset_type;
 
+mod _capacity_task_failure;
+
+mod _capacity_task_failure_type;
+
+mod _capacity_task_status;
+
+mod _capacity_task_summary;
+
 mod _catalog_item;
 
 mod _catalog_item_class;
@@ -108,6 +126,8 @@ mod _connection_details;
 mod _ec2_capacity;
 
 mod _fiber_optic_cable_type;
+
+mod _instance_type_capacity;
 
 mod _instance_type_item;
 

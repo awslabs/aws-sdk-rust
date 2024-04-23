@@ -3,7 +3,7 @@ pub use crate::operation::update_timeline_event::_update_timeline_event_output::
 
 pub use crate::operation::update_timeline_event::_update_timeline_event_input::UpdateTimelineEventInputBuilder;
 
-impl UpdateTimelineEventInputBuilder {
+impl crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateTimelineEventFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl UpdateTimelineEventFluentBuilder {
     pub fn get_event_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_data()
     }
+    ///
     /// Appends an item to `eventReferences`.
     ///
     /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).

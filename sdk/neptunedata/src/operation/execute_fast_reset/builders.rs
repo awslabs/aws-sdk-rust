@@ -3,7 +3,7 @@ pub use crate::operation::execute_fast_reset::_execute_fast_reset_output::Execut
 
 pub use crate::operation::execute_fast_reset::_execute_fast_reset_input::ExecuteFastResetInputBuilder;
 
-impl ExecuteFastResetInputBuilder {
+impl crate::operation::execute_fast_reset::builders::ExecuteFastResetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl ExecuteFastResetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

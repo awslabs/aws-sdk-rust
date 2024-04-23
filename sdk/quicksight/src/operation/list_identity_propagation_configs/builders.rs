@@ -3,7 +3,7 @@ pub use crate::operation::list_identity_propagation_configs::_list_identity_prop
 
 pub use crate::operation::list_identity_propagation_configs::_list_identity_propagation_configs_input::ListIdentityPropagationConfigsInputBuilder;
 
-impl ListIdentityPropagationConfigsInputBuilder {
+impl crate::operation::list_identity_propagation_configs::builders::ListIdentityPropagationConfigsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ListIdentityPropagationConfigsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

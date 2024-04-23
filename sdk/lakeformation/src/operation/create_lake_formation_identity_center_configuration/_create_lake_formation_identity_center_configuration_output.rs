@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLakeFormationIdentityCenterConfigurationOutput {
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLakeFormationIdentityCenterConfigurationOutput {
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
@@ -35,17 +35,17 @@ pub struct CreateLakeFormationIdentityCenterConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateLakeFormationIdentityCenterConfigurationOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated with IAM Identity Center.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }

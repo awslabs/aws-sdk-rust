@@ -3,7 +3,7 @@ pub use crate::operation::describe_dhcp_options::_describe_dhcp_options_output::
 
 pub use crate::operation::describe_dhcp_options::_describe_dhcp_options_input::DescribeDhcpOptionsInputBuilder;
 
-impl DescribeDhcpOptionsInputBuilder {
+impl crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeDhcpOptionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl DescribeDhcpOptionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator {
         crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `DhcpOptionsIds`.
     ///
     /// To override the contents of this collection use [`set_dhcp_options_ids`](Self::set_dhcp_options_ids).
@@ -136,6 +137,7 @@ impl DescribeDhcpOptionsFluentBuilder {
     pub fn get_dhcp_options_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dhcp_options_ids()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

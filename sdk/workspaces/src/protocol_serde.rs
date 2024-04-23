@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_accept_account_link_invitation;
+
 pub(crate) mod shape_associate_connection_alias;
 
 pub(crate) mod shape_associate_ip_groups;
@@ -32,6 +34,8 @@ pub(crate) mod shape_associate_workspace_application;
 pub(crate) mod shape_authorize_ip_rules;
 
 pub(crate) mod shape_copy_workspace_image;
+
+pub(crate) mod shape_create_account_link_invitation;
 
 pub(crate) mod shape_create_connect_client_add_in;
 
@@ -50,6 +54,8 @@ pub(crate) mod shape_create_workspace_bundle;
 pub(crate) mod shape_create_workspace_image;
 
 pub(crate) mod shape_create_workspaces;
+
+pub(crate) mod shape_delete_account_link_invitation;
 
 pub(crate) mod shape_delete_client_branding;
 
@@ -117,9 +123,13 @@ pub(crate) mod shape_disassociate_ip_groups;
 
 pub(crate) mod shape_disassociate_workspace_application;
 
+pub(crate) mod shape_get_account_link;
+
 pub(crate) mod shape_import_client_branding;
 
 pub(crate) mod shape_import_workspace_image;
+
+pub(crate) mod shape_list_account_links;
 
 pub(crate) mod shape_list_available_management_cidr_ranges;
 
@@ -149,6 +159,8 @@ pub(crate) mod shape_rebuild_workspaces;
 
 pub(crate) mod shape_register_workspace_directory;
 
+pub(crate) mod shape_reject_account_link_invitation;
+
 pub(crate) mod shape_restore_workspace;
 
 pub(crate) mod shape_revoke_ip_rules;
@@ -177,6 +189,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_accept_account_link_invitation_input;
+
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_application_not_supported_exception;
@@ -191,7 +205,11 @@ pub(crate) mod shape_authorize_ip_rules_input;
 
 pub(crate) mod shape_compute_not_compatible_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_copy_workspace_image_input;
+
+pub(crate) mod shape_create_account_link_invitation_input;
 
 pub(crate) mod shape_create_connect_client_add_in_input;
 
@@ -210,6 +228,8 @@ pub(crate) mod shape_create_workspace_bundle_input;
 pub(crate) mod shape_create_workspace_image_input;
 
 pub(crate) mod shape_create_workspaces_input;
+
+pub(crate) mod shape_delete_account_link_invitation_input;
 
 pub(crate) mod shape_delete_client_branding_input;
 
@@ -275,15 +295,21 @@ pub(crate) mod shape_disassociate_ip_groups_input;
 
 pub(crate) mod shape_disassociate_workspace_application_input;
 
+pub(crate) mod shape_get_account_link_input;
+
 pub(crate) mod shape_import_client_branding_input;
 
 pub(crate) mod shape_import_workspace_image_input;
 
 pub(crate) mod shape_incompatible_applications_exception;
 
+pub(crate) mod shape_internal_server_exception;
+
 pub(crate) mod shape_invalid_parameter_values_exception;
 
 pub(crate) mod shape_invalid_resource_state_exception;
+
+pub(crate) mod shape_list_account_links_input;
 
 pub(crate) mod shape_list_available_management_cidr_ranges_input;
 
@@ -318,6 +344,8 @@ pub(crate) mod shape_reboot_workspaces_input;
 pub(crate) mod shape_rebuild_workspaces_input;
 
 pub(crate) mod shape_register_workspace_directory_input;
+
+pub(crate) mod shape_reject_account_link_invitation_input;
 
 pub(crate) mod shape_resource_already_exists_exception;
 
@@ -357,7 +385,13 @@ pub(crate) mod shape_update_workspace_bundle_input;
 
 pub(crate) mod shape_update_workspace_image_permission_input;
 
+pub(crate) mod shape_validation_exception;
+
 pub(crate) mod shape_workspaces_default_role_not_found_exception;
+
+pub(crate) mod shape_account_link;
+
+pub(crate) mod shape_account_link_list;
 
 pub(crate) mod shape_account_modification_list;
 

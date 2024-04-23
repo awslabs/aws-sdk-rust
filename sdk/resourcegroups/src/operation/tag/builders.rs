@@ -3,7 +3,7 @@ pub use crate::operation::tag::_tag_output::TagOutputBuilder;
 
 pub use crate::operation::tag::_tag_input::TagInputBuilder;
 
-impl TagInputBuilder {
+impl crate::operation::tag::builders::TagInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -92,12 +92,12 @@ impl TagFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::tag::TagOutput, crate::operation::tag::TagError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl TagFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

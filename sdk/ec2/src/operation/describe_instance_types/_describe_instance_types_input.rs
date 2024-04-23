@@ -5,7 +5,7 @@
 pub struct DescribeInstanceTypesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>,
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
@@ -121,7 +121,7 @@ impl DescribeInstanceTypesInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
     pub fn instance_types(&self) -> &[crate::types::InstanceType] {
@@ -280,19 +280,19 @@ impl DescribeInstanceTypesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub fn instance_types(mut self, input: crate::types::InstanceType) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
         v.push(input);
         self.instance_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>) -> Self {
         self.instance_types = input;
         self
     }
-    /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The instance types.</p>
     pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
         &self.instance_types
     }

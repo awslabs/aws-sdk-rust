@@ -3,7 +3,7 @@ pub use crate::operation::create_data_source::_create_data_source_output::Create
 
 pub use crate::operation::create_data_source::_create_data_source_input::CreateDataSourceInputBuilder;
 
-impl CreateDataSourceInputBuilder {
+impl crate::operation::create_data_source::builders::CreateDataSourceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl CreateDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDataSource`.
 ///
-/// <p>Creates a data source connector for an Amazon Q application.</p>
+/// <p>Creates a data source connector for an Amazon Q Business application.</p>
 /// <p><code>CreateDataSource</code> is a synchronous operation. The operation returns 200 if the data source was successfully created. Otherwise, an exception is raised.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataSourceFluentBuilder {
@@ -100,26 +100,26 @@ impl CreateDataSourceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source will be attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source will be attached to.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source will be attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source will be attached to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application the data source will be attached to.</p>
+    /// <p>The identifier of the Amazon Q Business application the data source will be attached to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
@@ -151,31 +151,31 @@ impl CreateDataSourceFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported connectors</a>.</p>
+    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a>.</p>
     pub fn configuration(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported connectors</a>.</p>
+    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html.html">Supported connectors</a>.</p>
+    /// <p>Configuration information to connect to your data source repository. For configuration templates for your specific data source, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connectors-list.html">Supported connectors</a>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_configuration()
     }
-    /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using Amazon VPC with Amazon Q connectors</a>.</p>
+    /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using Amazon VPC with Amazon Q Business connectors</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.inner = self.inner.vpc_configuration(input);
         self
     }
-    /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using Amazon VPC with Amazon Q connectors</a>.</p>
+    /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using Amazon VPC with Amazon Q Business connectors</a>.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }
-    /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using Amazon VPC with Amazon Q connectors</a>.</p>
+    /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/connector-vpc.html">Using Amazon VPC with Amazon Q Business connectors</a>.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
         self.inner.get_vpc_configuration()
     }
@@ -193,6 +193,7 @@ impl CreateDataSourceFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -211,19 +212,19 @@ impl CreateDataSourceFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>Sets the frequency for Amazon Q to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q won't periodically update the index.</p>
+    /// <p>Sets the frequency for Amazon Q Business to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q Business won't periodically update the index.</p>
     /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub fn sync_schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_schedule(input.into());
         self
     }
-    /// <p>Sets the frequency for Amazon Q to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q won't periodically update the index.</p>
+    /// <p>Sets the frequency for Amazon Q Business to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q Business won't periodically update the index.</p>
     /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub fn set_sync_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_schedule(input);
         self
     }
-    /// <p>Sets the frequency for Amazon Q to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q won't periodically update the index.</p>
+    /// <p>Sets the frequency for Amazon Q Business to check the documents in your data source repository and update your index. If you don't set a schedule, Amazon Q Business won't periodically update the index.</p>
     /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand. You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     pub fn get_sync_schedule(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sync_schedule()

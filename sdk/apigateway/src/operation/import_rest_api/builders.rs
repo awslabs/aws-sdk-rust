@@ -3,7 +3,7 @@ pub use crate::operation::import_rest_api::_import_rest_api_output::ImportRestAp
 
 pub use crate::operation::import_rest_api::_import_rest_api_input::ImportRestApiInputBuilder;
 
-impl ImportRestApiInputBuilder {
+impl crate::operation::import_rest_api::builders::ImportRestApiInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ImportRestApiFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl ImportRestApiFluentBuilder {
     pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
         self.inner.get_fail_on_warnings()
     }
+    ///
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).

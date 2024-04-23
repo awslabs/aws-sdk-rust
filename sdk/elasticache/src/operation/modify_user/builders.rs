@@ -3,7 +3,7 @@ pub use crate::operation::modify_user::_modify_user_output::ModifyUserOutputBuil
 
 pub use crate::operation::modify_user::_modify_user_input::ModifyUserInputBuilder;
 
-impl ModifyUserInputBuilder {
+impl crate::operation::modify_user::builders::ModifyUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ModifyUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl ModifyUserFluentBuilder {
     pub fn get_append_access_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_append_access_string()
     }
+    ///
     /// Appends an item to `Passwords`.
     ///
     /// To override the contents of this collection use [`set_passwords`](Self::set_passwords).

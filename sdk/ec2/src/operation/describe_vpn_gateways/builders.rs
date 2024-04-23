@@ -3,7 +3,7 @@ pub use crate::operation::describe_vpn_gateways::_describe_vpn_gateways_output::
 
 pub use crate::operation::describe_vpn_gateways::_describe_vpn_gateways_input::DescribeVpnGatewaysInputBuilder;
 
-impl DescribeVpnGatewaysInputBuilder {
+impl crate::operation::describe_vpn_gateways::builders::DescribeVpnGatewaysInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl DescribeVpnGatewaysFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -205,6 +206,7 @@ impl DescribeVpnGatewaysFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `VpnGatewayIds`.
     ///
     /// To override the contents of this collection use [`set_vpn_gateway_ids`](Self::set_vpn_gateway_ids).

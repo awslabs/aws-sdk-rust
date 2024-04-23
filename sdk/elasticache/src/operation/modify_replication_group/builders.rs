@@ -3,7 +3,7 @@ pub use crate::operation::modify_replication_group::_modify_replication_group_ou
 
 pub use crate::operation::modify_replication_group::_modify_replication_group_input::ModifyReplicationGroupInputBuilder;
 
-impl ModifyReplicationGroupInputBuilder {
+impl crate::operation::modify_replication_group::builders::ModifyReplicationGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl ModifyReplicationGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -220,6 +220,7 @@ impl ModifyReplicationGroupFluentBuilder {
     pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_group_id()
     }
+    ///
     /// Appends an item to `CacheSecurityGroupNames`.
     ///
     /// To override the contents of this collection use [`set_cache_security_group_names`](Self::set_cache_security_group_names).
@@ -244,6 +245,7 @@ impl ModifyReplicationGroupFluentBuilder {
     pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cache_security_group_names()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -565,6 +567,7 @@ impl ModifyReplicationGroupFluentBuilder {
     pub fn get_auth_token_update_strategy(&self) -> &::std::option::Option<crate::types::AuthTokenUpdateStrategyType> {
         self.inner.get_auth_token_update_strategy()
     }
+    ///
     /// Appends an item to `UserGroupIdsToAdd`.
     ///
     /// To override the contents of this collection use [`set_user_group_ids_to_add`](Self::set_user_group_ids_to_add).
@@ -583,6 +586,7 @@ impl ModifyReplicationGroupFluentBuilder {
     pub fn get_user_group_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_group_ids_to_add()
     }
+    ///
     /// Appends an item to `UserGroupIdsToRemove`.
     ///
     /// To override the contents of this collection use [`set_user_group_ids_to_remove`](Self::set_user_group_ids_to_remove).
@@ -615,6 +619,7 @@ impl ModifyReplicationGroupFluentBuilder {
     pub fn get_remove_user_groups(&self) -> &::std::option::Option<bool> {
         self.inner.get_remove_user_groups()
     }
+    ///
     /// Appends an item to `LogDeliveryConfigurations`.
     ///
     /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).

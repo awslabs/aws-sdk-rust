@@ -3,7 +3,7 @@ pub use crate::operation::update_flow_source::_update_flow_source_output::Update
 
 pub use crate::operation::update_flow_source::_update_flow_source_input::UpdateFlowSourceInputBuilder;
 
-impl UpdateFlowSourceInputBuilder {
+impl crate::operation::update_flow_source::builders::UpdateFlowSourceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateFlowSourceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -220,6 +220,7 @@ impl UpdateFlowSourceFluentBuilder {
     pub fn get_max_sync_buffer(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_sync_buffer()
     }
+    ///
     /// Appends an item to `MediaStreamSourceConfigurations`.
     ///
     /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).

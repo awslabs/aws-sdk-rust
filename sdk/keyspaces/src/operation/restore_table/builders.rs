@@ -3,7 +3,7 @@ pub use crate::operation::restore_table::_restore_table_output::RestoreTableOutp
 
 pub use crate::operation::restore_table::_restore_table_input::RestoreTableInputBuilder;
 
-impl RestoreTableInputBuilder {
+impl crate::operation::restore_table::builders::RestoreTableInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -123,12 +123,12 @@ impl RestoreTableFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -316,6 +316,7 @@ impl RestoreTableFluentBuilder {
     pub fn get_point_in_time_recovery_override(&self) -> &::std::option::Option<crate::types::PointInTimeRecovery> {
         self.inner.get_point_in_time_recovery_override()
     }
+    ///
     /// Appends an item to `tagsOverride`.
     ///
     /// To override the contents of this collection use [`set_tags_override`](Self::set_tags_override).
@@ -354,6 +355,7 @@ impl RestoreTableFluentBuilder {
     pub fn get_auto_scaling_specification(&self) -> &::std::option::Option<crate::types::AutoScalingSpecification> {
         self.inner.get_auto_scaling_specification()
     }
+    ///
     /// Appends an item to `replicaSpecifications`.
     ///
     /// To override the contents of this collection use [`set_replica_specifications`](Self::set_replica_specifications).

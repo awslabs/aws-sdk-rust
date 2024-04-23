@@ -5,8 +5,10 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`workflow_name(impl Into<String>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::set_workflow_name):<br>required: **true**<br><p>The name of the workflow.</p><br>
     ///   - [`record(impl Into<String>, impl Into<String>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::record) / [`set_record(Option<HashMap::<String, String>>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::set_record):<br>required: **true**<br><p>The record to fetch the Match ID for.</p><br>
+    ///   - [`apply_normalization(bool)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::apply_normalization) / [`set_apply_normalization(Option<bool>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::set_apply_normalization):<br>required: **false**<br><p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p><br>
     /// - On success, responds with [`GetMatchIdOutput`](crate::operation::get_match_id::GetMatchIdOutput) with field(s):
     ///   - [`match_id(Option<String>)`](crate::operation::get_match_id::GetMatchIdOutput::match_id): <p>The unique identifiers for this group of match records.</p>
+    ///   - [`match_rule(Option<String>)`](crate::operation::get_match_id::GetMatchIdOutput::match_rule): <p>The rule the record matched on.</p>
     /// - On failure, responds with [`SdkError<GetMatchIdError>`](crate::operation::get_match_id::GetMatchIdError)
     pub fn get_match_id(&self) -> crate::operation::get_match_id::builders::GetMatchIdFluentBuilder {
         crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::new(self.handle.clone())

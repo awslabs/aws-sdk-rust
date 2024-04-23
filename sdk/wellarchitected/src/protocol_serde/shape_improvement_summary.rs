@@ -54,6 +54,9 @@ where
                                 crate::protocol_serde::shape_choice_improvement_plans::de_choice_improvement_plans(tokens)?,
                             );
                         }
+                        "JiraConfiguration" => {
+                            builder = builder.set_jira_configuration(crate::protocol_serde::shape_jira_configuration::de_jira_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

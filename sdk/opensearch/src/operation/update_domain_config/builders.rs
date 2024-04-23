@@ -3,7 +3,7 @@ pub use crate::operation::update_domain_config::_update_domain_config_output::Up
 
 pub use crate::operation::update_domain_config::_update_domain_config_input::UpdateDomainConfigInputBuilder;
 
-impl UpdateDomainConfigInputBuilder {
+impl crate::operation::update_domain_config::builders::UpdateDomainConfigInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDomainConfigFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl UpdateDomainConfigFluentBuilder {
     pub fn get_cognito_options(&self) -> &::std::option::Option<crate::types::CognitoOptions> {
         self.inner.get_cognito_options()
     }
+    ///
     /// Adds a key-value pair to `AdvancedOptions`.
     ///
     /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
@@ -272,6 +273,7 @@ impl UpdateDomainConfigFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
     }
+    ///
     /// Adds a key-value pair to `LogPublishingOptions`.
     ///
     /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).

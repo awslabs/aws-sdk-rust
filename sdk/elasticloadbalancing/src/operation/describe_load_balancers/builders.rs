@@ -3,7 +3,7 @@ pub use crate::operation::describe_load_balancers::_describe_load_balancers_outp
 
 pub use crate::operation::describe_load_balancers::_describe_load_balancers_input::DescribeLoadBalancersInputBuilder;
 
-impl DescribeLoadBalancersInputBuilder {
+impl crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeLoadBalancersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeLoadBalancersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_load_balancers::paginator::DescribeLoadBalancersPaginator {
         crate::operation::describe_load_balancers::paginator::DescribeLoadBalancersPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `LoadBalancerNames`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).

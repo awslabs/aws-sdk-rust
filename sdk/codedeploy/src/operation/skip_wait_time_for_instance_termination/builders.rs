@@ -3,7 +3,7 @@ pub use crate::operation::skip_wait_time_for_instance_termination::_skip_wait_ti
 
 pub use crate::operation::skip_wait_time_for_instance_termination::_skip_wait_time_for_instance_termination_input::SkipWaitTimeForInstanceTerminationInputBuilder;
 
-impl SkipWaitTimeForInstanceTerminationInputBuilder {
+impl crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl SkipWaitTimeForInstanceTerminationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

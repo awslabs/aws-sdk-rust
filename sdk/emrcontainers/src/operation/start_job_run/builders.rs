@@ -3,7 +3,7 @@ pub use crate::operation::start_job_run::_start_job_run_output::StartJobRunOutpu
 
 pub use crate::operation::start_job_run::_start_job_run_input::StartJobRunInputBuilder;
 
-impl StartJobRunInputBuilder {
+impl crate::operation::start_job_run::builders::StartJobRunInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartJobRunFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl StartJobRunFluentBuilder {
     pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
         self.inner.get_configuration_overrides()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -238,6 +239,7 @@ impl StartJobRunFluentBuilder {
     pub fn get_job_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_template_id()
     }
+    ///
     /// Adds a key-value pair to `jobTemplateParameters`.
     ///
     /// To override the contents of this collection use [`set_job_template_parameters`](Self::set_job_template_parameters).

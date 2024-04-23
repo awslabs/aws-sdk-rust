@@ -3,7 +3,7 @@ pub use crate::operation::describe_images::_describe_images_output::DescribeImag
 
 pub use crate::operation::describe_images::_describe_images_input::DescribeImagesInputBuilder;
 
-impl DescribeImagesInputBuilder {
+impl crate::operation::describe_images::builders::DescribeImagesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl DescribeImagesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -118,6 +118,7 @@ impl DescribeImagesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
         crate::operation::describe_images::paginator::DescribeImagesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ExecutableUsers`.
     ///
     /// To override the contents of this collection use [`set_executable_users`](Self::set_executable_users).
@@ -160,6 +161,7 @@ impl DescribeImagesFluentBuilder {
     pub fn get_executable_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_executable_users()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -400,6 +402,7 @@ impl DescribeImagesFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `ImageIds`.
     ///
     /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
@@ -421,6 +424,7 @@ impl DescribeImagesFluentBuilder {
     pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_image_ids()
     }
+    ///
     /// Appends an item to `Owners`.
     ///
     /// To override the contents of this collection use [`set_owners`](Self::set_owners).

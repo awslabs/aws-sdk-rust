@@ -3,7 +3,7 @@ pub use crate::operation::write_records::_write_records_output::WriteRecordsOutp
 
 pub use crate::operation::write_records::_write_records_input::WriteRecordsInputBuilder;
 
-impl WriteRecordsInputBuilder {
+impl crate::operation::write_records::builders::WriteRecordsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl WriteRecordsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -156,6 +156,7 @@ impl WriteRecordsFluentBuilder {
     pub fn get_common_attributes(&self) -> &::std::option::Option<crate::types::Record> {
         self.inner.get_common_attributes()
     }
+    ///
     /// Appends an item to `Records`.
     ///
     /// To override the contents of this collection use [`set_records`](Self::set_records).

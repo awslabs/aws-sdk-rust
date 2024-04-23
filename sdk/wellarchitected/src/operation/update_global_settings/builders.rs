@@ -3,7 +3,7 @@ pub use crate::operation::update_global_settings::_update_global_settings_output
 
 pub use crate::operation::update_global_settings::_update_global_settings_input::UpdateGlobalSettingsInputBuilder;
 
-impl UpdateGlobalSettingsInputBuilder {
+impl crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl UpdateGlobalSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGlobalSettings`.
 ///
-/// <p>Updates whether the Amazon Web Services account is opted into organization sharing and discovery integration features.</p>
+/// <p>Update whether the Amazon Web Services account is opted into organization sharing and discovery integration features.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,12 +99,12 @@ impl UpdateGlobalSettingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -135,5 +135,19 @@ impl UpdateGlobalSettingsFluentBuilder {
     /// <p>The status of discovery support settings.</p>
     pub fn get_discovery_integration_status(&self) -> &::std::option::Option<crate::types::DiscoveryIntegrationStatus> {
         self.inner.get_discovery_integration_status()
+    }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn jira_configuration(mut self, input: crate::types::AccountJiraConfigurationInput) -> Self {
+        self.inner = self.inner.jira_configuration(input);
+        self
+    }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::AccountJiraConfigurationInput>) -> Self {
+        self.inner = self.inner.set_jira_configuration(input);
+        self
+    }
+    /// <p>The status of Jira integration settings.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::AccountJiraConfigurationInput> {
+        self.inner.get_jira_configuration()
     }
 }

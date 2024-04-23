@@ -3,7 +3,7 @@ pub use crate::operation::create_flow_logs::_create_flow_logs_output::CreateFlow
 
 pub use crate::operation::create_flow_logs::_create_flow_logs_input::CreateFlowLogsInputBuilder;
 
-impl CreateFlowLogsInputBuilder {
+impl crate::operation::create_flow_logs::builders::CreateFlowLogsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateFlowLogsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -187,6 +187,7 @@ impl CreateFlowLogsFluentBuilder {
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_group_name()
     }
+    ///
     /// Appends an item to `ResourceIds`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
@@ -323,6 +324,7 @@ impl CreateFlowLogsFluentBuilder {
     pub fn get_log_format(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_format()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

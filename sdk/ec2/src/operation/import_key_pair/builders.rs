@@ -3,7 +3,7 @@ pub use crate::operation::import_key_pair::_import_key_pair_output::ImportKeyPai
 
 pub use crate::operation::import_key_pair::_import_key_pair_input::ImportKeyPairInputBuilder;
 
-impl ImportKeyPairInputBuilder {
+impl crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ImportKeyPairFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl ImportKeyPairFluentBuilder {
     pub fn get_public_key_material(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_public_key_material()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

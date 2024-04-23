@@ -3,7 +3,7 @@ pub use crate::operation::update_chat_controls_configuration::_update_chat_contr
 
 pub use crate::operation::update_chat_controls_configuration::_update_chat_controls_configuration_input::UpdateChatControlsConfigurationInputBuilder;
 
-impl UpdateChatControlsConfigurationInputBuilder {
+impl crate::operation::update_chat_controls_configuration::builders::UpdateChatControlsConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl UpdateChatControlsConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateChatControlsConfiguration`.
 ///
-/// <p>Updates an set of chat controls configured for an existing Amazon Q application.</p>
+/// <p>Updates an set of chat controls configured for an existing Amazon Q Business application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateChatControlsConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,12 +99,12 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,17 +122,17 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
+    /// <p>A token that you provide to identify the request to update a Amazon Q Business application chat configuration.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
+    /// <p>A token that you provide to identify the request to update a Amazon Q Business application chat configuration.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
+    /// <p>A token that you provide to identify the request to update a Amazon Q Business application chat configuration.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -164,6 +164,7 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     pub fn get_blocked_phrases_configuration_update(&self) -> &::std::option::Option<crate::types::BlockedPhrasesConfigurationUpdate> {
         self.inner.get_blocked_phrases_configuration_update()
     }
+    ///
     /// Appends an item to `topicConfigurationsToCreateOrUpdate`.
     ///
     /// To override the contents of this collection use [`set_topic_configurations_to_create_or_update`](Self::set_topic_configurations_to_create_or_update).
@@ -185,6 +186,7 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     pub fn get_topic_configurations_to_create_or_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
         self.inner.get_topic_configurations_to_create_or_update()
     }
+    ///
     /// Appends an item to `topicConfigurationsToDelete`.
     ///
     /// To override the contents of this collection use [`set_topic_configurations_to_delete`](Self::set_topic_configurations_to_delete).
@@ -202,5 +204,19 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     /// <p>The configured topic specific chat controls you want to delete.</p>
     pub fn get_topic_configurations_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
         self.inner.get_topic_configurations_to_delete()
+    }
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn creator_mode_configuration(mut self, input: crate::types::CreatorModeConfiguration) -> Self {
+        self.inner = self.inner.creator_mode_configuration(input);
+        self
+    }
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn set_creator_mode_configuration(mut self, input: ::std::option::Option<crate::types::CreatorModeConfiguration>) -> Self {
+        self.inner = self.inner.set_creator_mode_configuration(input);
+        self
+    }
+    /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
+    pub fn get_creator_mode_configuration(&self) -> &::std::option::Option<crate::types::CreatorModeConfiguration> {
+        self.inner.get_creator_mode_configuration()
     }
 }

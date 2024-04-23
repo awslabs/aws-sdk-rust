@@ -3,7 +3,7 @@ pub use crate::operation::create_dynamic_thing_group::_create_dynamic_thing_grou
 
 pub use crate::operation::create_dynamic_thing_group::_create_dynamic_thing_group_input::CreateDynamicThingGroupInputBuilder;
 
-impl CreateDynamicThingGroupInputBuilder {
+impl crate::operation::create_dynamic_thing_group::builders::CreateDynamicThingGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateDynamicThingGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -194,6 +194,7 @@ impl CreateDynamicThingGroupFluentBuilder {
     pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_version()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

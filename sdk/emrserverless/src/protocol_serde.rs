@@ -127,6 +127,8 @@ pub(crate) mod shape_job_run_summary;
 
 pub(crate) mod shape_managed_persistence_monitoring_configuration;
 
+pub(crate) mod shape_prometheus_monitoring_configuration;
+
 pub(crate) mod shape_resource_utilization;
 
 pub(crate) mod shape_s3_monitoring_configuration;

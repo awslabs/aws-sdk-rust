@@ -3,7 +3,7 @@ pub use crate::operation::update_mobile_device_access_rule::_update_mobile_devic
 
 pub use crate::operation::update_mobile_device_access_rule::_update_mobile_device_access_rule_input::UpdateMobileDeviceAccessRuleInputBuilder;
 
-impl UpdateMobileDeviceAccessRuleInputBuilder {
+impl crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     pub fn get_effect(&self) -> &::std::option::Option<crate::types::MobileDeviceAccessRuleEffect> {
         self.inner.get_effect()
     }
+    ///
     /// Appends an item to `DeviceTypes`.
     ///
     /// To override the contents of this collection use [`set_device_types`](Self::set_device_types).
@@ -196,6 +197,7 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     pub fn get_device_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_device_types()
     }
+    ///
     /// Appends an item to `NotDeviceTypes`.
     ///
     /// To override the contents of this collection use [`set_not_device_types`](Self::set_not_device_types).
@@ -214,6 +216,7 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     pub fn get_not_device_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_not_device_types()
     }
+    ///
     /// Appends an item to `DeviceModels`.
     ///
     /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
@@ -232,6 +235,7 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     pub fn get_device_models(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_device_models()
     }
+    ///
     /// Appends an item to `NotDeviceModels`.
     ///
     /// To override the contents of this collection use [`set_not_device_models`](Self::set_not_device_models).
@@ -250,6 +254,7 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     pub fn get_not_device_models(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_not_device_models()
     }
+    ///
     /// Appends an item to `DeviceOperatingSystems`.
     ///
     /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
@@ -268,6 +273,7 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     pub fn get_device_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_device_operating_systems()
     }
+    ///
     /// Appends an item to `NotDeviceOperatingSystems`.
     ///
     /// To override the contents of this collection use [`set_not_device_operating_systems`](Self::set_not_device_operating_systems).
@@ -286,6 +292,7 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     pub fn get_not_device_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_not_device_operating_systems()
     }
+    ///
     /// Appends an item to `DeviceUserAgents`.
     ///
     /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
@@ -304,6 +311,7 @@ impl UpdateMobileDeviceAccessRuleFluentBuilder {
     pub fn get_device_user_agents(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_device_user_agents()
     }
+    ///
     /// Appends an item to `NotDeviceUserAgents`.
     ///
     /// To override the contents of this collection use [`set_not_device_user_agents`](Self::set_not_device_user_agents).

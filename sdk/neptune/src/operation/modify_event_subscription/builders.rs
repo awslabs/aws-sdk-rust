@@ -3,7 +3,7 @@ pub use crate::operation::modify_event_subscription::_modify_event_subscription_
 
 pub use crate::operation::modify_event_subscription::_modify_event_subscription_input::ModifyEventSubscriptionInputBuilder;
 
-impl ModifyEventSubscriptionInputBuilder {
+impl crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ModifyEventSubscriptionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl ModifyEventSubscriptionFluentBuilder {
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_type()
     }
+    ///
     /// Appends an item to `EventCategories`.
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).

@@ -3,7 +3,7 @@ pub use crate::operation::create_object::_create_object_output::CreateObjectOutp
 
 pub use crate::operation::create_object::_create_object_input::CreateObjectInputBuilder;
 
-impl CreateObjectInputBuilder {
+impl crate::operation::create_object::builders::CreateObjectInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateObjectFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateObjectFluentBuilder {
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_arn()
     }
+    ///
     /// Appends an item to `SchemaFacets`.
     ///
     /// To override the contents of this collection use [`set_schema_facets`](Self::set_schema_facets).
@@ -140,6 +141,7 @@ impl CreateObjectFluentBuilder {
     pub fn get_schema_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
         self.inner.get_schema_facets()
     }
+    ///
     /// Appends an item to `ObjectAttributeList`.
     ///
     /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).

@@ -3,7 +3,7 @@ pub use crate::operation::update_dataset::_update_dataset_output::UpdateDatasetO
 
 pub use crate::operation::update_dataset::_update_dataset_input::UpdateDatasetInputBuilder;
 
-impl UpdateDatasetInputBuilder {
+impl crate::operation::update_dataset::builders::UpdateDatasetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDatasetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateDatasetFluentBuilder {
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_name()
     }
+    ///
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -140,6 +141,7 @@ impl UpdateDatasetFluentBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>> {
         self.inner.get_actions()
     }
+    ///
     /// Appends an item to `triggers`.
     ///
     /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
@@ -158,6 +160,7 @@ impl UpdateDatasetFluentBuilder {
     pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>> {
         self.inner.get_triggers()
     }
+    ///
     /// Appends an item to `contentDeliveryRules`.
     ///
     /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
@@ -204,6 +207,7 @@ impl UpdateDatasetFluentBuilder {
     pub fn get_versioning_configuration(&self) -> &::std::option::Option<crate::types::VersioningConfiguration> {
         self.inner.get_versioning_configuration()
     }
+    ///
     /// Appends an item to `lateDataRules`.
     ///
     /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).

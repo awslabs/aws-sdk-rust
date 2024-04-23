@@ -3,7 +3,7 @@ pub use crate::operation::create_model_package::_create_model_package_output::Cr
 
 pub use crate::operation::create_model_package::_create_model_package_input::CreateModelPackageInputBuilder;
 
-impl CreateModelPackageInputBuilder {
+impl crate::operation::create_model_package::builders::CreateModelPackageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -108,12 +108,12 @@ impl CreateModelPackageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -248,6 +248,7 @@ impl CreateModelPackageFluentBuilder {
     pub fn get_certify_for_marketplace(&self) -> &::std::option::Option<bool> {
         self.inner.get_certify_for_marketplace()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -376,6 +377,7 @@ impl CreateModelPackageFluentBuilder {
     pub fn get_sample_payload_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sample_payload_url()
     }
+    ///
     /// Adds a key-value pair to `CustomerMetadataProperties`.
     ///
     /// To override the contents of this collection use [`set_customer_metadata_properties`](Self::set_customer_metadata_properties).
@@ -417,6 +419,7 @@ impl CreateModelPackageFluentBuilder {
     pub fn get_drift_check_baselines(&self) -> &::std::option::Option<crate::types::DriftCheckBaselines> {
         self.inner.get_drift_check_baselines()
     }
+    ///
     /// Appends an item to `AdditionalInferenceSpecifications`.
     ///
     /// To override the contents of this collection use [`set_additional_inference_specifications`](Self::set_additional_inference_specifications).

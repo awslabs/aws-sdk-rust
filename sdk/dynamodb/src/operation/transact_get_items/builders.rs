@@ -3,7 +3,7 @@ pub use crate::operation::transact_get_items::_transact_get_items_output::Transa
 
 pub use crate::operation::transact_get_items::_transact_get_items_input::TransactGetItemsInputBuilder;
 
-impl TransactGetItemsInputBuilder {
+impl crate::operation::transact_get_items::builders::TransactGetItemsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -110,15 +110,16 @@ impl TransactGetItemsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `TransactItems`.
     ///
     /// To override the contents of this collection use [`set_transact_items`](Self::set_transact_items).

@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_cancel_capacity_task;
+
 pub(crate) mod shape_cancel_order;
 
 pub(crate) mod shape_create_order;
@@ -35,6 +37,8 @@ pub(crate) mod shape_delete_outpost;
 
 pub(crate) mod shape_delete_site;
 
+pub(crate) mod shape_get_capacity_task;
+
 pub(crate) mod shape_get_catalog_item;
 
 pub(crate) mod shape_get_connection;
@@ -45,11 +49,15 @@ pub(crate) mod shape_get_outpost;
 
 pub(crate) mod shape_get_outpost_instance_types;
 
+pub(crate) mod shape_get_outpost_supported_instance_types;
+
 pub(crate) mod shape_get_site;
 
 pub(crate) mod shape_get_site_address;
 
 pub(crate) mod shape_list_assets;
+
+pub(crate) mod shape_list_capacity_tasks;
 
 pub(crate) mod shape_list_catalog_items;
 
@@ -60,6 +68,8 @@ pub(crate) mod shape_list_outposts;
 pub(crate) mod shape_list_sites;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_start_capacity_task;
 
 pub(crate) mod shape_start_connection;
 
@@ -99,6 +109,8 @@ pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_capacity_task_input;
+
 pub(crate) mod shape_start_connection_input;
 
 pub(crate) mod shape_tag_resource_input;
@@ -117,11 +129,17 @@ pub(crate) mod shape_address;
 
 pub(crate) mod shape_asset_list_definition;
 
+pub(crate) mod shape_capacity_task_failure;
+
+pub(crate) mod shape_capacity_task_list;
+
 pub(crate) mod shape_catalog_item;
 
 pub(crate) mod shape_catalog_item_list_definition;
 
 pub(crate) mod shape_connection_details;
+
+pub(crate) mod shape_instance_type_capacity;
 
 pub(crate) mod shape_instance_type_list_definition;
 
@@ -137,6 +155,8 @@ pub(crate) mod shape_outpost_list_definition;
 
 pub(crate) mod shape_rack_physical_properties;
 
+pub(crate) mod shape_requested_instance_pools;
+
 pub(crate) mod shape_site;
 
 pub(crate) mod shape_site_list_definition;
@@ -144,6 +164,8 @@ pub(crate) mod shape_site_list_definition;
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_asset_info;
+
+pub(crate) mod shape_capacity_task_summary;
 
 pub(crate) mod shape_cidr_list;
 

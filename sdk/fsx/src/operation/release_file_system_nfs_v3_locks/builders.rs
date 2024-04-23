@@ -3,7 +3,7 @@ pub use crate::operation::release_file_system_nfs_v3_locks::_release_file_system
 
 pub use crate::operation::release_file_system_nfs_v3_locks::_release_file_system_nfs_v3_locks_input::ReleaseFileSystemNfsV3LocksInputBuilder;
 
-impl ReleaseFileSystemNfsV3LocksInputBuilder {
+impl crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ReleaseFileSystemNfsV3LocksFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::update_quick_response::_update_quick_response_output::
 
 pub use crate::operation::update_quick_response::_update_quick_response_input::UpdateQuickResponseInputBuilder;
 
-impl UpdateQuickResponseInputBuilder {
+impl crate::operation::update_quick_response::builders::UpdateQuickResponseInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateQuickResponseFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -294,6 +294,7 @@ impl UpdateQuickResponseFluentBuilder {
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
         self.inner.get_is_active()
     }
+    ///
     /// Appends an item to `channels`.
     ///
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).

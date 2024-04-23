@@ -11,9 +11,25 @@ pub use crate::types::_ingest_endpoint::IngestEndpoint;
 
 pub use crate::types::_channel_list_configuration::ChannelListConfiguration;
 
-pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfiguration;
+pub use crate::types::_get_dash_manifest_configuration::GetDashManifestConfiguration;
+
+pub use crate::types::_dash_utc_timing::DashUtcTiming;
+
+pub use crate::types::_dash_utc_timing_mode::DashUtcTimingMode;
+
+pub use crate::types::_dash_drm_signaling::DashDrmSignaling;
+
+pub use crate::types::_scte_dash::ScteDash;
+
+pub use crate::types::_ad_marker_dash::AdMarkerDash;
+
+pub use crate::types::_dash_period_trigger::DashPeriodTrigger;
+
+pub use crate::types::_dash_segment_template_format::DashSegmentTemplateFormat;
 
 pub use crate::types::_filter_configuration::FilterConfiguration;
+
+pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfiguration;
 
 pub use crate::types::_scte_hls::ScteHls;
 
@@ -47,15 +63,21 @@ pub use crate::types::_scte_filter::ScteFilter;
 
 pub use crate::types::_container_type::ContainerType;
 
+pub use crate::types::_create_dash_manifest_configuration::CreateDashManifestConfiguration;
+
 pub use crate::types::_create_low_latency_hls_manifest_configuration::CreateLowLatencyHlsManifestConfiguration;
 
 pub use crate::types::_create_hls_manifest_configuration::CreateHlsManifestConfiguration;
 
 pub use crate::types::_origin_endpoint_list_configuration::OriginEndpointListConfiguration;
 
+pub use crate::types::_list_dash_manifest_configuration::ListDashManifestConfiguration;
+
 pub use crate::types::_list_low_latency_hls_manifest_configuration::ListLowLatencyHlsManifestConfiguration;
 
 pub use crate::types::_list_hls_manifest_configuration::ListHlsManifestConfiguration;
+
+mod _ad_marker_dash;
 
 mod _ad_marker_hls;
 
@@ -69,9 +91,21 @@ mod _conflict_exception_type;
 
 mod _container_type;
 
+mod _create_dash_manifest_configuration;
+
 mod _create_hls_manifest_configuration;
 
 mod _create_low_latency_hls_manifest_configuration;
+
+mod _dash_drm_signaling;
+
+mod _dash_period_trigger;
+
+mod _dash_segment_template_format;
+
+mod _dash_utc_timing;
+
+mod _dash_utc_timing_mode;
 
 mod _drm_system;
 
@@ -83,11 +117,15 @@ mod _encryption_method;
 
 mod _filter_configuration;
 
+mod _get_dash_manifest_configuration;
+
 mod _get_hls_manifest_configuration;
 
 mod _get_low_latency_hls_manifest_configuration;
 
 mod _ingest_endpoint;
+
+mod _list_dash_manifest_configuration;
 
 mod _list_hls_manifest_configuration;
 
@@ -102,6 +140,8 @@ mod _preset_speke20_video;
 mod _resource_type_not_found;
 
 mod _scte;
+
+mod _scte_dash;
 
 mod _scte_filter;
 

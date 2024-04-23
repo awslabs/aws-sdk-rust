@@ -3,7 +3,7 @@ pub use crate::operation::update_certificate_provider::_update_certificate_provi
 
 pub use crate::operation::update_certificate_provider::_update_certificate_provider_input::UpdateCertificateProviderInputBuilder;
 
-impl UpdateCertificateProviderInputBuilder {
+impl crate::operation::update_certificate_provider::builders::UpdateCertificateProviderInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateCertificateProviderFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl UpdateCertificateProviderFluentBuilder {
     pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_lambda_function_arn()
     }
+    ///
     /// Appends an item to `accountDefaultForOperations`.
     ///
     /// To override the contents of this collection use [`set_account_default_for_operations`](Self::set_account_default_for_operations).

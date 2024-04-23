@@ -3,7 +3,7 @@ pub use crate::operation::update_policy_store::_update_policy_store_output::Upda
 
 pub use crate::operation::update_policy_store::_update_policy_store_input::UpdatePolicyStoreInputBuilder;
 
-impl UpdatePolicyStoreInputBuilder {
+impl crate::operation::update_policy_store::builders::UpdatePolicyStoreInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdatePolicyStoreFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

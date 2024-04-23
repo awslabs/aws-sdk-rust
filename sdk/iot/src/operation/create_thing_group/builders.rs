@@ -3,7 +3,7 @@ pub use crate::operation::create_thing_group::_create_thing_group_output::Create
 
 pub use crate::operation::create_thing_group::_create_thing_group_input::CreateThingGroupInputBuilder;
 
-impl CreateThingGroupInputBuilder {
+impl crate::operation::create_thing_group::builders::CreateThingGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl CreateThingGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl CreateThingGroupFluentBuilder {
     pub fn get_thing_group_properties(&self) -> &::std::option::Option<crate::types::ThingGroupProperties> {
         self.inner.get_thing_group_properties()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

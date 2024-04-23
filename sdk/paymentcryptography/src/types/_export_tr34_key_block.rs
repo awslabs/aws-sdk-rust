@@ -8,12 +8,14 @@ pub struct ExportTr34KeyBlock {
     pub certificate_authority_public_key_identifier: ::std::string::String,
     /// <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
     pub wrapping_key_certificate: ::std::string::String,
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <code>GetParametersForExport</code> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub export_token: ::std::string::String,
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
     pub key_block_format: crate::types::Tr34KeyBlockFormat,
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
     pub random_nonce: ::std::option::Option<::std::string::String>,
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub key_block_headers: ::std::option::Option<crate::types::KeyBlockHeaders>,
 }
 impl ExportTr34KeyBlock {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
@@ -26,7 +28,7 @@ impl ExportTr34KeyBlock {
         use std::ops::Deref;
         self.wrapping_key_certificate.deref()
     }
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <code>GetParametersForExport</code> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn export_token(&self) -> &str {
         use std::ops::Deref;
         self.export_token.deref()
@@ -38,6 +40,10 @@ impl ExportTr34KeyBlock {
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
     pub fn random_nonce(&self) -> ::std::option::Option<&str> {
         self.random_nonce.as_deref()
+    }
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub fn key_block_headers(&self) -> ::std::option::Option<&crate::types::KeyBlockHeaders> {
+        self.key_block_headers.as_ref()
     }
 }
 impl ::std::fmt::Debug for ExportTr34KeyBlock {
@@ -51,6 +57,7 @@ impl ::std::fmt::Debug for ExportTr34KeyBlock {
         formatter.field("export_token", &self.export_token);
         formatter.field("key_block_format", &self.key_block_format);
         formatter.field("random_nonce", &self.random_nonce);
+        formatter.field("key_block_headers", &self.key_block_headers);
         formatter.finish()
     }
 }
@@ -70,6 +77,7 @@ pub struct ExportTr34KeyBlockBuilder {
     pub(crate) export_token: ::std::option::Option<::std::string::String>,
     pub(crate) key_block_format: ::std::option::Option<crate::types::Tr34KeyBlockFormat>,
     pub(crate) random_nonce: ::std::option::Option<::std::string::String>,
+    pub(crate) key_block_headers: ::std::option::Option<crate::types::KeyBlockHeaders>,
 }
 impl ExportTr34KeyBlockBuilder {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
@@ -102,18 +110,18 @@ impl ExportTr34KeyBlockBuilder {
     pub fn get_wrapping_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapping_key_certificate
     }
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <code>GetParametersForExport</code> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
     /// This field is required.
     pub fn export_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <code>GetParametersForExport</code> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn set_export_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_token = input;
         self
     }
-    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <code>GetParametersForExport</code> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn get_export_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_token
     }
@@ -145,6 +153,20 @@ impl ExportTr34KeyBlockBuilder {
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
     pub fn get_random_nonce(&self) -> &::std::option::Option<::std::string::String> {
         &self.random_nonce
+    }
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub fn key_block_headers(mut self, input: crate::types::KeyBlockHeaders) -> Self {
+        self.key_block_headers = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub fn set_key_block_headers(mut self, input: ::std::option::Option<crate::types::KeyBlockHeaders>) -> Self {
+        self.key_block_headers = input;
+        self
+    }
+    /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
+    pub fn get_key_block_headers(&self) -> &::std::option::Option<crate::types::KeyBlockHeaders> {
+        &self.key_block_headers
     }
     /// Consumes the builder and constructs a [`ExportTr34KeyBlock`](crate::types::ExportTr34KeyBlock).
     /// This method will fail if any of the following fields are not set:
@@ -179,6 +201,7 @@ impl ExportTr34KeyBlockBuilder {
                 )
             })?,
             random_nonce: self.random_nonce,
+            key_block_headers: self.key_block_headers,
         })
     }
 }
@@ -193,6 +216,7 @@ impl ::std::fmt::Debug for ExportTr34KeyBlockBuilder {
         formatter.field("export_token", &self.export_token);
         formatter.field("key_block_format", &self.key_block_format);
         formatter.field("random_nonce", &self.random_nonce);
+        formatter.field("key_block_headers", &self.key_block_headers);
         formatter.finish()
     }
 }

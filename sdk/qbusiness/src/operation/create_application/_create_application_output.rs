@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct CreateApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateApplicationOutputBuilder {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Q application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Q Business application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }

@@ -3,7 +3,7 @@ pub use crate::operation::put_organization_conformance_pack::_put_organization_c
 
 pub use crate::operation::put_organization_conformance_pack::_put_organization_conformance_pack_input::PutOrganizationConformancePackInputBuilder;
 
-impl PutOrganizationConformancePackInputBuilder {
+impl crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl PutOrganizationConformancePackFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -202,6 +202,7 @@ impl PutOrganizationConformancePackFluentBuilder {
     pub fn get_delivery_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_delivery_s3_key_prefix()
     }
+    ///
     /// Appends an item to `ConformancePackInputParameters`.
     ///
     /// To override the contents of this collection use [`set_conformance_pack_input_parameters`](Self::set_conformance_pack_input_parameters).
@@ -223,6 +224,7 @@ impl PutOrganizationConformancePackFluentBuilder {
     pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
         self.inner.get_conformance_pack_input_parameters()
     }
+    ///
     /// Appends an item to `ExcludedAccounts`.
     ///
     /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).

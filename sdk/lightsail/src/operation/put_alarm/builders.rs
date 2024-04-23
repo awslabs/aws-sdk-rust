@@ -3,7 +3,7 @@ pub use crate::operation::put_alarm::_put_alarm_output::PutAlarmOutputBuilder;
 
 pub use crate::operation::put_alarm::_put_alarm_input::PutAlarmInputBuilder;
 
-impl PutAlarmInputBuilder {
+impl crate::operation::put_alarm::builders::PutAlarmInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl PutAlarmFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -295,6 +295,7 @@ impl PutAlarmFluentBuilder {
     pub fn get_treat_missing_data(&self) -> &::std::option::Option<crate::types::TreatMissingData> {
         self.inner.get_treat_missing_data()
     }
+    ///
     /// Appends an item to `contactProtocols`.
     ///
     /// To override the contents of this collection use [`set_contact_protocols`](Self::set_contact_protocols).
@@ -322,6 +323,7 @@ impl PutAlarmFluentBuilder {
     pub fn get_contact_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
         self.inner.get_contact_protocols()
     }
+    ///
     /// Appends an item to `notificationTriggers`.
     ///
     /// To override the contents of this collection use [`set_notification_triggers`](Self::set_notification_triggers).

@@ -3,7 +3,7 @@ pub use crate::operation::get_plugin::_get_plugin_output::GetPluginOutputBuilder
 
 pub use crate::operation::get_plugin::_get_plugin_input::GetPluginInputBuilder;
 
-impl GetPluginInputBuilder {
+impl crate::operation::get_plugin::builders::GetPluginInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl GetPluginInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPlugin`.
 ///
-/// <p>Gets information about an existing Amazon Q plugin.</p>
+/// <p>Gets information about an existing Amazon Q Business plugin.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPluginFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -93,12 +93,12 @@ impl GetPluginFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

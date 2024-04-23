@@ -3,7 +3,7 @@ pub use crate::operation::get_access_point_policy_status_for_object_lambda::_get
 
 pub use crate::operation::get_access_point_policy_status_for_object_lambda::_get_access_point_policy_status_for_object_lambda_input::GetAccessPointPolicyStatusForObjectLambdaInputBuilder;
 
-impl GetAccessPointPolicyStatusForObjectLambdaInputBuilder {
+impl crate::operation::get_access_point_policy_status_for_object_lambda::builders::GetAccessPointPolicyStatusForObjectLambdaInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl GetAccessPointPolicyStatusForObjectLambdaFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::register_user::_register_user_output::RegisterUserOutp
 
 pub use crate::operation::register_user::_register_user_input::RegisterUserInputBuilder;
 
-impl RegisterUserInputBuilder {
+impl crate::operation::register_user::builders::RegisterUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RegisterUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -390,6 +390,7 @@ impl RegisterUserFluentBuilder {
     pub fn get_external_login_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_external_login_id()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

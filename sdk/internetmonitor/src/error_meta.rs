@@ -161,6 +161,31 @@ impl From<crate::operation::get_health_event::GetHealthEventError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_internet_event::GetInternetEventError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_internet_event::GetInternetEventError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_internet_event::GetInternetEventError> for Error {
+    fn from(err: crate::operation::get_internet_event::GetInternetEventError) -> Self {
+        match err {
+            crate::operation::get_internet_event::GetInternetEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_internet_event::GetInternetEventError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_internet_event::GetInternetEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_internet_event::GetInternetEventError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_internet_event::GetInternetEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitor::GetMonitorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -260,6 +285,31 @@ impl From<crate::operation::list_health_events::ListHealthEventsError> for Error
             crate::operation::list_health_events::ListHealthEventsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_health_events::ListHealthEventsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_health_events::ListHealthEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_internet_events::ListInternetEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_internet_events::ListInternetEventsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_internet_events::ListInternetEventsError> for Error {
+    fn from(err: crate::operation::list_internet_events::ListInternetEventsError) -> Self {
+        match err {
+            crate::operation::list_internet_events::ListInternetEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_internet_events::ListInternetEventsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_internet_events::ListInternetEventsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_internet_events::ListInternetEventsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_internet_events::ListInternetEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -3,7 +3,7 @@ pub use crate::operation::describe_applications::_describe_applications_output::
 
 pub use crate::operation::describe_applications::_describe_applications_input::DescribeApplicationsInputBuilder;
 
-impl DescribeApplicationsInputBuilder {
+impl crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeApplicationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeApplicationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_applications::paginator::DescribeApplicationsPaginator {
         crate::operation::describe_applications::paginator::DescribeApplicationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ApplicationIds`.
     ///
     /// To override the contents of this collection use [`set_application_ids`](Self::set_application_ids).
@@ -132,6 +133,7 @@ impl DescribeApplicationsFluentBuilder {
     pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_application_ids()
     }
+    ///
     /// Appends an item to `ComputeTypeNames`.
     ///
     /// To override the contents of this collection use [`set_compute_type_names`](Self::set_compute_type_names).
@@ -164,6 +166,7 @@ impl DescribeApplicationsFluentBuilder {
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::WorkSpaceApplicationLicenseType> {
         self.inner.get_license_type()
     }
+    ///
     /// Appends an item to `OperatingSystemNames`.
     ///
     /// To override the contents of this collection use [`set_operating_system_names`](Self::set_operating_system_names).

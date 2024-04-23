@@ -3,7 +3,7 @@ pub use crate::operation::create_lf_tag::_create_lf_tag_output::CreateLfTagOutpu
 
 pub use crate::operation::create_lf_tag::_create_lf_tag_input::CreateLfTagInputBuilder;
 
-impl CreateLfTagInputBuilder {
+impl crate::operation::create_lf_tag::builders::CreateLfTagInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateLFTagFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateLFTagFluentBuilder {
     pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tag_key()
     }
+    ///
     /// Appends an item to `TagValues`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).

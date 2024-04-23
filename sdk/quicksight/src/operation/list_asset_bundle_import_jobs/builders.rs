@@ -3,7 +3,7 @@ pub use crate::operation::list_asset_bundle_import_jobs::_list_asset_bundle_impo
 
 pub use crate::operation::list_asset_bundle_import_jobs::_list_asset_bundle_import_jobs_input::ListAssetBundleImportJobsInputBuilder;
 
-impl ListAssetBundleImportJobsInputBuilder {
+impl crate::operation::list_asset_bundle_import_jobs::builders::ListAssetBundleImportJobsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListAssetBundleImportJobsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

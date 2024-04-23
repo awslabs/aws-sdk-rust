@@ -3,7 +3,7 @@ pub use crate::operation::describe_savings_plans::_describe_savings_plans_output
 
 pub use crate::operation::describe_savings_plans::_describe_savings_plans_input::DescribeSavingsPlansInputBuilder;
 
-impl DescribeSavingsPlansInputBuilder {
+impl crate::operation::describe_savings_plans::builders::DescribeSavingsPlansInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl DescribeSavingsPlansFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `savingsPlanArns`.
     ///
     /// To override the contents of this collection use [`set_savings_plan_arns`](Self::set_savings_plan_arns).
@@ -126,6 +127,7 @@ impl DescribeSavingsPlansFluentBuilder {
     pub fn get_savings_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_savings_plan_arns()
     }
+    ///
     /// Appends an item to `savingsPlanIds`.
     ///
     /// To override the contents of this collection use [`set_savings_plan_ids`](Self::set_savings_plan_ids).
@@ -172,6 +174,7 @@ impl DescribeSavingsPlansFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `states`.
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
@@ -190,6 +193,7 @@ impl DescribeSavingsPlansFluentBuilder {
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>> {
         self.inner.get_states()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

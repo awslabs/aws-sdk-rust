@@ -3,7 +3,7 @@ pub use crate::operation::update_application::_update_application_output::Update
 
 pub use crate::operation::update_application::_update_application_input::UpdateApplicationInputBuilder;
 
-impl UpdateApplicationInputBuilder {
+impl crate::operation::update_application::builders::UpdateApplicationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateApplicationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_application_source_config(&self) -> &::std::option::Option<crate::types::ApplicationSourceConfig> {
         self.inner.get_application_source_config()
     }
+    ///
     /// Appends an item to `Subscriptions`.
     ///
     /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
@@ -186,6 +187,7 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         self.inner.get_subscriptions()
     }
+    ///
     /// Appends an item to `Publications`.
     ///
     /// To override the contents of this collection use [`set_publications`](Self::set_publications).
@@ -207,6 +209,7 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_publications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Publication>> {
         self.inner.get_publications()
     }
+    ///
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).

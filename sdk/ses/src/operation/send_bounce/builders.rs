@@ -3,7 +3,7 @@ pub use crate::operation::send_bounce::_send_bounce_output::SendBounceOutputBuil
 
 pub use crate::operation::send_bounce::_send_bounce_input::SendBounceInputBuilder;
 
-impl SendBounceInputBuilder {
+impl crate::operation::send_bounce::builders::SendBounceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl SendBounceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -168,6 +168,7 @@ impl SendBounceFluentBuilder {
     pub fn get_message_dsn(&self) -> &::std::option::Option<crate::types::MessageDsn> {
         self.inner.get_message_dsn()
     }
+    ///
     /// Appends an item to `BouncedRecipientInfoList`.
     ///
     /// To override the contents of this collection use [`set_bounced_recipient_info_list`](Self::set_bounced_recipient_info_list).

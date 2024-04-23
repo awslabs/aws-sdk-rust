@@ -3,7 +3,7 @@ pub use crate::operation::send_destination_number_verification_code::_send_desti
 
 pub use crate::operation::send_destination_number_verification_code::_send_destination_number_verification_code_input::SendDestinationNumberVerificationCodeInputBuilder;
 
-impl SendDestinationNumberVerificationCodeInputBuilder {
+impl crate::operation::send_destination_number_verification_code::builders::SendDestinationNumberVerificationCodeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl SendDestinationNumberVerificationCodeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -181,6 +181,7 @@ impl SendDestinationNumberVerificationCodeFluentBuilder {
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_set_name()
     }
+    ///
     /// Adds a key-value pair to `Context`.
     ///
     /// To override the contents of this collection use [`set_context`](Self::set_context).
@@ -199,6 +200,7 @@ impl SendDestinationNumberVerificationCodeFluentBuilder {
     pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_context()
     }
+    ///
     /// Adds a key-value pair to `DestinationCountryParameters`.
     ///
     /// To override the contents of this collection use [`set_destination_country_parameters`](Self::set_destination_country_parameters).

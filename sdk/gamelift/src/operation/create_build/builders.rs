@@ -3,7 +3,7 @@ pub use crate::operation::create_build::_create_build_output::CreateBuildOutputB
 
 pub use crate::operation::create_build::_create_build_input::CreateBuildInputBuilder;
 
-impl CreateBuildInputBuilder {
+impl crate::operation::create_build::builders::CreateBuildInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -113,12 +113,12 @@ impl CreateBuildFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -187,6 +187,7 @@ impl CreateBuildFluentBuilder {
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
         self.inner.get_operating_system()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

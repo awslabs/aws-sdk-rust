@@ -3,7 +3,7 @@ pub use crate::operation::send_bulk_email::_send_bulk_email_output::SendBulkEmai
 
 pub use crate::operation::send_bulk_email::_send_bulk_email_input::SendBulkEmailInputBuilder;
 
-impl SendBulkEmailInputBuilder {
+impl crate::operation::send_bulk_email::builders::SendBulkEmailInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SendBulkEmailFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl SendBulkEmailFluentBuilder {
     pub fn get_from_email_address_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_from_email_address_identity_arn()
     }
+    ///
     /// Appends an item to `ReplyToAddresses`.
     ///
     /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
@@ -194,6 +195,7 @@ impl SendBulkEmailFluentBuilder {
     pub fn get_feedback_forwarding_email_address_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feedback_forwarding_email_address_identity_arn()
     }
+    ///
     /// Appends an item to `DefaultEmailTags`.
     ///
     /// To override the contents of this collection use [`set_default_email_tags`](Self::set_default_email_tags).
@@ -226,6 +228,7 @@ impl SendBulkEmailFluentBuilder {
     pub fn get_default_content(&self) -> &::std::option::Option<crate::types::BulkEmailContent> {
         self.inner.get_default_content()
     }
+    ///
     /// Appends an item to `BulkEmailEntries`.
     ///
     /// To override the contents of this collection use [`set_bulk_email_entries`](Self::set_bulk_email_entries).

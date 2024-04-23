@@ -16,6 +16,8 @@ pub struct TopBottomFilter {
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The parameter whose value should be used for the filter value.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl TopBottomFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -44,6 +46,10 @@ impl TopBottomFilter {
     pub fn parameter_name(&self) -> ::std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(&self) -> ::std::option::Option<&crate::types::DefaultFilterControlConfiguration> {
+        self.default_filter_control_configuration.as_ref()
+    }
 }
 impl TopBottomFilter {
     /// Creates a new builder-style object to manufacture [`TopBottomFilter`](crate::types::TopBottomFilter).
@@ -62,6 +68,7 @@ pub struct TopBottomFilterBuilder {
     pub(crate) aggregation_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationSortConfiguration>>,
     pub(crate) time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
+    pub(crate) default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl TopBottomFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -159,6 +166,20 @@ impl TopBottomFilterBuilder {
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_name
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(mut self, input: crate::types::DefaultFilterControlConfiguration) -> Self {
+        self.default_filter_control_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn set_default_filter_control_configuration(mut self, input: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>) -> Self {
+        self.default_filter_control_configuration = input;
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn get_default_filter_control_configuration(&self) -> &::std::option::Option<crate::types::DefaultFilterControlConfiguration> {
+        &self.default_filter_control_configuration
+    }
     /// Consumes the builder and constructs a [`TopBottomFilter`](crate::types::TopBottomFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::TopBottomFilterBuilder::filter_id)
@@ -181,6 +202,7 @@ impl TopBottomFilterBuilder {
             })?,
             time_granularity: self.time_granularity,
             parameter_name: self.parameter_name,
+            default_filter_control_configuration: self.default_filter_control_configuration,
         })
     }
 }

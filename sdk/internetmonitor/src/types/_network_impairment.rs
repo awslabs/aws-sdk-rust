@@ -8,7 +8,7 @@ pub struct NetworkImpairment {
     pub networks: ::std::vec::Vec<crate::types::Network>,
     /// <p>The combination of the Autonomous System Number (ASN) of the network and the name of the network.</p>
     pub as_path: ::std::vec::Vec<crate::types::Network>,
-    /// <p>Type of network impairment.</p>
+    /// <p>The type of network impairment.</p>
     pub network_event_type: crate::types::TriangulationEventType,
 }
 impl NetworkImpairment {
@@ -22,7 +22,7 @@ impl NetworkImpairment {
         use std::ops::Deref;
         self.as_path.deref()
     }
-    /// <p>Type of network impairment.</p>
+    /// <p>The type of network impairment.</p>
     pub fn network_event_type(&self) -> &crate::types::TriangulationEventType {
         &self.network_event_type
     }
@@ -83,18 +83,18 @@ impl NetworkImpairmentBuilder {
     pub fn get_as_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Network>> {
         &self.as_path
     }
-    /// <p>Type of network impairment.</p>
+    /// <p>The type of network impairment.</p>
     /// This field is required.
     pub fn network_event_type(mut self, input: crate::types::TriangulationEventType) -> Self {
         self.network_event_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Type of network impairment.</p>
+    /// <p>The type of network impairment.</p>
     pub fn set_network_event_type(mut self, input: ::std::option::Option<crate::types::TriangulationEventType>) -> Self {
         self.network_event_type = input;
         self
     }
-    /// <p>Type of network impairment.</p>
+    /// <p>The type of network impairment.</p>
     pub fn get_network_event_type(&self) -> &::std::option::Option<crate::types::TriangulationEventType> {
         &self.network_event_type
     }

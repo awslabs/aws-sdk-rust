@@ -3,7 +3,7 @@ pub use crate::operation::get_outpost_instance_types::_get_outpost_instance_type
 
 pub use crate::operation::get_outpost_instance_types::_get_outpost_instance_types_input::GetOutpostInstanceTypesInputBuilder;
 
-impl GetOutpostInstanceTypesInputBuilder {
+impl crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetOutpostInstanceTypesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,17 +114,17 @@ impl GetOutpostInstanceTypesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator {
         crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The ID or ARN of the Outpost.</p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_id(input.into());
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The ID or ARN of the Outpost.</p>
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_id(input);
         self
     }
-    /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
+    /// <p>The ID or ARN of the Outpost.</p>
     pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_outpost_id()
     }

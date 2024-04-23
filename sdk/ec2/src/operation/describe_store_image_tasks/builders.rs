@@ -3,7 +3,7 @@ pub use crate::operation::describe_store_image_tasks::_describe_store_image_task
 
 pub use crate::operation::describe_store_image_tasks::_describe_store_image_tasks_input::DescribeStoreImageTasksInputBuilder;
 
-impl DescribeStoreImageTasksInputBuilder {
+impl crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl DescribeStoreImageTasksFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -118,6 +118,7 @@ impl DescribeStoreImageTasksFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator {
         crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `ImageIds`.
     ///
     /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
@@ -150,6 +151,7 @@ impl DescribeStoreImageTasksFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

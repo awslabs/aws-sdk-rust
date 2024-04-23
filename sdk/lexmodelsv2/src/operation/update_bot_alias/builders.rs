@@ -3,7 +3,7 @@ pub use crate::operation::update_bot_alias::_update_bot_alias_output::UpdateBotA
 
 pub use crate::operation::update_bot_alias::_update_bot_alias_input::UpdateBotAliasInputBuilder;
 
-impl UpdateBotAliasInputBuilder {
+impl crate::operation::update_bot_alias::builders::UpdateBotAliasInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateBotAliasFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateBotAliasFluentBuilder {
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bot_version()
     }
+    ///
     /// Adds a key-value pair to `botAliasLocaleSettings`.
     ///
     /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).

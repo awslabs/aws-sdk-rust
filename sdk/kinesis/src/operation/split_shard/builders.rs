@@ -3,7 +3,7 @@ pub use crate::operation::split_shard::_split_shard_output::SplitShardOutputBuil
 
 pub use crate::operation::split_shard::_split_shard_input::SplitShardInputBuilder;
 
-impl SplitShardInputBuilder {
+impl crate::operation::split_shard::builders::SplitShardInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -110,12 +110,12 @@ impl SplitShardFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::create_auto_scaling_group::_create_auto_scaling_group_
 
 pub use crate::operation::create_auto_scaling_group::_create_auto_scaling_group_input::CreateAutoScalingGroupInputBuilder;
 
-impl CreateAutoScalingGroupInputBuilder {
+impl crate::operation::create_auto_scaling_group::builders::CreateAutoScalingGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl CreateAutoScalingGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -271,6 +271,7 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_default_cooldown(&self) -> &::std::option::Option<i32> {
         self.inner.get_default_cooldown()
     }
+    ///
     /// Appends an item to `AvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -289,6 +290,7 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
     }
+    ///
     /// Appends an item to `LoadBalancerNames`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
@@ -307,6 +309,7 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_load_balancer_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_load_balancer_names()
     }
+    ///
     /// Appends an item to `TargetGroupARNs`.
     ///
     /// To override the contents of this collection use [`set_target_group_arns`](Self::set_target_group_arns).
@@ -396,6 +399,7 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_vpc_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_zone_identifier()
     }
+    ///
     /// Appends an item to `TerminationPolicies`.
     ///
     /// To override the contents of this collection use [`set_termination_policies`](Self::set_termination_policies).
@@ -445,6 +449,7 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_capacity_rebalance(&self) -> &::std::option::Option<bool> {
         self.inner.get_capacity_rebalance()
     }
+    ///
     /// Appends an item to `LifecycleHookSpecificationList`.
     ///
     /// To override the contents of this collection use [`set_lifecycle_hook_specification_list`](Self::set_lifecycle_hook_specification_list).
@@ -466,6 +471,7 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_lifecycle_hook_specification_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleHookSpecification>> {
         self.inner.get_lifecycle_hook_specification_list()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -572,6 +578,7 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_default_instance_warmup(&self) -> &::std::option::Option<i32> {
         self.inner.get_default_instance_warmup()
     }
+    ///
     /// Appends an item to `TrafficSources`.
     ///
     /// To override the contents of this collection use [`set_traffic_sources`](Self::set_traffic_sources).

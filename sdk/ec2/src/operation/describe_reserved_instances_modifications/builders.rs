@@ -3,7 +3,7 @@ pub use crate::operation::describe_reserved_instances_modifications::_describe_r
 
 pub use crate::operation::describe_reserved_instances_modifications::_describe_reserved_instances_modifications_input::DescribeReservedInstancesModificationsInputBuilder;
 
-impl DescribeReservedInstancesModificationsInputBuilder {
+impl crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -126,6 +126,7 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
             self.inner,
         )
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -222,6 +223,7 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `ReservedInstancesModificationIds`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_modification_ids`](Self::set_reserved_instances_modification_ids).

@@ -3,7 +3,7 @@ pub use crate::operation::untag_meeting::_untag_meeting_output::UntagMeetingOutp
 
 pub use crate::operation::untag_meeting::_untag_meeting_input::UntagMeetingInputBuilder;
 
-impl UntagMeetingInputBuilder {
+impl crate::operation::untag_meeting::builders::UntagMeetingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl UntagMeetingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -126,6 +126,7 @@ impl UntagMeetingFluentBuilder {
     pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_meeting_id()
     }
+    ///
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).

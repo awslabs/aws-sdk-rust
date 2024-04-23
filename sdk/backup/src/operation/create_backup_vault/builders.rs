@@ -3,7 +3,7 @@ pub use crate::operation::create_backup_vault::_create_backup_vault_output::Crea
 
 pub use crate::operation::create_backup_vault::_create_backup_vault_input::CreateBackupVaultInputBuilder;
 
-impl CreateBackupVaultInputBuilder {
+impl crate::operation::create_backup_vault::builders::CreateBackupVaultInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateBackupVaultFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -124,6 +124,7 @@ impl CreateBackupVaultFluentBuilder {
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_vault_name()
     }
+    ///
     /// Adds a key-value pair to `BackupVaultTags`.
     ///
     /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).

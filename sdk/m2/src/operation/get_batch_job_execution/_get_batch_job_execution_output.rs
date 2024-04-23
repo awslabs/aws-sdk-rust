@@ -27,6 +27,8 @@ pub struct GetBatchJobExecutionOutput {
     pub return_code: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of this batch job.</p>
     pub batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
+    /// <p>The restart steps information for the most recent restart operation.</p>
+    pub job_step_restart_marker: ::std::option::Option<crate::types::JobStepRestartMarker>,
     _request_id: Option<String>,
 }
 impl GetBatchJobExecutionOutput {
@@ -80,6 +82,10 @@ impl GetBatchJobExecutionOutput {
     pub fn batch_job_identifier(&self) -> ::std::option::Option<&crate::types::BatchJobIdentifier> {
         self.batch_job_identifier.as_ref()
     }
+    /// <p>The restart steps information for the most recent restart operation.</p>
+    pub fn job_step_restart_marker(&self) -> ::std::option::Option<&crate::types::JobStepRestartMarker> {
+        self.job_step_restart_marker.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetBatchJobExecutionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -109,6 +115,7 @@ pub struct GetBatchJobExecutionOutputBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) return_code: ::std::option::Option<::std::string::String>,
     pub(crate) batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
+    pub(crate) job_step_restart_marker: ::std::option::Option<crate::types::JobStepRestartMarker>,
     _request_id: Option<String>,
 }
 impl GetBatchJobExecutionOutputBuilder {
@@ -284,6 +291,20 @@ impl GetBatchJobExecutionOutputBuilder {
     pub fn get_batch_job_identifier(&self) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
         &self.batch_job_identifier
     }
+    /// <p>The restart steps information for the most recent restart operation.</p>
+    pub fn job_step_restart_marker(mut self, input: crate::types::JobStepRestartMarker) -> Self {
+        self.job_step_restart_marker = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The restart steps information for the most recent restart operation.</p>
+    pub fn set_job_step_restart_marker(mut self, input: ::std::option::Option<crate::types::JobStepRestartMarker>) -> Self {
+        self.job_step_restart_marker = input;
+        self
+    }
+    /// <p>The restart steps information for the most recent restart operation.</p>
+    pub fn get_job_step_restart_marker(&self) -> &::std::option::Option<crate::types::JobStepRestartMarker> {
+        &self.job_step_restart_marker
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -336,6 +357,7 @@ impl GetBatchJobExecutionOutputBuilder {
             status_reason: self.status_reason,
             return_code: self.return_code,
             batch_job_identifier: self.batch_job_identifier,
+            job_step_restart_marker: self.job_step_restart_marker,
             _request_id: self._request_id,
         })
     }

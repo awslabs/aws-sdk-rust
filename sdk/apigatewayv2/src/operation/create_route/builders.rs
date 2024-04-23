@@ -3,7 +3,7 @@ pub use crate::operation::create_route::_create_route_output::CreateRouteOutputB
 
 pub use crate::operation::create_route::_create_route_input::CreateRouteInputBuilder;
 
-impl CreateRouteInputBuilder {
+impl crate::operation::create_route::builders::CreateRouteInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateRouteFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateRouteFluentBuilder {
     pub fn get_api_key_required(&self) -> &::std::option::Option<bool> {
         self.inner.get_api_key_required()
     }
+    ///
     /// Appends an item to `AuthorizationScopes`.
     ///
     /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
@@ -210,6 +211,7 @@ impl CreateRouteFluentBuilder {
     pub fn get_operation_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_name()
     }
+    ///
     /// Adds a key-value pair to `RequestModels`.
     ///
     /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
@@ -235,6 +237,7 @@ impl CreateRouteFluentBuilder {
     pub fn get_request_models(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_request_models()
     }
+    ///
     /// Adds a key-value pair to `RequestParameters`.
     ///
     /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).

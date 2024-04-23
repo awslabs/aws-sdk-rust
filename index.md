@@ -379,6 +379,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | QBusiness | [aws-sdk-qbusiness](https://crates.io/crates/aws-sdk-qbusiness) ([docs](https://docs.rs/aws-sdk-qbusiness)) |
 | Redshift Data API Service | [aws-sdk-redshiftdata](https://crates.io/crates/aws-sdk-redshiftdata) ([docs](https://docs.rs/aws-sdk-redshiftdata)) |
 | Redshift Serverless | [aws-sdk-redshiftserverless](https://crates.io/crates/aws-sdk-redshiftserverless) ([docs](https://docs.rs/aws-sdk-redshiftserverless)) |
+| Route 53 Profiles | [aws-sdk-route53profiles](https://crates.io/crates/aws-sdk-route53profiles) ([docs](https://docs.rs/aws-sdk-route53profiles)) |
 | Route53 Recovery Cluster | [aws-sdk-route53recoverycluster](https://crates.io/crates/aws-sdk-route53recoverycluster) ([docs](https://docs.rs/aws-sdk-route53recoverycluster)) |
 | Schemas | [aws-sdk-schemas](https://crates.io/crates/aws-sdk-schemas) ([docs](https://docs.rs/aws-sdk-schemas)) |
 | Service Quotas | [aws-sdk-servicequotas](https://crates.io/crates/aws-sdk-servicequotas) ([docs](https://docs.rs/aws-sdk-servicequotas)) |

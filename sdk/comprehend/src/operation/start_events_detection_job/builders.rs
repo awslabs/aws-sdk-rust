@@ -3,7 +3,7 @@ pub use crate::operation::start_events_detection_job::_start_events_detection_jo
 
 pub use crate::operation::start_events_detection_job::_start_events_detection_job_input::StartEventsDetectionJobInputBuilder;
 
-impl StartEventsDetectionJobInputBuilder {
+impl crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartEventsDetectionJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl StartEventsDetectionJobFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    ///
     /// Appends an item to `TargetEventTypes`.
     ///
     /// To override the contents of this collection use [`set_target_event_types`](Self::set_target_event_types).
@@ -210,6 +211,7 @@ impl StartEventsDetectionJobFluentBuilder {
     pub fn get_target_event_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_target_event_types()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

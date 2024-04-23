@@ -3,7 +3,7 @@ pub use crate::operation::put_rum_events::_put_rum_events_output::PutRumEventsOu
 
 pub use crate::operation::put_rum_events::_put_rum_events_input::PutRumEventsInputBuilder;
 
-impl PutRumEventsInputBuilder {
+impl crate::operation::put_rum_events::builders::PutRumEventsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl PutRumEventsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl PutRumEventsFluentBuilder {
     pub fn get_user_details(&self) -> &::std::option::Option<crate::types::UserDetails> {
         self.inner.get_user_details()
     }
+    ///
     /// Appends an item to `RumEvents`.
     ///
     /// To override the contents of this collection use [`set_rum_events`](Self::set_rum_events).

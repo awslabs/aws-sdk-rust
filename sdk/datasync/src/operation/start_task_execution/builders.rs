@@ -3,7 +3,7 @@ pub use crate::operation::start_task_execution::_start_task_execution_output::St
 
 pub use crate::operation::start_task_execution::_start_task_execution_input::StartTaskExecutionInputBuilder;
 
-impl StartTaskExecutionInputBuilder {
+impl crate::operation::start_task_execution::builders::StartTaskExecutionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl StartTaskExecutionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl StartTaskExecutionFluentBuilder {
     pub fn get_override_options(&self) -> &::std::option::Option<crate::types::Options> {
         self.inner.get_override_options()
     }
+    ///
     /// Appends an item to `Includes`.
     ///
     /// To override the contents of this collection use [`set_includes`](Self::set_includes).
@@ -160,6 +161,7 @@ impl StartTaskExecutionFluentBuilder {
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         self.inner.get_includes()
     }
+    ///
     /// Appends an item to `Excludes`.
     ///
     /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
@@ -218,6 +220,7 @@ impl StartTaskExecutionFluentBuilder {
     pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
         self.inner.get_task_report_config()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

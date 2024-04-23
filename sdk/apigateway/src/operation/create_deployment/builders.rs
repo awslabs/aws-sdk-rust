@@ -3,7 +3,7 @@ pub use crate::operation::create_deployment::_create_deployment_output::CreateDe
 
 pub use crate::operation::create_deployment::_create_deployment_input::CreateDeploymentInputBuilder;
 
-impl CreateDeploymentInputBuilder {
+impl crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateDeploymentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl CreateDeploymentFluentBuilder {
     pub fn get_cache_cluster_size(&self) -> &::std::option::Option<crate::types::CacheClusterSize> {
         self.inner.get_cache_cluster_size()
     }
+    ///
     /// Adds a key-value pair to `variables`.
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).

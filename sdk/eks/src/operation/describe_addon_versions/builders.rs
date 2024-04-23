@@ -3,7 +3,7 @@ pub use crate::operation::describe_addon_versions::_describe_addon_versions_outp
 
 pub use crate::operation::describe_addon_versions::_describe_addon_versions_input::DescribeAddonVersionsInputBuilder;
 
-impl DescribeAddonVersionsInputBuilder {
+impl crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeAddonVersionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -177,6 +177,7 @@ impl DescribeAddonVersionsFluentBuilder {
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_addon_name()
     }
+    ///
     /// Appends an item to `types`.
     ///
     /// To override the contents of this collection use [`set_types`](Self::set_types).
@@ -195,6 +196,7 @@ impl DescribeAddonVersionsFluentBuilder {
     pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_types()
     }
+    ///
     /// Appends an item to `publishers`.
     ///
     /// To override the contents of this collection use [`set_publishers`](Self::set_publishers).
@@ -213,6 +215,7 @@ impl DescribeAddonVersionsFluentBuilder {
     pub fn get_publishers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_publishers()
     }
+    ///
     /// Appends an item to `owners`.
     ///
     /// To override the contents of this collection use [`set_owners`](Self::set_owners).

@@ -3,29 +3,29 @@ pub use crate::operation::delete_local_gateway_route_table_virtual_interface_gro
 
 pub use crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::_delete_local_gateway_route_table_virtual_interface_group_association_input::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder;
 
-impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
-    /// Sends a request with this input using the given client.
+impl crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
+                    /// Sends a request with this input using the given client.
                     pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
                         crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
                         ::aws_smithy_runtime_api::client::result::SdkError<
                             crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
                             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
                         >
-    >{
-        let mut fluent_builder = client.delete_local_gateway_route_table_virtual_interface_group_association();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
-}
+                    > {
+                        let mut fluent_builder = client.delete_local_gateway_route_table_virtual_interface_group_association();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+                }
 /// Fluent builder constructing a request to `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
 ///
 /// <p>Deletes a local gateway route table virtual interface group association.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
                 crate::client::customize::internal::CustomizableSend<
                     crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
@@ -84,12 +84,12 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput, crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError, Self>{
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

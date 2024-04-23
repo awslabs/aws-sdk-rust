@@ -3,7 +3,7 @@ pub use crate::operation::create_cluster_snapshot::_create_cluster_snapshot_outp
 
 pub use crate::operation::create_cluster_snapshot::_create_cluster_snapshot_input::CreateClusterSnapshotInputBuilder;
 
-impl CreateClusterSnapshotInputBuilder {
+impl crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateClusterSnapshotFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -193,6 +193,7 @@ impl CreateClusterSnapshotFluentBuilder {
     pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_manual_snapshot_retention_period()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

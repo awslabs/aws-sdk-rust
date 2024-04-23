@@ -3,7 +3,7 @@ pub use crate::operation::create_provisioned_model_throughput::_create_provision
 
 pub use crate::operation::create_provisioned_model_throughput::_create_provisioned_model_throughput_input::CreateProvisionedModelThroughputInputBuilder;
 
-impl CreateProvisionedModelThroughputInputBuilder {
+impl crate::operation::create_provisioned_model_throughput::builders::CreateProvisionedModelThroughputInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateProvisionedModelThroughputFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl CreateProvisionedModelThroughputFluentBuilder {
     pub fn get_commitment_duration(&self) -> &::std::option::Option<crate::types::CommitmentDuration> {
         self.inner.get_commitment_duration()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

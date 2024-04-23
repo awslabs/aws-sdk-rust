@@ -15,6 +15,12 @@ pub use crate::types::error::_invalid_resource_state_exception::InvalidResourceS
 
 pub use crate::types::error::_resource_associated_exception::ResourceAssociatedException;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
+pub use crate::types::error::_internal_server_exception::InternalServerException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_workspaces_default_role_not_found_exception::WorkspacesDefaultRoleNotFoundException;
 
 pub use crate::types::error::_unsupported_network_configuration_exception::UnsupportedNetworkConfigurationException;
@@ -43,7 +49,11 @@ mod _application_not_supported_exception;
 
 mod _compute_not_compatible_exception;
 
+mod _conflict_exception;
+
 mod _incompatible_applications_exception;
+
+mod _internal_server_exception;
 
 mod _invalid_parameter_values_exception;
 
@@ -72,6 +82,8 @@ mod _resource_unavailable_exception;
 mod _unsupported_network_configuration_exception;
 
 mod _unsupported_workspace_configuration_exception;
+
+mod _validation_exception;
 
 mod _workspaces_default_role_not_found_exception;
 

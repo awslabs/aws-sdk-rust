@@ -3,7 +3,7 @@ pub use crate::operation::disconnect_recovery_instance::_disconnect_recovery_ins
 
 pub use crate::operation::disconnect_recovery_instance::_disconnect_recovery_instance_input::DisconnectRecoveryInstanceInputBuilder;
 
-impl DisconnectRecoveryInstanceInputBuilder {
+impl crate::operation::disconnect_recovery_instance::builders::DisconnectRecoveryInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DisconnectRecoveryInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

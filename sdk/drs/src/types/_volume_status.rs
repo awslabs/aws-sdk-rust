@@ -15,6 +15,7 @@
 ///     VolumeStatus::ContainsMarketplaceProductCodes => { /* ... */ },
 ///     VolumeStatus::MissingVolumeAttributes => { /* ... */ },
 ///     VolumeStatus::MissingVolumeAttributesAndPrecheckUnavailable => { /* ... */ },
+///     VolumeStatus::Pending => { /* ... */ },
 ///     VolumeStatus::Regular => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum VolumeStatus {
     #[allow(missing_docs)] // documentation missing in model
     MissingVolumeAttributesAndPrecheckUnavailable,
     #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Regular,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for VolumeStatus {
             "CONTAINS_MARKETPLACE_PRODUCT_CODES" => VolumeStatus::ContainsMarketplaceProductCodes,
             "MISSING_VOLUME_ATTRIBUTES" => VolumeStatus::MissingVolumeAttributes,
             "MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE" => VolumeStatus::MissingVolumeAttributesAndPrecheckUnavailable,
+            "PENDING" => VolumeStatus::Pending,
             "REGULAR" => VolumeStatus::Regular,
             other => VolumeStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -80,6 +84,7 @@ impl VolumeStatus {
             VolumeStatus::ContainsMarketplaceProductCodes => "CONTAINS_MARKETPLACE_PRODUCT_CODES",
             VolumeStatus::MissingVolumeAttributes => "MISSING_VOLUME_ATTRIBUTES",
             VolumeStatus::MissingVolumeAttributesAndPrecheckUnavailable => "MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE",
+            VolumeStatus::Pending => "PENDING",
             VolumeStatus::Regular => "REGULAR",
             VolumeStatus::Unknown(value) => value.as_str(),
         }
@@ -90,6 +95,7 @@ impl VolumeStatus {
             "CONTAINS_MARKETPLACE_PRODUCT_CODES",
             "MISSING_VOLUME_ATTRIBUTES",
             "MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE",
+            "PENDING",
             "REGULAR",
         ]
     }
@@ -117,6 +123,7 @@ impl ::std::fmt::Display for VolumeStatus {
             VolumeStatus::ContainsMarketplaceProductCodes => write!(f, "CONTAINS_MARKETPLACE_PRODUCT_CODES"),
             VolumeStatus::MissingVolumeAttributes => write!(f, "MISSING_VOLUME_ATTRIBUTES"),
             VolumeStatus::MissingVolumeAttributesAndPrecheckUnavailable => write!(f, "MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE"),
+            VolumeStatus::Pending => write!(f, "PENDING"),
             VolumeStatus::Regular => write!(f, "REGULAR"),
             VolumeStatus::Unknown(value) => write!(f, "{}", value),
         }

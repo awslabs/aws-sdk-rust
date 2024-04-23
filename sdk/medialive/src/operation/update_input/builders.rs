@@ -3,7 +3,7 @@ pub use crate::operation::update_input::_update_input_output::UpdateInputOutputB
 
 pub use crate::operation::update_input::_update_input_input::UpdateInputInputBuilder;
 
-impl UpdateInputInputBuilder {
+impl crate::operation::update_input::builders::UpdateInputInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl UpdateInputFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `Destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -126,6 +127,7 @@ impl UpdateInputFluentBuilder {
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>> {
         self.inner.get_destinations()
     }
+    ///
     /// Appends an item to `InputDevices`.
     ///
     /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
@@ -158,6 +160,7 @@ impl UpdateInputFluentBuilder {
     pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_id()
     }
+    ///
     /// Appends an item to `InputSecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_input_security_groups`](Self::set_input_security_groups).
@@ -176,6 +179,7 @@ impl UpdateInputFluentBuilder {
     pub fn get_input_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_input_security_groups()
     }
+    ///
     /// Appends an item to `MediaConnectFlows`.
     ///
     /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
@@ -222,6 +226,7 @@ impl UpdateInputFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
     /// Appends an item to `Sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).

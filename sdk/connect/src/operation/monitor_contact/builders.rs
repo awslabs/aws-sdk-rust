@@ -3,7 +3,7 @@ pub use crate::operation::monitor_contact::_monitor_contact_output::MonitorConta
 
 pub use crate::operation::monitor_contact::_monitor_contact_input::MonitorContactInputBuilder;
 
-impl MonitorContactInputBuilder {
+impl crate::operation::monitor_contact::builders::MonitorContactInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl MonitorContactFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl MonitorContactFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
+    ///
     /// Appends an item to `AllowedMonitorCapabilities`.
     ///
     /// To override the contents of this collection use [`set_allowed_monitor_capabilities`](Self::set_allowed_monitor_capabilities).

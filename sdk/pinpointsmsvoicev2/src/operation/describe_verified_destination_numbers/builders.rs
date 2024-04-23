@@ -3,7 +3,7 @@ pub use crate::operation::describe_verified_destination_numbers::_describe_verif
 
 pub use crate::operation::describe_verified_destination_numbers::_describe_verified_destination_numbers_input::DescribeVerifiedDestinationNumbersInputBuilder;
 
-impl DescribeVerifiedDestinationNumbersInputBuilder {
+impl crate::operation::describe_verified_destination_numbers::builders::DescribeVerifiedDestinationNumbersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeVerifiedDestinationNumbersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeVerifiedDestinationNumbersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_verified_destination_numbers::paginator::DescribeVerifiedDestinationNumbersPaginator {
         crate::operation::describe_verified_destination_numbers::paginator::DescribeVerifiedDestinationNumbersPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `VerifiedDestinationNumberIds`.
     ///
     /// To override the contents of this collection use [`set_verified_destination_number_ids`](Self::set_verified_destination_number_ids).
@@ -132,6 +133,7 @@ impl DescribeVerifiedDestinationNumbersFluentBuilder {
     pub fn get_verified_destination_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_verified_destination_number_ids()
     }
+    ///
     /// Appends an item to `DestinationPhoneNumbers`.
     ///
     /// To override the contents of this collection use [`set_destination_phone_numbers`](Self::set_destination_phone_numbers).
@@ -150,6 +152,7 @@ impl DescribeVerifiedDestinationNumbersFluentBuilder {
     pub fn get_destination_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_destination_phone_numbers()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

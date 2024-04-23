@@ -3,7 +3,7 @@ pub use crate::operation::describe_alarms::_describe_alarms_output::DescribeAlar
 
 pub use crate::operation::describe_alarms::_describe_alarms_input::DescribeAlarmsInputBuilder;
 
-impl DescribeAlarmsInputBuilder {
+impl crate::operation::describe_alarms::builders::DescribeAlarmsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeAlarmsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl DescribeAlarmsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_alarms::paginator::DescribeAlarmsPaginator {
         crate::operation::describe_alarms::paginator::DescribeAlarmsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `AlarmNames`.
     ///
     /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
@@ -150,6 +151,7 @@ impl DescribeAlarmsFluentBuilder {
     pub fn get_alarm_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alarm_name_prefix()
     }
+    ///
     /// Appends an item to `AlarmTypes`.
     ///
     /// To override the contents of this collection use [`set_alarm_types`](Self::set_alarm_types).

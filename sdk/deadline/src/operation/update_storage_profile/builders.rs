@@ -3,7 +3,7 @@ pub use crate::operation::update_storage_profile::_update_storage_profile_output
 
 pub use crate::operation::update_storage_profile::_update_storage_profile_input::UpdateStorageProfileInputBuilder;
 
-impl UpdateStorageProfileInputBuilder {
+impl crate::operation::update_storage_profile::builders::UpdateStorageProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateStorageProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl UpdateStorageProfileFluentBuilder {
     pub fn get_os_family(&self) -> &::std::option::Option<crate::types::StorageProfileOperatingSystemFamily> {
         self.inner.get_os_family()
     }
+    ///
     /// Appends an item to `fileSystemLocationsToAdd`.
     ///
     /// To override the contents of this collection use [`set_file_system_locations_to_add`](Self::set_file_system_locations_to_add).
@@ -196,6 +197,7 @@ impl UpdateStorageProfileFluentBuilder {
     pub fn get_file_system_locations_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemLocation>> {
         self.inner.get_file_system_locations_to_add()
     }
+    ///
     /// Appends an item to `fileSystemLocationsToRemove`.
     ///
     /// To override the contents of this collection use [`set_file_system_locations_to_remove`](Self::set_file_system_locations_to_remove).

@@ -3,7 +3,7 @@ pub use crate::operation::update_control::_update_control_output::UpdateControlO
 
 pub use crate::operation::update_control::_update_control_input::UpdateControlInputBuilder;
 
-impl UpdateControlInputBuilder {
+impl crate::operation::update_control::builders::UpdateControlInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateControlFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl UpdateControlFluentBuilder {
     pub fn get_action_plan_instructions(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_action_plan_instructions()
     }
+    ///
     /// Appends an item to `controlMappingSources`.
     ///
     /// To override the contents of this collection use [`set_control_mapping_sources`](Self::set_control_mapping_sources).

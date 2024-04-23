@@ -3,7 +3,7 @@ pub use crate::operation::list_outposts::_list_outposts_output::ListOutpostsOutp
 
 pub use crate::operation::list_outposts::_list_outposts_input::ListOutpostsInputBuilder;
 
-impl ListOutpostsInputBuilder {
+impl crate::operation::list_outposts::builders::ListOutpostsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ListOutpostsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl ListOutpostsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `LifeCycleStatusFilter`.
     ///
     /// To override the contents of this collection use [`set_life_cycle_status_filter`](Self::set_life_cycle_status_filter).
@@ -161,6 +162,7 @@ impl ListOutpostsFluentBuilder {
     pub fn get_life_cycle_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_life_cycle_status_filter()
     }
+    ///
     /// Appends an item to `AvailabilityZoneFilter`.
     ///
     /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
@@ -179,6 +181,7 @@ impl ListOutpostsFluentBuilder {
     pub fn get_availability_zone_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zone_filter()
     }
+    ///
     /// Appends an item to `AvailabilityZoneIdFilter`.
     ///
     /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).

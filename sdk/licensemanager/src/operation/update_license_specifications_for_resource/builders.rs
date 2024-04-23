@@ -3,7 +3,7 @@ pub use crate::operation::update_license_specifications_for_resource::_update_li
 
 pub use crate::operation::update_license_specifications_for_resource::_update_license_specifications_for_resource_input::UpdateLicenseSpecificationsForResourceInputBuilder;
 
-impl UpdateLicenseSpecificationsForResourceInputBuilder {
+impl crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl UpdateLicenseSpecificationsForResourceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -127,6 +127,7 @@ impl UpdateLicenseSpecificationsForResourceFluentBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
+    ///
     /// Appends an item to `AddLicenseSpecifications`.
     ///
     /// To override the contents of this collection use [`set_add_license_specifications`](Self::set_add_license_specifications).
@@ -145,6 +146,7 @@ impl UpdateLicenseSpecificationsForResourceFluentBuilder {
     pub fn get_add_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
         self.inner.get_add_license_specifications()
     }
+    ///
     /// Appends an item to `RemoveLicenseSpecifications`.
     ///
     /// To override the contents of this collection use [`set_remove_license_specifications`](Self::set_remove_license_specifications).

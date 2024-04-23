@@ -3,7 +3,7 @@ pub use crate::operation::create_kx_volume::_create_kx_volume_output::CreateKxVo
 
 pub use crate::operation::create_kx_volume::_create_kx_volume_input::CreateKxVolumeInputBuilder;
 
-impl CreateKxVolumeInputBuilder {
+impl crate::operation::create_kx_volume::builders::CreateKxVolumeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateKxVolumeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl CreateKxVolumeFluentBuilder {
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         self.inner.get_az_mode()
     }
+    ///
     /// Appends an item to `availabilityZoneIds`.
     ///
     /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
@@ -224,6 +225,7 @@ impl CreateKxVolumeFluentBuilder {
     pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zone_ids()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

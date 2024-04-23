@@ -3,7 +3,7 @@ pub use crate::operation::update_response_plan::_update_response_plan_output::Up
 
 pub use crate::operation::update_response_plan::_update_response_plan_input::UpdateResponsePlanInputBuilder;
 
-impl UpdateResponsePlanInputBuilder {
+impl crate::operation::update_response_plan::builders::UpdateResponsePlanInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateResponsePlanFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -245,6 +245,7 @@ impl UpdateResponsePlanFluentBuilder {
     pub fn get_incident_template_dedupe_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_incident_template_dedupe_string()
     }
+    ///
     /// Appends an item to `incidentTemplateNotificationTargets`.
     ///
     /// To override the contents of this collection use [`set_incident_template_notification_targets`](Self::set_incident_template_notification_targets).
@@ -283,6 +284,7 @@ impl UpdateResponsePlanFluentBuilder {
     pub fn get_chat_channel(&self) -> &::std::option::Option<crate::types::ChatChannel> {
         self.inner.get_chat_channel()
     }
+    ///
     /// Appends an item to `engagements`.
     ///
     /// To override the contents of this collection use [`set_engagements`](Self::set_engagements).
@@ -301,6 +303,7 @@ impl UpdateResponsePlanFluentBuilder {
     pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_engagements()
     }
+    ///
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -319,6 +322,7 @@ impl UpdateResponsePlanFluentBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
         self.inner.get_actions()
     }
+    ///
     /// Adds a key-value pair to `incidentTemplateTags`.
     ///
     /// To override the contents of this collection use [`set_incident_template_tags`](Self::set_incident_template_tags).
@@ -344,6 +348,7 @@ impl UpdateResponsePlanFluentBuilder {
     pub fn get_incident_template_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_incident_template_tags()
     }
+    ///
     /// Appends an item to `integrations`.
     ///
     /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).

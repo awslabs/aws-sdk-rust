@@ -3,7 +3,7 @@ pub use crate::operation::update_kx_dataview::_update_kx_dataview_output::Update
 
 pub use crate::operation::update_kx_dataview::_update_kx_dataview_input::UpdateKxDataviewInputBuilder;
 
-impl UpdateKxDataviewInputBuilder {
+impl crate::operation::update_kx_dataview::builders::UpdateKxDataviewInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateKxDataviewFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl UpdateKxDataviewFluentBuilder {
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_changeset_id()
     }
+    ///
     /// Appends an item to `segmentConfigurations`.
     ///
     /// To override the contents of this collection use [`set_segment_configurations`](Self::set_segment_configurations).

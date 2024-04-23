@@ -3,7 +3,7 @@ pub use crate::operation::create_launch_configuration::_create_launch_configurat
 
 pub use crate::operation::create_launch_configuration::_create_launch_configuration_input::CreateLaunchConfigurationInputBuilder;
 
-impl CreateLaunchConfigurationInputBuilder {
+impl crate::operation::create_launch_configuration::builders::CreateLaunchConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl CreateLaunchConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -157,6 +157,7 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_name()
     }
+    ///
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -189,6 +190,7 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn get_classic_link_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_classic_link_vpc_id()
     }
+    ///
     /// Appends an item to `ClassicLinkVPCSecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_classic_link_vpc_security_groups`](Self::set_classic_link_vpc_security_groups).
@@ -298,6 +300,7 @@ impl CreateLaunchConfigurationFluentBuilder {
     pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ramdisk_id()
     }
+    ///
     /// Appends an item to `BlockDeviceMappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).

@@ -3,7 +3,7 @@ pub use crate::operation::update_id_mapping_workflow::_update_id_mapping_workflo
 
 pub use crate::operation::update_id_mapping_workflow::_update_id_mapping_workflow_input::UpdateIdMappingWorkflowInputBuilder;
 
-impl UpdateIdMappingWorkflowInputBuilder {
+impl crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateIdMappingWorkflowFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateIdMappingWorkflowFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `inputSourceConfig`.
     ///
     /// To override the contents of this collection use [`set_input_source_config`](Self::set_input_source_config).
@@ -154,6 +155,7 @@ impl UpdateIdMappingWorkflowFluentBuilder {
     pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>> {
         self.inner.get_input_source_config()
     }
+    ///
     /// Appends an item to `outputSourceConfig`.
     ///
     /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
@@ -186,17 +188,17 @@ impl UpdateIdMappingWorkflowFluentBuilder {
     pub fn get_id_mapping_techniques(&self) -> &::std::option::Option<crate::types::IdMappingTechniques> {
         self.inner.get_id_mapping_techniques()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }

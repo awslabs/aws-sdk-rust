@@ -3,7 +3,7 @@ pub use crate::operation::create_instances::_create_instances_output::CreateInst
 
 pub use crate::operation::create_instances::_create_instances_input::CreateInstancesInputBuilder;
 
-impl CreateInstancesInputBuilder {
+impl crate::operation::create_instances::builders::CreateInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl CreateInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `instanceNames`.
     ///
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
@@ -232,6 +233,7 @@ impl CreateInstancesFluentBuilder {
     pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_pair_name()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -253,6 +255,7 @@ impl CreateInstancesFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `addOns`.
     ///
     /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).

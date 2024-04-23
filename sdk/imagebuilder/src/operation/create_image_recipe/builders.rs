@@ -3,7 +3,7 @@ pub use crate::operation::create_image_recipe::_create_image_recipe_output::Crea
 
 pub use crate::operation::create_image_recipe::_create_image_recipe_input::CreateImageRecipeInputBuilder;
 
-impl CreateImageRecipeInputBuilder {
+impl crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateImageRecipeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -195,6 +195,7 @@ impl CreateImageRecipeFluentBuilder {
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_semantic_version()
     }
+    ///
     /// Appends an item to `components`.
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
@@ -227,6 +228,7 @@ impl CreateImageRecipeFluentBuilder {
     pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_parent_image()
     }
+    ///
     /// Appends an item to `blockDeviceMappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
@@ -245,6 +247,7 @@ impl CreateImageRecipeFluentBuilder {
     pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
         self.inner.get_block_device_mappings()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::create_restore_testing_selection::_create_restore_test
 
 pub use crate::operation::create_restore_testing_selection::_create_restore_testing_selection_input::CreateRestoreTestingSelectionInputBuilder;
 
-impl CreateRestoreTestingSelectionInputBuilder {
+impl crate::operation::create_restore_testing_selection::builders::CreateRestoreTestingSelectionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl CreateRestoreTestingSelectionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

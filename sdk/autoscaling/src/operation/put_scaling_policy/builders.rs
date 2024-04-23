@@ -3,7 +3,7 @@ pub use crate::operation::put_scaling_policy::_put_scaling_policy_output::PutSca
 
 pub use crate::operation::put_scaling_policy::_put_scaling_policy_input::PutScalingPolicyInputBuilder;
 
-impl PutScalingPolicyInputBuilder {
+impl crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl PutScalingPolicyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -291,6 +291,7 @@ impl PutScalingPolicyFluentBuilder {
     pub fn get_metric_aggregation_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_metric_aggregation_type()
     }
+    ///
     /// Appends an item to `StepAdjustments`.
     ///
     /// To override the contents of this collection use [`set_step_adjustments`](Self::set_step_adjustments).

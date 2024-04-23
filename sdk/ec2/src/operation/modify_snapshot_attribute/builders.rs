@@ -3,7 +3,7 @@ pub use crate::operation::modify_snapshot_attribute::_modify_snapshot_attribute_
 
 pub use crate::operation::modify_snapshot_attribute::_modify_snapshot_attribute_input::ModifySnapshotAttributeInputBuilder;
 
-impl ModifySnapshotAttributeInputBuilder {
+impl crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl ModifySnapshotAttributeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl ModifySnapshotAttributeFluentBuilder {
     pub fn get_create_volume_permission(&self) -> &::std::option::Option<crate::types::CreateVolumePermissionModifications> {
         self.inner.get_create_volume_permission()
     }
+    ///
     /// Appends an item to `GroupNames`.
     ///
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
@@ -184,6 +185,7 @@ impl ModifySnapshotAttributeFluentBuilder {
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_id()
     }
+    ///
     /// Appends an item to `UserIds`.
     ///
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).

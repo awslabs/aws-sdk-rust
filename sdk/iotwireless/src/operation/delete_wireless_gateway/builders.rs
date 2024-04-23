@@ -3,7 +3,7 @@ pub use crate::operation::delete_wireless_gateway::_delete_wireless_gateway_outp
 
 pub use crate::operation::delete_wireless_gateway::_delete_wireless_gateway_input::DeleteWirelessGatewayInputBuilder;
 
-impl DeleteWirelessGatewayInputBuilder {
+impl crate::operation::delete_wireless_gateway::builders::DeleteWirelessGatewayInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,16 @@ impl DeleteWirelessGatewayInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWirelessGateway`.
 ///
-/// <p>Deletes a wireless gateway.</p>
+/// <p>Deletes a wireless gateway.</p><note>
+/// <p>When deleting a wireless gateway, you might run into duplication errors for the following reasons.</p>
+/// <ul>
+/// <li>
+/// <p>If you specify a <code>GatewayEui</code> value that already exists.</p></li>
+/// <li>
+/// <p>If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.</p></li>
+/// </ul>
+/// <p>To avoid this error, make sure that you use unique identifiers and parameters for each request within the specified time period.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWirelessGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,12 +108,12 @@ impl DeleteWirelessGatewayFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

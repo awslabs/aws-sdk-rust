@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConversationsOutput {
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business web experiences.</p>
     pub conversations: ::std::option::Option<::std::vec::Vec<crate::types::Conversation>>,
     _request_id: Option<String>,
 }
 impl ListConversationsOutput {
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business web experiences.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conversations.is_none()`.
     pub fn conversations(&self) -> &[crate::types::Conversation] {
@@ -42,17 +42,17 @@ pub struct ListConversationsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListConversationsOutputBuilder {
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListConversationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_conversations`](Self::set_conversations).
     ///
-    /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business web experiences.</p>
     pub fn conversations(mut self, input: crate::types::Conversation) -> Self {
         let mut v = self.conversations.unwrap_or_default();
         v.push(input);
         self.conversations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business web experiences.</p>
     pub fn set_conversations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Conversation>>) -> Self {
         self.conversations = input;
         self
     }
-    /// <p>An array of summary information on the configuration of one or more Amazon Q web experiences.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business web experiences.</p>
     pub fn get_conversations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Conversation>> {
         &self.conversations
     }

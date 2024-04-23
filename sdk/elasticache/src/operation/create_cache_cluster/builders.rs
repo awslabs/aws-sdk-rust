@@ -3,7 +3,7 @@ pub use crate::operation::create_cache_cluster::_create_cache_cluster_output::Cr
 
 pub use crate::operation::create_cache_cluster::_create_cache_cluster_input::CreateCacheClusterInputBuilder;
 
-impl CreateCacheClusterInputBuilder {
+impl crate::operation::create_cache_cluster::builders::CreateCacheClusterInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateCacheClusterFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -213,6 +213,7 @@ impl CreateCacheClusterFluentBuilder {
     pub fn get_preferred_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_availability_zone()
     }
+    ///
     /// Appends an item to `PreferredAvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_preferred_availability_zones`](Self::set_preferred_availability_zones).
@@ -525,6 +526,7 @@ impl CreateCacheClusterFluentBuilder {
     pub fn get_cache_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_subnet_group_name()
     }
+    ///
     /// Appends an item to `CacheSecurityGroupNames`.
     ///
     /// To override the contents of this collection use [`set_cache_security_group_names`](Self::set_cache_security_group_names).
@@ -546,6 +548,7 @@ impl CreateCacheClusterFluentBuilder {
     pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cache_security_group_names()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -567,6 +570,7 @@ impl CreateCacheClusterFluentBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -585,6 +589,7 @@ impl CreateCacheClusterFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `SnapshotArns`.
     ///
     /// To override the contents of this collection use [`set_snapshot_arns`](Self::set_snapshot_arns).
@@ -815,6 +820,7 @@ impl CreateCacheClusterFluentBuilder {
     pub fn get_preferred_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_outpost_arn()
     }
+    ///
     /// Appends an item to `PreferredOutpostArns`.
     ///
     /// To override the contents of this collection use [`set_preferred_outpost_arns`](Self::set_preferred_outpost_arns).
@@ -833,6 +839,7 @@ impl CreateCacheClusterFluentBuilder {
     pub fn get_preferred_outpost_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_preferred_outpost_arns()
     }
+    ///
     /// Appends an item to `LogDeliveryConfigurations`.
     ///
     /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).

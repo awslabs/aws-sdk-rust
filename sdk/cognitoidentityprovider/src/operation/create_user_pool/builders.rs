@@ -3,7 +3,7 @@ pub use crate::operation::create_user_pool::_create_user_pool_output::CreateUser
 
 pub use crate::operation::create_user_pool::_create_user_pool_input::CreateUserPoolInputBuilder;
 
-impl CreateUserPoolInputBuilder {
+impl crate::operation::create_user_pool::builders::CreateUserPoolInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -114,12 +114,12 @@ impl CreateUserPoolFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -197,6 +197,7 @@ impl CreateUserPoolFluentBuilder {
     pub fn get_lambda_config(&self) -> &::std::option::Option<crate::types::LambdaConfigType> {
         self.inner.get_lambda_config()
     }
+    ///
     /// Appends an item to `AutoVerifiedAttributes`.
     ///
     /// To override the contents of this collection use [`set_auto_verified_attributes`](Self::set_auto_verified_attributes).
@@ -215,6 +216,7 @@ impl CreateUserPoolFluentBuilder {
     pub fn get_auto_verified_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAttributeType>> {
         self.inner.get_auto_verified_attributes()
     }
+    ///
     /// Appends an item to `AliasAttributes`.
     ///
     /// To override the contents of this collection use [`set_alias_attributes`](Self::set_alias_attributes).
@@ -233,6 +235,7 @@ impl CreateUserPoolFluentBuilder {
     pub fn get_alias_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasAttributeType>> {
         self.inner.get_alias_attributes()
     }
+    ///
     /// Appends an item to `UsernameAttributes`.
     ///
     /// To override the contents of this collection use [`set_username_attributes`](Self::set_username_attributes).
@@ -397,6 +400,7 @@ impl CreateUserPoolFluentBuilder {
     pub fn get_sms_configuration(&self) -> &::std::option::Option<crate::types::SmsConfigurationType> {
         self.inner.get_sms_configuration()
     }
+    ///
     /// Adds a key-value pair to `UserPoolTags`.
     ///
     /// To override the contents of this collection use [`set_user_pool_tags`](Self::set_user_pool_tags).
@@ -436,6 +440,7 @@ impl CreateUserPoolFluentBuilder {
     pub fn get_admin_create_user_config(&self) -> &::std::option::Option<crate::types::AdminCreateUserConfigType> {
         self.inner.get_admin_create_user_config()
     }
+    ///
     /// Appends an item to `Schema`.
     ///
     /// To override the contents of this collection use [`set_schema`](Self::set_schema).

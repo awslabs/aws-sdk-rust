@@ -3,7 +3,7 @@ pub use crate::operation::list_contact_references::_list_contact_references_outp
 
 pub use crate::operation::list_contact_references::_list_contact_references_input::ListContactReferencesInputBuilder;
 
-impl ListContactReferencesInputBuilder {
+impl crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ListContactReferencesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl ListContactReferencesFluentBuilder {
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }
+    ///
     /// Appends an item to `ReferenceTypes`.
     ///
     /// To override the contents of this collection use [`set_reference_types`](Self::set_reference_types).

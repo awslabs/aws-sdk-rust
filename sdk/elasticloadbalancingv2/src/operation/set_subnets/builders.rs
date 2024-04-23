@@ -3,7 +3,7 @@ pub use crate::operation::set_subnets::_set_subnets_output::SetSubnetsOutputBuil
 
 pub use crate::operation::set_subnets::_set_subnets_input::SetSubnetsInputBuilder;
 
-impl SetSubnetsInputBuilder {
+impl crate::operation::set_subnets::builders::SetSubnetsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl SetSubnetsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl SetSubnetsFluentBuilder {
     pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_load_balancer_arn()
     }
+    ///
     /// Appends an item to `Subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -156,6 +157,7 @@ impl SetSubnetsFluentBuilder {
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnets()
     }
+    ///
     /// Appends an item to `SubnetMappings`.
     ///
     /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).

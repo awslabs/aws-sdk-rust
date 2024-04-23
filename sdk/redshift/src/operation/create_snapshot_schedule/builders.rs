@@ -3,7 +3,7 @@ pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_ou
 
 pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_input::CreateSnapshotScheduleInputBuilder;
 
-impl CreateSnapshotScheduleInputBuilder {
+impl crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl CreateSnapshotScheduleFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `ScheduleDefinitions`.
     ///
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
@@ -154,6 +155,7 @@ impl CreateSnapshotScheduleFluentBuilder {
     pub fn get_schedule_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_schedule_description()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

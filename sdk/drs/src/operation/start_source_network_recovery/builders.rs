@@ -3,7 +3,7 @@ pub use crate::operation::start_source_network_recovery::_start_source_network_r
 
 pub use crate::operation::start_source_network_recovery::_start_source_network_recovery_input::StartSourceNetworkRecoveryInputBuilder;
 
-impl StartSourceNetworkRecoveryInputBuilder {
+impl crate::operation::start_source_network_recovery::builders::StartSourceNetworkRecoveryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl StartSourceNetworkRecoveryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `sourceNetworks`.
     ///
     /// To override the contents of this collection use [`set_source_networks`](Self::set_source_networks).
@@ -143,6 +144,7 @@ impl StartSourceNetworkRecoveryFluentBuilder {
     pub fn get_deploy_as_new(&self) -> &::std::option::Option<bool> {
         self.inner.get_deploy_as_new()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

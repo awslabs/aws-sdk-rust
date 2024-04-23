@@ -3,7 +3,7 @@ pub use crate::operation::create_task_template::_create_task_template_output::Cr
 
 pub use crate::operation::create_task_template::_create_task_template_input::CreateTaskTemplateInputBuilder;
 
-impl CreateTaskTemplateInputBuilder {
+impl crate::operation::create_task_template::builders::CreateTaskTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateTaskTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl CreateTaskTemplateFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskTemplateStatus> {
         self.inner.get_status()
     }
+    ///
     /// Appends an item to `Fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).

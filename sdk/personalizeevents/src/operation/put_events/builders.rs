@@ -3,7 +3,7 @@ pub use crate::operation::put_events::_put_events_output::PutEventsOutputBuilder
 
 pub use crate::operation::put_events::_put_events_input::PutEventsInputBuilder;
 
-impl PutEventsInputBuilder {
+impl crate::operation::put_events::builders::PutEventsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl PutEventsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -144,6 +144,7 @@ impl PutEventsFluentBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }
+    ///
     /// Appends an item to `eventList`.
     ///
     /// To override the contents of this collection use [`set_event_list`](Self::set_event_list).

@@ -82,6 +82,9 @@ where
                         "apiSchema" => {
                             builder = builder.set_api_schema(crate::protocol_serde::shape_api_schema::de_api_schema(tokens)?);
                         }
+                        "functionSchema" => {
+                            builder = builder.set_function_schema(crate::protocol_serde::shape_function_schema::de_function_schema(tokens)?);
+                        }
                         "actionGroupState" => {
                             builder = builder.set_action_group_state(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

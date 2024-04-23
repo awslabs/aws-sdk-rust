@@ -3,7 +3,7 @@ pub use crate::operation::create_inference_component::_create_inference_componen
 
 pub use crate::operation::create_inference_component::_create_inference_component_input::CreateInferenceComponentInputBuilder;
 
-impl CreateInferenceComponentInputBuilder {
+impl crate::operation::create_inference_component::builders::CreateInferenceComponentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateInferenceComponentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateInferenceComponentFluentBuilder {
     pub fn get_runtime_config(&self) -> &::std::option::Option<crate::types::InferenceComponentRuntimeConfig> {
         self.inner.get_runtime_config()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

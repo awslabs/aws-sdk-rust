@@ -3,7 +3,7 @@ pub use crate::operation::complete_multipart_upload::_complete_multipart_upload_
 
 pub use crate::operation::complete_multipart_upload::_complete_multipart_upload_input::CompleteMultipartUploadInputBuilder;
 
-impl CompleteMultipartUploadInputBuilder {
+impl crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CompleteMultipartUploadFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

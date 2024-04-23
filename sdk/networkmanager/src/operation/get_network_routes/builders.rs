@@ -3,7 +3,7 @@ pub use crate::operation::get_network_routes::_get_network_routes_output::GetNet
 
 pub use crate::operation::get_network_routes::_get_network_routes_input::GetNetworkRoutesInputBuilder;
 
-impl GetNetworkRoutesInputBuilder {
+impl crate::operation::get_network_routes::builders::GetNetworkRoutesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetNetworkRoutesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl GetNetworkRoutesFluentBuilder {
     pub fn get_route_table_identifier(&self) -> &::std::option::Option<crate::types::RouteTableIdentifier> {
         self.inner.get_route_table_identifier()
     }
+    ///
     /// Appends an item to `ExactCidrMatches`.
     ///
     /// To override the contents of this collection use [`set_exact_cidr_matches`](Self::set_exact_cidr_matches).
@@ -154,6 +155,7 @@ impl GetNetworkRoutesFluentBuilder {
     pub fn get_exact_cidr_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_exact_cidr_matches()
     }
+    ///
     /// Appends an item to `LongestPrefixMatches`.
     ///
     /// To override the contents of this collection use [`set_longest_prefix_matches`](Self::set_longest_prefix_matches).
@@ -172,6 +174,7 @@ impl GetNetworkRoutesFluentBuilder {
     pub fn get_longest_prefix_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_longest_prefix_matches()
     }
+    ///
     /// Appends an item to `SubnetOfMatches`.
     ///
     /// To override the contents of this collection use [`set_subnet_of_matches`](Self::set_subnet_of_matches).
@@ -190,6 +193,7 @@ impl GetNetworkRoutesFluentBuilder {
     pub fn get_subnet_of_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_of_matches()
     }
+    ///
     /// Appends an item to `SupernetOfMatches`.
     ///
     /// To override the contents of this collection use [`set_supernet_of_matches`](Self::set_supernet_of_matches).
@@ -208,6 +212,7 @@ impl GetNetworkRoutesFluentBuilder {
     pub fn get_supernet_of_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_supernet_of_matches()
     }
+    ///
     /// Appends an item to `PrefixListIds`.
     ///
     /// To override the contents of this collection use [`set_prefix_list_ids`](Self::set_prefix_list_ids).
@@ -226,6 +231,7 @@ impl GetNetworkRoutesFluentBuilder {
     pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_prefix_list_ids()
     }
+    ///
     /// Appends an item to `States`.
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
@@ -244,6 +250,7 @@ impl GetNetworkRoutesFluentBuilder {
     pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteState>> {
         self.inner.get_states()
     }
+    ///
     /// Appends an item to `Types`.
     ///
     /// To override the contents of this collection use [`set_types`](Self::set_types).
@@ -262,6 +269,7 @@ impl GetNetworkRoutesFluentBuilder {
     pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteType>> {
         self.inner.get_types()
     }
+    ///
     /// Adds a key-value pair to `DestinationFilters`.
     ///
     /// To override the contents of this collection use [`set_destination_filters`](Self::set_destination_filters).

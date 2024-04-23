@@ -3,7 +3,7 @@ pub use crate::operation::create_partnership::_create_partnership_output::Create
 
 pub use crate::operation::create_partnership::_create_partnership_input::CreatePartnershipInputBuilder;
 
-impl CreatePartnershipInputBuilder {
+impl crate::operation::create_partnership::builders::CreatePartnershipInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreatePartnershipFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreatePartnershipFluentBuilder {
     pub fn get_phone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_phone()
     }
+    ///
     /// Appends an item to `capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
@@ -196,6 +197,7 @@ impl CreatePartnershipFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

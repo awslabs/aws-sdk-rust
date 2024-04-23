@@ -3,7 +3,7 @@ pub use crate::operation::create_campaign::_create_campaign_output::CreateCampai
 
 pub use crate::operation::create_campaign::_create_campaign_input::CreateCampaignInputBuilder;
 
-impl CreateCampaignInputBuilder {
+impl crate::operation::create_campaign::builders::CreateCampaignInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,6 +22,9 @@ impl CreateCampaignInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCampaign`.
 ///
+/// <important>
+/// <p>You incur campaign costs while it is active. To avoid unnecessary costs, make sure to delete the campaign when you are finished. For information about campaign costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
+/// </important>
 /// <p>Creates a campaign that deploys a solution version. When a client calls the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> and <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a> APIs, a campaign is specified in the request.</p>
 /// <p><b>Minimum Provisioned TPS and Auto-Scaling</b></p><important>
 /// <p>A high <code>minProvisionedTPS</code> will increase your cost. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
@@ -128,12 +131,12 @@ impl CreateCampaignFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,17 +154,23 @@ impl CreateCampaignFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the trained model to deploy with the campaign. To specify the latest solution version of your solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.</p>
+    /// <p>To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution version.</p>
+    /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_solution_version_arn()
     }
@@ -193,6 +202,7 @@ impl CreateCampaignFluentBuilder {
     pub fn get_campaign_config(&self) -> &::std::option::Option<crate::types::CampaignConfig> {
         self.inner.get_campaign_config()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

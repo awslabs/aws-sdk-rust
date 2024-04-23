@@ -3,7 +3,7 @@ pub use crate::operation::set_identity_pool_roles::_set_identity_pool_roles_outp
 
 pub use crate::operation::set_identity_pool_roles::_set_identity_pool_roles_input::SetIdentityPoolRolesInputBuilder;
 
-impl SetIdentityPoolRolesInputBuilder {
+impl crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl SetIdentityPoolRolesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl SetIdentityPoolRolesFluentBuilder {
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_pool_id()
     }
+    ///
     /// Adds a key-value pair to `Roles`.
     ///
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
@@ -141,6 +142,7 @@ impl SetIdentityPoolRolesFluentBuilder {
     pub fn get_roles(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_roles()
     }
+    ///
     /// Adds a key-value pair to `RoleMappings`.
     ///
     /// To override the contents of this collection use [`set_role_mappings`](Self::set_role_mappings).

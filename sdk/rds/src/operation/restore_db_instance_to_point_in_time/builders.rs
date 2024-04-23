@@ -3,7 +3,7 @@ pub use crate::operation::restore_db_instance_to_point_in_time::_restore_db_inst
 
 pub use crate::operation::restore_db_instance_to_point_in_time::_restore_db_instance_to_point_in_time_input::RestoreDbInstanceToPointInTimeInputBuilder;
 
-impl RestoreDbInstanceToPointInTimeInputBuilder {
+impl crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDbInstanceToPointInTimeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -700,6 +700,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_tags_to_snapshot()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -787,6 +788,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_tde_credential_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tde_credential_password()
     }
+    ///
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -947,6 +949,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_domain_auth_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_auth_secret_arn()
     }
+    ///
     /// Appends an item to `DomainDnsIps`.
     ///
     /// To override the contents of this collection use [`set_domain_dns_ips`](Self::set_domain_dns_ips).
@@ -1003,6 +1006,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_iam_database_authentication()
     }
+    ///
     /// Appends an item to `EnableCloudwatchLogsExports`.
     ///
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
@@ -1024,6 +1028,7 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
+    ///
     /// Appends an item to `ProcessorFeatures`.
     ///
     /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).

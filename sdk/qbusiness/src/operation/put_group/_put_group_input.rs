@@ -14,7 +14,7 @@ pub struct PutGroupInput {
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the group.</p>
     pub r#type: ::std::option::Option<crate::types::MembershipType>,
-    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q chat results only from document a user has access to.</p>
+    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q Business chat results only from document a user has access to.</p>
     pub group_members: ::std::option::Option<crate::types::GroupMembers>,
 }
 impl PutGroupInput {
@@ -39,7 +39,7 @@ impl PutGroupInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::MembershipType> {
         self.r#type.as_ref()
     }
-    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q chat results only from document a user has access to.</p>
+    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q Business chat results only from document a user has access to.</p>
     pub fn group_members(&self) -> ::std::option::Option<&crate::types::GroupMembers> {
         self.group_members.as_ref()
     }
@@ -140,18 +140,18 @@ impl PutGroupInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
         &self.r#type
     }
-    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q chat results only from document a user has access to.</p>
+    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q Business chat results only from document a user has access to.</p>
     /// This field is required.
     pub fn group_members(mut self, input: crate::types::GroupMembers) -> Self {
         self.group_members = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q chat results only from document a user has access to.</p>
+    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q Business chat results only from document a user has access to.</p>
     pub fn set_group_members(mut self, input: ::std::option::Option<crate::types::GroupMembers>) -> Self {
         self.group_members = input;
         self
     }
-    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q chat results only from document a user has access to.</p>
+    /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q Business chat results only from document a user has access to.</p>
     pub fn get_group_members(&self) -> &::std::option::Option<crate::types::GroupMembers> {
         &self.group_members
     }

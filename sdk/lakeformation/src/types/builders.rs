@@ -7,6 +7,8 @@ pub use crate::types::_add_object_input::AddObjectInputBuilder;
 
 pub use crate::types::_external_filtering_configuration::ExternalFilteringConfigurationBuilder;
 
+pub use crate::types::_data_lake_principal::DataLakePrincipalBuilder;
+
 pub use crate::types::_data_cells_filter::DataCellsFilterBuilder;
 
 pub use crate::types::_column_wildcard::ColumnWildcardBuilder;
@@ -46,8 +48,6 @@ pub use crate::types::_data_location_resource::DataLocationResourceBuilder;
 pub use crate::types::_table_with_columns_resource::TableWithColumnsResourceBuilder;
 
 pub use crate::types::_catalog_resource::CatalogResourceBuilder;
-
-pub use crate::types::_data_lake_principal::DataLakePrincipalBuilder;
 
 pub use crate::types::_lf_tag_error::LfTagErrorBuilder;
 

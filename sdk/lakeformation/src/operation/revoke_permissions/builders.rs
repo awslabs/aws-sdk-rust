@@ -3,7 +3,7 @@ pub use crate::operation::revoke_permissions::_revoke_permissions_output::Revoke
 
 pub use crate::operation::revoke_permissions::_revoke_permissions_input::RevokePermissionsInputBuilder;
 
-impl RevokePermissionsInputBuilder {
+impl crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RevokePermissionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl RevokePermissionsFluentBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
         self.inner.get_resource()
     }
+    ///
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -168,6 +169,7 @@ impl RevokePermissionsFluentBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         self.inner.get_permissions()
     }
+    ///
     /// Appends an item to `PermissionsWithGrantOption`.
     ///
     /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).

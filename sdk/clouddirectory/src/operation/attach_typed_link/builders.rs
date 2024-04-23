@@ -3,7 +3,7 @@ pub use crate::operation::attach_typed_link::_attach_typed_link_output::AttachTy
 
 pub use crate::operation::attach_typed_link::_attach_typed_link_input::AttachTypedLinkInputBuilder;
 
-impl AttachTypedLinkInputBuilder {
+impl crate::operation::attach_typed_link::builders::AttachTypedLinkInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl AttachTypedLinkFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl AttachTypedLinkFluentBuilder {
     pub fn get_typed_link_facet(&self) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
         self.inner.get_typed_link_facet()
     }
+    ///
     /// Appends an item to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).

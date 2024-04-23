@@ -3,7 +3,7 @@ pub use crate::operation::update_trust_store::_update_trust_store_output::Update
 
 pub use crate::operation::update_trust_store::_update_trust_store_input::UpdateTrustStoreInputBuilder;
 
-impl UpdateTrustStoreInputBuilder {
+impl crate::operation::update_trust_store::builders::UpdateTrustStoreInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateTrustStoreFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateTrustStoreFluentBuilder {
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trust_store_arn()
     }
+    ///
     /// Appends an item to `certificatesToAdd`.
     ///
     /// To override the contents of this collection use [`set_certificates_to_add`](Self::set_certificates_to_add).
@@ -140,6 +141,7 @@ impl UpdateTrustStoreFluentBuilder {
     pub fn get_certificates_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         self.inner.get_certificates_to_add()
     }
+    ///
     /// Appends an item to `certificatesToDelete`.
     ///
     /// To override the contents of this collection use [`set_certificates_to_delete`](Self::set_certificates_to_delete).

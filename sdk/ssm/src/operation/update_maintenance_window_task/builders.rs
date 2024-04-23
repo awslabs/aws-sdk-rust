@@ -3,7 +3,7 @@ pub use crate::operation::update_maintenance_window_task::_update_maintenance_wi
 
 pub use crate::operation::update_maintenance_window_task::_update_maintenance_window_task_input::UpdateMaintenanceWindowTaskInputBuilder;
 
-impl UpdateMaintenanceWindowTaskInputBuilder {
+impl crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -118,12 +118,12 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -155,6 +155,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     pub fn get_window_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_window_task_id()
     }
+    ///
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -210,6 +211,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_role_arn()
     }
+    ///
     /// Adds a key-value pair to `TaskParameters`.
     ///
     /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).

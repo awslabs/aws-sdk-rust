@@ -3,7 +3,7 @@ pub use crate::operation::put_mailbox_permissions::_put_mailbox_permissions_outp
 
 pub use crate::operation::put_mailbox_permissions::_put_mailbox_permissions_input::PutMailboxPermissionsInputBuilder;
 
-impl PutMailboxPermissionsInputBuilder {
+impl crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutMailboxPermissionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -204,6 +204,7 @@ impl PutMailboxPermissionsFluentBuilder {
     pub fn get_grantee_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grantee_id()
     }
+    ///
     /// Appends an item to `PermissionValues`.
     ///
     /// To override the contents of this collection use [`set_permission_values`](Self::set_permission_values).

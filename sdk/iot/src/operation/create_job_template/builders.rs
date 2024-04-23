@@ -3,7 +3,7 @@ pub use crate::operation::create_job_template::_create_job_template_output::Crea
 
 pub use crate::operation::create_job_template::_create_job_template_input::CreateJobTemplateInputBuilder;
 
-impl CreateJobTemplateInputBuilder {
+impl crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateJobTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -241,6 +241,7 @@ impl CreateJobTemplateFluentBuilder {
     pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
         self.inner.get_timeout_config()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -273,6 +274,7 @@ impl CreateJobTemplateFluentBuilder {
     pub fn get_job_executions_retry_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
         self.inner.get_job_executions_retry_config()
     }
+    ///
     /// Appends an item to `maintenanceWindows`.
     ///
     /// To override the contents of this collection use [`set_maintenance_windows`](Self::set_maintenance_windows).
@@ -291,6 +293,7 @@ impl CreateJobTemplateFluentBuilder {
     pub fn get_maintenance_windows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>> {
         self.inner.get_maintenance_windows()
     }
+    ///
     /// Appends an item to `destinationPackageVersions`.
     ///
     /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).

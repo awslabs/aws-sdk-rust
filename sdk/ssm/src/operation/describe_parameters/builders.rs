@@ -3,7 +3,7 @@ pub use crate::operation::describe_parameters::_describe_parameters_output::Desc
 
 pub use crate::operation::describe_parameters::_describe_parameters_input::DescribeParametersInputBuilder;
 
-impl DescribeParametersInputBuilder {
+impl crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DescribeParametersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -117,6 +117,7 @@ impl DescribeParametersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_parameters::paginator::DescribeParametersPaginator {
         crate::operation::describe_parameters::paginator::DescribeParametersPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -135,6 +136,7 @@ impl DescribeParametersFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParametersFilter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `ParameterFilters`.
     ///
     /// To override the contents of this collection use [`set_parameter_filters`](Self::set_parameter_filters).

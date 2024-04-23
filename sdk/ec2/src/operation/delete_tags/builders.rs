@@ -3,7 +3,7 @@ pub use crate::operation::delete_tags::_delete_tags_output::DeleteTagsOutputBuil
 
 pub use crate::operation::delete_tags::_delete_tags_input::DeleteTagsInputBuilder;
 
-impl DeleteTagsInputBuilder {
+impl crate::operation::delete_tags::builders::DeleteTagsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DeleteTagsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl DeleteTagsFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `Resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -144,6 +145,7 @@ impl DeleteTagsFluentBuilder {
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resources()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

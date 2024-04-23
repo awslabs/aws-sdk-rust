@@ -3,7 +3,7 @@ pub use crate::operation::start_data_source_sync_job::_start_data_source_sync_jo
 
 pub use crate::operation::start_data_source_sync_job::_start_data_source_sync_job_input::StartDataSourceSyncJobInputBuilder;
 
-impl StartDataSourceSyncJobInputBuilder {
+impl crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl StartDataSourceSyncJobInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDataSourceSyncJob`.
 ///
-/// <p>Starts a data source connector synchronization job. If a synchronization job is already in progress, Amazon Q returns a <code>ConflictException</code>.</p>
+/// <p>Starts a data source connector synchronization job. If a synchronization job is already in progress, Amazon Q Business returns a <code>ConflictException</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDataSourceSyncJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,12 +99,12 @@ impl StartDataSourceSyncJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,17 +122,17 @@ impl StartDataSourceSyncJobFluentBuilder {
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_source_id()
     }
-    /// <p>The identifier of Amazon Q application the data source is connected to.</p>
+    /// <p>The identifier of Amazon Q Business application the data source is connected to.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of Amazon Q application the data source is connected to.</p>
+    /// <p>The identifier of Amazon Q Business application the data source is connected to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of Amazon Q application the data source is connected to.</p>
+    /// <p>The identifier of Amazon Q Business application the data source is connected to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

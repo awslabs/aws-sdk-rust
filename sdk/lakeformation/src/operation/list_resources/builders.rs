@@ -3,7 +3,7 @@ pub use crate::operation::list_resources::_list_resources_output::ListResourcesO
 
 pub use crate::operation::list_resources::_list_resources_input::ListResourcesInputBuilder;
 
-impl ListResourcesInputBuilder {
+impl crate::operation::list_resources::builders::ListResourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListResourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListResourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_resources::paginator::ListResourcesPaginator {
         crate::operation::list_resources::paginator::ListResourcesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `FilterConditionList`.
     ///
     /// To override the contents of this collection use [`set_filter_condition_list`](Self::set_filter_condition_list).

@@ -10,19 +10,19 @@ pub struct AttributeFilter {
     pub or_all_filters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
     /// <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
     pub not_filter: ::std::option::Option<::std::boxed::Box<crate::types::AttributeFilter>>,
-    /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
+    /// <p>Performs an equals operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub equals_to: ::std::option::Option<crate::types::DocumentAttribute>,
-    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub contains_all: ::std::option::Option<crate::types::DocumentAttribute>,
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub contains_any: ::std::option::Option<crate::types::DocumentAttribute>,
-    /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub greater_than: ::std::option::Option<crate::types::DocumentAttribute>,
-    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub greater_than_or_equals: ::std::option::Option<crate::types::DocumentAttribute>,
-    /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub less_than: ::std::option::Option<crate::types::DocumentAttribute>,
-    /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than or equals operation on two document attributes or metadata fields.Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value type</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub less_than_or_equals: ::std::option::Option<crate::types::DocumentAttribute>,
 }
 impl AttributeFilter {
@@ -42,31 +42,31 @@ impl AttributeFilter {
     pub fn not_filter(&self) -> ::std::option::Option<&crate::types::AttributeFilter> {
         self.not_filter.as_deref()
     }
-    /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
+    /// <p>Performs an equals operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub fn equals_to(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.equals_to.as_ref()
     }
-    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub fn contains_all(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.contains_all.as_ref()
     }
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub fn contains_any(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.contains_any.as_ref()
     }
-    /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn greater_than(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.greater_than.as_ref()
     }
-    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn greater_than_or_equals(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.greater_than_or_equals.as_ref()
     }
-    /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn less_than(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.less_than.as_ref()
     }
-    /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than or equals operation on two document attributes or metadata fields.Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value type</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn less_than_or_equals(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
         self.less_than_or_equals.as_ref()
     }
@@ -148,101 +148,101 @@ impl AttributeFilterBuilder {
     pub fn get_not_filter(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::AttributeFilter>> {
         &self.not_filter
     }
-    /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
+    /// <p>Performs an equals operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub fn equals_to(mut self, input: crate::types::DocumentAttribute) -> Self {
         self.equals_to = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
+    /// <p>Performs an equals operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub fn set_equals_to(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.equals_to = input;
         self
     }
-    /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
+    /// <p>Performs an equals operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub fn get_equals_to(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.equals_to
     }
-    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub fn contains_all(mut self, input: crate::types::DocumentAttribute) -> Self {
         self.contains_all = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub fn set_contains_all(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.contains_all = input;
         self
     }
-    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains all the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>stringListValue</code>.</p>
     pub fn get_contains_all(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.contains_all
     }
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub fn contains_any(mut self, input: crate::types::DocumentAttribute) -> Self {
         self.contains_any = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub fn set_contains_any(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.contains_any = input;
         self
     }
-    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields.</p>
+    /// <p>Returns <code>true</code> when a document contains any of the specified document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and <code>stringValue</code>.</p>
     pub fn get_contains_any(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.contains_any
     }
-    /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn greater_than(mut self, input: crate::types::DocumentAttribute) -> Self {
         self.greater_than = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn set_greater_than(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.greater_than = input;
         self
     }
-    /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn get_greater_than(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.greater_than
     }
-    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn greater_than_or_equals(mut self, input: crate::types::DocumentAttribute) -> Self {
         self.greater_than_or_equals = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn set_greater_than_or_equals(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.greater_than_or_equals = input;
         self
     }
-    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn get_greater_than_or_equals(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.greater_than_or_equals
     }
-    /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn less_than(mut self, input: crate::types::DocumentAttribute) -> Self {
         self.less_than = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn set_less_than(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.less_than = input;
         self
     }
-    /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than operation on two document attributes or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn get_less_than(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.less_than
     }
-    /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than or equals operation on two document attributes or metadata fields.Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value type</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn less_than_or_equals(mut self, input: crate::types::DocumentAttribute) -> Self {
         self.less_than_or_equals = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than or equals operation on two document attributes or metadata fields.Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value type</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn set_less_than_or_equals(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
         self.less_than_or_equals = input;
         self
     }
-    /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
+    /// <p>Performs a less than or equals operation on two document attributes or metadata fields.Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document attribute value type</a>: <code>dateValue</code> and <code>longValue</code>.</p>
     pub fn get_less_than_or_equals(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
         &self.less_than_or_equals
     }

@@ -28,6 +28,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "trainingMode" => {
+                            builder = builder.set_training_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TrainingMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "trainingType" => {
+                            builder = builder.set_training_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TrainingType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "creationDateTime" => {
                             builder = builder.set_creation_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

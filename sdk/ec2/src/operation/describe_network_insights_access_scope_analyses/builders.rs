@@ -3,7 +3,7 @@ pub use crate::operation::describe_network_insights_access_scope_analyses::_desc
 
 pub use crate::operation::describe_network_insights_access_scope_analyses::_describe_network_insights_access_scope_analyses_input::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder;
 
-impl DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
+impl crate::operation::describe_network_insights_access_scope_analyses::builders::DescribeNetworkInsightsAccessScopeAnalysesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -126,6 +126,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
             self.inner,
         )
     }
+    ///
     /// Appends an item to `NetworkInsightsAccessScopeAnalysisIds`.
     ///
     /// To override the contents of this collection use [`set_network_insights_access_scope_analysis_ids`](Self::set_network_insights_access_scope_analysis_ids).
@@ -186,6 +187,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesFluentBuilder {
     pub fn get_analysis_start_time_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_analysis_start_time_end()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

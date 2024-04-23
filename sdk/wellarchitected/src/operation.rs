@@ -73,6 +73,9 @@ pub mod get_answer;
 /// Types for the `GetConsolidatedReport` operation.
 pub mod get_consolidated_report;
 
+/// Types for the `GetGlobalSettings` operation.
+pub mod get_global_settings;
+
 /// Types for the `GetLens` operation.
 pub mod get_lens;
 
@@ -177,6 +180,9 @@ pub mod update_answer;
 
 /// Types for the `UpdateGlobalSettings` operation.
 pub mod update_global_settings;
+
+/// Types for the `UpdateIntegration` operation.
+pub mod update_integration;
 
 /// Types for the `UpdateLensReview` operation.
 pub mod update_lens_review;

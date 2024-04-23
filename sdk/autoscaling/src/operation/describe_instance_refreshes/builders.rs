@@ -3,7 +3,7 @@ pub use crate::operation::describe_instance_refreshes::_describe_instance_refres
 
 pub use crate::operation::describe_instance_refreshes::_describe_instance_refreshes_input::DescribeInstanceRefreshesInputBuilder;
 
-impl DescribeInstanceRefreshesInputBuilder {
+impl crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl DescribeInstanceRefreshesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -130,6 +130,7 @@ impl DescribeInstanceRefreshesFluentBuilder {
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_auto_scaling_group_name()
     }
+    ///
     /// Appends an item to `InstanceRefreshIds`.
     ///
     /// To override the contents of this collection use [`set_instance_refresh_ids`](Self::set_instance_refresh_ids).

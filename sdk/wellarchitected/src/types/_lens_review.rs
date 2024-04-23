@@ -19,6 +19,8 @@ pub struct LensReview {
     pub lens_status: ::std::option::Option<crate::types::LensStatus>,
     /// <p>List of pillar review summaries of lens review in a workload.</p>
     pub pillar_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PillarReviewSummary>>,
+    /// <p>Jira configuration status of the Lens review.</p>
+    pub jira_configuration: ::std::option::Option<crate::types::JiraSelectedQuestionConfiguration>,
     /// <p>The date and time recorded.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The notes associated with the workload.</p>
@@ -62,6 +64,10 @@ impl LensReview {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillar_review_summaries.is_none()`.
     pub fn pillar_review_summaries(&self) -> &[crate::types::PillarReviewSummary] {
         self.pillar_review_summaries.as_deref().unwrap_or_default()
+    }
+    /// <p>Jira configuration status of the Lens review.</p>
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::JiraSelectedQuestionConfiguration> {
+        self.jira_configuration.as_ref()
     }
     /// <p>The date and time recorded.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -108,6 +114,7 @@ pub struct LensReviewBuilder {
     pub(crate) lens_name: ::std::option::Option<::std::string::String>,
     pub(crate) lens_status: ::std::option::Option<crate::types::LensStatus>,
     pub(crate) pillar_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PillarReviewSummary>>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::JiraSelectedQuestionConfiguration>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,
     pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
@@ -214,6 +221,20 @@ impl LensReviewBuilder {
     /// <p>List of pillar review summaries of lens review in a workload.</p>
     pub fn get_pillar_review_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PillarReviewSummary>> {
         &self.pillar_review_summaries
+    }
+    /// <p>Jira configuration status of the Lens review.</p>
+    pub fn jira_configuration(mut self, input: crate::types::JiraSelectedQuestionConfiguration) -> Self {
+        self.jira_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Jira configuration status of the Lens review.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::JiraSelectedQuestionConfiguration>) -> Self {
+        self.jira_configuration = input;
+        self
+    }
+    /// <p>Jira configuration status of the Lens review.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::JiraSelectedQuestionConfiguration> {
+        &self.jira_configuration
     }
     /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -329,6 +350,7 @@ impl LensReviewBuilder {
             lens_name: self.lens_name,
             lens_status: self.lens_status,
             pillar_review_summaries: self.pillar_review_summaries,
+            jira_configuration: self.jira_configuration,
             updated_at: self.updated_at,
             notes: self.notes,
             risk_counts: self.risk_counts,

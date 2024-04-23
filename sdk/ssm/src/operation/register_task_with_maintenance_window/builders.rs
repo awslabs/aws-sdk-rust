@@ -3,7 +3,7 @@ pub use crate::operation::register_task_with_maintenance_window::_register_task_
 
 pub use crate::operation::register_task_with_maintenance_window::_register_task_with_maintenance_window_input::RegisterTaskWithMaintenanceWindowInputBuilder;
 
-impl RegisterTaskWithMaintenanceWindowInputBuilder {
+impl crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_window_id()
     }
+    ///
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -221,6 +222,7 @@ impl RegisterTaskWithMaintenanceWindowFluentBuilder {
     pub fn get_task_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskType> {
         self.inner.get_task_type()
     }
+    ///
     /// Adds a key-value pair to `TaskParameters`.
     ///
     /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).

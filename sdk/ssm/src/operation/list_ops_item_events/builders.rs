@@ -3,7 +3,7 @@ pub use crate::operation::list_ops_item_events::_list_ops_item_events_output::Li
 
 pub use crate::operation::list_ops_item_events::_list_ops_item_events_input::ListOpsItemEventsInputBuilder;
 
-impl ListOpsItemEventsInputBuilder {
+impl crate::operation::list_ops_item_events::builders::ListOpsItemEventsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListOpsItemEventsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListOpsItemEventsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_ops_item_events::paginator::ListOpsItemEventsPaginator {
         crate::operation::list_ops_item_events::paginator::ListOpsItemEventsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of summary information on the configuration of one or more Amazon Q applications.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business applications.</p>
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     _request_id: Option<String>,
 }
 impl ListApplicationsOutput {
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of summary information on the configuration of one or more Amazon Q applications.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business applications.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
     pub fn applications(&self) -> &[crate::types::Application] {
@@ -42,17 +42,17 @@ pub struct ListApplicationsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListApplicationsOutputBuilder {
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent request to retrieve the next set of applications.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListApplicationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
-    /// <p>An array of summary information on the configuration of one or more Amazon Q applications.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business applications.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         let mut v = self.applications.unwrap_or_default();
         v.push(input);
         self.applications = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of summary information on the configuration of one or more Amazon Q applications.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business applications.</p>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.applications = input;
         self
     }
-    /// <p>An array of summary information on the configuration of one or more Amazon Q applications.</p>
+    /// <p>An array of summary information on the configuration of one or more Amazon Q Business applications.</p>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         &self.applications
     }

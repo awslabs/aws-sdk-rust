@@ -3,7 +3,7 @@ pub use crate::operation::list_indexes::_list_indexes_output::ListIndexesOutputB
 
 pub use crate::operation::list_indexes::_list_indexes_input::ListIndexesInputBuilder;
 
-impl ListIndexesInputBuilder {
+impl crate::operation::list_indexes::builders::ListIndexesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListIndexesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -131,6 +131,7 @@ impl ListIndexesFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
         self.inner.get_type()
     }
+    ///
     /// Appends an item to `Regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).

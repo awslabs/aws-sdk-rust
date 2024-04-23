@@ -3,7 +3,7 @@ pub use crate::operation::create_job::_create_job_output::CreateJobOutputBuilder
 
 pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 
-impl CreateJobInputBuilder {
+impl crate::operation::create_job::builders::CreateJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl CreateJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -144,6 +144,7 @@ impl CreateJobFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    ///
     /// Appends an item to `HopDestinations`.
     ///
     /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
@@ -260,6 +261,7 @@ impl CreateJobFluentBuilder {
     pub fn get_status_update_interval(&self) -> &::std::option::Option<crate::types::StatusUpdateInterval> {
         self.inner.get_status_update_interval()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -278,6 +280,7 @@ impl CreateJobFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Adds a key-value pair to `UserMetadata`.
     ///
     /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).

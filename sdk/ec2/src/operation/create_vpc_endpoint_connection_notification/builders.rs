@@ -3,7 +3,7 @@ pub use crate::operation::create_vpc_endpoint_connection_notification::_create_v
 
 pub use crate::operation::create_vpc_endpoint_connection_notification::_create_vpc_endpoint_connection_notification_input::CreateVpcEndpointConnectionNotificationInputBuilder;
 
-impl CreateVpcEndpointConnectionNotificationInputBuilder {
+impl crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -169,6 +169,7 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder {
     pub fn get_connection_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connection_notification_arn()
     }
+    ///
     /// Appends an item to `ConnectionEvents`.
     ///
     /// To override the contents of this collection use [`set_connection_events`](Self::set_connection_events).

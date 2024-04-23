@@ -3,7 +3,7 @@ pub use crate::operation::enable_fast_snapshot_restores::_enable_fast_snapshot_r
 
 pub use crate::operation::enable_fast_snapshot_restores::_enable_fast_snapshot_restores_input::EnableFastSnapshotRestoresInputBuilder;
 
-impl EnableFastSnapshotRestoresInputBuilder {
+impl crate::operation::enable_fast_snapshot_restores::builders::EnableFastSnapshotRestoresInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,15 +101,16 @@ impl EnableFastSnapshotRestoresFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `AvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -128,6 +129,7 @@ impl EnableFastSnapshotRestoresFluentBuilder {
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
     }
+    ///
     /// Appends an item to `SourceSnapshotIds`.
     ///
     /// To override the contents of this collection use [`set_source_snapshot_ids`](Self::set_source_snapshot_ids).

@@ -3,7 +3,7 @@ pub use crate::operation::create_media_concatenation_pipeline::_create_media_con
 
 pub use crate::operation::create_media_concatenation_pipeline::_create_media_concatenation_pipeline_input::CreateMediaConcatenationPipelineInputBuilder;
 
-impl CreateMediaConcatenationPipelineInputBuilder {
+impl crate::operation::create_media_concatenation_pipeline::builders::CreateMediaConcatenationPipelineInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl CreateMediaConcatenationPipelineFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `Sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -126,6 +127,7 @@ impl CreateMediaConcatenationPipelineFluentBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>> {
         self.inner.get_sources()
     }
+    ///
     /// Appends an item to `Sinks`.
     ///
     /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
@@ -158,6 +160,7 @@ impl CreateMediaConcatenationPipelineFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

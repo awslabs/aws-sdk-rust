@@ -3,7 +3,7 @@ pub use crate::operation::update_analysis_permissions::_update_analysis_permissi
 
 pub use crate::operation::update_analysis_permissions::_update_analysis_permissions_input::UpdateAnalysisPermissionsInputBuilder;
 
-impl UpdateAnalysisPermissionsInputBuilder {
+impl crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateAnalysisPermissionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateAnalysisPermissionsFluentBuilder {
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_analysis_id()
     }
+    ///
     /// Appends an item to `GrantPermissions`.
     ///
     /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
@@ -154,6 +155,7 @@ impl UpdateAnalysisPermissionsFluentBuilder {
     pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_grant_permissions()
     }
+    ///
     /// Appends an item to `RevokePermissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).

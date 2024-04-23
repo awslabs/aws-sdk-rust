@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricsOutput {
-    /// <p>The list of retrieved metrics.</p>
+    /// <p>The list of summary metrics that were retrieved.</p>
     pub summary_metric_query_results: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQueryResult>>,
     _request_id: Option<String>,
 }
 impl GetMetricsOutput {
-    /// <p>The list of retrieved metrics.</p>
+    /// <p>The list of summary metrics that were retrieved.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summary_metric_query_results.is_none()`.
     pub fn summary_metric_query_results(&self) -> &[crate::types::SummaryMetricQueryResult] {
@@ -39,19 +39,19 @@ impl GetMetricsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_summary_metric_query_results`](Self::set_summary_metric_query_results).
     ///
-    /// <p>The list of retrieved metrics.</p>
+    /// <p>The list of summary metrics that were retrieved.</p>
     pub fn summary_metric_query_results(mut self, input: crate::types::SummaryMetricQueryResult) -> Self {
         let mut v = self.summary_metric_query_results.unwrap_or_default();
         v.push(input);
         self.summary_metric_query_results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of retrieved metrics.</p>
+    /// <p>The list of summary metrics that were retrieved.</p>
     pub fn set_summary_metric_query_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQueryResult>>) -> Self {
         self.summary_metric_query_results = input;
         self
     }
-    /// <p>The list of retrieved metrics.</p>
+    /// <p>The list of summary metrics that were retrieved.</p>
     pub fn get_summary_metric_query_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQueryResult>> {
         &self.summary_metric_query_results
     }

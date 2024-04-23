@@ -3,7 +3,7 @@ pub use crate::operation::update_position::_update_position_output::UpdatePositi
 
 pub use crate::operation::update_position::_update_position_input::UpdatePositionInputBuilder;
 
-impl UpdatePositionInputBuilder {
+impl crate::operation::update_position::builders::UpdatePositionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl UpdatePositionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl UpdatePositionFluentBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
         self.inner.get_resource_type()
     }
+    ///
     /// Appends an item to `Position`.
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).

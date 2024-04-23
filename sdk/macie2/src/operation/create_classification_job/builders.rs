@@ -3,7 +3,7 @@ pub use crate::operation::create_classification_job::_create_classification_job_
 
 pub use crate::operation::create_classification_job::_create_classification_job_input::CreateClassificationJobInputBuilder;
 
-impl CreateClassificationJobInputBuilder {
+impl crate::operation::create_classification_job::builders::CreateClassificationJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl CreateClassificationJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `allowListIds`.
     ///
     /// To override the contents of this collection use [`set_allow_list_ids`](Self::set_allow_list_ids).
@@ -140,6 +141,7 @@ impl CreateClassificationJobFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `customDataIdentifierIds`.
     ///
     /// To override the contents of this collection use [`set_custom_data_identifier_ids`](Self::set_custom_data_identifier_ids).
@@ -221,6 +223,7 @@ impl CreateClassificationJobFluentBuilder {
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
         self.inner.get_job_type()
     }
+    ///
     /// Appends an item to `managedDataIdentifierIds`.
     ///
     /// To override the contents of this collection use [`set_managed_data_identifier_ids`](Self::set_managed_data_identifier_ids).
@@ -357,6 +360,7 @@ impl CreateClassificationJobFluentBuilder {
     pub fn get_schedule_frequency(&self) -> &::std::option::Option<crate::types::JobScheduleFrequency> {
         self.inner.get_schedule_frequency()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

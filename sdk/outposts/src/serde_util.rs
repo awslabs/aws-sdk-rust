@@ -17,3 +17,24 @@ pub(crate) fn address_correct_errors(mut builder: crate::types::builders::Addres
     }
     builder
 }
+
+pub(crate) fn capacity_task_failure_correct_errors(
+    mut builder: crate::types::builders::CapacityTaskFailureBuilder,
+) -> crate::types::builders::CapacityTaskFailureBuilder {
+    if builder.reason.is_none() {
+        builder.reason = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn instance_type_capacity_correct_errors(
+    mut builder: crate::types::builders::InstanceTypeCapacityBuilder,
+) -> crate::types::builders::InstanceTypeCapacityBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = Some(Default::default())
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    builder
+}

@@ -3,7 +3,7 @@ pub use crate::operation::update_job_from_source_control::_update_job_from_sourc
 
 pub use crate::operation::update_job_from_source_control::_update_job_from_source_control_input::UpdateJobFromSourceControlInputBuilder;
 
-impl UpdateJobFromSourceControlInputBuilder {
+impl crate::operation::update_job_from_source_control::builders::UpdateJobFromSourceControlInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateJobFromSourceControlFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::describe_snapshot_schedules::_describe_snapshot_schedu
 
 pub use crate::operation::describe_snapshot_schedules::_describe_snapshot_schedules_input::DescribeSnapshotSchedulesInputBuilder;
 
-impl DescribeSnapshotSchedulesInputBuilder {
+impl crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeSnapshotSchedulesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl DescribeSnapshotSchedulesFluentBuilder {
     pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_schedule_identifier()
     }
+    ///
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -160,6 +161,7 @@ impl DescribeSnapshotSchedulesFluentBuilder {
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_keys()
     }
+    ///
     /// Appends an item to `TagValues`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).

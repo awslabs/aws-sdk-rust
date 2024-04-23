@@ -3,7 +3,7 @@ pub use crate::operation::create_user::_create_user_output::CreateUserOutputBuil
 
 pub use crate::operation::create_user::_create_user_input::CreateUserInputBuilder;
 
-impl CreateUserInputBuilder {
+impl crate::operation::create_user::builders::CreateUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateUserFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
+    ///
     /// Appends an item to `userAliases`.
     ///
     /// To override the contents of this collection use [`set_user_aliases`](Self::set_user_aliases).
@@ -154,17 +155,17 @@ impl CreateUserFluentBuilder {
     pub fn get_user_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAlias>> {
         self.inner.get_user_aliases()
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A token that you provide to identify the request to create your Amazon Q user mapping.</p>
+    /// <p>A token that you provide to identify the request to create your Amazon Q Business user mapping.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

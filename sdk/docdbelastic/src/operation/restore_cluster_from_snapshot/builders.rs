@@ -3,7 +3,7 @@ pub use crate::operation::restore_cluster_from_snapshot::_restore_cluster_from_s
 
 pub use crate::operation::restore_cluster_from_snapshot::_restore_cluster_from_snapshot_input::RestoreClusterFromSnapshotInputBuilder;
 
-impl RestoreClusterFromSnapshotInputBuilder {
+impl crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RestoreClusterFromSnapshotFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_arn()
     }
+    ///
     /// Appends an item to `vpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -154,6 +155,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
+    ///
     /// Appends an item to `subnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -192,6 +194,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

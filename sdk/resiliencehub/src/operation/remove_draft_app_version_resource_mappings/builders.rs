@@ -3,7 +3,7 @@ pub use crate::operation::remove_draft_app_version_resource_mappings::_remove_dr
 
 pub use crate::operation::remove_draft_app_version_resource_mappings::_remove_draft_app_version_resource_mappings_input::RemoveDraftAppVersionResourceMappingsInputBuilder;
 
-impl RemoveDraftAppVersionResourceMappingsInputBuilder {
+impl crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -126,6 +126,7 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_arn()
     }
+    ///
     /// Appends an item to `resourceNames`.
     ///
     /// To override the contents of this collection use [`set_resource_names`](Self::set_resource_names).
@@ -144,6 +145,7 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     pub fn get_resource_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_names()
     }
+    ///
     /// Appends an item to `logicalStackNames`.
     ///
     /// To override the contents of this collection use [`set_logical_stack_names`](Self::set_logical_stack_names).
@@ -162,6 +164,7 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     pub fn get_logical_stack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_logical_stack_names()
     }
+    ///
     /// Appends an item to `appRegistryAppNames`.
     ///
     /// To override the contents of this collection use [`set_app_registry_app_names`](Self::set_app_registry_app_names).
@@ -180,6 +183,7 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     pub fn get_app_registry_app_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_app_registry_app_names()
     }
+    ///
     /// Appends an item to `resourceGroupNames`.
     ///
     /// To override the contents of this collection use [`set_resource_group_names`](Self::set_resource_group_names).
@@ -198,6 +202,7 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     pub fn get_resource_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_group_names()
     }
+    ///
     /// Appends an item to `terraformSourceNames`.
     ///
     /// To override the contents of this collection use [`set_terraform_source_names`](Self::set_terraform_source_names).
@@ -216,6 +221,7 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     pub fn get_terraform_source_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_terraform_source_names()
     }
+    ///
     /// Appends an item to `eksSourceNames`.
     ///
     /// To override the contents of this collection use [`set_eks_source_names`](Self::set_eks_source_names).

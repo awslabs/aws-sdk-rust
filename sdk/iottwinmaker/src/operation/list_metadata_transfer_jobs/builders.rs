@@ -3,7 +3,7 @@ pub use crate::operation::list_metadata_transfer_jobs::_list_metadata_transfer_j
 
 pub use crate::operation::list_metadata_transfer_jobs::_list_metadata_transfer_jobs_input::ListMetadataTransferJobsInputBuilder;
 
-impl ListMetadataTransferJobsInputBuilder {
+impl crate::operation::list_metadata_transfer_jobs::builders::ListMetadataTransferJobsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListMetadataTransferJobsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl ListMetadataTransferJobsFluentBuilder {
     pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
         self.inner.get_destination_type()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

@@ -3,7 +3,7 @@ pub use crate::operation::batch_delete_document::_batch_delete_document_output::
 
 pub use crate::operation::batch_delete_document::_batch_delete_document_input::BatchDeleteDocumentInputBuilder;
 
-impl BatchDeleteDocumentInputBuilder {
+impl crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl BatchDeleteDocumentInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDeleteDocument`.
 ///
-/// <p>Asynchronously deletes one or more documents added using the <code>BatchPutDocument</code> API from an Amazon Q index.</p>
+/// <p>Asynchronously deletes one or more documents added using the <code>BatchPutDocument</code> API from an Amazon Q Business index.</p>
 /// <p>You can see the progress of the deletion, and any error messages related to the process, by using CloudWatch.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteDocumentFluentBuilder {
@@ -100,58 +100,59 @@ impl BatchDeleteDocumentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
+    /// <p>The identifier of the Amazon Q Business index that contains the documents to delete.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
+    /// <p>The identifier of the Amazon Q Business index that contains the documents to delete.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q index that contains the documents to delete.</p>
+    /// <p>The identifier of the Amazon Q Business index that contains the documents to delete.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }
+    ///
     /// Appends an item to `documents`.
     ///
     /// To override the contents of this collection use [`set_documents`](Self::set_documents).
     ///
-    /// <p>Documents deleted from the Amazon Q index.</p>
+    /// <p>Documents deleted from the Amazon Q Business index.</p>
     pub fn documents(mut self, input: crate::types::DeleteDocument) -> Self {
         self.inner = self.inner.documents(input);
         self
     }
-    /// <p>Documents deleted from the Amazon Q index.</p>
+    /// <p>Documents deleted from the Amazon Q Business index.</p>
     pub fn set_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDocument>>) -> Self {
         self.inner = self.inner.set_documents(input);
         self
     }
-    /// <p>Documents deleted from the Amazon Q index.</p>
+    /// <p>Documents deleted from the Amazon Q Business index.</p>
     pub fn get_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteDocument>> {
         self.inner.get_documents()
     }

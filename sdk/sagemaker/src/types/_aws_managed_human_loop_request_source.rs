@@ -12,11 +12,8 @@
 /// ```text
 /// # let awsmanagedhumanlooprequestsource = unimplemented!();
 /// match awsmanagedhumanlooprequestsource {
-///     AwsManagedHumanLoopRequestSource::BedrockModelEvaluation => { /* ... */ },
-///     AwsManagedHumanLoopRequestSource::HandshakeVerifyIdentity => { /* ... */ },
 ///     AwsManagedHumanLoopRequestSource::RekognitionDetectModerationLabelsImageV3 => { /* ... */ },
 ///     AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1 => { /* ... */ },
-///     AwsManagedHumanLoopRequestSource::TextractAnalyzeExpense => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,15 +42,9 @@
 )]
 pub enum AwsManagedHumanLoopRequestSource {
     #[allow(missing_docs)] // documentation missing in model
-    BedrockModelEvaluation,
-    #[allow(missing_docs)] // documentation missing in model
-    HandshakeVerifyIdentity,
-    #[allow(missing_docs)] // documentation missing in model
     RekognitionDetectModerationLabelsImageV3,
     #[allow(missing_docs)] // documentation missing in model
     TextractAnalyzeDocumentFormsV1,
-    #[allow(missing_docs)] // documentation missing in model
-    TextractAnalyzeExpense,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -61,11 +52,8 @@ pub enum AwsManagedHumanLoopRequestSource {
 impl ::std::convert::From<&str> for AwsManagedHumanLoopRequestSource {
     fn from(s: &str) -> Self {
         match s {
-            "AWS/Bedrock/ModelEvaluation" => AwsManagedHumanLoopRequestSource::BedrockModelEvaluation,
-            "AWS/Handshake/VerifyIdentity" => AwsManagedHumanLoopRequestSource::HandshakeVerifyIdentity,
             "AWS/Rekognition/DetectModerationLabels/Image/V3" => AwsManagedHumanLoopRequestSource::RekognitionDetectModerationLabelsImageV3,
             "AWS/Textract/AnalyzeDocument/Forms/V1" => AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1,
-            "AWS/Textract/AnalyzeExpense" => AwsManagedHumanLoopRequestSource::TextractAnalyzeExpense,
             other => AwsManagedHumanLoopRequestSource::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,23 +69,14 @@ impl AwsManagedHumanLoopRequestSource {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            AwsManagedHumanLoopRequestSource::BedrockModelEvaluation => "AWS/Bedrock/ModelEvaluation",
-            AwsManagedHumanLoopRequestSource::HandshakeVerifyIdentity => "AWS/Handshake/VerifyIdentity",
             AwsManagedHumanLoopRequestSource::RekognitionDetectModerationLabelsImageV3 => "AWS/Rekognition/DetectModerationLabels/Image/V3",
             AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1 => "AWS/Textract/AnalyzeDocument/Forms/V1",
-            AwsManagedHumanLoopRequestSource::TextractAnalyzeExpense => "AWS/Textract/AnalyzeExpense",
             AwsManagedHumanLoopRequestSource::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS/Bedrock/ModelEvaluation",
-            "AWS/Handshake/VerifyIdentity",
-            "AWS/Rekognition/DetectModerationLabels/Image/V3",
-            "AWS/Textract/AnalyzeDocument/Forms/V1",
-            "AWS/Textract/AnalyzeExpense",
-        ]
+        &["AWS/Rekognition/DetectModerationLabels/Image/V3", "AWS/Textract/AnalyzeDocument/Forms/V1"]
     }
 }
 impl ::std::convert::AsRef<str> for AwsManagedHumanLoopRequestSource {
@@ -120,13 +99,10 @@ impl AwsManagedHumanLoopRequestSource {
 impl ::std::fmt::Display for AwsManagedHumanLoopRequestSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
-            AwsManagedHumanLoopRequestSource::BedrockModelEvaluation => write!(f, "AWS/Bedrock/ModelEvaluation"),
-            AwsManagedHumanLoopRequestSource::HandshakeVerifyIdentity => write!(f, "AWS/Handshake/VerifyIdentity"),
             AwsManagedHumanLoopRequestSource::RekognitionDetectModerationLabelsImageV3 => {
                 write!(f, "AWS/Rekognition/DetectModerationLabels/Image/V3")
             }
             AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1 => write!(f, "AWS/Textract/AnalyzeDocument/Forms/V1"),
-            AwsManagedHumanLoopRequestSource::TextractAnalyzeExpense => write!(f, "AWS/Textract/AnalyzeExpense"),
             AwsManagedHumanLoopRequestSource::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -3,7 +3,7 @@ pub use crate::operation::disable_vpc_classic_link::_disable_vpc_classic_link_ou
 
 pub use crate::operation::disable_vpc_classic_link::_disable_vpc_classic_link_input::DisableVpcClassicLinkInputBuilder;
 
-impl DisableVpcClassicLinkInputBuilder {
+impl crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DisableVpcClassicLinkFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

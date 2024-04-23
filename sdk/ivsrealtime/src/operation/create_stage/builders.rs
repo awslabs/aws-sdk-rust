@@ -3,7 +3,7 @@ pub use crate::operation::create_stage::_create_stage_output::CreateStageOutputB
 
 pub use crate::operation::create_stage::_create_stage_input::CreateStageInputBuilder;
 
-impl CreateStageInputBuilder {
+impl crate::operation::create_stage::builders::CreateStageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateStageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateStageFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `participantTokenConfigurations`.
     ///
     /// To override the contents of this collection use [`set_participant_token_configurations`](Self::set_participant_token_configurations).
@@ -143,6 +144,7 @@ impl CreateStageFluentBuilder {
     pub fn get_participant_token_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenConfiguration>> {
         self.inner.get_participant_token_configurations()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

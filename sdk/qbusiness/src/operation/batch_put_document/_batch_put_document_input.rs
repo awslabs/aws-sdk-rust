@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutDocumentInput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q Business index to add the documents to.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more documents to add to the index.</p>
     pub documents: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
@@ -15,11 +15,11 @@ pub struct BatchPutDocumentInput {
     pub data_source_sync_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchPutDocumentInput {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q Business index to add the documents to.</p>
     pub fn index_id(&self) -> ::std::option::Option<&str> {
         self.index_id.as_deref()
     }
@@ -56,33 +56,33 @@ pub struct BatchPutDocumentInputBuilder {
     pub(crate) data_source_sync_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchPutDocumentInputBuilder {
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application.</p>
+    /// <p>The identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q Business index to add the documents to.</p>
     /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q Business index to add the documents to.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q index to add the documents to.</p>
+    /// <p>The identifier of the Amazon Q Business index to add the documents to.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }

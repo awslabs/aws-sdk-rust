@@ -7,6 +7,8 @@ pub struct GetMatchIdInput {
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The record to fetch the Match ID for.</p>
     pub record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub apply_normalization: ::std::option::Option<bool>,
 }
 impl GetMatchIdInput {
     /// <p>The name of the workflow.</p>
@@ -17,12 +19,17 @@ impl GetMatchIdInput {
     pub fn record(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.record.as_ref()
     }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn apply_normalization(&self) -> ::std::option::Option<bool> {
+        self.apply_normalization
+    }
 }
 impl ::std::fmt::Debug for GetMatchIdInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetMatchIdInput");
         formatter.field("workflow_name", &self.workflow_name);
         formatter.field("record", &"*** Sensitive Data Redacted ***");
+        formatter.field("apply_normalization", &self.apply_normalization);
         formatter.finish()
     }
 }
@@ -39,6 +46,7 @@ impl GetMatchIdInput {
 pub struct GetMatchIdInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) record: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) apply_normalization: ::std::option::Option<bool>,
 }
 impl GetMatchIdInputBuilder {
     /// <p>The name of the workflow.</p>
@@ -76,11 +84,26 @@ impl GetMatchIdInputBuilder {
     pub fn get_record(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.record
     }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn apply_normalization(mut self, input: bool) -> Self {
+        self.apply_normalization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn set_apply_normalization(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.apply_normalization = input;
+        self
+    }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn get_apply_normalization(&self) -> &::std::option::Option<bool> {
+        &self.apply_normalization
+    }
     /// Consumes the builder and constructs a [`GetMatchIdInput`](crate::operation::get_match_id::GetMatchIdInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_match_id::GetMatchIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_match_id::GetMatchIdInput {
             workflow_name: self.workflow_name,
             record: self.record,
+            apply_normalization: self.apply_normalization,
         })
     }
 }
@@ -89,6 +112,7 @@ impl ::std::fmt::Debug for GetMatchIdInputBuilder {
         let mut formatter = f.debug_struct("GetMatchIdInputBuilder");
         formatter.field("workflow_name", &self.workflow_name);
         formatter.field("record", &"*** Sensitive Data Redacted ***");
+        formatter.field("apply_normalization", &self.apply_normalization);
         formatter.finish()
     }
 }

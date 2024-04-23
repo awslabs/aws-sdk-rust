@@ -3,7 +3,7 @@ pub use crate::operation::describe_commands::_describe_commands_output::Describe
 
 pub use crate::operation::describe_commands::_describe_commands_input::DescribeCommandsInputBuilder;
 
-impl DescribeCommandsInputBuilder {
+impl crate::operation::describe_commands::builders::DescribeCommandsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DescribeCommandsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl DescribeCommandsFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
+    ///
     /// Appends an item to `CommandIds`.
     ///
     /// To override the contents of this collection use [`set_command_ids`](Self::set_command_ids).

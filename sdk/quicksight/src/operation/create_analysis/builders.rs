@@ -3,7 +3,7 @@ pub use crate::operation::create_analysis::_create_analysis_output::CreateAnalys
 
 pub use crate::operation::create_analysis::_create_analysis_input::CreateAnalysisInputBuilder;
 
-impl CreateAnalysisInputBuilder {
+impl crate::operation::create_analysis::builders::CreateAnalysisInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateAnalysisFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateAnalysisFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
         self.inner.get_parameters()
     }
+    ///
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -216,6 +217,7 @@ impl CreateAnalysisFluentBuilder {
     pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_theme_arn()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -268,6 +270,7 @@ impl CreateAnalysisFluentBuilder {
     pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
         self.inner.get_validation_strategy()
     }
+    ///
     /// Appends an item to `FolderArns`.
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).

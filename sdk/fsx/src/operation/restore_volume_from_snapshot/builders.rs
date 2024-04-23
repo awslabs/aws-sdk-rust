@@ -3,7 +3,7 @@ pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_sna
 
 pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_snapshot_input::RestoreVolumeFromSnapshotInputBuilder;
 
-impl RestoreVolumeFromSnapshotInputBuilder {
+impl crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_id()
     }
+    ///
     /// Appends an item to `Options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).

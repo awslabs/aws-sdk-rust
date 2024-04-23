@@ -3,7 +3,7 @@ pub use crate::operation::create_billing_group::_create_billing_group_output::Cr
 
 pub use crate::operation::create_billing_group::_create_billing_group_input::CreateBillingGroupInputBuilder;
 
-impl CreateBillingGroupInputBuilder {
+impl crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateBillingGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl CreateBillingGroupFluentBuilder {
     pub fn get_billing_group_properties(&self) -> &::std::option::Option<crate::types::BillingGroupProperties> {
         self.inner.get_billing_group_properties()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

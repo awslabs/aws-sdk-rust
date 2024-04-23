@@ -3,7 +3,7 @@ pub use crate::operation::delete_recommendation_preferences::_delete_recommendat
 
 pub use crate::operation::delete_recommendation_preferences::_delete_recommendation_preferences_input::DeleteRecommendationPreferencesInputBuilder;
 
-impl DeleteRecommendationPreferencesInputBuilder {
+impl crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DeleteRecommendationPreferencesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -149,6 +149,7 @@ impl DeleteRecommendationPreferencesFluentBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         self.inner.get_scope()
     }
+    ///
     /// Appends an item to `recommendationPreferenceNames`.
     ///
     /// To override the contents of this collection use [`set_recommendation_preference_names`](Self::set_recommendation_preference_names).

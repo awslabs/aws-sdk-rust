@@ -3,7 +3,7 @@ pub use crate::operation::create_matchmaking_configuration::_create_matchmaking_
 
 pub use crate::operation::create_matchmaking_configuration::_create_matchmaking_configuration_input::CreateMatchmakingConfigurationInputBuilder;
 
-impl CreateMatchmakingConfigurationInputBuilder {
+impl crate::operation::create_matchmaking_configuration::builders::CreateMatchmakingConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -141,6 +141,7 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `GameSessionQueueArns`.
     ///
     /// To override the contents of this collection use [`set_game_session_queue_arns`](Self::set_game_session_queue_arns).
@@ -266,6 +267,7 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn get_custom_event_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_event_data()
     }
+    ///
     /// Appends an item to `GameProperties`.
     ///
     /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
@@ -344,6 +346,7 @@ impl CreateMatchmakingConfigurationFluentBuilder {
     pub fn get_flex_match_mode(&self) -> &::std::option::Option<crate::types::FlexMatchMode> {
         self.inner.get_flex_match_mode()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

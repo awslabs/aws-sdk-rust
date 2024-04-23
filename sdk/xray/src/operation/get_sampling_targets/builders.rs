@@ -3,7 +3,7 @@ pub use crate::operation::get_sampling_targets::_get_sampling_targets_output::Ge
 
 pub use crate::operation::get_sampling_targets::_get_sampling_targets_input::GetSamplingTargetsInputBuilder;
 
-impl GetSamplingTargetsInputBuilder {
+impl crate::operation::get_sampling_targets::builders::GetSamplingTargetsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl GetSamplingTargetsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `SamplingStatisticsDocuments`.
     ///
     /// To override the contents of this collection use [`set_sampling_statistics_documents`](Self::set_sampling_statistics_documents).

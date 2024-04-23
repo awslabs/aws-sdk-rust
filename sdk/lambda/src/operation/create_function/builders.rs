@@ -3,7 +3,7 @@ pub use crate::operation::create_function::_create_function_output::CreateFuncti
 
 pub use crate::operation::create_function::_create_function_input::CreateFunctionInputBuilder;
 
-impl CreateFunctionInputBuilder {
+impl crate::operation::create_function::builders::CreateFunctionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl CreateFunctionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -359,6 +359,7 @@ impl CreateFunctionFluentBuilder {
     pub fn get_tracing_config(&self) -> &::std::option::Option<crate::types::TracingConfig> {
         self.inner.get_tracing_config()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -377,6 +378,7 @@ impl CreateFunctionFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `Layers`.
     ///
     /// To override the contents of this collection use [`set_layers`](Self::set_layers).
@@ -395,6 +397,7 @@ impl CreateFunctionFluentBuilder {
     pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_layers()
     }
+    ///
     /// Appends an item to `FileSystemConfigs`.
     ///
     /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
@@ -441,6 +444,7 @@ impl CreateFunctionFluentBuilder {
     pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_code_signing_config_arn()
     }
+    ///
     /// Appends an item to `Architectures`.
     ///
     /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).

@@ -3,7 +3,7 @@ pub use crate::operation::get_relational_database_master_user_password::_get_rel
 
 pub use crate::operation::get_relational_database_master_user_password::_get_relational_database_master_user_password_input::GetRelationalDatabaseMasterUserPasswordInputBuilder;
 
-impl GetRelationalDatabaseMasterUserPasswordInputBuilder {
+impl crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -104,12 +104,12 @@ impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

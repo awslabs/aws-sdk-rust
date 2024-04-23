@@ -3,7 +3,7 @@ pub use crate::operation::create_dashboard::_create_dashboard_output::CreateDash
 
 pub use crate::operation::create_dashboard::_create_dashboard_input::CreateDashboardInputBuilder;
 
-impl CreateDashboardInputBuilder {
+impl crate::operation::create_dashboard::builders::CreateDashboardInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateDashboardFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl CreateDashboardFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
         self.inner.get_parameters()
     }
+    ///
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -206,6 +207,7 @@ impl CreateDashboardFluentBuilder {
     pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::DashboardSourceEntity> {
         self.inner.get_source_entity()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -324,6 +326,7 @@ impl CreateDashboardFluentBuilder {
     pub fn get_validation_strategy(&self) -> &::std::option::Option<crate::types::ValidationStrategy> {
         self.inner.get_validation_strategy()
     }
+    ///
     /// Appends an item to `FolderArns`.
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).
@@ -356,6 +359,7 @@ impl CreateDashboardFluentBuilder {
     pub fn get_link_sharing_configuration(&self) -> &::std::option::Option<crate::types::LinkSharingConfiguration> {
         self.inner.get_link_sharing_configuration()
     }
+    ///
     /// Appends an item to `LinkEntities`.
     ///
     /// To override the contents of this collection use [`set_link_entities`](Self::set_link_entities).

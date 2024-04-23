@@ -119,6 +119,8 @@ pub struct Workload {
     pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    /// <p>Jira configuration for a specific workload.</p>
+    pub jira_configuration: ::std::option::Option<crate::types::WorkloadJiraConfigurationOutput>,
 }
 impl Workload {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -304,6 +306,10 @@ impl Workload {
     pub fn prioritized_risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.prioritized_risk_counts.as_ref()
     }
+    /// <p>Jira configuration for a specific workload.</p>
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::WorkloadJiraConfigurationOutput> {
+        self.jira_configuration.as_ref()
+    }
 }
 impl Workload {
     /// Creates a new builder-style object to manufacture [`Workload`](crate::types::Workload).
@@ -343,6 +349,7 @@ pub struct WorkloadBuilder {
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
     pub(crate) prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::WorkloadJiraConfigurationOutput>,
 }
 impl WorkloadBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -966,6 +973,20 @@ impl WorkloadBuilder {
     pub fn get_prioritized_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
         &self.prioritized_risk_counts
     }
+    /// <p>Jira configuration for a specific workload.</p>
+    pub fn jira_configuration(mut self, input: crate::types::WorkloadJiraConfigurationOutput) -> Self {
+        self.jira_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Jira configuration for a specific workload.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::WorkloadJiraConfigurationOutput>) -> Self {
+        self.jira_configuration = input;
+        self
+    }
+    /// <p>Jira configuration for a specific workload.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::WorkloadJiraConfigurationOutput> {
+        &self.jira_configuration
+    }
     /// Consumes the builder and constructs a [`Workload`](crate::types::Workload).
     pub fn build(self) -> crate::types::Workload {
         crate::types::Workload {
@@ -996,6 +1017,7 @@ impl WorkloadBuilder {
             applications: self.applications,
             profiles: self.profiles,
             prioritized_risk_counts: self.prioritized_risk_counts,
+            jira_configuration: self.jira_configuration,
         }
     }
 }

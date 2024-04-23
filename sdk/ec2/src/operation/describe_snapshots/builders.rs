@@ -3,7 +3,7 @@ pub use crate::operation::describe_snapshots::_describe_snapshots_output::Descri
 
 pub use crate::operation::describe_snapshots::_describe_snapshots_input::DescribeSnapshotsInputBuilder;
 
-impl DescribeSnapshotsInputBuilder {
+impl crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -116,12 +116,12 @@ impl DescribeSnapshotsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -131,6 +131,7 @@ impl DescribeSnapshotsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator {
         crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -279,6 +280,7 @@ impl DescribeSnapshotsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `OwnerIds`.
     ///
     /// To override the contents of this collection use [`set_owner_ids`](Self::set_owner_ids).
@@ -297,6 +299,7 @@ impl DescribeSnapshotsFluentBuilder {
     pub fn get_owner_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_owner_ids()
     }
+    ///
     /// Appends an item to `RestorableByUserIds`.
     ///
     /// To override the contents of this collection use [`set_restorable_by_user_ids`](Self::set_restorable_by_user_ids).
@@ -315,6 +318,7 @@ impl DescribeSnapshotsFluentBuilder {
     pub fn get_restorable_by_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_restorable_by_user_ids()
     }
+    ///
     /// Appends an item to `SnapshotIds`.
     ///
     /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).

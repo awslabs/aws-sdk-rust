@@ -3,7 +3,7 @@ pub use crate::operation::batch_read::_batch_read_output::BatchReadOutputBuilder
 
 pub use crate::operation::batch_read::_batch_read_input::BatchReadInputBuilder;
 
-impl BatchReadInputBuilder {
+impl crate::operation::batch_read::builders::BatchReadInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl BatchReadFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -116,6 +116,7 @@ impl BatchReadFluentBuilder {
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_directory_arn()
     }
+    ///
     /// Appends an item to `Operations`.
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).

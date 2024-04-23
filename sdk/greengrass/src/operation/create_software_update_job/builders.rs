@@ -3,7 +3,7 @@ pub use crate::operation::create_software_update_job::_create_software_update_jo
 
 pub use crate::operation::create_software_update_job::_create_software_update_job_input::CreateSoftwareUpdateJobInputBuilder;
 
-impl CreateSoftwareUpdateJobInputBuilder {
+impl crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSoftwareUpdateJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateSoftwareUpdateJobFluentBuilder {
     pub fn get_update_agent_log_level(&self) -> &::std::option::Option<crate::types::UpdateAgentLogLevel> {
         self.inner.get_update_agent_log_level()
     }
+    ///
     /// Appends an item to `UpdateTargets`.
     ///
     /// To override the contents of this collection use [`set_update_targets`](Self::set_update_targets).

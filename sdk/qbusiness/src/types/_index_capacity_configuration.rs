@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndexCapacityConfiguration {
-    /// <p>The number of storage units configured for an Amazon Q index.</p>
+    /// <p>The number of storage units configured for an Amazon Q Business index.</p>
     pub units: ::std::option::Option<i32>,
 }
 impl IndexCapacityConfiguration {
-    /// <p>The number of storage units configured for an Amazon Q index.</p>
+    /// <p>The number of storage units configured for an Amazon Q Business index.</p>
     pub fn units(&self) -> ::std::option::Option<i32> {
         self.units
     }
@@ -27,17 +27,17 @@ pub struct IndexCapacityConfigurationBuilder {
     pub(crate) units: ::std::option::Option<i32>,
 }
 impl IndexCapacityConfigurationBuilder {
-    /// <p>The number of storage units configured for an Amazon Q index.</p>
+    /// <p>The number of storage units configured for an Amazon Q Business index.</p>
     pub fn units(mut self, input: i32) -> Self {
         self.units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of storage units configured for an Amazon Q index.</p>
+    /// <p>The number of storage units configured for an Amazon Q Business index.</p>
     pub fn set_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.units = input;
         self
     }
-    /// <p>The number of storage units configured for an Amazon Q index.</p>
+    /// <p>The number of storage units configured for an Amazon Q Business index.</p>
     pub fn get_units(&self) -> &::std::option::Option<i32> {
         &self.units
     }

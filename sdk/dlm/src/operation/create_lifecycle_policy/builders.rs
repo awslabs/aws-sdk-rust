@@ -3,7 +3,7 @@ pub use crate::operation::create_lifecycle_policy::_create_lifecycle_policy_outp
 
 pub use crate::operation::create_lifecycle_policy::_create_lifecycle_policy_input::CreateLifecyclePolicyInputBuilder;
 
-impl CreateLifecyclePolicyInputBuilder {
+impl crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -114,12 +114,12 @@ impl CreateLifecyclePolicyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -185,6 +185,7 @@ impl CreateLifecyclePolicyFluentBuilder {
     pub fn get_policy_details(&self) -> &::std::option::Option<crate::types::PolicyDetails> {
         self.inner.get_policy_details()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -330,6 +331,7 @@ impl CreateLifecyclePolicyFluentBuilder {
     pub fn get_extend_deletion(&self) -> &::std::option::Option<bool> {
         self.inner.get_extend_deletion()
     }
+    ///
     /// Appends an item to `CrossRegionCopyTargets`.
     ///
     /// To override the contents of this collection use [`set_cross_region_copy_targets`](Self::set_cross_region_copy_targets).

@@ -3,7 +3,7 @@ pub use crate::operation::describe_pools::_describe_pools_output::DescribePoolsO
 
 pub use crate::operation::describe_pools::_describe_pools_input::DescribePoolsInputBuilder;
 
-impl DescribePoolsInputBuilder {
+impl crate::operation::describe_pools::builders::DescribePoolsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DescribePoolsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -117,6 +117,7 @@ impl DescribePoolsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_pools::paginator::DescribePoolsPaginator {
         crate::operation::describe_pools::paginator::DescribePoolsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `PoolIds`.
     ///
     /// To override the contents of this collection use [`set_pool_ids`](Self::set_pool_ids).
@@ -135,6 +136,7 @@ impl DescribePoolsFluentBuilder {
     pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pool_ids()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

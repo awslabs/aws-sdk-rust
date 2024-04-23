@@ -3,7 +3,7 @@ pub use crate::operation::get_crawler_metrics::_get_crawler_metrics_output::GetC
 
 pub use crate::operation::get_crawler_metrics::_get_crawler_metrics_input::GetCrawlerMetricsInputBuilder;
 
-impl GetCrawlerMetricsInputBuilder {
+impl crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetCrawlerMetricsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl GetCrawlerMetricsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_crawler_metrics::paginator::GetCrawlerMetricsPaginator {
         crate::operation::get_crawler_metrics::paginator::GetCrawlerMetricsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `CrawlerNameList`.
     ///
     /// To override the contents of this collection use [`set_crawler_name_list`](Self::set_crawler_name_list).

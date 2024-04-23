@@ -3,7 +3,7 @@ pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_output::Author
 
 pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_input::AuthorizeIpRulesInputBuilder;
 
-impl AuthorizeIpRulesInputBuilder {
+impl crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl AuthorizeIpRulesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl AuthorizeIpRulesFluentBuilder {
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_id()
     }
+    ///
     /// Appends an item to `UserRules`.
     ///
     /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).

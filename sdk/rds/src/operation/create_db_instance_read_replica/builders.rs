@@ -3,7 +3,7 @@ pub use crate::operation::create_db_instance_read_replica::_create_db_instance_r
 
 pub use crate::operation::create_db_instance_read_replica::_create_db_instance_read_replica_input::CreateDbInstanceReadReplicaInputBuilder;
 
-impl CreateDbInstanceReadReplicaInputBuilder {
+impl crate::operation::create_db_instance_read_replica::builders::CreateDbInstanceReadReplicaInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -395,6 +395,7 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
         self.inner.get_publicly_accessible()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -475,6 +476,7 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_subnet_group_name()
     }
+    ///
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -792,6 +794,7 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_performance_insights_retention_period()
     }
+    ///
     /// Appends an item to `EnableCloudwatchLogsExports`.
     ///
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
@@ -813,6 +816,7 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
+    ///
     /// Appends an item to `ProcessorFeatures`.
     ///
     /// To override the contents of this collection use [`set_processor_features`](Self::set_processor_features).
@@ -989,6 +993,7 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     pub fn get_domain_auth_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_auth_secret_arn()
     }
+    ///
     /// Appends an item to `DomainDnsIps`.
     ///
     /// To override the contents of this collection use [`set_domain_dns_ips`](Self::set_domain_dns_ips).

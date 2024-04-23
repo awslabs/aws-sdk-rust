@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`override_permissions(Option<AssetBundleImportJobOverridePermissions>)`](crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobOutput::override_permissions): <p>Optional permission overrides that are applied to the resource configuration before import.</p>
     ///   - [`override_tags(Option<AssetBundleImportJobOverrideTags>)`](crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobOutput::override_tags): <p>Optional tag overrides that are applied to the resource configuration before import.</p>
     ///   - [`override_validation_strategy(Option<AssetBundleImportJobOverrideValidationStrategy>)`](crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobOutput::override_validation_strategy): <p>An optional validation strategy override for all analyses and dashboards to be applied to the resource configuration before import.</p>
+    ///   - [`warnings(Option<Vec::<AssetBundleImportJobWarning>>)`](crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobOutput::warnings): <p>An array of warning records that describe all permitted errors that are encountered during the import job.</p>
     /// - On failure, responds with [`SdkError<DescribeAssetBundleImportJobError>`](crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError)
     pub fn describe_asset_bundle_import_job(
         &self,

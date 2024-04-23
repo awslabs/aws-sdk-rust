@@ -3,7 +3,7 @@ pub use crate::operation::start_medical_scribe_job::_start_medical_scribe_job_ou
 
 pub use crate::operation::start_medical_scribe_job::_start_medical_scribe_job_input::StartMedicalScribeJobInputBuilder;
 
-impl StartMedicalScribeJobInputBuilder {
+impl crate::operation::start_medical_scribe_job::builders::StartMedicalScribeJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -116,12 +116,12 @@ impl StartMedicalScribeJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -250,6 +250,7 @@ impl StartMedicalScribeJobFluentBuilder {
     pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_encryption_kms_key_id()
     }
+    ///
     /// Adds a key-value pair to `KMSEncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_kms_encryption_context`](Self::set_kms_encryption_context).
@@ -309,6 +310,7 @@ impl StartMedicalScribeJobFluentBuilder {
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::MedicalScribeSettings> {
         self.inner.get_settings()
     }
+    ///
     /// Appends an item to `ChannelDefinitions`.
     ///
     /// To override the contents of this collection use [`set_channel_definitions`](Self::set_channel_definitions).
@@ -327,6 +329,7 @@ impl StartMedicalScribeJobFluentBuilder {
     pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalScribeChannelDefinition>> {
         self.inner.get_channel_definitions()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

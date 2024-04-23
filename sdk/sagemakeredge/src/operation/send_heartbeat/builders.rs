@@ -3,7 +3,7 @@ pub use crate::operation::send_heartbeat::_send_heartbeat_output::SendHeartbeatO
 
 pub use crate::operation::send_heartbeat::_send_heartbeat_input::SendHeartbeatInputBuilder;
 
-impl SendHeartbeatInputBuilder {
+impl crate::operation::send_heartbeat::builders::SendHeartbeatInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl SendHeartbeatFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `AgentMetrics`.
     ///
     /// To override the contents of this collection use [`set_agent_metrics`](Self::set_agent_metrics).
@@ -126,6 +127,7 @@ impl SendHeartbeatFluentBuilder {
     pub fn get_agent_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>> {
         self.inner.get_agent_metrics()
     }
+    ///
     /// Appends an item to `Models`.
     ///
     /// To override the contents of this collection use [`set_models`](Self::set_models).

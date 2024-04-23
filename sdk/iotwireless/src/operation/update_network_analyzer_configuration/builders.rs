@@ -3,7 +3,7 @@ pub use crate::operation::update_network_analyzer_configuration::_update_network
 
 pub use crate::operation::update_network_analyzer_configuration::_update_network_analyzer_configuration_input::UpdateNetworkAnalyzerConfigurationInputBuilder;
 
-impl UpdateNetworkAnalyzerConfigurationInputBuilder {
+impl crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
         self.inner.get_trace_content()
     }
+    ///
     /// Appends an item to `WirelessDevicesToAdd`.
     ///
     /// To override the contents of this collection use [`set_wireless_devices_to_add`](Self::set_wireless_devices_to_add).
@@ -154,6 +155,7 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_wireless_devices_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_wireless_devices_to_add()
     }
+    ///
     /// Appends an item to `WirelessDevicesToRemove`.
     ///
     /// To override the contents of this collection use [`set_wireless_devices_to_remove`](Self::set_wireless_devices_to_remove).
@@ -172,6 +174,7 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_wireless_devices_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_wireless_devices_to_remove()
     }
+    ///
     /// Appends an item to `WirelessGatewaysToAdd`.
     ///
     /// To override the contents of this collection use [`set_wireless_gateways_to_add`](Self::set_wireless_gateways_to_add).
@@ -190,6 +193,7 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_wireless_gateways_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_wireless_gateways_to_add()
     }
+    ///
     /// Appends an item to `WirelessGatewaysToRemove`.
     ///
     /// To override the contents of this collection use [`set_wireless_gateways_to_remove`](Self::set_wireless_gateways_to_remove).
@@ -222,6 +226,7 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `MulticastGroupsToAdd`.
     ///
     /// To override the contents of this collection use [`set_multicast_groups_to_add`](Self::set_multicast_groups_to_add).
@@ -240,6 +245,7 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn get_multicast_groups_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_multicast_groups_to_add()
     }
+    ///
     /// Appends an item to `MulticastGroupsToRemove`.
     ///
     /// To override the contents of this collection use [`set_multicast_groups_to_remove`](Self::set_multicast_groups_to_remove).

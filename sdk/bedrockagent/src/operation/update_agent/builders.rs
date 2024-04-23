@@ -3,7 +3,7 @@ pub use crate::operation::update_agent::_update_agent_output::UpdateAgentOutputB
 
 pub use crate::operation::update_agent::_update_agent_input::UpdateAgentInputBuilder;
 
-impl UpdateAgentInputBuilder {
+impl crate::operation::update_agent::builders::UpdateAgentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateAgentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -195,31 +195,31 @@ impl UpdateAgentFluentBuilder {
     pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_idle_session_ttl_in_seconds()
     }
-    /// <p>The ARN of the IAM role with permissions to update the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub fn agent_resource_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_resource_role_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM role with permissions to update the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub fn set_agent_resource_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_resource_role_arn(input);
         self
     }
-    /// <p>The ARN of the IAM role with permissions to update the agent. The ARN must begin with <code>AmazonBedrockExecutionRoleForAgents_</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.</p>
     pub fn get_agent_resource_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_resource_role_arn()
     }
-    /// <p>The ARN of the KMS key with which to encrypt the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the agent.</p>
     pub fn customer_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_encryption_key_arn(input.into());
         self
     }
-    /// <p>The ARN of the KMS key with which to encrypt the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the agent.</p>
     pub fn set_customer_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_encryption_key_arn(input);
         self
     }
-    /// <p>The ARN of the KMS key with which to encrypt the agent.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the agent.</p>
     pub fn get_customer_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_encryption_key_arn()
     }

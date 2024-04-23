@@ -3,7 +3,7 @@ pub use crate::operation::update_practice_run_configuration::_update_practice_ru
 
 pub use crate::operation::update_practice_run_configuration::_update_practice_run_configuration_input::UpdatePracticeRunConfigurationInputBuilder;
 
-impl UpdatePracticeRunConfigurationInputBuilder {
+impl crate::operation::update_practice_run_configuration::builders::UpdatePracticeRunConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdatePracticeRunConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdatePracticeRunConfigurationFluentBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_identifier()
     }
+    ///
     /// Appends an item to `blockedWindows`.
     ///
     /// To override the contents of this collection use [`set_blocked_windows`](Self::set_blocked_windows).
@@ -146,6 +147,7 @@ impl UpdatePracticeRunConfigurationFluentBuilder {
     pub fn get_blocked_windows(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_blocked_windows()
     }
+    ///
     /// Appends an item to `blockedDates`.
     ///
     /// To override the contents of this collection use [`set_blocked_dates`](Self::set_blocked_dates).
@@ -170,6 +172,7 @@ impl UpdatePracticeRunConfigurationFluentBuilder {
     pub fn get_blocked_dates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_blocked_dates()
     }
+    ///
     /// Appends an item to `blockingAlarms`.
     ///
     /// To override the contents of this collection use [`set_blocking_alarms`](Self::set_blocking_alarms).
@@ -188,6 +191,7 @@ impl UpdatePracticeRunConfigurationFluentBuilder {
     pub fn get_blocking_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>> {
         self.inner.get_blocking_alarms()
     }
+    ///
     /// Appends an item to `outcomeAlarms`.
     ///
     /// To override the contents of this collection use [`set_outcome_alarms`](Self::set_outcome_alarms).

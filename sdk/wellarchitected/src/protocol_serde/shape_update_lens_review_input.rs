@@ -3,18 +3,24 @@ pub fn ser_update_lens_review_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_lens_review::UpdateLensReviewInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.lens_notes {
-        object.key("LensNotes").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.pillar_notes {
+    if let Some(var_1) = &input.jira_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("PillarNotes").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("JiraConfiguration").start_object();
+        crate::protocol_serde::shape_jira_selected_question_configuration::ser_jira_selected_question_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.lens_notes {
+        object.key("LensNotes").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.pillar_notes {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("PillarNotes").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_3.finish();
+        object_5.finish();
     }
     Ok(())
 }

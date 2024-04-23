@@ -3,7 +3,7 @@ pub use crate::operation::start_export_task::_start_export_task_output::StartExp
 
 pub use crate::operation::start_export_task::_start_export_task_input::StartExportTaskInputBuilder;
 
-impl StartExportTaskInputBuilder {
+impl crate::operation::start_export_task::builders::StartExportTaskInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl StartExportTaskFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -316,6 +316,7 @@ impl StartExportTaskFluentBuilder {
     pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_prefix()
     }
+    ///
     /// Appends an item to `ExportOnly`.
     ///
     /// To override the contents of this collection use [`set_export_only`](Self::set_export_only).

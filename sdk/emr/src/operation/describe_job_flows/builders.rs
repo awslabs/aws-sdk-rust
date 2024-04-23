@@ -3,7 +3,7 @@ pub use crate::operation::describe_job_flows::_describe_job_flows_output::Descri
 
 pub use crate::operation::describe_job_flows::_describe_job_flows_input::DescribeJobFlowsInputBuilder;
 
-impl DescribeJobFlowsInputBuilder {
+impl crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -110,12 +110,12 @@ impl DescribeJobFlowsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -147,6 +147,7 @@ impl DescribeJobFlowsFluentBuilder {
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_created_before()
     }
+    ///
     /// Appends an item to `JobFlowIds`.
     ///
     /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
@@ -165,6 +166,7 @@ impl DescribeJobFlowsFluentBuilder {
     pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_job_flow_ids()
     }
+    ///
     /// Appends an item to `JobFlowStates`.
     ///
     /// To override the contents of this collection use [`set_job_flow_states`](Self::set_job_flow_states).

@@ -3,7 +3,7 @@ pub use crate::operation::untag_open_id_connect_provider::_untag_open_id_connect
 
 pub use crate::operation::untag_open_id_connect_provider::_untag_open_id_connect_provider_input::UntagOpenIdConnectProviderInputBuilder;
 
-impl UntagOpenIdConnectProviderInputBuilder {
+impl crate::operation::untag_open_id_connect_provider::builders::UntagOpenIdConnectProviderInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UntagOpenIDConnectProviderFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -125,6 +125,7 @@ impl UntagOpenIDConnectProviderFluentBuilder {
     pub fn get_open_id_connect_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_open_id_connect_provider_arn()
     }
+    ///
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).

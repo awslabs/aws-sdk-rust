@@ -3,7 +3,7 @@ pub use crate::operation::describe_launch_configurations::_describe_launch_confi
 
 pub use crate::operation::describe_launch_configurations::_describe_launch_configurations_input::DescribeLaunchConfigurationsInputBuilder;
 
-impl DescribeLaunchConfigurationsInputBuilder {
+impl crate::operation::describe_launch_configurations::builders::DescribeLaunchConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeLaunchConfigurationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeLaunchConfigurationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_launch_configurations::paginator::DescribeLaunchConfigurationsPaginator {
         crate::operation::describe_launch_configurations::paginator::DescribeLaunchConfigurationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `LaunchConfigurationNames`.
     ///
     /// To override the contents of this collection use [`set_launch_configuration_names`](Self::set_launch_configuration_names).

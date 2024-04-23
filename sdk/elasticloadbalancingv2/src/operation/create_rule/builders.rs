@@ -3,7 +3,7 @@ pub use crate::operation::create_rule::_create_rule_output::CreateRuleOutputBuil
 
 pub use crate::operation::create_rule::_create_rule_input::CreateRuleInputBuilder;
 
-impl CreateRuleInputBuilder {
+impl crate::operation::create_rule::builders::CreateRuleInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateRuleFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl CreateRuleFluentBuilder {
     pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_listener_arn()
     }
+    ///
     /// Appends an item to `Conditions`.
     ///
     /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
@@ -155,6 +156,7 @@ impl CreateRuleFluentBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
+    ///
     /// Appends an item to `Actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -173,6 +175,7 @@ impl CreateRuleFluentBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
         self.inner.get_actions()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

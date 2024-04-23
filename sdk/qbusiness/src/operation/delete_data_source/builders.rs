@@ -3,7 +3,7 @@ pub use crate::operation::delete_data_source::_delete_data_source_output::Delete
 
 pub use crate::operation::delete_data_source::_delete_data_source_input::DeleteDataSourceInputBuilder;
 
-impl DeleteDataSourceInputBuilder {
+impl crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl DeleteDataSourceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataSource`.
 ///
-/// <p>Deletes an Amazon Q data source connector. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>.</p>
+/// <p>Deletes an Amazon Q Business data source connector. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,26 +99,26 @@ impl DeleteDataSourceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application used with the data source connector.</p>
+    /// <p>The identifier of the Amazon Q Business application used with the data source connector.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application used with the data source connector.</p>
+    /// <p>The identifier of the Amazon Q Business application used with the data source connector.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application used with the data source connector.</p>
+    /// <p>The identifier of the Amazon Q Business application used with the data source connector.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

@@ -10,6 +10,8 @@ pub struct WorkerResourceConfig {
     pub memory: ::std::string::String,
     /// <p>The disk requirements for every worker instance of the worker type.</p>
     pub disk: ::std::option::Option<::std::string::String>,
+    /// <p>The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.</p>
+    pub disk_type: ::std::option::Option<::std::string::String>,
 }
 impl WorkerResourceConfig {
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
@@ -26,6 +28,10 @@ impl WorkerResourceConfig {
     pub fn disk(&self) -> ::std::option::Option<&str> {
         self.disk.as_deref()
     }
+    /// <p>The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.</p>
+    pub fn disk_type(&self) -> ::std::option::Option<&str> {
+        self.disk_type.as_deref()
+    }
 }
 impl WorkerResourceConfig {
     /// Creates a new builder-style object to manufacture [`WorkerResourceConfig`](crate::types::WorkerResourceConfig).
@@ -41,6 +47,7 @@ pub struct WorkerResourceConfigBuilder {
     pub(crate) cpu: ::std::option::Option<::std::string::String>,
     pub(crate) memory: ::std::option::Option<::std::string::String>,
     pub(crate) disk: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_type: ::std::option::Option<::std::string::String>,
 }
 impl WorkerResourceConfigBuilder {
     /// <p>The CPU requirements for every worker instance of the worker type.</p>
@@ -87,6 +94,20 @@ impl WorkerResourceConfigBuilder {
     pub fn get_disk(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk
     }
+    /// <p>The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.</p>
+    pub fn disk_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.disk_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.</p>
+    pub fn set_disk_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.disk_type = input;
+        self
+    }
+    /// <p>The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.</p>
+    pub fn get_disk_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_type
+    }
     /// Consumes the builder and constructs a [`WorkerResourceConfig`](crate::types::WorkerResourceConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`cpu`](crate::types::builders::WorkerResourceConfigBuilder::cpu)
@@ -106,6 +127,7 @@ impl WorkerResourceConfigBuilder {
                 )
             })?,
             disk: self.disk,
+            disk_type: self.disk_type,
         })
     }
 }

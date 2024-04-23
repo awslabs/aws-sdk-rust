@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RuleConfiguration {
-    /// <p>A rule for configuring how Amazon Q responds when it encounters a a blocked topic.</p>
+    /// <p>A rule for configuring how Amazon Q Business responds when it encounters a a blocked topic.</p>
     ContentBlockerRule(crate::types::ContentBlockerRule),
-    /// <p>Rules for retrieving content from data sources connected to a Amazon Q application for a specific topic control configuration.</p>
+    /// <p>Rules for retrieving content from data sources connected to a Amazon Q Business application for a specific topic control configuration.</p>
     ContentRetrievalRule(crate::types::ContentRetrievalRule),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePluginInput {
-    /// <p>The identifier the application attached to the Amazon Q plugin.</p>
+    /// <p>The identifier the application attached to the Amazon Q Business plugin.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the plugin being deleted.</p>
     pub plugin_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePluginInput {
-    /// <p>The identifier the application attached to the Amazon Q plugin.</p>
+    /// <p>The identifier the application attached to the Amazon Q Business plugin.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeletePluginInputBuilder {
     pub(crate) plugin_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePluginInputBuilder {
-    /// <p>The identifier the application attached to the Amazon Q plugin.</p>
+    /// <p>The identifier the application attached to the Amazon Q Business plugin.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier the application attached to the Amazon Q plugin.</p>
+    /// <p>The identifier the application attached to the Amazon Q Business plugin.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier the application attached to the Amazon Q plugin.</p>
+    /// <p>The identifier the application attached to the Amazon Q Business plugin.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }

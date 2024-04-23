@@ -12,7 +12,7 @@ pub struct CreateIdMappingWorkflowOutput {
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
     pub input_source_config: ::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>,
     /// <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>Output</code>.</p>
-    pub output_source_config: ::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>,
+    pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
@@ -40,9 +40,10 @@ impl CreateIdMappingWorkflowOutput {
         self.input_source_config.deref()
     }
     /// <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>Output</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
     pub fn output_source_config(&self) -> &[crate::types::IdMappingWorkflowOutputSource] {
-        use std::ops::Deref;
-        self.output_source_config.deref()
+        self.output_source_config.as_deref().unwrap_or_default()
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub fn id_mapping_techniques(&self) -> ::std::option::Option<&crate::types::IdMappingTechniques> {
@@ -208,7 +209,6 @@ impl CreateIdMappingWorkflowOutputBuilder {
     /// - [`workflow_name`](crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWorkflowOutputBuilder::workflow_name)
     /// - [`workflow_arn`](crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWorkflowOutputBuilder::workflow_arn)
     /// - [`input_source_config`](crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWorkflowOutputBuilder::input_source_config)
-    /// - [`output_source_config`](crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWorkflowOutputBuilder::output_source_config)
     /// - [`role_arn`](crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWorkflowOutputBuilder::role_arn)
     pub fn build(
         self,
@@ -236,12 +236,7 @@ impl CreateIdMappingWorkflowOutputBuilder {
                     "input_source_config was not specified but it is required when building CreateIdMappingWorkflowOutput",
                 )
             })?,
-            output_source_config: self.output_source_config.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "output_source_config",
-                    "output_source_config was not specified but it is required when building CreateIdMappingWorkflowOutput",
-                )
-            })?,
+            output_source_config: self.output_source_config,
             id_mapping_techniques: self.id_mapping_techniques,
             role_arn: self.role_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

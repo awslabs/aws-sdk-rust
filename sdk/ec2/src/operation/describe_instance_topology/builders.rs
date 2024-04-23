@@ -3,7 +3,7 @@ pub use crate::operation::describe_instance_topology::_describe_instance_topolog
 
 pub use crate::operation::describe_instance_topology::_describe_instance_topology_input::DescribeInstanceTopologyInputBuilder;
 
-impl DescribeInstanceTopologyInputBuilder {
+impl crate::operation::describe_instance_topology::builders::DescribeInstanceTopologyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -121,12 +121,12 @@ impl DescribeInstanceTopologyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -184,6 +184,7 @@ impl DescribeInstanceTopologyFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `InstanceIds`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
@@ -208,6 +209,7 @@ impl DescribeInstanceTopologyFluentBuilder {
     pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
+    ///
     /// Appends an item to `GroupNames`.
     ///
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
@@ -229,6 +231,7 @@ impl DescribeInstanceTopologyFluentBuilder {
     pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_group_names()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

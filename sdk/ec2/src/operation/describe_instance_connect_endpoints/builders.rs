@@ -3,7 +3,7 @@ pub use crate::operation::describe_instance_connect_endpoints::_describe_instanc
 
 pub use crate::operation::describe_instance_connect_endpoints::_describe_instance_connect_endpoints_input::DescribeInstanceConnectEndpointsInputBuilder;
 
-impl DescribeInstanceConnectEndpointsInputBuilder {
+impl crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -156,6 +156,7 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -240,6 +241,7 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `InstanceConnectEndpointIds`.
     ///
     /// To override the contents of this collection use [`set_instance_connect_endpoint_ids`](Self::set_instance_connect_endpoint_ids).

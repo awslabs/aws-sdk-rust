@@ -3,7 +3,7 @@ pub use crate::operation::create_managed_prefix_list::_create_managed_prefix_lis
 
 pub use crate::operation::create_managed_prefix_list::_create_managed_prefix_list_input::CreateManagedPrefixListInputBuilder;
 
-impl CreateManagedPrefixListInputBuilder {
+impl crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateManagedPrefixListFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl CreateManagedPrefixListFluentBuilder {
     pub fn get_prefix_list_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_prefix_list_name()
     }
+    ///
     /// Appends an item to `Entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -171,6 +172,7 @@ impl CreateManagedPrefixListFluentBuilder {
     pub fn get_max_entries(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_entries()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

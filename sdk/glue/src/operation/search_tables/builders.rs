@@ -3,7 +3,7 @@ pub use crate::operation::search_tables::_search_tables_output::SearchTablesOutp
 
 pub use crate::operation::search_tables::_search_tables_input::SearchTablesInputBuilder;
 
-impl SearchTablesInputBuilder {
+impl crate::operation::search_tables::builders::SearchTablesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl SearchTablesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -143,6 +143,7 @@ impl SearchTablesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -181,6 +182,7 @@ impl SearchTablesFluentBuilder {
     pub fn get_search_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_search_text()
     }
+    ///
     /// Appends an item to `SortCriteria`.
     ///
     /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).

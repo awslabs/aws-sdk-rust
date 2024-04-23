@@ -3,7 +3,7 @@ pub use crate::operation::create_security_profile::_create_security_profile_outp
 
 pub use crate::operation::create_security_profile::_create_security_profile_input::CreateSecurityProfileInputBuilder;
 
-impl CreateSecurityProfileInputBuilder {
+impl crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSecurityProfileFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateSecurityProfileFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -168,6 +169,7 @@ impl CreateSecurityProfileFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -186,6 +188,7 @@ impl CreateSecurityProfileFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Adds a key-value pair to `AllowedAccessControlTags`.
     ///
     /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
@@ -213,6 +216,7 @@ impl CreateSecurityProfileFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_allowed_access_control_tags()
     }
+    ///
     /// Appends an item to `TagRestrictedResources`.
     ///
     /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
@@ -231,6 +235,7 @@ impl CreateSecurityProfileFluentBuilder {
     pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_restricted_resources()
     }
+    ///
     /// Appends an item to `Applications`.
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
@@ -249,6 +254,7 @@ impl CreateSecurityProfileFluentBuilder {
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         self.inner.get_applications()
     }
+    ///
     /// Appends an item to `HierarchyRestrictedResources`.
     ///
     /// To override the contents of this collection use [`set_hierarchy_restricted_resources`](Self::set_hierarchy_restricted_resources).

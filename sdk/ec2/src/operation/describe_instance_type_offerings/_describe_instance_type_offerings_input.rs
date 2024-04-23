@@ -6,13 +6,23 @@ pub struct DescribeInstanceTypeOfferingsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The location type.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an Availability Zone for the current Region.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the current Region.</p></li>
+    /// <li>
+    /// <p><code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the current Region.</p></li>
+    /// <li>
+    /// <p><code>region</code> - The current Region. If you specify a location filter, it must match the current Region.</p></li>
+    /// </ul>
     pub location_type: ::std::option::Option<crate::types::LocationType>,
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
     /// <li>
-    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <p><code>instance-type</code> - The instance type. For a list of possible values, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.</p></li>
     /// <li>
-    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <p><code>location</code> - The location. For a list of possible identifiers, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and Zones</a>.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -26,15 +36,25 @@ impl DescribeInstanceTypeOfferingsInput {
         self.dry_run
     }
     /// <p>The location type.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an Availability Zone for the current Region.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the current Region.</p></li>
+    /// <li>
+    /// <p><code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the current Region.</p></li>
+    /// <li>
+    /// <p><code>region</code> - The current Region. If you specify a location filter, it must match the current Region.</p></li>
+    /// </ul>
     pub fn location_type(&self) -> ::std::option::Option<&crate::types::LocationType> {
         self.location_type.as_ref()
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
     /// <li>
-    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <p><code>instance-type</code> - The instance type. For a list of possible values, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.</p></li>
     /// <li>
-    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <p><code>location</code> - The location. For a list of possible identifiers, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and Zones</a>.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -83,16 +103,46 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
         &self.dry_run
     }
     /// <p>The location type.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an Availability Zone for the current Region.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the current Region.</p></li>
+    /// <li>
+    /// <p><code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the current Region.</p></li>
+    /// <li>
+    /// <p><code>region</code> - The current Region. If you specify a location filter, it must match the current Region.</p></li>
+    /// </ul>
     pub fn location_type(mut self, input: crate::types::LocationType) -> Self {
         self.location_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location type.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an Availability Zone for the current Region.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the current Region.</p></li>
+    /// <li>
+    /// <p><code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the current Region.</p></li>
+    /// <li>
+    /// <p><code>region</code> - The current Region. If you specify a location filter, it must match the current Region.</p></li>
+    /// </ul>
     pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.location_type = input;
         self
     }
     /// <p>The location type.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an Availability Zone for the current Region.</p></li>
+    /// <li>
+    /// <p><code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the current Region.</p></li>
+    /// <li>
+    /// <p><code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the current Region.</p></li>
+    /// <li>
+    /// <p><code>region</code> - The current Region. If you specify a location filter, it must match the current Region.</p></li>
+    /// </ul>
     pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
         &self.location_type
     }
@@ -103,9 +153,9 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
     /// <li>
-    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <p><code>instance-type</code> - The instance type. For a list of possible values, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.</p></li>
     /// <li>
-    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <p><code>location</code> - The location. For a list of possible identifiers, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and Zones</a>.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -116,9 +166,9 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
     /// <li>
-    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <p><code>instance-type</code> - The instance type. For a list of possible values, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.</p></li>
     /// <li>
-    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <p><code>location</code> - The location. For a list of possible identifiers, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and Zones</a>.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -127,9 +177,9 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
     /// <li>
-    /// <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>
+    /// <p><code>instance-type</code> - The instance type. For a list of possible values, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.</p></li>
     /// <li>
-    /// <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li>
+    /// <p><code>location</code> - The location. For a list of possible identifiers, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and Zones</a>.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

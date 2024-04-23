@@ -3,7 +3,7 @@ pub use crate::operation::create_token::_create_token_output::CreateTokenOutputB
 
 pub use crate::operation::create_token::_create_token_input::CreateTokenInputBuilder;
 
-impl CreateTokenInputBuilder {
+impl crate::operation::create_token::builders::CreateTokenInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateTokenFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -204,6 +204,7 @@ impl CreateTokenFluentBuilder {
     pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_refresh_token()
     }
+    ///
     /// Appends an item to `scope`.
     ///
     /// To override the contents of this collection use [`set_scope`](Self::set_scope).

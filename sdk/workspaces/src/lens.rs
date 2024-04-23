@@ -49,6 +49,16 @@ pub(crate) fn reflens_describe_workspaces_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_account_links_output_output_next_token(
+    input: &crate::operation::list_account_links::ListAccountLinksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_workspace_bundles_output_output_bundles(
     input: crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceBundle>> {
@@ -73,6 +83,16 @@ pub(crate) fn lens_describe_workspaces_output_output_workspaces(
     input: crate::operation::describe_workspaces::DescribeWorkspacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Workspace>> {
     let input = match input.workspaces {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_account_links_output_output_account_links(
+    input: crate::operation::list_account_links::ListAccountLinksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountLink>> {
+    let input = match input.account_links {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

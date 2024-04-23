@@ -6,46 +6,58 @@ pub fn ser_update_origin_endpoint_input_input(
     if let Some(var_1) = &input.container_type {
         object.key("ContainerType").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.hls_manifests {
-        let mut array_4 = object.key("HlsManifests").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.dash_manifests {
+        let mut array_3 = object.key("DashManifests").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_create_hls_manifest_configuration::ser_create_hls_manifest_configuration(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_create_dash_manifest_configuration::ser_create_dash_manifest_configuration(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.low_latency_hls_manifests {
-        let mut array_8 = object.key("LowLatencyHlsManifests").start_array();
+    if let Some(var_6) = &input.description {
+        object.key("Description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.hls_manifests {
+        let mut array_8 = object.key("HlsManifests").start_array();
         for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_create_low_latency_hls_manifest_configuration::ser_create_low_latency_hls_manifest_configuration(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_create_hls_manifest_configuration::ser_create_hls_manifest_configuration(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }
         array_8.finish();
     }
-    if let Some(var_11) = &input.segment {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("Segment").start_object();
-        crate::protocol_serde::shape_segment::ser_segment(&mut object_12, var_11)?;
-        object_12.finish();
+    if let Some(var_11) = &input.low_latency_hls_manifests {
+        let mut array_12 = object.key("LowLatencyHlsManifests").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_create_low_latency_hls_manifest_configuration::ser_create_low_latency_hls_manifest_configuration(
+                    &mut object_14,
+                    item_13,
+                )?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
     }
-    if let Some(var_13) = &input.startover_window_seconds {
+    if let Some(var_15) = &input.segment {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("Segment").start_object();
+        crate::protocol_serde::shape_segment::ser_segment(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.startover_window_seconds {
         object.key("StartoverWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
     Ok(())

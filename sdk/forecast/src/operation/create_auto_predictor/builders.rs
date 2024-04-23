@@ -3,7 +3,7 @@ pub use crate::operation::create_auto_predictor::_create_auto_predictor_output::
 
 pub use crate::operation::create_auto_predictor::_create_auto_predictor_input::CreateAutoPredictorInputBuilder;
 
-impl CreateAutoPredictorInputBuilder {
+impl crate::operation::create_auto_predictor::builders::CreateAutoPredictorInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -122,12 +122,12 @@ impl CreateAutoPredictorFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl CreateAutoPredictorFluentBuilder {
     pub fn get_forecast_horizon(&self) -> &::std::option::Option<i32> {
         self.inner.get_forecast_horizon()
     }
+    ///
     /// Appends an item to `ForecastTypes`.
     ///
     /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
@@ -183,6 +184,7 @@ impl CreateAutoPredictorFluentBuilder {
     pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_forecast_types()
     }
+    ///
     /// Appends an item to `ForecastDimensions`.
     ///
     /// To override the contents of this collection use [`set_forecast_dimensions`](Self::set_forecast_dimensions).
@@ -345,6 +347,7 @@ impl CreateAutoPredictorFluentBuilder {
     pub fn get_explain_predictor(&self) -> &::std::option::Option<bool> {
         self.inner.get_explain_predictor()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

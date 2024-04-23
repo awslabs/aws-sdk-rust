@@ -3,7 +3,7 @@ pub use crate::operation::create_agent_action_group::_create_agent_action_group_
 
 pub use crate::operation::create_agent_action_group::_create_agent_action_group_input::CreateAgentActionGroupInputBuilder;
 
-impl CreateAgentActionGroupInputBuilder {
+impl crate::operation::create_agent_action_group::builders::CreateAgentActionGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateAgentActionGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -196,17 +196,17 @@ impl CreateAgentActionGroupFluentBuilder {
     pub fn get_parent_action_group_signature(&self) -> &::std::option::Option<crate::types::ActionGroupSignature> {
         self.inner.get_parent_action_group_signature()
     }
-    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn action_group_executor(mut self, input: crate::types::ActionGroupExecutor) -> Self {
         self.inner = self.inner.action_group_executor(input);
         self
     }
-    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn set_action_group_executor(mut self, input: ::std::option::Option<crate::types::ActionGroupExecutor>) -> Self {
         self.inner = self.inner.set_action_group_executor(input);
         self
     }
-    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     pub fn get_action_group_executor(&self) -> &::std::option::Option<crate::types::ActionGroupExecutor> {
         self.inner.get_action_group_executor()
     }
@@ -237,5 +237,19 @@ impl CreateAgentActionGroupFluentBuilder {
     /// <p>Specifies whether the action group is available for the agent to invoke or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> request.</p>
     pub fn get_action_group_state(&self) -> &::std::option::Option<crate::types::ActionGroupState> {
         self.inner.get_action_group_state()
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn function_schema(mut self, input: crate::types::FunctionSchema) -> Self {
+        self.inner = self.inner.function_schema(input);
+        self
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn set_function_schema(mut self, input: ::std::option::Option<crate::types::FunctionSchema>) -> Self {
+        self.inner = self.inner.set_function_schema(input);
+        self
+    }
+    /// <p>Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.</p>
+    pub fn get_function_schema(&self) -> &::std::option::Option<crate::types::FunctionSchema> {
+        self.inner.get_function_schema()
     }
 }

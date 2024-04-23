@@ -23,5 +23,20 @@ pub fn ser_session_state(
         }
         object_6.finish();
     }
+    if let Some(var_9) = &input.return_control_invocation_results {
+        let mut array_10 = object.key("returnControlInvocationResults").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_invocation_result_member::ser_invocation_result_member(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_13) = &input.invocation_id {
+        object.key("invocationId").string(var_13.as_str());
+    }
     Ok(())
 }

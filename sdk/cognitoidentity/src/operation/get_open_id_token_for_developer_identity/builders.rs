@@ -3,7 +3,7 @@ pub use crate::operation::get_open_id_token_for_developer_identity::_get_open_id
 
 pub use crate::operation::get_open_id_token_for_developer_identity::_get_open_id_token_for_developer_identity_input::GetOpenIdTokenForDeveloperIdentityInputBuilder;
 
-impl GetOpenIdTokenForDeveloperIdentityInputBuilder {
+impl crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_id()
     }
+    ///
     /// Adds a key-value pair to `Logins`.
     ///
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
@@ -157,6 +158,7 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_logins()
     }
+    ///
     /// Adds a key-value pair to `PrincipalTags`.
     ///
     /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).

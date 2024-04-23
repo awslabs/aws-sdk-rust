@@ -3,7 +3,7 @@ pub use crate::operation::update_provisioned_product_properties::_update_provisi
 
 pub use crate::operation::update_provisioned_product_properties::_update_provisioned_product_properties_input::UpdateProvisionedProductPropertiesInputBuilder;
 
-impl UpdateProvisionedProductPropertiesInputBuilder {
+impl crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
     pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provisioned_product_id()
     }
+    ///
     /// Adds a key-value pair to `ProvisionedProductProperties`.
     ///
     /// To override the contents of this collection use [`set_provisioned_product_properties`](Self::set_provisioned_product_properties).

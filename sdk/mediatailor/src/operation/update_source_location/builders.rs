@@ -3,7 +3,7 @@ pub use crate::operation::update_source_location::_update_source_location_output
 
 pub use crate::operation::update_source_location::_update_source_location_input::UpdateSourceLocationInputBuilder;
 
-impl UpdateSourceLocationInputBuilder {
+impl crate::operation::update_source_location::builders::UpdateSourceLocationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateSourceLocationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl UpdateSourceLocationFluentBuilder {
     pub fn get_http_configuration(&self) -> &::std::option::Option<crate::types::HttpConfiguration> {
         self.inner.get_http_configuration()
     }
+    ///
     /// Appends an item to `SegmentDeliveryConfigurations`.
     ///
     /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).

@@ -23,6 +23,10 @@ pub use crate::types::_environment_summary::EnvironmentSummary;
 
 pub use crate::types::_batch_job_identifier::BatchJobIdentifier;
 
+pub use crate::types::_restart_batch_job_identifier::RestartBatchJobIdentifier;
+
+pub use crate::types::_job_step_restart_marker::JobStepRestartMarker;
+
 pub use crate::types::_s3_batch_job_identifier::S3BatchJobIdentifier;
 
 pub use crate::types::_job_identifier::JobIdentifier;
@@ -42,6 +46,8 @@ pub use crate::types::_data_set_import_task::DataSetImportTask;
 pub use crate::types::_data_set_import_summary::DataSetImportSummary;
 
 pub use crate::types::_data_set_task_lifecycle::DataSetTaskLifecycle;
+
+pub use crate::types::_job_step::JobStep;
 
 pub use crate::types::_batch_job_execution_summary::BatchJobExecutionSummary;
 
@@ -181,6 +187,10 @@ mod _high_availability_config;
 
 mod _job_identifier;
 
+mod _job_step;
+
+mod _job_step_restart_marker;
+
 mod _log_group_summary;
 
 mod _maintenance_schedule;
@@ -198,6 +208,8 @@ mod _ps_attributes;
 mod _ps_detail_attributes;
 
 mod _record_length;
+
+mod _restart_batch_job_identifier;
 
 mod _s3_batch_job_identifier;
 

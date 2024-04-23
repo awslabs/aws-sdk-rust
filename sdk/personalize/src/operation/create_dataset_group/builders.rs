@@ -3,7 +3,7 @@ pub use crate::operation::create_dataset_group::_create_dataset_group_output::Cr
 
 pub use crate::operation::create_dataset_group::_create_dataset_group_input::CreateDatasetGroupInputBuilder;
 
-impl CreateDatasetGroupInputBuilder {
+impl crate::operation::create_dataset_group::builders::CreateDatasetGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -141,12 +141,12 @@ impl CreateDatasetGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl CreateDatasetGroupFluentBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
         self.inner.get_domain()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

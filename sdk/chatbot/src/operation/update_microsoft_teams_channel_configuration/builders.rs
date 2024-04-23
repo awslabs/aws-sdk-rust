@@ -3,7 +3,7 @@ pub use crate::operation::update_microsoft_teams_channel_configuration::_update_
 
 pub use crate::operation::update_microsoft_teams_channel_configuration::_update_microsoft_teams_channel_configuration_input::UpdateMicrosoftTeamsChannelConfigurationInputBuilder;
 
-impl UpdateMicrosoftTeamsChannelConfigurationInputBuilder {
+impl crate::operation::update_microsoft_teams_channel_configuration::builders::UpdateMicrosoftTeamsChannelConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl UpdateMicrosoftTeamsChannelConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl UpdateMicrosoftTeamsChannelConfigurationFluentBuilder {
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_name()
     }
+    ///
     /// Appends an item to `SnsTopicArns`.
     ///
     /// To override the contents of this collection use [`set_sns_topic_arns`](Self::set_sns_topic_arns).
@@ -200,6 +201,7 @@ impl UpdateMicrosoftTeamsChannelConfigurationFluentBuilder {
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_logging_level()
     }
+    ///
     /// Appends an item to `GuardrailPolicyArns`.
     ///
     /// To override the contents of this collection use [`set_guardrail_policy_arns`](Self::set_guardrail_policy_arns).

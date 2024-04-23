@@ -3,7 +3,7 @@ pub use crate::operation::create_artifact::_create_artifact_output::CreateArtifa
 
 pub use crate::operation::create_artifact::_create_artifact_input::CreateArtifactInputBuilder;
 
-impl CreateArtifactInputBuilder {
+impl crate::operation::create_artifact::builders::CreateArtifactInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateArtifactFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateArtifactFluentBuilder {
     pub fn get_artifact_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_artifact_type()
     }
+    ///
     /// Adds a key-value pair to `Properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
@@ -182,6 +183,7 @@ impl CreateArtifactFluentBuilder {
     pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         self.inner.get_metadata_properties()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

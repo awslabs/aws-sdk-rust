@@ -5,9 +5,15 @@ pub use crate::types::_ingest_endpoint::IngestEndpointBuilder;
 
 pub use crate::types::_channel_list_configuration::ChannelListConfigurationBuilder;
 
-pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfigurationBuilder;
+pub use crate::types::_get_dash_manifest_configuration::GetDashManifestConfigurationBuilder;
+
+pub use crate::types::_dash_utc_timing::DashUtcTimingBuilder;
+
+pub use crate::types::_scte_dash::ScteDashBuilder;
 
 pub use crate::types::_filter_configuration::FilterConfigurationBuilder;
+
+pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfigurationBuilder;
 
 pub use crate::types::_scte_hls::ScteHlsBuilder;
 
@@ -25,11 +31,15 @@ pub use crate::types::_encryption_method::EncryptionMethodBuilder;
 
 pub use crate::types::_scte::ScteBuilder;
 
+pub use crate::types::_create_dash_manifest_configuration::CreateDashManifestConfigurationBuilder;
+
 pub use crate::types::_create_low_latency_hls_manifest_configuration::CreateLowLatencyHlsManifestConfigurationBuilder;
 
 pub use crate::types::_create_hls_manifest_configuration::CreateHlsManifestConfigurationBuilder;
 
 pub use crate::types::_origin_endpoint_list_configuration::OriginEndpointListConfigurationBuilder;
+
+pub use crate::types::_list_dash_manifest_configuration::ListDashManifestConfigurationBuilder;
 
 pub use crate::types::_list_low_latency_hls_manifest_configuration::ListLowLatencyHlsManifestConfigurationBuilder;
 

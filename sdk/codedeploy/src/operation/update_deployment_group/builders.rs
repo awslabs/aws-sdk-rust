@@ -3,7 +3,7 @@ pub use crate::operation::update_deployment_group::_update_deployment_group_outp
 
 pub use crate::operation::update_deployment_group::_update_deployment_group_input::UpdateDeploymentGroupInputBuilder;
 
-impl UpdateDeploymentGroupInputBuilder {
+impl crate::operation::update_deployment_group::builders::UpdateDeploymentGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDeploymentGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deployment_config_name()
     }
+    ///
     /// Appends an item to `ec2TagFilters`.
     ///
     /// To override the contents of this collection use [`set_ec2_tag_filters`](Self::set_ec2_tag_filters).
@@ -182,6 +183,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     pub fn get_ec2_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>> {
         self.inner.get_ec2_tag_filters()
     }
+    ///
     /// Appends an item to `onPremisesInstanceTagFilters`.
     ///
     /// To override the contents of this collection use [`set_on_premises_instance_tag_filters`](Self::set_on_premises_instance_tag_filters).
@@ -200,6 +202,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     pub fn get_on_premises_instance_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
         self.inner.get_on_premises_instance_tag_filters()
     }
+    ///
     /// Appends an item to `autoScalingGroups`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
@@ -250,6 +253,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_role_arn()
     }
+    ///
     /// Appends an item to `triggerConfigurations`.
     ///
     /// To override the contents of this collection use [`set_trigger_configurations`](Self::set_trigger_configurations).
@@ -372,6 +376,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     pub fn get_ec2_tag_set(&self) -> &::std::option::Option<crate::types::Ec2TagSet> {
         self.inner.get_ec2_tag_set()
     }
+    ///
     /// Appends an item to `ecsServices`.
     ///
     /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).

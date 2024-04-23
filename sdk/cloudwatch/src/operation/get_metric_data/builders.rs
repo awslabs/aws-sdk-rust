@@ -3,7 +3,7 @@ pub use crate::operation::get_metric_data::_get_metric_data_output::GetMetricDat
 
 pub use crate::operation::get_metric_data::_get_metric_data_input::GetMetricDataInputBuilder;
 
-impl GetMetricDataInputBuilder {
+impl crate::operation::get_metric_data::builders::GetMetricDataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -117,12 +117,12 @@ impl GetMetricDataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -132,6 +132,7 @@ impl GetMetricDataFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_metric_data::paginator::GetMetricDataPaginator {
         crate::operation::get_metric_data::paginator::GetMetricDataPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `MetricDataQueries`.
     ///
     /// To override the contents of this collection use [`set_metric_data_queries`](Self::set_metric_data_queries).

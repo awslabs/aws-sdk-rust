@@ -3,7 +3,7 @@ pub use crate::operation::describe_trust_stores::_describe_trust_stores_output::
 
 pub use crate::operation::describe_trust_stores::_describe_trust_stores_input::DescribeTrustStoresInputBuilder;
 
-impl DescribeTrustStoresInputBuilder {
+impl crate::operation::describe_trust_stores::builders::DescribeTrustStoresInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeTrustStoresFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeTrustStoresFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_trust_stores::paginator::DescribeTrustStoresPaginator {
         crate::operation::describe_trust_stores::paginator::DescribeTrustStoresPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `TrustStoreArns`.
     ///
     /// To override the contents of this collection use [`set_trust_store_arns`](Self::set_trust_store_arns).
@@ -132,6 +133,7 @@ impl DescribeTrustStoresFluentBuilder {
     pub fn get_trust_store_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_trust_store_arns()
     }
+    ///
     /// Appends an item to `Names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).

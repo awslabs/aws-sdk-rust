@@ -3,7 +3,7 @@ pub use crate::operation::search_tables_by_lf_tags::_search_tables_by_lf_tags_ou
 
 pub use crate::operation::search_tables_by_lf_tags::_search_tables_by_lf_tags_input::SearchTablesByLfTagsInputBuilder;
 
-impl SearchTablesByLfTagsInputBuilder {
+impl crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SearchTablesByLFTagsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -156,6 +156,7 @@ impl SearchTablesByLFTagsFluentBuilder {
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog_id()
     }
+    ///
     /// Appends an item to `Expression`.
     ///
     /// To override the contents of this collection use [`set_expression`](Self::set_expression).

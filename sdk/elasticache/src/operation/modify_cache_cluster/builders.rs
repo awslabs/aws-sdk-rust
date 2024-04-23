@@ -3,7 +3,7 @@ pub use crate::operation::modify_cache_cluster::_modify_cache_cluster_output::Mo
 
 pub use crate::operation::modify_cache_cluster::_modify_cache_cluster_input::ModifyCacheClusterInputBuilder;
 
-impl ModifyCacheClusterInputBuilder {
+impl crate::operation::modify_cache_cluster::builders::ModifyCacheClusterInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ModifyCacheClusterFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl ModifyCacheClusterFluentBuilder {
     pub fn get_num_cache_nodes(&self) -> &::std::option::Option<i32> {
         self.inner.get_num_cache_nodes()
     }
+    ///
     /// Appends an item to `CacheNodeIdsToRemove`.
     ///
     /// To override the contents of this collection use [`set_cache_node_ids_to_remove`](Self::set_cache_node_ids_to_remove).
@@ -201,6 +202,7 @@ impl ModifyCacheClusterFluentBuilder {
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::AzMode> {
         self.inner.get_az_mode()
     }
+    ///
     /// Appends an item to `NewAvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_new_availability_zones`](Self::set_new_availability_zones).
@@ -399,6 +401,7 @@ impl ModifyCacheClusterFluentBuilder {
     pub fn get_new_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_new_availability_zones()
     }
+    ///
     /// Appends an item to `CacheSecurityGroupNames`.
     ///
     /// To override the contents of this collection use [`set_cache_security_group_names`](Self::set_cache_security_group_names).
@@ -423,6 +426,7 @@ impl ModifyCacheClusterFluentBuilder {
     pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cache_security_group_names()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -747,6 +751,7 @@ impl ModifyCacheClusterFluentBuilder {
     pub fn get_auth_token_update_strategy(&self) -> &::std::option::Option<crate::types::AuthTokenUpdateStrategyType> {
         self.inner.get_auth_token_update_strategy()
     }
+    ///
     /// Appends an item to `LogDeliveryConfigurations`.
     ///
     /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).

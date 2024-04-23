@@ -3,7 +3,7 @@ pub use crate::operation::put_resource_set::_put_resource_set_output::PutResourc
 
 pub use crate::operation::put_resource_set::_put_resource_set_input::PutResourceSetInputBuilder;
 
-impl PutResourceSetInputBuilder {
+impl crate::operation::put_resource_set::builders::PutResourceSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl PutResourceSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl PutResourceSetFluentBuilder {
     pub fn get_resource_set(&self) -> &::std::option::Option<crate::types::ResourceSet> {
         self.inner.get_resource_set()
     }
+    ///
     /// Appends an item to `TagList`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).

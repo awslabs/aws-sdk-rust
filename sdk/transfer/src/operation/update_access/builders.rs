@@ -3,7 +3,7 @@ pub use crate::operation::update_access::_update_access_output::UpdateAccessOutp
 
 pub use crate::operation::update_access::_update_access_input::UpdateAccessInputBuilder;
 
-impl UpdateAccessInputBuilder {
+impl crate::operation::update_access::builders::UpdateAccessInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateAccessFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl UpdateAccessFluentBuilder {
     pub fn get_home_directory_type(&self) -> &::std::option::Option<crate::types::HomeDirectoryType> {
         self.inner.get_home_directory_type()
     }
+    ///
     /// Appends an item to `HomeDirectoryMappings`.
     ///
     /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).

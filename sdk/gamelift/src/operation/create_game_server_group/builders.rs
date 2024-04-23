@@ -3,7 +3,7 @@ pub use crate::operation::create_game_server_group::_create_game_server_group_ou
 
 pub use crate::operation::create_game_server_group::_create_game_server_group_input::CreateGameServerGroupInputBuilder;
 
-impl CreateGameServerGroupInputBuilder {
+impl crate::operation::create_game_server_group::builders::CreateGameServerGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl CreateGameServerGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -196,6 +196,7 @@ impl CreateGameServerGroupFluentBuilder {
     pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
         self.inner.get_launch_template()
     }
+    ///
     /// Appends an item to `InstanceDefinitions`.
     ///
     /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
@@ -280,6 +281,7 @@ impl CreateGameServerGroupFluentBuilder {
     pub fn get_game_server_protection_policy(&self) -> &::std::option::Option<crate::types::GameServerProtectionPolicy> {
         self.inner.get_game_server_protection_policy()
     }
+    ///
     /// Appends an item to `VpcSubnets`.
     ///
     /// To override the contents of this collection use [`set_vpc_subnets`](Self::set_vpc_subnets).
@@ -298,6 +300,7 @@ impl CreateGameServerGroupFluentBuilder {
     pub fn get_vpc_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_subnets()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

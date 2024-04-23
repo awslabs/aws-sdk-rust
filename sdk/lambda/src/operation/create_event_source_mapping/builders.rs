@@ -3,7 +3,7 @@ pub use crate::operation::create_event_source_mapping::_create_event_source_mapp
 
 pub use crate::operation::create_event_source_mapping::_create_event_source_mapping_input::CreateEventSourceMappingInputBuilder;
 
-impl CreateEventSourceMappingInputBuilder {
+impl crate::operation::create_event_source_mapping::builders::CreateEventSourceMappingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -146,12 +146,12 @@ impl CreateEventSourceMappingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -486,6 +486,7 @@ impl CreateEventSourceMappingFluentBuilder {
     pub fn get_tumbling_window_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_tumbling_window_in_seconds()
     }
+    ///
     /// Appends an item to `Topics`.
     ///
     /// To override the contents of this collection use [`set_topics`](Self::set_topics).
@@ -504,6 +505,7 @@ impl CreateEventSourceMappingFluentBuilder {
     pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_topics()
     }
+    ///
     /// Appends an item to `Queues`.
     ///
     /// To override the contents of this collection use [`set_queues`](Self::set_queues).
@@ -522,6 +524,7 @@ impl CreateEventSourceMappingFluentBuilder {
     pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_queues()
     }
+    ///
     /// Appends an item to `SourceAccessConfigurations`.
     ///
     /// To override the contents of this collection use [`set_source_access_configurations`](Self::set_source_access_configurations).
@@ -557,6 +560,7 @@ impl CreateEventSourceMappingFluentBuilder {
     pub fn get_self_managed_event_source(&self) -> &::std::option::Option<crate::types::SelfManagedEventSource> {
         self.inner.get_self_managed_event_source()
     }
+    ///
     /// Appends an item to `FunctionResponseTypes`.
     ///
     /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).

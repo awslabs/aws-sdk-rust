@@ -3,7 +3,7 @@ pub use crate::operation::describe_scaling_plans::_describe_scaling_plans_output
 
 pub use crate::operation::describe_scaling_plans::_describe_scaling_plans_input::DescribeScalingPlansInputBuilder;
 
-impl DescribeScalingPlansInputBuilder {
+impl crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl DescribeScalingPlansFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `ScalingPlanNames`.
     ///
     /// To override the contents of this collection use [`set_scaling_plan_names`](Self::set_scaling_plan_names).
@@ -146,6 +147,7 @@ impl DescribeScalingPlansFluentBuilder {
     pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
         self.inner.get_scaling_plan_version()
     }
+    ///
     /// Appends an item to `ApplicationSources`.
     ///
     /// To override the contents of this collection use [`set_application_sources`](Self::set_application_sources).

@@ -20,5 +20,11 @@ pub fn ser_export_tr34_key_block(
     if let Some(var_1) = &input.random_nonce {
         object.key("RandomNonce").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.key_block_headers {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("KeyBlockHeaders").start_object();
+        crate::protocol_serde::shape_key_block_headers::ser_key_block_headers(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }

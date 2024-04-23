@@ -13,6 +13,8 @@ pub use crate::types::_enable_status::EnableStatus;
 
 pub use crate::types::_application_status::ApplicationStatus;
 
+pub use crate::types::_data_lake_principal::DataLakePrincipal;
+
 pub use crate::types::_data_cells_filter::DataCellsFilter;
 
 pub use crate::types::_column_wildcard::ColumnWildcard;
@@ -58,8 +60,6 @@ pub use crate::types::_data_location_resource::DataLocationResource;
 pub use crate::types::_table_with_columns_resource::TableWithColumnsResource;
 
 pub use crate::types::_catalog_resource::CatalogResource;
-
-pub use crate::types::_data_lake_principal::DataLakePrincipal;
 
 pub use crate::types::_lf_tag_error::LfTagError;
 

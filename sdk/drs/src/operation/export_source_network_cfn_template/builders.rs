@@ -3,7 +3,7 @@ pub use crate::operation::export_source_network_cfn_template::_export_source_net
 
 pub use crate::operation::export_source_network_cfn_template::_export_source_network_cfn_template_input::ExportSourceNetworkCfnTemplateInputBuilder;
 
-impl ExportSourceNetworkCfnTemplateInputBuilder {
+impl crate::operation::export_source_network_cfn_template::builders::ExportSourceNetworkCfnTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ExportSourceNetworkCfnTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -19,11 +19,19 @@ pub use crate::types::_output_attribute::OutputAttributeBuilder;
 
 pub use crate::types::_input_source::InputSourceBuilder;
 
+pub use crate::types::_id_namespace_id_mapping_workflow_properties::IdNamespaceIdMappingWorkflowPropertiesBuilder;
+
+pub use crate::types::_namespace_provider_properties::NamespaceProviderPropertiesBuilder;
+
+pub use crate::types::_id_namespace_input_source::IdNamespaceInputSourceBuilder;
+
 pub use crate::types::_id_mapping_techniques::IdMappingTechniquesBuilder;
 
 pub use crate::types::_id_mapping_workflow_output_source::IdMappingWorkflowOutputSourceBuilder;
 
 pub use crate::types::_id_mapping_workflow_input_source::IdMappingWorkflowInputSourceBuilder;
+
+pub use crate::types::_id_mapping_job_output_source::IdMappingJobOutputSourceBuilder;
 
 pub use crate::types::_schema_mapping_summary::SchemaMappingSummaryBuilder;
 
@@ -33,11 +41,21 @@ pub use crate::types::_matching_workflow_summary::MatchingWorkflowSummaryBuilder
 
 pub use crate::types::_job_summary::JobSummaryBuilder;
 
+pub use crate::types::_id_namespace_summary::IdNamespaceSummaryBuilder;
+
 pub use crate::types::_id_mapping_workflow_summary::IdMappingWorkflowSummaryBuilder;
+
+pub use crate::types::_provider_component_schema::ProviderComponentSchemaBuilder;
+
+pub use crate::types::_provider_schema_attribute::ProviderSchemaAttributeBuilder;
 
 pub use crate::types::_provider_intermediate_data_access_configuration::ProviderIntermediateDataAccessConfigurationBuilder;
 
 pub use crate::types::_provider_marketplace_configuration::ProviderMarketplaceConfigurationBuilder;
+
+pub use crate::types::_provider_id_name_space_configuration::ProviderIdNameSpaceConfigurationBuilder;
+
+pub use crate::types::_job_output_source::JobOutputSourceBuilder;
 
 pub use crate::types::_error_details::ErrorDetailsBuilder;
 

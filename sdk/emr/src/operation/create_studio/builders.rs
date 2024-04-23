@@ -3,7 +3,7 @@ pub use crate::operation::create_studio::_create_studio_output::CreateStudioOutp
 
 pub use crate::operation::create_studio::_create_studio_input::CreateStudioInputBuilder;
 
-impl CreateStudioInputBuilder {
+impl crate::operation::create_studio::builders::CreateStudioInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateStudioFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateStudioFluentBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
     }
+    ///
     /// Appends an item to `SubnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -280,6 +281,7 @@ impl CreateStudioFluentBuilder {
     pub fn get_idp_relay_state_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idp_relay_state_parameter_name()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

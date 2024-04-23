@@ -3,7 +3,7 @@ pub use crate::operation::delete_web_experience::_delete_web_experience_output::
 
 pub use crate::operation::delete_web_experience::_delete_web_experience_input::DeleteWebExperienceInputBuilder;
 
-impl DeleteWebExperienceInputBuilder {
+impl crate::operation::delete_web_experience::builders::DeleteWebExperienceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl DeleteWebExperienceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWebExperience`.
 ///
-/// <p>Deletes an Amazon Q web experience.</p>
+/// <p>Deletes an Amazon Q Business web experience.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWebExperienceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,40 +99,40 @@ impl DeleteWebExperienceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business web experience.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business web experience.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application linked to the Amazon Q Business web experience.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the Amazon Q web experience being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience being deleted.</p>
     pub fn web_experience_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.web_experience_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q web experience being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience being deleted.</p>
     pub fn set_web_experience_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_web_experience_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q web experience being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience being deleted.</p>
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_web_experience_id()
     }

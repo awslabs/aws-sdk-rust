@@ -3,7 +3,7 @@ pub use crate::operation::update_chime_webhook_configuration::_update_chime_webh
 
 pub use crate::operation::update_chime_webhook_configuration::_update_chime_webhook_configuration_input::UpdateChimeWebhookConfigurationInputBuilder;
 
-impl UpdateChimeWebhookConfigurationInputBuilder {
+impl crate::operation::update_chime_webhook_configuration::builders::UpdateChimeWebhookConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateChimeWebhookConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateChimeWebhookConfigurationFluentBuilder {
     pub fn get_webhook_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_webhook_url()
     }
+    ///
     /// Appends an item to `SnsTopicArns`.
     ///
     /// To override the contents of this collection use [`set_sns_topic_arns`](Self::set_sns_topic_arns).

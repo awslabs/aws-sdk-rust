@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRetrieverInput {
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the retriever.</p>
     pub retriever_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRetrieverInput {
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetRetrieverInputBuilder {
     pub(crate) retriever_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRetrieverInputBuilder {
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }

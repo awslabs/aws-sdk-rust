@@ -3,7 +3,7 @@ pub use crate::operation::update_cross_account_attachment::_update_cross_account
 
 pub use crate::operation::update_cross_account_attachment::_update_cross_account_attachment_input::UpdateCrossAccountAttachmentInputBuilder;
 
-impl UpdateCrossAccountAttachmentInputBuilder {
+impl crate::operation::update_cross_account_attachment::builders::UpdateCrossAccountAttachmentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateCrossAccountAttachmentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl UpdateCrossAccountAttachmentFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `AddPrincipals`.
     ///
     /// To override the contents of this collection use [`set_add_principals`](Self::set_add_principals).
@@ -158,6 +159,7 @@ impl UpdateCrossAccountAttachmentFluentBuilder {
     pub fn get_add_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_principals()
     }
+    ///
     /// Appends an item to `RemovePrincipals`.
     ///
     /// To override the contents of this collection use [`set_remove_principals`](Self::set_remove_principals).
@@ -179,6 +181,7 @@ impl UpdateCrossAccountAttachmentFluentBuilder {
     pub fn get_remove_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_principals()
     }
+    ///
     /// Appends an item to `AddResources`.
     ///
     /// To override the contents of this collection use [`set_add_resources`](Self::set_add_resources).
@@ -200,6 +203,7 @@ impl UpdateCrossAccountAttachmentFluentBuilder {
     pub fn get_add_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         self.inner.get_add_resources()
     }
+    ///
     /// Appends an item to `RemoveResources`.
     ///
     /// To override the contents of this collection use [`set_remove_resources`](Self::set_remove_resources).

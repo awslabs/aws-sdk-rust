@@ -5,7 +5,7 @@
 pub struct ListMessagesOutput {
     /// <p>An array of information on one or more messages.</p>
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListMessagesOutput {
     pub fn messages(&self) -> &[crate::types::Message] {
         self.messages.as_deref().unwrap_or_default()
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -62,17 +62,17 @@ impl ListMessagesOutputBuilder {
     pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
         &self.messages
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

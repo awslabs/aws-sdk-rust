@@ -3,7 +3,7 @@ pub use crate::operation::create_model_card::_create_model_card_output::CreateMo
 
 pub use crate::operation::create_model_card::_create_model_card_input::CreateModelCardInputBuilder;
 
-impl CreateModelCardInputBuilder {
+impl crate::operation::create_model_card::builders::CreateModelCardInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateModelCardFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -195,6 +195,7 @@ impl CreateModelCardFluentBuilder {
     pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
         self.inner.get_model_card_status()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

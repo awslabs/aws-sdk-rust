@@ -3,7 +3,7 @@ pub use crate::operation::create_authorizer::_create_authorizer_output::CreateAu
 
 pub use crate::operation::create_authorizer::_create_authorizer_input::CreateAuthorizerInputBuilder;
 
-impl CreateAuthorizerInputBuilder {
+impl crate::operation::create_authorizer::builders::CreateAuthorizerInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateAuthorizerFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -230,6 +230,7 @@ impl CreateAuthorizerFluentBuilder {
     pub fn get_enable_simple_responses(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_simple_responses()
     }
+    ///
     /// Appends an item to `IdentitySource`.
     ///
     /// To override the contents of this collection use [`set_identity_source`](Self::set_identity_source).

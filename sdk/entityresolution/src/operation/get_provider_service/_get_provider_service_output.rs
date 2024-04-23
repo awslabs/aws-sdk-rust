@@ -15,6 +15,10 @@ pub struct GetProviderServiceOutput {
     pub provider_service_arn: ::std::string::String,
     /// <p>The definition of the provider configuration.</p>
     pub provider_configuration_definition: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>The provider configuration required for different ID namespace types.</p>
+    pub provider_id_name_space_configuration: ::std::option::Option<crate::types::ProviderIdNameSpaceConfiguration>,
+    /// <p>Provider service job configurations.</p>
+    pub provider_job_configuration: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The required configuration fields to use with the provider service.</p>
     pub provider_endpoint_configuration: ::std::option::Option<crate::types::ProviderEndpointConfiguration>,
     /// <p>Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code> means the output will be anonymized and you can't relate the data that comes back from the provider to the identifying input. A value of <code>FALSE</code> means the output won't be anonymized and you can relate the data that comes back from the provider to your source data.</p>
@@ -23,6 +27,8 @@ pub struct GetProviderServiceOutput {
     pub provider_entity_output_definition: ::aws_smithy_types::Document,
     /// <p>The Amazon Web Services accounts and the S3 permissions that are required by some providers to create an S3 bucket for intermediate data storage.</p>
     pub provider_intermediate_data_access_configuration: ::std::option::Option<crate::types::ProviderIntermediateDataAccessConfiguration>,
+    /// <p>Input schema for the provider service.</p>
+    pub provider_component_schema: ::std::option::Option<crate::types::ProviderComponentSchema>,
     _request_id: Option<String>,
 }
 impl GetProviderServiceOutput {
@@ -54,6 +60,14 @@ impl GetProviderServiceOutput {
     pub fn provider_configuration_definition(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.provider_configuration_definition.as_ref()
     }
+    /// <p>The provider configuration required for different ID namespace types.</p>
+    pub fn provider_id_name_space_configuration(&self) -> ::std::option::Option<&crate::types::ProviderIdNameSpaceConfiguration> {
+        self.provider_id_name_space_configuration.as_ref()
+    }
+    /// <p>Provider service job configurations.</p>
+    pub fn provider_job_configuration(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.provider_job_configuration.as_ref()
+    }
     /// <p>The required configuration fields to use with the provider service.</p>
     pub fn provider_endpoint_configuration(&self) -> ::std::option::Option<&crate::types::ProviderEndpointConfiguration> {
         self.provider_endpoint_configuration.as_ref()
@@ -71,6 +85,10 @@ impl GetProviderServiceOutput {
         &self,
     ) -> ::std::option::Option<&crate::types::ProviderIntermediateDataAccessConfiguration> {
         self.provider_intermediate_data_access_configuration.as_ref()
+    }
+    /// <p>Input schema for the provider service.</p>
+    pub fn provider_component_schema(&self) -> ::std::option::Option<&crate::types::ProviderComponentSchema> {
+        self.provider_component_schema.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetProviderServiceOutput {
@@ -95,10 +113,13 @@ pub struct GetProviderServiceOutputBuilder {
     pub(crate) provider_service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) provider_service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) provider_configuration_definition: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) provider_id_name_space_configuration: ::std::option::Option<crate::types::ProviderIdNameSpaceConfiguration>,
+    pub(crate) provider_job_configuration: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) provider_endpoint_configuration: ::std::option::Option<crate::types::ProviderEndpointConfiguration>,
     pub(crate) anonymized_output: ::std::option::Option<bool>,
     pub(crate) provider_entity_output_definition: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) provider_intermediate_data_access_configuration: ::std::option::Option<crate::types::ProviderIntermediateDataAccessConfiguration>,
+    pub(crate) provider_component_schema: ::std::option::Option<crate::types::ProviderComponentSchema>,
     _request_id: Option<String>,
 }
 impl GetProviderServiceOutputBuilder {
@@ -191,6 +212,34 @@ impl GetProviderServiceOutputBuilder {
     pub fn get_provider_configuration_definition(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.provider_configuration_definition
     }
+    /// <p>The provider configuration required for different ID namespace types.</p>
+    pub fn provider_id_name_space_configuration(mut self, input: crate::types::ProviderIdNameSpaceConfiguration) -> Self {
+        self.provider_id_name_space_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The provider configuration required for different ID namespace types.</p>
+    pub fn set_provider_id_name_space_configuration(mut self, input: ::std::option::Option<crate::types::ProviderIdNameSpaceConfiguration>) -> Self {
+        self.provider_id_name_space_configuration = input;
+        self
+    }
+    /// <p>The provider configuration required for different ID namespace types.</p>
+    pub fn get_provider_id_name_space_configuration(&self) -> &::std::option::Option<crate::types::ProviderIdNameSpaceConfiguration> {
+        &self.provider_id_name_space_configuration
+    }
+    /// <p>Provider service job configurations.</p>
+    pub fn provider_job_configuration(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.provider_job_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provider service job configurations.</p>
+    pub fn set_provider_job_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.provider_job_configuration = input;
+        self
+    }
+    /// <p>Provider service job configurations.</p>
+    pub fn get_provider_job_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.provider_job_configuration
+    }
     /// <p>The required configuration fields to use with the provider service.</p>
     /// This field is required.
     pub fn provider_endpoint_configuration(mut self, input: crate::types::ProviderEndpointConfiguration) -> Self {
@@ -255,6 +304,20 @@ impl GetProviderServiceOutputBuilder {
     ) -> &::std::option::Option<crate::types::ProviderIntermediateDataAccessConfiguration> {
         &self.provider_intermediate_data_access_configuration
     }
+    /// <p>Input schema for the provider service.</p>
+    pub fn provider_component_schema(mut self, input: crate::types::ProviderComponentSchema) -> Self {
+        self.provider_component_schema = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Input schema for the provider service.</p>
+    pub fn set_provider_component_schema(mut self, input: ::std::option::Option<crate::types::ProviderComponentSchema>) -> Self {
+        self.provider_component_schema = input;
+        self
+    }
+    /// <p>Input schema for the provider service.</p>
+    pub fn get_provider_component_schema(&self) -> &::std::option::Option<crate::types::ProviderComponentSchema> {
+        &self.provider_component_schema
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -309,6 +372,8 @@ impl GetProviderServiceOutputBuilder {
                 )
             })?,
             provider_configuration_definition: self.provider_configuration_definition,
+            provider_id_name_space_configuration: self.provider_id_name_space_configuration,
+            provider_job_configuration: self.provider_job_configuration,
             provider_endpoint_configuration: self.provider_endpoint_configuration,
             anonymized_output: self.anonymized_output.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -323,6 +388,7 @@ impl GetProviderServiceOutputBuilder {
                 )
             })?,
             provider_intermediate_data_access_configuration: self.provider_intermediate_data_access_configuration,
+            provider_component_schema: self.provider_component_schema,
             _request_id: self._request_id,
         })
     }

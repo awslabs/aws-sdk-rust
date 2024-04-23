@@ -5,11 +5,19 @@
 pub struct StartIdMappingJobInput {
     /// <p>The name of the ID mapping job to be retrieved.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>,
 }
 impl StartIdMappingJobInput {
     /// <p>The name of the ID mapping job to be retrieved.</p>
     pub fn workflow_name(&self) -> ::std::option::Option<&str> {
         self.workflow_name.as_deref()
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
+    pub fn output_source_config(&self) -> &[crate::types::IdMappingJobOutputSource] {
+        self.output_source_config.as_deref().unwrap_or_default()
     }
 }
 impl StartIdMappingJobInput {
@@ -24,6 +32,7 @@ impl StartIdMappingJobInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartIdMappingJobInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
+    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>,
 }
 impl StartIdMappingJobInputBuilder {
     /// <p>The name of the ID mapping job to be retrieved.</p>
@@ -41,12 +50,33 @@ impl StartIdMappingJobInputBuilder {
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_name
     }
+    /// Appends an item to `output_source_config`.
+    ///
+    /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
+    ///
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn output_source_config(mut self, input: crate::types::IdMappingJobOutputSource) -> Self {
+        let mut v = self.output_source_config.unwrap_or_default();
+        v.push(input);
+        self.output_source_config = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>) -> Self {
+        self.output_source_config = input;
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>> {
+        &self.output_source_config
+    }
     /// Consumes the builder and constructs a [`StartIdMappingJobInput`](crate::operation::start_id_mapping_job::StartIdMappingJobInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_id_mapping_job::StartIdMappingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_id_mapping_job::StartIdMappingJobInput {
             workflow_name: self.workflow_name,
+            output_source_config: self.output_source_config,
         })
     }
 }

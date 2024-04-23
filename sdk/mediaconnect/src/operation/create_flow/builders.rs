@@ -3,7 +3,7 @@ pub use crate::operation::create_flow::_create_flow_output::CreateFlowOutputBuil
 
 pub use crate::operation::create_flow::_create_flow_input::CreateFlowInputBuilder;
 
-impl CreateFlowInputBuilder {
+impl crate::operation::create_flow::builders::CreateFlowInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateFlowFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateFlowFluentBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
+    ///
     /// Appends an item to `Entitlements`.
     ///
     /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
@@ -140,6 +141,7 @@ impl CreateFlowFluentBuilder {
     pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
         self.inner.get_entitlements()
     }
+    ///
     /// Appends an item to `MediaStreams`.
     ///
     /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
@@ -172,6 +174,7 @@ impl CreateFlowFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `Outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -218,6 +221,7 @@ impl CreateFlowFluentBuilder {
     pub fn get_source_failover_config(&self) -> &::std::option::Option<crate::types::FailoverConfig> {
         self.inner.get_source_failover_config()
     }
+    ///
     /// Appends an item to `Sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -236,6 +240,7 @@ impl CreateFlowFluentBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
         self.inner.get_sources()
     }
+    ///
     /// Appends an item to `VpcInterfaces`.
     ///
     /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).

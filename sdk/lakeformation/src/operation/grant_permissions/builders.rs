@@ -3,7 +3,7 @@ pub use crate::operation::grant_permissions::_grant_permissions_output::GrantPer
 
 pub use crate::operation::grant_permissions::_grant_permissions_input::GrantPermissionsInputBuilder;
 
-impl GrantPermissionsInputBuilder {
+impl crate::operation::grant_permissions::builders::GrantPermissionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GrantPermissionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -154,6 +154,7 @@ impl GrantPermissionsFluentBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
         self.inner.get_resource()
     }
+    ///
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -172,6 +173,7 @@ impl GrantPermissionsFluentBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         self.inner.get_permissions()
     }
+    ///
     /// Appends an item to `PermissionsWithGrantOption`.
     ///
     /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).

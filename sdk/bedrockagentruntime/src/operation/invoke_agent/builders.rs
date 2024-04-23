@@ -3,7 +3,7 @@ pub use crate::operation::invoke_agent::_invoke_agent_output::InvokeAgentOutputB
 
 pub use crate::operation::invoke_agent::_invoke_agent_input::InvokeAgentInputBuilder;
 
-impl InvokeAgentInputBuilder {
+impl crate::operation::invoke_agent::builders::InvokeAgentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl InvokeAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `InvokeAgent`.
 ///
-/// <p>Sends a prompt for the agent to process and respond to.</p><note>
+/// <p>Sends a prompt for the agent to process and respond to. Use return control event type for function calling.</p><note>
 /// <p>The CLI doesn't support <code>InvokeAgent</code>.</p>
 /// </note>
 /// <ul>
@@ -33,7 +33,9 @@ impl InvokeAgentInputBuilder {
 /// <li>
 /// <p>End a conversation by setting <code>endSession</code> to <code>true</code>.</p></li>
 /// <li>
-/// <p>Include attributes for the session or prompt in the <code>sessionState</code> object.</p></li>
+/// <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or parameters returned from the action group.</p></li>
+/// <li>
+/// <p>Use return control event type for function calling.</p></li>
 /// </ul>
 /// <p>The response is returned in the <code>bytes</code> field of the <code>chunk</code> object.</p>
 /// <ul>
@@ -120,12 +122,12 @@ impl InvokeAgentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::create_fleet_locations::_create_fleet_locations_output
 
 pub use crate::operation::create_fleet_locations::_create_fleet_locations_input::CreateFleetLocationsInputBuilder;
 
-impl CreateFleetLocationsInputBuilder {
+impl crate::operation::create_fleet_locations::builders::CreateFleetLocationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl CreateFleetLocationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -129,6 +129,7 @@ impl CreateFleetLocationsFluentBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
+    ///
     /// Appends an item to `Locations`.
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).

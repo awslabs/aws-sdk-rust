@@ -3,7 +3,7 @@ pub use crate::operation::create_queue::_create_queue_output::CreateQueueOutputB
 
 pub use crate::operation::create_queue::_create_queue_input::CreateQueueInputBuilder;
 
-impl CreateQueueInputBuilder {
+impl crate::operation::create_queue::builders::CreateQueueInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateQueueFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -220,6 +220,7 @@ impl CreateQueueFluentBuilder {
     pub fn get_job_run_as_user(&self) -> &::std::option::Option<crate::types::JobRunAsUser> {
         self.inner.get_job_run_as_user()
     }
+    ///
     /// Appends an item to `requiredFileSystemLocationNames`.
     ///
     /// To override the contents of this collection use [`set_required_file_system_location_names`](Self::set_required_file_system_location_names).
@@ -238,6 +239,7 @@ impl CreateQueueFluentBuilder {
     pub fn get_required_file_system_location_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_required_file_system_location_names()
     }
+    ///
     /// Appends an item to `allowedStorageProfileIds`.
     ///
     /// To override the contents of this collection use [`set_allowed_storage_profile_ids`](Self::set_allowed_storage_profile_ids).
@@ -256,6 +258,7 @@ impl CreateQueueFluentBuilder {
     pub fn get_allowed_storage_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_storage_profile_ids()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

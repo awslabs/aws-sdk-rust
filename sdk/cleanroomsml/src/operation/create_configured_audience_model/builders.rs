@@ -3,7 +3,7 @@ pub use crate::operation::create_configured_audience_model::_create_configured_a
 
 pub use crate::operation::create_configured_audience_model::_create_configured_audience_model_input::CreateConfiguredAudienceModelInputBuilder;
 
-impl CreateConfiguredAudienceModelInputBuilder {
+impl crate::operation::create_configured_audience_model::builders::CreateConfiguredAudienceModelInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateConfiguredAudienceModelFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateConfiguredAudienceModelFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `sharedAudienceMetrics`.
     ///
     /// To override the contents of this collection use [`set_shared_audience_metrics`](Self::set_shared_audience_metrics).
@@ -210,6 +211,7 @@ impl CreateConfiguredAudienceModelFluentBuilder {
     pub fn get_audience_size_config(&self) -> &::std::option::Option<crate::types::AudienceSizeConfig> {
         self.inner.get_audience_size_config()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

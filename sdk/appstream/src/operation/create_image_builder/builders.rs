@@ -3,7 +3,7 @@ pub use crate::operation::create_image_builder::_create_image_builder_output::Cr
 
 pub use crate::operation::create_image_builder::_create_image_builder_input::CreateImageBuilderInputBuilder;
 
-impl CreateImageBuilderInputBuilder {
+impl crate::operation::create_image_builder::builders::CreateImageBuilderInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateImageBuilderFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -470,6 +470,7 @@ impl CreateImageBuilderFluentBuilder {
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_appstream_agent_version()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -500,6 +501,7 @@ impl CreateImageBuilderFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `AccessEndpoints`.
     ///
     /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).

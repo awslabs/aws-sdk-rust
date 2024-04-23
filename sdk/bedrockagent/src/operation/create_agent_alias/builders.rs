@@ -3,7 +3,7 @@ pub use crate::operation::create_agent_alias::_create_agent_alias_output::Create
 
 pub use crate::operation::create_agent_alias::_create_agent_alias_input::CreateAgentAliasInputBuilder;
 
-impl CreateAgentAliasInputBuilder {
+impl crate::operation::create_agent_alias::builders::CreateAgentAliasInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateAgentAliasFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateAgentAliasFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `routingConfiguration`.
     ///
     /// To override the contents of this collection use [`set_routing_configuration`](Self::set_routing_configuration).
@@ -185,6 +186,7 @@ impl CreateAgentAliasFluentBuilder {
     pub fn get_routing_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAliasRoutingConfigurationListItem>> {
         self.inner.get_routing_configuration()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

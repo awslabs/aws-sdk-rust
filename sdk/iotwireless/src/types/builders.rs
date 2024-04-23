@@ -157,6 +157,8 @@ pub use crate::types::_sidewalk_device_metadata::SidewalkDeviceMetadataBuilder;
 
 pub use crate::types::_lo_ra_wan_device_metadata::LoRaWanDeviceMetadataBuilder;
 
+pub use crate::types::_lo_ra_wan_public_gateway_metadata::LoRaWanPublicGatewayMetadataBuilder;
+
 pub use crate::types::_lo_ra_wan_gateway_metadata::LoRaWanGatewayMetadataBuilder;
 
 pub use crate::types::_sidewalk_device::SidewalkDeviceBuilder;

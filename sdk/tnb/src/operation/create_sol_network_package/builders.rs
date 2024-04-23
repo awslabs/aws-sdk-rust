@@ -3,7 +3,7 @@ pub use crate::operation::create_sol_network_package::_create_sol_network_packag
 
 pub use crate::operation::create_sol_network_package::_create_sol_network_package_input::CreateSolNetworkPackageInputBuilder;
 
-impl CreateSolNetworkPackageInputBuilder {
+impl crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,15 +102,16 @@ impl CreateSolNetworkPackageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

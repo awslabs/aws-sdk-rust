@@ -3,7 +3,7 @@ pub use crate::operation::list_group_resources::_list_group_resources_output::Li
 
 pub use crate::operation::list_group_resources::_list_group_resources_input::ListGroupResourcesInputBuilder;
 
-impl ListGroupResourcesInputBuilder {
+impl crate::operation::list_group_resources::builders::ListGroupResourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl ListGroupResourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -163,6 +163,7 @@ impl ListGroupResourcesFluentBuilder {
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

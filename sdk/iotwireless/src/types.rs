@@ -233,6 +233,8 @@ pub use crate::types::_battery_level::BatteryLevel;
 
 pub use crate::types::_lo_ra_wan_device_metadata::LoRaWanDeviceMetadata;
 
+pub use crate::types::_lo_ra_wan_public_gateway_metadata::LoRaWanPublicGatewayMetadata;
+
 pub use crate::types::_lo_ra_wan_gateway_metadata::LoRaWanGatewayMetadata;
 
 pub use crate::types::_sidewalk_device::SidewalkDevice;
@@ -478,6 +480,8 @@ mod _lo_ra_wan_multicast_get;
 mod _lo_ra_wan_multicast_metadata;
 
 mod _lo_ra_wan_multicast_session;
+
+mod _lo_ra_wan_public_gateway_metadata;
 
 mod _lo_ra_wan_send_data_to_device;
 

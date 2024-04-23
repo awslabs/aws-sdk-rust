@@ -3,7 +3,7 @@ pub use crate::operation::start_restore_job::_start_restore_job_output::StartRes
 
 pub use crate::operation::start_restore_job::_start_restore_job_input::StartRestoreJobInputBuilder;
 
-impl StartRestoreJobInputBuilder {
+impl crate::operation::start_restore_job::builders::StartRestoreJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartRestoreJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl StartRestoreJobFluentBuilder {
     pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recovery_point_arn()
     }
+    ///
     /// Adds a key-value pair to `Metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).

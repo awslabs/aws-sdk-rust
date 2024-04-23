@@ -3,7 +3,7 @@ pub use crate::operation::create_job_queue::_create_job_queue_output::CreateJobQ
 
 pub use crate::operation::create_job_queue::_create_job_queue_input::CreateJobQueueInputBuilder;
 
-impl CreateJobQueueInputBuilder {
+impl crate::operation::create_job_queue::builders::CreateJobQueueInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateJobQueueFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl CreateJobQueueFluentBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
+    ///
     /// Appends an item to `computeEnvironmentOrder`.
     ///
     /// To override the contents of this collection use [`set_compute_environment_order`](Self::set_compute_environment_order).
@@ -189,6 +190,7 @@ impl CreateJobQueueFluentBuilder {
     pub fn get_compute_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>> {
         self.inner.get_compute_environment_order()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -207,6 +209,7 @@ impl CreateJobQueueFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `jobStateTimeLimitActions`.
     ///
     /// To override the contents of this collection use [`set_job_state_time_limit_actions`](Self::set_job_state_time_limit_actions).

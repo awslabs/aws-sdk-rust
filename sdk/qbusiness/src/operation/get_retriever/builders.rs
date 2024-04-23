@@ -3,7 +3,7 @@ pub use crate::operation::get_retriever::_get_retriever_output::GetRetrieverOutp
 
 pub use crate::operation::get_retriever::_get_retriever_input::GetRetrieverInputBuilder;
 
-impl GetRetrieverInputBuilder {
+impl crate::operation::get_retriever::builders::GetRetrieverInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl GetRetrieverInputBuilder {
 }
 /// Fluent builder constructing a request to `GetRetriever`.
 ///
-/// <p>Gets information about an existing retriever used by an Amazon Q application.</p>
+/// <p>Gets information about an existing retriever used by an Amazon Q Business application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRetrieverFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,26 +99,26 @@ impl GetRetrieverFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application using the retriever.</p>
+    /// <p>The identifier of the Amazon Q Business application using the retriever.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

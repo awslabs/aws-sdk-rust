@@ -3,7 +3,7 @@ pub use crate::operation::add_cache::_add_cache_output::AddCacheOutputBuilder;
 
 pub use crate::operation::add_cache::_add_cache_input::AddCacheInputBuilder;
 
-impl AddCacheInputBuilder {
+impl crate::operation::add_cache::builders::AddCacheInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -91,12 +91,12 @@ impl AddCacheFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl AddCacheFluentBuilder {
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_arn()
     }
+    ///
     /// Appends an item to `DiskIds`.
     ///
     /// To override the contents of this collection use [`set_disk_ids`](Self::set_disk_ids).

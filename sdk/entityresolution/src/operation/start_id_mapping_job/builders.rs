@@ -3,7 +3,7 @@ pub use crate::operation::start_id_mapping_job::_start_id_mapping_job_output::St
 
 pub use crate::operation::start_id_mapping_job::_start_id_mapping_job_input::StartIdMappingJobInputBuilder;
 
-impl StartIdMappingJobInputBuilder {
+impl crate::operation::start_id_mapping_job::builders::StartIdMappingJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartIdMappingJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -121,5 +121,24 @@ impl StartIdMappingJobFluentBuilder {
     /// <p>The name of the ID mapping job to be retrieved.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_name()
+    }
+    ///
+    /// Appends an item to `outputSourceConfig`.
+    ///
+    /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
+    ///
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn output_source_config(mut self, input: crate::types::IdMappingJobOutputSource) -> Self {
+        self.inner = self.inner.output_source_config(input);
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>) -> Self {
+        self.inner = self.inner.set_output_source_config(input);
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>> {
+        self.inner.get_output_source_config()
     }
 }

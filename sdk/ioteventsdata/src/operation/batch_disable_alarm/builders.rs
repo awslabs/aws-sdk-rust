@@ -3,7 +3,7 @@ pub use crate::operation::batch_disable_alarm::_batch_disable_alarm_output::Batc
 
 pub use crate::operation::batch_disable_alarm::_batch_disable_alarm_input::BatchDisableAlarmInputBuilder;
 
-impl BatchDisableAlarmInputBuilder {
+impl crate::operation::batch_disable_alarm::builders::BatchDisableAlarmInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl BatchDisableAlarmFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `disableActionRequests`.
     ///
     /// To override the contents of this collection use [`set_disable_action_requests`](Self::set_disable_action_requests).

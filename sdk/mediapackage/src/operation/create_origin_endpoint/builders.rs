@@ -3,7 +3,7 @@ pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_output
 
 pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_input::CreateOriginEndpointInputBuilder;
 
-impl CreateOriginEndpointInputBuilder {
+impl crate::operation::create_origin_endpoint::builders::CreateOriginEndpointInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateOriginEndpointFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -262,6 +262,7 @@ impl CreateOriginEndpointFluentBuilder {
     pub fn get_startover_window_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_startover_window_seconds()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -294,6 +295,7 @@ impl CreateOriginEndpointFluentBuilder {
     pub fn get_time_delay_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_time_delay_seconds()
     }
+    ///
     /// Appends an item to `Whitelist`.
     ///
     /// To override the contents of this collection use [`set_whitelist`](Self::set_whitelist).

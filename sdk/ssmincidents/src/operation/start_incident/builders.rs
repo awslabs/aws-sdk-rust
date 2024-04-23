@@ -3,7 +3,7 @@ pub use crate::operation::start_incident::_start_incident_output::StartIncidentO
 
 pub use crate::operation::start_incident::_start_incident_input::StartIncidentInputBuilder;
 
-impl StartIncidentInputBuilder {
+impl crate::operation::start_incident::builders::StartIncidentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartIncidentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -217,6 +217,7 @@ impl StartIncidentFluentBuilder {
     pub fn get_trigger_details(&self) -> &::std::option::Option<crate::types::TriggerDetails> {
         self.inner.get_trigger_details()
     }
+    ///
     /// Appends an item to `relatedItems`.
     ///
     /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).

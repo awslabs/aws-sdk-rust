@@ -3,7 +3,7 @@ pub use crate::operation::create_data_set::_create_data_set_output::CreateDataSe
 
 pub use crate::operation::create_data_set::_create_data_set_input::CreateDataSetInputBuilder;
 
-impl CreateDataSetInputBuilder {
+impl crate::operation::create_data_set::builders::CreateDataSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateDataSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateDataSetFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Adds a key-value pair to `PhysicalTableMap`.
     ///
     /// To override the contents of this collection use [`set_physical_table_map`](Self::set_physical_table_map).
@@ -171,6 +172,7 @@ impl CreateDataSetFluentBuilder {
     pub fn get_physical_table_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>> {
         self.inner.get_physical_table_map()
     }
+    ///
     /// Adds a key-value pair to `LogicalTableMap`.
     ///
     /// To override the contents of this collection use [`set_logical_table_map`](Self::set_logical_table_map).
@@ -206,6 +208,7 @@ impl CreateDataSetFluentBuilder {
     pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::DataSetImportMode> {
         self.inner.get_import_mode()
     }
+    ///
     /// Appends an item to `ColumnGroups`.
     ///
     /// To override the contents of this collection use [`set_column_groups`](Self::set_column_groups).
@@ -224,6 +227,7 @@ impl CreateDataSetFluentBuilder {
     pub fn get_column_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>> {
         self.inner.get_column_groups()
     }
+    ///
     /// Adds a key-value pair to `FieldFolders`.
     ///
     /// To override the contents of this collection use [`set_field_folders`](Self::set_field_folders).
@@ -245,6 +249,7 @@ impl CreateDataSetFluentBuilder {
     pub fn get_field_folders(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>> {
         self.inner.get_field_folders()
     }
+    ///
     /// Appends an item to `Permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -294,6 +299,7 @@ impl CreateDataSetFluentBuilder {
     pub fn get_row_level_permission_tag_configuration(&self) -> &::std::option::Option<crate::types::RowLevelPermissionTagConfiguration> {
         self.inner.get_row_level_permission_tag_configuration()
     }
+    ///
     /// Appends an item to `ColumnLevelPermissionRules`.
     ///
     /// To override the contents of this collection use [`set_column_level_permission_rules`](Self::set_column_level_permission_rules).
@@ -315,6 +321,7 @@ impl CreateDataSetFluentBuilder {
     pub fn get_column_level_permission_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>> {
         self.inner.get_column_level_permission_rules()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -347,6 +354,7 @@ impl CreateDataSetFluentBuilder {
     pub fn get_data_set_usage_configuration(&self) -> &::std::option::Option<crate::types::DataSetUsageConfiguration> {
         self.inner.get_data_set_usage_configuration()
     }
+    ///
     /// Appends an item to `DatasetParameters`.
     ///
     /// To override the contents of this collection use [`set_dataset_parameters`](Self::set_dataset_parameters).
@@ -365,6 +373,7 @@ impl CreateDataSetFluentBuilder {
     pub fn get_dataset_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>> {
         self.inner.get_dataset_parameters()
     }
+    ///
     /// Appends an item to `FolderArns`.
     ///
     /// To override the contents of this collection use [`set_folder_arns`](Self::set_folder_arns).

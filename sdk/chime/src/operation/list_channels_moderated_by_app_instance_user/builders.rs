@@ -3,7 +3,7 @@ pub use crate::operation::list_channels_moderated_by_app_instance_user::_list_ch
 
 pub use crate::operation::list_channels_moderated_by_app_instance_user::_list_channels_moderated_by_app_instance_user_input::ListChannelsModeratedByAppInstanceUserInputBuilder;
 
-impl ListChannelsModeratedByAppInstanceUserInputBuilder {
+impl crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl ListChannelsModeratedByAppInstanceUserFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

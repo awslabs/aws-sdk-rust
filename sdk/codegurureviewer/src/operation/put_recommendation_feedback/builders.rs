@@ -3,7 +3,7 @@ pub use crate::operation::put_recommendation_feedback::_put_recommendation_feedb
 
 pub use crate::operation::put_recommendation_feedback::_put_recommendation_feedback_input::PutRecommendationFeedbackInputBuilder;
 
-impl PutRecommendationFeedbackInputBuilder {
+impl crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutRecommendationFeedbackFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl PutRecommendationFeedbackFluentBuilder {
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recommendation_id()
     }
+    ///
     /// Appends an item to `Reactions`.
     ///
     /// To override the contents of this collection use [`set_reactions`](Self::set_reactions).

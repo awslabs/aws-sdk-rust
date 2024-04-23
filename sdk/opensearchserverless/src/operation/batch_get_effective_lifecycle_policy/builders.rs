@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_effective_lifecycle_policy::_batch_get_effec
 
 pub use crate::operation::batch_get_effective_lifecycle_policy::_batch_get_effective_lifecycle_policy_input::BatchGetEffectiveLifecyclePolicyInputBuilder;
 
-impl BatchGetEffectiveLifecyclePolicyInputBuilder {
+impl crate::operation::batch_get_effective_lifecycle_policy::builders::BatchGetEffectiveLifecyclePolicyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl BatchGetEffectiveLifecyclePolicyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `resourceIdentifiers`.
     ///
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).

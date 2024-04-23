@@ -3,7 +3,7 @@ pub use crate::operation::search_resources::_search_resources_output::SearchReso
 
 pub use crate::operation::search_resources::_search_resources_input::SearchResourcesInputBuilder;
 
-impl SearchResourcesInputBuilder {
+impl crate::operation::search_resources::builders::SearchResourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SearchResourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl SearchResourcesFluentBuilder {
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_text()
     }
+    ///
     /// Appends an item to `QueryScopes`.
     ///
     /// To override the contents of this collection use [`set_query_scopes`](Self::set_query_scopes).
@@ -174,6 +175,7 @@ impl SearchResourcesFluentBuilder {
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_organization_id()
     }
+    ///
     /// Appends an item to `AdditionalResponseFields`.
     ///
     /// To override the contents of this collection use [`set_additional_response_fields`](Self::set_additional_response_fields).
@@ -209,6 +211,7 @@ impl SearchResourcesFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::Filters> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `OrderBy`.
     ///
     /// To override the contents of this collection use [`set_order_by`](Self::set_order_by).

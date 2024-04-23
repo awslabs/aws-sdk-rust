@@ -3,7 +3,7 @@ pub use crate::operation::update_resiliency_policy::_update_resiliency_policy_ou
 
 pub use crate::operation::update_resiliency_policy::_update_resiliency_policy_input::UpdateResiliencyPolicyInputBuilder;
 
-impl UpdateResiliencyPolicyInputBuilder {
+impl crate::operation::update_resiliency_policy::builders::UpdateResiliencyPolicyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateResiliencyPolicyFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -180,6 +180,7 @@ impl UpdateResiliencyPolicyFluentBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::ResiliencyPolicyTier> {
         self.inner.get_tier()
     }
+    ///
     /// Adds a key-value pair to `policy`.
     ///
     /// To override the contents of this collection use [`set_policy`](Self::set_policy).

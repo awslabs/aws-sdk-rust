@@ -3,7 +3,7 @@ pub use crate::operation::update_ops_metadata::_update_ops_metadata_output::Upda
 
 pub use crate::operation::update_ops_metadata::_update_ops_metadata_input::UpdateOpsMetadataInputBuilder;
 
-impl UpdateOpsMetadataInputBuilder {
+impl crate::operation::update_ops_metadata::builders::UpdateOpsMetadataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateOpsMetadataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateOpsMetadataFluentBuilder {
     pub fn get_ops_metadata_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ops_metadata_arn()
     }
+    ///
     /// Adds a key-value pair to `MetadataToUpdate`.
     ///
     /// To override the contents of this collection use [`set_metadata_to_update`](Self::set_metadata_to_update).
@@ -143,6 +144,7 @@ impl UpdateOpsMetadataFluentBuilder {
     pub fn get_metadata_to_update(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.inner.get_metadata_to_update()
     }
+    ///
     /// Appends an item to `KeysToDelete`.
     ///
     /// To override the contents of this collection use [`set_keys_to_delete`](Self::set_keys_to_delete).

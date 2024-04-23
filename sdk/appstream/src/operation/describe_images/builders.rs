@@ -3,7 +3,7 @@ pub use crate::operation::describe_images::_describe_images_output::DescribeImag
 
 pub use crate::operation::describe_images::_describe_images_input::DescribeImagesInputBuilder;
 
-impl DescribeImagesInputBuilder {
+impl crate::operation::describe_images::builders::DescribeImagesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeImagesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeImagesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
         crate::operation::describe_images::paginator::DescribeImagesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
@@ -132,6 +133,7 @@ impl DescribeImagesFluentBuilder {
     pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_names()
     }
+    ///
     /// Appends an item to `Arns`.
     ///
     /// To override the contents of this collection use [`set_arns`](Self::set_arns).

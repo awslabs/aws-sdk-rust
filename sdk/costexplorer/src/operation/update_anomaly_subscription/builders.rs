@@ -3,7 +3,7 @@ pub use crate::operation::update_anomaly_subscription::_update_anomaly_subscript
 
 pub use crate::operation::update_anomaly_subscription::_update_anomaly_subscription_input::UpdateAnomalySubscriptionInputBuilder;
 
-impl UpdateAnomalySubscriptionInputBuilder {
+impl crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     pub fn get_frequency(&self) -> &::std::option::Option<crate::types::AnomalySubscriptionFrequency> {
         self.inner.get_frequency()
     }
+    ///
     /// Appends an item to `MonitorArnList`.
     ///
     /// To override the contents of this collection use [`set_monitor_arn_list`](Self::set_monitor_arn_list).
@@ -182,6 +183,7 @@ impl UpdateAnomalySubscriptionFluentBuilder {
     pub fn get_monitor_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_monitor_arn_list()
     }
+    ///
     /// Appends an item to `Subscribers`.
     ///
     /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).

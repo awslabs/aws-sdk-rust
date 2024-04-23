@@ -3,7 +3,7 @@ pub use crate::operation::create_resource_policy_statement::_create_resource_pol
 
 pub use crate::operation::create_resource_policy_statement::_create_resource_policy_statement_input::CreateResourcePolicyStatementInputBuilder;
 
-impl CreateResourcePolicyStatementInputBuilder {
+impl crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateResourcePolicyStatementFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
     pub fn get_effect(&self) -> &::std::option::Option<crate::types::Effect> {
         self.inner.get_effect()
     }
+    ///
     /// Appends an item to `principal`.
     ///
     /// To override the contents of this collection use [`set_principal`](Self::set_principal).
@@ -169,6 +170,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
     pub fn get_principal(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
         self.inner.get_principal()
     }
+    ///
     /// Appends an item to `action`.
     ///
     /// To override the contents of this collection use [`set_action`](Self::set_action).
@@ -187,6 +189,7 @@ impl CreateResourcePolicyStatementFluentBuilder {
     pub fn get_action(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_action()
     }
+    ///
     /// Adds a key-value pair to `condition`.
     ///
     /// To override the contents of this collection use [`set_condition`](Self::set_condition).

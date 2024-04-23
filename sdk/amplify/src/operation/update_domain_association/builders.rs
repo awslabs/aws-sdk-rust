@@ -3,7 +3,7 @@ pub use crate::operation::update_domain_association::_update_domain_association_
 
 pub use crate::operation::update_domain_association::_update_domain_association_input::UpdateDomainAssociationInputBuilder;
 
-impl UpdateDomainAssociationInputBuilder {
+impl crate::operation::update_domain_association::builders::UpdateDomainAssociationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDomainAssociationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateDomainAssociationFluentBuilder {
     pub fn get_enable_auto_sub_domain(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_auto_sub_domain()
     }
+    ///
     /// Appends an item to `subDomainSettings`.
     ///
     /// To override the contents of this collection use [`set_sub_domain_settings`](Self::set_sub_domain_settings).
@@ -168,6 +169,7 @@ impl UpdateDomainAssociationFluentBuilder {
     pub fn get_sub_domain_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>> {
         self.inner.get_sub_domain_settings()
     }
+    ///
     /// Appends an item to `autoSubDomainCreationPatterns`.
     ///
     /// To override the contents of this collection use [`set_auto_sub_domain_creation_patterns`](Self::set_auto_sub_domain_creation_patterns).

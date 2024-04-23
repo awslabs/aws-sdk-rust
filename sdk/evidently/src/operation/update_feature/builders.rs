@@ -3,7 +3,7 @@ pub use crate::operation::update_feature::_update_feature_output::UpdateFeatureO
 
 pub use crate::operation::update_feature::_update_feature_input::UpdateFeatureInputBuilder;
 
-impl UpdateFeatureInputBuilder {
+impl crate::operation::update_feature::builders::UpdateFeatureInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateFeatureFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl UpdateFeatureFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `addOrUpdateVariations`.
     ///
     /// To override the contents of this collection use [`set_add_or_update_variations`](Self::set_add_or_update_variations).
@@ -183,6 +184,7 @@ impl UpdateFeatureFluentBuilder {
     pub fn get_add_or_update_variations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VariationConfig>> {
         self.inner.get_add_or_update_variations()
     }
+    ///
     /// Appends an item to `removeVariations`.
     ///
     /// To override the contents of this collection use [`set_remove_variations`](Self::set_remove_variations).
@@ -218,6 +220,7 @@ impl UpdateFeatureFluentBuilder {
     pub fn get_default_variation(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_variation()
     }
+    ///
     /// Adds a key-value pair to `entityOverrides`.
     ///
     /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).

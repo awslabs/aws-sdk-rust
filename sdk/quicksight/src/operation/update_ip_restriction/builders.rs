@@ -3,7 +3,7 @@ pub use crate::operation::update_ip_restriction::_update_ip_restriction_output::
 
 pub use crate::operation::update_ip_restriction::_update_ip_restriction_input::UpdateIpRestrictionInputBuilder;
 
-impl UpdateIpRestrictionInputBuilder {
+impl crate::operation::update_ip_restriction::builders::UpdateIpRestrictionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateIpRestrictionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateIpRestrictionFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
+    ///
     /// Adds a key-value pair to `IpRestrictionRuleMap`.
     ///
     /// To override the contents of this collection use [`set_ip_restriction_rule_map`](Self::set_ip_restriction_rule_map).
@@ -147,6 +148,7 @@ impl UpdateIpRestrictionFluentBuilder {
     pub fn get_ip_restriction_rule_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_ip_restriction_rule_map()
     }
+    ///
     /// Adds a key-value pair to `VpcIdRestrictionRuleMap`.
     ///
     /// To override the contents of this collection use [`set_vpc_id_restriction_rule_map`](Self::set_vpc_id_restriction_rule_map).
@@ -174,6 +176,7 @@ impl UpdateIpRestrictionFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_vpc_id_restriction_rule_map()
     }
+    ///
     /// Adds a key-value pair to `VpcEndpointIdRestrictionRuleMap`.
     ///
     /// To override the contents of this collection use [`set_vpc_endpoint_id_restriction_rule_map`](Self::set_vpc_endpoint_id_restriction_rule_map).

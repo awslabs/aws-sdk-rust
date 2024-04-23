@@ -3,7 +3,7 @@ pub use crate::operation::get_parameters_for_export::_get_parameters_for_export_
 
 pub use crate::operation::get_parameters_for_export::_get_parameters_for_export_input::GetParametersForExportInputBuilder;
 
-impl GetParametersForExportInputBuilder {
+impl crate::operation::get_parameters_for_export::builders::GetParametersForExportInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -23,14 +23,14 @@ impl GetParametersForExportInputBuilder {
 /// Fluent builder constructing a request to `GetParametersForExport`.
 ///
 /// <p>Gets the export token and the signing key certificate to initiate a TR-34 key export from Amazon Web Services Payment Cryptography.</p>
-/// <p>The signing key certificate signs the wrapped key under export within the TR-34 key payload. The export token and signing key certificate must be in place and operational before calling <code>ExportKey</code>. The export token expires in 7 days. You can use the same export token to export multiple keys from your service account.</p>
+/// <p>The signing key certificate signs the wrapped key under export within the TR-34 key payload. The export token and signing key certificate must be in place and operational before calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>. The export token expires in 7 days. You can use the same export token to export multiple keys from your service account.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
-/// <p><code>ExportKey</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a></p></li>
 /// <li>
-/// <p><code>GetParametersForImport</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetParametersForExportFluentBuilder {
@@ -108,12 +108,12 @@ impl GetParametersForExportFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

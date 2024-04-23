@@ -3,7 +3,7 @@ pub use crate::operation::create_workteam::_create_workteam_output::CreateWorkte
 
 pub use crate::operation::create_workteam::_create_workteam_input::CreateWorkteamInputBuilder;
 
-impl CreateWorkteamInputBuilder {
+impl crate::operation::create_workteam::builders::CreateWorkteamInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateWorkteamFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl CreateWorkteamFluentBuilder {
     pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workforce_name()
     }
+    ///
     /// Appends an item to `MemberDefinitions`.
     ///
     /// To override the contents of this collection use [`set_member_definitions`](Self::set_member_definitions).
@@ -192,6 +193,7 @@ impl CreateWorkteamFluentBuilder {
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         self.inner.get_notification_configuration()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

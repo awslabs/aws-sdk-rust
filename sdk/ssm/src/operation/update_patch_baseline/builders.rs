@@ -3,7 +3,7 @@ pub use crate::operation::update_patch_baseline::_update_patch_baseline_output::
 
 pub use crate::operation::update_patch_baseline::_update_patch_baseline_input::UpdatePatchBaselineInputBuilder;
 
-impl UpdatePatchBaselineInputBuilder {
+impl crate::operation::update_patch_baseline::builders::UpdatePatchBaselineInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdatePatchBaselineFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -166,6 +166,7 @@ impl UpdatePatchBaselineFluentBuilder {
     pub fn get_approval_rules(&self) -> &::std::option::Option<crate::types::PatchRuleGroup> {
         self.inner.get_approval_rules()
     }
+    ///
     /// Appends an item to `ApprovedPatches`.
     ///
     /// To override the contents of this collection use [`set_approved_patches`](Self::set_approved_patches).
@@ -215,6 +216,7 @@ impl UpdatePatchBaselineFluentBuilder {
     pub fn get_approved_patches_enable_non_security(&self) -> &::std::option::Option<bool> {
         self.inner.get_approved_patches_enable_non_security()
     }
+    ///
     /// Appends an item to `RejectedPatches`.
     ///
     /// To override the contents of this collection use [`set_rejected_patches`](Self::set_rejected_patches).
@@ -282,6 +284,7 @@ impl UpdatePatchBaselineFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `Sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).

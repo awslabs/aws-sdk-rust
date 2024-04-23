@@ -3,7 +3,7 @@ pub use crate::operation::refresh_cache::_refresh_cache_output::RefreshCacheOutp
 
 pub use crate::operation::refresh_cache::_refresh_cache_input::RefreshCacheInputBuilder;
 
-impl RefreshCacheInputBuilder {
+impl crate::operation::refresh_cache::builders::RefreshCacheInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -112,12 +112,12 @@ impl RefreshCacheFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -135,6 +135,7 @@ impl RefreshCacheFluentBuilder {
     pub fn get_file_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_share_arn()
     }
+    ///
     /// Appends an item to `FolderList`.
     ///
     /// To override the contents of this collection use [`set_folder_list`](Self::set_folder_list).

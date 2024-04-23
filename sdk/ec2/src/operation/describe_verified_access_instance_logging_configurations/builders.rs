@@ -3,32 +3,29 @@ pub use crate::operation::describe_verified_access_instance_logging_configuratio
 
 pub use crate::operation::describe_verified_access_instance_logging_configurations::_describe_verified_access_instance_logging_configurations_input::DescribeVerifiedAccessInstanceLoggingConfigurationsInputBuilder;
 
-impl DescribeVerifiedAccessInstanceLoggingConfigurationsInputBuilder {
-    /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_verified_access_instance_logging_configurations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
-}
+impl crate::operation::describe_verified_access_instance_logging_configurations::builders::DescribeVerifiedAccessInstanceLoggingConfigurationsInputBuilder {
+                    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_verified_access_instance_logging_configurations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
+                }
 /// Fluent builder constructing a request to `DescribeVerifiedAccessInstanceLoggingConfigurations`.
 ///
 /// <p>Describes the specified Amazon Web Services Verified Access instances.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_verified_access_instance_logging_configurations::builders::DescribeVerifiedAccessInstanceLoggingConfigurationsInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::describe_verified_access_instance_logging_configurations::builders::DescribeVerifiedAccessInstanceLoggingConfigurationsInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput,
@@ -103,12 +100,12 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -118,6 +115,7 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_verified_access_instance_logging_configurations::paginator::DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator{
         crate::operation::describe_verified_access_instance_logging_configurations::paginator::DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `VerifiedAccessInstanceIds`.
     ///
     /// To override the contents of this collection use [`set_verified_access_instance_ids`](Self::set_verified_access_instance_ids).
@@ -164,6 +162,7 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

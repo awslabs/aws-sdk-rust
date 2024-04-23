@@ -3,7 +3,7 @@ pub use crate::operation::get_geo_match_set::_get_geo_match_set_output::GetGeoMa
 
 pub use crate::operation::get_geo_match_set::_get_geo_match_set_input::GetGeoMatchSetInputBuilder;
 
-impl GetGeoMatchSetInputBuilder {
+impl crate::operation::get_geo_match_set::builders::GetGeoMatchSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl GetGeoMatchSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

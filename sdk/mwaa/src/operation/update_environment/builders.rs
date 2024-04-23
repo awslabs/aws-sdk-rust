@@ -3,7 +3,7 @@ pub use crate::operation::update_environment::_update_environment_output::Update
 
 pub use crate::operation::update_environment::_update_environment_input::UpdateEnvironmentInputBuilder;
 
-impl UpdateEnvironmentInputBuilder {
+impl crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateEnvironmentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -280,6 +280,7 @@ impl UpdateEnvironmentFluentBuilder {
     pub fn get_startup_script_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_startup_script_s3_object_version()
     }
+    ///
     /// Adds a key-value pair to `AirflowConfigurationOptions`.
     ///
     /// To override the contents of this collection use [`set_airflow_configuration_options`](Self::set_airflow_configuration_options).

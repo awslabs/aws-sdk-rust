@@ -9,6 +9,10 @@ pub struct CreateLakeFormationIdentityCenterConfigurationInput {
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
 }
 impl CreateLakeFormationIdentityCenterConfigurationInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.</p>
@@ -22,6 +26,14 @@ impl CreateLakeFormationIdentityCenterConfigurationInput {
     /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn external_filtering(&self) -> ::std::option::Option<&crate::types::ExternalFilteringConfiguration> {
         self.external_filtering.as_ref()
+    }
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.share_recipients.is_none()`.
+    pub fn share_recipients(&self) -> &[crate::types::DataLakePrincipal] {
+        self.share_recipients.as_deref().unwrap_or_default()
     }
 }
 impl CreateLakeFormationIdentityCenterConfigurationInput {
@@ -40,6 +52,7 @@ pub struct CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
+    pub(crate) share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
 }
 impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.</p>
@@ -84,6 +97,32 @@ impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     pub fn get_external_filtering(&self) -> &::std::option::Option<crate::types::ExternalFilteringConfiguration> {
         &self.external_filtering
     }
+    /// Appends an item to `share_recipients`.
+    ///
+    /// To override the contents of this collection use [`set_share_recipients`](Self::set_share_recipients).
+    ///
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn share_recipients(mut self, input: crate::types::DataLakePrincipal) -> Self {
+        let mut v = self.share_recipients.unwrap_or_default();
+        v.push(input);
+        self.share_recipients = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn set_share_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>) -> Self {
+        self.share_recipients = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
+        &self.share_recipients
+    }
     /// Consumes the builder and constructs a [`CreateLakeFormationIdentityCenterConfigurationInput`](crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationInput).
     pub fn build(
         self,
@@ -96,6 +135,7 @@ impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
                 catalog_id: self.catalog_id,
                 instance_arn: self.instance_arn,
                 external_filtering: self.external_filtering,
+                share_recipients: self.share_recipients,
             },
         )
     }

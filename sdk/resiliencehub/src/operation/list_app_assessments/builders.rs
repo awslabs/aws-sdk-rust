@@ -3,7 +3,7 @@ pub use crate::operation::list_app_assessments::_list_app_assessments_output::Li
 
 pub use crate::operation::list_app_assessments::_list_app_assessments_input::ListAppAssessmentsInputBuilder;
 
-impl ListAppAssessmentsInputBuilder {
+impl crate::operation::list_app_assessments::builders::ListAppAssessmentsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListAppAssessmentsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl ListAppAssessmentsFluentBuilder {
     pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_assessment_name()
     }
+    ///
     /// Appends an item to `assessmentStatus`.
     ///
     /// To override the contents of this collection use [`set_assessment_status`](Self::set_assessment_status).

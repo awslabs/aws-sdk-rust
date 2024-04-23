@@ -3,7 +3,7 @@ pub use crate::operation::get_metric_configuration::_get_metric_configuration_ou
 
 pub use crate::operation::get_metric_configuration::_get_metric_configuration_input::GetMetricConfigurationInputBuilder;
 
-impl GetMetricConfigurationInputBuilder {
+impl crate::operation::get_metric_configuration::builders::GetMetricConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl GetMetricConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMetricConfiguration`.
 ///
-/// <p>Get the metric configuration status for this account.</p>
+/// <p>Get the metric configuration status for this AWS account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMetricConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,12 +99,12 @@ impl GetMetricConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

@@ -3,7 +3,7 @@ pub use crate::operation::update_stack_set::_update_stack_set_output::UpdateStac
 
 pub use crate::operation::update_stack_set::_update_stack_set_input::UpdateStackSetInputBuilder;
 
-impl UpdateStackSetInputBuilder {
+impl crate::operation::update_stack_set::builders::UpdateStackSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateStackSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -188,6 +188,7 @@ impl UpdateStackSetFluentBuilder {
     pub fn get_use_previous_template(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_previous_template()
     }
+    ///
     /// Appends an item to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -206,6 +207,7 @@ impl UpdateStackSetFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
+    ///
     /// Appends an item to `Capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
@@ -335,6 +337,7 @@ impl UpdateStackSetFluentBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
         self.inner.get_capabilities()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -529,6 +532,7 @@ impl UpdateStackSetFluentBuilder {
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_id()
     }
+    ///
     /// Appends an item to `Accounts`.
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
@@ -553,6 +557,7 @@ impl UpdateStackSetFluentBuilder {
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_accounts()
     }
+    ///
     /// Appends an item to `Regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).

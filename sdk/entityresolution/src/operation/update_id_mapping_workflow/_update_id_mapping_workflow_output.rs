@@ -5,17 +5,17 @@
 pub struct UpdateIdMappingWorkflowOutput {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub workflow_arn: ::std::string::String,
     /// <p>A description of the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
     pub input_source_config: ::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub output_source_config: ::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>,
+    pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub role_arn: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -25,7 +25,7 @@ impl UpdateIdMappingWorkflowOutput {
         use std::ops::Deref;
         self.workflow_name.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn workflow_arn(&self) -> &str {
         use std::ops::Deref;
         self.workflow_arn.deref()
@@ -40,15 +40,16 @@ impl UpdateIdMappingWorkflowOutput {
         self.input_source_config.deref()
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
     pub fn output_source_config(&self) -> &[crate::types::IdMappingWorkflowOutputSource] {
-        use std::ops::Deref;
-        self.output_source_config.deref()
+        self.output_source_config.as_deref().unwrap_or_default()
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub fn id_mapping_techniques(&self) -> ::std::option::Option<&crate::types::IdMappingTechniques> {
         self.id_mapping_techniques.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
@@ -95,18 +96,18 @@ impl UpdateIdMappingWorkflowOutputBuilder {
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     /// This field is required.
     pub fn workflow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn set_workflow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn get_workflow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_arn
     }
@@ -179,18 +180,18 @@ impl UpdateIdMappingWorkflowOutputBuilder {
     pub fn get_id_mapping_techniques(&self) -> &::std::option::Option<crate::types::IdMappingTechniques> {
         &self.id_mapping_techniques
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -208,7 +209,6 @@ impl UpdateIdMappingWorkflowOutputBuilder {
     /// - [`workflow_name`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::workflow_name)
     /// - [`workflow_arn`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::workflow_arn)
     /// - [`input_source_config`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::input_source_config)
-    /// - [`output_source_config`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::output_source_config)
     /// - [`role_arn`](crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder::role_arn)
     pub fn build(
         self,
@@ -236,12 +236,7 @@ impl UpdateIdMappingWorkflowOutputBuilder {
                     "input_source_config was not specified but it is required when building UpdateIdMappingWorkflowOutput",
                 )
             })?,
-            output_source_config: self.output_source_config.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "output_source_config",
-                    "output_source_config was not specified but it is required when building UpdateIdMappingWorkflowOutput",
-                )
-            })?,
+            output_source_config: self.output_source_config,
             id_mapping_techniques: self.id_mapping_techniques,
             role_arn: self.role_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

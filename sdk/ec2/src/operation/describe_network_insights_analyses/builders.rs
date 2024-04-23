@@ -3,7 +3,7 @@ pub use crate::operation::describe_network_insights_analyses::_describe_network_
 
 pub use crate::operation::describe_network_insights_analyses::_describe_network_insights_analyses_input::DescribeNetworkInsightsAnalysesInputBuilder;
 
-impl DescribeNetworkInsightsAnalysesInputBuilder {
+impl crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_network_insights_analyses::paginator::DescribeNetworkInsightsAnalysesPaginator {
         crate::operation::describe_network_insights_analyses::paginator::DescribeNetworkInsightsAnalysesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `NetworkInsightsAnalysisIds`.
     ///
     /// To override the contents of this collection use [`set_network_insights_analysis_ids`](Self::set_network_insights_analysis_ids).
@@ -174,6 +175,7 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder {
     pub fn get_analysis_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_analysis_end_time()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

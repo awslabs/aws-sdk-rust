@@ -3,7 +3,7 @@ pub use crate::operation::create_application::_create_application_output::Create
 
 pub use crate::operation::create_application::_create_application_input::CreateApplicationInputBuilder;
 
-impl CreateApplicationInputBuilder {
+impl crate::operation::create_application::builders::CreateApplicationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateApplicationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl CreateApplicationFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Adds a key-value pair to `initialCapacity`.
     ///
     /// To override the contents of this collection use [`set_initial_capacity`](Self::set_initial_capacity).
@@ -201,6 +202,7 @@ impl CreateApplicationFluentBuilder {
     pub fn get_maximum_capacity(&self) -> &::std::option::Option<crate::types::MaximumAllowedResources> {
         self.inner.get_maximum_capacity()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -289,6 +291,7 @@ impl CreateApplicationFluentBuilder {
     pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfigurationInput> {
         self.inner.get_image_configuration()
     }
+    ///
     /// Adds a key-value pair to `workerTypeSpecifications`.
     ///
     /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
@@ -316,6 +319,7 @@ impl CreateApplicationFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         self.inner.get_worker_type_specifications()
     }
+    ///
     /// Appends an item to `runtimeConfiguration`.
     ///
     /// To override the contents of this collection use [`set_runtime_configuration`](Self::set_runtime_configuration).

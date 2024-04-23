@@ -3,7 +3,7 @@ pub use crate::operation::create_action::_create_action_output::CreateActionOutp
 
 pub use crate::operation::create_action::_create_action_input::CreateActionInputBuilder;
 
-impl CreateActionInputBuilder {
+impl crate::operation::create_action::builders::CreateActionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateActionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl CreateActionFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
         self.inner.get_status()
     }
+    ///
     /// Adds a key-value pair to `Properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
@@ -210,6 +211,7 @@ impl CreateActionFluentBuilder {
     pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         self.inner.get_metadata_properties()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

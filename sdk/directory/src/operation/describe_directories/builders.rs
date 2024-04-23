@@ -3,7 +3,7 @@ pub use crate::operation::describe_directories::_describe_directories_output::De
 
 pub use crate::operation::describe_directories::_describe_directories_input::DescribeDirectoriesInputBuilder;
 
-impl DescribeDirectoriesInputBuilder {
+impl crate::operation::describe_directories::builders::DescribeDirectoriesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DescribeDirectoriesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -117,6 +117,7 @@ impl DescribeDirectoriesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator {
         crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `DirectoryIds`.
     ///
     /// To override the contents of this collection use [`set_directory_ids`](Self::set_directory_ids).

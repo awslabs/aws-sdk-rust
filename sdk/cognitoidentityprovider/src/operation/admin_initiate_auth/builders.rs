@@ -3,7 +3,7 @@ pub use crate::operation::admin_initiate_auth::_admin_initiate_auth_output::Admi
 
 pub use crate::operation::admin_initiate_auth::_admin_initiate_auth_input::AdminInitiateAuthInputBuilder;
 
-impl AdminInitiateAuthInputBuilder {
+impl crate::operation::admin_initiate_auth::builders::AdminInitiateAuthInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -111,12 +111,12 @@ impl AdminInitiateAuthFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -225,6 +225,7 @@ impl AdminInitiateAuthFluentBuilder {
     pub fn get_auth_flow(&self) -> &::std::option::Option<crate::types::AuthFlowType> {
         self.inner.get_auth_flow()
     }
+    ///
     /// Adds a key-value pair to `AuthParameters`.
     ///
     /// To override the contents of this collection use [`set_auth_parameters`](Self::set_auth_parameters).
@@ -283,6 +284,7 @@ impl AdminInitiateAuthFluentBuilder {
     pub fn get_auth_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_auth_parameters()
     }
+    ///
     /// Adds a key-value pair to `ClientMetadata`.
     ///
     /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).

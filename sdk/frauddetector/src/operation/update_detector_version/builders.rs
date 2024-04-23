@@ -3,7 +3,7 @@ pub use crate::operation::update_detector_version::_update_detector_version_outp
 
 pub use crate::operation::update_detector_version::_update_detector_version_input::UpdateDetectorVersionInputBuilder;
 
-impl UpdateDetectorVersionInputBuilder {
+impl crate::operation::update_detector_version::builders::UpdateDetectorVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDetectorVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateDetectorVersionFluentBuilder {
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_version_id()
     }
+    ///
     /// Appends an item to `externalModelEndpoints`.
     ///
     /// To override the contents of this collection use [`set_external_model_endpoints`](Self::set_external_model_endpoints).
@@ -154,6 +155,7 @@ impl UpdateDetectorVersionFluentBuilder {
     pub fn get_external_model_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_external_model_endpoints()
     }
+    ///
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -186,6 +188,7 @@ impl UpdateDetectorVersionFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `modelVersions`.
     ///
     /// To override the contents of this collection use [`set_model_versions`](Self::set_model_versions).

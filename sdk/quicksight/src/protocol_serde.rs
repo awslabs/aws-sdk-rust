@@ -583,6 +583,8 @@ pub(crate) mod shape_asset_bundle_import_job_override_validation_strategy;
 
 pub(crate) mod shape_asset_bundle_import_job_summary_list;
 
+pub(crate) mod shape_asset_bundle_import_job_warning_list;
+
 pub(crate) mod shape_asset_bundle_import_source;
 
 pub(crate) mod shape_asset_bundle_import_source_description;
@@ -910,6 +912,8 @@ pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_parameters_
 pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_tags;
 
 pub(crate) mod shape_asset_bundle_import_job_vpc_connection_override_tags_list;
+
+pub(crate) mod shape_asset_bundle_import_job_warning;
 
 pub(crate) mod shape_asset_options;
 
@@ -1383,6 +1387,8 @@ pub(crate) mod shape_filled_map_visual;
 
 pub(crate) mod shape_filter_control_list;
 
+pub(crate) mod shape_filter_cross_sheet_control;
+
 pub(crate) mod shape_filter_date_time_picker_control;
 
 pub(crate) mod shape_filter_drop_down_control;
@@ -1581,6 +1587,8 @@ pub(crate) mod shape_database_group_list;
 
 pub(crate) mod shape_date_time_picker_control_display_options;
 
+pub(crate) mod shape_default_filter_control_configuration;
+
 pub(crate) mod shape_default_free_form_layout_configuration;
 
 pub(crate) mod shape_default_grid_layout_configuration;
@@ -1760,6 +1768,8 @@ pub(crate) mod shape_date_time_hierarchy;
 pub(crate) mod shape_decimal_dataset_parameter_value_list;
 
 pub(crate) mod shape_decimal_default_value_list;
+
+pub(crate) mod shape_default_filter_control_options;
 
 pub(crate) mod shape_donut_options;
 
@@ -2020,6 +2030,20 @@ pub(crate) mod shape_data_label_type;
 pub(crate) mod shape_data_path_color;
 
 pub(crate) mod shape_decimal_places_configuration;
+
+pub(crate) mod shape_default_date_time_picker_control_options;
+
+pub(crate) mod shape_default_filter_drop_down_control_options;
+
+pub(crate) mod shape_default_filter_list_control_options;
+
+pub(crate) mod shape_default_relative_date_time_control_options;
+
+pub(crate) mod shape_default_slider_control_options;
+
+pub(crate) mod shape_default_text_area_control_options;
+
+pub(crate) mod shape_default_text_field_control_options;
 
 pub(crate) mod shape_dimension_field;
 

@@ -3,7 +3,7 @@ pub use crate::operation::update_stage::_update_stage_output::UpdateStageOutputB
 
 pub use crate::operation::update_stage::_update_stage_input::UpdateStageInputBuilder;
 
-impl UpdateStageInputBuilder {
+impl crate::operation::update_stage::builders::UpdateStageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateStageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -206,6 +206,7 @@ impl UpdateStageFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Adds a key-value pair to `RouteSettings`.
     ///
     /// To override the contents of this collection use [`set_route_settings`](Self::set_route_settings).
@@ -241,6 +242,7 @@ impl UpdateStageFluentBuilder {
     pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stage_name()
     }
+    ///
     /// Adds a key-value pair to `StageVariables`.
     ///
     /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).

@@ -3,7 +3,7 @@ pub use crate::operation::configure_logs_for_channel::_configure_logs_for_channe
 
 pub use crate::operation::configure_logs_for_channel::_configure_logs_for_channel_input::ConfigureLogsForChannelInputBuilder;
 
-impl ConfigureLogsForChannelInputBuilder {
+impl crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ConfigureLogsForChannelFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl ConfigureLogsForChannelFluentBuilder {
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_name()
     }
+    ///
     /// Appends an item to `LogTypes`.
     ///
     /// To override the contents of this collection use [`set_log_types`](Self::set_log_types).

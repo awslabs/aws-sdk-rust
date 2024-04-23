@@ -3,7 +3,7 @@ pub use crate::operation::get_trace_graph::_get_trace_graph_output::GetTraceGrap
 
 pub use crate::operation::get_trace_graph::_get_trace_graph_input::GetTraceGraphInputBuilder;
 
-impl GetTraceGraphInputBuilder {
+impl crate::operation::get_trace_graph::builders::GetTraceGraphInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetTraceGraphFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl GetTraceGraphFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_trace_graph::paginator::GetTraceGraphPaginator {
         crate::operation::get_trace_graph::paginator::GetTraceGraphPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `TraceIds`.
     ///
     /// To override the contents of this collection use [`set_trace_ids`](Self::set_trace_ids).

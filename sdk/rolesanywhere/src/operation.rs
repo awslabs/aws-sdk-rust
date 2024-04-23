@@ -7,6 +7,9 @@ pub mod create_profile;
 /// Types for the `CreateTrustAnchor` operation.
 pub mod create_trust_anchor;
 
+/// Types for the `DeleteAttributeMapping` operation.
+pub mod delete_attribute_mapping;
+
 /// Types for the `DeleteCrl` operation.
 pub mod delete_crl;
 
@@ -63,6 +66,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ListTrustAnchors` operation.
 pub mod list_trust_anchors;
+
+/// Types for the `PutAttributeMapping` operation.
+pub mod put_attribute_mapping;
 
 /// Types for the `PutNotificationSettings` operation.
 pub mod put_notification_settings;

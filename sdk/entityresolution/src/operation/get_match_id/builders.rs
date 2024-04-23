@@ -3,7 +3,7 @@ pub use crate::operation::get_match_id::_get_match_id_output::GetMatchIdOutputBu
 
 pub use crate::operation::get_match_id::_get_match_id_input::GetMatchIdInputBuilder;
 
-impl GetMatchIdInputBuilder {
+impl crate::operation::get_match_id::builders::GetMatchIdInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetMatchIdFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl GetMatchIdFluentBuilder {
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_name()
     }
+    ///
     /// Adds a key-value pair to `record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).
@@ -139,5 +140,19 @@ impl GetMatchIdFluentBuilder {
     /// <p>The record to fetch the Match ID for.</p>
     pub fn get_record(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_record()
+    }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn apply_normalization(mut self, input: bool) -> Self {
+        self.inner = self.inner.apply_normalization(input);
+        self
+    }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn set_apply_normalization(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_apply_normalization(input);
+        self
+    }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn get_apply_normalization(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_normalization()
     }
 }

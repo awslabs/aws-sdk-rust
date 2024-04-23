@@ -3,7 +3,7 @@ pub use crate::operation::put_record::_put_record_output::PutRecordOutputBuilder
 
 pub use crate::operation::put_record::_put_record_input::PutRecordInputBuilder;
 
-impl PutRecordInputBuilder {
+impl crate::operation::put_record::builders::PutRecordInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -96,12 +96,12 @@ impl PutRecordFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -119,6 +119,7 @@ impl PutRecordFluentBuilder {
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feature_group_name()
     }
+    ///
     /// Appends an item to `Record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).
@@ -161,6 +162,7 @@ impl PutRecordFluentBuilder {
     pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
         self.inner.get_record()
     }
+    ///
     /// Appends an item to `TargetStores`.
     ///
     /// To override the contents of this collection use [`set_target_stores`](Self::set_target_stores).

@@ -3,7 +3,7 @@ pub use crate::operation::create_app_block_builder::_create_app_block_builder_ou
 
 pub use crate::operation::create_app_block_builder::_create_app_block_builder_input::CreateAppBlockBuilderInputBuilder;
 
-impl CreateAppBlockBuilderInputBuilder {
+impl crate::operation::create_app_block_builder::builders::CreateAppBlockBuilderInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateAppBlockBuilderFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateAppBlockBuilderFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -295,6 +296,7 @@ impl CreateAppBlockBuilderFluentBuilder {
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_role_arn()
     }
+    ///
     /// Appends an item to `AccessEndpoints`.
     ///
     /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).

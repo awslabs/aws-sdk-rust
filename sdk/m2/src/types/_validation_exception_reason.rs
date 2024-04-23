@@ -13,9 +13,11 @@
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::CannotParse => { /* ... */ },
+///     ValidationExceptionReason::FeatureNotAvailable => { /* ... */ },
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
 ///     ValidationExceptionReason::Other => { /* ... */ },
 ///     ValidationExceptionReason::UnknownOperation => { /* ... */ },
+///     ValidationExceptionReason::UnsupportedEngineVersion => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,11 +48,15 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
     #[allow(missing_docs)] // documentation missing in model
+    FeatureNotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
     Other,
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedEngineVersion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,9 +65,11 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "cannotParse" => ValidationExceptionReason::CannotParse,
+            "featureNotAvailable" => ValidationExceptionReason::FeatureNotAvailable,
             "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
             "other" => ValidationExceptionReason::Other,
             "unknownOperation" => ValidationExceptionReason::UnknownOperation,
+            "unsupportedEngineVersion" => ValidationExceptionReason::UnsupportedEngineVersion,
             other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -78,15 +86,24 @@ impl ValidationExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "cannotParse",
+            ValidationExceptionReason::FeatureNotAvailable => "featureNotAvailable",
             ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
             ValidationExceptionReason::Other => "other",
             ValidationExceptionReason::UnknownOperation => "unknownOperation",
+            ValidationExceptionReason::UnsupportedEngineVersion => "unsupportedEngineVersion",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["cannotParse", "fieldValidationFailed", "other", "unknownOperation"]
+        &[
+            "cannotParse",
+            "featureNotAvailable",
+            "fieldValidationFailed",
+            "other",
+            "unknownOperation",
+            "unsupportedEngineVersion",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ValidationExceptionReason {
@@ -110,9 +127,11 @@ impl ::std::fmt::Display for ValidationExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ValidationExceptionReason::CannotParse => write!(f, "cannotParse"),
+            ValidationExceptionReason::FeatureNotAvailable => write!(f, "featureNotAvailable"),
             ValidationExceptionReason::FieldValidationFailed => write!(f, "fieldValidationFailed"),
             ValidationExceptionReason::Other => write!(f, "other"),
             ValidationExceptionReason::UnknownOperation => write!(f, "unknownOperation"),
+            ValidationExceptionReason::UnsupportedEngineVersion => write!(f, "unsupportedEngineVersion"),
             ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -3,7 +3,7 @@ pub use crate::operation::list_monitors::_list_monitors_output::ListMonitorsOutp
 
 pub use crate::operation::list_monitors::_list_monitors_input::ListMonitorsInputBuilder;
 
-impl ListMonitorsInputBuilder {
+impl crate::operation::list_monitors::builders::ListMonitorsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListMonitorsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -159,17 +159,17 @@ impl ListMonitorsFluentBuilder {
     pub fn get_monitor_status(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_monitor_status()
     }
-    /// <p>TBD</p>
+    /// <p>A boolean option that you can set to <code>TRUE</code> to include monitors for linked accounts in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn include_linked_accounts(mut self, input: bool) -> Self {
         self.inner = self.inner.include_linked_accounts(input);
         self
     }
-    /// <p>TBD</p>
+    /// <p>A boolean option that you can set to <code>TRUE</code> to include monitors for linked accounts in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_linked_accounts(input);
         self
     }
-    /// <p>TBD</p>
+    /// <p>A boolean option that you can set to <code>TRUE</code> to include monitors for linked accounts in a list of monitors, when you've set up cross-account sharing in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_linked_accounts()
     }

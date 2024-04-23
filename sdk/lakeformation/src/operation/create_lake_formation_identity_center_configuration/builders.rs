@@ -3,7 +3,7 @@ pub use crate::operation::create_lake_formation_identity_center_configuration::_
 
 pub use crate::operation::create_lake_formation_identity_center_configuration::_create_lake_formation_identity_center_configuration_input::CreateLakeFormationIdentityCenterConfigurationInputBuilder;
 
-impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
+impl crate::operation::create_lake_formation_identity_center_configuration::builders::CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl CreateLakeFormationIdentityCenterConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -157,5 +157,30 @@ impl CreateLakeFormationIdentityCenterConfigurationFluentBuilder {
     /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn get_external_filtering(&self) -> &::std::option::Option<crate::types::ExternalFilteringConfiguration> {
         self.inner.get_external_filtering()
+    }
+    ///
+    /// Appends an item to `ShareRecipients`.
+    ///
+    /// To override the contents of this collection use [`set_share_recipients`](Self::set_share_recipients).
+    ///
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn share_recipients(mut self, input: crate::types::DataLakePrincipal) -> Self {
+        self.inner = self.inner.share_recipients(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn set_share_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>) -> Self {
+        self.inner = self.inner.set_share_recipients(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.</p>
+    /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
+    /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
+    pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
+        self.inner.get_share_recipients()
     }
 }

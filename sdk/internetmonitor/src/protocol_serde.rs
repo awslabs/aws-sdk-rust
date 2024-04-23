@@ -29,6 +29,8 @@ pub(crate) mod shape_delete_monitor;
 
 pub(crate) mod shape_get_health_event;
 
+pub(crate) mod shape_get_internet_event;
+
 pub(crate) mod shape_get_monitor;
 
 pub(crate) mod shape_get_query_results;
@@ -36,6 +38,8 @@ pub(crate) mod shape_get_query_results;
 pub(crate) mod shape_get_query_status;
 
 pub(crate) mod shape_list_health_events;
+
+pub(crate) mod shape_list_internet_events;
 
 pub(crate) mod shape_list_monitors;
 
@@ -89,6 +93,8 @@ pub(crate) mod shape_update_monitor_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_client_location;
+
 pub(crate) mod shape_filter_parameter;
 
 pub(crate) mod shape_health_event_list;
@@ -96,6 +102,8 @@ pub(crate) mod shape_health_event_list;
 pub(crate) mod shape_health_events_config;
 
 pub(crate) mod shape_impacted_locations_list;
+
+pub(crate) mod shape_internet_events_list;
 
 pub(crate) mod shape_internet_measurements_log_delivery;
 
@@ -112,6 +120,8 @@ pub(crate) mod shape_tag_map;
 pub(crate) mod shape_health_event;
 
 pub(crate) mod shape_impacted_location;
+
+pub(crate) mod shape_internet_event_summary;
 
 pub(crate) mod shape_local_health_events_config;
 

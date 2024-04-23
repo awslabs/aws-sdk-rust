@@ -3,7 +3,7 @@ pub use crate::operation::decrease_replica_count::_decrease_replica_count_output
 
 pub use crate::operation::decrease_replica_count::_decrease_replica_count_input::DecreaseReplicaCountInputBuilder;
 
-impl DecreaseReplicaCountInputBuilder {
+impl crate::operation::decrease_replica_count::builders::DecreaseReplicaCountInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DecreaseReplicaCountFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -175,6 +175,7 @@ impl DecreaseReplicaCountFluentBuilder {
     pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_new_replica_count()
     }
+    ///
     /// Appends an item to `ReplicaConfiguration`.
     ///
     /// To override the contents of this collection use [`set_replica_configuration`](Self::set_replica_configuration).
@@ -193,6 +194,7 @@ impl DecreaseReplicaCountFluentBuilder {
     pub fn get_replica_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
         self.inner.get_replica_configuration()
     }
+    ///
     /// Appends an item to `ReplicasToRemove`.
     ///
     /// To override the contents of this collection use [`set_replicas_to_remove`](Self::set_replicas_to_remove).

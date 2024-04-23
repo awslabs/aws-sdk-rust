@@ -98,6 +98,8 @@ pub struct UpdateWorkloadInput {
     pub discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
     pub applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Configuration of the Jira integration.</p>
+    pub jira_configuration: ::std::option::Option<crate::types::WorkloadJiraConfigurationInput>,
 }
 impl UpdateWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -238,6 +240,10 @@ impl UpdateWorkloadInput {
     pub fn applications(&self) -> &[::std::string::String] {
         self.applications.as_deref().unwrap_or_default()
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::WorkloadJiraConfigurationInput> {
+        self.jira_configuration.as_ref()
+    }
 }
 impl UpdateWorkloadInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkloadInput`](crate::operation::update_workload::UpdateWorkloadInput).
@@ -267,6 +273,7 @@ pub struct UpdateWorkloadInputBuilder {
     pub(crate) improvement_status: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
     pub(crate) discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::WorkloadJiraConfigurationInput>,
 }
 impl UpdateWorkloadInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -718,6 +725,20 @@ impl UpdateWorkloadInputBuilder {
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.applications
     }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(mut self, input: crate::types::WorkloadJiraConfigurationInput) -> Self {
+        self.jira_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::WorkloadJiraConfigurationInput>) -> Self {
+        self.jira_configuration = input;
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::WorkloadJiraConfigurationInput> {
+        &self.jira_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateWorkloadInput`](crate::operation::update_workload::UpdateWorkloadInput).
     pub fn build(
         self,
@@ -740,6 +761,7 @@ impl UpdateWorkloadInputBuilder {
             improvement_status: self.improvement_status,
             discovery_config: self.discovery_config,
             applications: self.applications,
+            jira_configuration: self.jira_configuration,
         })
     }
 }

@@ -3,7 +3,7 @@ pub use crate::operation::create_model_bias_job_definition::_create_model_bias_j
 
 pub use crate::operation::create_model_bias_job_definition::_create_model_bias_job_definition_input::CreateModelBiasJobDefinitionInputBuilder;
 
-impl CreateModelBiasJobDefinitionInputBuilder {
+impl crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -234,6 +234,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
     pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
         self.inner.get_stopping_condition()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

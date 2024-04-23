@@ -3,7 +3,7 @@ pub use crate::operation::start_backup_job::_start_backup_job_output::StartBacku
 
 pub use crate::operation::start_backup_job::_start_backup_job_input::StartBackupJobInputBuilder;
 
-impl StartBackupJobInputBuilder {
+impl crate::operation::start_backup_job::builders::StartBackupJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartBackupJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -224,6 +224,7 @@ impl StartBackupJobFluentBuilder {
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::Lifecycle> {
         self.inner.get_lifecycle()
     }
+    ///
     /// Adds a key-value pair to `RecoveryPointTags`.
     ///
     /// To override the contents of this collection use [`set_recovery_point_tags`](Self::set_recovery_point_tags).
@@ -249,6 +250,7 @@ impl StartBackupJobFluentBuilder {
     pub fn get_recovery_point_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_recovery_point_tags()
     }
+    ///
     /// Adds a key-value pair to `BackupOptions`.
     ///
     /// To override the contents of this collection use [`set_backup_options`](Self::set_backup_options).

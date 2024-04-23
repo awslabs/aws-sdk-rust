@@ -3,7 +3,7 @@ pub use crate::operation::update_table_replica_auto_scaling::_update_table_repli
 
 pub use crate::operation::update_table_replica_auto_scaling::_update_table_replica_auto_scaling_input::UpdateTableReplicaAutoScalingInputBuilder;
 
-impl UpdateTableReplicaAutoScalingInputBuilder {
+impl crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,15 +101,16 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `GlobalSecondaryIndexUpdates`.
     ///
     /// To override the contents of this collection use [`set_global_secondary_index_updates`](Self::set_global_secondary_index_updates).
@@ -162,6 +163,7 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
     pub fn get_provisioned_write_capacity_auto_scaling_update(&self) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
         self.inner.get_provisioned_write_capacity_auto_scaling_update()
     }
+    ///
     /// Appends an item to `ReplicaUpdates`.
     ///
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).

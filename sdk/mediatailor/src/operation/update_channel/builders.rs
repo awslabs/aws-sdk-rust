@@ -3,7 +3,7 @@ pub use crate::operation::update_channel::_update_channel_output::UpdateChannelO
 
 pub use crate::operation::update_channel::_update_channel_input::UpdateChannelInputBuilder;
 
-impl UpdateChannelInputBuilder {
+impl crate::operation::update_channel::builders::UpdateChannelInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateChannelFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateChannelFluentBuilder {
     pub fn get_filler_slate(&self) -> &::std::option::Option<crate::types::SlateSource> {
         self.inner.get_filler_slate()
     }
+    ///
     /// Appends an item to `Outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -168,6 +169,7 @@ impl UpdateChannelFluentBuilder {
     pub fn get_time_shift_configuration(&self) -> &::std::option::Option<crate::types::TimeShiftConfiguration> {
         self.inner.get_time_shift_configuration()
     }
+    ///
     /// Appends an item to `Audiences`.
     ///
     /// To override the contents of this collection use [`set_audiences`](Self::set_audiences).

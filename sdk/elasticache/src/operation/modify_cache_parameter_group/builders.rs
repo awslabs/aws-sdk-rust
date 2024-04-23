@@ -3,7 +3,7 @@ pub use crate::operation::modify_cache_parameter_group::_modify_cache_parameter_
 
 pub use crate::operation::modify_cache_parameter_group::_modify_cache_parameter_group_input::ModifyCacheParameterGroupInputBuilder;
 
-impl ModifyCacheParameterGroupInputBuilder {
+impl crate::operation::modify_cache_parameter_group::builders::ModifyCacheParameterGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ModifyCacheParameterGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl ModifyCacheParameterGroupFluentBuilder {
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_parameter_group_name()
     }
+    ///
     /// Appends an item to `ParameterNameValues`.
     ///
     /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).

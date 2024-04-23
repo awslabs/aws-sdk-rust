@@ -3,7 +3,7 @@ pub use crate::operation::create_metric_set::_create_metric_set_output::CreateMe
 
 pub use crate::operation::create_metric_set::_create_metric_set_input::CreateMetricSetInputBuilder;
 
-impl CreateMetricSetInputBuilder {
+impl crate::operation::create_metric_set::builders::CreateMetricSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateMetricSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateMetricSetFluentBuilder {
     pub fn get_metric_set_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_metric_set_description()
     }
+    ///
     /// Appends an item to `MetricList`.
     ///
     /// To override the contents of this collection use [`set_metric_list`](Self::set_metric_list).
@@ -196,6 +197,7 @@ impl CreateMetricSetFluentBuilder {
     pub fn get_timestamp_column(&self) -> &::std::option::Option<crate::types::TimestampColumn> {
         self.inner.get_timestamp_column()
     }
+    ///
     /// Appends an item to `DimensionList`.
     ///
     /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
@@ -256,6 +258,7 @@ impl CreateMetricSetFluentBuilder {
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_timezone()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -274,6 +277,7 @@ impl CreateMetricSetFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `DimensionFilterList`.
     ///
     /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).

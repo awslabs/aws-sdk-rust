@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ActionGroupExecutor {
-    /// <p>The ARN of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
+    /// <p>To return the action group invocation results directly in the <code>InvokeAgent</code> response, specify <code>RETURN_CONTROL</code>.</p>
+    CustomControl(crate::types::CustomControlMethod),
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.</p>
     Lambda(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -17,7 +19,19 @@ pub enum ActionGroupExecutor {
     Unknown,
 }
 impl ActionGroupExecutor {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`CustomControl`](crate::types::ActionGroupExecutor::CustomControl), extracting the inner [`CustomControlMethod`](crate::types::CustomControlMethod).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_custom_control(&self) -> ::std::result::Result<&crate::types::CustomControlMethod, &Self> {
+        if let ActionGroupExecutor::CustomControl(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CustomControl`](crate::types::ActionGroupExecutor::CustomControl).
+    pub fn is_custom_control(&self) -> bool {
+        self.as_custom_control().is_ok()
+    }
     /// Tries to convert the enum instance into [`Lambda`](crate::types::ActionGroupExecutor::Lambda), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_lambda(&self) -> ::std::result::Result<&::std::string::String, &Self> {

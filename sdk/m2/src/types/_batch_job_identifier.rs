@@ -6,6 +6,8 @@
 pub enum BatchJobIdentifier {
     /// <p>Specifies a file associated with a specific batch job.</p>
     FileBatchJobIdentifier(crate::types::FileBatchJobIdentifier),
+    /// <p>Specifies the required information for restart, including execution ID and jobsteprestartmarker.</p>
+    RestartBatchJobIdentifier(crate::types::RestartBatchJobIdentifier),
     /// <p>Specifies an Amazon S3 location that identifies the batch jobs that you want to run. Use this identifier to run ad hoc batch jobs.</p>
     S3BatchJobIdentifier(crate::types::S3BatchJobIdentifier),
     /// <p>A batch job identifier in which the batch job to run is identified by the script name.</p>
@@ -33,6 +35,19 @@ impl BatchJobIdentifier {
     /// Returns true if this is a [`FileBatchJobIdentifier`](crate::types::BatchJobIdentifier::FileBatchJobIdentifier).
     pub fn is_file_batch_job_identifier(&self) -> bool {
         self.as_file_batch_job_identifier().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RestartBatchJobIdentifier`](crate::types::BatchJobIdentifier::RestartBatchJobIdentifier), extracting the inner [`RestartBatchJobIdentifier`](crate::types::RestartBatchJobIdentifier).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_restart_batch_job_identifier(&self) -> ::std::result::Result<&crate::types::RestartBatchJobIdentifier, &Self> {
+        if let BatchJobIdentifier::RestartBatchJobIdentifier(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RestartBatchJobIdentifier`](crate::types::BatchJobIdentifier::RestartBatchJobIdentifier).
+    pub fn is_restart_batch_job_identifier(&self) -> bool {
+        self.as_restart_batch_job_identifier().is_ok()
     }
     /// Tries to convert the enum instance into [`S3BatchJobIdentifier`](crate::types::BatchJobIdentifier::S3BatchJobIdentifier), extracting the inner [`S3BatchJobIdentifier`](crate::types::S3BatchJobIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.

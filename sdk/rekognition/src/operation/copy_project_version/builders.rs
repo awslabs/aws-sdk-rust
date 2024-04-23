@@ -3,7 +3,7 @@ pub use crate::operation::copy_project_version::_copy_project_version_output::Co
 
 pub use crate::operation::copy_project_version::_copy_project_version_input::CopyProjectVersionInputBuilder;
 
-impl CopyProjectVersionInputBuilder {
+impl crate::operation::copy_project_version::builders::CopyProjectVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -110,12 +110,12 @@ impl CopyProjectVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -189,6 +189,7 @@ impl CopyProjectVersionFluentBuilder {
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
         self.inner.get_output_config()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

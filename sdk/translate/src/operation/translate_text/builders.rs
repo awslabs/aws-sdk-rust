@@ -3,7 +3,7 @@ pub use crate::operation::translate_text::_translate_text_output::TranslateTextO
 
 pub use crate::operation::translate_text::_translate_text_input::TranslateTextInputBuilder;
 
-impl TranslateTextInputBuilder {
+impl crate::operation::translate_text::builders::TranslateTextInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl TranslateTextFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl TranslateTextFluentBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_text()
     }
+    ///
     /// Appends an item to `TerminologyNames`.
     ///
     /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).

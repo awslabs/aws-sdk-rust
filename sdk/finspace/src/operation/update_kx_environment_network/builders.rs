@@ -3,7 +3,7 @@ pub use crate::operation::update_kx_environment_network::_update_kx_environment_
 
 pub use crate::operation::update_kx_environment_network::_update_kx_environment_network_input::UpdateKxEnvironmentNetworkInputBuilder;
 
-impl UpdateKxEnvironmentNetworkInputBuilder {
+impl crate::operation::update_kx_environment_network::builders::UpdateKxEnvironmentNetworkInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl UpdateKxEnvironmentNetworkFluentBuilder {
     pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
         self.inner.get_transit_gateway_configuration()
     }
+    ///
     /// Appends an item to `customDNSConfiguration`.
     ///
     /// To override the contents of this collection use [`set_custom_dns_configuration`](Self::set_custom_dns_configuration).

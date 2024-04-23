@@ -3,7 +3,7 @@ pub use crate::operation::describe_app_block_builders::_describe_app_block_build
 
 pub use crate::operation::describe_app_block_builders::_describe_app_block_builders_input::DescribeAppBlockBuildersInputBuilder;
 
-impl DescribeAppBlockBuildersInputBuilder {
+impl crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeAppBlockBuildersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeAppBlockBuildersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_app_block_builders::paginator::DescribeAppBlockBuildersPaginator {
         crate::operation::describe_app_block_builders::paginator::DescribeAppBlockBuildersPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).

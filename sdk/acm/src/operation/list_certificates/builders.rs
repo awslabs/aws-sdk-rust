@@ -3,7 +3,7 @@ pub use crate::operation::list_certificates::_list_certificates_output::ListCert
 
 pub use crate::operation::list_certificates::_list_certificates_input::ListCertificatesInputBuilder;
 
-impl ListCertificatesInputBuilder {
+impl crate::operation::list_certificates::builders::ListCertificatesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListCertificatesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListCertificatesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_certificates::paginator::ListCertificatesPaginator {
         crate::operation::list_certificates::paginator::ListCertificatesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `CertificateStatuses`.
     ///
     /// To override the contents of this collection use [`set_certificate_statuses`](Self::set_certificate_statuses).

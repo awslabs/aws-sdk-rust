@@ -3,7 +3,7 @@ pub use crate::operation::is_member_in_groups::_is_member_in_groups_output::IsMe
 
 pub use crate::operation::is_member_in_groups::_is_member_in_groups_input::IsMemberInGroupsInputBuilder;
 
-impl IsMemberInGroupsInputBuilder {
+impl crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl IsMemberInGroupsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl IsMemberInGroupsFluentBuilder {
     pub fn get_member_id(&self) -> &::std::option::Option<crate::types::MemberId> {
         self.inner.get_member_id()
     }
+    ///
     /// Appends an item to `GroupIds`.
     ///
     /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).

@@ -39,6 +39,22 @@ pub use crate::types::_prompt_template::PromptTemplateBuilder;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInputBuilder;
 
+pub use crate::types::_return_control_payload::ReturnControlPayloadBuilder;
+
+pub use crate::types::_function_invocation_input::FunctionInvocationInputBuilder;
+
+pub use crate::types::_function_parameter::FunctionParameterBuilder;
+
+pub use crate::types::_api_invocation_input::ApiInvocationInputBuilder;
+
+pub use crate::types::_api_request_body::ApiRequestBodyBuilder;
+
+pub use crate::types::_property_parameters::PropertyParametersBuilder;
+
+pub use crate::types::_parameter::ParameterBuilder;
+
+pub use crate::types::_api_parameter::ApiParameterBuilder;
+
 pub use crate::types::_trace_part::TracePartBuilder;
 
 pub use crate::types::_failure_trace::FailureTraceBuilder;
@@ -69,8 +85,6 @@ pub use crate::types::_action_group_invocation_input::ActionGroupInvocationInput
 
 pub use crate::types::_request_body::RequestBodyBuilder;
 
-pub use crate::types::_parameter::ParameterBuilder;
-
 pub use crate::types::_rationale::RationaleBuilder;
 
 pub use crate::types::_pre_processing_model_invocation_output::PreProcessingModelInvocationOutputBuilder;
@@ -82,3 +96,9 @@ pub use crate::types::_payload_part::PayloadPartBuilder;
 pub use crate::types::_attribution::AttributionBuilder;
 
 pub use crate::types::_session_state::SessionStateBuilder;
+
+pub use crate::types::_function_result::FunctionResultBuilder;
+
+pub use crate::types::_content_body::ContentBodyBuilder;
+
+pub use crate::types::_api_result::ApiResultBuilder;

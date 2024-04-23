@@ -3,7 +3,7 @@ pub use crate::operation::create_task_set::_create_task_set_output::CreateTaskSe
 
 pub use crate::operation::create_task_set::_create_task_set_input::CreateTaskSetInputBuilder;
 
-impl CreateTaskSetInputBuilder {
+impl crate::operation::create_task_set::builders::CreateTaskSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateTaskSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -181,6 +181,7 @@ impl CreateTaskSetFluentBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         self.inner.get_network_configuration()
     }
+    ///
     /// Appends an item to `loadBalancers`.
     ///
     /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
@@ -199,6 +200,7 @@ impl CreateTaskSetFluentBuilder {
     pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
         self.inner.get_load_balancers()
     }
+    ///
     /// Appends an item to `serviceRegistries`.
     ///
     /// To override the contents of this collection use [`set_service_registries`](Self::set_service_registries).
@@ -234,6 +236,7 @@ impl CreateTaskSetFluentBuilder {
     pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
         self.inner.get_launch_type()
     }
+    ///
     /// Appends an item to `capacityProviderStrategy`.
     ///
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
@@ -312,6 +315,7 @@ impl CreateTaskSetFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

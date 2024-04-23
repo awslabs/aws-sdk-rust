@@ -3,7 +3,7 @@ pub use crate::operation::get_signed_bluinsights_url::_get_signed_bluinsights_ur
 
 pub use crate::operation::get_signed_bluinsights_url::_get_signed_bluinsights_url_input::GetSignedBluinsightsUrlInputBuilder;
 
-impl GetSignedBluinsightsUrlInputBuilder {
+impl crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetSignedBluinsightsUrlFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

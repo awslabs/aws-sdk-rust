@@ -3,7 +3,7 @@ pub use crate::operation::modify_vpc_endpoint_service_configuration::_modify_vpc
 
 pub use crate::operation::modify_vpc_endpoint_service_configuration::_modify_vpc_endpoint_service_configuration_input::ModifyVpcEndpointServiceConfigurationInputBuilder;
 
-impl ModifyVpcEndpointServiceConfigurationInputBuilder {
+impl crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -182,6 +182,7 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
         self.inner.get_acceptance_required()
     }
+    ///
     /// Appends an item to `AddNetworkLoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_add_network_load_balancer_arns`](Self::set_add_network_load_balancer_arns).
@@ -200,6 +201,7 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_add_network_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_network_load_balancer_arns()
     }
+    ///
     /// Appends an item to `RemoveNetworkLoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_remove_network_load_balancer_arns`](Self::set_remove_network_load_balancer_arns).
@@ -218,6 +220,7 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_remove_network_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_network_load_balancer_arns()
     }
+    ///
     /// Appends an item to `AddGatewayLoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_add_gateway_load_balancer_arns`](Self::set_add_gateway_load_balancer_arns).
@@ -236,6 +239,7 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_add_gateway_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_gateway_load_balancer_arns()
     }
+    ///
     /// Appends an item to `RemoveGatewayLoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_remove_gateway_load_balancer_arns`](Self::set_remove_gateway_load_balancer_arns).
@@ -254,6 +258,7 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_remove_gateway_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_gateway_load_balancer_arns()
     }
+    ///
     /// Appends an item to `AddSupportedIpAddressTypes`.
     ///
     /// To override the contents of this collection use [`set_add_supported_ip_address_types`](Self::set_add_supported_ip_address_types).
@@ -272,6 +277,7 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     pub fn get_add_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_supported_ip_address_types()
     }
+    ///
     /// Appends an item to `RemoveSupportedIpAddressTypes`.
     ///
     /// To override the contents of this collection use [`set_remove_supported_ip_address_types`](Self::set_remove_supported_ip_address_types).

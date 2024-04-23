@@ -3,7 +3,7 @@ pub use crate::operation::create_job::_create_job_output::CreateJobOutputBuilder
 
 pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 
-impl CreateJobInputBuilder {
+impl crate::operation::create_job::builders::CreateJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl CreateJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -186,6 +186,7 @@ impl CreateJobFluentBuilder {
     pub fn get_command(&self) -> &::std::option::Option<crate::types::JobCommand> {
         self.inner.get_command()
     }
+    ///
     /// Adds a key-value pair to `DefaultArguments`.
     ///
     /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
@@ -226,6 +227,7 @@ impl CreateJobFluentBuilder {
     pub fn get_default_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_default_arguments()
     }
+    ///
     /// Adds a key-value pair to `NonOverridableArguments`.
     ///
     /// To override the contents of this collection use [`set_non_overridable_arguments`](Self::set_non_overridable_arguments).
@@ -368,6 +370,7 @@ impl CreateJobFluentBuilder {
     pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_security_configuration()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -493,6 +496,7 @@ impl CreateJobFluentBuilder {
     pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
         self.inner.get_worker_type()
     }
+    ///
     /// Adds a key-value pair to `CodeGenConfigurationNodes`.
     ///
     /// To override the contents of this collection use [`set_code_gen_configuration_nodes`](Self::set_code_gen_configuration_nodes).

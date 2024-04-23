@@ -3,7 +3,7 @@ pub use crate::operation::update_stack::_update_stack_output::UpdateStackOutputB
 
 pub use crate::operation::update_stack::_update_stack_input::UpdateStackInputBuilder;
 
-impl UpdateStackInputBuilder {
+impl crate::operation::update_stack::builders::UpdateStackInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateStackFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -209,6 +209,7 @@ impl UpdateStackFluentBuilder {
     pub fn get_stack_policy_during_update_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_policy_during_update_url()
     }
+    ///
     /// Appends an item to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -227,6 +228,7 @@ impl UpdateStackFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
+    ///
     /// Appends an item to `Capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
@@ -371,6 +373,7 @@ impl UpdateStackFluentBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
         self.inner.get_capabilities()
     }
+    ///
     /// Appends an item to `ResourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -463,6 +466,7 @@ impl UpdateStackFluentBuilder {
     pub fn get_stack_policy_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_policy_url()
     }
+    ///
     /// Appends an item to `NotificationARNs`.
     ///
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
@@ -481,6 +485,7 @@ impl UpdateStackFluentBuilder {
     pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_notification_arns()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

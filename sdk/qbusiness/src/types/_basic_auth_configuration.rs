@@ -6,7 +6,7 @@
 pub struct BasicAuthConfiguration {
     /// <p>The ARN of the Secrets Manager secret that stores the basic authentication credentials used for plugin configuration..</p>
     pub secret_arn: ::std::string::String,
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub role_arn: ::std::string::String,
 }
 impl BasicAuthConfiguration {
@@ -15,7 +15,7 @@ impl BasicAuthConfiguration {
         use std::ops::Deref;
         self.secret_arn.deref()
     }
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
@@ -51,18 +51,18 @@ impl BasicAuthConfigurationBuilder {
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
+    /// <p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

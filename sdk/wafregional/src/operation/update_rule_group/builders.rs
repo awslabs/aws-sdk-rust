@@ -3,7 +3,7 @@ pub use crate::operation::update_rule_group::_update_rule_group_output::UpdateRu
 
 pub use crate::operation::update_rule_group::_update_rule_group_input::UpdateRuleGroupInputBuilder;
 
-impl UpdateRuleGroupInputBuilder {
+impl crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -118,12 +118,12 @@ impl UpdateRuleGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -141,6 +141,7 @@ impl UpdateRuleGroupFluentBuilder {
     pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rule_group_id()
     }
+    ///
     /// Appends an item to `Updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).

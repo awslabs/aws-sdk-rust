@@ -3,7 +3,7 @@ pub use crate::operation::start_batch_job::_start_batch_job_output::StartBatchJo
 
 pub use crate::operation::start_batch_job::_start_batch_job_input::StartBatchJobInputBuilder;
 
-impl StartBatchJobInputBuilder {
+impl crate::operation::start_batch_job::builders::StartBatchJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartBatchJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl StartBatchJobFluentBuilder {
     pub fn get_batch_job_identifier(&self) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
         self.inner.get_batch_job_identifier()
     }
+    ///
     /// Adds a key-value pair to `jobParams`.
     ///
     /// To override the contents of this collection use [`set_job_params`](Self::set_job_params).

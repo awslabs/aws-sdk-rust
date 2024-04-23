@@ -3,7 +3,7 @@ pub use crate::operation::update_typed_link_facet::_update_typed_link_facet_outp
 
 pub use crate::operation::update_typed_link_facet::_update_typed_link_facet_input::UpdateTypedLinkFacetInputBuilder;
 
-impl UpdateTypedLinkFacetInputBuilder {
+impl crate::operation::update_typed_link_facet::builders::UpdateTypedLinkFacetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateTypedLinkFacetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateTypedLinkFacetFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `AttributeUpdates`.
     ///
     /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
@@ -154,6 +155,7 @@ impl UpdateTypedLinkFacetFluentBuilder {
     pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkFacetAttributeUpdate>> {
         self.inner.get_attribute_updates()
     }
+    ///
     /// Appends an item to `IdentityAttributeOrder`.
     ///
     /// To override the contents of this collection use [`set_identity_attribute_order`](Self::set_identity_attribute_order).

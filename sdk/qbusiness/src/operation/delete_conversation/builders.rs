@@ -3,7 +3,7 @@ pub use crate::operation::delete_conversation::_delete_conversation_output::Dele
 
 pub use crate::operation::delete_conversation::_delete_conversation_input::DeleteConversationInputBuilder;
 
-impl DeleteConversationInputBuilder {
+impl crate::operation::delete_conversation::builders::DeleteConversationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl DeleteConversationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteConversation`.
 ///
-/// <p>Deletes an Amazon Q web experience conversation.</p>
+/// <p>Deletes an Amazon Q Business web experience conversation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConversationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,40 +99,40 @@ impl DeleteConversationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation being deleted.</p>
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conversation_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation being deleted.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conversation_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q web experience conversation being deleted.</p>
+    /// <p>The identifier of the Amazon Q Business web experience conversation being deleted.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_conversation_id()
     }
-    /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the conversation.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the conversation.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application associated with the conversation.</p>
+    /// <p>The identifier of the Amazon Q Business application associated with the conversation.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

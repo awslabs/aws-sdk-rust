@@ -160,6 +160,11 @@ where
                         "PrioritizedRiskCounts" => {
                             builder = builder.set_prioritized_risk_counts(crate::protocol_serde::shape_risk_counts::de_risk_counts(tokens)?);
                         }
+                        "JiraConfiguration" => {
+                            builder = builder.set_jira_configuration(
+                                crate::protocol_serde::shape_workload_jira_configuration_output::de_workload_jira_configuration_output(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

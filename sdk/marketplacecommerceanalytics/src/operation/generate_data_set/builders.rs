@@ -3,7 +3,7 @@ pub use crate::operation::generate_data_set::_generate_data_set_output::Generate
 
 pub use crate::operation::generate_data_set::_generate_data_set_input::GenerateDataSetInputBuilder;
 
-impl GenerateDataSetInputBuilder {
+impl crate::operation::generate_data_set::builders::GenerateDataSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GenerateDataSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -354,6 +354,7 @@ impl GenerateDataSetFluentBuilder {
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sns_topic_arn()
     }
+    ///
     /// Adds a key-value pair to `customerDefinedValues`.
     ///
     /// To override the contents of this collection use [`set_customer_defined_values`](Self::set_customer_defined_values).

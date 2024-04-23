@@ -3,7 +3,7 @@ pub use crate::operation::start_loader_job::_start_loader_job_output::StartLoade
 
 pub use crate::operation::start_loader_job::_start_loader_job_input::StartLoaderJobInputBuilder;
 
-impl StartLoaderJobInputBuilder {
+impl crate::operation::start_loader_job::builders::StartLoaderJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl StartLoaderJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -378,6 +378,7 @@ impl StartLoaderJobFluentBuilder {
     pub fn get_parallelism(&self) -> &::std::option::Option<crate::types::Parallelism> {
         self.inner.get_parallelism()
     }
+    ///
     /// Adds a key-value pair to `parserConfiguration`.
     ///
     /// To override the contents of this collection use [`set_parser_configuration`](Self::set_parser_configuration).
@@ -491,6 +492,7 @@ impl StartLoaderJobFluentBuilder {
     pub fn get_queue_request(&self) -> &::std::option::Option<bool> {
         self.inner.get_queue_request()
     }
+    ///
     /// Appends an item to `dependencies`.
     ///
     /// To override the contents of this collection use [`set_dependencies`](Self::set_dependencies).

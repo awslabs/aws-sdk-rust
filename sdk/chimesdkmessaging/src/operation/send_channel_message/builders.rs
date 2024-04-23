@@ -3,7 +3,7 @@ pub use crate::operation::send_channel_message::_send_channel_message_output::Se
 
 pub use crate::operation::send_channel_message::_send_channel_message_input::SendChannelMessageInputBuilder;
 
-impl SendChannelMessageInputBuilder {
+impl crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl SendChannelMessageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -230,6 +230,7 @@ impl SendChannelMessageFluentBuilder {
     pub fn get_push_notification(&self) -> &::std::option::Option<crate::types::PushNotificationConfiguration> {
         self.inner.get_push_notification()
     }
+    ///
     /// Adds a key-value pair to `MessageAttributes`.
     ///
     /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
@@ -281,6 +282,7 @@ impl SendChannelMessageFluentBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content_type()
     }
+    ///
     /// Appends an item to `Target`.
     ///
     /// To override the contents of this collection use [`set_target`](Self::set_target).

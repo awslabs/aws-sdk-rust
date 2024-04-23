@@ -3,7 +3,7 @@ pub use crate::operation::describe_assessment_runs::_describe_assessment_runs_ou
 
 pub use crate::operation::describe_assessment_runs::_describe_assessment_runs_input::DescribeAssessmentRunsInputBuilder;
 
-impl DescribeAssessmentRunsInputBuilder {
+impl crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl DescribeAssessmentRunsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `assessmentRunArns`.
     ///
     /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).

@@ -3,7 +3,7 @@ pub use crate::operation::update_stream_processor::_update_stream_processor_outp
 
 pub use crate::operation::update_stream_processor::_update_stream_processor_input::UpdateStreamProcessorInputBuilder;
 
-impl UpdateStreamProcessorInputBuilder {
+impl crate::operation::update_stream_processor::builders::UpdateStreamProcessorInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateStreamProcessorFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl UpdateStreamProcessorFluentBuilder {
     pub fn get_settings_for_update(&self) -> &::std::option::Option<crate::types::StreamProcessorSettingsForUpdate> {
         self.inner.get_settings_for_update()
     }
+    ///
     /// Appends an item to `RegionsOfInterestForUpdate`.
     ///
     /// To override the contents of this collection use [`set_regions_of_interest_for_update`](Self::set_regions_of_interest_for_update).
@@ -171,6 +172,7 @@ impl UpdateStreamProcessorFluentBuilder {
     pub fn get_data_sharing_preference_for_update(&self) -> &::std::option::Option<crate::types::StreamProcessorDataSharingPreference> {
         self.inner.get_data_sharing_preference_for_update()
     }
+    ///
     /// Appends an item to `ParametersToDelete`.
     ///
     /// To override the contents of this collection use [`set_parameters_to_delete`](Self::set_parameters_to_delete).

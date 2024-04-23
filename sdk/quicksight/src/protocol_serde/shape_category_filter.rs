@@ -18,6 +18,12 @@ pub fn ser_category_filter(
         crate::protocol_serde::shape_category_filter_configuration::ser_category_filter_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.default_filter_control_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("DefaultFilterControlConfiguration").start_object();
+        crate::protocol_serde::shape_default_filter_control_configuration::ser_default_filter_control_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -49,6 +55,11 @@ where
                         "Configuration" => {
                             builder = builder.set_configuration(
                                 crate::protocol_serde::shape_category_filter_configuration::de_category_filter_configuration(tokens)?,
+                            );
+                        }
+                        "DefaultFilterControlConfiguration" => {
+                            builder = builder.set_default_filter_control_configuration(
+                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

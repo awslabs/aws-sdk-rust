@@ -3,7 +3,7 @@ pub use crate::operation::create_subscription_request::_create_subscription_requ
 
 pub use crate::operation::create_subscription_request::_create_subscription_request_input::CreateSubscriptionRequestInputBuilder;
 
-impl CreateSubscriptionRequestInputBuilder {
+impl crate::operation::create_subscription_request::builders::CreateSubscriptionRequestInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSubscriptionRequestFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateSubscriptionRequestFluentBuilder {
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }
+    ///
     /// Appends an item to `subscribedPrincipals`.
     ///
     /// To override the contents of this collection use [`set_subscribed_principals`](Self::set_subscribed_principals).
@@ -140,6 +141,7 @@ impl CreateSubscriptionRequestFluentBuilder {
     pub fn get_subscribed_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscribedPrincipalInput>> {
         self.inner.get_subscribed_principals()
     }
+    ///
     /// Appends an item to `subscribedListings`.
     ///
     /// To override the contents of this collection use [`set_subscribed_listings`](Self::set_subscribed_listings).

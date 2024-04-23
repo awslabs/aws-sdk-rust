@@ -3,7 +3,7 @@ pub use crate::operation::update_open_id_connect_provider_thumbprint::_update_op
 
 pub use crate::operation::update_open_id_connect_provider_thumbprint::_update_open_id_connect_provider_thumbprint_input::UpdateOpenIdConnectProviderThumbprintInputBuilder;
 
-impl UpdateOpenIdConnectProviderThumbprintInputBuilder {
+impl crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIdConnectProviderThumbprintInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -109,12 +109,12 @@ impl UpdateOpenIDConnectProviderThumbprintFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -135,6 +135,7 @@ impl UpdateOpenIDConnectProviderThumbprintFluentBuilder {
     pub fn get_open_id_connect_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_open_id_connect_provider_arn()
     }
+    ///
     /// Appends an item to `ThumbprintList`.
     ///
     /// To override the contents of this collection use [`set_thumbprint_list`](Self::set_thumbprint_list).

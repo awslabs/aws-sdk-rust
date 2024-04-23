@@ -3,7 +3,7 @@ pub use crate::operation::create_transit_gateway_multicast_domain::_create_trans
 
 pub use crate::operation::create_transit_gateway_multicast_domain::_create_transit_gateway_multicast_domain_input::CreateTransitGatewayMulticastDomainInputBuilder;
 
-impl CreateTransitGatewayMulticastDomainInputBuilder {
+impl crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl CreateTransitGatewayMulticastDomainFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,6 +138,7 @@ impl CreateTransitGatewayMulticastDomainFluentBuilder {
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CreateTransitGatewayMulticastDomainRequestOptions> {
         self.inner.get_options()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

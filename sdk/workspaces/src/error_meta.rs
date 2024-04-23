@@ -9,8 +9,12 @@ pub enum Error {
     ApplicationNotSupportedException(crate::types::error::ApplicationNotSupportedException),
     /// <p>The compute type of the WorkSpace is not compatible with the application.</p>
     ComputeNotCompatibleException(crate::types::error::ComputeNotCompatibleException),
+    /// <p>The <code>TargetAccountId</code> is already linked or invited.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The specified application is not compatible with the resource.</p>
     IncompatibleApplicationsException(crate::types::error::IncompatibleApplicationsException),
+    /// <p>Unexpected server error occured.</p>
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValuesException(crate::types::error::InvalidParameterValuesException),
     /// <p>The state of the resource is not valid for this operation.</p>
@@ -39,6 +43,8 @@ pub enum Error {
     UnsupportedNetworkConfigurationException(crate::types::error::UnsupportedNetworkConfigurationException),
     /// <p>The configuration of this WorkSpace is not supported for this operation. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/required-service-components.html">Required Configuration and Service Components for WorkSpaces </a>.</p>
     UnsupportedWorkspaceConfigurationException(crate::types::error::UnsupportedWorkspaceConfigurationException),
+    /// <p>You either haven't provided a <code>TargetAccountId</code> or are using the same value for <code>TargetAccountId</code> and <code>SourceAccountId</code>.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// <p>The workspaces_DefaultRole role could not be found. If this is the first time you are registering a directory, you will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">Creating the workspaces_DefaultRole Role</a>.</p>
     WorkspacesDefaultRoleNotFoundException(crate::types::error::WorkspacesDefaultRoleNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -56,7 +62,9 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ApplicationNotSupportedException(inner) => inner.fmt(f),
             Error::ComputeNotCompatibleException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::IncompatibleApplicationsException(inner) => inner.fmt(f),
+            Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidParameterValuesException(inner) => inner.fmt(f),
             Error::InvalidResourceStateException(inner) => inner.fmt(f),
             Error::OperatingSystemNotCompatibleException(inner) => inner.fmt(f),
@@ -71,6 +79,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceUnavailableException(inner) => inner.fmt(f),
             Error::UnsupportedNetworkConfigurationException(inner) => inner.fmt(f),
             Error::UnsupportedWorkspaceConfigurationException(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::WorkspacesDefaultRoleNotFoundException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -96,7 +105,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ApplicationNotSupportedException(inner) => inner.meta(),
             Self::ComputeNotCompatibleException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::IncompatibleApplicationsException(inner) => inner.meta(),
+            Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidParameterValuesException(inner) => inner.meta(),
             Self::InvalidResourceStateException(inner) => inner.meta(),
             Self::OperatingSystemNotCompatibleException(inner) => inner.meta(),
@@ -111,8 +122,52 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceUnavailableException(inner) => inner.meta(),
             Self::UnsupportedNetworkConfigurationException(inner) => inner.meta(),
             Self::UnsupportedWorkspaceConfigurationException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
             Self::WorkspacesDefaultRoleNotFoundException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError> for Error {
+    fn from(err: crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError) -> Self {
+        match err {
+            crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -322,6 +377,46 @@ impl From<crate::operation::copy_workspace_image::CopyWorkspaceImageError> for E
                 Error::ResourceUnavailableException(inner)
             }
             crate::operation::copy_workspace_image::CopyWorkspaceImageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_account_link_invitation::CreateAccountLinkInvitationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_account_link_invitation::CreateAccountLinkInvitationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_account_link_invitation::CreateAccountLinkInvitationError> for Error {
+    fn from(err: crate::operation::create_account_link_invitation::CreateAccountLinkInvitationError) -> Self {
+        match err {
+            crate::operation::create_account_link_invitation::CreateAccountLinkInvitationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_account_link_invitation::CreateAccountLinkInvitationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_account_link_invitation::CreateAccountLinkInvitationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_account_link_invitation::CreateAccountLinkInvitationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_account_link_invitation::CreateAccountLinkInvitationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -656,6 +751,49 @@ impl From<crate::operation::create_workspaces::CreateWorkspacesError> for Error 
                 Error::ResourceLimitExceededException(inner)
             }
             crate::operation::create_workspaces::CreateWorkspacesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError> for Error {
+    fn from(err: crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError) -> Self {
+        match err {
+            crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_account_link_invitation::DeleteAccountLinkInvitationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1769,6 +1907,31 @@ impl From<crate::operation::disassociate_workspace_application::DisassociateWork
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_link::GetAccountLinkError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_link::GetAccountLinkError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_account_link::GetAccountLinkError> for Error {
+    fn from(err: crate::operation::get_account_link::GetAccountLinkError) -> Self {
+        match err {
+            crate::operation::get_account_link::GetAccountLinkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_account_link::GetAccountLinkError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_account_link::GetAccountLinkError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_account_link::GetAccountLinkError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_account_link::GetAccountLinkError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_client_branding::ImportClientBrandingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1834,6 +1997,30 @@ impl From<crate::operation::import_workspace_image::ImportWorkspaceImageError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::import_workspace_image::ImportWorkspaceImageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_account_links::ListAccountLinksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_account_links::ListAccountLinksError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_account_links::ListAccountLinksError> for Error {
+    fn from(err: crate::operation::list_account_links::ListAccountLinksError) -> Self {
+        match err {
+            crate::operation::list_account_links::ListAccountLinksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_account_links::ListAccountLinksError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_account_links::ListAccountLinksError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_account_links::ListAccountLinksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2334,6 +2521,49 @@ impl From<crate::operation::register_workspace_directory::RegisterWorkspaceDirec
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError> for Error {
+    fn from(err: crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError) -> Self {
+        match err {
+            crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::reject_account_link_invitation::RejectAccountLinkInvitationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_workspace::RestoreWorkspaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2670,7 +2900,9 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ApplicationNotSupportedException(inner) => inner.source(),
             Error::ComputeNotCompatibleException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::IncompatibleApplicationsException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
             Error::InvalidParameterValuesException(inner) => inner.source(),
             Error::InvalidResourceStateException(inner) => inner.source(),
             Error::OperatingSystemNotCompatibleException(inner) => inner.source(),
@@ -2685,6 +2917,7 @@ impl ::std::error::Error for Error {
             Error::ResourceUnavailableException(inner) => inner.source(),
             Error::UnsupportedNetworkConfigurationException(inner) => inner.source(),
             Error::UnsupportedWorkspaceConfigurationException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
             Error::WorkspacesDefaultRoleNotFoundException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -2696,7 +2929,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ApplicationNotSupportedException(e) => e.request_id(),
             Self::ComputeNotCompatibleException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::IncompatibleApplicationsException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
             Self::InvalidParameterValuesException(e) => e.request_id(),
             Self::InvalidResourceStateException(e) => e.request_id(),
             Self::OperatingSystemNotCompatibleException(e) => e.request_id(),
@@ -2711,6 +2946,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceUnavailableException(e) => e.request_id(),
             Self::UnsupportedNetworkConfigurationException(e) => e.request_id(),
             Self::UnsupportedWorkspaceConfigurationException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
             Self::WorkspacesDefaultRoleNotFoundException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

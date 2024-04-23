@@ -3,7 +3,7 @@ pub use crate::operation::update_app_block_builder::_update_app_block_builder_ou
 
 pub use crate::operation::update_app_block_builder::_update_app_block_builder_input::UpdateAppBlockBuilderInputBuilder;
 
-impl UpdateAppBlockBuilderInputBuilder {
+impl crate::operation::update_app_block_builder::builders::UpdateAppBlockBuilderInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateAppBlockBuilderFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -266,6 +266,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_role_arn()
     }
+    ///
     /// Appends an item to `AccessEndpoints`.
     ///
     /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
@@ -284,6 +285,7 @@ impl UpdateAppBlockBuilderFluentBuilder {
     pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         self.inner.get_access_endpoints()
     }
+    ///
     /// Appends an item to `AttributesToDelete`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).

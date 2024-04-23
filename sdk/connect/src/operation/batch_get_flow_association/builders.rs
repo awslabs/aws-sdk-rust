@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_flow_association::_batch_get_flow_associatio
 
 pub use crate::operation::batch_get_flow_association::_batch_get_flow_association_input::BatchGetFlowAssociationInputBuilder;
 
-impl BatchGetFlowAssociationInputBuilder {
+impl crate::operation::batch_get_flow_association::builders::BatchGetFlowAssociationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchGetFlowAssociationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl BatchGetFlowAssociationFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
+    ///
     /// Appends an item to `ResourceIds`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).

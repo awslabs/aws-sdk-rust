@@ -3,7 +3,7 @@ pub use crate::operation::test_metric_filter::_test_metric_filter_output::TestMe
 
 pub use crate::operation::test_metric_filter::_test_metric_filter_input::TestMetricFilterInputBuilder;
 
-impl TestMetricFilterInputBuilder {
+impl crate::operation::test_metric_filter::builders::TestMetricFilterInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl TestMetricFilterFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl TestMetricFilterFluentBuilder {
     pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_filter_pattern()
     }
+    ///
     /// Appends an item to `logEventMessages`.
     ///
     /// To override the contents of this collection use [`set_log_event_messages`](Self::set_log_event_messages).

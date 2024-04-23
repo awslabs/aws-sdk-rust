@@ -3,7 +3,7 @@ pub use crate::operation::create_deployment_job::_create_deployment_job_output::
 
 pub use crate::operation::create_deployment_job::_create_deployment_job_input::CreateDeploymentJobInputBuilder;
 
-impl CreateDeploymentJobInputBuilder {
+impl crate::operation::create_deployment_job::builders::CreateDeploymentJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl CreateDeploymentJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -158,6 +158,7 @@ impl CreateDeploymentJobFluentBuilder {
     pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet()
     }
+    ///
     /// Appends an item to `deploymentApplicationConfigs`.
     ///
     /// To override the contents of this collection use [`set_deployment_application_configs`](Self::set_deployment_application_configs).
@@ -179,6 +180,7 @@ impl CreateDeploymentJobFluentBuilder {
     pub fn get_deployment_application_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>> {
         self.inner.get_deployment_application_configs()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

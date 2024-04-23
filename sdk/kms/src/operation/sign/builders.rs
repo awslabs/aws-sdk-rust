@@ -3,7 +3,7 @@ pub use crate::operation::sign::_sign_output::SignOutputBuilder;
 
 pub use crate::operation::sign::_sign_input::SignInputBuilder;
 
-impl SignInputBuilder {
+impl crate::operation::sign::builders::SignInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl SignFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::sign::SignOutput, crate::operation::sign::SignError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -247,6 +247,7 @@ impl SignFluentBuilder {
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
         self.inner.get_message_type()
     }
+    ///
     /// Appends an item to `GrantTokens`.
     ///
     /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).

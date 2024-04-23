@@ -170,3 +170,5 @@ pub(crate) mod shape_key_summary;
 pub(crate) mod shape_root_certificate_public_key;
 
 pub(crate) mod shape_trusted_certificate_public_key;
+
+pub(crate) mod shape_key_block_headers;

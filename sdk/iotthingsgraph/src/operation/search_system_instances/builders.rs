@@ -3,7 +3,7 @@ pub use crate::operation::search_system_instances::_search_system_instances_outp
 
 pub use crate::operation::search_system_instances::_search_system_instances_input::SearchSystemInstancesInputBuilder;
 
-impl SearchSystemInstancesInputBuilder {
+impl crate::operation::search_system_instances::builders::SearchSystemInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl SearchSystemInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl SearchSystemInstancesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_system_instances::paginator::SearchSystemInstancesPaginator {
         crate::operation::search_system_instances::paginator::SearchSystemInstancesPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

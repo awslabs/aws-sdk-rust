@@ -5,6 +5,8 @@
 pub struct StartIdMappingJobOutput {
     /// <p>The ID of the job.</p>
     pub job_id: ::std::string::String,
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>,
     _request_id: Option<String>,
 }
 impl StartIdMappingJobOutput {
@@ -12,6 +14,12 @@ impl StartIdMappingJobOutput {
     pub fn job_id(&self) -> &str {
         use std::ops::Deref;
         self.job_id.deref()
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
+    pub fn output_source_config(&self) -> &[crate::types::IdMappingJobOutputSource] {
+        self.output_source_config.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for StartIdMappingJobOutput {
@@ -31,6 +39,7 @@ impl StartIdMappingJobOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartIdMappingJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>,
     _request_id: Option<String>,
 }
 impl StartIdMappingJobOutputBuilder {
@@ -48,6 +57,26 @@ impl StartIdMappingJobOutputBuilder {
     /// <p>The ID of the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
+    }
+    /// Appends an item to `output_source_config`.
+    ///
+    /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
+    ///
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn output_source_config(mut self, input: crate::types::IdMappingJobOutputSource) -> Self {
+        let mut v = self.output_source_config.unwrap_or_default();
+        v.push(input);
+        self.output_source_config = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>>) -> Self {
+        self.output_source_config = input;
+        self
+    }
+    /// <p>A list of <code>OutputSource</code> objects.</p>
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingJobOutputSource>> {
+        &self.output_source_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -72,6 +101,7 @@ impl StartIdMappingJobOutputBuilder {
                     "job_id was not specified but it is required when building StartIdMappingJobOutput",
                 )
             })?,
+            output_source_config: self.output_source_config,
             _request_id: self._request_id,
         })
     }

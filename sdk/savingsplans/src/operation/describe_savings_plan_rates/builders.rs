@@ -3,7 +3,7 @@ pub use crate::operation::describe_savings_plan_rates::_describe_savings_plan_ra
 
 pub use crate::operation::describe_savings_plan_rates::_describe_savings_plan_rates_input::DescribeSavingsPlanRatesInputBuilder;
 
-impl DescribeSavingsPlanRatesInputBuilder {
+impl crate::operation::describe_savings_plan_rates::builders::DescribeSavingsPlanRatesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeSavingsPlanRatesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl DescribeSavingsPlanRatesFluentBuilder {
     pub fn get_savings_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_savings_plan_id()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

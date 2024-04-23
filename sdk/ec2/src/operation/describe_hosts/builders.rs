@@ -3,7 +3,7 @@ pub use crate::operation::describe_hosts::_describe_hosts_output::DescribeHostsO
 
 pub use crate::operation::describe_hosts::_describe_hosts_input::DescribeHostsInputBuilder;
 
-impl DescribeHostsInputBuilder {
+impl crate::operation::describe_hosts::builders::DescribeHostsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl DescribeHostsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl DescribeHostsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_hosts::paginator::DescribeHostsPaginator {
         crate::operation::describe_hosts::paginator::DescribeHostsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
@@ -181,6 +182,7 @@ impl DescribeHostsFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filter()
     }
+    ///
     /// Appends an item to `HostIds`.
     ///
     /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).

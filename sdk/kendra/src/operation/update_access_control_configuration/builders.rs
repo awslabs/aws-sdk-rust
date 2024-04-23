@@ -3,7 +3,7 @@ pub use crate::operation::update_access_control_configuration::_update_access_co
 
 pub use crate::operation::update_access_control_configuration::_update_access_control_configuration_input::UpdateAccessControlConfigurationInputBuilder;
 
-impl UpdateAccessControlConfigurationInputBuilder {
+impl crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl UpdateAccessControlConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -166,6 +166,7 @@ impl UpdateAccessControlConfigurationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `AccessControlList`.
     ///
     /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
@@ -184,6 +185,7 @@ impl UpdateAccessControlConfigurationFluentBuilder {
     pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
         self.inner.get_access_control_list()
     }
+    ///
     /// Appends an item to `HierarchicalAccessControlList`.
     ///
     /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).

@@ -3,7 +3,7 @@ pub use crate::operation::test_invoke_authorizer::_test_invoke_authorizer_output
 
 pub use crate::operation::test_invoke_authorizer::_test_invoke_authorizer_input::TestInvokeAuthorizerInputBuilder;
 
-impl TestInvokeAuthorizerInputBuilder {
+impl crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl TestInvokeAuthorizerFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl TestInvokeAuthorizerFluentBuilder {
     pub fn get_authorizer_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_authorizer_id()
     }
+    ///
     /// Adds a key-value pair to `headers`.
     ///
     /// To override the contents of this collection use [`set_headers`](Self::set_headers).
@@ -154,6 +155,7 @@ impl TestInvokeAuthorizerFluentBuilder {
     pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_headers()
     }
+    ///
     /// Adds a key-value pair to `multiValueHeaders`.
     ///
     /// To override the contents of this collection use [`set_multi_value_headers`](Self::set_multi_value_headers).
@@ -205,6 +207,7 @@ impl TestInvokeAuthorizerFluentBuilder {
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_body()
     }
+    ///
     /// Adds a key-value pair to `stageVariables`.
     ///
     /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
@@ -230,6 +233,7 @@ impl TestInvokeAuthorizerFluentBuilder {
     pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_stage_variables()
     }
+    ///
     /// Adds a key-value pair to `additionalContext`.
     ///
     /// To override the contents of this collection use [`set_additional_context`](Self::set_additional_context).

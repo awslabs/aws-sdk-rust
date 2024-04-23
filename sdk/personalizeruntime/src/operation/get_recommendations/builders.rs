@@ -3,7 +3,7 @@ pub use crate::operation::get_recommendations::_get_recommendations_output::GetR
 
 pub use crate::operation::get_recommendations::_get_recommendations_input::GetRecommendationsInputBuilder;
 
-impl GetRecommendationsInputBuilder {
+impl crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -108,12 +108,12 @@ impl GetRecommendationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl GetRecommendationsFluentBuilder {
     pub fn get_num_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_num_results()
     }
+    ///
     /// Adds a key-value pair to `context`.
     ///
     /// To override the contents of this collection use [`set_context`](Self::set_context).
@@ -214,6 +215,7 @@ impl GetRecommendationsFluentBuilder {
     pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_filter_arn()
     }
+    ///
     /// Adds a key-value pair to `filterValues`.
     ///
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
@@ -255,6 +257,7 @@ impl GetRecommendationsFluentBuilder {
     pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recommender_arn()
     }
+    ///
     /// Appends an item to `promotions`.
     ///
     /// To override the contents of this collection use [`set_promotions`](Self::set_promotions).
@@ -273,6 +276,7 @@ impl GetRecommendationsFluentBuilder {
     pub fn get_promotions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Promotion>> {
         self.inner.get_promotions()
     }
+    ///
     /// Adds a key-value pair to `metadataColumns`.
     ///
     /// To override the contents of this collection use [`set_metadata_columns`](Self::set_metadata_columns).

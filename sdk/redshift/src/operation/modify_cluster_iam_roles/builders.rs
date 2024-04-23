@@ -3,7 +3,7 @@ pub use crate::operation::modify_cluster_iam_roles::_modify_cluster_iam_roles_ou
 
 pub use crate::operation::modify_cluster_iam_roles::_modify_cluster_iam_roles_input::ModifyClusterIamRolesInputBuilder;
 
-impl ModifyClusterIamRolesInputBuilder {
+impl crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl ModifyClusterIamRolesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -123,6 +123,7 @@ impl ModifyClusterIamRolesFluentBuilder {
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_identifier()
     }
+    ///
     /// Appends an item to `AddIamRoles`.
     ///
     /// To override the contents of this collection use [`set_add_iam_roles`](Self::set_add_iam_roles).
@@ -141,6 +142,7 @@ impl ModifyClusterIamRolesFluentBuilder {
     pub fn get_add_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_add_iam_roles()
     }
+    ///
     /// Appends an item to `RemoveIamRoles`.
     ///
     /// To override the contents of this collection use [`set_remove_iam_roles`](Self::set_remove_iam_roles).

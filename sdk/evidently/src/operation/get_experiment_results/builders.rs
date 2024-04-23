@@ -3,7 +3,7 @@ pub use crate::operation::get_experiment_results::_get_experiment_results_output
 
 pub use crate::operation::get_experiment_results::_get_experiment_results_input::GetExperimentResultsInputBuilder;
 
-impl GetExperimentResultsInputBuilder {
+impl crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetExperimentResultsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -165,6 +165,7 @@ impl GetExperimentResultsFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
+    ///
     /// Appends an item to `metricNames`.
     ///
     /// To override the contents of this collection use [`set_metric_names`](Self::set_metric_names).
@@ -183,6 +184,7 @@ impl GetExperimentResultsFluentBuilder {
     pub fn get_metric_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_metric_names()
     }
+    ///
     /// Appends an item to `treatmentNames`.
     ///
     /// To override the contents of this collection use [`set_treatment_names`](Self::set_treatment_names).
@@ -215,6 +217,7 @@ impl GetExperimentResultsFluentBuilder {
     pub fn get_base_stat(&self) -> &::std::option::Option<crate::types::ExperimentBaseStat> {
         self.inner.get_base_stat()
     }
+    ///
     /// Appends an item to `resultStats`.
     ///
     /// To override the contents of this collection use [`set_result_stats`](Self::set_result_stats).
@@ -263,6 +266,7 @@ impl GetExperimentResultsFluentBuilder {
     pub fn get_result_stats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>> {
         self.inner.get_result_stats()
     }
+    ///
     /// Appends an item to `reportNames`.
     ///
     /// To override the contents of this collection use [`set_report_names`](Self::set_report_names).

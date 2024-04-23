@@ -34,6 +34,8 @@ pub struct NumericRangeFilter {
     /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub null_option: crate::types::FilterNullOption,
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl NumericRangeFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -85,6 +87,10 @@ impl NumericRangeFilter {
     pub fn null_option(&self) -> &crate::types::FilterNullOption {
         &self.null_option
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(&self) -> ::std::option::Option<&crate::types::DefaultFilterControlConfiguration> {
+        self.default_filter_control_configuration.as_ref()
+    }
 }
 impl NumericRangeFilter {
     /// Creates a new builder-style object to manufacture [`NumericRangeFilter`](crate::types::NumericRangeFilter).
@@ -106,6 +112,7 @@ pub struct NumericRangeFilterBuilder {
     pub(crate) select_all_options: ::std::option::Option<crate::types::NumericFilterSelectAllOptions>,
     pub(crate) aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
     pub(crate) null_option: ::std::option::Option<crate::types::FilterNullOption>,
+    pub(crate) default_filter_control_configuration: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>,
 }
 impl NumericRangeFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
@@ -273,6 +280,20 @@ impl NumericRangeFilterBuilder {
     pub fn get_null_option(&self) -> &::std::option::Option<crate::types::FilterNullOption> {
         &self.null_option
     }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn default_filter_control_configuration(mut self, input: crate::types::DefaultFilterControlConfiguration) -> Self {
+        self.default_filter_control_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn set_default_filter_control_configuration(mut self, input: ::std::option::Option<crate::types::DefaultFilterControlConfiguration>) -> Self {
+        self.default_filter_control_configuration = input;
+        self
+    }
+    /// <p>The default configurations for the associated controls. This applies only for filters that are scoped to multiple sheets.</p>
+    pub fn get_default_filter_control_configuration(&self) -> &::std::option::Option<crate::types::DefaultFilterControlConfiguration> {
+        &self.default_filter_control_configuration
+    }
     /// Consumes the builder and constructs a [`NumericRangeFilter`](crate::types::NumericRangeFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::NumericRangeFilterBuilder::filter_id)
@@ -298,6 +319,7 @@ impl NumericRangeFilterBuilder {
                     "null_option was not specified but it is required when building NumericRangeFilter",
                 )
             })?,
+            default_filter_control_configuration: self.default_filter_control_configuration,
         })
     }
 }

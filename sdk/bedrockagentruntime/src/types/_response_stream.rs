@@ -6,7 +6,9 @@
 pub enum ResponseStream {
     /// <p>Contains a part of an agent response and citations for it.</p>
     Chunk(crate::types::PayloadPart),
-    /// <p>Contains information about the agent and session, alongside the agent's reasoning process and results from calling API actions and querying knowledge bases and metadata about the trace. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Trace events</a>.</p>
+    /// <p>Contains the parameters and information that the agent elicited from the customer to carry out an action. This information is returned to the system and can be used in your own setup for fulfilling the action.</p>
+    ReturnControl(crate::types::ReturnControlPayload),
+    /// <p>Contains information about the agent and session, alongside the agent's reasoning process and results from calling actions and querying knowledge bases and metadata about the trace. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Trace events</a>.</p>
     Trace(crate::types::TracePart),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -32,6 +34,19 @@ impl ResponseStream {
     pub fn is_chunk(&self) -> bool {
         self.as_chunk().is_ok()
     }
+    /// Tries to convert the enum instance into [`ReturnControl`](crate::types::ResponseStream::ReturnControl), extracting the inner [`ReturnControlPayload`](crate::types::ReturnControlPayload).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_return_control(&self) -> ::std::result::Result<&crate::types::ReturnControlPayload, &Self> {
+        if let ResponseStream::ReturnControl(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ReturnControl`](crate::types::ResponseStream::ReturnControl).
+    pub fn is_return_control(&self) -> bool {
+        self.as_return_control().is_ok()
+    }
     /// Tries to convert the enum instance into [`Trace`](crate::types::ResponseStream::Trace), extracting the inner [`TracePart`](crate::types::TracePart).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_trace(&self) -> ::std::result::Result<&crate::types::TracePart, &Self> {
@@ -54,6 +69,7 @@ impl ::std::fmt::Debug for ResponseStream {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             ResponseStream::Chunk(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            ResponseStream::ReturnControl(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             ResponseStream::Trace(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             ResponseStream::Unknown => f.debug_tuple("Unknown").finish(),
         }

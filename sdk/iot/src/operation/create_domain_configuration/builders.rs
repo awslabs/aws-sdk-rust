@@ -3,7 +3,7 @@ pub use crate::operation::create_domain_configuration::_create_domain_configurat
 
 pub use crate::operation::create_domain_configuration::_create_domain_configuration_input::CreateDomainConfigurationInputBuilder;
 
-impl CreateDomainConfigurationInputBuilder {
+impl crate::operation::create_domain_configuration::builders::CreateDomainConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateDomainConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl CreateDomainConfigurationFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
+    ///
     /// Appends an item to `serverCertificateArns`.
     ///
     /// To override the contents of this collection use [`set_server_certificate_arns`](Self::set_server_certificate_arns).
@@ -203,6 +204,7 @@ impl CreateDomainConfigurationFluentBuilder {
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
         self.inner.get_service_type()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

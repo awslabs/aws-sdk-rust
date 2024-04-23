@@ -3,7 +3,7 @@ pub use crate::operation::start_network_insights_analysis::_start_network_insigh
 
 pub use crate::operation::start_network_insights_analysis::_start_network_insights_analysis_input::StartNetworkInsightsAnalysisInputBuilder;
 
-impl StartNetworkInsightsAnalysisInputBuilder {
+impl crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     pub fn get_network_insights_path_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_insights_path_id()
     }
+    ///
     /// Appends an item to `AdditionalAccounts`.
     ///
     /// To override the contents of this collection use [`set_additional_accounts`](Self::set_additional_accounts).
@@ -140,6 +141,7 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     pub fn get_additional_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_accounts()
     }
+    ///
     /// Appends an item to `FilterInArns`.
     ///
     /// To override the contents of this collection use [`set_filter_in_arns`](Self::set_filter_in_arns).
@@ -172,6 +174,7 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

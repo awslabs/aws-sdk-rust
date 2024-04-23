@@ -3,7 +3,7 @@ pub use crate::operation::describe_configuration_aggregator_sources_status::_des
 
 pub use crate::operation::describe_configuration_aggregator_sources_status::_describe_configuration_aggregator_sources_status_input::DescribeConfigurationAggregatorSourcesStatusInputBuilder;
 
-impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
+impl crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl DescribeConfigurationAggregatorSourcesStatusFluentBuilder {
     pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_aggregator_name()
     }
+    ///
     /// Appends an item to `UpdateStatus`.
     ///
     /// To override the contents of this collection use [`set_update_status`](Self::set_update_status).

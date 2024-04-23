@@ -3,7 +3,7 @@ pub use crate::operation::get_cost_and_usage_with_resources::_get_cost_and_usage
 
 pub use crate::operation::get_cost_and_usage_with_resources::_get_cost_and_usage_with_resources_input::GetCostAndUsageWithResourcesInputBuilder;
 
-impl GetCostAndUsageWithResourcesInputBuilder {
+impl crate::operation::get_cost_and_usage_with_resources::builders::GetCostAndUsageWithResourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -161,6 +161,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
         self.inner.get_filter()
     }
+    ///
     /// Appends an item to `Metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
@@ -191,6 +192,7 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_metrics()
     }
+    ///
     /// Appends an item to `GroupBy`.
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).

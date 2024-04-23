@@ -3,7 +3,7 @@ pub use crate::operation::get_health_event::_get_health_event_output::GetHealthE
 
 pub use crate::operation::get_health_event::_get_health_event_input::GetHealthEventInputBuilder;
 
-impl GetHealthEventInputBuilder {
+impl crate::operation::get_health_event::builders::GetHealthEventInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl GetHealthEventInputBuilder {
 }
 /// Fluent builder constructing a request to `GetHealthEvent`.
 ///
-/// <p>Gets information the Amazon CloudWatch Internet Monitor has created and stored about a health event for a specified monitor. This information includes the impacted locations, and all the information related to the event, by location.</p>
+/// <p>Gets information that Amazon CloudWatch Internet Monitor has created and stored about a health event for a specified monitor. This information includes the impacted locations, and all the information related to the event, by location.</p>
 /// <p>The information returned includes the impact on performance, availability, and round-trip time, information about the network providers (ASNs), the event type, and so on.</p>
 /// <p>Information rolled up at the global traffic level is also returned, including the impact type and total traffic impact.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -101,12 +101,12 @@ impl GetHealthEventFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -138,17 +138,17 @@ impl GetHealthEventFluentBuilder {
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_id()
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn linked_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.linked_account_id(input.into());
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn set_linked_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_linked_account_id(input);
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn get_linked_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_linked_account_id()
     }

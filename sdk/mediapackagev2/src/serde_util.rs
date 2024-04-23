@@ -312,6 +312,18 @@ pub(crate) fn encryption_correct_errors(mut builder: crate::types::builders::Enc
     builder
 }
 
+pub(crate) fn get_dash_manifest_configuration_correct_errors(
+    mut builder: crate::types::builders::GetDashManifestConfigurationBuilder,
+) -> crate::types::builders::GetDashManifestConfigurationBuilder {
+    if builder.manifest_name.is_none() {
+        builder.manifest_name = Some(Default::default())
+    }
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_hls_manifest_configuration_correct_errors(
     mut builder: crate::types::builders::GetHlsManifestConfigurationBuilder,
 ) -> crate::types::builders::GetHlsManifestConfigurationBuilder {
@@ -389,6 +401,15 @@ pub(crate) fn encryption_contract_configuration_correct_errors(
     }
     if builder.preset_speke20_video.is_none() {
         builder.preset_speke20_video = "no value was set".parse::<crate::types::PresetSpeke20Video>().ok()
+    }
+    builder
+}
+
+pub(crate) fn list_dash_manifest_configuration_correct_errors(
+    mut builder: crate::types::builders::ListDashManifestConfigurationBuilder,
+) -> crate::types::builders::ListDashManifestConfigurationBuilder {
+    if builder.manifest_name.is_none() {
+        builder.manifest_name = Some(Default::default())
     }
     builder
 }

@@ -3,7 +3,7 @@ pub use crate::operation::restore_from_cluster_snapshot::_restore_from_cluster_s
 
 pub use crate::operation::restore_from_cluster_snapshot::_restore_from_cluster_snapshot_input::RestoreFromClusterSnapshotInputBuilder;
 
-impl RestoreFromClusterSnapshotInputBuilder {
+impl crate::operation::restore_from_cluster_snapshot::builders::RestoreFromClusterSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -396,6 +396,7 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     pub fn get_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_parameter_group_name()
     }
+    ///
     /// Appends an item to `ClusterSecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_cluster_security_groups`](Self::set_cluster_security_groups).
@@ -420,6 +421,7 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cluster_security_groups()
     }
+    ///
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -575,6 +577,7 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_additional_info()
     }
+    ///
     /// Appends an item to `IamRoles`.
     ///
     /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).

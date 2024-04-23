@@ -3,7 +3,7 @@ pub use crate::operation::notify_workers::_notify_workers_output::NotifyWorkersO
 
 pub use crate::operation::notify_workers::_notify_workers_input::NotifyWorkersInputBuilder;
 
-impl NotifyWorkersInputBuilder {
+impl crate::operation::notify_workers::builders::NotifyWorkersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl NotifyWorkersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl NotifyWorkersFluentBuilder {
     pub fn get_message_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_message_text()
     }
+    ///
     /// Appends an item to `WorkerIds`.
     ///
     /// To override the contents of this collection use [`set_worker_ids`](Self::set_worker_ids).

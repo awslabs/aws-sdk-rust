@@ -3,7 +3,7 @@ pub use crate::operation::create_job::_create_job_output::CreateJobOutputBuilder
 
 pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 
-impl CreateJobInputBuilder {
+impl crate::operation::create_job::builders::CreateJobInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -93,12 +93,12 @@ impl CreateJobFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -186,6 +186,7 @@ impl CreateJobFluentBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_priority()
     }
+    ///
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).

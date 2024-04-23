@@ -3,7 +3,7 @@ pub use crate::operation::get_asset_property_aggregates::_get_asset_property_agg
 
 pub use crate::operation::get_asset_property_aggregates::_get_asset_property_aggregates_input::GetAssetPropertyAggregatesInputBuilder;
 
-impl GetAssetPropertyAggregatesInputBuilder {
+impl crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -163,6 +163,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_property_alias()
     }
+    ///
     /// Appends an item to `aggregateTypes`.
     ///
     /// To override the contents of this collection use [`set_aggregate_types`](Self::set_aggregate_types).
@@ -195,6 +196,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     pub fn get_resolution(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resolution()
     }
+    ///
     /// Appends an item to `qualities`.
     ///
     /// To override the contents of this collection use [`set_qualities`](Self::set_qualities).

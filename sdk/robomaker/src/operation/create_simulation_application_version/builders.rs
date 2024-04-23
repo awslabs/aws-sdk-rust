@@ -3,7 +3,7 @@ pub use crate::operation::create_simulation_application_version::_create_simulat
 
 pub use crate::operation::create_simulation_application_version::_create_simulation_application_version_input::CreateSimulationApplicationVersionInputBuilder;
 
-impl CreateSimulationApplicationVersionInputBuilder {
+impl crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSimulationApplicationVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl CreateSimulationApplicationVersionFluentBuilder {
     pub fn get_current_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_current_revision_id()
     }
+    ///
     /// Appends an item to `s3Etags`.
     ///
     /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).

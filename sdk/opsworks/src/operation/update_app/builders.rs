@@ -3,7 +3,7 @@ pub use crate::operation::update_app::_update_app_output::UpdateAppOutputBuilder
 
 pub use crate::operation::update_app::_update_app_input::UpdateAppInputBuilder;
 
-impl UpdateAppInputBuilder {
+impl crate::operation::update_app::builders::UpdateAppInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -94,12 +94,12 @@ impl UpdateAppFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -145,6 +145,7 @@ impl UpdateAppFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `DataSources`.
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
@@ -191,6 +192,7 @@ impl UpdateAppFluentBuilder {
     pub fn get_app_source(&self) -> &::std::option::Option<crate::types::Source> {
         self.inner.get_app_source()
     }
+    ///
     /// Appends an item to `Domains`.
     ///
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
@@ -237,6 +239,7 @@ impl UpdateAppFluentBuilder {
     pub fn get_ssl_configuration(&self) -> &::std::option::Option<crate::types::SslConfiguration> {
         self.inner.get_ssl_configuration()
     }
+    ///
     /// Adds a key-value pair to `Attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -258,6 +261,7 @@ impl UpdateAppFluentBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>> {
         self.inner.get_attributes()
     }
+    ///
     /// Appends an item to `Environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).

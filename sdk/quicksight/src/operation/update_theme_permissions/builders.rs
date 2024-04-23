@@ -3,7 +3,7 @@ pub use crate::operation::update_theme_permissions::_update_theme_permissions_ou
 
 pub use crate::operation::update_theme_permissions::_update_theme_permissions_input::UpdateThemePermissionsInputBuilder;
 
-impl UpdateThemePermissionsInputBuilder {
+impl crate::operation::update_theme_permissions::builders::UpdateThemePermissionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -142,12 +142,12 @@ impl UpdateThemePermissionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -179,6 +179,7 @@ impl UpdateThemePermissionsFluentBuilder {
     pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_theme_id()
     }
+    ///
     /// Appends an item to `GrantPermissions`.
     ///
     /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
@@ -197,6 +198,7 @@ impl UpdateThemePermissionsFluentBuilder {
     pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_grant_permissions()
     }
+    ///
     /// Appends an item to `RevokePermissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).

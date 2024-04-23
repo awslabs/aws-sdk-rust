@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypeOfferingsOutput {
-    /// <p>The instance types offered.</p>
+    /// <p>The instance types offered in the location.</p>
     pub instance_type_offerings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceTypeOfferingsOutput {
-    /// <p>The instance types offered.</p>
+    /// <p>The instance types offered in the location.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_offerings.is_none()`.
     pub fn instance_type_offerings(&self) -> &[crate::types::InstanceTypeOffering] {
@@ -46,19 +46,19 @@ impl DescribeInstanceTypeOfferingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_type_offerings`](Self::set_instance_type_offerings).
     ///
-    /// <p>The instance types offered.</p>
+    /// <p>The instance types offered in the location.</p>
     pub fn instance_type_offerings(mut self, input: crate::types::InstanceTypeOffering) -> Self {
         let mut v = self.instance_type_offerings.unwrap_or_default();
         v.push(input);
         self.instance_type_offerings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The instance types offered.</p>
+    /// <p>The instance types offered in the location.</p>
     pub fn set_instance_type_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>>) -> Self {
         self.instance_type_offerings = input;
         self
     }
-    /// <p>The instance types offered.</p>
+    /// <p>The instance types offered in the location.</p>
     pub fn get_instance_type_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeOffering>> {
         &self.instance_type_offerings
     }

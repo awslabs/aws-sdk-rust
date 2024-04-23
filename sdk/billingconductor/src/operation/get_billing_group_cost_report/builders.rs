@@ -3,7 +3,7 @@ pub use crate::operation::get_billing_group_cost_report::_get_billing_group_cost
 
 pub use crate::operation::get_billing_group_cost_report::_get_billing_group_cost_report_input::GetBillingGroupCostReportInputBuilder;
 
-impl GetBillingGroupCostReportInputBuilder {
+impl crate::operation::get_billing_group_cost_report::builders::GetBillingGroupCostReportInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetBillingGroupCostReportFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl GetBillingGroupCostReportFluentBuilder {
     pub fn get_billing_period_range(&self) -> &::std::option::Option<crate::types::BillingPeriodRange> {
         self.inner.get_billing_period_range()
     }
+    ///
     /// Appends an item to `GroupBy`.
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).

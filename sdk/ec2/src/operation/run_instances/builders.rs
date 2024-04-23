@@ -3,7 +3,7 @@ pub use crate::operation::run_instances::_run_instances_output::RunInstancesOutp
 
 pub use crate::operation::run_instances::_run_instances_input::RunInstancesInputBuilder;
 
-impl RunInstancesInputBuilder {
+impl crate::operation::run_instances::builders::RunInstancesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -117,15 +117,16 @@ impl RunInstancesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `BlockDeviceMappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
@@ -189,6 +190,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_ipv6_address_count()
     }
+    ///
     /// Appends an item to `Ipv6Addresses`.
     ///
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
@@ -332,65 +334,67 @@ impl RunInstancesFluentBuilder {
     pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ramdisk_id()
     }
+    ///
     /// Appends an item to `SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
+    ///
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>[Default VPC] The names of the security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>[Default VPC] The names of the security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>[Default VPC] The names of the security groups.</p>
-    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
-    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
         self
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
-    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
-    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
+    /// <p>If you specify a network interface, you must specify any subnets as part of the network interface instead of using this parameter.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subnet_id()
     }
@@ -521,16 +525,17 @@ impl RunInstancesFluentBuilder {
     pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::ShutdownBehavior> {
         self.inner.get_instance_initiated_shutdown_behavior()
     }
+    ///
     /// Appends an item to `NetworkInterfaces`.
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
+    /// <p>The network interfaces to associate with the instance.</p>
     pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
         self.inner = self.inner.network_interfaces(input);
         self
     }
-    /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
+    /// <p>The network interfaces to associate with the instance.</p>
     pub fn set_network_interfaces(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
@@ -538,7 +543,7 @@ impl RunInstancesFluentBuilder {
         self.inner = self.inner.set_network_interfaces(input);
         self
     }
-    /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
+    /// <p>The network interfaces to associate with the instance.</p>
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
         self.inner.get_network_interfaces()
     }
@@ -562,45 +567,45 @@ impl RunInstancesFluentBuilder {
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_private_ip_address()
     }
+    ///
     /// Appends an item to `ElasticGpuSpecification`.
     ///
     /// To override the contents of this collection use [`set_elastic_gpu_specification`](Self::set_elastic_gpu_specification).
     ///
-    /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>An elastic GPU to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub fn elastic_gpu_specification(mut self, input: crate::types::ElasticGpuSpecification) -> Self {
         self.inner = self.inner.elastic_gpu_specification(input);
         self
     }
-    /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>An elastic GPU to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub fn set_elastic_gpu_specification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
         self.inner = self.inner.set_elastic_gpu_specification(input);
         self
     }
-    /// <p>Deprecated.</p><note>
-    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// <p>An elastic GPU to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
     /// </note>
     pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
         self.inner.get_elastic_gpu_specification()
     }
+    ///
     /// Appends an item to `ElasticInferenceAccelerators`.
     ///
     /// To override the contents of this collection use [`set_elastic_inference_accelerators`](Self::set_elastic_inference_accelerators).
     ///
-    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
-    /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
-    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// <p>An elastic inference accelerator to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
     /// </note>
     pub fn elastic_inference_accelerators(mut self, input: crate::types::ElasticInferenceAccelerator) -> Self {
         self.inner = self.inner.elastic_inference_accelerators(input);
         self
     }
-    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
-    /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
-    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// <p>An elastic inference accelerator to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
     /// </note>
     pub fn set_elastic_inference_accelerators(
         mut self,
@@ -609,13 +614,13 @@ impl RunInstancesFluentBuilder {
         self.inner = self.inner.set_elastic_inference_accelerators(input);
         self
     }
-    /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
-    /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
-    /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
+    /// <p>An elastic inference accelerator to associate with the instance.</p><note>
+    /// <p>Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.</p>
     /// </note>
     pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
         self.inner.get_elastic_inference_accelerators()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -766,6 +771,7 @@ impl RunInstancesFluentBuilder {
     pub fn get_hibernation_options(&self) -> &::std::option::Option<crate::types::HibernationOptionsRequest> {
         self.inner.get_hibernation_options()
     }
+    ///
     /// Appends an item to `LicenseSpecifications`.
     ///
     /// To override the contents of this collection use [`set_license_specifications`](Self::set_license_specifications).

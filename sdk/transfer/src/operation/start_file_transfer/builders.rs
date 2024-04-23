@@ -3,7 +3,7 @@ pub use crate::operation::start_file_transfer::_start_file_transfer_output::Star
 
 pub use crate::operation::start_file_transfer::_start_file_transfer_input::StartFileTransferInputBuilder;
 
-impl StartFileTransferInputBuilder {
+impl crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -30,7 +30,7 @@ impl StartFileTransferInputBuilder {
 /// <p>For an SFTP connector, the file transfer can be either outbound or inbound. In both cases, you specify the <code>ConnectorId</code>. Depending on the direction of the transfer, you also specify the following items:</p>
 /// <ul>
 /// <li>
-/// <p>If you are transferring file from a partner's SFTP server to Amazon Web Services storage, you specify one or more <code>RetreiveFilePaths</code> to identify the files you want to transfer, and a <code>LocalDirectoryPath</code> to specify the destination folder.</p></li>
+/// <p>If you are transferring file from a partner's SFTP server to Amazon Web Services storage, you specify one or more <code>RetrieveFilePaths</code> to identify the files you want to transfer, and a <code>LocalDirectoryPath</code> to specify the destination folder.</p></li>
 /// <li>
 /// <p>If you are transferring file to a partner's SFTP server from Amazon Web Services storage, you specify one or more <code>SendFilePaths</code> to identify the files you want to transfer, and a <code>RemoteDirectoryPath</code> to specify the destination folder.</p></li>
 /// </ul></li>
@@ -111,12 +111,12 @@ impl StartFileTransferFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -134,6 +134,7 @@ impl StartFileTransferFluentBuilder {
     pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_id()
     }
+    ///
     /// Appends an item to `SendFilePaths`.
     ///
     /// To override the contents of this collection use [`set_send_file_paths`](Self::set_send_file_paths).
@@ -158,6 +159,7 @@ impl StartFileTransferFluentBuilder {
     pub fn get_send_file_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_send_file_paths()
     }
+    ///
     /// Appends an item to `RetrieveFilePaths`.
     ///
     /// To override the contents of this collection use [`set_retrieve_file_paths`](Self::set_retrieve_file_paths).

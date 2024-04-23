@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_health_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_internet_events_output_output_next_token(
+    input: &crate::operation::list_internet_events::ListInternetEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_monitors_output_output_next_token(
     input: &crate::operation::list_monitors::ListMonitorsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -33,6 +43,13 @@ pub(crate) fn lens_list_health_events_output_output_health_events(
     input: crate::operation::list_health_events::ListHealthEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>> {
     let input = input.health_events;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_internet_events_output_output_internet_events(
+    input: crate::operation::list_internet_events::ListInternetEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InternetEventSummary>> {
+    let input = input.internet_events;
     ::std::option::Option::Some(input)
 }
 

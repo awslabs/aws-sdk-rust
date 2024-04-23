@@ -3,7 +3,7 @@ pub use crate::operation::create_grant::_create_grant_output::CreateGrantOutputB
 
 pub use crate::operation::create_grant::_create_grant_input::CreateGrantInputBuilder;
 
-impl CreateGrantInputBuilder {
+impl crate::operation::create_grant::builders::CreateGrantInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateGrantFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateGrantFluentBuilder {
     pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_arn()
     }
+    ///
     /// Appends an item to `Principals`.
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
@@ -218,6 +219,7 @@ impl CreateGrantFluentBuilder {
     pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_home_region()
     }
+    ///
     /// Appends an item to `AllowedOperations`.
     ///
     /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).

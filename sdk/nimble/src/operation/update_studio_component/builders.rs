@@ -3,7 +3,7 @@ pub use crate::operation::update_studio_component::_update_studio_component_outp
 
 pub use crate::operation::update_studio_component::_update_studio_component_input::UpdateStudioComponentInputBuilder;
 
-impl UpdateStudioComponentInputBuilder {
+impl crate::operation::update_studio_component::builders::UpdateStudioComponentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateStudioComponentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl UpdateStudioComponentFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    ///
     /// Appends an item to `ec2SecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_ec2_security_group_ids`](Self::set_ec2_security_group_ids).
@@ -168,6 +169,7 @@ impl UpdateStudioComponentFluentBuilder {
     pub fn get_ec2_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ec2_security_group_ids()
     }
+    ///
     /// Appends an item to `initializationScripts`.
     ///
     /// To override the contents of this collection use [`set_initialization_scripts`](Self::set_initialization_scripts).
@@ -203,6 +205,7 @@ impl UpdateStudioComponentFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    ///
     /// Appends an item to `scriptParameters`.
     ///
     /// To override the contents of this collection use [`set_script_parameters`](Self::set_script_parameters).

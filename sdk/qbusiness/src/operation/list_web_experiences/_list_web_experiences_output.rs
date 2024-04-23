@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWebExperiencesOutput {
-    /// <p>An array of summary information for one or more Amazon Q experiences.</p>
+    /// <p>An array of summary information for one or more Amazon Q Business experiences.</p>
     pub web_experiences: ::std::option::Option<::std::vec::Vec<crate::types::WebExperience>>,
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWebExperiencesOutput {
-    /// <p>An array of summary information for one or more Amazon Q experiences.</p>
+    /// <p>An array of summary information for one or more Amazon Q Business experiences.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.web_experiences.is_none()`.
     pub fn web_experiences(&self) -> &[crate::types::WebExperience] {
         self.web_experiences.as_deref().unwrap_or_default()
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListWebExperiencesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_web_experiences`](Self::set_web_experiences).
     ///
-    /// <p>An array of summary information for one or more Amazon Q experiences.</p>
+    /// <p>An array of summary information for one or more Amazon Q Business experiences.</p>
     pub fn web_experiences(mut self, input: crate::types::WebExperience) -> Self {
         let mut v = self.web_experiences.unwrap_or_default();
         v.push(input);
         self.web_experiences = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of summary information for one or more Amazon Q experiences.</p>
+    /// <p>An array of summary information for one or more Amazon Q Business experiences.</p>
     pub fn set_web_experiences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WebExperience>>) -> Self {
         self.web_experiences = input;
         self
     }
-    /// <p>An array of summary information for one or more Amazon Q experiences.</p>
+    /// <p>An array of summary information for one or more Amazon Q Business experiences.</p>
     pub fn get_web_experiences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebExperience>> {
         &self.web_experiences
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If the response is truncated, Amazon Q returns this token, which you can use in a later request to list the next set of messages.</p>
+    /// <p>If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list the next set of messages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

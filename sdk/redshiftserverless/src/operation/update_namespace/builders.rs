@@ -3,7 +3,7 @@ pub use crate::operation::update_namespace::_update_namespace_output::UpdateName
 
 pub use crate::operation::update_namespace::_update_namespace_input::UpdateNamespaceInputBuilder;
 
-impl UpdateNamespaceInputBuilder {
+impl crate::operation::update_namespace::builders::UpdateNamespaceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateNamespaceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -181,6 +181,7 @@ impl UpdateNamespaceFluentBuilder {
     pub fn get_default_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_iam_role_arn()
     }
+    ///
     /// Appends an item to `iamRoles`.
     ///
     /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
@@ -199,6 +200,7 @@ impl UpdateNamespaceFluentBuilder {
     pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_iam_roles()
     }
+    ///
     /// Appends an item to `logExports`.
     ///
     /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).

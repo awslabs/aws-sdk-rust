@@ -3,7 +3,7 @@ pub use crate::operation::list_recommendation_feedback::_list_recommendation_fee
 
 pub use crate::operation::list_recommendation_feedback::_list_recommendation_feedback_input::ListRecommendationFeedbackInputBuilder;
 
-impl ListRecommendationFeedbackInputBuilder {
+impl crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListRecommendationFeedbackFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -156,6 +156,7 @@ impl ListRecommendationFeedbackFluentBuilder {
     pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_code_review_arn()
     }
+    ///
     /// Appends an item to `UserIds`.
     ///
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
@@ -177,6 +178,7 @@ impl ListRecommendationFeedbackFluentBuilder {
     pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_ids()
     }
+    ///
     /// Appends an item to `RecommendationIds`.
     ///
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).

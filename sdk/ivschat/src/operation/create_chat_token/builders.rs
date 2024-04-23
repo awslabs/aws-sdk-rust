@@ -3,7 +3,7 @@ pub use crate::operation::create_chat_token::_create_chat_token_output::CreateCh
 
 pub use crate::operation::create_chat_token::_create_chat_token_input::CreateChatTokenInputBuilder;
 
-impl CreateChatTokenInputBuilder {
+impl crate::operation::create_chat_token::builders::CreateChatTokenInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl CreateChatTokenFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl CreateChatTokenFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
+    ///
     /// Appends an item to `capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
@@ -171,6 +172,7 @@ impl CreateChatTokenFluentBuilder {
     pub fn get_session_duration_in_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_session_duration_in_minutes()
     }
+    ///
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).

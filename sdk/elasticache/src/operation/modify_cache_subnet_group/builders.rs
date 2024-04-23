@@ -3,7 +3,7 @@ pub use crate::operation::modify_cache_subnet_group::_modify_cache_subnet_group_
 
 pub use crate::operation::modify_cache_subnet_group::_modify_cache_subnet_group_input::ModifyCacheSubnetGroupInputBuilder;
 
-impl ModifyCacheSubnetGroupInputBuilder {
+impl crate::operation::modify_cache_subnet_group::builders::ModifyCacheSubnetGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ModifyCacheSubnetGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -142,6 +142,7 @@ impl ModifyCacheSubnetGroupFluentBuilder {
     pub fn get_cache_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_subnet_group_description()
     }
+    ///
     /// Appends an item to `SubnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).

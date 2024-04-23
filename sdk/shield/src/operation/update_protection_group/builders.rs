@@ -3,7 +3,7 @@ pub use crate::operation::update_protection_group::_update_protection_group_outp
 
 pub use crate::operation::update_protection_group::_update_protection_group_input::UpdateProtectionGroupInputBuilder;
 
-impl UpdateProtectionGroupInputBuilder {
+impl crate::operation::update_protection_group::builders::UpdateProtectionGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateProtectionGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -188,6 +188,7 @@ impl UpdateProtectionGroupFluentBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ProtectedResourceType> {
         self.inner.get_resource_type()
     }
+    ///
     /// Appends an item to `Members`.
     ///
     /// To override the contents of this collection use [`set_members`](Self::set_members).

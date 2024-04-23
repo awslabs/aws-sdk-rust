@@ -3,7 +3,7 @@ pub use crate::operation::send_voice_message::_send_voice_message_output::SendVo
 
 pub use crate::operation::send_voice_message::_send_voice_message_input::SendVoiceMessageInputBuilder;
 
-impl SendVoiceMessageInputBuilder {
+impl crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SendVoiceMessageFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -238,6 +238,7 @@ impl SendVoiceMessageFluentBuilder {
     pub fn get_time_to_live(&self) -> &::std::option::Option<i32> {
         self.inner.get_time_to_live()
     }
+    ///
     /// Adds a key-value pair to `Context`.
     ///
     /// To override the contents of this collection use [`set_context`](Self::set_context).

@@ -3,7 +3,7 @@ pub use crate::operation::get_findings::_get_findings_output::GetFindingsOutputB
 
 pub use crate::operation::get_findings::_get_findings_input::GetFindingsInputBuilder;
 
-impl GetFindingsInputBuilder {
+impl crate::operation::get_findings::builders::GetFindingsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetFindingsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -135,6 +135,7 @@ impl GetFindingsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingFilters> {
         self.inner.get_filters()
     }
+    ///
     /// Appends an item to `SortCriteria`.
     ///
     /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).

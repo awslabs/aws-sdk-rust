@@ -3,7 +3,7 @@ pub use crate::operation::describe_transit_gateway_connects::_describe_transit_g
 
 pub use crate::operation::describe_transit_gateway_connects::_describe_transit_gateway_connects_input::DescribeTransitGatewayConnectsInputBuilder;
 
-impl DescribeTransitGatewayConnectsInputBuilder {
+impl crate::operation::describe_transit_gateway_connects::builders::DescribeTransitGatewayConnectsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeTransitGatewayConnectsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl DescribeTransitGatewayConnectsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_transit_gateway_connects::paginator::DescribeTransitGatewayConnectsPaginator {
         crate::operation::describe_transit_gateway_connects::paginator::DescribeTransitGatewayConnectsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `TransitGatewayAttachmentIds`.
     ///
     /// To override the contents of this collection use [`set_transit_gateway_attachment_ids`](Self::set_transit_gateway_attachment_ids).
@@ -132,6 +133,7 @@ impl DescribeTransitGatewayConnectsFluentBuilder {
     pub fn get_transit_gateway_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_transit_gateway_attachment_ids()
     }
+    ///
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

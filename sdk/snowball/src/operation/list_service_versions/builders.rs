@@ -3,7 +3,7 @@ pub use crate::operation::list_service_versions::_list_service_versions_output::
 
 pub use crate::operation::list_service_versions::_list_service_versions_input::ListServiceVersionsInputBuilder;
 
-impl ListServiceVersionsInputBuilder {
+impl crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListServiceVersionsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl ListServiceVersionsFluentBuilder {
     pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
         self.inner.get_service_name()
     }
+    ///
     /// Appends an item to `DependentServices`.
     ///
     /// To override the contents of this collection use [`set_dependent_services`](Self::set_dependent_services).

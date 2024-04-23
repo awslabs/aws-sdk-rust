@@ -3,7 +3,7 @@ pub use crate::operation::update_regex_match_set::_update_regex_match_set_output
 
 pub use crate::operation::update_regex_match_set::_update_regex_match_set_input::UpdateRegexMatchSetInputBuilder;
 
-impl UpdateRegexMatchSetInputBuilder {
+impl crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -124,12 +124,12 @@ impl UpdateRegexMatchSetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -147,6 +147,7 @@ impl UpdateRegexMatchSetFluentBuilder {
     pub fn get_regex_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_regex_match_set_id()
     }
+    ///
     /// Appends an item to `Updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).

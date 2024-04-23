@@ -3,7 +3,7 @@ pub use crate::operation::start_test_set_generation::_start_test_set_generation_
 
 pub use crate::operation::start_test_set_generation::_start_test_set_generation_input::StartTestSetGenerationInputBuilder;
 
-impl StartTestSetGenerationInputBuilder {
+impl crate::operation::start_test_set_generation::builders::StartTestSetGenerationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl StartTestSetGenerationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -178,6 +178,7 @@ impl StartTestSetGenerationFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
+    ///
     /// Adds a key-value pair to `testSetTags`.
     ///
     /// To override the contents of this collection use [`set_test_set_tags`](Self::set_test_set_tags).

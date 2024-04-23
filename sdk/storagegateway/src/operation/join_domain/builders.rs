@@ -3,7 +3,7 @@ pub use crate::operation::join_domain::_join_domain_output::JoinDomainOutputBuil
 
 pub use crate::operation::join_domain::_join_domain_input::JoinDomainInputBuilder;
 
-impl JoinDomainInputBuilder {
+impl crate::operation::join_domain::builders::JoinDomainInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl JoinDomainFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl JoinDomainFluentBuilder {
     pub fn get_organizational_unit(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_organizational_unit()
     }
+    ///
     /// Appends an item to `DomainControllers`.
     ///
     /// To override the contents of this collection use [`set_domain_controllers`](Self::set_domain_controllers).

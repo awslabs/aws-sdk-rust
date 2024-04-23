@@ -3,7 +3,7 @@ pub use crate::operation::create_vpc_ingress_connection::_create_vpc_ingress_con
 
 pub use crate::operation::create_vpc_ingress_connection::_create_vpc_ingress_connection_input::CreateVpcIngressConnectionInputBuilder;
 
-impl CreateVpcIngressConnectionInputBuilder {
+impl crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateVpcIngressConnectionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl CreateVpcIngressConnectionFluentBuilder {
     pub fn get_ingress_vpc_configuration(&self) -> &::std::option::Option<crate::types::IngressVpcConfiguration> {
         self.inner.get_ingress_vpc_configuration()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

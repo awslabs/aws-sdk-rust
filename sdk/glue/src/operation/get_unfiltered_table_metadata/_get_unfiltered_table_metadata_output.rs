@@ -21,6 +21,8 @@ pub struct GetUnfilteredTableMetadataOutput {
     pub is_protected: bool,
     /// <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    /// <p>The filter that applies to the table. For example when applying the filter in SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using an <code>AND</code> operator with any other predicates applied by the user querying the table.</p>
+    pub row_filter: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUnfilteredTableMetadataOutput {
@@ -66,6 +68,10 @@ impl GetUnfilteredTableMetadataOutput {
     pub fn permissions(&self) -> &[crate::types::Permission] {
         self.permissions.as_deref().unwrap_or_default()
     }
+    /// <p>The filter that applies to the table. For example when applying the filter in SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using an <code>AND</code> operator with any other predicates applied by the user querying the table.</p>
+    pub fn row_filter(&self) -> ::std::option::Option<&str> {
+        self.row_filter.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetUnfilteredTableMetadataOutput {
     fn request_id(&self) -> Option<&str> {
@@ -92,6 +98,7 @@ pub struct GetUnfilteredTableMetadataOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) is_protected: ::std::option::Option<bool>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) row_filter: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUnfilteredTableMetadataOutputBuilder {
@@ -239,6 +246,20 @@ impl GetUnfilteredTableMetadataOutputBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
+    /// <p>The filter that applies to the table. For example when applying the filter in SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using an <code>AND</code> operator with any other predicates applied by the user querying the table.</p>
+    pub fn row_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.row_filter = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The filter that applies to the table. For example when applying the filter in SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using an <code>AND</code> operator with any other predicates applied by the user querying the table.</p>
+    pub fn set_row_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.row_filter = input;
+        self
+    }
+    /// <p>The filter that applies to the table. For example when applying the filter in SQL, it would go in the <code>WHERE</code> clause and can be evaluated by using an <code>AND</code> operator with any other predicates applied by the user querying the table.</p>
+    pub fn get_row_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.row_filter
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -260,6 +281,7 @@ impl GetUnfilteredTableMetadataOutputBuilder {
             resource_arn: self.resource_arn,
             is_protected: self.is_protected.unwrap_or_default(),
             permissions: self.permissions,
+            row_filter: self.row_filter,
             _request_id: self._request_id,
         }
     }

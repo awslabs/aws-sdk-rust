@@ -3,7 +3,7 @@ pub use crate::operation::update_sol_network_instance::_update_sol_network_insta
 
 pub use crate::operation::update_sol_network_instance::_update_sol_network_instance_input::UpdateSolNetworkInstanceInputBuilder;
 
-impl UpdateSolNetworkInstanceInputBuilder {
+impl crate::operation::update_sol_network_instance::builders::UpdateSolNetworkInstanceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl UpdateSolNetworkInstanceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl UpdateSolNetworkInstanceFluentBuilder {
     pub fn get_modify_vnf_info_data(&self) -> &::std::option::Option<crate::types::UpdateSolNetworkModify> {
         self.inner.get_modify_vnf_info_data()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::update_maintenance_window_target::_update_maintenance_
 
 pub use crate::operation::update_maintenance_window_target::_update_maintenance_window_target_input::UpdateMaintenanceWindowTargetInputBuilder;
 
-impl UpdateMaintenanceWindowTargetInputBuilder {
+impl crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -115,12 +115,12 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -152,6 +152,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
     pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_window_target_id()
     }
+    ///
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).

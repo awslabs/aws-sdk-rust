@@ -3,7 +3,7 @@ pub use crate::operation::delete_ipam_pool::_delete_ipam_pool_output::DeleteIpam
 
 pub use crate::operation::delete_ipam_pool::_delete_ipam_pool_input::DeleteIpamPoolInputBuilder;
 
-impl DeleteIpamPoolInputBuilder {
+impl crate::operation::delete_ipam_pool::builders::DeleteIpamPoolInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl DeleteIpamPoolFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

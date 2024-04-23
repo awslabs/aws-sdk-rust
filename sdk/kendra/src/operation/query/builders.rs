@@ -3,7 +3,7 @@ pub use crate::operation::query::_query_output::QueryOutputBuilder;
 
 pub use crate::operation::query::_query_input::QueryInputBuilder;
 
-impl QueryInputBuilder {
+impl crate::operation::query::builders::QueryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl QueryFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::query::QueryOutput, crate::operation::query::QueryError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -153,6 +153,7 @@ impl QueryFluentBuilder {
     pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
         self.inner.get_attribute_filter()
     }
+    ///
     /// Appends an item to `Facets`.
     ///
     /// To override the contents of this collection use [`set_facets`](Self::set_facets).
@@ -171,6 +172,7 @@ impl QueryFluentBuilder {
     pub fn get_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Facet>> {
         self.inner.get_facets()
     }
+    ///
     /// Appends an item to `RequestedDocumentAttributes`.
     ///
     /// To override the contents of this collection use [`set_requested_document_attributes`](Self::set_requested_document_attributes).
@@ -203,6 +205,7 @@ impl QueryFluentBuilder {
     pub fn get_query_result_type_filter(&self) -> &::std::option::Option<crate::types::QueryResultType> {
         self.inner.get_query_result_type_filter()
     }
+    ///
     /// Appends an item to `DocumentRelevanceOverrideConfigurations`.
     ///
     /// To override the contents of this collection use [`set_document_relevance_override_configurations`](Self::set_document_relevance_override_configurations).
@@ -277,6 +280,7 @@ impl QueryFluentBuilder {
     pub fn get_sorting_configuration(&self) -> &::std::option::Option<crate::types::SortingConfiguration> {
         self.inner.get_sorting_configuration()
     }
+    ///
     /// Appends an item to `SortingConfigurations`.
     ///
     /// To override the contents of this collection use [`set_sorting_configurations`](Self::set_sorting_configurations).

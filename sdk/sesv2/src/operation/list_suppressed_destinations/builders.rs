@@ -3,7 +3,7 @@ pub use crate::operation::list_suppressed_destinations::_list_suppressed_destina
 
 pub use crate::operation::list_suppressed_destinations::_list_suppressed_destinations_input::ListSuppressedDestinationsInputBuilder;
 
-impl ListSuppressedDestinationsInputBuilder {
+impl crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl ListSuppressedDestinationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -114,6 +114,7 @@ impl ListSuppressedDestinationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_suppressed_destinations::paginator::ListSuppressedDestinationsPaginator {
         crate::operation::list_suppressed_destinations::paginator::ListSuppressedDestinationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `Reasons`.
     ///
     /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).

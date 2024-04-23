@@ -3,7 +3,7 @@ pub use crate::operation::describe_lake_formation_identity_center_configuration:
 
 pub use crate::operation::describe_lake_formation_identity_center_configuration::_describe_lake_formation_identity_center_configuration_input::DescribeLakeFormationIdentityCenterConfigurationInputBuilder;
 
-impl DescribeLakeFormationIdentityCenterConfigurationInputBuilder {
+impl crate::operation::describe_lake_formation_identity_center_configuration::builders::DescribeLakeFormationIdentityCenterConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,10 +25,10 @@ impl DescribeLakeFormationIdentityCenterConfigurationInputBuilder {
 /// <p>Retrieves the instance ARN and application ARN for the connection.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLakeFormationIdentityCenterConfigurationFluentBuilder {
-    handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_lake_formation_identity_center_configuration::builders::DescribeLakeFormationIdentityCenterConfigurationInputBuilder,
-    config_override: ::std::option::Option<crate::config::Builder>,
-}
+                handle: ::std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::describe_lake_formation_identity_center_configuration::builders::DescribeLakeFormationIdentityCenterConfigurationInputBuilder,
+                config_override: ::std::option::Option<crate::config::Builder>,
+            }
 impl
     crate::client::customize::internal::CustomizableSend<
         crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationOutput,
@@ -103,12 +103,12 @@ impl DescribeLakeFormationIdentityCenterConfigurationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

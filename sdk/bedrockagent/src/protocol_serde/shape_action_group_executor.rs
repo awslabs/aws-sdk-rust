@@ -7,6 +7,9 @@ pub fn ser_action_group_executor(
         crate::types::ActionGroupExecutor::Lambda(inner) => {
             object_2.key("lambda").string(inner.as_str());
         }
+        crate::types::ActionGroupExecutor::CustomControl(inner) => {
+            object_2.key("customControl").string(inner.as_str());
+        }
         crate::types::ActionGroupExecutor::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ActionGroupExecutor",
@@ -52,6 +55,14 @@ where
                                 .transpose()?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lambda' cannot be null")
+                                })?,
+                        )),
+                        "customControl" => Some(crate::types::ActionGroupExecutor::CustomControl(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::CustomControlMethod::from(u.as_ref())))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customControl' cannot be null")
                                 })?,
                         )),
                         _ => {

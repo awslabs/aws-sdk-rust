@@ -3,7 +3,7 @@ pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_pa
 
 pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_partitions_metadata_input::GetUnfilteredPartitionsMetadataInputBuilder;
 
-impl GetUnfilteredPartitionsMetadataInputBuilder {
+impl crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -424,6 +424,7 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
     pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
         self.inner.get_audit_context()
     }
+    ///
     /// Appends an item to `SupportedPermissionTypes`.
     ///
     /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).

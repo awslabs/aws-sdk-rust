@@ -3,7 +3,7 @@ pub use crate::operation::get_index::_get_index_output::GetIndexOutputBuilder;
 
 pub use crate::operation::get_index::_get_index_input::GetIndexInputBuilder;
 
-impl GetIndexInputBuilder {
+impl crate::operation::get_index::builders::GetIndexInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl GetIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `GetIndex`.
 ///
-/// <p>Gets information about an existing Amazon Q index.</p>
+/// <p>Gets information about an existing Amazon Q Business index.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIndexFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -90,40 +90,40 @@ impl GetIndexFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q application connected to the index.</p>
+    /// <p>The identifier of the Amazon Q Business application connected to the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The identifier of the Amazon Q index you want information on.</p>
+    /// <p>The identifier of the Amazon Q Business index you want information on.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_index_id()
     }

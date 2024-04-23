@@ -3,7 +3,7 @@ pub use crate::operation::create_recommendation_template::_create_recommendation
 
 pub use crate::operation::create_recommendation_template::_create_recommendation_template_input::CreateRecommendationTemplateInputBuilder;
 
-impl CreateRecommendationTemplateInputBuilder {
+impl crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,15 +99,16 @@ impl CreateRecommendationTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `recommendationIds`.
     ///
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
@@ -182,6 +183,7 @@ impl CreateRecommendationTemplateFluentBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::TemplateFormat> {
         self.inner.get_format()
     }
+    ///
     /// Appends an item to `recommendationTypes`.
     ///
     /// To override the contents of this collection use [`set_recommendation_types`](Self::set_recommendation_types).
@@ -302,6 +304,7 @@ impl CreateRecommendationTemplateFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -3,7 +3,7 @@ pub use crate::operation::update_document::_update_document_output::UpdateDocume
 
 pub use crate::operation::update_document::_update_document_input::UpdateDocumentInputBuilder;
 
-impl UpdateDocumentInputBuilder {
+impl crate::operation::update_document::builders::UpdateDocumentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateDocumentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateDocumentFluentBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()
     }
+    ///
     /// Appends an item to `Attachments`.
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).

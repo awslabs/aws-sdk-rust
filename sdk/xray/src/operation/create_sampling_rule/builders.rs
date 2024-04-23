@@ -3,7 +3,7 @@ pub use crate::operation::create_sampling_rule::_create_sampling_rule_output::Cr
 
 pub use crate::operation::create_sampling_rule::_create_sampling_rule_input::CreateSamplingRuleInputBuilder;
 
-impl CreateSamplingRuleInputBuilder {
+impl crate::operation::create_sampling_rule::builders::CreateSamplingRuleInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl CreateSamplingRuleFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl CreateSamplingRuleFluentBuilder {
     pub fn get_sampling_rule(&self) -> &::std::option::Option<crate::types::SamplingRule> {
         self.inner.get_sampling_rule()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

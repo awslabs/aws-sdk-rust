@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`low_latency_hls_manifests(Option<Vec::<GetLowLatencyHlsManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::low_latency_hls_manifests): <p>A low-latency HLS manifest configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::e_tag): <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
+    ///   - [`dash_manifests(Option<Vec::<GetDashManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::dash_manifests): <p>A DASH manifest configuration.</p>
     /// - On failure, responds with [`SdkError<GetOriginEndpointError>`](crate::operation::get_origin_endpoint::GetOriginEndpointError)
     pub fn get_origin_endpoint(&self) -> crate::operation::get_origin_endpoint::builders::GetOriginEndpointFluentBuilder {
         crate::operation::get_origin_endpoint::builders::GetOriginEndpointFluentBuilder::new(self.handle.clone())

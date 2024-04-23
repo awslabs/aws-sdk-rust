@@ -3,7 +3,7 @@ pub use crate::operation::decrypt::_decrypt_output::DecryptOutputBuilder;
 
 pub use crate::operation::decrypt::_decrypt_input::DecryptInputBuilder;
 
-impl DecryptInputBuilder {
+impl crate::operation::decrypt::builders::DecryptInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -122,12 +122,12 @@ impl DecryptFluentBuilder {
     {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -145,6 +145,7 @@ impl DecryptFluentBuilder {
     pub fn get_ciphertext_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_ciphertext_blob()
     }
+    ///
     /// Adds a key-value pair to `EncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
@@ -176,6 +177,7 @@ impl DecryptFluentBuilder {
     pub fn get_encryption_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_encryption_context()
     }
+    ///
     /// Appends an item to `GrantTokens`.
     ///
     /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).

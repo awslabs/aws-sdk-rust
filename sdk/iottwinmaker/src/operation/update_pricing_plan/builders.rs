@@ -3,7 +3,7 @@ pub use crate::operation::update_pricing_plan::_update_pricing_plan_output::Upda
 
 pub use crate::operation::update_pricing_plan::_update_pricing_plan_input::UpdatePricingPlanInputBuilder;
 
-impl UpdatePricingPlanInputBuilder {
+impl crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdatePricingPlanFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdatePricingPlanFluentBuilder {
     pub fn get_pricing_mode(&self) -> &::std::option::Option<crate::types::PricingMode> {
         self.inner.get_pricing_mode()
     }
+    ///
     /// Appends an item to `bundleNames`.
     ///
     /// To override the contents of this collection use [`set_bundle_names`](Self::set_bundle_names).

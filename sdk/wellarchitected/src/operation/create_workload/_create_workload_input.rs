@@ -105,6 +105,8 @@ pub struct CreateWorkloadInput {
     pub profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of review template ARNs to associate with the workload.</p>
     pub review_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Jira configuration settings when creating a workload.</p>
+    pub jira_configuration: ::std::option::Option<crate::types::WorkloadJiraConfigurationInput>,
 }
 impl CreateWorkloadInput {
     /// <p>The name of the workload.</p>
@@ -262,6 +264,10 @@ impl CreateWorkloadInput {
     pub fn review_template_arns(&self) -> &[::std::string::String] {
         self.review_template_arns.as_deref().unwrap_or_default()
     }
+    /// <p>Jira configuration settings when creating a workload.</p>
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::WorkloadJiraConfigurationInput> {
+        self.jira_configuration.as_ref()
+    }
 }
 impl CreateWorkloadInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
@@ -293,6 +299,7 @@ pub struct CreateWorkloadInputBuilder {
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) review_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::WorkloadJiraConfigurationInput>,
 }
 impl CreateWorkloadInputBuilder {
     /// <p>The name of the workload.</p>
@@ -808,6 +815,20 @@ impl CreateWorkloadInputBuilder {
     pub fn get_review_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.review_template_arns
     }
+    /// <p>Jira configuration settings when creating a workload.</p>
+    pub fn jira_configuration(mut self, input: crate::types::WorkloadJiraConfigurationInput) -> Self {
+        self.jira_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Jira configuration settings when creating a workload.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::WorkloadJiraConfigurationInput>) -> Self {
+        self.jira_configuration = input;
+        self
+    }
+    /// <p>Jira configuration settings when creating a workload.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::WorkloadJiraConfigurationInput> {
+        &self.jira_configuration
+    }
     /// Consumes the builder and constructs a [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
     pub fn build(
         self,
@@ -832,6 +853,7 @@ impl CreateWorkloadInputBuilder {
             applications: self.applications,
             profile_arns: self.profile_arns,
             review_template_arns: self.review_template_arns,
+            jira_configuration: self.jira_configuration,
         })
     }
 }

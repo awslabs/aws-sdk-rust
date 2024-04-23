@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIndexInput {
-    /// <p>The identifier of the Amazon Q application using the index.</p>
+    /// <p>The identifier of the Amazon Q Business application using the index.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>A name for the Amazon Q index.</p>
+    /// <p>A name for the Amazon Q Business index.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>A description for the Amazon Q index.</p>
+    /// <p>A description for the Amazon Q Business index.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -17,15 +17,15 @@ pub struct CreateIndexInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateIndexInput {
-    /// <p>The identifier of the Amazon Q application using the index.</p>
+    /// <p>The identifier of the Amazon Q Business application using the index.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>A name for the Amazon Q index.</p>
+    /// <p>A name for the Amazon Q Business index.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>A description for the Amazon Q index.</p>
+    /// <p>A description for the Amazon Q Business index.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -63,47 +63,47 @@ pub struct CreateIndexInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateIndexInputBuilder {
-    /// <p>The identifier of the Amazon Q application using the index.</p>
+    /// <p>The identifier of the Amazon Q Business application using the index.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application using the index.</p>
+    /// <p>The identifier of the Amazon Q Business application using the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application using the index.</p>
+    /// <p>The identifier of the Amazon Q Business application using the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>A name for the Amazon Q index.</p>
+    /// <p>A name for the Amazon Q Business index.</p>
     /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the Amazon Q index.</p>
+    /// <p>A name for the Amazon Q Business index.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>A name for the Amazon Q index.</p>
+    /// <p>A name for the Amazon Q Business index.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>A description for the Amazon Q index.</p>
+    /// <p>A description for the Amazon Q Business index.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description for the Amazon Q index.</p>
+    /// <p>A description for the Amazon Q Business index.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description for the Amazon Q index.</p>
+    /// <p>A description for the Amazon Q Business index.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

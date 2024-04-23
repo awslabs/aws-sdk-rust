@@ -3,7 +3,7 @@ pub use crate::operation::delete_fleets::_delete_fleets_output::DeleteFleetsOutp
 
 pub use crate::operation::delete_fleets::_delete_fleets_input::DeleteFleetsInputBuilder;
 
-impl DeleteFleetsInputBuilder {
+impl crate::operation::delete_fleets::builders::DeleteFleetsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -25,13 +25,17 @@ impl DeleteFleetsInputBuilder {
 /// <p>Deletes the specified EC2 Fleets.</p>
 /// <p>After you delete an EC2 Fleet, it launches no new instances.</p>
 /// <p>You must also specify whether a deleted EC2 Fleet should terminate its instances. If you choose to terminate the instances, the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state, and the instances continue to run until they are interrupted or you terminate them manually.</p>
-/// <p>For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet is deleted. A deleted <code>instant</code> fleet with running instances is not supported.</p>
+/// <p>For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet is deleted. Up to 1000 instances can be terminated in a single request to delete <code>instant</code> fleets. A deleted <code>instant</code> fleet with running instances is not supported.</p>
 /// <p class="title"><b>Restrictions</b></p>
 /// <ul>
 /// <li>
-/// <p>You can delete up to 25 <code>instant</code> fleets in a single request. If you exceed this number, no <code>instant</code> fleets are deleted and an error is returned. There is no restriction on the number of fleets of type <code>maintain</code> or <code>request</code> that can be deleted in a single request.</p></li>
+/// <p>You can delete up to 25 fleets of type <code>instant</code> in a single request.</p></li>
 /// <li>
-/// <p>Up to 1000 instances can be terminated in a single request to delete <code>instant</code> fleets.</p></li>
+/// <p>You can delete up to 100 fleets of type <code>maintain</code> or <code>request</code> in a single request.</p></li>
+/// <li>
+/// <p>You can delete up to 125 fleets in a single request, provided you do not exceed the quota for each fleet type, as specified above.</p></li>
+/// <li>
+/// <p>If you exceed the specified number of fleets to delete, no fleets are deleted.</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Delete an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,12 +114,12 @@ impl DeleteFleetsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -133,21 +137,25 @@ impl DeleteFleetsFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    ///
     /// Appends an item to `FleetIds`.
     ///
     /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
     ///
     /// <p>The IDs of the EC2 Fleets.</p>
+    /// <p>Constraints: In a single request, you can specify up to 25 <code>instant</code> fleet IDs and up to 100 <code>maintain</code> or <code>request</code> fleet IDs.</p>
     pub fn fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_ids(input.into());
         self
     }
     /// <p>The IDs of the EC2 Fleets.</p>
+    /// <p>Constraints: In a single request, you can specify up to 25 <code>instant</code> fleet IDs and up to 100 <code>maintain</code> or <code>request</code> fleet IDs.</p>
     pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fleet_ids(input);
         self
     }
     /// <p>The IDs of the EC2 Fleets.</p>
+    /// <p>Constraints: In a single request, you can specify up to 25 <code>instant</code> fleet IDs and up to 100 <code>maintain</code> or <code>request</code> fleet IDs.</p>
     pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_fleet_ids()
     }

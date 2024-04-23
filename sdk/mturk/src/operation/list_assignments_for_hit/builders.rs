@@ -3,7 +3,7 @@ pub use crate::operation::list_assignments_for_hit::_list_assignments_for_hit_ou
 
 pub use crate::operation::list_assignments_for_hit::_list_assignments_for_hit_input::ListAssignmentsForHitInputBuilder;
 
-impl ListAssignmentsForHitInputBuilder {
+impl crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl ListAssignmentsForHITFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -160,6 +160,7 @@ impl ListAssignmentsForHITFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    ///
     /// Appends an item to `AssignmentStatuses`.
     ///
     /// To override the contents of this collection use [`set_assignment_statuses`](Self::set_assignment_statuses).

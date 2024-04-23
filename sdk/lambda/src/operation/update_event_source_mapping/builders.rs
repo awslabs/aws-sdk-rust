@@ -3,7 +3,7 @@ pub use crate::operation::update_event_source_mapping::_update_event_source_mapp
 
 pub use crate::operation::update_event_source_mapping::_update_event_source_mapping_input::UpdateEventSourceMappingInputBuilder;
 
-impl UpdateEventSourceMappingInputBuilder {
+impl crate::operation::update_event_source_mapping::builders::UpdateEventSourceMappingInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -146,12 +146,12 @@ impl UpdateEventSourceMappingFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -402,6 +402,7 @@ impl UpdateEventSourceMappingFluentBuilder {
     pub fn get_parallelization_factor(&self) -> &::std::option::Option<i32> {
         self.inner.get_parallelization_factor()
     }
+    ///
     /// Appends an item to `SourceAccessConfigurations`.
     ///
     /// To override the contents of this collection use [`set_source_access_configurations`](Self::set_source_access_configurations).
@@ -437,6 +438,7 @@ impl UpdateEventSourceMappingFluentBuilder {
     pub fn get_tumbling_window_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_tumbling_window_in_seconds()
     }
+    ///
     /// Appends an item to `FunctionResponseTypes`.
     ///
     /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).

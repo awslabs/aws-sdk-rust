@@ -10,6 +10,8 @@ pub struct SourceCloudProperties {
     pub origin_region: ::std::option::Option<::std::string::String>,
     /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
     pub origin_availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the source Outpost</p>
+    pub source_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl SourceCloudProperties {
     /// <p>AWS Account ID for an EC2-originated Source Server.</p>
@@ -23,6 +25,10 @@ impl SourceCloudProperties {
     /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
     pub fn origin_availability_zone(&self) -> ::std::option::Option<&str> {
         self.origin_availability_zone.as_deref()
+    }
+    /// <p>The ARN of the source Outpost</p>
+    pub fn source_outpost_arn(&self) -> ::std::option::Option<&str> {
+        self.source_outpost_arn.as_deref()
     }
 }
 impl SourceCloudProperties {
@@ -39,6 +45,7 @@ pub struct SourceCloudPropertiesBuilder {
     pub(crate) origin_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_region: ::std::option::Option<::std::string::String>,
     pub(crate) origin_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) source_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl SourceCloudPropertiesBuilder {
     /// <p>AWS Account ID for an EC2-originated Source Server.</p>
@@ -83,12 +90,27 @@ impl SourceCloudPropertiesBuilder {
     pub fn get_origin_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin_availability_zone
     }
+    /// <p>The ARN of the source Outpost</p>
+    pub fn source_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_outpost_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the source Outpost</p>
+    pub fn set_source_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_outpost_arn = input;
+        self
+    }
+    /// <p>The ARN of the source Outpost</p>
+    pub fn get_source_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_outpost_arn
+    }
     /// Consumes the builder and constructs a [`SourceCloudProperties`](crate::types::SourceCloudProperties).
     pub fn build(self) -> crate::types::SourceCloudProperties {
         crate::types::SourceCloudProperties {
             origin_account_id: self.origin_account_id,
             origin_region: self.origin_region,
             origin_availability_zone: self.origin_availability_zone,
+            source_outpost_arn: self.source_outpost_arn,
         }
     }
 }

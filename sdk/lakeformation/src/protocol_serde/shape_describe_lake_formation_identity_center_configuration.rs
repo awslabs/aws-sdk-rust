@@ -177,6 +177,18 @@ pub(crate) fn de_describe_lake_formation_identity_center_configuration(
                             .transpose()?,
                     );
                 }
+                "ResourceShare" => {
+                    builder = builder.set_resource_share(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ShareRecipients" => {
+                    builder = builder.set_share_recipients(crate::protocol_serde::shape_data_lake_principal_list::de_data_lake_principal_list(
+                        tokens,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

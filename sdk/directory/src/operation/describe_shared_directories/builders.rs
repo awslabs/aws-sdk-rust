@@ -3,7 +3,7 @@ pub use crate::operation::describe_shared_directories::_describe_shared_director
 
 pub use crate::operation::describe_shared_directories::_describe_shared_directories_input::DescribeSharedDirectoriesInputBuilder;
 
-impl DescribeSharedDirectoriesInputBuilder {
+impl crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl DescribeSharedDirectoriesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -128,6 +128,7 @@ impl DescribeSharedDirectoriesFluentBuilder {
     pub fn get_owner_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_owner_directory_id()
     }
+    ///
     /// Appends an item to `SharedDirectoryIds`.
     ///
     /// To override the contents of this collection use [`set_shared_directory_ids`](Self::set_shared_directory_ids).

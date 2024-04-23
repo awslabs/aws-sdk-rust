@@ -3,7 +3,7 @@ pub use crate::operation::get_asset_property_value_history::_get_asset_property_
 
 pub use crate::operation::get_asset_property_value_history::_get_asset_property_value_history_input::GetAssetPropertyValueHistoryInputBuilder;
 
-impl GetAssetPropertyValueHistoryInputBuilder {
+impl crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -106,12 +106,12 @@ impl GetAssetPropertyValueHistoryFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -191,6 +191,7 @@ impl GetAssetPropertyValueHistoryFluentBuilder {
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_date()
     }
+    ///
     /// Appends an item to `qualities`.
     ///
     /// To override the contents of this collection use [`set_qualities`](Self::set_qualities).

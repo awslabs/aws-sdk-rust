@@ -34,6 +34,8 @@ pub struct RecoveryInstance {
     pub origin_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The version of the DRS agent installed on the recovery instance</p>
     pub agent_version: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the source Outpost</p>
+    pub source_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstance {
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
@@ -96,6 +98,10 @@ impl RecoveryInstance {
     pub fn agent_version(&self) -> ::std::option::Option<&str> {
         self.agent_version.as_deref()
     }
+    /// <p>The ARN of the source Outpost</p>
+    pub fn source_outpost_arn(&self) -> ::std::option::Option<&str> {
+        self.source_outpost_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for RecoveryInstance {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -115,6 +121,7 @@ impl ::std::fmt::Debug for RecoveryInstance {
         formatter.field("origin_environment", &self.origin_environment);
         formatter.field("origin_availability_zone", &self.origin_availability_zone);
         formatter.field("agent_version", &self.agent_version);
+        formatter.field("source_outpost_arn", &self.source_outpost_arn);
         formatter.finish()
     }
 }
@@ -144,6 +151,7 @@ pub struct RecoveryInstanceBuilder {
     pub(crate) origin_environment: ::std::option::Option<crate::types::OriginEnvironment>,
     pub(crate) origin_availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
+    pub(crate) source_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceBuilder {
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
@@ -362,6 +370,20 @@ impl RecoveryInstanceBuilder {
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_version
     }
+    /// <p>The ARN of the source Outpost</p>
+    pub fn source_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_outpost_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the source Outpost</p>
+    pub fn set_source_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_outpost_arn = input;
+        self
+    }
+    /// <p>The ARN of the source Outpost</p>
+    pub fn get_source_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_outpost_arn
+    }
     /// Consumes the builder and constructs a [`RecoveryInstance`](crate::types::RecoveryInstance).
     pub fn build(self) -> crate::types::RecoveryInstance {
         crate::types::RecoveryInstance {
@@ -380,6 +402,7 @@ impl RecoveryInstanceBuilder {
             origin_environment: self.origin_environment,
             origin_availability_zone: self.origin_availability_zone,
             agent_version: self.agent_version,
+            source_outpost_arn: self.source_outpost_arn,
         }
     }
 }
@@ -401,6 +424,7 @@ impl ::std::fmt::Debug for RecoveryInstanceBuilder {
         formatter.field("origin_environment", &self.origin_environment);
         formatter.field("origin_availability_zone", &self.origin_availability_zone);
         formatter.field("agent_version", &self.agent_version);
+        formatter.field("source_outpost_arn", &self.source_outpost_arn);
         formatter.finish()
     }
 }

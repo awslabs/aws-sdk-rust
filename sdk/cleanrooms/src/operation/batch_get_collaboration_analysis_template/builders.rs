@@ -3,7 +3,7 @@ pub use crate::operation::batch_get_collaboration_analysis_template::_batch_get_
 
 pub use crate::operation::batch_get_collaboration_analysis_template::_batch_get_collaboration_analysis_template_input::BatchGetCollaborationAnalysisTemplateInputBuilder;
 
-impl BatchGetCollaborationAnalysisTemplateInputBuilder {
+impl crate::operation::batch_get_collaboration_analysis_template::builders::BatchGetCollaborationAnalysisTemplateInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl BatchGetCollaborationAnalysisTemplateFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -125,6 +125,7 @@ impl BatchGetCollaborationAnalysisTemplateFluentBuilder {
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_collaboration_identifier()
     }
+    ///
     /// Appends an item to `analysisTemplateArns`.
     ///
     /// To override the contents of this collection use [`set_analysis_template_arns`](Self::set_analysis_template_arns).

@@ -23,7 +23,7 @@ pub struct StartQueryInput {
     /// <p>The <code>FilterParameters</code> field that you use with Amazon CloudWatch Internet Monitor queries is a string the defines how you want a query to be filtered. The filter parameters that you can specify depend on the query type, since each query type returns a different set of Internet Monitor data.</p>
     /// <p>For more information about specifying filter parameters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html">Using the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub filter_parameters: ::std::option::Option<::std::vec::Vec<crate::types::FilterParameter>>,
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub linked_account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartQueryInput {
@@ -59,7 +59,7 @@ impl StartQueryInput {
     pub fn filter_parameters(&self) -> &[crate::types::FilterParameter] {
         self.filter_parameters.as_deref().unwrap_or_default()
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn linked_account_id(&self) -> ::std::option::Option<&str> {
         self.linked_account_id.as_deref()
     }
@@ -193,17 +193,17 @@ impl StartQueryInputBuilder {
     pub fn get_filter_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterParameter>> {
         &self.filter_parameters
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn linked_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.linked_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn set_linked_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.linked_account_id = input;
         self
     }
-    /// <p>TBD</p>
+    /// <p>The account ID for an account that you've set up cross-account sharing for in Amazon CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
     pub fn get_linked_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.linked_account_id
     }

@@ -3,7 +3,7 @@ pub use crate::operation::send_automation_signal::_send_automation_signal_output
 
 pub use crate::operation::send_automation_signal::_send_automation_signal_input::SendAutomationSignalInputBuilder;
 
-impl SendAutomationSignalInputBuilder {
+impl crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl SendAutomationSignalFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -136,6 +136,7 @@ impl SendAutomationSignalFluentBuilder {
     pub fn get_signal_type(&self) -> &::std::option::Option<crate::types::SignalType> {
         self.inner.get_signal_type()
     }
+    ///
     /// Adds a key-value pair to `Payload`.
     ///
     /// To override the contents of this collection use [`set_payload`](Self::set_payload).

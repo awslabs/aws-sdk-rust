@@ -3,7 +3,7 @@ pub use crate::operation::modify_instance_attribute::_modify_instance_attribute_
 
 pub use crate::operation::modify_instance_attribute::_modify_instance_attribute_input::ModifyInstanceAttributeInputBuilder;
 
-impl ModifyInstanceAttributeInputBuilder {
+impl crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl ModifyInstanceAttributeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -144,6 +144,7 @@ impl ModifyInstanceAttributeFluentBuilder {
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {
         self.inner.get_attribute()
     }
+    ///
     /// Appends an item to `BlockDeviceMappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
@@ -227,6 +228,7 @@ impl ModifyInstanceAttributeFluentBuilder {
     pub fn get_ena_support(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_ena_support()
     }
+    ///
     /// Appends an item to `Groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).

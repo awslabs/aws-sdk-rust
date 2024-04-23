@@ -3,7 +3,7 @@ pub use crate::operation::update_service::_update_service_output::UpdateServiceO
 
 pub use crate::operation::update_service::_update_service_input::UpdateServiceInputBuilder;
 
-impl UpdateServiceInputBuilder {
+impl crate::operation::update_service::builders::UpdateServiceInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -147,12 +147,12 @@ impl UpdateServiceFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -212,6 +212,7 @@ impl UpdateServiceFluentBuilder {
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_definition()
     }
+    ///
     /// Appends an item to `capacityProviderStrategy`.
     ///
     /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
@@ -279,6 +280,7 @@ impl UpdateServiceFluentBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         self.inner.get_network_configuration()
     }
+    ///
     /// Appends an item to `placementConstraints`.
     ///
     /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
@@ -300,6 +302,7 @@ impl UpdateServiceFluentBuilder {
     pub fn get_placement_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>> {
         self.inner.get_placement_constraints()
     }
+    ///
     /// Appends an item to `placementStrategy`.
     ///
     /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
@@ -397,6 +400,7 @@ impl UpdateServiceFluentBuilder {
     pub fn get_enable_ecs_managed_tags(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_ecs_managed_tags()
     }
+    ///
     /// Appends an item to `loadBalancers`.
     ///
     /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
@@ -447,6 +451,7 @@ impl UpdateServiceFluentBuilder {
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
         self.inner.get_propagate_tags()
     }
+    ///
     /// Appends an item to `serviceRegistries`.
     ///
     /// To override the contents of this collection use [`set_service_registries`](Self::set_service_registries).
@@ -488,6 +493,7 @@ impl UpdateServiceFluentBuilder {
     pub fn get_service_connect_configuration(&self) -> &::std::option::Option<crate::types::ServiceConnectConfiguration> {
         self.inner.get_service_connect_configuration()
     }
+    ///
     /// Appends an item to `volumeConfigurations`.
     ///
     /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).

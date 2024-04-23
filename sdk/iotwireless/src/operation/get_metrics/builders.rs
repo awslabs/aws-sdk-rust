@@ -3,7 +3,7 @@ pub use crate::operation::get_metrics::_get_metrics_output::GetMetricsOutputBuil
 
 pub use crate::operation::get_metrics::_get_metrics_input::GetMetricsInputBuilder;
 
-impl GetMetricsInputBuilder {
+impl crate::operation::get_metrics::builders::GetMetricsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -22,7 +22,7 @@ impl GetMetricsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMetrics`.
 ///
-/// <p>Get metrics.</p>
+/// <p>Get the summary metrics for this AWS account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMetricsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,30 +99,31 @@ impl GetMetricsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `SummaryMetricQueries`.
     ///
     /// To override the contents of this collection use [`set_summary_metric_queries`](Self::set_summary_metric_queries).
     ///
-    /// <p>The list of queries to retrieve summary metrics.</p>
+    /// <p>The list of queries to retrieve the summary metrics.</p>
     pub fn summary_metric_queries(mut self, input: crate::types::SummaryMetricQuery) -> Self {
         self.inner = self.inner.summary_metric_queries(input);
         self
     }
-    /// <p>The list of queries to retrieve summary metrics.</p>
+    /// <p>The list of queries to retrieve the summary metrics.</p>
     pub fn set_summary_metric_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQuery>>) -> Self {
         self.inner = self.inner.set_summary_metric_queries(input);
         self
     }
-    /// <p>The list of queries to retrieve summary metrics.</p>
+    /// <p>The list of queries to retrieve the summary metrics.</p>
     pub fn get_summary_metric_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SummaryMetricQuery>> {
         self.inner.get_summary_metric_queries()
     }

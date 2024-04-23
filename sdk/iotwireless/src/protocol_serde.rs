@@ -563,6 +563,8 @@ pub(crate) mod shape_lo_ra_wan_join_resource_type_event_configuration;
 
 pub(crate) mod shape_lo_ra_wan_multicast_metadata;
 
+pub(crate) mod shape_lo_ra_wan_public_gateway_metadata_list;
+
 pub(crate) mod shape_lo_ra_wan_send_data_to_device;
 
 pub(crate) mod shape_lo_ra_wan_update_gateway_task_create;
@@ -652,6 +654,8 @@ pub(crate) mod shape_join_eui_range;
 pub(crate) mod shape_lo_ra_wan_gateway_metadata;
 
 pub(crate) mod shape_lo_ra_wan_list_device;
+
+pub(crate) mod shape_lo_ra_wan_public_gateway_metadata;
 
 pub(crate) mod shape_lo_ra_wan_update_gateway_task_entry;
 

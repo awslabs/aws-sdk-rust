@@ -3,7 +3,7 @@ pub use crate::operation::put_gateway_response::_put_gateway_response_output::Pu
 
 pub use crate::operation::put_gateway_response::_put_gateway_response_input::PutGatewayResponseInputBuilder;
 
-impl PutGatewayResponseInputBuilder {
+impl crate::operation::put_gateway_response::builders::PutGatewayResponseInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutGatewayResponseFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -150,6 +150,7 @@ impl PutGatewayResponseFluentBuilder {
     pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_status_code()
     }
+    ///
     /// Adds a key-value pair to `responseParameters`.
     ///
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
@@ -175,6 +176,7 @@ impl PutGatewayResponseFluentBuilder {
     pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_response_parameters()
     }
+    ///
     /// Adds a key-value pair to `responseTemplates`.
     ///
     /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).

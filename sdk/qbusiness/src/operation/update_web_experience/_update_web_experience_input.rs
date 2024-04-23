@@ -3,43 +3,43 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWebExperienceInput {
-    /// <p>The identifier of the Amazon Q application attached to the web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub web_experience_id: ::std::option::Option<::std::string::String>,
-    /// <p>The authentication configuration of the Amazon Q web experience.</p>
+    /// <p>The authentication configuration of the Amazon Q Business web experience.</p>
     pub authentication_configuration: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>,
-    /// <p>The title of the Amazon Q web experience.</p>
+    /// <p>The title of the Amazon Q Business web experience.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>The subtitle of the Amazon Q web experience.</p>
+    /// <p>The subtitle of the Amazon Q Business web experience.</p>
     pub subtitle: ::std::option::Option<::std::string::String>,
-    /// <p>A customized welcome message for an end user in an Amazon Q web experience.</p>
+    /// <p>A customized welcome message for an end user in an Amazon Q Business web experience.</p>
     pub welcome_message: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether sample prompts are enabled in the web experience for an end user.</p>
     pub sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
 }
 impl UpdateWebExperienceInput {
-    /// <p>The identifier of the Amazon Q application attached to the web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub fn web_experience_id(&self) -> ::std::option::Option<&str> {
         self.web_experience_id.as_deref()
     }
-    /// <p>The authentication configuration of the Amazon Q web experience.</p>
+    /// <p>The authentication configuration of the Amazon Q Business web experience.</p>
     pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::WebExperienceAuthConfiguration> {
         self.authentication_configuration.as_ref()
     }
-    /// <p>The title of the Amazon Q web experience.</p>
+    /// <p>The title of the Amazon Q Business web experience.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The subtitle of the Amazon Q web experience.</p>
+    /// <p>The subtitle of the Amazon Q Business web experience.</p>
     pub fn subtitle(&self) -> ::std::option::Option<&str> {
         self.subtitle.as_deref()
     }
-    /// <p>A customized welcome message for an end user in an Amazon Q web experience.</p>
+    /// <p>A customized welcome message for an end user in an Amazon Q Business web experience.</p>
     pub fn welcome_message(&self) -> ::std::option::Option<&str> {
         self.welcome_message.as_deref()
     }
@@ -68,89 +68,89 @@ pub struct UpdateWebExperienceInputBuilder {
     pub(crate) sample_prompts_control_mode: ::std::option::Option<crate::types::WebExperienceSamplePromptsControlMode>,
 }
 impl UpdateWebExperienceInputBuilder {
-    /// <p>The identifier of the Amazon Q application attached to the web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q application attached to the web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q application attached to the web experience.</p>
+    /// <p>The identifier of the Amazon Q Business application attached to the web experience.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     /// This field is required.
     pub fn web_experience_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_experience_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub fn set_web_experience_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_experience_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Q web experience.</p>
+    /// <p>The identifier of the Amazon Q Business web experience.</p>
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.web_experience_id
     }
-    /// <p>The authentication configuration of the Amazon Q web experience.</p>
+    /// <p>The authentication configuration of the Amazon Q Business web experience.</p>
     pub fn authentication_configuration(mut self, input: crate::types::WebExperienceAuthConfiguration) -> Self {
         self.authentication_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authentication configuration of the Amazon Q web experience.</p>
+    /// <p>The authentication configuration of the Amazon Q Business web experience.</p>
     pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>) -> Self {
         self.authentication_configuration = input;
         self
     }
-    /// <p>The authentication configuration of the Amazon Q web experience.</p>
+    /// <p>The authentication configuration of the Amazon Q Business web experience.</p>
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::WebExperienceAuthConfiguration> {
         &self.authentication_configuration
     }
-    /// <p>The title of the Amazon Q web experience.</p>
+    /// <p>The title of the Amazon Q Business web experience.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The title of the Amazon Q web experience.</p>
+    /// <p>The title of the Amazon Q Business web experience.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
-    /// <p>The title of the Amazon Q web experience.</p>
+    /// <p>The title of the Amazon Q Business web experience.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>The subtitle of the Amazon Q web experience.</p>
+    /// <p>The subtitle of the Amazon Q Business web experience.</p>
     pub fn subtitle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subtitle = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The subtitle of the Amazon Q web experience.</p>
+    /// <p>The subtitle of the Amazon Q Business web experience.</p>
     pub fn set_subtitle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subtitle = input;
         self
     }
-    /// <p>The subtitle of the Amazon Q web experience.</p>
+    /// <p>The subtitle of the Amazon Q Business web experience.</p>
     pub fn get_subtitle(&self) -> &::std::option::Option<::std::string::String> {
         &self.subtitle
     }
-    /// <p>A customized welcome message for an end user in an Amazon Q web experience.</p>
+    /// <p>A customized welcome message for an end user in an Amazon Q Business web experience.</p>
     pub fn welcome_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.welcome_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A customized welcome message for an end user in an Amazon Q web experience.</p>
+    /// <p>A customized welcome message for an end user in an Amazon Q Business web experience.</p>
     pub fn set_welcome_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.welcome_message = input;
         self
     }
-    /// <p>A customized welcome message for an end user in an Amazon Q web experience.</p>
+    /// <p>A customized welcome message for an end user in an Amazon Q Business web experience.</p>
     pub fn get_welcome_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.welcome_message
     }

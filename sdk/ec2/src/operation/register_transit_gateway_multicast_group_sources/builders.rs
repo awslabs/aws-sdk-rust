@@ -3,7 +3,7 @@ pub use crate::operation::register_transit_gateway_multicast_group_sources::_reg
 
 pub use crate::operation::register_transit_gateway_multicast_group_sources::_register_transit_gateway_multicast_group_sources_input::RegisterTransitGatewayMulticastGroupSourcesInputBuilder;
 
-impl RegisterTransitGatewayMulticastGroupSourcesInputBuilder {
+impl crate::operation::register_transit_gateway_multicast_group_sources::builders::RegisterTransitGatewayMulticastGroupSourcesInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -107,12 +107,12 @@ impl RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -144,6 +144,7 @@ impl RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {
     pub fn get_group_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_ip_address()
     }
+    ///
     /// Appends an item to `NetworkInterfaceIds`.
     ///
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).

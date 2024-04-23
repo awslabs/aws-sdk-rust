@@ -7,11 +7,17 @@ pub use crate::types::_address::AddressBuilder;
 
 pub use crate::types::_outpost::OutpostBuilder;
 
+pub use crate::types::_capacity_task_failure::CapacityTaskFailureBuilder;
+
+pub use crate::types::_instance_type_capacity::InstanceTypeCapacityBuilder;
+
 pub use crate::types::_order_summary::OrderSummaryBuilder;
 
 pub use crate::types::_catalog_item::CatalogItemBuilder;
 
 pub use crate::types::_ec2_capacity::Ec2CapacityBuilder;
+
+pub use crate::types::_capacity_task_summary::CapacityTaskSummaryBuilder;
 
 pub use crate::types::_asset_info::AssetInfoBuilder;
 

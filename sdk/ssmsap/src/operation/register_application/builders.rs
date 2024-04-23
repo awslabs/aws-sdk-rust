@@ -3,7 +3,7 @@ pub use crate::operation::register_application::_register_application_output::Re
 
 pub use crate::operation::register_application::_register_application_input::RegisterApplicationInputBuilder;
 
-impl RegisterApplicationInputBuilder {
+impl crate::operation::register_application::builders::RegisterApplicationInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -102,12 +102,12 @@ impl RegisterApplicationFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -139,6 +139,7 @@ impl RegisterApplicationFluentBuilder {
     pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
         self.inner.get_application_type()
     }
+    ///
     /// Appends an item to `Instances`.
     ///
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
@@ -185,6 +186,7 @@ impl RegisterApplicationFluentBuilder {
     pub fn get_sid(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sid()
     }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -203,6 +205,7 @@ impl RegisterApplicationFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
     /// Appends an item to `Credentials`.
     ///
     /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).

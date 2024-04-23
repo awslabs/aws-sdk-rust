@@ -3,7 +3,7 @@ pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_output
 
 pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_input::CreateScheduledAuditInputBuilder;
 
-impl CreateScheduledAuditInputBuilder {
+impl crate::operation::create_scheduled_audit::builders::CreateScheduledAuditInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateScheduledAuditFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -151,6 +151,7 @@ impl CreateScheduledAuditFluentBuilder {
     pub fn get_day_of_week(&self) -> &::std::option::Option<crate::types::DayOfWeek> {
         self.inner.get_day_of_week()
     }
+    ///
     /// Appends an item to `targetCheckNames`.
     ///
     /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
@@ -183,6 +184,7 @@ impl CreateScheduledAuditFluentBuilder {
     pub fn get_scheduled_audit_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scheduled_audit_name()
     }
+    ///
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

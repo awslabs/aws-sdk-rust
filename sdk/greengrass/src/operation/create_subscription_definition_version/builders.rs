@@ -3,7 +3,7 @@ pub use crate::operation::create_subscription_definition_version::_create_subscr
 
 pub use crate::operation::create_subscription_definition_version::_create_subscription_definition_version_input::CreateSubscriptionDefinitionVersionInputBuilder;
 
-impl CreateSubscriptionDefinitionVersionInputBuilder {
+impl crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl CreateSubscriptionDefinitionVersionFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -137,6 +137,7 @@ impl CreateSubscriptionDefinitionVersionFluentBuilder {
     pub fn get_subscription_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscription_definition_id()
     }
+    ///
     /// Appends an item to `Subscriptions`.
     ///
     /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).

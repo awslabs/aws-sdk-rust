@@ -3,7 +3,7 @@ pub use crate::operation::create_network_insights_access_scope::_create_network_
 
 pub use crate::operation::create_network_insights_access_scope::_create_network_insights_access_scope_input::CreateNetworkInsightsAccessScopeInputBuilder;
 
-impl CreateNetworkInsightsAccessScopeInputBuilder {
+impl crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,15 +100,16 @@ impl CreateNetworkInsightsAccessScopeFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
+    ///
     /// Appends an item to `MatchPaths`.
     ///
     /// To override the contents of this collection use [`set_match_paths`](Self::set_match_paths).
@@ -127,6 +128,7 @@ impl CreateNetworkInsightsAccessScopeFluentBuilder {
     pub fn get_match_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>> {
         self.inner.get_match_paths()
     }
+    ///
     /// Appends an item to `ExcludePaths`.
     ///
     /// To override the contents of this collection use [`set_exclude_paths`](Self::set_exclude_paths).
@@ -159,6 +161,7 @@ impl CreateNetworkInsightsAccessScopeFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).

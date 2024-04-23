@@ -3,7 +3,7 @@ pub use crate::operation::run_job_flow::_run_job_flow_output::RunJobFlowOutputBu
 
 pub use crate::operation::run_job_flow::_run_job_flow_input::RunJobFlowInputBuilder;
 
-impl RunJobFlowInputBuilder {
+impl crate::operation::run_job_flow::builders::RunJobFlowInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -105,12 +105,12 @@ impl RunJobFlowFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -212,6 +212,7 @@ impl RunJobFlowFluentBuilder {
     pub fn get_instances(&self) -> &::std::option::Option<crate::types::JobFlowInstancesConfig> {
         self.inner.get_instances()
     }
+    ///
     /// Appends an item to `Steps`.
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
@@ -230,6 +231,7 @@ impl RunJobFlowFluentBuilder {
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepConfig>> {
         self.inner.get_steps()
     }
+    ///
     /// Appends an item to `BootstrapActions`.
     ///
     /// To override the contents of this collection use [`set_bootstrap_actions`](Self::set_bootstrap_actions).
@@ -248,6 +250,7 @@ impl RunJobFlowFluentBuilder {
     pub fn get_bootstrap_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionConfig>> {
         self.inner.get_bootstrap_actions()
     }
+    ///
     /// Appends an item to `SupportedProducts`.
     ///
     /// To override the contents of this collection use [`set_supported_products`](Self::set_supported_products).
@@ -293,6 +296,7 @@ impl RunJobFlowFluentBuilder {
     pub fn get_supported_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_supported_products()
     }
+    ///
     /// Appends an item to `NewSupportedProducts`.
     ///
     /// To override the contents of this collection use [`set_new_supported_products`](Self::set_new_supported_products).
@@ -374,6 +378,7 @@ impl RunJobFlowFluentBuilder {
     pub fn get_new_supported_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedProductConfig>> {
         self.inner.get_new_supported_products()
     }
+    ///
     /// Appends an item to `Applications`.
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
@@ -392,6 +397,7 @@ impl RunJobFlowFluentBuilder {
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         self.inner.get_applications()
     }
+    ///
     /// Appends an item to `Configurations`.
     ///
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
@@ -464,6 +470,7 @@ impl RunJobFlowFluentBuilder {
     pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_role()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -611,6 +618,7 @@ impl RunJobFlowFluentBuilder {
     pub fn get_managed_scaling_policy(&self) -> &::std::option::Option<crate::types::ManagedScalingPolicy> {
         self.inner.get_managed_scaling_policy()
     }
+    ///
     /// Appends an item to `PlacementGroupConfigs`.
     ///
     /// To override the contents of this collection use [`set_placement_group_configs`](Self::set_placement_group_configs).

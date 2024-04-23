@@ -3,7 +3,7 @@ pub use crate::operation::list_voice_connector_termination_credentials::_list_vo
 
 pub use crate::operation::list_voice_connector_termination_credentials::_list_voice_connector_termination_credentials_input::ListVoiceConnectorTerminationCredentialsInputBuilder;
 
-impl ListVoiceConnectorTerminationCredentialsInputBuilder {
+impl crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -103,12 +103,12 @@ impl ListVoiceConnectorTerminationCredentialsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

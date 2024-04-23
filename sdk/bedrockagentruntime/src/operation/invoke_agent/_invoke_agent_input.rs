@@ -169,7 +169,6 @@ impl InvokeAgentInputBuilder {
         &self.enable_trace
     }
     /// <p>The prompt text to send the agent.</p>
-    /// This field is required.
     pub fn input_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_text = ::std::option::Option::Some(input.into());
         self

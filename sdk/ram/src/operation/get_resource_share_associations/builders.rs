@@ -3,7 +3,7 @@ pub use crate::operation::get_resource_share_associations::_get_resource_share_a
 
 pub use crate::operation::get_resource_share_associations::_get_resource_share_associations_input::GetResourceShareAssociationsInputBuilder;
 
-impl GetResourceShareAssociationsInputBuilder {
+impl crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl GetResourceShareAssociationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -146,6 +146,7 @@ impl GetResourceShareAssociationsFluentBuilder {
     pub fn get_association_type(&self) -> &::std::option::Option<crate::types::ResourceShareAssociationType> {
         self.inner.get_association_type()
     }
+    ///
     /// Appends an item to `resourceShareArns`.
     ///
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).

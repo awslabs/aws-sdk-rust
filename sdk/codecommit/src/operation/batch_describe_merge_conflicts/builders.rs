@@ -3,7 +3,7 @@ pub use crate::operation::batch_describe_merge_conflicts::_batch_describe_merge_
 
 pub use crate::operation::batch_describe_merge_conflicts::_batch_describe_merge_conflicts_input::BatchDescribeMergeConflictsInputBuilder;
 
-impl BatchDescribeMergeConflictsInputBuilder {
+impl crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl BatchDescribeMergeConflictsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -192,6 +192,7 @@ impl BatchDescribeMergeConflictsFluentBuilder {
     pub fn get_max_conflict_files(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_conflict_files()
     }
+    ///
     /// Appends an item to `filePaths`.
     ///
     /// To override the contents of this collection use [`set_file_paths`](Self::set_file_paths).

@@ -3,7 +3,7 @@ pub use crate::operation::put_account_details::_put_account_details_output::PutA
 
 pub use crate::operation::put_account_details::_put_account_details_input::PutAccountDetailsInputBuilder;
 
-impl PutAccountDetailsInputBuilder {
+impl crate::operation::put_account_details::builders::PutAccountDetailsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl PutAccountDetailsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -164,6 +164,7 @@ impl PutAccountDetailsFluentBuilder {
     pub fn get_use_case_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_use_case_description()
     }
+    ///
     /// Appends an item to `AdditionalContactEmailAddresses`.
     ///
     /// To override the contents of this collection use [`set_additional_contact_email_addresses`](Self::set_additional_contact_email_addresses).

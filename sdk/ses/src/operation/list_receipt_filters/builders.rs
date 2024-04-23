@@ -3,7 +3,7 @@ pub use crate::operation::list_receipt_filters::_list_receipt_filters_output::Li
 
 pub use crate::operation::list_receipt_filters::_list_receipt_filters_input::ListReceiptFiltersInputBuilder;
 
-impl ListReceiptFiltersInputBuilder {
+impl crate::operation::list_receipt_filters::builders::ListReceiptFiltersInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -101,12 +101,12 @@ impl ListReceiptFiltersFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

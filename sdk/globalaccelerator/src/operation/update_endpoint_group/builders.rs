@@ -3,7 +3,7 @@ pub use crate::operation::update_endpoint_group::_update_endpoint_group_output::
 
 pub use crate::operation::update_endpoint_group::_update_endpoint_group_input::UpdateEndpointGroupInputBuilder;
 
-impl UpdateEndpointGroupInputBuilder {
+impl crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateEndpointGroupFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -122,6 +122,7 @@ impl UpdateEndpointGroupFluentBuilder {
     pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_group_arn()
     }
+    ///
     /// Appends an item to `EndpointConfigurations`.
     ///
     /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
@@ -230,6 +231,7 @@ impl UpdateEndpointGroupFluentBuilder {
     pub fn get_threshold_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_threshold_count()
     }
+    ///
     /// Appends an item to `PortOverrides`.
     ///
     /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).

@@ -3,7 +3,7 @@ pub use crate::operation::delete_alias::_delete_alias_output::DeleteAliasOutputB
 
 pub use crate::operation::delete_alias::_delete_alias_input::DeleteAliasInputBuilder;
 
-impl DeleteAliasInputBuilder {
+impl crate::operation::delete_alias::builders::DeleteAliasInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -23,18 +23,18 @@ impl DeleteAliasInputBuilder {
 /// Fluent builder constructing a request to `DeleteAlias`.
 ///
 /// <p>Deletes the alias, but doesn't affect the underlying key.</p>
-/// <p>Each key can have multiple aliases. To get the aliases of all keys, use the <code>ListAliases</code> operation. To change the alias of a key, first use <code>DeleteAlias</code> to delete the current alias and then use <code>CreateAlias</code> to create a new alias. To associate an existing alias with a different key, call <code>UpdateAlias</code>.</p>
+/// <p>Each key can have multiple aliases. To get the aliases of all keys, use the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a> operation. To change the alias of a key, first use <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a> to delete the current alias and then use <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a> to create a new alias. To associate an existing alias with a different key, call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
 /// <li>
-/// <p><code>CreateAlias</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a></p></li>
 /// <li>
-/// <p><code>GetAlias</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a></p></li>
 /// <li>
-/// <p><code>ListAliases</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a></p></li>
 /// <li>
-/// <p><code>UpdateAlias</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAliasFluentBuilder {
@@ -112,12 +112,12 @@ impl DeleteAliasFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }

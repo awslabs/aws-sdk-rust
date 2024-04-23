@@ -3,7 +3,7 @@ pub use crate::operation::create_agent::_create_agent_output::CreateAgentOutputB
 
 pub use crate::operation::create_agent::_create_agent_input::CreateAgentInputBuilder;
 
-impl CreateAgentInputBuilder {
+impl crate::operation::create_agent::builders::CreateAgentInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -108,12 +108,12 @@ impl CreateAgentFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -145,6 +145,7 @@ impl CreateAgentFluentBuilder {
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_name()
     }
+    ///
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -183,6 +184,7 @@ impl CreateAgentFluentBuilder {
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_endpoint_id()
     }
+    ///
     /// Appends an item to `SubnetArns`.
     ///
     /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
@@ -201,6 +203,7 @@ impl CreateAgentFluentBuilder {
     pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_arns()
     }
+    ///
     /// Appends an item to `SecurityGroupArns`.
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).

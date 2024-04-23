@@ -3,7 +3,7 @@ pub use crate::operation::verify::_verify_output::VerifyOutputBuilder;
 
 pub use crate::operation::verify::_verify_input::VerifyInputBuilder;
 
-impl VerifyInputBuilder {
+impl crate::operation::verify::builders::VerifyInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -97,12 +97,12 @@ impl VerifyFluentBuilder {
     ) -> crate::client::customize::CustomizableOperation<crate::operation::verify::VerifyOutput, crate::operation::verify::VerifyError, Self> {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -266,6 +266,7 @@ impl VerifyFluentBuilder {
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithmSpec> {
         self.inner.get_signing_algorithm()
     }
+    ///
     /// Appends an item to `GrantTokens`.
     ///
     /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).

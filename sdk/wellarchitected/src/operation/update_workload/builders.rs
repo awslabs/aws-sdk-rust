@@ -3,7 +3,7 @@ pub use crate::operation::update_workload::_update_workload_output::UpdateWorklo
 
 pub use crate::operation::update_workload::_update_workload_input::UpdateWorkloadInputBuilder;
 
-impl UpdateWorkloadInputBuilder {
+impl crate::operation::update_workload::builders::UpdateWorkloadInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -99,12 +99,12 @@ impl UpdateWorkloadFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -167,6 +167,7 @@ impl UpdateWorkloadFluentBuilder {
     pub fn get_environment(&self) -> &::std::option::Option<crate::types::WorkloadEnvironment> {
         self.inner.get_environment()
     }
+    ///
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -185,6 +186,7 @@ impl UpdateWorkloadFluentBuilder {
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
+    ///
     /// Appends an item to `AwsRegions`.
     ///
     /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
@@ -203,6 +205,7 @@ impl UpdateWorkloadFluentBuilder {
     pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_aws_regions()
     }
+    ///
     /// Appends an item to `NonAwsRegions`.
     ///
     /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
@@ -221,6 +224,7 @@ impl UpdateWorkloadFluentBuilder {
     pub fn get_non_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_non_aws_regions()
     }
+    ///
     /// Appends an item to `PillarPriorities`.
     ///
     /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
@@ -528,6 +532,7 @@ impl UpdateWorkloadFluentBuilder {
     pub fn get_discovery_config(&self) -> &::std::option::Option<crate::types::WorkloadDiscoveryConfig> {
         self.inner.get_discovery_config()
     }
+    ///
     /// Appends an item to `Applications`.
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
@@ -545,5 +550,19 @@ impl UpdateWorkloadFluentBuilder {
     /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_applications()
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn jira_configuration(mut self, input: crate::types::WorkloadJiraConfigurationInput) -> Self {
+        self.inner = self.inner.jira_configuration(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn set_jira_configuration(mut self, input: ::std::option::Option<crate::types::WorkloadJiraConfigurationInput>) -> Self {
+        self.inner = self.inner.set_jira_configuration(input);
+        self
+    }
+    /// <p>Configuration of the Jira integration.</p>
+    pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::WorkloadJiraConfigurationInput> {
+        self.inner.get_jira_configuration()
     }
 }

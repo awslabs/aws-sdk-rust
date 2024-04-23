@@ -12,7 +12,7 @@ pub struct FilterSliderControl {
     pub source_filter_id: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
-    /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
@@ -20,9 +20,9 @@ pub struct FilterSliderControl {
     /// <p><code>RANGE</code>: Filter data that is in a specified range.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::SheetControlSliderType>,
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
-    pub maximum_value: f64,
     /// <p>The larger value that is displayed at the right of the slider.</p>
+    pub maximum_value: f64,
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub minimum_value: f64,
     /// <p>The number of increments that the slider bar is divided into.</p>
     pub step_size: f64,
@@ -47,7 +47,7 @@ impl FilterSliderControl {
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::SliderControlDisplayOptions> {
         self.display_options.as_ref()
     }
-    /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
@@ -57,11 +57,11 @@ impl FilterSliderControl {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlSliderType> {
         self.r#type.as_ref()
     }
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn maximum_value(&self) -> f64 {
         self.maximum_value
     }
-    /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn minimum_value(&self) -> f64 {
         self.minimum_value
     }
@@ -150,7 +150,7 @@ impl FilterSliderControlBuilder {
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::SliderControlDisplayOptions> {
         &self.display_options
     }
-    /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
@@ -161,7 +161,7 @@ impl FilterSliderControlBuilder {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
@@ -172,7 +172,7 @@ impl FilterSliderControlBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
+    /// <p>The type of the <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li>
     /// <p><code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p></li>
@@ -182,33 +182,33 @@ impl FilterSliderControlBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SheetControlSliderType> {
         &self.r#type
     }
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// <p>The larger value that is displayed at the right of the slider.</p>
     /// This field is required.
     pub fn maximum_value(mut self, input: f64) -> Self {
         self.maximum_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn set_maximum_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum_value = input;
         self
     }
-    /// <p>The smaller value that is displayed at the left of the slider.</p>
+    /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn get_maximum_value(&self) -> &::std::option::Option<f64> {
         &self.maximum_value
     }
-    /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     /// This field is required.
     pub fn minimum_value(mut self, input: f64) -> Self {
         self.minimum_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn set_minimum_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum_value = input;
         self
     }
-    /// <p>The larger value that is displayed at the right of the slider.</p>
+    /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn get_minimum_value(&self) -> &::std::option::Option<f64> {
         &self.minimum_value
     }

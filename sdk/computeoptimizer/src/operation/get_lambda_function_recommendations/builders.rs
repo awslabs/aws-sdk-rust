@@ -3,7 +3,7 @@ pub use crate::operation::get_lambda_function_recommendations::_get_lambda_funct
 
 pub use crate::operation::get_lambda_function_recommendations::_get_lambda_function_recommendations_input::GetLambdaFunctionRecommendationsInputBuilder;
 
-impl GetLambdaFunctionRecommendationsInputBuilder {
+impl crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
     pub async fn send_with(
         self,
@@ -100,12 +100,12 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     > {
         crate::client::customize::CustomizableOperation::new(self)
     }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
+    pub(crate) fn config_override(mut self, config_override: impl ::std::convert::Into<crate::config::Builder>) -> Self {
+        self.set_config_override(::std::option::Option::Some(config_override.into()));
         self
     }
 
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
+    pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
     }
@@ -115,6 +115,7 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_lambda_function_recommendations::paginator::GetLambdaFunctionRecommendationsPaginator {
         crate::operation::get_lambda_function_recommendations::paginator::GetLambdaFunctionRecommendationsPaginator::new(self.handle, self.inner)
     }
+    ///
     /// Appends an item to `functionArns`.
     ///
     /// To override the contents of this collection use [`set_function_arns`](Self::set_function_arns).
@@ -136,6 +137,7 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     pub fn get_function_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_function_arns()
     }
+    ///
     /// Appends an item to `accountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -160,6 +162,7 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
+    ///
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
