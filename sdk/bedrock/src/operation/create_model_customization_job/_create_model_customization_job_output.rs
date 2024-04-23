@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelCustomizationJobOutput {
-    /// <p>ARN of the fine tuning job</p>
+    /// <p>Amazon Resource Name (ARN) of the fine tuning job</p>
     pub job_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateModelCustomizationJobOutput {
-    /// <p>ARN of the fine tuning job</p>
+    /// <p>Amazon Resource Name (ARN) of the fine tuning job</p>
     pub fn job_arn(&self) -> &str {
         use std::ops::Deref;
         self.job_arn.deref()
@@ -34,18 +34,18 @@ pub struct CreateModelCustomizationJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateModelCustomizationJobOutputBuilder {
-    /// <p>ARN of the fine tuning job</p>
+    /// <p>Amazon Resource Name (ARN) of the fine tuning job</p>
     /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of the fine tuning job</p>
+    /// <p>Amazon Resource Name (ARN) of the fine tuning job</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
-    /// <p>ARN of the fine tuning job</p>
+    /// <p>Amazon Resource Name (ARN) of the fine tuning job</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }

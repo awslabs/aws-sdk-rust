@@ -24,6 +24,10 @@ pub struct UserSettings {
     pub idle_disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The configuration that specifies which cookies should be synchronized from the end user's local browser to the remote browser.</p>
     pub cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
+    /// <p>The customer managed key used to encrypt sensitive information in the user settings.</p>
+    pub customer_managed_key: ::std::option::Option<::std::string::String>,
+    /// <p>The additional encryption context of the user settings.</p>
+    pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UserSettings {
     /// <p>The ARN of the user settings.</p>
@@ -69,6 +73,14 @@ impl UserSettings {
     pub fn cookie_synchronization_configuration(&self) -> ::std::option::Option<&crate::types::CookieSynchronizationConfiguration> {
         self.cookie_synchronization_configuration.as_ref()
     }
+    /// <p>The customer managed key used to encrypt sensitive information in the user settings.</p>
+    pub fn customer_managed_key(&self) -> ::std::option::Option<&str> {
+        self.customer_managed_key.as_deref()
+    }
+    /// <p>The additional encryption context of the user settings.</p>
+    pub fn additional_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.additional_encryption_context.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UserSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +95,8 @@ impl ::std::fmt::Debug for UserSettings {
         formatter.field("disconnect_timeout_in_minutes", &self.disconnect_timeout_in_minutes);
         formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("customer_managed_key", &self.customer_managed_key);
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.finish()
     }
 }
@@ -107,6 +121,8 @@ pub struct UserSettingsBuilder {
     pub(crate) disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) idle_disconnect_timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
+    pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UserSettingsBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -259,6 +275,49 @@ impl UserSettingsBuilder {
     pub fn get_cookie_synchronization_configuration(&self) -> &::std::option::Option<crate::types::CookieSynchronizationConfiguration> {
         &self.cookie_synchronization_configuration
     }
+    /// <p>The customer managed key used to encrypt sensitive information in the user settings.</p>
+    pub fn customer_managed_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.customer_managed_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the user settings.</p>
+    pub fn set_customer_managed_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_managed_key = input;
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the user settings.</p>
+    pub fn get_customer_managed_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_managed_key
+    }
+    /// Adds a key-value pair to `additional_encryption_context`.
+    ///
+    /// To override the contents of this collection use [`set_additional_encryption_context`](Self::set_additional_encryption_context).
+    ///
+    /// <p>The additional encryption context of the user settings.</p>
+    pub fn additional_encryption_context(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.additional_encryption_context.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.additional_encryption_context = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The additional encryption context of the user settings.</p>
+    pub fn set_additional_encryption_context(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.additional_encryption_context = input;
+        self
+    }
+    /// <p>The additional encryption context of the user settings.</p>
+    pub fn get_additional_encryption_context(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.additional_encryption_context
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_settings_arn`](crate::types::builders::UserSettingsBuilder::user_settings_arn)
@@ -279,6 +338,8 @@ impl UserSettingsBuilder {
             disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
             idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
             cookie_synchronization_configuration: self.cookie_synchronization_configuration,
+            customer_managed_key: self.customer_managed_key,
+            additional_encryption_context: self.additional_encryption_context,
         })
     }
 }
@@ -295,6 +356,8 @@ impl ::std::fmt::Debug for UserSettingsBuilder {
         formatter.field("disconnect_timeout_in_minutes", &self.disconnect_timeout_in_minutes);
         formatter.field("idle_disconnect_timeout_in_minutes", &self.idle_disconnect_timeout_in_minutes);
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("customer_managed_key", &self.customer_managed_key);
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.finish()
     }
 }

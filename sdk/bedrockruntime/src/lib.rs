@@ -17,7 +17,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! Describes the API operations for running inference using Bedrock models.
+//! Describes the API operations for running inference using Amazon Bedrock models.
 //!
 //! ## Getting Started
 //!
@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockruntime = "1.22.0"
+//! aws-sdk-bedrockruntime = "1.23.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

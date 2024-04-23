@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-workspacesweb = "1.21.0"
+aws-sdk-workspacesweb = "1.22.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

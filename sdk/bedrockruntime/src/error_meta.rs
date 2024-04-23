@@ -11,7 +11,7 @@ pub enum Error {
     ModelErrorException(crate::types::error::ModelErrorException),
     /// <p>The model specified in the request is not ready to serve inference requests.</p>
     ModelNotReadyException(crate::types::error::ModelNotReadyException),
-    /// <p>An error occurred while streaming the response.</p>
+    /// <p>An error occurred while streaming the response. Retry your request.</p>
     ModelStreamErrorException(crate::types::error::ModelStreamErrorException),
     /// <p>The request took too long to process. Processing time exceeded the model timeout length.</p>
     ModelTimeoutException(crate::types::error::ModelTimeoutException),

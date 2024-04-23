@@ -1929,6 +1929,7 @@ impl From<crate::operation::update_portal::UpdatePortalError> for Error {
             crate::operation::update_portal::UpdatePortalError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_portal::UpdatePortalError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_portal::UpdatePortalError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_portal::UpdatePortalError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_portal::UpdatePortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_portal::UpdatePortalError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_portal::UpdatePortalError::Unhandled(inner) => Error::Unhandled(inner),

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCustomModelInput {
-    /// <p>Name or ARN of the custom model.</p>
+    /// <p>Name or Amazon Resource Name (ARN) of the custom model.</p>
     pub model_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetCustomModelInput {
-    /// <p>Name or ARN of the custom model.</p>
+    /// <p>Name or Amazon Resource Name (ARN) of the custom model.</p>
     pub fn model_identifier(&self) -> ::std::option::Option<&str> {
         self.model_identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetCustomModelInputBuilder {
     pub(crate) model_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetCustomModelInputBuilder {
-    /// <p>Name or ARN of the custom model.</p>
+    /// <p>Name or Amazon Resource Name (ARN) of the custom model.</p>
     /// This field is required.
     pub fn model_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name or ARN of the custom model.</p>
+    /// <p>Name or Amazon Resource Name (ARN) of the custom model.</p>
     pub fn set_model_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_identifier = input;
         self
     }
-    /// <p>Name or ARN of the custom model.</p>
+    /// <p>Name or Amazon Resource Name (ARN) of the custom model.</p>
     pub fn get_model_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_identifier
     }

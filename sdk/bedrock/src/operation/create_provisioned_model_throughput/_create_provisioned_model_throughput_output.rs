@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProvisionedModelThroughputOutput {
-    /// <p>The ARN for this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
     pub provisioned_model_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateProvisionedModelThroughputOutput {
-    /// <p>The ARN for this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
     pub fn provisioned_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.provisioned_model_arn.deref()
@@ -34,18 +34,18 @@ pub struct CreateProvisionedModelThroughputOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateProvisionedModelThroughputOutputBuilder {
-    /// <p>The ARN for this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
     /// This field is required.
     pub fn provisioned_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN for this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
     pub fn set_provisioned_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_model_arn = input;
         self
     }
-    /// <p>The ARN for this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) for this Provisioned Throughput.</p>
     pub fn get_provisioned_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioned_model_arn
     }

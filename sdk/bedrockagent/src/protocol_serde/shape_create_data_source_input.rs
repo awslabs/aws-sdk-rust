@@ -6,29 +6,32 @@ pub fn ser_create_data_source_input_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.data_source_configuration {
+    if let Some(var_2) = &input.data_deletion_policy {
+        object.key("dataDeletionPolicy").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.data_source_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("dataSourceConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_configuration::ser_data_source_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("dataSourceConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_configuration::ser_data_source_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
+    if let Some(var_5) = &input.description {
+        object.key("description").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.server_side_encryption_configuration {
+    if let Some(var_7) = &input.server_side_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("serverSideEncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("serverSideEncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.vector_ingestion_configuration {
+    if let Some(var_9) = &input.vector_ingestion_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("vectorIngestionConfiguration").start_object();
-        crate::protocol_serde::shape_vector_ingestion_configuration::ser_vector_ingestion_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("vectorIngestionConfiguration").start_object();
+        crate::protocol_serde::shape_vector_ingestion_configuration::ser_vector_ingestion_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

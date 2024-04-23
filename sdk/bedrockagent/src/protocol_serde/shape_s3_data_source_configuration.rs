@@ -15,6 +15,9 @@ pub fn ser_s3_data_source_configuration(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.bucket_owner_account_id {
+        object.key("bucketOwnerAccountId").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -42,6 +45,13 @@ where
                         }
                         "inclusionPrefixes" => {
                             builder = builder.set_inclusion_prefixes(crate::protocol_serde::shape_s3_prefixes::de_s3_prefixes(tokens)?);
+                        }
+                        "bucketOwnerAccountId" => {
+                            builder = builder.set_bucket_owner_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

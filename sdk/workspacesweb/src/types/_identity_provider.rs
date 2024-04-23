@@ -76,7 +76,13 @@ pub struct IdentityProvider {
     /// <li>
     /// <p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
     /// <li>
-    /// <p><code>IDPSignout</code> <i>optional</i></p></li>
+    /// <p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>IDPInit</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code></p></li>
+    /// <li>
+    /// <p><code>EncryptedResponses</code> (boolean) <i>optional</i></p></li>
     /// </ul></li>
     /// </ul>
     pub identity_provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -161,7 +167,13 @@ impl IdentityProvider {
     /// <li>
     /// <p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
     /// <li>
-    /// <p><code>IDPSignout</code> <i>optional</i></p></li>
+    /// <p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>IDPInit</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code></p></li>
+    /// <li>
+    /// <p><code>EncryptedResponses</code> (boolean) <i>optional</i></p></li>
     /// </ul></li>
     /// </ul>
     pub fn identity_provider_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -308,7 +320,13 @@ impl IdentityProviderBuilder {
     /// <li>
     /// <p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
     /// <li>
-    /// <p><code>IDPSignout</code> <i>optional</i></p></li>
+    /// <p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>IDPInit</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code></p></li>
+    /// <li>
+    /// <p><code>EncryptedResponses</code> (boolean) <i>optional</i></p></li>
     /// </ul></li>
     /// </ul>
     pub fn identity_provider_details(
@@ -387,7 +405,13 @@ impl IdentityProviderBuilder {
     /// <li>
     /// <p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
     /// <li>
-    /// <p><code>IDPSignout</code> <i>optional</i></p></li>
+    /// <p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>IDPInit</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code></p></li>
+    /// <li>
+    /// <p><code>EncryptedResponses</code> (boolean) <i>optional</i></p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_identity_provider_details(
@@ -463,7 +487,13 @@ impl IdentityProviderBuilder {
     /// <li>
     /// <p><code>MetadataFile</code> OR <code>MetadataURL</code></p></li>
     /// <li>
-    /// <p><code>IDPSignout</code> <i>optional</i></p></li>
+    /// <p><code>IDPSignout</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>IDPInit</code> (boolean) <i>optional</i></p></li>
+    /// <li>
+    /// <p><code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code></p></li>
+    /// <li>
+    /// <p><code>EncryptedResponses</code> (boolean) <i>optional</i></p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_identity_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

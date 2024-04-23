@@ -251,6 +251,8 @@ pub(crate) mod shape_certificate_summary;
 
 pub(crate) mod shape_cookie_specification;
 
+pub(crate) mod shape_encryption_context_map;
+
 pub(crate) mod shape_identity_provider_details;
 
 pub(crate) mod shape_identity_provider_summary;

@@ -929,6 +929,8 @@ mod disable_image_block_public_access;
 
 mod disable_image_deprecation;
 
+mod disable_image_deregistration_protection;
+
 mod disable_ipam_organization_admin_account;
 
 mod disable_serial_console_access;
@@ -988,6 +990,8 @@ mod enable_image;
 mod enable_image_block_public_access;
 
 mod enable_image_deprecation;
+
+mod enable_image_deregistration_protection;
 
 mod enable_ipam_organization_admin_account;
 

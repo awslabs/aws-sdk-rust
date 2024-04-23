@@ -22,7 +22,7 @@ impl crate::operation::stop_model_customization_job::builders::StopModelCustomiz
 }
 /// Fluent builder constructing a request to `StopModelCustomizationJob`.
 ///
-/// <p>Stops an active model customization job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock User Guide.</p>
+/// <p>Stops an active model customization job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopModelCustomizationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

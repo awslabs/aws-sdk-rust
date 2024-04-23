@@ -410,6 +410,32 @@ pub fn de_image(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
                 builder = builder.set_source_instance_id(var_31);
             }
             ,
+            s if s.matches("deregistrationProtection") /* DeregistrationProtection com.amazonaws.ec2#Image$DeregistrationProtection */ =>  {
+                let var_32 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_deregistration_protection(var_32);
+            }
+            ,
+            s if s.matches("lastLaunchedTime") /* LastLaunchedTime com.amazonaws.ec2#Image$LastLaunchedTime */ =>  {
+                let var_33 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_last_launched_time(var_33);
+            }
+            ,
             _ => {}
         }
     }

@@ -9,8 +9,12 @@ pub struct UpdatePortalInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    /// <p>The type and resources of the underlying instance.</p>
+    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub max_concurrent_sessions: ::std::option::Option<i32>,
 }
 impl UpdatePortalInput {
     /// <p>The ARN of the web portal.</p>
@@ -23,9 +27,17 @@ impl UpdatePortalInput {
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn max_concurrent_sessions(&self) -> ::std::option::Option<i32> {
+        self.max_concurrent_sessions
     }
 }
 impl ::std::fmt::Debug for UpdatePortalInput {
@@ -34,6 +46,8 @@ impl ::std::fmt::Debug for UpdatePortalInput {
         formatter.field("portal_arn", &self.portal_arn);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
         formatter.finish()
     }
 }
@@ -51,6 +65,8 @@ pub struct UpdatePortalInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub(crate) max_concurrent_sessions: ::std::option::Option<i32>,
 }
 impl UpdatePortalInputBuilder {
     /// <p>The ARN of the web portal.</p>
@@ -84,23 +100,51 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
+        self.instance_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
+        self.instance_type = input;
+        self
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
+        self.max_concurrent_sessions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn set_max_concurrent_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_concurrent_sessions = input;
+        self
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn get_max_concurrent_sessions(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_sessions
     }
     /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
     pub fn build(
@@ -110,6 +154,8 @@ impl UpdatePortalInputBuilder {
             portal_arn: self.portal_arn,
             display_name: self.display_name,
             authentication_type: self.authentication_type,
+            instance_type: self.instance_type,
+            max_concurrent_sessions: self.max_concurrent_sessions,
         })
     }
 }
@@ -119,6 +165,8 @@ impl ::std::fmt::Debug for UpdatePortalInputBuilder {
         formatter.field("portal_arn", &self.portal_arn);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("authentication_type", &self.authentication_type);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
         formatter.finish()
     }
 }

@@ -180,6 +180,20 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         self.inner.get_data_source_configuration()
     }
+    /// <p>The data deletion policy of the updated data source.</p>
+    pub fn data_deletion_policy(mut self, input: crate::types::DataDeletionPolicy) -> Self {
+        self.inner = self.inner.data_deletion_policy(input);
+        self
+    }
+    /// <p>The data deletion policy of the updated data source.</p>
+    pub fn set_data_deletion_policy(mut self, input: ::std::option::Option<crate::types::DataDeletionPolicy>) -> Self {
+        self.inner = self.inner.set_data_deletion_policy(input);
+        self
+    }
+    /// <p>The data deletion policy of the updated data source.</p>
+    pub fn get_data_deletion_policy(&self) -> &::std::option::Option<crate::types::DataDeletionPolicy> {
+        self.inner.get_data_deletion_policy()
+    }
     /// <p>Contains details about server-side encryption of the data source.</p>
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.inner = self.inner.server_side_encryption_configuration(input);

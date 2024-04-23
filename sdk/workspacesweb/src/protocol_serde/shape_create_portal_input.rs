@@ -25,17 +25,26 @@ pub fn ser_create_portal_input_input(
     if let Some(var_8) = &input.display_name {
         object.key("displayName").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_9) = &input.instance_type {
+        object.key("instanceType").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.max_concurrent_sessions {
+        object.key("maxConcurrentSessions").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
+    }
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
     Ok(())
 }

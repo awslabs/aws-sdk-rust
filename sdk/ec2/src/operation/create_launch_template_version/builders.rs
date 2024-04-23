@@ -22,9 +22,9 @@ impl crate::operation::create_launch_template_version::builders::CreateLaunchTem
 }
 /// Fluent builder constructing a request to `CreateLaunchTemplateVersion`.
 ///
-/// <p>Creates a new version of a launch template. You can specify an existing version of launch template from which to base the new version.</p>
-/// <p>Launch template versions are numbered in the order in which they are created. You cannot specify, change, or replace the numbering of launch template versions.</p>
-/// <p>Launch templates are immutable; after you create a launch template, you can't modify it. Instead, you can create a new version of the launch template that includes any changes you require.</p>
+/// <p>Creates a new version of a launch template. You must specify an existing launch template, either by name or ID. You can determine whether the new version inherits parameters from a source version, and add or overwrite parameters as needed.</p>
+/// <p>Launch template versions are numbered in the order in which they are created. You can't specify, change, or replace the numbering of launch template versions.</p>
+/// <p>Launch templates are immutable; after you create a launch template, you can't modify it. Instead, you can create a new version of the launch template that includes the changes that you require.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify a launch template (manage launch template versions)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLaunchTemplateVersionFluentBuilder {
@@ -143,50 +143,56 @@ impl CreateLaunchTemplateVersionFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_id(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_id(input);
         self
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_launch_template_id()
     }
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_name(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_name(input);
         self
     }
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_launch_template_name()
     }
-    /// <p>The version number of the launch template version on which to base the new version. The new version inherits the same launch parameters as the source version, except for parameters that you specify in <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
+    /// <p>The version of the launch template on which to base the new version. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
+    /// <p>If you specify this parameter, the new version inherits the launch parameters from the source version. If you specify additional launch parameters for the new version, they overwrite any corresponding launch parameters inherited from the source version.</p>
+    /// <p>If you omit this parameter, the new version contains only the launch parameters that you specify for the new version.</p>
     pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
-    /// <p>The version number of the launch template version on which to base the new version. The new version inherits the same launch parameters as the source version, except for parameters that you specify in <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
+    /// <p>The version of the launch template on which to base the new version. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
+    /// <p>If you specify this parameter, the new version inherits the launch parameters from the source version. If you specify additional launch parameters for the new version, they overwrite any corresponding launch parameters inherited from the source version.</p>
+    /// <p>If you omit this parameter, the new version contains only the launch parameters that you specify for the new version.</p>
     pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }
-    /// <p>The version number of the launch template version on which to base the new version. The new version inherits the same launch parameters as the source version, except for parameters that you specify in <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
+    /// <p>The version of the launch template on which to base the new version. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
+    /// <p>If you specify this parameter, the new version inherits the launch parameters from the source version. If you specify additional launch parameters for the new version, they overwrite any corresponding launch parameters inherited from the source version.</p>
+    /// <p>If you omit this parameter, the new version contains only the launch parameters that you specify for the new version.</p>
     pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_version()
     }

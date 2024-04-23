@@ -14,6 +14,7 @@
 /// match imageattributename {
 ///     ImageAttributeName::BlockDeviceMapping => { /* ... */ },
 ///     ImageAttributeName::BootMode => { /* ... */ },
+///     ImageAttributeName::DeregistrationProtection => { /* ... */ },
 ///     ImageAttributeName::Description => { /* ... */ },
 ///     ImageAttributeName::ImdsSupport => { /* ... */ },
 ///     ImageAttributeName::Kernel => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum ImageAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     BootMode,
     #[allow(missing_docs)] // documentation missing in model
+    DeregistrationProtection,
+    #[allow(missing_docs)] // documentation missing in model
     Description,
     #[allow(missing_docs)] // documentation missing in model
     ImdsSupport,
@@ -84,6 +87,7 @@ impl ::std::convert::From<&str> for ImageAttributeName {
         match s {
             "blockDeviceMapping" => ImageAttributeName::BlockDeviceMapping,
             "bootMode" => ImageAttributeName::BootMode,
+            "deregistrationProtection" => ImageAttributeName::DeregistrationProtection,
             "description" => ImageAttributeName::Description,
             "imdsSupport" => ImageAttributeName::ImdsSupport,
             "kernel" => ImageAttributeName::Kernel,
@@ -111,6 +115,7 @@ impl ImageAttributeName {
         match self {
             ImageAttributeName::BlockDeviceMapping => "blockDeviceMapping",
             ImageAttributeName::BootMode => "bootMode",
+            ImageAttributeName::DeregistrationProtection => "deregistrationProtection",
             ImageAttributeName::Description => "description",
             ImageAttributeName::ImdsSupport => "imdsSupport",
             ImageAttributeName::Kernel => "kernel",
@@ -129,6 +134,7 @@ impl ImageAttributeName {
         &[
             "blockDeviceMapping",
             "bootMode",
+            "deregistrationProtection",
             "description",
             "imdsSupport",
             "kernel",
@@ -164,6 +170,7 @@ impl ::std::fmt::Display for ImageAttributeName {
         match self {
             ImageAttributeName::BlockDeviceMapping => write!(f, "blockDeviceMapping"),
             ImageAttributeName::BootMode => write!(f, "bootMode"),
+            ImageAttributeName::DeregistrationProtection => write!(f, "deregistrationProtection"),
             ImageAttributeName::Description => write!(f, "description"),
             ImageAttributeName::ImdsSupport => write!(f, "imdsSupport"),
             ImageAttributeName::Kernel => write!(f, "kernel"),

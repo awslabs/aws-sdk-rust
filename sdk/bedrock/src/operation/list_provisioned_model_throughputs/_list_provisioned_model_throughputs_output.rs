@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProvisionedModelThroughputsOutput {
-    /// <p>Continuation token for the next request to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, this value is returned. To see the next batch of results, include this value in the <code>nextToken</code> field in another list request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>List of summaries, one for each provisioned throughput in the response.</p>
+    /// <p>A list of summaries, one for each Provisioned Throughput in the response.</p>
     pub provisioned_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>>,
     _request_id: Option<String>,
 }
 impl ListProvisionedModelThroughputsOutput {
-    /// <p>Continuation token for the next request to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, this value is returned. To see the next batch of results, include this value in the <code>nextToken</code> field in another list request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>List of summaries, one for each provisioned throughput in the response.</p>
+    /// <p>A list of summaries, one for each Provisioned Throughput in the response.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_model_summaries.is_none()`.
     pub fn provisioned_model_summaries(&self) -> &[crate::types::ProvisionedModelSummary] {
@@ -42,17 +42,17 @@ pub struct ListProvisionedModelThroughputsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListProvisionedModelThroughputsOutputBuilder {
-    /// <p>Continuation token for the next request to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, this value is returned. To see the next batch of results, include this value in the <code>nextToken</code> field in another list request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Continuation token for the next request to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, this value is returned. To see the next batch of results, include this value in the <code>nextToken</code> field in another list request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Continuation token for the next request to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, this value is returned. To see the next batch of results, include this value in the <code>nextToken</code> field in another list request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +60,19 @@ impl ListProvisionedModelThroughputsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_provisioned_model_summaries`](Self::set_provisioned_model_summaries).
     ///
-    /// <p>List of summaries, one for each provisioned throughput in the response.</p>
+    /// <p>A list of summaries, one for each Provisioned Throughput in the response.</p>
     pub fn provisioned_model_summaries(mut self, input: crate::types::ProvisionedModelSummary) -> Self {
         let mut v = self.provisioned_model_summaries.unwrap_or_default();
         v.push(input);
         self.provisioned_model_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of summaries, one for each provisioned throughput in the response.</p>
+    /// <p>A list of summaries, one for each Provisioned Throughput in the response.</p>
     pub fn set_provisioned_model_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>>) -> Self {
         self.provisioned_model_summaries = input;
         self
     }
-    /// <p>List of summaries, one for each provisioned throughput in the response.</p>
+    /// <p>A list of summaries, one for each Provisioned Throughput in the response.</p>
     pub fn get_provisioned_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>> {
         &self.provisioned_model_summaries
     }

@@ -26,10 +26,14 @@ pub struct DataSource {
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>Contains details about how to ingest the documents in the data source.</p>
     pub vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
+    /// <p>The deletion policy for the data source.</p>
+    pub data_deletion_policy: ::std::option::Option<crate::types::DataDeletionPolicy>,
     /// <p>The time at which the data source was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the data source was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The details of the failure reasons related to the data source.</p>
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DataSource {
     /// <p>The unique identifier of the knowledge base to which the data source belongs.</p>
@@ -73,6 +77,10 @@ impl DataSource {
     pub fn vector_ingestion_configuration(&self) -> ::std::option::Option<&crate::types::VectorIngestionConfiguration> {
         self.vector_ingestion_configuration.as_ref()
     }
+    /// <p>The deletion policy for the data source.</p>
+    pub fn data_deletion_policy(&self) -> ::std::option::Option<&crate::types::DataDeletionPolicy> {
+        self.data_deletion_policy.as_ref()
+    }
     /// <p>The time at which the data source was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -80,6 +88,12 @@ impl DataSource {
     /// <p>The time at which the data source was last updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
+    }
+    /// <p>The details of the failure reasons related to the data source.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[::std::string::String] {
+        self.failure_reasons.as_deref().unwrap_or_default()
     }
 }
 impl DataSource {
@@ -101,8 +115,10 @@ pub struct DataSourceBuilder {
     pub(crate) data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
+    pub(crate) data_deletion_policy: ::std::option::Option<crate::types::DataDeletionPolicy>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DataSourceBuilder {
     /// <p>The unique identifier of the knowledge base to which the data source belongs.</p>
@@ -240,6 +256,20 @@ impl DataSourceBuilder {
     pub fn get_vector_ingestion_configuration(&self) -> &::std::option::Option<crate::types::VectorIngestionConfiguration> {
         &self.vector_ingestion_configuration
     }
+    /// <p>The deletion policy for the data source.</p>
+    pub fn data_deletion_policy(mut self, input: crate::types::DataDeletionPolicy) -> Self {
+        self.data_deletion_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deletion policy for the data source.</p>
+    pub fn set_data_deletion_policy(mut self, input: ::std::option::Option<crate::types::DataDeletionPolicy>) -> Self {
+        self.data_deletion_policy = input;
+        self
+    }
+    /// <p>The deletion policy for the data source.</p>
+    pub fn get_data_deletion_policy(&self) -> &::std::option::Option<crate::types::DataDeletionPolicy> {
+        &self.data_deletion_policy
+    }
     /// <p>The time at which the data source was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -269,6 +299,26 @@ impl DataSourceBuilder {
     /// <p>The time at which the data source was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
+    }
+    /// Appends an item to `failure_reasons`.
+    ///
+    /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
+    ///
+    /// <p>The details of the failure reasons related to the data source.</p>
+    pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.failure_reasons.unwrap_or_default();
+        v.push(input.into());
+        self.failure_reasons = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The details of the failure reasons related to the data source.</p>
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.failure_reasons = input;
+        self
+    }
+    /// <p>The details of the failure reasons related to the data source.</p>
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reasons
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     /// This method will fail if any of the following fields are not set:
@@ -308,6 +358,7 @@ impl DataSourceBuilder {
             data_source_configuration: self.data_source_configuration,
             server_side_encryption_configuration: self.server_side_encryption_configuration,
             vector_ingestion_configuration: self.vector_ingestion_configuration,
+            data_deletion_policy: self.data_deletion_policy,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -320,6 +371,7 @@ impl DataSourceBuilder {
                     "updated_at was not specified but it is required when building DataSource",
                 )
             })?,
+            failure_reasons: self.failure_reasons,
         })
     }
 }

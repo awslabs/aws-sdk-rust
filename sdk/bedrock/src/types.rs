@@ -59,6 +59,96 @@ pub use crate::types::_s3_config::S3Config;
 
 pub use crate::types::_cloud_watch_config::CloudWatchConfig;
 
+pub use crate::types::_guardrail_sensitive_information_policy_config::GuardrailSensitiveInformationPolicyConfig;
+
+pub use crate::types::_guardrail_regex_config::GuardrailRegexConfig;
+
+pub use crate::types::_guardrail_sensitive_information_action::GuardrailSensitiveInformationAction;
+
+pub use crate::types::_guardrail_pii_entity_config::GuardrailPiiEntityConfig;
+
+pub use crate::types::_guardrail_pii_entity_type::GuardrailPiiEntityType;
+
+pub use crate::types::_guardrail_word_policy_config::GuardrailWordPolicyConfig;
+
+pub use crate::types::_guardrail_managed_words_config::GuardrailManagedWordsConfig;
+
+pub use crate::types::_guardrail_managed_words_type::GuardrailManagedWordsType;
+
+pub use crate::types::_guardrail_word_config::GuardrailWordConfig;
+
+pub use crate::types::_guardrail_content_policy_config::GuardrailContentPolicyConfig;
+
+pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterConfig;
+
+pub use crate::types::_guardrail_filter_strength::GuardrailFilterStrength;
+
+pub use crate::types::_guardrail_content_filter_type::GuardrailContentFilterType;
+
+pub use crate::types::_guardrail_topic_policy_config::GuardrailTopicPolicyConfig;
+
+pub use crate::types::_guardrail_topic_config::GuardrailTopicConfig;
+
+pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
+
+pub use crate::types::_guardrail_sensitive_information_policy::GuardrailSensitiveInformationPolicy;
+
+pub use crate::types::_guardrail_regex::GuardrailRegex;
+
+pub use crate::types::_guardrail_pii_entity::GuardrailPiiEntity;
+
+pub use crate::types::_guardrail_word_policy::GuardrailWordPolicy;
+
+pub use crate::types::_guardrail_managed_words::GuardrailManagedWords;
+
+pub use crate::types::_guardrail_word::GuardrailWord;
+
+pub use crate::types::_guardrail_content_policy::GuardrailContentPolicy;
+
+pub use crate::types::_guardrail_content_filter::GuardrailContentFilter;
+
+pub use crate::types::_guardrail_topic_policy::GuardrailTopicPolicy;
+
+pub use crate::types::_guardrail_topic::GuardrailTopic;
+
+pub use crate::types::_guardrail_status::GuardrailStatus;
+
+pub use crate::types::_guardrail_summary::GuardrailSummary;
+
+pub use crate::types::_evaluation_summary::EvaluationSummary;
+
+pub use crate::types::_evaluation_task_type::EvaluationTaskType;
+
+pub use crate::types::_evaluation_job_type::EvaluationJobType;
+
+pub use crate::types::_evaluation_job_status::EvaluationJobStatus;
+
+pub use crate::types::_evaluation_output_data_config::EvaluationOutputDataConfig;
+
+pub use crate::types::_evaluation_inference_config::EvaluationInferenceConfig;
+
+pub use crate::types::_evaluation_model_config::EvaluationModelConfig;
+
+pub use crate::types::_evaluation_bedrock_model::EvaluationBedrockModel;
+
+pub use crate::types::_evaluation_config::EvaluationConfig;
+
+pub use crate::types::_human_evaluation_config::HumanEvaluationConfig;
+
+pub use crate::types::_evaluation_dataset_metric_config::EvaluationDatasetMetricConfig;
+
+pub use crate::types::_evaluation_dataset::EvaluationDataset;
+
+pub use crate::types::_evaluation_dataset_location::EvaluationDatasetLocation;
+
+pub use crate::types::_human_evaluation_custom_metric::HumanEvaluationCustomMetric;
+
+pub use crate::types::_human_workflow_config::HumanWorkflowConfig;
+
+pub use crate::types::_automated_evaluation_config::AutomatedEvaluationConfig;
+
+mod _automated_evaluation_config;
+
 mod _cloud_watch_config;
 
 mod _commitment_duration;
@@ -66,6 +156,30 @@ mod _commitment_duration;
 mod _custom_model_summary;
 
 mod _customization_type;
+
+mod _evaluation_bedrock_model;
+
+mod _evaluation_config;
+
+mod _evaluation_dataset;
+
+mod _evaluation_dataset_location;
+
+mod _evaluation_dataset_metric_config;
+
+mod _evaluation_inference_config;
+
+mod _evaluation_job_status;
+
+mod _evaluation_job_type;
+
+mod _evaluation_model_config;
+
+mod _evaluation_output_data_config;
+
+mod _evaluation_summary;
+
+mod _evaluation_task_type;
 
 mod _fine_tuning_job_status;
 
@@ -76,6 +190,68 @@ mod _foundation_model_lifecycle;
 mod _foundation_model_lifecycle_status;
 
 mod _foundation_model_summary;
+
+mod _guardrail_content_filter;
+
+mod _guardrail_content_filter_config;
+
+mod _guardrail_content_filter_type;
+
+mod _guardrail_content_policy;
+
+mod _guardrail_content_policy_config;
+
+mod _guardrail_filter_strength;
+
+mod _guardrail_managed_words;
+
+mod _guardrail_managed_words_config;
+
+mod _guardrail_managed_words_type;
+
+mod _guardrail_pii_entity;
+
+mod _guardrail_pii_entity_config;
+
+mod _guardrail_pii_entity_type;
+
+mod _guardrail_regex;
+
+mod _guardrail_regex_config;
+
+mod _guardrail_sensitive_information_action;
+
+mod _guardrail_sensitive_information_policy;
+
+mod _guardrail_sensitive_information_policy_config;
+
+mod _guardrail_status;
+
+mod _guardrail_summary;
+
+mod _guardrail_topic;
+
+mod _guardrail_topic_config;
+
+mod _guardrail_topic_policy;
+
+mod _guardrail_topic_policy_config;
+
+mod _guardrail_topic_type;
+
+mod _guardrail_word;
+
+mod _guardrail_word_config;
+
+mod _guardrail_word_policy;
+
+mod _guardrail_word_policy_config;
+
+mod _human_evaluation_config;
+
+mod _human_evaluation_custom_metric;
+
+mod _human_workflow_config;
 
 mod _inference_type;
 

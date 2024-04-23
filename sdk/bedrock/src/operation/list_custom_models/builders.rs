@@ -23,7 +23,7 @@ impl crate::operation::list_custom_models::builders::ListCustomModelsInputBuilde
 /// Fluent builder constructing a request to `ListCustomModels`.
 ///
 /// <p>Returns a list of the custom models that you have created with the <code>CreateModelCustomizationJob</code> operation.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock User Guide.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomModelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -157,31 +157,31 @@ impl ListCustomModelsFluentBuilder {
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name_contains()
     }
-    /// <p>Return custom models only if the base model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn base_model_arn_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_model_arn_equals(input.into());
         self
     }
-    /// <p>Return custom models only if the base model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn set_base_model_arn_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_model_arn_equals(input);
         self
     }
-    /// <p>Return custom models only if the base model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn get_base_model_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_base_model_arn_equals()
     }
-    /// <p>Return custom models only if the foundation model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn foundation_model_arn_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.foundation_model_arn_equals(input.into());
         self
     }
-    /// <p>Return custom models only if the foundation model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn set_foundation_model_arn_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_foundation_model_arn_equals(input);
         self
     }
-    /// <p>Return custom models only if the foundation model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn get_foundation_model_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_foundation_model_arn_equals()
     }

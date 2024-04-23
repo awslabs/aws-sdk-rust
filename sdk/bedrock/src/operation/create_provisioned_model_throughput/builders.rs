@@ -22,8 +22,7 @@ impl crate::operation::create_provisioned_model_throughput::builders::CreateProv
 }
 /// Fluent builder constructing a request to `CreateProvisionedModelThroughput`.
 ///
-/// <p>Creates a provisioned throughput with dedicated capacity for a foundation model or a fine-tuned model.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in the Bedrock User Guide.</p>
+/// <p>Creates dedicated throughput for a base or custom model with the model units and for the duration that you specify. For pricing details, see <a href="http://aws.amazon.com/bedrock/pricing/">Amazon Bedrock Pricing</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProvisionedModelThroughputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,73 +108,82 @@ impl CreateProvisionedModelThroughputFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the Amazon S3 User Guide.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the Amazon S3 User Guide.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the Amazon S3 User Guide.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
-    /// <p>Number of model units to allocate.</p>
+    /// <p>Number of model units to allocate. A model unit delivers a specific throughput level for the specified model. The throughput level of a model unit specifies the total number of input and output tokens that it can process and generate within a span of one minute. By default, your account has no model units for purchasing Provisioned Throughputs with commitment. You must first visit the <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase">Amazon Web Services support center</a> to request MUs.</p>
+    /// <p>For model unit quotas, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html#prov-thru-quotas">Provisioned Throughput quotas</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>For more information about what an MU specifies, contact your Amazon Web Services account manager.</p>
     pub fn model_units(mut self, input: i32) -> Self {
         self.inner = self.inner.model_units(input);
         self
     }
-    /// <p>Number of model units to allocate.</p>
+    /// <p>Number of model units to allocate. A model unit delivers a specific throughput level for the specified model. The throughput level of a model unit specifies the total number of input and output tokens that it can process and generate within a span of one minute. By default, your account has no model units for purchasing Provisioned Throughputs with commitment. You must first visit the <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase">Amazon Web Services support center</a> to request MUs.</p>
+    /// <p>For model unit quotas, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html#prov-thru-quotas">Provisioned Throughput quotas</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>For more information about what an MU specifies, contact your Amazon Web Services account manager.</p>
     pub fn set_model_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_model_units(input);
         self
     }
-    /// <p>Number of model units to allocate.</p>
+    /// <p>Number of model units to allocate. A model unit delivers a specific throughput level for the specified model. The throughput level of a model unit specifies the total number of input and output tokens that it can process and generate within a span of one minute. By default, your account has no model units for purchasing Provisioned Throughputs with commitment. You must first visit the <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase">Amazon Web Services support center</a> to request MUs.</p>
+    /// <p>For model unit quotas, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html#prov-thru-quotas">Provisioned Throughput quotas</a> in the Amazon Bedrock User Guide.</p>
+    /// <p>For more information about what an MU specifies, contact your Amazon Web Services account manager.</p>
     pub fn get_model_units(&self) -> &::std::option::Option<i32> {
         self.inner.get_model_units()
     }
-    /// <p>Unique name for this provisioned throughput.</p>
+    /// <p>The name for this Provisioned Throughput.</p>
     pub fn provisioned_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioned_model_name(input.into());
         self
     }
-    /// <p>Unique name for this provisioned throughput.</p>
+    /// <p>The name for this Provisioned Throughput.</p>
     pub fn set_provisioned_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioned_model_name(input);
         self
     }
-    /// <p>Unique name for this provisioned throughput.</p>
+    /// <p>The name for this Provisioned Throughput.</p>
     pub fn get_provisioned_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provisioned_model_name()
     }
-    /// <p>Name or ARN of the model to associate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the model to associate with this Provisioned Throughput. For a list of models for which you can purchase Provisioned Throughput, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#prov-throughput-models">Amazon Bedrock model IDs for purchasing Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_id(input.into());
         self
     }
-    /// <p>Name or ARN of the model to associate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the model to associate with this Provisioned Throughput. For a list of models for which you can purchase Provisioned Throughput, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#prov-throughput-models">Amazon Bedrock model IDs for purchasing Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_id(input);
         self
     }
-    /// <p>Name or ARN of the model to associate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the model to associate with this Provisioned Throughput. For a list of models for which you can purchase Provisioned Throughput, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#prov-throughput-models">Amazon Bedrock model IDs for purchasing Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_id()
     }
-    /// <p>Commitment duration requested for the provisioned throughput.</p>
+    /// <p>The commitment duration requested for the Provisioned Throughput. Billing occurs hourly and is discounted for longer commitment terms. To request a no-commit Provisioned Throughput, omit this field.</p>
+    /// <p>Custom models support all levels of commitment. To see which base models support no commitment, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/pt-supported.html">Supported regions and models for Provisioned Throughput</a> in the Amazon Bedrock User Guide</p>
     pub fn commitment_duration(mut self, input: crate::types::CommitmentDuration) -> Self {
         self.inner = self.inner.commitment_duration(input);
         self
     }
-    /// <p>Commitment duration requested for the provisioned throughput.</p>
+    /// <p>The commitment duration requested for the Provisioned Throughput. Billing occurs hourly and is discounted for longer commitment terms. To request a no-commit Provisioned Throughput, omit this field.</p>
+    /// <p>Custom models support all levels of commitment. To see which base models support no commitment, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/pt-supported.html">Supported regions and models for Provisioned Throughput</a> in the Amazon Bedrock User Guide</p>
     pub fn set_commitment_duration(mut self, input: ::std::option::Option<crate::types::CommitmentDuration>) -> Self {
         self.inner = self.inner.set_commitment_duration(input);
         self
     }
-    /// <p>Commitment duration requested for the provisioned throughput.</p>
+    /// <p>The commitment duration requested for the Provisioned Throughput. Billing occurs hourly and is discounted for longer commitment terms. To request a no-commit Provisioned Throughput, omit this field.</p>
+    /// <p>Custom models support all levels of commitment. To see which base models support no commitment, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/pt-supported.html">Supported regions and models for Provisioned Throughput</a> in the Amazon Bedrock User Guide</p>
     pub fn get_commitment_duration(&self) -> &::std::option::Option<crate::types::CommitmentDuration> {
         self.inner.get_commitment_duration()
     }
@@ -184,17 +192,17 @@ impl CreateProvisionedModelThroughputFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags to associate with this provisioned throughput.</p>
+    /// <p>Tags to associate with this Provisioned Throughput.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Tags to associate with this provisioned throughput.</p>
+    /// <p>Tags to associate with this Provisioned Throughput.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Tags to associate with this provisioned throughput.</p>
+    /// <p>Tags to associate with this Provisioned Throughput.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }

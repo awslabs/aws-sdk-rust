@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacesOutput {
-    /// <p>Information about one or more network interfaces.</p>
+    /// <p>Information about the network interfaces.</p>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeNetworkInterfacesOutput {
-    /// <p>Information about one or more network interfaces.</p>
+    /// <p>Information about the network interfaces.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
     pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
@@ -46,19 +46,19 @@ impl DescribeNetworkInterfacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p>Information about one or more network interfaces.</p>
+    /// <p>Information about the network interfaces.</p>
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
         self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about one or more network interfaces.</p>
+    /// <p>Information about the network interfaces.</p>
     pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.network_interfaces = input;
         self
     }
-    /// <p>Information about one or more network interfaces.</p>
+    /// <p>Information about the network interfaces.</p>
     pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }

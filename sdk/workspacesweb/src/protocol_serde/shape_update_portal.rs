@@ -82,6 +82,24 @@ pub fn de_update_portal_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::update_portal::UpdatePortalError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_portal::UpdatePortalError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::update_portal::UpdatePortalError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

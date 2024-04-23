@@ -1150,6 +1150,9 @@ pub mod disable_image_block_public_access;
 /// Types for the `DisableImageDeprecation` operation.
 pub mod disable_image_deprecation;
 
+/// Types for the `DisableImageDeregistrationProtection` operation.
+pub mod disable_image_deregistration_protection;
+
 /// Types for the `DisableIpamOrganizationAdminAccount` operation.
 pub mod disable_ipam_organization_admin_account;
 
@@ -1239,6 +1242,9 @@ pub mod enable_image_block_public_access;
 
 /// Types for the `EnableImageDeprecation` operation.
 pub mod enable_image_deprecation;
+
+/// Types for the `EnableImageDeregistrationProtection` operation.
+pub mod enable_image_deregistration_protection;
 
 /// Types for the `EnableIpamOrganizationAdminAccount` operation.
 pub mod enable_ipam_organization_admin_account;

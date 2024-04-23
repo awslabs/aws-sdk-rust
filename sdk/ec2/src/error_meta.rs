@@ -10039,6 +10039,40 @@ impl From<crate::operation::disable_image_deprecation::DisableImageDeprecationEr
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_image_deregistration_protection::DisableImageDeregistrationProtectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_image_deregistration_protection::DisableImageDeregistrationProtectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_image_deregistration_protection::DisableImageDeregistrationProtectionError> for Error {
+    fn from(err: crate::operation::disable_image_deregistration_protection::DisableImageDeregistrationProtectionError) -> Self {
+        match err {
+            crate::operation::disable_image_deregistration_protection::DisableImageDeregistrationProtectionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountError,
             R,
         >,
@@ -10880,6 +10914,40 @@ impl From<crate::operation::enable_image_deprecation::EnableImageDeprecationErro
     fn from(err: crate::operation::enable_image_deprecation::EnableImageDeprecationError) -> Self {
         match err {
             crate::operation::enable_image_deprecation::EnableImageDeprecationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_image_deregistration_protection::EnableImageDeregistrationProtectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_image_deregistration_protection::EnableImageDeregistrationProtectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_image_deregistration_protection::EnableImageDeregistrationProtectionError> for Error {
+    fn from(err: crate::operation::enable_image_deregistration_protection::EnableImageDeregistrationProtectionError) -> Self {
+        match err {
+            crate::operation::enable_image_deregistration_protection::EnableImageDeregistrationProtectionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

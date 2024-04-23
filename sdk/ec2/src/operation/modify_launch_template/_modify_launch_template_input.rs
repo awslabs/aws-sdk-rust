@@ -9,10 +9,10 @@ pub struct ModifyLaunchTemplateInput {
     /// <p>Constraint: Maximum 128 ASCII characters.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the launch template to set as the default version.</p>
     pub default_version: ::std::option::Option<::std::string::String>,
@@ -28,12 +28,12 @@ impl ModifyLaunchTemplateInput {
         self.client_token.as_deref()
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn launch_template_id(&self) -> ::std::option::Option<&str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn launch_template_name(&self) -> ::std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
@@ -92,36 +92,36 @@ impl ModifyLaunchTemplateInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_template_id = input;
         self
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_template_id
     }
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_template_name = input;
         self
     }
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name, but not both.</p>
     pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_template_name
     }

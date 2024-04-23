@@ -22,7 +22,7 @@ impl crate::operation::delete_provisioned_model_throughput::builders::DeleteProv
 }
 /// Fluent builder constructing a request to `DeleteProvisionedModelThroughput`.
 ///
-/// <p>Deletes a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in the Bedrock User Guide.</p>
+/// <p>Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before the commitment term is over. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProvisionedModelThroughputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteProvisionedModelThroughputFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN or name of the provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
     pub fn provisioned_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioned_model_id(input.into());
         self
     }
-    /// <p>The ARN or name of the provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
     pub fn set_provisioned_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioned_model_id(input);
         self
     }
-    /// <p>The ARN or name of the provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p>
     pub fn get_provisioned_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_provisioned_model_id()
     }

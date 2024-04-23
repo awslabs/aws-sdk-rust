@@ -240,7 +240,7 @@ pub enum TagResourceError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
+    /// <p>The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

@@ -138,22 +138,50 @@ impl UpdatePortalFluentBuilder {
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.inner = self.inner.authentication_type(input);
         self
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         self.inner.get_authentication_type()
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
+        self.inner = self.inner.instance_type(input);
+        self
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
+        self.inner = self.inner.set_instance_type(input);
+        self
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        self.inner.get_instance_type()
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_concurrent_sessions(input);
+        self
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn set_max_concurrent_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_concurrent_sessions(input);
+        self
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn get_max_concurrent_sessions(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_concurrent_sessions()
     }
 }

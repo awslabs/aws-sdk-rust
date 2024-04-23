@@ -3,89 +3,89 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProvisionedModelThroughputOutput {
-    /// <p>The current number of model units requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units allocated to this Provisioned Throughput.</p>
     pub model_units: i32,
-    /// <p>The desired number of model units that was requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units that was requested for this Provisioned Throughput.</p>
     pub desired_model_units: i32,
-    /// <p>The name of the provisioned throughput.</p>
+    /// <p>The name of the Provisioned Throughput.</p>
     pub provisioned_model_name: ::std::string::String,
-    /// <p>The ARN of the provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Provisioned Throughput.</p>
     pub provisioned_model_arn: ::std::string::String,
-    /// <p>The ARN or name of the model associated with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.</p>
     pub model_arn: ::std::string::String,
-    /// <p>The ARN of the new model to asssociate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value differs from the <code>modelArn</code> if updating hasn't completed.</p>
     pub desired_model_arn: ::std::string::String,
-    /// <p>ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base model that the custom model for which the Provisioned Throughput was created was customized.</p>
     pub foundation_model_arn: ::std::string::String,
-    /// <p>Status of the provisioned throughput.</p>
+    /// <p>The status of the Provisioned Throughput.</p>
     pub status: crate::types::ProvisionedModelStatus,
-    /// <p>The timestamp of the creation time for this provisioned throughput.</p>
+    /// <p>The timestamp of the creation time for this Provisioned Throughput.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The timestamp of the last modified time of this provisioned throughput.</p>
+    /// <p>The timestamp of the last time that this Provisioned Throughput was modified.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
-    /// <p>Failure message for any issues that the create operation encounters.</p>
+    /// <p>A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned Throughput.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
-    /// <p>Commitment duration of the provisioned throughput.</p>
+    /// <p>Commitment duration of the Provisioned Throughput.</p>
     pub commitment_duration: ::std::option::Option<crate::types::CommitmentDuration>,
-    /// <p>Commitment expiration time for the provisioned throughput.</p>
+    /// <p>The timestamp for when the commitment term for the Provisioned Throughput expires.</p>
     pub commitment_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetProvisionedModelThroughputOutput {
-    /// <p>The current number of model units requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units allocated to this Provisioned Throughput.</p>
     pub fn model_units(&self) -> i32 {
         self.model_units
     }
-    /// <p>The desired number of model units that was requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units that was requested for this Provisioned Throughput.</p>
     pub fn desired_model_units(&self) -> i32 {
         self.desired_model_units
     }
-    /// <p>The name of the provisioned throughput.</p>
+    /// <p>The name of the Provisioned Throughput.</p>
     pub fn provisioned_model_name(&self) -> &str {
         use std::ops::Deref;
         self.provisioned_model_name.deref()
     }
-    /// <p>The ARN of the provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Provisioned Throughput.</p>
     pub fn provisioned_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.provisioned_model_arn.deref()
     }
-    /// <p>The ARN or name of the model associated with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.</p>
     pub fn model_arn(&self) -> &str {
         use std::ops::Deref;
         self.model_arn.deref()
     }
-    /// <p>The ARN of the new model to asssociate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value differs from the <code>modelArn</code> if updating hasn't completed.</p>
     pub fn desired_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.desired_model_arn.deref()
     }
-    /// <p>ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base model that the custom model for which the Provisioned Throughput was created was customized.</p>
     pub fn foundation_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.foundation_model_arn.deref()
     }
-    /// <p>Status of the provisioned throughput.</p>
+    /// <p>The status of the Provisioned Throughput.</p>
     pub fn status(&self) -> &crate::types::ProvisionedModelStatus {
         &self.status
     }
-    /// <p>The timestamp of the creation time for this provisioned throughput.</p>
+    /// <p>The timestamp of the creation time for this Provisioned Throughput.</p>
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The timestamp of the last modified time of this provisioned throughput.</p>
+    /// <p>The timestamp of the last time that this Provisioned Throughput was modified.</p>
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
-    /// <p>Failure message for any issues that the create operation encounters.</p>
+    /// <p>A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned Throughput.</p>
     pub fn failure_message(&self) -> ::std::option::Option<&str> {
         self.failure_message.as_deref()
     }
-    /// <p>Commitment duration of the provisioned throughput.</p>
+    /// <p>Commitment duration of the Provisioned Throughput.</p>
     pub fn commitment_duration(&self) -> ::std::option::Option<&crate::types::CommitmentDuration> {
         self.commitment_duration.as_ref()
     }
-    /// <p>Commitment expiration time for the provisioned throughput.</p>
+    /// <p>The timestamp for when the commitment term for the Provisioned Throughput expires.</p>
     pub fn commitment_expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.commitment_expiration_time.as_ref()
     }
@@ -122,195 +122,195 @@ pub struct GetProvisionedModelThroughputOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetProvisionedModelThroughputOutputBuilder {
-    /// <p>The current number of model units requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units allocated to this Provisioned Throughput.</p>
     /// This field is required.
     pub fn model_units(mut self, input: i32) -> Self {
         self.model_units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current number of model units requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units allocated to this Provisioned Throughput.</p>
     pub fn set_model_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_units = input;
         self
     }
-    /// <p>The current number of model units requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units allocated to this Provisioned Throughput.</p>
     pub fn get_model_units(&self) -> &::std::option::Option<i32> {
         &self.model_units
     }
-    /// <p>The desired number of model units that was requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units that was requested for this Provisioned Throughput.</p>
     /// This field is required.
     pub fn desired_model_units(mut self, input: i32) -> Self {
         self.desired_model_units = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The desired number of model units that was requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units that was requested for this Provisioned Throughput.</p>
     pub fn set_desired_model_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_model_units = input;
         self
     }
-    /// <p>The desired number of model units that was requested to be available for this provisioned throughput.</p>
+    /// <p>The number of model units that was requested for this Provisioned Throughput.</p>
     pub fn get_desired_model_units(&self) -> &::std::option::Option<i32> {
         &self.desired_model_units
     }
-    /// <p>The name of the provisioned throughput.</p>
+    /// <p>The name of the Provisioned Throughput.</p>
     /// This field is required.
     pub fn provisioned_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the provisioned throughput.</p>
+    /// <p>The name of the Provisioned Throughput.</p>
     pub fn set_provisioned_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_model_name = input;
         self
     }
-    /// <p>The name of the provisioned throughput.</p>
+    /// <p>The name of the Provisioned Throughput.</p>
     pub fn get_provisioned_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioned_model_name
     }
-    /// <p>The ARN of the provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Provisioned Throughput.</p>
     /// This field is required.
     pub fn provisioned_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Provisioned Throughput.</p>
     pub fn set_provisioned_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_model_arn = input;
         self
     }
-    /// <p>The ARN of the provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Provisioned Throughput.</p>
     pub fn get_provisioned_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioned_model_arn
     }
-    /// <p>The ARN or name of the model associated with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.</p>
     /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN or name of the model associated with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The ARN or name of the model associated with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
-    /// <p>The ARN of the new model to asssociate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value differs from the <code>modelArn</code> if updating hasn't completed.</p>
     /// This field is required.
     pub fn desired_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the new model to asssociate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value differs from the <code>modelArn</code> if updating hasn't completed.</p>
     pub fn set_desired_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_model_arn = input;
         self
     }
-    /// <p>The ARN of the new model to asssociate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value differs from the <code>modelArn</code> if updating hasn't completed.</p>
     pub fn get_desired_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_model_arn
     }
-    /// <p>ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base model that the custom model for which the Provisioned Throughput was created was customized.</p>
     /// This field is required.
     pub fn foundation_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.foundation_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base model that the custom model for which the Provisioned Throughput was created was customized.</p>
     pub fn set_foundation_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.foundation_model_arn = input;
         self
     }
-    /// <p>ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base model that the custom model for which the Provisioned Throughput was created was customized.</p>
     pub fn get_foundation_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.foundation_model_arn
     }
-    /// <p>Status of the provisioned throughput.</p>
+    /// <p>The status of the Provisioned Throughput.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ProvisionedModelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Status of the provisioned throughput.</p>
+    /// <p>The status of the Provisioned Throughput.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProvisionedModelStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Status of the provisioned throughput.</p>
+    /// <p>The status of the Provisioned Throughput.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProvisionedModelStatus> {
         &self.status
     }
-    /// <p>The timestamp of the creation time for this provisioned throughput.</p>
+    /// <p>The timestamp of the creation time for this Provisioned Throughput.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of the creation time for this provisioned throughput.</p>
+    /// <p>The timestamp of the creation time for this Provisioned Throughput.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The timestamp of the creation time for this provisioned throughput.</p>
+    /// <p>The timestamp of the creation time for this Provisioned Throughput.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The timestamp of the last modified time of this provisioned throughput.</p>
+    /// <p>The timestamp of the last time that this Provisioned Throughput was modified.</p>
     /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of the last modified time of this provisioned throughput.</p>
+    /// <p>The timestamp of the last time that this Provisioned Throughput was modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>The timestamp of the last modified time of this provisioned throughput.</p>
+    /// <p>The timestamp of the last time that this Provisioned Throughput was modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>Failure message for any issues that the create operation encounters.</p>
+    /// <p>A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned Throughput.</p>
     pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Failure message for any issues that the create operation encounters.</p>
+    /// <p>A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned Throughput.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }
-    /// <p>Failure message for any issues that the create operation encounters.</p>
+    /// <p>A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned Throughput.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_message
     }
-    /// <p>Commitment duration of the provisioned throughput.</p>
+    /// <p>Commitment duration of the Provisioned Throughput.</p>
     pub fn commitment_duration(mut self, input: crate::types::CommitmentDuration) -> Self {
         self.commitment_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Commitment duration of the provisioned throughput.</p>
+    /// <p>Commitment duration of the Provisioned Throughput.</p>
     pub fn set_commitment_duration(mut self, input: ::std::option::Option<crate::types::CommitmentDuration>) -> Self {
         self.commitment_duration = input;
         self
     }
-    /// <p>Commitment duration of the provisioned throughput.</p>
+    /// <p>Commitment duration of the Provisioned Throughput.</p>
     pub fn get_commitment_duration(&self) -> &::std::option::Option<crate::types::CommitmentDuration> {
         &self.commitment_duration
     }
-    /// <p>Commitment expiration time for the provisioned throughput.</p>
+    /// <p>The timestamp for when the commitment term for the Provisioned Throughput expires.</p>
     pub fn commitment_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.commitment_expiration_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Commitment expiration time for the provisioned throughput.</p>
+    /// <p>The timestamp for when the commitment term for the Provisioned Throughput expires.</p>
     pub fn set_commitment_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.commitment_expiration_time = input;
         self
     }
-    /// <p>Commitment expiration time for the provisioned throughput.</p>
+    /// <p>The timestamp for when the commitment term for the Provisioned Throughput expires.</p>
     pub fn get_commitment_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.commitment_expiration_time
     }

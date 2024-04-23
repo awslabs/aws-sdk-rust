@@ -22,7 +22,7 @@ impl crate::operation::get_custom_model::builders::GetCustomModelInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCustomModel`.
 ///
-/// <p>Get the properties associated with a Amazon Bedrock custom model that you have created.For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock User Guide.</p>
+/// <p>Get the properties associated with a Amazon Bedrock custom model that you have created.For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCustomModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetCustomModelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Name or ARN of the custom model.</p>
+    /// <p>Name or Amazon Resource Name (ARN) of the custom model.</p>
     pub fn model_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_identifier(input.into());
         self
     }
-    /// <p>Name or ARN of the custom model.</p>
+    /// <p>Name or Amazon Resource Name (ARN) of the custom model.</p>
     pub fn set_model_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_identifier(input);
         self
     }
-    /// <p>Name or ARN of the custom model.</p>
+    /// <p>Name or Amazon Resource Name (ARN) of the custom model.</p>
     pub fn get_model_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_identifier()
     }

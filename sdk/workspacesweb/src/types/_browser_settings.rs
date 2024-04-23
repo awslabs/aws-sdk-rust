@@ -10,6 +10,10 @@ pub struct BrowserSettings {
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     pub browser_policy: ::std::option::Option<::std::string::String>,
+    /// <p>The customer managed key used to encrypt sensitive information in the browser settings.</p>
+    pub customer_managed_key: ::std::option::Option<::std::string::String>,
+    /// <p>The additional encryption context of the browser settings.</p>
+    pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl BrowserSettings {
     /// <p>The ARN of the browser settings.</p>
@@ -27,6 +31,14 @@ impl BrowserSettings {
     pub fn browser_policy(&self) -> ::std::option::Option<&str> {
         self.browser_policy.as_deref()
     }
+    /// <p>The customer managed key used to encrypt sensitive information in the browser settings.</p>
+    pub fn customer_managed_key(&self) -> ::std::option::Option<&str> {
+        self.customer_managed_key.as_deref()
+    }
+    /// <p>The additional encryption context of the browser settings.</p>
+    pub fn additional_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.additional_encryption_context.as_ref()
+    }
 }
 impl ::std::fmt::Debug for BrowserSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -34,6 +46,8 @@ impl ::std::fmt::Debug for BrowserSettings {
         formatter.field("browser_settings_arn", &self.browser_settings_arn);
         formatter.field("associated_portal_arns", &self.associated_portal_arns);
         formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
+        formatter.field("customer_managed_key", &self.customer_managed_key);
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.finish()
     }
 }
@@ -51,6 +65,8 @@ pub struct BrowserSettingsBuilder {
     pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) browser_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl BrowserSettingsBuilder {
     /// <p>The ARN of the browser settings.</p>
@@ -102,6 +118,49 @@ impl BrowserSettingsBuilder {
     pub fn get_browser_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.browser_policy
     }
+    /// <p>The customer managed key used to encrypt sensitive information in the browser settings.</p>
+    pub fn customer_managed_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.customer_managed_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the browser settings.</p>
+    pub fn set_customer_managed_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_managed_key = input;
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the browser settings.</p>
+    pub fn get_customer_managed_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_managed_key
+    }
+    /// Adds a key-value pair to `additional_encryption_context`.
+    ///
+    /// To override the contents of this collection use [`set_additional_encryption_context`](Self::set_additional_encryption_context).
+    ///
+    /// <p>The additional encryption context of the browser settings.</p>
+    pub fn additional_encryption_context(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.additional_encryption_context.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.additional_encryption_context = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The additional encryption context of the browser settings.</p>
+    pub fn set_additional_encryption_context(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.additional_encryption_context = input;
+        self
+    }
+    /// <p>The additional encryption context of the browser settings.</p>
+    pub fn get_additional_encryption_context(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.additional_encryption_context
+    }
     /// Consumes the builder and constructs a [`BrowserSettings`](crate::types::BrowserSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`browser_settings_arn`](crate::types::builders::BrowserSettingsBuilder::browser_settings_arn)
@@ -115,6 +174,8 @@ impl BrowserSettingsBuilder {
             })?,
             associated_portal_arns: self.associated_portal_arns,
             browser_policy: self.browser_policy,
+            customer_managed_key: self.customer_managed_key,
+            additional_encryption_context: self.additional_encryption_context,
         })
     }
 }
@@ -124,6 +185,8 @@ impl ::std::fmt::Debug for BrowserSettingsBuilder {
         formatter.field("browser_settings_arn", &self.browser_settings_arn);
         formatter.field("associated_portal_arns", &self.associated_portal_arns);
         formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
+        formatter.field("customer_managed_key", &self.customer_managed_key);
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.finish()
     }
 }

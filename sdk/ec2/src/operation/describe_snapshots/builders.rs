@@ -39,7 +39,9 @@ impl crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuild
 /// <p>If you specify a list of restorable users, only snapshots with create snapshot permissions for those users are returned. You can specify Amazon Web Services account IDs (if you own the snapshots), <code>self</code> for snapshots for which you own or have explicit permissions, or <code>all</code> for public snapshots.</p>
 /// <p>If you are describing a long list of snapshots, we recommend that you paginate the output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
 /// <p>To get the state of fast snapshot restores for a snapshot, use <code>DescribeFastSnapshotRestores</code>.</p>
-/// <p>For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.</p>
+/// <p>For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.</p><important>
+/// <p>We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and timeouts.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

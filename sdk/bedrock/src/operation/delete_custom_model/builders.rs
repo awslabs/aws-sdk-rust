@@ -22,7 +22,7 @@ impl crate::operation::delete_custom_model::builders::DeleteCustomModelInputBuil
 }
 /// Fluent builder constructing a request to `DeleteCustomModel`.
 ///
-/// <p>Deletes a custom model that you created earlier. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock User Guide.</p>
+/// <p>Deletes a custom model that you created earlier. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

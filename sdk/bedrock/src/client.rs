@@ -118,6 +118,12 @@ impl Client {
     }
 }
 
+mod create_evaluation_job;
+
+mod create_guardrail;
+
+mod create_guardrail_version;
+
 mod create_model_customization_job;
 
 mod create_provisioned_model_throughput;
@@ -128,13 +134,19 @@ pub mod customize;
 
 mod delete_custom_model;
 
+mod delete_guardrail;
+
 mod delete_model_invocation_logging_configuration;
 
 mod delete_provisioned_model_throughput;
 
 mod get_custom_model;
 
+mod get_evaluation_job;
+
 mod get_foundation_model;
+
+mod get_guardrail;
 
 mod get_model_customization_job;
 
@@ -144,7 +156,11 @@ mod get_provisioned_model_throughput;
 
 mod list_custom_models;
 
+mod list_evaluation_jobs;
+
 mod list_foundation_models;
+
+mod list_guardrails;
 
 mod list_model_customization_jobs;
 
@@ -154,10 +170,14 @@ mod list_tags_for_resource;
 
 mod put_model_invocation_logging_configuration;
 
+mod stop_evaluation_job;
+
 mod stop_model_customization_job;
 
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_guardrail;
 
 mod update_provisioned_model_throughput;

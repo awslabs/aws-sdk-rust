@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProvisionedModelThroughput`](crate::operation::delete_provisioned_model_throughput::builders::DeleteProvisionedModelThroughputFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`provisioned_model_id(impl Into<String>)`](crate::operation::delete_provisioned_model_throughput::builders::DeleteProvisionedModelThroughputFluentBuilder::provisioned_model_id) / [`set_provisioned_model_id(Option<String>)`](crate::operation::delete_provisioned_model_throughput::builders::DeleteProvisionedModelThroughputFluentBuilder::set_provisioned_model_id):<br>required: **true**<br><p>The ARN or name of the provisioned throughput.</p><br>
+    ///   - [`provisioned_model_id(impl Into<String>)`](crate::operation::delete_provisioned_model_throughput::builders::DeleteProvisionedModelThroughputFluentBuilder::provisioned_model_id) / [`set_provisioned_model_id(Option<String>)`](crate::operation::delete_provisioned_model_throughput::builders::DeleteProvisionedModelThroughputFluentBuilder::set_provisioned_model_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput.</p><br>
     /// - On success, responds with [`DeleteProvisionedModelThroughputOutput`](crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputOutput)
     /// - On failure, responds with [`SdkError<DeleteProvisionedModelThroughputError>`](crate::operation::delete_provisioned_model_throughput::DeleteProvisionedModelThroughputError)
     pub fn delete_provisioned_model_throughput(

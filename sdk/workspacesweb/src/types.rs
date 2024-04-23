@@ -29,6 +29,8 @@ pub use crate::types::_trust_store_summary::TrustStoreSummary;
 
 pub use crate::types::_portal::Portal;
 
+pub use crate::types::_instance_type::InstanceType;
+
 pub use crate::types::_authentication_type::AuthenticationType;
 
 pub use crate::types::_portal_status::PortalStatus;
@@ -82,6 +84,8 @@ mod _identity_provider;
 mod _identity_provider_summary;
 
 mod _identity_provider_type;
+
+mod _instance_type;
 
 mod _ip_access_settings;
 

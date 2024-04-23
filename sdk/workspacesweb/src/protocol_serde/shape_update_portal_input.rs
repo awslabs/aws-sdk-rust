@@ -9,5 +9,14 @@ pub fn ser_update_portal_input_input(
     if let Some(var_2) = &input.display_name {
         object.key("displayName").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.instance_type {
+        object.key("instanceType").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.max_concurrent_sessions {
+        object.key("maxConcurrentSessions").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
     Ok(())
 }

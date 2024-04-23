@@ -32,10 +32,18 @@ pub struct Portal {
     pub user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The ARN of the IP access settings.</p>
     pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The customer managed key used to encrypt sensitive information in the portal.</p>
+    pub customer_managed_key: ::std::option::Option<::std::string::String>,
+    /// <p>The additional encryption context of the portal.</p>
+    pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The type and resources of the underlying instance.</p>
+    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub max_concurrent_sessions: ::std::option::Option<i32>,
 }
 impl Portal {
     /// <p>The ARN of the web portal.</p>
@@ -93,13 +101,29 @@ impl Portal {
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The ARN of the IP access settings.</p>
     pub fn ip_access_settings_arn(&self) -> ::std::option::Option<&str> {
         self.ip_access_settings_arn.as_deref()
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the portal.</p>
+    pub fn customer_managed_key(&self) -> ::std::option::Option<&str> {
+        self.customer_managed_key.as_deref()
+    }
+    /// <p>The additional encryption context of the portal.</p>
+    pub fn additional_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.additional_encryption_context.as_ref()
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+        self.instance_type.as_ref()
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn max_concurrent_sessions(&self) -> ::std::option::Option<i32> {
+        self.max_concurrent_sessions
     }
 }
 impl ::std::fmt::Debug for Portal {
@@ -120,6 +144,10 @@ impl ::std::fmt::Debug for Portal {
         formatter.field("user_access_logging_settings_arn", &self.user_access_logging_settings_arn);
         formatter.field("authentication_type", &self.authentication_type);
         formatter.field("ip_access_settings_arn", &self.ip_access_settings_arn);
+        formatter.field("customer_managed_key", &self.customer_managed_key);
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
         formatter.finish()
     }
 }
@@ -149,6 +177,10 @@ pub struct PortalBuilder {
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) ip_access_settings_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub(crate) max_concurrent_sessions: ::std::option::Option<i32>,
 }
 impl PortalBuilder {
     /// <p>The ARN of the web portal.</p>
@@ -336,21 +368,21 @@ impl PortalBuilder {
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
-    /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
+    /// <p><code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single Sign-On). Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         &self.authentication_type
     }
@@ -367,6 +399,77 @@ impl PortalBuilder {
     /// <p>The ARN of the IP access settings.</p>
     pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_access_settings_arn
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the portal.</p>
+    pub fn customer_managed_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.customer_managed_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the portal.</p>
+    pub fn set_customer_managed_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_managed_key = input;
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the portal.</p>
+    pub fn get_customer_managed_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_managed_key
+    }
+    /// Adds a key-value pair to `additional_encryption_context`.
+    ///
+    /// To override the contents of this collection use [`set_additional_encryption_context`](Self::set_additional_encryption_context).
+    ///
+    /// <p>The additional encryption context of the portal.</p>
+    pub fn additional_encryption_context(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.additional_encryption_context.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.additional_encryption_context = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The additional encryption context of the portal.</p>
+    pub fn set_additional_encryption_context(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.additional_encryption_context = input;
+        self
+    }
+    /// <p>The additional encryption context of the portal.</p>
+    pub fn get_additional_encryption_context(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.additional_encryption_context
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
+        self.instance_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
+        self.instance_type = input;
+        self
+    }
+    /// <p>The type and resources of the underlying instance.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
+        self.max_concurrent_sessions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn set_max_concurrent_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_concurrent_sessions = input;
+        self
+    }
+    /// <p>The maximum number of concurrent sessions for the portal.</p>
+    pub fn get_max_concurrent_sessions(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_sessions
     }
     /// Consumes the builder and constructs a [`Portal`](crate::types::Portal).
     /// This method will fail if any of the following fields are not set:
@@ -393,6 +496,10 @@ impl PortalBuilder {
             user_access_logging_settings_arn: self.user_access_logging_settings_arn,
             authentication_type: self.authentication_type,
             ip_access_settings_arn: self.ip_access_settings_arn,
+            customer_managed_key: self.customer_managed_key,
+            additional_encryption_context: self.additional_encryption_context,
+            instance_type: self.instance_type,
+            max_concurrent_sessions: self.max_concurrent_sessions,
         })
     }
 }
@@ -414,6 +521,10 @@ impl ::std::fmt::Debug for PortalBuilder {
         formatter.field("user_access_logging_settings_arn", &self.user_access_logging_settings_arn);
         formatter.field("authentication_type", &self.authentication_type);
         formatter.field("ip_access_settings_arn", &self.ip_access_settings_arn);
+        formatter.field("customer_managed_key", &self.customer_managed_key);
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
         formatter.finish()
     }
 }

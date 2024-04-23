@@ -32,6 +32,8 @@ pub struct DescribeImageAttributeOutput {
     pub last_launched_time: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub imds_support: ::std::option::Option<crate::types::AttributeValue>,
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub deregistration_protection: ::std::option::Option<crate::types::AttributeValue>,
     _request_id: Option<String>,
 }
 impl DescribeImageAttributeOutput {
@@ -95,6 +97,10 @@ impl DescribeImageAttributeOutput {
     pub fn imds_support(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
         self.imds_support.as_ref()
     }
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub fn deregistration_protection(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
+        self.deregistration_protection.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeImageAttributeOutput {
     fn request_id(&self) -> Option<&str> {
@@ -125,6 +131,7 @@ pub struct DescribeImageAttributeOutputBuilder {
     pub(crate) uefi_data: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) last_launched_time: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) imds_support: ::std::option::Option<crate::types::AttributeValue>,
+    pub(crate) deregistration_protection: ::std::option::Option<crate::types::AttributeValue>,
     _request_id: Option<String>,
 }
 impl DescribeImageAttributeOutputBuilder {
@@ -334,6 +341,20 @@ impl DescribeImageAttributeOutputBuilder {
     pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         &self.imds_support
     }
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub fn deregistration_protection(mut self, input: crate::types::AttributeValue) -> Self {
+        self.deregistration_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub fn set_deregistration_protection(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
+        self.deregistration_protection = input;
+        self
+    }
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub fn get_deregistration_protection(&self) -> &::std::option::Option<crate::types::AttributeValue> {
+        &self.deregistration_protection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -359,6 +380,7 @@ impl DescribeImageAttributeOutputBuilder {
             uefi_data: self.uefi_data,
             last_launched_time: self.last_launched_time,
             imds_support: self.imds_support,
+            deregistration_protection: self.deregistration_protection,
             _request_id: self._request_id,
         }
     }

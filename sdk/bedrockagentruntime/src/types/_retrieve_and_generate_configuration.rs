@@ -13,6 +13,8 @@ pub struct RetrieveAndGenerateConfiguration {
     pub r#type: crate::types::RetrieveAndGenerateType,
     /// <p>Contains details about the resource being queried.</p>
     pub knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration>,
+    /// <p>The configuration used with the external source wrapper object in the retrieveAndGenerate function.</p>
+    pub external_sources_configuration: ::std::option::Option<crate::types::ExternalSourcesRetrieveAndGenerateConfiguration>,
 }
 impl RetrieveAndGenerateConfiguration {
     /// <p>The type of resource that is queried by the request.</p>
@@ -22,6 +24,10 @@ impl RetrieveAndGenerateConfiguration {
     /// <p>Contains details about the resource being queried.</p>
     pub fn knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration> {
         self.knowledge_base_configuration.as_ref()
+    }
+    /// <p>The configuration used with the external source wrapper object in the retrieveAndGenerate function.</p>
+    pub fn external_sources_configuration(&self) -> ::std::option::Option<&crate::types::ExternalSourcesRetrieveAndGenerateConfiguration> {
+        self.external_sources_configuration.as_ref()
     }
 }
 impl RetrieveAndGenerateConfiguration {
@@ -37,6 +43,7 @@ impl RetrieveAndGenerateConfiguration {
 pub struct RetrieveAndGenerateConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RetrieveAndGenerateType>,
     pub(crate) knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration>,
+    pub(crate) external_sources_configuration: ::std::option::Option<crate::types::ExternalSourcesRetrieveAndGenerateConfiguration>,
 }
 impl RetrieveAndGenerateConfigurationBuilder {
     /// <p>The type of resource that is queried by the request.</p>
@@ -71,6 +78,23 @@ impl RetrieveAndGenerateConfigurationBuilder {
     pub fn get_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration> {
         &self.knowledge_base_configuration
     }
+    /// <p>The configuration used with the external source wrapper object in the retrieveAndGenerate function.</p>
+    pub fn external_sources_configuration(mut self, input: crate::types::ExternalSourcesRetrieveAndGenerateConfiguration) -> Self {
+        self.external_sources_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration used with the external source wrapper object in the retrieveAndGenerate function.</p>
+    pub fn set_external_sources_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ExternalSourcesRetrieveAndGenerateConfiguration>,
+    ) -> Self {
+        self.external_sources_configuration = input;
+        self
+    }
+    /// <p>The configuration used with the external source wrapper object in the retrieveAndGenerate function.</p>
+    pub fn get_external_sources_configuration(&self) -> &::std::option::Option<crate::types::ExternalSourcesRetrieveAndGenerateConfiguration> {
+        &self.external_sources_configuration
+    }
     /// Consumes the builder and constructs a [`RetrieveAndGenerateConfiguration`](crate::types::RetrieveAndGenerateConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::RetrieveAndGenerateConfigurationBuilder::r#type)
@@ -83,6 +107,7 @@ impl RetrieveAndGenerateConfigurationBuilder {
                 )
             })?,
             knowledge_base_configuration: self.knowledge_base_configuration,
+            external_sources_configuration: self.external_sources_configuration,
         })
     }
 }

@@ -3,55 +3,55 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProvisionedModelThroughputsInput {
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created after the specified time.</p>
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created before the specified time.</p>
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Return the list of provisioned capacities that match the specified status.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.</p>
     pub status_equals: ::std::option::Option<crate::types::ProvisionedModelStatus>,
-    /// <p>Return the list of provisioned capacities where their model ARN is equal to this parameter.</p>
+    /// <p>A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that you specify.</p>
     pub model_arn_equals: ::std::option::Option<::std::string::String>,
-    /// <p>Return the list of provisioned capacities if their name contains these characters.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their name contains the expression that you specify.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
-    /// <p>THe maximum number of results to return in the response.</p>
+    /// <p>THe maximum number of results to return in the response. If there are more results than the number you specified, the response returns a <code>nextToken</code> value. To see the next batch of results, send the <code>nextToken</code> value in another list request.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, the response returns a <code>nextToken</code> value. To see the next batch of results, specify the <code>nextToken</code> value in this field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The field to sort by in the returned list of provisioned capacities.</p>
+    /// <p>The field by which to sort the returned list of Provisioned Throughputs.</p>
     pub sort_by: ::std::option::Option<crate::types::SortByProvisionedModels>,
     /// <p>The sort order of the results.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListProvisionedModelThroughputsInput {
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created after the specified time.</p>
     pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created before the specified time.</p>
     pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
-    /// <p>Return the list of provisioned capacities that match the specified status.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.</p>
     pub fn status_equals(&self) -> ::std::option::Option<&crate::types::ProvisionedModelStatus> {
         self.status_equals.as_ref()
     }
-    /// <p>Return the list of provisioned capacities where their model ARN is equal to this parameter.</p>
+    /// <p>A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that you specify.</p>
     pub fn model_arn_equals(&self) -> ::std::option::Option<&str> {
         self.model_arn_equals.as_deref()
     }
-    /// <p>Return the list of provisioned capacities if their name contains these characters.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their name contains the expression that you specify.</p>
     pub fn name_contains(&self) -> ::std::option::Option<&str> {
         self.name_contains.as_deref()
     }
-    /// <p>THe maximum number of results to return in the response.</p>
+    /// <p>THe maximum number of results to return in the response. If there are more results than the number you specified, the response returns a <code>nextToken</code> value. To see the next batch of results, send the <code>nextToken</code> value in another list request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, the response returns a <code>nextToken</code> value. To see the next batch of results, specify the <code>nextToken</code> value in this field.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The field to sort by in the returned list of provisioned capacities.</p>
+    /// <p>The field by which to sort the returned list of Provisioned Throughputs.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortByProvisionedModels> {
         self.sort_by.as_ref()
     }
@@ -82,115 +82,115 @@ pub struct ListProvisionedModelThroughputsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListProvisionedModelThroughputsInputBuilder {
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created after the specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_after = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created after the specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
-    /// <p>Return provisioned capacities created after the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created after the specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_after
     }
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created before the specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created before the specified time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
-    /// <p>Return provisioned capacities created before the specified time.</p>
+    /// <p>A filter that returns Provisioned Throughputs created before the specified time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time_before
     }
-    /// <p>Return the list of provisioned capacities that match the specified status.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.</p>
     pub fn status_equals(mut self, input: crate::types::ProvisionedModelStatus) -> Self {
         self.status_equals = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Return the list of provisioned capacities that match the specified status.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::ProvisionedModelStatus>) -> Self {
         self.status_equals = input;
         self
     }
-    /// <p>Return the list of provisioned capacities that match the specified status.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::ProvisionedModelStatus> {
         &self.status_equals
     }
-    /// <p>Return the list of provisioned capacities where their model ARN is equal to this parameter.</p>
+    /// <p>A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that you specify.</p>
     pub fn model_arn_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn_equals = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Return the list of provisioned capacities where their model ARN is equal to this parameter.</p>
+    /// <p>A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that you specify.</p>
     pub fn set_model_arn_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn_equals = input;
         self
     }
-    /// <p>Return the list of provisioned capacities where their model ARN is equal to this parameter.</p>
+    /// <p>A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that you specify.</p>
     pub fn get_model_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn_equals
     }
-    /// <p>Return the list of provisioned capacities if their name contains these characters.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their name contains the expression that you specify.</p>
     pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Return the list of provisioned capacities if their name contains these characters.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their name contains the expression that you specify.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
-    /// <p>Return the list of provisioned capacities if their name contains these characters.</p>
+    /// <p>A filter that returns Provisioned Throughputs if their name contains the expression that you specify.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_contains
     }
-    /// <p>THe maximum number of results to return in the response.</p>
+    /// <p>THe maximum number of results to return in the response. If there are more results than the number you specified, the response returns a <code>nextToken</code> value. To see the next batch of results, send the <code>nextToken</code> value in another list request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>THe maximum number of results to return in the response.</p>
+    /// <p>THe maximum number of results to return in the response. If there are more results than the number you specified, the response returns a <code>nextToken</code> value. To see the next batch of results, send the <code>nextToken</code> value in another list request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>THe maximum number of results to return in the response.</p>
+    /// <p>THe maximum number of results to return in the response. If there are more results than the number you specified, the response returns a <code>nextToken</code> value. To see the next batch of results, send the <code>nextToken</code> value in another list request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, the response returns a <code>nextToken</code> value. To see the next batch of results, specify the <code>nextToken</code> value in this field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, the response returns a <code>nextToken</code> value. To see the next batch of results, specify the <code>nextToken</code> value in this field.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
+    /// <p>If there are more results than the number you specified in the <code>maxResults</code> field, the response returns a <code>nextToken</code> value. To see the next batch of results, specify the <code>nextToken</code> value in this field.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The field to sort by in the returned list of provisioned capacities.</p>
+    /// <p>The field by which to sort the returned list of Provisioned Throughputs.</p>
     pub fn sort_by(mut self, input: crate::types::SortByProvisionedModels) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The field to sort by in the returned list of provisioned capacities.</p>
+    /// <p>The field by which to sort the returned list of Provisioned Throughputs.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortByProvisionedModels>) -> Self {
         self.sort_by = input;
         self
     }
-    /// <p>The field to sort by in the returned list of provisioned capacities.</p>
+    /// <p>The field by which to sort the returned list of Provisioned Throughputs.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortByProvisionedModels> {
         &self.sort_by
     }

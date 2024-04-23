@@ -111,6 +111,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "instanceType" => {
+                            builder = builder.set_instance_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InstanceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "maxConcurrentSessions" => {
+                            builder = builder.set_max_concurrent_sessions(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

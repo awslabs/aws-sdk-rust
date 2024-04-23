@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetModelCustomizationJobOutput {
-    /// <p>The ARN of the customization job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customization job.</p>
     pub job_arn: ::std::string::String,
     /// <p>The name of the customization job.</p>
     pub job_name: ::std::string::String,
     /// <p>The name of the output model.</p>
     pub output_model_name: ::std::string::String,
-    /// <p>The ARN of the output model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the output model.</p>
     pub output_model_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The token that you specified in the CreateCustomizationJob request.</p>
+    /// <p>The token that you specified in the <code>CreateCustomizationJob</code> request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the IAM role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub role_arn: ::std::string::String,
     /// <p>The status of the job. A successful job transitions from in-progress to completed when the output model is ready to use. If the job failed, the failure message contains information about why the job failed.</p>
     pub status: ::std::option::Option<crate::types::ModelCustomizationJobStatus>,
@@ -25,13 +25,13 @@ pub struct GetModelCustomizationJobOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time that the resource transitioned to terminal state.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     pub base_model_arn: ::std::string::String,
-    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
+    /// <p>The hyperparameter values for the job. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
     pub hyper_parameters: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    /// <p>S3 Location of the training data.</p>
+    /// <p>Contains information about the training dataset.</p>
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
-    /// <p>Array of up to 10 validators.</p>
+    /// <p>Contains information about the validation dataset.</p>
     pub validation_data_config: ::std::option::Option<crate::types::ValidationDataConfig>,
     /// <p>Output data configuration</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
@@ -39,7 +39,7 @@ pub struct GetModelCustomizationJobOutput {
     pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub output_model_kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Metrics associated with the custom job.</p>
+    /// <p>Contains training metrics from the job creation.</p>
     pub training_metrics: ::std::option::Option<crate::types::TrainingMetrics>,
     /// <p>The loss metric for each validator that you provided in the createjob request.</p>
     pub validation_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorMetric>>,
@@ -48,7 +48,7 @@ pub struct GetModelCustomizationJobOutput {
     _request_id: Option<String>,
 }
 impl GetModelCustomizationJobOutput {
-    /// <p>The ARN of the customization job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customization job.</p>
     pub fn job_arn(&self) -> &str {
         use std::ops::Deref;
         self.job_arn.deref()
@@ -63,15 +63,15 @@ impl GetModelCustomizationJobOutput {
         use std::ops::Deref;
         self.output_model_name.deref()
     }
-    /// <p>The ARN of the output model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the output model.</p>
     pub fn output_model_arn(&self) -> ::std::option::Option<&str> {
         self.output_model_arn.as_deref()
     }
-    /// <p>The token that you specified in the CreateCustomizationJob request.</p>
+    /// <p>The token that you specified in the <code>CreateCustomizationJob</code> request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The ARN of the IAM role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
@@ -96,20 +96,20 @@ impl GetModelCustomizationJobOutput {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     pub fn base_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.base_model_arn.deref()
     }
-    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
+    /// <p>The hyperparameter values for the job. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
     pub fn hyper_parameters(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
         &self.hyper_parameters
     }
-    /// <p>S3 Location of the training data.</p>
+    /// <p>Contains information about the training dataset.</p>
     pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
         self.training_data_config.as_ref()
     }
-    /// <p>Array of up to 10 validators.</p>
+    /// <p>Contains information about the validation dataset.</p>
     pub fn validation_data_config(&self) -> ::std::option::Option<&crate::types::ValidationDataConfig> {
         self.validation_data_config.as_ref()
     }
@@ -125,7 +125,7 @@ impl GetModelCustomizationJobOutput {
     pub fn output_model_kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.output_model_kms_key_arn.as_deref()
     }
-    /// <p>Metrics associated with the custom job.</p>
+    /// <p>Contains training metrics from the job creation.</p>
     pub fn training_metrics(&self) -> ::std::option::Option<&crate::types::TrainingMetrics> {
         self.training_metrics.as_ref()
     }
@@ -180,18 +180,18 @@ pub struct GetModelCustomizationJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetModelCustomizationJobOutputBuilder {
-    /// <p>The ARN of the customization job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customization job.</p>
     /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the customization job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customization job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
-    /// <p>The ARN of the customization job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customization job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
@@ -225,46 +225,46 @@ impl GetModelCustomizationJobOutputBuilder {
     pub fn get_output_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_model_name
     }
-    /// <p>The ARN of the output model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the output model.</p>
     pub fn output_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the output model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the output model.</p>
     pub fn set_output_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_model_arn = input;
         self
     }
-    /// <p>The ARN of the output model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the output model.</p>
     pub fn get_output_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_model_arn
     }
-    /// <p>The token that you specified in the CreateCustomizationJob request.</p>
+    /// <p>The token that you specified in the <code>CreateCustomizationJob</code> request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token that you specified in the CreateCustomizationJob request.</p>
+    /// <p>The token that you specified in the <code>CreateCustomizationJob</code> request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>The token that you specified in the CreateCustomizationJob request.</p>
+    /// <p>The token that you specified in the <code>CreateCustomizationJob</code> request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
-    /// <p>The ARN of the IAM role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -339,18 +339,18 @@ impl GetModelCustomizationJobOutputBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     /// This field is required.
     pub fn base_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     pub fn set_base_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_model_arn = input;
         self
     }
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     pub fn get_base_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_model_arn
     }
@@ -358,7 +358,7 @@ impl GetModelCustomizationJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
     ///
-    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
+    /// <p>The hyperparameter values for the job. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
     pub fn hyper_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -369,7 +369,7 @@ impl GetModelCustomizationJobOutputBuilder {
         self.hyper_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
+    /// <p>The hyperparameter values for the job. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
     pub fn set_hyper_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -377,37 +377,37 @@ impl GetModelCustomizationJobOutputBuilder {
         self.hyper_parameters = input;
         self
     }
-    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
+    /// <p>The hyperparameter values for the job. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
     pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.hyper_parameters
     }
-    /// <p>S3 Location of the training data.</p>
+    /// <p>Contains information about the training dataset.</p>
     /// This field is required.
     pub fn training_data_config(mut self, input: crate::types::TrainingDataConfig) -> Self {
         self.training_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>S3 Location of the training data.</p>
+    /// <p>Contains information about the training dataset.</p>
     pub fn set_training_data_config(mut self, input: ::std::option::Option<crate::types::TrainingDataConfig>) -> Self {
         self.training_data_config = input;
         self
     }
-    /// <p>S3 Location of the training data.</p>
+    /// <p>Contains information about the training dataset.</p>
     pub fn get_training_data_config(&self) -> &::std::option::Option<crate::types::TrainingDataConfig> {
         &self.training_data_config
     }
-    /// <p>Array of up to 10 validators.</p>
+    /// <p>Contains information about the validation dataset.</p>
     /// This field is required.
     pub fn validation_data_config(mut self, input: crate::types::ValidationDataConfig) -> Self {
         self.validation_data_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Array of up to 10 validators.</p>
+    /// <p>Contains information about the validation dataset.</p>
     pub fn set_validation_data_config(mut self, input: ::std::option::Option<crate::types::ValidationDataConfig>) -> Self {
         self.validation_data_config = input;
         self
     }
-    /// <p>Array of up to 10 validators.</p>
+    /// <p>Contains information about the validation dataset.</p>
     pub fn get_validation_data_config(&self) -> &::std::option::Option<crate::types::ValidationDataConfig> {
         &self.validation_data_config
     }
@@ -454,17 +454,17 @@ impl GetModelCustomizationJobOutputBuilder {
     pub fn get_output_model_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_model_kms_key_arn
     }
-    /// <p>Metrics associated with the custom job.</p>
+    /// <p>Contains training metrics from the job creation.</p>
     pub fn training_metrics(mut self, input: crate::types::TrainingMetrics) -> Self {
         self.training_metrics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Metrics associated with the custom job.</p>
+    /// <p>Contains training metrics from the job creation.</p>
     pub fn set_training_metrics(mut self, input: ::std::option::Option<crate::types::TrainingMetrics>) -> Self {
         self.training_metrics = input;
         self
     }
-    /// <p>Metrics associated with the custom job.</p>
+    /// <p>Contains training metrics from the job creation.</p>
     pub fn get_training_metrics(&self) -> &::std::option::Option<crate::types::TrainingMetrics> {
         &self.training_metrics
     }

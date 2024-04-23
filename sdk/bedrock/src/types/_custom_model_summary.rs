@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomModelSummary {
-    /// <p>The ARN of the custom model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom model.</p>
     pub model_arn: ::std::string::String,
     /// <p>The name of the custom model.</p>
     pub model_name: ::std::string::String,
     /// <p>Creation time of the model.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
-    /// <p>The base model ARN.</p>
+    /// <p>The base model Amazon Resource Name (ARN).</p>
     pub base_model_arn: ::std::string::String,
     /// <p>The base model name.</p>
     pub base_model_name: ::std::string::String,
@@ -18,7 +18,7 @@ pub struct CustomModelSummary {
     pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
 }
 impl CustomModelSummary {
-    /// <p>The ARN of the custom model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom model.</p>
     pub fn model_arn(&self) -> &str {
         use std::ops::Deref;
         self.model_arn.deref()
@@ -32,7 +32,7 @@ impl CustomModelSummary {
     pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_time
     }
-    /// <p>The base model ARN.</p>
+    /// <p>The base model Amazon Resource Name (ARN).</p>
     pub fn base_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.base_model_arn.deref()
@@ -66,18 +66,18 @@ pub struct CustomModelSummaryBuilder {
     pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
 }
 impl CustomModelSummaryBuilder {
-    /// <p>The ARN of the custom model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom model.</p>
     /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the custom model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom model.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The ARN of the custom model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom model.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
@@ -111,18 +111,18 @@ impl CustomModelSummaryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The base model ARN.</p>
+    /// <p>The base model Amazon Resource Name (ARN).</p>
     /// This field is required.
     pub fn base_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The base model ARN.</p>
+    /// <p>The base model Amazon Resource Name (ARN).</p>
     pub fn set_base_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_model_arn = input;
         self
     }
-    /// <p>The base model ARN.</p>
+    /// <p>The base model Amazon Resource Name (ARN).</p>
     pub fn get_base_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_model_arn
     }

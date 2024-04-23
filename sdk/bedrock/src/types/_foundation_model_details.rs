@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FoundationModelDetails {
-    /// <p>The model ARN.</p>
+    /// <p>The model Amazon Resource Name (ARN).</p>
     pub model_arn: ::std::string::String,
     /// <p>The model identifier.</p>
     pub model_id: ::std::string::String,
     /// <p>The model name.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
-    /// <p>he model's provider name.</p>
+    /// <p>The model's provider name.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The input modalities that the model supports.</p>
     pub input_modalities: ::std::option::Option<::std::vec::Vec<crate::types::ModelModality>>,
@@ -26,7 +26,7 @@ pub struct FoundationModelDetails {
     pub model_lifecycle: ::std::option::Option<crate::types::FoundationModelLifecycle>,
 }
 impl FoundationModelDetails {
-    /// <p>The model ARN.</p>
+    /// <p>The model Amazon Resource Name (ARN).</p>
     pub fn model_arn(&self) -> &str {
         use std::ops::Deref;
         self.model_arn.deref()
@@ -40,7 +40,7 @@ impl FoundationModelDetails {
     pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
-    /// <p>he model's provider name.</p>
+    /// <p>The model's provider name.</p>
     pub fn provider_name(&self) -> ::std::option::Option<&str> {
         self.provider_name.as_deref()
     }
@@ -100,18 +100,18 @@ pub struct FoundationModelDetailsBuilder {
     pub(crate) model_lifecycle: ::std::option::Option<crate::types::FoundationModelLifecycle>,
 }
 impl FoundationModelDetailsBuilder {
-    /// <p>The model ARN.</p>
+    /// <p>The model Amazon Resource Name (ARN).</p>
     /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The model ARN.</p>
+    /// <p>The model Amazon Resource Name (ARN).</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The model ARN.</p>
+    /// <p>The model Amazon Resource Name (ARN).</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
@@ -144,17 +144,17 @@ impl FoundationModelDetailsBuilder {
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }
-    /// <p>he model's provider name.</p>
+    /// <p>The model's provider name.</p>
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>he model's provider name.</p>
+    /// <p>The model's provider name.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
-    /// <p>he model's provider name.</p>
+    /// <p>The model's provider name.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_name
     }

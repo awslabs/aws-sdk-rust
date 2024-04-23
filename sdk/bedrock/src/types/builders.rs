@@ -32,3 +32,63 @@ pub use crate::types::_logging_config::LoggingConfigBuilder;
 pub use crate::types::_s3_config::S3ConfigBuilder;
 
 pub use crate::types::_cloud_watch_config::CloudWatchConfigBuilder;
+
+pub use crate::types::_guardrail_sensitive_information_policy_config::GuardrailSensitiveInformationPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_regex_config::GuardrailRegexConfigBuilder;
+
+pub use crate::types::_guardrail_pii_entity_config::GuardrailPiiEntityConfigBuilder;
+
+pub use crate::types::_guardrail_word_policy_config::GuardrailWordPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_managed_words_config::GuardrailManagedWordsConfigBuilder;
+
+pub use crate::types::_guardrail_word_config::GuardrailWordConfigBuilder;
+
+pub use crate::types::_guardrail_content_policy_config::GuardrailContentPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterConfigBuilder;
+
+pub use crate::types::_guardrail_topic_policy_config::GuardrailTopicPolicyConfigBuilder;
+
+pub use crate::types::_guardrail_topic_config::GuardrailTopicConfigBuilder;
+
+pub use crate::types::_guardrail_sensitive_information_policy::GuardrailSensitiveInformationPolicyBuilder;
+
+pub use crate::types::_guardrail_regex::GuardrailRegexBuilder;
+
+pub use crate::types::_guardrail_pii_entity::GuardrailPiiEntityBuilder;
+
+pub use crate::types::_guardrail_word_policy::GuardrailWordPolicyBuilder;
+
+pub use crate::types::_guardrail_managed_words::GuardrailManagedWordsBuilder;
+
+pub use crate::types::_guardrail_word::GuardrailWordBuilder;
+
+pub use crate::types::_guardrail_content_policy::GuardrailContentPolicyBuilder;
+
+pub use crate::types::_guardrail_content_filter::GuardrailContentFilterBuilder;
+
+pub use crate::types::_guardrail_topic_policy::GuardrailTopicPolicyBuilder;
+
+pub use crate::types::_guardrail_topic::GuardrailTopicBuilder;
+
+pub use crate::types::_guardrail_summary::GuardrailSummaryBuilder;
+
+pub use crate::types::_evaluation_summary::EvaluationSummaryBuilder;
+
+pub use crate::types::_evaluation_output_data_config::EvaluationOutputDataConfigBuilder;
+
+pub use crate::types::_evaluation_bedrock_model::EvaluationBedrockModelBuilder;
+
+pub use crate::types::_human_evaluation_config::HumanEvaluationConfigBuilder;
+
+pub use crate::types::_evaluation_dataset_metric_config::EvaluationDatasetMetricConfigBuilder;
+
+pub use crate::types::_evaluation_dataset::EvaluationDatasetBuilder;
+
+pub use crate::types::_human_evaluation_custom_metric::HumanEvaluationCustomMetricBuilder;
+
+pub use crate::types::_human_workflow_config::HumanWorkflowConfigBuilder;
+
+pub use crate::types::_automated_evaluation_config::AutomatedEvaluationConfigBuilder;

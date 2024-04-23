@@ -3,23 +3,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProvisionedModelThroughputInput {
-    /// <p>The ARN or name of the provisioned throughput to update.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.</p>
     pub provisioned_model_id: ::std::option::Option<::std::string::String>,
-    /// <p>The new name for this provisioned throughput.</p>
+    /// <p>The new name for this Provisioned Throughput.</p>
     pub desired_provisioned_model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the new model to associate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify this field if this Provisioned Throughput is associated with a base model.</p>
+    /// <p>If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The base model from which the custom model was customized.</p></li>
+    /// <li>
+    /// <p>Another custom model that was customized from the same base model as the custom model.</p></li>
+    /// </ul>
     pub desired_model_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProvisionedModelThroughputInput {
-    /// <p>The ARN or name of the provisioned throughput to update.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.</p>
     pub fn provisioned_model_id(&self) -> ::std::option::Option<&str> {
         self.provisioned_model_id.as_deref()
     }
-    /// <p>The new name for this provisioned throughput.</p>
+    /// <p>The new name for this Provisioned Throughput.</p>
     pub fn desired_provisioned_model_name(&self) -> ::std::option::Option<&str> {
         self.desired_provisioned_model_name.as_deref()
     }
-    /// <p>The ARN of the new model to associate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify this field if this Provisioned Throughput is associated with a base model.</p>
+    /// <p>If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The base model from which the custom model was customized.</p></li>
+    /// <li>
+    /// <p>Another custom model that was customized from the same base model as the custom model.</p></li>
+    /// </ul>
     pub fn desired_model_id(&self) -> ::std::option::Option<&str> {
         self.desired_model_id.as_deref()
     }
@@ -40,46 +54,67 @@ pub struct UpdateProvisionedModelThroughputInputBuilder {
     pub(crate) desired_model_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProvisionedModelThroughputInputBuilder {
-    /// <p>The ARN or name of the provisioned throughput to update.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.</p>
     /// This field is required.
     pub fn provisioned_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN or name of the provisioned throughput to update.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.</p>
     pub fn set_provisioned_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioned_model_id = input;
         self
     }
-    /// <p>The ARN or name of the provisioned throughput to update.</p>
+    /// <p>The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.</p>
     pub fn get_provisioned_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioned_model_id
     }
-    /// <p>The new name for this provisioned throughput.</p>
+    /// <p>The new name for this Provisioned Throughput.</p>
     pub fn desired_provisioned_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_provisioned_model_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new name for this provisioned throughput.</p>
+    /// <p>The new name for this Provisioned Throughput.</p>
     pub fn set_desired_provisioned_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_provisioned_model_name = input;
         self
     }
-    /// <p>The new name for this provisioned throughput.</p>
+    /// <p>The new name for this Provisioned Throughput.</p>
     pub fn get_desired_provisioned_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_provisioned_model_name
     }
-    /// <p>The ARN of the new model to associate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify this field if this Provisioned Throughput is associated with a base model.</p>
+    /// <p>If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The base model from which the custom model was customized.</p></li>
+    /// <li>
+    /// <p>Another custom model that was customized from the same base model as the custom model.</p></li>
+    /// </ul>
     pub fn desired_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the new model to associate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify this field if this Provisioned Throughput is associated with a base model.</p>
+    /// <p>If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The base model from which the custom model was customized.</p></li>
+    /// <li>
+    /// <p>Another custom model that was customized from the same base model as the custom model.</p></li>
+    /// </ul>
     pub fn set_desired_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_model_id = input;
         self
     }
-    /// <p>The ARN of the new model to associate with this provisioned throughput.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify this field if this Provisioned Throughput is associated with a base model.</p>
+    /// <p>If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The base model from which the custom model was customized.</p></li>
+    /// <li>
+    /// <p>Another custom model that was customized from the same base model as the custom model.</p></li>
+    /// </ul>
     pub fn get_desired_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_model_id
     }

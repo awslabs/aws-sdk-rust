@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFoundationModelsInput {
-    /// <p>A Amazon Bedrock model provider.</p>
+    /// <p>Return models belonging to the model provider that you specify.</p>
     pub by_provider: ::std::option::Option<::std::string::String>,
-    /// <p>List by customization type.</p>
+    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
     pub by_customization_type: ::std::option::Option<crate::types::ModelCustomization>,
-    /// <p>List by output modality type.</p>
+    /// <p>Return models that support the output modality that you specify.</p>
     pub by_output_modality: ::std::option::Option<crate::types::ModelModality>,
-    /// <p>List by inference type.</p>
+    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
     pub by_inference_type: ::std::option::Option<crate::types::InferenceType>,
 }
 impl ListFoundationModelsInput {
-    /// <p>A Amazon Bedrock model provider.</p>
+    /// <p>Return models belonging to the model provider that you specify.</p>
     pub fn by_provider(&self) -> ::std::option::Option<&str> {
         self.by_provider.as_deref()
     }
-    /// <p>List by customization type.</p>
+    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
     pub fn by_customization_type(&self) -> ::std::option::Option<&crate::types::ModelCustomization> {
         self.by_customization_type.as_ref()
     }
-    /// <p>List by output modality type.</p>
+    /// <p>Return models that support the output modality that you specify.</p>
     pub fn by_output_modality(&self) -> ::std::option::Option<&crate::types::ModelModality> {
         self.by_output_modality.as_ref()
     }
-    /// <p>List by inference type.</p>
+    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
     pub fn by_inference_type(&self) -> ::std::option::Option<&crate::types::InferenceType> {
         self.by_inference_type.as_ref()
     }
@@ -47,59 +47,59 @@ pub struct ListFoundationModelsInputBuilder {
     pub(crate) by_inference_type: ::std::option::Option<crate::types::InferenceType>,
 }
 impl ListFoundationModelsInputBuilder {
-    /// <p>A Amazon Bedrock model provider.</p>
+    /// <p>Return models belonging to the model provider that you specify.</p>
     pub fn by_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_provider = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A Amazon Bedrock model provider.</p>
+    /// <p>Return models belonging to the model provider that you specify.</p>
     pub fn set_by_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_provider = input;
         self
     }
-    /// <p>A Amazon Bedrock model provider.</p>
+    /// <p>Return models belonging to the model provider that you specify.</p>
     pub fn get_by_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_provider
     }
-    /// <p>List by customization type.</p>
+    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
     pub fn by_customization_type(mut self, input: crate::types::ModelCustomization) -> Self {
         self.by_customization_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>List by customization type.</p>
+    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
     pub fn set_by_customization_type(mut self, input: ::std::option::Option<crate::types::ModelCustomization>) -> Self {
         self.by_customization_type = input;
         self
     }
-    /// <p>List by customization type.</p>
+    /// <p>Return models that support the customization type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
     pub fn get_by_customization_type(&self) -> &::std::option::Option<crate::types::ModelCustomization> {
         &self.by_customization_type
     }
-    /// <p>List by output modality type.</p>
+    /// <p>Return models that support the output modality that you specify.</p>
     pub fn by_output_modality(mut self, input: crate::types::ModelModality) -> Self {
         self.by_output_modality = ::std::option::Option::Some(input);
         self
     }
-    /// <p>List by output modality type.</p>
+    /// <p>Return models that support the output modality that you specify.</p>
     pub fn set_by_output_modality(mut self, input: ::std::option::Option<crate::types::ModelModality>) -> Self {
         self.by_output_modality = input;
         self
     }
-    /// <p>List by output modality type.</p>
+    /// <p>Return models that support the output modality that you specify.</p>
     pub fn get_by_output_modality(&self) -> &::std::option::Option<crate::types::ModelModality> {
         &self.by_output_modality
     }
-    /// <p>List by inference type.</p>
+    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
     pub fn by_inference_type(mut self, input: crate::types::InferenceType) -> Self {
         self.by_inference_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>List by inference type.</p>
+    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
     pub fn set_by_inference_type(mut self, input: ::std::option::Option<crate::types::InferenceType>) -> Self {
         self.by_inference_type = input;
         self
     }
-    /// <p>List by inference type.</p>
+    /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p>
     pub fn get_by_inference_type(&self) -> &::std::option::Option<crate::types::InferenceType> {
         &self.by_inference_type
     }

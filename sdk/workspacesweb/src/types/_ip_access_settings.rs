@@ -16,6 +16,10 @@ pub struct IpAccessSettings {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The creation date timestamp of the IP access settings.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The customer managed key used to encrypt sensitive information in the IP access settings.</p>
+    pub customer_managed_key: ::std::option::Option<::std::string::String>,
+    /// <p>The additional encryption context of the IP access settings.</p>
+    pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IpAccessSettings {
     /// <p>The ARN of the IP access settings resource.</p>
@@ -47,6 +51,14 @@ impl IpAccessSettings {
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
+    /// <p>The customer managed key used to encrypt sensitive information in the IP access settings.</p>
+    pub fn customer_managed_key(&self) -> ::std::option::Option<&str> {
+        self.customer_managed_key.as_deref()
+    }
+    /// <p>The additional encryption context of the IP access settings.</p>
+    pub fn additional_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.additional_encryption_context.as_ref()
+    }
 }
 impl ::std::fmt::Debug for IpAccessSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -57,6 +69,8 @@ impl ::std::fmt::Debug for IpAccessSettings {
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_date", &self.creation_date);
+        formatter.field("customer_managed_key", &self.customer_managed_key);
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.finish()
     }
 }
@@ -77,6 +91,8 @@ pub struct IpAccessSettingsBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IpAccessSettingsBuilder {
     /// <p>The ARN of the IP access settings resource.</p>
@@ -176,6 +192,49 @@ impl IpAccessSettingsBuilder {
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }
+    /// <p>The customer managed key used to encrypt sensitive information in the IP access settings.</p>
+    pub fn customer_managed_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.customer_managed_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the IP access settings.</p>
+    pub fn set_customer_managed_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_managed_key = input;
+        self
+    }
+    /// <p>The customer managed key used to encrypt sensitive information in the IP access settings.</p>
+    pub fn get_customer_managed_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_managed_key
+    }
+    /// Adds a key-value pair to `additional_encryption_context`.
+    ///
+    /// To override the contents of this collection use [`set_additional_encryption_context`](Self::set_additional_encryption_context).
+    ///
+    /// <p>The additional encryption context of the IP access settings.</p>
+    pub fn additional_encryption_context(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.additional_encryption_context.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.additional_encryption_context = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The additional encryption context of the IP access settings.</p>
+    pub fn set_additional_encryption_context(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.additional_encryption_context = input;
+        self
+    }
+    /// <p>The additional encryption context of the IP access settings.</p>
+    pub fn get_additional_encryption_context(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.additional_encryption_context
+    }
     /// Consumes the builder and constructs a [`IpAccessSettings`](crate::types::IpAccessSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_access_settings_arn`](crate::types::builders::IpAccessSettingsBuilder::ip_access_settings_arn)
@@ -192,6 +251,8 @@ impl IpAccessSettingsBuilder {
             display_name: self.display_name,
             description: self.description,
             creation_date: self.creation_date,
+            customer_managed_key: self.customer_managed_key,
+            additional_encryption_context: self.additional_encryption_context,
         })
     }
 }
@@ -204,6 +265,8 @@ impl ::std::fmt::Debug for IpAccessSettingsBuilder {
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_date", &self.creation_date);
+        formatter.field("customer_managed_key", &self.customer_managed_key);
+        formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.finish()
     }
 }

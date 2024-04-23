@@ -23,7 +23,7 @@ impl crate::operation::list_model_customization_jobs::builders::ListModelCustomi
 /// Fluent builder constructing a request to `ListModelCustomizationJobs`.
 ///
 /// <p>Returns a list of model customization jobs that you have submitted. You can filter the jobs to return based on one or more criteria.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock User Guide.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListModelCustomizationJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

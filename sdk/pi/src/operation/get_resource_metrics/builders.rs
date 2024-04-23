@@ -22,7 +22,7 @@ impl crate::operation::get_resource_metrics::builders::GetResourceMetricsInputBu
 }
 /// Fluent builder constructing a request to `GetResourceMetrics`.
 ///
-/// <p>Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific dimension groups and dimensions, and provide aggregation and filtering criteria for each group.</p><note>
+/// <p>Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific dimension groups and dimensions, and provide filtering criteria for each group. You must specify an aggregate function for each metric.</p><note>
 /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -170,17 +170,17 @@ impl GetResourceMetricsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_metric_queries`](Self::set_metric_queries).
     ///
-    /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
+    /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric. For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and <code>.sum</code>.</p>
     pub fn metric_queries(mut self, input: crate::types::MetricQuery) -> Self {
         self.inner = self.inner.metric_queries(input);
         self
     }
-    /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
+    /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric. For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and <code>.sum</code>.</p>
     pub fn set_metric_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>>) -> Self {
         self.inner = self.inner.set_metric_queries(input);
         self
     }
-    /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
+    /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric. For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and <code>.sum</code>.</p>
     pub fn get_metric_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>> {
         self.inner.get_metric_queries()
     }

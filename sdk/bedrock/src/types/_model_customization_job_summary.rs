@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelCustomizationJobSummary {
-    /// <p>ARN of the customization job.</p>
+    /// <p>Amazon Resource Name (ARN) of the customization job.</p>
     pub job_arn: ::std::string::String,
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     pub base_model_arn: ::std::string::String,
     /// <p>Name of the customization job.</p>
     pub job_name: ::std::string::String,
@@ -18,7 +18,7 @@ pub struct ModelCustomizationJobSummary {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>Time that the customization job ended.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>ARN of the custom model.</p>
+    /// <p>Amazon Resource Name (ARN) of the custom model.</p>
     pub custom_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the custom model.</p>
     pub custom_model_name: ::std::option::Option<::std::string::String>,
@@ -26,12 +26,12 @@ pub struct ModelCustomizationJobSummary {
     pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
 }
 impl ModelCustomizationJobSummary {
-    /// <p>ARN of the customization job.</p>
+    /// <p>Amazon Resource Name (ARN) of the customization job.</p>
     pub fn job_arn(&self) -> &str {
         use std::ops::Deref;
         self.job_arn.deref()
     }
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     pub fn base_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.base_model_arn.deref()
@@ -57,7 +57,7 @@ impl ModelCustomizationJobSummary {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>ARN of the custom model.</p>
+    /// <p>Amazon Resource Name (ARN) of the custom model.</p>
     pub fn custom_model_arn(&self) -> ::std::option::Option<&str> {
         self.custom_model_arn.as_deref()
     }
@@ -93,33 +93,33 @@ pub struct ModelCustomizationJobSummaryBuilder {
     pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
 }
 impl ModelCustomizationJobSummaryBuilder {
-    /// <p>ARN of the customization job.</p>
+    /// <p>Amazon Resource Name (ARN) of the customization job.</p>
     /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of the customization job.</p>
+    /// <p>Amazon Resource Name (ARN) of the customization job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
-    /// <p>ARN of the customization job.</p>
+    /// <p>Amazon Resource Name (ARN) of the customization job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_arn
     }
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     /// This field is required.
     pub fn base_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     pub fn set_base_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_model_arn = input;
         self
     }
-    /// <p>ARN of the base model.</p>
+    /// <p>Amazon Resource Name (ARN) of the base model.</p>
     pub fn get_base_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_model_arn
     }
@@ -196,17 +196,17 @@ impl ModelCustomizationJobSummaryBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>ARN of the custom model.</p>
+    /// <p>Amazon Resource Name (ARN) of the custom model.</p>
     pub fn custom_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of the custom model.</p>
+    /// <p>Amazon Resource Name (ARN) of the custom model.</p>
     pub fn set_custom_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_model_arn = input;
         self
     }
-    /// <p>ARN of the custom model.</p>
+    /// <p>Amazon Resource Name (ARN) of the custom model.</p>
     pub fn get_custom_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_model_arn
     }

@@ -286,7 +286,7 @@ pub enum InvokeModelWithResponseStreamError {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>An error occurred while streaming the response.</p>
+    /// <p>An error occurred while streaming the response. Retry your request.</p>
     ModelStreamErrorException(crate::types::error::ModelStreamErrorException),
     /// <p>Input validation failed. Check your request parameters and retry the request.</p>
     ValidationException(crate::types::error::ValidationException),

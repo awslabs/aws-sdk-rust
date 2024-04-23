@@ -8,6 +8,8 @@ pub struct S3DataSourceConfiguration {
     pub bucket_arn: ::std::string::String,
     /// <p>A list of S3 prefixes that define the object containing the data sources. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a>.</p>
     pub inclusion_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The account ID for the owner of the S3 bucket.</p>
+    pub bucket_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl S3DataSourceConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the bucket that contains the data source.</p>
@@ -20,6 +22,10 @@ impl S3DataSourceConfiguration {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_prefixes.is_none()`.
     pub fn inclusion_prefixes(&self) -> &[::std::string::String] {
         self.inclusion_prefixes.as_deref().unwrap_or_default()
+    }
+    /// <p>The account ID for the owner of the S3 bucket.</p>
+    pub fn bucket_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.bucket_owner_account_id.as_deref()
     }
 }
 impl S3DataSourceConfiguration {
@@ -35,6 +41,7 @@ impl S3DataSourceConfiguration {
 pub struct S3DataSourceConfigurationBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) inclusion_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bucket_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl S3DataSourceConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the bucket that contains the data source.</p>
@@ -72,6 +79,20 @@ impl S3DataSourceConfigurationBuilder {
     pub fn get_inclusion_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.inclusion_prefixes
     }
+    /// <p>The account ID for the owner of the S3 bucket.</p>
+    pub fn bucket_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account ID for the owner of the S3 bucket.</p>
+    pub fn set_bucket_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bucket_owner_account_id = input;
+        self
+    }
+    /// <p>The account ID for the owner of the S3 bucket.</p>
+    pub fn get_bucket_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_owner_account_id
+    }
     /// Consumes the builder and constructs a [`S3DataSourceConfiguration`](crate::types::S3DataSourceConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_arn`](crate::types::builders::S3DataSourceConfigurationBuilder::bucket_arn)
@@ -84,6 +105,7 @@ impl S3DataSourceConfigurationBuilder {
                 )
             })?,
             inclusion_prefixes: self.inclusion_prefixes,
+            bucket_owner_account_id: self.bucket_owner_account_id,
         })
     }
 }

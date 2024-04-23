@@ -13,6 +13,7 @@
 /// # let datasourcestatus = unimplemented!();
 /// match datasourcestatus {
 ///     DataSourceStatus::Available => { /* ... */ },
+///     DataSourceStatus::DeleteUnsuccessful => { /* ... */ },
 ///     DataSourceStatus::Deleting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum DataSourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    DeleteUnsuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for DataSourceStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => DataSourceStatus::Available,
+            "DELETE_UNSUCCESSFUL" => DataSourceStatus::DeleteUnsuccessful,
             "DELETING" => DataSourceStatus::Deleting,
             other => DataSourceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl DataSourceStatus {
     pub fn as_str(&self) -> &str {
         match self {
             DataSourceStatus::Available => "AVAILABLE",
+            DataSourceStatus::DeleteUnsuccessful => "DELETE_UNSUCCESSFUL",
             DataSourceStatus::Deleting => "DELETING",
             DataSourceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "DELETING"]
+        &["AVAILABLE", "DELETE_UNSUCCESSFUL", "DELETING"]
     }
 }
 impl ::std::convert::AsRef<str> for DataSourceStatus {
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for DataSourceStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DataSourceStatus::Available => write!(f, "AVAILABLE"),
+            DataSourceStatus::DeleteUnsuccessful => write!(f, "DELETE_UNSUCCESSFUL"),
             DataSourceStatus::Deleting => write!(f, "DELETING"),
             DataSourceStatus::Unknown(value) => write!(f, "{}", value),
         }

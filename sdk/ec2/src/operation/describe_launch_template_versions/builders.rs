@@ -129,41 +129,41 @@ impl DescribeLaunchTemplateVersionsFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>To describe one or more versions of a specified launch template, you must specify either the launch template ID or the launch template name, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
     pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_id(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>To describe one or more versions of a specified launch template, you must specify either the launch template ID or the launch template name, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
     pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_id(input);
         self
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
+    /// <p>To describe one or more versions of a specified launch template, you must specify either the launch template ID or the launch template name, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
     pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_launch_template_id()
     }
     /// <p>The name of the launch template.</p>
-    /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>To describe one or more versions of a specified launch template, you must specify either the launch template name or the launch template ID, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
     pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_name(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
-    /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>To describe one or more versions of a specified launch template, you must specify either the launch template name or the launch template ID, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
     pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_name(input);
         self
     }
     /// <p>The name of the launch template.</p>
-    /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
+    /// <p>To describe one or more versions of a specified launch template, you must specify either the launch template name or the launch template ID, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
     pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_launch_template_name()

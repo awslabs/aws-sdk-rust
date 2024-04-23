@@ -15,5 +15,14 @@ pub fn ser_retrieve_and_generate_configuration(
         )?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.external_sources_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("externalSourcesConfiguration").start_object();
+        crate::protocol_serde::shape_external_sources_retrieve_and_generate_configuration::ser_external_sources_retrieve_and_generate_configuration(
+            &mut object_4,
+            var_3,
+        )?;
+        object_4.finish();
+    }
     Ok(())
 }

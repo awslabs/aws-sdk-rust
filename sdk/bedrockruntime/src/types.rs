@@ -3,9 +3,13 @@ pub use crate::types::_response_stream::ResponseStream;
 
 pub use crate::types::_payload_part::PayloadPart;
 
+pub use crate::types::_trace::Trace;
+
 mod _payload_part;
 
 mod _response_stream;
+
+mod _trace;
 
 /// Builders
 pub mod builders;

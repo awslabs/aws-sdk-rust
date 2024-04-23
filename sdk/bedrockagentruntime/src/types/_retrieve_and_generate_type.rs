@@ -12,6 +12,7 @@
 /// ```text
 /// # let retrieveandgeneratetype = unimplemented!();
 /// match retrieveandgeneratetype {
+///     RetrieveAndGenerateType::ExternalSources => { /* ... */ },
 ///     RetrieveAndGenerateType::KnowledgeBase => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum RetrieveAndGenerateType {
     #[allow(missing_docs)] // documentation missing in model
+    ExternalSources,
+    #[allow(missing_docs)] // documentation missing in model
     KnowledgeBase,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +52,7 @@ pub enum RetrieveAndGenerateType {
 impl ::std::convert::From<&str> for RetrieveAndGenerateType {
     fn from(s: &str) -> Self {
         match s {
+            "EXTERNAL_SOURCES" => RetrieveAndGenerateType::ExternalSources,
             "KNOWLEDGE_BASE" => RetrieveAndGenerateType::KnowledgeBase,
             other => RetrieveAndGenerateType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +69,14 @@ impl RetrieveAndGenerateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RetrieveAndGenerateType::ExternalSources => "EXTERNAL_SOURCES",
             RetrieveAndGenerateType::KnowledgeBase => "KNOWLEDGE_BASE",
             RetrieveAndGenerateType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KNOWLEDGE_BASE"]
+        &["EXTERNAL_SOURCES", "KNOWLEDGE_BASE"]
     }
 }
 impl ::std::convert::AsRef<str> for RetrieveAndGenerateType {
@@ -94,6 +99,7 @@ impl RetrieveAndGenerateType {
 impl ::std::fmt::Display for RetrieveAndGenerateType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RetrieveAndGenerateType::ExternalSources => write!(f, "EXTERNAL_SOURCES"),
             RetrieveAndGenerateType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
             RetrieveAndGenerateType::Unknown(value) => write!(f, "{}", value),
         }

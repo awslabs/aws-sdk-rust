@@ -3,17 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InvokeModelInput {
-    /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
+    /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The desired MIME type of the inference body in the response. The default value is <code>application/json</code>.</p>
     pub accept: ::std::option::Option<::std::string::String>,
-    /// <p>Identifier of the model.</p>
+    /// <p>The unique identifier of the model to invoke to run inference.</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
+    /// </ul>
     pub model_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.</p>
+    pub trace: ::std::option::Option<crate::types::Trace>,
+    /// <p>The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is applied to the invocation.</p>
+    /// <p>An error will be thrown in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code> field in the request body.</p></li>
+    /// <li>
+    /// <p>You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.</p></li>
+    /// <li>
+    /// <p>You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.</p></li>
+    /// </ul>
+    pub guardrail_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The version number for the guardrail. The value can also be <code>DRAFT</code>.</p>
+    pub guardrail_version: ::std::option::Option<::std::string::String>,
 }
 impl InvokeModelInput {
-    /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
+    /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
     pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
@@ -25,9 +49,39 @@ impl InvokeModelInput {
     pub fn accept(&self) -> ::std::option::Option<&str> {
         self.accept.as_deref()
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>The unique identifier of the model to invoke to run inference.</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
+    /// </ul>
     pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
+    }
+    /// <p>Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.</p>
+    pub fn trace(&self) -> ::std::option::Option<&crate::types::Trace> {
+        self.trace.as_ref()
+    }
+    /// <p>The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is applied to the invocation.</p>
+    /// <p>An error will be thrown in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code> field in the request body.</p></li>
+    /// <li>
+    /// <p>You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.</p></li>
+    /// <li>
+    /// <p>You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.</p></li>
+    /// </ul>
+    pub fn guardrail_identifier(&self) -> ::std::option::Option<&str> {
+        self.guardrail_identifier.as_deref()
+    }
+    /// <p>The version number for the guardrail. The value can also be <code>DRAFT</code>.</p>
+    pub fn guardrail_version(&self) -> ::std::option::Option<&str> {
+        self.guardrail_version.as_deref()
     }
 }
 impl ::std::fmt::Debug for InvokeModelInput {
@@ -37,6 +91,9 @@ impl ::std::fmt::Debug for InvokeModelInput {
         formatter.field("content_type", &self.content_type);
         formatter.field("accept", &self.accept);
         formatter.field("model_id", &self.model_id);
+        formatter.field("trace", &self.trace);
+        formatter.field("guardrail_identifier", &self.guardrail_identifier);
+        formatter.field("guardrail_version", &self.guardrail_version);
         formatter.finish()
     }
 }
@@ -55,20 +112,23 @@ pub struct InvokeModelInputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) accept: ::std::option::Option<::std::string::String>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) trace: ::std::option::Option<crate::types::Trace>,
+    pub(crate) guardrail_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,
 }
 impl InvokeModelInputBuilder {
-    /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
+    /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
     /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
+    /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.body = input;
         self
     }
-    /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
+    /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.body
     }
@@ -100,20 +160,116 @@ impl InvokeModelInputBuilder {
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>The unique identifier of the model to invoke to run inference.</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>The unique identifier of the model to invoke to run inference.</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
+    /// </ul>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>Identifier of the model.</p>
+    /// <p>The unique identifier of the model to invoke to run inference.</p>
+    /// <p>The <code>modelId</code> to provide depends on the type of model that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p></li>
+    /// </ul>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
+    }
+    /// <p>Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.</p>
+    pub fn trace(mut self, input: crate::types::Trace) -> Self {
+        self.trace = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.</p>
+    pub fn set_trace(mut self, input: ::std::option::Option<crate::types::Trace>) -> Self {
+        self.trace = input;
+        self
+    }
+    /// <p>Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.</p>
+    pub fn get_trace(&self) -> &::std::option::Option<crate::types::Trace> {
+        &self.trace
+    }
+    /// <p>The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is applied to the invocation.</p>
+    /// <p>An error will be thrown in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code> field in the request body.</p></li>
+    /// <li>
+    /// <p>You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.</p></li>
+    /// <li>
+    /// <p>You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.</p></li>
+    /// </ul>
+    pub fn guardrail_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.guardrail_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is applied to the invocation.</p>
+    /// <p>An error will be thrown in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code> field in the request body.</p></li>
+    /// <li>
+    /// <p>You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.</p></li>
+    /// <li>
+    /// <p>You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.</p></li>
+    /// </ul>
+    pub fn set_guardrail_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.guardrail_identifier = input;
+        self
+    }
+    /// <p>The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is applied to the invocation.</p>
+    /// <p>An error will be thrown in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code> field in the request body.</p></li>
+    /// <li>
+    /// <p>You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.</p></li>
+    /// <li>
+    /// <p>You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.</p></li>
+    /// </ul>
+    pub fn get_guardrail_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.guardrail_identifier
+    }
+    /// <p>The version number for the guardrail. The value can also be <code>DRAFT</code>.</p>
+    pub fn guardrail_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.guardrail_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version number for the guardrail. The value can also be <code>DRAFT</code>.</p>
+    pub fn set_guardrail_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.guardrail_version = input;
+        self
+    }
+    /// <p>The version number for the guardrail. The value can also be <code>DRAFT</code>.</p>
+    pub fn get_guardrail_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.guardrail_version
     }
     /// Consumes the builder and constructs a [`InvokeModelInput`](crate::operation::invoke_model::InvokeModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model::InvokeModelInput, ::aws_smithy_types::error::operation::BuildError> {
@@ -122,6 +278,9 @@ impl InvokeModelInputBuilder {
             content_type: self.content_type,
             accept: self.accept,
             model_id: self.model_id,
+            trace: self.trace,
+            guardrail_identifier: self.guardrail_identifier,
+            guardrail_version: self.guardrail_version,
         })
     }
 }
@@ -132,6 +291,9 @@ impl ::std::fmt::Debug for InvokeModelInputBuilder {
         formatter.field("content_type", &self.content_type);
         formatter.field("accept", &self.accept);
         formatter.field("model_id", &self.model_id);
+        formatter.field("trace", &self.trace);
+        formatter.field("guardrail_identifier", &self.guardrail_identifier);
+        formatter.field("guardrail_version", &self.guardrail_version);
         formatter.finish()
     }
 }

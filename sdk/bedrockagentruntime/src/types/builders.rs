@@ -31,11 +31,21 @@ pub use crate::types::_retrieve_and_generate_session_configuration::RetrieveAndG
 
 pub use crate::types::_retrieve_and_generate_configuration::RetrieveAndGenerateConfigurationBuilder;
 
+pub use crate::types::_external_sources_retrieve_and_generate_configuration::ExternalSourcesRetrieveAndGenerateConfigurationBuilder;
+
+pub use crate::types::_external_sources_generation_configuration::ExternalSourcesGenerationConfigurationBuilder;
+
+pub use crate::types::_prompt_template::PromptTemplateBuilder;
+
+pub use crate::types::_external_source::ExternalSourceBuilder;
+
+pub use crate::types::_byte_content_doc::ByteContentDocBuilder;
+
+pub use crate::types::_s3_object_doc::S3ObjectDocBuilder;
+
 pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::KnowledgeBaseRetrieveAndGenerateConfigurationBuilder;
 
 pub use crate::types::_generation_configuration::GenerationConfigurationBuilder;
-
-pub use crate::types::_prompt_template::PromptTemplateBuilder;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInputBuilder;
 

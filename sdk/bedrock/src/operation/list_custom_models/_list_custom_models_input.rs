@@ -9,9 +9,9 @@ pub struct ListCustomModelsInput {
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return custom models only if the job name contains these characters.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
-    /// <p>Return custom models only if the base model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.</p>
     pub base_model_arn_equals: ::std::option::Option<::std::string::String>,
-    /// <p>Return custom models only if the foundation model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.</p>
     pub foundation_model_arn_equals: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -35,11 +35,11 @@ impl ListCustomModelsInput {
     pub fn name_contains(&self) -> ::std::option::Option<&str> {
         self.name_contains.as_deref()
     }
-    /// <p>Return custom models only if the base model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn base_model_arn_equals(&self) -> ::std::option::Option<&str> {
         self.base_model_arn_equals.as_deref()
     }
-    /// <p>Return custom models only if the foundation model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn foundation_model_arn_equals(&self) -> ::std::option::Option<&str> {
         self.foundation_model_arn_equals.as_deref()
     }
@@ -124,31 +124,31 @@ impl ListCustomModelsInputBuilder {
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_contains
     }
-    /// <p>Return custom models only if the base model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn base_model_arn_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_arn_equals = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Return custom models only if the base model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn set_base_model_arn_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_model_arn_equals = input;
         self
     }
-    /// <p>Return custom models only if the base model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn get_base_model_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_model_arn_equals
     }
-    /// <p>Return custom models only if the foundation model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn foundation_model_arn_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.foundation_model_arn_equals = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Return custom models only if the foundation model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn set_foundation_model_arn_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.foundation_model_arn_equals = input;
         self
     }
-    /// <p>Return custom models only if the foundation model ARN matches this parameter.</p>
+    /// <p>Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.</p>
     pub fn get_foundation_model_arn_equals(&self) -> &::std::option::Option<::std::string::String> {
         &self.foundation_model_arn_equals
     }

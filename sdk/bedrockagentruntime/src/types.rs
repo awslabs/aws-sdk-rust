@@ -37,11 +37,23 @@ pub use crate::types::_retrieve_and_generate_session_configuration::RetrieveAndG
 
 pub use crate::types::_retrieve_and_generate_configuration::RetrieveAndGenerateConfiguration;
 
+pub use crate::types::_external_sources_retrieve_and_generate_configuration::ExternalSourcesRetrieveAndGenerateConfiguration;
+
+pub use crate::types::_external_sources_generation_configuration::ExternalSourcesGenerationConfiguration;
+
+pub use crate::types::_prompt_template::PromptTemplate;
+
+pub use crate::types::_external_source::ExternalSource;
+
+pub use crate::types::_byte_content_doc::ByteContentDoc;
+
+pub use crate::types::_s3_object_doc::S3ObjectDoc;
+
+pub use crate::types::_external_source_type::ExternalSourceType;
+
 pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::KnowledgeBaseRetrieveAndGenerateConfiguration;
 
 pub use crate::types::_generation_configuration::GenerationConfiguration;
-
-pub use crate::types::_prompt_template::PromptTemplate;
 
 pub use crate::types::_retrieve_and_generate_type::RetrieveAndGenerateType;
 
@@ -151,11 +163,21 @@ mod _api_result;
 
 mod _attribution;
 
+mod _byte_content_doc;
+
 mod _citation;
 
 mod _content_body;
 
 mod _creation_mode;
+
+mod _external_source;
+
+mod _external_source_type;
+
+mod _external_sources_generation_configuration;
+
+mod _external_sources_retrieve_and_generate_configuration;
 
 mod _failure_trace;
 
@@ -258,6 +280,8 @@ mod _retrieve_and_generate_type;
 mod _retrieved_reference;
 
 mod _return_control_payload;
+
+mod _s3_object_doc;
 
 mod _search_type;
 

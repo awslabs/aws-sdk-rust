@@ -66,6 +66,12 @@ pub struct Image {
     pub imds_support: ::std::option::Option<crate::types::ImdsSupportValues>,
     /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
     pub source_instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub deregistration_protection: ::std::option::Option<::std::string::String>,
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
+    /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
+    /// </note>
+    pub last_launched_time: ::std::option::Option<::std::string::String>,
 }
 impl Image {
     /// <p>The architecture of the image.</p>
@@ -198,6 +204,16 @@ impl Image {
     pub fn source_instance_id(&self) -> ::std::option::Option<&str> {
         self.source_instance_id.as_deref()
     }
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub fn deregistration_protection(&self) -> ::std::option::Option<&str> {
+        self.deregistration_protection.as_deref()
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
+    /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
+    /// </note>
+    pub fn last_launched_time(&self) -> ::std::option::Option<&str> {
+        self.last_launched_time.as_deref()
+    }
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
@@ -241,6 +257,8 @@ pub struct ImageBuilder {
     pub(crate) deprecation_time: ::std::option::Option<::std::string::String>,
     pub(crate) imds_support: ::std::option::Option<crate::types::ImdsSupportValues>,
     pub(crate) source_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) deregistration_protection: ::std::option::Option<::std::string::String>,
+    pub(crate) last_launched_time: ::std::option::Option<::std::string::String>,
 }
 impl ImageBuilder {
     /// <p>The architecture of the image.</p>
@@ -695,6 +713,40 @@ impl ImageBuilder {
     pub fn get_source_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_instance_id
     }
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub fn deregistration_protection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.deregistration_protection = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub fn set_deregistration_protection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deregistration_protection = input;
+        self
+    }
+    /// <p>Indicates whether deregistration protection is enabled for the AMI.</p>
+    pub fn get_deregistration_protection(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deregistration_protection
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
+    /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
+    /// </note>
+    pub fn last_launched_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_launched_time = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
+    /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
+    /// </note>
+    pub fn set_last_launched_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_launched_time = input;
+        self
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
+    /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
+    /// </note>
+    pub fn get_last_launched_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_launched_time
+    }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
@@ -729,6 +781,8 @@ impl ImageBuilder {
             deprecation_time: self.deprecation_time,
             imds_support: self.imds_support,
             source_instance_id: self.source_instance_id,
+            deregistration_protection: self.deregistration_protection,
+            last_launched_time: self.last_launched_time,
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Specifies a single cookie or set of cookies in an end user's browser.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CookieSpecification {
     /// <p>The domain of the cookie.</p>
     pub domain: ::std::string::String,
@@ -26,6 +26,15 @@ impl CookieSpecification {
         self.path.as_deref()
     }
 }
+impl ::std::fmt::Debug for CookieSpecification {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CookieSpecification");
+        formatter.field("domain", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("path", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CookieSpecification {
     /// Creates a new builder-style object to manufacture [`CookieSpecification`](crate::types::CookieSpecification).
     pub fn builder() -> crate::types::builders::CookieSpecificationBuilder {
@@ -35,7 +44,7 @@ impl CookieSpecification {
 
 /// A builder for [`CookieSpecification`](crate::types::CookieSpecification).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CookieSpecificationBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -99,5 +108,14 @@ impl CookieSpecificationBuilder {
             name: self.name,
             path: self.path,
         })
+    }
+}
+impl ::std::fmt::Debug for CookieSpecificationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CookieSpecificationBuilder");
+        formatter.field("domain", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("path", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

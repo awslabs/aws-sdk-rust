@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FoundationModelSummary {
-    /// <p>The ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model.</p>
     pub model_arn: ::std::string::String,
-    /// <p>The model Id of the foundation model.</p>
+    /// <p>The model ID of the foundation model.</p>
     pub model_id: ::std::string::String,
     /// <p>The name of the model.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
@@ -26,12 +26,12 @@ pub struct FoundationModelSummary {
     pub model_lifecycle: ::std::option::Option<crate::types::FoundationModelLifecycle>,
 }
 impl FoundationModelSummary {
-    /// <p>The ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model.</p>
     pub fn model_arn(&self) -> &str {
         use std::ops::Deref;
         self.model_arn.deref()
     }
-    /// <p>The model Id of the foundation model.</p>
+    /// <p>The model ID of the foundation model.</p>
     pub fn model_id(&self) -> &str {
         use std::ops::Deref;
         self.model_id.deref()
@@ -100,33 +100,33 @@ pub struct FoundationModelSummaryBuilder {
     pub(crate) model_lifecycle: ::std::option::Option<crate::types::FoundationModelLifecycle>,
 }
 impl FoundationModelSummaryBuilder {
-    /// <p>The ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model.</p>
     /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The ARN of the foundation model.</p>
+    /// <p>The Amazon Resource Name (ARN) of the foundation model.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
-    /// <p>The model Id of the foundation model.</p>
+    /// <p>The model ID of the foundation model.</p>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The model Id of the foundation model.</p>
+    /// <p>The model ID of the foundation model.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>The model Id of the foundation model.</p>
+    /// <p>The model ID of the foundation model.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }

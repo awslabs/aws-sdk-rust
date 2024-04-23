@@ -13,6 +13,8 @@ pub struct CreateDataSourceInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains metadata about where the data source is stored.</p>
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
+    /// <p>The deletion policy for the requested data source</p>
+    pub data_deletion_policy: ::std::option::Option<crate::types::DataDeletionPolicy>,
     /// <p>Contains details about the server-side encryption for the data source.</p>
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>Contains details about how to ingest the documents in the data source.</p>
@@ -39,6 +41,10 @@ impl CreateDataSourceInput {
     pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
+    /// <p>The deletion policy for the requested data source</p>
+    pub fn data_deletion_policy(&self) -> ::std::option::Option<&crate::types::DataDeletionPolicy> {
+        self.data_deletion_policy.as_ref()
+    }
     /// <p>Contains details about the server-side encryption for the data source.</p>
     pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
@@ -64,6 +70,7 @@ pub struct CreateDataSourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
+    pub(crate) data_deletion_policy: ::std::option::Option<crate::types::DataDeletionPolicy>,
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) vector_ingestion_configuration: ::std::option::Option<crate::types::VectorIngestionConfiguration>,
 }
@@ -141,6 +148,20 @@ impl CreateDataSourceInputBuilder {
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         &self.data_source_configuration
     }
+    /// <p>The deletion policy for the requested data source</p>
+    pub fn data_deletion_policy(mut self, input: crate::types::DataDeletionPolicy) -> Self {
+        self.data_deletion_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deletion policy for the requested data source</p>
+    pub fn set_data_deletion_policy(mut self, input: ::std::option::Option<crate::types::DataDeletionPolicy>) -> Self {
+        self.data_deletion_policy = input;
+        self
+    }
+    /// <p>The deletion policy for the requested data source</p>
+    pub fn get_data_deletion_policy(&self) -> &::std::option::Option<crate::types::DataDeletionPolicy> {
+        &self.data_deletion_policy
+    }
     /// <p>Contains details about the server-side encryption for the data source.</p>
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
@@ -179,6 +200,7 @@ impl CreateDataSourceInputBuilder {
             name: self.name,
             description: self.description,
             data_source_configuration: self.data_source_configuration,
+            data_deletion_policy: self.data_deletion_policy,
             server_side_encryption_configuration: self.server_side_encryption_configuration,
             vector_ingestion_configuration: self.vector_ingestion_configuration,
         })

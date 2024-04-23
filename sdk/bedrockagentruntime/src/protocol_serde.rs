@@ -88,6 +88,8 @@ pub(crate) mod shape_session_state;
 
 pub(crate) mod shape_citation;
 
+pub(crate) mod shape_external_sources_retrieve_and_generate_configuration;
+
 pub(crate) mod shape_invocation_result_member;
 
 pub(crate) mod shape_knowledge_base_retrieval_result;
@@ -103,6 +105,10 @@ pub(crate) mod shape_return_control_payload;
 pub(crate) mod shape_trace_part;
 
 pub(crate) mod shape_api_result;
+
+pub(crate) mod shape_external_source;
+
+pub(crate) mod shape_external_sources_generation_configuration;
 
 pub(crate) mod shape_function_result;
 
@@ -122,6 +128,8 @@ pub(crate) mod shape_retrieved_references;
 
 pub(crate) mod shape_attribution;
 
+pub(crate) mod shape_byte_content_doc;
+
 pub(crate) mod shape_content_body;
 
 pub(crate) mod shape_filter_attribute;
@@ -133,6 +141,8 @@ pub(crate) mod shape_prompt_template;
 pub(crate) mod shape_retrieval_result_s3_location;
 
 pub(crate) mod shape_retrieved_reference;
+
+pub(crate) mod shape_s3_object_doc;
 
 pub(crate) mod shape_text_response_part;
 

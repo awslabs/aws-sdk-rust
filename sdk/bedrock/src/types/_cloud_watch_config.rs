@@ -6,7 +6,7 @@
 pub struct CloudWatchConfig {
     /// <p>The log group name.</p>
     pub log_group_name: ::std::string::String,
-    /// <p>The role ARN.</p>
+    /// <p>The role Amazon Resource Name (ARN).</p>
     pub role_arn: ::std::string::String,
     /// <p>S3 configuration for delivering a large amount of data.</p>
     pub large_data_delivery_s3_config: ::std::option::Option<crate::types::S3Config>,
@@ -17,7 +17,7 @@ impl CloudWatchConfig {
         use std::ops::Deref;
         self.log_group_name.deref()
     }
-    /// <p>The role ARN.</p>
+    /// <p>The role Amazon Resource Name (ARN).</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
@@ -58,18 +58,18 @@ impl CloudWatchConfigBuilder {
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_name
     }
-    /// <p>The role ARN.</p>
+    /// <p>The role Amazon Resource Name (ARN).</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The role ARN.</p>
+    /// <p>The role Amazon Resource Name (ARN).</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The role ARN.</p>
+    /// <p>The role Amazon Resource Name (ARN).</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

@@ -14,6 +14,7 @@
 /// match knowledgebasestatus {
 ///     KnowledgeBaseStatus::Active => { /* ... */ },
 ///     KnowledgeBaseStatus::Creating => { /* ... */ },
+///     KnowledgeBaseStatus::DeleteUnsuccessful => { /* ... */ },
 ///     KnowledgeBaseStatus::Deleting => { /* ... */ },
 ///     KnowledgeBaseStatus::Failed => { /* ... */ },
 ///     KnowledgeBaseStatus::Updating => { /* ... */ },
@@ -49,6 +50,8 @@ pub enum KnowledgeBaseStatus {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
+    DeleteUnsuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for KnowledgeBaseStatus {
         match s {
             "ACTIVE" => KnowledgeBaseStatus::Active,
             "CREATING" => KnowledgeBaseStatus::Creating,
+            "DELETE_UNSUCCESSFUL" => KnowledgeBaseStatus::DeleteUnsuccessful,
             "DELETING" => KnowledgeBaseStatus::Deleting,
             "FAILED" => KnowledgeBaseStatus::Failed,
             "UPDATING" => KnowledgeBaseStatus::Updating,
@@ -83,6 +87,7 @@ impl KnowledgeBaseStatus {
         match self {
             KnowledgeBaseStatus::Active => "ACTIVE",
             KnowledgeBaseStatus::Creating => "CREATING",
+            KnowledgeBaseStatus::DeleteUnsuccessful => "DELETE_UNSUCCESSFUL",
             KnowledgeBaseStatus::Deleting => "DELETING",
             KnowledgeBaseStatus::Failed => "FAILED",
             KnowledgeBaseStatus::Updating => "UPDATING",
@@ -91,7 +96,7 @@ impl KnowledgeBaseStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+        &["ACTIVE", "CREATING", "DELETE_UNSUCCESSFUL", "DELETING", "FAILED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for KnowledgeBaseStatus {
@@ -116,6 +121,7 @@ impl ::std::fmt::Display for KnowledgeBaseStatus {
         match self {
             KnowledgeBaseStatus::Active => write!(f, "ACTIVE"),
             KnowledgeBaseStatus::Creating => write!(f, "CREATING"),
+            KnowledgeBaseStatus::DeleteUnsuccessful => write!(f, "DELETE_UNSUCCESSFUL"),
             KnowledgeBaseStatus::Deleting => write!(f, "DELETING"),
             KnowledgeBaseStatus::Failed => write!(f, "FAILED"),
             KnowledgeBaseStatus::Updating => write!(f, "UPDATING"),

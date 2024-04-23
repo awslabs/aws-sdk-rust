@@ -12,7 +12,7 @@ tracing = "0.1.37"
 tokio-stream = "0.1.14"
 aws-config= { version = "1.2.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-autoscaling= { version = "1.22.0", path = "../../../sdk/autoscaling" }
-aws-sdk-ec2= { version = "1.35.0", path = "../../../sdk/ec2" }
+aws-sdk-ec2= { version = "1.36.0", path = "../../../sdk/ec2" }
 aws-types= { version = "1.2.0", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]

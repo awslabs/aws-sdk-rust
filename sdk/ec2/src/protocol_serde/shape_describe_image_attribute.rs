@@ -187,6 +187,16 @@ pub fn de_describe_image_attribute(
                 builder = builder.set_imds_support(var_13);
             }
             ,
+            s if s.matches("deregistrationProtection") /* DeregistrationProtection com.amazonaws.ec2.synthetic#DescribeImageAttributeOutput$DeregistrationProtection */ =>  {
+                let var_14 =
+                    Some(
+                        crate::protocol_serde::shape_attribute_value::de_attribute_value(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_deregistration_protection(var_14);
+            }
+            ,
             _ => {}
         }
     }

@@ -47,6 +47,18 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "customerManagedKey" => {
+                            builder = builder.set_customer_managed_key(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "additionalEncryptionContext" => {
+                            builder = builder.set_additional_encryption_context(
+                                crate::protocol_serde::shape_encryption_context_map::de_encryption_context_map(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

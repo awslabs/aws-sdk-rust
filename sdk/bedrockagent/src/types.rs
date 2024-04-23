@@ -79,6 +79,8 @@ pub use crate::types::_ingestion_job_filter_attribute::IngestionJobFilterAttribu
 
 pub use crate::types::_data_source::DataSource;
 
+pub use crate::types::_data_deletion_policy::DataDeletionPolicy;
+
 pub use crate::types::_vector_ingestion_configuration::VectorIngestionConfiguration;
 
 pub use crate::types::_chunking_configuration::ChunkingConfiguration;
@@ -180,6 +182,8 @@ mod _chunking_strategy;
 mod _creation_mode;
 
 mod _custom_control_method;
+
+mod _data_deletion_policy;
 
 mod _data_source;
 

@@ -23,9 +23,10 @@ impl crate::operation::create_model_customization_job::builders::CreateModelCust
 /// Fluent builder constructing a request to `CreateModelCustomizationJob`.
 ///
 /// <p>Creates a fine-tuning job to customize a base model.</p>
-/// <p>You specify the base foundation model and the location of the training data. After the model-customization job completes successfully, your custom model resource will be ready to use. Training data contains input and output text for each record in a JSONL format. Optionally, you can specify validation data in the same format as the training data. Amazon Bedrock returns validation loss metrics and output generations after the job completes.</p>
+/// <p>You specify the base foundation model and the location of the training data. After the model-customization job completes successfully, your custom model resource will be ready to use. Amazon Bedrock returns validation loss metrics and output generations after the job completes.</p>
+/// <p>For information on the format of training and validation data, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html">Prepare the datasets</a>.</p>
 /// <p>Model-customization jobs are asynchronous and the completion time depends on the base model and the training/validation data size. To monitor a job, use the <code>GetModelCustomizationJob</code> operation to retrieve the job status.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock User Guide.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelCustomizationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,59 +112,59 @@ impl CreateModelCustomizationJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Enter a unique name for the fine-tuning job.</p>
+    /// <p>A name for the fine-tuning job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
-    /// <p>Enter a unique name for the fine-tuning job.</p>
+    /// <p>A name for the fine-tuning job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
-    /// <p>Enter a unique name for the fine-tuning job.</p>
+    /// <p>A name for the fine-tuning job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_name()
     }
-    /// <p>Enter a name for the custom model.</p>
+    /// <p>A name for the resulting custom model.</p>
     pub fn custom_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_model_name(input.into());
         self
     }
-    /// <p>Enter a name for the custom model.</p>
+    /// <p>A name for the resulting custom model.</p>
     pub fn set_custom_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_model_name(input);
         self
     }
-    /// <p>Enter a name for the custom model.</p>
+    /// <p>A name for the resulting custom model.</p>
     pub fn get_custom_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_model_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
@@ -214,17 +215,17 @@ impl CreateModelCustomizationJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_job_tags`](Self::set_job_tags).
     ///
-    /// <p>Assign tags to the job.</p>
+    /// <p>Tags to attach to the job.</p>
     pub fn job_tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.job_tags(input);
         self
     }
-    /// <p>Assign tags to the job.</p>
+    /// <p>Tags to attach to the job.</p>
     pub fn set_job_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_job_tags(input);
         self
     }
-    /// <p>Assign tags to the job.</p>
+    /// <p>Tags to attach to the job.</p>
     pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_job_tags()
     }
@@ -233,17 +234,17 @@ impl CreateModelCustomizationJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_custom_model_tags`](Self::set_custom_model_tags).
     ///
-    /// <p>Assign tags to the custom model.</p>
+    /// <p>Tags to attach to the resulting custom model.</p>
     pub fn custom_model_tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.custom_model_tags(input);
         self
     }
-    /// <p>Assign tags to the custom model.</p>
+    /// <p>Tags to attach to the resulting custom model.</p>
     pub fn set_custom_model_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_custom_model_tags(input);
         self
     }
-    /// <p>Assign tags to the custom model.</p>
+    /// <p>Tags to attach to the resulting custom model.</p>
     pub fn get_custom_model_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_custom_model_tags()
     }
@@ -294,7 +295,7 @@ impl CreateModelCustomizationJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
     ///
-    /// <p>Parameters related to tuning the model.</p>
+    /// <p>Parameters related to tuning the model. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
     pub fn hyper_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -303,7 +304,7 @@ impl CreateModelCustomizationJobFluentBuilder {
         self.inner = self.inner.hyper_parameters(k.into(), v.into());
         self
     }
-    /// <p>Parameters related to tuning the model.</p>
+    /// <p>Parameters related to tuning the model. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
     pub fn set_hyper_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -311,7 +312,7 @@ impl CreateModelCustomizationJobFluentBuilder {
         self.inner = self.inner.set_hyper_parameters(input);
         self
     }
-    /// <p>Parameters related to tuning the model.</p>
+    /// <p>Parameters related to tuning the model. For details on the format for different models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model hyperparameters</a>.</p>
     pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_hyper_parameters()
     }
