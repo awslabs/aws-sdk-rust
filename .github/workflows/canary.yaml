@@ -70,8 +70,8 @@ jobs:
         with:
           toolchain: ${{ matrix.rust_version }}
           targets: x86_64-unknown-linux-musl
-      - name: Install musl-gcc
-        run: sudo apt-get update && sudo apt-get install -y musl-dev musl-tools
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y awscli musl-dev musl-tools
       - name: Install cargo component for wasm canary
         env:
           # Must be in sync with that specified in `smithy-rs`
@@ -79,9 +79,6 @@ jobs:
         run: |
           rustup toolchain install ${{ env.rust_nightly_version }}
           cargo +${{ env.rust_nightly_version }} install cargo-component --locked --version ${CARGO_COMPONENT_VERSION}
-      - name: Install awscli
-        run: |
-          sudo apt-get update && sudo apt-get install -y awscli
       - name: Compile the canary runner
         working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: cargo build
