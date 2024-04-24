@@ -113,6 +113,8 @@ pub(crate) mod shape_describe_instance_patch_states_for_patch_group;
 
 pub(crate) mod shape_describe_instance_patches;
 
+pub(crate) mod shape_describe_instance_properties;
+
 pub(crate) mod shape_describe_inventory_deletions;
 
 pub(crate) mod shape_describe_maintenance_window_execution_task_invocations;
@@ -429,6 +431,8 @@ pub(crate) mod shape_describe_instance_patch_states_input;
 
 pub(crate) mod shape_describe_instance_patches_input;
 
+pub(crate) mod shape_describe_instance_properties_input;
+
 pub(crate) mod shape_describe_inventory_deletions_input;
 
 pub(crate) mod shape_describe_maintenance_window_execution_task_invocations_input;
@@ -588,6 +592,8 @@ pub(crate) mod shape_invalid_filter_value;
 pub(crate) mod shape_invalid_instance_id;
 
 pub(crate) mod shape_invalid_instance_information_filter_value;
+
+pub(crate) mod shape_invalid_instance_property_filter_value;
 
 pub(crate) mod shape_invalid_inventory_group_exception;
 
@@ -961,6 +967,12 @@ pub(crate) mod shape_instance_patch_state_list;
 
 pub(crate) mod shape_instance_patch_states_list;
 
+pub(crate) mod shape_instance_properties;
+
+pub(crate) mod shape_instance_property_filter;
+
+pub(crate) mod shape_instance_property_string_filter;
+
 pub(crate) mod shape_inventory_aggregator;
 
 pub(crate) mod shape_inventory_deletion_summary;
@@ -1188,6 +1200,8 @@ pub(crate) mod shape_instance_id_list;
 pub(crate) mod shape_instance_information;
 
 pub(crate) mod shape_instance_patch_state;
+
+pub(crate) mod shape_instance_property;
 
 pub(crate) mod shape_inventory_deletion_status_item;
 

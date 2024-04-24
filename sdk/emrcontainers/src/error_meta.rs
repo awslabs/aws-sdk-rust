@@ -139,6 +139,36 @@ impl From<crate::operation::create_managed_endpoint::CreateManagedEndpointError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_security_configuration::CreateSecurityConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_security_configuration::CreateSecurityConfigurationError> for Error {
+    fn from(err: crate::operation::create_security_configuration::CreateSecurityConfigurationError) -> Self {
+        match err {
+            crate::operation::create_security_configuration::CreateSecurityConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_security_configuration::CreateSecurityConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_security_configuration::CreateSecurityConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_virtual_cluster::CreateVirtualClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -330,6 +360,43 @@ impl From<crate::operation::describe_managed_endpoint::DescribeManagedEndpointEr
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_security_configuration::DescribeSecurityConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_security_configuration::DescribeSecurityConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_security_configuration::DescribeSecurityConfigurationError> for Error {
+    fn from(err: crate::operation::describe_security_configuration::DescribeSecurityConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_security_configuration::DescribeSecurityConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_security_configuration::DescribeSecurityConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_security_configuration::DescribeSecurityConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_security_configuration::DescribeSecurityConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_virtual_cluster::DescribeVirtualClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -474,6 +541,36 @@ impl From<crate::operation::list_managed_endpoints::ListManagedEndpointsError> f
             }
             crate::operation::list_managed_endpoints::ListManagedEndpointsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_managed_endpoints::ListManagedEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_security_configurations::ListSecurityConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_security_configurations::ListSecurityConfigurationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_security_configurations::ListSecurityConfigurationsError> for Error {
+    fn from(err: crate::operation::list_security_configurations::ListSecurityConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_security_configurations::ListSecurityConfigurationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_security_configurations::ListSecurityConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_security_configurations::ListSecurityConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

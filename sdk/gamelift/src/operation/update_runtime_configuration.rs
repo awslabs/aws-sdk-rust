@@ -259,6 +259,8 @@ pub enum UpdateRuntimeConfigurationError {
     InvalidFleetStatusException(crate::types::error::InvalidFleetStatusException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
@@ -299,6 +301,7 @@ impl UpdateRuntimeConfigurationError {
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidFleetStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -316,6 +319,10 @@ impl UpdateRuntimeConfigurationError {
     pub fn is_invalid_request_exception(&self) -> bool {
         matches!(self, Self::InvalidRequestException(_))
     }
+    /// Returns `true` if the error kind is `UpdateRuntimeConfigurationError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `UpdateRuntimeConfigurationError::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
         matches!(self, Self::NotFoundException(_))
@@ -331,6 +338,7 @@ impl ::std::error::Error for UpdateRuntimeConfigurationError {
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidFleetStatusException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -343,6 +351,7 @@ impl ::std::fmt::Display for UpdateRuntimeConfigurationError {
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidFleetStatusException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
             Self::UnauthorizedException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -369,6 +378,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateRuntime
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidFleetStatusException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

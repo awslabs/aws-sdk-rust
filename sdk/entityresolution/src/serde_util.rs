@@ -11,6 +11,24 @@ pub(crate) fn add_policy_statement_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_delete_unique_id_output_output_correct_errors(
+    mut builder: crate::operation::batch_delete_unique_id::builders::BatchDeleteUniqueIdOutputBuilder,
+) -> crate::operation::batch_delete_unique_id::builders::BatchDeleteUniqueIdOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DeleteUniqueIdStatus>().ok()
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    if builder.deleted.is_none() {
+        builder.deleted = Some(Default::default())
+    }
+    if builder.disconnected_unique_ids.is_none() {
+        builder.disconnected_unique_ids = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_id_mapping_workflow_output_output_correct_errors(
     mut builder: crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWorkflowOutputBuilder,
 ) -> crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWorkflowOutputBuilder {
@@ -466,6 +484,27 @@ pub(crate) fn resolution_techniques_correct_errors(
 ) -> crate::types::builders::ResolutionTechniquesBuilder {
     if builder.resolution_type.is_none() {
         builder.resolution_type = "no value was set".parse::<crate::types::ResolutionType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_unique_id_error_correct_errors(
+    mut builder: crate::types::builders::DeleteUniqueIdErrorBuilder,
+) -> crate::types::builders::DeleteUniqueIdErrorBuilder {
+    if builder.unique_id.is_none() {
+        builder.unique_id = Some(Default::default())
+    }
+    if builder.error_type.is_none() {
+        builder.error_type = "no value was set".parse::<crate::types::DeleteUniqueIdErrorType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn deleted_unique_id_correct_errors(
+    mut builder: crate::types::builders::DeletedUniqueIdBuilder,
+) -> crate::types::builders::DeletedUniqueIdBuilder {
+    if builder.unique_id.is_none() {
+        builder.unique_id = Some(Default::default())
     }
     builder
 }

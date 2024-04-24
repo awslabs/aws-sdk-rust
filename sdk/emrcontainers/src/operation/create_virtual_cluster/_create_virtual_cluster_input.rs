@@ -11,6 +11,8 @@ pub struct CreateVirtualClusterInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the virtual cluster.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The ID of the security configuration.</p>
+    pub security_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateVirtualClusterInput {
     /// <p>The specified name of the virtual cluster.</p>
@@ -29,6 +31,10 @@ impl CreateVirtualClusterInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The ID of the security configuration.</p>
+    pub fn security_configuration_id(&self) -> ::std::option::Option<&str> {
+        self.security_configuration_id.as_deref()
+    }
 }
 impl CreateVirtualClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
@@ -45,6 +51,7 @@ pub struct CreateVirtualClusterInputBuilder {
     pub(crate) container_provider: ::std::option::Option<crate::types::ContainerProvider>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) security_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateVirtualClusterInputBuilder {
     /// <p>The specified name of the virtual cluster.</p>
@@ -112,6 +119,20 @@ impl CreateVirtualClusterInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The ID of the security configuration.</p>
+    pub fn security_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.security_configuration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the security configuration.</p>
+    pub fn set_security_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_configuration_id = input;
+        self
+    }
+    /// <p>The ID of the security configuration.</p>
+    pub fn get_security_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_configuration_id
+    }
     /// Consumes the builder and constructs a [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
     pub fn build(
         self,
@@ -122,6 +143,7 @@ impl CreateVirtualClusterInputBuilder {
             container_provider: self.container_provider,
             client_token: self.client_token,
             tags: self.tags,
+            security_configuration_id: self.security_configuration_id,
         })
     }
 }

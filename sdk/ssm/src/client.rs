@@ -253,6 +253,8 @@ mod describe_instance_patch_states_for_patch_group;
 
 mod describe_instance_patches;
 
+mod describe_instance_properties;
+
 mod describe_inventory_deletions;
 
 mod describe_maintenance_window_execution_task_invocations;

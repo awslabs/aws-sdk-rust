@@ -33,6 +33,24 @@ pub use crate::types::_container_provider_type::ContainerProviderType;
 
 pub use crate::types::_virtual_cluster_state::VirtualClusterState;
 
+pub use crate::types::_security_configuration::SecurityConfiguration;
+
+pub use crate::types::_security_configuration_data::SecurityConfigurationData;
+
+pub use crate::types::_authorization_configuration::AuthorizationConfiguration;
+
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+
+pub use crate::types::_in_transit_encryption_configuration::InTransitEncryptionConfiguration;
+
+pub use crate::types::_tls_certificate_configuration::TlsCertificateConfiguration;
+
+pub use crate::types::_certificate_provider_type::CertificateProviderType;
+
+pub use crate::types::_lake_formation_configuration::LakeFormationConfiguration;
+
+pub use crate::types::_secure_namespace_info::SecureNamespaceInfo;
+
 pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_failure_reason::FailureReason;
@@ -65,7 +83,11 @@ pub use crate::types::_job_run_state::JobRunState;
 
 pub use crate::types::_credentials::Credentials;
 
+mod _authorization_configuration;
+
 mod _certificate;
+
+mod _certificate_provider_type;
 
 mod _cloud_watch_monitoring_configuration;
 
@@ -85,11 +107,15 @@ mod _credentials;
 
 mod _eks_info;
 
+mod _encryption_configuration;
+
 mod _endpoint;
 
 mod _endpoint_state;
 
 mod _failure_reason;
+
+mod _in_transit_encryption_configuration;
 
 mod _job_driver;
 
@@ -100,6 +126,8 @@ mod _job_run_state;
 mod _job_template;
 
 mod _job_template_data;
+
+mod _lake_formation_configuration;
 
 mod _monitoring_configuration;
 
@@ -119,6 +147,12 @@ mod _retry_policy_execution;
 
 mod _s3_monitoring_configuration;
 
+mod _secure_namespace_info;
+
+mod _security_configuration;
+
+mod _security_configuration_data;
+
 mod _spark_sql_job_driver;
 
 mod _spark_submit_job_driver;
@@ -126,6 +160,8 @@ mod _spark_submit_job_driver;
 mod _template_parameter_configuration;
 
 mod _template_parameter_data_type;
+
+mod _tls_certificate_configuration;
 
 mod _virtual_cluster;
 

@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_add_policy_statement;
 
+pub(crate) mod shape_batch_delete_unique_id;
+
 pub(crate) mod shape_create_id_mapping_workflow;
 
 pub(crate) mod shape_create_id_namespace;
@@ -143,6 +145,12 @@ pub(crate) mod shape_update_schema_mapping_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_delete_unique_id_errors_list;
+
+pub(crate) mod shape_deleted_unique_id_list;
+
+pub(crate) mod shape_disconnected_unique_ids_list;
+
 pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_id_mapping_job_metrics;
@@ -212,6 +220,10 @@ pub(crate) mod shape_schema_mapping_list;
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_aws_account_id_list;
+
+pub(crate) mod shape_delete_unique_id_error;
+
+pub(crate) mod shape_deleted_unique_id;
 
 pub(crate) mod shape_id_mapping_workflow_summary;
 

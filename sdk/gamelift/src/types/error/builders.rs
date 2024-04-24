@@ -9,17 +9,19 @@ pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuild
 
 pub use crate::types::error::_not_found_exception::NotFoundExceptionBuilder;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
+
 pub use crate::types::error::_invalid_fleet_status_exception::InvalidFleetStatusExceptionBuilder;
 
 pub use crate::types::error::_invalid_game_session_status_exception::InvalidGameSessionStatusExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
-
 pub use crate::types::error::_tagging_failed_exception::TaggingFailedExceptionBuilder;
 
 pub use crate::types::error::_terminal_routing_strategy_exception::TerminalRoutingStrategyExceptionBuilder;
+
+pub use crate::types::error::_not_ready_exception::NotReadyExceptionBuilder;
 
 pub use crate::types::error::_game_session_full_exception::GameSessionFullExceptionBuilder;
 

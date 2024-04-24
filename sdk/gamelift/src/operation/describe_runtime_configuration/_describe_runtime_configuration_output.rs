@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRuntimeConfigurationOutput {
-    /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
+    /// <p>Instructions that describe how server processes are launched and maintained on computes in the fleet.</p>
     pub runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeRuntimeConfigurationOutput {
-    /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
+    /// <p>Instructions that describe how server processes are launched and maintained on computes in the fleet.</p>
     pub fn runtime_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeRuntimeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeRuntimeConfigurationOutputBuilder {
-    /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
+    /// <p>Instructions that describe how server processes are launched and maintained on computes in the fleet.</p>
     pub fn runtime_configuration(mut self, input: crate::types::RuntimeConfiguration) -> Self {
         self.runtime_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
+    /// <p>Instructions that describe how server processes are launched and maintained on computes in the fleet.</p>
     pub fn set_runtime_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
         self.runtime_configuration = input;
         self
     }
-    /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
+    /// <p>Instructions that describe how server processes are launched and maintained on computes in the fleet.</p>
     pub fn get_runtime_configuration(&self) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
         &self.runtime_configuration
     }

@@ -149,6 +149,13 @@ pub(crate) fn de_get_compute_access(
                 "Credentials" => {
                     builder = builder.set_credentials(crate::protocol_serde::shape_aws_credentials::de_aws_credentials(tokens)?);
                 }
+                "Target" => {
+                    builder = builder.set_target(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

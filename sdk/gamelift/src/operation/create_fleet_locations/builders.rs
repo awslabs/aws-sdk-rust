@@ -22,8 +22,9 @@ impl crate::operation::create_fleet_locations::builders::CreateFleetLocationsInp
 }
 /// Fluent builder constructing a request to `CreateFleetLocations`.
 ///
-/// <p>Adds remote locations to a fleet and begins populating the new locations with EC2 instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings.</p><note>
-/// <p>This operation cannot be used with fleets that don't support remote locations. Fleets can have multiple locations only if they reside in Amazon Web Services Regions that support this feature and were created after the feature was released in March 2021.</p>
+/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
+/// <p>Adds remote locations to an EC2 or container fleet and begins populating the new locations with instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings.</p><note>
+/// <p>You can't add remote locations to a fleet that resides in an Amazon Web Services Region that doesn't support multiple locations. Fleets created prior to March 2021 can't support multiple locations.</p>
 /// </note>
 /// <p>To add fleet locations, specify the fleet to be updated and provide a list of one or more locations.</p>
 /// <p>If successful, this operation returns the list of added locations with their status set to <code>NEW</code>. Amazon GameLift initiates the process of starting an instance in each added location. You can track the status of each new location by monitoring location creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.</p>

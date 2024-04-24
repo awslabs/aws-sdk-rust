@@ -144,6 +144,8 @@ mod create_alias;
 
 mod create_build;
 
+mod create_container_group_definition;
+
 mod create_fleet;
 
 mod create_fleet_locations;
@@ -201,6 +203,8 @@ mod delete_alias;
 
 mod delete_build;
 
+mod delete_container_group_definition;
+
 mod delete_fleet;
 
 mod delete_fleet_locations;
@@ -232,6 +236,8 @@ mod describe_alias;
 mod describe_build;
 
 mod describe_compute;
+
+mod describe_container_group_definition;
 
 mod describe_ec2_instance_limits;
 
@@ -298,6 +304,8 @@ mod list_aliases;
 mod list_builds;
 
 mod list_compute;
+
+mod list_container_group_definitions;
 
 mod list_fleets;
 

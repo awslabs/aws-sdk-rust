@@ -122,6 +122,8 @@ pub enum Error {
     InvalidInstanceId(crate::types::error::InvalidInstanceId),
     /// <p>The specified filter value isn't valid.</p>
     InvalidInstanceInformationFilterValue(crate::types::error::InvalidInstanceInformationFilterValue),
+    /// <p>The specified filter value isn't valid.</p>
+    InvalidInstancePropertyFilterValue(crate::types::error::InvalidInstancePropertyFilterValue),
     /// <p>The specified inventory group isn't valid.</p>
     InvalidInventoryGroupException(crate::types::error::InvalidInventoryGroupException),
     /// <p>You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
@@ -348,6 +350,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidFilterValue(inner) => inner.fmt(f),
             Error::InvalidInstanceId(inner) => inner.fmt(f),
             Error::InvalidInstanceInformationFilterValue(inner) => inner.fmt(f),
+            Error::InvalidInstancePropertyFilterValue(inner) => inner.fmt(f),
             Error::InvalidInventoryGroupException(inner) => inner.fmt(f),
             Error::InvalidInventoryItemContextException(inner) => inner.fmt(f),
             Error::InvalidInventoryRequestException(inner) => inner.fmt(f),
@@ -501,6 +504,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidFilterValue(inner) => inner.meta(),
             Self::InvalidInstanceId(inner) => inner.meta(),
             Self::InvalidInstanceInformationFilterValue(inner) => inner.meta(),
+            Self::InvalidInstancePropertyFilterValue(inner) => inner.meta(),
             Self::InvalidInventoryGroupException(inner) => inner.meta(),
             Self::InvalidInventoryItemContextException(inner) => inner.meta(),
             Self::InvalidInventoryRequestException(inner) => inner.meta(),
@@ -2057,6 +2061,49 @@ impl From<crate::operation::describe_instance_patch_states_for_patch_group::Desc
             crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_properties::DescribeInstancePropertiesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_properties::DescribeInstancePropertiesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_instance_properties::DescribeInstancePropertiesError> for Error {
+    fn from(err: crate::operation::describe_instance_properties::DescribeInstancePropertiesError) -> Self {
+        match err {
+            crate::operation::describe_instance_properties::DescribeInstancePropertiesError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_instance_properties::DescribeInstancePropertiesError::InvalidActivationId(inner) => {
+                Error::InvalidActivationId(inner)
+            }
+            crate::operation::describe_instance_properties::DescribeInstancePropertiesError::InvalidDocument(inner) => Error::InvalidDocument(inner),
+            crate::operation::describe_instance_properties::DescribeInstancePropertiesError::InvalidFilterKey(inner) => {
+                Error::InvalidFilterKey(inner)
+            }
+            crate::operation::describe_instance_properties::DescribeInstancePropertiesError::InvalidInstanceId(inner) => {
+                Error::InvalidInstanceId(inner)
+            }
+            crate::operation::describe_instance_properties::DescribeInstancePropertiesError::InvalidInstancePropertyFilterValue(inner) => {
+                Error::InvalidInstancePropertyFilterValue(inner)
+            }
+            crate::operation::describe_instance_properties::DescribeInstancePropertiesError::InvalidNextToken(inner) => {
+                Error::InvalidNextToken(inner)
+            }
+            crate::operation::describe_instance_properties::DescribeInstancePropertiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5044,6 +5091,7 @@ impl ::std::error::Error for Error {
             Error::InvalidFilterValue(inner) => inner.source(),
             Error::InvalidInstanceId(inner) => inner.source(),
             Error::InvalidInstanceInformationFilterValue(inner) => inner.source(),
+            Error::InvalidInstancePropertyFilterValue(inner) => inner.source(),
             Error::InvalidInventoryGroupException(inner) => inner.source(),
             Error::InvalidInventoryItemContextException(inner) => inner.source(),
             Error::InvalidInventoryRequestException(inner) => inner.source(),
@@ -5183,6 +5231,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidFilterValue(e) => e.request_id(),
             Self::InvalidInstanceId(e) => e.request_id(),
             Self::InvalidInstanceInformationFilterValue(e) => e.request_id(),
+            Self::InvalidInstancePropertyFilterValue(e) => e.request_id(),
             Self::InvalidInventoryGroupException(e) => e.request_id(),
             Self::InvalidInventoryItemContextException(e) => e.request_id(),
             Self::InvalidInventoryRequestException(e) => e.request_id(),

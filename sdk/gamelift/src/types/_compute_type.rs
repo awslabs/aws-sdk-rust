@@ -13,6 +13,7 @@
 /// # let computetype = unimplemented!();
 /// match computetype {
 ///     ComputeType::Anywhere => { /* ... */ },
+///     ComputeType::Container => { /* ... */ },
 ///     ComputeType::Ec2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum ComputeType {
     #[allow(missing_docs)] // documentation missing in model
     Anywhere,
     #[allow(missing_docs)] // documentation missing in model
+    Container,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for ComputeType {
     fn from(s: &str) -> Self {
         match s {
             "ANYWHERE" => ComputeType::Anywhere,
+            "CONTAINER" => ComputeType::Container,
             "EC2" => ComputeType::Ec2,
             other => ComputeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl ComputeType {
     pub fn as_str(&self) -> &str {
         match self {
             ComputeType::Anywhere => "ANYWHERE",
+            ComputeType::Container => "CONTAINER",
             ComputeType::Ec2 => "EC2",
             ComputeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANYWHERE", "EC2"]
+        &["ANYWHERE", "CONTAINER", "EC2"]
     }
 }
 impl ::std::convert::AsRef<str> for ComputeType {
@@ -100,6 +105,7 @@ impl ::std::fmt::Display for ComputeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ComputeType::Anywhere => write!(f, "ANYWHERE"),
+            ComputeType::Container => write!(f, "CONTAINER"),
             ComputeType::Ec2 => write!(f, "EC2"),
             ComputeType::Unknown(value) => write!(f, "{}", value),
         }

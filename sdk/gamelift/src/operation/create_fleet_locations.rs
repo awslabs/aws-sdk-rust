@@ -260,6 +260,8 @@ pub enum CreateFleetLocationsError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>The operation failed because Amazon GameLift has not yet finished validating this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential backoffs and jitter</a>.</p>
+    NotReadyException(crate::types::error::NotReadyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
@@ -303,6 +305,7 @@ impl CreateFleetLocationsError {
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedRegionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -332,6 +335,10 @@ impl CreateFleetLocationsError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(self, Self::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `CreateFleetLocationsError::NotReadyException`.
+    pub fn is_not_ready_exception(&self) -> bool {
+        matches!(self, Self::NotReadyException(_))
+    }
     /// Returns `true` if the error kind is `CreateFleetLocationsError::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
         matches!(self, Self::UnauthorizedException(_))
@@ -350,6 +357,7 @@ impl ::std::error::Error for CreateFleetLocationsError {
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NotReadyException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedRegionException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -365,6 +373,7 @@ impl ::std::fmt::Display for CreateFleetLocationsError {
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
+            Self::NotReadyException(_inner) => _inner.fmt(f),
             Self::UnauthorizedException(_inner) => _inner.fmt(f),
             Self::UnsupportedRegionException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -394,6 +403,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateFleetLo
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedRegionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

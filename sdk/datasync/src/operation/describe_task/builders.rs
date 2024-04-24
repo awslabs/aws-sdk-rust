@@ -22,7 +22,7 @@ impl crate::operation::describe_task::builders::DescribeTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTask`.
 ///
-/// <p>Provides information about an DataSync transfer task.</p>
+/// <p>Provides information about a <i>task</i>, which defines where and how DataSync transfers your data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want information about.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_arn(input.into());
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want information about.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_arn(input);
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want information about.</p>
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_arn()
     }

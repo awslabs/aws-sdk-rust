@@ -22,7 +22,10 @@ impl crate::operation::deregister_compute::builders::DeregisterComputeInputBuild
 }
 /// Fluent builder constructing a request to `DeregisterCompute`.
 ///
-/// <p>Removes a compute resource from an Amazon GameLift Anywhere fleet. Deregistered computes can no longer host game sessions through Amazon GameLift.</p>
+/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
+/// <p>Removes a compute resource from an Amazon GameLift Anywhere fleet or container fleet. Deregistered computes can no longer host game sessions through Amazon GameLift.</p>
+/// <p>For an Anywhere fleet or a container fleet that's running the Amazon GameLift Agent, the Agent handles all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent, call this operation to deregister fleet computes.</p>
+/// <p>To deregister a compute, call this operation from the compute that's being deregistered and specify the compute name and the fleet ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterComputeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +125,17 @@ impl DeregisterComputeFluentBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
+    /// <p>The unique identifier of the compute resource to deregister. For an Anywhere fleet compute, use the registered compute name. For a container fleet, use the compute name (for example, <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>) or the compute ARN.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_name(input.into());
         self
     }
-    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
+    /// <p>The unique identifier of the compute resource to deregister. For an Anywhere fleet compute, use the registered compute name. For a container fleet, use the compute name (for example, <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>) or the compute ARN.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_name(input);
         self
     }
-    /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
+    /// <p>The unique identifier of the compute resource to deregister. For an Anywhere fleet compute, use the registered compute name. For a container fleet, use the compute name (for example, <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>) or the compute ARN.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compute_name()
     }

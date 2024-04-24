@@ -22,7 +22,7 @@ impl crate::operation::update_task::builders::UpdateTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTask`.
 ///
-/// <p>Updates the configuration of an DataSync transfer task.</p>
+/// <p>Updates the configuration of a <i>task</i>, which defines where and how DataSync transfers your data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,34 +108,37 @@ impl UpdateTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
+    /// <p>Specifies the ARN of the task that you want to update.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
+    /// <p>Specifies the ARN of the task that you want to update.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
+    /// <p>Specifies the ARN of the task that you want to update.</p>
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_arn()
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any option before calling <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>You also can override your task options for each task execution. For example, you might want to adjust the <code>LogLevel</code> for an individual execution.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
         self.inner = self.inner.options(input);
         self
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any option before calling <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>You also can override your task options for each task execution. For example, you might want to adjust the <code>LogLevel</code> for an individual execution.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any option before calling <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>You also can override your task options for each task execution. For example, you might want to adjust the <code>LogLevel</code> for an individual execution.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
         self.inner.get_options()
     }
@@ -144,59 +147,59 @@ impl UpdateTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
     ///
-    /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>Specifies exclude filters that define the files, objects, and folders in your source location that you don't want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn excludes(mut self, input: crate::types::FilterRule) -> Self {
         self.inner = self.inner.excludes(input);
         self
     }
-    /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>Specifies exclude filters that define the files, objects, and folders in your source location that you don't want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.inner = self.inner.set_excludes(input);
         self
     }
-    /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>Specifies exclude filters that define the files, objects, and folders in your source location that you don't want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         self.inner.get_excludes()
     }
-    /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+    /// <p>Specifies a schedule for when you want your task to run. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn schedule(mut self, input: crate::types::TaskSchedule) -> Self {
         self.inner = self.inner.schedule(input);
         self
     }
-    /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+    /// <p>Specifies a schedule for when you want your task to run. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::TaskSchedule>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
     }
-    /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+    /// <p>Specifies a schedule for when you want your task to run. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::TaskSchedule> {
         self.inner.get_schedule()
     }
-    /// <p>The name of the task to update.</p>
+    /// <p>Specifies the name of your task.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the task to update.</p>
+    /// <p>Specifies the name of your task.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the task to update.</p>
+    /// <p>Specifies the name of your task.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
     pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_log_group_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_watch_log_group_arn()
     }
@@ -205,17 +208,17 @@ impl UpdateTaskFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_includes`](Self::set_includes).
     ///
-    /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>Specifies include filters define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn includes(mut self, input: crate::types::FilterRule) -> Self {
         self.inner = self.inner.includes(input);
         self
     }
-    /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>Specifies include filters define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.inner = self.inner.set_includes(input);
         self
     }
-    /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>Specifies include filters define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         self.inner.get_includes()
     }

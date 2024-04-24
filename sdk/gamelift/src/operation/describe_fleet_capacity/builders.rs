@@ -22,7 +22,9 @@ impl crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityI
 }
 /// Fluent builder constructing a request to `DescribeFleetCapacity`.
 ///
-/// <p>Retrieves the resource capacity settings for one or more fleets. The data returned includes the current fleet capacity (number of EC2 instances), and settings that can control how capacity scaling. For fleets with remote locations, this operation retrieves data for the fleet's home Region only.</p>
+/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
+/// <p>Retrieves the resource capacity settings for one or more fleets. For a container fleet, this operation also returns counts for replica container groups.</p>
+/// <p>With multi-location fleets, this operation retrieves data for the fleet's home Region only. To retrieve capacity for remote locations, see <code>DescribeFleetLocationCapacity</code>.</p>
 /// <p>This operation can be used in the following ways:</p>
 /// <ul>
 /// <li>
@@ -31,7 +33,7 @@ impl crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityI
 /// <p>To get capacity data for all fleets, do not provide a fleet identifier.</p></li>
 /// </ul>
 /// <p>When requesting multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages.</p>
-/// <p>If successful, a <code>FleetCapacity</code> object is returned for each requested fleet ID. Each FleetCapacity object includes a <code>Location</code> property, which is set to the fleet's home Region. When a list of fleet IDs is provided, attribute objects are returned only for fleets that currently exist.</p><note>
+/// <p>If successful, a <code>FleetCapacity</code> object is returned for each requested fleet ID. Each <code>FleetCapacity</code> object includes a <code>Location</code> property, which is set to the fleet's home Region. Capacity values are returned only for fleets that currently exist.</p><note>
 /// <p>Some API operations may limit the number of fleet IDs that are allowed in one request. If a request exceeds this limit, the request fails and the error message includes the maximum allowed.</p>
 /// </note>
 /// <p><b>Learn more</b></p>

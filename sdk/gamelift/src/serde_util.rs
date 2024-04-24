@@ -73,6 +73,30 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn connection_port_range_correct_errors(
+    mut builder: crate::types::builders::ConnectionPortRangeBuilder,
+) -> crate::types::builders::ConnectionPortRangeBuilder {
+    if builder.from_port.is_none() {
+        builder.from_port = Some(Default::default())
+    }
+    if builder.to_port.is_none() {
+        builder.to_port = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_definition_correct_errors(
+    mut builder: crate::types::builders::ContainerDefinitionBuilder,
+) -> crate::types::builders::ContainerDefinitionBuilder {
+    if builder.container_name.is_none() {
+        builder.container_name = Some(Default::default())
+    }
+    if builder.image_uri.is_none() {
+        builder.image_uri = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn game_property_correct_errors(mut builder: crate::types::builders::GamePropertyBuilder) -> crate::types::builders::GamePropertyBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -109,6 +133,63 @@ pub(crate) fn target_configuration_correct_errors(
 ) -> crate::types::builders::TargetConfigurationBuilder {
     if builder.target_value.is_none() {
         builder.target_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_health_check_correct_errors(
+    mut builder: crate::types::builders::ContainerHealthCheckBuilder,
+) -> crate::types::builders::ContainerHealthCheckBuilder {
+    if builder.command.is_none() {
+        builder.command = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_port_configuration_correct_errors(
+    mut builder: crate::types::builders::ContainerPortConfigurationBuilder,
+) -> crate::types::builders::ContainerPortConfigurationBuilder {
+    if builder.container_port_ranges.is_none() {
+        builder.container_port_ranges = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_dependency_correct_errors(
+    mut builder: crate::types::builders::ContainerDependencyBuilder,
+) -> crate::types::builders::ContainerDependencyBuilder {
+    if builder.container_name.is_none() {
+        builder.container_name = Some(Default::default())
+    }
+    if builder.condition.is_none() {
+        builder.condition = "no value was set".parse::<crate::types::ContainerDependencyCondition>().ok()
+    }
+    builder
+}
+
+pub(crate) fn container_environment_correct_errors(
+    mut builder: crate::types::builders::ContainerEnvironmentBuilder,
+) -> crate::types::builders::ContainerEnvironmentBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn container_port_range_correct_errors(
+    mut builder: crate::types::builders::ContainerPortRangeBuilder,
+) -> crate::types::builders::ContainerPortRangeBuilder {
+    if builder.from_port.is_none() {
+        builder.from_port = Some(Default::default())
+    }
+    if builder.to_port.is_none() {
+        builder.to_port = Some(Default::default())
+    }
+    if builder.protocol.is_none() {
+        builder.protocol = "no value was set".parse::<crate::types::IpProtocol>().ok()
     }
     builder
 }

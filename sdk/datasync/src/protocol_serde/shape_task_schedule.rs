@@ -6,6 +6,9 @@ pub fn ser_task_schedule(
     {
         object.key("ScheduleExpression").string(input.schedule_expression.as_str());
     }
+    if let Some(var_1) = &input.status {
+        object.key("Status").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -28,6 +31,13 @@ where
                             builder = builder.set_schedule_expression(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ScheduleStatus::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

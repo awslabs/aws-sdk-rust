@@ -22,9 +22,8 @@ impl crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesI
 }
 /// Fluent builder constructing a request to `UpdateFleetAttributes`.
 ///
-/// <p>Updates a fleet's mutable attributes, including game session protection and resource creation limits.</p>
-/// <p>To update fleet attributes, specify the fleet ID and the property values that you want to change.</p>
-/// <p>If successful, an updated <code>FleetAttributes</code> object is returned.</p>
+/// <p>Updates a fleet's mutable attributes, such as game session protection and resource creation limits.</p>
+/// <p>To update fleet attributes, specify the fleet ID and the property values that you want to change. If successful, Amazon GameLift returns the identifiers for the updated fleet.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

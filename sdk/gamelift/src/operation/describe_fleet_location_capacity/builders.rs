@@ -22,7 +22,8 @@ impl crate::operation::describe_fleet_location_capacity::builders::DescribeFleet
 }
 /// Fluent builder constructing a request to `DescribeFleetLocationCapacity`.
 ///
-/// <p>Retrieves the resource capacity settings for a fleet location. The data returned includes the current capacity (number of EC2 instances) and some scaling settings for the requested fleet location. Use this operation to retrieve capacity information for a fleet's remote location or home Region (you can also retrieve home Region capacity by calling <code>DescribeFleetCapacity</code>).</p>
+/// <p>Retrieves the resource capacity settings for a fleet location. The data returned includes the current capacity (number of EC2 instances) and some scaling settings for the requested fleet location. For a container fleet, this operation also returns counts for replica container groups.</p>
+/// <p>Use this operation to retrieve capacity information for a fleet's remote location or home Region (you can also retrieve home Region capacity by calling <code>DescribeFleetCapacity</code>).</p>
 /// <p>To retrieve capacity data, identify a fleet and location.</p>
 /// <p>If successful, a <code>FleetCapacity</code> object is returned for the requested fleet location.</p>
 /// <p><b>Learn more</b></p>

@@ -658,9 +658,9 @@ model_hash = '481a634abb604c1cff5824bd15503ce726661dec63a755e44575bb41e20190d6'
 
 [crates.aws-sdk-datasync]
 category = 'AwsSdk'
-version = '1.22.0'
-source_hash = '267b6bcc704ce8433dfcdd34c7a5eccd73b6682441873e883717377973f463d4'
-model_hash = 'c4fb5a85639fb378d3eddfe570d7ad5cbe18d68b485f13184ab6f21140de642c'
+version = '1.23.0'
+source_hash = '227d982c8d4c19eff62eee106e2b60f138a98b82575504bd28aac15d04351325'
+model_hash = '34dbe90f14f00f3a1a0b64c000912865f026efb7e3391124d21ea91b4c5e5079'
 
 [crates.aws-sdk-datazone]
 category = 'AwsSdk'
@@ -754,9 +754,9 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.36.0'
-source_hash = '257f3b090248a78f492805ecded7c63d18c1f7d2411eff119100cab2f1060296'
-model_hash = 'c30ee759ef773cde3b98534df3b767540b44e4770c26428ed225caac5737518f'
+version = '1.37.0'
+source_hash = '75a426124410736e3bf7ac9e2e3295b3923747e7022ea1242e08f508d091abe1'
+model_hash = '6b9544bb7ad715b7a58f32e58e1cf888ca8327a7543874acfd665812e45bd6bd'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -850,9 +850,9 @@ model_hash = 'dff40cca16ef6e0c56759e2943407b9566bfa59ce9b2ac0e5ff72fcb3d45c3f3'
 
 [crates.aws-sdk-emrcontainers]
 category = 'AwsSdk'
-version = '1.23.0'
-source_hash = 'a6935a4f5c804458bedbbedb4a783d34bee9954b274b1a0d1684c6aba5a0242f'
-model_hash = '781bbf5e6668075d12983b605b2214e34cd46b935db7600ff767495eac449c7c'
+version = '1.24.0'
+source_hash = '629905b94747e2bf7ecd74e425992d603d6af13f4a9717b90aa373eaf5ec127b'
+model_hash = 'a3fa4a153efb3d412647bdfc673c1fc75c76cf250fa0173211615bbd732a5ff0'
 
 [crates.aws-sdk-emrserverless]
 category = 'AwsSdk'
@@ -862,9 +862,9 @@ model_hash = 'db161322f2fbbc436b57f3c18c98f4982c1980f4af7b0b9b9702067921b99404'
 
 [crates.aws-sdk-entityresolution]
 category = 'AwsSdk'
-version = '1.22.0'
-source_hash = '0b2c7078ff21fd304a425bce58d0bc0ac36115cffe0d7746a24e4e89816c45b5'
-model_hash = '1c409d05807621cbb5883cae461d1dd13cde294d8c836aca803a8fdfd6410e9c'
+version = '1.23.0'
+source_hash = '07a72de419d10a78e208e89b3ac72c87ad9c86a10698310dedc4c071e3b38b66'
+model_hash = 'c9c356bf917c6e25942cbf2b24aea9ea239cb49baa1adacb0c023a380465c8b4'
 
 [crates.aws-sdk-eventbridge]
 category = 'AwsSdk'
@@ -940,9 +940,9 @@ model_hash = '1bea8408a4cd4c8a0bbcd8b6a461c5f3109bbdb63d06b1e7a41751fea6fabca6'
 
 [crates.aws-sdk-gamelift]
 category = 'AwsSdk'
-version = '1.21.0'
-source_hash = '1209389a0c88de5a09ca59da97fd321bd2e20dfd39dd84155f101509e12d5d44'
-model_hash = 'cff88d2c035d0cfba0449095412b1a08f221b530ecb50d9a65b0782b255fc80c'
+version = '1.22.0'
+source_hash = '3141f43639fd840da6b82f48323f473ecad01c429c5001d18b544f3a4980dad5'
+model_hash = '76263512dc24ec44c06a849c02a4a277498c4e638c2a171f1d7c6ae4eb741102'
 
 [crates.aws-sdk-glacier]
 category = 'AwsSdk'
@@ -2092,9 +2092,9 @@ model_hash = 'f40d7c92d5abe756aae63a1b2d825a2177ec11cf0d574d51545a2271e22f7c57'
 
 [crates.aws-sdk-ssm]
 category = 'AwsSdk'
-version = '1.23.0'
-source_hash = '21ec6b8a1695bcc0a7ad7d1453986eac28bc9b1e9344bfc7e7ae42a30ae3fea0'
-model_hash = '48fddadafe08926547006cd85fdbc72a457a6e35df5470d839321916a6dbadb8'
+version = '1.24.0'
+source_hash = '90e9ec24912f8d54ed7288e879d9fad4a6f69aab921c33cc8556237a34fb0f79'
+model_hash = '3b66fe53ba440f236c4bb818f5584283c247e89057b67f1b87389f63bf32e8d9'
 
 [crates.aws-sdk-ssmcontacts]
 category = 'AwsSdk'
@@ -2459,17 +2459,10 @@ source_hash = 'c9c8e48cc4574efee8e1d841ecf24e57b78a432b5dfeda812c3c6a68215f6fef'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'c7160bf3ac4ee81fb94cd8a9f3554d31b07f977b368703ef1953d70d8304d4ab'
-
-[release]
-tag = 'release-2024-04-23'
-
 [release.crates]
-aws-sdk-bedrock = '1.23.0'
-aws-sdk-bedrockagent = '1.22.0'
-aws-sdk-bedrockagentruntime = '1.21.0'
-aws-sdk-bedrockruntime = '1.23.0'
-aws-sdk-costexplorer = '1.23.0'
-aws-sdk-ec2 = '1.36.0'
-aws-sdk-pi = '1.21.1'
-aws-sdk-rds = '1.29.1'
-aws-sdk-workspacesweb = '1.22.0'
+aws-sdk-datasync = '1.23.0'
+aws-sdk-ec2 = '1.37.0'
+aws-sdk-emrcontainers = '1.24.0'
+aws-sdk-entityresolution = '1.23.0'
+aws-sdk-gamelift = '1.22.0'
+aws-sdk-ssm = '1.24.0'

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationOutput {
-    /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown.</p>
+    /// <p>The runtime configuration currently in use by computes in the fleet. If the update is successful, all property changes are shown.</p>
     pub runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateRuntimeConfigurationOutput {
-    /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown.</p>
+    /// <p>The runtime configuration currently in use by computes in the fleet. If the update is successful, all property changes are shown.</p>
     pub fn runtime_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateRuntimeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateRuntimeConfigurationOutputBuilder {
-    /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown.</p>
+    /// <p>The runtime configuration currently in use by computes in the fleet. If the update is successful, all property changes are shown.</p>
     pub fn runtime_configuration(mut self, input: crate::types::RuntimeConfiguration) -> Self {
         self.runtime_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown.</p>
+    /// <p>The runtime configuration currently in use by computes in the fleet. If the update is successful, all property changes are shown.</p>
     pub fn set_runtime_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
         self.runtime_configuration = input;
         self
     }
-    /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown.</p>
+    /// <p>The runtime configuration currently in use by computes in the fleet. If the update is successful, all property changes are shown.</p>
     pub fn get_runtime_configuration(&self) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
         &self.runtime_configuration
     }

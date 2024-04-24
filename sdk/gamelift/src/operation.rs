@@ -13,6 +13,9 @@ pub mod create_alias;
 /// Types for the `CreateBuild` operation.
 pub mod create_build;
 
+/// Types for the `CreateContainerGroupDefinition` operation.
+pub mod create_container_group_definition;
+
 /// Types for the `CreateFleet` operation.
 pub mod create_fleet;
 
@@ -57,6 +60,9 @@ pub mod delete_alias;
 
 /// Types for the `DeleteBuild` operation.
 pub mod delete_build;
+
+/// Types for the `DeleteContainerGroupDefinition` operation.
+pub mod delete_container_group_definition;
 
 /// Types for the `DeleteFleet` operation.
 pub mod delete_fleet;
@@ -105,6 +111,9 @@ pub mod describe_build;
 
 /// Types for the `DescribeCompute` operation.
 pub mod describe_compute;
+
+/// Types for the `DescribeContainerGroupDefinition` operation.
+pub mod describe_container_group_definition;
 
 /// Types for the `DescribeEC2InstanceLimits` operation.
 pub mod describe_ec2_instance_limits;
@@ -204,6 +213,9 @@ pub mod list_builds;
 
 /// Types for the `ListCompute` operation.
 pub mod list_compute;
+
+/// Types for the `ListContainerGroupDefinitions` operation.
+pub mod list_container_group_definitions;
 
 /// Types for the `ListFleets` operation.
 pub mod list_fleets;

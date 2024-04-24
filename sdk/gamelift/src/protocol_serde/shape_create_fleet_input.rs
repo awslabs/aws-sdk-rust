@@ -123,5 +123,11 @@ pub fn ser_create_fleet_input_input(
     if let Some(var_40) = &input.instance_role_credentials_provider {
         object.key("InstanceRoleCredentialsProvider").string(var_40.as_str());
     }
+    if let Some(var_41) = &input.container_groups_configuration {
+        #[allow(unused_mut)]
+        let mut object_42 = object.key("ContainerGroupsConfiguration").start_object();
+        crate::protocol_serde::shape_container_groups_configuration::ser_container_groups_configuration(&mut object_42, var_41)?;
+        object_42.finish();
+    }
     Ok(())
 }

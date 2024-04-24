@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskInput {
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want information about.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTaskInput {
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want information about.</p>
     pub fn task_arn(&self) -> ::std::option::Option<&str> {
         self.task_arn.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct DescribeTaskInputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTaskInputBuilder {
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want information about.</p>
     /// This field is required.
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want information about.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task that you want information about.</p>
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_arn
     }

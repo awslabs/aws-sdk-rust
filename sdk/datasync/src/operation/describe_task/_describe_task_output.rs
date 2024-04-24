@@ -4,110 +4,108 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskOutput {
-    /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
+    /// <p>The ARN of your task.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the task that was described.</p>
-    /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub status: ::std::option::Option<crate::types::TaskStatus>,
-    /// <p>The name of the task that was described.</p>
+    /// <p>The name of your task.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
+    /// <p>The ARN of the most recent task execution.</p>
     pub current_task_execution_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
+    /// <p>The ARN of your transfer's source location.</p>
     pub source_location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
+    /// <p>The ARN of your transfer's destination location.</p>
     pub destination_location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
-    /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your source location.</p>
     pub source_network_interface_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your destination location.</p>
     pub destination_network_interface_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
-    /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at the end of your transfer, bandwidth limits, among other options.</p>
     pub options: ::std::option::Option<crate::types::Options>,
-    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The exclude filters that define the files, objects, and folders in your source location that you don't want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
+    /// <p>The schedule for when you want your task to run. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub schedule: ::std::option::Option<crate::types::TaskSchedule>,
-    /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error details to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub error_detail: ::std::option::Option<::std::string::String>,
     /// <p>The time that the task was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     pub manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
+    /// <p>The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task schedule</a>.</p>
+    pub schedule_details: ::std::option::Option<crate::types::TaskScheduleDetails>,
     _request_id: Option<String>,
 }
 impl DescribeTaskOutput {
-    /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
+    /// <p>The ARN of your task.</p>
     pub fn task_arn(&self) -> ::std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>The status of the task that was described.</p>
-    /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
         self.status.as_ref()
     }
-    /// <p>The name of the task that was described.</p>
+    /// <p>The name of your task.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
+    /// <p>The ARN of the most recent task execution.</p>
     pub fn current_task_execution_arn(&self) -> ::std::option::Option<&str> {
         self.current_task_execution_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
+    /// <p>The ARN of your transfer's source location.</p>
     pub fn source_location_arn(&self) -> ::std::option::Option<&str> {
         self.source_location_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
+    /// <p>The ARN of your transfer's destination location.</p>
     pub fn destination_location_arn(&self) -> ::std::option::Option<&str> {
         self.destination_location_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
-    /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
     pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your source location.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_network_interface_arns.is_none()`.
     pub fn source_network_interface_arns(&self) -> &[::std::string::String] {
         self.source_network_interface_arns.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your destination location.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_network_interface_arns.is_none()`.
     pub fn destination_network_interface_arns(&self) -> &[::std::string::String] {
         self.destination_network_interface_arns.as_deref().unwrap_or_default()
     }
-    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
-    /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at the end of your transfer, bandwidth limits, among other options.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
         self.options.as_ref()
     }
-    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The exclude filters that define the files, objects, and folders in your source location that you don't want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
     pub fn excludes(&self) -> &[crate::types::FilterRule] {
         self.excludes.as_deref().unwrap_or_default()
     }
-    /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
+    /// <p>The schedule for when you want your task to run. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::TaskSchedule> {
         self.schedule.as_ref()
     }
-    /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error details to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub fn error_detail(&self) -> ::std::option::Option<&str> {
         self.error_detail.as_deref()
     }
@@ -115,19 +113,23 @@ impl DescribeTaskOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
     pub fn includes(&self) -> &[crate::types::FilterRule] {
         self.includes.as_deref().unwrap_or_default()
     }
-    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     pub fn manifest_config(&self) -> ::std::option::Option<&crate::types::ManifestConfig> {
         self.manifest_config.as_ref()
     }
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
         self.task_report_config.as_ref()
+    }
+    /// <p>The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task schedule</a>.</p>
+    pub fn schedule_details(&self) -> ::std::option::Option<&crate::types::TaskScheduleDetails> {
+        self.schedule_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTaskOutput {
@@ -164,110 +166,108 @@ pub struct DescribeTaskOutputBuilder {
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     pub(crate) manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
+    pub(crate) schedule_details: ::std::option::Option<crate::types::TaskScheduleDetails>,
     _request_id: Option<String>,
 }
 impl DescribeTaskOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
+    /// <p>The ARN of your task.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
+    /// <p>The ARN of your task.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
+    /// <p>The ARN of your task.</p>
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_arn
     }
-    /// <p>The status of the task that was described.</p>
-    /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the task that was described.</p>
-    /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the task that was described.</p>
-    /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
         &self.status
     }
-    /// <p>The name of the task that was described.</p>
+    /// <p>The name of your task.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the task that was described.</p>
+    /// <p>The name of your task.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the task that was described.</p>
+    /// <p>The name of your task.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
+    /// <p>The ARN of the most recent task execution.</p>
     pub fn current_task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
+    /// <p>The ARN of the most recent task execution.</p>
     pub fn set_current_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_task_execution_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
+    /// <p>The ARN of the most recent task execution.</p>
     pub fn get_current_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_task_execution_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
+    /// <p>The ARN of your transfer's source location.</p>
     pub fn source_location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
+    /// <p>The ARN of your transfer's source location.</p>
     pub fn set_source_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
+    /// <p>The ARN of your transfer's source location.</p>
     pub fn get_source_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_location_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
+    /// <p>The ARN of your transfer's destination location.</p>
     pub fn destination_location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
+    /// <p>The ARN of your transfer's destination location.</p>
     pub fn set_destination_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_location_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
+    /// <p>The ARN of your transfer's destination location.</p>
     pub fn get_destination_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_location_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
-    /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
     pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
-    /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
-    /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with Amazon CloudWatch</a>.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_log_group_arn
     }
@@ -275,19 +275,19 @@ impl DescribeTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_source_network_interface_arns`](Self::set_source_network_interface_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your source location.</p>
     pub fn source_network_interface_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_network_interface_arns.unwrap_or_default();
         v.push(input.into());
         self.source_network_interface_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your source location.</p>
     pub fn set_source_network_interface_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_network_interface_arns = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your source location.</p>
     pub fn get_source_network_interface_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_network_interface_arns
     }
@@ -295,36 +295,33 @@ impl DescribeTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_network_interface_arns`](Self::set_destination_network_interface_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your destination location.</p>
     pub fn destination_network_interface_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_network_interface_arns.unwrap_or_default();
         v.push(input.into());
         self.destination_network_interface_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your destination location.</p>
     pub fn set_destination_network_interface_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destination_network_interface_arns = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
+    /// <p>The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> that DataSync created for your destination location.</p>
     pub fn get_destination_network_interface_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destination_network_interface_arns
     }
-    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
-    /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at the end of your transfer, bandwidth limits, among other options.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
-    /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at the end of your transfer, bandwidth limits, among other options.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.options = input;
         self
     }
-    /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
-    /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at the end of your transfer, bandwidth limits, among other options.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
         &self.options
     }
@@ -332,61 +329,61 @@ impl DescribeTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
     ///
-    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The exclude filters that define the files, objects, and folders in your source location that you don't want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn excludes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.excludes.unwrap_or_default();
         v.push(input);
         self.excludes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The exclude filters that define the files, objects, and folders in your source location that you don't want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.excludes = input;
         self
     }
-    /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The exclude filters that define the files, objects, and folders in your source location that you don't want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.excludes
     }
-    /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
+    /// <p>The schedule for when you want your task to run. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn schedule(mut self, input: crate::types::TaskSchedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
+    /// <p>The schedule for when you want your task to run. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::TaskSchedule>) -> Self {
         self.schedule = input;
         self
     }
-    /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
+    /// <p>The schedule for when you want your task to run. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::TaskSchedule> {
         &self.schedule
     }
-    /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
-    /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_code
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error details to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub fn error_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_detail = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error details to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub fn set_error_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_detail = input;
         self
     }
-    /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues.</p>
+    /// <p>If there's an issue with your task, you can use the error details to help you troubleshoot the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting issues with DataSync transfers</a>.</p>
     pub fn get_error_detail(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_detail
     }
@@ -408,49 +405,63 @@ impl DescribeTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_includes`](Self::set_includes).
     ///
-    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn includes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.includes.unwrap_or_default();
         v.push(input);
         self.includes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.includes = input;
         self
     }
-    /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    /// <p>The include filters that define the files, objects, and folders in your source location that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by using filters</a>.</p>
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
-    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     pub fn manifest_config(mut self, input: crate::types::ManifestConfig) -> Self {
         self.manifest_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     pub fn set_manifest_config(mut self, input: ::std::option::Option<crate::types::ManifestConfig>) -> Self {
         self.manifest_config = input;
         self
     }
-    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     pub fn get_manifest_config(&self) -> &::std::option::Option<crate::types::ManifestConfig> {
         &self.manifest_config
     }
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
         self.task_report_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
         self.task_report_config = input;
         self
     }
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
+    /// <p>The configuration of your task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
         &self.task_report_config
+    }
+    /// <p>The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task schedule</a>.</p>
+    pub fn schedule_details(mut self, input: crate::types::TaskScheduleDetails) -> Self {
+        self.schedule_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task schedule</a>.</p>
+    pub fn set_schedule_details(mut self, input: ::std::option::Option<crate::types::TaskScheduleDetails>) -> Self {
+        self.schedule_details = input;
+        self
+    }
+    /// <p>The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task schedule</a>.</p>
+    pub fn get_schedule_details(&self) -> &::std::option::Option<crate::types::TaskScheduleDetails> {
+        &self.schedule_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -482,6 +493,7 @@ impl DescribeTaskOutputBuilder {
             includes: self.includes,
             manifest_config: self.manifest_config,
             task_report_config: self.task_report_config,
+            schedule_details: self.schedule_details,
             _request_id: self._request_id,
         }
     }

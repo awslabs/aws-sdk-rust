@@ -22,9 +22,19 @@ impl crate::operation::list_compute::builders::ListComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCompute`.
 ///
-/// <p>Retrieves the compute resources in an Amazon GameLift fleet. You can request information for either managed EC2 fleets or Anywhere fleets.</p>
-/// <p>To request a list of computes, specify the fleet ID. You can filter the result set by location. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
-/// <p>If successful, this operation returns the compute resource for the requested fleet. For managed EC2 fleets, it returns a list of EC2 instances. For Anywhere fleets, it returns a list of registered compute names.</p>
+/// <p><b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public preview.</b></p>
+/// <p>Retrieves information on the compute resources in an Amazon GameLift fleet.</p>
+/// <p>To request a list of computes, specify the fleet ID. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
+/// <p>You can filter the result set by location.</p>
+/// <p>If successful, this operation returns information on all computes in the requested fleet. Depending on the fleet's compute type, the result includes the following information:</p>
+/// <ul>
+/// <li>
+/// <p>For <code>EC2</code> fleets, this operation returns information about the EC2 instance. Compute names are instance IDs.</p></li>
+/// <li>
+/// <p>For <code>ANYWHERE</code> fleets, this operation returns the compute names and details provided when the compute was registered with <code>RegisterCompute</code>. The <code>GameLiftServiceSdkEndpoint</code> or <code>GameLiftAgentEndpoint</code> is included.</p></li>
+/// <li>
+/// <p>For <code>CONTAINER</code> fleets, this operation returns information about containers that are registered as computes, and the instances they're running on. Compute names are container names.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComputeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -130,17 +140,17 @@ impl ListComputeFluentBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The name of a location to retrieve compute resources for.</p>
+    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or container fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
         self
     }
-    /// <p>The name of a location to retrieve compute resources for.</p>
+    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or container fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }
-    /// <p>The name of a location to retrieve compute resources for.</p>
+    /// <p>The name of a location to retrieve compute resources for. For an Amazon GameLift Anywhere fleet, use a custom location. For a multi-location EC2 or container fleet, provide a Amazon Web Services Region or Local Zone code (for example: <code>us-west-2</code> or <code>us-west-2-lax-1</code>).</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location()
     }

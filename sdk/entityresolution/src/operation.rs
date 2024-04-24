@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddPolicyStatement` operation.
 pub mod add_policy_statement;
 
+/// Types for the `BatchDeleteUniqueId` operation.
+pub mod batch_delete_unique_id;
+
 /// Types for the `CreateIdMappingWorkflow` operation.
 pub mod create_id_mapping_workflow;
 

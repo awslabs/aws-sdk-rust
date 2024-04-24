@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`groups(Option<Vec::<GroupIdentifier>>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::groups): <p>The security groups associated with the network interface.</p>
     ///   - [`network_interface_id(Option<String>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::network_interface_id): <p>The ID of the network interface.</p>
     ///   - [`source_dest_check(Option<AttributeBooleanValue>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::source_dest_check): <p>Indicates whether source/destination checking is enabled.</p>
+    ///   - [`associate_public_ip_address(Option<bool>)`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput::associate_public_ip_address): <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
     /// - On failure, responds with [`SdkError<DescribeNetworkInterfaceAttributeError>`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeError)
     pub fn describe_network_interface_attribute(
         &self,

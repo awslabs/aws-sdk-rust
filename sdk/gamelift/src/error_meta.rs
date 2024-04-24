@@ -24,6 +24,8 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>The operation failed because Amazon GameLift has not yet finished validating this compute. We recommend attempting 8 to 10 retries over 3 to 5 minutes with <a href="http://aws.amazon.com/blogs/https:/aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">exponential backoffs and jitter</a>.</p>
+    NotReadyException(crate::types::error::NotReadyException),
     /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period.</p>
     OutOfCapacityException(crate::types::error::OutOfCapacityException),
     /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
@@ -56,6 +58,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
+            Error::NotReadyException(inner) => inner.fmt(f),
             Error::OutOfCapacityException(inner) => inner.fmt(f),
             Error::TaggingFailedException(inner) => inner.fmt(f),
             Error::TerminalRoutingStrategyException(inner) => inner.fmt(f),
@@ -92,6 +95,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidRequestException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
+            Self::NotReadyException(inner) => inner.meta(),
             Self::OutOfCapacityException(inner) => inner.meta(),
             Self::TaggingFailedException(inner) => inner.meta(),
             Self::TerminalRoutingStrategyException(inner) => inner.meta(),
@@ -206,6 +210,59 @@ impl From<crate::operation::create_build::CreateBuildError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError> for Error {
+    fn from(err: crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError) -> Self {
+        match err {
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::create_container_group_definition::CreateContainerGroupDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_fleet::CreateFleetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -228,6 +285,7 @@ impl From<crate::operation::create_fleet::CreateFleetError> for Error {
             crate::operation::create_fleet::CreateFleetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::create_fleet::CreateFleetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_fleet::CreateFleetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_fleet::CreateFleetError::NotReadyException(inner) => Error::NotReadyException(inner),
             crate::operation::create_fleet::CreateFleetError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
             crate::operation::create_fleet::CreateFleetError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_fleet::CreateFleetError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
@@ -266,6 +324,7 @@ impl From<crate::operation::create_fleet_locations::CreateFleetLocationsError> f
                 Error::LimitExceededException(inner)
             }
             crate::operation::create_fleet_locations::CreateFleetLocationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_fleet_locations::CreateFleetLocationsError::NotReadyException(inner) => Error::NotReadyException(inner),
             crate::operation::create_fleet_locations::CreateFleetLocationsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::create_fleet_locations::CreateFleetLocationsError::UnsupportedRegionException(inner) => {
                 Error::UnsupportedRegionException(inner)
@@ -736,6 +795,56 @@ impl From<crate::operation::delete_build::DeleteBuildError> for Error {
             crate::operation::delete_build::DeleteBuildError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
             crate::operation::delete_build::DeleteBuildError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_build::DeleteBuildError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError> for Error {
+    fn from(err: crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError) -> Self {
+        match err {
+            crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::delete_container_group_definition::DeleteContainerGroupDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1235,6 +1344,53 @@ impl From<crate::operation::describe_compute::DescribeComputeError> for Error {
             crate::operation::describe_compute::DescribeComputeError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::describe_compute::DescribeComputeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::describe_compute::DescribeComputeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError> for Error {
+    fn from(err: crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError) -> Self {
+        match err {
+            crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::describe_container_group_definition::DescribeContainerGroupDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2375,6 +2531,47 @@ impl From<crate::operation::list_compute::ListComputeError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError> for Error {
+    fn from(err: crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError) -> Self {
+        match err {
+            crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::list_container_group_definitions::ListContainerGroupDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_fleets::ListFleetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2577,6 +2774,7 @@ impl From<crate::operation::register_compute::RegisterComputeError> for Error {
             crate::operation::register_compute::RegisterComputeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::register_compute::RegisterComputeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::register_compute::RegisterComputeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::register_compute::RegisterComputeError::NotReadyException(inner) => Error::NotReadyException(inner),
             crate::operation::register_compute::RegisterComputeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::register_compute::RegisterComputeError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -3389,6 +3587,9 @@ impl From<crate::operation::update_runtime_configuration::UpdateRuntimeConfigura
             crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
+            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
@@ -3470,6 +3671,7 @@ impl ::std::error::Error for Error {
             Error::InvalidRequestException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
+            Error::NotReadyException(inner) => inner.source(),
             Error::OutOfCapacityException(inner) => inner.source(),
             Error::TaggingFailedException(inner) => inner.source(),
             Error::TerminalRoutingStrategyException(inner) => inner.source(),
@@ -3492,6 +3694,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidRequestException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
+            Self::NotReadyException(e) => e.request_id(),
             Self::OutOfCapacityException(e) => e.request_id(),
             Self::TaggingFailedException(e) => e.request_id(),
             Self::TerminalRoutingStrategyException(e) => e.request_id(),

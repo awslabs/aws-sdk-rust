@@ -223,6 +223,10 @@ pub use crate::types::error::_ops_item_related_item_association_not_found_except
 
 pub use crate::types::error::_invalid_deletion_id_exception::InvalidDeletionIdExceptionBuilder;
 
+pub use crate::types::error::_invalid_instance_property_filter_value::InvalidInstancePropertyFilterValueBuilder;
+
+pub use crate::types::error::_invalid_activation_id::InvalidActivationIdBuilder;
+
 pub use crate::types::error::_invalid_instance_information_filter_value::InvalidInstanceInformationFilterValueBuilder;
 
 pub use crate::types::error::_association_execution_does_not_exist::AssociationExecutionDoesNotExistBuilder;
@@ -238,8 +242,6 @@ pub use crate::types::error::_invalid_inventory_request_exception::InvalidInvent
 pub use crate::types::error::_invalid_delete_inventory_parameters_exception::InvalidDeleteInventoryParametersExceptionBuilder;
 
 pub use crate::types::error::_associated_instances::AssociatedInstancesBuilder;
-
-pub use crate::types::error::_invalid_activation_id::InvalidActivationIdBuilder;
 
 pub use crate::types::error::_invalid_activation::InvalidActivationBuilder;
 

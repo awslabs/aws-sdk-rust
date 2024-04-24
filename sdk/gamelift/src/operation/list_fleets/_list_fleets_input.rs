@@ -7,6 +7,8 @@ pub struct ListFleetsInput {
     pub build_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub script_id: ::std::option::Option<::std::string::String>,
+    /// <p>The container group definition name to request fleets for. Use this parameter to return only fleets that are deployed with the specified container group definition.</p>
+    pub container_group_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -20,6 +22,10 @@ impl ListFleetsInput {
     /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub fn script_id(&self) -> ::std::option::Option<&str> {
         self.script_id.as_deref()
+    }
+    /// <p>The container group definition name to request fleets for. Use this parameter to return only fleets that are deployed with the specified container group definition.</p>
+    pub fn container_group_definition_name(&self) -> ::std::option::Option<&str> {
+        self.container_group_definition_name.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -43,6 +49,7 @@ impl ListFleetsInput {
 pub struct ListFleetsInputBuilder {
     pub(crate) build_id: ::std::option::Option<::std::string::String>,
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
+    pub(crate) container_group_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -74,6 +81,20 @@ impl ListFleetsInputBuilder {
     /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.script_id
+    }
+    /// <p>The container group definition name to request fleets for. Use this parameter to return only fleets that are deployed with the specified container group definition.</p>
+    pub fn container_group_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.container_group_definition_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The container group definition name to request fleets for. Use this parameter to return only fleets that are deployed with the specified container group definition.</p>
+    pub fn set_container_group_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.container_group_definition_name = input;
+        self
+    }
+    /// <p>The container group definition name to request fleets for. Use this parameter to return only fleets that are deployed with the specified container group definition.</p>
+    pub fn get_container_group_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_group_definition_name
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -108,6 +129,7 @@ impl ListFleetsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_fleets::ListFleetsInput {
             build_id: self.build_id,
             script_id: self.script_id,
+            container_group_definition_name: self.container_group_definition_name,
             limit: self.limit,
             next_token: self.next_token,
         })

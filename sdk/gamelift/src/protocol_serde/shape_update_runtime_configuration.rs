@@ -70,6 +70,21 @@ pub fn de_update_runtime_configuration_http_error(
             }
             tmp
         }),
+        "LimitExceededException" => crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NotFoundException" => crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

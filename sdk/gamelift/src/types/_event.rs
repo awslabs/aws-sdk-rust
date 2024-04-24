@@ -105,6 +105,8 @@ pub struct Event {
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
     pub pre_signed_log_url: ::std::option::Option<::std::string::String>,
+    /// <p>The number of times that this event occurred.</p>
+    pub count: ::std::option::Option<i64>,
 }
 impl Event {
     /// <p>A unique identifier for a fleet event.</p>
@@ -220,6 +222,10 @@ impl Event {
     pub fn pre_signed_log_url(&self) -> ::std::option::Option<&str> {
         self.pre_signed_log_url.as_deref()
     }
+    /// <p>The number of times that this event occurred.</p>
+    pub fn count(&self) -> ::std::option::Option<i64> {
+        self.count
+    }
 }
 impl Event {
     /// Creates a new builder-style object to manufacture [`Event`](crate::types::Event).
@@ -238,6 +244,7 @@ pub struct EventBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) pre_signed_log_url: ::std::option::Option<::std::string::String>,
+    pub(crate) count: ::std::option::Option<i64>,
 }
 impl EventBuilder {
     /// <p>A unique identifier for a fleet event.</p>
@@ -591,6 +598,20 @@ impl EventBuilder {
     pub fn get_pre_signed_log_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.pre_signed_log_url
     }
+    /// <p>The number of times that this event occurred.</p>
+    pub fn count(mut self, input: i64) -> Self {
+        self.count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of times that this event occurred.</p>
+    pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.count = input;
+        self
+    }
+    /// <p>The number of times that this event occurred.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
+    }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
@@ -600,6 +621,7 @@ impl EventBuilder {
             message: self.message,
             event_time: self.event_time,
             pre_signed_log_url: self.pre_signed_log_url,
+            count: self.count,
         }
     }
 }

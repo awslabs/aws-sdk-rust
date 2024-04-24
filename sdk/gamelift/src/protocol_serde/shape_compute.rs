@@ -97,6 +97,24 @@ where
                                     .transpose()?,
                             );
                         }
+                        "GameLiftAgentEndpoint" => {
+                            builder = builder.set_game_lift_agent_endpoint(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "InstanceId" => {
+                            builder = builder.set_instance_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ContainerAttributes" => {
+                            builder =
+                                builder.set_container_attributes(crate::protocol_serde::shape_container_attributes::de_container_attributes(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

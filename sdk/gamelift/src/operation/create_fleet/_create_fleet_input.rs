@@ -7,9 +7,9 @@ pub struct CreateFleetInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the fleet.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a custom game server build to be deployed to a fleet with compute type <code>EC2</code>. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
     pub build_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a Realtime configuration script to be deployed to a fleet with compute type <code>EC2</code>. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
     pub script_id: ::std::option::Option<::std::string::String>,
     /// <p><b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
     pub server_launch_path: ::std::option::Option<::std::string::String>,
@@ -17,9 +17,10 @@ pub struct CreateFleetInput {
     pub server_launch_parameters: ::std::option::Option<::std::string::String>,
     /// <p><b>This parameter is no longer used.</b> To specify where Amazon GameLift should store log files once a server process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize the server process</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
     pub log_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use with EC2 and container fleets. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     pub ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
-    /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for EC2 and container fleets. You can leave this parameter empty when creating the fleet, but you must call <code>UpdateFleetPortSettings</code> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>To manage inbound access for a container fleet, set this parameter to the same port numbers that you set for the fleet's connection port range. During the life of the fleet, update this parameter to control which connection ports are open to inbound traffic.</p>
     pub ec2_inbound_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
     /// <ul>
@@ -29,8 +30,8 @@ pub struct CreateFleetInput {
     /// <p><b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
-    /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently.</p><note>
-    /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
+    /// <p>Instructions for how to launch and run server processes on the fleet. Set runtime configuration for EC2 fleets and container fleets. For an Anywhere fleets, set this parameter only if the fleet is running the Amazon GameLift Agent. The runtime configuration defines one or more server process configurations. Each server process identifies a game executable or Realtime script file and the number of processes to run concurrently.</p><note>
+    /// <p>This parameter replaces the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
     pub runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
@@ -50,17 +51,27 @@ pub struct CreateFleetInput {
     /// <p>ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the <i>Certificate Manager User Guide</i>.</p>
     /// </note>
     pub certificate_configuration: ::std::option::Option<crate::types::CertificateConfiguration>,
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, don't use this parameter.</p>
-    /// <p>To use this parameter, Amazon GameLift requires you to use your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
+    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
     pub locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
     /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift. By default, this property is set to <code>EC2</code>.</p>
+    /// <p>The type of compute resource used to host your game servers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EC2</code> – The game server build is deployed to Amazon EC2 instances for cloud hosting. This is the default setting.</p></li>
+    /// <li>
+    /// <p><code>CONTAINER</code> – Container images with your game server build and supporting software are deployed to Amazon EC2 instances for cloud hosting. With this compute type, you must specify the <code>ContainerGroupsConfiguration</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>ANYWHERE</code> – Game servers or container images with your game server and supporting software are deployed to compute resources that are provided and managed by you. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
+    /// </ul>
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>Amazon GameLift Anywhere configuration options.</p>
     pub anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
-    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role that's defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
     pub instance_role_credentials_provider: ::std::option::Option<crate::types::InstanceRoleCredentialsProvider>,
+    /// <p>The container groups to deploy to instances in the container fleet and other fleet-level configuration settings. Use the <code>CreateContainerGroupDefinition</code> action to create container groups. A container fleet must have exactly one replica container group, and can optionally have one daemon container group. You can't change this property after you create the fleet.</p>
+    pub container_groups_configuration: ::std::option::Option<crate::types::ContainerGroupsConfiguration>,
 }
 impl CreateFleetInput {
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
@@ -71,11 +82,11 @@ impl CreateFleetInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a custom game server build to be deployed to a fleet with compute type <code>EC2</code>. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
     pub fn build_id(&self) -> ::std::option::Option<&str> {
         self.build_id.as_deref()
     }
-    /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a Realtime configuration script to be deployed to a fleet with compute type <code>EC2</code>. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
     pub fn script_id(&self) -> ::std::option::Option<&str> {
         self.script_id.as_deref()
     }
@@ -93,11 +104,12 @@ impl CreateFleetInput {
     pub fn log_paths(&self) -> &[::std::string::String] {
         self.log_paths.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use with EC2 and container fleets. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     pub fn ec2_instance_type(&self) -> ::std::option::Option<&crate::types::Ec2InstanceType> {
         self.ec2_instance_type.as_ref()
     }
-    /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for EC2 and container fleets. You can leave this parameter empty when creating the fleet, but you must call <code>UpdateFleetPortSettings</code> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>To manage inbound access for a container fleet, set this parameter to the same port numbers that you set for the fleet's connection port range. During the life of the fleet, update this parameter to control which connection ports are open to inbound traffic.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_inbound_permissions.is_none()`.
     pub fn ec2_inbound_permissions(&self) -> &[crate::types::IpPermission] {
@@ -113,8 +125,8 @@ impl CreateFleetInput {
     pub fn new_game_session_protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.new_game_session_protection_policy.as_ref()
     }
-    /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently.</p><note>
-    /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
+    /// <p>Instructions for how to launch and run server processes on the fleet. Set runtime configuration for EC2 fleets and container fleets. For an Anywhere fleets, set this parameter only if the fleet is running the Amazon GameLift Agent. The runtime configuration defines one or more server process configurations. Each server process identifies a game executable or Realtime script file and the number of processes to run concurrently.</p><note>
+    /// <p>This parameter replaces the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
     pub fn runtime_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
@@ -152,8 +164,8 @@ impl CreateFleetInput {
     pub fn certificate_configuration(&self) -> ::std::option::Option<&crate::types::CertificateConfiguration> {
         self.certificate_configuration.as_ref()
     }
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, don't use this parameter.</p>
-    /// <p>To use this parameter, Amazon GameLift requires you to use your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
+    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
     pub fn locations(&self) -> &[crate::types::LocationConfiguration] {
@@ -165,7 +177,15 @@ impl CreateFleetInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift. By default, this property is set to <code>EC2</code>.</p>
+    /// <p>The type of compute resource used to host your game servers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EC2</code> – The game server build is deployed to Amazon EC2 instances for cloud hosting. This is the default setting.</p></li>
+    /// <li>
+    /// <p><code>CONTAINER</code> – Container images with your game server build and supporting software are deployed to Amazon EC2 instances for cloud hosting. With this compute type, you must specify the <code>ContainerGroupsConfiguration</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>ANYWHERE</code> – Game servers or container images with your game server and supporting software are deployed to compute resources that are provided and managed by you. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
+    /// </ul>
     pub fn compute_type(&self) -> ::std::option::Option<&crate::types::ComputeType> {
         self.compute_type.as_ref()
     }
@@ -173,9 +193,13 @@ impl CreateFleetInput {
     pub fn anywhere_configuration(&self) -> ::std::option::Option<&crate::types::AnywhereConfiguration> {
         self.anywhere_configuration.as_ref()
     }
-    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role that's defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
     pub fn instance_role_credentials_provider(&self) -> ::std::option::Option<&crate::types::InstanceRoleCredentialsProvider> {
         self.instance_role_credentials_provider.as_ref()
+    }
+    /// <p>The container groups to deploy to instances in the container fleet and other fleet-level configuration settings. Use the <code>CreateContainerGroupDefinition</code> action to create container groups. A container fleet must have exactly one replica container group, and can optionally have one daemon container group. You can't change this property after you create the fleet.</p>
+    pub fn container_groups_configuration(&self) -> ::std::option::Option<&crate::types::ContainerGroupsConfiguration> {
+        self.container_groups_configuration.as_ref()
     }
 }
 impl CreateFleetInput {
@@ -212,6 +236,7 @@ pub struct CreateFleetInputBuilder {
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
     pub(crate) anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
     pub(crate) instance_role_credentials_provider: ::std::option::Option<crate::types::InstanceRoleCredentialsProvider>,
+    pub(crate) container_groups_configuration: ::std::option::Option<crate::types::ContainerGroupsConfiguration>,
 }
 impl CreateFleetInputBuilder {
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
@@ -243,31 +268,31 @@ impl CreateFleetInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a custom game server build to be deployed to a fleet with compute type <code>EC2</code>. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
     pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.build_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a custom game server build to be deployed to a fleet with compute type <code>EC2</code>. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.build_id = input;
         self
     }
-    /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a custom game server build to be deployed to a fleet with compute type <code>EC2</code>. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property can't be changed after the fleet is created.</p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.build_id
     }
-    /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a Realtime configuration script to be deployed to a fleet with compute type <code>EC2</code>. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
     pub fn script_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a Realtime configuration script to be deployed to a fleet with compute type <code>EC2</code>. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
     pub fn set_script_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_id = input;
         self
     }
-    /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
+    /// <p>The unique identifier for a Realtime configuration script to be deployed to a fleet with compute type <code>EC2</code>. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property can't be changed after the fleet is created.</p>
     pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.script_id
     }
@@ -319,17 +344,17 @@ impl CreateFleetInputBuilder {
     pub fn get_log_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_paths
     }
-    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use with EC2 and container fleets. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     pub fn ec2_instance_type(mut self, input: crate::types::Ec2InstanceType) -> Self {
         self.ec2_instance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use with EC2 and container fleets. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     pub fn set_ec2_instance_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.ec2_instance_type = input;
         self
     }
-    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
+    /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use with EC2 and container fleets. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     pub fn get_ec2_instance_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
         &self.ec2_instance_type
     }
@@ -337,19 +362,22 @@ impl CreateFleetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ec2_inbound_permissions`](Self::set_ec2_inbound_permissions).
     ///
-    /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for EC2 and container fleets. You can leave this parameter empty when creating the fleet, but you must call <code>UpdateFleetPortSettings</code> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>To manage inbound access for a container fleet, set this parameter to the same port numbers that you set for the fleet's connection port range. During the life of the fleet, update this parameter to control which connection ports are open to inbound traffic.</p>
     pub fn ec2_inbound_permissions(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.ec2_inbound_permissions.unwrap_or_default();
         v.push(input);
         self.ec2_inbound_permissions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for EC2 and container fleets. You can leave this parameter empty when creating the fleet, but you must call <code>UpdateFleetPortSettings</code> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>To manage inbound access for a container fleet, set this parameter to the same port numbers that you set for the fleet's connection port range. During the life of the fleet, update this parameter to control which connection ports are open to inbound traffic.</p>
     pub fn set_ec2_inbound_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.ec2_inbound_permissions = input;
         self
     }
-    /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>The IP address ranges and port settings that allow inbound traffic to access game server processes and other processes on this fleet. Set this parameter for EC2 and container fleets. You can leave this parameter empty when creating the fleet, but you must call <code>UpdateFleetPortSettings</code> to set it before players can connect to game sessions. As a best practice, we recommend opening ports for remote access only when you need them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges.</p>
+    /// <p>To manage inbound access for a container fleet, set this parameter to the same port numbers that you set for the fleet's connection port range. During the life of the fleet, update this parameter to control which connection ports are open to inbound traffic.</p>
     pub fn get_ec2_inbound_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.ec2_inbound_permissions
     }
@@ -385,22 +413,22 @@ impl CreateFleetInputBuilder {
     pub fn get_new_game_session_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.new_game_session_protection_policy
     }
-    /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently.</p><note>
-    /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
+    /// <p>Instructions for how to launch and run server processes on the fleet. Set runtime configuration for EC2 fleets and container fleets. For an Anywhere fleets, set this parameter only if the fleet is running the Amazon GameLift Agent. The runtime configuration defines one or more server process configurations. Each server process identifies a game executable or Realtime script file and the number of processes to run concurrently.</p><note>
+    /// <p>This parameter replaces the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
     pub fn runtime_configuration(mut self, input: crate::types::RuntimeConfiguration) -> Self {
         self.runtime_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently.</p><note>
-    /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
+    /// <p>Instructions for how to launch and run server processes on the fleet. Set runtime configuration for EC2 fleets and container fleets. For an Anywhere fleets, set this parameter only if the fleet is running the Amazon GameLift Agent. The runtime configuration defines one or more server process configurations. Each server process identifies a game executable or Realtime script file and the number of processes to run concurrently.</p><note>
+    /// <p>This parameter replaces the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
     pub fn set_runtime_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
         self.runtime_configuration = input;
         self
     }
-    /// <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently.</p><note>
-    /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
+    /// <p>Instructions for how to launch and run server processes on the fleet. Set runtime configuration for EC2 fleets and container fleets. For an Anywhere fleets, set this parameter only if the fleet is running the Amazon GameLift Agent. The runtime configuration defines one or more server process configurations. Each server process identifies a game executable or Realtime script file and the number of processes to run concurrently.</p><note>
+    /// <p>This parameter replaces the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>
     /// </note>
     pub fn get_runtime_configuration(&self) -> &::std::option::Option<crate::types::RuntimeConfiguration> {
         &self.runtime_configuration
@@ -522,22 +550,22 @@ impl CreateFleetInputBuilder {
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
     ///
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, don't use this parameter.</p>
-    /// <p>To use this parameter, Amazon GameLift requires you to use your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
+    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
     pub fn locations(mut self, input: crate::types::LocationConfiguration) -> Self {
         let mut v = self.locations.unwrap_or_default();
         v.push(input);
         self.locations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, don't use this parameter.</p>
-    /// <p>To use this parameter, Amazon GameLift requires you to use your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
+    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
     pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>) -> Self {
         self.locations = input;
         self
     }
-    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, don't use this parameter.</p>
-    /// <p>To use this parameter, Amazon GameLift requires you to use your home location in the request.</p>
+    /// <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in Amazon Web Services Regions that support multiple locations. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code, such as <code>us-west-2</code> or Local Zone code. To create a fleet with instances in the home Region only, don't set this parameter.</p>
+    /// <p>When using this parameter, Amazon GameLift requires you to include your home location in the request.</p>
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
         &self.locations
     }
@@ -561,17 +589,41 @@ impl CreateFleetInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift. By default, this property is set to <code>EC2</code>.</p>
+    /// <p>The type of compute resource used to host your game servers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EC2</code> – The game server build is deployed to Amazon EC2 instances for cloud hosting. This is the default setting.</p></li>
+    /// <li>
+    /// <p><code>CONTAINER</code> – Container images with your game server build and supporting software are deployed to Amazon EC2 instances for cloud hosting. With this compute type, you must specify the <code>ContainerGroupsConfiguration</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>ANYWHERE</code> – Game servers or container images with your game server and supporting software are deployed to compute resources that are provided and managed by you. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
+    /// </ul>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift. By default, this property is set to <code>EC2</code>.</p>
+    /// <p>The type of compute resource used to host your game servers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EC2</code> – The game server build is deployed to Amazon EC2 instances for cloud hosting. This is the default setting.</p></li>
+    /// <li>
+    /// <p><code>CONTAINER</code> – Container images with your game server build and supporting software are deployed to Amazon EC2 instances for cloud hosting. With this compute type, you must specify the <code>ContainerGroupsConfiguration</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>ANYWHERE</code> – Game servers or container images with your game server and supporting software are deployed to compute resources that are provided and managed by you. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
+    /// </ul>
     pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }
-    /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift. By default, this property is set to <code>EC2</code>.</p>
+    /// <p>The type of compute resource used to host your game servers.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EC2</code> – The game server build is deployed to Amazon EC2 instances for cloud hosting. This is the default setting.</p></li>
+    /// <li>
+    /// <p><code>CONTAINER</code> – Container images with your game server build and supporting software are deployed to Amazon EC2 instances for cloud hosting. With this compute type, you must specify the <code>ContainerGroupsConfiguration</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>ANYWHERE</code> – Game servers or container images with your game server and supporting software are deployed to compute resources that are provided and managed by you. With this compute type, you can also set the <code>AnywhereConfiguration</code> parameter.</p></li>
+    /// </ul>
     pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
         &self.compute_type
     }
@@ -589,19 +641,33 @@ impl CreateFleetInputBuilder {
     pub fn get_anywhere_configuration(&self) -> &::std::option::Option<crate::types::AnywhereConfiguration> {
         &self.anywhere_configuration
     }
-    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role that's defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
     pub fn instance_role_credentials_provider(mut self, input: crate::types::InstanceRoleCredentialsProvider) -> Self {
         self.instance_role_credentials_provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role that's defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
     pub fn set_instance_role_credentials_provider(mut self, input: ::std::option::Option<crate::types::InstanceRoleCredentialsProvider>) -> Self {
         self.instance_role_credentials_provider = input;
         self
     }
-    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
+    /// <p>Prompts Amazon GameLift to generate a shared credentials file for the IAM role that's defined in <code>InstanceRoleArn</code>. The shared credentials file is stored on each fleet instance and refreshed as needed. Use shared credentials for applications that are deployed along with the game server executable, if the game server is integrated with server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>.</p>
     pub fn get_instance_role_credentials_provider(&self) -> &::std::option::Option<crate::types::InstanceRoleCredentialsProvider> {
         &self.instance_role_credentials_provider
+    }
+    /// <p>The container groups to deploy to instances in the container fleet and other fleet-level configuration settings. Use the <code>CreateContainerGroupDefinition</code> action to create container groups. A container fleet must have exactly one replica container group, and can optionally have one daemon container group. You can't change this property after you create the fleet.</p>
+    pub fn container_groups_configuration(mut self, input: crate::types::ContainerGroupsConfiguration) -> Self {
+        self.container_groups_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The container groups to deploy to instances in the container fleet and other fleet-level configuration settings. Use the <code>CreateContainerGroupDefinition</code> action to create container groups. A container fleet must have exactly one replica container group, and can optionally have one daemon container group. You can't change this property after you create the fleet.</p>
+    pub fn set_container_groups_configuration(mut self, input: ::std::option::Option<crate::types::ContainerGroupsConfiguration>) -> Self {
+        self.container_groups_configuration = input;
+        self
+    }
+    /// <p>The container groups to deploy to instances in the container fleet and other fleet-level configuration settings. Use the <code>CreateContainerGroupDefinition</code> action to create container groups. A container fleet must have exactly one replica container group, and can optionally have one daemon container group. You can't change this property after you create the fleet.</p>
+    pub fn get_container_groups_configuration(&self) -> &::std::option::Option<crate::types::ContainerGroupsConfiguration> {
+        &self.container_groups_configuration
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
@@ -629,6 +695,7 @@ impl CreateFleetInputBuilder {
             compute_type: self.compute_type,
             anywhere_configuration: self.anywhere_configuration,
             instance_role_credentials_provider: self.instance_role_credentials_provider,
+            container_groups_configuration: self.container_groups_configuration,
         })
     }
 }

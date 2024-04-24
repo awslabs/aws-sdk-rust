@@ -29,6 +29,8 @@ pub(crate) mod shape_create_job_template;
 
 pub(crate) mod shape_create_managed_endpoint;
 
+pub(crate) mod shape_create_security_configuration;
+
 pub(crate) mod shape_create_virtual_cluster;
 
 pub(crate) mod shape_delete_job_template;
@@ -43,6 +45,8 @@ pub(crate) mod shape_describe_job_template;
 
 pub(crate) mod shape_describe_managed_endpoint;
 
+pub(crate) mod shape_describe_security_configuration;
+
 pub(crate) mod shape_describe_virtual_cluster;
 
 pub(crate) mod shape_get_managed_endpoint_session_credentials;
@@ -52,6 +56,8 @@ pub(crate) mod shape_list_job_runs;
 pub(crate) mod shape_list_job_templates;
 
 pub(crate) mod shape_list_managed_endpoints;
+
+pub(crate) mod shape_list_security_configurations;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -74,6 +80,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_create_job_template_input;
 
 pub(crate) mod shape_create_managed_endpoint_input;
+
+pub(crate) mod shape_create_security_configuration_input;
 
 pub(crate) mod shape_create_virtual_cluster_input;
 
@@ -117,11 +125,19 @@ pub(crate) mod shape_job_templates;
 
 pub(crate) mod shape_retry_policy_configuration;
 
+pub(crate) mod shape_security_configuration;
+
+pub(crate) mod shape_security_configuration_data;
+
+pub(crate) mod shape_security_configurations;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_virtual_cluster;
 
 pub(crate) mod shape_virtual_clusters;
+
+pub(crate) mod shape_authorization_configuration;
 
 pub(crate) mod shape_certificate;
 
@@ -151,6 +167,10 @@ pub(crate) mod shape_container_log_rotation_configuration;
 
 pub(crate) mod shape_eks_info;
 
+pub(crate) mod shape_encryption_configuration;
+
+pub(crate) mod shape_lake_formation_configuration;
+
 pub(crate) mod shape_parametric_monitoring_configuration;
 
 pub(crate) mod shape_s3_monitoring_configuration;
@@ -159,8 +179,14 @@ pub(crate) mod shape_template_parameter_configuration_map;
 
 pub(crate) mod shape_entry_point_arguments;
 
+pub(crate) mod shape_in_transit_encryption_configuration;
+
 pub(crate) mod shape_parametric_cloud_watch_monitoring_configuration;
 
 pub(crate) mod shape_parametric_s3_monitoring_configuration;
 
+pub(crate) mod shape_secure_namespace_info;
+
 pub(crate) mod shape_sensitive_properties_map;
+
+pub(crate) mod shape_tls_certificate_configuration;

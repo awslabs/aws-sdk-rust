@@ -7,7 +7,9 @@ pub struct CreateMaintenanceWindowInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p><note>
+    /// <p>When using a rate schedule, if you provide a start date that occurs in the past, the current date and time are used as the start date.</p>
+    /// </note>
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
     pub end_date: ::std::option::Option<::std::string::String>,
@@ -51,7 +53,9 @@ impl CreateMaintenanceWindowInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p><note>
+    /// <p>When using a rate schedule, if you provide a start date that occurs in the past, the current date and time are used as the start date.</p>
+    /// </note>
     pub fn start_date(&self) -> ::std::option::Option<&str> {
         self.start_date.as_deref()
     }
@@ -180,17 +184,23 @@ impl CreateMaintenanceWindowInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p><note>
+    /// <p>When using a rate schedule, if you provide a start date that occurs in the past, the current date and time are used as the start date.</p>
+    /// </note>
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p><note>
+    /// <p>When using a rate schedule, if you provide a start date that occurs in the past, the current date and time are used as the start date.</p>
+    /// </note>
     pub fn set_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_date = input;
         self
     }
-    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
+    /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p><note>
+    /// <p>When using a rate schedule, if you provide a start date that occurs in the past, the current date and time are used as the start date.</p>
+    /// </note>
     pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_date
     }

@@ -81,9 +81,25 @@ pub use crate::types::_job_metrics::JobMetrics;
 
 pub use crate::types::_id_mapping_job_metrics::IdMappingJobMetrics;
 
+pub use crate::types::_deleted_unique_id::DeletedUniqueId;
+
+pub use crate::types::_delete_unique_id_error::DeleteUniqueIdError;
+
+pub use crate::types::_delete_unique_id_error_type::DeleteUniqueIdErrorType;
+
+pub use crate::types::_delete_unique_id_status::DeleteUniqueIdStatus;
+
 pub use crate::types::_statement_effect::StatementEffect;
 
 mod _attribute_matching_model;
+
+mod _delete_unique_id_error;
+
+mod _delete_unique_id_error_type;
+
+mod _delete_unique_id_status;
+
+mod _deleted_unique_id;
 
 mod _error_details;
 

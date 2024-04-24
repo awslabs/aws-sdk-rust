@@ -138,6 +138,8 @@ impl Client {
 
 mod add_policy_statement;
 
+mod batch_delete_unique_id;
+
 mod create_id_mapping_workflow;
 
 mod create_id_namespace;

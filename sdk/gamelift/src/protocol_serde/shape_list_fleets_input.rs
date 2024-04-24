@@ -9,14 +9,17 @@ pub fn ser_list_fleets_input_input(
     if let Some(var_2) = &input.script_id {
         object.key("ScriptId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.limit {
+    if let Some(var_3) = &input.container_group_definition_name {
+        object.key("ContainerGroupDefinitionName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("NextToken").string(var_4.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("NextToken").string(var_5.as_str());
     }
     Ok(())
 }

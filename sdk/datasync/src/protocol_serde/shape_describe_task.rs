@@ -185,6 +185,9 @@ pub(crate) fn de_describe_task(
                 "TaskReportConfig" => {
                     builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens)?);
                 }
+                "ScheduleDetails" => {
+                    builder = builder.set_schedule_details(crate::protocol_serde::shape_task_schedule_details::de_task_schedule_details(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

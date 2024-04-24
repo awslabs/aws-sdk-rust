@@ -196,6 +196,12 @@ impl CreateDocumentFluentBuilder {
     /// <p><code>amazon</code></p></li>
     /// <li>
     /// <p><code>amzn</code></p></li>
+    /// <li>
+    /// <p><code>AWSEC2</code></p></li>
+    /// <li>
+    /// <p><code>AWSConfigRemediation</code></p></li>
+    /// <li>
+    /// <p><code>AWSSupport</code></p></li>
     /// </ul>
     /// </important>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -211,6 +217,12 @@ impl CreateDocumentFluentBuilder {
     /// <p><code>amazon</code></p></li>
     /// <li>
     /// <p><code>amzn</code></p></li>
+    /// <li>
+    /// <p><code>AWSEC2</code></p></li>
+    /// <li>
+    /// <p><code>AWSConfigRemediation</code></p></li>
+    /// <li>
+    /// <p><code>AWSSupport</code></p></li>
     /// </ul>
     /// </important>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -226,6 +238,12 @@ impl CreateDocumentFluentBuilder {
     /// <p><code>amazon</code></p></li>
     /// <li>
     /// <p><code>amzn</code></p></li>
+    /// <li>
+    /// <p><code>AWSEC2</code></p></li>
+    /// <li>
+    /// <p><code>AWSConfigRemediation</code></p></li>
+    /// <li>
+    /// <p><code>AWSSupport</code></p></li>
     /// </ul>
     /// </important>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

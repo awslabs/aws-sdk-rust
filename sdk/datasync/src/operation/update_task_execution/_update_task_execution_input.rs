@@ -6,7 +6,8 @@ pub struct UpdateTaskExecutionInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're updating.</p>
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any option before calling <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>You also can override your task options for each task execution. For example, you might want to adjust the <code>LogLevel</code> for an individual execution.</p>
     pub options: ::std::option::Option<crate::types::Options>,
 }
 impl UpdateTaskExecutionInput {
@@ -15,7 +16,8 @@ impl UpdateTaskExecutionInput {
         self.task_execution_arn.as_deref()
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any option before calling <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>You also can override your task options for each task execution. For example, you might want to adjust the <code>LogLevel</code> for an individual execution.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
         self.options.as_ref()
     }
@@ -51,20 +53,23 @@ impl UpdateTaskExecutionInputBuilder {
         &self.task_execution_arn
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any option before calling <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>You also can override your task options for each task execution. For example, you might want to adjust the <code>LogLevel</code> for an individual execution.</p>
     /// This field is required.
     pub fn options(mut self, input: crate::types::Options) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any option before calling <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>You also can override your task options for each task execution. For example, you might want to adjust the <code>LogLevel</code> for an individual execution.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.options = input;
         self
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
-    /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
+    /// <p>Each option has a default value. Unless you need to, you don't have to configure any option before calling <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    /// <p>You also can override your task options for each task execution. For example, you might want to adjust the <code>LogLevel</code> for an individual execution.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
         &self.options
     }

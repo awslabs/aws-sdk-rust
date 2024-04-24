@@ -12,6 +12,7 @@
 /// ```text
 /// # let networkinterfaceattribute = unimplemented!();
 /// match networkinterfaceattribute {
+///     NetworkInterfaceAttribute::AssociatePublicIpAddress => { /* ... */ },
 ///     NetworkInterfaceAttribute::Attachment => { /* ... */ },
 ///     NetworkInterfaceAttribute::Description => { /* ... */ },
 ///     NetworkInterfaceAttribute::GroupSet => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum NetworkInterfaceAttribute {
     #[allow(missing_docs)] // documentation missing in model
+    AssociatePublicIpAddress,
+    #[allow(missing_docs)] // documentation missing in model
     Attachment,
     #[allow(missing_docs)] // documentation missing in model
     Description,
@@ -58,6 +61,7 @@ pub enum NetworkInterfaceAttribute {
 impl ::std::convert::From<&str> for NetworkInterfaceAttribute {
     fn from(s: &str) -> Self {
         match s {
+            "associatePublicIpAddress" => NetworkInterfaceAttribute::AssociatePublicIpAddress,
             "attachment" => NetworkInterfaceAttribute::Attachment,
             "description" => NetworkInterfaceAttribute::Description,
             "groupSet" => NetworkInterfaceAttribute::GroupSet,
@@ -77,6 +81,7 @@ impl NetworkInterfaceAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            NetworkInterfaceAttribute::AssociatePublicIpAddress => "associatePublicIpAddress",
             NetworkInterfaceAttribute::Attachment => "attachment",
             NetworkInterfaceAttribute::Description => "description",
             NetworkInterfaceAttribute::GroupSet => "groupSet",
@@ -86,7 +91,7 @@ impl NetworkInterfaceAttribute {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["attachment", "description", "groupSet", "sourceDestCheck"]
+        &["associatePublicIpAddress", "attachment", "description", "groupSet", "sourceDestCheck"]
     }
 }
 impl ::std::convert::AsRef<str> for NetworkInterfaceAttribute {
@@ -109,6 +114,7 @@ impl NetworkInterfaceAttribute {
 impl ::std::fmt::Display for NetworkInterfaceAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            NetworkInterfaceAttribute::AssociatePublicIpAddress => write!(f, "associatePublicIpAddress"),
             NetworkInterfaceAttribute::Attachment => write!(f, "attachment"),
             NetworkInterfaceAttribute::Description => write!(f, "description"),
             NetworkInterfaceAttribute::GroupSet => write!(f, "groupSet"),

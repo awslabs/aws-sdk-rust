@@ -14,6 +14,8 @@ pub struct DescribeNetworkInterfaceAttributeOutput {
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
     pub source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub associate_public_ip_address: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeNetworkInterfaceAttributeOutput {
@@ -39,6 +41,10 @@ impl DescribeNetworkInterfaceAttributeOutput {
     pub fn source_dest_check(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.source_dest_check.as_ref()
     }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
+        self.associate_public_ip_address
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeNetworkInterfaceAttributeOutput {
     fn request_id(&self) -> Option<&str> {
@@ -61,6 +67,7 @@ pub struct DescribeNetworkInterfaceAttributeOutputBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
+    pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeNetworkInterfaceAttributeOutputBuilder {
@@ -140,6 +147,20 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
     pub fn get_source_dest_check(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.source_dest_check
     }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn associate_public_ip_address(mut self, input: bool) -> Self {
+        self.associate_public_ip_address = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.associate_public_ip_address = input;
+        self
+    }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
+        &self.associate_public_ip_address
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -157,6 +178,7 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
             groups: self.groups,
             network_interface_id: self.network_interface_id,
             source_dest_check: self.source_dest_check,
+            associate_public_ip_address: self.associate_public_ip_address,
             _request_id: self._request_id,
         }
     }

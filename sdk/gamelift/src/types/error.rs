@@ -9,17 +9,19 @@ pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 
 pub use crate::types::error::_not_found_exception::NotFoundException;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
 pub use crate::types::error::_invalid_fleet_status_exception::InvalidFleetStatusException;
 
 pub use crate::types::error::_invalid_game_session_status_exception::InvalidGameSessionStatusException;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
-
 pub use crate::types::error::_tagging_failed_exception::TaggingFailedException;
 
 pub use crate::types::error::_terminal_routing_strategy_exception::TerminalRoutingStrategyException;
+
+pub use crate::types::error::_not_ready_exception::NotReadyException;
 
 pub use crate::types::error::_game_session_full_exception::GameSessionFullException;
 
@@ -48,6 +50,8 @@ mod _invalid_request_exception;
 mod _limit_exceeded_exception;
 
 mod _not_found_exception;
+
+mod _not_ready_exception;
 
 mod _out_of_capacity_exception;
 

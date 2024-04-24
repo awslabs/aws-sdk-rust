@@ -142,6 +142,8 @@ mod create_job_template;
 
 mod create_managed_endpoint;
 
+mod create_security_configuration;
+
 mod create_virtual_cluster;
 
 /// Operation customization and supporting types.
@@ -183,6 +185,8 @@ mod describe_job_template;
 
 mod describe_managed_endpoint;
 
+mod describe_security_configuration;
+
 mod describe_virtual_cluster;
 
 mod get_managed_endpoint_session_credentials;
@@ -192,6 +196,8 @@ mod list_job_runs;
 mod list_job_templates;
 
 mod list_managed_endpoints;
+
+mod list_security_configurations;
 
 mod list_tags_for_resource;
 

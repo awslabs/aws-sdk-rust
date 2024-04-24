@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_managed_endpoints_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_security_configurations_output_output_next_token(
+    input: &crate::operation::list_security_configurations::ListSecurityConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_virtual_clusters_output_output_next_token(
     input: &crate::operation::list_virtual_clusters::ListVirtualClustersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -63,6 +73,16 @@ pub(crate) fn lens_list_managed_endpoints_output_output_endpoints(
     input: crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>> {
     let input = match input.endpoints {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_security_configurations_output_output_security_configurations(
+    input: crate::operation::list_security_configurations::ListSecurityConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfiguration>> {
+    let input = match input.security_configurations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -92,6 +92,21 @@ pub fn de_create_fleet_http_error(
             }
             tmp
         }),
+        "NotReadyException" => crate::operation::create_fleet::CreateFleetError::NotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotReadyExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_ready_exception::de_not_ready_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_fleet::CreateFleetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TaggingFailedException" => crate::operation::create_fleet::CreateFleetError::TaggingFailedException({
             #[allow(unused_mut)]
             let mut tmp = {

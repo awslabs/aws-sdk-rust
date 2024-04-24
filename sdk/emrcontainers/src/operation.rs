@@ -10,6 +10,9 @@ pub mod create_job_template;
 /// Types for the `CreateManagedEndpoint` operation.
 pub mod create_managed_endpoint;
 
+/// Types for the `CreateSecurityConfiguration` operation.
+pub mod create_security_configuration;
+
 /// Types for the `CreateVirtualCluster` operation.
 pub mod create_virtual_cluster;
 
@@ -31,6 +34,9 @@ pub mod describe_job_template;
 /// Types for the `DescribeManagedEndpoint` operation.
 pub mod describe_managed_endpoint;
 
+/// Types for the `DescribeSecurityConfiguration` operation.
+pub mod describe_security_configuration;
+
 /// Types for the `DescribeVirtualCluster` operation.
 pub mod describe_virtual_cluster;
 
@@ -45,6 +51,9 @@ pub mod list_job_templates;
 
 /// Types for the `ListManagedEndpoints` operation.
 pub mod list_managed_endpoints;
+
+/// Types for the `ListSecurityConfigurations` operation.
+pub mod list_security_configurations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

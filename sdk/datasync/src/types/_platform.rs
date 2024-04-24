@@ -4,15 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Platform {
-    /// <p>The version of the DataSync agent.</p><important>
-    /// <p>On December 7, 2023, we discontinued version 1 DataSync agents. Check the DataSync console to see if you have affected agents. If you do, <a href="https://docs.aws.amazon.com/datasync/latest/userguide/replacing-agent.html">replace</a> those agents or <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deleting-agent.html">delete</a> them if they aren't in use. If you need more help, contact <a href="https://aws.amazon.com/contact-us/">Amazon Web Services Support</a>.</p>
-    /// </important>
+    /// <p>The version of the DataSync agent.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl Platform {
-    /// <p>The version of the DataSync agent.</p><important>
-    /// <p>On December 7, 2023, we discontinued version 1 DataSync agents. Check the DataSync console to see if you have affected agents. If you do, <a href="https://docs.aws.amazon.com/datasync/latest/userguide/replacing-agent.html">replace</a> those agents or <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deleting-agent.html">delete</a> them if they aren't in use. If you need more help, contact <a href="https://aws.amazon.com/contact-us/">Amazon Web Services Support</a>.</p>
-    /// </important>
+    /// <p>The version of the DataSync agent.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -31,23 +27,17 @@ pub struct PlatformBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl PlatformBuilder {
-    /// <p>The version of the DataSync agent.</p><important>
-    /// <p>On December 7, 2023, we discontinued version 1 DataSync agents. Check the DataSync console to see if you have affected agents. If you do, <a href="https://docs.aws.amazon.com/datasync/latest/userguide/replacing-agent.html">replace</a> those agents or <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deleting-agent.html">delete</a> them if they aren't in use. If you need more help, contact <a href="https://aws.amazon.com/contact-us/">Amazon Web Services Support</a>.</p>
-    /// </important>
+    /// <p>The version of the DataSync agent.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the DataSync agent.</p><important>
-    /// <p>On December 7, 2023, we discontinued version 1 DataSync agents. Check the DataSync console to see if you have affected agents. If you do, <a href="https://docs.aws.amazon.com/datasync/latest/userguide/replacing-agent.html">replace</a> those agents or <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deleting-agent.html">delete</a> them if they aren't in use. If you need more help, contact <a href="https://aws.amazon.com/contact-us/">Amazon Web Services Support</a>.</p>
-    /// </important>
+    /// <p>The version of the DataSync agent.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version of the DataSync agent.</p><important>
-    /// <p>On December 7, 2023, we discontinued version 1 DataSync agents. Check the DataSync console to see if you have affected agents. If you do, <a href="https://docs.aws.amazon.com/datasync/latest/userguide/replacing-agent.html">replace</a> those agents or <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deleting-agent.html">delete</a> them if they aren't in use. If you need more help, contact <a href="https://aws.amazon.com/contact-us/">Amazon Web Services Support</a>.</p>
-    /// </important>
+    /// <p>The version of the DataSync agent.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }

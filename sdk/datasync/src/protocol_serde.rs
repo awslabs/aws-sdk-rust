@@ -353,6 +353,8 @@ pub(crate) mod shape_task_report_config;
 
 pub(crate) mod shape_task_schedule;
 
+pub(crate) mod shape_task_schedule_details;
+
 pub(crate) mod shape_agent_list_entry;
 
 pub(crate) mod shape_discovery_job_list_entry;

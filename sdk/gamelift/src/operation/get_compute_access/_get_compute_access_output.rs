@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetComputeAccessOutput {
-    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+    /// <p>The ID of the fleet that holds the compute resource to be accessed.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -17,10 +17,12 @@ pub struct GetComputeAccessOutput {
     pub compute_arn: ::std::option::Option<::std::string::String>,
     /// <p>A set of temporary Amazon Web Services credentials for use when connecting to the compute resource with Amazon EC2 Systems Manager (SSM).</p>
     pub credentials: ::std::option::Option<crate::types::AwsCredentials>,
+    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    pub target: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetComputeAccessOutput {
-    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+    /// <p>The ID of the fleet that holds the compute resource to be accessed.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
@@ -44,6 +46,10 @@ impl GetComputeAccessOutput {
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::AwsCredentials> {
         self.credentials.as_ref()
     }
+    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    pub fn target(&self) -> ::std::option::Option<&str> {
+        self.target.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetComputeAccessOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -53,6 +59,7 @@ impl ::std::fmt::Debug for GetComputeAccessOutput {
         formatter.field("compute_name", &self.compute_name);
         formatter.field("compute_arn", &self.compute_arn);
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("target", &self.target);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -78,20 +85,21 @@ pub struct GetComputeAccessOutputBuilder {
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
     pub(crate) compute_arn: ::std::option::Option<::std::string::String>,
     pub(crate) credentials: ::std::option::Option<crate::types::AwsCredentials>,
+    pub(crate) target: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetComputeAccessOutputBuilder {
-    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+    /// <p>The ID of the fleet that holds the compute resource to be accessed.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+    /// <p>The ID of the fleet that holds the compute resource to be accessed.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
-    /// <p>The ID of the fleet that contains the compute resource to be accessed.</p>
+    /// <p>The ID of the fleet that holds the compute resource to be accessed.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
@@ -163,6 +171,20 @@ impl GetComputeAccessOutputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::AwsCredentials> {
         &self.credentials
     }
+    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target = input;
+        self
+    }
+    /// <p>(For container fleets only) The instance ID where the compute resource is running.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -180,6 +202,7 @@ impl GetComputeAccessOutputBuilder {
             compute_name: self.compute_name,
             compute_arn: self.compute_arn,
             credentials: self.credentials,
+            target: self.target,
             _request_id: self._request_id,
         }
     }
@@ -192,6 +215,7 @@ impl ::std::fmt::Debug for GetComputeAccessOutputBuilder {
         formatter.field("compute_name", &self.compute_name);
         formatter.field("compute_arn", &self.compute_arn);
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("target", &self.target);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

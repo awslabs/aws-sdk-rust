@@ -110,6 +110,21 @@ pub fn de_describe_network_interface_attribute(
                 builder = builder.set_source_dest_check(var_5);
             }
             ,
+            s if s.matches("associatePublicIpAddress") /* AssociatePublicIpAddress com.amazonaws.ec2.synthetic#DescribeNetworkInterfaceAttributeOutput$AssociatePublicIpAddress */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_associate_public_ip_address(var_6);
+            }
+            ,
             _ => {}
         }
     }

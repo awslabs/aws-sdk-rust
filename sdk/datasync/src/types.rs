@@ -61,6 +61,8 @@ pub use crate::types::_filter_type::FilterType;
 
 pub use crate::types::_task_schedule::TaskSchedule;
 
+pub use crate::types::_schedule_status::ScheduleStatus;
+
 pub use crate::types::_credentials::Credentials;
 
 pub use crate::types::_discovery_server_configuration::DiscoveryServerConfiguration;
@@ -136,6 +138,10 @@ pub use crate::types::_report_result::ReportResult;
 pub use crate::types::_phase_status::PhaseStatus;
 
 pub use crate::types::_task_execution_result_detail::TaskExecutionResultDetail;
+
+pub use crate::types::_task_schedule_details::TaskScheduleDetails;
+
+pub use crate::types::_schedule_disabled_by::ScheduleDisabledBy;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
@@ -333,6 +339,10 @@ mod _s3_manifest_config;
 
 mod _s3_storage_class;
 
+mod _schedule_disabled_by;
+
+mod _schedule_status;
+
 mod _smb_mount_options;
 
 mod _smb_security_descriptor_copy_flags;
@@ -364,6 +374,8 @@ mod _task_queueing;
 mod _task_report_config;
 
 mod _task_schedule;
+
+mod _task_schedule_details;
 
 mod _task_status;
 

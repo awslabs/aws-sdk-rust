@@ -169,4 +169,18 @@ impl CreateVirtualClusterFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The ID of the security configuration.</p>
+    pub fn security_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.security_configuration_id(input.into());
+        self
+    }
+    /// <p>The ID of the security configuration.</p>
+    pub fn set_security_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_security_configuration_id(input);
+        self
+    }
+    /// <p>The ID of the security configuration.</p>
+    pub fn get_security_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_configuration_id()
+    }
 }

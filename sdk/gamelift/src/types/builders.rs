@@ -65,9 +65,29 @@ pub use crate::types::_aws_credentials::AwsCredentialsBuilder;
 
 pub use crate::types::_compute::ComputeBuilder;
 
+pub use crate::types::_container_attributes::ContainerAttributesBuilder;
+
+pub use crate::types::_container_port_mapping::ContainerPortMappingBuilder;
+
 pub use crate::types::_target_configuration::TargetConfigurationBuilder;
 
 pub use crate::types::_location_model::LocationModelBuilder;
+
+pub use crate::types::_container_group_definition::ContainerGroupDefinitionBuilder;
+
+pub use crate::types::_container_definition::ContainerDefinitionBuilder;
+
+pub use crate::types::_container_dependency::ContainerDependencyBuilder;
+
+pub use crate::types::_container_environment::ContainerEnvironmentBuilder;
+
+pub use crate::types::_container_health_check::ContainerHealthCheckBuilder;
+
+pub use crate::types::_container_port_configuration::ContainerPortConfigurationBuilder;
+
+pub use crate::types::_container_port_range::ContainerPortRangeBuilder;
+
+pub use crate::types::_container_memory_limits::ContainerMemoryLimitsBuilder;
 
 pub use crate::types::_instance_access::InstanceAccessBuilder;
 
@@ -95,6 +115,8 @@ pub use crate::types::_fleet_utilization::FleetUtilizationBuilder;
 
 pub use crate::types::_fleet_capacity::FleetCapacityBuilder;
 
+pub use crate::types::_replica_container_group_counts::ReplicaContainerGroupCountsBuilder;
+
 pub use crate::types::_ec2_instance_counts::Ec2InstanceCountsBuilder;
 
 pub use crate::types::_location_attributes::LocationAttributesBuilder;
@@ -104,6 +126,14 @@ pub use crate::types::_location_state::LocationStateBuilder;
 pub use crate::types::_event::EventBuilder;
 
 pub use crate::types::_fleet_attributes::FleetAttributesBuilder;
+
+pub use crate::types::_container_groups_attributes::ContainerGroupsAttributesBuilder;
+
+pub use crate::types::_container_groups_per_instance::ContainerGroupsPerInstanceBuilder;
+
+pub use crate::types::_connection_port_range::ConnectionPortRangeBuilder;
+
+pub use crate::types::_container_group_definition_property::ContainerGroupDefinitionPropertyBuilder;
 
 pub use crate::types::_certificate_configuration::CertificateConfigurationBuilder;
 
@@ -116,5 +146,9 @@ pub use crate::types::_target_tracking_configuration::TargetTrackingConfiguratio
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecificationBuilder;
 
 pub use crate::types::_location_configuration::LocationConfigurationBuilder;
+
+pub use crate::types::_container_groups_configuration::ContainerGroupsConfigurationBuilder;
+
+pub use crate::types::_container_definition_input::ContainerDefinitionInputBuilder;
 
 pub use crate::types::_claim_filter_option::ClaimFilterOptionBuilder;

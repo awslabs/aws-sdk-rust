@@ -97,6 +97,34 @@ impl From<crate::operation::add_policy_statement::AddPolicyStatementError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdError> for Error {
+    fn from(err: crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdError) -> Self {
+        match err {
+            crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowError, R>>
     for Error
 where

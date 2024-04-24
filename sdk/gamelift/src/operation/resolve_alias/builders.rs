@@ -22,7 +22,8 @@ impl crate::operation::resolve_alias::builders::ResolveAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `ResolveAlias`.
 ///
-/// <p>Retrieves the fleet ID that an alias is currently pointing to.</p>
+/// <p>Attempts to retrieve a fleet ID that is associated with an alias. Specify a unique alias identifier.</p>
+/// <p>If the alias has a <code>SIMPLE</code> routing strategy, Amazon GameLift returns a fleet ID. If the alias has a <code>TERMINAL</code> routing strategy, the result is a <code>TerminalRoutingStrategyException</code>.</p>
 /// <p><b>Related actions</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

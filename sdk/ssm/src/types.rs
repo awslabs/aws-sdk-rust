@@ -385,6 +385,22 @@ pub use crate::types::_inventory_deletion_summary_item::InventoryDeletionSummary
 
 pub use crate::types::_inventory_deletion_status::InventoryDeletionStatus;
 
+pub use crate::types::_instance_property::InstanceProperty;
+
+pub use crate::types::_source_type::SourceType;
+
+pub use crate::types::_instance_aggregated_association_overview::InstanceAggregatedAssociationOverview;
+
+pub use crate::types::_ping_status::PingStatus;
+
+pub use crate::types::_instance_property_string_filter::InstancePropertyStringFilter;
+
+pub use crate::types::_instance_property_filter_operator::InstancePropertyFilterOperator;
+
+pub use crate::types::_instance_property_filter::InstancePropertyFilter;
+
+pub use crate::types::_instance_property_filter_key::InstancePropertyFilterKey;
+
 pub use crate::types::_instance_patch_state::InstancePatchState;
 
 pub use crate::types::_reboot_option::RebootOption;
@@ -401,13 +417,7 @@ pub use crate::types::_patch_compliance_data_state::PatchComplianceDataState;
 
 pub use crate::types::_instance_information::InstanceInformation;
 
-pub use crate::types::_source_type::SourceType;
-
-pub use crate::types::_instance_aggregated_association_overview::InstanceAggregatedAssociationOverview;
-
 pub use crate::types::_resource_type::ResourceType;
-
-pub use crate::types::_ping_status::PingStatus;
 
 pub use crate::types::_instance_information_string_filter::InstanceInformationStringFilter;
 
@@ -676,6 +686,16 @@ mod _instance_patch_state;
 mod _instance_patch_state_filter;
 
 mod _instance_patch_state_operator_type;
+
+mod _instance_property;
+
+mod _instance_property_filter;
+
+mod _instance_property_filter_key;
+
+mod _instance_property_filter_operator;
+
+mod _instance_property_string_filter;
 
 mod _inventory_aggregator;
 

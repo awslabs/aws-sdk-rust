@@ -251,6 +251,14 @@ pub use crate::types::_inventory_deletion_summary::InventoryDeletionSummaryBuild
 
 pub use crate::types::_inventory_deletion_summary_item::InventoryDeletionSummaryItemBuilder;
 
+pub use crate::types::_instance_property::InstancePropertyBuilder;
+
+pub use crate::types::_instance_aggregated_association_overview::InstanceAggregatedAssociationOverviewBuilder;
+
+pub use crate::types::_instance_property_string_filter::InstancePropertyStringFilterBuilder;
+
+pub use crate::types::_instance_property_filter::InstancePropertyFilterBuilder;
+
 pub use crate::types::_instance_patch_state::InstancePatchStateBuilder;
 
 pub use crate::types::_instance_patch_state_filter::InstancePatchStateFilterBuilder;
@@ -258,8 +266,6 @@ pub use crate::types::_instance_patch_state_filter::InstancePatchStateFilterBuil
 pub use crate::types::_patch_compliance_data::PatchComplianceDataBuilder;
 
 pub use crate::types::_instance_information::InstanceInformationBuilder;
-
-pub use crate::types::_instance_aggregated_association_overview::InstanceAggregatedAssociationOverviewBuilder;
 
 pub use crate::types::_instance_information_string_filter::InstanceInformationStringFilterBuilder;
 

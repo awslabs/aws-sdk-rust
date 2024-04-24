@@ -136,6 +136,9 @@ pub mod describe_instance_patch_states_for_patch_group;
 /// Types for the `DescribeInstancePatches` operation.
 pub mod describe_instance_patches;
 
+/// Types for the `DescribeInstanceProperties` operation.
+pub mod describe_instance_properties;
+
 /// Types for the `DescribeInventoryDeletions` operation.
 pub mod describe_inventory_deletions;
 

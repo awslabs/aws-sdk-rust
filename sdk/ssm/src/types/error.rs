@@ -223,6 +223,10 @@ pub use crate::types::error::_ops_item_related_item_association_not_found_except
 
 pub use crate::types::error::_invalid_deletion_id_exception::InvalidDeletionIdException;
 
+pub use crate::types::error::_invalid_instance_property_filter_value::InvalidInstancePropertyFilterValue;
+
+pub use crate::types::error::_invalid_activation_id::InvalidActivationId;
+
 pub use crate::types::error::_invalid_instance_information_filter_value::InvalidInstanceInformationFilterValue;
 
 pub use crate::types::error::_association_execution_does_not_exist::AssociationExecutionDoesNotExist;
@@ -238,8 +242,6 @@ pub use crate::types::error::_invalid_inventory_request_exception::InvalidInvent
 pub use crate::types::error::_invalid_delete_inventory_parameters_exception::InvalidDeleteInventoryParametersException;
 
 pub use crate::types::error::_associated_instances::AssociatedInstances;
-
-pub use crate::types::error::_invalid_activation_id::InvalidActivationId;
 
 pub use crate::types::error::_invalid_activation::InvalidActivation;
 
@@ -368,6 +370,8 @@ mod _invalid_filter_value;
 mod _invalid_instance_id;
 
 mod _invalid_instance_information_filter_value;
+
+mod _invalid_instance_property_filter_value;
 
 mod _invalid_inventory_group_exception;
 

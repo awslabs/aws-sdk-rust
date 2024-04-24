@@ -15,15 +15,18 @@ pub fn ser_create_virtual_cluster_input_input(
     if let Some(var_4) = &input.name {
         object.key("name").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_5) = &input.security_configuration_id {
+        object.key("securityConfigurationId").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_6.finish();
+        object_7.finish();
     }
     Ok(())
 }

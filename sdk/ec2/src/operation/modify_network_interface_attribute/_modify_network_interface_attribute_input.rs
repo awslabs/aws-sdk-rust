@@ -22,6 +22,8 @@ pub struct ModifyNetworkInterfaceAttributeInput {
     pub enable_primary_ipv6: ::std::option::Option<bool>,
     /// <p>A connection tracking specification.</p>
     pub connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub associate_public_ip_address: ::std::option::Option<bool>,
 }
 impl ModifyNetworkInterfaceAttributeInput {
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
@@ -62,6 +64,10 @@ impl ModifyNetworkInterfaceAttributeInput {
     pub fn connection_tracking_specification(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationRequest> {
         self.connection_tracking_specification.as_ref()
     }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
+        self.associate_public_ip_address
+    }
 }
 impl ModifyNetworkInterfaceAttributeInput {
     /// Creates a new builder-style object to manufacture [`ModifyNetworkInterfaceAttributeInput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput).
@@ -83,6 +89,7 @@ pub struct ModifyNetworkInterfaceAttributeInputBuilder {
     pub(crate) ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecification>,
     pub(crate) enable_primary_ipv6: ::std::option::Option<bool>,
     pub(crate) connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
+    pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
 }
 impl ModifyNetworkInterfaceAttributeInputBuilder {
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
@@ -221,6 +228,20 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
     pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
         &self.connection_tracking_specification
     }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn associate_public_ip_address(mut self, input: bool) -> Self {
+        self.associate_public_ip_address = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.associate_public_ip_address = input;
+        self
+    }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
+        &self.associate_public_ip_address
+    }
     /// Consumes the builder and constructs a [`ModifyNetworkInterfaceAttributeInput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput).
     pub fn build(
         self,
@@ -239,6 +260,7 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
                 ena_srd_specification: self.ena_srd_specification,
                 enable_primary_ipv6: self.enable_primary_ipv6,
                 connection_tracking_specification: self.connection_tracking_specification,
+                associate_public_ip_address: self.associate_public_ip_address,
             },
         )
     }

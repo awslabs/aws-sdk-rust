@@ -45,6 +45,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ReplicaContainerGroupCounts" => {
+                            builder = builder.set_replica_container_group_counts(
+                                crate::protocol_serde::shape_replica_container_group_counts::de_replica_container_group_counts(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

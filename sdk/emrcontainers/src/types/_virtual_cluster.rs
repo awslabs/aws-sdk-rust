@@ -18,6 +18,8 @@ pub struct VirtualCluster {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The assigned tags of the virtual cluster.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The ID of the security configuration.</p>
+    pub security_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl VirtualCluster {
     /// <p>The ID of the virtual cluster.</p>
@@ -48,6 +50,10 @@ impl VirtualCluster {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The ID of the security configuration.</p>
+    pub fn security_configuration_id(&self) -> ::std::option::Option<&str> {
+        self.security_configuration_id.as_deref()
+    }
 }
 impl VirtualCluster {
     /// Creates a new builder-style object to manufacture [`VirtualCluster`](crate::types::VirtualCluster).
@@ -67,6 +73,7 @@ pub struct VirtualClusterBuilder {
     pub(crate) container_provider: ::std::option::Option<crate::types::ContainerProvider>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) security_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl VirtualClusterBuilder {
     /// <p>The ID of the virtual cluster.</p>
@@ -173,6 +180,20 @@ impl VirtualClusterBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The ID of the security configuration.</p>
+    pub fn security_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.security_configuration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the security configuration.</p>
+    pub fn set_security_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_configuration_id = input;
+        self
+    }
+    /// <p>The ID of the security configuration.</p>
+    pub fn get_security_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_configuration_id
+    }
     /// Consumes the builder and constructs a [`VirtualCluster`](crate::types::VirtualCluster).
     pub fn build(self) -> crate::types::VirtualCluster {
         crate::types::VirtualCluster {
@@ -183,6 +204,7 @@ impl VirtualClusterBuilder {
             container_provider: self.container_provider,
             created_at: self.created_at,
             tags: self.tags,
+            security_configuration_id: self.security_configuration_id,
         }
     }
 }

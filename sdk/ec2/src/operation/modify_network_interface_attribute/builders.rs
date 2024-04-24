@@ -242,4 +242,18 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
     pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
         self.inner.get_connection_tracking_specification()
     }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn associate_public_ip_address(mut self, input: bool) -> Self {
+        self.inner = self.inner.associate_public_ip_address(input);
+        self
+    }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_associate_public_ip_address(input);
+        self
+    }
+    /// <p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>
+    pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
+        self.inner.get_associate_public_ip_address()
+    }
 }

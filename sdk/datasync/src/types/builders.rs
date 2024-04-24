@@ -61,6 +61,8 @@ pub use crate::types::_report_result::ReportResultBuilder;
 
 pub use crate::types::_task_execution_result_detail::TaskExecutionResultDetailBuilder;
 
+pub use crate::types::_task_schedule_details::TaskScheduleDetailsBuilder;
+
 pub use crate::types::_resource_details::ResourceDetailsBuilder;
 
 pub use crate::types::_net_app_ontap_cluster::NetAppOntapClusterBuilder;

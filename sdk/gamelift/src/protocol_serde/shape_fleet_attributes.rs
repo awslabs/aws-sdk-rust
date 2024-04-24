@@ -175,6 +175,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ContainerGroupsAttributes" => {
+                            builder = builder.set_container_groups_attributes(
+                                crate::protocol_serde::shape_container_groups_attributes::de_container_groups_attributes(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
