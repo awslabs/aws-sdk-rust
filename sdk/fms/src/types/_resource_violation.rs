@@ -38,8 +38,6 @@ pub struct ResourceViolation {
     pub dns_duplicate_rule_group_violation: ::std::option::Option<crate::types::DnsDuplicateRuleGroupViolation>,
     /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.</p>
     pub dns_rule_group_limit_exceeded_violation: ::std::option::Option<crate::types::DnsRuleGroupLimitExceededViolation>,
-    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
-    pub possible_remediation_actions: ::std::option::Option<crate::types::PossibleRemediationActions>,
     /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
     pub firewall_subnet_is_out_of_scope_violation: ::std::option::Option<crate::types::FirewallSubnetIsOutOfScopeViolation>,
     /// <p>Contains details about the route endpoint that violates the policy scope.</p>
@@ -53,6 +51,10 @@ pub struct ResourceViolation {
         ::std::option::Option<crate::types::ThirdPartyFirewallMissingExpectedRouteTableViolation>,
     /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
     pub firewall_subnet_missing_vpc_endpoint_violation: ::std::option::Option<crate::types::FirewallSubnetMissingVpcEndpointViolation>,
+    /// <p>Violation detail for the entries in a network ACL resource.</p>
+    pub invalid_network_acl_entries_violation: ::std::option::Option<crate::types::InvalidNetworkAclEntriesViolation>,
+    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
+    pub possible_remediation_actions: ::std::option::Option<crate::types::PossibleRemediationActions>,
 }
 impl ResourceViolation {
     /// <p>Violation detail for security groups.</p>
@@ -131,10 +133,6 @@ impl ResourceViolation {
     pub fn dns_rule_group_limit_exceeded_violation(&self) -> ::std::option::Option<&crate::types::DnsRuleGroupLimitExceededViolation> {
         self.dns_rule_group_limit_exceeded_violation.as_ref()
     }
-    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
-    pub fn possible_remediation_actions(&self) -> ::std::option::Option<&crate::types::PossibleRemediationActions> {
-        self.possible_remediation_actions.as_ref()
-    }
     /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
     pub fn firewall_subnet_is_out_of_scope_violation(&self) -> ::std::option::Option<&crate::types::FirewallSubnetIsOutOfScopeViolation> {
         self.firewall_subnet_is_out_of_scope_violation.as_ref()
@@ -162,6 +160,14 @@ impl ResourceViolation {
     /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
     pub fn firewall_subnet_missing_vpc_endpoint_violation(&self) -> ::std::option::Option<&crate::types::FirewallSubnetMissingVpcEndpointViolation> {
         self.firewall_subnet_missing_vpc_endpoint_violation.as_ref()
+    }
+    /// <p>Violation detail for the entries in a network ACL resource.</p>
+    pub fn invalid_network_acl_entries_violation(&self) -> ::std::option::Option<&crate::types::InvalidNetworkAclEntriesViolation> {
+        self.invalid_network_acl_entries_violation.as_ref()
+    }
+    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
+    pub fn possible_remediation_actions(&self) -> ::std::option::Option<&crate::types::PossibleRemediationActions> {
+        self.possible_remediation_actions.as_ref()
     }
 }
 impl ResourceViolation {
@@ -196,7 +202,6 @@ pub struct ResourceViolationBuilder {
     pub(crate) dns_rule_group_priority_conflict_violation: ::std::option::Option<crate::types::DnsRuleGroupPriorityConflictViolation>,
     pub(crate) dns_duplicate_rule_group_violation: ::std::option::Option<crate::types::DnsDuplicateRuleGroupViolation>,
     pub(crate) dns_rule_group_limit_exceeded_violation: ::std::option::Option<crate::types::DnsRuleGroupLimitExceededViolation>,
-    pub(crate) possible_remediation_actions: ::std::option::Option<crate::types::PossibleRemediationActions>,
     pub(crate) firewall_subnet_is_out_of_scope_violation: ::std::option::Option<crate::types::FirewallSubnetIsOutOfScopeViolation>,
     pub(crate) route_has_out_of_scope_endpoint_violation: ::std::option::Option<crate::types::RouteHasOutOfScopeEndpointViolation>,
     pub(crate) third_party_firewall_missing_firewall_violation: ::std::option::Option<crate::types::ThirdPartyFirewallMissingFirewallViolation>,
@@ -204,6 +209,8 @@ pub struct ResourceViolationBuilder {
     pub(crate) third_party_firewall_missing_expected_route_table_violation:
         ::std::option::Option<crate::types::ThirdPartyFirewallMissingExpectedRouteTableViolation>,
     pub(crate) firewall_subnet_missing_vpc_endpoint_violation: ::std::option::Option<crate::types::FirewallSubnetMissingVpcEndpointViolation>,
+    pub(crate) invalid_network_acl_entries_violation: ::std::option::Option<crate::types::InvalidNetworkAclEntriesViolation>,
+    pub(crate) possible_remediation_actions: ::std::option::Option<crate::types::PossibleRemediationActions>,
 }
 impl ResourceViolationBuilder {
     /// <p>Violation detail for security groups.</p>
@@ -495,20 +502,6 @@ impl ResourceViolationBuilder {
     pub fn get_dns_rule_group_limit_exceeded_violation(&self) -> &::std::option::Option<crate::types::DnsRuleGroupLimitExceededViolation> {
         &self.dns_rule_group_limit_exceeded_violation
     }
-    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
-    pub fn possible_remediation_actions(mut self, input: crate::types::PossibleRemediationActions) -> Self {
-        self.possible_remediation_actions = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
-    pub fn set_possible_remediation_actions(mut self, input: ::std::option::Option<crate::types::PossibleRemediationActions>) -> Self {
-        self.possible_remediation_actions = input;
-        self
-    }
-    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
-    pub fn get_possible_remediation_actions(&self) -> &::std::option::Option<crate::types::PossibleRemediationActions> {
-        &self.possible_remediation_actions
-    }
     /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
     pub fn firewall_subnet_is_out_of_scope_violation(mut self, input: crate::types::FirewallSubnetIsOutOfScopeViolation) -> Self {
         self.firewall_subnet_is_out_of_scope_violation = ::std::option::Option::Some(input);
@@ -622,6 +615,37 @@ impl ResourceViolationBuilder {
     ) -> &::std::option::Option<crate::types::FirewallSubnetMissingVpcEndpointViolation> {
         &self.firewall_subnet_missing_vpc_endpoint_violation
     }
+    /// <p>Violation detail for the entries in a network ACL resource.</p>
+    pub fn invalid_network_acl_entries_violation(mut self, input: crate::types::InvalidNetworkAclEntriesViolation) -> Self {
+        self.invalid_network_acl_entries_violation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Violation detail for the entries in a network ACL resource.</p>
+    pub fn set_invalid_network_acl_entries_violation(
+        mut self,
+        input: ::std::option::Option<crate::types::InvalidNetworkAclEntriesViolation>,
+    ) -> Self {
+        self.invalid_network_acl_entries_violation = input;
+        self
+    }
+    /// <p>Violation detail for the entries in a network ACL resource.</p>
+    pub fn get_invalid_network_acl_entries_violation(&self) -> &::std::option::Option<crate::types::InvalidNetworkAclEntriesViolation> {
+        &self.invalid_network_acl_entries_violation
+    }
+    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
+    pub fn possible_remediation_actions(mut self, input: crate::types::PossibleRemediationActions) -> Self {
+        self.possible_remediation_actions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
+    pub fn set_possible_remediation_actions(mut self, input: ::std::option::Option<crate::types::PossibleRemediationActions>) -> Self {
+        self.possible_remediation_actions = input;
+        self
+    }
+    /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
+    pub fn get_possible_remediation_actions(&self) -> &::std::option::Option<crate::types::PossibleRemediationActions> {
+        &self.possible_remediation_actions
+    }
     /// Consumes the builder and constructs a [`ResourceViolation`](crate::types::ResourceViolation).
     pub fn build(self) -> crate::types::ResourceViolation {
         crate::types::ResourceViolation {
@@ -641,13 +665,14 @@ impl ResourceViolationBuilder {
             dns_rule_group_priority_conflict_violation: self.dns_rule_group_priority_conflict_violation,
             dns_duplicate_rule_group_violation: self.dns_duplicate_rule_group_violation,
             dns_rule_group_limit_exceeded_violation: self.dns_rule_group_limit_exceeded_violation,
-            possible_remediation_actions: self.possible_remediation_actions,
             firewall_subnet_is_out_of_scope_violation: self.firewall_subnet_is_out_of_scope_violation,
             route_has_out_of_scope_endpoint_violation: self.route_has_out_of_scope_endpoint_violation,
             third_party_firewall_missing_firewall_violation: self.third_party_firewall_missing_firewall_violation,
             third_party_firewall_missing_subnet_violation: self.third_party_firewall_missing_subnet_violation,
             third_party_firewall_missing_expected_route_table_violation: self.third_party_firewall_missing_expected_route_table_violation,
             firewall_subnet_missing_vpc_endpoint_violation: self.firewall_subnet_missing_vpc_endpoint_violation,
+            invalid_network_acl_entries_violation: self.invalid_network_acl_entries_violation,
+            possible_remediation_actions: self.possible_remediation_actions,
         }
     }
 }

@@ -234,3 +234,5 @@ mod update_map_run;
 mod update_state_machine;
 
 mod update_state_machine_alias;
+
+mod validate_state_machine_definition;

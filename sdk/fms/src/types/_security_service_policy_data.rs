@@ -47,7 +47,7 @@ pub struct SecurityServicePolicyData {
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
     /// <p>Firewall Manager automatically distributes tags from the primary group to the security groups created by this policy. To use security group tag distribution, you must also set <code>revertManualSecurityGroupChanges</code> to <code>true</code>, otherwise Firewall Manager won't be able to create the policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall Manager identifies and reports when the security groups created by this policy become non-compliant.</p>
-    /// <p>Firewall Manager won't distrubute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
+    /// <p>Firewall Manager won't distribute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
     /// <li>
     /// <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns</p>
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code></p></li>
@@ -112,7 +112,7 @@ pub struct SecurityServicePolicyData {
     /// <p><code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code></p></li>
     /// </ul>
     pub managed_service_data: ::std::option::Option<::std::string::String>,
-    /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
+    /// <p>Contains the settings to configure a network ACL policy, a Network Firewall firewall policy deployment model, or a third-party firewall policy.</p>
     pub policy_option: ::std::option::Option<crate::types::PolicyOption>,
 }
 impl SecurityServicePolicyData {
@@ -161,7 +161,7 @@ impl SecurityServicePolicyData {
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
     /// <p>Firewall Manager automatically distributes tags from the primary group to the security groups created by this policy. To use security group tag distribution, you must also set <code>revertManualSecurityGroupChanges</code> to <code>true</code>, otherwise Firewall Manager won't be able to create the policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall Manager identifies and reports when the security groups created by this policy become non-compliant.</p>
-    /// <p>Firewall Manager won't distrubute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
+    /// <p>Firewall Manager won't distribute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
     /// <li>
     /// <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns</p>
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code></p></li>
@@ -228,7 +228,7 @@ impl SecurityServicePolicyData {
     pub fn managed_service_data(&self) -> ::std::option::Option<&str> {
         self.managed_service_data.as_deref()
     }
-    /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
+    /// <p>Contains the settings to configure a network ACL policy, a Network Firewall firewall policy deployment model, or a third-party firewall policy.</p>
     pub fn policy_option(&self) -> ::std::option::Option<&crate::types::PolicyOption> {
         self.policy_option.as_ref()
     }
@@ -305,7 +305,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
     /// <p>Firewall Manager automatically distributes tags from the primary group to the security groups created by this policy. To use security group tag distribution, you must also set <code>revertManualSecurityGroupChanges</code> to <code>true</code>, otherwise Firewall Manager won't be able to create the policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall Manager identifies and reports when the security groups created by this policy become non-compliant.</p>
-    /// <p>Firewall Manager won't distrubute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
+    /// <p>Firewall Manager won't distribute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
     /// <li>
     /// <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns</p>
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code></p></li>
@@ -414,7 +414,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
     /// <p>Firewall Manager automatically distributes tags from the primary group to the security groups created by this policy. To use security group tag distribution, you must also set <code>revertManualSecurityGroupChanges</code> to <code>true</code>, otherwise Firewall Manager won't be able to create the policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall Manager identifies and reports when the security groups created by this policy become non-compliant.</p>
-    /// <p>Firewall Manager won't distrubute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
+    /// <p>Firewall Manager won't distribute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
     /// <li>
     /// <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns</p>
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code></p></li>
@@ -523,7 +523,7 @@ impl SecurityServicePolicyDataBuilder {
     /// <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution</p>
     /// <p><code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code></p>
     /// <p>Firewall Manager automatically distributes tags from the primary group to the security groups created by this policy. To use security group tag distribution, you must also set <code>revertManualSecurityGroupChanges</code> to <code>true</code>, otherwise Firewall Manager won't be able to create the policy. When you enable <code>revertManualSecurityGroupChanges</code>, Firewall Manager identifies and reports when the security groups created by this policy become non-compliant.</p>
-    /// <p>Firewall Manager won't distrubute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
+    /// <p>Firewall Manager won't distribute system tags added by Amazon Web Services services into the replica security groups. System tags begin with the <code>aws:</code> prefix.</p></li>
     /// <li>
     /// <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns</p>
     /// <p><code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code></p></li>
@@ -590,17 +590,17 @@ impl SecurityServicePolicyDataBuilder {
     pub fn get_managed_service_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_service_data
     }
-    /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
+    /// <p>Contains the settings to configure a network ACL policy, a Network Firewall firewall policy deployment model, or a third-party firewall policy.</p>
     pub fn policy_option(mut self, input: crate::types::PolicyOption) -> Self {
         self.policy_option = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
+    /// <p>Contains the settings to configure a network ACL policy, a Network Firewall firewall policy deployment model, or a third-party firewall policy.</p>
     pub fn set_policy_option(mut self, input: ::std::option::Option<crate::types::PolicyOption>) -> Self {
         self.policy_option = input;
         self
     }
-    /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
+    /// <p>Contains the settings to configure a network ACL policy, a Network Firewall firewall policy deployment model, or a third-party firewall policy.</p>
     pub fn get_policy_option(&self) -> &::std::option::Option<crate::types::PolicyOption> {
         &self.policy_option
     }

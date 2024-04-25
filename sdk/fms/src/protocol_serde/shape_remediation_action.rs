@@ -61,6 +61,28 @@ where
                                     crate::protocol_serde::shape_fms_policy_update_firewall_creation_config_action::de_fms_policy_update_firewall_creation_config_action(tokens)?
                                 );
                         }
+                        "CreateNetworkAclAction" => {
+                            builder = builder.set_create_network_acl_action(
+                                crate::protocol_serde::shape_create_network_acl_action::de_create_network_acl_action(tokens)?,
+                            );
+                        }
+                        "ReplaceNetworkAclAssociationAction" => {
+                            builder = builder.set_replace_network_acl_association_action(
+                                crate::protocol_serde::shape_replace_network_acl_association_action::de_replace_network_acl_association_action(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "CreateNetworkAclEntriesAction" => {
+                            builder = builder.set_create_network_acl_entries_action(
+                                crate::protocol_serde::shape_create_network_acl_entries_action::de_create_network_acl_entries_action(tokens)?,
+                            );
+                        }
+                        "DeleteNetworkAclEntriesAction" => {
+                            builder = builder.set_delete_network_acl_entries_action(
+                                crate::protocol_serde::shape_delete_network_acl_entries_action::de_delete_network_acl_entries_action(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

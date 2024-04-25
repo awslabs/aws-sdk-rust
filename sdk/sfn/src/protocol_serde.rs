@@ -95,6 +95,8 @@ pub(crate) mod shape_update_state_machine;
 
 pub(crate) mod shape_update_state_machine_alias;
 
+pub(crate) mod shape_validate_state_machine_definition;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -229,6 +231,8 @@ pub(crate) mod shape_update_state_machine_alias_input;
 
 pub(crate) mod shape_update_state_machine_input;
 
+pub(crate) mod shape_validate_state_machine_definition_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_activity_list;
@@ -267,6 +271,8 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_tracing_configuration;
 
+pub(crate) mod shape_validate_state_machine_definition_diagnostic_list;
+
 pub(crate) mod shape_activity_list_item;
 
 pub(crate) mod shape_execution_list_item;
@@ -288,6 +294,8 @@ pub(crate) mod shape_state_machine_alias_list_item;
 pub(crate) mod shape_state_machine_list_item;
 
 pub(crate) mod shape_state_machine_version_list_item;
+
+pub(crate) mod shape_validate_state_machine_definition_diagnostic;
 
 pub(crate) mod shape_activity_failed_event_details;
 

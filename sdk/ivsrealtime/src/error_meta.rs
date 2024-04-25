@@ -893,6 +893,7 @@ impl From<crate::operation::update_stage::UpdateStageError> for Error {
     fn from(err: crate::operation::update_stage::UpdateStageError) -> Self {
         match err {
             crate::operation::update_stage::UpdateStageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_stage::UpdateStageError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_stage::UpdateStageError::PendingVerification(inner) => Error::PendingVerification(inner),
             crate::operation::update_stage::UpdateStageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_stage::UpdateStageError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),

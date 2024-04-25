@@ -97,11 +97,6 @@ where
                                     )?,
                                 );
                             }
-                            "PossibleRemediationActions" => {
-                                builder = builder.set_possible_remediation_actions(
-                                    crate::protocol_serde::shape_possible_remediation_actions::de_possible_remediation_actions(tokens)?,
-                                );
-                            }
                             "FirewallSubnetIsOutOfScopeViolation" => {
                                 builder = builder.set_firewall_subnet_is_out_of_scope_violation(
                                     crate::protocol_serde::shape_firewall_subnet_is_out_of_scope_violation::de_firewall_subnet_is_out_of_scope_violation(tokens)?
@@ -130,6 +125,18 @@ where
                             "FirewallSubnetMissingVPCEndpointViolation" => {
                                 builder = builder.set_firewall_subnet_missing_vpc_endpoint_violation(
                                     crate::protocol_serde::shape_firewall_subnet_missing_vpc_endpoint_violation::de_firewall_subnet_missing_vpc_endpoint_violation(tokens)?
+                                );
+                            }
+                            "InvalidNetworkAclEntriesViolation" => {
+                                builder = builder.set_invalid_network_acl_entries_violation(
+                                    crate::protocol_serde::shape_invalid_network_acl_entries_violation::de_invalid_network_acl_entries_violation(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "PossibleRemediationActions" => {
+                                builder = builder.set_possible_remediation_actions(
+                                    crate::protocol_serde::shape_possible_remediation_actions::de_possible_remediation_actions(tokens)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -19,6 +19,18 @@ pub use crate::types::_security_service_policy_data::SecurityServicePolicyData;
 
 pub use crate::types::_policy_option::PolicyOption;
 
+pub use crate::types::_network_acl_common_policy::NetworkAclCommonPolicy;
+
+pub use crate::types::_network_acl_entry_set::NetworkAclEntrySet;
+
+pub use crate::types::_network_acl_entry::NetworkAclEntry;
+
+pub use crate::types::_network_acl_rule_action::NetworkAclRuleAction;
+
+pub use crate::types::_network_acl_port_range::NetworkAclPortRange;
+
+pub use crate::types::_network_acl_icmp_type_code::NetworkAclIcmpTypeCode;
+
 pub use crate::types::_third_party_firewall_policy::ThirdPartyFirewallPolicy;
 
 pub use crate::types::_firewall_deployment_model::FirewallDeploymentModel;
@@ -73,6 +85,50 @@ pub use crate::types::_violation_detail::ViolationDetail;
 
 pub use crate::types::_resource_violation::ResourceViolation;
 
+pub use crate::types::_possible_remediation_actions::PossibleRemediationActions;
+
+pub use crate::types::_possible_remediation_action::PossibleRemediationAction;
+
+pub use crate::types::_remediation_action_with_order::RemediationActionWithOrder;
+
+pub use crate::types::_remediation_action::RemediationAction;
+
+pub use crate::types::_delete_network_acl_entries_action::DeleteNetworkAclEntriesAction;
+
+pub use crate::types::_entry_description::EntryDescription;
+
+pub use crate::types::_entry_type::EntryType;
+
+pub use crate::types::_action_target::ActionTarget;
+
+pub use crate::types::_create_network_acl_entries_action::CreateNetworkAclEntriesAction;
+
+pub use crate::types::_replace_network_acl_association_action::ReplaceNetworkAclAssociationAction;
+
+pub use crate::types::_create_network_acl_action::CreateNetworkAclAction;
+
+pub use crate::types::_fms_policy_update_firewall_creation_config_action::FmsPolicyUpdateFirewallCreationConfigAction;
+
+pub use crate::types::_ec2_create_route_table_action::Ec2CreateRouteTableAction;
+
+pub use crate::types::_ec2_associate_route_table_action::Ec2AssociateRouteTableAction;
+
+pub use crate::types::_ec2_replace_route_table_association_action::Ec2ReplaceRouteTableAssociationAction;
+
+pub use crate::types::_ec2_copy_route_table_action::Ec2CopyRouteTableAction;
+
+pub use crate::types::_ec2_delete_route_action::Ec2DeleteRouteAction;
+
+pub use crate::types::_ec2_replace_route_action::Ec2ReplaceRouteAction;
+
+pub use crate::types::_ec2_create_route_action::Ec2CreateRouteAction;
+
+pub use crate::types::_invalid_network_acl_entries_violation::InvalidNetworkAclEntriesViolation;
+
+pub use crate::types::_entry_violation::EntryViolation;
+
+pub use crate::types::_entry_violation_reason::EntryViolationReason;
+
 pub use crate::types::_firewall_subnet_missing_vpc_endpoint_violation::FirewallSubnetMissingVpcEndpointViolation;
 
 pub use crate::types::_third_party_firewall_missing_expected_route_table_violation::ThirdPartyFirewallMissingExpectedRouteTableViolation;
@@ -90,32 +146,6 @@ pub use crate::types::_target_type::TargetType;
 pub use crate::types::_destination_type::DestinationType;
 
 pub use crate::types::_firewall_subnet_is_out_of_scope_violation::FirewallSubnetIsOutOfScopeViolation;
-
-pub use crate::types::_possible_remediation_actions::PossibleRemediationActions;
-
-pub use crate::types::_possible_remediation_action::PossibleRemediationAction;
-
-pub use crate::types::_remediation_action_with_order::RemediationActionWithOrder;
-
-pub use crate::types::_remediation_action::RemediationAction;
-
-pub use crate::types::_fms_policy_update_firewall_creation_config_action::FmsPolicyUpdateFirewallCreationConfigAction;
-
-pub use crate::types::_ec2_create_route_table_action::Ec2CreateRouteTableAction;
-
-pub use crate::types::_action_target::ActionTarget;
-
-pub use crate::types::_ec2_associate_route_table_action::Ec2AssociateRouteTableAction;
-
-pub use crate::types::_ec2_replace_route_table_association_action::Ec2ReplaceRouteTableAssociationAction;
-
-pub use crate::types::_ec2_copy_route_table_action::Ec2CopyRouteTableAction;
-
-pub use crate::types::_ec2_delete_route_action::Ec2DeleteRouteAction;
-
-pub use crate::types::_ec2_replace_route_action::Ec2ReplaceRouteAction;
-
-pub use crate::types::_ec2_create_route_action::Ec2CreateRouteAction;
 
 pub use crate::types::_dns_rule_group_limit_exceeded_violation::DnsRuleGroupLimitExceededViolation;
 
@@ -213,9 +243,15 @@ mod _aws_vpc_security_group_violation;
 
 mod _compliance_violator;
 
+mod _create_network_acl_action;
+
+mod _create_network_acl_entries_action;
+
 mod _customer_policy_scope_id_type;
 
 mod _customer_policy_status;
+
+mod _delete_network_acl_entries_action;
 
 mod _dependent_service_name;
 
@@ -243,6 +279,14 @@ mod _ec2_replace_route_action;
 
 mod _ec2_replace_route_table_association_action;
 
+mod _entry_description;
+
+mod _entry_type;
+
+mod _entry_violation;
+
+mod _entry_violation_reason;
+
 mod _evaluation_result;
 
 mod _expected_route;
@@ -259,7 +303,21 @@ mod _firewall_subnet_missing_vpc_endpoint_violation;
 
 mod _fms_policy_update_firewall_creation_config_action;
 
+mod _invalid_network_acl_entries_violation;
+
 mod _marketplace_subscription_onboarding_status;
+
+mod _network_acl_common_policy;
+
+mod _network_acl_entry;
+
+mod _network_acl_entry_set;
+
+mod _network_acl_icmp_type_code;
+
+mod _network_acl_port_range;
+
+mod _network_acl_rule_action;
 
 mod _network_firewall_black_hole_route_detected_violation;
 
@@ -324,6 +382,8 @@ mod _remediation_action;
 mod _remediation_action_type;
 
 mod _remediation_action_with_order;
+
+mod _replace_network_acl_association_action;
 
 mod _resource;
 

@@ -8,7 +8,7 @@ pub struct AdminAccountSummary {
     pub admin_account: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value that indicates if the administrator is the default administrator. If true, then this is the default administrator account. The default administrator can manage third-party firewalls and has full administrative scope. There is only one default administrator account per organization. For information about Firewall Manager default administrator accounts, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub default_admin: bool,
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
@@ -30,7 +30,7 @@ impl AdminAccountSummary {
     pub fn default_admin(&self) -> bool {
         self.default_admin
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
@@ -89,7 +89,7 @@ impl AdminAccountSummaryBuilder {
     pub fn get_default_admin(&self) -> &::std::option::Option<bool> {
         &self.default_admin
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
@@ -104,7 +104,7 @@ impl AdminAccountSummaryBuilder {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
@@ -119,7 +119,7 @@ impl AdminAccountSummaryBuilder {
         self.status = input;
         self
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>

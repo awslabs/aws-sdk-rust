@@ -14,6 +14,7 @@
 /// match securityservicetype {
 ///     SecurityServiceType::DnsFirewall => { /* ... */ },
 ///     SecurityServiceType::ImportNetworkFirewall => { /* ... */ },
+///     SecurityServiceType::NetworkAclCommon => { /* ... */ },
 ///     SecurityServiceType::NetworkFirewall => { /* ... */ },
 ///     SecurityServiceType::SecurityGroupsCommon => { /* ... */ },
 ///     SecurityServiceType::SecurityGroupsContentAudit => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum SecurityServiceType {
     #[allow(missing_docs)] // documentation missing in model
     ImportNetworkFirewall,
     #[allow(missing_docs)] // documentation missing in model
+    NetworkAclCommon,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkFirewall,
     #[allow(missing_docs)] // documentation missing in model
     SecurityGroupsCommon,
@@ -78,6 +81,7 @@ impl ::std::convert::From<&str> for SecurityServiceType {
         match s {
             "DNS_FIREWALL" => SecurityServiceType::DnsFirewall,
             "IMPORT_NETWORK_FIREWALL" => SecurityServiceType::ImportNetworkFirewall,
+            "NETWORK_ACL_COMMON" => SecurityServiceType::NetworkAclCommon,
             "NETWORK_FIREWALL" => SecurityServiceType::NetworkFirewall,
             "SECURITY_GROUPS_COMMON" => SecurityServiceType::SecurityGroupsCommon,
             "SECURITY_GROUPS_CONTENT_AUDIT" => SecurityServiceType::SecurityGroupsContentAudit,
@@ -103,6 +107,7 @@ impl SecurityServiceType {
         match self {
             SecurityServiceType::DnsFirewall => "DNS_FIREWALL",
             SecurityServiceType::ImportNetworkFirewall => "IMPORT_NETWORK_FIREWALL",
+            SecurityServiceType::NetworkAclCommon => "NETWORK_ACL_COMMON",
             SecurityServiceType::NetworkFirewall => "NETWORK_FIREWALL",
             SecurityServiceType::SecurityGroupsCommon => "SECURITY_GROUPS_COMMON",
             SecurityServiceType::SecurityGroupsContentAudit => "SECURITY_GROUPS_CONTENT_AUDIT",
@@ -119,6 +124,7 @@ impl SecurityServiceType {
         &[
             "DNS_FIREWALL",
             "IMPORT_NETWORK_FIREWALL",
+            "NETWORK_ACL_COMMON",
             "NETWORK_FIREWALL",
             "SECURITY_GROUPS_COMMON",
             "SECURITY_GROUPS_CONTENT_AUDIT",
@@ -152,6 +158,7 @@ impl ::std::fmt::Display for SecurityServiceType {
         match self {
             SecurityServiceType::DnsFirewall => write!(f, "DNS_FIREWALL"),
             SecurityServiceType::ImportNetworkFirewall => write!(f, "IMPORT_NETWORK_FIREWALL"),
+            SecurityServiceType::NetworkAclCommon => write!(f, "NETWORK_ACL_COMMON"),
             SecurityServiceType::NetworkFirewall => write!(f, "NETWORK_FIREWALL"),
             SecurityServiceType::SecurityGroupsCommon => write!(f, "SECURITY_GROUPS_COMMON"),
             SecurityServiceType::SecurityGroupsContentAudit => write!(f, "SECURITY_GROUPS_CONTENT_AUDIT"),

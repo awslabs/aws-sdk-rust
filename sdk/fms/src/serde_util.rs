@@ -183,11 +183,50 @@ pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::R
     builder
 }
 
+pub(crate) fn network_acl_common_policy_correct_errors(
+    mut builder: crate::types::builders::NetworkAclCommonPolicyBuilder,
+) -> crate::types::builders::NetworkAclCommonPolicyBuilder {
+    if builder.network_acl_entry_set.is_none() {
+        builder.network_acl_entry_set = {
+            let builder = crate::types::builders::NetworkAclEntrySetBuilder::default();
+            crate::serde_util::network_acl_entry_set_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn network_acl_entry_set_correct_errors(
+    mut builder: crate::types::builders::NetworkAclEntrySetBuilder,
+) -> crate::types::builders::NetworkAclEntrySetBuilder {
+    if builder.force_remediate_for_first_entries.is_none() {
+        builder.force_remediate_for_first_entries = Some(Default::default())
+    }
+    if builder.force_remediate_for_last_entries.is_none() {
+        builder.force_remediate_for_last_entries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn possible_remediation_action_correct_errors(
     mut builder: crate::types::builders::PossibleRemediationActionBuilder,
 ) -> crate::types::builders::PossibleRemediationActionBuilder {
     if builder.ordered_remediation_actions.is_none() {
         builder.ordered_remediation_actions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn network_acl_entry_correct_errors(
+    mut builder: crate::types::builders::NetworkAclEntryBuilder,
+) -> crate::types::builders::NetworkAclEntryBuilder {
+    if builder.protocol.is_none() {
+        builder.protocol = Some(Default::default())
+    }
+    if builder.rule_action.is_none() {
+        builder.rule_action = "no value was set".parse::<crate::types::NetworkAclRuleAction>().ok()
+    }
+    if builder.egress.is_none() {
+        builder.egress = Some(Default::default())
     }
     builder
 }

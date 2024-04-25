@@ -13,6 +13,16 @@ pub use crate::types::_security_service_policy_data::SecurityServicePolicyDataBu
 
 pub use crate::types::_policy_option::PolicyOptionBuilder;
 
+pub use crate::types::_network_acl_common_policy::NetworkAclCommonPolicyBuilder;
+
+pub use crate::types::_network_acl_entry_set::NetworkAclEntrySetBuilder;
+
+pub use crate::types::_network_acl_entry::NetworkAclEntryBuilder;
+
+pub use crate::types::_network_acl_port_range::NetworkAclPortRangeBuilder;
+
+pub use crate::types::_network_acl_icmp_type_code::NetworkAclIcmpTypeCodeBuilder;
+
 pub use crate::types::_third_party_firewall_policy::ThirdPartyFirewallPolicyBuilder;
 
 pub use crate::types::_network_firewall_policy::NetworkFirewallPolicyBuilder;
@@ -55,6 +65,46 @@ pub use crate::types::_violation_detail::ViolationDetailBuilder;
 
 pub use crate::types::_resource_violation::ResourceViolationBuilder;
 
+pub use crate::types::_possible_remediation_actions::PossibleRemediationActionsBuilder;
+
+pub use crate::types::_possible_remediation_action::PossibleRemediationActionBuilder;
+
+pub use crate::types::_remediation_action_with_order::RemediationActionWithOrderBuilder;
+
+pub use crate::types::_remediation_action::RemediationActionBuilder;
+
+pub use crate::types::_delete_network_acl_entries_action::DeleteNetworkAclEntriesActionBuilder;
+
+pub use crate::types::_entry_description::EntryDescriptionBuilder;
+
+pub use crate::types::_action_target::ActionTargetBuilder;
+
+pub use crate::types::_create_network_acl_entries_action::CreateNetworkAclEntriesActionBuilder;
+
+pub use crate::types::_replace_network_acl_association_action::ReplaceNetworkAclAssociationActionBuilder;
+
+pub use crate::types::_create_network_acl_action::CreateNetworkAclActionBuilder;
+
+pub use crate::types::_fms_policy_update_firewall_creation_config_action::FmsPolicyUpdateFirewallCreationConfigActionBuilder;
+
+pub use crate::types::_ec2_create_route_table_action::Ec2CreateRouteTableActionBuilder;
+
+pub use crate::types::_ec2_associate_route_table_action::Ec2AssociateRouteTableActionBuilder;
+
+pub use crate::types::_ec2_replace_route_table_association_action::Ec2ReplaceRouteTableAssociationActionBuilder;
+
+pub use crate::types::_ec2_copy_route_table_action::Ec2CopyRouteTableActionBuilder;
+
+pub use crate::types::_ec2_delete_route_action::Ec2DeleteRouteActionBuilder;
+
+pub use crate::types::_ec2_replace_route_action::Ec2ReplaceRouteActionBuilder;
+
+pub use crate::types::_ec2_create_route_action::Ec2CreateRouteActionBuilder;
+
+pub use crate::types::_invalid_network_acl_entries_violation::InvalidNetworkAclEntriesViolationBuilder;
+
+pub use crate::types::_entry_violation::EntryViolationBuilder;
+
 pub use crate::types::_firewall_subnet_missing_vpc_endpoint_violation::FirewallSubnetMissingVpcEndpointViolationBuilder;
 
 pub use crate::types::_third_party_firewall_missing_expected_route_table_violation::ThirdPartyFirewallMissingExpectedRouteTableViolationBuilder;
@@ -68,32 +118,6 @@ pub use crate::types::_route_has_out_of_scope_endpoint_violation::RouteHasOutOfS
 pub use crate::types::_route::RouteBuilder;
 
 pub use crate::types::_firewall_subnet_is_out_of_scope_violation::FirewallSubnetIsOutOfScopeViolationBuilder;
-
-pub use crate::types::_possible_remediation_actions::PossibleRemediationActionsBuilder;
-
-pub use crate::types::_possible_remediation_action::PossibleRemediationActionBuilder;
-
-pub use crate::types::_remediation_action_with_order::RemediationActionWithOrderBuilder;
-
-pub use crate::types::_remediation_action::RemediationActionBuilder;
-
-pub use crate::types::_fms_policy_update_firewall_creation_config_action::FmsPolicyUpdateFirewallCreationConfigActionBuilder;
-
-pub use crate::types::_ec2_create_route_table_action::Ec2CreateRouteTableActionBuilder;
-
-pub use crate::types::_action_target::ActionTargetBuilder;
-
-pub use crate::types::_ec2_associate_route_table_action::Ec2AssociateRouteTableActionBuilder;
-
-pub use crate::types::_ec2_replace_route_table_association_action::Ec2ReplaceRouteTableAssociationActionBuilder;
-
-pub use crate::types::_ec2_copy_route_table_action::Ec2CopyRouteTableActionBuilder;
-
-pub use crate::types::_ec2_delete_route_action::Ec2DeleteRouteActionBuilder;
-
-pub use crate::types::_ec2_replace_route_action::Ec2ReplaceRouteActionBuilder;
-
-pub use crate::types::_ec2_create_route_action::Ec2CreateRouteActionBuilder;
 
 pub use crate::types::_dns_rule_group_limit_exceeded_violation::DnsRuleGroupLimitExceededViolationBuilder;
 

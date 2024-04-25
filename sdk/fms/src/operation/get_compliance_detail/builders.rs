@@ -23,16 +23,7 @@ impl crate::operation::get_compliance_detail::builders::GetComplianceDetailInput
 /// Fluent builder constructing a request to `GetComplianceDetail`.
 ///
 /// <p>Returns detailed compliance information about the specified member account. Details include resources that are in and out of compliance with the specified policy.</p>
-/// <ul>
-/// <li>
-/// <p>Resources are considered noncompliant for WAF and Shield Advanced policies if the specified policy has not been applied to them.</p></li>
-/// <li>
-/// <p>Resources are considered noncompliant for security group policies if they are in scope of the policy, they violate one or more of the policy rules, and remediation is disabled or not possible.</p></li>
-/// <li>
-/// <p>Resources are considered noncompliant for Network Firewall policies if a firewall is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability Zone and subnet, if a subnet created by the Firewall Manager doesn't have the expected route table, and for modifications to a firewall policy that violate the Firewall Manager policy's rules.</p></li>
-/// <li>
-/// <p>Resources are considered noncompliant for DNS Firewall policies if a DNS Firewall rule group is missing from the rule group associations for the VPC.</p></li>
-/// </ul>
+/// <p>The reasons for resources being considered compliant depend on the Firewall Manager policy type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComplianceDetailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

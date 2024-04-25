@@ -258,6 +258,8 @@ pub enum RedriveExecutionError {
     ExecutionNotRedrivable(crate::types::error::ExecutionNotRedrivable),
     /// <p>The provided Amazon Resource Name (ARN) is not valid.</p>
     InvalidArn(crate::types::error::InvalidArn),
+    /// <p>The input does not satisfy the constraints specified by an Amazon Web Services service.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -295,6 +297,7 @@ impl RedriveExecutionError {
             Self::ExecutionLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ExecutionNotRedrivable(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArn(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -314,6 +317,10 @@ impl RedriveExecutionError {
     pub fn is_invalid_arn(&self) -> bool {
         matches!(self, Self::InvalidArn(_))
     }
+    /// Returns `true` if the error kind is `RedriveExecutionError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl ::std::error::Error for RedriveExecutionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -322,6 +329,7 @@ impl ::std::error::Error for RedriveExecutionError {
             Self::ExecutionLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::ExecutionNotRedrivable(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArn(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -333,6 +341,7 @@ impl ::std::fmt::Display for RedriveExecutionError {
             Self::ExecutionLimitExceeded(_inner) => _inner.fmt(f),
             Self::ExecutionNotRedrivable(_inner) => _inner.fmt(f),
             Self::InvalidArn(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -358,6 +367,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RedriveExecut
             Self::ExecutionLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ExecutionNotRedrivable(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArn(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

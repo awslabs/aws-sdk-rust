@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAdminScopeInput {
-    /// <p>The administator account that you want to get the details for.</p>
+    /// <p>The administrator account that you want to get the details for.</p>
     pub admin_account: ::std::option::Option<::std::string::String>,
 }
 impl GetAdminScopeInput {
-    /// <p>The administator account that you want to get the details for.</p>
+    /// <p>The administrator account that you want to get the details for.</p>
     pub fn admin_account(&self) -> ::std::option::Option<&str> {
         self.admin_account.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetAdminScopeInputBuilder {
     pub(crate) admin_account: ::std::option::Option<::std::string::String>,
 }
 impl GetAdminScopeInputBuilder {
-    /// <p>The administator account that you want to get the details for.</p>
+    /// <p>The administrator account that you want to get the details for.</p>
     /// This field is required.
     pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The administator account that you want to get the details for.</p>
+    /// <p>The administrator account that you want to get the details for.</p>
     pub fn set_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account = input;
         self
     }
-    /// <p>The administator account that you want to get the details for.</p>
+    /// <p>The administrator account that you want to get the details for.</p>
     pub fn get_admin_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_account
     }

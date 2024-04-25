@@ -119,6 +119,8 @@ impl GetViolationDetailsFluentBuilder {
     /// <li>
     /// <p>Security group content audit</p></li>
     /// <li>
+    /// <p>Network ACL</p></li>
+    /// <li>
     /// <p>Third-party firewall</p></li>
     /// </ul>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,6 +138,8 @@ impl GetViolationDetailsFluentBuilder {
     /// <li>
     /// <p>Security group content audit</p></li>
     /// <li>
+    /// <p>Network ACL</p></li>
+    /// <li>
     /// <p>Third-party firewall</p></li>
     /// </ul>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -152,6 +156,8 @@ impl GetViolationDetailsFluentBuilder {
     /// <p>Network Firewall</p></li>
     /// <li>
     /// <p>Security group content audit</p></li>
+    /// <li>
+    /// <p>Network ACL</p></li>
     /// <li>
     /// <p>Third-party firewall</p></li>
     /// </ul>

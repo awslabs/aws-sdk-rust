@@ -14,6 +14,8 @@ pub struct GetViolationDetailsInput {
     /// <li>
     /// <p>Security group content audit</p></li>
     /// <li>
+    /// <p>Network ACL</p></li>
+    /// <li>
     /// <p>Third-party firewall</p></li>
     /// </ul>
     pub policy_id: ::std::option::Option<::std::string::String>,
@@ -35,6 +37,8 @@ impl GetViolationDetailsInput {
     /// <p>Network Firewall</p></li>
     /// <li>
     /// <p>Security group content audit</p></li>
+    /// <li>
+    /// <p>Network ACL</p></li>
     /// <li>
     /// <p>Third-party firewall</p></li>
     /// </ul>
@@ -82,6 +86,8 @@ impl GetViolationDetailsInputBuilder {
     /// <li>
     /// <p>Security group content audit</p></li>
     /// <li>
+    /// <p>Network ACL</p></li>
+    /// <li>
     /// <p>Third-party firewall</p></li>
     /// </ul>
     /// This field is required.
@@ -100,6 +106,8 @@ impl GetViolationDetailsInputBuilder {
     /// <li>
     /// <p>Security group content audit</p></li>
     /// <li>
+    /// <p>Network ACL</p></li>
+    /// <li>
     /// <p>Third-party firewall</p></li>
     /// </ul>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -116,6 +124,8 @@ impl GetViolationDetailsInputBuilder {
     /// <p>Network Firewall</p></li>
     /// <li>
     /// <p>Security group content audit</p></li>
+    /// <li>
+    /// <p>Network ACL</p></li>
     /// <li>
     /// <p>Third-party firewall</p></li>
     /// </ul>

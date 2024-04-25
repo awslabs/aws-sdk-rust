@@ -5,7 +5,7 @@
 pub struct GetAdminScopeOutput {
     /// <p>Contains details about the administrative scope of the requested account.</p>
     pub admin_scope: ::std::option::Option<crate::types::AdminScope>,
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
@@ -24,7 +24,7 @@ impl GetAdminScopeOutput {
     pub fn admin_scope(&self) -> ::std::option::Option<&crate::types::AdminScope> {
         self.admin_scope.as_ref()
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
@@ -74,7 +74,7 @@ impl GetAdminScopeOutputBuilder {
     pub fn get_admin_scope(&self) -> &::std::option::Option<crate::types::AdminScope> {
         &self.admin_scope
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
@@ -89,7 +89,7 @@ impl GetAdminScopeOutputBuilder {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>
@@ -104,7 +104,7 @@ impl GetAdminScopeOutputBuilder {
         self.status = input;
         self
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administrator.</p>
     /// <ul>
     /// <li>
     /// <p><code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p></li>

@@ -22,6 +22,14 @@ pub struct RemediationAction {
     pub ec2_create_route_table_action: ::std::option::Option<crate::types::Ec2CreateRouteTableAction>,
     /// <p>The remedial action to take when updating a firewall configuration.</p>
     pub fms_policy_update_firewall_creation_config_action: ::std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>,
+    /// <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+    pub create_network_acl_action: ::std::option::Option<crate::types::CreateNetworkAclAction>,
+    /// <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.</p>
+    pub replace_network_acl_association_action: ::std::option::Option<crate::types::ReplaceNetworkAclAssociationAction>,
+    /// <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub create_network_acl_entries_action: ::std::option::Option<crate::types::CreateNetworkAclEntriesAction>,
+    /// <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub delete_network_acl_entries_action: ::std::option::Option<crate::types::DeleteNetworkAclEntriesAction>,
 }
 impl RemediationAction {
     /// <p>A description of a remediation action.</p>
@@ -62,6 +70,22 @@ impl RemediationAction {
     ) -> ::std::option::Option<&crate::types::FmsPolicyUpdateFirewallCreationConfigAction> {
         self.fms_policy_update_firewall_creation_config_action.as_ref()
     }
+    /// <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+    pub fn create_network_acl_action(&self) -> ::std::option::Option<&crate::types::CreateNetworkAclAction> {
+        self.create_network_acl_action.as_ref()
+    }
+    /// <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.</p>
+    pub fn replace_network_acl_association_action(&self) -> ::std::option::Option<&crate::types::ReplaceNetworkAclAssociationAction> {
+        self.replace_network_acl_association_action.as_ref()
+    }
+    /// <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub fn create_network_acl_entries_action(&self) -> ::std::option::Option<&crate::types::CreateNetworkAclEntriesAction> {
+        self.create_network_acl_entries_action.as_ref()
+    }
+    /// <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub fn delete_network_acl_entries_action(&self) -> ::std::option::Option<&crate::types::DeleteNetworkAclEntriesAction> {
+        self.delete_network_acl_entries_action.as_ref()
+    }
 }
 impl RemediationAction {
     /// Creates a new builder-style object to manufacture [`RemediationAction`](crate::types::RemediationAction).
@@ -83,6 +107,10 @@ pub struct RemediationActionBuilder {
     pub(crate) ec2_associate_route_table_action: ::std::option::Option<crate::types::Ec2AssociateRouteTableAction>,
     pub(crate) ec2_create_route_table_action: ::std::option::Option<crate::types::Ec2CreateRouteTableAction>,
     pub(crate) fms_policy_update_firewall_creation_config_action: ::std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>,
+    pub(crate) create_network_acl_action: ::std::option::Option<crate::types::CreateNetworkAclAction>,
+    pub(crate) replace_network_acl_association_action: ::std::option::Option<crate::types::ReplaceNetworkAclAssociationAction>,
+    pub(crate) create_network_acl_entries_action: ::std::option::Option<crate::types::CreateNetworkAclEntriesAction>,
+    pub(crate) delete_network_acl_entries_action: ::std::option::Option<crate::types::DeleteNetworkAclEntriesAction>,
 }
 impl RemediationActionBuilder {
     /// <p>A description of a remediation action.</p>
@@ -219,6 +247,65 @@ impl RemediationActionBuilder {
     ) -> &::std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction> {
         &self.fms_policy_update_firewall_creation_config_action
     }
+    /// <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+    pub fn create_network_acl_action(mut self, input: crate::types::CreateNetworkAclAction) -> Self {
+        self.create_network_acl_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+    pub fn set_create_network_acl_action(mut self, input: ::std::option::Option<crate::types::CreateNetworkAclAction>) -> Self {
+        self.create_network_acl_action = input;
+        self
+    }
+    /// <p>Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.</p>
+    pub fn get_create_network_acl_action(&self) -> &::std::option::Option<crate::types::CreateNetworkAclAction> {
+        &self.create_network_acl_action
+    }
+    /// <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.</p>
+    pub fn replace_network_acl_association_action(mut self, input: crate::types::ReplaceNetworkAclAssociationAction) -> Self {
+        self.replace_network_acl_association_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.</p>
+    pub fn set_replace_network_acl_association_action(
+        mut self,
+        input: ::std::option::Option<crate::types::ReplaceNetworkAclAssociationAction>,
+    ) -> Self {
+        self.replace_network_acl_association_action = input;
+        self
+    }
+    /// <p>Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.</p>
+    pub fn get_replace_network_acl_association_action(&self) -> &::std::option::Option<crate::types::ReplaceNetworkAclAssociationAction> {
+        &self.replace_network_acl_association_action
+    }
+    /// <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub fn create_network_acl_entries_action(mut self, input: crate::types::CreateNetworkAclEntriesAction) -> Self {
+        self.create_network_acl_entries_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub fn set_create_network_acl_entries_action(mut self, input: ::std::option::Option<crate::types::CreateNetworkAclEntriesAction>) -> Self {
+        self.create_network_acl_entries_action = input;
+        self
+    }
+    /// <p>Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub fn get_create_network_acl_entries_action(&self) -> &::std::option::Option<crate::types::CreateNetworkAclEntriesAction> {
+        &self.create_network_acl_entries_action
+    }
+    /// <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub fn delete_network_acl_entries_action(mut self, input: crate::types::DeleteNetworkAclEntriesAction) -> Self {
+        self.delete_network_acl_entries_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub fn set_delete_network_acl_entries_action(mut self, input: ::std::option::Option<crate::types::DeleteNetworkAclEntriesAction>) -> Self {
+        self.delete_network_acl_entries_action = input;
+        self
+    }
+    /// <p>Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.</p>
+    pub fn get_delete_network_acl_entries_action(&self) -> &::std::option::Option<crate::types::DeleteNetworkAclEntriesAction> {
+        &self.delete_network_acl_entries_action
+    }
     /// Consumes the builder and constructs a [`RemediationAction`](crate::types::RemediationAction).
     pub fn build(self) -> crate::types::RemediationAction {
         crate::types::RemediationAction {
@@ -231,6 +318,10 @@ impl RemediationActionBuilder {
             ec2_associate_route_table_action: self.ec2_associate_route_table_action,
             ec2_create_route_table_action: self.ec2_create_route_table_action,
             fms_policy_update_firewall_creation_config_action: self.fms_policy_update_firewall_creation_config_action,
+            create_network_acl_action: self.create_network_acl_action,
+            replace_network_acl_association_action: self.replace_network_acl_association_action,
+            create_network_acl_entries_action: self.create_network_acl_entries_action,
+            delete_network_acl_entries_action: self.delete_network_acl_entries_action,
         }
     }
 }

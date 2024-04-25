@@ -20,13 +20,15 @@ pub struct Policy {
     /// <li>
     /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
     /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
     /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
+    /// <li>
+    /// <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p></li>
+    /// <li>
+    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
     /// <li>
     /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
     /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
     /// </ul>
     pub resource_type: ::std::string::String,
     /// <p>An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a single resource type, use <code>ResourceType</code>.</p>
@@ -106,13 +108,15 @@ impl Policy {
     /// <li>
     /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
     /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
     /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
+    /// <li>
+    /// <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p></li>
+    /// <li>
+    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
     /// <li>
     /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
     /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
     /// </ul>
     pub fn resource_type(&self) -> &str {
         use std::ops::Deref;
@@ -293,13 +297,15 @@ impl PolicyBuilder {
     /// <li>
     /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
     /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
     /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
+    /// <li>
+    /// <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p></li>
+    /// <li>
+    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
     /// <li>
     /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
     /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -314,13 +320,15 @@ impl PolicyBuilder {
     /// <li>
     /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
     /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
     /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
+    /// <li>
+    /// <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p></li>
+    /// <li>
+    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
     /// <li>
     /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
     /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
@@ -334,13 +342,15 @@ impl PolicyBuilder {
     /// <li>
     /// <p>WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
     /// <li>
-    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
-    /// <li>
     /// <p>Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.</p></li>
+    /// <li>
+    /// <p>Network ACL - <code>AWS::EC2::Subnet</code>.</p></li>
+    /// <li>
+    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
     /// <li>
     /// <p>Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.</p></li>
     /// <li>
-    /// <p>Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.</p></li>
+    /// <p>DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.</p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type

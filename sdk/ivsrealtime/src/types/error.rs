@@ -7,11 +7,11 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_pending_verification::PendingVerification;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_internal_server_exception::InternalServerException;
-
-pub use crate::types::error::_conflict_exception::ConflictException;
 
 mod _access_denied_exception;
 

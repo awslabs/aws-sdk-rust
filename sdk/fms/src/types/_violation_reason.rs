@@ -20,6 +20,7 @@
 ///     ViolationReason::FmsCreatedSecurityGroupEdited => { /* ... */ },
 ///     ViolationReason::InternetGatewayMissingExpectedRoute => { /* ... */ },
 ///     ViolationReason::InternetTrafficNotInspected => { /* ... */ },
+///     ViolationReason::InvalidNetworkAclEntry => { /* ... */ },
 ///     ViolationReason::InvalidRouteConfiguration => { /* ... */ },
 ///     ViolationReason::MissingExpectedRouteTable => { /* ... */ },
 ///     ViolationReason::MissingFirewall => { /* ... */ },
@@ -84,6 +85,8 @@ pub enum ViolationReason {
     #[allow(missing_docs)] // documentation missing in model
     InternetTrafficNotInspected,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidNetworkAclEntry,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidRouteConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     MissingExpectedRouteTable,
@@ -138,6 +141,7 @@ impl ::std::convert::From<&str> for ViolationReason {
             "FMS_CREATED_SECURITY_GROUP_EDITED" => ViolationReason::FmsCreatedSecurityGroupEdited,
             "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE" => ViolationReason::InternetGatewayMissingExpectedRoute,
             "INTERNET_TRAFFIC_NOT_INSPECTED" => ViolationReason::InternetTrafficNotInspected,
+            "INVALID_NETWORK_ACL_ENTRY" => ViolationReason::InvalidNetworkAclEntry,
             "INVALID_ROUTE_CONFIGURATION" => ViolationReason::InvalidRouteConfiguration,
             "MISSING_EXPECTED_ROUTE_TABLE" => ViolationReason::MissingExpectedRouteTable,
             "MISSING_FIREWALL" => ViolationReason::MissingFirewall,
@@ -181,6 +185,7 @@ impl ViolationReason {
             ViolationReason::FmsCreatedSecurityGroupEdited => "FMS_CREATED_SECURITY_GROUP_EDITED",
             ViolationReason::InternetGatewayMissingExpectedRoute => "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE",
             ViolationReason::InternetTrafficNotInspected => "INTERNET_TRAFFIC_NOT_INSPECTED",
+            ViolationReason::InvalidNetworkAclEntry => "INVALID_NETWORK_ACL_ENTRY",
             ViolationReason::InvalidRouteConfiguration => "INVALID_ROUTE_CONFIGURATION",
             ViolationReason::MissingExpectedRouteTable => "MISSING_EXPECTED_ROUTE_TABLE",
             ViolationReason::MissingFirewall => "MISSING_FIREWALL",
@@ -215,6 +220,7 @@ impl ViolationReason {
             "FMS_CREATED_SECURITY_GROUP_EDITED",
             "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE",
             "INTERNET_TRAFFIC_NOT_INSPECTED",
+            "INVALID_NETWORK_ACL_ENTRY",
             "INVALID_ROUTE_CONFIGURATION",
             "MISSING_EXPECTED_ROUTE_TABLE",
             "MISSING_FIREWALL",
@@ -266,6 +272,7 @@ impl ::std::fmt::Display for ViolationReason {
             ViolationReason::FmsCreatedSecurityGroupEdited => write!(f, "FMS_CREATED_SECURITY_GROUP_EDITED"),
             ViolationReason::InternetGatewayMissingExpectedRoute => write!(f, "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE"),
             ViolationReason::InternetTrafficNotInspected => write!(f, "INTERNET_TRAFFIC_NOT_INSPECTED"),
+            ViolationReason::InvalidNetworkAclEntry => write!(f, "INVALID_NETWORK_ACL_ENTRY"),
             ViolationReason::InvalidRouteConfiguration => write!(f, "INVALID_ROUTE_CONFIGURATION"),
             ViolationReason::MissingExpectedRouteTable => write!(f, "MISSING_EXPECTED_ROUTE_TABLE"),
             ViolationReason::MissingFirewall => write!(f, "MISSING_FIREWALL"),

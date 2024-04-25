@@ -337,6 +337,10 @@ pub(crate) mod shape_firewall_subnet_is_out_of_scope_violation;
 
 pub(crate) mod shape_firewall_subnet_missing_vpc_endpoint_violation;
 
+pub(crate) mod shape_invalid_network_acl_entries_violation;
+
+pub(crate) mod shape_network_acl_common_policy;
+
 pub(crate) mod shape_network_firewall_black_hole_route_detected_violation;
 
 pub(crate) mod shape_network_firewall_internet_traffic_not_inspected_violation;
@@ -375,7 +379,11 @@ pub(crate) mod shape_aws_ec2_network_interface_violations;
 
 pub(crate) mod shape_dns_rule_group_priorities;
 
+pub(crate) mod shape_entry_violations;
+
 pub(crate) mod shape_expected_routes;
+
+pub(crate) mod shape_network_acl_entry_set;
 
 pub(crate) mod shape_network_firewall_policy_description;
 
@@ -391,7 +399,13 @@ pub(crate) mod shape_routes;
 
 pub(crate) mod shape_security_group_remediation_actions;
 
+pub(crate) mod shape_entry_violation;
+
 pub(crate) mod shape_expected_route;
+
+pub(crate) mod shape_network_acl_entries;
+
+pub(crate) mod shape_network_acl_entry;
 
 pub(crate) mod shape_network_firewall_action_list;
 
@@ -407,7 +421,17 @@ pub(crate) mod shape_stateful_rule_group_list;
 
 pub(crate) mod shape_stateless_rule_group_list;
 
+pub(crate) mod shape_entries_with_conflicts;
+
+pub(crate) mod shape_entry_description;
+
+pub(crate) mod shape_entry_violation_reasons;
+
 pub(crate) mod shape_length_bounded_string_list;
+
+pub(crate) mod shape_network_acl_icmp_type_code;
+
+pub(crate) mod shape_network_acl_port_range;
 
 pub(crate) mod shape_ordered_remediation_actions;
 
@@ -425,6 +449,12 @@ pub(crate) mod shape_remediation_action_with_order;
 
 pub(crate) mod shape_remediation_action;
 
+pub(crate) mod shape_create_network_acl_action;
+
+pub(crate) mod shape_create_network_acl_entries_action;
+
+pub(crate) mod shape_delete_network_acl_entries_action;
+
 pub(crate) mod shape_ec2_associate_route_table_action;
 
 pub(crate) mod shape_ec2_copy_route_table_action;
@@ -441,4 +471,8 @@ pub(crate) mod shape_ec2_replace_route_table_association_action;
 
 pub(crate) mod shape_fms_policy_update_firewall_creation_config_action;
 
+pub(crate) mod shape_replace_network_acl_association_action;
+
 pub(crate) mod shape_action_target;
+
+pub(crate) mod shape_entries_description;

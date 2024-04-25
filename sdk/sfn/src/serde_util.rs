@@ -293,6 +293,18 @@ pub(crate) fn update_state_machine_alias_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn validate_state_machine_definition_output_output_correct_errors(
+    mut builder: crate::operation::validate_state_machine_definition::builders::ValidateStateMachineDefinitionOutputBuilder,
+) -> crate::operation::validate_state_machine_definition::builders::ValidateStateMachineDefinitionOutputBuilder {
+    if builder.result.is_none() {
+        builder.result = "no value was set".parse::<crate::types::ValidateStateMachineDefinitionResultCode>().ok()
+    }
+    if builder.diagnostics.is_none() {
+        builder.diagnostics = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn map_run_item_counts_correct_errors(
     mut builder: crate::types::builders::MapRunItemCountsBuilder,
 ) -> crate::types::builders::MapRunItemCountsBuilder {
@@ -470,6 +482,21 @@ pub(crate) fn state_machine_version_list_item_correct_errors(
     }
     if builder.creation_date.is_none() {
         builder.creation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn validate_state_machine_definition_diagnostic_correct_errors(
+    mut builder: crate::types::builders::ValidateStateMachineDefinitionDiagnosticBuilder,
+) -> crate::types::builders::ValidateStateMachineDefinitionDiagnosticBuilder {
+    if builder.severity.is_none() {
+        builder.severity = "no value was set".parse::<crate::types::ValidateStateMachineDefinitionSeverity>().ok()
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

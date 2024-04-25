@@ -177,6 +177,7 @@ impl UpdateGraphqlApiInputBuilder {
         &self.log_config
     }
     /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self

@@ -24,6 +24,11 @@ where
                                 crate::protocol_serde::shape_third_party_firewall_policy::de_third_party_firewall_policy(tokens)?,
                             );
                         }
+                        "NetworkAclCommonPolicy" => {
+                            builder = builder.set_network_acl_common_policy(
+                                crate::protocol_serde::shape_network_acl_common_policy::de_network_acl_common_policy(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -57,6 +62,12 @@ pub fn ser_policy_option(
         let mut object_4 = object.key("ThirdPartyFirewallPolicy").start_object();
         crate::protocol_serde::shape_third_party_firewall_policy::ser_third_party_firewall_policy(&mut object_4, var_3)?;
         object_4.finish();
+    }
+    if let Some(var_5) = &input.network_acl_common_policy {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("NetworkAclCommonPolicy").start_object();
+        crate::protocol_serde::shape_network_acl_common_policy::ser_network_acl_common_policy(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

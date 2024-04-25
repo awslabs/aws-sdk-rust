@@ -28,9 +28,13 @@ impl crate::operation::put_policy::builders::PutPolicyInputBuilder {
 /// <p>Firewall Manager provides the following types of policies:</p>
 /// <ul>
 /// <li>
+/// <p><b>WAF policy</b> - This policy applies WAF web ACL protections to specified accounts and resources.</p></li>
+/// <li>
 /// <p><b>Shield Advanced policy</b> - This policy applies Shield Advanced protection to specified accounts and resources.</p></li>
 /// <li>
 /// <p><b>Security Groups policy</b> - This type of policy gives you control over security groups that are in use throughout your organization in Organizations and lets you enforce a baseline set of rules across your organization.</p></li>
+/// <li>
+/// <p><b>Network ACL policy</b> - This type of policy gives you control over the network ACLs that are in use throughout your organization in Organizations and lets you enforce a baseline set of first and last network ACL rules across your organization.</p></li>
 /// <li>
 /// <p><b>Network Firewall policy</b> - This policy applies Network Firewall protection to your organization's VPCs.</p></li>
 /// <li>

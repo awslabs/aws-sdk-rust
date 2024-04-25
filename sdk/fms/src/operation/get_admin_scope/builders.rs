@@ -22,7 +22,7 @@ impl crate::operation::get_admin_scope::builders::GetAdminScopeInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAdminScope`.
 ///
-/// <p>Returns information about the specified account's administrative scope. The admistrative scope defines the resources that an Firewall Manager administrator can manage.</p>
+/// <p>Returns information about the specified account's administrative scope. The administrative scope defines the resources that an Firewall Manager administrator can manage.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAdminScopeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetAdminScopeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The administator account that you want to get the details for.</p>
+    /// <p>The administrator account that you want to get the details for.</p>
     pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_account(input.into());
         self
     }
-    /// <p>The administator account that you want to get the details for.</p>
+    /// <p>The administrator account that you want to get the details for.</p>
     pub fn set_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_account(input);
         self
     }
-    /// <p>The administator account that you want to get the details for.</p>
+    /// <p>The administrator account that you want to get the details for.</p>
     pub fn get_admin_account(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_account()
     }

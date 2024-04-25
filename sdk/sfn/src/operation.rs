@@ -108,3 +108,6 @@ pub mod update_state_machine;
 
 /// Types for the `UpdateStateMachineAlias` operation.
 pub mod update_state_machine_alias;
+
+/// Types for the `ValidateStateMachineDefinition` operation.
+pub mod validate_state_machine_definition;
