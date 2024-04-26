@@ -131,7 +131,7 @@ pub fn de_upgrade_target(
                 builder = builder.set_supports_babelfish(var_9);
             }
             ,
-            s if s.matches("SupportsLocalWriteForwarding") /* SupportsLocalWriteForwarding com.amazonaws.rds#UpgradeTarget$SupportsLocalWriteForwarding */ =>  {
+            s if s.matches("SupportsLimitlessDatabase") /* SupportsLimitlessDatabase com.amazonaws.rds#UpgradeTarget$SupportsLimitlessDatabase */ =>  {
                 let var_10 =
                     Some(
                          {
@@ -143,10 +143,10 @@ pub fn de_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_supports_local_write_forwarding(var_10);
+                builder = builder.set_supports_limitless_database(var_10);
             }
             ,
-            s if s.matches("SupportsIntegrations") /* SupportsIntegrations com.amazonaws.rds#UpgradeTarget$SupportsIntegrations */ =>  {
+            s if s.matches("SupportsLocalWriteForwarding") /* SupportsLocalWriteForwarding com.amazonaws.rds#UpgradeTarget$SupportsLocalWriteForwarding */ =>  {
                 let var_11 =
                     Some(
                          {
@@ -158,7 +158,22 @@ pub fn de_upgrade_target(
                         ?
                     )
                 ;
-                builder = builder.set_supports_integrations(var_11);
+                builder = builder.set_supports_local_write_forwarding(var_11);
+            }
+            ,
+            s if s.matches("SupportsIntegrations") /* SupportsIntegrations com.amazonaws.rds#UpgradeTarget$SupportsIntegrations */ =>  {
+                let var_12 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_integrations(var_12);
             }
             ,
             _ => {}

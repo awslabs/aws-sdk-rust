@@ -6,11 +6,17 @@
 pub struct AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
     pub enable_answer_machine_detection: bool,
+    /// Enable or disable await answer machine prompt
+    pub await_answer_machine_prompt: ::std::option::Option<bool>,
 }
 impl AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
     pub fn enable_answer_machine_detection(&self) -> bool {
         self.enable_answer_machine_detection
+    }
+    /// Enable or disable await answer machine prompt
+    pub fn await_answer_machine_prompt(&self) -> ::std::option::Option<bool> {
+        self.await_answer_machine_prompt
     }
 }
 impl AnswerMachineDetectionConfig {
@@ -25,6 +31,7 @@ impl AnswerMachineDetectionConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfigBuilder {
     pub(crate) enable_answer_machine_detection: ::std::option::Option<bool>,
+    pub(crate) await_answer_machine_prompt: ::std::option::Option<bool>,
 }
 impl AnswerMachineDetectionConfigBuilder {
     /// Enable or disable answering machine detection
@@ -42,6 +49,20 @@ impl AnswerMachineDetectionConfigBuilder {
     pub fn get_enable_answer_machine_detection(&self) -> &::std::option::Option<bool> {
         &self.enable_answer_machine_detection
     }
+    /// Enable or disable await answer machine prompt
+    pub fn await_answer_machine_prompt(mut self, input: bool) -> Self {
+        self.await_answer_machine_prompt = ::std::option::Option::Some(input);
+        self
+    }
+    /// Enable or disable await answer machine prompt
+    pub fn set_await_answer_machine_prompt(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.await_answer_machine_prompt = input;
+        self
+    }
+    /// Enable or disable await answer machine prompt
+    pub fn get_await_answer_machine_prompt(&self) -> &::std::option::Option<bool> {
+        &self.await_answer_machine_prompt
+    }
     /// Consumes the builder and constructs a [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`enable_answer_machine_detection`](crate::types::builders::AnswerMachineDetectionConfigBuilder::enable_answer_machine_detection)
@@ -53,6 +74,7 @@ impl AnswerMachineDetectionConfigBuilder {
                     "enable_answer_machine_detection was not specified but it is required when building AnswerMachineDetectionConfig",
                 )
             })?,
+            await_answer_machine_prompt: self.await_answer_machine_prompt,
         })
     }
 }

@@ -22,6 +22,8 @@ pub struct PipelineExecutionSummary {
     /// <p>Failed: The pipeline execution was not completed successfully.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
+    /// <p>Status summary for the pipeline.</p>
+    pub status_summary: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
@@ -34,6 +36,10 @@ pub struct PipelineExecutionSummary {
     pub stop_trigger: ::std::option::Option<crate::types::StopExecutionTrigger>,
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
     pub execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
+    /// <p>Type of the pipeline execution.</p>
+    pub execution_type: ::std::option::Option<crate::types::ExecutionType>,
+    /// <p>The metadata for the stage execution to be rolled back.</p>
+    pub rollback_metadata: ::std::option::Option<crate::types::PipelineRollbackMetadata>,
 }
 impl PipelineExecutionSummary {
     /// <p>The ID of the pipeline execution.</p>
@@ -57,6 +63,10 @@ impl PipelineExecutionSummary {
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStatus> {
         self.status.as_ref()
+    }
+    /// <p>Status summary for the pipeline.</p>
+    pub fn status_summary(&self) -> ::std::option::Option<&str> {
+        self.status_summary.as_deref()
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -84,6 +94,14 @@ impl PipelineExecutionSummary {
     pub fn execution_mode(&self) -> ::std::option::Option<&crate::types::ExecutionMode> {
         self.execution_mode.as_ref()
     }
+    /// <p>Type of the pipeline execution.</p>
+    pub fn execution_type(&self) -> ::std::option::Option<&crate::types::ExecutionType> {
+        self.execution_type.as_ref()
+    }
+    /// <p>The metadata for the stage execution to be rolled back.</p>
+    pub fn rollback_metadata(&self) -> ::std::option::Option<&crate::types::PipelineRollbackMetadata> {
+        self.rollback_metadata.as_ref()
+    }
 }
 impl PipelineExecutionSummary {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).
@@ -98,12 +116,15 @@ impl PipelineExecutionSummary {
 pub struct PipelineExecutionSummaryBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
+    pub(crate) status_summary: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) source_revisions: ::std::option::Option<::std::vec::Vec<crate::types::SourceRevision>>,
     pub(crate) trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     pub(crate) stop_trigger: ::std::option::Option<crate::types::StopExecutionTrigger>,
     pub(crate) execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
+    pub(crate) execution_type: ::std::option::Option<crate::types::ExecutionType>,
+    pub(crate) rollback_metadata: ::std::option::Option<crate::types::PipelineRollbackMetadata>,
 }
 impl PipelineExecutionSummaryBuilder {
     /// <p>The ID of the pipeline execution.</p>
@@ -175,6 +196,20 @@ impl PipelineExecutionSummaryBuilder {
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineExecutionStatus> {
         &self.status
+    }
+    /// <p>Status summary for the pipeline.</p>
+    pub fn status_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_summary = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Status summary for the pipeline.</p>
+    pub fn set_status_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_summary = input;
+        self
+    }
+    /// <p>Status summary for the pipeline.</p>
+    pub fn get_status_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_summary
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -266,17 +301,48 @@ impl PipelineExecutionSummaryBuilder {
     pub fn get_execution_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
         &self.execution_mode
     }
+    /// <p>Type of the pipeline execution.</p>
+    pub fn execution_type(mut self, input: crate::types::ExecutionType) -> Self {
+        self.execution_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Type of the pipeline execution.</p>
+    pub fn set_execution_type(mut self, input: ::std::option::Option<crate::types::ExecutionType>) -> Self {
+        self.execution_type = input;
+        self
+    }
+    /// <p>Type of the pipeline execution.</p>
+    pub fn get_execution_type(&self) -> &::std::option::Option<crate::types::ExecutionType> {
+        &self.execution_type
+    }
+    /// <p>The metadata for the stage execution to be rolled back.</p>
+    pub fn rollback_metadata(mut self, input: crate::types::PipelineRollbackMetadata) -> Self {
+        self.rollback_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata for the stage execution to be rolled back.</p>
+    pub fn set_rollback_metadata(mut self, input: ::std::option::Option<crate::types::PipelineRollbackMetadata>) -> Self {
+        self.rollback_metadata = input;
+        self
+    }
+    /// <p>The metadata for the stage execution to be rolled back.</p>
+    pub fn get_rollback_metadata(&self) -> &::std::option::Option<crate::types::PipelineRollbackMetadata> {
+        &self.rollback_metadata
+    }
     /// Consumes the builder and constructs a [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).
     pub fn build(self) -> crate::types::PipelineExecutionSummary {
         crate::types::PipelineExecutionSummary {
             pipeline_execution_id: self.pipeline_execution_id,
             status: self.status,
+            status_summary: self.status_summary,
             start_time: self.start_time,
             last_update_time: self.last_update_time,
             source_revisions: self.source_revisions,
             trigger: self.trigger,
             stop_trigger: self.stop_trigger,
             execution_mode: self.execution_mode,
+            execution_type: self.execution_type,
+            rollback_metadata: self.rollback_metadata,
         }
     }
 }

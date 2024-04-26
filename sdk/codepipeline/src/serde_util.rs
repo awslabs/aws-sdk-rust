@@ -20,6 +20,15 @@ pub(crate) fn list_action_types_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn rollback_stage_output_output_correct_errors(
+    mut builder: crate::operation::rollback_stage::builders::RollbackStageOutputBuilder,
+) -> crate::operation::rollback_stage::builders::RollbackStageOutputBuilder {
+    if builder.pipeline_execution_id.is_none() {
+        builder.pipeline_execution_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn action_type_correct_errors(mut builder: crate::types::builders::ActionTypeBuilder) -> crate::types::builders::ActionTypeBuilder {
     if builder.id.is_none() {
         builder.id = {

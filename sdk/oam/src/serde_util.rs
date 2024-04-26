@@ -25,3 +25,21 @@ pub(crate) fn list_sinks_output_output_correct_errors(
     }
     builder
 }
+
+pub(crate) fn log_group_configuration_correct_errors(
+    mut builder: crate::types::builders::LogGroupConfigurationBuilder,
+) -> crate::types::builders::LogGroupConfigurationBuilder {
+    if builder.filter.is_none() {
+        builder.filter = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metric_configuration_correct_errors(
+    mut builder: crate::types::builders::MetricConfigurationBuilder,
+) -> crate::types::builders::MetricConfigurationBuilder {
+    if builder.filter.is_none() {
+        builder.filter = Some(Default::default())
+    }
+    builder
+}

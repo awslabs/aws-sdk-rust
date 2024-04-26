@@ -142,6 +142,20 @@ impl ListPipelineExecutionsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The pipeline execution to filter on.</p>
+    pub fn filter(mut self, input: crate::types::PipelineExecutionFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>The pipeline execution to filter on.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::PipelineExecutionFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>The pipeline execution to filter on.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::PipelineExecutionFilter> {
+        self.inner.get_filter()
+    }
     /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

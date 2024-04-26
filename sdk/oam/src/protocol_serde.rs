@@ -103,6 +103,8 @@ pub(crate) mod shape_update_link_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_link_configuration;
+
 pub(crate) mod shape_list_attached_links_items;
 
 pub(crate) mod shape_list_links_items;
@@ -118,3 +120,7 @@ pub(crate) mod shape_list_attached_links_item;
 pub(crate) mod shape_list_links_item;
 
 pub(crate) mod shape_list_sinks_item;
+
+pub(crate) mod shape_log_group_configuration;
+
+pub(crate) mod shape_metric_configuration;

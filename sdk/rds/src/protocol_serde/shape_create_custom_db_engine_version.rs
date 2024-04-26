@@ -522,48 +522,8 @@ pub fn de_create_custom_db_engine_version(
                 builder = builder.set_custom_db_engine_version_manifest(var_29);
             }
             ,
-            s if s.matches("SupportsCertificateRotationWithoutRestart") /* SupportsCertificateRotationWithoutRestart com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsCertificateRotationWithoutRestart */ =>  {
+            s if s.matches("SupportsLimitlessDatabase") /* SupportsLimitlessDatabase com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsLimitlessDatabase */ =>  {
                 let var_30 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_certificate_rotation_without_restart(var_30);
-            }
-            ,
-            s if s.matches("SupportedCACertificateIdentifiers") /* SupportedCACertificateIdentifiers com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportedCACertificateIdentifiers */ =>  {
-                let var_31 =
-                    Some(
-                        crate::protocol_serde::shape_ca_certificate_identifiers_list::de_ca_certificate_identifiers_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_supported_ca_certificate_identifiers(var_31);
-            }
-            ,
-            s if s.matches("SupportsLocalWriteForwarding") /* SupportsLocalWriteForwarding com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsLocalWriteForwarding */ =>  {
-                let var_32 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_local_write_forwarding(var_32);
-            }
-            ,
-            s if s.matches("SupportsIntegrations") /* SupportsIntegrations com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsIntegrations */ =>  {
-                let var_33 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -574,7 +534,62 @@ pub fn de_create_custom_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_integrations(var_33);
+                builder = builder.set_supports_limitless_database(var_30);
+            }
+            ,
+            s if s.matches("SupportsCertificateRotationWithoutRestart") /* SupportsCertificateRotationWithoutRestart com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsCertificateRotationWithoutRestart */ =>  {
+                let var_31 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_certificate_rotation_without_restart(var_31);
+            }
+            ,
+            s if s.matches("SupportedCACertificateIdentifiers") /* SupportedCACertificateIdentifiers com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportedCACertificateIdentifiers */ =>  {
+                let var_32 =
+                    Some(
+                        crate::protocol_serde::shape_ca_certificate_identifiers_list::de_ca_certificate_identifiers_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_ca_certificate_identifiers(var_32);
+            }
+            ,
+            s if s.matches("SupportsLocalWriteForwarding") /* SupportsLocalWriteForwarding com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsLocalWriteForwarding */ =>  {
+                let var_33 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_local_write_forwarding(var_33);
+            }
+            ,
+            s if s.matches("SupportsIntegrations") /* SupportsIntegrations com.amazonaws.rds.synthetic#CreateCustomDBEngineVersionOutput$SupportsIntegrations */ =>  {
+                let var_34 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_integrations(var_34);
             }
             ,
             _ => {}

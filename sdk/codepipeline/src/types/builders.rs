@@ -19,6 +19,8 @@ pub use crate::types::_pipeline_variable_declaration::PipelineVariableDeclaratio
 
 pub use crate::types::_stage_declaration::StageDeclarationBuilder;
 
+pub use crate::types::_failure_conditions::FailureConditionsBuilder;
+
 pub use crate::types::_action_declaration::ActionDeclarationBuilder;
 
 pub use crate::types::_input_artifact::InputArtifactBuilder;
@@ -103,11 +105,17 @@ pub use crate::types::_pipeline_summary::PipelineSummaryBuilder;
 
 pub use crate::types::_pipeline_execution_summary::PipelineExecutionSummaryBuilder;
 
+pub use crate::types::_pipeline_rollback_metadata::PipelineRollbackMetadataBuilder;
+
 pub use crate::types::_stop_execution_trigger::StopExecutionTriggerBuilder;
 
 pub use crate::types::_execution_trigger::ExecutionTriggerBuilder;
 
 pub use crate::types::_source_revision::SourceRevisionBuilder;
+
+pub use crate::types::_pipeline_execution_filter::PipelineExecutionFilterBuilder;
+
+pub use crate::types::_succeeded_in_stage_filter::SucceededInStageFilterBuilder;
 
 pub use crate::types::_action_type::ActionTypeBuilder;
 

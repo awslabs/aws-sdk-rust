@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`resource_types(Option<Vec::<String>>)`](crate::operation::get_link::GetLinkOutput::resource_types): <p>The resource types supported by this link.</p>
     ///   - [`sink_arn(Option<String>)`](crate::operation::get_link::GetLinkOutput::sink_arn): <p>The ARN of the sink that is used for this link.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_link::GetLinkOutput::tags): <p>The tags assigned to the link.</p>
+    ///   - [`link_configuration(Option<LinkConfiguration>)`](crate::operation::get_link::GetLinkOutput::link_configuration): <p>This structure includes filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.</p>
     /// - On failure, responds with [`SdkError<GetLinkError>`](crate::operation::get_link::GetLinkError)
     pub fn get_link(&self) -> crate::operation::get_link::builders::GetLinkFluentBuilder {
         crate::operation::get_link::builders::GetLinkFluentBuilder::new(self.handle.clone())

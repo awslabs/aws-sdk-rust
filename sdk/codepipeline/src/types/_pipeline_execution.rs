@@ -38,6 +38,10 @@ pub struct PipelineExecution {
     pub trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
     pub execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
+    /// <p>The type of the pipeline execution.</p>
+    pub execution_type: ::std::option::Option<crate::types::ExecutionType>,
+    /// <p>The metadata about the execution pertaining to stage rollback.</p>
+    pub rollback_metadata: ::std::option::Option<crate::types::PipelineRollbackMetadata>,
 }
 impl PipelineExecution {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
@@ -96,6 +100,14 @@ impl PipelineExecution {
     pub fn execution_mode(&self) -> ::std::option::Option<&crate::types::ExecutionMode> {
         self.execution_mode.as_ref()
     }
+    /// <p>The type of the pipeline execution.</p>
+    pub fn execution_type(&self) -> ::std::option::Option<&crate::types::ExecutionType> {
+        self.execution_type.as_ref()
+    }
+    /// <p>The metadata about the execution pertaining to stage rollback.</p>
+    pub fn rollback_metadata(&self) -> ::std::option::Option<&crate::types::PipelineRollbackMetadata> {
+        self.rollback_metadata.as_ref()
+    }
 }
 impl PipelineExecution {
     /// Creates a new builder-style object to manufacture [`PipelineExecution`](crate::types::PipelineExecution).
@@ -117,6 +129,8 @@ pub struct PipelineExecutionBuilder {
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>>,
     pub(crate) trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     pub(crate) execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
+    pub(crate) execution_type: ::std::option::Option<crate::types::ExecutionType>,
+    pub(crate) rollback_metadata: ::std::option::Option<crate::types::PipelineRollbackMetadata>,
 }
 impl PipelineExecutionBuilder {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
@@ -305,6 +319,34 @@ impl PipelineExecutionBuilder {
     pub fn get_execution_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
         &self.execution_mode
     }
+    /// <p>The type of the pipeline execution.</p>
+    pub fn execution_type(mut self, input: crate::types::ExecutionType) -> Self {
+        self.execution_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the pipeline execution.</p>
+    pub fn set_execution_type(mut self, input: ::std::option::Option<crate::types::ExecutionType>) -> Self {
+        self.execution_type = input;
+        self
+    }
+    /// <p>The type of the pipeline execution.</p>
+    pub fn get_execution_type(&self) -> &::std::option::Option<crate::types::ExecutionType> {
+        &self.execution_type
+    }
+    /// <p>The metadata about the execution pertaining to stage rollback.</p>
+    pub fn rollback_metadata(mut self, input: crate::types::PipelineRollbackMetadata) -> Self {
+        self.rollback_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata about the execution pertaining to stage rollback.</p>
+    pub fn set_rollback_metadata(mut self, input: ::std::option::Option<crate::types::PipelineRollbackMetadata>) -> Self {
+        self.rollback_metadata = input;
+        self
+    }
+    /// <p>The metadata about the execution pertaining to stage rollback.</p>
+    pub fn get_rollback_metadata(&self) -> &::std::option::Option<crate::types::PipelineRollbackMetadata> {
+        &self.rollback_metadata
+    }
     /// Consumes the builder and constructs a [`PipelineExecution`](crate::types::PipelineExecution).
     pub fn build(self) -> crate::types::PipelineExecution {
         crate::types::PipelineExecution {
@@ -317,6 +359,8 @@ impl PipelineExecutionBuilder {
             variables: self.variables,
             trigger: self.trigger,
             execution_mode: self.execution_mode,
+            execution_type: self.execution_type,
+            rollback_metadata: self.rollback_metadata,
         }
     }
 }

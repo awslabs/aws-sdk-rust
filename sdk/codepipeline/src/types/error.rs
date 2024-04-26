@@ -35,9 +35,15 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_concurrent_pipeline_executions_limit_exceeded_exception::ConcurrentPipelineExecutionsLimitExceededException;
 
-pub use crate::types::error::_stage_not_retryable_exception::StageNotRetryableException;
+pub use crate::types::error::_unable_to_rollback_stage_exception::UnableToRollbackStageException;
 
 pub use crate::types::error::_stage_not_found_exception::StageNotFoundException;
+
+pub use crate::types::error::_pipeline_execution_outdated_exception::PipelineExecutionOutdatedException;
+
+pub use crate::types::error::_pipeline_execution_not_found_exception::PipelineExecutionNotFoundException;
+
+pub use crate::types::error::_stage_not_retryable_exception::StageNotRetryableException;
 
 pub use crate::types::error::_not_latest_pipeline_execution_exception::NotLatestPipelineExecutionException;
 
@@ -62,8 +68,6 @@ pub use crate::types::error::_approval_already_completed_exception::ApprovalAlre
 pub use crate::types::error::_action_not_found_exception::ActionNotFoundException;
 
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
-
-pub use crate::types::error::_pipeline_execution_not_found_exception::PipelineExecutionNotFoundException;
 
 pub use crate::types::error::_invalid_job_exception::InvalidJobException;
 
@@ -127,6 +131,8 @@ mod _pipeline_execution_not_found_exception;
 
 mod _pipeline_execution_not_stoppable_exception;
 
+mod _pipeline_execution_outdated_exception;
+
 mod _pipeline_name_in_use_exception;
 
 mod _pipeline_not_found_exception;
@@ -142,6 +148,8 @@ mod _stage_not_found_exception;
 mod _stage_not_retryable_exception;
 
 mod _too_many_tags_exception;
+
+mod _unable_to_rollback_stage_exception;
 
 mod _validation_exception;
 

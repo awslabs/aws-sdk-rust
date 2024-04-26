@@ -10,7 +10,7 @@ pub struct UserType {
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     /// <p>The creation date of the user.</p>
     pub user_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
+    /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub user_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the user is enabled.</p>
     pub enabled: bool,
@@ -48,7 +48,7 @@ impl UserType {
     pub fn user_create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.user_create_date.as_ref()
     }
-    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
+    /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn user_last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.user_last_modified_date.as_ref()
     }
@@ -162,17 +162,17 @@ impl UserTypeBuilder {
     pub fn get_user_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.user_create_date
     }
-    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
+    /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn user_last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.user_last_modified_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
+    /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn set_user_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.user_last_modified_date = input;
         self
     }
-    /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
+    /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn get_user_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.user_last_modified_date
     }

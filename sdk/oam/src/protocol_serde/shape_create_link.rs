@@ -192,6 +192,9 @@ pub(crate) fn de_create_link(
                             .transpose()?,
                     );
                 }
+                "LinkConfiguration" => {
+                    builder = builder.set_link_configuration(crate::protocol_serde::shape_link_configuration::de_link_configuration(tokens)?);
+                }
                 "ResourceTypes" => {
                     builder = builder.set_resource_types(crate::protocol_serde::shape_resource_types_output::de_resource_types_output(tokens)?);
                 }

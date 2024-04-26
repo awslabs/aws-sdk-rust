@@ -12,8 +12,10 @@
 /// ```text
 /// # let triggertype = unimplemented!();
 /// match triggertype {
+///     TriggerType::AutomatedRollback => { /* ... */ },
 ///     TriggerType::CloudWatchEvent => { /* ... */ },
 ///     TriggerType::CreatePipeline => { /* ... */ },
+///     TriggerType::ManualRollback => { /* ... */ },
 ///     TriggerType::PollForSourceChanges => { /* ... */ },
 ///     TriggerType::PutActionRevision => { /* ... */ },
 ///     TriggerType::StartPipelineExecution => { /* ... */ },
@@ -47,9 +49,13 @@
 )]
 pub enum TriggerType {
     #[allow(missing_docs)] // documentation missing in model
+    AutomatedRollback,
+    #[allow(missing_docs)] // documentation missing in model
     CloudWatchEvent,
     #[allow(missing_docs)] // documentation missing in model
     CreatePipeline,
+    #[allow(missing_docs)] // documentation missing in model
+    ManualRollback,
     #[allow(missing_docs)] // documentation missing in model
     PollForSourceChanges,
     #[allow(missing_docs)] // documentation missing in model
@@ -67,8 +73,10 @@ pub enum TriggerType {
 impl ::std::convert::From<&str> for TriggerType {
     fn from(s: &str) -> Self {
         match s {
+            "AutomatedRollback" => TriggerType::AutomatedRollback,
             "CloudWatchEvent" => TriggerType::CloudWatchEvent,
             "CreatePipeline" => TriggerType::CreatePipeline,
+            "ManualRollback" => TriggerType::ManualRollback,
             "PollForSourceChanges" => TriggerType::PollForSourceChanges,
             "PutActionRevision" => TriggerType::PutActionRevision,
             "StartPipelineExecution" => TriggerType::StartPipelineExecution,
@@ -89,8 +97,10 @@ impl TriggerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TriggerType::AutomatedRollback => "AutomatedRollback",
             TriggerType::CloudWatchEvent => "CloudWatchEvent",
             TriggerType::CreatePipeline => "CreatePipeline",
+            TriggerType::ManualRollback => "ManualRollback",
             TriggerType::PollForSourceChanges => "PollForSourceChanges",
             TriggerType::PutActionRevision => "PutActionRevision",
             TriggerType::StartPipelineExecution => "StartPipelineExecution",
@@ -102,8 +112,10 @@ impl TriggerType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AutomatedRollback",
             "CloudWatchEvent",
             "CreatePipeline",
+            "ManualRollback",
             "PollForSourceChanges",
             "PutActionRevision",
             "StartPipelineExecution",
@@ -132,8 +144,10 @@ impl TriggerType {
 impl ::std::fmt::Display for TriggerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TriggerType::AutomatedRollback => write!(f, "AutomatedRollback"),
             TriggerType::CloudWatchEvent => write!(f, "CloudWatchEvent"),
             TriggerType::CreatePipeline => write!(f, "CreatePipeline"),
+            TriggerType::ManualRollback => write!(f, "ManualRollback"),
             TriggerType::PollForSourceChanges => write!(f, "PollForSourceChanges"),
             TriggerType::PutActionRevision => write!(f, "PutActionRevision"),
             TriggerType::StartPipelineExecution => write!(f, "StartPipelineExecution"),

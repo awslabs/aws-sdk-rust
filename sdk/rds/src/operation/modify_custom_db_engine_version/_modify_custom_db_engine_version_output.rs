@@ -71,6 +71,8 @@ pub struct ModifyCustomDbEngineVersionOutput {
     pub supports_babelfish: ::std::option::Option<bool>,
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB engine version supports Aurora Limitless Database.</p>
+    pub supports_limitless_database: ::std::option::Option<bool>,
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
     /// <p>A list of the supported CA certificate identifiers.</p>
@@ -225,6 +227,10 @@ impl ModifyCustomDbEngineVersionOutput {
     pub fn custom_db_engine_version_manifest(&self) -> ::std::option::Option<&str> {
         self.custom_db_engine_version_manifest.as_deref()
     }
+    /// <p>Indicates whether the DB engine version supports Aurora Limitless Database.</p>
+    pub fn supports_limitless_database(&self) -> ::std::option::Option<bool> {
+        self.supports_limitless_database
+    }
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn supports_certificate_rotation_without_restart(&self) -> ::std::option::Option<bool> {
         self.supports_certificate_rotation_without_restart
@@ -291,6 +297,7 @@ pub struct ModifyCustomDbEngineVersionOutputBuilder {
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) supports_babelfish: ::std::option::Option<bool>,
     pub(crate) custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
+    pub(crate) supports_limitless_database: ::std::option::Option<bool>,
     pub(crate) supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
     pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supports_local_write_forwarding: ::std::option::Option<bool>,
@@ -779,6 +786,20 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     pub fn get_custom_db_engine_version_manifest(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_db_engine_version_manifest
     }
+    /// <p>Indicates whether the DB engine version supports Aurora Limitless Database.</p>
+    pub fn supports_limitless_database(mut self, input: bool) -> Self {
+        self.supports_limitless_database = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB engine version supports Aurora Limitless Database.</p>
+    pub fn set_supports_limitless_database(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_limitless_database = input;
+        self
+    }
+    /// <p>Indicates whether the DB engine version supports Aurora Limitless Database.</p>
+    pub fn get_supports_limitless_database(&self) -> &::std::option::Option<bool> {
+        &self.supports_limitless_database
+    }
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
         self.supports_certificate_rotation_without_restart = ::std::option::Option::Some(input);
@@ -888,6 +909,7 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
             tag_list: self.tag_list,
             supports_babelfish: self.supports_babelfish,
             custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
+            supports_limitless_database: self.supports_limitless_database,
             supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart,
             supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
             supports_local_write_forwarding: self.supports_local_write_forwarding,

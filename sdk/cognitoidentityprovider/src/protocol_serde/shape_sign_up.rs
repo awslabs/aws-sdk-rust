@@ -159,6 +159,21 @@ pub fn de_sign_up_http_error(
             }
             tmp
         }),
+        "LimitExceededException" => crate::operation::sign_up::SignUpError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::sign_up::SignUpError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NotAuthorizedException" => crate::operation::sign_up::SignUpError::NotAuthorizedException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -23,6 +23,8 @@ pub struct CreateLinkInput {
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.</p>
+    pub link_configuration: ::std::option::Option<crate::types::LinkConfiguration>,
 }
 impl CreateLinkInput {
     /// <p>Specify a friendly human-readable name to use to identify this source account when you are viewing data from it in the monitoring account.</p>
@@ -55,6 +57,10 @@ impl CreateLinkInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn link_configuration(&self) -> ::std::option::Option<&crate::types::LinkConfiguration> {
+        self.link_configuration.as_ref()
+    }
 }
 impl CreateLinkInput {
     /// Creates a new builder-style object to manufacture [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
@@ -71,6 +77,7 @@ pub struct CreateLinkInputBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
     pub(crate) sink_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) link_configuration: ::std::option::Option<crate::types::LinkConfiguration>,
 }
 impl CreateLinkInputBuilder {
     /// <p>Specify a friendly human-readable name to use to identify this source account when you are viewing data from it in the monitoring account.</p>
@@ -179,6 +186,20 @@ impl CreateLinkInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn link_configuration(mut self, input: crate::types::LinkConfiguration) -> Self {
+        self.link_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn set_link_configuration(mut self, input: ::std::option::Option<crate::types::LinkConfiguration>) -> Self {
+        self.link_configuration = input;
+        self
+    }
+    /// <p>Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn get_link_configuration(&self) -> &::std::option::Option<crate::types::LinkConfiguration> {
+        &self.link_configuration
+    }
     /// Consumes the builder and constructs a [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_link::CreateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_link::CreateLinkInput {
@@ -186,6 +207,7 @@ impl CreateLinkInputBuilder {
             resource_types: self.resource_types,
             sink_identifier: self.sink_identifier,
             tags: self.tags,
+            link_configuration: self.link_configuration,
         })
     }
 }

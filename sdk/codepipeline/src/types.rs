@@ -27,6 +27,10 @@ pub use crate::types::_execution_mode::ExecutionMode;
 
 pub use crate::types::_stage_declaration::StageDeclaration;
 
+pub use crate::types::_failure_conditions::FailureConditions;
+
+pub use crate::types::_result::Result;
+
 pub use crate::types::_action_declaration::ActionDeclaration;
 
 pub use crate::types::_input_artifact::InputArtifact;
@@ -135,6 +139,10 @@ pub use crate::types::_pipeline_summary::PipelineSummary;
 
 pub use crate::types::_pipeline_execution_summary::PipelineExecutionSummary;
 
+pub use crate::types::_pipeline_rollback_metadata::PipelineRollbackMetadata;
+
+pub use crate::types::_execution_type::ExecutionType;
+
 pub use crate::types::_stop_execution_trigger::StopExecutionTrigger;
 
 pub use crate::types::_execution_trigger::ExecutionTrigger;
@@ -144,6 +152,10 @@ pub use crate::types::_trigger_type::TriggerType;
 pub use crate::types::_source_revision::SourceRevision;
 
 pub use crate::types::_pipeline_execution_status::PipelineExecutionStatus;
+
+pub use crate::types::_pipeline_execution_filter::PipelineExecutionFilter;
+
+pub use crate::types::_succeeded_in_stage_filter::SucceededInStageFilter;
 
 pub use crate::types::_action_type::ActionType;
 
@@ -299,9 +311,13 @@ mod _execution_mode;
 
 mod _execution_trigger;
 
+mod _execution_type;
+
 mod _executor_configuration;
 
 mod _executor_type;
+
+mod _failure_conditions;
 
 mod _failure_details;
 
@@ -347,11 +363,15 @@ mod _pipeline_declaration;
 
 mod _pipeline_execution;
 
+mod _pipeline_execution_filter;
+
 mod _pipeline_execution_status;
 
 mod _pipeline_execution_summary;
 
 mod _pipeline_metadata;
+
+mod _pipeline_rollback_metadata;
 
 mod _pipeline_summary;
 
@@ -366,6 +386,8 @@ mod _pipeline_variable;
 mod _pipeline_variable_declaration;
 
 mod _resolved_pipeline_variable;
+
+mod _result;
 
 mod _s3_artifact_location;
 
@@ -394,6 +416,8 @@ mod _stage_transition_type;
 mod _start_time_range;
 
 mod _stop_execution_trigger;
+
+mod _succeeded_in_stage_filter;
 
 mod _tag;
 

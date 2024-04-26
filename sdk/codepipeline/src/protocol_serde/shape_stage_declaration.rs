@@ -30,6 +30,12 @@ pub fn ser_stage_declaration(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.on_failure {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("onFailure").start_object();
+        crate::protocol_serde::shape_failure_conditions::ser_failure_conditions(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +69,9 @@ where
                         "actions" => {
                             builder = builder
                                 .set_actions(crate::protocol_serde::shape_stage_action_declaration_list::de_stage_action_declaration_list(tokens)?);
+                        }
+                        "onFailure" => {
+                            builder = builder.set_on_failure(crate::protocol_serde::shape_failure_conditions::de_failure_conditions(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -94,6 +94,25 @@ pub(super) fn resolve_endpoint(
                     }
                 }
             }
+            if (partition_result.name()) == ("aws-us-gov") {
+                if (*use_fips) == (true) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://support.us-gov-west-1.amazonaws.com".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "support".to_string().into());
+                                    out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
             if (partition_result.name()) == ("aws-iso") {
                 if (*use_fips) == (false) {
                     if (*use_dual_stack) == (false) {

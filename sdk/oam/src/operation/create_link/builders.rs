@@ -22,7 +22,7 @@ impl crate::operation::create_link::builders::CreateLinkInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLink`.
 ///
-/// <p>Creates a link between a source account and a sink that you have created in a monitoring account.</p>
+/// <p>Creates a link between a source account and a sink that you have created in a monitoring account. After the link is created, data is sent from the source account to the monitoring account. When you create a link, you can optionally specify filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.</p>
 /// <p>Before you create a link, you must create a sink in the monitoring account and create a sink policy in that account. The sink policy must permit the source account to link to it. You can grant permission to source accounts by granting permission to an entire organization or to individual accounts.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html">CreateSink</a> and <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_PutSinkPolicy.html">PutSinkPolicy</a>.</p>
 /// <p>Each monitoring account can be linked to as many as 100,000 source accounts.</p>
@@ -213,5 +213,19 @@ impl CreateLinkFluentBuilder {
     /// <p>For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
+    }
+    /// <p>Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn link_configuration(mut self, input: crate::types::LinkConfiguration) -> Self {
+        self.inner = self.inner.link_configuration(input);
+        self
+    }
+    /// <p>Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn set_link_configuration(mut self, input: ::std::option::Option<crate::types::LinkConfiguration>) -> Self {
+        self.inner = self.inner.set_link_configuration(input);
+        self
+    }
+    /// <p>Use this structure to optionally create filters that specify that only some metric namespaces or log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn get_link_configuration(&self) -> &::std::option::Option<crate::types::LinkConfiguration> {
+        self.inner.get_link_configuration()
     }
 }

@@ -57,6 +57,8 @@ pub enum Error {
     PipelineExecutionNotFoundException(crate::types::error::PipelineExecutionNotFoundException),
     /// <p>Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code> state, or it might no longer be in progress.</p>
     PipelineExecutionNotStoppableException(crate::types::error::PipelineExecutionNotStoppableException),
+    /// <p>The specified pipeline execution is outdated and cannot be used as a target pipeline execution for rollback.</p>
+    PipelineExecutionOutdatedException(crate::types::error::PipelineExecutionOutdatedException),
     /// <p>The specified pipeline name is already in use.</p>
     PipelineNameInUseException(crate::types::error::PipelineNameInUseException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
@@ -73,6 +75,8 @@ pub enum Error {
     StageNotRetryableException(crate::types::error::StageNotRetryableException),
     /// <p>The tags limit for a resource has been exceeded.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
+    /// <p>Unable to roll back the stage. The cause might be if the pipeline version has changed since the target pipeline execution was deployed, the stage is currently running, or an incorrect target pipeline execution ID was provided.</p>
+    UnableToRollbackStageException(crate::types::error::UnableToRollbackStageException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::types::error::ValidationException),
     /// <p>The specified webhook was entered in an invalid format or cannot be found.</p>
@@ -116,6 +120,7 @@ impl ::std::fmt::Display for Error {
             Error::OutputVariablesSizeExceededException(inner) => inner.fmt(f),
             Error::PipelineExecutionNotFoundException(inner) => inner.fmt(f),
             Error::PipelineExecutionNotStoppableException(inner) => inner.fmt(f),
+            Error::PipelineExecutionOutdatedException(inner) => inner.fmt(f),
             Error::PipelineNameInUseException(inner) => inner.fmt(f),
             Error::PipelineNotFoundException(inner) => inner.fmt(f),
             Error::PipelineVersionNotFoundException(inner) => inner.fmt(f),
@@ -124,6 +129,7 @@ impl ::std::fmt::Display for Error {
             Error::StageNotFoundException(inner) => inner.fmt(f),
             Error::StageNotRetryableException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
+            Error::UnableToRollbackStageException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::WebhookNotFoundException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -174,6 +180,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::OutputVariablesSizeExceededException(inner) => inner.meta(),
             Self::PipelineExecutionNotFoundException(inner) => inner.meta(),
             Self::PipelineExecutionNotStoppableException(inner) => inner.meta(),
+            Self::PipelineExecutionOutdatedException(inner) => inner.meta(),
             Self::PipelineNameInUseException(inner) => inner.meta(),
             Self::PipelineNotFoundException(inner) => inner.meta(),
             Self::PipelineVersionNotFoundException(inner) => inner.meta(),
@@ -182,6 +189,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::StageNotFoundException(inner) => inner.meta(),
             Self::StageNotRetryableException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
+            Self::UnableToRollbackStageException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::WebhookNotFoundException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -1175,6 +1183,40 @@ impl From<crate::operation::retry_stage_execution::RetryStageExecutionError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rollback_stage::RollbackStageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rollback_stage::RollbackStageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::rollback_stage::RollbackStageError> for Error {
+    fn from(err: crate::operation::rollback_stage::RollbackStageError) -> Self {
+        match err {
+            crate::operation::rollback_stage::RollbackStageError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::rollback_stage::RollbackStageError::PipelineExecutionNotFoundException(inner) => {
+                Error::PipelineExecutionNotFoundException(inner)
+            }
+            crate::operation::rollback_stage::RollbackStageError::PipelineExecutionOutdatedException(inner) => {
+                Error::PipelineExecutionOutdatedException(inner)
+            }
+            crate::operation::rollback_stage::RollbackStageError::PipelineNotFoundException(inner) => Error::PipelineNotFoundException(inner),
+            crate::operation::rollback_stage::RollbackStageError::StageNotFoundException(inner) => Error::StageNotFoundException(inner),
+            crate::operation::rollback_stage::RollbackStageError::UnableToRollbackStageException(inner) => {
+                Error::UnableToRollbackStageException(inner)
+            }
+            crate::operation::rollback_stage::RollbackStageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::rollback_stage::RollbackStageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_pipeline_execution::StartPipelineExecutionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1384,6 +1426,7 @@ impl ::std::error::Error for Error {
             Error::OutputVariablesSizeExceededException(inner) => inner.source(),
             Error::PipelineExecutionNotFoundException(inner) => inner.source(),
             Error::PipelineExecutionNotStoppableException(inner) => inner.source(),
+            Error::PipelineExecutionOutdatedException(inner) => inner.source(),
             Error::PipelineNameInUseException(inner) => inner.source(),
             Error::PipelineNotFoundException(inner) => inner.source(),
             Error::PipelineVersionNotFoundException(inner) => inner.source(),
@@ -1392,6 +1435,7 @@ impl ::std::error::Error for Error {
             Error::StageNotFoundException(inner) => inner.source(),
             Error::StageNotRetryableException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnableToRollbackStageException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::WebhookNotFoundException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -1428,6 +1472,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::OutputVariablesSizeExceededException(e) => e.request_id(),
             Self::PipelineExecutionNotFoundException(e) => e.request_id(),
             Self::PipelineExecutionNotStoppableException(e) => e.request_id(),
+            Self::PipelineExecutionOutdatedException(e) => e.request_id(),
             Self::PipelineNameInUseException(e) => e.request_id(),
             Self::PipelineNotFoundException(e) => e.request_id(),
             Self::PipelineVersionNotFoundException(e) => e.request_id(),
@@ -1436,6 +1481,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::StageNotFoundException(e) => e.request_id(),
             Self::StageNotRetryableException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
+            Self::UnableToRollbackStageException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::WebhookNotFoundException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

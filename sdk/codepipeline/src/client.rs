@@ -229,6 +229,8 @@ mod register_webhook_with_third_party;
 
 mod retry_stage_execution;
 
+mod rollback_stage;
+
 mod start_pipeline_execution;
 
 mod stop_pipeline_execution;

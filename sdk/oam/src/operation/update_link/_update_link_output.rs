@@ -17,6 +17,8 @@ pub struct UpdateLinkOutput {
     pub sink_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the link.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>This structure includes filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.</p>
+    pub link_configuration: ::std::option::Option<crate::types::LinkConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateLinkOutput {
@@ -50,6 +52,10 @@ impl UpdateLinkOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>This structure includes filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.</p>
+    pub fn link_configuration(&self) -> ::std::option::Option<&crate::types::LinkConfiguration> {
+        self.link_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateLinkOutput {
     fn request_id(&self) -> Option<&str> {
@@ -74,6 +80,7 @@ pub struct UpdateLinkOutputBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sink_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) link_configuration: ::std::option::Option<crate::types::LinkConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateLinkOutputBuilder {
@@ -187,6 +194,20 @@ impl UpdateLinkOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>This structure includes filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.</p>
+    pub fn link_configuration(mut self, input: crate::types::LinkConfiguration) -> Self {
+        self.link_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This structure includes filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.</p>
+    pub fn set_link_configuration(mut self, input: ::std::option::Option<crate::types::LinkConfiguration>) -> Self {
+        self.link_configuration = input;
+        self
+    }
+    /// <p>This structure includes filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.</p>
+    pub fn get_link_configuration(&self) -> &::std::option::Option<crate::types::LinkConfiguration> {
+        &self.link_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -206,6 +227,7 @@ impl UpdateLinkOutputBuilder {
             resource_types: self.resource_types,
             sink_arn: self.sink_arn,
             tags: self.tags,
+            link_configuration: self.link_configuration,
             _request_id: self._request_id,
         }
     }

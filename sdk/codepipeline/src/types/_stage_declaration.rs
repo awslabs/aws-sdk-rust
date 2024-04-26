@@ -10,6 +10,8 @@ pub struct StageDeclaration {
     pub blockers: ::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>>,
     /// <p>The actions included in a stage.</p>
     pub actions: ::std::vec::Vec<crate::types::ActionDeclaration>,
+    /// <p>The method to use when a stage has not completed successfully. For example, configuring this field for rollback will roll back a failed stage automatically to the last successful pipeline execution in the stage.</p>
+    pub on_failure: ::std::option::Option<crate::types::FailureConditions>,
 }
 impl StageDeclaration {
     /// <p>The name of the stage.</p>
@@ -28,6 +30,10 @@ impl StageDeclaration {
         use std::ops::Deref;
         self.actions.deref()
     }
+    /// <p>The method to use when a stage has not completed successfully. For example, configuring this field for rollback will roll back a failed stage automatically to the last successful pipeline execution in the stage.</p>
+    pub fn on_failure(&self) -> ::std::option::Option<&crate::types::FailureConditions> {
+        self.on_failure.as_ref()
+    }
 }
 impl StageDeclaration {
     /// Creates a new builder-style object to manufacture [`StageDeclaration`](crate::types::StageDeclaration).
@@ -43,6 +49,7 @@ pub struct StageDeclarationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) blockers: ::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionDeclaration>>,
+    pub(crate) on_failure: ::std::option::Option<crate::types::FailureConditions>,
 }
 impl StageDeclarationBuilder {
     /// <p>The name of the stage.</p>
@@ -100,6 +107,20 @@ impl StageDeclarationBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionDeclaration>> {
         &self.actions
     }
+    /// <p>The method to use when a stage has not completed successfully. For example, configuring this field for rollback will roll back a failed stage automatically to the last successful pipeline execution in the stage.</p>
+    pub fn on_failure(mut self, input: crate::types::FailureConditions) -> Self {
+        self.on_failure = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method to use when a stage has not completed successfully. For example, configuring this field for rollback will roll back a failed stage automatically to the last successful pipeline execution in the stage.</p>
+    pub fn set_on_failure(mut self, input: ::std::option::Option<crate::types::FailureConditions>) -> Self {
+        self.on_failure = input;
+        self
+    }
+    /// <p>The method to use when a stage has not completed successfully. For example, configuring this field for rollback will roll back a failed stage automatically to the last successful pipeline execution in the stage.</p>
+    pub fn get_on_failure(&self) -> &::std::option::Option<crate::types::FailureConditions> {
+        &self.on_failure
+    }
     /// Consumes the builder and constructs a [`StageDeclaration`](crate::types::StageDeclaration).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::StageDeclarationBuilder::name)
@@ -119,6 +140,7 @@ impl StageDeclarationBuilder {
                     "actions was not specified but it is required when building StageDeclaration",
                 )
             })?,
+            on_failure: self.on_failure,
         })
     }
 }

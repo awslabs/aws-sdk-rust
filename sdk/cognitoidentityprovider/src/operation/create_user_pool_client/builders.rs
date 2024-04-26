@@ -452,7 +452,7 @@ impl CreateUserPoolClientFluentBuilder {
     pub fn get_logout_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_logout_urls()
     }
-    /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+    /// <p>The default redirect URI. In app clients with one assigned IdP, replaces <code>redirect_uri</code> in authentication requests. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
     /// <li>
@@ -462,14 +462,14 @@ impl CreateUserPoolClientFluentBuilder {
     /// <li>
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default redirect URI</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn default_redirect_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_redirect_uri(input.into());
         self
     }
-    /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+    /// <p>The default redirect URI. In app clients with one assigned IdP, replaces <code>redirect_uri</code> in authentication requests. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
     /// <li>
@@ -479,14 +479,14 @@ impl CreateUserPoolClientFluentBuilder {
     /// <li>
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default redirect URI</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn set_default_redirect_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_redirect_uri(input);
         self
     }
-    /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+    /// <p>The default redirect URI. In app clients with one assigned IdP, replaces <code>redirect_uri</code> in authentication requests. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
     /// <ul>
     /// <li>
@@ -496,7 +496,7 @@ impl CreateUserPoolClientFluentBuilder {
     /// <li>
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
-    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default redirect URI</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn get_default_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {

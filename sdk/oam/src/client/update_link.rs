@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`identifier(impl Into<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_identifier):<br>required: **true**<br><p>The ARN of the link that you want to update.</p><br>
     ///   - [`resource_types(ResourceType)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::resource_types) / [`set_resource_types(Option<Vec::<ResourceType>>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_resource_types):<br>required: **true**<br><p>An array of strings that define which types of data that the source account will send to the monitoring account.</p> <p>Your input here replaces the current set of data types that are shared.</p><br>
+    ///   - [`link_configuration(LinkConfiguration)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::link_configuration) / [`set_link_configuration(Option<LinkConfiguration>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_link_configuration):<br>required: **false**<br><p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p><br>
     /// - On success, responds with [`UpdateLinkOutput`](crate::operation::update_link::UpdateLinkOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::update_link::UpdateLinkOutput::arn): <p>The ARN of the link that you have updated.</p>
     ///   - [`id(Option<String>)`](crate::operation::update_link::UpdateLinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
@@ -13,6 +14,7 @@ impl super::Client {
     ///   - [`resource_types(Option<Vec::<String>>)`](crate::operation::update_link::UpdateLinkOutput::resource_types): <p>The resource types now supported by this link.</p>
     ///   - [`sink_arn(Option<String>)`](crate::operation::update_link::UpdateLinkOutput::sink_arn): <p>The ARN of the sink that is used for this link.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_link::UpdateLinkOutput::tags): <p>The tags assigned to the link.</p>
+    ///   - [`link_configuration(Option<LinkConfiguration>)`](crate::operation::update_link::UpdateLinkOutput::link_configuration): <p>This structure includes filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.</p>
     /// - On failure, responds with [`SdkError<UpdateLinkError>`](crate::operation::update_link::UpdateLinkError)
     pub fn update_link(&self) -> crate::operation::update_link::builders::UpdateLinkFluentBuilder {
         crate::operation::update_link::builders::UpdateLinkFluentBuilder::new(self.handle.clone())

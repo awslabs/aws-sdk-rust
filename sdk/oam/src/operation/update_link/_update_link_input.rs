@@ -8,6 +8,8 @@ pub struct UpdateLinkInput {
     /// <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>
     /// <p>Your input here replaces the current set of data types that are shared.</p>
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
+    /// <p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p>
+    pub link_configuration: ::std::option::Option<crate::types::LinkConfiguration>,
 }
 impl UpdateLinkInput {
     /// <p>The ARN of the link that you want to update.</p>
@@ -20,6 +22,10 @@ impl UpdateLinkInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
     pub fn resource_types(&self) -> &[crate::types::ResourceType] {
         self.resource_types.as_deref().unwrap_or_default()
+    }
+    /// <p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn link_configuration(&self) -> ::std::option::Option<&crate::types::LinkConfiguration> {
+        self.link_configuration.as_ref()
     }
 }
 impl UpdateLinkInput {
@@ -35,6 +41,7 @@ impl UpdateLinkInput {
 pub struct UpdateLinkInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
+    pub(crate) link_configuration: ::std::option::Option<crate::types::LinkConfiguration>,
 }
 impl UpdateLinkInputBuilder {
     /// <p>The ARN of the link that you want to update.</p>
@@ -75,11 +82,26 @@ impl UpdateLinkInputBuilder {
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
         &self.resource_types
     }
+    /// <p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn link_configuration(mut self, input: crate::types::LinkConfiguration) -> Self {
+        self.link_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn set_link_configuration(mut self, input: ::std::option::Option<crate::types::LinkConfiguration>) -> Self {
+        self.link_configuration = input;
+        self
+    }
+    /// <p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn get_link_configuration(&self) -> &::std::option::Option<crate::types::LinkConfiguration> {
+        &self.link_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_link::UpdateLinkInput {
             identifier: self.identifier,
             resource_types: self.resource_types,
+            link_configuration: self.link_configuration,
         })
     }
 }

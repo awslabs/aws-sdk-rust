@@ -3669,6 +3669,7 @@ impl From<crate::operation::sign_up::SignUpError> for Error {
             crate::operation::sign_up::SignUpError::InvalidSmsRoleTrustRelationshipException(inner) => {
                 Error::InvalidSmsRoleTrustRelationshipException(inner)
             }
+            crate::operation::sign_up::SignUpError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::sign_up::SignUpError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::sign_up::SignUpError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::sign_up::SignUpError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),

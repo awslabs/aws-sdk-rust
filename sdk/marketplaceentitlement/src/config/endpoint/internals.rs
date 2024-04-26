@@ -98,6 +98,11 @@ pub(super) fn resolve_endpoint(
                     "DualStack is enabled but this partition does not support DualStack".to_string(),
                 ));
             }
+            if (region) == ("cn-northwest-1") {
+                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                    .url("https://entitlement-marketplace.cn-northwest-1.amazonaws.com.cn".to_string())
+                    .build());
+            }
             if ("aws") == (partition_result.name()) {
                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                     .url({

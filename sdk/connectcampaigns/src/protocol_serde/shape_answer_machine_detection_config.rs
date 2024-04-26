@@ -6,6 +6,9 @@ pub fn ser_answer_machine_detection_config(
     {
         object.key("enableAnswerMachineDetection").boolean(input.enable_answer_machine_detection);
     }
+    if let Some(var_1) = &input.await_answer_machine_prompt {
+        object.key("awaitAnswerMachinePrompt").boolean(*var_1);
+    }
     Ok(())
 }
 
@@ -27,6 +30,10 @@ where
                         "enableAnswerMachineDetection" => {
                             builder = builder
                                 .set_enable_answer_machine_detection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "awaitAnswerMachinePrompt" => {
+                            builder =
+                                builder.set_await_answer_machine_prompt(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

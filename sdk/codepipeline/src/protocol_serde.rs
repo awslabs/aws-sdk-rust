@@ -89,6 +89,8 @@ pub(crate) mod shape_register_webhook_with_third_party;
 
 pub(crate) mod shape_retry_stage_execution;
 
+pub(crate) mod shape_rollback_stage;
+
 pub(crate) mod shape_start_pipeline_execution;
 
 pub(crate) mod shape_stop_pipeline_execution;
@@ -207,6 +209,8 @@ pub(crate) mod shape_pipeline_execution_not_found_exception;
 
 pub(crate) mod shape_pipeline_execution_not_stoppable_exception;
 
+pub(crate) mod shape_pipeline_execution_outdated_exception;
+
 pub(crate) mod shape_pipeline_name_in_use_exception;
 
 pub(crate) mod shape_pipeline_not_found_exception;
@@ -239,6 +243,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_retry_stage_execution_input;
 
+pub(crate) mod shape_rollback_stage_input;
+
 pub(crate) mod shape_stage_not_found_exception;
 
 pub(crate) mod shape_stage_not_retryable_exception;
@@ -250,6 +256,8 @@ pub(crate) mod shape_stop_pipeline_execution_input;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_tags_exception;
+
+pub(crate) mod shape_unable_to_rollback_stage_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
@@ -298,6 +306,8 @@ pub(crate) mod shape_list_webhook_item;
 pub(crate) mod shape_pipeline_declaration;
 
 pub(crate) mod shape_pipeline_execution;
+
+pub(crate) mod shape_pipeline_execution_filter;
 
 pub(crate) mod shape_pipeline_execution_summary_list;
 
@@ -357,6 +367,8 @@ pub(crate) mod shape_latest_in_pipeline_execution_filter;
 
 pub(crate) mod shape_pipeline_execution_summary;
 
+pub(crate) mod shape_pipeline_rollback_metadata;
+
 pub(crate) mod shape_pipeline_stage_declaration_list;
 
 pub(crate) mod shape_pipeline_summary;
@@ -374,6 +386,8 @@ pub(crate) mod shape_resolved_pipeline_variable_list;
 pub(crate) mod shape_stage_declaration;
 
 pub(crate) mod shape_stage_state;
+
+pub(crate) mod shape_succeeded_in_stage_filter;
 
 pub(crate) mod shape_third_party_job;
 
@@ -406,6 +420,8 @@ pub(crate) mod shape_blocker_declaration;
 pub(crate) mod shape_encryption_key;
 
 pub(crate) mod shape_executor_configuration;
+
+pub(crate) mod shape_failure_conditions;
 
 pub(crate) mod shape_git_configuration;
 

@@ -10,6 +10,8 @@ pub struct StageExecution {
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
     pub status: crate::types::StageExecutionStatus,
+    /// <p>The type of pipeline execution for the stage, such as a rollback pipeline execution.</p>
+    pub r#type: ::std::option::Option<crate::types::ExecutionType>,
 }
 impl StageExecution {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
@@ -22,6 +24,10 @@ impl StageExecution {
     /// </note>
     pub fn status(&self) -> &crate::types::StageExecutionStatus {
         &self.status
+    }
+    /// <p>The type of pipeline execution for the stage, such as a rollback pipeline execution.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ExecutionType> {
+        self.r#type.as_ref()
     }
 }
 impl StageExecution {
@@ -37,6 +43,7 @@ impl StageExecution {
 pub struct StageExecutionBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::StageExecutionStatus>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ExecutionType>,
 }
 impl StageExecutionBuilder {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
@@ -75,6 +82,20 @@ impl StageExecutionBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StageExecutionStatus> {
         &self.status
     }
+    /// <p>The type of pipeline execution for the stage, such as a rollback pipeline execution.</p>
+    pub fn r#type(mut self, input: crate::types::ExecutionType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of pipeline execution for the stage, such as a rollback pipeline execution.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExecutionType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of pipeline execution for the stage, such as a rollback pipeline execution.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ExecutionType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`StageExecution`](crate::types::StageExecution).
     /// This method will fail if any of the following fields are not set:
     /// - [`pipeline_execution_id`](crate::types::builders::StageExecutionBuilder::pipeline_execution_id)
@@ -93,6 +114,7 @@ impl StageExecutionBuilder {
                     "status was not specified but it is required when building StageExecution",
                 )
             })?,
+            r#type: self.r#type,
         })
     }
 }

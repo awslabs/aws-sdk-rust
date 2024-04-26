@@ -100,6 +100,9 @@ pub mod register_webhook_with_third_party;
 /// Types for the `RetryStageExecution` operation.
 pub mod retry_stage_execution;
 
+/// Types for the `RollbackStage` operation.
+pub mod rollback_stage;
+
 /// Types for the `StartPipelineExecution` operation.
 pub mod start_pipeline_execution;
 

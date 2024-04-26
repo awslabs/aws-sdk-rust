@@ -240,6 +240,8 @@ pub enum SignUpError {
     InvalidSmsRoleAccessPolicyException(crate::types::error::InvalidSmsRoleAccessPolicyException),
     /// <p>This exception is thrown when the trust relationship is not valid for the role provided for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(crate::types::error::InvalidSmsRoleTrustRelationshipException),
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p>This exception is thrown when the Amazon Cognito service can't find the requested resource.</p>
@@ -294,6 +296,7 @@ impl SignUpError {
             Self::InvalidPasswordException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSmsRoleAccessPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSmsRoleTrustRelationshipException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotAuthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -339,6 +342,10 @@ impl SignUpError {
     pub fn is_invalid_sms_role_trust_relationship_exception(&self) -> bool {
         matches!(self, Self::InvalidSmsRoleTrustRelationshipException(_))
     }
+    /// Returns `true` if the error kind is `SignUpError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `SignUpError::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(self, Self::NotAuthorizedException(_))
@@ -376,6 +383,7 @@ impl ::std::error::Error for SignUpError {
             Self::InvalidPasswordException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSmsRoleAccessPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSmsRoleTrustRelationshipException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotAuthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
@@ -398,6 +406,7 @@ impl ::std::fmt::Display for SignUpError {
             Self::InvalidPasswordException(_inner) => _inner.fmt(f),
             Self::InvalidSmsRoleAccessPolicyException(_inner) => _inner.fmt(f),
             Self::InvalidSmsRoleTrustRelationshipException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NotAuthorizedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -434,6 +443,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SignUpError {
             Self::InvalidPasswordException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSmsRoleAccessPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSmsRoleTrustRelationshipException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotAuthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

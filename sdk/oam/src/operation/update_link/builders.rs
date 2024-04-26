@@ -23,6 +23,7 @@ impl crate::operation::update_link::builders::UpdateLinkInputBuilder {
 /// Fluent builder constructing a request to `UpdateLink`.
 ///
 /// <p>Use this operation to change what types of data are shared from a source account to its linked monitoring account sink. You can't change the sink or change the monitoring account with this operation.</p>
+/// <p>When you update a link, you can optionally specify filters that specify which metric namespaces and which log groups are shared from the source account to the monitoring account.</p>
 /// <p>To update the list of tags associated with the sink, use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLinkFluentBuilder {
@@ -144,5 +145,19 @@ impl UpdateLinkFluentBuilder {
     /// <p>Your input here replaces the current set of data types that are shared.</p>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
         self.inner.get_resource_types()
+    }
+    /// <p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn link_configuration(mut self, input: crate::types::LinkConfiguration) -> Self {
+        self.inner = self.inner.link_configuration(input);
+        self
+    }
+    /// <p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn set_link_configuration(mut self, input: ::std::option::Option<crate::types::LinkConfiguration>) -> Self {
+        self.inner = self.inner.set_link_configuration(input);
+        self
+    }
+    /// <p>Use this structure to filter which metric namespaces and which log groups are to be shared from the source account to the monitoring account.</p>
+    pub fn get_link_configuration(&self) -> &::std::option::Option<crate::types::LinkConfiguration> {
+        self.inner.get_link_configuration()
     }
 }
