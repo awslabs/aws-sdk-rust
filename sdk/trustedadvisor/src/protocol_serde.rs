@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_update_recommendation_resource_exclusion;
+
 pub(crate) mod shape_get_organization_recommendation;
 
 pub(crate) mod shape_get_recommendation;
@@ -53,6 +55,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_update_recommendation_resource_exclusion_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_internal_server_exception;
@@ -79,9 +83,13 @@ pub(crate) mod shape_organization_recommendation_summary_list;
 
 pub(crate) mod shape_recommendation;
 
+pub(crate) mod shape_recommendation_resource_exclusion;
+
 pub(crate) mod shape_recommendation_resource_summary_list;
 
 pub(crate) mod shape_recommendation_summary_list;
+
+pub(crate) mod shape_update_recommendation_resource_exclusion_error_list;
 
 pub(crate) mod shape_account_recommendation_lifecycle_summary;
 
@@ -102,6 +110,8 @@ pub(crate) mod shape_recommendation_resource_summary;
 pub(crate) mod shape_recommendation_resources_aggregates;
 
 pub(crate) mod shape_recommendation_summary;
+
+pub(crate) mod shape_update_recommendation_resource_exclusion_error;
 
 pub(crate) mod shape_recommendation_cost_optimizing_aggregates;
 

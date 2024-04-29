@@ -22,7 +22,7 @@ impl crate::operation::update_organization_recommendation_lifecycle::builders::U
 }
 /// Fluent builder constructing a request to `UpdateOrganizationRecommendationLifecycle`.
 ///
-/// <p>Update the lifecyle of a Recommendation within an Organization. This API only supports prioritized recommendations.</p>
+/// <p>Update the lifecycle of a Recommendation within an Organization. This API only supports prioritized recommendations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOrganizationRecommendationLifecycleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

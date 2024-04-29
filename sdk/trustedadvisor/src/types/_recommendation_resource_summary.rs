@@ -18,6 +18,8 @@ pub struct RecommendationResourceSummary {
     pub metadata: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>When the Recommendation Resource was last updated</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The exclusion status of the Recommendation Resource</p>
+    pub exclusion_status: crate::types::ExclusionStatus,
     /// <p>The Recommendation ARN</p>
     pub recommendation_arn: ::std::string::String,
 }
@@ -54,6 +56,10 @@ impl RecommendationResourceSummary {
     pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
+    /// <p>The exclusion status of the Recommendation Resource</p>
+    pub fn exclusion_status(&self) -> &crate::types::ExclusionStatus {
+        &self.exclusion_status
+    }
     /// <p>The Recommendation ARN</p>
     pub fn recommendation_arn(&self) -> &str {
         use std::ops::Deref;
@@ -78,6 +84,7 @@ pub struct RecommendationResourceSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) exclusion_status: ::std::option::Option<crate::types::ExclusionStatus>,
     pub(crate) recommendation_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationResourceSummaryBuilder {
@@ -191,6 +198,20 @@ impl RecommendationResourceSummaryBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// <p>The exclusion status of the Recommendation Resource</p>
+    pub fn exclusion_status(mut self, input: crate::types::ExclusionStatus) -> Self {
+        self.exclusion_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The exclusion status of the Recommendation Resource</p>
+    pub fn set_exclusion_status(mut self, input: ::std::option::Option<crate::types::ExclusionStatus>) -> Self {
+        self.exclusion_status = input;
+        self
+    }
+    /// <p>The exclusion status of the Recommendation Resource</p>
+    pub fn get_exclusion_status(&self) -> &::std::option::Option<crate::types::ExclusionStatus> {
+        &self.exclusion_status
+    }
     /// <p>The Recommendation ARN</p>
     /// This field is required.
     pub fn recommendation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -260,6 +281,11 @@ impl RecommendationResourceSummaryBuilder {
                     "last_updated_at was not specified but it is required when building RecommendationResourceSummary",
                 )
             })?,
+            exclusion_status: self.exclusion_status.unwrap_or(
+                "included"
+                    .parse::<crate::types::ExclusionStatus>()
+                    .expect("static value validated to member"),
+            ),
             recommendation_arn: self.recommendation_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation_arn",

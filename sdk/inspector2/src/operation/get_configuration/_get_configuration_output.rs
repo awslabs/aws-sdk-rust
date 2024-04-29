@@ -5,12 +5,18 @@
 pub struct GetConfigurationOutput {
     /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfigurationState>,
+    /// <p>Specifies how the Amazon EC2 automated scan mode is currently configured for your environment.</p>
+    pub ec2_configuration: ::std::option::Option<crate::types::Ec2ConfigurationState>,
     _request_id: Option<String>,
 }
 impl GetConfigurationOutput {
     /// <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
     pub fn ecr_configuration(&self) -> ::std::option::Option<&crate::types::EcrConfigurationState> {
         self.ecr_configuration.as_ref()
+    }
+    /// <p>Specifies how the Amazon EC2 automated scan mode is currently configured for your environment.</p>
+    pub fn ec2_configuration(&self) -> ::std::option::Option<&crate::types::Ec2ConfigurationState> {
+        self.ec2_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetConfigurationOutput {
@@ -30,6 +36,7 @@ impl GetConfigurationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfigurationOutputBuilder {
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfigurationState>,
+    pub(crate) ec2_configuration: ::std::option::Option<crate::types::Ec2ConfigurationState>,
     _request_id: Option<String>,
 }
 impl GetConfigurationOutputBuilder {
@@ -47,6 +54,20 @@ impl GetConfigurationOutputBuilder {
     pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfigurationState> {
         &self.ecr_configuration
     }
+    /// <p>Specifies how the Amazon EC2 automated scan mode is currently configured for your environment.</p>
+    pub fn ec2_configuration(mut self, input: crate::types::Ec2ConfigurationState) -> Self {
+        self.ec2_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the Amazon EC2 automated scan mode is currently configured for your environment.</p>
+    pub fn set_ec2_configuration(mut self, input: ::std::option::Option<crate::types::Ec2ConfigurationState>) -> Self {
+        self.ec2_configuration = input;
+        self
+    }
+    /// <p>Specifies how the Amazon EC2 automated scan mode is currently configured for your environment.</p>
+    pub fn get_ec2_configuration(&self) -> &::std::option::Option<crate::types::Ec2ConfigurationState> {
+        &self.ec2_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl GetConfigurationOutputBuilder {
     pub fn build(self) -> crate::operation::get_configuration::GetConfigurationOutput {
         crate::operation::get_configuration::GetConfigurationOutput {
             ecr_configuration: self.ecr_configuration,
+            ec2_configuration: self.ec2_configuration,
             _request_id: self._request_id,
         }
     }

@@ -222,6 +222,8 @@ pub mod customize;
 
 mod delete_scheduled_query;
 
+mod describe_account_settings;
+
 mod describe_endpoints;
 
 mod describe_scheduled_query;
@@ -239,5 +241,7 @@ mod query;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_account_settings;
 
 mod update_scheduled_query;

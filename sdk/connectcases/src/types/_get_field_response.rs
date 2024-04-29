@@ -18,6 +18,12 @@ pub struct GetFieldResponse {
     pub namespace: crate::types::FieldNamespace,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub deleted: bool,
+    /// <p>The timestamp for when the resource was created.</p>
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
@@ -51,6 +57,18 @@ impl GetFieldResponse {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub fn deleted(&self) -> bool {
+        self.deleted
+    }
+    /// <p>The timestamp for when the resource was created.</p>
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl GetFieldResponse {
     /// Creates a new builder-style object to manufacture [`GetFieldResponse`](crate::types::GetFieldResponse).
@@ -70,6 +88,9 @@ pub struct GetFieldResponseBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FieldType>,
     pub(crate) namespace: ::std::option::Option<crate::types::FieldNamespace>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) deleted: ::std::option::Option<bool>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetFieldResponseBuilder {
     /// <p>Unique identifier of the field.</p>
@@ -186,6 +207,48 @@ impl GetFieldResponseBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub fn deleted(mut self, input: bool) -> Self {
+        self.deleted = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub fn set_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deleted = input;
+        self
+    }
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub fn get_deleted(&self) -> &::std::option::Option<bool> {
+        &self.deleted
+    }
+    /// <p>The timestamp for when the resource was created.</p>
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp for when the resource was created.</p>
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input;
+        self
+    }
+    /// <p>The timestamp for when the resource was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// Consumes the builder and constructs a [`GetFieldResponse`](crate::types::GetFieldResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::GetFieldResponseBuilder::field_id)
@@ -227,6 +290,9 @@ impl GetFieldResponseBuilder {
                 )
             })?,
             tags: self.tags,
+            deleted: self.deleted.unwrap_or_default(),
+            created_time: self.created_time,
+            last_modified_time: self.last_modified_time,
         })
     }
 }

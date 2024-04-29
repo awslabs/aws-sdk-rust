@@ -181,6 +181,12 @@ pub mod customize;
 
 mod delete_domain;
 
+mod delete_field;
+
+mod delete_layout;
+
+mod delete_template;
+
 mod get_case;
 
 mod get_case_audit_events;

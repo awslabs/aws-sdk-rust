@@ -76,9 +76,9 @@ model_hash = 'b09b164e9949d95279b977fd962cc347c565b275f84f50e5501256a4d663a525'
 
 [crates.aws-sdk-amplify]
 category = 'AwsSdk'
-version = '1.22.0'
-source_hash = 'cb478d82fc70f959c8db53a804de24ff8853bff94abd5da4b5cc8ae0da8c0680'
-model_hash = '7f900e5de96c5ff1a3fd57da3ee7449fecb75ca028a4769d0007a0f613f211a6'
+version = '1.23.0'
+source_hash = 'a482e9f1ebb1402670edf1067291b947e805fd2576ef92127ed17828c0bc8ed7'
+model_hash = 'a6d5d1e0da870e8794b111e90c6499de0188f1c16c31fed82eff7d36d05057a4'
 
 [crates.aws-sdk-amplifybackend]
 category = 'AwsSdk'
@@ -580,9 +580,9 @@ model_hash = '37ecc34e51a30d7479c2b73c944fb8932f6e75bda9db27439bfb4e149a2eec47'
 
 [crates.aws-sdk-connectcases]
 category = 'AwsSdk'
-version = '1.22.0'
-source_hash = 'd6009b9e4f5debdbbfb5d6ebaf1f472c8ef8a1f2de2294490ace9220a2825143'
-model_hash = '8a819d7f5765c8ee653d7ae0ea4241edc5e2b75fe43545098546b093b7d258c7'
+version = '1.23.0'
+source_hash = 'dca7a54b5e9746f5fe6e20a32e245d3b26d8cb4982e205ed3d21c28302c004f7'
+model_hash = '7d644965639e0f9654668f0595be109644cab8a09f495924a13974ae9c778d2c'
 
 [crates.aws-sdk-connectcontactlens]
 category = 'AwsSdk'
@@ -1036,9 +1036,9 @@ model_hash = '70886218ed0115b5c85b366be76a361d4b27fa844847e5a2f902cce0b8f7ba5d'
 
 [crates.aws-sdk-inspector2]
 category = 'AwsSdk'
-version = '1.23.0'
-source_hash = '7044d0097cb9653d9a8cc8c2f9946d2c1c71c0934fd36d0ef999594a28359555'
-model_hash = 'c05f78ad530c0fd3c129dafb9dcbd86e8992e40ec0e6299ecd49febbdb5d03a4'
+version = '1.24.0'
+source_hash = '64fc79589f4e13479e63c6c230d3bc657bfa8f2fbd99f8278b66ad98fc196131'
+model_hash = '63ae74740a7c89f95d227f58e96b80577163791b2694296ac518c89abcbea3e5'
 
 [crates.aws-sdk-inspectorscan]
 category = 'AwsSdk'
@@ -2188,9 +2188,9 @@ model_hash = '68af5db97b128f878677b80742e2adf78602fc4016c9807db28a3d0469e02d9a'
 
 [crates.aws-sdk-timestreamquery]
 category = 'AwsSdk'
-version = '1.21.0'
-source_hash = '88432ff9b3ece7139795e44343fcc623ae77294a837a03648bfeb96f57b0d4b6'
-model_hash = 'b6aa68594f71078f60bab4e4841f569dcab2d7f991bed316f65821dd0d7bc26a'
+version = '1.22.0'
+source_hash = 'dd688ececfdbe0a1cb0aa09d3a727f6148ea5fe74fd48e6e6c80b2c704fbf7c6'
+model_hash = '87fde23cf74ed664721966ff1de10047d7e2f2f0cf1b704e304cc971f65958a7'
 
 [crates.aws-sdk-timestreamwrite]
 category = 'AwsSdk'
@@ -2206,9 +2206,9 @@ model_hash = '153626e8fb6b3863afd4b91cd157c8ca6d27db4513982a66221826d7c4417405'
 
 [crates.aws-sdk-transcribe]
 category = 'AwsSdk'
-version = '1.21.0'
-source_hash = 'ef05e4b8ff7de5bb6b2232ef6de657826e8c642aaa9d644c3299849786170fad'
-model_hash = '342bbfe3e53520a26decc4fc18770801a2d6746561ec33700591dd13b93813ab'
+version = '1.22.0'
+source_hash = '4ccd67814cf32a2e3cb761cedc0b4ad3f361e04f54703f62946b01d4bce3748c'
+model_hash = 'e15ab454daa167dfa2eb8b08a1bd9ae6960f92e1f8195ce5d259e278a10dcf48'
 
 [crates.aws-sdk-transcribestreaming]
 category = 'AwsSdk'
@@ -2230,9 +2230,9 @@ model_hash = '07e1d4a125bceac820fa7ba3ba4314903c47c463bd1c600a953038ab8dd1975f'
 
 [crates.aws-sdk-trustedadvisor]
 category = 'AwsSdk'
-version = '1.21.0'
-source_hash = 'a7e00bec341d1d35e3ed23045d93f4dfeb991c9496cf0c9d2530de1a0482b6f4'
-model_hash = 'ce72702d8baaff26bc29ba694fab60de0a76b50e1221c9df5a7b2d3645a2a431'
+version = '1.22.0'
+source_hash = 'e802832e6e36beb4a5cf02f9d89c1df7fa214c618b930c3e396e2646a97eac11'
+model_hash = 'ffb68f74e946dc2e4c4d51ff67ed5a078ed71b245da3baa52784e356fcda1885'
 
 [crates.aws-sdk-verifiedpermissions]
 category = 'AwsSdk'
@@ -2459,15 +2459,10 @@ source_hash = 'c9c8e48cc4574efee8e1d841ecf24e57b78a432b5dfeda812c3c6a68215f6fef'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'c7160bf3ac4ee81fb94cd8a9f3554d31b07f977b368703ef1953d70d8304d4ab'
-
-[release]
-tag = 'release-2024-04-26'
-
 [release.crates]
-aws-sdk-codepipeline = '1.23.0'
-aws-sdk-cognitoidentityprovider = '1.25.0'
-aws-sdk-connectcampaigns = '1.23.0'
-aws-sdk-marketplaceentitlement = '1.22.0'
-aws-sdk-oam = '1.23.0'
-aws-sdk-rds = '1.30.0'
-aws-sdk-support = '1.22.0'
+aws-sdk-amplify = '1.23.0'
+aws-sdk-connectcases = '1.23.0'
+aws-sdk-inspector2 = '1.24.0'
+aws-sdk-timestreamquery = '1.22.0'
+aws-sdk-transcribe = '1.22.0'
+aws-sdk-trustedadvisor = '1.22.0'

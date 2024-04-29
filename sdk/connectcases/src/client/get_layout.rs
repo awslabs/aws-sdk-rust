@@ -11,6 +11,9 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::get_layout::GetLayoutOutput::name): <p>The name of the layout. It must be unique.</p>
     ///   - [`content(Option<LayoutContent>)`](crate::operation::get_layout::GetLayoutOutput::content): <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field.</p>
     ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_layout::GetLayoutOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    ///   - [`deleted(bool)`](crate::operation::get_layout::GetLayoutOutput::deleted): <p>Indicates whether the resource has been deleted.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::operation::get_layout::GetLayoutOutput::created_time): <p>The timestamp for when the resource was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_layout::GetLayoutOutput::last_modified_time): <p>The timestamp for when the resource was created or last modified.</p>
     /// - On failure, responds with [`SdkError<GetLayoutError>`](crate::operation::get_layout::GetLayoutError)
     pub fn get_layout(&self) -> crate::operation::get_layout::builders::GetLayoutFluentBuilder {
         crate::operation::get_layout::builders::GetLayoutFluentBuilder::new(self.handle.clone())

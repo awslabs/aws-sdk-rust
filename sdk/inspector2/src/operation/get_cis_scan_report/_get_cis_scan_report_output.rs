@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCisScanReportOutput {
-    /// <p>The URL where the CIS scan report PDF can be downloaded.</p>
+    /// <p>The URL where a PDF of the CIS scan report can be downloaded.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::CisReportStatus>,
     _request_id: Option<String>,
 }
 impl GetCisScanReportOutput {
-    /// <p>The URL where the CIS scan report PDF can be downloaded.</p>
+    /// <p>The URL where a PDF of the CIS scan report can be downloaded.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct GetCisScanReportOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetCisScanReportOutputBuilder {
-    /// <p>The URL where the CIS scan report PDF can be downloaded.</p>
+    /// <p>The URL where a PDF of the CIS scan report can be downloaded.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL where the CIS scan report PDF can be downloaded.</p>
+    /// <p>The URL where a PDF of the CIS scan report can be downloaded.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The URL where the CIS scan report PDF can be downloaded.</p>
+    /// <p>The URL where a PDF of the CIS scan report can be downloaded.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

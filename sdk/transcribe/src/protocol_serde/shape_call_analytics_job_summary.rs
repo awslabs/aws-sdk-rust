@@ -53,6 +53,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CallAnalyticsJobDetails" => {
+                            builder = builder.set_call_analytics_job_details(
+                                crate::protocol_serde::shape_call_analytics_job_details::de_call_analytics_job_details(tokens)?,
+                            );
+                        }
                         "FailureReason" => {
                             builder = builder.set_failure_reason(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

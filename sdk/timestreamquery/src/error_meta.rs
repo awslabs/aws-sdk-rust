@@ -7,7 +7,7 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Unable to poll results for a cancelled query.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>Timestream was unable to fully process this request because of an internal server error.</p>
+    /// <p>The service was unable to fully process this request because of an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested endpoint was not valid.</p>
     InvalidEndpointException(crate::types::error::InvalidEndpointException),
@@ -166,6 +166,42 @@ impl From<crate::operation::delete_scheduled_query::DeleteScheduledQueryError> f
             crate::operation::delete_scheduled_query::DeleteScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_scheduled_query::DeleteScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_scheduled_query::DeleteScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_account_settings::DescribeAccountSettingsError> for Error {
+    fn from(err: crate::operation::describe_account_settings::DescribeAccountSettingsError) -> Self {
+        match err {
+            crate::operation::describe_account_settings::DescribeAccountSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_account_settings::DescribeAccountSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_account_settings::DescribeAccountSettingsError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::describe_account_settings::DescribeAccountSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_account_settings::DescribeAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -428,6 +464,40 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_account_settings::UpdateAccountSettingsError> for Error {
+    fn from(err: crate::operation::update_account_settings::UpdateAccountSettingsError) -> Self {
+        match err {
+            crate::operation::update_account_settings::UpdateAccountSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_account_settings::UpdateAccountSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_account_settings::UpdateAccountSettingsError::InvalidEndpointException(inner) => {
+                Error::InvalidEndpointException(inner)
+            }
+            crate::operation::update_account_settings::UpdateAccountSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_account_settings::UpdateAccountSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_account_settings::UpdateAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

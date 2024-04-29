@@ -165,6 +165,20 @@ impl ListOrganizationRecommendationResourcesFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
         self.inner.get_status()
     }
+    /// <p>The exclusion status of the resource</p>
+    pub fn exclusion_status(mut self, input: crate::types::ExclusionStatus) -> Self {
+        self.inner = self.inner.exclusion_status(input);
+        self
+    }
+    /// <p>The exclusion status of the resource</p>
+    pub fn set_exclusion_status(mut self, input: ::std::option::Option<crate::types::ExclusionStatus>) -> Self {
+        self.inner = self.inner.set_exclusion_status(input);
+        self
+    }
+    /// <p>The exclusion status of the resource</p>
+    pub fn get_exclusion_status(&self) -> &::std::option::Option<crate::types::ExclusionStatus> {
+        self.inner.get_exclusion_status()
+    }
     /// <p>The AWS Region code of the resource</p>
     pub fn region_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region_code(input.into());

@@ -20,3 +20,7 @@ pub use crate::types::_check_summary::CheckSummaryBuilder;
 pub use crate::types::_recommendation::RecommendationBuilder;
 
 pub use crate::types::_organization_recommendation::OrganizationRecommendationBuilder;
+
+pub use crate::types::_update_recommendation_resource_exclusion_error::UpdateRecommendationResourceExclusionErrorBuilder;
+
+pub use crate::types::_recommendation_resource_exclusion::RecommendationResourceExclusionBuilder;

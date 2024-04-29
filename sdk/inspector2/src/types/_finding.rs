@@ -20,7 +20,7 @@ pub struct Finding {
     pub severity: crate::types::Severity,
     /// <p>The date and time that the finding was first observed.</p>
     pub first_observed_at: ::aws_smithy_types::DateTime,
-    /// <p>The date and time that the finding was last observed.</p>
+    /// <p>The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding is updated.</p>
     pub last_observed_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the finding was last updated at.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -83,7 +83,7 @@ impl Finding {
     pub fn first_observed_at(&self) -> &::aws_smithy_types::DateTime {
         &self.first_observed_at
     }
-    /// <p>The date and time that the finding was last observed.</p>
+    /// <p>The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding is updated.</p>
     pub fn last_observed_at(&self) -> &::aws_smithy_types::DateTime {
         &self.last_observed_at
     }
@@ -290,18 +290,18 @@ impl FindingBuilder {
     pub fn get_first_observed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.first_observed_at
     }
-    /// <p>The date and time that the finding was last observed.</p>
+    /// <p>The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding is updated.</p>
     /// This field is required.
     pub fn last_observed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_observed_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the finding was last observed.</p>
+    /// <p>The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding is updated.</p>
     pub fn set_last_observed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_observed_at = input;
         self
     }
-    /// <p>The date and time that the finding was last observed.</p>
+    /// <p>The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding is updated.</p>
     pub fn get_last_observed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_observed_at
     }

@@ -23,6 +23,8 @@ pub use crate::types::_recommendation_type::RecommendationType;
 
 pub use crate::types::_recommendation_resource_summary::RecommendationResourceSummary;
 
+pub use crate::types::_exclusion_status::ExclusionStatus;
+
 pub use crate::types::_resource_status::ResourceStatus;
 
 pub use crate::types::_organization_recommendation_summary::OrganizationRecommendationSummary;
@@ -39,9 +41,15 @@ pub use crate::types::_recommendation::Recommendation;
 
 pub use crate::types::_organization_recommendation::OrganizationRecommendation;
 
+pub use crate::types::_update_recommendation_resource_exclusion_error::UpdateRecommendationResourceExclusionError;
+
+pub use crate::types::_recommendation_resource_exclusion::RecommendationResourceExclusion;
+
 mod _account_recommendation_lifecycle_summary;
 
 mod _check_summary;
+
+mod _exclusion_status;
 
 mod _organization_recommendation;
 
@@ -61,6 +69,8 @@ mod _recommendation_pillar;
 
 mod _recommendation_pillar_specific_aggregates;
 
+mod _recommendation_resource_exclusion;
+
 mod _recommendation_resource_summary;
 
 mod _recommendation_resources_aggregates;
@@ -78,6 +88,8 @@ mod _resource_status;
 mod _update_recommendation_lifecycle_stage;
 
 mod _update_recommendation_lifecycle_stage_reason_code;
+
+mod _update_recommendation_resource_exclusion_error;
 
 /// Builders
 pub mod builders;

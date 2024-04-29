@@ -19,6 +19,12 @@ pub struct GetTemplateOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>The status of the template.</p>
     pub status: crate::types::TemplateStatus,
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub deleted: bool,
+    /// <p>The timestamp for when the resource was created.</p>
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutput {
@@ -59,6 +65,18 @@ impl GetTemplateOutput {
     pub fn status(&self) -> &crate::types::TemplateStatus {
         &self.status
     }
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub fn deleted(&self) -> bool {
+        self.deleted
+    }
+    /// <p>The timestamp for when the resource was created.</p>
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_time.as_ref()
+    }
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTemplateOutput {
     fn request_id(&self) -> Option<&str> {
@@ -84,6 +102,9 @@ pub struct GetTemplateOutputBuilder {
     pub(crate) required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     pub(crate) status: ::std::option::Option<crate::types::TemplateStatus>,
+    pub(crate) deleted: ::std::option::Option<bool>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutputBuilder {
@@ -220,6 +241,48 @@ impl GetTemplateOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
         &self.status
     }
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub fn deleted(mut self, input: bool) -> Self {
+        self.deleted = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub fn set_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deleted = input;
+        self
+    }
+    /// <p>Indicates whether the resource has been deleted.</p>
+    pub fn get_deleted(&self) -> &::std::option::Option<bool> {
+        &self.deleted
+    }
+    /// <p>The timestamp for when the resource was created.</p>
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp for when the resource was created.</p>
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input;
+        self
+    }
+    /// <p>The timestamp for when the resource was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp for when the resource was created or last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -265,6 +328,9 @@ impl GetTemplateOutputBuilder {
                     "status was not specified but it is required when building GetTemplateOutput",
                 )
             })?,
+            deleted: self.deleted.unwrap_or_default(),
+            created_time: self.created_time,
+            last_modified_time: self.last_modified_time,
             _request_id: self._request_id,
         })
     }

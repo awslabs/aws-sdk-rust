@@ -122,4 +122,18 @@ impl UpdateConfigurationFluentBuilder {
     pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfiguration> {
         self.inner.get_ecr_configuration()
     }
+    /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
+    pub fn ec2_configuration(mut self, input: crate::types::Ec2Configuration) -> Self {
+        self.inner = self.inner.ec2_configuration(input);
+        self
+    }
+    /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
+    pub fn set_ec2_configuration(mut self, input: ::std::option::Option<crate::types::Ec2Configuration>) -> Self {
+        self.inner = self.inner.set_ec2_configuration(input);
+        self
+    }
+    /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
+    pub fn get_ec2_configuration(&self) -> &::std::option::Option<crate::types::Ec2Configuration> {
+        self.inner.get_ec2_configuration()
+    }
 }

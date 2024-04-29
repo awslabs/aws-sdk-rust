@@ -12,6 +12,8 @@ pub struct CallAnalyticsJob {
     /// <p>Provides the status of the specified Call Analytics job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
     pub call_analytics_job_status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub call_analytics_job_details: ::std::option::Option<crate::types::CallAnalyticsJobDetails>,
     /// <p>The language code used to create your Call Analytics job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>If you do not know the language spoken in your media file, you can omit this field and let Amazon Transcribe automatically identify the language of your media. To improve the accuracy of language identification, you can include several language codes and Amazon Transcribe chooses the closest match for your transcription.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -74,6 +76,10 @@ impl CallAnalyticsJob {
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
     pub fn call_analytics_job_status(&self) -> ::std::option::Option<&crate::types::CallAnalyticsJobStatus> {
         self.call_analytics_job_status.as_ref()
+    }
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub fn call_analytics_job_details(&self) -> ::std::option::Option<&crate::types::CallAnalyticsJobDetails> {
+        self.call_analytics_job_details.as_ref()
     }
     /// <p>The language code used to create your Call Analytics job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>If you do not know the language spoken in your media file, you can omit this field and let Amazon Transcribe automatically identify the language of your media. To improve the accuracy of language identification, you can include several language codes and Amazon Transcribe chooses the closest match for your transcription.</p>
@@ -169,6 +175,7 @@ impl CallAnalyticsJob {
 pub struct CallAnalyticsJobBuilder {
     pub(crate) call_analytics_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) call_analytics_job_status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
+    pub(crate) call_analytics_job_details: ::std::option::Option<crate::types::CallAnalyticsJobDetails>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) media_sample_rate_hertz: ::std::option::Option<i32>,
     pub(crate) media_format: ::std::option::Option<crate::types::MediaFormat>,
@@ -214,6 +221,20 @@ impl CallAnalyticsJobBuilder {
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
     pub fn get_call_analytics_job_status(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobStatus> {
         &self.call_analytics_job_status
+    }
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub fn call_analytics_job_details(mut self, input: crate::types::CallAnalyticsJobDetails) -> Self {
+        self.call_analytics_job_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub fn set_call_analytics_job_details(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJobDetails>) -> Self {
+        self.call_analytics_job_details = input;
+        self
+    }
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub fn get_call_analytics_job_details(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobDetails> {
+        &self.call_analytics_job_details
     }
     /// <p>The language code used to create your Call Analytics job. For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>If you do not know the language spoken in your media file, you can omit this field and let Amazon Transcribe automatically identify the language of your media. To improve the accuracy of language identification, you can include several language codes and Amazon Transcribe chooses the closest match for your transcription.</p>
@@ -486,6 +507,7 @@ impl CallAnalyticsJobBuilder {
         crate::types::CallAnalyticsJob {
             call_analytics_job_name: self.call_analytics_job_name,
             call_analytics_job_status: self.call_analytics_job_status,
+            call_analytics_job_details: self.call_analytics_job_details,
             language_code: self.language_code,
             media_sample_rate_hertz: self.media_sample_rate_hertz,
             media_format: self.media_format,

@@ -14,6 +14,9 @@ impl super::Client {
     ///   - [`required_fields(Option<Vec::<RequiredField>>)`](crate::operation::get_template::GetTemplateOutput::required_fields): <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
     ///   - [`tags(Option<HashMap::<String, Option<String>>>)`](crate::operation::get_template::GetTemplateOutput::tags): <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     ///   - [`status(TemplateStatus)`](crate::operation::get_template::GetTemplateOutput::status): <p>The status of the template.</p>
+    ///   - [`deleted(bool)`](crate::operation::get_template::GetTemplateOutput::deleted): <p>Indicates whether the resource has been deleted.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::operation::get_template::GetTemplateOutput::created_time): <p>The timestamp for when the resource was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_template::GetTemplateOutput::last_modified_time): <p>The timestamp for when the resource was created or last modified.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)
     pub fn get_template(&self) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
         crate::operation::get_template::builders::GetTemplateFluentBuilder::new(self.handle.clone())

@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_configuration::builders::GetConfigurationFluentBuilder::send) it.
     /// - On success, responds with [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput) with field(s):
     ///   - [`ecr_configuration(Option<EcrConfigurationState>)`](crate::operation::get_configuration::GetConfigurationOutput::ecr_configuration): <p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>
+    ///   - [`ec2_configuration(Option<Ec2ConfigurationState>)`](crate::operation::get_configuration::GetConfigurationOutput::ec2_configuration): <p>Specifies how the Amazon EC2 automated scan mode is currently configured for your environment.</p>
     /// - On failure, responds with [`SdkError<GetConfigurationError>`](crate::operation::get_configuration::GetConfigurationError)
     pub fn get_configuration(&self) -> crate::operation::get_configuration::builders::GetConfigurationFluentBuilder {
         crate::operation::get_configuration::builders::GetConfigurationFluentBuilder::new(self.handle.clone())

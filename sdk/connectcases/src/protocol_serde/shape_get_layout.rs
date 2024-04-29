@@ -128,6 +128,21 @@ pub(crate) fn de_get_layout(
                 "content" => {
                     builder = builder.set_content(crate::protocol_serde::shape_layout_content::de_layout_content(tokens)?);
                 }
+                "createdTime" => {
+                    builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "deleted" => {
+                    builder = builder.set_deleted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "lastModifiedTime" => {
+                    builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
                 "layoutArn" => {
                     builder = builder.set_layout_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

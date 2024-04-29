@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CumulativeBytesScanned" => {
+                            builder = builder.set_cumulative_bytes_scanned(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "RecordsIngested" => {
                             builder = builder.set_records_ingested(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

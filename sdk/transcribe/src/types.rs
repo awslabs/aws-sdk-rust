@@ -103,6 +103,14 @@ pub use crate::types::_call_analytics_job_settings::CallAnalyticsJobSettings;
 
 pub use crate::types::_summarization::Summarization;
 
+pub use crate::types::_call_analytics_job_details::CallAnalyticsJobDetails;
+
+pub use crate::types::_call_analytics_skipped_feature::CallAnalyticsSkippedFeature;
+
+pub use crate::types::_call_analytics_skipped_reason_code::CallAnalyticsSkippedReasonCode;
+
+pub use crate::types::_call_analytics_feature::CallAnalyticsFeature;
+
 pub use crate::types::_call_analytics_job_status::CallAnalyticsJobStatus;
 
 pub use crate::types::_vocabulary_filter_info::VocabularyFilterInfo;
@@ -133,13 +141,21 @@ mod _absolute_time_range;
 
 mod _base_model_name;
 
+mod _call_analytics_feature;
+
 mod _call_analytics_job;
+
+mod _call_analytics_job_details;
 
 mod _call_analytics_job_settings;
 
 mod _call_analytics_job_status;
 
 mod _call_analytics_job_summary;
+
+mod _call_analytics_skipped_feature;
+
+mod _call_analytics_skipped_reason_code;
 
 mod _category_properties;
 

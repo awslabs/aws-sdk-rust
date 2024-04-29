@@ -159,17 +159,29 @@ pub fn ser_coverage_filter_criteria(
         }
         array_50.finish();
     }
-    if let Some(var_53) = &input.image_pulled_at {
-        let mut array_54 = object.key("imagePulledAt").start_array();
+    if let Some(var_53) = &input.scan_mode {
+        let mut array_54 = object.key("scanMode").start_array();
         for item_55 in var_53 {
             {
                 #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
-                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(&mut object_56, item_55)?;
+                crate::protocol_serde::shape_coverage_string_filter::ser_coverage_string_filter(&mut object_56, item_55)?;
                 object_56.finish();
             }
         }
         array_54.finish();
+    }
+    if let Some(var_57) = &input.image_pulled_at {
+        let mut array_58 = object.key("imagePulledAt").start_array();
+        for item_59 in var_57 {
+            {
+                #[allow(unused_mut)]
+                let mut object_60 = array_58.value().start_object();
+                crate::protocol_serde::shape_coverage_date_filter::ser_coverage_date_filter(&mut object_60, item_59)?;
+                object_60.finish();
+            }
+        }
+        array_58.finish();
     }
     Ok(())
 }

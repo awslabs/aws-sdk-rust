@@ -240,7 +240,7 @@ pub enum QueryError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Unable to poll results for a cancelled query.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>Timestream was unable to fully process this request because of an internal server error.</p>
+    /// <p>The service was unable to fully process this request because of an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested endpoint was not valid.</p>
     InvalidEndpointException(crate::types::error::InvalidEndpointException),

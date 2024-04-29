@@ -30,6 +30,8 @@ pub struct CoverageFilterCriteria {
     pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
     pub last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+    pub scan_mode: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The date an image was last pulled at.</p>
     pub image_pulled_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
 }
@@ -112,6 +114,12 @@ impl CoverageFilterCriteria {
     pub fn last_scanned_at(&self) -> &[crate::types::CoverageDateFilter] {
         self.last_scanned_at.as_deref().unwrap_or_default()
     }
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_mode.is_none()`.
+    pub fn scan_mode(&self) -> &[crate::types::CoverageStringFilter] {
+        self.scan_mode.as_deref().unwrap_or_default()
+    }
     /// <p>The date an image was last pulled at.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_pulled_at.is_none()`.
@@ -143,6 +151,7 @@ pub struct CoverageFilterCriteriaBuilder {
     pub(crate) lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     pub(crate) lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     pub(crate) last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    pub(crate) scan_mode: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     pub(crate) image_pulled_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
 }
 impl CoverageFilterCriteriaBuilder {
@@ -406,6 +415,26 @@ impl CoverageFilterCriteriaBuilder {
     pub fn get_last_scanned_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>> {
         &self.last_scanned_at
     }
+    /// Appends an item to `scan_mode`.
+    ///
+    /// To override the contents of this collection use [`set_scan_mode`](Self::set_scan_mode).
+    ///
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+    pub fn scan_mode(mut self, input: crate::types::CoverageStringFilter) -> Self {
+        let mut v = self.scan_mode.unwrap_or_default();
+        v.push(input);
+        self.scan_mode = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+    pub fn set_scan_mode(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
+        self.scan_mode = input;
+        self
+    }
+    /// <p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>
+    pub fn get_scan_mode(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.scan_mode
+    }
     /// Appends an item to `image_pulled_at`.
     ///
     /// To override the contents of this collection use [`set_image_pulled_at`](Self::set_image_pulled_at).
@@ -442,6 +471,7 @@ impl CoverageFilterCriteriaBuilder {
             lambda_function_tags: self.lambda_function_tags,
             lambda_function_runtime: self.lambda_function_runtime,
             last_scanned_at: self.last_scanned_at,
+            scan_mode: self.scan_mode,
             image_pulled_at: self.image_pulled_at,
         }
     }

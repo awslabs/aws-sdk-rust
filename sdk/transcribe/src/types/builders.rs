@@ -61,6 +61,10 @@ pub use crate::types::_call_analytics_job_settings::CallAnalyticsJobSettingsBuil
 
 pub use crate::types::_summarization::SummarizationBuilder;
 
+pub use crate::types::_call_analytics_job_details::CallAnalyticsJobDetailsBuilder;
+
+pub use crate::types::_call_analytics_skipped_feature::CallAnalyticsSkippedFeatureBuilder;
+
 pub use crate::types::_vocabulary_filter_info::VocabularyFilterInfoBuilder;
 
 pub use crate::types::_vocabulary_info::VocabularyInfoBuilder;

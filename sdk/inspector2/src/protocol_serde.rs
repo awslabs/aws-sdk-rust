@@ -315,6 +315,10 @@ pub(crate) mod shape_delegated_admin_account_list;
 
 pub(crate) mod shape_destination;
 
+pub(crate) mod shape_ec2_configuration;
+
+pub(crate) mod shape_ec2_configuration_state;
+
 pub(crate) mod shape_ecr_configuration;
 
 pub(crate) mod shape_ecr_configuration_state;
@@ -442,6 +446,8 @@ pub(crate) mod shape_date_filter_list;
 pub(crate) mod shape_delegated_admin_account;
 
 pub(crate) mod shape_ec2_instance_aggregation;
+
+pub(crate) mod shape_ec2_scan_mode_state;
 
 pub(crate) mod shape_ecr_rescan_duration_state;
 

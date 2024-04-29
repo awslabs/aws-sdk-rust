@@ -275,6 +275,8 @@ pub(crate) mod shape_vocabularies;
 
 pub(crate) mod shape_vocabulary_filters;
 
+pub(crate) mod shape_call_analytics_job_details;
+
 pub(crate) mod shape_call_analytics_job_summary;
 
 pub(crate) mod shape_channel_definitions;
@@ -321,6 +323,8 @@ pub(crate) mod shape_vocabulary_info;
 
 pub(crate) mod shape_absolute_time_range;
 
+pub(crate) mod shape_call_analytics_skipped_feature_list;
+
 pub(crate) mod shape_language_code_item;
 
 pub(crate) mod shape_pii_entity_types;
@@ -330,6 +334,8 @@ pub(crate) mod shape_relative_time_range;
 pub(crate) mod shape_subtitle_file_uris;
 
 pub(crate) mod shape_subtitle_formats;
+
+pub(crate) mod shape_call_analytics_skipped_feature;
 
 pub(crate) mod shape_toxicity_categories;
 

@@ -20,6 +20,8 @@ pub struct CallAnalyticsJobSummary {
     /// <p>Provides the status of your Call Analytics job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
     pub call_analytics_job_status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub call_analytics_job_details: ::std::option::Option<crate::types::CallAnalyticsJobDetails>,
     /// <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the Call Analytics job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
@@ -52,6 +54,10 @@ impl CallAnalyticsJobSummary {
     pub fn call_analytics_job_status(&self) -> ::std::option::Option<&crate::types::CallAnalyticsJobStatus> {
         self.call_analytics_job_status.as_ref()
     }
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub fn call_analytics_job_details(&self) -> ::std::option::Option<&crate::types::CallAnalyticsJobDetails> {
+        self.call_analytics_job_details.as_ref()
+    }
     /// <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the Call Analytics job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
@@ -74,6 +80,7 @@ pub struct CallAnalyticsJobSummaryBuilder {
     pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) call_analytics_job_status: ::std::option::Option<crate::types::CallAnalyticsJobStatus>,
+    pub(crate) call_analytics_job_details: ::std::option::Option<crate::types::CallAnalyticsJobDetails>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl CallAnalyticsJobSummaryBuilder {
@@ -173,6 +180,20 @@ impl CallAnalyticsJobSummaryBuilder {
     pub fn get_call_analytics_job_status(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobStatus> {
         &self.call_analytics_job_status
     }
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub fn call_analytics_job_details(mut self, input: crate::types::CallAnalyticsJobDetails) -> Self {
+        self.call_analytics_job_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub fn set_call_analytics_job_details(mut self, input: ::std::option::Option<crate::types::CallAnalyticsJobDetails>) -> Self {
+        self.call_analytics_job_details = input;
+        self
+    }
+    /// <p>Provides detailed information about a call analytics job, including information about skipped analytics features.</p>
+    pub fn get_call_analytics_job_details(&self) -> &::std::option::Option<crate::types::CallAnalyticsJobDetails> {
+        &self.call_analytics_job_details
+    }
     /// <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the Call Analytics job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
@@ -196,6 +217,7 @@ impl CallAnalyticsJobSummaryBuilder {
             completion_time: self.completion_time,
             language_code: self.language_code,
             call_analytics_job_status: self.call_analytics_job_status,
+            call_analytics_job_details: self.call_analytics_job_details,
             failure_reason: self.failure_reason,
         }
     }

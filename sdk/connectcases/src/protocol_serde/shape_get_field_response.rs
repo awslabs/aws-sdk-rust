@@ -59,6 +59,21 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                         }
+                        "deleted" => {
+                            builder = builder.set_deleted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "createdTime" => {
+                            builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "lastModifiedTime" => {
+                            builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

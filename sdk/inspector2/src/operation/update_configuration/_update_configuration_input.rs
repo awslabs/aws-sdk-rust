@@ -5,11 +5,17 @@
 pub struct UpdateConfigurationInput {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
+    /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
+    pub ec2_configuration: ::std::option::Option<crate::types::Ec2Configuration>,
 }
 impl UpdateConfigurationInput {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     pub fn ecr_configuration(&self) -> ::std::option::Option<&crate::types::EcrConfiguration> {
         self.ecr_configuration.as_ref()
+    }
+    /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
+    pub fn ec2_configuration(&self) -> ::std::option::Option<&crate::types::Ec2Configuration> {
+        self.ec2_configuration.as_ref()
     }
 }
 impl UpdateConfigurationInput {
@@ -24,10 +30,10 @@ impl UpdateConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationInputBuilder {
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
+    pub(crate) ec2_configuration: ::std::option::Option<crate::types::Ec2Configuration>,
 }
 impl UpdateConfigurationInputBuilder {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
-    /// This field is required.
     pub fn ecr_configuration(mut self, input: crate::types::EcrConfiguration) -> Self {
         self.ecr_configuration = ::std::option::Option::Some(input);
         self
@@ -41,6 +47,20 @@ impl UpdateConfigurationInputBuilder {
     pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfiguration> {
         &self.ecr_configuration
     }
+    /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
+    pub fn ec2_configuration(mut self, input: crate::types::Ec2Configuration) -> Self {
+        self.ec2_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
+    pub fn set_ec2_configuration(mut self, input: ::std::option::Option<crate::types::Ec2Configuration>) -> Self {
+        self.ec2_configuration = input;
+        self
+    }
+    /// <p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>
+    pub fn get_ec2_configuration(&self) -> &::std::option::Option<crate::types::Ec2Configuration> {
+        &self.ec2_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
     pub fn build(
         self,
@@ -48,6 +68,7 @@ impl UpdateConfigurationInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::update_configuration::UpdateConfigurationInput {
             ecr_configuration: self.ecr_configuration,
+            ec2_configuration: self.ec2_configuration,
         })
     }
 }

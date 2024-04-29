@@ -18,6 +18,8 @@ pub struct CoveredResource {
     pub resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
     /// <p>The date and time the resource was last checked for vulnerabilities.</p>
     pub last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The scan method that is applied to the instance.</p>
+    pub scan_mode: ::std::option::Option<crate::types::ScanMode>,
 }
 impl CoveredResource {
     /// <p>The type of the covered resource.</p>
@@ -50,6 +52,10 @@ impl CoveredResource {
     pub fn last_scanned_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_scanned_at.as_ref()
     }
+    /// <p>The scan method that is applied to the instance.</p>
+    pub fn scan_mode(&self) -> ::std::option::Option<&crate::types::ScanMode> {
+        self.scan_mode.as_ref()
+    }
 }
 impl CoveredResource {
     /// Creates a new builder-style object to manufacture [`CoveredResource`](crate::types::CoveredResource).
@@ -69,6 +75,7 @@ pub struct CoveredResourceBuilder {
     pub(crate) scan_status: ::std::option::Option<crate::types::ScanStatus>,
     pub(crate) resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
     pub(crate) last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) scan_mode: ::std::option::Option<crate::types::ScanMode>,
 }
 impl CoveredResourceBuilder {
     /// <p>The type of the covered resource.</p>
@@ -173,6 +180,20 @@ impl CoveredResourceBuilder {
     pub fn get_last_scanned_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_scanned_at
     }
+    /// <p>The scan method that is applied to the instance.</p>
+    pub fn scan_mode(mut self, input: crate::types::ScanMode) -> Self {
+        self.scan_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scan method that is applied to the instance.</p>
+    pub fn set_scan_mode(mut self, input: ::std::option::Option<crate::types::ScanMode>) -> Self {
+        self.scan_mode = input;
+        self
+    }
+    /// <p>The scan method that is applied to the instance.</p>
+    pub fn get_scan_mode(&self) -> &::std::option::Option<crate::types::ScanMode> {
+        &self.scan_mode
+    }
     /// Consumes the builder and constructs a [`CoveredResource`](crate::types::CoveredResource).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::CoveredResourceBuilder::resource_type)
@@ -208,6 +229,7 @@ impl CoveredResourceBuilder {
             scan_status: self.scan_status,
             resource_metadata: self.resource_metadata,
             last_scanned_at: self.last_scanned_at,
+            scan_mode: self.scan_mode,
         })
     }
 }

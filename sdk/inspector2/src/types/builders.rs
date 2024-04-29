@@ -17,6 +17,8 @@ pub use crate::types::_port_range_filter::PortRangeFilterBuilder;
 
 pub use crate::types::_map_filter::MapFilterBuilder;
 
+pub use crate::types::_ec2_configuration::Ec2ConfigurationBuilder;
+
 pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
 
 pub use crate::types::_update_cis_targets::UpdateCisTargetsBuilder;
@@ -234,6 +236,10 @@ pub use crate::types::_resource_string_filter::ResourceStringFilterBuilder;
 pub use crate::types::_destination::DestinationBuilder;
 
 pub use crate::types::_delegated_admin::DelegatedAdminBuilder;
+
+pub use crate::types::_ec2_configuration_state::Ec2ConfigurationStateBuilder;
+
+pub use crate::types::_ec2_scan_mode_state::Ec2ScanModeStateBuilder;
 
 pub use crate::types::_ecr_configuration_state::EcrConfigurationStateBuilder;
 

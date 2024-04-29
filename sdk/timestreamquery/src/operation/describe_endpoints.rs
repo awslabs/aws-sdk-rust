@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeEndpo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeEndpointsError {
-    /// <p>Timestream was unable to fully process this request because of an internal server error.</p>
+    /// <p>The service was unable to fully process this request because of an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

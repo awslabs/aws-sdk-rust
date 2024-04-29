@@ -125,12 +125,27 @@ pub(crate) fn de_get_template(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "createdTime" => {
+                    builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "deleted" => {
+                    builder = builder.set_deleted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "lastModifiedTime" => {
+                    builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
                 }
                 "layoutConfiguration" => {
                     builder = builder.set_layout_configuration(crate::protocol_serde::shape_layout_configuration::de_layout_configuration(tokens)?);

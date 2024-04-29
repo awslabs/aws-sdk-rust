@@ -10,6 +10,9 @@ pub mod create_scheduled_query;
 /// Types for the `DeleteScheduledQuery` operation.
 pub mod delete_scheduled_query;
 
+/// Types for the `DescribeAccountSettings` operation.
+pub mod describe_account_settings;
+
 /// Types for the `DescribeEndpoints` operation.
 pub mod describe_endpoints;
 
@@ -36,6 +39,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAccountSettings` operation.
+pub mod update_account_settings;
 
 /// Types for the `UpdateScheduledQuery` operation.
 pub mod update_scheduled_query;

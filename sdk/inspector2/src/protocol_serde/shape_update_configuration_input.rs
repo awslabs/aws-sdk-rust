@@ -3,11 +3,17 @@ pub fn ser_update_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_configuration::UpdateConfigurationInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.ecr_configuration {
+    if let Some(var_1) = &input.ec2_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("ecrConfiguration").start_object();
-        crate::protocol_serde::shape_ecr_configuration::ser_ecr_configuration(&mut object_2, var_1)?;
+        let mut object_2 = object.key("ec2Configuration").start_object();
+        crate::protocol_serde::shape_ec2_configuration::ser_ec2_configuration(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.ecr_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ecrConfiguration").start_object();
+        crate::protocol_serde::shape_ecr_configuration::ser_ecr_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

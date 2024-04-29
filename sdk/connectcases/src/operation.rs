@@ -28,6 +28,15 @@ pub mod create_template;
 /// Types for the `DeleteDomain` operation.
 pub mod delete_domain;
 
+/// Types for the `DeleteField` operation.
+pub mod delete_field;
+
+/// Types for the `DeleteLayout` operation.
+pub mod delete_layout;
+
+/// Types for the `DeleteTemplate` operation.
+pub mod delete_template;
+
 /// Types for the `GetCase` operation.
 pub mod get_case;
 

@@ -327,6 +327,88 @@ impl From<crate::operation::delete_domain::DeleteDomainError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_field::DeleteFieldError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_field::DeleteFieldError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_field::DeleteFieldError> for Error {
+    fn from(err: crate::operation::delete_field::DeleteFieldError) -> Self {
+        match err {
+            crate::operation::delete_field::DeleteFieldError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_field::DeleteFieldError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_field::DeleteFieldError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_field::DeleteFieldError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_field::DeleteFieldError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_field::DeleteFieldError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_field::DeleteFieldError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_field::DeleteFieldError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_layout::DeleteLayoutError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_layout::DeleteLayoutError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_layout::DeleteLayoutError> for Error {
+    fn from(err: crate::operation::delete_layout::DeleteLayoutError) -> Self {
+        match err {
+            crate::operation::delete_layout::DeleteLayoutError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_layout::DeleteLayoutError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_layout::DeleteLayoutError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_layout::DeleteLayoutError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_layout::DeleteLayoutError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_layout::DeleteLayoutError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_layout::DeleteLayoutError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_template::DeleteTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_template::DeleteTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_template::DeleteTemplateError> for Error {
+    fn from(err: crate::operation::delete_template::DeleteTemplateError) -> Self {
+        match err {
+            crate::operation::delete_template::DeleteTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_template::DeleteTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_template::DeleteTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_template::DeleteTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_template::DeleteTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_template::DeleteTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_template::DeleteTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_case::GetCaseError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

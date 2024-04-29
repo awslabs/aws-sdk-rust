@@ -104,6 +104,10 @@ pub(crate) fn de_get_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "ec2Configuration" => {
+                    builder =
+                        builder.set_ec2_configuration(crate::protocol_serde::shape_ec2_configuration_state::de_ec2_configuration_state(tokens)?);
+                }
                 "ecrConfiguration" => {
                     builder =
                         builder.set_ecr_configuration(crate::protocol_serde::shape_ecr_configuration_state::de_ecr_configuration_state(tokens)?);

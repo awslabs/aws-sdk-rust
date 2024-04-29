@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod batch_update_recommendation_resource_exclusion;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -147,7 +149,7 @@ impl Client {
 /// # let client: aws_sdk_trustedadvisor::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.get_organization_recommendation()
+/// let result = client.batch_update_recommendation_resource_exclusion()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

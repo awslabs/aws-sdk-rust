@@ -9,6 +9,8 @@ pub struct ListRecommendationResourcesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The status of the resource</p>
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
+    /// <p>The exclusion status of the resource</p>
+    pub exclusion_status: ::std::option::Option<crate::types::ExclusionStatus>,
     /// <p>The AWS Region code of the resource</p>
     pub region_code: ::std::option::Option<::std::string::String>,
     /// <p>The Recommendation identifier</p>
@@ -26,6 +28,10 @@ impl ListRecommendationResourcesInput {
     /// <p>The status of the resource</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.status.as_ref()
+    }
+    /// <p>The exclusion status of the resource</p>
+    pub fn exclusion_status(&self) -> ::std::option::Option<&crate::types::ExclusionStatus> {
+        self.exclusion_status.as_ref()
     }
     /// <p>The AWS Region code of the resource</p>
     pub fn region_code(&self) -> ::std::option::Option<&str> {
@@ -50,6 +56,7 @@ pub struct ListRecommendationResourcesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
+    pub(crate) exclusion_status: ::std::option::Option<crate::types::ExclusionStatus>,
     pub(crate) region_code: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -96,6 +103,20 @@ impl ListRecommendationResourcesInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
         &self.status
     }
+    /// <p>The exclusion status of the resource</p>
+    pub fn exclusion_status(mut self, input: crate::types::ExclusionStatus) -> Self {
+        self.exclusion_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The exclusion status of the resource</p>
+    pub fn set_exclusion_status(mut self, input: ::std::option::Option<crate::types::ExclusionStatus>) -> Self {
+        self.exclusion_status = input;
+        self
+    }
+    /// <p>The exclusion status of the resource</p>
+    pub fn get_exclusion_status(&self) -> &::std::option::Option<crate::types::ExclusionStatus> {
+        &self.exclusion_status
+    }
     /// <p>The AWS Region code of the resource</p>
     pub fn region_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_code = ::std::option::Option::Some(input.into());
@@ -136,6 +157,7 @@ impl ListRecommendationResourcesInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             status: self.status,
+            exclusion_status: self.exclusion_status,
             region_code: self.region_code,
             recommendation_identifier: self.recommendation_identifier,
         })

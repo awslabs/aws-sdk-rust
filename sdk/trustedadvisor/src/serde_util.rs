@@ -8,18 +8,18 @@ pub(crate) fn access_denied_exception_correct_errors(
     builder
 }
 
-pub(crate) fn internal_server_exception_correct_errors(
-    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
-) -> crate::types::error::builders::InternalServerExceptionBuilder {
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
     builder
 }
 
-pub(crate) fn resource_not_found_exception_correct_errors(
-    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
-) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+pub(crate) fn internal_server_exception_correct_errors(
+    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
+) -> crate::types::error::builders::InternalServerExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -38,6 +38,24 @@ pub(crate) fn throttling_exception_correct_errors(
 pub(crate) fn validation_exception_correct_errors(
     mut builder: crate::types::error::builders::ValidationExceptionBuilder,
 ) -> crate::types::error::builders::ValidationExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_recommendation_resource_exclusion_output_output_correct_errors(
+    mut builder: crate::operation::batch_update_recommendation_resource_exclusion::builders::BatchUpdateRecommendationResourceExclusionOutputBuilder,
+) -> crate::operation::batch_update_recommendation_resource_exclusion::builders::BatchUpdateRecommendationResourceExclusionOutputBuilder {
+    if builder.batch_update_recommendation_resource_exclusion_errors.is_none() {
+        builder.batch_update_recommendation_resource_exclusion_errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -94,15 +112,6 @@ pub(crate) fn list_recommendations_output_output_correct_errors(
 ) -> crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder {
     if builder.recommendation_summaries.is_none() {
         builder.recommendation_summaries = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn conflict_exception_correct_errors(
-    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
-) -> crate::types::error::builders::ConflictExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
     }
     builder
 }

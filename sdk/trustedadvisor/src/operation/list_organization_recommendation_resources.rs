@@ -227,14 +227,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListOrganiza
                         query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.region_code {
+                if let ::std::option::Option::Some(inner_5) = &_input.exclusion_status {
                     {
-                        query.push_kv("regionCode", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("exclusionStatus", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.affected_account_id {
+                if let ::std::option::Option::Some(inner_6) = &_input.region_code {
                     {
-                        query.push_kv("affectedAccountId", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("regionCode", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_7) = &_input.affected_account_id {
+                    {
+                        query.push_kv("affectedAccountId", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

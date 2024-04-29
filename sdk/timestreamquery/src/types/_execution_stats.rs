@@ -10,6 +10,8 @@ pub struct ExecutionStats {
     pub data_writes: i64,
     /// <p>Bytes metered for a single scheduled query run.</p>
     pub bytes_metered: i64,
+    /// <p>Bytes scanned for a single scheduled query run.</p>
+    pub cumulative_bytes_scanned: i64,
     /// <p>The number of records ingested for a single scheduled query run.</p>
     pub records_ingested: i64,
     /// <p>Number of rows present in the output from running a query before ingestion to destination data source.</p>
@@ -27,6 +29,10 @@ impl ExecutionStats {
     /// <p>Bytes metered for a single scheduled query run.</p>
     pub fn bytes_metered(&self) -> i64 {
         self.bytes_metered
+    }
+    /// <p>Bytes scanned for a single scheduled query run.</p>
+    pub fn cumulative_bytes_scanned(&self) -> i64 {
+        self.cumulative_bytes_scanned
     }
     /// <p>The number of records ingested for a single scheduled query run.</p>
     pub fn records_ingested(&self) -> i64 {
@@ -51,6 +57,7 @@ pub struct ExecutionStatsBuilder {
     pub(crate) execution_time_in_millis: ::std::option::Option<i64>,
     pub(crate) data_writes: ::std::option::Option<i64>,
     pub(crate) bytes_metered: ::std::option::Option<i64>,
+    pub(crate) cumulative_bytes_scanned: ::std::option::Option<i64>,
     pub(crate) records_ingested: ::std::option::Option<i64>,
     pub(crate) query_result_rows: ::std::option::Option<i64>,
 }
@@ -97,6 +104,20 @@ impl ExecutionStatsBuilder {
     pub fn get_bytes_metered(&self) -> &::std::option::Option<i64> {
         &self.bytes_metered
     }
+    /// <p>Bytes scanned for a single scheduled query run.</p>
+    pub fn cumulative_bytes_scanned(mut self, input: i64) -> Self {
+        self.cumulative_bytes_scanned = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Bytes scanned for a single scheduled query run.</p>
+    pub fn set_cumulative_bytes_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.cumulative_bytes_scanned = input;
+        self
+    }
+    /// <p>Bytes scanned for a single scheduled query run.</p>
+    pub fn get_cumulative_bytes_scanned(&self) -> &::std::option::Option<i64> {
+        &self.cumulative_bytes_scanned
+    }
     /// <p>The number of records ingested for a single scheduled query run.</p>
     pub fn records_ingested(mut self, input: i64) -> Self {
         self.records_ingested = ::std::option::Option::Some(input);
@@ -131,6 +152,7 @@ impl ExecutionStatsBuilder {
             execution_time_in_millis: self.execution_time_in_millis.unwrap_or_default(),
             data_writes: self.data_writes.unwrap_or_default(),
             bytes_metered: self.bytes_metered.unwrap_or_default(),
+            cumulative_bytes_scanned: self.cumulative_bytes_scanned.unwrap_or_default(),
             records_ingested: self.records_ingested.unwrap_or_default(),
             query_result_rows: self.query_result_rows.unwrap_or_default(),
         }

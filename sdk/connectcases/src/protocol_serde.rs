@@ -41,6 +41,12 @@ pub(crate) mod shape_create_template;
 
 pub(crate) mod shape_delete_domain;
 
+pub(crate) mod shape_delete_field;
+
+pub(crate) mod shape_delete_layout;
+
+pub(crate) mod shape_delete_template;
+
 pub(crate) mod shape_get_case;
 
 pub(crate) mod shape_get_case_audit_events;

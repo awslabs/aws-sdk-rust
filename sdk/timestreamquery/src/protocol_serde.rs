@@ -29,6 +29,8 @@ pub(crate) mod shape_create_scheduled_query;
 
 pub(crate) mod shape_delete_scheduled_query;
 
+pub(crate) mod shape_describe_account_settings;
+
 pub(crate) mod shape_describe_endpoints;
 
 pub(crate) mod shape_describe_scheduled_query;
@@ -46,6 +48,8 @@ pub(crate) mod shape_query;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_account_settings;
 
 pub(crate) mod shape_update_scheduled_query;
 
@@ -94,6 +98,8 @@ pub(crate) mod shape_tag_resource_input;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_account_settings_input;
 
 pub(crate) mod shape_update_scheduled_query_input;
 

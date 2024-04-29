@@ -14,7 +14,7 @@ serde_json = "1.0"
 aws-config= { version = "1.2.1", path = "../../../sdk/aws-config" }
 aws-sdk-polly= { version = "1.22.0", path = "../../../sdk/polly" }
 aws-sdk-s3= { version = "1.24.0", path = "../../../sdk/s3" }
-aws-sdk-transcribe= { version = "1.21.0", path = "../../../sdk/transcribe" }
+aws-sdk-transcribe= { version = "1.22.0", path = "../../../sdk/transcribe" }
 aws-smithy-types= { version = "1.1.8", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
 
 [dependencies.tokio]

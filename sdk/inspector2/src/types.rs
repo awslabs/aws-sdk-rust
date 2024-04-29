@@ -31,6 +31,10 @@ pub use crate::types::_scan_type::ScanType;
 
 pub use crate::types::_ec2_deep_inspection_status::Ec2DeepInspectionStatus;
 
+pub use crate::types::_ec2_configuration::Ec2Configuration;
+
+pub use crate::types::_ec2_scan_mode::Ec2ScanMode;
+
 pub use crate::types::_ecr_configuration::EcrConfiguration;
 
 pub use crate::types::_ecr_pull_date_rescan_duration::EcrPullDateRescanDuration;
@@ -273,6 +277,8 @@ pub use crate::types::_coverage_map_comparison::CoverageMapComparison;
 
 pub use crate::types::_covered_resource::CoveredResource;
 
+pub use crate::types::_scan_mode::ScanMode;
+
 pub use crate::types::_resource_scan_metadata::ResourceScanMetadata;
 
 pub use crate::types::_lambda_function_metadata::LambdaFunctionMetadata;
@@ -390,6 +396,12 @@ pub use crate::types::_external_report_status::ExternalReportStatus;
 pub use crate::types::_sbom_report_format::SbomReportFormat;
 
 pub use crate::types::_delegated_admin::DelegatedAdmin;
+
+pub use crate::types::_ec2_configuration_state::Ec2ConfigurationState;
+
+pub use crate::types::_ec2_scan_mode_state::Ec2ScanModeState;
+
+pub use crate::types::_ec2_scan_mode_status::Ec2ScanModeStatus;
 
 pub use crate::types::_ecr_configuration_state::EcrConfigurationState;
 
@@ -651,6 +663,10 @@ mod _delegated_admin_status;
 
 mod _destination;
 
+mod _ec2_configuration;
+
+mod _ec2_configuration_state;
+
 mod _ec2_deep_inspection_status;
 
 mod _ec2_instance_aggregation;
@@ -662,6 +678,12 @@ mod _ec2_instance_sort_by;
 mod _ec2_metadata;
 
 mod _ec2_platform;
+
+mod _ec2_scan_mode;
+
+mod _ec2_scan_mode_state;
+
+mod _ec2_scan_mode_status;
 
 mod _ecr_configuration;
 
@@ -860,6 +882,8 @@ mod _resource_type;
 mod _runtime;
 
 mod _sbom_report_format;
+
+mod _scan_mode;
 
 mod _scan_status;
 
