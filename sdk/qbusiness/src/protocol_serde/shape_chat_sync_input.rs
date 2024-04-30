@@ -27,26 +27,32 @@ pub fn ser_chat_sync_input_input(
         crate::protocol_serde::shape_attribute_filter::ser_attribute_filter(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.chat_mode {
-        object.key("chatMode").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.chat_mode_configuration {
+    if let Some(var_9) = &input.auth_challenge_response {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("chatModeConfiguration").start_object();
-        crate::protocol_serde::shape_chat_mode_configuration::ser_chat_mode_configuration(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("authChallengeResponse").start_object();
+        crate::protocol_serde::shape_auth_challenge_response::ser_auth_challenge_response(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.client_token {
-        object.key("clientToken").string(var_12.as_str());
+    if let Some(var_11) = &input.chat_mode {
+        object.key("chatMode").string(var_11.as_str());
     }
-    if let Some(var_13) = &input.conversation_id {
-        object.key("conversationId").string(var_13.as_str());
+    if let Some(var_12) = &input.chat_mode_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("chatModeConfiguration").start_object();
+        crate::protocol_serde::shape_chat_mode_configuration::ser_chat_mode_configuration(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_14) = &input.parent_message_id {
-        object.key("parentMessageId").string(var_14.as_str());
+    if let Some(var_14) = &input.client_token {
+        object.key("clientToken").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.user_message {
-        object.key("userMessage").string(var_15.as_str());
+    if let Some(var_15) = &input.conversation_id {
+        object.key("conversationId").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.parent_message_id {
+        object.key("parentMessageId").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.user_message {
+        object.key("userMessage").string(var_17.as_str());
     }
     Ok(())
 }

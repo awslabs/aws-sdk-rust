@@ -42,21 +42,27 @@ pub fn ser_start_run_input_input(
             ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_12) = &input.storage_type {
+        object.key("storageType").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_16) = &input.workflow_id {
-        object.key("workflowId").string(var_16.as_str());
+    if let Some(var_17) = &input.workflow_id {
+        object.key("workflowId").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.workflow_type {
-        object.key("workflowType").string(var_17.as_str());
+    if let Some(var_18) = &input.workflow_owner_id {
+        object.key("workflowOwnerId").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.workflow_type {
+        object.key("workflowType").string(var_19.as_str());
     }
     Ok(())
 }

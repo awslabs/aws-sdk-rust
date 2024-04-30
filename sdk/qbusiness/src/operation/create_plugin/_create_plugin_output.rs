@@ -7,6 +7,8 @@ pub struct CreatePluginOutput {
     pub plugin_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a plugin.</p>
     pub plugin_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub build_status: ::std::option::Option<crate::types::PluginBuildStatus>,
     _request_id: Option<String>,
 }
 impl CreatePluginOutput {
@@ -17,6 +19,10 @@ impl CreatePluginOutput {
     /// <p>The Amazon Resource Name (ARN) of a plugin.</p>
     pub fn plugin_arn(&self) -> ::std::option::Option<&str> {
         self.plugin_arn.as_deref()
+    }
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub fn build_status(&self) -> ::std::option::Option<&crate::types::PluginBuildStatus> {
+        self.build_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePluginOutput {
@@ -37,6 +43,7 @@ impl CreatePluginOutput {
 pub struct CreatePluginOutputBuilder {
     pub(crate) plugin_id: ::std::option::Option<::std::string::String>,
     pub(crate) plugin_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) build_status: ::std::option::Option<crate::types::PluginBuildStatus>,
     _request_id: Option<String>,
 }
 impl CreatePluginOutputBuilder {
@@ -68,6 +75,20 @@ impl CreatePluginOutputBuilder {
     pub fn get_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.plugin_arn
     }
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub fn build_status(mut self, input: crate::types::PluginBuildStatus) -> Self {
+        self.build_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub fn set_build_status(mut self, input: ::std::option::Option<crate::types::PluginBuildStatus>) -> Self {
+        self.build_status = input;
+        self
+    }
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub fn get_build_status(&self) -> &::std::option::Option<crate::types::PluginBuildStatus> {
+        &self.build_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl CreatePluginOutputBuilder {
         crate::operation::create_plugin::CreatePluginOutput {
             plugin_id: self.plugin_id,
             plugin_arn: self.plugin_arn,
+            build_status: self.build_status,
             _request_id: self._request_id,
         }
     }

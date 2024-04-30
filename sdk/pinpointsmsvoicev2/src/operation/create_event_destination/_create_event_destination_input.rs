@@ -11,7 +11,7 @@ pub struct CreateEventDestinationInput {
     /// <p>The <code>TEXT_SENT</code> event type is not supported.</p>
     /// </note>
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch Logs.</p>
     pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
@@ -37,7 +37,7 @@ impl CreateEventDestinationInput {
     pub fn matching_event_types(&self) -> &[crate::types::EventType] {
         self.matching_event_types.as_deref().unwrap_or_default()
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch Logs.</p>
     pub fn cloud_watch_logs_destination(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsDestination> {
         self.cloud_watch_logs_destination.as_ref()
     }
@@ -130,17 +130,17 @@ impl CreateEventDestinationInputBuilder {
     pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
         &self.matching_event_types
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch Logs.</p>
     pub fn cloud_watch_logs_destination(mut self, input: crate::types::CloudWatchLogsDestination) -> Self {
         self.cloud_watch_logs_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch Logs.</p>
     pub fn set_cloud_watch_logs_destination(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsDestination>) -> Self {
         self.cloud_watch_logs_destination = input;
         self
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch Logs.</p>
     pub fn get_cloud_watch_logs_destination(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
         &self.cloud_watch_logs_destination
     }

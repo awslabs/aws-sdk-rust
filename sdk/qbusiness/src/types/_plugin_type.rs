@@ -12,6 +12,7 @@
 /// ```text
 /// # let plugintype = unimplemented!();
 /// match plugintype {
+///     PluginType::Custom => { /* ... */ },
 ///     PluginType::Jira => { /* ... */ },
 ///     PluginType::Salesforce => { /* ... */ },
 ///     PluginType::ServiceNow => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum PluginType {
     #[allow(missing_docs)] // documentation missing in model
+    Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Jira,
     #[allow(missing_docs)] // documentation missing in model
     Salesforce,
@@ -58,6 +61,7 @@ pub enum PluginType {
 impl ::std::convert::From<&str> for PluginType {
     fn from(s: &str) -> Self {
         match s {
+            "CUSTOM" => PluginType::Custom,
             "JIRA" => PluginType::Jira,
             "SALESFORCE" => PluginType::Salesforce,
             "SERVICE_NOW" => PluginType::ServiceNow,
@@ -77,6 +81,7 @@ impl PluginType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PluginType::Custom => "CUSTOM",
             PluginType::Jira => "JIRA",
             PluginType::Salesforce => "SALESFORCE",
             PluginType::ServiceNow => "SERVICE_NOW",
@@ -86,7 +91,7 @@ impl PluginType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JIRA", "SALESFORCE", "SERVICE_NOW", "ZENDESK"]
+        &["CUSTOM", "JIRA", "SALESFORCE", "SERVICE_NOW", "ZENDESK"]
     }
 }
 impl ::std::convert::AsRef<str> for PluginType {
@@ -109,6 +114,7 @@ impl PluginType {
 impl ::std::fmt::Display for PluginType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PluginType::Custom => write!(f, "CUSTOM"),
             PluginType::Jira => write!(f, "JIRA"),
             PluginType::Salesforce => write!(f, "SALESFORCE"),
             PluginType::ServiceNow => write!(f, "SERVICE_NOW"),

@@ -133,6 +133,34 @@ impl From<crate::operation::batch_put_document::BatchPutDocumentError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::chat::ChatError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::chat::ChatError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::chat::ChatError> for Error {
+    fn from(err: crate::operation::chat::ChatError) -> Self {
+        match err {
+            crate::operation::chat::ChatError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::chat::ChatError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::chat::ChatError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::chat::ChatError::LicenseNotFoundException(inner) => Error::LicenseNotFoundException(inner),
+            crate::operation::chat::ChatError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::chat::ChatError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::chat::ChatError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::chat::ChatError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::chat_sync::ChatSyncError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1683,6 +1711,48 @@ impl From<crate::operation::update_web_experience::UpdateWebExperienceError> for
             crate::operation::update_web_experience::UpdateWebExperienceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_web_experience::UpdateWebExperienceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_web_experience::UpdateWebExperienceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ChatInputStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ChatInputStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::ChatInputStreamError> for Error {
+    fn from(err: crate::types::error::ChatInputStreamError) -> Self {
+        match err {
+            crate::types::error::ChatInputStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ChatOutputStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ChatOutputStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::ChatOutputStreamError> for Error {
+    fn from(err: crate::types::error::ChatOutputStreamError) -> Self {
+        match err {
+            crate::types::error::ChatOutputStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -9,6 +9,8 @@ pub struct GetWorkflowInput {
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The export format for the workflow.</p>
     pub export: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>>,
+    /// <p>The ID of the workflow owner.</p>
+    pub workflow_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowInput {
     /// <p>The workflow's ID.</p>
@@ -25,6 +27,10 @@ impl GetWorkflowInput {
     pub fn export(&self) -> &[crate::types::WorkflowExport] {
         self.export.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn workflow_owner_id(&self) -> ::std::option::Option<&str> {
+        self.workflow_owner_id.as_deref()
+    }
 }
 impl GetWorkflowInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
@@ -40,6 +46,7 @@ pub struct GetWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::WorkflowType>,
     pub(crate) export: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>>,
+    pub(crate) workflow_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowInputBuilder {
     /// <p>The workflow's ID.</p>
@@ -91,12 +98,27 @@ impl GetWorkflowInputBuilder {
     pub fn get_export(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>> {
         &self.export
     }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn workflow_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_owner_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn set_workflow_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workflow_owner_id = input;
+        self
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn get_workflow_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_owner_id
+    }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workflow::GetWorkflowInput {
             id: self.id,
             r#type: self.r#type,
             export: self.export,
+            workflow_owner_id: self.workflow_owner_id,
         })
     }
 }

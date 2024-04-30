@@ -138,6 +138,8 @@ impl Client {
 
 mod associate_origination_identity;
 
+mod associate_protect_configuration;
+
 mod create_configuration_set;
 
 mod create_event_destination;
@@ -145,6 +147,8 @@ mod create_event_destination;
 mod create_opt_out_list;
 
 mod create_pool;
+
+mod create_protect_configuration;
 
 mod create_registration;
 
@@ -183,6 +187,8 @@ mod create_verified_destination_number;
 /// ```
 pub mod customize;
 
+mod delete_account_default_protect_configuration;
+
 mod delete_configuration_set;
 
 mod delete_default_message_type;
@@ -193,11 +199,15 @@ mod delete_event_destination;
 
 mod delete_keyword;
 
+mod delete_media_message_spend_limit_override;
+
 mod delete_opt_out_list;
 
 mod delete_opted_out_number;
 
 mod delete_pool;
+
+mod delete_protect_configuration;
 
 mod delete_registration;
 
@@ -227,6 +237,8 @@ mod describe_phone_numbers;
 
 mod describe_pools;
 
+mod describe_protect_configurations;
+
 mod describe_registration_attachments;
 
 mod describe_registration_field_definitions;
@@ -249,7 +261,11 @@ mod describe_verified_destination_numbers;
 
 mod disassociate_origination_identity;
 
+mod disassociate_protect_configuration;
+
 mod discard_registration_version;
+
+mod get_protect_configuration_country_rule_set;
 
 mod list_pool_origination_identities;
 
@@ -273,13 +289,19 @@ mod request_sender_id;
 
 mod send_destination_number_verification_code;
 
+mod send_media_message;
+
 mod send_text_message;
 
 mod send_voice_message;
 
+mod set_account_default_protect_configuration;
+
 mod set_default_message_type;
 
 mod set_default_sender_id;
+
+mod set_media_message_spend_limit_override;
 
 mod set_text_message_spend_limit_override;
 
@@ -296,6 +318,10 @@ mod update_event_destination;
 mod update_phone_number;
 
 mod update_pool;
+
+mod update_protect_configuration;
+
+mod update_protect_configuration_country_rule_set;
 
 mod update_sender_id;
 

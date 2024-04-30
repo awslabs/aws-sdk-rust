@@ -1049,6 +1049,8 @@ pub use crate::types::_conditional_formatting_icon_set_type::ConditionalFormatti
 
 pub use crate::types::_gauge_chart_configuration::GaugeChartConfiguration;
 
+pub use crate::types::_gauge_chart_color_configuration::GaugeChartColorConfiguration;
+
 pub use crate::types::_gauge_chart_options::GaugeChartOptions;
 
 pub use crate::types::_arc_configuration::ArcConfiguration;
@@ -1340,6 +1342,8 @@ pub use crate::types::_template_source_template::TemplateSourceTemplate;
 pub use crate::types::_template_source_analysis::TemplateSourceAnalysis;
 
 pub use crate::types::_data_set_reference::DataSetReference;
+
+pub use crate::types::_purchase_mode::PurchaseMode;
 
 pub use crate::types::_role::Role;
 
@@ -1843,6 +1847,8 @@ pub use crate::types::_embedding_identity_type::EmbeddingIdentityType;
 
 pub use crate::types::_registered_user_embedding_experience_configuration::RegisteredUserEmbeddingExperienceConfiguration;
 
+pub use crate::types::_registered_user_generative_qn_a_embedding_configuration::RegisteredUserGenerativeQnAEmbeddingConfiguration;
+
 pub use crate::types::_registered_user_dashboard_visual_embedding_configuration::RegisteredUserDashboardVisualEmbeddingConfiguration;
 
 pub use crate::types::_dashboard_visual_id::DashboardVisualId;
@@ -1862,6 +1868,8 @@ pub use crate::types::_registered_user_dashboard_feature_configurations::Registe
 pub use crate::types::_bookmarks_configurations::BookmarksConfigurations;
 
 pub use crate::types::_anonymous_user_embedding_experience_configuration::AnonymousUserEmbeddingExperienceConfiguration;
+
+pub use crate::types::_anonymous_user_generative_qn_a_embedding_configuration::AnonymousUserGenerativeQnAEmbeddingConfiguration;
 
 pub use crate::types::_anonymous_user_q_search_bar_embedding_configuration::AnonymousUserQSearchBarEmbeddingConfiguration;
 
@@ -2008,6 +2016,8 @@ mod _anonymous_user_dashboard_embedding_configuration;
 mod _anonymous_user_dashboard_visual_embedding_configuration;
 
 mod _anonymous_user_embedding_experience_configuration;
+
+mod _anonymous_user_generative_qn_a_embedding_configuration;
 
 mod _anonymous_user_q_search_bar_embedding_configuration;
 
@@ -2771,6 +2781,8 @@ mod _funnel_chart_visual;
 
 mod _gauge_chart_arc_conditional_formatting;
 
+mod _gauge_chart_color_configuration;
+
 mod _gauge_chart_conditional_formatting;
 
 mod _gauge_chart_conditional_formatting_option;
@@ -3251,6 +3263,8 @@ mod _property_role;
 
 mod _property_usage;
 
+mod _purchase_mode;
+
 mod _queue_info;
 
 mod _radar_chart_aggregated_field_wells;
@@ -3324,6 +3338,8 @@ mod _registered_user_dashboard_feature_configurations;
 mod _registered_user_dashboard_visual_embedding_configuration;
 
 mod _registered_user_embedding_experience_configuration;
+
+mod _registered_user_generative_qn_a_embedding_configuration;
 
 mod _registered_user_q_search_bar_embedding_configuration;
 

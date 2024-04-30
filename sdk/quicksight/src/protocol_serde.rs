@@ -343,6 +343,8 @@ pub(crate) mod shape_update_refresh_schedule;
 
 pub(crate) mod shape_update_role_custom_permission;
 
+pub(crate) mod shape_update_spice_capacity_configuration;
+
 pub(crate) mod shape_update_template;
 
 pub(crate) mod shape_update_template_alias;
@@ -516,6 +518,8 @@ pub(crate) mod shape_update_public_sharing_settings_input;
 pub(crate) mod shape_update_refresh_schedule_input;
 
 pub(crate) mod shape_update_role_custom_permission_input;
+
+pub(crate) mod shape_update_spice_capacity_configuration_input;
 
 pub(crate) mod shape_update_template_alias_input;
 
@@ -795,6 +799,8 @@ pub(crate) mod shape_anonymous_user_dashboard_embedding_configuration;
 
 pub(crate) mod shape_anonymous_user_dashboard_visual_embedding_configuration;
 
+pub(crate) mod shape_anonymous_user_generative_qn_a_embedding_configuration;
+
 pub(crate) mod shape_anonymous_user_q_search_bar_embedding_configuration;
 
 pub(crate) mod shape_anonymous_user_snapshot_job_result_list;
@@ -1070,6 +1076,8 @@ pub(crate) mod shape_refresh_frequency;
 pub(crate) mod shape_registered_user_dashboard_embedding_configuration;
 
 pub(crate) mod shape_registered_user_dashboard_visual_embedding_configuration;
+
+pub(crate) mod shape_registered_user_generative_qn_a_embedding_configuration;
 
 pub(crate) mod shape_registered_user_q_search_bar_embedding_configuration;
 
@@ -1794,6 +1802,8 @@ pub(crate) mod shape_funnel_chart_data_label_options;
 pub(crate) mod shape_funnel_chart_field_wells;
 
 pub(crate) mod shape_funnel_chart_sort_configuration;
+
+pub(crate) mod shape_gauge_chart_color_configuration;
 
 pub(crate) mod shape_gauge_chart_conditional_formatting_option;
 

@@ -16,6 +16,12 @@ pub fn ser_plugin_auth_configuration(
             crate::protocol_serde::shape_o_auth2_client_credential_configuration::ser_o_auth2_client_credential_configuration(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::PluginAuthConfiguration::NoAuthConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("noAuthConfiguration").start_object();
+            crate::protocol_serde::shape_no_auth_configuration::ser_no_auth_configuration(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::PluginAuthConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "PluginAuthConfiguration",
@@ -67,6 +73,11 @@ where
                                         "value for 'oAuth2ClientCredentialConfiguration' cannot be null",
                                     )
                                 })?,
+                        )),
+                        "noAuthConfiguration" => Some(crate::types::PluginAuthConfiguration::NoAuthConfiguration(
+                            crate::protocol_serde::shape_no_auth_configuration::de_no_auth_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noAuthConfiguration' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

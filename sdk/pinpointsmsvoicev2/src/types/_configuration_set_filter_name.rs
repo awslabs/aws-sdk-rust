@@ -16,6 +16,7 @@
 ///     ConfigurationSetFilterName::DefaultSenderId => { /* ... */ },
 ///     ConfigurationSetFilterName::EventDestinationName => { /* ... */ },
 ///     ConfigurationSetFilterName::MatchingEventTypes => { /* ... */ },
+///     ConfigurationSetFilterName::ProtectConfigurationId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum ConfigurationSetFilterName {
     EventDestinationName,
     #[allow(missing_docs)] // documentation missing in model
     MatchingEventTypes,
+    #[allow(missing_docs)] // documentation missing in model
+    ProtectConfigurationId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for ConfigurationSetFilterName {
             "default-sender-id" => ConfigurationSetFilterName::DefaultSenderId,
             "event-destination-name" => ConfigurationSetFilterName::EventDestinationName,
             "matching-event-types" => ConfigurationSetFilterName::MatchingEventTypes,
+            "protect-configuration-id" => ConfigurationSetFilterName::ProtectConfigurationId,
             other => ConfigurationSetFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,6 +85,7 @@ impl ConfigurationSetFilterName {
             ConfigurationSetFilterName::DefaultSenderId => "default-sender-id",
             ConfigurationSetFilterName::EventDestinationName => "event-destination-name",
             ConfigurationSetFilterName::MatchingEventTypes => "matching-event-types",
+            ConfigurationSetFilterName::ProtectConfigurationId => "protect-configuration-id",
             ConfigurationSetFilterName::Unknown(value) => value.as_str(),
         }
     }
@@ -91,6 +96,7 @@ impl ConfigurationSetFilterName {
             "default-sender-id",
             "event-destination-name",
             "matching-event-types",
+            "protect-configuration-id",
         ]
     }
 }
@@ -118,6 +124,7 @@ impl ::std::fmt::Display for ConfigurationSetFilterName {
             ConfigurationSetFilterName::DefaultSenderId => write!(f, "default-sender-id"),
             ConfigurationSetFilterName::EventDestinationName => write!(f, "event-destination-name"),
             ConfigurationSetFilterName::MatchingEventTypes => write!(f, "matching-event-types"),
+            ConfigurationSetFilterName::ProtectConfigurationId => write!(f, "protect-configuration-id"),
             ConfigurationSetFilterName::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -4,13 +4,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatefulEngineOptions {
-    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>DEFAULT_ACTION_ORDER</code></p>
     pub rule_order: ::std::option::Option<crate::types::RuleOrder>,
+    /// <p>Indicates how Network Firewall should handle traffic when a network connection breaks midstream.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DROP</code> - Fail closed and drop all subsequent traffic going to the firewall.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Continue to apply rules to subsequent traffic without context from traffic before the break. This impacts the behavior of rules that depend on context. For example, with a stateful rule that drops HTTP traffic, Network Firewall won't match subsequent traffic because the it won't have the context from session initialization, which defines the application layer protocol as HTTP. However, a TCP-layer rule using a <code>flow:stateless</code> rule would still match, and so would the <code>aws:drop_strict</code> default action.</p></li>
+    /// <li>
+    /// <p><code>REJECT</code> - Fail closed and drop all subsequent traffic going to the firewall. With this option, Network Firewall also sends a TCP reject packet back to the client so the client can immediately establish a new session. With the new session, Network Firewall will have context and will apply rules appropriately.</p>
+    /// <p>For applications that are reliant on long-lived TCP connections that trigger Gateway Load Balancer idle timeouts, this is the recommended setting.</p></li>
+    /// <li>
+    /// <p><code>FMS_IGNORE</code> - Firewall Manager doesn't monitor or modify the Network Firewall stream exception policy settings.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stream-exception-policy.html">Stream exception policy in your firewall policy</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>FMS_IGNORE</code></p>
+    pub stream_exception_policy: ::std::option::Option<crate::types::StreamExceptionPolicy>,
 }
 impl StatefulEngineOptions {
-    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>DEFAULT_ACTION_ORDER</code></p>
     pub fn rule_order(&self) -> ::std::option::Option<&crate::types::RuleOrder> {
         self.rule_order.as_ref()
+    }
+    /// <p>Indicates how Network Firewall should handle traffic when a network connection breaks midstream.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DROP</code> - Fail closed and drop all subsequent traffic going to the firewall.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Continue to apply rules to subsequent traffic without context from traffic before the break. This impacts the behavior of rules that depend on context. For example, with a stateful rule that drops HTTP traffic, Network Firewall won't match subsequent traffic because the it won't have the context from session initialization, which defines the application layer protocol as HTTP. However, a TCP-layer rule using a <code>flow:stateless</code> rule would still match, and so would the <code>aws:drop_strict</code> default action.</p></li>
+    /// <li>
+    /// <p><code>REJECT</code> - Fail closed and drop all subsequent traffic going to the firewall. With this option, Network Firewall also sends a TCP reject packet back to the client so the client can immediately establish a new session. With the new session, Network Firewall will have context and will apply rules appropriately.</p>
+    /// <p>For applications that are reliant on long-lived TCP connections that trigger Gateway Load Balancer idle timeouts, this is the recommended setting.</p></li>
+    /// <li>
+    /// <p><code>FMS_IGNORE</code> - Firewall Manager doesn't monitor or modify the Network Firewall stream exception policy settings.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stream-exception-policy.html">Stream exception policy in your firewall policy</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>FMS_IGNORE</code></p>
+    pub fn stream_exception_policy(&self) -> ::std::option::Option<&crate::types::StreamExceptionPolicy> {
+        self.stream_exception_policy.as_ref()
     }
 }
 impl StatefulEngineOptions {
@@ -25,24 +59,84 @@ impl StatefulEngineOptions {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatefulEngineOptionsBuilder {
     pub(crate) rule_order: ::std::option::Option<crate::types::RuleOrder>,
+    pub(crate) stream_exception_policy: ::std::option::Option<crate::types::StreamExceptionPolicy>,
 }
 impl StatefulEngineOptionsBuilder {
-    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>DEFAULT_ACTION_ORDER</code></p>
     pub fn rule_order(mut self, input: crate::types::RuleOrder) -> Self {
         self.rule_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>DEFAULT_ACTION_ORDER</code></p>
     pub fn set_rule_order(mut self, input: ::std::option::Option<crate::types::RuleOrder>) -> Self {
         self.rule_order = input;
         self
     }
-    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>DEFAULT_ACTION_ORDER</code></p>
     pub fn get_rule_order(&self) -> &::std::option::Option<crate::types::RuleOrder> {
         &self.rule_order
     }
+    /// <p>Indicates how Network Firewall should handle traffic when a network connection breaks midstream.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DROP</code> - Fail closed and drop all subsequent traffic going to the firewall.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Continue to apply rules to subsequent traffic without context from traffic before the break. This impacts the behavior of rules that depend on context. For example, with a stateful rule that drops HTTP traffic, Network Firewall won't match subsequent traffic because the it won't have the context from session initialization, which defines the application layer protocol as HTTP. However, a TCP-layer rule using a <code>flow:stateless</code> rule would still match, and so would the <code>aws:drop_strict</code> default action.</p></li>
+    /// <li>
+    /// <p><code>REJECT</code> - Fail closed and drop all subsequent traffic going to the firewall. With this option, Network Firewall also sends a TCP reject packet back to the client so the client can immediately establish a new session. With the new session, Network Firewall will have context and will apply rules appropriately.</p>
+    /// <p>For applications that are reliant on long-lived TCP connections that trigger Gateway Load Balancer idle timeouts, this is the recommended setting.</p></li>
+    /// <li>
+    /// <p><code>FMS_IGNORE</code> - Firewall Manager doesn't monitor or modify the Network Firewall stream exception policy settings.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stream-exception-policy.html">Stream exception policy in your firewall policy</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>FMS_IGNORE</code></p>
+    pub fn stream_exception_policy(mut self, input: crate::types::StreamExceptionPolicy) -> Self {
+        self.stream_exception_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates how Network Firewall should handle traffic when a network connection breaks midstream.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DROP</code> - Fail closed and drop all subsequent traffic going to the firewall.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Continue to apply rules to subsequent traffic without context from traffic before the break. This impacts the behavior of rules that depend on context. For example, with a stateful rule that drops HTTP traffic, Network Firewall won't match subsequent traffic because the it won't have the context from session initialization, which defines the application layer protocol as HTTP. However, a TCP-layer rule using a <code>flow:stateless</code> rule would still match, and so would the <code>aws:drop_strict</code> default action.</p></li>
+    /// <li>
+    /// <p><code>REJECT</code> - Fail closed and drop all subsequent traffic going to the firewall. With this option, Network Firewall also sends a TCP reject packet back to the client so the client can immediately establish a new session. With the new session, Network Firewall will have context and will apply rules appropriately.</p>
+    /// <p>For applications that are reliant on long-lived TCP connections that trigger Gateway Load Balancer idle timeouts, this is the recommended setting.</p></li>
+    /// <li>
+    /// <p><code>FMS_IGNORE</code> - Firewall Manager doesn't monitor or modify the Network Firewall stream exception policy settings.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stream-exception-policy.html">Stream exception policy in your firewall policy</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>FMS_IGNORE</code></p>
+    pub fn set_stream_exception_policy(mut self, input: ::std::option::Option<crate::types::StreamExceptionPolicy>) -> Self {
+        self.stream_exception_policy = input;
+        self
+    }
+    /// <p>Indicates how Network Firewall should handle traffic when a network connection breaks midstream.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DROP</code> - Fail closed and drop all subsequent traffic going to the firewall.</p></li>
+    /// <li>
+    /// <p><code>CONTINUE</code> - Continue to apply rules to subsequent traffic without context from traffic before the break. This impacts the behavior of rules that depend on context. For example, with a stateful rule that drops HTTP traffic, Network Firewall won't match subsequent traffic because the it won't have the context from session initialization, which defines the application layer protocol as HTTP. However, a TCP-layer rule using a <code>flow:stateless</code> rule would still match, and so would the <code>aws:drop_strict</code> default action.</p></li>
+    /// <li>
+    /// <p><code>REJECT</code> - Fail closed and drop all subsequent traffic going to the firewall. With this option, Network Firewall also sends a TCP reject packet back to the client so the client can immediately establish a new session. With the new session, Network Firewall will have context and will apply rules appropriately.</p>
+    /// <p>For applications that are reliant on long-lived TCP connections that trigger Gateway Load Balancer idle timeouts, this is the recommended setting.</p></li>
+    /// <li>
+    /// <p><code>FMS_IGNORE</code> - Firewall Manager doesn't monitor or modify the Network Firewall stream exception policy settings.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stream-exception-policy.html">Stream exception policy in your firewall policy</a> in the <i>Network Firewall Developer Guide</i>.</p>
+    /// <p>Default: <code>FMS_IGNORE</code></p>
+    pub fn get_stream_exception_policy(&self) -> &::std::option::Option<crate::types::StreamExceptionPolicy> {
+        &self.stream_exception_policy
+    }
     /// Consumes the builder and constructs a [`StatefulEngineOptions`](crate::types::StatefulEngineOptions).
     pub fn build(self) -> crate::types::StatefulEngineOptions {
-        crate::types::StatefulEngineOptions { rule_order: self.rule_order }
+        crate::types::StatefulEngineOptions {
+            rule_order: self.rule_order,
+            stream_exception_policy: self.stream_exception_policy,
+        }
     }
 }

@@ -35,6 +35,8 @@ impl crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointI
 /// <li>
 /// <p><code>pypi</code></p></li>
 /// <li>
+/// <p><code>ruby</code></p></li>
+/// <li>
 /// <p><code>swift</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

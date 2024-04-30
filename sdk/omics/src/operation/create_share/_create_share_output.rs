@@ -3,24 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateShareOutput {
-    /// <p>An ID generated for the share.</p>
+    /// <p>The ID that HealthOmics generates for the share.</p>
     pub share_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of a share.</p>
+    /// <p>The status of the share.</p>
     pub status: ::std::option::Option<crate::types::ShareStatus>,
-    /// <p>A name given to the share.</p>
+    /// <p>The name of the share.</p>
     pub share_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateShareOutput {
-    /// <p>An ID generated for the share.</p>
+    /// <p>The ID that HealthOmics generates for the share.</p>
     pub fn share_id(&self) -> ::std::option::Option<&str> {
         self.share_id.as_deref()
     }
-    /// <p>The status of a share.</p>
+    /// <p>The status of the share.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
         self.status.as_ref()
     }
-    /// <p>A name given to the share.</p>
+    /// <p>The name of the share.</p>
     pub fn share_name(&self) -> ::std::option::Option<&str> {
         self.share_name.as_deref()
     }
@@ -47,45 +47,45 @@ pub struct CreateShareOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateShareOutputBuilder {
-    /// <p>An ID generated for the share.</p>
+    /// <p>The ID that HealthOmics generates for the share.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An ID generated for the share.</p>
+    /// <p>The ID that HealthOmics generates for the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self
     }
-    /// <p>An ID generated for the share.</p>
+    /// <p>The ID that HealthOmics generates for the share.</p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_id
     }
-    /// <p>The status of a share.</p>
+    /// <p>The status of the share.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of a share.</p>
+    /// <p>The status of the share.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of a share.</p>
+    /// <p>The status of the share.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
         &self.status
     }
-    /// <p>A name given to the share.</p>
+    /// <p>The name of the share.</p>
     pub fn share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name given to the share.</p>
+    /// <p>The name of the share.</p>
     pub fn set_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_name = input;
         self
     }
-    /// <p>A name given to the share.</p>
+    /// <p>The name of the share.</p>
     pub fn get_share_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_name
     }

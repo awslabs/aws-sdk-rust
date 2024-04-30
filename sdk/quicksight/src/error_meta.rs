@@ -6134,6 +6134,53 @@ impl From<crate::operation::update_role_custom_permission::UpdateRoleCustomPermi
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError> for Error {
+    fn from(err: crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError) -> Self {
+        match err {
+            crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_spice_capacity_configuration::UpdateSPICECapacityConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_template::UpdateTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

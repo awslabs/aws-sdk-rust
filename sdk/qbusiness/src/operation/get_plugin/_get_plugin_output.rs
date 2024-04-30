@@ -15,6 +15,10 @@ pub struct GetPluginOutput {
     pub server_url: ::std::option::Option<::std::string::String>,
     /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
+    /// <p>Configuration information required to create a custom plugin.</p>
+    pub custom_plugin_configuration: ::std::option::Option<crate::types::CustomPluginConfiguration>,
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub build_status: ::std::option::Option<crate::types::PluginBuildStatus>,
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.</p>
     pub plugin_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the plugin.</p>
@@ -49,6 +53,14 @@ impl GetPluginOutput {
     /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub fn auth_configuration(&self) -> ::std::option::Option<&crate::types::PluginAuthConfiguration> {
         self.auth_configuration.as_ref()
+    }
+    /// <p>Configuration information required to create a custom plugin.</p>
+    pub fn custom_plugin_configuration(&self) -> ::std::option::Option<&crate::types::CustomPluginConfiguration> {
+        self.custom_plugin_configuration.as_ref()
+    }
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub fn build_status(&self) -> ::std::option::Option<&crate::types::PluginBuildStatus> {
+        self.build_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.</p>
     pub fn plugin_arn(&self) -> ::std::option::Option<&str> {
@@ -89,6 +101,8 @@ pub struct GetPluginOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PluginType>,
     pub(crate) server_url: ::std::option::Option<::std::string::String>,
     pub(crate) auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
+    pub(crate) custom_plugin_configuration: ::std::option::Option<crate::types::CustomPluginConfiguration>,
+    pub(crate) build_status: ::std::option::Option<crate::types::PluginBuildStatus>,
     pub(crate) plugin_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::PluginState>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -180,6 +194,34 @@ impl GetPluginOutputBuilder {
     pub fn get_auth_configuration(&self) -> &::std::option::Option<crate::types::PluginAuthConfiguration> {
         &self.auth_configuration
     }
+    /// <p>Configuration information required to create a custom plugin.</p>
+    pub fn custom_plugin_configuration(mut self, input: crate::types::CustomPluginConfiguration) -> Self {
+        self.custom_plugin_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration information required to create a custom plugin.</p>
+    pub fn set_custom_plugin_configuration(mut self, input: ::std::option::Option<crate::types::CustomPluginConfiguration>) -> Self {
+        self.custom_plugin_configuration = input;
+        self
+    }
+    /// <p>Configuration information required to create a custom plugin.</p>
+    pub fn get_custom_plugin_configuration(&self) -> &::std::option::Option<crate::types::CustomPluginConfiguration> {
+        &self.custom_plugin_configuration
+    }
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub fn build_status(mut self, input: crate::types::PluginBuildStatus) -> Self {
+        self.build_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub fn set_build_status(mut self, input: ::std::option::Option<crate::types::PluginBuildStatus>) -> Self {
+        self.build_status = input;
+        self
+    }
+    /// <p>The current status of a plugin. A plugin is modified asynchronously.</p>
+    pub fn get_build_status(&self) -> &::std::option::Option<crate::types::PluginBuildStatus> {
+        &self.build_status
+    }
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.</p>
     pub fn plugin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plugin_arn = ::std::option::Option::Some(input.into());
@@ -254,6 +296,8 @@ impl GetPluginOutputBuilder {
             r#type: self.r#type,
             server_url: self.server_url,
             auth_configuration: self.auth_configuration,
+            custom_plugin_configuration: self.custom_plugin_configuration,
+            build_status: self.build_status,
             plugin_arn: self.plugin_arn,
             state: self.state,
             created_at: self.created_at,

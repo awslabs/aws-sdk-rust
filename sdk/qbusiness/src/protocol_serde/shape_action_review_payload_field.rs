@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "displayDescription" => {
+                            builder = builder.set_display_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "type" => {
                             builder = builder.set_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -42,6 +49,13 @@ where
                             builder = builder.set_allowed_values(
                                     crate::protocol_serde::shape_action_review_payload_field_allowed_values::de_action_review_payload_field_allowed_values(tokens)?
                                 );
+                        }
+                        "allowedFormat" => {
+                            builder = builder.set_allowed_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         "required" => {
                             builder = builder.set_required(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

@@ -98,6 +98,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "FirewallDomainRedirectionAction" => {
+                            builder = builder.set_firewall_domain_redirection_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FirewallDomainRedirectionAction::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "Qtype" => {
                             builder = builder.set_qtype(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

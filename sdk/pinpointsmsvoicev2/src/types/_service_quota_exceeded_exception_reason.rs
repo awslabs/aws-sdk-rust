@@ -18,6 +18,7 @@
 ///     ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::KeywordsPerPool => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForMedia => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => { /* ... */ },
@@ -25,6 +26,7 @@
 ///     ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::PoolsPerAccount => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::ProtectConfigurationsPerAccount => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::RegistrationsPerAccount => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::RegistrationAttachmentsCreatedPerDay => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::RegistrationAttachmentsPerAccount => { /* ... */ },
@@ -73,6 +75,8 @@ pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     KeywordsPerPool,
     #[allow(missing_docs)] // documentation missing in model
+    MonthlySpendLimitReachedForMedia,
+    #[allow(missing_docs)] // documentation missing in model
     MonthlySpendLimitReachedForText,
     #[allow(missing_docs)] // documentation missing in model
     MonthlySpendLimitReachedForVoice,
@@ -86,6 +90,8 @@ pub enum ServiceQuotaExceededExceptionReason {
     PhoneNumbersPerRegistration,
     #[allow(missing_docs)] // documentation missing in model
     PoolsPerAccount,
+    #[allow(missing_docs)] // documentation missing in model
+    ProtectConfigurationsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
     RegistrationsPerAccount,
     #[allow(missing_docs)] // documentation missing in model
@@ -115,6 +121,7 @@ impl ::std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
             "EVENT_DESTINATIONS_PER_CONFIGURATION_SET" => ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet,
             "KEYWORDS_PER_PHONE_NUMBER" => ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber,
             "KEYWORDS_PER_POOL" => ServiceQuotaExceededExceptionReason::KeywordsPerPool,
+            "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForMedia,
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText,
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice,
             "OPT_OUT_LISTS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::OptOutListsPerAccount,
@@ -122,6 +129,7 @@ impl ::std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
             "PHONE_NUMBERS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount,
             "PHONE_NUMBERS_PER_REGISTRATION" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration,
             "POOLS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PoolsPerAccount,
+            "PROTECT_CONFIGURATIONS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::ProtectConfigurationsPerAccount,
             "REGISTRATIONS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::RegistrationsPerAccount,
             "REGISTRATION_ATTACHMENTS_CREATED_PER_DAY" => ServiceQuotaExceededExceptionReason::RegistrationAttachmentsCreatedPerDay,
             "REGISTRATION_ATTACHMENTS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::RegistrationAttachmentsPerAccount,
@@ -151,6 +159,7 @@ impl ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => "EVENT_DESTINATIONS_PER_CONFIGURATION_SET",
             ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => "KEYWORDS_PER_PHONE_NUMBER",
             ServiceQuotaExceededExceptionReason::KeywordsPerPool => "KEYWORDS_PER_POOL",
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForMedia => "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA",
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT",
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE",
             ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => "OPT_OUT_LISTS_PER_ACCOUNT",
@@ -158,6 +167,7 @@ impl ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => "PHONE_NUMBERS_PER_ACCOUNT",
             ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => "PHONE_NUMBERS_PER_REGISTRATION",
             ServiceQuotaExceededExceptionReason::PoolsPerAccount => "POOLS_PER_ACCOUNT",
+            ServiceQuotaExceededExceptionReason::ProtectConfigurationsPerAccount => "PROTECT_CONFIGURATIONS_PER_ACCOUNT",
             ServiceQuotaExceededExceptionReason::RegistrationsPerAccount => "REGISTRATIONS_PER_ACCOUNT",
             ServiceQuotaExceededExceptionReason::RegistrationAttachmentsCreatedPerDay => "REGISTRATION_ATTACHMENTS_CREATED_PER_DAY",
             ServiceQuotaExceededExceptionReason::RegistrationAttachmentsPerAccount => "REGISTRATION_ATTACHMENTS_PER_ACCOUNT",
@@ -178,6 +188,7 @@ impl ServiceQuotaExceededExceptionReason {
             "EVENT_DESTINATIONS_PER_CONFIGURATION_SET",
             "KEYWORDS_PER_PHONE_NUMBER",
             "KEYWORDS_PER_POOL",
+            "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA",
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT",
             "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE",
             "OPT_OUT_LISTS_PER_ACCOUNT",
@@ -185,6 +196,7 @@ impl ServiceQuotaExceededExceptionReason {
             "PHONE_NUMBERS_PER_ACCOUNT",
             "PHONE_NUMBERS_PER_REGISTRATION",
             "POOLS_PER_ACCOUNT",
+            "PROTECT_CONFIGURATIONS_PER_ACCOUNT",
             "REGISTRATIONS_PER_ACCOUNT",
             "REGISTRATION_ATTACHMENTS_CREATED_PER_DAY",
             "REGISTRATION_ATTACHMENTS_PER_ACCOUNT",
@@ -222,6 +234,7 @@ impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => write!(f, "EVENT_DESTINATIONS_PER_CONFIGURATION_SET"),
             ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => write!(f, "KEYWORDS_PER_PHONE_NUMBER"),
             ServiceQuotaExceededExceptionReason::KeywordsPerPool => write!(f, "KEYWORDS_PER_POOL"),
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForMedia => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_MEDIA"),
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT"),
             ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE"),
             ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => write!(f, "OPT_OUT_LISTS_PER_ACCOUNT"),
@@ -229,6 +242,7 @@ impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
             ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => write!(f, "PHONE_NUMBERS_PER_ACCOUNT"),
             ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => write!(f, "PHONE_NUMBERS_PER_REGISTRATION"),
             ServiceQuotaExceededExceptionReason::PoolsPerAccount => write!(f, "POOLS_PER_ACCOUNT"),
+            ServiceQuotaExceededExceptionReason::ProtectConfigurationsPerAccount => write!(f, "PROTECT_CONFIGURATIONS_PER_ACCOUNT"),
             ServiceQuotaExceededExceptionReason::RegistrationsPerAccount => write!(f, "REGISTRATIONS_PER_ACCOUNT"),
             ServiceQuotaExceededExceptionReason::RegistrationAttachmentsCreatedPerDay => write!(f, "REGISTRATION_ATTACHMENTS_CREATED_PER_DAY"),
             ServiceQuotaExceededExceptionReason::RegistrationAttachmentsPerAccount => write!(f, "REGISTRATION_ATTACHMENTS_PER_ACCOUNT"),

@@ -7,6 +7,7 @@ pub struct NetworkAclEntrySet {
     /// <p>The rules that you want to run first in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub first_entries: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
     /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
@@ -14,6 +15,7 @@ pub struct NetworkAclEntrySet {
     /// <p>The rules that you want to run last in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub last_entries: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
     /// <p>Applies only when remediation is enabled for the policy as a whole. Firewall Manager uses this setting when it finds policy violations that involve conflicts between the custom entries and the policy entries.</p>
     /// <p>If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant and does not try to remediate. For more information about the remediation behavior, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.</p>
@@ -23,6 +25,7 @@ impl NetworkAclEntrySet {
     /// <p>The rules that you want to run first in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.first_entries.is_none()`.
     pub fn first_entries(&self) -> &[crate::types::NetworkAclEntry] {
@@ -36,6 +39,7 @@ impl NetworkAclEntrySet {
     /// <p>The rules that you want to run last in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_entries.is_none()`.
     pub fn last_entries(&self) -> &[crate::types::NetworkAclEntry] {
@@ -71,6 +75,7 @@ impl NetworkAclEntrySetBuilder {
     /// <p>The rules that you want to run first in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub fn first_entries(mut self, input: crate::types::NetworkAclEntry) -> Self {
         let mut v = self.first_entries.unwrap_or_default();
         v.push(input);
@@ -80,6 +85,7 @@ impl NetworkAclEntrySetBuilder {
     /// <p>The rules that you want to run first in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub fn set_first_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>) -> Self {
         self.first_entries = input;
         self
@@ -87,6 +93,7 @@ impl NetworkAclEntrySetBuilder {
     /// <p>The rules that you want to run first in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub fn get_first_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>> {
         &self.first_entries
     }
@@ -115,6 +122,7 @@ impl NetworkAclEntrySetBuilder {
     /// <p>The rules that you want to run last in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub fn last_entries(mut self, input: crate::types::NetworkAclEntry) -> Self {
         let mut v = self.last_entries.unwrap_or_default();
         v.push(input);
@@ -124,6 +132,7 @@ impl NetworkAclEntrySetBuilder {
     /// <p>The rules that you want to run last in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub fn set_last_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>) -> Self {
         self.last_entries = input;
         self
@@ -131,6 +140,7 @@ impl NetworkAclEntrySetBuilder {
     /// <p>The rules that you want to run last in the Firewall Manager managed network ACLs.</p><note>
     /// <p>Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule numbers for you, in the network ACLs that it creates.</p>
     /// </note>
+    /// <p>You must specify at least one first entry or one last entry in any network ACL policy.</p>
     pub fn get_last_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>> {
         &self.last_entries
     }

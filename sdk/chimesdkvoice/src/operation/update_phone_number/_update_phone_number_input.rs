@@ -9,7 +9,7 @@ pub struct UpdatePhoneNumberInput {
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     /// <p>The outbound calling name associated with the phone number.</p>
     pub calling_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    /// <p>Specifies the updated name assigned to one or more phone numbers.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePhoneNumberInput {
@@ -25,7 +25,7 @@ impl UpdatePhoneNumberInput {
     pub fn calling_name(&self) -> ::std::option::Option<&str> {
         self.calling_name.as_deref()
     }
-    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    /// <p>Specifies the updated name assigned to one or more phone numbers.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -100,17 +100,17 @@ impl UpdatePhoneNumberInputBuilder {
     pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.calling_name
     }
-    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    /// <p>Specifies the updated name assigned to one or more phone numbers.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    /// <p>Specifies the updated name assigned to one or more phone numbers.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    /// <p>Specifies the updated name assigned to one or more phone numbers.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

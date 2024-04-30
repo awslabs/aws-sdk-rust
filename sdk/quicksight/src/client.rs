@@ -483,6 +483,8 @@ mod update_refresh_schedule;
 
 mod update_role_custom_permission;
 
+mod update_spice_capacity_configuration;
+
 mod update_template;
 
 mod update_template_alias;

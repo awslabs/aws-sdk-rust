@@ -282,4 +282,18 @@ impl SendTextMessageFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn protect_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.protect_configuration_id(input.into());
+        self
+    }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn set_protect_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_protect_configuration_id(input);
+        self
+    }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn get_protect_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_protect_configuration_id()
+    }
 }

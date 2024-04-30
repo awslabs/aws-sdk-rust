@@ -29,6 +29,8 @@ pub struct SendVoiceMessageInput {
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub protect_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl SendVoiceMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
@@ -77,6 +79,10 @@ impl SendVoiceMessageInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn protect_configuration_id(&self) -> ::std::option::Option<&str> {
+        self.protect_configuration_id.as_deref()
+    }
 }
 impl SendVoiceMessageInput {
     /// Creates a new builder-style object to manufacture [`SendVoiceMessageInput`](crate::operation::send_voice_message::SendVoiceMessageInput).
@@ -99,6 +105,7 @@ pub struct SendVoiceMessageInputBuilder {
     pub(crate) time_to_live: ::std::option::Option<i32>,
     pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl SendVoiceMessageInputBuilder {
     /// <p>The destination phone number in E.164 format.</p>
@@ -267,6 +274,20 @@ impl SendVoiceMessageInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn protect_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protect_configuration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn set_protect_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.protect_configuration_id = input;
+        self
+    }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn get_protect_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protect_configuration_id
+    }
     /// Consumes the builder and constructs a [`SendVoiceMessageInput`](crate::operation::send_voice_message::SendVoiceMessageInput).
     pub fn build(
         self,
@@ -282,6 +303,7 @@ impl SendVoiceMessageInputBuilder {
             time_to_live: self.time_to_live,
             context: self.context,
             dry_run: self.dry_run,
+            protect_configuration_id: self.protect_configuration_id,
         })
     }
 }

@@ -809,6 +809,8 @@ pub use crate::types::_conditional_formatting_icon_set::ConditionalFormattingIco
 
 pub use crate::types::_gauge_chart_configuration::GaugeChartConfigurationBuilder;
 
+pub use crate::types::_gauge_chart_color_configuration::GaugeChartColorConfigurationBuilder;
+
 pub use crate::types::_gauge_chart_options::GaugeChartOptionsBuilder;
 
 pub use crate::types::_arc_configuration::ArcConfigurationBuilder;
@@ -1437,6 +1439,8 @@ pub use crate::types::_asset_bundle_export_job_summary::AssetBundleExportJobSumm
 
 pub use crate::types::_registered_user_embedding_experience_configuration::RegisteredUserEmbeddingExperienceConfigurationBuilder;
 
+pub use crate::types::_registered_user_generative_qn_a_embedding_configuration::RegisteredUserGenerativeQnAEmbeddingConfigurationBuilder;
+
 pub use crate::types::_registered_user_dashboard_visual_embedding_configuration::RegisteredUserDashboardVisualEmbeddingConfigurationBuilder;
 
 pub use crate::types::_dashboard_visual_id::DashboardVisualIdBuilder;
@@ -1456,6 +1460,8 @@ pub use crate::types::_registered_user_dashboard_feature_configurations::Registe
 pub use crate::types::_bookmarks_configurations::BookmarksConfigurationsBuilder;
 
 pub use crate::types::_anonymous_user_embedding_experience_configuration::AnonymousUserEmbeddingExperienceConfigurationBuilder;
+
+pub use crate::types::_anonymous_user_generative_qn_a_embedding_configuration::AnonymousUserGenerativeQnAEmbeddingConfigurationBuilder;
 
 pub use crate::types::_anonymous_user_q_search_bar_embedding_configuration::AnonymousUserQSearchBarEmbeddingConfigurationBuilder;
 

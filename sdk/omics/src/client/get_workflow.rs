@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`id(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_id):<br>required: **true**<br><p>The workflow's ID.</p><br>
     ///   - [`r#type(WorkflowType)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::type) / [`set_type(Option<WorkflowType>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_type):<br>required: **false**<br><p>The workflow's type.</p><br>
     ///   - [`export(WorkflowExport)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::export) / [`set_export(Option<Vec::<WorkflowExport>>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_export):<br>required: **false**<br><p>The export format for the workflow.</p><br>
+    ///   - [`workflow_owner_id(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::workflow_owner_id) / [`set_workflow_owner_id(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_workflow_owner_id):<br>required: **false**<br><p>The ID of the workflow owner.</p><br>
     /// - On success, responds with [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::arn): <p>The workflow's ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::id): <p>The workflow's ID.</p>
@@ -18,7 +19,7 @@ impl super::Client {
     ///   - [`main(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::main): <p>The path of the main definition file for the workflow.</p>
     ///   - [`digest(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::digest): <p>The workflow's digest.</p>
     ///   - [`parameter_template(Option<HashMap::<String, WorkflowParameter>>)`](crate::operation::get_workflow::GetWorkflowOutput::parameter_template): <p>The workflow's parameter template.</p>
-    ///   - [`storage_capacity(Option<i32>)`](crate::operation::get_workflow::GetWorkflowOutput::storage_capacity): <p>The workflow's storage capacity in gigabytes.</p>
+    ///   - [`storage_capacity(Option<i32>)`](crate::operation::get_workflow::GetWorkflowOutput::storage_capacity): <p>The workflow's storage capacity in gibibytes.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_workflow::GetWorkflowOutput::creation_time): <p>When the workflow was created.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::status_message): <p>The workflow's status message.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_workflow::GetWorkflowOutput::tags): <p>The workflow's tags.</p>

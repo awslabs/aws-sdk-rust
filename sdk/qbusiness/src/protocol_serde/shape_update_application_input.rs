@@ -15,8 +15,11 @@ pub fn ser_update_application_input_input(
     if let Some(var_4) = &input.display_name {
         object.key("displayName").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.role_arn {
-        object.key("roleArn").string(var_5.as_str());
+    if let Some(var_5) = &input.identity_center_instance_arn {
+        object.key("identityCenterInstanceArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.role_arn {
+        object.key("roleArn").string(var_6.as_str());
     }
     Ok(())
 }

@@ -8,6 +8,8 @@ pub struct TextSegment {
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based location in the response string where the source attribution ends.</p>
     pub end_offset: ::std::option::Option<i32>,
+    /// <p>The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business chat response.</p>
+    pub snippet_excerpt: ::std::option::Option<crate::types::SnippetExcerpt>,
 }
 impl TextSegment {
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
@@ -17,6 +19,10 @@ impl TextSegment {
     /// <p>The zero-based location in the response string where the source attribution ends.</p>
     pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
+    }
+    /// <p>The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business chat response.</p>
+    pub fn snippet_excerpt(&self) -> ::std::option::Option<&crate::types::SnippetExcerpt> {
+        self.snippet_excerpt.as_ref()
     }
 }
 impl TextSegment {
@@ -32,6 +38,7 @@ impl TextSegment {
 pub struct TextSegmentBuilder {
     pub(crate) begin_offset: ::std::option::Option<i32>,
     pub(crate) end_offset: ::std::option::Option<i32>,
+    pub(crate) snippet_excerpt: ::std::option::Option<crate::types::SnippetExcerpt>,
 }
 impl TextSegmentBuilder {
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
@@ -62,11 +69,26 @@ impl TextSegmentBuilder {
     pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
         &self.end_offset
     }
+    /// <p>The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business chat response.</p>
+    pub fn snippet_excerpt(mut self, input: crate::types::SnippetExcerpt) -> Self {
+        self.snippet_excerpt = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business chat response.</p>
+    pub fn set_snippet_excerpt(mut self, input: ::std::option::Option<crate::types::SnippetExcerpt>) -> Self {
+        self.snippet_excerpt = input;
+        self
+    }
+    /// <p>The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business chat response.</p>
+    pub fn get_snippet_excerpt(&self) -> &::std::option::Option<crate::types::SnippetExcerpt> {
+        &self.snippet_excerpt
+    }
     /// Consumes the builder and constructs a [`TextSegment`](crate::types::TextSegment).
     pub fn build(self) -> crate::types::TextSegment {
         crate::types::TextSegment {
             begin_offset: self.begin_offset,
             end_offset: self.end_offset,
+            snippet_excerpt: self.snippet_excerpt,
         }
     }
 }

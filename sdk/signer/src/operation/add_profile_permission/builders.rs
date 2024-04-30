@@ -136,17 +136,50 @@ impl AddProfilePermissionFluentBuilder {
     pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profile_version()
     }
-    /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
+    /// <p>For cross-account signing. Grant a designated account permission to perform one or more of the following actions. Each action is associated with a specific API's operations. For more information about cross-account signing, see <a href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.</p>
+    /// <p>You can designate the following actions to an account.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For details, see <code>StartSigningJob</code>.</p></li>
+    /// <li>
+    /// <p><code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see <code>SignPayload</code></p></li>
+    /// <li>
+    /// <p><code>signer:GetSigningProfile</code>. For details, see <code>GetSigningProfile</code>.</p></li>
+    /// <li>
+    /// <p><code>signer:RevokeSignature</code>. For details, see <code>RevokeSignature</code>.</p></li>
+    /// </ul>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action(input.into());
         self
     }
-    /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
+    /// <p>For cross-account signing. Grant a designated account permission to perform one or more of the following actions. Each action is associated with a specific API's operations. For more information about cross-account signing, see <a href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.</p>
+    /// <p>You can designate the following actions to an account.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For details, see <code>StartSigningJob</code>.</p></li>
+    /// <li>
+    /// <p><code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see <code>SignPayload</code></p></li>
+    /// <li>
+    /// <p><code>signer:GetSigningProfile</code>. For details, see <code>GetSigningProfile</code>.</p></li>
+    /// <li>
+    /// <p><code>signer:RevokeSignature</code>. For details, see <code>RevokeSignature</code>.</p></li>
+    /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
-    /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
+    /// <p>For cross-account signing. Grant a designated account permission to perform one or more of the following actions. Each action is associated with a specific API's operations. For more information about cross-account signing, see <a href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.</p>
+    /// <p>You can designate the following actions to an account.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For details, see <code>StartSigningJob</code>.</p></li>
+    /// <li>
+    /// <p><code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see <code>SignPayload</code></p></li>
+    /// <li>
+    /// <p><code>signer:GetSigningProfile</code>. For details, see <code>GetSigningProfile</code>.</p></li>
+    /// <li>
+    /// <p><code>signer:RevokeSignature</code>. For details, see <code>RevokeSignature</code>.</p></li>
+    /// </ul>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_action()
     }

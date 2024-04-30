@@ -33,6 +33,8 @@ impl crate::operation::start_signing_job::builders::StartSigningJobInputBuilder 
 /// <li>
 /// <p>You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code> operation.</p></li>
 /// <li>
+/// <p>You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region signing isn't supported.</p></li>
+/// <li>
 /// <p>You must also specify a request token that identifies your request to Signer.</p></li>
 /// </ul>
 /// <p>You can call the <code>DescribeSigningJob</code> and the <code>ListSigningJobs</code> actions after you call <code>StartSigningJob</code>.</p>

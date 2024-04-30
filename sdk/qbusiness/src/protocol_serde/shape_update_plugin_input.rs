@@ -9,14 +9,20 @@ pub fn ser_update_plugin_input_input(
         crate::protocol_serde::shape_plugin_auth_configuration::ser_plugin_auth_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.display_name {
-        object.key("displayName").string(var_3.as_str());
+    if let Some(var_3) = &input.custom_plugin_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("customPluginConfiguration").start_object();
+        crate::protocol_serde::shape_custom_plugin_configuration::ser_custom_plugin_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.server_url {
-        object.key("serverUrl").string(var_4.as_str());
+    if let Some(var_5) = &input.display_name {
+        object.key("displayName").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.state {
-        object.key("state").string(var_5.as_str());
+    if let Some(var_6) = &input.server_url {
+        object.key("serverUrl").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.state {
+        object.key("state").string(var_7.as_str());
     }
     Ok(())
 }

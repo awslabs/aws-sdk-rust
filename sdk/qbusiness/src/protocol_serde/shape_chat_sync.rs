@@ -159,6 +159,10 @@ pub(crate) fn de_chat_sync(
                 "actionReview" => {
                     builder = builder.set_action_review(crate::protocol_serde::shape_action_review::de_action_review(tokens)?);
                 }
+                "authChallengeRequest" => {
+                    builder =
+                        builder.set_auth_challenge_request(crate::protocol_serde::shape_auth_challenge_request::de_auth_challenge_request(tokens)?);
+                }
                 "conversationId" => {
                     builder = builder.set_conversation_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

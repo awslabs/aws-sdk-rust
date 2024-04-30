@@ -7,6 +7,9 @@ pub mod batch_delete_document;
 /// Types for the `BatchPutDocument` operation.
 pub mod batch_put_document;
 
+/// Types for the `Chat` operation.
+pub mod chat;
+
 /// Types for the `ChatSync` operation.
 pub mod chat_sync;
 

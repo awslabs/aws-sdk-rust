@@ -1111,6 +1111,8 @@ pub use crate::types::_integer_parameter_range_specification::IntegerParameterRa
 
 pub use crate::types::_retention_policy::RetentionPolicyBuilder;
 
+pub use crate::types::_session_chaining_config::SessionChainingConfigBuilder;
+
 pub use crate::types::_recommendation_job_output_config::RecommendationJobOutputConfigBuilder;
 
 pub use crate::types::_recommendation_job_compiled_output_config::RecommendationJobCompiledOutputConfigBuilder;

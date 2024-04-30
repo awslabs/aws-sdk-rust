@@ -33,11 +33,17 @@ pub fn ser_gauge_chart_configuration(
         crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.interactions {
+    if let Some(var_11) = &input.color_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("Interactions").start_object();
-        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_12, var_11)?;
+        let mut object_12 = object.key("ColorConfiguration").start_object();
+        crate::protocol_serde::shape_gauge_chart_color_configuration::ser_gauge_chart_color_configuration(&mut object_12, var_11)?;
         object_12.finish();
+    }
+    if let Some(var_13) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }
@@ -73,6 +79,11 @@ where
                         }
                         "VisualPalette" => {
                             builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens)?);
+                        }
+                        "ColorConfiguration" => {
+                            builder = builder.set_color_configuration(
+                                crate::protocol_serde::shape_gauge_chart_color_configuration::de_gauge_chart_color_configuration(tokens)?,
+                            );
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(

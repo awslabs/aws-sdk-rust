@@ -38,6 +38,10 @@ pub struct UpdateFirewallRuleInput {
     pub block_override_ttl: ::std::option::Option<i32>,
     /// <p>The name of the rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    pub firewall_domain_redirection_action: ::std::option::Option<crate::types::FirewallDomainRedirectionAction>,
     /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
     /// <ul>
     /// <li>
@@ -66,6 +70,8 @@ pub struct UpdateFirewallRuleInput {
     /// <p>SRV: Application specific values that identify servers.</p></li>
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// <li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub qtype: ::std::option::Option<::std::string::String>,
 }
@@ -123,6 +129,12 @@ impl UpdateFirewallRuleInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    pub fn firewall_domain_redirection_action(&self) -> ::std::option::Option<&crate::types::FirewallDomainRedirectionAction> {
+        self.firewall_domain_redirection_action.as_ref()
+    }
     /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
     /// <ul>
     /// <li>
@@ -151,6 +163,8 @@ impl UpdateFirewallRuleInput {
     /// <p>SRV: Application specific values that identify servers.</p></li>
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// <li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn qtype(&self) -> ::std::option::Option<&str> {
         self.qtype.as_deref()
@@ -176,6 +190,7 @@ pub struct UpdateFirewallRuleInputBuilder {
     pub(crate) block_override_dns_type: ::std::option::Option<crate::types::BlockOverrideDnsType>,
     pub(crate) block_override_ttl: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_domain_redirection_action: ::std::option::Option<crate::types::FirewallDomainRedirectionAction>,
     pub(crate) qtype: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFirewallRuleInputBuilder {
@@ -358,6 +373,26 @@ impl UpdateFirewallRuleInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    pub fn firewall_domain_redirection_action(mut self, input: crate::types::FirewallDomainRedirectionAction) -> Self {
+        self.firewall_domain_redirection_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    pub fn set_firewall_domain_redirection_action(mut self, input: ::std::option::Option<crate::types::FirewallDomainRedirectionAction>) -> Self {
+        self.firewall_domain_redirection_action = input;
+        self
+    }
+    /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot ALIAS.</p>
+    /// <p><code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the allow domain list.</p>
+    /// <p><code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain alloww list.</p>
+    pub fn get_firewall_domain_redirection_action(&self) -> &::std::option::Option<crate::types::FirewallDomainRedirectionAction> {
+        &self.firewall_domain_redirection_action
+    }
     /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
     /// <ul>
     /// <li>
@@ -386,6 +421,8 @@ impl UpdateFirewallRuleInputBuilder {
     /// <p>SRV: Application specific values that identify servers.</p></li>
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// <li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qtype = ::std::option::Option::Some(input.into());
@@ -419,6 +456,8 @@ impl UpdateFirewallRuleInputBuilder {
     /// <p>SRV: Application specific values that identify servers.</p></li>
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// <li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qtype = input;
@@ -452,6 +491,8 @@ impl UpdateFirewallRuleInputBuilder {
     /// <p>SRV: Application specific values that identify servers.</p></li>
     /// <li>
     /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// <li>
+    /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
     pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
         &self.qtype
@@ -471,6 +512,7 @@ impl UpdateFirewallRuleInputBuilder {
             block_override_dns_type: self.block_override_dns_type,
             block_override_ttl: self.block_override_ttl,
             name: self.name,
+            firewall_domain_redirection_action: self.firewall_domain_redirection_action,
             qtype: self.qtype,
         })
     }

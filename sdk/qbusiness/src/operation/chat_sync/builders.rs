@@ -193,6 +193,20 @@ impl ChatSyncFluentBuilder {
     pub fn get_action_execution(&self) -> &::std::option::Option<crate::types::ActionExecution> {
         self.inner.get_action_execution()
     }
+    /// <p>An authentication verification event response by a third party authentication server to Amazon Q Business.</p>
+    pub fn auth_challenge_response(mut self, input: crate::types::AuthChallengeResponse) -> Self {
+        self.inner = self.inner.auth_challenge_response(input);
+        self
+    }
+    /// <p>An authentication verification event response by a third party authentication server to Amazon Q Business.</p>
+    pub fn set_auth_challenge_response(mut self, input: ::std::option::Option<crate::types::AuthChallengeResponse>) -> Self {
+        self.inner = self.inner.set_auth_challenge_response(input);
+        self
+    }
+    /// <p>An authentication verification event response by a third party authentication server to Amazon Q Business.</p>
+    pub fn get_auth_challenge_response(&self) -> &::std::option::Option<crate::types::AuthChallengeResponse> {
+        self.inner.get_auth_challenge_response()
+    }
     /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conversation_id(input.into());
@@ -235,7 +249,7 @@ impl ChatSyncFluentBuilder {
     pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
         self.inner.get_attribute_filter()
     }
-    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <p>The chat modes available to an Amazon Q Business end user.</p>
     /// <ul>
     /// <li>
     /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
@@ -249,7 +263,7 @@ impl ChatSyncFluentBuilder {
         self.inner = self.inner.chat_mode(input);
         self
     }
-    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <p>The chat modes available to an Amazon Q Business end user.</p>
     /// <ul>
     /// <li>
     /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
@@ -263,7 +277,7 @@ impl ChatSyncFluentBuilder {
         self.inner = self.inner.set_chat_mode(input);
         self
     }
-    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <p>The chat modes available to an Amazon Q Business end user.</p>
     /// <ul>
     /// <li>
     /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>

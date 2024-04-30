@@ -140,6 +140,8 @@ mod batch_delete_document;
 
 mod batch_put_document;
 
+mod chat;
+
 mod chat_sync;
 
 mod create_application;

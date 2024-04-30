@@ -13,6 +13,8 @@ pub struct UpdatePluginInput {
     pub state: ::std::option::Option<crate::types::PluginState>,
     /// <p>The source URL used for plugin configuration.</p>
     pub server_url: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for a custom plugin.</p>
+    pub custom_plugin_configuration: ::std::option::Option<crate::types::CustomPluginConfiguration>,
     /// <p>The authentication configuration the plugin is using.</p>
     pub auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
 }
@@ -37,6 +39,10 @@ impl UpdatePluginInput {
     pub fn server_url(&self) -> ::std::option::Option<&str> {
         self.server_url.as_deref()
     }
+    /// <p>The configuration for a custom plugin.</p>
+    pub fn custom_plugin_configuration(&self) -> ::std::option::Option<&crate::types::CustomPluginConfiguration> {
+        self.custom_plugin_configuration.as_ref()
+    }
     /// <p>The authentication configuration the plugin is using.</p>
     pub fn auth_configuration(&self) -> ::std::option::Option<&crate::types::PluginAuthConfiguration> {
         self.auth_configuration.as_ref()
@@ -58,6 +64,7 @@ pub struct UpdatePluginInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::PluginState>,
     pub(crate) server_url: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_plugin_configuration: ::std::option::Option<crate::types::CustomPluginConfiguration>,
     pub(crate) auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
 }
 impl UpdatePluginInputBuilder {
@@ -133,6 +140,20 @@ impl UpdatePluginInputBuilder {
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_url
     }
+    /// <p>The configuration for a custom plugin.</p>
+    pub fn custom_plugin_configuration(mut self, input: crate::types::CustomPluginConfiguration) -> Self {
+        self.custom_plugin_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for a custom plugin.</p>
+    pub fn set_custom_plugin_configuration(mut self, input: ::std::option::Option<crate::types::CustomPluginConfiguration>) -> Self {
+        self.custom_plugin_configuration = input;
+        self
+    }
+    /// <p>The configuration for a custom plugin.</p>
+    pub fn get_custom_plugin_configuration(&self) -> &::std::option::Option<crate::types::CustomPluginConfiguration> {
+        &self.custom_plugin_configuration
+    }
     /// <p>The authentication configuration the plugin is using.</p>
     pub fn auth_configuration(mut self, input: crate::types::PluginAuthConfiguration) -> Self {
         self.auth_configuration = ::std::option::Option::Some(input);
@@ -157,6 +178,7 @@ impl UpdatePluginInputBuilder {
             display_name: self.display_name,
             state: self.state,
             server_url: self.server_url,
+            custom_plugin_configuration: self.custom_plugin_configuration,
             auth_configuration: self.auth_configuration,
         })
     }

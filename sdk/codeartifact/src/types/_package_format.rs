@@ -17,6 +17,7 @@
 ///     PackageFormat::Npm => { /* ... */ },
 ///     PackageFormat::Nuget => { /* ... */ },
 ///     PackageFormat::Pypi => { /* ... */ },
+///     PackageFormat::Ruby => { /* ... */ },
 ///     PackageFormat::Swift => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum PackageFormat {
     #[allow(missing_docs)] // documentation missing in model
     Pypi,
     #[allow(missing_docs)] // documentation missing in model
+    Ruby,
+    #[allow(missing_docs)] // documentation missing in model
     Swift,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for PackageFormat {
             "npm" => PackageFormat::Npm,
             "nuget" => PackageFormat::Nuget,
             "pypi" => PackageFormat::Pypi,
+            "ruby" => PackageFormat::Ruby,
             "swift" => PackageFormat::Swift,
             other => PackageFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -90,13 +94,14 @@ impl PackageFormat {
             PackageFormat::Npm => "npm",
             PackageFormat::Nuget => "nuget",
             PackageFormat::Pypi => "pypi",
+            PackageFormat::Ruby => "ruby",
             PackageFormat::Swift => "swift",
             PackageFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["generic", "maven", "npm", "nuget", "pypi", "swift"]
+        &["generic", "maven", "npm", "nuget", "pypi", "ruby", "swift"]
     }
 }
 impl ::std::convert::AsRef<str> for PackageFormat {
@@ -124,6 +129,7 @@ impl ::std::fmt::Display for PackageFormat {
             PackageFormat::Npm => write!(f, "npm"),
             PackageFormat::Nuget => write!(f, "nuget"),
             PackageFormat::Pypi => write!(f, "pypi"),
+            PackageFormat::Ruby => write!(f, "ruby"),
             PackageFormat::Swift => write!(f, "swift"),
             PackageFormat::Unknown(value) => write!(f, "{}", value),
         }

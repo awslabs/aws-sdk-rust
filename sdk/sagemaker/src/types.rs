@@ -1653,6 +1653,8 @@ pub use crate::types::_retention_policy::RetentionPolicy;
 
 pub use crate::types::_retention_type::RetentionType;
 
+pub use crate::types::_session_chaining_config::SessionChainingConfig;
+
 pub use crate::types::_recommendation_job_output_config::RecommendationJobOutputConfig;
 
 pub use crate::types::_recommendation_job_compiled_output_config::RecommendationJobCompiledOutputConfig;
@@ -3052,6 +3054,8 @@ mod _service_catalog_provisioned_product_details;
 mod _service_catalog_provisioning_details;
 
 mod _service_catalog_provisioning_update_details;
+
+mod _session_chaining_config;
 
 mod _shadow_mode_config;
 

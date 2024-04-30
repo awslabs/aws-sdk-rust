@@ -53,5 +53,8 @@ pub fn ser_send_text_message_input_input(
     if let Some(var_17) = &input.dry_run {
         object.key("DryRun").boolean(*var_17);
     }
+    if let Some(var_18) = &input.protect_configuration_id {
+        object.key("ProtectConfigurationId").string(var_18.as_str());
+    }
     Ok(())
 }

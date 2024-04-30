@@ -79,6 +79,16 @@ pub(crate) fn reflens_describe_pools_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_protect_configurations_output_output_next_token(
+    input: &crate::operation::describe_protect_configurations::DescribeProtectConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_registration_attachments_output_output_next_token(
     input: &crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -273,6 +283,16 @@ pub(crate) fn lens_describe_pools_output_output_pools(
     input: crate::operation::describe_pools::DescribePoolsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PoolInformation>> {
     let input = match input.pools {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_protect_configurations_output_output_protect_configurations(
+    input: crate::operation::describe_protect_configurations::DescribeProtectConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectConfigurationInformation>> {
+    let input = match input.protect_configurations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

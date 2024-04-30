@@ -43,5 +43,8 @@ pub fn ser_send_voice_message_input_input(
     if let Some(var_13) = &input.dry_run {
         object.key("DryRun").boolean(*var_13);
     }
+    if let Some(var_14) = &input.protect_configuration_id {
+        object.key("ProtectConfigurationId").string(var_14.as_str());
+    }
     Ok(())
 }

@@ -39,8 +39,11 @@ pub fn ser_create_firewall_rule_input_input(
     if let Some(var_10) = &input.name {
         object.key("Name").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.qtype {
-        object.key("Qtype").string(var_11.as_str());
+    if let Some(var_11) = &input.firewall_domain_redirection_action {
+        object.key("FirewallDomainRedirectionAction").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.qtype {
+        object.key("Qtype").string(var_12.as_str());
     }
     Ok(())
 }

@@ -23,6 +23,7 @@ impl crate::operation::get_run::builders::GetRunInputBuilder {
 /// Fluent builder constructing a request to `GetRun`.
 ///
 /// <p>Gets information about a workflow run.</p>
+/// <p>If a workflow is shared with you, you cannot export information about the run.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

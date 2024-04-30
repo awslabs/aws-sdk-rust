@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "snippetExcerpt" => {
+                            builder = builder.set_snippet_excerpt(crate::protocol_serde::shape_snippet_excerpt::de_snippet_excerpt(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

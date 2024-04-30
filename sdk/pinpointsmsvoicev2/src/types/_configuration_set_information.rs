@@ -16,6 +16,8 @@ pub struct ConfigurationSetInformation {
     pub default_sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the ConfigurationSet was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub protect_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl ConfigurationSetInformation {
     /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
@@ -45,6 +47,10 @@ impl ConfigurationSetInformation {
     pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.created_timestamp
     }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn protect_configuration_id(&self) -> ::std::option::Option<&str> {
+        self.protect_configuration_id.as_deref()
+    }
 }
 impl ConfigurationSetInformation {
     /// Creates a new builder-style object to manufacture [`ConfigurationSetInformation`](crate::types::ConfigurationSetInformation).
@@ -63,6 +69,7 @@ pub struct ConfigurationSetInformationBuilder {
     pub(crate) default_message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) default_sender_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) protect_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl ConfigurationSetInformationBuilder {
     /// <p>The Resource Name (ARN) of the ConfigurationSet.</p>
@@ -158,6 +165,20 @@ impl ConfigurationSetInformationBuilder {
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn protect_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protect_configuration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn set_protect_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.protect_configuration_id = input;
+        self
+    }
+    /// <p>The unique identifier for the protect configuration.</p>
+    pub fn get_protect_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protect_configuration_id
+    }
     /// Consumes the builder and constructs a [`ConfigurationSetInformation`](crate::types::ConfigurationSetInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`configuration_set_arn`](crate::types::builders::ConfigurationSetInformationBuilder::configuration_set_arn)
@@ -192,6 +213,7 @@ impl ConfigurationSetInformationBuilder {
                     "created_timestamp was not specified but it is required when building ConfigurationSetInformation",
                 )
             })?,
+            protect_configuration_id: self.protect_configuration_id,
         })
     }
 }

@@ -481,6 +481,9 @@ pub mod update_refresh_schedule;
 /// Types for the `UpdateRoleCustomPermission` operation.
 pub mod update_role_custom_permission;
 
+/// Types for the `UpdateSPICECapacityConfiguration` operation.
+pub mod update_spice_capacity_configuration;
+
 /// Types for the `UpdateTemplate` operation.
 pub mod update_template;
 

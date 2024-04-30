@@ -41,6 +41,8 @@ pub use crate::types::_share_details::ShareDetails;
 
 pub use crate::types::_filter::Filter;
 
+pub use crate::types::_share_resource_type::ShareResourceType;
+
 pub use crate::types::_resource_owner::ResourceOwner;
 
 pub use crate::types::_read_set_part_source::ReadSetPartSource;
@@ -124,6 +126,8 @@ pub use crate::types::_read_set_status::ReadSetStatus;
 pub use crate::types::_read_set_list_item::ReadSetListItem;
 
 pub use crate::types::_read_set_filter::ReadSetFilter;
+
+pub use crate::types::_storage_type::StorageType;
 
 pub use crate::types::_run_log_location::RunLogLocation;
 
@@ -371,6 +375,8 @@ mod _sequence_store_s3_access;
 
 mod _share_details;
 
+mod _share_resource_type;
+
 mod _share_status;
 
 mod _source_files;
@@ -382,6 +388,8 @@ mod _start_read_set_activation_job_source_item;
 mod _start_read_set_import_job_source_item;
 
 mod _start_reference_import_job_source_item;
+
+mod _storage_type;
 
 mod _store_format;
 

@@ -10,6 +10,8 @@ pub struct AnonymousUserEmbeddingExperienceConfiguration {
     pub dashboard_visual: ::std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>,
     /// <p>The Q search bar that you want to use for anonymous user embedding.</p>
     pub q_search_bar: ::std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>,
+    /// <p>The Generative Q&amp;A experience that you want to use for anonymous user embedding.</p>
+    pub generative_qn_a: ::std::option::Option<crate::types::AnonymousUserGenerativeQnAEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfiguration {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
@@ -23,6 +25,10 @@ impl AnonymousUserEmbeddingExperienceConfiguration {
     /// <p>The Q search bar that you want to use for anonymous user embedding.</p>
     pub fn q_search_bar(&self) -> ::std::option::Option<&crate::types::AnonymousUserQSearchBarEmbeddingConfiguration> {
         self.q_search_bar.as_ref()
+    }
+    /// <p>The Generative Q&amp;A experience that you want to use for anonymous user embedding.</p>
+    pub fn generative_qn_a(&self) -> ::std::option::Option<&crate::types::AnonymousUserGenerativeQnAEmbeddingConfiguration> {
+        self.generative_qn_a.as_ref()
     }
 }
 impl AnonymousUserEmbeddingExperienceConfiguration {
@@ -39,6 +45,7 @@ pub struct AnonymousUserEmbeddingExperienceConfigurationBuilder {
     pub(crate) dashboard: ::std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>,
     pub(crate) dashboard_visual: ::std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>,
     pub(crate) q_search_bar: ::std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>,
+    pub(crate) generative_qn_a: ::std::option::Option<crate::types::AnonymousUserGenerativeQnAEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfigurationBuilder {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
@@ -83,12 +90,27 @@ impl AnonymousUserEmbeddingExperienceConfigurationBuilder {
     pub fn get_q_search_bar(&self) -> &::std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration> {
         &self.q_search_bar
     }
+    /// <p>The Generative Q&amp;A experience that you want to use for anonymous user embedding.</p>
+    pub fn generative_qn_a(mut self, input: crate::types::AnonymousUserGenerativeQnAEmbeddingConfiguration) -> Self {
+        self.generative_qn_a = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Generative Q&amp;A experience that you want to use for anonymous user embedding.</p>
+    pub fn set_generative_qn_a(mut self, input: ::std::option::Option<crate::types::AnonymousUserGenerativeQnAEmbeddingConfiguration>) -> Self {
+        self.generative_qn_a = input;
+        self
+    }
+    /// <p>The Generative Q&amp;A experience that you want to use for anonymous user embedding.</p>
+    pub fn get_generative_qn_a(&self) -> &::std::option::Option<crate::types::AnonymousUserGenerativeQnAEmbeddingConfiguration> {
+        &self.generative_qn_a
+    }
     /// Consumes the builder and constructs a [`AnonymousUserEmbeddingExperienceConfiguration`](crate::types::AnonymousUserEmbeddingExperienceConfiguration).
     pub fn build(self) -> crate::types::AnonymousUserEmbeddingExperienceConfiguration {
         crate::types::AnonymousUserEmbeddingExperienceConfiguration {
             dashboard: self.dashboard,
             dashboard_visual: self.dashboard_visual,
             q_search_bar: self.q_search_bar,
+            generative_qn_a: self.generative_qn_a,
         }
     }
 }

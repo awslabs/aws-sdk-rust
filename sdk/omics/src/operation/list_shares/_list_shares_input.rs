@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSharesInput {
-    /// <p>The account that owns the analytics store shared.</p>
+    /// <p>The account that owns the resource shares.</p>
     pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
-    /// <p>Attributes used to filter for a specific subset of shares.</p>
+    /// <p>Attributes that you use to filter for a specific subset of resource shares.</p>
     pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ListSharesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSharesInput {
-    /// <p>The account that owns the analytics store shared.</p>
+    /// <p>The account that owns the resource shares.</p>
     pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
         self.resource_owner.as_ref()
     }
-    /// <p>Attributes used to filter for a specific subset of shares.</p>
+    /// <p>Attributes that you use to filter for a specific subset of resource shares.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::Filter> {
         self.filter.as_ref()
     }
@@ -47,32 +47,32 @@ pub struct ListSharesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListSharesInputBuilder {
-    /// <p>The account that owns the analytics store shared.</p>
+    /// <p>The account that owns the resource shares.</p>
     /// This field is required.
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.resource_owner = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The account that owns the analytics store shared.</p>
+    /// <p>The account that owns the resource shares.</p>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.resource_owner = input;
         self
     }
-    /// <p>The account that owns the analytics store shared.</p>
+    /// <p>The account that owns the resource shares.</p>
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
         &self.resource_owner
     }
-    /// <p>Attributes used to filter for a specific subset of shares.</p>
+    /// <p>Attributes that you use to filter for a specific subset of resource shares.</p>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Attributes used to filter for a specific subset of shares.</p>
+    /// <p>Attributes that you use to filter for a specific subset of resource shares.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>Attributes used to filter for a specific subset of shares.</p>
+    /// <p>Attributes that you use to filter for a specific subset of resource shares.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
         &self.filter
     }

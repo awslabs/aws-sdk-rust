@@ -18,53 +18,80 @@ pub fn ser_create_account_subscription_input_input(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.authentication_method {
-        object.key("AuthenticationMethod").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.author_group {
-        let mut array_8 = object.key("AuthorGroup").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.admin_pro_group {
+        let mut array_7 = object.key("AdminProGroup").start_array();
+        for item_8 in var_6 {
             {
-                array_8.value().string(item_9.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
-    if let Some(var_10) = &input.contact_number {
-        object.key("ContactNumber").string(var_10.as_str());
+    if let Some(var_9) = &input.authentication_method {
+        object.key("AuthenticationMethod").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.directory_id {
-        object.key("DirectoryId").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.edition {
-        object.key("Edition").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.email_address {
-        object.key("EmailAddress").string(var_13.as_str());
-    }
-    if let Some(var_14) = &input.first_name {
-        object.key("FirstName").string(var_14.as_str());
-    }
-    if let Some(var_15) = &input.iam_identity_center_instance_arn {
-        object.key("IAMIdentityCenterInstanceArn").string(var_15.as_str());
-    }
-    if let Some(var_16) = &input.last_name {
-        object.key("LastName").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.notification_email {
-        object.key("NotificationEmail").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.reader_group {
-        let mut array_19 = object.key("ReaderGroup").start_array();
-        for item_20 in var_18 {
+    if let Some(var_10) = &input.author_group {
+        let mut array_11 = object.key("AuthorGroup").start_array();
+        for item_12 in var_10 {
             {
-                array_19.value().string(item_20.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_19.finish();
+        array_11.finish();
     }
-    if let Some(var_21) = &input.realm {
-        object.key("Realm").string(var_21.as_str());
+    if let Some(var_13) = &input.author_pro_group {
+        let mut array_14 = object.key("AuthorProGroup").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_16) = &input.contact_number {
+        object.key("ContactNumber").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.directory_id {
+        object.key("DirectoryId").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.edition {
+        object.key("Edition").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.email_address {
+        object.key("EmailAddress").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.first_name {
+        object.key("FirstName").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.iam_identity_center_instance_arn {
+        object.key("IAMIdentityCenterInstanceArn").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.last_name {
+        object.key("LastName").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.notification_email {
+        object.key("NotificationEmail").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.reader_group {
+        let mut array_25 = object.key("ReaderGroup").start_array();
+        for item_26 in var_24 {
+            {
+                array_25.value().string(item_26.as_str());
+            }
+        }
+        array_25.finish();
+    }
+    if let Some(var_27) = &input.reader_pro_group {
+        let mut array_28 = object.key("ReaderProGroup").start_array();
+        for item_29 in var_27 {
+            {
+                array_28.value().string(item_29.as_str());
+            }
+        }
+        array_28.finish();
+    }
+    if let Some(var_30) = &input.realm {
+        object.key("Realm").string(var_30.as_str());
     }
     Ok(())
 }

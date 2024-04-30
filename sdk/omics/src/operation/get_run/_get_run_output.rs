@@ -29,7 +29,7 @@ pub struct GetRunOutput {
     pub digest: ::std::option::Option<::std::string::String>,
     /// <p>The run's parameters.</p>
     pub parameters: ::std::option::Option<::aws_smithy_types::Document>,
-    /// <p>The run's storage capacity in gigabytes.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>The run's output URI.</p>
     pub output_uri: ::std::option::Option<::std::string::String>,
@@ -61,6 +61,10 @@ pub struct GetRunOutput {
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>The destination for workflow outputs.</p>
     pub run_output_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The run's storage type.</p>
+    pub storage_type: ::std::option::Option<crate::types::StorageType>,
+    /// <p>The ID of the workflow owner.</p>
+    pub workflow_owner_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -116,7 +120,7 @@ impl GetRunOutput {
     pub fn parameters(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.parameters.as_ref()
     }
-    /// <p>The run's storage capacity in gigabytes.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
@@ -180,6 +184,14 @@ impl GetRunOutput {
     pub fn run_output_uri(&self) -> ::std::option::Option<&str> {
         self.run_output_uri.as_deref()
     }
+    /// <p>The run's storage type.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn workflow_owner_id(&self) -> ::std::option::Option<&str> {
+        self.workflow_owner_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -226,6 +238,8 @@ pub struct GetRunOutputBuilder {
     pub(crate) log_location: ::std::option::Option<crate::types::RunLogLocation>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
     pub(crate) run_output_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
+    pub(crate) workflow_owner_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -411,17 +425,17 @@ impl GetRunOutputBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.parameters
     }
-    /// <p>The run's storage capacity in gigabytes.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The run's storage capacity in gigabytes.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
     }
-    /// <p>The run's storage capacity in gigabytes.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }
@@ -654,6 +668,34 @@ impl GetRunOutputBuilder {
     pub fn get_run_output_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_output_uri
     }
+    /// <p>The run's storage type.</p>
+    pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
+        self.storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The run's storage type.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The run's storage type.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        &self.storage_type
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn workflow_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_owner_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn set_workflow_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workflow_owner_id = input;
+        self
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn get_workflow_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_owner_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -695,6 +737,8 @@ impl GetRunOutputBuilder {
             log_location: self.log_location,
             uuid: self.uuid,
             run_output_uri: self.run_output_uri,
+            storage_type: self.storage_type,
+            workflow_owner_id: self.workflow_owner_id,
             _request_id: self._request_id,
         }
     }

@@ -6,6 +6,8 @@
 pub enum PluginAuthConfiguration {
     /// <p>Information about the basic authentication credentials used to configure a plugin.</p>
     BasicAuthConfiguration(crate::types::BasicAuthConfiguration),
+    /// <p>Information about invoking a custom plugin without any authentication.</p>
+    NoAuthConfiguration(crate::types::NoAuthConfiguration),
     /// <p>Information about the OAuth 2.0 authentication credential/token used to configure a plugin.</p>
     OAuth2ClientCredentialConfiguration(crate::types::OAuth2ClientCredentialConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl PluginAuthConfiguration {
     /// Returns true if this is a [`BasicAuthConfiguration`](crate::types::PluginAuthConfiguration::BasicAuthConfiguration).
     pub fn is_basic_auth_configuration(&self) -> bool {
         self.as_basic_auth_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`NoAuthConfiguration`](crate::types::PluginAuthConfiguration::NoAuthConfiguration), extracting the inner [`NoAuthConfiguration`](crate::types::NoAuthConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_no_auth_configuration(&self) -> ::std::result::Result<&crate::types::NoAuthConfiguration, &Self> {
+        if let PluginAuthConfiguration::NoAuthConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NoAuthConfiguration`](crate::types::PluginAuthConfiguration::NoAuthConfiguration).
+    pub fn is_no_auth_configuration(&self) -> bool {
+        self.as_no_auth_configuration().is_ok()
     }
     /// Tries to convert the enum instance into [`OAuth2ClientCredentialConfiguration`](crate::types::PluginAuthConfiguration::OAuth2ClientCredentialConfiguration), extracting the inner [`OAuth2ClientCredentialConfiguration`](crate::types::OAuth2ClientCredentialConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

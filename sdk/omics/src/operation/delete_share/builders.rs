@@ -22,7 +22,7 @@ impl crate::operation::delete_share::builders::DeleteShareInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteShare`.
 ///
-/// <p>Deletes a share of an analytics store.</p>
+/// <p>Deletes a resource share. If you are the resource owner, the subscriber will no longer have access to the shared resource. If you are the subscriber, this operation deletes your access to the share.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteShareFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID for the share request to be deleted.</p>
+    /// <p>The ID for the resource share to be deleted.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.share_id(input.into());
         self
     }
-    /// <p>The ID for the share request to be deleted.</p>
+    /// <p>The ID for the resource share to be deleted.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_share_id(input);
         self
     }
-    /// <p>The ID for the share request to be deleted.</p>
+    /// <p>The ID for the resource share to be deleted.</p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_share_id()
     }

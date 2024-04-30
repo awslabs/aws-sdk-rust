@@ -163,17 +163,17 @@ impl CreateEventDestinationFluentBuilder {
     pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
         self.inner.get_matching_event_types()
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch Logs.</p>
     pub fn cloud_watch_logs_destination(mut self, input: crate::types::CloudWatchLogsDestination) -> Self {
         self.inner = self.inner.cloud_watch_logs_destination(input);
         self
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch Logs.</p>
     pub fn set_cloud_watch_logs_destination(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsDestination>) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_destination(input);
         self
     }
-    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch Logs.</p>
     pub fn get_cloud_watch_logs_destination(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
         self.inner.get_cloud_watch_logs_destination()
     }

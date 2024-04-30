@@ -19,7 +19,7 @@ pub struct StartRunInput {
     pub priority: ::std::option::Option<i32>,
     /// <p>Parameters for the run.</p>
     pub parameters: ::std::option::Option<::aws_smithy_types::Document>,
-    /// <p>A storage capacity for the run in gibibytes.</p>
+    /// <p>A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>An output URI for the run.</p>
     pub output_uri: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,10 @@ pub struct StartRunInput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The retention mode for the run.</p>
     pub retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
+    /// <p>The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file system utilization.</p>
+    pub storage_type: ::std::option::Option<crate::types::StorageType>,
+    /// <p>The ID of the workflow owner.</p>
+    pub workflow_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl StartRunInput {
     /// <p>The run's workflow ID.</p>
@@ -65,7 +69,7 @@ impl StartRunInput {
     pub fn parameters(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.parameters.as_ref()
     }
-    /// <p>A storage capacity for the run in gibibytes.</p>
+    /// <p>A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
@@ -88,6 +92,14 @@ impl StartRunInput {
     /// <p>The retention mode for the run.</p>
     pub fn retention_mode(&self) -> ::std::option::Option<&crate::types::RunRetentionMode> {
         self.retention_mode.as_ref()
+    }
+    /// <p>The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file system utilization.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn workflow_owner_id(&self) -> ::std::option::Option<&str> {
+        self.workflow_owner_id.as_deref()
     }
 }
 impl StartRunInput {
@@ -115,6 +127,8 @@ pub struct StartRunInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) retention_mode: ::std::option::Option<crate::types::RunRetentionMode>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
+    pub(crate) workflow_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl StartRunInputBuilder {
     /// <p>The run's workflow ID.</p>
@@ -230,17 +244,17 @@ impl StartRunInputBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.parameters
     }
-    /// <p>A storage capacity for the run in gibibytes.</p>
+    /// <p>A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A storage capacity for the run in gibibytes.</p>
+    /// <p>A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
     }
-    /// <p>A storage capacity for the run in gibibytes.</p>
+    /// <p>A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the system ignores any value that you enter).</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }
@@ -321,6 +335,34 @@ impl StartRunInputBuilder {
     pub fn get_retention_mode(&self) -> &::std::option::Option<crate::types::RunRetentionMode> {
         &self.retention_mode
     }
+    /// <p>The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file system utilization.</p>
+    pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
+        self.storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file system utilization.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file system utilization.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        &self.storage_type
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn workflow_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_owner_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn set_workflow_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workflow_owner_id = input;
+        self
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn get_workflow_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_owner_id
+    }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_run::StartRunInput {
@@ -338,6 +380,8 @@ impl StartRunInputBuilder {
             tags: self.tags,
             request_id: self.request_id,
             retention_mode: self.retention_mode,
+            storage_type: self.storage_type,
+            workflow_owner_id: self.workflow_owner_id,
         })
     }
 }

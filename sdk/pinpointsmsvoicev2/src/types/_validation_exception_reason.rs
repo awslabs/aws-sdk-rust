@@ -26,6 +26,7 @@
 ///     ValidationExceptionReason::InvalidRegistrationAssociation => { /* ... */ },
 ///     ValidationExceptionReason::InvalidRequest => { /* ... */ },
 ///     ValidationExceptionReason::MaximumSizeExceeded => { /* ... */ },
+///     ValidationExceptionReason::MediaTypeNotSupported => { /* ... */ },
 ///     ValidationExceptionReason::MissingParameter => { /* ... */ },
 ///     ValidationExceptionReason::Other => { /* ... */ },
 ///     ValidationExceptionReason::ParametersCannotBeUsedTogether => { /* ... */ },
@@ -106,6 +107,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     MaximumSizeExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    MediaTypeNotSupported,
+    #[allow(missing_docs)] // documentation missing in model
     MissingParameter,
     #[allow(missing_docs)] // documentation missing in model
     Other,
@@ -174,6 +177,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "INVALID_REGISTRATION_ASSOCIATION" => ValidationExceptionReason::InvalidRegistrationAssociation,
             "INVALID_REQUEST" => ValidationExceptionReason::InvalidRequest,
             "MAXIMUM_SIZE_EXCEEDED" => ValidationExceptionReason::MaximumSizeExceeded,
+            "MEDIA_TYPE_NOT_SUPPORTED" => ValidationExceptionReason::MediaTypeNotSupported,
             "MISSING_PARAMETER" => ValidationExceptionReason::MissingParameter,
             "OTHER" => ValidationExceptionReason::Other,
             "PARAMETERS_CANNOT_BE_USED_TOGETHER" => ValidationExceptionReason::ParametersCannotBeUsedTogether,
@@ -227,6 +231,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidRegistrationAssociation => "INVALID_REGISTRATION_ASSOCIATION",
             ValidationExceptionReason::InvalidRequest => "INVALID_REQUEST",
             ValidationExceptionReason::MaximumSizeExceeded => "MAXIMUM_SIZE_EXCEEDED",
+            ValidationExceptionReason::MediaTypeNotSupported => "MEDIA_TYPE_NOT_SUPPORTED",
             ValidationExceptionReason::MissingParameter => "MISSING_PARAMETER",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::ParametersCannotBeUsedTogether => "PARAMETERS_CANNOT_BE_USED_TOGETHER",
@@ -271,6 +276,7 @@ impl ValidationExceptionReason {
             "INVALID_REGISTRATION_ASSOCIATION",
             "INVALID_REQUEST",
             "MAXIMUM_SIZE_EXCEEDED",
+            "MEDIA_TYPE_NOT_SUPPORTED",
             "MISSING_PARAMETER",
             "OTHER",
             "PARAMETERS_CANNOT_BE_USED_TOGETHER",
@@ -332,6 +338,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::InvalidRegistrationAssociation => write!(f, "INVALID_REGISTRATION_ASSOCIATION"),
             ValidationExceptionReason::InvalidRequest => write!(f, "INVALID_REQUEST"),
             ValidationExceptionReason::MaximumSizeExceeded => write!(f, "MAXIMUM_SIZE_EXCEEDED"),
+            ValidationExceptionReason::MediaTypeNotSupported => write!(f, "MEDIA_TYPE_NOT_SUPPORTED"),
             ValidationExceptionReason::MissingParameter => write!(f, "MISSING_PARAMETER"),
             ValidationExceptionReason::Other => write!(f, "OTHER"),
             ValidationExceptionReason::ParametersCannotBeUsedTogether => write!(f, "PARAMETERS_CANNOT_BE_USED_TOGETHER"),

@@ -1859,6 +1859,8 @@ pub(crate) mod shape_service_catalog_provisioning_details;
 
 pub(crate) mod shape_service_catalog_provisioning_update_details;
 
+pub(crate) mod shape_session_chaining_config;
+
 pub(crate) mod shape_shadow_mode_config;
 
 pub(crate) mod shape_source_algorithm_specification;

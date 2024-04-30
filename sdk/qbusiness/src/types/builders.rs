@@ -31,9 +31,15 @@ pub use crate::types::_number_attribute_boosting_configuration::NumberAttributeB
 
 pub use crate::types::_retriever::RetrieverBuilder;
 
+pub use crate::types::_no_auth_configuration::NoAuthConfigurationBuilder;
+
 pub use crate::types::_o_auth2_client_credential_configuration::OAuth2ClientCredentialConfigurationBuilder;
 
 pub use crate::types::_basic_auth_configuration::BasicAuthConfigurationBuilder;
+
+pub use crate::types::_custom_plugin_configuration::CustomPluginConfigurationBuilder;
+
+pub use crate::types::_s3::S3Builder;
 
 pub use crate::types::_plugin::PluginBuilder;
 
@@ -103,6 +109,8 @@ pub use crate::types::_source_attribution::SourceAttributionBuilder;
 
 pub use crate::types::_text_segment::TextSegmentBuilder;
 
+pub use crate::types::_snippet_excerpt::SnippetExcerptBuilder;
+
 pub use crate::types::_attachment_output::AttachmentOutputBuilder;
 
 pub use crate::types::_group_summary::GroupSummaryBuilder;
@@ -121,13 +129,39 @@ pub use crate::types::_applied_creator_mode_configuration::AppliedCreatorModeCon
 
 pub use crate::types::_blocked_phrases_configuration::BlockedPhrasesConfigurationBuilder;
 
+pub use crate::types::_auth_challenge_request::AuthChallengeRequestBuilder;
+
 pub use crate::types::_plugin_configuration::PluginConfigurationBuilder;
 
 pub use crate::types::_attribute_filter::AttributeFilterBuilder;
 
 pub use crate::types::_document_attribute::DocumentAttributeBuilder;
 
+pub use crate::types::_auth_challenge_response::AuthChallengeResponseBuilder;
+
 pub use crate::types::_attachment_input::AttachmentInputBuilder;
+
+pub use crate::types::_auth_challenge_request_event::AuthChallengeRequestEventBuilder;
+
+pub use crate::types::_failed_attachment_event::FailedAttachmentEventBuilder;
+
+pub use crate::types::_action_review_event::ActionReviewEventBuilder;
+
+pub use crate::types::_metadata_event::MetadataEventBuilder;
+
+pub use crate::types::_text_output_event::TextOutputEventBuilder;
+
+pub use crate::types::_auth_challenge_response_event::AuthChallengeResponseEventBuilder;
+
+pub use crate::types::_end_of_input_event::EndOfInputEventBuilder;
+
+pub use crate::types::_action_execution_event::ActionExecutionEventBuilder;
+
+pub use crate::types::_attachment_input_event::AttachmentInputEventBuilder;
+
+pub use crate::types::_text_input_event::TextInputEventBuilder;
+
+pub use crate::types::_configuration_event::ConfigurationEventBuilder;
 
 pub use crate::types::_failed_document::FailedDocumentBuilder;
 
@@ -140,7 +174,5 @@ pub use crate::types::_access_control::AccessControlBuilder;
 pub use crate::types::_principal_group::PrincipalGroupBuilder;
 
 pub use crate::types::_principal_user::PrincipalUserBuilder;
-
-pub use crate::types::_s3::S3Builder;
 
 pub use crate::types::_delete_document::DeleteDocumentBuilder;

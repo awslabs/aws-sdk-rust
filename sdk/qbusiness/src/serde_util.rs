@@ -101,6 +101,30 @@ pub(crate) fn applied_creator_mode_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn auth_challenge_request_correct_errors(
+    mut builder: crate::types::builders::AuthChallengeRequestBuilder,
+) -> crate::types::builders::AuthChallengeRequestBuilder {
+    if builder.authorization_url.is_none() {
+        builder.authorization_url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn custom_plugin_configuration_correct_errors(
+    mut builder: crate::types::builders::CustomPluginConfigurationBuilder,
+) -> crate::types::builders::CustomPluginConfigurationBuilder {
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.api_schema_type.is_none() {
+        builder.api_schema_type = "no value was set".parse::<crate::types::ApiSchemaType>().ok()
+    }
+    if builder.api_schema.is_none() {
+        builder.api_schema = Some(crate::types::ApiSchema::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn data_source_vpc_configuration_correct_errors(
     mut builder: crate::types::builders::DataSourceVpcConfigurationBuilder,
 ) -> crate::types::builders::DataSourceVpcConfigurationBuilder {
@@ -226,6 +250,15 @@ pub(crate) fn action_execution_correct_errors(
     builder
 }
 
+pub(crate) fn auth_challenge_request_event_correct_errors(
+    mut builder: crate::types::builders::AuthChallengeRequestEventBuilder,
+) -> crate::types::builders::AuthChallengeRequestEventBuilder {
+    if builder.authorization_url.is_none() {
+        builder.authorization_url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn document_attribute_condition_correct_errors(
     mut builder: crate::types::builders::DocumentAttributeConditionBuilder,
 ) -> crate::types::builders::DocumentAttributeConditionBuilder {
@@ -234,6 +267,16 @@ pub(crate) fn document_attribute_condition_correct_errors(
     }
     if builder.operator.is_none() {
         builder.operator = "no value was set".parse::<crate::types::DocumentEnrichmentConditionOperator>().ok()
+    }
+    builder
+}
+
+pub(crate) fn s3_correct_errors(mut builder: crate::types::builders::S3Builder) -> crate::types::builders::S3Builder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
     }
     builder
 }

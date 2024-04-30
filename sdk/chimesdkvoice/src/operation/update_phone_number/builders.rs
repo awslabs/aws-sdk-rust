@@ -22,7 +22,7 @@ impl crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuil
 }
 /// Fluent builder constructing a request to `UpdatePhoneNumber`.
 ///
-/// <p>Updates phone number details, such as product type or calling name, for the specified phone number ID. You can update one phone number detail at a time. For example, you can update either the product type or the calling name in one action.</p>
+/// <p>Updates phone number details, such as product type, calling name, or phone number name for the specified phone number ID. You can update one phone number detail at a time. For example, you can update either the product type, calling name, or phone number name in one action.</p>
 /// <p>For numbers outside the U.S., you must use the Amazon Chime SDK SIP Media Application Dial-In product type.</p>
 /// <p>Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -152,17 +152,17 @@ impl UpdatePhoneNumberFluentBuilder {
     pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_calling_name()
     }
-    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    /// <p>Specifies the updated name assigned to one or more phone numbers.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    /// <p>Specifies the updated name assigned to one or more phone numbers.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>Specifies the name assigned to one or more phone numbers.</p>
+    /// <p>Specifies the updated name assigned to one or more phone numbers.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

@@ -7,6 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetSipMediaApplicationAlexaSkillConfigurationOutput`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationOutput) with field(s):
     ///   - [`sip_media_application_alexa_skill_configuration(Option<SipMediaApplicationAlexaSkillConfiguration>)`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationOutput::sip_media_application_alexa_skill_configuration): <p>Returns the Alexa Skill configuration.</p>
     /// - On failure, responds with [`SdkError<GetSipMediaApplicationAlexaSkillConfigurationError>`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError)
+    #[deprecated(
+        note = "Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties)."
+    )]
     pub fn get_sip_media_application_alexa_skill_configuration(
         &self,
     ) -> crate::operation::get_sip_media_application_alexa_skill_configuration::builders::GetSipMediaApplicationAlexaSkillConfigurationFluentBuilder

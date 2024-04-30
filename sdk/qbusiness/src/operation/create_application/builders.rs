@@ -22,7 +22,9 @@ impl crate::operation::create_application::builders::CreateApplicationInputBuild
 }
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
-/// <p>Creates an Amazon Q Business application.</p>
+/// <p>Creates an Amazon Q Business application.</p><note>
+/// <p>There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro are also available in Amazon Q Business Lite. For information on what's included in Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription tiers to users.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

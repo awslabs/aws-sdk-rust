@@ -12,7 +12,7 @@ pub struct DocumentAttributeCondition {
     pub key: ::std::string::String,
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
-    /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
+    /// <p>Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     pub operator: crate::types::DocumentEnrichmentConditionOperator,
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
     pub value: ::std::option::Option<crate::types::DocumentAttributeValue>,
@@ -27,7 +27,7 @@ impl DocumentAttributeCondition {
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
-    /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
+    /// <p>Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     pub fn operator(&self) -> &crate::types::DocumentEnrichmentConditionOperator {
         &self.operator
     }
@@ -75,7 +75,7 @@ impl DocumentAttributeConditionBuilder {
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
-    /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
+    /// <p>Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     /// This field is required.
     pub fn operator(mut self, input: crate::types::DocumentEnrichmentConditionOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -83,14 +83,14 @@ impl DocumentAttributeConditionBuilder {
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
-    /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
+    /// <p>Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::DocumentEnrichmentConditionOperator>) -> Self {
         self.operator = input;
         self
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
-    /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
+    /// <p>Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::DocumentEnrichmentConditionOperator> {
         &self.operator
     }

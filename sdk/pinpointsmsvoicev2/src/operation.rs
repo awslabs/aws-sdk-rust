@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateOriginationIdentity` operation.
 pub mod associate_origination_identity;
 
+/// Types for the `AssociateProtectConfiguration` operation.
+pub mod associate_protect_configuration;
+
 /// Types for the `CreateConfigurationSet` operation.
 pub mod create_configuration_set;
 
@@ -15,6 +18,9 @@ pub mod create_opt_out_list;
 
 /// Types for the `CreatePool` operation.
 pub mod create_pool;
+
+/// Types for the `CreateProtectConfiguration` operation.
+pub mod create_protect_configuration;
 
 /// Types for the `CreateRegistration` operation.
 pub mod create_registration;
@@ -31,6 +37,9 @@ pub mod create_registration_version;
 /// Types for the `CreateVerifiedDestinationNumber` operation.
 pub mod create_verified_destination_number;
 
+/// Types for the `DeleteAccountDefaultProtectConfiguration` operation.
+pub mod delete_account_default_protect_configuration;
+
 /// Types for the `DeleteConfigurationSet` operation.
 pub mod delete_configuration_set;
 
@@ -46,6 +55,9 @@ pub mod delete_event_destination;
 /// Types for the `DeleteKeyword` operation.
 pub mod delete_keyword;
 
+/// Types for the `DeleteMediaMessageSpendLimitOverride` operation.
+pub mod delete_media_message_spend_limit_override;
+
 /// Types for the `DeleteOptOutList` operation.
 pub mod delete_opt_out_list;
 
@@ -54,6 +66,9 @@ pub mod delete_opted_out_number;
 
 /// Types for the `DeletePool` operation.
 pub mod delete_pool;
+
+/// Types for the `DeleteProtectConfiguration` operation.
+pub mod delete_protect_configuration;
 
 /// Types for the `DeleteRegistration` operation.
 pub mod delete_registration;
@@ -97,6 +112,9 @@ pub mod describe_phone_numbers;
 /// Types for the `DescribePools` operation.
 pub mod describe_pools;
 
+/// Types for the `DescribeProtectConfigurations` operation.
+pub mod describe_protect_configurations;
+
 /// Types for the `DescribeRegistrationAttachments` operation.
 pub mod describe_registration_attachments;
 
@@ -130,8 +148,14 @@ pub mod describe_verified_destination_numbers;
 /// Types for the `DisassociateOriginationIdentity` operation.
 pub mod disassociate_origination_identity;
 
+/// Types for the `DisassociateProtectConfiguration` operation.
+pub mod disassociate_protect_configuration;
+
 /// Types for the `DiscardRegistrationVersion` operation.
 pub mod discard_registration_version;
+
+/// Types for the `GetProtectConfigurationCountryRuleSet` operation.
+pub mod get_protect_configuration_country_rule_set;
 
 /// Types for the `ListPoolOriginationIdentities` operation.
 pub mod list_pool_origination_identities;
@@ -166,17 +190,26 @@ pub mod request_sender_id;
 /// Types for the `SendDestinationNumberVerificationCode` operation.
 pub mod send_destination_number_verification_code;
 
+/// Types for the `SendMediaMessage` operation.
+pub mod send_media_message;
+
 /// Types for the `SendTextMessage` operation.
 pub mod send_text_message;
 
 /// Types for the `SendVoiceMessage` operation.
 pub mod send_voice_message;
 
+/// Types for the `SetAccountDefaultProtectConfiguration` operation.
+pub mod set_account_default_protect_configuration;
+
 /// Types for the `SetDefaultMessageType` operation.
 pub mod set_default_message_type;
 
 /// Types for the `SetDefaultSenderId` operation.
 pub mod set_default_sender_id;
+
+/// Types for the `SetMediaMessageSpendLimitOverride` operation.
+pub mod set_media_message_spend_limit_override;
 
 /// Types for the `SetTextMessageSpendLimitOverride` operation.
 pub mod set_text_message_spend_limit_override;
@@ -201,6 +234,12 @@ pub mod update_phone_number;
 
 /// Types for the `UpdatePool` operation.
 pub mod update_pool;
+
+/// Types for the `UpdateProtectConfiguration` operation.
+pub mod update_protect_configuration;
+
+/// Types for the `UpdateProtectConfigurationCountryRuleSet` operation.
+pub mod update_protect_configuration_country_rule_set;
 
 /// Types for the `UpdateSenderId` operation.
 pub mod update_sender_id;

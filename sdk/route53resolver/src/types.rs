@@ -47,6 +47,8 @@ pub use crate::types::_mutation_protection_status::MutationProtectionStatus;
 
 pub use crate::types::_firewall_rule::FirewallRule;
 
+pub use crate::types::_firewall_domain_redirection_action::FirewallDomainRedirectionAction;
+
 pub use crate::types::_block_override_dns_type::BlockOverrideDnsType;
 
 pub use crate::types::_block_response::BlockResponse;
@@ -120,6 +122,8 @@ mod _firewall_domain_list;
 mod _firewall_domain_list_metadata;
 
 mod _firewall_domain_list_status;
+
+mod _firewall_domain_redirection_action;
 
 mod _firewall_domain_update_operation;
 

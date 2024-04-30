@@ -27,6 +27,8 @@ pub(crate) mod shape_batch_delete_document;
 
 pub(crate) mod shape_batch_put_document;
 
+pub(crate) mod shape_chat;
+
 pub(crate) mod shape_chat_sync;
 
 pub(crate) mod shape_create_application;
@@ -147,6 +149,10 @@ pub(crate) mod shape_batch_delete_document_input;
 
 pub(crate) mod shape_batch_put_document_input;
 
+pub(crate) mod shape_chat_input_stream;
+
+pub(crate) mod shape_chat_output;
+
 pub(crate) mod shape_chat_sync_input;
 
 pub(crate) mod shape_conflict_exception;
@@ -199,7 +205,16 @@ pub(crate) mod shape_update_web_experience_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    // Note: HeaderMap::new() doesn't allocate
+    crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
+}
+
 pub(crate) mod shape_action_execution;
+
+pub(crate) mod shape_action_execution_event;
 
 pub(crate) mod shape_action_review;
 
@@ -211,11 +226,19 @@ pub(crate) mod shape_applied_creator_mode_configuration;
 
 pub(crate) mod shape_attachment_input;
 
+pub(crate) mod shape_attachment_input_event;
+
 pub(crate) mod shape_attachments_configuration;
 
 pub(crate) mod shape_attachments_output;
 
 pub(crate) mod shape_attribute_filter;
+
+pub(crate) mod shape_auth_challenge_request;
+
+pub(crate) mod shape_auth_challenge_response;
+
+pub(crate) mod shape_auth_challenge_response_event;
 
 pub(crate) mod shape_blocked_phrases_configuration;
 
@@ -223,9 +246,13 @@ pub(crate) mod shape_blocked_phrases_configuration_update;
 
 pub(crate) mod shape_chat_mode_configuration;
 
+pub(crate) mod shape_configuration_event;
+
 pub(crate) mod shape_conversations;
 
 pub(crate) mod shape_creator_mode_configuration;
+
+pub(crate) mod shape_custom_plugin_configuration;
 
 pub(crate) mod shape_data_source_sync_jobs;
 
@@ -246,6 +273,8 @@ pub(crate) mod shape_document_detail_list;
 pub(crate) mod shape_document_enrichment_configuration;
 
 pub(crate) mod shape_encryption_configuration;
+
+pub(crate) mod shape_end_of_input_event;
 
 pub(crate) mod shape_error_detail;
 
@@ -283,6 +312,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_text_input_event;
+
 pub(crate) mod shape_topic_configuration;
 
 pub(crate) mod shape_topic_configurations;
@@ -301,11 +332,17 @@ pub(crate) mod shape_access_configuration;
 
 pub(crate) mod shape_action_execution_payload_field;
 
+pub(crate) mod shape_action_review_event;
+
 pub(crate) mod shape_action_review_payload;
+
+pub(crate) mod shape_api_schema;
 
 pub(crate) mod shape_application;
 
 pub(crate) mod shape_attachment_output;
+
+pub(crate) mod shape_auth_challenge_request_event;
 
 pub(crate) mod shape_basic_auth_configuration;
 
@@ -322,6 +359,8 @@ pub(crate) mod shape_document_attribute;
 pub(crate) mod shape_document_content;
 
 pub(crate) mod shape_document_details;
+
+pub(crate) mod shape_failed_attachment_event;
 
 pub(crate) mod shape_failed_document;
 
@@ -343,7 +382,11 @@ pub(crate) mod shape_member_user;
 
 pub(crate) mod shape_message;
 
+pub(crate) mod shape_metadata_event;
+
 pub(crate) mod shape_native_index_configuration;
+
+pub(crate) mod shape_no_auth_configuration;
 
 pub(crate) mod shape_o_auth2_client_credential_configuration;
 
@@ -364,6 +407,8 @@ pub(crate) mod shape_source_attribution;
 pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_text_document_statistics;
+
+pub(crate) mod shape_text_output_event;
 
 pub(crate) mod shape_validation_exception_field;
 
@@ -426,6 +471,8 @@ pub(crate) mod shape_eligible_data_source;
 pub(crate) mod shape_principal_group;
 
 pub(crate) mod shape_principal_user;
+
+pub(crate) mod shape_snippet_excerpt;
 
 pub(crate) mod shape_string_attribute_value_boosting;
 

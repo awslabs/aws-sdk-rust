@@ -30,5 +30,8 @@ pub fn ser_create_index_input_input(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.r#type {
+        object.key("type").string(var_10.as_str());
+    }
     Ok(())
 }

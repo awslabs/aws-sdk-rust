@@ -130,11 +130,23 @@ pub(crate) fn de_get_plugin(
                         tokens,
                     )?);
                 }
+                "buildStatus" => {
+                    builder = builder.set_build_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PluginBuildStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
+                }
+                "customPluginConfiguration" => {
+                    builder = builder.set_custom_plugin_configuration(
+                        crate::protocol_serde::shape_custom_plugin_configuration::de_custom_plugin_configuration(tokens)?,
+                    );
                 }
                 "displayName" => {
                     builder = builder.set_display_name(

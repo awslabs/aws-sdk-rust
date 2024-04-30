@@ -574,4 +574,18 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_infra_check_config(&self) -> &::std::option::Option<crate::types::InfraCheckConfig> {
         self.inner.get_infra_check_config()
     }
+    /// <p>Contains information about attribute-based access control (ABAC) for the training job.</p>
+    pub fn session_chaining_config(mut self, input: crate::types::SessionChainingConfig) -> Self {
+        self.inner = self.inner.session_chaining_config(input);
+        self
+    }
+    /// <p>Contains information about attribute-based access control (ABAC) for the training job.</p>
+    pub fn set_session_chaining_config(mut self, input: ::std::option::Option<crate::types::SessionChainingConfig>) -> Self {
+        self.inner = self.inner.set_session_chaining_config(input);
+        self
+    }
+    /// <p>Contains information about attribute-based access control (ABAC) for the training job.</p>
+    pub fn get_session_chaining_config(&self) -> &::std::option::Option<crate::types::SessionChainingConfig> {
+        self.inner.get_session_chaining_config()
+    }
 }

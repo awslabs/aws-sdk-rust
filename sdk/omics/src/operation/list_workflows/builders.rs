@@ -114,31 +114,31 @@ impl ListWorkflowsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_workflows::paginator::ListWorkflowsPaginator {
         crate::operation::list_workflows::paginator::ListWorkflowsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The workflows' type.</p>
+    /// <p>Filter the list by workflow type.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The workflows' type.</p>
+    /// <p>Filter the list by workflow type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The workflows' type.</p>
+    /// <p>Filter the list by workflow type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         self.inner.get_type()
     }
-    /// <p>The workflows' name.</p>
+    /// <p>Filter the list by workflow name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The workflows' name.</p>
+    /// <p>Filter the list by workflow name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The workflows' name.</p>
+    /// <p>Filter the list by workflow name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

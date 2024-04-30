@@ -27,5 +27,11 @@ pub fn ser_anonymous_user_embedding_experience_configuration(
         )?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.generative_qn_a {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("GenerativeQnA").start_object();
+        crate::protocol_serde::shape_anonymous_user_generative_qn_a_embedding_configuration::ser_anonymous_user_generative_qn_a_embedding_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

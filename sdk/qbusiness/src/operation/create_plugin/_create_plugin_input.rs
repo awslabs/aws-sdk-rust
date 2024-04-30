@@ -9,10 +9,12 @@ pub struct CreatePluginInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of plugin you want to create.</p>
     pub r#type: ::std::option::Option<crate::types::PluginType>,
-    /// <p>The source URL used for plugin configuration.</p>
-    pub server_url: ::std::option::Option<::std::string::String>,
     /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
+    /// <p>The source URL used for plugin configuration.</p>
+    pub server_url: ::std::option::Option<::std::string::String>,
+    /// <p>Contains configuration for a custom plugin.</p>
+    pub custom_plugin_configuration: ::std::option::Option<crate::types::CustomPluginConfiguration>,
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A token that you provide to identify the request to create your Amazon Q Business plugin.</p>
@@ -31,13 +33,17 @@ impl CreatePluginInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::PluginType> {
         self.r#type.as_ref()
     }
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
+    pub fn auth_configuration(&self) -> ::std::option::Option<&crate::types::PluginAuthConfiguration> {
+        self.auth_configuration.as_ref()
+    }
     /// <p>The source URL used for plugin configuration.</p>
     pub fn server_url(&self) -> ::std::option::Option<&str> {
         self.server_url.as_deref()
     }
-    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
-    pub fn auth_configuration(&self) -> ::std::option::Option<&crate::types::PluginAuthConfiguration> {
-        self.auth_configuration.as_ref()
+    /// <p>Contains configuration for a custom plugin.</p>
+    pub fn custom_plugin_configuration(&self) -> ::std::option::Option<&crate::types::CustomPluginConfiguration> {
+        self.custom_plugin_configuration.as_ref()
     }
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     ///
@@ -64,8 +70,9 @@ pub struct CreatePluginInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PluginType>,
-    pub(crate) server_url: ::std::option::Option<::std::string::String>,
     pub(crate) auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
+    pub(crate) server_url: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_plugin_configuration: ::std::option::Option<crate::types::CustomPluginConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -115,21 +122,6 @@ impl CreatePluginInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PluginType> {
         &self.r#type
     }
-    /// <p>The source URL used for plugin configuration.</p>
-    /// This field is required.
-    pub fn server_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.server_url = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The source URL used for plugin configuration.</p>
-    pub fn set_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_url = input;
-        self
-    }
-    /// <p>The source URL used for plugin configuration.</p>
-    pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
-        &self.server_url
-    }
     /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     /// This field is required.
     pub fn auth_configuration(mut self, input: crate::types::PluginAuthConfiguration) -> Self {
@@ -144,6 +136,34 @@ impl CreatePluginInputBuilder {
     /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
     pub fn get_auth_configuration(&self) -> &::std::option::Option<crate::types::PluginAuthConfiguration> {
         &self.auth_configuration
+    }
+    /// <p>The source URL used for plugin configuration.</p>
+    pub fn server_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The source URL used for plugin configuration.</p>
+    pub fn set_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.server_url = input;
+        self
+    }
+    /// <p>The source URL used for plugin configuration.</p>
+    pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_url
+    }
+    /// <p>Contains configuration for a custom plugin.</p>
+    pub fn custom_plugin_configuration(mut self, input: crate::types::CustomPluginConfiguration) -> Self {
+        self.custom_plugin_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains configuration for a custom plugin.</p>
+    pub fn set_custom_plugin_configuration(mut self, input: ::std::option::Option<crate::types::CustomPluginConfiguration>) -> Self {
+        self.custom_plugin_configuration = input;
+        self
+    }
+    /// <p>Contains configuration for a custom plugin.</p>
+    pub fn get_custom_plugin_configuration(&self) -> &::std::option::Option<crate::types::CustomPluginConfiguration> {
+        &self.custom_plugin_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -187,8 +207,9 @@ impl CreatePluginInputBuilder {
             application_id: self.application_id,
             display_name: self.display_name,
             r#type: self.r#type,
-            server_url: self.server_url,
             auth_configuration: self.auth_configuration,
+            server_url: self.server_url,
+            custom_plugin_configuration: self.custom_plugin_configuration,
             tags: self.tags,
             client_token: self.client_token,
         })

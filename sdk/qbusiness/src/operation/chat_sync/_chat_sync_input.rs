@@ -15,13 +15,15 @@ pub struct ChatSyncInput {
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentInput>>,
     /// <p>A request from an end user to perform an Amazon Q Business plugin action.</p>
     pub action_execution: ::std::option::Option<crate::types::ActionExecution>,
+    /// <p>An authentication verification event response by a third party authentication server to Amazon Q Business.</p>
+    pub auth_challenge_response: ::std::option::Option<crate::types::AuthChallengeResponse>,
     /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the previous end user text input message in a conversation.</p>
     pub parent_message_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables filtering of Amazon Q Business web experience responses based on document attributes or metadata fields.</p>
     pub attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
-    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <p>The chat modes available to an Amazon Q Business end user.</p>
     /// <ul>
     /// <li>
     /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
@@ -66,6 +68,10 @@ impl ChatSyncInput {
     pub fn action_execution(&self) -> ::std::option::Option<&crate::types::ActionExecution> {
         self.action_execution.as_ref()
     }
+    /// <p>An authentication verification event response by a third party authentication server to Amazon Q Business.</p>
+    pub fn auth_challenge_response(&self) -> ::std::option::Option<&crate::types::AuthChallengeResponse> {
+        self.auth_challenge_response.as_ref()
+    }
     /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn conversation_id(&self) -> ::std::option::Option<&str> {
         self.conversation_id.as_deref()
@@ -78,7 +84,7 @@ impl ChatSyncInput {
     pub fn attribute_filter(&self) -> ::std::option::Option<&crate::types::AttributeFilter> {
         self.attribute_filter.as_ref()
     }
-    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <p>The chat modes available to an Amazon Q Business end user.</p>
     /// <ul>
     /// <li>
     /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
@@ -117,6 +123,7 @@ pub struct ChatSyncInputBuilder {
     pub(crate) user_message: ::std::option::Option<::std::string::String>,
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentInput>>,
     pub(crate) action_execution: ::std::option::Option<crate::types::ActionExecution>,
+    pub(crate) auth_challenge_response: ::std::option::Option<crate::types::AuthChallengeResponse>,
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
     pub(crate) parent_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
@@ -222,6 +229,20 @@ impl ChatSyncInputBuilder {
     pub fn get_action_execution(&self) -> &::std::option::Option<crate::types::ActionExecution> {
         &self.action_execution
     }
+    /// <p>An authentication verification event response by a third party authentication server to Amazon Q Business.</p>
+    pub fn auth_challenge_response(mut self, input: crate::types::AuthChallengeResponse) -> Self {
+        self.auth_challenge_response = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An authentication verification event response by a third party authentication server to Amazon Q Business.</p>
+    pub fn set_auth_challenge_response(mut self, input: ::std::option::Option<crate::types::AuthChallengeResponse>) -> Self {
+        self.auth_challenge_response = input;
+        self
+    }
+    /// <p>An authentication verification event response by a third party authentication server to Amazon Q Business.</p>
+    pub fn get_auth_challenge_response(&self) -> &::std::option::Option<crate::types::AuthChallengeResponse> {
+        &self.auth_challenge_response
+    }
     /// <p>The identifier of the Amazon Q Business conversation.</p>
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
@@ -264,7 +285,7 @@ impl ChatSyncInputBuilder {
     pub fn get_attribute_filter(&self) -> &::std::option::Option<crate::types::AttributeFilter> {
         &self.attribute_filter
     }
-    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <p>The chat modes available to an Amazon Q Business end user.</p>
     /// <ul>
     /// <li>
     /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
@@ -278,7 +299,7 @@ impl ChatSyncInputBuilder {
         self.chat_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <p>The chat modes available to an Amazon Q Business end user.</p>
     /// <ul>
     /// <li>
     /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
@@ -292,7 +313,7 @@ impl ChatSyncInputBuilder {
         self.chat_mode = input;
         self
     }
-    /// <p>The chat modes available in an Amazon Q Business web experience.</p>
+    /// <p>The chat modes available to an Amazon Q Business end user.</p>
     /// <ul>
     /// <li>
     /// <p><code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business application. When this mode is enabled, Amazon Q Business generates responses only from data sources connected to an Amazon Q Business application.</p></li>
@@ -342,6 +363,7 @@ impl ChatSyncInputBuilder {
             user_message: self.user_message,
             attachments: self.attachments,
             action_execution: self.action_execution,
+            auth_challenge_response: self.auth_challenge_response,
             conversation_id: self.conversation_id,
             parent_message_id: self.parent_message_id,
             attribute_filter: self.attribute_filter,

@@ -9,17 +9,20 @@ pub fn ser_update_web_experience_input_input(
         crate::protocol_serde::shape_web_experience_auth_configuration::ser_web_experience_auth_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.sample_prompts_control_mode {
-        object.key("samplePromptsControlMode").string(var_3.as_str());
+    if let Some(var_3) = &input.role_arn {
+        object.key("roleArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.subtitle {
-        object.key("subtitle").string(var_4.as_str());
+    if let Some(var_4) = &input.sample_prompts_control_mode {
+        object.key("samplePromptsControlMode").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.title {
-        object.key("title").string(var_5.as_str());
+    if let Some(var_5) = &input.subtitle {
+        object.key("subtitle").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.welcome_message {
-        object.key("welcomeMessage").string(var_6.as_str());
+    if let Some(var_6) = &input.title {
+        object.key("title").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.welcome_message {
+        object.key("welcomeMessage").string(var_7.as_str());
     }
     Ok(())
 }

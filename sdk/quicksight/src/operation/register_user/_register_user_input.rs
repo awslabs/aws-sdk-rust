@@ -3,13 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterUserInput {
-    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
-    /// </ul>
+    /// <p>The identity type that your Amazon QuickSight account uses to manage the identity of users.</p>
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The email address of the user that you want to register.</p>
     pub email: ::std::option::Option<::std::string::String>,
@@ -50,7 +44,7 @@ pub struct RegisterUserInput {
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub custom_permissions_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
@@ -69,13 +63,7 @@ pub struct RegisterUserInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RegisterUserInput {
-    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
-    /// </ul>
+    /// <p>The identity type that your Amazon QuickSight account uses to manage the identity of users.</p>
     pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
@@ -132,7 +120,7 @@ impl RegisterUserInput {
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn custom_permissions_name(&self) -> ::std::option::Option<&str> {
         self.custom_permissions_name.as_deref()
@@ -188,36 +176,18 @@ pub struct RegisterUserInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RegisterUserInputBuilder {
-    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
-    /// </ul>
+    /// <p>The identity type that your Amazon QuickSight account uses to manage the identity of users.</p>
     /// This field is required.
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
-    /// </ul>
+    /// <p>The identity type that your Amazon QuickSight account uses to manage the identity of users.</p>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
-    /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li>
-    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
-    /// </ul>
+    /// <p>The identity type that your Amazon QuickSight account uses to manage the identity of users.</p>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
         &self.identity_type
     }
@@ -372,7 +342,7 @@ impl RegisterUserInputBuilder {
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn custom_permissions_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_permissions_name = ::std::option::Option::Some(input.into());
@@ -391,7 +361,7 @@ impl RegisterUserInputBuilder {
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn set_custom_permissions_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_permissions_name = input;
@@ -410,7 +380,7 @@ impl RegisterUserInputBuilder {
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
-    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
+    /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn get_custom_permissions_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_permissions_name

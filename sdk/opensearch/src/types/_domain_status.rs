@@ -18,8 +18,16 @@ pub struct DomainStatus {
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work only with IPv4 IP addresses.</p>
     pub endpoint_v2: ::std::option::Option<::std::string::String>,
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>IPv4 IP addresses</b> - <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code></p></li>
+    /// <li>
+    /// <p><b>Dual stack IP addresses</b> - <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code></p></li>
+    /// </ul>
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    pub domain_endpoint_v2_hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
     pub processing: ::std::option::Option<bool>,
     /// <p>The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch Service is in the process of a version upgrade. False if the configuration is active.</p>
@@ -99,9 +107,19 @@ impl DomainStatus {
     pub fn endpoint_v2(&self) -> ::std::option::Option<&str> {
         self.endpoint_v2.as_deref()
     }
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>IPv4 IP addresses</b> - <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code></p></li>
+    /// <li>
+    /// <p><b>Dual stack IP addresses</b> - <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code></p></li>
+    /// </ul>
     pub fn endpoints(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.endpoints.as_ref()
+    }
+    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    pub fn domain_endpoint_v2_hosted_zone_id(&self) -> ::std::option::Option<&str> {
+        self.domain_endpoint_v2_hosted_zone_id.as_deref()
     }
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
     pub fn processing(&self) -> ::std::option::Option<bool> {
@@ -219,6 +237,7 @@ pub struct DomainStatusBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_v2: ::std::option::Option<::std::string::String>,
     pub(crate) endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) domain_endpoint_v2_hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) processing: ::std::option::Option<bool>,
     pub(crate) upgrade_processing: ::std::option::Option<bool>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -349,21 +368,53 @@ impl DomainStatusBuilder {
     ///
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
     ///
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>IPv4 IP addresses</b> - <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code></p></li>
+    /// <li>
+    /// <p><b>Dual stack IP addresses</b> - <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code></p></li>
+    /// </ul>
     pub fn endpoints(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.endpoints.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.endpoints = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>IPv4 IP addresses</b> - <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code></p></li>
+    /// <li>
+    /// <p><b>Dual stack IP addresses</b> - <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code></p></li>
+    /// </ul>
     pub fn set_endpoints(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.endpoints = input;
         self
     }
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>IPv4 IP addresses</b> - <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code></p></li>
+    /// <li>
+    /// <p><b>Dual stack IP addresses</b> - <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code></p></li>
+    /// </ul>
     pub fn get_endpoints(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.endpoints
+    }
+    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    pub fn domain_endpoint_v2_hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_endpoint_v2_hosted_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    pub fn set_domain_endpoint_v2_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_endpoint_v2_hosted_zone_id = input;
+        self
+    }
+    /// <p>The DualStack Hosted Zone Id for the domain.</p>
+    pub fn get_domain_endpoint_v2_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_endpoint_v2_hosted_zone_id
     }
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
     pub fn processing(mut self, input: bool) -> Self {
@@ -748,6 +799,7 @@ impl DomainStatusBuilder {
             endpoint: self.endpoint,
             endpoint_v2: self.endpoint_v2,
             endpoints: self.endpoints,
+            domain_endpoint_v2_hosted_zone_id: self.domain_endpoint_v2_hosted_zone_id,
             processing: self.processing,
             upgrade_processing: self.upgrade_processing,
             engine_version: self.engine_version,

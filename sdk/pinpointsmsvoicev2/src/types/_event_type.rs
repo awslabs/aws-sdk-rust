@@ -13,6 +13,23 @@
 /// # let eventtype = unimplemented!();
 /// match eventtype {
 ///     EventType::All => { /* ... */ },
+///     EventType::MediaAll => { /* ... */ },
+///     EventType::MediaBlocked => { /* ... */ },
+///     EventType::MediaCarrierBlocked => { /* ... */ },
+///     EventType::MediaCarrierUnreachable => { /* ... */ },
+///     EventType::MediaDelivered => { /* ... */ },
+///     EventType::MediaFileInaccessible => { /* ... */ },
+///     EventType::MediaFileSizeExceeded => { /* ... */ },
+///     EventType::MediaFileTypeUnsupported => { /* ... */ },
+///     EventType::MediaInvalid => { /* ... */ },
+///     EventType::MediaInvalidMessage => { /* ... */ },
+///     EventType::MediaPending => { /* ... */ },
+///     EventType::MediaQueued => { /* ... */ },
+///     EventType::MediaSpam => { /* ... */ },
+///     EventType::MediaSuccessful => { /* ... */ },
+///     EventType::MediaTtlExpired => { /* ... */ },
+///     EventType::MediaUnknown => { /* ... */ },
+///     EventType::MediaUnreachable => { /* ... */ },
 ///     EventType::TextAll => { /* ... */ },
 ///     EventType::TextBlocked => { /* ... */ },
 ///     EventType::TextCarrierBlocked => { /* ... */ },
@@ -66,6 +83,40 @@
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaAll,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaBlocked,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaCarrierBlocked,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaCarrierUnreachable,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaDelivered,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaFileInaccessible,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaFileSizeExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaFileTypeUnsupported,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaInvalid,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaInvalidMessage,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaPending,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaQueued,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaSpam,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaTtlExpired,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaUnknown,
+    #[allow(missing_docs)] // documentation missing in model
+    MediaUnreachable,
     #[allow(missing_docs)] // documentation missing in model
     TextAll,
     #[allow(missing_docs)] // documentation missing in model
@@ -122,6 +173,23 @@ impl ::std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => EventType::All,
+            "MEDIA_ALL" => EventType::MediaAll,
+            "MEDIA_BLOCKED" => EventType::MediaBlocked,
+            "MEDIA_CARRIER_BLOCKED" => EventType::MediaCarrierBlocked,
+            "MEDIA_CARRIER_UNREACHABLE" => EventType::MediaCarrierUnreachable,
+            "MEDIA_DELIVERED" => EventType::MediaDelivered,
+            "MEDIA_FILE_INACCESSIBLE" => EventType::MediaFileInaccessible,
+            "MEDIA_FILE_SIZE_EXCEEDED" => EventType::MediaFileSizeExceeded,
+            "MEDIA_FILE_TYPE_UNSUPPORTED" => EventType::MediaFileTypeUnsupported,
+            "MEDIA_INVALID" => EventType::MediaInvalid,
+            "MEDIA_INVALID_MESSAGE" => EventType::MediaInvalidMessage,
+            "MEDIA_PENDING" => EventType::MediaPending,
+            "MEDIA_QUEUED" => EventType::MediaQueued,
+            "MEDIA_SPAM" => EventType::MediaSpam,
+            "MEDIA_SUCCESSFUL" => EventType::MediaSuccessful,
+            "MEDIA_TTL_EXPIRED" => EventType::MediaTtlExpired,
+            "MEDIA_UNKNOWN" => EventType::MediaUnknown,
+            "MEDIA_UNREACHABLE" => EventType::MediaUnreachable,
             "TEXT_ALL" => EventType::TextAll,
             "TEXT_BLOCKED" => EventType::TextBlocked,
             "TEXT_CARRIER_BLOCKED" => EventType::TextCarrierBlocked,
@@ -162,6 +230,23 @@ impl EventType {
     pub fn as_str(&self) -> &str {
         match self {
             EventType::All => "ALL",
+            EventType::MediaAll => "MEDIA_ALL",
+            EventType::MediaBlocked => "MEDIA_BLOCKED",
+            EventType::MediaCarrierBlocked => "MEDIA_CARRIER_BLOCKED",
+            EventType::MediaCarrierUnreachable => "MEDIA_CARRIER_UNREACHABLE",
+            EventType::MediaDelivered => "MEDIA_DELIVERED",
+            EventType::MediaFileInaccessible => "MEDIA_FILE_INACCESSIBLE",
+            EventType::MediaFileSizeExceeded => "MEDIA_FILE_SIZE_EXCEEDED",
+            EventType::MediaFileTypeUnsupported => "MEDIA_FILE_TYPE_UNSUPPORTED",
+            EventType::MediaInvalid => "MEDIA_INVALID",
+            EventType::MediaInvalidMessage => "MEDIA_INVALID_MESSAGE",
+            EventType::MediaPending => "MEDIA_PENDING",
+            EventType::MediaQueued => "MEDIA_QUEUED",
+            EventType::MediaSpam => "MEDIA_SPAM",
+            EventType::MediaSuccessful => "MEDIA_SUCCESSFUL",
+            EventType::MediaTtlExpired => "MEDIA_TTL_EXPIRED",
+            EventType::MediaUnknown => "MEDIA_UNKNOWN",
+            EventType::MediaUnreachable => "MEDIA_UNREACHABLE",
             EventType::TextAll => "TEXT_ALL",
             EventType::TextBlocked => "TEXT_BLOCKED",
             EventType::TextCarrierBlocked => "TEXT_CARRIER_BLOCKED",
@@ -193,6 +278,23 @@ impl EventType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ALL",
+            "MEDIA_ALL",
+            "MEDIA_BLOCKED",
+            "MEDIA_CARRIER_BLOCKED",
+            "MEDIA_CARRIER_UNREACHABLE",
+            "MEDIA_DELIVERED",
+            "MEDIA_FILE_INACCESSIBLE",
+            "MEDIA_FILE_SIZE_EXCEEDED",
+            "MEDIA_FILE_TYPE_UNSUPPORTED",
+            "MEDIA_INVALID",
+            "MEDIA_INVALID_MESSAGE",
+            "MEDIA_PENDING",
+            "MEDIA_QUEUED",
+            "MEDIA_SPAM",
+            "MEDIA_SUCCESSFUL",
+            "MEDIA_TTL_EXPIRED",
+            "MEDIA_UNKNOWN",
+            "MEDIA_UNREACHABLE",
             "TEXT_ALL",
             "TEXT_BLOCKED",
             "TEXT_CARRIER_BLOCKED",
@@ -241,6 +343,23 @@ impl ::std::fmt::Display for EventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventType::All => write!(f, "ALL"),
+            EventType::MediaAll => write!(f, "MEDIA_ALL"),
+            EventType::MediaBlocked => write!(f, "MEDIA_BLOCKED"),
+            EventType::MediaCarrierBlocked => write!(f, "MEDIA_CARRIER_BLOCKED"),
+            EventType::MediaCarrierUnreachable => write!(f, "MEDIA_CARRIER_UNREACHABLE"),
+            EventType::MediaDelivered => write!(f, "MEDIA_DELIVERED"),
+            EventType::MediaFileInaccessible => write!(f, "MEDIA_FILE_INACCESSIBLE"),
+            EventType::MediaFileSizeExceeded => write!(f, "MEDIA_FILE_SIZE_EXCEEDED"),
+            EventType::MediaFileTypeUnsupported => write!(f, "MEDIA_FILE_TYPE_UNSUPPORTED"),
+            EventType::MediaInvalid => write!(f, "MEDIA_INVALID"),
+            EventType::MediaInvalidMessage => write!(f, "MEDIA_INVALID_MESSAGE"),
+            EventType::MediaPending => write!(f, "MEDIA_PENDING"),
+            EventType::MediaQueued => write!(f, "MEDIA_QUEUED"),
+            EventType::MediaSpam => write!(f, "MEDIA_SPAM"),
+            EventType::MediaSuccessful => write!(f, "MEDIA_SUCCESSFUL"),
+            EventType::MediaTtlExpired => write!(f, "MEDIA_TTL_EXPIRED"),
+            EventType::MediaUnknown => write!(f, "MEDIA_UNKNOWN"),
+            EventType::MediaUnreachable => write!(f, "MEDIA_UNREACHABLE"),
             EventType::TextAll => write!(f, "TEXT_ALL"),
             EventType::TextBlocked => write!(f, "TEXT_BLOCKED"),
             EventType::TextCarrierBlocked => write!(f, "TEXT_CARRIER_BLOCKED"),

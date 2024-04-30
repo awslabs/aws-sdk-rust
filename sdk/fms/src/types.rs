@@ -173,6 +173,8 @@ pub use crate::types::_network_firewall_policy_description::NetworkFirewallPolic
 
 pub use crate::types::_stateful_engine_options::StatefulEngineOptions;
 
+pub use crate::types::_stream_exception_policy::StreamExceptionPolicy;
+
 pub use crate::types::_rule_order::RuleOrder;
 
 pub use crate::types::_stateful_rule_group::StatefulRuleGroup;
@@ -416,6 +418,8 @@ mod _stateful_engine_options;
 mod _stateful_rule_group;
 
 mod _stateless_rule_group;
+
+mod _stream_exception_policy;
 
 mod _tag;
 

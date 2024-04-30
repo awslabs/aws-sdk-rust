@@ -10,6 +10,8 @@ pub struct TopicSummary {
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the topic.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The user experience version of the topic.</p>
+    pub user_experience_version: ::std::option::Option<crate::types::TopicUserExperienceVersion>,
 }
 impl TopicSummary {
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
@@ -23,6 +25,10 @@ impl TopicSummary {
     /// <p>The name of the topic.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The user experience version of the topic.</p>
+    pub fn user_experience_version(&self) -> ::std::option::Option<&crate::types::TopicUserExperienceVersion> {
+        self.user_experience_version.as_ref()
     }
 }
 impl TopicSummary {
@@ -39,6 +45,7 @@ pub struct TopicSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) user_experience_version: ::std::option::Option<crate::types::TopicUserExperienceVersion>,
 }
 impl TopicSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
@@ -83,12 +90,27 @@ impl TopicSummaryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The user experience version of the topic.</p>
+    pub fn user_experience_version(mut self, input: crate::types::TopicUserExperienceVersion) -> Self {
+        self.user_experience_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The user experience version of the topic.</p>
+    pub fn set_user_experience_version(mut self, input: ::std::option::Option<crate::types::TopicUserExperienceVersion>) -> Self {
+        self.user_experience_version = input;
+        self
+    }
+    /// <p>The user experience version of the topic.</p>
+    pub fn get_user_experience_version(&self) -> &::std::option::Option<crate::types::TopicUserExperienceVersion> {
+        &self.user_experience_version
+    }
     /// Consumes the builder and constructs a [`TopicSummary`](crate::types::TopicSummary).
     pub fn build(self) -> crate::types::TopicSummary {
         crate::types::TopicSummary {
             arn: self.arn,
             topic_id: self.topic_id,
             name: self.name,
+            user_experience_version: self.user_experience_version,
         }
     }
 }

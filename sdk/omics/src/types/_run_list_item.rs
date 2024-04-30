@@ -16,7 +16,7 @@ pub struct RunListItem {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The run's priority.</p>
     pub priority: ::std::option::Option<i32>,
-    /// <p>The run's storage capacity.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>When the run was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -24,6 +24,8 @@ pub struct RunListItem {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the run stopped.</p>
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The run's storage type.</p>
+    pub storage_type: ::std::option::Option<crate::types::StorageType>,
 }
 impl RunListItem {
     /// <p>The run's ARN.</p>
@@ -50,7 +52,7 @@ impl RunListItem {
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
-    /// <p>The run's storage capacity.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
@@ -65,6 +67,10 @@ impl RunListItem {
     /// <p>When the run stopped.</p>
     pub fn stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
+    }
+    /// <p>The run's storage type.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
+        self.storage_type.as_ref()
     }
 }
 impl RunListItem {
@@ -88,6 +94,7 @@ pub struct RunListItemBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
 }
 impl RunListItemBuilder {
     /// <p>The run's ARN.</p>
@@ -174,17 +181,17 @@ impl RunListItemBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>The run's storage capacity.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The run's storage capacity.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
     }
-    /// <p>The run's storage capacity.</p>
+    /// <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }
@@ -230,6 +237,20 @@ impl RunListItemBuilder {
     pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stop_time
     }
+    /// <p>The run's storage type.</p>
+    pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
+        self.storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The run's storage type.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The run's storage type.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`RunListItem`](crate::types::RunListItem).
     pub fn build(self) -> crate::types::RunListItem {
         crate::types::RunListItem {
@@ -243,6 +264,7 @@ impl RunListItemBuilder {
             creation_time: self.creation_time,
             start_time: self.start_time,
             stop_time: self.stop_time,
+            storage_type: self.storage_type,
         }
     }
 }

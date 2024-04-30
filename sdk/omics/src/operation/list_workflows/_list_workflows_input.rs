@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowsInput {
-    /// <p>The workflows' type.</p>
+    /// <p>Filter the list by workflow type.</p>
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
-    /// <p>The workflows' name.</p>
+    /// <p>Filter the list by workflow name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub starting_token: ::std::option::Option<::std::string::String>,
@@ -13,11 +13,11 @@ pub struct ListWorkflowsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListWorkflowsInput {
-    /// <p>The workflows' type.</p>
+    /// <p>Filter the list by workflow type.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
-    /// <p>The workflows' name.</p>
+    /// <p>Filter the list by workflow name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -47,31 +47,31 @@ pub struct ListWorkflowsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListWorkflowsInputBuilder {
-    /// <p>The workflows' type.</p>
+    /// <p>Filter the list by workflow type.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The workflows' type.</p>
+    /// <p>Filter the list by workflow type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The workflows' type.</p>
+    /// <p>Filter the list by workflow type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         &self.r#type
     }
-    /// <p>The workflows' name.</p>
+    /// <p>Filter the list by workflow name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The workflows' name.</p>
+    /// <p>Filter the list by workflow name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The workflows' name.</p>
+    /// <p>Filter the list by workflow name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

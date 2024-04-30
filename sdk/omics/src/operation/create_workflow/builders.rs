@@ -216,17 +216,17 @@ impl CreateWorkflowFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         self.inner.get_parameter_template()
     }
-    /// <p>A storage capacity for the workflow in gibibytes.</p>
+    /// <p>The storage capacity for the workflow in gibibytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
         self
     }
-    /// <p>A storage capacity for the workflow in gibibytes.</p>
+    /// <p>The storage capacity for the workflow in gibibytes.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
-    /// <p>A storage capacity for the workflow in gibibytes.</p>
+    /// <p>The storage capacity for the workflow in gibibytes.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_storage_capacity()
     }

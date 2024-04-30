@@ -13,6 +13,7 @@
 /// # let accountattributename = unimplemented!();
 /// match accountattributename {
 ///     AccountAttributeName::AccountTier => { /* ... */ },
+///     AccountAttributeName::DefaultProtectConfigurationId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum AccountAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     AccountTier,
+    #[allow(missing_docs)] // documentation missing in model
+    DefaultProtectConfigurationId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for AccountAttributeName {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_TIER" => AccountAttributeName::AccountTier,
+            "DEFAULT_PROTECT_CONFIGURATION_ID" => AccountAttributeName::DefaultProtectConfigurationId,
             other => AccountAttributeName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl AccountAttributeName {
     pub fn as_str(&self) -> &str {
         match self {
             AccountAttributeName::AccountTier => "ACCOUNT_TIER",
+            AccountAttributeName::DefaultProtectConfigurationId => "DEFAULT_PROTECT_CONFIGURATION_ID",
             AccountAttributeName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT_TIER"]
+        &["ACCOUNT_TIER", "DEFAULT_PROTECT_CONFIGURATION_ID"]
     }
 }
 impl ::std::convert::AsRef<str> for AccountAttributeName {
@@ -95,6 +100,7 @@ impl ::std::fmt::Display for AccountAttributeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AccountAttributeName::AccountTier => write!(f, "ACCOUNT_TIER"),
+            AccountAttributeName::DefaultProtectConfigurationId => write!(f, "DEFAULT_PROTECT_CONFIGURATION_ID"),
             AccountAttributeName::Unknown(value) => write!(f, "{}", value),
         }
     }

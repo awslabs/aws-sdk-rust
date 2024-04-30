@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "resourceId" => {
+                            builder = builder.set_resource_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "principalSubscriber" => {
                             builder = builder.set_principal_subscriber(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

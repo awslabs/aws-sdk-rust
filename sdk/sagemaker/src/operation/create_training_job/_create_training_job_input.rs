@@ -71,6 +71,8 @@ pub struct CreateTrainingJobInput {
     pub remote_debug_config: ::std::option::Option<crate::types::RemoteDebugConfig>,
     /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
     pub infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
+    /// <p>Contains information about attribute-based access control (ABAC) for the training job.</p>
+    pub session_chaining_config: ::std::option::Option<crate::types::SessionChainingConfig>,
 }
 impl CreateTrainingJobInput {
     /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
@@ -197,6 +199,10 @@ impl CreateTrainingJobInput {
     pub fn infra_check_config(&self) -> ::std::option::Option<&crate::types::InfraCheckConfig> {
         self.infra_check_config.as_ref()
     }
+    /// <p>Contains information about attribute-based access control (ABAC) for the training job.</p>
+    pub fn session_chaining_config(&self) -> ::std::option::Option<&crate::types::SessionChainingConfig> {
+        self.session_chaining_config.as_ref()
+    }
 }
 impl CreateTrainingJobInput {
     /// Creates a new builder-style object to manufacture [`CreateTrainingJobInput`](crate::operation::create_training_job::CreateTrainingJobInput).
@@ -233,6 +239,7 @@ pub struct CreateTrainingJobInputBuilder {
     pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     pub(crate) remote_debug_config: ::std::option::Option<crate::types::RemoteDebugConfig>,
     pub(crate) infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
+    pub(crate) session_chaining_config: ::std::option::Option<crate::types::SessionChainingConfig>,
 }
 impl CreateTrainingJobInputBuilder {
     /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
@@ -686,6 +693,20 @@ impl CreateTrainingJobInputBuilder {
     pub fn get_infra_check_config(&self) -> &::std::option::Option<crate::types::InfraCheckConfig> {
         &self.infra_check_config
     }
+    /// <p>Contains information about attribute-based access control (ABAC) for the training job.</p>
+    pub fn session_chaining_config(mut self, input: crate::types::SessionChainingConfig) -> Self {
+        self.session_chaining_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about attribute-based access control (ABAC) for the training job.</p>
+    pub fn set_session_chaining_config(mut self, input: ::std::option::Option<crate::types::SessionChainingConfig>) -> Self {
+        self.session_chaining_config = input;
+        self
+    }
+    /// <p>Contains information about attribute-based access control (ABAC) for the training job.</p>
+    pub fn get_session_chaining_config(&self) -> &::std::option::Option<crate::types::SessionChainingConfig> {
+        &self.session_chaining_config
+    }
     /// Consumes the builder and constructs a [`CreateTrainingJobInput`](crate::operation::create_training_job::CreateTrainingJobInput).
     pub fn build(
         self,
@@ -715,6 +736,7 @@ impl CreateTrainingJobInputBuilder {
             retry_strategy: self.retry_strategy,
             remote_debug_config: self.remote_debug_config,
             infra_check_config: self.infra_check_config,
+            session_chaining_config: self.session_chaining_config,
         })
     }
 }

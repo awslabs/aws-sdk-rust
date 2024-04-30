@@ -178,6 +178,20 @@ impl UpdatePluginFluentBuilder {
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_url()
     }
+    /// <p>The configuration for a custom plugin.</p>
+    pub fn custom_plugin_configuration(mut self, input: crate::types::CustomPluginConfiguration) -> Self {
+        self.inner = self.inner.custom_plugin_configuration(input);
+        self
+    }
+    /// <p>The configuration for a custom plugin.</p>
+    pub fn set_custom_plugin_configuration(mut self, input: ::std::option::Option<crate::types::CustomPluginConfiguration>) -> Self {
+        self.inner = self.inner.set_custom_plugin_configuration(input);
+        self
+    }
+    /// <p>The configuration for a custom plugin.</p>
+    pub fn get_custom_plugin_configuration(&self) -> &::std::option::Option<crate::types::CustomPluginConfiguration> {
+        self.inner.get_custom_plugin_configuration()
+    }
     /// <p>The authentication configuration the plugin is using.</p>
     pub fn auth_configuration(mut self, input: crate::types::PluginAuthConfiguration) -> Self {
         self.inner = self.inner.auth_configuration(input);

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteShare`](crate::operation::delete_share::builders::DeleteShareFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`share_id(impl Into<String>)`](crate::operation::delete_share::builders::DeleteShareFluentBuilder::share_id) / [`set_share_id(Option<String>)`](crate::operation::delete_share::builders::DeleteShareFluentBuilder::set_share_id):<br>required: **true**<br><p>The ID for the share request to be deleted.</p><br>
+    ///   - [`share_id(impl Into<String>)`](crate::operation::delete_share::builders::DeleteShareFluentBuilder::share_id) / [`set_share_id(Option<String>)`](crate::operation::delete_share::builders::DeleteShareFluentBuilder::set_share_id):<br>required: **true**<br><p>The ID for the resource share to be deleted.</p><br>
     /// - On success, responds with [`DeleteShareOutput`](crate::operation::delete_share::DeleteShareOutput) with field(s):
     ///   - [`status(Option<ShareStatus>)`](crate::operation::delete_share::DeleteShareOutput::status): <p>The status of the share being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteShareError>`](crate::operation::delete_share::DeleteShareError)

@@ -22,7 +22,9 @@ impl crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumb
 }
 /// Fluent builder constructing a request to `BatchUpdatePhoneNumber`.
 ///
-/// <p>Updates one or more phone numbers.</p>
+/// <p>Updates phone number product types, calling names, or phone number names. You can update one attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type, the calling name, or phone name.</p><note>
+/// <p>You cannot have a duplicate <code>phoneNumberId</code> in a request.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

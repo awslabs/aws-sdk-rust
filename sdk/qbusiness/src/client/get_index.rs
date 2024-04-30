@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`application_id(Option<String>)`](crate::operation::get_index::GetIndexOutput::application_id): <p>The identifier of the Amazon Q Business application associated with the index.</p>
     ///   - [`index_id(Option<String>)`](crate::operation::get_index::GetIndexOutput::index_id): <p>The identifier of the Amazon Q Business index.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::get_index::GetIndexOutput::display_name): <p>The name of the Amazon Q Business index.</p>
+    ///   - [`r#type(Option<IndexType>)`](crate::operation::get_index::GetIndexOutput::type): <p>The type of index attached to your Amazon Q Business application.</p>
     ///   - [`index_arn(Option<String>)`](crate::operation::get_index::GetIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) of the Amazon Q Business index.</p>
     ///   - [`status(Option<IndexStatus>)`](crate::operation::get_index::GetIndexOutput::status): <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_index::GetIndexOutput::description): <p>The description for the Amazon Q Business index.</p>

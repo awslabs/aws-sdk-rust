@@ -201,6 +201,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetWorkflowR
                         }
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.workflow_owner_id {
+                    {
+                        query.push_kv("workflowOwnerId", &::aws_smithy_http::query::fmt_string(inner_5));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

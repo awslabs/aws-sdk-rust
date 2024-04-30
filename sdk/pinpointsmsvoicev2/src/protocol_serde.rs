@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_origination_identity;
 
+pub(crate) mod shape_associate_protect_configuration;
+
 pub(crate) mod shape_create_configuration_set;
 
 pub(crate) mod shape_create_event_destination;
@@ -32,6 +34,8 @@ pub(crate) mod shape_create_event_destination;
 pub(crate) mod shape_create_opt_out_list;
 
 pub(crate) mod shape_create_pool;
+
+pub(crate) mod shape_create_protect_configuration;
 
 pub(crate) mod shape_create_registration;
 
@@ -43,6 +47,8 @@ pub(crate) mod shape_create_registration_version;
 
 pub(crate) mod shape_create_verified_destination_number;
 
+pub(crate) mod shape_delete_account_default_protect_configuration;
+
 pub(crate) mod shape_delete_configuration_set;
 
 pub(crate) mod shape_delete_default_message_type;
@@ -53,11 +59,15 @@ pub(crate) mod shape_delete_event_destination;
 
 pub(crate) mod shape_delete_keyword;
 
+pub(crate) mod shape_delete_media_message_spend_limit_override;
+
 pub(crate) mod shape_delete_opt_out_list;
 
 pub(crate) mod shape_delete_opted_out_number;
 
 pub(crate) mod shape_delete_pool;
+
+pub(crate) mod shape_delete_protect_configuration;
 
 pub(crate) mod shape_delete_registration;
 
@@ -87,6 +97,8 @@ pub(crate) mod shape_describe_phone_numbers;
 
 pub(crate) mod shape_describe_pools;
 
+pub(crate) mod shape_describe_protect_configurations;
+
 pub(crate) mod shape_describe_registration_attachments;
 
 pub(crate) mod shape_describe_registration_field_definitions;
@@ -109,7 +121,11 @@ pub(crate) mod shape_describe_verified_destination_numbers;
 
 pub(crate) mod shape_disassociate_origination_identity;
 
+pub(crate) mod shape_disassociate_protect_configuration;
+
 pub(crate) mod shape_discard_registration_version;
+
+pub(crate) mod shape_get_protect_configuration_country_rule_set;
 
 pub(crate) mod shape_list_pool_origination_identities;
 
@@ -133,13 +149,19 @@ pub(crate) mod shape_request_sender_id;
 
 pub(crate) mod shape_send_destination_number_verification_code;
 
+pub(crate) mod shape_send_media_message;
+
 pub(crate) mod shape_send_text_message;
 
 pub(crate) mod shape_send_voice_message;
 
+pub(crate) mod shape_set_account_default_protect_configuration;
+
 pub(crate) mod shape_set_default_message_type;
 
 pub(crate) mod shape_set_default_sender_id;
+
+pub(crate) mod shape_set_media_message_spend_limit_override;
 
 pub(crate) mod shape_set_text_message_spend_limit_override;
 
@@ -157,6 +179,10 @@ pub(crate) mod shape_update_phone_number;
 
 pub(crate) mod shape_update_pool;
 
+pub(crate) mod shape_update_protect_configuration;
+
+pub(crate) mod shape_update_protect_configuration_country_rule_set;
+
 pub(crate) mod shape_update_sender_id;
 
 pub(crate) mod shape_verify_destination_number;
@@ -173,6 +199,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_origination_identity_input;
 
+pub(crate) mod shape_associate_protect_configuration_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_configuration_set_input;
@@ -182,6 +210,8 @@ pub(crate) mod shape_create_event_destination_input;
 pub(crate) mod shape_create_opt_out_list_input;
 
 pub(crate) mod shape_create_pool_input;
+
+pub(crate) mod shape_create_protect_configuration_input;
 
 pub(crate) mod shape_create_registration_association_input;
 
@@ -209,6 +239,8 @@ pub(crate) mod shape_delete_opted_out_number_input;
 
 pub(crate) mod shape_delete_pool_input;
 
+pub(crate) mod shape_delete_protect_configuration_input;
+
 pub(crate) mod shape_delete_registration_attachment_input;
 
 pub(crate) mod shape_delete_registration_field_value_input;
@@ -233,6 +265,8 @@ pub(crate) mod shape_describe_phone_numbers_input;
 
 pub(crate) mod shape_describe_pools_input;
 
+pub(crate) mod shape_describe_protect_configurations_input;
+
 pub(crate) mod shape_describe_registration_attachments_input;
 
 pub(crate) mod shape_describe_registration_field_definitions_input;
@@ -255,7 +289,11 @@ pub(crate) mod shape_describe_verified_destination_numbers_input;
 
 pub(crate) mod shape_disassociate_origination_identity_input;
 
+pub(crate) mod shape_disassociate_protect_configuration_input;
+
 pub(crate) mod shape_discard_registration_version_input;
+
+pub(crate) mod shape_get_protect_configuration_country_rule_set_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -283,15 +321,21 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_send_destination_number_verification_code_input;
 
+pub(crate) mod shape_send_media_message_input;
+
 pub(crate) mod shape_send_text_message_input;
 
 pub(crate) mod shape_send_voice_message_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_set_account_default_protect_configuration_input;
+
 pub(crate) mod shape_set_default_message_type_input;
 
 pub(crate) mod shape_set_default_sender_id_input;
+
+pub(crate) mod shape_set_media_message_spend_limit_override_input;
 
 pub(crate) mod shape_set_text_message_spend_limit_override_input;
 
@@ -310,6 +354,10 @@ pub(crate) mod shape_update_event_destination_input;
 pub(crate) mod shape_update_phone_number_input;
 
 pub(crate) mod shape_update_pool_input;
+
+pub(crate) mod shape_update_protect_configuration_country_rule_set_input;
+
+pub(crate) mod shape_update_protect_configuration_input;
 
 pub(crate) mod shape_update_sender_id_input;
 
@@ -358,6 +406,14 @@ pub(crate) mod shape_pool_filter;
 pub(crate) mod shape_pool_information_list;
 
 pub(crate) mod shape_pool_origination_identities_filter;
+
+pub(crate) mod shape_protect_configuration_country_rule_set;
+
+pub(crate) mod shape_protect_configuration_country_rule_set_information;
+
+pub(crate) mod shape_protect_configuration_filter;
+
+pub(crate) mod shape_protect_configuration_information_list;
 
 pub(crate) mod shape_registration_association_filter;
 
@@ -430,6 +486,8 @@ pub(crate) mod shape_origination_identity_metadata;
 pub(crate) mod shape_phone_number_information;
 
 pub(crate) mod shape_pool_information;
+
+pub(crate) mod shape_protect_configuration_information;
 
 pub(crate) mod shape_registration_association_metadata;
 

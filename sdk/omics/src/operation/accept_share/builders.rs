@@ -22,7 +22,7 @@ impl crate::operation::accept_share::builders::AcceptShareInputBuilder {
 }
 /// Fluent builder constructing a request to `AcceptShare`.
 ///
-/// <p>Accepts a share for an analytics store.</p>
+/// <p>Accept a resource share request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AcceptShareFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID for a share offer for analytics store data.</p>
+    /// <p>The ID of the resource share.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.share_id(input.into());
         self
     }
-    /// <p>The ID for a share offer for analytics store data.</p>
+    /// <p>The ID of the resource share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_share_id(input);
         self
     }
-    /// <p>The ID for a share offer for analytics store data.</p>
+    /// <p>The ID of the resource share.</p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_share_id()
     }

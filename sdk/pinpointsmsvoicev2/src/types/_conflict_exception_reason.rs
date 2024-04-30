@@ -14,6 +14,7 @@
 /// match conflictexceptionreason {
 ///     ConflictExceptionReason::CreateRegistrationVersionNotAllowed => { /* ... */ },
 ///     ConflictExceptionReason::DeletionProtectionEnabled => { /* ... */ },
+///     ConflictExceptionReason::DestinationCountryBlockedByProtectConfiguration => { /* ... */ },
 ///     ConflictExceptionReason::DestinationPhoneNumberNotVerified => { /* ... */ },
 ///     ConflictExceptionReason::DestinationPhoneNumberOptedOut => { /* ... */ },
 ///     ConflictExceptionReason::DisassociateRegistrationNotAllowed => { /* ... */ },
@@ -30,6 +31,9 @@
 ///     ConflictExceptionReason::PhoneNumberAssociatedToRegistration => { /* ... */ },
 ///     ConflictExceptionReason::PhoneNumberNotAssociatedToPool => { /* ... */ },
 ///     ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => { /* ... */ },
+///     ConflictExceptionReason::ProtectConfigurationAssociatedWithConfigurationSet => { /* ... */ },
+///     ConflictExceptionReason::ProtectConfigurationIsAccountDefault => { /* ... */ },
+///     ConflictExceptionReason::ProtectConfigurationNotAssociatedWithConfigurationSet => { /* ... */ },
 ///     ConflictExceptionReason::RegistrationAlreadySubmitted => { /* ... */ },
 ///     ConflictExceptionReason::RegistrationNotComplete => { /* ... */ },
 ///     ConflictExceptionReason::ResourceAlreadyExists => { /* ... */ },
@@ -75,6 +79,8 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     DeletionProtectionEnabled,
     #[allow(missing_docs)] // documentation missing in model
+    DestinationCountryBlockedByProtectConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     DestinationPhoneNumberNotVerified,
     #[allow(missing_docs)] // documentation missing in model
     DestinationPhoneNumberOptedOut,
@@ -106,6 +112,12 @@ pub enum ConflictExceptionReason {
     PhoneNumberNotAssociatedToPool,
     #[allow(missing_docs)] // documentation missing in model
     PhoneNumberNotInRegistrationRegion,
+    #[allow(missing_docs)] // documentation missing in model
+    ProtectConfigurationAssociatedWithConfigurationSet,
+    #[allow(missing_docs)] // documentation missing in model
+    ProtectConfigurationIsAccountDefault,
+    #[allow(missing_docs)] // documentation missing in model
+    ProtectConfigurationNotAssociatedWithConfigurationSet,
     #[allow(missing_docs)] // documentation missing in model
     RegistrationAlreadySubmitted,
     #[allow(missing_docs)] // documentation missing in model
@@ -141,6 +153,7 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
         match s {
             "CREATE_REGISTRATION_VERSION_NOT_ALLOWED" => ConflictExceptionReason::CreateRegistrationVersionNotAllowed,
             "DELETION_PROTECTION_ENABLED" => ConflictExceptionReason::DeletionProtectionEnabled,
+            "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION" => ConflictExceptionReason::DestinationCountryBlockedByProtectConfiguration,
             "DESTINATION_PHONE_NUMBER_NOT_VERIFIED" => ConflictExceptionReason::DestinationPhoneNumberNotVerified,
             "DESTINATION_PHONE_NUMBER_OPTED_OUT" => ConflictExceptionReason::DestinationPhoneNumberOptedOut,
             "DISASSOCIATE_REGISTRATION_NOT_ALLOWED" => ConflictExceptionReason::DisassociateRegistrationNotAllowed,
@@ -157,6 +170,11 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
             "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION" => ConflictExceptionReason::PhoneNumberAssociatedToRegistration,
             "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL" => ConflictExceptionReason::PhoneNumberNotAssociatedToPool,
             "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION" => ConflictExceptionReason::PhoneNumberNotInRegistrationRegion,
+            "PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET" => ConflictExceptionReason::ProtectConfigurationAssociatedWithConfigurationSet,
+            "PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT" => ConflictExceptionReason::ProtectConfigurationIsAccountDefault,
+            "PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET" => {
+                ConflictExceptionReason::ProtectConfigurationNotAssociatedWithConfigurationSet
+            }
             "REGISTRATION_ALREADY_SUBMITTED" => ConflictExceptionReason::RegistrationAlreadySubmitted,
             "REGISTRATION_NOT_COMPLETE" => ConflictExceptionReason::RegistrationNotComplete,
             "RESOURCE_ALREADY_EXISTS" => ConflictExceptionReason::ResourceAlreadyExists,
@@ -187,6 +205,7 @@ impl ConflictExceptionReason {
         match self {
             ConflictExceptionReason::CreateRegistrationVersionNotAllowed => "CREATE_REGISTRATION_VERSION_NOT_ALLOWED",
             ConflictExceptionReason::DeletionProtectionEnabled => "DELETION_PROTECTION_ENABLED",
+            ConflictExceptionReason::DestinationCountryBlockedByProtectConfiguration => "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION",
             ConflictExceptionReason::DestinationPhoneNumberNotVerified => "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
             ConflictExceptionReason::DestinationPhoneNumberOptedOut => "DESTINATION_PHONE_NUMBER_OPTED_OUT",
             ConflictExceptionReason::DisassociateRegistrationNotAllowed => "DISASSOCIATE_REGISTRATION_NOT_ALLOWED",
@@ -203,6 +222,11 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::PhoneNumberAssociatedToRegistration => "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION",
             ConflictExceptionReason::PhoneNumberNotAssociatedToPool => "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL",
             ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION",
+            ConflictExceptionReason::ProtectConfigurationAssociatedWithConfigurationSet => "PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET",
+            ConflictExceptionReason::ProtectConfigurationIsAccountDefault => "PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT",
+            ConflictExceptionReason::ProtectConfigurationNotAssociatedWithConfigurationSet => {
+                "PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET"
+            }
             ConflictExceptionReason::RegistrationAlreadySubmitted => "REGISTRATION_ALREADY_SUBMITTED",
             ConflictExceptionReason::RegistrationNotComplete => "REGISTRATION_NOT_COMPLETE",
             ConflictExceptionReason::ResourceAlreadyExists => "RESOURCE_ALREADY_EXISTS",
@@ -224,6 +248,7 @@ impl ConflictExceptionReason {
         &[
             "CREATE_REGISTRATION_VERSION_NOT_ALLOWED",
             "DELETION_PROTECTION_ENABLED",
+            "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION",
             "DESTINATION_PHONE_NUMBER_NOT_VERIFIED",
             "DESTINATION_PHONE_NUMBER_OPTED_OUT",
             "DISASSOCIATE_REGISTRATION_NOT_ALLOWED",
@@ -240,6 +265,9 @@ impl ConflictExceptionReason {
             "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION",
             "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL",
             "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION",
+            "PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET",
+            "PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT",
+            "PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET",
             "REGISTRATION_ALREADY_SUBMITTED",
             "REGISTRATION_NOT_COMPLETE",
             "RESOURCE_ALREADY_EXISTS",
@@ -278,6 +306,9 @@ impl ::std::fmt::Display for ConflictExceptionReason {
         match self {
             ConflictExceptionReason::CreateRegistrationVersionNotAllowed => write!(f, "CREATE_REGISTRATION_VERSION_NOT_ALLOWED"),
             ConflictExceptionReason::DeletionProtectionEnabled => write!(f, "DELETION_PROTECTION_ENABLED"),
+            ConflictExceptionReason::DestinationCountryBlockedByProtectConfiguration => {
+                write!(f, "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION")
+            }
             ConflictExceptionReason::DestinationPhoneNumberNotVerified => write!(f, "DESTINATION_PHONE_NUMBER_NOT_VERIFIED"),
             ConflictExceptionReason::DestinationPhoneNumberOptedOut => write!(f, "DESTINATION_PHONE_NUMBER_OPTED_OUT"),
             ConflictExceptionReason::DisassociateRegistrationNotAllowed => write!(f, "DISASSOCIATE_REGISTRATION_NOT_ALLOWED"),
@@ -294,6 +325,13 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::PhoneNumberAssociatedToRegistration => write!(f, "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION"),
             ConflictExceptionReason::PhoneNumberNotAssociatedToPool => write!(f, "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL"),
             ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => write!(f, "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION"),
+            ConflictExceptionReason::ProtectConfigurationAssociatedWithConfigurationSet => {
+                write!(f, "PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET")
+            }
+            ConflictExceptionReason::ProtectConfigurationIsAccountDefault => write!(f, "PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT"),
+            ConflictExceptionReason::ProtectConfigurationNotAssociatedWithConfigurationSet => {
+                write!(f, "PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET")
+            }
             ConflictExceptionReason::RegistrationAlreadySubmitted => write!(f, "REGISTRATION_ALREADY_SUBMITTED"),
             ConflictExceptionReason::RegistrationNotComplete => write!(f, "REGISTRATION_NOT_COMPLETE"),
             ConflictExceptionReason::ResourceAlreadyExists => write!(f, "RESOURCE_ALREADY_EXISTS"),

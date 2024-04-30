@@ -61,11 +61,23 @@ pub use crate::types::_retriever::Retriever;
 
 pub use crate::types::_plugin_auth_configuration::PluginAuthConfiguration;
 
+pub use crate::types::_no_auth_configuration::NoAuthConfiguration;
+
 pub use crate::types::_o_auth2_client_credential_configuration::OAuth2ClientCredentialConfiguration;
 
 pub use crate::types::_basic_auth_configuration::BasicAuthConfiguration;
 
+pub use crate::types::_custom_plugin_configuration::CustomPluginConfiguration;
+
+pub use crate::types::_api_schema::ApiSchema;
+
+pub use crate::types::_s3::S3;
+
+pub use crate::types::_api_schema_type::ApiSchemaType;
+
 pub use crate::types::_plugin_state::PluginState;
+
+pub use crate::types::_plugin_build_status::PluginBuildStatus;
 
 pub use crate::types::_plugin_type::PluginType;
 
@@ -84,6 +96,8 @@ pub use crate::types::_index_statistics::IndexStatistics;
 pub use crate::types::_text_document_statistics::TextDocumentStatistics;
 
 pub use crate::types::_index_status::IndexStatus;
+
+pub use crate::types::_index_type::IndexType;
 
 pub use crate::types::_index::Index;
 
@@ -169,6 +183,8 @@ pub use crate::types::_source_attribution::SourceAttribution;
 
 pub use crate::types::_text_segment::TextSegment;
 
+pub use crate::types::_snippet_excerpt::SnippetExcerpt;
+
 pub use crate::types::_attachment_output::AttachmentOutput;
 
 pub use crate::types::_attachment_status::AttachmentStatus;
@@ -197,6 +213,8 @@ pub use crate::types::_applied_creator_mode_configuration::AppliedCreatorModeCon
 
 pub use crate::types::_blocked_phrases_configuration::BlockedPhrasesConfiguration;
 
+pub use crate::types::_auth_challenge_request::AuthChallengeRequest;
+
 pub use crate::types::_chat_mode_configuration::ChatModeConfiguration;
 
 pub use crate::types::_plugin_configuration::PluginConfiguration;
@@ -207,7 +225,35 @@ pub use crate::types::_attribute_filter::AttributeFilter;
 
 pub use crate::types::_document_attribute::DocumentAttribute;
 
+pub use crate::types::_auth_challenge_response::AuthChallengeResponse;
+
 pub use crate::types::_attachment_input::AttachmentInput;
+
+pub use crate::types::_chat_output_stream::ChatOutputStream;
+
+pub use crate::types::_auth_challenge_request_event::AuthChallengeRequestEvent;
+
+pub use crate::types::_failed_attachment_event::FailedAttachmentEvent;
+
+pub use crate::types::_action_review_event::ActionReviewEvent;
+
+pub use crate::types::_metadata_event::MetadataEvent;
+
+pub use crate::types::_text_output_event::TextOutputEvent;
+
+pub use crate::types::_chat_input_stream::ChatInputStream;
+
+pub use crate::types::_auth_challenge_response_event::AuthChallengeResponseEvent;
+
+pub use crate::types::_end_of_input_event::EndOfInputEvent;
+
+pub use crate::types::_action_execution_event::ActionExecutionEvent;
+
+pub use crate::types::_attachment_input_event::AttachmentInputEvent;
+
+pub use crate::types::_text_input_event::TextInputEvent;
+
+pub use crate::types::_configuration_event::ConfigurationEvent;
 
 pub use crate::types::_failed_document::FailedDocument;
 
@@ -231,8 +277,6 @@ pub use crate::types::_content_type::ContentType;
 
 pub use crate::types::_document_content::DocumentContent;
 
-pub use crate::types::_s3::S3;
-
 pub use crate::types::_delete_document::DeleteDocument;
 
 mod _access_configuration;
@@ -241,15 +285,23 @@ mod _access_control;
 
 mod _action_execution;
 
+mod _action_execution_event;
+
 mod _action_execution_payload_field;
 
 mod _action_payload_field_type;
 
 mod _action_review;
 
+mod _action_review_event;
+
 mod _action_review_payload_field;
 
 mod _action_review_payload_field_allowed_value;
+
+mod _api_schema;
+
+mod _api_schema_type;
 
 mod _application;
 
@@ -260,6 +312,8 @@ mod _applied_attachments_configuration;
 mod _applied_creator_mode_configuration;
 
 mod _attachment_input;
+
+mod _attachment_input_event;
 
 mod _attachment_output;
 
@@ -275,15 +329,29 @@ mod _attribute_type;
 
 mod _attribute_value_operator;
 
+mod _auth_challenge_request;
+
+mod _auth_challenge_request_event;
+
+mod _auth_challenge_response;
+
+mod _auth_challenge_response_event;
+
 mod _basic_auth_configuration;
 
 mod _blocked_phrases_configuration;
 
 mod _blocked_phrases_configuration_update;
 
+mod _chat_input_stream;
+
 mod _chat_mode;
 
 mod _chat_mode_configuration;
+
+mod _chat_output_stream;
+
+mod _configuration_event;
 
 mod _content_blocker_rule;
 
@@ -296,6 +364,8 @@ mod _conversation;
 mod _creator_mode_configuration;
 
 mod _creator_mode_control;
+
+mod _custom_plugin_configuration;
 
 mod _data_source;
 
@@ -345,9 +415,13 @@ mod _eligible_data_source;
 
 mod _encryption_configuration;
 
+mod _end_of_input_event;
+
 mod _error_code;
 
 mod _error_detail;
+
+mod _failed_attachment_event;
 
 mod _failed_document;
 
@@ -368,6 +442,8 @@ mod _index_capacity_configuration;
 mod _index_statistics;
 
 mod _index_status;
+
+mod _index_type;
 
 mod _inline_document_enrichment_configuration;
 
@@ -391,7 +467,11 @@ mod _message_usefulness_feedback;
 
 mod _message_usefulness_reason;
 
+mod _metadata_event;
+
 mod _native_index_configuration;
+
+mod _no_auth_configuration;
 
 mod _number_attribute_boosting_configuration;
 
@@ -402,6 +482,8 @@ mod _o_auth2_client_credential_configuration;
 mod _plugin;
 
 mod _plugin_auth_configuration;
+
+mod _plugin_build_status;
 
 mod _plugin_configuration;
 
@@ -437,6 +519,8 @@ mod _s3;
 
 mod _saml_configuration;
 
+mod _snippet_excerpt;
+
 mod _source_attribution;
 
 mod _status;
@@ -450,6 +534,10 @@ mod _string_list_attribute_boosting_configuration;
 mod _tag;
 
 mod _text_document_statistics;
+
+mod _text_input_event;
+
+mod _text_output_event;
 
 mod _text_segment;
 

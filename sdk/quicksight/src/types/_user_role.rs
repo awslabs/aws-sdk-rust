@@ -13,8 +13,11 @@
 /// # let userrole = unimplemented!();
 /// match userrole {
 ///     UserRole::Admin => { /* ... */ },
+///     UserRole::AdminPro => { /* ... */ },
 ///     UserRole::Author => { /* ... */ },
+///     UserRole::AuthorPro => { /* ... */ },
 ///     UserRole::Reader => { /* ... */ },
+///     UserRole::ReaderPro => { /* ... */ },
 ///     UserRole::RestrictedAuthor => { /* ... */ },
 ///     UserRole::RestrictedReader => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -47,9 +50,15 @@ pub enum UserRole {
     #[allow(missing_docs)] // documentation missing in model
     Admin,
     #[allow(missing_docs)] // documentation missing in model
+    AdminPro,
+    #[allow(missing_docs)] // documentation missing in model
     Author,
     #[allow(missing_docs)] // documentation missing in model
+    AuthorPro,
+    #[allow(missing_docs)] // documentation missing in model
     Reader,
+    #[allow(missing_docs)] // documentation missing in model
+    ReaderPro,
     #[allow(missing_docs)] // documentation missing in model
     RestrictedAuthor,
     #[allow(missing_docs)] // documentation missing in model
@@ -62,8 +71,11 @@ impl ::std::convert::From<&str> for UserRole {
     fn from(s: &str) -> Self {
         match s {
             "ADMIN" => UserRole::Admin,
+            "ADMIN_PRO" => UserRole::AdminPro,
             "AUTHOR" => UserRole::Author,
+            "AUTHOR_PRO" => UserRole::AuthorPro,
             "READER" => UserRole::Reader,
+            "READER_PRO" => UserRole::ReaderPro,
             "RESTRICTED_AUTHOR" => UserRole::RestrictedAuthor,
             "RESTRICTED_READER" => UserRole::RestrictedReader,
             other => UserRole::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -82,8 +94,11 @@ impl UserRole {
     pub fn as_str(&self) -> &str {
         match self {
             UserRole::Admin => "ADMIN",
+            UserRole::AdminPro => "ADMIN_PRO",
             UserRole::Author => "AUTHOR",
+            UserRole::AuthorPro => "AUTHOR_PRO",
             UserRole::Reader => "READER",
+            UserRole::ReaderPro => "READER_PRO",
             UserRole::RestrictedAuthor => "RESTRICTED_AUTHOR",
             UserRole::RestrictedReader => "RESTRICTED_READER",
             UserRole::Unknown(value) => value.as_str(),
@@ -91,7 +106,16 @@ impl UserRole {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADMIN", "AUTHOR", "READER", "RESTRICTED_AUTHOR", "RESTRICTED_READER"]
+        &[
+            "ADMIN",
+            "ADMIN_PRO",
+            "AUTHOR",
+            "AUTHOR_PRO",
+            "READER",
+            "READER_PRO",
+            "RESTRICTED_AUTHOR",
+            "RESTRICTED_READER",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for UserRole {
@@ -115,8 +139,11 @@ impl ::std::fmt::Display for UserRole {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             UserRole::Admin => write!(f, "ADMIN"),
+            UserRole::AdminPro => write!(f, "ADMIN_PRO"),
             UserRole::Author => write!(f, "AUTHOR"),
+            UserRole::AuthorPro => write!(f, "AUTHOR_PRO"),
             UserRole::Reader => write!(f, "READER"),
+            UserRole::ReaderPro => write!(f, "READER_PRO"),
             UserRole::RestrictedAuthor => write!(f, "RESTRICTED_AUTHOR"),
             UserRole::RestrictedReader => write!(f, "RESTRICTED_READER"),
             UserRole::Unknown(value) => write!(f, "{}", value),

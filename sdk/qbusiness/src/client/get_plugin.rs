@@ -12,6 +12,8 @@ impl super::Client {
     ///   - [`r#type(Option<PluginType>)`](crate::operation::get_plugin::GetPluginOutput::type): <p>The type of the plugin.</p>
     ///   - [`server_url(Option<String>)`](crate::operation::get_plugin::GetPluginOutput::server_url): <p>The source URL used for plugin configuration.</p>
     ///   - [`auth_configuration(Option<PluginAuthConfiguration>)`](crate::operation::get_plugin::GetPluginOutput::auth_configuration): <p>Authentication configuration information for an Amazon Q Business plugin.</p>
+    ///   - [`custom_plugin_configuration(Option<CustomPluginConfiguration>)`](crate::operation::get_plugin::GetPluginOutput::custom_plugin_configuration): <p>Configuration information required to create a custom plugin.</p>
+    ///   - [`build_status(Option<PluginBuildStatus>)`](crate::operation::get_plugin::GetPluginOutput::build_status): <p>The current status of a plugin. A plugin is modified asynchronously.</p>
     ///   - [`plugin_arn(Option<String>)`](crate::operation::get_plugin::GetPluginOutput::plugin_arn): <p>The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.</p>
     ///   - [`state(Option<PluginState>)`](crate::operation::get_plugin::GetPluginOutput::state): <p>The current state of the plugin.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_plugin::GetPluginOutput::created_at): <p>The timestamp for when the plugin was created.</p>

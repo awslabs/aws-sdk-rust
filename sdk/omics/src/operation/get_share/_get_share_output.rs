@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetShareOutput {
-    /// <p>An analytic store share details object. contains status, resourceArn, ownerId, etc.</p>
+    /// <p>A resource share details object. The object includes the status, the resourceArn, and ownerId.</p>
     pub share: ::std::option::Option<crate::types::ShareDetails>,
     _request_id: Option<String>,
 }
 impl GetShareOutput {
-    /// <p>An analytic store share details object. contains status, resourceArn, ownerId, etc.</p>
+    /// <p>A resource share details object. The object includes the status, the resourceArn, and ownerId.</p>
     pub fn share(&self) -> ::std::option::Option<&crate::types::ShareDetails> {
         self.share.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetShareOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetShareOutputBuilder {
-    /// <p>An analytic store share details object. contains status, resourceArn, ownerId, etc.</p>
+    /// <p>A resource share details object. The object includes the status, the resourceArn, and ownerId.</p>
     pub fn share(mut self, input: crate::types::ShareDetails) -> Self {
         self.share = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An analytic store share details object. contains status, resourceArn, ownerId, etc.</p>
+    /// <p>A resource share details object. The object includes the status, the resourceArn, and ownerId.</p>
     pub fn set_share(mut self, input: ::std::option::Option<crate::types::ShareDetails>) -> Self {
         self.share = input;
         self
     }
-    /// <p>An analytic store share details object. contains status, resourceArn, ownerId, etc.</p>
+    /// <p>A resource share details object. The object includes the status, the resourceArn, and ownerId.</p>
     pub fn get_share(&self) -> &::std::option::Option<crate::types::ShareDetails> {
         &self.share
     }

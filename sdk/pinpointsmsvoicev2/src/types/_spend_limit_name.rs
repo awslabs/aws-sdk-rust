@@ -12,6 +12,7 @@
 /// ```text
 /// # let spendlimitname = unimplemented!();
 /// match spendlimitname {
+///     SpendLimitName::MediaMessageMonthlySpendLimit => { /* ... */ },
 ///     SpendLimitName::TextMessageMonthlySpendLimit => { /* ... */ },
 ///     SpendLimitName::VoiceMessageMonthlySpendLimit => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum SpendLimitName {
     #[allow(missing_docs)] // documentation missing in model
+    MediaMessageMonthlySpendLimit,
+    #[allow(missing_docs)] // documentation missing in model
     TextMessageMonthlySpendLimit,
     #[allow(missing_docs)] // documentation missing in model
     VoiceMessageMonthlySpendLimit,
@@ -52,6 +55,7 @@ pub enum SpendLimitName {
 impl ::std::convert::From<&str> for SpendLimitName {
     fn from(s: &str) -> Self {
         match s {
+            "MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT" => SpendLimitName::MediaMessageMonthlySpendLimit,
             "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT" => SpendLimitName::TextMessageMonthlySpendLimit,
             "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT" => SpendLimitName::VoiceMessageMonthlySpendLimit,
             other => SpendLimitName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl SpendLimitName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SpendLimitName::MediaMessageMonthlySpendLimit => "MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT",
             SpendLimitName::TextMessageMonthlySpendLimit => "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT",
             SpendLimitName::VoiceMessageMonthlySpendLimit => "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT",
             SpendLimitName::Unknown(value) => value.as_str(),
@@ -76,7 +81,11 @@ impl SpendLimitName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TEXT_MESSAGE_MONTHLY_SPEND_LIMIT", "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT"]
+        &[
+            "MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT",
+            "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT",
+            "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SpendLimitName {
@@ -99,6 +108,7 @@ impl SpendLimitName {
 impl ::std::fmt::Display for SpendLimitName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SpendLimitName::MediaMessageMonthlySpendLimit => write!(f, "MEDIA_MESSAGE_MONTHLY_SPEND_LIMIT"),
             SpendLimitName::TextMessageMonthlySpendLimit => write!(f, "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT"),
             SpendLimitName::VoiceMessageMonthlySpendLimit => write!(f, "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT"),
             SpendLimitName::Unknown(value) => write!(f, "{}", value),

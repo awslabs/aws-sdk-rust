@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "StreamExceptionPolicy" => {
+                            builder = builder.set_stream_exception_policy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::StreamExceptionPolicy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

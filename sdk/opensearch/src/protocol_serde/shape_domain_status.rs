@@ -58,6 +58,13 @@ where
                         "Endpoints" => {
                             builder = builder.set_endpoints(crate::protocol_serde::shape_endpoints_map::de_endpoints_map(tokens)?);
                         }
+                        "DomainEndpointV2HostedZoneId" => {
+                            builder = builder.set_domain_endpoint_v2_hosted_zone_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Processing" => {
                             builder = builder.set_processing(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

@@ -4,12 +4,12 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`r#type(WorkflowType)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::type) / [`set_type(Option<WorkflowType>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_type):<br>required: **false**<br><p>The workflows' type.</p><br>
-    ///   - [`name(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_name):<br>required: **false**<br><p>The workflows' name.</p><br>
+    ///   - [`r#type(WorkflowType)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::type) / [`set_type(Option<WorkflowType>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_type):<br>required: **false**<br><p>Filter the list by workflow type.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_name):<br>required: **false**<br><p>Filter the list by workflow name.</p><br>
     ///   - [`starting_token(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::starting_token) / [`set_starting_token(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_starting_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of workflows to return in one page of results.</p><br>
     /// - On success, responds with [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput) with field(s):
-    ///   - [`items(Option<Vec::<WorkflowListItem>>)`](crate::operation::list_workflows::ListWorkflowsOutput::items): <p>The workflows' items.</p>
+    ///   - [`items(Option<Vec::<WorkflowListItem>>)`](crate::operation::list_workflows::ListWorkflowsOutput::items): <p>A list of workflow items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflows::ListWorkflowsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
     pub fn list_workflows(&self) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {

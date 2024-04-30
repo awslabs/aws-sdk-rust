@@ -23,6 +23,9 @@ pub struct RegisteredUserEmbeddingExperienceConfiguration {
     pub q_search_bar: ::std::option::Option<crate::types::RegisteredUserQSearchBarEmbeddingConfiguration>,
     /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
     pub dashboard_visual: ::std::option::Option<crate::types::RegisteredUserDashboardVisualEmbeddingConfiguration>,
+    /// <p>The configuration details for embedding the Generative Q&amp;A experience.</p>
+    /// <p>For more information about embedding the Generative Q&amp;A experience, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub generative_qn_a: ::std::option::Option<crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration>,
 }
 impl RegisteredUserEmbeddingExperienceConfiguration {
     /// <p>The configuration details for providing a dashboard embedding experience.</p>
@@ -50,6 +53,11 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
     pub fn dashboard_visual(&self) -> ::std::option::Option<&crate::types::RegisteredUserDashboardVisualEmbeddingConfiguration> {
         self.dashboard_visual.as_ref()
     }
+    /// <p>The configuration details for embedding the Generative Q&amp;A experience.</p>
+    /// <p>For more information about embedding the Generative Q&amp;A experience, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn generative_qn_a(&self) -> ::std::option::Option<&crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration> {
+        self.generative_qn_a.as_ref()
+    }
 }
 impl RegisteredUserEmbeddingExperienceConfiguration {
     /// Creates a new builder-style object to manufacture [`RegisteredUserEmbeddingExperienceConfiguration`](crate::types::RegisteredUserEmbeddingExperienceConfiguration).
@@ -66,6 +74,7 @@ pub struct RegisteredUserEmbeddingExperienceConfigurationBuilder {
     pub(crate) quick_sight_console: ::std::option::Option<crate::types::RegisteredUserQuickSightConsoleEmbeddingConfiguration>,
     pub(crate) q_search_bar: ::std::option::Option<crate::types::RegisteredUserQSearchBarEmbeddingConfiguration>,
     pub(crate) dashboard_visual: ::std::option::Option<crate::types::RegisteredUserDashboardVisualEmbeddingConfiguration>,
+    pub(crate) generative_qn_a: ::std::option::Option<crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration>,
 }
 impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
     /// <p>The configuration details for providing a dashboard embedding experience.</p>
@@ -154,6 +163,23 @@ impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
     pub fn get_dashboard_visual(&self) -> &::std::option::Option<crate::types::RegisteredUserDashboardVisualEmbeddingConfiguration> {
         &self.dashboard_visual
     }
+    /// <p>The configuration details for embedding the Generative Q&amp;A experience.</p>
+    /// <p>For more information about embedding the Generative Q&amp;A experience, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn generative_qn_a(mut self, input: crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration) -> Self {
+        self.generative_qn_a = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration details for embedding the Generative Q&amp;A experience.</p>
+    /// <p>For more information about embedding the Generative Q&amp;A experience, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn set_generative_qn_a(mut self, input: ::std::option::Option<crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration>) -> Self {
+        self.generative_qn_a = input;
+        self
+    }
+    /// <p>The configuration details for embedding the Generative Q&amp;A experience.</p>
+    /// <p>For more information about embedding the Generative Q&amp;A experience, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_generative_qn_a(&self) -> &::std::option::Option<crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration> {
+        &self.generative_qn_a
+    }
     /// Consumes the builder and constructs a [`RegisteredUserEmbeddingExperienceConfiguration`](crate::types::RegisteredUserEmbeddingExperienceConfiguration).
     pub fn build(self) -> crate::types::RegisteredUserEmbeddingExperienceConfiguration {
         crate::types::RegisteredUserEmbeddingExperienceConfiguration {
@@ -161,6 +187,7 @@ impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
             quick_sight_console: self.quick_sight_console,
             q_search_bar: self.q_search_bar,
             dashboard_visual: self.dashboard_visual,
+            generative_qn_a: self.generative_qn_a,
         }
     }
 }

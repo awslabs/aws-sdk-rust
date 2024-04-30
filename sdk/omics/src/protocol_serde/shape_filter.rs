@@ -21,5 +21,14 @@ pub fn ser_filter(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.r#type {
+        let mut array_8 = object.key("type").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }

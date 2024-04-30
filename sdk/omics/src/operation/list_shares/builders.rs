@@ -22,7 +22,7 @@ impl crate::operation::list_shares::builders::ListSharesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListShares`.
 ///
-/// <p>Lists all shares associated with an account.</p>
+/// <p>Retrieves the resource shares associated with an account. Use the filter parameter to retrieve a specific subset of the shares.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSharesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,31 @@ impl ListSharesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_shares::paginator::ListSharesPaginator {
         crate::operation::list_shares::paginator::ListSharesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The account that owns the analytics store shared.</p>
+    /// <p>The account that owns the resource shares.</p>
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.inner = self.inner.resource_owner(input);
         self
     }
-    /// <p>The account that owns the analytics store shared.</p>
+    /// <p>The account that owns the resource shares.</p>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
-    /// <p>The account that owns the analytics store shared.</p>
+    /// <p>The account that owns the resource shares.</p>
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
         self.inner.get_resource_owner()
     }
-    /// <p>Attributes used to filter for a specific subset of shares.</p>
+    /// <p>Attributes that you use to filter for a specific subset of resource shares.</p>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>Attributes used to filter for a specific subset of shares.</p>
+    /// <p>Attributes that you use to filter for a specific subset of resource shares.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>Attributes used to filter for a specific subset of shares.</p>
+    /// <p>Attributes that you use to filter for a specific subset of resource shares.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
         self.inner.get_filter()
     }

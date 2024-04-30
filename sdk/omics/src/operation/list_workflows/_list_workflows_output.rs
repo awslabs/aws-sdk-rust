@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowsOutput {
-    /// <p>The workflows' items.</p>
+    /// <p>A list of workflow items.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowListItem>>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorkflowsOutput {
-    /// <p>The workflows' items.</p>
+    /// <p>A list of workflow items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::WorkflowListItem] {
@@ -46,19 +46,19 @@ impl ListWorkflowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>The workflows' items.</p>
+    /// <p>A list of workflow items.</p>
     pub fn items(mut self, input: crate::types::WorkflowListItem) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The workflows' items.</p>
+    /// <p>A list of workflow items.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowListItem>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>The workflows' items.</p>
+    /// <p>A list of workflow items.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowListItem>> {
         &self.items
     }

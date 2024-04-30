@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`definition(Option<String>)`](crate::operation::get_run::GetRunOutput::definition): <p>The run's definition.</p>
     ///   - [`digest(Option<String>)`](crate::operation::get_run::GetRunOutput::digest): <p>The run's digest.</p>
     ///   - [`parameters(Option<Document>)`](crate::operation::get_run::GetRunOutput::parameters): <p>The run's parameters.</p>
-    ///   - [`storage_capacity(Option<i32>)`](crate::operation::get_run::GetRunOutput::storage_capacity): <p>The run's storage capacity in gigabytes.</p>
+    ///   - [`storage_capacity(Option<i32>)`](crate::operation::get_run::GetRunOutput::storage_capacity): <p>The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the maximum amount of storage used during the run.</p>
     ///   - [`output_uri(Option<String>)`](crate::operation::get_run::GetRunOutput::output_uri): <p>The run's output URI.</p>
     ///   - [`log_level(Option<RunLogLevel>)`](crate::operation::get_run::GetRunOutput::log_level): <p>The run's log level.</p>
     ///   - [`resource_digests(Option<HashMap::<String, String>>)`](crate::operation::get_run::GetRunOutput::resource_digests): <p>The run's resource digests.</p>
@@ -35,6 +35,8 @@ impl super::Client {
     ///   - [`log_location(Option<RunLogLocation>)`](crate::operation::get_run::GetRunOutput::log_location): <p>The location of the run log.</p>
     ///   - [`uuid(Option<String>)`](crate::operation::get_run::GetRunOutput::uuid): <p>The universally unique identifier for a run.</p>
     ///   - [`run_output_uri(Option<String>)`](crate::operation::get_run::GetRunOutput::run_output_uri): <p>The destination for workflow outputs.</p>
+    ///   - [`storage_type(Option<StorageType>)`](crate::operation::get_run::GetRunOutput::storage_type): <p>The run's storage type.</p>
+    ///   - [`workflow_owner_id(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_owner_id): <p>The ID of the workflow owner.</p>
     /// - On failure, responds with [`SdkError<GetRunError>`](crate::operation::get_run::GetRunError)
     pub fn get_run(&self) -> crate::operation::get_run::builders::GetRunFluentBuilder {
         crate::operation::get_run::builders::GetRunFluentBuilder::new(self.handle.clone())

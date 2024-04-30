@@ -12,6 +12,7 @@
 /// ```text
 /// # let numbercapability = unimplemented!();
 /// match numbercapability {
+///     NumberCapability::Mms => { /* ... */ },
 ///     NumberCapability::Sms => { /* ... */ },
 ///     NumberCapability::Voice => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum NumberCapability {
     #[allow(missing_docs)] // documentation missing in model
+    Mms,
+    #[allow(missing_docs)] // documentation missing in model
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Voice,
@@ -52,6 +55,7 @@ pub enum NumberCapability {
 impl ::std::convert::From<&str> for NumberCapability {
     fn from(s: &str) -> Self {
         match s {
+            "MMS" => NumberCapability::Mms,
             "SMS" => NumberCapability::Sms,
             "VOICE" => NumberCapability::Voice,
             other => NumberCapability::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl NumberCapability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            NumberCapability::Mms => "MMS",
             NumberCapability::Sms => "SMS",
             NumberCapability::Voice => "VOICE",
             NumberCapability::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl NumberCapability {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SMS", "VOICE"]
+        &["MMS", "SMS", "VOICE"]
     }
 }
 impl ::std::convert::AsRef<str> for NumberCapability {
@@ -99,6 +104,7 @@ impl NumberCapability {
 impl ::std::fmt::Display for NumberCapability {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            NumberCapability::Mms => write!(f, "MMS"),
             NumberCapability::Sms => write!(f, "SMS"),
             NumberCapability::Voice => write!(f, "VOICE"),
             NumberCapability::Unknown(value) => write!(f, "{}", value),

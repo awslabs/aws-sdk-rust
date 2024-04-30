@@ -14,6 +14,8 @@ pub struct GaugeChartConfiguration {
     pub tooltip_options: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    /// <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+    pub color_configuration: ::std::option::Option<crate::types::GaugeChartColorConfiguration>,
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
@@ -38,6 +40,10 @@ impl GaugeChartConfiguration {
     pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
+    /// <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+    pub fn color_configuration(&self) -> ::std::option::Option<&crate::types::GaugeChartColorConfiguration> {
+        self.color_configuration.as_ref()
+    }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
@@ -59,6 +65,7 @@ pub struct GaugeChartConfigurationBuilder {
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) tooltip_options: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    pub(crate) color_configuration: ::std::option::Option<crate::types::GaugeChartColorConfiguration>,
     pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl GaugeChartConfigurationBuilder {
@@ -132,6 +139,20 @@ impl GaugeChartConfigurationBuilder {
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
         &self.visual_palette
     }
+    /// <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+    pub fn color_configuration(mut self, input: crate::types::GaugeChartColorConfiguration) -> Self {
+        self.color_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+    pub fn set_color_configuration(mut self, input: ::std::option::Option<crate::types::GaugeChartColorConfiguration>) -> Self {
+        self.color_configuration = input;
+        self
+    }
+    /// <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_color_configuration(&self) -> &::std::option::Option<crate::types::GaugeChartColorConfiguration> {
+        &self.color_configuration
+    }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
         self.interactions = ::std::option::Option::Some(input);
@@ -154,6 +175,7 @@ impl GaugeChartConfigurationBuilder {
             data_labels: self.data_labels,
             tooltip_options: self.tooltip_options,
             visual_palette: self.visual_palette,
+            color_configuration: self.color_configuration,
             interactions: self.interactions,
         }
     }

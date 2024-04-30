@@ -13,6 +13,8 @@ pub struct ChatSyncOutput {
     pub user_message_id: ::std::option::Option<::std::string::String>,
     /// <p>A request from Amazon Q Business to the end user for information Amazon Q Business needs to successfully complete a requested plugin action.</p>
     pub action_review: ::std::option::Option<crate::types::ActionReview>,
+    /// <p>An authentication verification event activated by an end user request to use a custom plugin.</p>
+    pub auth_challenge_request: ::std::option::Option<crate::types::AuthChallengeRequest>,
     /// <p>The source documents used to generate the conversation response.</p>
     pub source_attributions: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SourceAttribution>>>,
     /// <p>A list of files which failed to upload during chat.</p>
@@ -39,6 +41,10 @@ impl ChatSyncOutput {
     /// <p>A request from Amazon Q Business to the end user for information Amazon Q Business needs to successfully complete a requested plugin action.</p>
     pub fn action_review(&self) -> ::std::option::Option<&crate::types::ActionReview> {
         self.action_review.as_ref()
+    }
+    /// <p>An authentication verification event activated by an end user request to use a custom plugin.</p>
+    pub fn auth_challenge_request(&self) -> ::std::option::Option<&crate::types::AuthChallengeRequest> {
+        self.auth_challenge_request.as_ref()
     }
     /// <p>The source documents used to generate the conversation response.</p>
     ///
@@ -74,6 +80,7 @@ pub struct ChatSyncOutputBuilder {
     pub(crate) system_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_review: ::std::option::Option<crate::types::ActionReview>,
+    pub(crate) auth_challenge_request: ::std::option::Option<crate::types::AuthChallengeRequest>,
     pub(crate) source_attributions: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SourceAttribution>>>,
     pub(crate) failed_attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentOutput>>,
     _request_id: Option<String>,
@@ -149,6 +156,20 @@ impl ChatSyncOutputBuilder {
     pub fn get_action_review(&self) -> &::std::option::Option<crate::types::ActionReview> {
         &self.action_review
     }
+    /// <p>An authentication verification event activated by an end user request to use a custom plugin.</p>
+    pub fn auth_challenge_request(mut self, input: crate::types::AuthChallengeRequest) -> Self {
+        self.auth_challenge_request = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An authentication verification event activated by an end user request to use a custom plugin.</p>
+    pub fn set_auth_challenge_request(mut self, input: ::std::option::Option<crate::types::AuthChallengeRequest>) -> Self {
+        self.auth_challenge_request = input;
+        self
+    }
+    /// <p>An authentication verification event activated by an end user request to use a custom plugin.</p>
+    pub fn get_auth_challenge_request(&self) -> &::std::option::Option<crate::types::AuthChallengeRequest> {
+        &self.auth_challenge_request
+    }
     /// Appends an item to `source_attributions`.
     ///
     /// To override the contents of this collection use [`set_source_attributions`](Self::set_source_attributions).
@@ -209,6 +230,7 @@ impl ChatSyncOutputBuilder {
             system_message_id: self.system_message_id,
             user_message_id: self.user_message_id,
             action_review: self.action_review,
+            auth_challenge_request: self.auth_challenge_request,
             source_attributions: self.source_attributions,
             failed_attachments: self.failed_attachments,
             _request_id: self._request_id,

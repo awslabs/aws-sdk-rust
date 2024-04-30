@@ -150,6 +150,20 @@ impl CreatePluginFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PluginType> {
         self.inner.get_type()
     }
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
+    pub fn auth_configuration(mut self, input: crate::types::PluginAuthConfiguration) -> Self {
+        self.inner = self.inner.auth_configuration(input);
+        self
+    }
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
+    pub fn set_auth_configuration(mut self, input: ::std::option::Option<crate::types::PluginAuthConfiguration>) -> Self {
+        self.inner = self.inner.set_auth_configuration(input);
+        self
+    }
+    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
+    pub fn get_auth_configuration(&self) -> &::std::option::Option<crate::types::PluginAuthConfiguration> {
+        self.inner.get_auth_configuration()
+    }
     /// <p>The source URL used for plugin configuration.</p>
     pub fn server_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_url(input.into());
@@ -164,19 +178,19 @@ impl CreatePluginFluentBuilder {
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_server_url()
     }
-    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
-    pub fn auth_configuration(mut self, input: crate::types::PluginAuthConfiguration) -> Self {
-        self.inner = self.inner.auth_configuration(input);
+    /// <p>Contains configuration for a custom plugin.</p>
+    pub fn custom_plugin_configuration(mut self, input: crate::types::CustomPluginConfiguration) -> Self {
+        self.inner = self.inner.custom_plugin_configuration(input);
         self
     }
-    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
-    pub fn set_auth_configuration(mut self, input: ::std::option::Option<crate::types::PluginAuthConfiguration>) -> Self {
-        self.inner = self.inner.set_auth_configuration(input);
+    /// <p>Contains configuration for a custom plugin.</p>
+    pub fn set_custom_plugin_configuration(mut self, input: ::std::option::Option<crate::types::CustomPluginConfiguration>) -> Self {
+        self.inner = self.inner.set_custom_plugin_configuration(input);
         self
     }
-    /// <p>Authentication configuration information for an Amazon Q Business plugin.</p>
-    pub fn get_auth_configuration(&self) -> &::std::option::Option<crate::types::PluginAuthConfiguration> {
-        self.inner.get_auth_configuration()
+    /// <p>Contains configuration for a custom plugin.</p>
+    pub fn get_custom_plugin_configuration(&self) -> &::std::option::Option<crate::types::CustomPluginConfiguration> {
+        self.inner.get_custom_plugin_configuration()
     }
     ///
     /// Appends an item to `tags`.

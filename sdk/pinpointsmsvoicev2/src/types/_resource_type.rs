@@ -20,6 +20,7 @@
 ///     ResourceType::OptedOutNumber => { /* ... */ },
 ///     ResourceType::PhoneNumber => { /* ... */ },
 ///     ResourceType::Pool => { /* ... */ },
+///     ResourceType::ProtectConfiguration => { /* ... */ },
 ///     ResourceType::Registration => { /* ... */ },
 ///     ResourceType::RegistrationAttachment => { /* ... */ },
 ///     ResourceType::SenderId => { /* ... */ },
@@ -68,6 +69,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Pool,
     #[allow(missing_docs)] // documentation missing in model
+    ProtectConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     Registration,
     #[allow(missing_docs)] // documentation missing in model
     RegistrationAttachment,
@@ -90,6 +93,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "opted-out-number" => ResourceType::OptedOutNumber,
             "phone-number" => ResourceType::PhoneNumber,
             "pool" => ResourceType::Pool,
+            "protect-configuration" => ResourceType::ProtectConfiguration,
             "registration" => ResourceType::Registration,
             "registration-attachment" => ResourceType::RegistrationAttachment,
             "sender-id" => ResourceType::SenderId,
@@ -117,6 +121,7 @@ impl ResourceType {
             ResourceType::OptedOutNumber => "opted-out-number",
             ResourceType::PhoneNumber => "phone-number",
             ResourceType::Pool => "pool",
+            ResourceType::ProtectConfiguration => "protect-configuration",
             ResourceType::Registration => "registration",
             ResourceType::RegistrationAttachment => "registration-attachment",
             ResourceType::SenderId => "sender-id",
@@ -135,6 +140,7 @@ impl ResourceType {
             "opted-out-number",
             "phone-number",
             "pool",
+            "protect-configuration",
             "registration",
             "registration-attachment",
             "sender-id",
@@ -170,6 +176,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::OptedOutNumber => write!(f, "opted-out-number"),
             ResourceType::PhoneNumber => write!(f, "phone-number"),
             ResourceType::Pool => write!(f, "pool"),
+            ResourceType::ProtectConfiguration => write!(f, "protect-configuration"),
             ResourceType::Registration => write!(f, "registration"),
             ResourceType::RegistrationAttachment => write!(f, "registration-attachment"),
             ResourceType::SenderId => write!(f, "sender-id"),

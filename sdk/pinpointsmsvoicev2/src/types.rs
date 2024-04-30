@@ -13,11 +13,15 @@ pub use crate::types::_verification_status::VerificationStatus;
 
 pub use crate::types::_message_type::MessageType;
 
+pub use crate::types::_protect_configuration_country_rule_set_information::ProtectConfigurationCountryRuleSetInformation;
+
+pub use crate::types::_protect_status::ProtectStatus;
+
+pub use crate::types::_number_capability::NumberCapability;
+
 pub use crate::types::_pool_status::PoolStatus;
 
 pub use crate::types::_number_type::NumberType;
-
-pub use crate::types::_number_capability::NumberCapability;
 
 pub use crate::types::_number_status::NumberStatus;
 
@@ -143,6 +147,12 @@ pub use crate::types::_registration_attachment_filter::RegistrationAttachmentFil
 
 pub use crate::types::_registration_attachment_filter_name::RegistrationAttachmentFilterName;
 
+pub use crate::types::_protect_configuration_information::ProtectConfigurationInformation;
+
+pub use crate::types::_protect_configuration_filter::ProtectConfigurationFilter;
+
+pub use crate::types::_protect_configuration_filter_name::ProtectConfigurationFilterName;
+
 pub use crate::types::_pool_information::PoolInformation;
 
 pub use crate::types::_pool_filter::PoolFilter;
@@ -264,6 +274,16 @@ mod _pool_origination_identities_filter;
 mod _pool_origination_identities_filter_name;
 
 mod _pool_status;
+
+mod _protect_configuration_country_rule_set_information;
+
+mod _protect_configuration_filter;
+
+mod _protect_configuration_filter_name;
+
+mod _protect_configuration_information;
+
+mod _protect_status;
 
 mod _registration_association_behavior;
 

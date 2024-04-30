@@ -13,9 +13,9 @@ pub struct GetWebExperienceOutput {
     pub default_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the Amazon Q Business web experience. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub status: ::std::option::Option<crate::types::WebExperienceStatus>,
-    /// <p>The Unix timestamp when the retriever was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Unix timestamp when the data source connector was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The title for your Amazon Q Business web experience.</p>
     pub title: ::std::option::Option<::std::string::String>,
@@ -28,6 +28,7 @@ pub struct GetWebExperienceOutput {
     /// <p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authentication configuration information for your Amazon Q Business web experience.</p>
+    #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub authentication_configuration: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
@@ -54,11 +55,11 @@ impl GetWebExperienceOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::WebExperienceStatus> {
         self.status.as_ref()
     }
-    /// <p>The Unix timestamp when the retriever was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Unix timestamp when the data source connector was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -83,6 +84,7 @@ impl GetWebExperienceOutput {
         self.role_arn.as_deref()
     }
     /// <p>The authentication configuration information for your Amazon Q Business web experience.</p>
+    #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::WebExperienceAuthConfiguration> {
         self.authentication_configuration.as_ref()
     }
@@ -194,31 +196,31 @@ impl GetWebExperienceOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WebExperienceStatus> {
         &self.status
     }
-    /// <p>The Unix timestamp when the retriever was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp when the retriever was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The Unix timestamp when the retriever was created.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The Unix timestamp when the data source connector was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp when the data source connector was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The Unix timestamp when the data source connector was last updated.</p>
+    /// <p>The Unix timestamp when the Amazon Q Business web experience was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
@@ -293,16 +295,19 @@ impl GetWebExperienceOutputBuilder {
         &self.role_arn
     }
     /// <p>The authentication configuration information for your Amazon Q Business web experience.</p>
+    #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub fn authentication_configuration(mut self, input: crate::types::WebExperienceAuthConfiguration) -> Self {
         self.authentication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The authentication configuration information for your Amazon Q Business web experience.</p>
+    #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>) -> Self {
         self.authentication_configuration = input;
         self
     }
     /// <p>The authentication configuration information for your Amazon Q Business web experience.</p>
+    #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::WebExperienceAuthConfiguration> {
         &self.authentication_configuration
     }

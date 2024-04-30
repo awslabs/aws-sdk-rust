@@ -136,17 +136,34 @@ impl UpdateWebExperienceFluentBuilder {
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_web_experience_id()
     }
+    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience and required resources.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.role_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience and required resources.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_role_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience and required resources.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>The authentication configuration of the Amazon Q Business web experience.</p>
+    #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub fn authentication_configuration(mut self, input: crate::types::WebExperienceAuthConfiguration) -> Self {
         self.inner = self.inner.authentication_configuration(input);
         self
     }
     /// <p>The authentication configuration of the Amazon Q Business web experience.</p>
+    #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::WebExperienceAuthConfiguration>) -> Self {
         self.inner = self.inner.set_authentication_configuration(input);
         self
     }
     /// <p>The authentication configuration of the Amazon Q Business web experience.</p>
+    #[deprecated(note = "Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management.")]
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::WebExperienceAuthConfiguration> {
         self.inner.get_authentication_configuration()
     }

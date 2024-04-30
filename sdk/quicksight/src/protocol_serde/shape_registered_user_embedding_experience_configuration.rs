@@ -33,5 +33,11 @@ pub fn ser_registered_user_embedding_experience_configuration(
         crate::protocol_serde::shape_registered_user_dashboard_visual_embedding_configuration::ser_registered_user_dashboard_visual_embedding_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.generative_qn_a {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("GenerativeQnA").start_object();
+        crate::protocol_serde::shape_registered_user_generative_qn_a_embedding_configuration::ser_registered_user_generative_qn_a_embedding_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

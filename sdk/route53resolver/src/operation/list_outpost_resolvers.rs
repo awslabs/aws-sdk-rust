@@ -254,6 +254,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListOutpostRe
 #[derive(::std::fmt::Debug)]
 pub enum ListOutpostResolversError {
     /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
+    /// <p>This error can also be thrown when a customer has reached the 5120 character limit for a resource policy for CloudWatch Logs.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>We encountered an unknown error. Try again in a few minutes.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),

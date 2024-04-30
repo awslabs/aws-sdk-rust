@@ -14,6 +14,8 @@ pub struct Plugin {
     pub server_url: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the plugin.</p>
     pub state: ::std::option::Option<crate::types::PluginState>,
+    /// <p>The status of the plugin.</p>
+    pub build_status: ::std::option::Option<crate::types::PluginBuildStatus>,
     /// <p>The timestamp for when the plugin was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the plugin was last updated.</p>
@@ -40,6 +42,10 @@ impl Plugin {
     pub fn state(&self) -> ::std::option::Option<&crate::types::PluginState> {
         self.state.as_ref()
     }
+    /// <p>The status of the plugin.</p>
+    pub fn build_status(&self) -> ::std::option::Option<&crate::types::PluginBuildStatus> {
+        self.build_status.as_ref()
+    }
     /// <p>The timestamp for when the plugin was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -65,6 +71,7 @@ pub struct PluginBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PluginType>,
     pub(crate) server_url: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::PluginState>,
+    pub(crate) build_status: ::std::option::Option<crate::types::PluginBuildStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -139,6 +146,20 @@ impl PluginBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PluginState> {
         &self.state
     }
+    /// <p>The status of the plugin.</p>
+    pub fn build_status(mut self, input: crate::types::PluginBuildStatus) -> Self {
+        self.build_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the plugin.</p>
+    pub fn set_build_status(mut self, input: ::std::option::Option<crate::types::PluginBuildStatus>) -> Self {
+        self.build_status = input;
+        self
+    }
+    /// <p>The status of the plugin.</p>
+    pub fn get_build_status(&self) -> &::std::option::Option<crate::types::PluginBuildStatus> {
+        &self.build_status
+    }
     /// <p>The timestamp for when the plugin was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -175,6 +196,7 @@ impl PluginBuilder {
             r#type: self.r#type,
             server_url: self.server_url,
             state: self.state,
+            build_status: self.build_status,
             created_at: self.created_at,
             updated_at: self.updated_at,
         }

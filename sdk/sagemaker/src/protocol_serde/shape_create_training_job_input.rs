@@ -164,5 +164,11 @@ pub fn ser_create_training_job_input_input(
         crate::protocol_serde::shape_infra_check_config::ser_infra_check_config(&mut object_55, var_54)?;
         object_55.finish();
     }
+    if let Some(var_56) = &input.session_chaining_config {
+        #[allow(unused_mut)]
+        let mut object_57 = object.key("SessionChainingConfig").start_object();
+        crate::protocol_serde::shape_session_chaining_config::ser_session_chaining_config(&mut object_57, var_56)?;
+        object_57.finish();
+    }
     Ok(())
 }

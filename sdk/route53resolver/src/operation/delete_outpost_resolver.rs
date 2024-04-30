@@ -254,6 +254,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteOutpost
 #[derive(::std::fmt::Debug)]
 pub enum DeleteOutpostResolverError {
     /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
+    /// <p>This error can also be thrown when a customer has reached the 5120 character limit for a resource policy for CloudWatch Logs.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is in the process of being deleted, or you can't import domains into a domain list that is in the process of being deleted.</p>
     ConflictException(crate::types::error::ConflictException),

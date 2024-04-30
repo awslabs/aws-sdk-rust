@@ -8,12 +8,16 @@ pub struct ActionReviewPayloadField {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The display order of fields in a payload.</p>
     pub display_order: ::std::option::Option<i32>,
+    /// <p>The field level description of each action review input field. This could be an explanation of the field. In the Amazon Q Business web experience, these descriptions could be used to display as tool tips to help users understand the field.</p>
+    pub display_description: ::std::option::Option<::std::string::String>,
     /// <p>The type of field.</p>
     pub r#type: ::std::option::Option<crate::types::ActionPayloadFieldType>,
     /// <p>The field value.</p>
     pub value: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business to perform the requested plugin action.</p>
     pub allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::ActionReviewPayloadFieldAllowedValue>>,
+    /// <p>The expected data format for the action review input field value. For example, in PTO request, <code>from</code> and <code>to</code> would be of <code>datetime</code> allowed format.</p>
+    pub allowed_format: ::std::option::Option<::std::string::String>,
     /// <p>Information about whether the field is required.</p>
     pub required: ::std::option::Option<bool>,
 }
@@ -25,6 +29,10 @@ impl ActionReviewPayloadField {
     /// <p>The display order of fields in a payload.</p>
     pub fn display_order(&self) -> ::std::option::Option<i32> {
         self.display_order
+    }
+    /// <p>The field level description of each action review input field. This could be an explanation of the field. In the Amazon Q Business web experience, these descriptions could be used to display as tool tips to help users understand the field.</p>
+    pub fn display_description(&self) -> ::std::option::Option<&str> {
+        self.display_description.as_deref()
     }
     /// <p>The type of field.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ActionPayloadFieldType> {
@@ -39,6 +47,10 @@ impl ActionReviewPayloadField {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
     pub fn allowed_values(&self) -> &[crate::types::ActionReviewPayloadFieldAllowedValue] {
         self.allowed_values.as_deref().unwrap_or_default()
+    }
+    /// <p>The expected data format for the action review input field value. For example, in PTO request, <code>from</code> and <code>to</code> would be of <code>datetime</code> allowed format.</p>
+    pub fn allowed_format(&self) -> ::std::option::Option<&str> {
+        self.allowed_format.as_deref()
     }
     /// <p>Information about whether the field is required.</p>
     pub fn required(&self) -> ::std::option::Option<bool> {
@@ -58,9 +70,11 @@ impl ActionReviewPayloadField {
 pub struct ActionReviewPayloadFieldBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_order: ::std::option::Option<i32>,
+    pub(crate) display_description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ActionPayloadFieldType>,
     pub(crate) value: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::ActionReviewPayloadFieldAllowedValue>>,
+    pub(crate) allowed_format: ::std::option::Option<::std::string::String>,
     pub(crate) required: ::std::option::Option<bool>,
 }
 impl ActionReviewPayloadFieldBuilder {
@@ -91,6 +105,20 @@ impl ActionReviewPayloadFieldBuilder {
     /// <p>The display order of fields in a payload.</p>
     pub fn get_display_order(&self) -> &::std::option::Option<i32> {
         &self.display_order
+    }
+    /// <p>The field level description of each action review input field. This could be an explanation of the field. In the Amazon Q Business web experience, these descriptions could be used to display as tool tips to help users understand the field.</p>
+    pub fn display_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The field level description of each action review input field. This could be an explanation of the field. In the Amazon Q Business web experience, these descriptions could be used to display as tool tips to help users understand the field.</p>
+    pub fn set_display_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.display_description = input;
+        self
+    }
+    /// <p>The field level description of each action review input field. This could be an explanation of the field. In the Amazon Q Business web experience, these descriptions could be used to display as tool tips to help users understand the field.</p>
+    pub fn get_display_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_description
     }
     /// <p>The type of field.</p>
     pub fn r#type(mut self, input: crate::types::ActionPayloadFieldType) -> Self {
@@ -140,6 +168,20 @@ impl ActionReviewPayloadFieldBuilder {
     pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionReviewPayloadFieldAllowedValue>> {
         &self.allowed_values
     }
+    /// <p>The expected data format for the action review input field value. For example, in PTO request, <code>from</code> and <code>to</code> would be of <code>datetime</code> allowed format.</p>
+    pub fn allowed_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.allowed_format = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expected data format for the action review input field value. For example, in PTO request, <code>from</code> and <code>to</code> would be of <code>datetime</code> allowed format.</p>
+    pub fn set_allowed_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.allowed_format = input;
+        self
+    }
+    /// <p>The expected data format for the action review input field value. For example, in PTO request, <code>from</code> and <code>to</code> would be of <code>datetime</code> allowed format.</p>
+    pub fn get_allowed_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_format
+    }
     /// <p>Information about whether the field is required.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -159,9 +201,11 @@ impl ActionReviewPayloadFieldBuilder {
         crate::types::ActionReviewPayloadField {
             display_name: self.display_name,
             display_order: self.display_order,
+            display_description: self.display_description,
             r#type: self.r#type,
             value: self.value,
             allowed_values: self.allowed_values,
+            allowed_format: self.allowed_format,
             required: self.required,
         }
     }

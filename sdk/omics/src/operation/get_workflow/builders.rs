@@ -23,6 +23,7 @@ impl crate::operation::get_workflow::builders::GetWorkflowInputBuilder {
 /// Fluent builder constructing a request to `GetWorkflow`.
 ///
 /// <p>Gets information about a workflow.</p>
+/// <p>If a workflow is shared with you, you cannot export the workflow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -154,5 +155,19 @@ impl GetWorkflowFluentBuilder {
     /// <p>The export format for the workflow.</p>
     pub fn get_export(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExport>> {
         self.inner.get_export()
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn workflow_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workflow_owner_id(input.into());
+        self
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn set_workflow_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workflow_owner_id(input);
+        self
+    }
+    /// <p>The ID of the workflow owner.</p>
+    pub fn get_workflow_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_owner_id()
     }
 }
