@@ -44,37 +44,37 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for StartConversationReque
         let payload = match input {
             Self::Input::ConfigurationEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("ConfigurationEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_configuration_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::AudioInputEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("AudioInputEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_audio_input_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::DtmfInputEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("DTMFInputEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_dtmf_input_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::TextInputEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("TextInputEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_text_input_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::PlaybackCompletionEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("PlaybackCompletionEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_playback_completion_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::DisconnectionEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("DisconnectionEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_start_conversation_request_event_stream::ser_disconnection_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }

@@ -44,37 +44,37 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for ChatInputStreamMarshal
         let payload = match input {
             Self::Input::ConfigurationEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("configurationEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_chat_input_stream::ser_configuration_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::TextEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("textEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_chat_input_stream::ser_text_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::AttachmentEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("attachmentEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_chat_input_stream::ser_attachment_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::ActionExecutionEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("actionExecutionEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_chat_input_stream::ser_action_execution_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::EndOfInputEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("endOfInputEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_chat_input_stream::ser_end_of_input_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
             Self::Input::AuthChallengeResponseEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("authChallengeResponseEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_chat_input_stream::ser_auth_challenge_response_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }

@@ -54,7 +54,7 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller 
             }
             Self::Input::ConfigurationEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("ConfigurationEvent".into())));
-                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/vnd.amazon.eventstream".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
                 crate::protocol_serde::shape_audio_stream::ser_configuration_event_payload(&inner)
                                             .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
             }
