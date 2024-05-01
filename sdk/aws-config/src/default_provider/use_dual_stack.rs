@@ -16,7 +16,14 @@ mod profile_key {
     pub(super) const USE_DUAL_STACK: &str = "use_dualstack_endpoint";
 }
 
-pub(crate) async fn use_dual_stack_provider(provider_config: &ProviderConfig) -> Option<bool> {
+/// Load the value for "use dual-stack"
+///
+/// This checks the following sources:
+/// 1. The environment variable `AWS_USE_DUALSTACK_ENDPOINT=true/false`
+/// 2. The profile key `use_dualstack_endpoint=true/false`
+///
+/// If invalid values are found, the provider will return `None` and an error will be logged.
+pub async fn use_dual_stack_provider(provider_config: &ProviderConfig) -> Option<bool> {
     let env = provider_config.env();
     let profiles = provider_config.profile().await;
 

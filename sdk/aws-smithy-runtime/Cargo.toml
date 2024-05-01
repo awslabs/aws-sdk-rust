@@ -114,6 +114,7 @@ features = ["env-filter", "fmt", "json"]
 
 [dev-dependencies]
 approx = "0.5.1"
+fastrand = "~2.0.0"
 futures-util = "0.3.29"
 pretty_assertions = "1.4.0"
 tracing-test = "0.2.1"
